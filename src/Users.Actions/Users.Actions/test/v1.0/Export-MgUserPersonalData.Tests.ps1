@@ -12,19 +12,19 @@ while(-not $mockingPath) {
 . ($mockingPath | Select-Object -First 1).FullName
 
 Describe 'Export-MgUserPersonalData' {
-    It 'ExportExpanded1' -skip {
+    It 'ExportExpanded' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'Export1' -skip {
+    It 'Export' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'ExportViaIdentityExpanded1' -skip {
+    It 'ExportViaIdentityExpanded' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'ExportViaIdentity1' -skip {
+    It 'ExportViaIdentity' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 }

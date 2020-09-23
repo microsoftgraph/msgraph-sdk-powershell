@@ -24,5 +24,7 @@ catch {
     # Get the Http Error Message from DevX Api, Rethrow Error to be handled Upstream
     $ErrorMessage = $_.Exception.Message
     Write-Host -ForegroundColor Red "[$RequestCount] Request Failed for $ModuleName Error Message: $ErrorMessage"
-    throw
+    if ($GraphVersion -eq "beta") {
+        throw
+    }
 }

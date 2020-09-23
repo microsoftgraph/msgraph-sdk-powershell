@@ -1,0 +1,12 @@
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
+ 
+steps:
+  - template: ./install-tools-template.yml
+  - task: PowerShell@2
+    displayName: 'Generate Profiles'
+    continueOnError: false
+    inputs:
+      targetType: 'filePath'
+      pwsh: true
+      filePath: $(System.DefaultWorkingDirectory)/tools/GenerateProfiles.ps1

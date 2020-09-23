@@ -14,10 +14,11 @@ Invoke action deleteTiIndicatorsByExternalId
 
 ### DeleteExpanded1 (Default)
 ```
-Remove-MgSecurityTiIndicatorByExternalId [-Value <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MgSecurityTiIndicatorByExternalId [-AdditionalProperties <Hashtable>] [-Value <String[]>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
-### Delete1
+### Delete2
 ```
 Remove-MgSecurityTiIndicatorByExternalId
  -BodyParameter <IPaths1Gb7He6SecurityTiindicatorsMicrosoftGraphDeletetiindicatorsbyexternalidPostRequestbodyContentApplicationJsonSchema>
@@ -49,13 +50,28 @@ PS C:\> {{ Add code here }}
 
 ## PARAMETERS
 
+### -AdditionalProperties
+Additional Parameters
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: DeleteExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -BodyParameter
 .
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPaths1Gb7He6SecurityTiindicatorsMicrosoftGraphDeletetiindicatorsbyexternalidPostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Delete1
+Parameter Sets: Delete2
 Aliases:
 
 Required: True
@@ -132,6 +148,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 BODYPARAMETER <IPaths1Gb7He6SecurityTiindicatorsMicrosoftGraphDeletetiindicatorsbyexternalidPostRequestbodyContentApplicationJsonSchema>: .
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Value <String[]>]`: 
 
 ## RELATED LINKS

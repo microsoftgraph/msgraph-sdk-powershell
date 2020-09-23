@@ -18,7 +18,7 @@ enum VersionState {
     EqualToFeed
     NotOnFeed
 }
-$ErrorActionPreference = 'Stop'
+$ErrorActionPreference = 'Continue'
 if ($PSEdition -ne 'Core') {
     Write-Error 'This script requires PowerShell Core to execute. [Note] Generated cmdlets will work in both PowerShell Core or Windows PowerShell.'
 }
@@ -46,22 +46,45 @@ if (-not (Test-Path $ArtifactsLocation)) {
 if (-not (Test-Path $ModuleMappingConfigPath)) {
     Write-Error "Module mapping file not be found: $ModuleMappingConfigPath."
 }
+
+$AllowPreRelease = $true
+if($ModulePreviewNumber -eq -1) {
+    $AllowPreRelease = $false
+}
 # Install module locally in order to specify it as a dependency for other modules down the generation pipeline.
 # https://stackoverflow.com/questions/46216038/how-do-i-define-requiredmodules-in-a-powershell-module-manifest-psd1.
-$ExistingAuthModule = Find-Module "Microsoft.Graph.Authentication" -Repository $RepositoryName
+$ExistingAuthModule = Find-Module "Microsoft.Graph.Authentication" -Repository $RepositoryName -AllowPrerelease:$AllowPreRelease
+Write-Warning "Auth Module: $ExistingAuthModule.Name"
+Write-Warning "Auth Module: $ExistingAuthModule.Version"
 if (!(Get-Module -Name $ExistingAuthModule.Name -ListAvailable)) {
-    Install-Module $ExistingAuthModule.Name -Repository $RepositoryName -AllowPrerelease -Force
+    Install-Module $ExistingAuthModule.Name -Repository $RepositoryName -Force -AllowClobber -AllowPrerelease:$AllowPreRelease
 }
-$RequiredGraphModules += @{ ModuleName = $ExistingAuthModule.Name ; ModuleVersion = $ExistingAuthModule.Version }
+if($ExistingAuthModule.Version -like '*preview*' ) {
+    $version = $ExistingAuthModule.Version.Remove($ExistingAuthModule.Version.IndexOf('-'))
+    Write-Warning "Required Version:  $ModulePrefix.$RequiredModule Version: $version"
+    $RequiredGraphModules += @{ ModuleName = $ExistingAuthModule.Name ; ModuleVersion = $version }
+}
+else {
+    $RequiredGraphModules += @{ ModuleName = $ExistingAuthModule.Name ; ModuleVersion = $ExistingAuthModule.Version }
+}
+
 if ($UpdateAutoRest) {
     # Update AutoRest.
     & autorest --reset
 }
-
 [HashTable] $ModuleMapping = Get-Content $ModuleMappingConfigPath | ConvertFrom-Json -AsHashTable
-$ModuleMapping.Keys | ForEach-Object -Begin { $RequestCount = 0 } -End { Write-Host -ForeGroundColor Green "Requests: $RequestCount" } {
+
+$ModuleMapping.Keys | ForEach-Object -ThrottleLimit $ModuleMapping.Keys.Count -Parallel {
+    enum VersionState {
+        Invalid
+        Valid
+        EqualToFeed
+        NotOnFeed
+    }
+    
     $ModuleName = $_
-    $ModuleProjectDir = Join-Path $ModulesOutputDir "$ModuleName\$ModuleName"
+    Write-Warning "Generating $ModuleName"
+    $ModuleProjectDir = Join-Path $Using:ModulesOutputDir "$ModuleName\$ModuleName"
 
     # Copy AutoRest readme.md config is none exists.
     if (-not (Test-Path "$ModuleProjectDir\readme.md")) {
@@ -72,50 +95,50 @@ $ModuleMapping.Keys | ForEach-Object -Begin { $RequestCount = 0 } -End { Write-H
     $ModuleLevelReadMePath = Join-Path $ModuleProjectDir "\readme.md" -Resolve
 
     # Read specified module version from readme.
-    $ModuleVersion = & $ReadModuleReadMePS1 -ReadMePath $ModuleLevelReadMePath -FieldToRead "module-version"
+    $ModuleVersion = & $Using:ReadModuleReadMePS1 -ReadMePath $ModuleLevelReadMePath -FieldToRead "module-version"
     if ($ModuleVersion -eq $null) {
         # Module version not set in readme.md.
-        Write-Error "Version number is not set on $ModulePrefix.$ModuleName module. Please set 'module-version' in $ModuleLevelReadMePath."
+        Write-Error "Version number is not set on $Using:ModulePrefix.$ModuleName module. Please set 'module-version' in $ModuleLevelReadMePath."
     }
 
     # Validate module version with the one on PSGallery.
-    [VersionState]$VersionState = & $ValidateUpdatedModuleVersionPS1 -ModuleName "$ModulePrefix.$ModuleName" -NextVersion $ModuleVersion
+    [VersionState] $VersionState = & $Using:ValidateUpdatedModuleVersionPS1 -ModuleName "$Using:ModulePrefix.$ModuleName" -NextVersion $ModuleVersion -PSRepository RepositoryName -ModulePreviewNumber $ModulePreviewNumber
 
-    if ($VersionState.Equals([VersionState]::Invalid) -and !$SkipVersionCheck) {
-        Write-Error "The specified version in $ModulePrefix.$ModuleName module is either higher or lower than what's on $RepositoryName. Update the 'module-version' in $ModuleLevelReadMePath"
+    if ($VersionState.Equals([VersionState]::Invalid) -and !$Using:SkipVersionCheck) {
+        Write-Warning "The specified version in $Using:ModulePrefix.$ModuleName module is either higher or lower than what's on $Using:RepositoryName. Update the 'module-version' in $ModuleLevelReadMePath"
     }
     elseif ($VersionState.Equals([VersionState]::EqualToFeed) -and !$SkipVersionCheck) {
-        Write-Warning "$ModulePrefix.$ModuleName module skipped. Version has not changed and is equal to what's on $RepositoryName."
+        Write-Warning "$Using:ModulePrefix.$ModuleName module skipped. Version has not changed and is equal to what's on $Using:RepositoryName."
     }
-    elseif ($VersionState.Equals([VersionState]::Valid) -or $VersionState.Equals([VersionState]::NotOnFeed) -or $SkipVersionCheck) {
+    elseif ($VersionState.Equals([VersionState]::Valid) -or $VersionState.Equals([VersionState]::NotOnFeed) -or $Using:SkipVersionCheck) {
         # Read release notes from readme.
-        $ModuleReleaseNotes = & $ReadModuleReadMePS1 -ReadMePath $ModuleLevelReadMePath -FieldToRead "release-notes"
+        $ModuleReleaseNotes = & $Using:ReadModuleReadMePS1 -ReadMePath $ModuleLevelReadMePath -FieldToRead "release-notes"
         if ($ModuleReleaseNotes -eq $null) {
             # Release notes not set in readme.md.
-            Write-Error "Release notes not set on $ModulePrefix.$ModuleName module. Please set 'release-notes' in $ModuleLevelReadMePath."
+            Write-Error "Release notes not set on $Using:ModulePrefix.$ModuleName module. Please set 'release-notes' in $ModuleLevelReadMePath."
         }
 
         try {
             # Generate PowerShell modules.
-            Write-Host -ForegroundColor Green "Generating '$ModulePrefix.$ModuleName' module..."
+            Write-Host -ForegroundColor Green "Generating '$Using:ModulePrefix.$ModuleName' module..."
             & autorest --module-version:$ModuleVersion --service-name:$ModuleName $ModuleLevelReadMePath --verbose
             if ($LASTEXITCODE) {
                 Write-Error "Failed to generate '$ModuleName' module."
             }
-            Write-Host -ForegroundColor Green "AutoRest generated '$ModulePrefix.$ModuleName' successfully."
+            Write-Host -ForegroundColor Green "AutoRest generated '$Using:ModulePrefix.$ModuleName' successfully."
 
             # Manage generated module.
-            Write-Host -ForegroundColor Green "Managing '$ModulePrefix.$ModuleName' module..."
-            & $ManageGeneratedModulePS1 -Module $ModuleName -ModulePrefix $ModulePrefix
+            Write-Host -ForegroundColor Green "Managing '$Using:ModulePrefix.$ModuleName' module..."
+            & $Using:ManageGeneratedModulePS1 -Module $ModuleName -ModulePrefix $Using:ModulePrefix
 
-            if ($Build) {
+            if ($Using:Build) {
                 # Build generated module.
-                if ($EnableSigning) {
+                if ($Using:EnableSigning) {
                     # Sign generated module.
-                    & $BuildModulePS1 -Module $ModuleName -ModulePrefix $ModulePrefix -ModuleVersion $ModuleVersion -ModulePreviewNumber $ModulePreviewNumber -RequiredModules $RequiredGraphModules -ReleaseNotes $ModuleReleaseNotes -EnableSigning
+                    & $Using:BuildModulePS1 -Module $ModuleName -ModulePrefix $Using:ModulePrefix -ModuleVersion $ModuleVersion -ModulePreviewNumber $Using:ModulePreviewNumber -RequiredModules $Using:RequiredGraphModules -ReleaseNotes $ModuleReleaseNotes -EnableSigning
                 }
                 else {
-                    & $BuildModulePS1 -Module $ModuleName -ModulePrefix $ModulePrefix -ModuleVersion $ModuleVersion -ModulePreviewNumber $ModulePreviewNumber -RequiredModules $RequiredGraphModules -ReleaseNotes $ModuleReleaseNotes
+                    & $Using:BuildModulePS1 -Module $ModuleName -ModulePrefix $Using:ModulePrefix -ModuleVersion $ModuleVersion -ModulePreviewNumber $Using:ModulePreviewNumber -RequiredModules $Using:RequiredGraphModules -ReleaseNotes $ModuleReleaseNotes
                 }
 
                 # Get profiles for generated modules.
@@ -123,36 +146,61 @@ $ModuleMapping.Keys | ForEach-Object -Begin { $RequestCount = 0 } -End { Write-H
                 $Profiles = Get-ChildItem -Path $ModuleExportsPath -Directory | %{ $_.Name}
 
                 # Update module manifest wiht profiles.
-                $ModuleManifestPath = Join-Path $ModuleProjectDir "$ModulePrefix.$ModuleName.psd1"
+                $ModuleManifestPath = Join-Path $ModuleProjectDir "$Using:ModulePrefix.$ModuleName.psd1"
                 [HashTable]$PrivateData = @{ Profiles = $Profiles }
                 Update-ModuleManifest -Path $ModuleManifestPath -PrivateData $PrivateData
 
                 # Update module psm1 with Graph session profile name.
-                $ModulePsm1 = Join-Path $ModuleProjectDir "/$ModulePrefix.$ModuleName.psm1"
+                $ModulePsm1 = Join-Path $ModuleProjectDir "/$Using:ModulePrefix.$ModuleName.psm1"
                 (Get-Content -Path $ModulePsm1) | ForEach-Object{
-                    $_
                     if ($_ -match '\$instance = \[Microsoft.Graph.PowerShell.Module\]::Instance') {
+                        # Update main psm1 with Graph session profile name and module name.
+                        $_
                         '  $instance.ProfileName = [Microsoft.Graph.PowerShell.Authentication.GraphSession]::Instance.SelectedProfile'
+                    } else {
+                        # Rename all Azure instances in psm1 to `Microsoft Graph`.
+                        $updatedLine = $_ -replace 'Azure', 'Microsoft Graph'
+                        # Replace all 'instance.Name' declarations with fully qualified module name.
+                        $updatedLine = $updatedLine -replace '\$\(\$instance.Name\)', "$ModulePrefix.$ModuleName"
+                        $updatedLine
                     }
                 } | Set-Content $ModulePsm1
 
+                # Address AutoREST bug where it looks for exports in the wrong directory.
+                $InternalModulePsm1 = Join-Path $ModuleProjectDir "/internal/$Using:ModulePrefix.$ModuleName.internal.psm1"
+                (Get-Content -Path $InternalModulePsm1) | ForEach-Object{
+                    $updatedLine = $_
+                    # Address AutoREST bug where it looks for exports in the wrong directory.
+                    if ($_ -match '\$exportsPath = \$PSScriptRoot') {
+                        $updatedLine = '  $exportsPath = Join-Path $PSScriptRoot "../exports"'
+                    }
+                    
+                    # Remove duplicate instance.Name declarations in internal.psm1
+                    # Main .psm1 already handles this.
+                    if ($_ -match '\$\(\$instance.Name\)') {
+                        $updatedLine = ""
+                    }
+                    $updatedLine
+                } | Set-Content $InternalModulePsm1
+                
                 if ($LASTEXITCODE) {
                     Write-Error "Failed to build '$ModuleName' module."
                 }
             }
 
-            if ($Pack) {
+            if ($Using:Pack) {
                 # Pack generated module.
-                & $PackModulePS1 -Module $ModuleName -ArtifactsLocation $ArtifactsLocation
+                & $Using:PackModulePS1 -Module $ModuleName -ArtifactsLocation $Using:ArtifactsLocation
             }
         }
         catch {
             Write-Error $_.Exception
         }
-        $RequestCount++
+        Write-Warning "Generating $ModuleName Completed"
     }
 }
 
+Write-Host -ForeGroundColor Green "Requests: $RequestCount"
 if ($Publish) {
     # Publish generated modules.
     & $PublishModulePS1 -Modules $ModuleMapping.Keys -ModulePrefix $ModulePrefix -ArtifactsLocation $ArtifactsLocation -RepositoryName $RepositoryName -RepositoryApiKey $RepositoryApiKey

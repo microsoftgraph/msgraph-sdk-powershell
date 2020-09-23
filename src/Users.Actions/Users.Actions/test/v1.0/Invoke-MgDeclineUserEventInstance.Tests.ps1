@@ -12,19 +12,19 @@ while(-not $mockingPath) {
 . ($mockingPath | Select-Object -First 1).FullName
 
 Describe 'Invoke-MgDeclineUserEventInstance' {
-    It 'DeclineExpanded' -skip {
+    It 'DeclineExpanded1' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'Decline' -skip {
+    It 'Decline1' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'DeclineViaIdentityExpanded' -skip {
+    It 'DeclineViaIdentityExpanded1' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'DeclineViaIdentity' -skip {
+    It 'DeclineViaIdentity1' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 }

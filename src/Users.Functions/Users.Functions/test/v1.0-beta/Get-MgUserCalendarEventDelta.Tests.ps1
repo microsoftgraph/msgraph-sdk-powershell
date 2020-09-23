@@ -12,11 +12,11 @@ while(-not $mockingPath) {
 . ($mockingPath | Select-Object -First 1).FullName
 
 Describe 'Get-MgUserCalendarEventDelta' {
-    It 'Delta1' -skip {
+    It 'Delta' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'Delta' -skip {
+    It 'Delta1' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 

@@ -38,21 +38,29 @@ subject-prefix: ''
 > see https://github.com/Azure/autorest/blob/master/docs/powershell/directives.md
 
 ``` yaml
-
 directive:
-# Remove paths that have /parent* or /calendarView*.
-  - remove-path-by-operation: users.onenote..*.parent.*|users.*.calendarView.*|.*.notebooks.section.*|.*.sectionGroups.section.*|.*.sections.pages.*
+# Remove invalid paths.
+  - remove-path-by-operation: .*exceptionOccurrences.*|users\.onenote\..*.parent.*|users.*\.calendarView.*|.*\.notebooks\.section.*|.*\.sectionGroups.section.*|.*\.sections\.pages.*|users\.calendar\.events\..*|users\.calendarGroups\.calendars|users\.calendars\.events\..*|users\.events\.calendar\..*
 # Rename cmdlets.
   - where:
       verb: Get
-      subject: ^(GroupOnenote)Notebook(RecentNotebook)$
+      subject: ^(UserOnenote)Notebook(RecentNotebook)$
     set:
       subject: $1$2
+  - where:
+      verb: Invoke
+      subject: ^(CalendarUserEventCalendar|CalendarUserCalendar)$
+    set:
+      subject: $1AllowedCalendarSharingRoles
+  - where:
+      verb: Get
+      subject: ^(UserManagedDevice)$
+    set:
+      subject: $1WithAppFailure
 ```
-
 ### Versioning
 
 ``` yaml
-module-version: 0.9.0
+module-version: 1.0.0
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

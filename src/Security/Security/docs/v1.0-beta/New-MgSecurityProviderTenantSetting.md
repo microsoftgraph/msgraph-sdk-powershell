@@ -14,9 +14,9 @@ Create new navigation property to providerTenantSettings for Security
 
 ### CreateExpanded (Default)
 ```
-New-MgSecurityProviderTenantSetting [-AzureTenantId <String>] [-Enabled] [-Id <String>]
- [-LastModifiedDateTime <DateTime>] [-Provider <String>] [-Vendor <String>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+New-MgSecurityProviderTenantSetting [-AdditionalProperties <Hashtable>] [-AzureTenantId <String>] [-Enabled]
+ [-Id <String>] [-LastModifiedDateTime <DateTime>] [-Provider <String>] [-Vendor <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
@@ -49,6 +49,21 @@ PS C:\> {{ Add code here }}
 {{ Add description here }}
 
 ## PARAMETERS
+
+### -AdditionalProperties
+Additional Parameters
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -AzureTenantId
 .
@@ -208,6 +223,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 BODYPARAMETER <IMicrosoftGraphProviderTenantSetting>: providerTenantSetting
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
   - `[AzureTenantId <String>]`: 
   - `[Enabled <Boolean?>]`: 

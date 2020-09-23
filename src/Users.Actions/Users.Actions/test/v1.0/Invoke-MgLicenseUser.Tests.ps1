@@ -12,11 +12,11 @@ while(-not $mockingPath) {
 . ($mockingPath | Select-Object -First 1).FullName
 
 Describe 'Invoke-MgLicenseUser' {
-    It 'License1' -skip {
+    It 'License' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'LicenseViaIdentity1' -skip {
+    It 'LicenseViaIdentity' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 }

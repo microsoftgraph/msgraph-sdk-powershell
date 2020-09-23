@@ -12,19 +12,19 @@ while(-not $mockingPath) {
 . ($mockingPath | Select-Object -First 1).FullName
 
 Describe 'Invoke-MgTranslateUserExchangeId' {
-    It 'TranslateExpanded1' -skip {
+    It 'TranslateExpanded' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'Translate1' -skip {
+    It 'Translate' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'TranslateViaIdentityExpanded1' -skip {
+    It 'TranslateViaIdentityExpanded' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'TranslateViaIdentity1' -skip {
+    It 'TranslateViaIdentity' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 }

@@ -1,0 +1,305 @@
+{
+  "operations": {
+    "/teams/{team-id}/schedule/timesOff": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams/{team-id}/channels/{channel-id}/tabs/{teamsTab-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams/{team-id}/primaryChannel/messages/{chatMessage-id}/hostedContents": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams/{team-id}/primaryChannel/members/{conversationMember-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams/{team-id}/schedule/swapShiftsChangeRequests": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams/{team-id}/group": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams/{team-id}/schedule/timeOffRequests": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams/{team-id}/channels/{channel-id}/messages/{chatMessage-id}/replies/{chatMessage-id1}": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams/{team-id}/channels": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams/{team-id}/primaryChannel/tabs/{teamsTab-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams/{team-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams/{team-id}/installedApps/{teamsAppInstallation-id}/teamsAppDefinition": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams/{team-id}/schedule/schedulingGroups": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams/{team-id}/primaryChannel/messages/{chatMessage-id}/replies": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teamwork/workforceIntegrations": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/users/{user-id}/joinedTeams": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams/{team-id}/primaryChannel/members": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams/{team-id}/primaryChannel/tabs/{teamsTab-id}/teamsApp/$ref": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams/{team-id}/primaryChannel/messages/{chatMessage-id}/hostedContents/{chatMessageHostedContent-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams/{team-id}/installedApps/{teamsAppInstallation-id}/teamsAppDefinition/$ref": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams/{team-id}/channels/{channel-id}/tabs": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams/{team-id}/installedApps/{teamsAppInstallation-id}/teamsApp": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams/{team-id}/members/{conversationMember-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams/{team-id}/operations/{teamsAsyncOperation-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams/{team-id}/installedApps/{teamsAppInstallation-id}/microsoft.graph.upgrade": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams/{team-id}/schedule/timeOffRequests/{timeOffRequest-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams/{team-id}/channels/{channel-id}/tabs/{teamsTab-id}/teamsApp/$ref": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teamwork": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams/{team-id}/primaryChannel/filesFolder": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams/{team-id}/schedule/timeOffReasons/{timeOffReason-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams/{team-id}/primaryChannel/messages": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams/{team-id}/template": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams/{team-id}/group/$ref": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams/{team-id}/operations": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams/{team-id}/primaryChannel/messages/{chatMessage-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams/{team-id}/channels/{channel-id}/messages/{chatMessage-id}/hostedContents/{chatMessageHostedContent-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams/{team-id}/schedule/shifts/{shift-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams/{team-id}/installedApps/{teamsAppInstallation-id}/teamsApp/$ref": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams/{team-id}/template/$ref": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams/{team-id}/schedule": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams/{team-id}/channels/{channel-id}/messages/{chatMessage-id}/replies": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams/{team-id}/microsoft.graph.unarchive": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams/{team-id}/channels/{channel-id}/messages/{chatMessage-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams/{team-id}/schedule/timesOff/{timeOff-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams/{team-id}/primaryChannel/tabs/{teamsTab-id}/teamsApp": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams/{team-id}/installedApps/{teamsAppInstallation-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams/{team-id}/channels/{channel-id}/filesFolder": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams/{team-id}/installedApps": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams/{team-id}/channels/{channel-id}/members": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams/{team-id}/channels/{channel-id}/members/{conversationMember-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams/{team-id}/schedule/openShifts": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams/{team-id}/schedule/microsoft.graph.share": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams/{team-id}/channels/{channel-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teamwork/workforceIntegrations/{workforceIntegration-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams/{team-id}/schedule/shifts": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams/{team-id}/schedule/openShiftChangeRequests": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams/{team-id}/primaryChannel": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams/{team-id}/channels/{channel-id}/messages": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams/{team-id}/channels/{channel-id}/tabs/{teamsTab-id}/teamsApp": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams/{team-id}/primaryChannel/messages/{chatMessage-id}/replies/{chatMessage-id1}": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams/{team-id}/schedule/swapShiftsChangeRequests/{swapShiftsChangeRequest-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams/{team-id}/schedule/schedulingGroups/{schedulingGroup-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams/{team-id}/schedule/offerShiftRequests": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/groups/{group-id}/team": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams/{team-id}/schedule/openShiftChangeRequests/{openShiftChangeRequest-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams/{team-id}/microsoft.graph.archive": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams/{team-id}/primaryChannel/tabs": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams/{team-id}/schedule/offerShiftRequests/{offerShiftRequest-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams/{team-id}/microsoft.graph.clone": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams/{team-id}/members": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams/{team-id}/channels/{channel-id}/messages/{chatMessage-id}/hostedContents": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams/{team-id}/schedule/timeOffReasons": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/teams/{team-id}/schedule/openShifts/{openShift-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    },
+    "/users/{user-id}/joinedTeams/{team-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Teams.yml",
+      "apiVersion": "v1.0"
+    }
+  },
+  "resources": []
+}

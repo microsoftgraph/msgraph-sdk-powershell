@@ -14,7 +14,8 @@ Update entity in schemaExtensions
 
 ### UpdateExpanded (Default)
 ```
-Update-MgSchemaExtension -SchemaExtensionId <String> [-Description <String>] [-Id <String>] [-Owner <String>]
+Update-MgSchemaExtension -SchemaExtensionId <String> [-AdditionalProperties <Hashtable>]
+ [-Description <String>] [-Id <String>] [-Owner <String>]
  [-Properties <IMicrosoftGraphExtensionSchemaProperty[]>] [-Status <String>] [-TargetTypes <String[]>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -33,9 +34,10 @@ Update-MgSchemaExtension -InputObject <ISchemaExtensionsIdentity>
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgSchemaExtension -InputObject <ISchemaExtensionsIdentity> [-Description <String>] [-Id <String>]
- [-Owner <String>] [-Properties <IMicrosoftGraphExtensionSchemaProperty[]>] [-Status <String>]
- [-TargetTypes <String[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgSchemaExtension -InputObject <ISchemaExtensionsIdentity> [-AdditionalProperties <Hashtable>]
+ [-Description <String>] [-Id <String>] [-Owner <String>]
+ [-Properties <IMicrosoftGraphExtensionSchemaProperty[]>] [-Status <String>] [-TargetTypes <String[]>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -62,6 +64,21 @@ PS C:\> {{ Add code here }}
 {{ Add description here }}
 
 ## PARAMETERS
+
+### -AdditionalProperties
+Additional Parameters
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -BodyParameter
 schemaExtension
@@ -176,7 +193,7 @@ Accept wildcard characters: False
 ```
 
 ### -SchemaExtensionId
-key: schemaExtension-id of schemaExtension
+key: id of schemaExtension
 
 ```yaml
 Type: System.String
@@ -278,6 +295,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 BODYPARAMETER <IMicrosoftGraphSchemaExtension>: schemaExtension
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
   - `[Description <String>]`: Description for the schema extension.
   - `[Owner <String>]`: The appId of the application that is the owner of the schema extension. This property can be supplied on creation, to set the owner.  If not supplied, then the calling application's appId will be set as the owner. In either case, the signed-in user must be the owner of the application. Once set, this property is read-only and cannot be changed.
@@ -288,7 +306,7 @@ BODYPARAMETER <IMicrosoftGraphSchemaExtension>: schemaExtension
   - `[TargetTypes <String[]>]`: Set of Microsoft Graph types (that can support extensions) that the schema extension can be applied to. Select from contact, device, event, group, message, organization, post, or user.
 
 INPUTOBJECT <ISchemaExtensionsIdentity>: Identity Parameter
-  - `[SchemaExtensionId <String>]`: key: schemaExtension-id of schemaExtension
+  - `[SchemaExtensionId <String>]`: key: id of schemaExtension
 
 PROPERTIES <IMicrosoftGraphExtensionSchemaProperty[]>: The collection of property names and types that make up the schema extension definition.
   - `[Name <String>]`: The name of the strongly-typed property defined as part of a schema extension.

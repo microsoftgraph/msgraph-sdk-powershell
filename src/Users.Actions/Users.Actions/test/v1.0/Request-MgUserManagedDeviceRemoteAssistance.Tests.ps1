@@ -12,11 +12,11 @@ while(-not $mockingPath) {
 . ($mockingPath | Select-Object -First 1).FullName
 
 Describe 'Request-MgUserManagedDeviceRemoteAssistance' {
-    It 'Request1' -skip {
+    It 'Request' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'RequestViaIdentity1' -skip {
+    It 'RequestViaIdentity' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 }

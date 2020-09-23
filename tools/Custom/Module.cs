@@ -24,7 +24,7 @@ namespace Microsoft.Graph.PowerShell
         /// <summary>
         /// The selected Microsoft Graph profile.
         /// </summary>
-        public string ProfileName { get; set; } = "v1.0-beta";
+        public string ProfileName { get; set; } = "v1.0";
         partial void BeforeCreatePipeline(System.Management.Automation.InvocationInfo invocationInfo, ref Runtime.HttpPipeline pipeline)
         {
             // Call Init to trigger any custom initialization needed after
@@ -56,19 +56,25 @@ namespace Microsoft.Graph.PowerShell
         /// </returns>
         public async Task EventHandler(string id, CancellationToken cancellationToken, Func<EventArgs> getEventData, Func<string, CancellationToken, Func<EventArgs>, Task> signal, InvocationInfo invocationInfo, string parameterSetName, System.Exception exception)
         {
-            switch (id)
+            if (invocationInfo.BoundParameters.ContainsKey("Debug"))
             {
-                case Events.Finally:
-                    await Finally(id, cancellationToken, getEventData, signal);
-                    break;
-                default:
-                    getEventData.Print(signal, cancellationToken, Events.Information, id);
-                    break;
+                switch (id)
+                {
+                    case Events.BeforeCall:
+                        await BeforeCall(id, cancellationToken, getEventData, signal);
+                        break;
+                    case Events.Finally:
+                        await Finally(id, cancellationToken, getEventData, signal);
+                        break;
+                    default:
+                        getEventData.Print(signal, cancellationToken, Events.Information, id);
+                        break;
+                }
             }
         }
 
         /// <summary>
-        /// Handles the Finally event, which is called just before Request and Response are disposed.
+        /// Handles the Finally event, which is called just after a response is received.
         /// </summary>
         /// <param name="id">The ID of the event</param>
         /// <param name="cancellationToken">The cancellation token for the event</param>
@@ -82,13 +88,33 @@ namespace Microsoft.Graph.PowerShell
             using (Extensions.NoSynchronizationContext)
             {
                 var eventData = EventDataConverter.ConvertFrom(getEventData());
-                using (var requestFormatter = new HttpMessageFormatter(eventData.RequestMessage as HttpRequestMessage))
                 using (var responseFormatter = new HttpMessageFormatter(eventData.ResponseMessage as HttpResponseMessage))
                 {
-                    var requestString = await requestFormatter.ReadAsStringAsync();
                     var responseString = await responseFormatter.ReadAsStringAsync();
-                    await signal(Events.Debug, cancellationToken, () => EventFactory.CreateLogEvent(requestString));
                     await signal(Events.Debug, cancellationToken, () => EventFactory.CreateLogEvent(responseString));
+                }
+            }
+        }
+
+        /// <summary>
+        /// Handles the BeforeCall event, which is called just before Request is sent.
+        /// </summary>
+        /// <param name="id">The ID of the event</param>
+        /// <param name="cancellationToken">The cancellation token for the event</param>
+        /// <param name="getEventData">A delegate to get the detailed event data</param>
+        /// <param name="signal">The callback for the event dispatcher</param>
+        /// <returns>
+        /// A <see cref="global::System.Threading.Tasks.Task" /> that will be complete when handling of the event is completed.
+        /// </returns>
+        private async Task BeforeCall(string id, CancellationToken cancellationToken, Func<EventArgs> getEventData, Func<string, CancellationToken, Func<EventArgs>, Task> signal)
+        {
+            using (Extensions.NoSynchronizationContext)
+            {
+                var eventData = EventDataConverter.ConvertFrom(getEventData());
+                using (var requestFormatter = new HttpMessageFormatter(eventData.RequestMessage as HttpRequestMessage))
+                {
+                    var requestString = await requestFormatter.ReadAsStringAsync();
+                    await signal(Events.Debug, cancellationToken, () => EventFactory.CreateLogEvent(requestString));
                 }
             }
         }

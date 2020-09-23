@@ -14,8 +14,8 @@ Update financials
 
 ### UpdateExpanded (Default)
 ```
-Update-MgFinancial [-Companies <IMicrosoftGraphCompany[]>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Update-MgFinancial [-AdditionalProperties <Hashtable>] [-Companies <IMicrosoftGraphCompany[]>] [-Id <String>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
@@ -48,6 +48,21 @@ PS C:\> {{ Add code here }}
 {{ Add description here }}
 
 ## PARAMETERS
+
+### -AdditionalProperties
+Additional Parameters
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: UpdateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -BodyParameter
 financials
@@ -163,6 +178,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 BODYPARAMETER <IMicrosoftGraphFinancials>: financials
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
   - `[Companies <IMicrosoftGraphCompany[]>]`: 
     - `[Id <String>]`: Read-only.
@@ -201,11 +217,13 @@ BODYPARAMETER <IMicrosoftGraphFinancials>: financials
     - `[BusinessProfileId <String>]`: 
     - `[CompanyInformation <IMicrosoftGraphCompanyInformation1[]>]`: 
       - `[Id <String>]`: Read-only.
-      - `[AddressCity <String>]`: 
-      - `[AddressCountryLetterCode <String>]`: 
-      - `[AddressPostalCode <String>]`: 
-      - `[AddressState <String>]`: 
-      - `[AddressStreet <String>]`: 
+      - `[Address <IMicrosoftGraphPostalAddressType>]`: postalAddressType
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[City <String>]`: 
+        - `[CountryLetterCode <String>]`: 
+        - `[PostalCode <String>]`: 
+        - `[State <String>]`: 
+        - `[Street <String>]`: 
       - `[CurrencyCode <String>]`: 
       - `[CurrentFiscalYearStartDate <DateTime?>]`: 
       - `[DisplayName <String>]`: 
@@ -233,13 +251,7 @@ BODYPARAMETER <IMicrosoftGraphFinancials>: financials
       - `[Symbol <String>]`: 
     - `[CustomerPaymentJournals <IMicrosoftGraphCustomerPaymentJournal[]>]`: 
       - `[Id <String>]`: Read-only.
-      - `[AccountBlocked <Boolean?>]`: 
-      - `[AccountCategory <String>]`: 
-      - `[AccountDisplayName <String>]`: 
-      - `[AccountId <String>]`: Read-only.
-      - `[AccountLastModifiedDateTime <DateTime?>]`: 
-      - `[AccountNumber <String>]`: 
-      - `[AccountSubCategory <String>]`: 
+      - `[Account <IMicrosoftGraphAccount>]`: account
       - `[BalancingAccountId <String>]`: 
       - `[BalancingAccountNumber <String>]`: 
       - `[Code <String>]`: 
@@ -251,39 +263,34 @@ BODYPARAMETER <IMicrosoftGraphFinancials>: financials
         - `[Comment <String>]`: 
         - `[ContactId <String>]`: 
         - `[Customer <IMicrosoftGraphCustomer>]`: customer
+          - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: Read-only.
-          - `[AddressCity <String>]`: 
-          - `[AddressCountryLetterCode <String>]`: 
-          - `[AddressPostalCode <String>]`: 
-          - `[AddressState <String>]`: 
-          - `[AddressStreet <String>]`: 
+          - `[Address <IMicrosoftGraphPostalAddressType>]`: postalAddressType
           - `[Blocked <String>]`: 
-          - `[Code <String>]`: 
-          - `[CurrencyAmountDecimalPlaces <String>]`: 
-          - `[CurrencyAmountRoundingPrecision <Decimal?>]`: 
+          - `[Currency <IMicrosoftGraphCurrency>]`: currency
           - `[CurrencyCode <String>]`: 
-          - `[CurrencyDisplayName <String>]`: 
           - `[CurrencyId <String>]`: 
-          - `[CurrencyLastModifiedDateTime <DateTime?>]`: 
-          - `[CurrencySymbol <String>]`: 
           - `[DisplayName <String>]`: 
           - `[Email <String>]`: 
           - `[LastModifiedDateTime <DateTime?>]`: 
-          - `[MicrosoftGraphEntityId <String>]`: Read-only.
           - `[Number <String>]`: 
-          - `[PaymentMethodCode <String>]`: 
-          - `[PaymentMethodDisplayName <String>]`: 
+          - `[PaymentMethod <IMicrosoftGraphPaymentMethod>]`: paymentMethod
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[Id <String>]`: Read-only.
+            - `[Code <String>]`: 
+            - `[DisplayName <String>]`: 
+            - `[LastModifiedDateTime <DateTime?>]`: 
           - `[PaymentMethodId <String>]`: 
-          - `[PaymentMethodId1 <String>]`: Read-only.
-          - `[PaymentMethodLastModifiedDateTime <DateTime?>]`: 
-          - `[PaymentTermCalculateDiscountOnCreditMemos <Boolean?>]`: 
-          - `[PaymentTermCode <String>]`: 
-          - `[PaymentTermDiscountDateCalculation <String>]`: 
-          - `[PaymentTermDiscountPercent <Decimal?>]`: 
-          - `[PaymentTermDisplayName <String>]`: 
-          - `[PaymentTermDueDateCalculation <String>]`: 
-          - `[PaymentTermId <String>]`: Read-only.
-          - `[PaymentTermLastModifiedDateTime <DateTime?>]`: 
+          - `[PaymentTerm <IMicrosoftGraphPaymentTerm>]`: paymentTerm
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[Id <String>]`: Read-only.
+            - `[CalculateDiscountOnCreditMemos <Boolean?>]`: 
+            - `[Code <String>]`: 
+            - `[DiscountDateCalculation <String>]`: 
+            - `[DiscountPercent <Decimal?>]`: 
+            - `[DisplayName <String>]`: 
+            - `[DueDateCalculation <String>]`: 
+            - `[LastModifiedDateTime <DateTime?>]`: 
           - `[PaymentTermsId <String>]`: 
           - `[PhoneNumber <String>]`: 
           - `[Picture <IMicrosoftGraphPicture[]>]`: 
@@ -292,11 +299,13 @@ BODYPARAMETER <IMicrosoftGraphFinancials>: financials
             - `[ContentType <String>]`: 
             - `[Height <Int32?>]`: 
             - `[Width <Int32?>]`: 
-          - `[ShipmentMethodCode <String>]`: 
-          - `[ShipmentMethodDisplayName <String>]`: 
+          - `[ShipmentMethod <IMicrosoftGraphShipmentMethod>]`: shipmentMethod
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[Id <String>]`: Read-only.
+            - `[Code <String>]`: 
+            - `[DisplayName <String>]`: 
+            - `[LastModifiedDateTime <DateTime?>]`: 
           - `[ShipmentMethodId <String>]`: 
-          - `[ShipmentMethodId1 <String>]`: Read-only.
-          - `[ShipmentMethodLastModifiedDateTime <DateTime?>]`: 
           - `[TaxAreaDisplayName <String>]`: 
           - `[TaxAreaId <String>]`: 
           - `[TaxLiable <Boolean?>]`: 
@@ -330,11 +339,7 @@ BODYPARAMETER <IMicrosoftGraphFinancials>: financials
     - `[DisplayName <String>]`: 
     - `[Employees <IMicrosoftGraphEmployee[]>]`: 
       - `[Id <String>]`: Read-only.
-      - `[AddressCity <String>]`: 
-      - `[AddressCountryLetterCode <String>]`: 
-      - `[AddressPostalCode <String>]`: 
-      - `[AddressState <String>]`: 
-      - `[AddressStreet <String>]`: 
+      - `[Address <IMicrosoftGraphPostalAddressType>]`: postalAddressType
       - `[BirthDate <DateTime?>]`: 
       - `[DisplayName <String>]`: 
       - `[Email <String>]`: 
@@ -354,21 +359,15 @@ BODYPARAMETER <IMicrosoftGraphFinancials>: financials
       - `[TerminationDate <DateTime?>]`: 
     - `[GeneralLedgerEntries <IMicrosoftGraphGeneralLedgerEntry[]>]`: 
       - `[Id <String>]`: Read-only.
-      - `[AccountBlocked <Boolean?>]`: 
-      - `[AccountCategory <String>]`: 
-      - `[AccountDisplayName <String>]`: 
+      - `[Account <IMicrosoftGraphAccount>]`: account
       - `[AccountId <String>]`: 
-      - `[AccountLastModifiedDateTime <DateTime?>]`: 
       - `[AccountNumber <String>]`: 
-      - `[AccountSubCategory <String>]`: 
       - `[CreditAmount <Decimal?>]`: 
       - `[DebitAmount <Decimal?>]`: 
       - `[Description <String>]`: 
       - `[DocumentNumber <String>]`: 
       - `[DocumentType <String>]`: 
       - `[LastModifiedDateTime <DateTime?>]`: 
-      - `[MicrosoftGraphEntityId <String>]`: Read-only.
-      - `[Number <String>]`: 
       - `[PostingDate <DateTime?>]`: 
     - `[ItemCategories <IMicrosoftGraphItemCategory[]>]`: 
       - `[Id <String>]`: Read-only.
@@ -379,16 +378,13 @@ BODYPARAMETER <IMicrosoftGraphFinancials>: financials
       - `[Id <String>]`: Read-only.
       - `[BaseUnitOfMeasureId <String>]`: 
       - `[Blocked <Boolean?>]`: 
-      - `[Code <String>]`: 
       - `[DisplayName <String>]`: 
       - `[Gtin <String>]`: 
       - `[Inventory <Decimal?>]`: 
+      - `[ItemCategory <IMicrosoftGraphItemCategory>]`: itemCategory
       - `[ItemCategoryCode <String>]`: 
-      - `[ItemCategoryDisplayName <String>]`: 
       - `[ItemCategoryId <String>]`: 
-      - `[ItemCategoryLastModifiedDateTime <DateTime?>]`: 
       - `[LastModifiedDateTime <DateTime?>]`: 
-      - `[MicrosoftGraphEntityId <String>]`: Read-only.
       - `[Number <String>]`: 
       - `[Picture <IMicrosoftGraphPicture[]>]`: 
       - `[PriceIncludesTax <Boolean?>]`: 
@@ -399,13 +395,9 @@ BODYPARAMETER <IMicrosoftGraphFinancials>: financials
       - `[UnitPrice <Decimal?>]`: 
     - `[JournalLines <IMicrosoftGraphJournalLine[]>]`: 
       - `[Id <String>]`: Read-only.
-      - `[AccountBlocked <Boolean?>]`: 
-      - `[AccountCategory <String>]`: 
-      - `[AccountDisplayName <String>]`: 
+      - `[Account <IMicrosoftGraphAccount>]`: account
       - `[AccountId <String>]`: 
-      - `[AccountLastModifiedDateTime <DateTime?>]`: 
       - `[AccountNumber <String>]`: 
-      - `[AccountSubCategory <String>]`: 
       - `[Amount <Decimal?>]`: 
       - `[Comment <String>]`: 
       - `[Description <String>]`: 
@@ -414,18 +406,10 @@ BODYPARAMETER <IMicrosoftGraphFinancials>: financials
       - `[JournalDisplayName <String>]`: 
       - `[LastModifiedDateTime <DateTime?>]`: 
       - `[LineNumber <Int32?>]`: 
-      - `[MicrosoftGraphEntityId <String>]`: Read-only.
-      - `[Number <String>]`: 
       - `[PostingDate <DateTime?>]`: 
     - `[Journals <IMicrosoftGraphJournal[]>]`: 
       - `[Id <String>]`: Read-only.
-      - `[AccountBlocked <Boolean?>]`: 
-      - `[AccountCategory <String>]`: 
-      - `[AccountDisplayName <String>]`: 
-      - `[AccountId <String>]`: Read-only.
-      - `[AccountLastModifiedDateTime <DateTime?>]`: 
-      - `[AccountNumber <String>]`: 
-      - `[AccountSubCategory <String>]`: 
+      - `[Account <IMicrosoftGraphAccount>]`: account
       - `[BalancingAccountId <String>]`: 
       - `[BalancingAccountNumber <String>]`: 
       - `[Code <String>]`: 
@@ -434,33 +418,14 @@ BODYPARAMETER <IMicrosoftGraphFinancials>: financials
       - `[LastModifiedDateTime <DateTime?>]`: 
     - `[Name <String>]`: 
     - `[PaymentMethods <IMicrosoftGraphPaymentMethod[]>]`: 
-      - `[Id <String>]`: Read-only.
-      - `[Code <String>]`: 
-      - `[DisplayName <String>]`: 
-      - `[LastModifiedDateTime <DateTime?>]`: 
     - `[PaymentTerms <IMicrosoftGraphPaymentTerm[]>]`: 
-      - `[Id <String>]`: Read-only.
-      - `[CalculateDiscountOnCreditMemos <Boolean?>]`: 
-      - `[Code <String>]`: 
-      - `[DiscountDateCalculation <String>]`: 
-      - `[DiscountPercent <Decimal?>]`: 
-      - `[DisplayName <String>]`: 
-      - `[DueDateCalculation <String>]`: 
-      - `[LastModifiedDateTime <DateTime?>]`: 
     - `[Picture <IMicrosoftGraphPicture[]>]`: 
     - `[PurchaseInvoiceLines <IMicrosoftGraphPurchaseInvoiceLine[]>]`: 
       - `[Id <String>]`: Read-only.
-      - `[AccountBlocked <Boolean?>]`: 
-      - `[AccountCategory <String>]`: 
-      - `[AccountDisplayName <String>]`: 
+      - `[Account <IMicrosoftGraphAccount>]`: account
       - `[AccountId <String>]`: 
-      - `[AccountId1 <String>]`: Read-only.
-      - `[AccountLastModifiedDateTime <DateTime?>]`: 
-      - `[AccountNumber <String>]`: 
-      - `[AccountSubCategory <String>]`: 
       - `[AmountExcludingTax <Decimal?>]`: 
       - `[AmountIncludingTax <Decimal?>]`: 
-      - `[Code <String>]`: 
       - `[Description <String>]`: 
       - `[DiscountAmount <Decimal?>]`: 
       - `[DiscountAppliedBeforeTax <Boolean?>]`: 
@@ -468,28 +433,9 @@ BODYPARAMETER <IMicrosoftGraphFinancials>: financials
       - `[DocumentId <String>]`: 
       - `[ExpectedReceiptDate <DateTime?>]`: 
       - `[InvoiceDiscountAllocation <Decimal?>]`: 
-      - `[ItemBaseUnitOfMeasureId <String>]`: 
-      - `[ItemBlocked <Boolean?>]`: 
-      - `[ItemCategoryCode <String>]`: 
-      - `[ItemCategoryDisplayName <String>]`: 
-      - `[ItemCategoryId <String>]`: 
-      - `[ItemCategoryLastModifiedDateTime <DateTime?>]`: 
-      - `[ItemDisplayName <String>]`: 
-      - `[ItemGtin <String>]`: 
+      - `[Item <IMicrosoftGraphItem>]`: item
       - `[ItemId <String>]`: 
-      - `[ItemId1 <String>]`: Read-only.
-      - `[ItemInventory <Decimal?>]`: 
-      - `[ItemLastModifiedDateTime <DateTime?>]`: 
-      - `[ItemNumber <String>]`: 
-      - `[ItemPicture <IMicrosoftGraphPicture[]>]`: 
-      - `[ItemPriceIncludesTax <Boolean?>]`: 
-      - `[ItemTaxGroupCode <String>]`: 
-      - `[ItemTaxGroupId <String>]`: 
-      - `[ItemType <String>]`: 
-      - `[ItemUnitCost <Decimal?>]`: 
-      - `[ItemUnitPrice <Decimal?>]`: 
       - `[LineType <String>]`: 
-      - `[MicrosoftGraphEntityId <String>]`: Read-only.
       - `[NetAmount <Decimal?>]`: 
       - `[NetAmountIncludingTax <Decimal?>]`: 
       - `[NetTaxAmount <Decimal?>]`: 
@@ -501,42 +447,24 @@ BODYPARAMETER <IMicrosoftGraphFinancials>: financials
       - `[UnitCost <Decimal?>]`: 
     - `[PurchaseInvoices <IMicrosoftGraphPurchaseInvoice[]>]`: 
       - `[Id <String>]`: Read-only.
-      - `[BuyFromAddressCity <String>]`: 
-      - `[BuyFromAddressCountryLetterCode <String>]`: 
-      - `[BuyFromAddressPostalCode <String>]`: 
-      - `[BuyFromAddressState <String>]`: 
-      - `[BuyFromAddressStreet <String>]`: 
-      - `[Code <String>]`: 
-      - `[CurrencyAmountDecimalPlaces <String>]`: 
-      - `[CurrencyAmountRoundingPrecision <Decimal?>]`: 
+      - `[BuyFromAddress <IMicrosoftGraphPostalAddressType>]`: postalAddressType
+      - `[Currency <IMicrosoftGraphCurrency>]`: currency
       - `[CurrencyCode <String>]`: 
-      - `[CurrencyDisplayName <String>]`: 
       - `[CurrencyId <String>]`: 
-      - `[CurrencyLastModifiedDateTime <DateTime?>]`: 
-      - `[CurrencySymbol <String>]`: 
       - `[DiscountAmount <Decimal?>]`: 
       - `[DiscountAppliedBeforeTax <Boolean?>]`: 
       - `[DueDate <DateTime?>]`: 
       - `[InvoiceDate <DateTime?>]`: 
       - `[LastModifiedDateTime <DateTime?>]`: 
-      - `[MicrosoftGraphEntityId <String>]`: Read-only.
       - `[Number <String>]`: 
-      - `[PayToAddressCity <String>]`: 
-      - `[PayToAddressCountryLetterCode <String>]`: 
-      - `[PayToAddressPostalCode <String>]`: 
-      - `[PayToAddressState <String>]`: 
-      - `[PayToAddressStreet <String>]`: 
+      - `[PayToAddress <IMicrosoftGraphPostalAddressType>]`: postalAddressType
       - `[PayToContact <String>]`: 
       - `[PayToName <String>]`: 
       - `[PayToVendorId <String>]`: 
       - `[PayToVendorNumber <String>]`: 
       - `[PricesIncludeTax <Boolean?>]`: 
       - `[PurchaseInvoiceLines <IMicrosoftGraphPurchaseInvoiceLine[]>]`: 
-      - `[ShipToAddressCity <String>]`: 
-      - `[ShipToAddressCountryLetterCode <String>]`: 
-      - `[ShipToAddressPostalCode <String>]`: 
-      - `[ShipToAddressState <String>]`: 
-      - `[ShipToAddressStreet <String>]`: 
+      - `[ShipToAddress <IMicrosoftGraphPostalAddressType>]`: postalAddressType
       - `[ShipToContact <String>]`: 
       - `[ShipToName <String>]`: 
       - `[Status <String>]`: 
@@ -544,40 +472,21 @@ BODYPARAMETER <IMicrosoftGraphFinancials>: financials
       - `[TotalAmountIncludingTax <Decimal?>]`: 
       - `[TotalTaxAmount <Decimal?>]`: 
       - `[Vendor <IMicrosoftGraphVendor>]`: vendor
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: Read-only.
-        - `[AddressCity <String>]`: 
-        - `[AddressCountryLetterCode <String>]`: 
-        - `[AddressPostalCode <String>]`: 
-        - `[AddressState <String>]`: 
-        - `[AddressStreet <String>]`: 
+        - `[Address <IMicrosoftGraphPostalAddressType>]`: postalAddressType
         - `[Balance <Decimal?>]`: 
         - `[Blocked <String>]`: 
-        - `[Code <String>]`: 
-        - `[CurrencyAmountDecimalPlaces <String>]`: 
-        - `[CurrencyAmountRoundingPrecision <Decimal?>]`: 
+        - `[Currency <IMicrosoftGraphCurrency>]`: currency
         - `[CurrencyCode <String>]`: 
-        - `[CurrencyDisplayName <String>]`: 
         - `[CurrencyId <String>]`: 
-        - `[CurrencyLastModifiedDateTime <DateTime?>]`: 
-        - `[CurrencySymbol <String>]`: 
         - `[DisplayName <String>]`: 
         - `[Email <String>]`: 
         - `[LastModifiedDateTime <DateTime?>]`: 
-        - `[MicrosoftGraphEntityId <String>]`: Read-only.
         - `[Number <String>]`: 
-        - `[PaymentMethodCode <String>]`: 
-        - `[PaymentMethodDisplayName <String>]`: 
+        - `[PaymentMethod <IMicrosoftGraphPaymentMethod>]`: paymentMethod
         - `[PaymentMethodId <String>]`: 
-        - `[PaymentMethodId1 <String>]`: Read-only.
-        - `[PaymentMethodLastModifiedDateTime <DateTime?>]`: 
-        - `[PaymentTermCalculateDiscountOnCreditMemos <Boolean?>]`: 
-        - `[PaymentTermCode <String>]`: 
-        - `[PaymentTermDiscountDateCalculation <String>]`: 
-        - `[PaymentTermDiscountPercent <Decimal?>]`: 
-        - `[PaymentTermDisplayName <String>]`: 
-        - `[PaymentTermDueDateCalculation <String>]`: 
-        - `[PaymentTermId <String>]`: Read-only.
-        - `[PaymentTermLastModifiedDateTime <DateTime?>]`: 
+        - `[PaymentTerm <IMicrosoftGraphPaymentTerm>]`: paymentTerm
         - `[PaymentTermsId <String>]`: 
         - `[PhoneNumber <String>]`: 
         - `[Picture <IMicrosoftGraphPicture[]>]`: 
@@ -590,45 +499,19 @@ BODYPARAMETER <IMicrosoftGraphFinancials>: financials
       - `[VendorNumber <String>]`: 
     - `[SalesCreditMemoLines <IMicrosoftGraphSalesCreditMemoLine[]>]`: 
       - `[Id <String>]`: Read-only.
-      - `[AccountBlocked <Boolean?>]`: 
-      - `[AccountCategory <String>]`: 
-      - `[AccountDisplayName <String>]`: 
+      - `[Account <IMicrosoftGraphAccount>]`: account
       - `[AccountId <String>]`: 
-      - `[AccountId1 <String>]`: Read-only.
-      - `[AccountLastModifiedDateTime <DateTime?>]`: 
-      - `[AccountNumber <String>]`: 
-      - `[AccountSubCategory <String>]`: 
       - `[AmountExcludingTax <Decimal?>]`: 
       - `[AmountIncludingTax <Decimal?>]`: 
-      - `[Code <String>]`: 
       - `[Description <String>]`: 
       - `[DiscountAmount <Decimal?>]`: 
       - `[DiscountAppliedBeforeTax <Boolean?>]`: 
       - `[DiscountPercent <Decimal?>]`: 
       - `[DocumentId <String>]`: 
       - `[InvoiceDiscountAllocation <Decimal?>]`: 
-      - `[ItemBaseUnitOfMeasureId <String>]`: 
-      - `[ItemBlocked <Boolean?>]`: 
-      - `[ItemCategoryCode <String>]`: 
-      - `[ItemCategoryDisplayName <String>]`: 
-      - `[ItemCategoryId <String>]`: 
-      - `[ItemCategoryLastModifiedDateTime <DateTime?>]`: 
-      - `[ItemDisplayName <String>]`: 
-      - `[ItemGtin <String>]`: 
+      - `[Item <IMicrosoftGraphItem>]`: item
       - `[ItemId <String>]`: 
-      - `[ItemId1 <String>]`: Read-only.
-      - `[ItemInventory <Decimal?>]`: 
-      - `[ItemLastModifiedDateTime <DateTime?>]`: 
-      - `[ItemNumber <String>]`: 
-      - `[ItemPicture <IMicrosoftGraphPicture[]>]`: 
-      - `[ItemPriceIncludesTax <Boolean?>]`: 
-      - `[ItemTaxGroupCode <String>]`: 
-      - `[ItemTaxGroupId <String>]`: 
-      - `[ItemType <String>]`: 
-      - `[ItemUnitCost <Decimal?>]`: 
-      - `[ItemUnitPrice <Decimal?>]`: 
       - `[LineType <String>]`: 
-      - `[MicrosoftGraphEntityId <String>]`: Read-only.
       - `[NetAmount <Decimal?>]`: 
       - `[NetAmountIncludingTax <Decimal?>]`: 
       - `[NetTaxAmount <Decimal?>]`: 
@@ -645,20 +528,11 @@ BODYPARAMETER <IMicrosoftGraphFinancials>: financials
       - `[BillToCustomerId <String>]`: 
       - `[BillToCustomerNumber <String>]`: 
       - `[BillToName <String>]`: 
-      - `[BillingPostalAddressCity <String>]`: 
-      - `[BillingPostalAddressCountryLetterCode <String>]`: 
-      - `[BillingPostalAddressPostalCode <String>]`: 
-      - `[BillingPostalAddressState <String>]`: 
-      - `[BillingPostalAddressStreet <String>]`: 
-      - `[Code <String>]`: 
+      - `[BillingPostalAddress <IMicrosoftGraphPostalAddressType>]`: postalAddressType
       - `[CreditMemoDate <DateTime?>]`: 
-      - `[CurrencyAmountDecimalPlaces <String>]`: 
-      - `[CurrencyAmountRoundingPrecision <Decimal?>]`: 
+      - `[Currency <IMicrosoftGraphCurrency>]`: currency
       - `[CurrencyCode <String>]`: 
-      - `[CurrencyDisplayName <String>]`: 
       - `[CurrencyId <String>]`: 
-      - `[CurrencyLastModifiedDateTime <DateTime?>]`: 
-      - `[CurrencySymbol <String>]`: 
       - `[Customer <IMicrosoftGraphCustomer>]`: customer
       - `[CustomerId <String>]`: 
       - `[CustomerName <String>]`: 
@@ -671,71 +545,33 @@ BODYPARAMETER <IMicrosoftGraphFinancials>: financials
       - `[InvoiceId <String>]`: 
       - `[InvoiceNumber <String>]`: 
       - `[LastModifiedDateTime <DateTime?>]`: 
-      - `[MicrosoftGraphEntityId <String>]`: Read-only.
       - `[Number <String>]`: 
-      - `[PaymentTermCalculateDiscountOnCreditMemos <Boolean?>]`: 
-      - `[PaymentTermCode <String>]`: 
-      - `[PaymentTermDiscountDateCalculation <String>]`: 
-      - `[PaymentTermDiscountPercent <Decimal?>]`: 
-      - `[PaymentTermDisplayName <String>]`: 
-      - `[PaymentTermDueDateCalculation <String>]`: 
-      - `[PaymentTermId <String>]`: Read-only.
-      - `[PaymentTermLastModifiedDateTime <DateTime?>]`: 
+      - `[PaymentTerm <IMicrosoftGraphPaymentTerm>]`: paymentTerm
       - `[PaymentTermsId <String>]`: 
       - `[PhoneNumber <String>]`: 
       - `[PricesIncludeTax <Boolean?>]`: 
       - `[SalesCreditMemoLines <IMicrosoftGraphSalesCreditMemoLine[]>]`: 
       - `[Salesperson <String>]`: 
-      - `[SellingPostalAddressCity <String>]`: 
-      - `[SellingPostalAddressCountryLetterCode <String>]`: 
-      - `[SellingPostalAddressPostalCode <String>]`: 
-      - `[SellingPostalAddressState <String>]`: 
-      - `[SellingPostalAddressStreet <String>]`: 
+      - `[SellingPostalAddress <IMicrosoftGraphPostalAddressType>]`: postalAddressType
       - `[Status <String>]`: 
       - `[TotalAmountExcludingTax <Decimal?>]`: 
       - `[TotalAmountIncludingTax <Decimal?>]`: 
       - `[TotalTaxAmount <Decimal?>]`: 
     - `[SalesInvoiceLines <IMicrosoftGraphSalesInvoiceLine[]>]`: 
       - `[Id <String>]`: Read-only.
-      - `[AccountBlocked <Boolean?>]`: 
-      - `[AccountCategory <String>]`: 
-      - `[AccountDisplayName <String>]`: 
+      - `[Account <IMicrosoftGraphAccount>]`: account
       - `[AccountId <String>]`: 
-      - `[AccountId1 <String>]`: Read-only.
-      - `[AccountLastModifiedDateTime <DateTime?>]`: 
-      - `[AccountNumber <String>]`: 
-      - `[AccountSubCategory <String>]`: 
       - `[AmountExcludingTax <Decimal?>]`: 
       - `[AmountIncludingTax <Decimal?>]`: 
-      - `[Code <String>]`: 
       - `[Description <String>]`: 
       - `[DiscountAmount <Decimal?>]`: 
       - `[DiscountAppliedBeforeTax <Boolean?>]`: 
       - `[DiscountPercent <Decimal?>]`: 
       - `[DocumentId <String>]`: 
       - `[InvoiceDiscountAllocation <Decimal?>]`: 
-      - `[ItemBaseUnitOfMeasureId <String>]`: 
-      - `[ItemBlocked <Boolean?>]`: 
-      - `[ItemCategoryCode <String>]`: 
-      - `[ItemCategoryDisplayName <String>]`: 
-      - `[ItemCategoryId <String>]`: 
-      - `[ItemCategoryLastModifiedDateTime <DateTime?>]`: 
-      - `[ItemDisplayName <String>]`: 
-      - `[ItemGtin <String>]`: 
+      - `[Item <IMicrosoftGraphItem>]`: item
       - `[ItemId <String>]`: 
-      - `[ItemId1 <String>]`: Read-only.
-      - `[ItemInventory <Decimal?>]`: 
-      - `[ItemLastModifiedDateTime <DateTime?>]`: 
-      - `[ItemNumber <String>]`: 
-      - `[ItemPicture <IMicrosoftGraphPicture[]>]`: 
-      - `[ItemPriceIncludesTax <Boolean?>]`: 
-      - `[ItemTaxGroupCode <String>]`: 
-      - `[ItemTaxGroupId <String>]`: 
-      - `[ItemType <String>]`: 
-      - `[ItemUnitCost <Decimal?>]`: 
-      - `[ItemUnitPrice <Decimal?>]`: 
       - `[LineType <String>]`: 
-      - `[MicrosoftGraphEntityId <String>]`: Read-only.
       - `[NetAmount <Decimal?>]`: 
       - `[NetAmountIncludingTax <Decimal?>]`: 
       - `[NetTaxAmount <Decimal?>]`: 
@@ -752,19 +588,10 @@ BODYPARAMETER <IMicrosoftGraphFinancials>: financials
       - `[BillToCustomerId <String>]`: 
       - `[BillToCustomerNumber <String>]`: 
       - `[BillToName <String>]`: 
-      - `[BillingPostalAddressCity <String>]`: 
-      - `[BillingPostalAddressCountryLetterCode <String>]`: 
-      - `[BillingPostalAddressPostalCode <String>]`: 
-      - `[BillingPostalAddressState <String>]`: 
-      - `[BillingPostalAddressStreet <String>]`: 
-      - `[Code <String>]`: 
-      - `[CurrencyAmountDecimalPlaces <String>]`: 
-      - `[CurrencyAmountRoundingPrecision <Decimal?>]`: 
+      - `[BillingPostalAddress <IMicrosoftGraphPostalAddressType>]`: postalAddressType
+      - `[Currency <IMicrosoftGraphCurrency>]`: currency
       - `[CurrencyCode <String>]`: 
-      - `[CurrencyDisplayName <String>]`: 
       - `[CurrencyId <String>]`: 
-      - `[CurrencyLastModifiedDateTime <DateTime?>]`: 
-      - `[CurrencySymbol <String>]`: 
       - `[Customer <IMicrosoftGraphCustomer>]`: customer
       - `[CustomerId <String>]`: 
       - `[CustomerName <String>]`: 
@@ -777,57 +604,31 @@ BODYPARAMETER <IMicrosoftGraphFinancials>: financials
       - `[ExternalDocumentNumber <String>]`: 
       - `[InvoiceDate <DateTime?>]`: 
       - `[LastModifiedDateTime <DateTime?>]`: 
-      - `[MicrosoftGraphEntityId <String>]`: Read-only.
       - `[Number <String>]`: 
       - `[OrderId <String>]`: 
       - `[OrderNumber <String>]`: 
-      - `[PaymentTermCalculateDiscountOnCreditMemos <Boolean?>]`: 
-      - `[PaymentTermCode <String>]`: 
-      - `[PaymentTermDiscountDateCalculation <String>]`: 
-      - `[PaymentTermDiscountPercent <Decimal?>]`: 
-      - `[PaymentTermDisplayName <String>]`: 
-      - `[PaymentTermDueDateCalculation <String>]`: 
-      - `[PaymentTermId <String>]`: Read-only.
-      - `[PaymentTermLastModifiedDateTime <DateTime?>]`: 
+      - `[PaymentTerm <IMicrosoftGraphPaymentTerm>]`: paymentTerm
       - `[PaymentTermsId <String>]`: 
       - `[PhoneNumber <String>]`: 
       - `[PricesIncludeTax <Boolean?>]`: 
       - `[SalesInvoiceLines <IMicrosoftGraphSalesInvoiceLine[]>]`: 
       - `[Salesperson <String>]`: 
-      - `[SellingPostalAddressCity <String>]`: 
-      - `[SellingPostalAddressCountryLetterCode <String>]`: 
-      - `[SellingPostalAddressPostalCode <String>]`: 
-      - `[SellingPostalAddressState <String>]`: 
-      - `[SellingPostalAddressStreet <String>]`: 
+      - `[SellingPostalAddress <IMicrosoftGraphPostalAddressType>]`: postalAddressType
       - `[ShipToContact <String>]`: 
       - `[ShipToName <String>]`: 
-      - `[ShipmentMethodCode <String>]`: 
-      - `[ShipmentMethodDisplayName <String>]`: 
+      - `[ShipmentMethod <IMicrosoftGraphShipmentMethod>]`: shipmentMethod
       - `[ShipmentMethodId <String>]`: 
-      - `[ShipmentMethodId1 <String>]`: Read-only.
-      - `[ShipmentMethodLastModifiedDateTime <DateTime?>]`: 
-      - `[ShippingPostalAddressCity <String>]`: 
-      - `[ShippingPostalAddressCountryLetterCode <String>]`: 
-      - `[ShippingPostalAddressPostalCode <String>]`: 
-      - `[ShippingPostalAddressState <String>]`: 
-      - `[ShippingPostalAddressStreet <String>]`: 
+      - `[ShippingPostalAddress <IMicrosoftGraphPostalAddressType>]`: postalAddressType
       - `[Status <String>]`: 
       - `[TotalAmountExcludingTax <Decimal?>]`: 
       - `[TotalAmountIncludingTax <Decimal?>]`: 
       - `[TotalTaxAmount <Decimal?>]`: 
     - `[SalesOrderLines <IMicrosoftGraphSalesOrderLine[]>]`: 
       - `[Id <String>]`: Read-only.
-      - `[AccountBlocked <Boolean?>]`: 
-      - `[AccountCategory <String>]`: 
-      - `[AccountDisplayName <String>]`: 
+      - `[Account <IMicrosoftGraphAccount>]`: account
       - `[AccountId <String>]`: 
-      - `[AccountId1 <String>]`: Read-only.
-      - `[AccountLastModifiedDateTime <DateTime?>]`: 
-      - `[AccountNumber <String>]`: 
-      - `[AccountSubCategory <String>]`: 
       - `[AmountExcludingTax <Decimal?>]`: 
       - `[AmountIncludingTax <Decimal?>]`: 
-      - `[Code <String>]`: 
       - `[Description <String>]`: 
       - `[DiscountAmount <Decimal?>]`: 
       - `[DiscountAppliedBeforeTax <Boolean?>]`: 
@@ -836,28 +637,9 @@ BODYPARAMETER <IMicrosoftGraphFinancials>: financials
       - `[InvoiceDiscountAllocation <Decimal?>]`: 
       - `[InvoiceQuantity <Decimal?>]`: 
       - `[InvoicedQuantity <Decimal?>]`: 
-      - `[ItemBaseUnitOfMeasureId <String>]`: 
-      - `[ItemBlocked <Boolean?>]`: 
-      - `[ItemCategoryCode <String>]`: 
-      - `[ItemCategoryDisplayName <String>]`: 
-      - `[ItemCategoryId <String>]`: 
-      - `[ItemCategoryLastModifiedDateTime <DateTime?>]`: 
-      - `[ItemDisplayName <String>]`: 
-      - `[ItemGtin <String>]`: 
+      - `[Item <IMicrosoftGraphItem>]`: item
       - `[ItemId <String>]`: 
-      - `[ItemId1 <String>]`: Read-only.
-      - `[ItemInventory <Decimal?>]`: 
-      - `[ItemLastModifiedDateTime <DateTime?>]`: 
-      - `[ItemNumber <String>]`: 
-      - `[ItemPicture <IMicrosoftGraphPicture[]>]`: 
-      - `[ItemPriceIncludesTax <Boolean?>]`: 
-      - `[ItemTaxGroupCode <String>]`: 
-      - `[ItemTaxGroupId <String>]`: 
-      - `[ItemType <String>]`: 
-      - `[ItemUnitCost <Decimal?>]`: 
-      - `[ItemUnitPrice <Decimal?>]`: 
       - `[LineType <String>]`: 
-      - `[MicrosoftGraphEntityId <String>]`: Read-only.
       - `[NetAmount <Decimal?>]`: 
       - `[NetAmountIncludingTax <Decimal?>]`: 
       - `[NetTaxAmount <Decimal?>]`: 
@@ -876,19 +658,10 @@ BODYPARAMETER <IMicrosoftGraphFinancials>: financials
       - `[BillToCustomerId <String>]`: 
       - `[BillToCustomerNumber <String>]`: 
       - `[BillToName <String>]`: 
-      - `[BillingPostalAddressCity <String>]`: 
-      - `[BillingPostalAddressCountryLetterCode <String>]`: 
-      - `[BillingPostalAddressPostalCode <String>]`: 
-      - `[BillingPostalAddressState <String>]`: 
-      - `[BillingPostalAddressStreet <String>]`: 
-      - `[Code <String>]`: 
-      - `[CurrencyAmountDecimalPlaces <String>]`: 
-      - `[CurrencyAmountRoundingPrecision <Decimal?>]`: 
+      - `[BillingPostalAddress <IMicrosoftGraphPostalAddressType>]`: postalAddressType
+      - `[Currency <IMicrosoftGraphCurrency>]`: currency
       - `[CurrencyCode <String>]`: 
-      - `[CurrencyDisplayName <String>]`: 
       - `[CurrencyId <String>]`: 
-      - `[CurrencyLastModifiedDateTime <DateTime?>]`: 
-      - `[CurrencySymbol <String>]`: 
       - `[Customer <IMicrosoftGraphCustomer>]`: customer
       - `[CustomerId <String>]`: 
       - `[CustomerName <String>]`: 
@@ -899,80 +672,38 @@ BODYPARAMETER <IMicrosoftGraphFinancials>: financials
       - `[ExternalDocumentNumber <String>]`: 
       - `[FullyShipped <Boolean?>]`: 
       - `[LastModifiedDateTime <DateTime?>]`: 
-      - `[MicrosoftGraphEntityId <String>]`: Read-only.
       - `[Number <String>]`: 
       - `[OrderDate <DateTime?>]`: 
       - `[PartialShipping <Boolean?>]`: 
-      - `[PaymentTermCalculateDiscountOnCreditMemos <Boolean?>]`: 
-      - `[PaymentTermCode <String>]`: 
-      - `[PaymentTermDiscountDateCalculation <String>]`: 
-      - `[PaymentTermDiscountPercent <Decimal?>]`: 
-      - `[PaymentTermDisplayName <String>]`: 
-      - `[PaymentTermDueDateCalculation <String>]`: 
-      - `[PaymentTermId <String>]`: Read-only.
-      - `[PaymentTermLastModifiedDateTime <DateTime?>]`: 
+      - `[PaymentTerm <IMicrosoftGraphPaymentTerm>]`: paymentTerm
       - `[PaymentTermsId <String>]`: 
       - `[PhoneNumber <String>]`: 
       - `[PricesIncludeTax <Boolean?>]`: 
       - `[RequestedDeliveryDate <DateTime?>]`: 
       - `[SalesOrderLines <IMicrosoftGraphSalesOrderLine[]>]`: 
       - `[Salesperson <String>]`: 
-      - `[SellingPostalAddressCity <String>]`: 
-      - `[SellingPostalAddressCountryLetterCode <String>]`: 
-      - `[SellingPostalAddressPostalCode <String>]`: 
-      - `[SellingPostalAddressState <String>]`: 
-      - `[SellingPostalAddressStreet <String>]`: 
+      - `[SellingPostalAddress <IMicrosoftGraphPostalAddressType>]`: postalAddressType
       - `[ShipToContact <String>]`: 
       - `[ShipToName <String>]`: 
-      - `[ShippingPostalAddressCity <String>]`: 
-      - `[ShippingPostalAddressCountryLetterCode <String>]`: 
-      - `[ShippingPostalAddressPostalCode <String>]`: 
-      - `[ShippingPostalAddressState <String>]`: 
-      - `[ShippingPostalAddressStreet <String>]`: 
+      - `[ShippingPostalAddress <IMicrosoftGraphPostalAddressType>]`: postalAddressType
       - `[Status <String>]`: 
       - `[TotalAmountExcludingTax <Decimal?>]`: 
       - `[TotalAmountIncludingTax <Decimal?>]`: 
       - `[TotalTaxAmount <Decimal?>]`: 
     - `[SalesQuoteLines <IMicrosoftGraphSalesQuoteLine[]>]`: 
       - `[Id <String>]`: Read-only.
-      - `[AccountBlocked <Boolean?>]`: 
-      - `[AccountCategory <String>]`: 
-      - `[AccountDisplayName <String>]`: 
+      - `[Account <IMicrosoftGraphAccount>]`: account
       - `[AccountId <String>]`: 
-      - `[AccountId1 <String>]`: Read-only.
-      - `[AccountLastModifiedDateTime <DateTime?>]`: 
-      - `[AccountNumber <String>]`: 
-      - `[AccountSubCategory <String>]`: 
       - `[AmountExcludingTax <Decimal?>]`: 
       - `[AmountIncludingTax <Decimal?>]`: 
-      - `[Code <String>]`: 
       - `[Description <String>]`: 
       - `[DiscountAmount <Decimal?>]`: 
       - `[DiscountAppliedBeforeTax <Boolean?>]`: 
       - `[DiscountPercent <Decimal?>]`: 
       - `[DocumentId <String>]`: 
-      - `[ItemBaseUnitOfMeasureId <String>]`: 
-      - `[ItemBlocked <Boolean?>]`: 
-      - `[ItemCategoryCode <String>]`: 
-      - `[ItemCategoryDisplayName <String>]`: 
-      - `[ItemCategoryId <String>]`: 
-      - `[ItemCategoryLastModifiedDateTime <DateTime?>]`: 
-      - `[ItemDisplayName <String>]`: 
-      - `[ItemGtin <String>]`: 
+      - `[Item <IMicrosoftGraphItem>]`: item
       - `[ItemId <String>]`: 
-      - `[ItemId1 <String>]`: Read-only.
-      - `[ItemInventory <Decimal?>]`: 
-      - `[ItemLastModifiedDateTime <DateTime?>]`: 
-      - `[ItemNumber <String>]`: 
-      - `[ItemPicture <IMicrosoftGraphPicture[]>]`: 
-      - `[ItemPriceIncludesTax <Boolean?>]`: 
-      - `[ItemTaxGroupCode <String>]`: 
-      - `[ItemTaxGroupId <String>]`: 
-      - `[ItemType <String>]`: 
-      - `[ItemUnitCost <Decimal?>]`: 
-      - `[ItemUnitPrice <Decimal?>]`: 
       - `[LineType <String>]`: 
-      - `[MicrosoftGraphEntityId <String>]`: Read-only.
       - `[NetAmount <Decimal?>]`: 
       - `[NetAmountIncludingTax <Decimal?>]`: 
       - `[NetTaxAmount <Decimal?>]`: 
@@ -989,19 +720,10 @@ BODYPARAMETER <IMicrosoftGraphFinancials>: financials
       - `[BillToCustomerId <String>]`: 
       - `[BillToCustomerNumber <String>]`: 
       - `[BillToName <String>]`: 
-      - `[BillingPostalAddressCity <String>]`: 
-      - `[BillingPostalAddressCountryLetterCode <String>]`: 
-      - `[BillingPostalAddressPostalCode <String>]`: 
-      - `[BillingPostalAddressState <String>]`: 
-      - `[BillingPostalAddressStreet <String>]`: 
-      - `[Code <String>]`: 
-      - `[CurrencyAmountDecimalPlaces <String>]`: 
-      - `[CurrencyAmountRoundingPrecision <Decimal?>]`: 
+      - `[BillingPostalAddress <IMicrosoftGraphPostalAddressType>]`: postalAddressType
+      - `[Currency <IMicrosoftGraphCurrency>]`: currency
       - `[CurrencyCode <String>]`: 
-      - `[CurrencyDisplayName <String>]`: 
       - `[CurrencyId <String>]`: 
-      - `[CurrencyLastModifiedDateTime <DateTime?>]`: 
-      - `[CurrencySymbol <String>]`: 
       - `[Customer <IMicrosoftGraphCustomer>]`: customer
       - `[CustomerId <String>]`: 
       - `[CustomerName <String>]`: 
@@ -1012,48 +734,25 @@ BODYPARAMETER <IMicrosoftGraphFinancials>: financials
       - `[Email <String>]`: 
       - `[ExternalDocumentNumber <String>]`: 
       - `[LastModifiedDateTime <DateTime?>]`: 
-      - `[MicrosoftGraphEntityId <String>]`: Read-only.
       - `[Number <String>]`: 
-      - `[PaymentTermCalculateDiscountOnCreditMemos <Boolean?>]`: 
-      - `[PaymentTermCode <String>]`: 
-      - `[PaymentTermDiscountDateCalculation <String>]`: 
-      - `[PaymentTermDiscountPercent <Decimal?>]`: 
-      - `[PaymentTermDisplayName <String>]`: 
-      - `[PaymentTermDueDateCalculation <String>]`: 
-      - `[PaymentTermId <String>]`: Read-only.
-      - `[PaymentTermLastModifiedDateTime <DateTime?>]`: 
+      - `[PaymentTerm <IMicrosoftGraphPaymentTerm>]`: paymentTerm
       - `[PaymentTermsId <String>]`: 
       - `[PhoneNumber <String>]`: 
       - `[SalesQuoteLines <IMicrosoftGraphSalesQuoteLine[]>]`: 
       - `[Salesperson <String>]`: 
-      - `[SellingPostalAddressCity <String>]`: 
-      - `[SellingPostalAddressCountryLetterCode <String>]`: 
-      - `[SellingPostalAddressPostalCode <String>]`: 
-      - `[SellingPostalAddressState <String>]`: 
-      - `[SellingPostalAddressStreet <String>]`: 
+      - `[SellingPostalAddress <IMicrosoftGraphPostalAddressType>]`: postalAddressType
       - `[SentDate <DateTime?>]`: 
       - `[ShipToContact <String>]`: 
       - `[ShipToName <String>]`: 
-      - `[ShipmentMethodCode <String>]`: 
-      - `[ShipmentMethodDisplayName <String>]`: 
+      - `[ShipmentMethod <IMicrosoftGraphShipmentMethod>]`: shipmentMethod
       - `[ShipmentMethodId <String>]`: 
-      - `[ShipmentMethodId1 <String>]`: Read-only.
-      - `[ShipmentMethodLastModifiedDateTime <DateTime?>]`: 
-      - `[ShippingPostalAddressCity <String>]`: 
-      - `[ShippingPostalAddressCountryLetterCode <String>]`: 
-      - `[ShippingPostalAddressPostalCode <String>]`: 
-      - `[ShippingPostalAddressState <String>]`: 
-      - `[ShippingPostalAddressStreet <String>]`: 
+      - `[ShippingPostalAddress <IMicrosoftGraphPostalAddressType>]`: postalAddressType
       - `[Status <String>]`: 
       - `[TotalAmountExcludingTax <Decimal?>]`: 
       - `[TotalAmountIncludingTax <Decimal?>]`: 
       - `[TotalTaxAmount <Decimal?>]`: 
       - `[ValidUntilDate <DateTime?>]`: 
     - `[ShipmentMethods <IMicrosoftGraphShipmentMethod[]>]`: 
-      - `[Id <String>]`: Read-only.
-      - `[Code <String>]`: 
-      - `[DisplayName <String>]`: 
-      - `[LastModifiedDateTime <DateTime?>]`: 
     - `[SystemVersion <String>]`: 
     - `[TaxAreas <IMicrosoftGraphTaxArea[]>]`: 
       - `[Id <String>]`: Read-only.
@@ -1112,11 +811,13 @@ COMPANIES <IMicrosoftGraphCompany[]>: .
   - `[BusinessProfileId <String>]`: 
   - `[CompanyInformation <IMicrosoftGraphCompanyInformation1[]>]`: 
     - `[Id <String>]`: Read-only.
-    - `[AddressCity <String>]`: 
-    - `[AddressCountryLetterCode <String>]`: 
-    - `[AddressPostalCode <String>]`: 
-    - `[AddressState <String>]`: 
-    - `[AddressStreet <String>]`: 
+    - `[Address <IMicrosoftGraphPostalAddressType>]`: postalAddressType
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[City <String>]`: 
+      - `[CountryLetterCode <String>]`: 
+      - `[PostalCode <String>]`: 
+      - `[State <String>]`: 
+      - `[Street <String>]`: 
     - `[CurrencyCode <String>]`: 
     - `[CurrentFiscalYearStartDate <DateTime?>]`: 
     - `[DisplayName <String>]`: 
@@ -1144,13 +845,7 @@ COMPANIES <IMicrosoftGraphCompany[]>: .
     - `[Symbol <String>]`: 
   - `[CustomerPaymentJournals <IMicrosoftGraphCustomerPaymentJournal[]>]`: 
     - `[Id <String>]`: Read-only.
-    - `[AccountBlocked <Boolean?>]`: 
-    - `[AccountCategory <String>]`: 
-    - `[AccountDisplayName <String>]`: 
-    - `[AccountId <String>]`: Read-only.
-    - `[AccountLastModifiedDateTime <DateTime?>]`: 
-    - `[AccountNumber <String>]`: 
-    - `[AccountSubCategory <String>]`: 
+    - `[Account <IMicrosoftGraphAccount>]`: account
     - `[BalancingAccountId <String>]`: 
     - `[BalancingAccountNumber <String>]`: 
     - `[Code <String>]`: 
@@ -1162,39 +857,34 @@ COMPANIES <IMicrosoftGraphCompany[]>: .
       - `[Comment <String>]`: 
       - `[ContactId <String>]`: 
       - `[Customer <IMicrosoftGraphCustomer>]`: customer
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: Read-only.
-        - `[AddressCity <String>]`: 
-        - `[AddressCountryLetterCode <String>]`: 
-        - `[AddressPostalCode <String>]`: 
-        - `[AddressState <String>]`: 
-        - `[AddressStreet <String>]`: 
+        - `[Address <IMicrosoftGraphPostalAddressType>]`: postalAddressType
         - `[Blocked <String>]`: 
-        - `[Code <String>]`: 
-        - `[CurrencyAmountDecimalPlaces <String>]`: 
-        - `[CurrencyAmountRoundingPrecision <Decimal?>]`: 
+        - `[Currency <IMicrosoftGraphCurrency>]`: currency
         - `[CurrencyCode <String>]`: 
-        - `[CurrencyDisplayName <String>]`: 
         - `[CurrencyId <String>]`: 
-        - `[CurrencyLastModifiedDateTime <DateTime?>]`: 
-        - `[CurrencySymbol <String>]`: 
         - `[DisplayName <String>]`: 
         - `[Email <String>]`: 
         - `[LastModifiedDateTime <DateTime?>]`: 
-        - `[MicrosoftGraphEntityId <String>]`: Read-only.
         - `[Number <String>]`: 
-        - `[PaymentMethodCode <String>]`: 
-        - `[PaymentMethodDisplayName <String>]`: 
+        - `[PaymentMethod <IMicrosoftGraphPaymentMethod>]`: paymentMethod
+          - `[(Any) <Object>]`: This indicates any property can be added to this object.
+          - `[Id <String>]`: Read-only.
+          - `[Code <String>]`: 
+          - `[DisplayName <String>]`: 
+          - `[LastModifiedDateTime <DateTime?>]`: 
         - `[PaymentMethodId <String>]`: 
-        - `[PaymentMethodId1 <String>]`: Read-only.
-        - `[PaymentMethodLastModifiedDateTime <DateTime?>]`: 
-        - `[PaymentTermCalculateDiscountOnCreditMemos <Boolean?>]`: 
-        - `[PaymentTermCode <String>]`: 
-        - `[PaymentTermDiscountDateCalculation <String>]`: 
-        - `[PaymentTermDiscountPercent <Decimal?>]`: 
-        - `[PaymentTermDisplayName <String>]`: 
-        - `[PaymentTermDueDateCalculation <String>]`: 
-        - `[PaymentTermId <String>]`: Read-only.
-        - `[PaymentTermLastModifiedDateTime <DateTime?>]`: 
+        - `[PaymentTerm <IMicrosoftGraphPaymentTerm>]`: paymentTerm
+          - `[(Any) <Object>]`: This indicates any property can be added to this object.
+          - `[Id <String>]`: Read-only.
+          - `[CalculateDiscountOnCreditMemos <Boolean?>]`: 
+          - `[Code <String>]`: 
+          - `[DiscountDateCalculation <String>]`: 
+          - `[DiscountPercent <Decimal?>]`: 
+          - `[DisplayName <String>]`: 
+          - `[DueDateCalculation <String>]`: 
+          - `[LastModifiedDateTime <DateTime?>]`: 
         - `[PaymentTermsId <String>]`: 
         - `[PhoneNumber <String>]`: 
         - `[Picture <IMicrosoftGraphPicture[]>]`: 
@@ -1203,11 +893,13 @@ COMPANIES <IMicrosoftGraphCompany[]>: .
           - `[ContentType <String>]`: 
           - `[Height <Int32?>]`: 
           - `[Width <Int32?>]`: 
-        - `[ShipmentMethodCode <String>]`: 
-        - `[ShipmentMethodDisplayName <String>]`: 
+        - `[ShipmentMethod <IMicrosoftGraphShipmentMethod>]`: shipmentMethod
+          - `[(Any) <Object>]`: This indicates any property can be added to this object.
+          - `[Id <String>]`: Read-only.
+          - `[Code <String>]`: 
+          - `[DisplayName <String>]`: 
+          - `[LastModifiedDateTime <DateTime?>]`: 
         - `[ShipmentMethodId <String>]`: 
-        - `[ShipmentMethodId1 <String>]`: Read-only.
-        - `[ShipmentMethodLastModifiedDateTime <DateTime?>]`: 
         - `[TaxAreaDisplayName <String>]`: 
         - `[TaxAreaId <String>]`: 
         - `[TaxLiable <Boolean?>]`: 
@@ -1241,11 +933,7 @@ COMPANIES <IMicrosoftGraphCompany[]>: .
   - `[DisplayName <String>]`: 
   - `[Employees <IMicrosoftGraphEmployee[]>]`: 
     - `[Id <String>]`: Read-only.
-    - `[AddressCity <String>]`: 
-    - `[AddressCountryLetterCode <String>]`: 
-    - `[AddressPostalCode <String>]`: 
-    - `[AddressState <String>]`: 
-    - `[AddressStreet <String>]`: 
+    - `[Address <IMicrosoftGraphPostalAddressType>]`: postalAddressType
     - `[BirthDate <DateTime?>]`: 
     - `[DisplayName <String>]`: 
     - `[Email <String>]`: 
@@ -1265,21 +953,15 @@ COMPANIES <IMicrosoftGraphCompany[]>: .
     - `[TerminationDate <DateTime?>]`: 
   - `[GeneralLedgerEntries <IMicrosoftGraphGeneralLedgerEntry[]>]`: 
     - `[Id <String>]`: Read-only.
-    - `[AccountBlocked <Boolean?>]`: 
-    - `[AccountCategory <String>]`: 
-    - `[AccountDisplayName <String>]`: 
+    - `[Account <IMicrosoftGraphAccount>]`: account
     - `[AccountId <String>]`: 
-    - `[AccountLastModifiedDateTime <DateTime?>]`: 
     - `[AccountNumber <String>]`: 
-    - `[AccountSubCategory <String>]`: 
     - `[CreditAmount <Decimal?>]`: 
     - `[DebitAmount <Decimal?>]`: 
     - `[Description <String>]`: 
     - `[DocumentNumber <String>]`: 
     - `[DocumentType <String>]`: 
     - `[LastModifiedDateTime <DateTime?>]`: 
-    - `[MicrosoftGraphEntityId <String>]`: Read-only.
-    - `[Number <String>]`: 
     - `[PostingDate <DateTime?>]`: 
   - `[ItemCategories <IMicrosoftGraphItemCategory[]>]`: 
     - `[Id <String>]`: Read-only.
@@ -1290,16 +972,13 @@ COMPANIES <IMicrosoftGraphCompany[]>: .
     - `[Id <String>]`: Read-only.
     - `[BaseUnitOfMeasureId <String>]`: 
     - `[Blocked <Boolean?>]`: 
-    - `[Code <String>]`: 
     - `[DisplayName <String>]`: 
     - `[Gtin <String>]`: 
     - `[Inventory <Decimal?>]`: 
+    - `[ItemCategory <IMicrosoftGraphItemCategory>]`: itemCategory
     - `[ItemCategoryCode <String>]`: 
-    - `[ItemCategoryDisplayName <String>]`: 
     - `[ItemCategoryId <String>]`: 
-    - `[ItemCategoryLastModifiedDateTime <DateTime?>]`: 
     - `[LastModifiedDateTime <DateTime?>]`: 
-    - `[MicrosoftGraphEntityId <String>]`: Read-only.
     - `[Number <String>]`: 
     - `[Picture <IMicrosoftGraphPicture[]>]`: 
     - `[PriceIncludesTax <Boolean?>]`: 
@@ -1310,13 +989,9 @@ COMPANIES <IMicrosoftGraphCompany[]>: .
     - `[UnitPrice <Decimal?>]`: 
   - `[JournalLines <IMicrosoftGraphJournalLine[]>]`: 
     - `[Id <String>]`: Read-only.
-    - `[AccountBlocked <Boolean?>]`: 
-    - `[AccountCategory <String>]`: 
-    - `[AccountDisplayName <String>]`: 
+    - `[Account <IMicrosoftGraphAccount>]`: account
     - `[AccountId <String>]`: 
-    - `[AccountLastModifiedDateTime <DateTime?>]`: 
     - `[AccountNumber <String>]`: 
-    - `[AccountSubCategory <String>]`: 
     - `[Amount <Decimal?>]`: 
     - `[Comment <String>]`: 
     - `[Description <String>]`: 
@@ -1325,18 +1000,10 @@ COMPANIES <IMicrosoftGraphCompany[]>: .
     - `[JournalDisplayName <String>]`: 
     - `[LastModifiedDateTime <DateTime?>]`: 
     - `[LineNumber <Int32?>]`: 
-    - `[MicrosoftGraphEntityId <String>]`: Read-only.
-    - `[Number <String>]`: 
     - `[PostingDate <DateTime?>]`: 
   - `[Journals <IMicrosoftGraphJournal[]>]`: 
     - `[Id <String>]`: Read-only.
-    - `[AccountBlocked <Boolean?>]`: 
-    - `[AccountCategory <String>]`: 
-    - `[AccountDisplayName <String>]`: 
-    - `[AccountId <String>]`: Read-only.
-    - `[AccountLastModifiedDateTime <DateTime?>]`: 
-    - `[AccountNumber <String>]`: 
-    - `[AccountSubCategory <String>]`: 
+    - `[Account <IMicrosoftGraphAccount>]`: account
     - `[BalancingAccountId <String>]`: 
     - `[BalancingAccountNumber <String>]`: 
     - `[Code <String>]`: 
@@ -1345,33 +1012,14 @@ COMPANIES <IMicrosoftGraphCompany[]>: .
     - `[LastModifiedDateTime <DateTime?>]`: 
   - `[Name <String>]`: 
   - `[PaymentMethods <IMicrosoftGraphPaymentMethod[]>]`: 
-    - `[Id <String>]`: Read-only.
-    - `[Code <String>]`: 
-    - `[DisplayName <String>]`: 
-    - `[LastModifiedDateTime <DateTime?>]`: 
   - `[PaymentTerms <IMicrosoftGraphPaymentTerm[]>]`: 
-    - `[Id <String>]`: Read-only.
-    - `[CalculateDiscountOnCreditMemos <Boolean?>]`: 
-    - `[Code <String>]`: 
-    - `[DiscountDateCalculation <String>]`: 
-    - `[DiscountPercent <Decimal?>]`: 
-    - `[DisplayName <String>]`: 
-    - `[DueDateCalculation <String>]`: 
-    - `[LastModifiedDateTime <DateTime?>]`: 
   - `[Picture <IMicrosoftGraphPicture[]>]`: 
   - `[PurchaseInvoiceLines <IMicrosoftGraphPurchaseInvoiceLine[]>]`: 
     - `[Id <String>]`: Read-only.
-    - `[AccountBlocked <Boolean?>]`: 
-    - `[AccountCategory <String>]`: 
-    - `[AccountDisplayName <String>]`: 
+    - `[Account <IMicrosoftGraphAccount>]`: account
     - `[AccountId <String>]`: 
-    - `[AccountId1 <String>]`: Read-only.
-    - `[AccountLastModifiedDateTime <DateTime?>]`: 
-    - `[AccountNumber <String>]`: 
-    - `[AccountSubCategory <String>]`: 
     - `[AmountExcludingTax <Decimal?>]`: 
     - `[AmountIncludingTax <Decimal?>]`: 
-    - `[Code <String>]`: 
     - `[Description <String>]`: 
     - `[DiscountAmount <Decimal?>]`: 
     - `[DiscountAppliedBeforeTax <Boolean?>]`: 
@@ -1379,28 +1027,9 @@ COMPANIES <IMicrosoftGraphCompany[]>: .
     - `[DocumentId <String>]`: 
     - `[ExpectedReceiptDate <DateTime?>]`: 
     - `[InvoiceDiscountAllocation <Decimal?>]`: 
-    - `[ItemBaseUnitOfMeasureId <String>]`: 
-    - `[ItemBlocked <Boolean?>]`: 
-    - `[ItemCategoryCode <String>]`: 
-    - `[ItemCategoryDisplayName <String>]`: 
-    - `[ItemCategoryId <String>]`: 
-    - `[ItemCategoryLastModifiedDateTime <DateTime?>]`: 
-    - `[ItemDisplayName <String>]`: 
-    - `[ItemGtin <String>]`: 
+    - `[Item <IMicrosoftGraphItem>]`: item
     - `[ItemId <String>]`: 
-    - `[ItemId1 <String>]`: Read-only.
-    - `[ItemInventory <Decimal?>]`: 
-    - `[ItemLastModifiedDateTime <DateTime?>]`: 
-    - `[ItemNumber <String>]`: 
-    - `[ItemPicture <IMicrosoftGraphPicture[]>]`: 
-    - `[ItemPriceIncludesTax <Boolean?>]`: 
-    - `[ItemTaxGroupCode <String>]`: 
-    - `[ItemTaxGroupId <String>]`: 
-    - `[ItemType <String>]`: 
-    - `[ItemUnitCost <Decimal?>]`: 
-    - `[ItemUnitPrice <Decimal?>]`: 
     - `[LineType <String>]`: 
-    - `[MicrosoftGraphEntityId <String>]`: Read-only.
     - `[NetAmount <Decimal?>]`: 
     - `[NetAmountIncludingTax <Decimal?>]`: 
     - `[NetTaxAmount <Decimal?>]`: 
@@ -1412,42 +1041,24 @@ COMPANIES <IMicrosoftGraphCompany[]>: .
     - `[UnitCost <Decimal?>]`: 
   - `[PurchaseInvoices <IMicrosoftGraphPurchaseInvoice[]>]`: 
     - `[Id <String>]`: Read-only.
-    - `[BuyFromAddressCity <String>]`: 
-    - `[BuyFromAddressCountryLetterCode <String>]`: 
-    - `[BuyFromAddressPostalCode <String>]`: 
-    - `[BuyFromAddressState <String>]`: 
-    - `[BuyFromAddressStreet <String>]`: 
-    - `[Code <String>]`: 
-    - `[CurrencyAmountDecimalPlaces <String>]`: 
-    - `[CurrencyAmountRoundingPrecision <Decimal?>]`: 
+    - `[BuyFromAddress <IMicrosoftGraphPostalAddressType>]`: postalAddressType
+    - `[Currency <IMicrosoftGraphCurrency>]`: currency
     - `[CurrencyCode <String>]`: 
-    - `[CurrencyDisplayName <String>]`: 
     - `[CurrencyId <String>]`: 
-    - `[CurrencyLastModifiedDateTime <DateTime?>]`: 
-    - `[CurrencySymbol <String>]`: 
     - `[DiscountAmount <Decimal?>]`: 
     - `[DiscountAppliedBeforeTax <Boolean?>]`: 
     - `[DueDate <DateTime?>]`: 
     - `[InvoiceDate <DateTime?>]`: 
     - `[LastModifiedDateTime <DateTime?>]`: 
-    - `[MicrosoftGraphEntityId <String>]`: Read-only.
     - `[Number <String>]`: 
-    - `[PayToAddressCity <String>]`: 
-    - `[PayToAddressCountryLetterCode <String>]`: 
-    - `[PayToAddressPostalCode <String>]`: 
-    - `[PayToAddressState <String>]`: 
-    - `[PayToAddressStreet <String>]`: 
+    - `[PayToAddress <IMicrosoftGraphPostalAddressType>]`: postalAddressType
     - `[PayToContact <String>]`: 
     - `[PayToName <String>]`: 
     - `[PayToVendorId <String>]`: 
     - `[PayToVendorNumber <String>]`: 
     - `[PricesIncludeTax <Boolean?>]`: 
     - `[PurchaseInvoiceLines <IMicrosoftGraphPurchaseInvoiceLine[]>]`: 
-    - `[ShipToAddressCity <String>]`: 
-    - `[ShipToAddressCountryLetterCode <String>]`: 
-    - `[ShipToAddressPostalCode <String>]`: 
-    - `[ShipToAddressState <String>]`: 
-    - `[ShipToAddressStreet <String>]`: 
+    - `[ShipToAddress <IMicrosoftGraphPostalAddressType>]`: postalAddressType
     - `[ShipToContact <String>]`: 
     - `[ShipToName <String>]`: 
     - `[Status <String>]`: 
@@ -1455,40 +1066,21 @@ COMPANIES <IMicrosoftGraphCompany[]>: .
     - `[TotalAmountIncludingTax <Decimal?>]`: 
     - `[TotalTaxAmount <Decimal?>]`: 
     - `[Vendor <IMicrosoftGraphVendor>]`: vendor
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: Read-only.
-      - `[AddressCity <String>]`: 
-      - `[AddressCountryLetterCode <String>]`: 
-      - `[AddressPostalCode <String>]`: 
-      - `[AddressState <String>]`: 
-      - `[AddressStreet <String>]`: 
+      - `[Address <IMicrosoftGraphPostalAddressType>]`: postalAddressType
       - `[Balance <Decimal?>]`: 
       - `[Blocked <String>]`: 
-      - `[Code <String>]`: 
-      - `[CurrencyAmountDecimalPlaces <String>]`: 
-      - `[CurrencyAmountRoundingPrecision <Decimal?>]`: 
+      - `[Currency <IMicrosoftGraphCurrency>]`: currency
       - `[CurrencyCode <String>]`: 
-      - `[CurrencyDisplayName <String>]`: 
       - `[CurrencyId <String>]`: 
-      - `[CurrencyLastModifiedDateTime <DateTime?>]`: 
-      - `[CurrencySymbol <String>]`: 
       - `[DisplayName <String>]`: 
       - `[Email <String>]`: 
       - `[LastModifiedDateTime <DateTime?>]`: 
-      - `[MicrosoftGraphEntityId <String>]`: Read-only.
       - `[Number <String>]`: 
-      - `[PaymentMethodCode <String>]`: 
-      - `[PaymentMethodDisplayName <String>]`: 
+      - `[PaymentMethod <IMicrosoftGraphPaymentMethod>]`: paymentMethod
       - `[PaymentMethodId <String>]`: 
-      - `[PaymentMethodId1 <String>]`: Read-only.
-      - `[PaymentMethodLastModifiedDateTime <DateTime?>]`: 
-      - `[PaymentTermCalculateDiscountOnCreditMemos <Boolean?>]`: 
-      - `[PaymentTermCode <String>]`: 
-      - `[PaymentTermDiscountDateCalculation <String>]`: 
-      - `[PaymentTermDiscountPercent <Decimal?>]`: 
-      - `[PaymentTermDisplayName <String>]`: 
-      - `[PaymentTermDueDateCalculation <String>]`: 
-      - `[PaymentTermId <String>]`: Read-only.
-      - `[PaymentTermLastModifiedDateTime <DateTime?>]`: 
+      - `[PaymentTerm <IMicrosoftGraphPaymentTerm>]`: paymentTerm
       - `[PaymentTermsId <String>]`: 
       - `[PhoneNumber <String>]`: 
       - `[Picture <IMicrosoftGraphPicture[]>]`: 
@@ -1501,45 +1093,19 @@ COMPANIES <IMicrosoftGraphCompany[]>: .
     - `[VendorNumber <String>]`: 
   - `[SalesCreditMemoLines <IMicrosoftGraphSalesCreditMemoLine[]>]`: 
     - `[Id <String>]`: Read-only.
-    - `[AccountBlocked <Boolean?>]`: 
-    - `[AccountCategory <String>]`: 
-    - `[AccountDisplayName <String>]`: 
+    - `[Account <IMicrosoftGraphAccount>]`: account
     - `[AccountId <String>]`: 
-    - `[AccountId1 <String>]`: Read-only.
-    - `[AccountLastModifiedDateTime <DateTime?>]`: 
-    - `[AccountNumber <String>]`: 
-    - `[AccountSubCategory <String>]`: 
     - `[AmountExcludingTax <Decimal?>]`: 
     - `[AmountIncludingTax <Decimal?>]`: 
-    - `[Code <String>]`: 
     - `[Description <String>]`: 
     - `[DiscountAmount <Decimal?>]`: 
     - `[DiscountAppliedBeforeTax <Boolean?>]`: 
     - `[DiscountPercent <Decimal?>]`: 
     - `[DocumentId <String>]`: 
     - `[InvoiceDiscountAllocation <Decimal?>]`: 
-    - `[ItemBaseUnitOfMeasureId <String>]`: 
-    - `[ItemBlocked <Boolean?>]`: 
-    - `[ItemCategoryCode <String>]`: 
-    - `[ItemCategoryDisplayName <String>]`: 
-    - `[ItemCategoryId <String>]`: 
-    - `[ItemCategoryLastModifiedDateTime <DateTime?>]`: 
-    - `[ItemDisplayName <String>]`: 
-    - `[ItemGtin <String>]`: 
+    - `[Item <IMicrosoftGraphItem>]`: item
     - `[ItemId <String>]`: 
-    - `[ItemId1 <String>]`: Read-only.
-    - `[ItemInventory <Decimal?>]`: 
-    - `[ItemLastModifiedDateTime <DateTime?>]`: 
-    - `[ItemNumber <String>]`: 
-    - `[ItemPicture <IMicrosoftGraphPicture[]>]`: 
-    - `[ItemPriceIncludesTax <Boolean?>]`: 
-    - `[ItemTaxGroupCode <String>]`: 
-    - `[ItemTaxGroupId <String>]`: 
-    - `[ItemType <String>]`: 
-    - `[ItemUnitCost <Decimal?>]`: 
-    - `[ItemUnitPrice <Decimal?>]`: 
     - `[LineType <String>]`: 
-    - `[MicrosoftGraphEntityId <String>]`: Read-only.
     - `[NetAmount <Decimal?>]`: 
     - `[NetAmountIncludingTax <Decimal?>]`: 
     - `[NetTaxAmount <Decimal?>]`: 
@@ -1556,20 +1122,11 @@ COMPANIES <IMicrosoftGraphCompany[]>: .
     - `[BillToCustomerId <String>]`: 
     - `[BillToCustomerNumber <String>]`: 
     - `[BillToName <String>]`: 
-    - `[BillingPostalAddressCity <String>]`: 
-    - `[BillingPostalAddressCountryLetterCode <String>]`: 
-    - `[BillingPostalAddressPostalCode <String>]`: 
-    - `[BillingPostalAddressState <String>]`: 
-    - `[BillingPostalAddressStreet <String>]`: 
-    - `[Code <String>]`: 
+    - `[BillingPostalAddress <IMicrosoftGraphPostalAddressType>]`: postalAddressType
     - `[CreditMemoDate <DateTime?>]`: 
-    - `[CurrencyAmountDecimalPlaces <String>]`: 
-    - `[CurrencyAmountRoundingPrecision <Decimal?>]`: 
+    - `[Currency <IMicrosoftGraphCurrency>]`: currency
     - `[CurrencyCode <String>]`: 
-    - `[CurrencyDisplayName <String>]`: 
     - `[CurrencyId <String>]`: 
-    - `[CurrencyLastModifiedDateTime <DateTime?>]`: 
-    - `[CurrencySymbol <String>]`: 
     - `[Customer <IMicrosoftGraphCustomer>]`: customer
     - `[CustomerId <String>]`: 
     - `[CustomerName <String>]`: 
@@ -1582,71 +1139,33 @@ COMPANIES <IMicrosoftGraphCompany[]>: .
     - `[InvoiceId <String>]`: 
     - `[InvoiceNumber <String>]`: 
     - `[LastModifiedDateTime <DateTime?>]`: 
-    - `[MicrosoftGraphEntityId <String>]`: Read-only.
     - `[Number <String>]`: 
-    - `[PaymentTermCalculateDiscountOnCreditMemos <Boolean?>]`: 
-    - `[PaymentTermCode <String>]`: 
-    - `[PaymentTermDiscountDateCalculation <String>]`: 
-    - `[PaymentTermDiscountPercent <Decimal?>]`: 
-    - `[PaymentTermDisplayName <String>]`: 
-    - `[PaymentTermDueDateCalculation <String>]`: 
-    - `[PaymentTermId <String>]`: Read-only.
-    - `[PaymentTermLastModifiedDateTime <DateTime?>]`: 
+    - `[PaymentTerm <IMicrosoftGraphPaymentTerm>]`: paymentTerm
     - `[PaymentTermsId <String>]`: 
     - `[PhoneNumber <String>]`: 
     - `[PricesIncludeTax <Boolean?>]`: 
     - `[SalesCreditMemoLines <IMicrosoftGraphSalesCreditMemoLine[]>]`: 
     - `[Salesperson <String>]`: 
-    - `[SellingPostalAddressCity <String>]`: 
-    - `[SellingPostalAddressCountryLetterCode <String>]`: 
-    - `[SellingPostalAddressPostalCode <String>]`: 
-    - `[SellingPostalAddressState <String>]`: 
-    - `[SellingPostalAddressStreet <String>]`: 
+    - `[SellingPostalAddress <IMicrosoftGraphPostalAddressType>]`: postalAddressType
     - `[Status <String>]`: 
     - `[TotalAmountExcludingTax <Decimal?>]`: 
     - `[TotalAmountIncludingTax <Decimal?>]`: 
     - `[TotalTaxAmount <Decimal?>]`: 
   - `[SalesInvoiceLines <IMicrosoftGraphSalesInvoiceLine[]>]`: 
     - `[Id <String>]`: Read-only.
-    - `[AccountBlocked <Boolean?>]`: 
-    - `[AccountCategory <String>]`: 
-    - `[AccountDisplayName <String>]`: 
+    - `[Account <IMicrosoftGraphAccount>]`: account
     - `[AccountId <String>]`: 
-    - `[AccountId1 <String>]`: Read-only.
-    - `[AccountLastModifiedDateTime <DateTime?>]`: 
-    - `[AccountNumber <String>]`: 
-    - `[AccountSubCategory <String>]`: 
     - `[AmountExcludingTax <Decimal?>]`: 
     - `[AmountIncludingTax <Decimal?>]`: 
-    - `[Code <String>]`: 
     - `[Description <String>]`: 
     - `[DiscountAmount <Decimal?>]`: 
     - `[DiscountAppliedBeforeTax <Boolean?>]`: 
     - `[DiscountPercent <Decimal?>]`: 
     - `[DocumentId <String>]`: 
     - `[InvoiceDiscountAllocation <Decimal?>]`: 
-    - `[ItemBaseUnitOfMeasureId <String>]`: 
-    - `[ItemBlocked <Boolean?>]`: 
-    - `[ItemCategoryCode <String>]`: 
-    - `[ItemCategoryDisplayName <String>]`: 
-    - `[ItemCategoryId <String>]`: 
-    - `[ItemCategoryLastModifiedDateTime <DateTime?>]`: 
-    - `[ItemDisplayName <String>]`: 
-    - `[ItemGtin <String>]`: 
+    - `[Item <IMicrosoftGraphItem>]`: item
     - `[ItemId <String>]`: 
-    - `[ItemId1 <String>]`: Read-only.
-    - `[ItemInventory <Decimal?>]`: 
-    - `[ItemLastModifiedDateTime <DateTime?>]`: 
-    - `[ItemNumber <String>]`: 
-    - `[ItemPicture <IMicrosoftGraphPicture[]>]`: 
-    - `[ItemPriceIncludesTax <Boolean?>]`: 
-    - `[ItemTaxGroupCode <String>]`: 
-    - `[ItemTaxGroupId <String>]`: 
-    - `[ItemType <String>]`: 
-    - `[ItemUnitCost <Decimal?>]`: 
-    - `[ItemUnitPrice <Decimal?>]`: 
     - `[LineType <String>]`: 
-    - `[MicrosoftGraphEntityId <String>]`: Read-only.
     - `[NetAmount <Decimal?>]`: 
     - `[NetAmountIncludingTax <Decimal?>]`: 
     - `[NetTaxAmount <Decimal?>]`: 
@@ -1663,19 +1182,10 @@ COMPANIES <IMicrosoftGraphCompany[]>: .
     - `[BillToCustomerId <String>]`: 
     - `[BillToCustomerNumber <String>]`: 
     - `[BillToName <String>]`: 
-    - `[BillingPostalAddressCity <String>]`: 
-    - `[BillingPostalAddressCountryLetterCode <String>]`: 
-    - `[BillingPostalAddressPostalCode <String>]`: 
-    - `[BillingPostalAddressState <String>]`: 
-    - `[BillingPostalAddressStreet <String>]`: 
-    - `[Code <String>]`: 
-    - `[CurrencyAmountDecimalPlaces <String>]`: 
-    - `[CurrencyAmountRoundingPrecision <Decimal?>]`: 
+    - `[BillingPostalAddress <IMicrosoftGraphPostalAddressType>]`: postalAddressType
+    - `[Currency <IMicrosoftGraphCurrency>]`: currency
     - `[CurrencyCode <String>]`: 
-    - `[CurrencyDisplayName <String>]`: 
     - `[CurrencyId <String>]`: 
-    - `[CurrencyLastModifiedDateTime <DateTime?>]`: 
-    - `[CurrencySymbol <String>]`: 
     - `[Customer <IMicrosoftGraphCustomer>]`: customer
     - `[CustomerId <String>]`: 
     - `[CustomerName <String>]`: 
@@ -1688,57 +1198,31 @@ COMPANIES <IMicrosoftGraphCompany[]>: .
     - `[ExternalDocumentNumber <String>]`: 
     - `[InvoiceDate <DateTime?>]`: 
     - `[LastModifiedDateTime <DateTime?>]`: 
-    - `[MicrosoftGraphEntityId <String>]`: Read-only.
     - `[Number <String>]`: 
     - `[OrderId <String>]`: 
     - `[OrderNumber <String>]`: 
-    - `[PaymentTermCalculateDiscountOnCreditMemos <Boolean?>]`: 
-    - `[PaymentTermCode <String>]`: 
-    - `[PaymentTermDiscountDateCalculation <String>]`: 
-    - `[PaymentTermDiscountPercent <Decimal?>]`: 
-    - `[PaymentTermDisplayName <String>]`: 
-    - `[PaymentTermDueDateCalculation <String>]`: 
-    - `[PaymentTermId <String>]`: Read-only.
-    - `[PaymentTermLastModifiedDateTime <DateTime?>]`: 
+    - `[PaymentTerm <IMicrosoftGraphPaymentTerm>]`: paymentTerm
     - `[PaymentTermsId <String>]`: 
     - `[PhoneNumber <String>]`: 
     - `[PricesIncludeTax <Boolean?>]`: 
     - `[SalesInvoiceLines <IMicrosoftGraphSalesInvoiceLine[]>]`: 
     - `[Salesperson <String>]`: 
-    - `[SellingPostalAddressCity <String>]`: 
-    - `[SellingPostalAddressCountryLetterCode <String>]`: 
-    - `[SellingPostalAddressPostalCode <String>]`: 
-    - `[SellingPostalAddressState <String>]`: 
-    - `[SellingPostalAddressStreet <String>]`: 
+    - `[SellingPostalAddress <IMicrosoftGraphPostalAddressType>]`: postalAddressType
     - `[ShipToContact <String>]`: 
     - `[ShipToName <String>]`: 
-    - `[ShipmentMethodCode <String>]`: 
-    - `[ShipmentMethodDisplayName <String>]`: 
+    - `[ShipmentMethod <IMicrosoftGraphShipmentMethod>]`: shipmentMethod
     - `[ShipmentMethodId <String>]`: 
-    - `[ShipmentMethodId1 <String>]`: Read-only.
-    - `[ShipmentMethodLastModifiedDateTime <DateTime?>]`: 
-    - `[ShippingPostalAddressCity <String>]`: 
-    - `[ShippingPostalAddressCountryLetterCode <String>]`: 
-    - `[ShippingPostalAddressPostalCode <String>]`: 
-    - `[ShippingPostalAddressState <String>]`: 
-    - `[ShippingPostalAddressStreet <String>]`: 
+    - `[ShippingPostalAddress <IMicrosoftGraphPostalAddressType>]`: postalAddressType
     - `[Status <String>]`: 
     - `[TotalAmountExcludingTax <Decimal?>]`: 
     - `[TotalAmountIncludingTax <Decimal?>]`: 
     - `[TotalTaxAmount <Decimal?>]`: 
   - `[SalesOrderLines <IMicrosoftGraphSalesOrderLine[]>]`: 
     - `[Id <String>]`: Read-only.
-    - `[AccountBlocked <Boolean?>]`: 
-    - `[AccountCategory <String>]`: 
-    - `[AccountDisplayName <String>]`: 
+    - `[Account <IMicrosoftGraphAccount>]`: account
     - `[AccountId <String>]`: 
-    - `[AccountId1 <String>]`: Read-only.
-    - `[AccountLastModifiedDateTime <DateTime?>]`: 
-    - `[AccountNumber <String>]`: 
-    - `[AccountSubCategory <String>]`: 
     - `[AmountExcludingTax <Decimal?>]`: 
     - `[AmountIncludingTax <Decimal?>]`: 
-    - `[Code <String>]`: 
     - `[Description <String>]`: 
     - `[DiscountAmount <Decimal?>]`: 
     - `[DiscountAppliedBeforeTax <Boolean?>]`: 
@@ -1747,28 +1231,9 @@ COMPANIES <IMicrosoftGraphCompany[]>: .
     - `[InvoiceDiscountAllocation <Decimal?>]`: 
     - `[InvoiceQuantity <Decimal?>]`: 
     - `[InvoicedQuantity <Decimal?>]`: 
-    - `[ItemBaseUnitOfMeasureId <String>]`: 
-    - `[ItemBlocked <Boolean?>]`: 
-    - `[ItemCategoryCode <String>]`: 
-    - `[ItemCategoryDisplayName <String>]`: 
-    - `[ItemCategoryId <String>]`: 
-    - `[ItemCategoryLastModifiedDateTime <DateTime?>]`: 
-    - `[ItemDisplayName <String>]`: 
-    - `[ItemGtin <String>]`: 
+    - `[Item <IMicrosoftGraphItem>]`: item
     - `[ItemId <String>]`: 
-    - `[ItemId1 <String>]`: Read-only.
-    - `[ItemInventory <Decimal?>]`: 
-    - `[ItemLastModifiedDateTime <DateTime?>]`: 
-    - `[ItemNumber <String>]`: 
-    - `[ItemPicture <IMicrosoftGraphPicture[]>]`: 
-    - `[ItemPriceIncludesTax <Boolean?>]`: 
-    - `[ItemTaxGroupCode <String>]`: 
-    - `[ItemTaxGroupId <String>]`: 
-    - `[ItemType <String>]`: 
-    - `[ItemUnitCost <Decimal?>]`: 
-    - `[ItemUnitPrice <Decimal?>]`: 
     - `[LineType <String>]`: 
-    - `[MicrosoftGraphEntityId <String>]`: Read-only.
     - `[NetAmount <Decimal?>]`: 
     - `[NetAmountIncludingTax <Decimal?>]`: 
     - `[NetTaxAmount <Decimal?>]`: 
@@ -1787,19 +1252,10 @@ COMPANIES <IMicrosoftGraphCompany[]>: .
     - `[BillToCustomerId <String>]`: 
     - `[BillToCustomerNumber <String>]`: 
     - `[BillToName <String>]`: 
-    - `[BillingPostalAddressCity <String>]`: 
-    - `[BillingPostalAddressCountryLetterCode <String>]`: 
-    - `[BillingPostalAddressPostalCode <String>]`: 
-    - `[BillingPostalAddressState <String>]`: 
-    - `[BillingPostalAddressStreet <String>]`: 
-    - `[Code <String>]`: 
-    - `[CurrencyAmountDecimalPlaces <String>]`: 
-    - `[CurrencyAmountRoundingPrecision <Decimal?>]`: 
+    - `[BillingPostalAddress <IMicrosoftGraphPostalAddressType>]`: postalAddressType
+    - `[Currency <IMicrosoftGraphCurrency>]`: currency
     - `[CurrencyCode <String>]`: 
-    - `[CurrencyDisplayName <String>]`: 
     - `[CurrencyId <String>]`: 
-    - `[CurrencyLastModifiedDateTime <DateTime?>]`: 
-    - `[CurrencySymbol <String>]`: 
     - `[Customer <IMicrosoftGraphCustomer>]`: customer
     - `[CustomerId <String>]`: 
     - `[CustomerName <String>]`: 
@@ -1810,80 +1266,38 @@ COMPANIES <IMicrosoftGraphCompany[]>: .
     - `[ExternalDocumentNumber <String>]`: 
     - `[FullyShipped <Boolean?>]`: 
     - `[LastModifiedDateTime <DateTime?>]`: 
-    - `[MicrosoftGraphEntityId <String>]`: Read-only.
     - `[Number <String>]`: 
     - `[OrderDate <DateTime?>]`: 
     - `[PartialShipping <Boolean?>]`: 
-    - `[PaymentTermCalculateDiscountOnCreditMemos <Boolean?>]`: 
-    - `[PaymentTermCode <String>]`: 
-    - `[PaymentTermDiscountDateCalculation <String>]`: 
-    - `[PaymentTermDiscountPercent <Decimal?>]`: 
-    - `[PaymentTermDisplayName <String>]`: 
-    - `[PaymentTermDueDateCalculation <String>]`: 
-    - `[PaymentTermId <String>]`: Read-only.
-    - `[PaymentTermLastModifiedDateTime <DateTime?>]`: 
+    - `[PaymentTerm <IMicrosoftGraphPaymentTerm>]`: paymentTerm
     - `[PaymentTermsId <String>]`: 
     - `[PhoneNumber <String>]`: 
     - `[PricesIncludeTax <Boolean?>]`: 
     - `[RequestedDeliveryDate <DateTime?>]`: 
     - `[SalesOrderLines <IMicrosoftGraphSalesOrderLine[]>]`: 
     - `[Salesperson <String>]`: 
-    - `[SellingPostalAddressCity <String>]`: 
-    - `[SellingPostalAddressCountryLetterCode <String>]`: 
-    - `[SellingPostalAddressPostalCode <String>]`: 
-    - `[SellingPostalAddressState <String>]`: 
-    - `[SellingPostalAddressStreet <String>]`: 
+    - `[SellingPostalAddress <IMicrosoftGraphPostalAddressType>]`: postalAddressType
     - `[ShipToContact <String>]`: 
     - `[ShipToName <String>]`: 
-    - `[ShippingPostalAddressCity <String>]`: 
-    - `[ShippingPostalAddressCountryLetterCode <String>]`: 
-    - `[ShippingPostalAddressPostalCode <String>]`: 
-    - `[ShippingPostalAddressState <String>]`: 
-    - `[ShippingPostalAddressStreet <String>]`: 
+    - `[ShippingPostalAddress <IMicrosoftGraphPostalAddressType>]`: postalAddressType
     - `[Status <String>]`: 
     - `[TotalAmountExcludingTax <Decimal?>]`: 
     - `[TotalAmountIncludingTax <Decimal?>]`: 
     - `[TotalTaxAmount <Decimal?>]`: 
   - `[SalesQuoteLines <IMicrosoftGraphSalesQuoteLine[]>]`: 
     - `[Id <String>]`: Read-only.
-    - `[AccountBlocked <Boolean?>]`: 
-    - `[AccountCategory <String>]`: 
-    - `[AccountDisplayName <String>]`: 
+    - `[Account <IMicrosoftGraphAccount>]`: account
     - `[AccountId <String>]`: 
-    - `[AccountId1 <String>]`: Read-only.
-    - `[AccountLastModifiedDateTime <DateTime?>]`: 
-    - `[AccountNumber <String>]`: 
-    - `[AccountSubCategory <String>]`: 
     - `[AmountExcludingTax <Decimal?>]`: 
     - `[AmountIncludingTax <Decimal?>]`: 
-    - `[Code <String>]`: 
     - `[Description <String>]`: 
     - `[DiscountAmount <Decimal?>]`: 
     - `[DiscountAppliedBeforeTax <Boolean?>]`: 
     - `[DiscountPercent <Decimal?>]`: 
     - `[DocumentId <String>]`: 
-    - `[ItemBaseUnitOfMeasureId <String>]`: 
-    - `[ItemBlocked <Boolean?>]`: 
-    - `[ItemCategoryCode <String>]`: 
-    - `[ItemCategoryDisplayName <String>]`: 
-    - `[ItemCategoryId <String>]`: 
-    - `[ItemCategoryLastModifiedDateTime <DateTime?>]`: 
-    - `[ItemDisplayName <String>]`: 
-    - `[ItemGtin <String>]`: 
+    - `[Item <IMicrosoftGraphItem>]`: item
     - `[ItemId <String>]`: 
-    - `[ItemId1 <String>]`: Read-only.
-    - `[ItemInventory <Decimal?>]`: 
-    - `[ItemLastModifiedDateTime <DateTime?>]`: 
-    - `[ItemNumber <String>]`: 
-    - `[ItemPicture <IMicrosoftGraphPicture[]>]`: 
-    - `[ItemPriceIncludesTax <Boolean?>]`: 
-    - `[ItemTaxGroupCode <String>]`: 
-    - `[ItemTaxGroupId <String>]`: 
-    - `[ItemType <String>]`: 
-    - `[ItemUnitCost <Decimal?>]`: 
-    - `[ItemUnitPrice <Decimal?>]`: 
     - `[LineType <String>]`: 
-    - `[MicrosoftGraphEntityId <String>]`: Read-only.
     - `[NetAmount <Decimal?>]`: 
     - `[NetAmountIncludingTax <Decimal?>]`: 
     - `[NetTaxAmount <Decimal?>]`: 
@@ -1900,19 +1314,10 @@ COMPANIES <IMicrosoftGraphCompany[]>: .
     - `[BillToCustomerId <String>]`: 
     - `[BillToCustomerNumber <String>]`: 
     - `[BillToName <String>]`: 
-    - `[BillingPostalAddressCity <String>]`: 
-    - `[BillingPostalAddressCountryLetterCode <String>]`: 
-    - `[BillingPostalAddressPostalCode <String>]`: 
-    - `[BillingPostalAddressState <String>]`: 
-    - `[BillingPostalAddressStreet <String>]`: 
-    - `[Code <String>]`: 
-    - `[CurrencyAmountDecimalPlaces <String>]`: 
-    - `[CurrencyAmountRoundingPrecision <Decimal?>]`: 
+    - `[BillingPostalAddress <IMicrosoftGraphPostalAddressType>]`: postalAddressType
+    - `[Currency <IMicrosoftGraphCurrency>]`: currency
     - `[CurrencyCode <String>]`: 
-    - `[CurrencyDisplayName <String>]`: 
     - `[CurrencyId <String>]`: 
-    - `[CurrencyLastModifiedDateTime <DateTime?>]`: 
-    - `[CurrencySymbol <String>]`: 
     - `[Customer <IMicrosoftGraphCustomer>]`: customer
     - `[CustomerId <String>]`: 
     - `[CustomerName <String>]`: 
@@ -1923,48 +1328,25 @@ COMPANIES <IMicrosoftGraphCompany[]>: .
     - `[Email <String>]`: 
     - `[ExternalDocumentNumber <String>]`: 
     - `[LastModifiedDateTime <DateTime?>]`: 
-    - `[MicrosoftGraphEntityId <String>]`: Read-only.
     - `[Number <String>]`: 
-    - `[PaymentTermCalculateDiscountOnCreditMemos <Boolean?>]`: 
-    - `[PaymentTermCode <String>]`: 
-    - `[PaymentTermDiscountDateCalculation <String>]`: 
-    - `[PaymentTermDiscountPercent <Decimal?>]`: 
-    - `[PaymentTermDisplayName <String>]`: 
-    - `[PaymentTermDueDateCalculation <String>]`: 
-    - `[PaymentTermId <String>]`: Read-only.
-    - `[PaymentTermLastModifiedDateTime <DateTime?>]`: 
+    - `[PaymentTerm <IMicrosoftGraphPaymentTerm>]`: paymentTerm
     - `[PaymentTermsId <String>]`: 
     - `[PhoneNumber <String>]`: 
     - `[SalesQuoteLines <IMicrosoftGraphSalesQuoteLine[]>]`: 
     - `[Salesperson <String>]`: 
-    - `[SellingPostalAddressCity <String>]`: 
-    - `[SellingPostalAddressCountryLetterCode <String>]`: 
-    - `[SellingPostalAddressPostalCode <String>]`: 
-    - `[SellingPostalAddressState <String>]`: 
-    - `[SellingPostalAddressStreet <String>]`: 
+    - `[SellingPostalAddress <IMicrosoftGraphPostalAddressType>]`: postalAddressType
     - `[SentDate <DateTime?>]`: 
     - `[ShipToContact <String>]`: 
     - `[ShipToName <String>]`: 
-    - `[ShipmentMethodCode <String>]`: 
-    - `[ShipmentMethodDisplayName <String>]`: 
+    - `[ShipmentMethod <IMicrosoftGraphShipmentMethod>]`: shipmentMethod
     - `[ShipmentMethodId <String>]`: 
-    - `[ShipmentMethodId1 <String>]`: Read-only.
-    - `[ShipmentMethodLastModifiedDateTime <DateTime?>]`: 
-    - `[ShippingPostalAddressCity <String>]`: 
-    - `[ShippingPostalAddressCountryLetterCode <String>]`: 
-    - `[ShippingPostalAddressPostalCode <String>]`: 
-    - `[ShippingPostalAddressState <String>]`: 
-    - `[ShippingPostalAddressStreet <String>]`: 
+    - `[ShippingPostalAddress <IMicrosoftGraphPostalAddressType>]`: postalAddressType
     - `[Status <String>]`: 
     - `[TotalAmountExcludingTax <Decimal?>]`: 
     - `[TotalAmountIncludingTax <Decimal?>]`: 
     - `[TotalTaxAmount <Decimal?>]`: 
     - `[ValidUntilDate <DateTime?>]`: 
   - `[ShipmentMethods <IMicrosoftGraphShipmentMethod[]>]`: 
-    - `[Id <String>]`: Read-only.
-    - `[Code <String>]`: 
-    - `[DisplayName <String>]`: 
-    - `[LastModifiedDateTime <DateTime?>]`: 
   - `[SystemVersion <String>]`: 
   - `[TaxAreas <IMicrosoftGraphTaxArea[]>]`: 
     - `[Id <String>]`: Read-only.

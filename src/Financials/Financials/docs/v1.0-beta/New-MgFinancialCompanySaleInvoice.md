@@ -14,31 +14,20 @@ Create new navigation property to salesInvoices for financials
 
 ### CreateExpanded (Default)
 ```
-New-MgFinancialCompanySaleInvoice -CompanyId <String> [-BillingPostalAddressCity <String>]
- [-BillingPostalAddressCountryLetterCode <String>] [-BillingPostalAddressPostalCode <String>]
- [-BillingPostalAddressState <String>] [-BillingPostalAddressStreet <String>] [-BillToCustomerId <String>]
- [-BillToCustomerNumber <String>] [-BillToName <String>] [-Code <String>]
- [-CurrencyAmountDecimalPlaces <String>] [-CurrencyAmountRoundingPrecision <Decimal>] [-CurrencyCode <String>]
- [-CurrencyDisplayName <String>] [-CurrencyId <String>] [-CurrencyLastModifiedDateTime <DateTime>]
- [-CurrencySymbol <String>] [-Customer <IMicrosoftGraphCustomer>] [-CustomerId <String>]
+New-MgFinancialCompanySaleInvoice -CompanyId <String> [-AdditionalProperties <Hashtable>]
+ [-BillingPostalAddress <IMicrosoftGraphPostalAddressType>] [-BillToCustomerId <String>]
+ [-BillToCustomerNumber <String>] [-BillToName <String>] [-Currency <IMicrosoftGraphCurrency>]
+ [-CurrencyCode <String>] [-CurrencyId <String>] [-Customer <IMicrosoftGraphCustomer>] [-CustomerId <String>]
  [-CustomerName <String>] [-CustomerNumber <String>] [-CustomerPurchaseOrderReference <String>]
  [-DiscountAmount <Decimal>] [-DiscountAppliedBeforeTax] [-DueDate <DateTime>] [-Email <String>]
  [-ExternalDocumentNumber <String>] [-Id <String>] [-InvoiceDate <DateTime>]
- [-LastModifiedDateTime <DateTime>] [-MicrosoftGraphEntityId <String>] [-Number <String>] [-OrderId <String>]
- [-OrderNumber <String>] [-PaymentTermCalculateDiscountOnCreditMemos] [-PaymentTermCode <String>]
- [-PaymentTermDiscountDateCalculation <String>] [-PaymentTermDiscountPercent <Decimal>]
- [-PaymentTermDisplayName <String>] [-PaymentTermDueDateCalculation <String>] [-PaymentTermId <String>]
- [-PaymentTermLastModifiedDateTime <DateTime>] [-PaymentTermsId <String>] [-PhoneNumber <String>]
+ [-LastModifiedDateTime <DateTime>] [-Number <String>] [-OrderId <String>] [-OrderNumber <String>]
+ [-PaymentTerm <IMicrosoftGraphPaymentTerm>] [-PaymentTermsId <String>] [-PhoneNumber <String>]
  [-PricesIncludeTax] [-SalesInvoiceLines <IMicrosoftGraphSalesInvoiceLine[]>] [-Salesperson <String>]
- [-SellingPostalAddressCity <String>] [-SellingPostalAddressCountryLetterCode <String>]
- [-SellingPostalAddressPostalCode <String>] [-SellingPostalAddressState <String>]
- [-SellingPostalAddressStreet <String>] [-ShipmentMethodCode <String>] [-ShipmentMethodDisplayName <String>]
- [-ShipmentMethodId <String>] [-ShipmentMethodId1 <String>] [-ShipmentMethodLastModifiedDateTime <DateTime>]
- [-ShippingPostalAddressCity <String>] [-ShippingPostalAddressCountryLetterCode <String>]
- [-ShippingPostalAddressPostalCode <String>] [-ShippingPostalAddressState <String>]
- [-ShippingPostalAddressStreet <String>] [-ShipToContact <String>] [-ShipToName <String>] [-Status <String>]
- [-TotalAmountExcludingTax <Decimal>] [-TotalAmountIncludingTax <Decimal>] [-TotalTaxAmount <Decimal>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-SellingPostalAddress <IMicrosoftGraphPostalAddressType>] [-ShipmentMethod <IMicrosoftGraphShipmentMethod>]
+ [-ShipmentMethodId <String>] [-ShippingPostalAddress <IMicrosoftGraphPostalAddressType>]
+ [-ShipToContact <String>] [-ShipToName <String>] [-Status <String>] [-TotalAmountExcludingTax <Decimal>]
+ [-TotalAmountIncludingTax <Decimal>] [-TotalTaxAmount <Decimal>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
@@ -55,31 +44,20 @@ New-MgFinancialCompanySaleInvoice -InputObject <IFinancialsIdentity>
 
 ### CreateViaIdentityExpanded
 ```
-New-MgFinancialCompanySaleInvoice -InputObject <IFinancialsIdentity> [-BillingPostalAddressCity <String>]
- [-BillingPostalAddressCountryLetterCode <String>] [-BillingPostalAddressPostalCode <String>]
- [-BillingPostalAddressState <String>] [-BillingPostalAddressStreet <String>] [-BillToCustomerId <String>]
- [-BillToCustomerNumber <String>] [-BillToName <String>] [-Code <String>]
- [-CurrencyAmountDecimalPlaces <String>] [-CurrencyAmountRoundingPrecision <Decimal>] [-CurrencyCode <String>]
- [-CurrencyDisplayName <String>] [-CurrencyId <String>] [-CurrencyLastModifiedDateTime <DateTime>]
- [-CurrencySymbol <String>] [-Customer <IMicrosoftGraphCustomer>] [-CustomerId <String>]
+New-MgFinancialCompanySaleInvoice -InputObject <IFinancialsIdentity> [-AdditionalProperties <Hashtable>]
+ [-BillingPostalAddress <IMicrosoftGraphPostalAddressType>] [-BillToCustomerId <String>]
+ [-BillToCustomerNumber <String>] [-BillToName <String>] [-Currency <IMicrosoftGraphCurrency>]
+ [-CurrencyCode <String>] [-CurrencyId <String>] [-Customer <IMicrosoftGraphCustomer>] [-CustomerId <String>]
  [-CustomerName <String>] [-CustomerNumber <String>] [-CustomerPurchaseOrderReference <String>]
  [-DiscountAmount <Decimal>] [-DiscountAppliedBeforeTax] [-DueDate <DateTime>] [-Email <String>]
  [-ExternalDocumentNumber <String>] [-Id <String>] [-InvoiceDate <DateTime>]
- [-LastModifiedDateTime <DateTime>] [-MicrosoftGraphEntityId <String>] [-Number <String>] [-OrderId <String>]
- [-OrderNumber <String>] [-PaymentTermCalculateDiscountOnCreditMemos] [-PaymentTermCode <String>]
- [-PaymentTermDiscountDateCalculation <String>] [-PaymentTermDiscountPercent <Decimal>]
- [-PaymentTermDisplayName <String>] [-PaymentTermDueDateCalculation <String>] [-PaymentTermId <String>]
- [-PaymentTermLastModifiedDateTime <DateTime>] [-PaymentTermsId <String>] [-PhoneNumber <String>]
+ [-LastModifiedDateTime <DateTime>] [-Number <String>] [-OrderId <String>] [-OrderNumber <String>]
+ [-PaymentTerm <IMicrosoftGraphPaymentTerm>] [-PaymentTermsId <String>] [-PhoneNumber <String>]
  [-PricesIncludeTax] [-SalesInvoiceLines <IMicrosoftGraphSalesInvoiceLine[]>] [-Salesperson <String>]
- [-SellingPostalAddressCity <String>] [-SellingPostalAddressCountryLetterCode <String>]
- [-SellingPostalAddressPostalCode <String>] [-SellingPostalAddressState <String>]
- [-SellingPostalAddressStreet <String>] [-ShipmentMethodCode <String>] [-ShipmentMethodDisplayName <String>]
- [-ShipmentMethodId <String>] [-ShipmentMethodId1 <String>] [-ShipmentMethodLastModifiedDateTime <DateTime>]
- [-ShippingPostalAddressCity <String>] [-ShippingPostalAddressCountryLetterCode <String>]
- [-ShippingPostalAddressPostalCode <String>] [-ShippingPostalAddressState <String>]
- [-ShippingPostalAddressStreet <String>] [-ShipToContact <String>] [-ShipToName <String>] [-Status <String>]
- [-TotalAmountExcludingTax <Decimal>] [-TotalAmountIncludingTax <Decimal>] [-TotalTaxAmount <Decimal>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-SellingPostalAddress <IMicrosoftGraphPostalAddressType>] [-ShipmentMethod <IMicrosoftGraphShipmentMethod>]
+ [-ShipmentMethodId <String>] [-ShippingPostalAddress <IMicrosoftGraphPostalAddressType>]
+ [-ShipToContact <String>] [-ShipToName <String>] [-Status <String>] [-TotalAmountExcludingTax <Decimal>]
+ [-TotalAmountIncludingTax <Decimal>] [-TotalTaxAmount <Decimal>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -107,11 +85,11 @@ PS C:\> {{ Add code here }}
 
 ## PARAMETERS
 
-### -BillingPostalAddressCity
-.
+### -AdditionalProperties
+Additional Parameters
 
 ```yaml
-Type: System.String
+Type: System.Collections.Hashtable
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -122,56 +100,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -BillingPostalAddressCountryLetterCode
-.
+### -BillingPostalAddress
+postalAddressType
+To construct, see NOTES section for BILLINGPOSTALADDRESS properties and create a hash table.
 
 ```yaml
-Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -BillingPostalAddressPostalCode
-.
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -BillingPostalAddressState
-.
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -BillingPostalAddressStreet
-.
-
-```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPostalAddressType
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -243,23 +177,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Code
-.
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -CompanyId
-key: company-id of company
+key: id of company
 
 ```yaml
 Type: System.String
@@ -273,26 +192,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -CurrencyAmountDecimalPlaces
-.
+### -Currency
+currency
+To construct, see NOTES section for CURRENCY properties and create a hash table.
 
 ```yaml
-Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -CurrencyAmountRoundingPrecision
-.
-
-```yaml
-Type: System.Decimal
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCurrency
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -318,52 +223,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -CurrencyDisplayName
-.
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -CurrencyId
-.
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -CurrencyLastModifiedDateTime
-.
-
-```yaml
-Type: System.DateTime
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -CurrencySymbol
 .
 
 ```yaml
@@ -590,21 +450,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -MicrosoftGraphEntityId
-Read-only.
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Number
 .
 
@@ -650,116 +495,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -PaymentTermCalculateDiscountOnCreditMemos
-.
+### -PaymentTerm
+paymentTerm
+To construct, see NOTES section for PAYMENTTERM properties and create a hash table.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -PaymentTermCode
-.
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -PaymentTermDiscountDateCalculation
-.
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -PaymentTermDiscountPercent
-.
-
-```yaml
-Type: System.Decimal
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -PaymentTermDisplayName
-.
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -PaymentTermDueDateCalculation
-.
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -PaymentTermId
-Read-only.
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -PaymentTermLastModifiedDateTime
-.
-
-```yaml
-Type: System.DateTime
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPaymentTerm
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -846,11 +587,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -SellingPostalAddressCity
-.
+### -SellingPostalAddress
+postalAddressType
+To construct, see NOTES section for SELLINGPOSTALADDRESS properties and create a hash table.
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPostalAddressType
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -861,86 +603,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -SellingPostalAddressCountryLetterCode
-.
+### -ShipmentMethod
+shipmentMethod
+To construct, see NOTES section for SHIPMENTMETHOD properties and create a hash table.
 
 ```yaml
-Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SellingPostalAddressPostalCode
-.
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SellingPostalAddressState
-.
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SellingPostalAddressStreet
-.
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ShipmentMethodCode
-.
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ShipmentMethodDisplayName
-.
-
-```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphShipmentMethod
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -966,101 +634,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ShipmentMethodId1
-Read-only.
+### -ShippingPostalAddress
+postalAddressType
+To construct, see NOTES section for SHIPPINGPOSTALADDRESS properties and create a hash table.
 
 ```yaml
-Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ShipmentMethodLastModifiedDateTime
-.
-
-```yaml
-Type: System.DateTime
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ShippingPostalAddressCity
-.
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ShippingPostalAddressCountryLetterCode
-.
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ShippingPostalAddressPostalCode
-.
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ShippingPostalAddressState
-.
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ShippingPostalAddressStreet
-.
-
-```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPostalAddressType
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -1214,58 +793,67 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
+BILLINGPOSTALADDRESS <IMicrosoftGraphPostalAddressType>: postalAddressType
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[City <String>]`: 
+  - `[CountryLetterCode <String>]`: 
+  - `[PostalCode <String>]`: 
+  - `[State <String>]`: 
+  - `[Street <String>]`: 
+
 BODYPARAMETER <IMicrosoftGraphSalesInvoice>: salesInvoice
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
   - `[BillToCustomerId <String>]`: 
   - `[BillToCustomerNumber <String>]`: 
   - `[BillToName <String>]`: 
-  - `[BillingPostalAddressCity <String>]`: 
-  - `[BillingPostalAddressCountryLetterCode <String>]`: 
-  - `[BillingPostalAddressPostalCode <String>]`: 
-  - `[BillingPostalAddressState <String>]`: 
-  - `[BillingPostalAddressStreet <String>]`: 
-  - `[Code <String>]`: 
-  - `[CurrencyAmountDecimalPlaces <String>]`: 
-  - `[CurrencyAmountRoundingPrecision <Decimal?>]`: 
-  - `[CurrencyCode <String>]`: 
-  - `[CurrencyDisplayName <String>]`: 
-  - `[CurrencyId <String>]`: 
-  - `[CurrencyLastModifiedDateTime <DateTime?>]`: 
-  - `[CurrencySymbol <String>]`: 
-  - `[Customer <IMicrosoftGraphCustomer>]`: customer
+  - `[BillingPostalAddress <IMicrosoftGraphPostalAddressType>]`: postalAddressType
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[City <String>]`: 
+    - `[CountryLetterCode <String>]`: 
+    - `[PostalCode <String>]`: 
+    - `[State <String>]`: 
+    - `[Street <String>]`: 
+  - `[Currency <IMicrosoftGraphCurrency>]`: currency
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: Read-only.
-    - `[AddressCity <String>]`: 
-    - `[AddressCountryLetterCode <String>]`: 
-    - `[AddressPostalCode <String>]`: 
-    - `[AddressState <String>]`: 
-    - `[AddressStreet <String>]`: 
-    - `[Blocked <String>]`: 
+    - `[AmountDecimalPlaces <String>]`: 
+    - `[AmountRoundingPrecision <Decimal?>]`: 
     - `[Code <String>]`: 
-    - `[CurrencyAmountDecimalPlaces <String>]`: 
-    - `[CurrencyAmountRoundingPrecision <Decimal?>]`: 
+    - `[DisplayName <String>]`: 
+    - `[LastModifiedDateTime <DateTime?>]`: 
+    - `[Symbol <String>]`: 
+  - `[CurrencyCode <String>]`: 
+  - `[CurrencyId <String>]`: 
+  - `[Customer <IMicrosoftGraphCustomer>]`: customer
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Id <String>]`: Read-only.
+    - `[Address <IMicrosoftGraphPostalAddressType>]`: postalAddressType
+    - `[Blocked <String>]`: 
+    - `[Currency <IMicrosoftGraphCurrency>]`: currency
     - `[CurrencyCode <String>]`: 
-    - `[CurrencyDisplayName <String>]`: 
     - `[CurrencyId <String>]`: 
-    - `[CurrencyLastModifiedDateTime <DateTime?>]`: 
-    - `[CurrencySymbol <String>]`: 
     - `[DisplayName <String>]`: 
     - `[Email <String>]`: 
     - `[LastModifiedDateTime <DateTime?>]`: 
-    - `[MicrosoftGraphEntityId <String>]`: Read-only.
     - `[Number <String>]`: 
-    - `[PaymentMethodCode <String>]`: 
-    - `[PaymentMethodDisplayName <String>]`: 
+    - `[PaymentMethod <IMicrosoftGraphPaymentMethod>]`: paymentMethod
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[Id <String>]`: Read-only.
+      - `[Code <String>]`: 
+      - `[DisplayName <String>]`: 
+      - `[LastModifiedDateTime <DateTime?>]`: 
     - `[PaymentMethodId <String>]`: 
-    - `[PaymentMethodId1 <String>]`: Read-only.
-    - `[PaymentMethodLastModifiedDateTime <DateTime?>]`: 
-    - `[PaymentTermCalculateDiscountOnCreditMemos <Boolean?>]`: 
-    - `[PaymentTermCode <String>]`: 
-    - `[PaymentTermDiscountDateCalculation <String>]`: 
-    - `[PaymentTermDiscountPercent <Decimal?>]`: 
-    - `[PaymentTermDisplayName <String>]`: 
-    - `[PaymentTermDueDateCalculation <String>]`: 
-    - `[PaymentTermId <String>]`: Read-only.
-    - `[PaymentTermLastModifiedDateTime <DateTime?>]`: 
+    - `[PaymentTerm <IMicrosoftGraphPaymentTerm>]`: paymentTerm
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[Id <String>]`: Read-only.
+      - `[CalculateDiscountOnCreditMemos <Boolean?>]`: 
+      - `[Code <String>]`: 
+      - `[DiscountDateCalculation <String>]`: 
+      - `[DiscountPercent <Decimal?>]`: 
+      - `[DisplayName <String>]`: 
+      - `[DueDateCalculation <String>]`: 
+      - `[LastModifiedDateTime <DateTime?>]`: 
     - `[PaymentTermsId <String>]`: 
     - `[PhoneNumber <String>]`: 
     - `[Picture <IMicrosoftGraphPicture[]>]`: 
@@ -1274,11 +862,13 @@ BODYPARAMETER <IMicrosoftGraphSalesInvoice>: salesInvoice
       - `[ContentType <String>]`: 
       - `[Height <Int32?>]`: 
       - `[Width <Int32?>]`: 
-    - `[ShipmentMethodCode <String>]`: 
-    - `[ShipmentMethodDisplayName <String>]`: 
+    - `[ShipmentMethod <IMicrosoftGraphShipmentMethod>]`: shipmentMethod
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[Id <String>]`: Read-only.
+      - `[Code <String>]`: 
+      - `[DisplayName <String>]`: 
+      - `[LastModifiedDateTime <DateTime?>]`: 
     - `[ShipmentMethodId <String>]`: 
-    - `[ShipmentMethodId1 <String>]`: Read-only.
-    - `[ShipmentMethodLastModifiedDateTime <DateTime?>]`: 
     - `[TaxAreaDisplayName <String>]`: 
     - `[TaxAreaId <String>]`: 
     - `[TaxLiable <Boolean?>]`: 
@@ -1296,62 +886,60 @@ BODYPARAMETER <IMicrosoftGraphSalesInvoice>: salesInvoice
   - `[ExternalDocumentNumber <String>]`: 
   - `[InvoiceDate <DateTime?>]`: 
   - `[LastModifiedDateTime <DateTime?>]`: 
-  - `[MicrosoftGraphEntityId <String>]`: Read-only.
   - `[Number <String>]`: 
   - `[OrderId <String>]`: 
   - `[OrderNumber <String>]`: 
-  - `[PaymentTermCalculateDiscountOnCreditMemos <Boolean?>]`: 
-  - `[PaymentTermCode <String>]`: 
-  - `[PaymentTermDiscountDateCalculation <String>]`: 
-  - `[PaymentTermDiscountPercent <Decimal?>]`: 
-  - `[PaymentTermDisplayName <String>]`: 
-  - `[PaymentTermDueDateCalculation <String>]`: 
-  - `[PaymentTermId <String>]`: Read-only.
-  - `[PaymentTermLastModifiedDateTime <DateTime?>]`: 
+  - `[PaymentTerm <IMicrosoftGraphPaymentTerm>]`: paymentTerm
   - `[PaymentTermsId <String>]`: 
   - `[PhoneNumber <String>]`: 
   - `[PricesIncludeTax <Boolean?>]`: 
   - `[SalesInvoiceLines <IMicrosoftGraphSalesInvoiceLine[]>]`: 
     - `[Id <String>]`: Read-only.
-    - `[AccountBlocked <Boolean?>]`: 
-    - `[AccountCategory <String>]`: 
-    - `[AccountDisplayName <String>]`: 
+    - `[Account <IMicrosoftGraphAccount>]`: account
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[Id <String>]`: Read-only.
+      - `[Blocked <Boolean?>]`: 
+      - `[Category <String>]`: 
+      - `[DisplayName <String>]`: 
+      - `[LastModifiedDateTime <DateTime?>]`: 
+      - `[Number <String>]`: 
+      - `[SubCategory <String>]`: 
     - `[AccountId <String>]`: 
-    - `[AccountId1 <String>]`: Read-only.
-    - `[AccountLastModifiedDateTime <DateTime?>]`: 
-    - `[AccountNumber <String>]`: 
-    - `[AccountSubCategory <String>]`: 
     - `[AmountExcludingTax <Decimal?>]`: 
     - `[AmountIncludingTax <Decimal?>]`: 
-    - `[Code <String>]`: 
     - `[Description <String>]`: 
     - `[DiscountAmount <Decimal?>]`: 
     - `[DiscountAppliedBeforeTax <Boolean?>]`: 
     - `[DiscountPercent <Decimal?>]`: 
     - `[DocumentId <String>]`: 
     - `[InvoiceDiscountAllocation <Decimal?>]`: 
-    - `[ItemBaseUnitOfMeasureId <String>]`: 
-    - `[ItemBlocked <Boolean?>]`: 
-    - `[ItemCategoryCode <String>]`: 
-    - `[ItemCategoryDisplayName <String>]`: 
-    - `[ItemCategoryId <String>]`: 
-    - `[ItemCategoryLastModifiedDateTime <DateTime?>]`: 
-    - `[ItemDisplayName <String>]`: 
-    - `[ItemGtin <String>]`: 
+    - `[Item <IMicrosoftGraphItem>]`: item
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[Id <String>]`: Read-only.
+      - `[BaseUnitOfMeasureId <String>]`: 
+      - `[Blocked <Boolean?>]`: 
+      - `[DisplayName <String>]`: 
+      - `[Gtin <String>]`: 
+      - `[Inventory <Decimal?>]`: 
+      - `[ItemCategory <IMicrosoftGraphItemCategory>]`: itemCategory
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[Id <String>]`: Read-only.
+        - `[Code <String>]`: 
+        - `[DisplayName <String>]`: 
+        - `[LastModifiedDateTime <DateTime?>]`: 
+      - `[ItemCategoryCode <String>]`: 
+      - `[ItemCategoryId <String>]`: 
+      - `[LastModifiedDateTime <DateTime?>]`: 
+      - `[Number <String>]`: 
+      - `[Picture <IMicrosoftGraphPicture[]>]`: 
+      - `[PriceIncludesTax <Boolean?>]`: 
+      - `[TaxGroupCode <String>]`: 
+      - `[TaxGroupId <String>]`: 
+      - `[Type <String>]`: 
+      - `[UnitCost <Decimal?>]`: 
+      - `[UnitPrice <Decimal?>]`: 
     - `[ItemId <String>]`: 
-    - `[ItemId1 <String>]`: Read-only.
-    - `[ItemInventory <Decimal?>]`: 
-    - `[ItemLastModifiedDateTime <DateTime?>]`: 
-    - `[ItemNumber <String>]`: 
-    - `[ItemPicture <IMicrosoftGraphPicture[]>]`: 
-    - `[ItemPriceIncludesTax <Boolean?>]`: 
-    - `[ItemTaxGroupCode <String>]`: 
-    - `[ItemTaxGroupId <String>]`: 
-    - `[ItemType <String>]`: 
-    - `[ItemUnitCost <Decimal?>]`: 
-    - `[ItemUnitPrice <Decimal?>]`: 
     - `[LineType <String>]`: 
-    - `[MicrosoftGraphEntityId <String>]`: Read-only.
     - `[NetAmount <Decimal?>]`: 
     - `[NetAmountIncludingTax <Decimal?>]`: 
     - `[NetTaxAmount <Decimal?>]`: 
@@ -1364,62 +952,70 @@ BODYPARAMETER <IMicrosoftGraphSalesInvoice>: salesInvoice
     - `[UnitOfMeasureId <String>]`: 
     - `[UnitPrice <Decimal?>]`: 
   - `[Salesperson <String>]`: 
-  - `[SellingPostalAddressCity <String>]`: 
-  - `[SellingPostalAddressCountryLetterCode <String>]`: 
-  - `[SellingPostalAddressPostalCode <String>]`: 
-  - `[SellingPostalAddressState <String>]`: 
-  - `[SellingPostalAddressStreet <String>]`: 
+  - `[SellingPostalAddress <IMicrosoftGraphPostalAddressType>]`: postalAddressType
   - `[ShipToContact <String>]`: 
   - `[ShipToName <String>]`: 
-  - `[ShipmentMethodCode <String>]`: 
-  - `[ShipmentMethodDisplayName <String>]`: 
+  - `[ShipmentMethod <IMicrosoftGraphShipmentMethod>]`: shipmentMethod
   - `[ShipmentMethodId <String>]`: 
-  - `[ShipmentMethodId1 <String>]`: Read-only.
-  - `[ShipmentMethodLastModifiedDateTime <DateTime?>]`: 
-  - `[ShippingPostalAddressCity <String>]`: 
-  - `[ShippingPostalAddressCountryLetterCode <String>]`: 
-  - `[ShippingPostalAddressPostalCode <String>]`: 
-  - `[ShippingPostalAddressState <String>]`: 
-  - `[ShippingPostalAddressStreet <String>]`: 
+  - `[ShippingPostalAddress <IMicrosoftGraphPostalAddressType>]`: postalAddressType
   - `[Status <String>]`: 
   - `[TotalAmountExcludingTax <Decimal?>]`: 
   - `[TotalAmountIncludingTax <Decimal?>]`: 
   - `[TotalTaxAmount <Decimal?>]`: 
 
-CUSTOMER <IMicrosoftGraphCustomer>: customer
+CURRENCY <IMicrosoftGraphCurrency>: currency
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
-  - `[AddressCity <String>]`: 
-  - `[AddressCountryLetterCode <String>]`: 
-  - `[AddressPostalCode <String>]`: 
-  - `[AddressState <String>]`: 
-  - `[AddressStreet <String>]`: 
-  - `[Blocked <String>]`: 
+  - `[AmountDecimalPlaces <String>]`: 
+  - `[AmountRoundingPrecision <Decimal?>]`: 
   - `[Code <String>]`: 
-  - `[CurrencyAmountDecimalPlaces <String>]`: 
-  - `[CurrencyAmountRoundingPrecision <Decimal?>]`: 
+  - `[DisplayName <String>]`: 
+  - `[LastModifiedDateTime <DateTime?>]`: 
+  - `[Symbol <String>]`: 
+
+CUSTOMER <IMicrosoftGraphCustomer>: customer
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[Id <String>]`: Read-only.
+  - `[Address <IMicrosoftGraphPostalAddressType>]`: postalAddressType
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[City <String>]`: 
+    - `[CountryLetterCode <String>]`: 
+    - `[PostalCode <String>]`: 
+    - `[State <String>]`: 
+    - `[Street <String>]`: 
+  - `[Blocked <String>]`: 
+  - `[Currency <IMicrosoftGraphCurrency>]`: currency
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Id <String>]`: Read-only.
+    - `[AmountDecimalPlaces <String>]`: 
+    - `[AmountRoundingPrecision <Decimal?>]`: 
+    - `[Code <String>]`: 
+    - `[DisplayName <String>]`: 
+    - `[LastModifiedDateTime <DateTime?>]`: 
+    - `[Symbol <String>]`: 
   - `[CurrencyCode <String>]`: 
-  - `[CurrencyDisplayName <String>]`: 
   - `[CurrencyId <String>]`: 
-  - `[CurrencyLastModifiedDateTime <DateTime?>]`: 
-  - `[CurrencySymbol <String>]`: 
   - `[DisplayName <String>]`: 
   - `[Email <String>]`: 
   - `[LastModifiedDateTime <DateTime?>]`: 
-  - `[MicrosoftGraphEntityId <String>]`: Read-only.
   - `[Number <String>]`: 
-  - `[PaymentMethodCode <String>]`: 
-  - `[PaymentMethodDisplayName <String>]`: 
+  - `[PaymentMethod <IMicrosoftGraphPaymentMethod>]`: paymentMethod
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Id <String>]`: Read-only.
+    - `[Code <String>]`: 
+    - `[DisplayName <String>]`: 
+    - `[LastModifiedDateTime <DateTime?>]`: 
   - `[PaymentMethodId <String>]`: 
-  - `[PaymentMethodId1 <String>]`: Read-only.
-  - `[PaymentMethodLastModifiedDateTime <DateTime?>]`: 
-  - `[PaymentTermCalculateDiscountOnCreditMemos <Boolean?>]`: 
-  - `[PaymentTermCode <String>]`: 
-  - `[PaymentTermDiscountDateCalculation <String>]`: 
-  - `[PaymentTermDiscountPercent <Decimal?>]`: 
-  - `[PaymentTermDisplayName <String>]`: 
-  - `[PaymentTermDueDateCalculation <String>]`: 
-  - `[PaymentTermId <String>]`: Read-only.
-  - `[PaymentTermLastModifiedDateTime <DateTime?>]`: 
+  - `[PaymentTerm <IMicrosoftGraphPaymentTerm>]`: paymentTerm
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Id <String>]`: Read-only.
+    - `[CalculateDiscountOnCreditMemos <Boolean?>]`: 
+    - `[Code <String>]`: 
+    - `[DiscountDateCalculation <String>]`: 
+    - `[DiscountPercent <Decimal?>]`: 
+    - `[DisplayName <String>]`: 
+    - `[DueDateCalculation <String>]`: 
+    - `[LastModifiedDateTime <DateTime?>]`: 
   - `[PaymentTermsId <String>]`: 
   - `[PhoneNumber <String>]`: 
   - `[Picture <IMicrosoftGraphPicture[]>]`: 
@@ -1428,11 +1024,13 @@ CUSTOMER <IMicrosoftGraphCustomer>: customer
     - `[ContentType <String>]`: 
     - `[Height <Int32?>]`: 
     - `[Width <Int32?>]`: 
-  - `[ShipmentMethodCode <String>]`: 
-  - `[ShipmentMethodDisplayName <String>]`: 
+  - `[ShipmentMethod <IMicrosoftGraphShipmentMethod>]`: shipmentMethod
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Id <String>]`: Read-only.
+    - `[Code <String>]`: 
+    - `[DisplayName <String>]`: 
+    - `[LastModifiedDateTime <DateTime?>]`: 
   - `[ShipmentMethodId <String>]`: 
-  - `[ShipmentMethodId1 <String>]`: Read-only.
-  - `[ShipmentMethodLastModifiedDateTime <DateTime?>]`: 
   - `[TaxAreaDisplayName <String>]`: 
   - `[TaxAreaId <String>]`: 
   - `[TaxLiable <Boolean?>]`: 
@@ -1441,89 +1039,106 @@ CUSTOMER <IMicrosoftGraphCustomer>: customer
   - `[Website <String>]`: 
 
 INPUTOBJECT <IFinancialsIdentity>: Identity Parameter
-  - `[AccountId <String>]`: key: account-id of account
-  - `[AgedAccountsPayableId <String>]`: key: agedAccountsPayable-id of agedAccountsPayable
-  - `[AgedAccountsReceivableId <String>]`: key: agedAccountsReceivable-id of agedAccountsReceivable
-  - `[CompanyId <String>]`: key: company-id of company
-  - `[CompanyInformationId <String>]`: key: companyInformation-id of companyInformation
-  - `[CountryRegionId <String>]`: key: countryRegion-id of countryRegion
-  - `[CurrencyId <String>]`: key: currency-id of currency
-  - `[CustomerId <String>]`: key: customer-id of customer
-  - `[CustomerPaymentId <String>]`: key: customerPayment-id of customerPayment
-  - `[CustomerPaymentJournalId <String>]`: key: customerPaymentJournal-id of customerPaymentJournal
-  - `[DimensionId <String>]`: key: dimension-id of dimension
-  - `[DimensionValueId <String>]`: key: dimensionValue-id of dimensionValue
-  - `[EmployeeId <String>]`: key: employee-id of employee
-  - `[GeneralLedgerEntryId <String>]`: key: generalLedgerEntry-id of generalLedgerEntry
-  - `[ItemCategoryId <String>]`: key: itemCategory-id of itemCategory
-  - `[ItemId <String>]`: key: item-id of item
-  - `[JournalId <String>]`: key: journal-id of journal
-  - `[JournalLineId <String>]`: key: journalLine-id of journalLine
-  - `[PaymentMethodId <String>]`: key: paymentMethod-id of paymentMethod
-  - `[PaymentTermId <String>]`: key: paymentTerm-id of paymentTerm
-  - `[PictureId <String>]`: key: picture-id of picture
-  - `[PurchaseInvoiceId <String>]`: key: purchaseInvoice-id of purchaseInvoice
-  - `[PurchaseInvoiceLineId <String>]`: key: purchaseInvoiceLine-id of purchaseInvoiceLine
-  - `[SalesCreditMemoId <String>]`: key: salesCreditMemo-id of salesCreditMemo
-  - `[SalesCreditMemoLineId <String>]`: key: salesCreditMemoLine-id of salesCreditMemoLine
-  - `[SalesInvoiceId <String>]`: key: salesInvoice-id of salesInvoice
-  - `[SalesInvoiceLineId <String>]`: key: salesInvoiceLine-id of salesInvoiceLine
-  - `[SalesOrderId <String>]`: key: salesOrder-id of salesOrder
-  - `[SalesOrderLineId <String>]`: key: salesOrderLine-id of salesOrderLine
-  - `[SalesQuoteId <String>]`: key: salesQuote-id of salesQuote
-  - `[SalesQuoteLineId <String>]`: key: salesQuoteLine-id of salesQuoteLine
-  - `[ShipmentMethodId <String>]`: key: shipmentMethod-id of shipmentMethod
-  - `[TaxAreaId <String>]`: key: taxArea-id of taxArea
-  - `[TaxGroupId <String>]`: key: taxGroup-id of taxGroup
-  - `[UnitOfMeasureId <String>]`: key: unitOfMeasure-id of unitOfMeasure
-  - `[VendorId <String>]`: key: vendor-id of vendor
+  - `[AccountId <String>]`: key: id of account
+  - `[AgedAccountsPayableId <String>]`: key: id of agedAccountsPayable
+  - `[AgedAccountsReceivableId <String>]`: key: id of agedAccountsReceivable
+  - `[CompanyId <String>]`: key: id of company
+  - `[CompanyInformationId <String>]`: key: id of companyInformation
+  - `[CountryRegionId <String>]`: key: id of countryRegion
+  - `[CurrencyId <String>]`: key: id of currency
+  - `[CustomerId <String>]`: key: id of customer
+  - `[CustomerPaymentId <String>]`: key: id of customerPayment
+  - `[CustomerPaymentJournalId <String>]`: key: id of customerPaymentJournal
+  - `[DimensionId <String>]`: key: id of dimension
+  - `[DimensionValueId <String>]`: key: id of dimensionValue
+  - `[EmployeeId <String>]`: key: id of employee
+  - `[GeneralLedgerEntryId <String>]`: key: id of generalLedgerEntry
+  - `[ItemCategoryId <String>]`: key: id of itemCategory
+  - `[ItemId <String>]`: key: id of item
+  - `[JournalId <String>]`: key: id of journal
+  - `[JournalLineId <String>]`: key: id of journalLine
+  - `[PaymentMethodId <String>]`: key: id of paymentMethod
+  - `[PaymentTermId <String>]`: key: id of paymentTerm
+  - `[PictureId <String>]`: key: id of picture
+  - `[PurchaseInvoiceId <String>]`: key: id of purchaseInvoice
+  - `[PurchaseInvoiceLineId <String>]`: key: id of purchaseInvoiceLine
+  - `[SalesCreditMemoId <String>]`: key: id of salesCreditMemo
+  - `[SalesCreditMemoLineId <String>]`: key: id of salesCreditMemoLine
+  - `[SalesInvoiceId <String>]`: key: id of salesInvoice
+  - `[SalesInvoiceLineId <String>]`: key: id of salesInvoiceLine
+  - `[SalesOrderId <String>]`: key: id of salesOrder
+  - `[SalesOrderLineId <String>]`: key: id of salesOrderLine
+  - `[SalesQuoteId <String>]`: key: id of salesQuote
+  - `[SalesQuoteLineId <String>]`: key: id of salesQuoteLine
+  - `[ShipmentMethodId <String>]`: key: id of shipmentMethod
+  - `[TaxAreaId <String>]`: key: id of taxArea
+  - `[TaxGroupId <String>]`: key: id of taxGroup
+  - `[UnitOfMeasureId <String>]`: key: id of unitOfMeasure
+  - `[VendorId <String>]`: key: id of vendor
+
+PAYMENTTERM <IMicrosoftGraphPaymentTerm>: paymentTerm
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[Id <String>]`: Read-only.
+  - `[CalculateDiscountOnCreditMemos <Boolean?>]`: 
+  - `[Code <String>]`: 
+  - `[DiscountDateCalculation <String>]`: 
+  - `[DiscountPercent <Decimal?>]`: 
+  - `[DisplayName <String>]`: 
+  - `[DueDateCalculation <String>]`: 
+  - `[LastModifiedDateTime <DateTime?>]`: 
 
 SALESINVOICELINES <IMicrosoftGraphSalesInvoiceLine[]>: .
   - `[Id <String>]`: Read-only.
-  - `[AccountBlocked <Boolean?>]`: 
-  - `[AccountCategory <String>]`: 
-  - `[AccountDisplayName <String>]`: 
+  - `[Account <IMicrosoftGraphAccount>]`: account
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Id <String>]`: Read-only.
+    - `[Blocked <Boolean?>]`: 
+    - `[Category <String>]`: 
+    - `[DisplayName <String>]`: 
+    - `[LastModifiedDateTime <DateTime?>]`: 
+    - `[Number <String>]`: 
+    - `[SubCategory <String>]`: 
   - `[AccountId <String>]`: 
-  - `[AccountId1 <String>]`: Read-only.
-  - `[AccountLastModifiedDateTime <DateTime?>]`: 
-  - `[AccountNumber <String>]`: 
-  - `[AccountSubCategory <String>]`: 
   - `[AmountExcludingTax <Decimal?>]`: 
   - `[AmountIncludingTax <Decimal?>]`: 
-  - `[Code <String>]`: 
   - `[Description <String>]`: 
   - `[DiscountAmount <Decimal?>]`: 
   - `[DiscountAppliedBeforeTax <Boolean?>]`: 
   - `[DiscountPercent <Decimal?>]`: 
   - `[DocumentId <String>]`: 
   - `[InvoiceDiscountAllocation <Decimal?>]`: 
-  - `[ItemBaseUnitOfMeasureId <String>]`: 
-  - `[ItemBlocked <Boolean?>]`: 
-  - `[ItemCategoryCode <String>]`: 
-  - `[ItemCategoryDisplayName <String>]`: 
-  - `[ItemCategoryId <String>]`: 
-  - `[ItemCategoryLastModifiedDateTime <DateTime?>]`: 
-  - `[ItemDisplayName <String>]`: 
-  - `[ItemGtin <String>]`: 
-  - `[ItemId <String>]`: 
-  - `[ItemId1 <String>]`: Read-only.
-  - `[ItemInventory <Decimal?>]`: 
-  - `[ItemLastModifiedDateTime <DateTime?>]`: 
-  - `[ItemNumber <String>]`: 
-  - `[ItemPicture <IMicrosoftGraphPicture[]>]`: 
+  - `[Item <IMicrosoftGraphItem>]`: item
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: Read-only.
-    - `[Content <Byte[]>]`: 
-    - `[ContentType <String>]`: 
-    - `[Height <Int32?>]`: 
-    - `[Width <Int32?>]`: 
-  - `[ItemPriceIncludesTax <Boolean?>]`: 
-  - `[ItemTaxGroupCode <String>]`: 
-  - `[ItemTaxGroupId <String>]`: 
-  - `[ItemType <String>]`: 
-  - `[ItemUnitCost <Decimal?>]`: 
-  - `[ItemUnitPrice <Decimal?>]`: 
+    - `[BaseUnitOfMeasureId <String>]`: 
+    - `[Blocked <Boolean?>]`: 
+    - `[DisplayName <String>]`: 
+    - `[Gtin <String>]`: 
+    - `[Inventory <Decimal?>]`: 
+    - `[ItemCategory <IMicrosoftGraphItemCategory>]`: itemCategory
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[Id <String>]`: Read-only.
+      - `[Code <String>]`: 
+      - `[DisplayName <String>]`: 
+      - `[LastModifiedDateTime <DateTime?>]`: 
+    - `[ItemCategoryCode <String>]`: 
+    - `[ItemCategoryId <String>]`: 
+    - `[LastModifiedDateTime <DateTime?>]`: 
+    - `[Number <String>]`: 
+    - `[Picture <IMicrosoftGraphPicture[]>]`: 
+      - `[Id <String>]`: Read-only.
+      - `[Content <Byte[]>]`: 
+      - `[ContentType <String>]`: 
+      - `[Height <Int32?>]`: 
+      - `[Width <Int32?>]`: 
+    - `[PriceIncludesTax <Boolean?>]`: 
+    - `[TaxGroupCode <String>]`: 
+    - `[TaxGroupId <String>]`: 
+    - `[Type <String>]`: 
+    - `[UnitCost <Decimal?>]`: 
+    - `[UnitPrice <Decimal?>]`: 
+  - `[ItemId <String>]`: 
   - `[LineType <String>]`: 
-  - `[MicrosoftGraphEntityId <String>]`: Read-only.
   - `[NetAmount <Decimal?>]`: 
   - `[NetAmountIncludingTax <Decimal?>]`: 
   - `[NetTaxAmount <Decimal?>]`: 
@@ -1535,6 +1150,29 @@ SALESINVOICELINES <IMicrosoftGraphSalesInvoiceLine[]>: .
   - `[TotalTaxAmount <Decimal?>]`: 
   - `[UnitOfMeasureId <String>]`: 
   - `[UnitPrice <Decimal?>]`: 
+
+SELLINGPOSTALADDRESS <IMicrosoftGraphPostalAddressType>: postalAddressType
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[City <String>]`: 
+  - `[CountryLetterCode <String>]`: 
+  - `[PostalCode <String>]`: 
+  - `[State <String>]`: 
+  - `[Street <String>]`: 
+
+SHIPMENTMETHOD <IMicrosoftGraphShipmentMethod>: shipmentMethod
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[Id <String>]`: Read-only.
+  - `[Code <String>]`: 
+  - `[DisplayName <String>]`: 
+  - `[LastModifiedDateTime <DateTime?>]`: 
+
+SHIPPINGPOSTALADDRESS <IMicrosoftGraphPostalAddressType>: postalAddressType
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[City <String>]`: 
+  - `[CountryLetterCode <String>]`: 
+  - `[PostalCode <String>]`: 
+  - `[State <String>]`: 
+  - `[Street <String>]`: 
 
 ## RELATED LINKS
 

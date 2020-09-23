@@ -12,19 +12,19 @@ while(-not $mockingPath) {
 . ($mockingPath | Select-Object -First 1).FullName
 
 Describe 'Invoke-MgAcceptUserEventInstance' {
-    It 'AcceptExpanded' -skip {
+    It 'AcceptExpanded1' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'Accept' -skip {
+    It 'Accept1' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'AcceptViaIdentityExpanded' -skip {
+    It 'AcceptViaIdentityExpanded1' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'AcceptViaIdentity' -skip {
+    It 'AcceptViaIdentity1' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 }

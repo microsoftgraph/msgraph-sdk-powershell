@@ -16,7 +16,7 @@ Describe 'Remove-MgSecurityTiIndicatorByExternalId' {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'Delete1' -skip {
+    It 'Delete2' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 }

@@ -15,8 +15,8 @@ Get dailyPrintUsageSummariesByPrinter from reports
 ### List (Default)
 ```
 Get-MgReportDailyPrintUsageSummaryByPrinter [-Count] [-ExpandProperty <String[]>] [-Filter <String>]
- [-PageSize <Int32>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-All]
- [<CommonParameters>]
+ [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
+ [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
@@ -57,7 +57,7 @@ PS C:\> {{ Add code here }}
 ## PARAMETERS
 
 ### -All
-List all pages
+List all pages.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -133,12 +133,12 @@ Accept wildcard characters: False
 ```
 
 ### -PageSize
-Show only the first n items
+Sets the page size of results.
 
 ```yaml
 Type: System.Int32
 Parameter Sets: List
-Aliases: Top, Limit
+Aliases:
 
 Required: False
 Position: Named
@@ -148,7 +148,7 @@ Accept wildcard characters: False
 ```
 
 ### -PrintUsageSummaryByPrinterId
-key: PrintUsageSummaryByPrinter-id of PrintUsageSummaryByPrinter
+key: id of PrintUsageSummaryByPrinter
 
 ```yaml
 Type: System.String
@@ -222,6 +222,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Top
+Show only the first n items
+
+```yaml
+Type: System.Int32
+Parameter Sets: List
+Aliases: Limit
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
@@ -243,17 +258,21 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IReportsIdentity>: Identity Parameter
-  - `[ApplicationSignInDetailedSummaryId <String>]`: key: applicationSignInDetailedSummary-id of applicationSignInDetailedSummary
-  - `[CredentialUserRegistrationDetailsId <String>]`: key: credentialUserRegistrationDetails-id of credentialUserRegistrationDetails
+  - `[ApplicationSignInDetailedSummaryId <String>]`: key: id of applicationSignInDetailedSummary
+  - `[CredentialUserRegistrationDetailsId <String>]`: key: id of credentialUserRegistrationDetails
   - `[Date <DateTime?>]`: 
+  - `[DirectoryAuditId <String>]`: key: id of directoryAudit
   - `[Filter <String>]`: 
   - `[Period <String>]`: 
-  - `[PrintUsageSummaryByPrinterId <String>]`: key: PrintUsageSummaryByPrinter-id of PrintUsageSummaryByPrinter
-  - `[PrintUsageSummaryByUserId <String>]`: key: PrintUsageSummaryByUser-id of PrintUsageSummaryByUser
+  - `[PrintUsageSummaryByPrinterId <String>]`: key: id of PrintUsageSummaryByPrinter
+  - `[PrintUsageSummaryByUserId <String>]`: key: id of PrintUsageSummaryByUser
+  - `[ProvisioningObjectSummaryId <String>]`: key: id of provisioningObjectSummary
+  - `[RestrictedSignInId <String>]`: key: id of restrictedSignIn
+  - `[SignInId <String>]`: key: id of signIn
   - `[Skip <Int32?>]`: 
   - `[SkipToken <String>]`: 
   - `[Top <Int32?>]`: 
-  - `[UserCredentialUsageDetailsId <String>]`: key: userCredentialUsageDetails-id of userCredentialUsageDetails
+  - `[UserCredentialUsageDetailsId <String>]`: key: id of userCredentialUsageDetails
 
 ## RELATED LINKS
 

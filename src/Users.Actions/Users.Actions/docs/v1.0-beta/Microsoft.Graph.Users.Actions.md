@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users.Actions
-Module Guid: 2919955f-57a7-4f71-97e0-d4f96aad0aae
+Module Guid: c605bff5-3c5b-4a0e-a811-f367d7dd0081
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -11,10 +11,13 @@ Locale: en-US
 Microsoft Graph PowerShell Cmdlets
 
 ## Microsoft.Graph.Users.Actions Cmdlets
+### [Add-MgUserPendingAccessReviewInstanceDecision](Add-MgUserPendingAccessReviewInstanceDecision.md)
+Invoke action applyDecisions
+
 ### [Clear-MgUserAndBlockManagedApp](Clear-MgUserAndBlockManagedApp.md)
 Invoke action wipeAndBlockManagedApps
 
-### [Clear-MgUserManagedAppRegistration](Clear-MgUserManagedAppRegistration.md)
+### [Clear-MgUserManagedAppRegistrationByDeviceTag](Clear-MgUserManagedAppRegistrationByDeviceTag.md)
 Invoke action wipeManagedAppRegistrationsByDeviceTag
 
 ### [Clear-MgUserManagedDevice](Clear-MgUserManagedDevice.md)
@@ -53,37 +56,7 @@ Invoke action copy
 ### [Copy-MgUserOnenoteNotebook](Copy-MgUserOnenoteNotebook.md)
 Invoke action copyNotebook
 
-### [Copy-MgUserOnenoteNotebookSectionGroupSectionPageToSection](Copy-MgUserOnenoteNotebookSectionGroupSectionPageToSection.md)
-Invoke action copyToSection
-
-### [Copy-MgUserOnenoteNotebookSectionGroupSectionToNotebook](Copy-MgUserOnenoteNotebookSectionGroupSectionToNotebook.md)
-Invoke action copyToNotebook
-
-### [Copy-MgUserOnenoteNotebookSectionGroupSectionToSectionGroup](Copy-MgUserOnenoteNotebookSectionGroupSectionToSectionGroup.md)
-Invoke action copyToSectionGroup
-
-### [Copy-MgUserOnenoteNotebookSectionPageToSection](Copy-MgUserOnenoteNotebookSectionPageToSection.md)
-Invoke action copyToSection
-
-### [Copy-MgUserOnenoteNotebookSectionToNotebook](Copy-MgUserOnenoteNotebookSectionToNotebook.md)
-Invoke action copyToNotebook
-
-### [Copy-MgUserOnenoteNotebookSectionToSectionGroup](Copy-MgUserOnenoteNotebookSectionToSectionGroup.md)
-Invoke action copyToSectionGroup
-
 ### [Copy-MgUserOnenotePageToSection](Copy-MgUserOnenotePageToSection.md)
-Invoke action copyToSection
-
-### [Copy-MgUserOnenoteSectionGroupSectionPageToSection](Copy-MgUserOnenoteSectionGroupSectionPageToSection.md)
-Invoke action copyToSection
-
-### [Copy-MgUserOnenoteSectionGroupSectionToNotebook](Copy-MgUserOnenoteSectionGroupSectionToNotebook.md)
-Invoke action copyToNotebook
-
-### [Copy-MgUserOnenoteSectionGroupSectionToSectionGroup](Copy-MgUserOnenoteSectionGroupSectionToSectionGroup.md)
-Invoke action copyToSectionGroup
-
-### [Copy-MgUserOnenoteSectionPageToSection](Copy-MgUserOnenoteSectionPageToSection.md)
 Invoke action copyToSection
 
 ### [Copy-MgUserOnenoteSectionToNotebook](Copy-MgUserOnenoteSectionToNotebook.md)
@@ -116,12 +89,6 @@ Invoke action findMeetingTimes
 ### [Get-MgUserById](Get-MgUserById.md)
 Invoke action getByIds
 
-### [Get-MgUserCalendarGroupCalendarEventCalendarSchedule](Get-MgUserCalendarGroupCalendarEventCalendarSchedule.md)
-Invoke action getSchedule
-
-### [Get-MgUserCalendarGroupCalendarSchedule](Get-MgUserCalendarGroupCalendarSchedule.md)
-Invoke action getSchedule
-
 ### [Get-MgUserCalendarSchedule](Get-MgUserCalendarSchedule.md)
 Invoke action getSchedule
 
@@ -146,50 +113,8 @@ Invoke action getNotebookFromWebUrl
 ### [Get-MgUserOwnedObjectByType](Get-MgUserOwnedObjectByType.md)
 Invoke action getUserOwnedObjects
 
-### [Invoke-MgAcceptUserCalendarEvent](Invoke-MgAcceptUserCalendarEvent.md)
-Invoke action accept
-
-### [Invoke-MgAcceptUserCalendarEventInstance](Invoke-MgAcceptUserCalendarEventInstance.md)
-Invoke action accept
-
-### [Invoke-MgAcceptUserCalendarEventInstanceTentatively](Invoke-MgAcceptUserCalendarEventInstanceTentatively.md)
-Invoke action tentativelyAccept
-
-### [Invoke-MgAcceptUserCalendarEventTentatively](Invoke-MgAcceptUserCalendarEventTentatively.md)
-Invoke action tentativelyAccept
-
-### [Invoke-MgAcceptUserCalendarGroupCalendarEvent](Invoke-MgAcceptUserCalendarGroupCalendarEvent.md)
-Invoke action accept
-
-### [Invoke-MgAcceptUserCalendarGroupCalendarEventInstance](Invoke-MgAcceptUserCalendarGroupCalendarEventInstance.md)
-Invoke action accept
-
-### [Invoke-MgAcceptUserCalendarGroupCalendarEventInstanceTentatively](Invoke-MgAcceptUserCalendarGroupCalendarEventInstanceTentatively.md)
-Invoke action tentativelyAccept
-
-### [Invoke-MgAcceptUserCalendarGroupCalendarEventTentatively](Invoke-MgAcceptUserCalendarGroupCalendarEventTentatively.md)
-Invoke action tentativelyAccept
-
-### [Invoke-MgAcceptUserDefaultCalendarEvent](Invoke-MgAcceptUserDefaultCalendarEvent.md)
-Invoke action accept
-
-### [Invoke-MgAcceptUserDefaultCalendarEventInstance](Invoke-MgAcceptUserDefaultCalendarEventInstance.md)
-Invoke action accept
-
-### [Invoke-MgAcceptUserDefaultCalendarEventInstanceTentatively](Invoke-MgAcceptUserDefaultCalendarEventInstanceTentatively.md)
-Invoke action tentativelyAccept
-
-### [Invoke-MgAcceptUserDefaultCalendarEventTentatively](Invoke-MgAcceptUserDefaultCalendarEventTentatively.md)
-Invoke action tentativelyAccept
-
 ### [Invoke-MgAcceptUserEvent](Invoke-MgAcceptUserEvent.md)
 Invoke action accept
-
-### [Invoke-MgAcceptUserEventCalendarEvent](Invoke-MgAcceptUserEventCalendarEvent.md)
-Invoke action accept
-
-### [Invoke-MgAcceptUserEventCalendarEventTentatively](Invoke-MgAcceptUserEventCalendarEventTentatively.md)
-Invoke action tentativelyAccept
 
 ### [Invoke-MgAcceptUserEventInstance](Invoke-MgAcceptUserEventInstance.md)
 Invoke action accept
@@ -200,59 +125,20 @@ Invoke action tentativelyAccept
 ### [Invoke-MgAcceptUserEventTentatively](Invoke-MgAcceptUserEventTentatively.md)
 Invoke action tentativelyAccept
 
+### [Invoke-MgAcceptUserPendingAccessReviewInstanceRecommendation](Invoke-MgAcceptUserPendingAccessReviewInstanceRecommendation.md)
+Invoke action acceptRecommendations
+
 ### [Invoke-MgCleanUserManagedDeviceWindowDevice](Invoke-MgCleanUserManagedDeviceWindowDevice.md)
 Invoke action cleanWindowsDevice
 
 ### [Invoke-MgCreateOrGetUserOnlineMeeting](Invoke-MgCreateOrGetUserOnlineMeeting.md)
 Invoke action createOrGet
 
-### [Invoke-MgDeclineUserCalendarEvent](Invoke-MgDeclineUserCalendarEvent.md)
-Invoke action decline
-
-### [Invoke-MgDeclineUserCalendarEventInstance](Invoke-MgDeclineUserCalendarEventInstance.md)
-Invoke action decline
-
-### [Invoke-MgDeclineUserCalendarGroupCalendarEvent](Invoke-MgDeclineUserCalendarGroupCalendarEvent.md)
-Invoke action decline
-
-### [Invoke-MgDeclineUserCalendarGroupCalendarEventInstance](Invoke-MgDeclineUserCalendarGroupCalendarEventInstance.md)
-Invoke action decline
-
-### [Invoke-MgDeclineUserDefaultCalendarEvent](Invoke-MgDeclineUserDefaultCalendarEvent.md)
-Invoke action decline
-
-### [Invoke-MgDeclineUserDefaultCalendarEventInstance](Invoke-MgDeclineUserDefaultCalendarEventInstance.md)
-Invoke action decline
-
 ### [Invoke-MgDeclineUserEvent](Invoke-MgDeclineUserEvent.md)
-Invoke action decline
-
-### [Invoke-MgDeclineUserEventCalendarEvent](Invoke-MgDeclineUserEventCalendarEvent.md)
 Invoke action decline
 
 ### [Invoke-MgDeclineUserEventInstance](Invoke-MgDeclineUserEventInstance.md)
 Invoke action decline
-
-### [Invoke-MgDismissUserCalendarEventInstanceReminder](Invoke-MgDismissUserCalendarEventInstanceReminder.md)
-Invoke action dismissReminder
-
-### [Invoke-MgDismissUserCalendarEventReminder](Invoke-MgDismissUserCalendarEventReminder.md)
-Invoke action dismissReminder
-
-### [Invoke-MgDismissUserCalendarGroupCalendarEventInstanceReminder](Invoke-MgDismissUserCalendarGroupCalendarEventInstanceReminder.md)
-Invoke action dismissReminder
-
-### [Invoke-MgDismissUserCalendarGroupCalendarEventReminder](Invoke-MgDismissUserCalendarGroupCalendarEventReminder.md)
-Invoke action dismissReminder
-
-### [Invoke-MgDismissUserDefaultCalendarEventInstanceReminder](Invoke-MgDismissUserDefaultCalendarEventInstanceReminder.md)
-Invoke action dismissReminder
-
-### [Invoke-MgDismissUserDefaultCalendarEventReminder](Invoke-MgDismissUserDefaultCalendarEventReminder.md)
-Invoke action dismissReminder
-
-### [Invoke-MgDismissUserEventCalendarEventReminder](Invoke-MgDismissUserEventCalendarEventReminder.md)
-Invoke action dismissReminder
 
 ### [Invoke-MgDismissUserEventInstanceReminder](Invoke-MgDismissUserEventInstanceReminder.md)
 Invoke action dismissReminder
@@ -266,28 +152,7 @@ Invoke action shutDown
 ### [Invoke-MgExecuteUserManagedDeviceAction](Invoke-MgExecuteUserManagedDeviceAction.md)
 Invoke action executeAction
 
-### [Invoke-MgForwardUserCalendarEvent](Invoke-MgForwardUserCalendarEvent.md)
-Invoke action forward
-
-### [Invoke-MgForwardUserCalendarEventInstance](Invoke-MgForwardUserCalendarEventInstance.md)
-Invoke action forward
-
-### [Invoke-MgForwardUserCalendarGroupCalendarEvent](Invoke-MgForwardUserCalendarGroupCalendarEvent.md)
-Invoke action forward
-
-### [Invoke-MgForwardUserCalendarGroupCalendarEventInstance](Invoke-MgForwardUserCalendarGroupCalendarEventInstance.md)
-Invoke action forward
-
-### [Invoke-MgForwardUserDefaultCalendarEvent](Invoke-MgForwardUserDefaultCalendarEvent.md)
-Invoke action forward
-
-### [Invoke-MgForwardUserDefaultCalendarEventInstance](Invoke-MgForwardUserDefaultCalendarEventInstance.md)
-Invoke action forward
-
 ### [Invoke-MgForwardUserEvent](Invoke-MgForwardUserEvent.md)
-Invoke action forward
-
-### [Invoke-MgForwardUserEventCalendarEvent](Invoke-MgForwardUserEventCalendarEvent.md)
 Invoke action forward
 
 ### [Invoke-MgForwardUserEventInstance](Invoke-MgForwardUserEventInstance.md)
@@ -302,7 +167,7 @@ Invoke action forward
 ### [Invoke-MgHasUserDeviceEnrollmentConfigurationPayloadLink](Invoke-MgHasUserDeviceEnrollmentConfigurationPayloadLink.md)
 Invoke action hasPayloadLinks
 
-### [Invoke-MgInvalidateUserRefreshToken](Invoke-MgInvalidateUserRefreshToken.md)
+### [Invoke-MgInvalidateUserreshTokenByRef](Invoke-MgInvalidateUserreshTokenByRef.md)
 Invoke action invalidateAllRefreshTokens
 
 ### [Invoke-MgLicenseUser](Invoke-MgLicenseUser.md)
@@ -341,27 +206,6 @@ Invoke action rotateFileVaultKey
 ### [Invoke-MgScanUserManagedDeviceWindowDefender](Invoke-MgScanUserManagedDeviceWindowDefender.md)
 Invoke action windowsDefenderScan
 
-### [Invoke-MgSnoozeUserCalendarEventInstanceReminder](Invoke-MgSnoozeUserCalendarEventInstanceReminder.md)
-Invoke action snoozeReminder
-
-### [Invoke-MgSnoozeUserCalendarEventReminder](Invoke-MgSnoozeUserCalendarEventReminder.md)
-Invoke action snoozeReminder
-
-### [Invoke-MgSnoozeUserCalendarGroupCalendarEventInstanceReminder](Invoke-MgSnoozeUserCalendarGroupCalendarEventInstanceReminder.md)
-Invoke action snoozeReminder
-
-### [Invoke-MgSnoozeUserCalendarGroupCalendarEventReminder](Invoke-MgSnoozeUserCalendarGroupCalendarEventReminder.md)
-Invoke action snoozeReminder
-
-### [Invoke-MgSnoozeUserDefaultCalendarEventInstanceReminder](Invoke-MgSnoozeUserDefaultCalendarEventInstanceReminder.md)
-Invoke action snoozeReminder
-
-### [Invoke-MgSnoozeUserDefaultCalendarEventReminder](Invoke-MgSnoozeUserDefaultCalendarEventReminder.md)
-Invoke action snoozeReminder
-
-### [Invoke-MgSnoozeUserEventCalendarEventReminder](Invoke-MgSnoozeUserEventCalendarEventReminder.md)
-Invoke action snoozeReminder
-
 ### [Invoke-MgSnoozeUserEventInstanceReminder](Invoke-MgSnoozeUserEventInstanceReminder.md)
 Invoke action snoozeReminder
 
@@ -376,9 +220,6 @@ Invoke action unsubscribe
 
 ### [Invoke-MgUnsubscribeUserMessage](Invoke-MgUnsubscribeUserMessage.md)
 Invoke action unsubscribe
-
-### [Invoke-MgUpgradeUserTeamworkInstalledApp](Invoke-MgUpgradeUserTeamworkInstalledApp.md)
-Invoke action upgrade
 
 ### [Lock-MgUserManagedDeviceRemote](Lock-MgUserManagedDeviceRemote.md)
 Invoke action remoteLock
@@ -395,15 +236,6 @@ Invoke action move
 ### [Move-MgUserMessage](Move-MgUserMessage.md)
 Invoke action move
 
-### [New-MgUserCalendarEventAttachmentUploadSession](New-MgUserCalendarEventAttachmentUploadSession.md)
-Invoke action createUploadSession
-
-### [New-MgUserCalendarGroupCalendarEventAttachmentUploadSession](New-MgUserCalendarGroupCalendarEventAttachmentUploadSession.md)
-Invoke action createUploadSession
-
-### [New-MgUserDefaultCalendarEventAttachmentUploadSession](New-MgUserDefaultCalendarEventAttachmentUploadSession.md)
-Invoke action createUploadSession
-
 ### [New-MgUserEventAttachmentUploadSession](New-MgUserEventAttachmentUploadSession.md)
 Invoke action createUploadSession
 
@@ -418,6 +250,12 @@ Invoke action createReply
 
 ### [New-MgUserMailFolderMessageReplyAll](New-MgUserMailFolderMessageReplyAll.md)
 Invoke action createReplyAll
+
+### [New-MgUserManagedDeviceLogCollectionRequest](New-MgUserManagedDeviceLogCollectionRequest.md)
+Invoke action createDeviceLogCollectionRequest
+
+### [New-MgUserManagedDeviceLogCollectionRequestDownloadUrl](New-MgUserManagedDeviceLogCollectionRequestDownloadUrl.md)
+Invoke action createDownloadUrl
 
 ### [New-MgUserMessageAttachmentUploadSession](New-MgUserMessageAttachmentUploadSession.md)
 Invoke action createUploadSession
@@ -449,9 +287,6 @@ Invoke action removeAllDevicesFromManagement
 ### [Remove-MgUserManagedDeviceUserFromSharedAppleDevice](Remove-MgUserManagedDeviceUserFromSharedAppleDevice.md)
 Invoke action deleteUserFromSharedAppleDevice
 
-### [Rename-MgUserPassword](Rename-MgUserPassword.md)
-Invoke action changePassword
-
 ### [Request-MgUserManagedDeviceRemoteAssistance](Request-MgUserManagedDeviceRemoteAssistance.md)
 Invoke action requestRemoteAssistance
 
@@ -460,6 +295,12 @@ Invoke action resetPassword
 
 ### [Reset-MgUserManagedDevicePasscode](Reset-MgUserManagedDevicePasscode.md)
 Invoke action resetPasscode
+
+### [Reset-MgUserPassword](Reset-MgUserPassword.md)
+Invoke action changePassword
+
+### [Reset-MgUserPendingAccessReviewInstanceDecision](Reset-MgUserPendingAccessReviewInstanceDecision.md)
+Invoke action resetDecisions
 
 ### [Restart-MgUserManagedDeviceNow](Restart-MgUserManagedDeviceNow.md)
 Invoke action rebootNow
@@ -488,6 +329,9 @@ Invoke action sendCustomNotificationToCompanyPortal
 ### [Send-MgUserMessage](Send-MgUserMessage.md)
 Invoke action send
 
+### [Send-MgUserPendingAccessReviewInstanceReminder](Send-MgUserPendingAccessReviewInstanceReminder.md)
+Invoke action sendReminder
+
 ### [Send-MgUserTeamworkActivityNotification](Send-MgUserTeamworkActivityNotification.md)
 Invoke action sendActivityNotification
 
@@ -509,32 +353,17 @@ Invoke action bypassActivationLock
 ### [Start-MgUserManagedDeviceConfigurationManagerAction](Start-MgUserManagedDeviceConfigurationManagerAction.md)
 Invoke action triggerConfigurationManagerAction
 
-### [Stop-MgUserCalendarEvent](Stop-MgUserCalendarEvent.md)
-Invoke action cancel
-
-### [Stop-MgUserCalendarEventInstance](Stop-MgUserCalendarEventInstance.md)
-Invoke action cancel
-
-### [Stop-MgUserCalendarGroupCalendarEvent](Stop-MgUserCalendarGroupCalendarEvent.md)
-Invoke action cancel
-
-### [Stop-MgUserCalendarGroupCalendarEventInstance](Stop-MgUserCalendarGroupCalendarEventInstance.md)
-Invoke action cancel
-
-### [Stop-MgUserDefaultCalendarEvent](Stop-MgUserDefaultCalendarEvent.md)
-Invoke action cancel
-
-### [Stop-MgUserDefaultCalendarEventInstance](Stop-MgUserDefaultCalendarEventInstance.md)
-Invoke action cancel
-
 ### [Stop-MgUserEvent](Stop-MgUserEvent.md)
-Invoke action cancel
-
-### [Stop-MgUserEventCalendarEvent](Stop-MgUserEventCalendarEvent.md)
 Invoke action cancel
 
 ### [Stop-MgUserEventInstance](Stop-MgUserEventInstance.md)
 Invoke action cancel
+
+### [Stop-MgUserPendingAccessReviewInstance](Stop-MgUserPendingAccessReviewInstance.md)
+Invoke action stop
+
+### [Stop-MgUserPendingAccessReviewInstanceDefinition](Stop-MgUserPendingAccessReviewInstanceDefinition.md)
+Invoke action stop
 
 ### [Sync-MgUserManagedDevice](Sync-MgUserManagedDevice.md)
 Invoke action syncDevice
@@ -551,18 +380,6 @@ Invoke action windowsDefenderUpdateSignatures
 ### [Update-MgUserManagedDeviceWindowDeviceAccount](Update-MgUserManagedDeviceWindowDeviceAccount.md)
 Invoke action updateWindowsDeviceAccount
 
-### [Update-MgUserOnenoteNotebookSectionGroupSectionPageContent](Update-MgUserOnenoteNotebookSectionGroupSectionPageContent.md)
-Invoke action onenotePatchContent
-
-### [Update-MgUserOnenoteNotebookSectionPageContent](Update-MgUserOnenoteNotebookSectionPageContent.md)
-Invoke action onenotePatchContent
-
 ### [Update-MgUserOnenotePageContent](Update-MgUserOnenotePageContent.md)
-Invoke action onenotePatchContent
-
-### [Update-MgUserOnenoteSectionGroupSectionPageContent](Update-MgUserOnenoteSectionGroupSectionPageContent.md)
-Invoke action onenotePatchContent
-
-### [Update-MgUserOnenoteSectionPageContent](Update-MgUserOnenoteSectionPageContent.md)
 Invoke action onenotePatchContent
 

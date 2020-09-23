@@ -14,14 +14,13 @@ Create new navigation property to hostSecurityProfiles for Security
 
 ### CreateExpanded (Default)
 ```
-New-MgSecurityHostSecurityProfile [-AzureSubscriptionId <String>] [-AzureTenantId <String>]
- [-FirstSeenDateTime <DateTime>] [-Fqdn <String>] [-Id <String>] [-IsAzureAdJoined] [-IsAzureAdRegistered]
- [-IsHybridAzureDomainJoined] [-LastSeenDateTime <DateTime>] [-LogonUsers <IMicrosoftGraphLogonUser[]>]
- [-NetBiosName <String>] [-NetworkInterfaces <IMicrosoftGraphNetworkInterface[]>] [-OS <String>]
- [-OSVersion <String>] [-ParentHost <String>] [-RelatedHostIds <String[]>] [-RiskScore <String>]
- [-Tags <String[]>] [-VendorInformationProvider <String>] [-VendorInformationProviderVersion <String>]
- [-VendorInformationSubProvider <String>] [-VendorInformationVendor <String>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+New-MgSecurityHostSecurityProfile [-AdditionalProperties <Hashtable>] [-AzureSubscriptionId <String>]
+ [-AzureTenantId <String>] [-FirstSeenDateTime <DateTime>] [-Fqdn <String>] [-Id <String>] [-IsAzureAdJoined]
+ [-IsAzureAdRegistered] [-IsHybridAzureDomainJoined] [-LastSeenDateTime <DateTime>]
+ [-LogonUsers <IMicrosoftGraphLogonUser[]>] [-NetBiosName <String>]
+ [-NetworkInterfaces <IMicrosoftGraphNetworkInterface[]>] [-OS <String>] [-OSVersion <String>]
+ [-ParentHost <String>] [-RelatedHostIds <String[]>] [-RiskScore <String>] [-Tags <String[]>]
+ [-VendorInformation <IMicrosoftGraphSecurityVendorInformation>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
@@ -54,6 +53,21 @@ PS C:\> {{ Add code here }}
 {{ Add description here }}
 
 ## PARAMETERS
+
+### -AdditionalProperties
+Additional Parameters
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -AzureSubscriptionId
 .
@@ -343,58 +357,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -VendorInformationProvider
-Specific provider (product/service - not vendor company); for example, WindowsDefenderATP.
+### -VendorInformation
+securityVendorInformation
+To construct, see NOTES section for VENDORINFORMATION properties and create a hash table.
 
 ```yaml
-Type: System.String
-Parameter Sets: CreateExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -VendorInformationProviderVersion
-Version of the provider or subprovider, if it exists, that generated the alert.
-Required
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -VendorInformationSubProvider
-Specific subprovider (under aggregating provider); for example, WindowsDefenderATP.SmartScreen.
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -VendorInformationVendor
-Name of the alert vendor (for example, Microsoft, Dell, FireEye).
-Required
-
-```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityVendorInformation
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -457,6 +425,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 BODYPARAMETER <IMicrosoftGraphHostSecurityProfile>: hostSecurityProfile
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
   - `[AzureSubscriptionId <String>]`: 
   - `[AzureTenantId <String>]`: 
@@ -487,10 +456,12 @@ BODYPARAMETER <IMicrosoftGraphHostSecurityProfile>: hostSecurityProfile
   - `[RelatedHostIds <String[]>]`: 
   - `[RiskScore <String>]`: 
   - `[Tags <String[]>]`: 
-  - `[VendorInformationProvider <String>]`: Specific provider (product/service - not vendor company); for example, WindowsDefenderATP.
-  - `[VendorInformationProviderVersion <String>]`: Version of the provider or subprovider, if it exists, that generated the alert. Required
-  - `[VendorInformationSubProvider <String>]`: Specific subprovider (under aggregating provider); for example, WindowsDefenderATP.SmartScreen.
-  - `[VendorInformationVendor <String>]`: Name of the alert vendor (for example, Microsoft, Dell, FireEye). Required
+  - `[VendorInformation <IMicrosoftGraphSecurityVendorInformation>]`: securityVendorInformation
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Provider <String>]`: Specific provider (product/service - not vendor company); for example, WindowsDefenderATP.
+    - `[ProviderVersion <String>]`: Version of the provider or subprovider, if it exists, that generated the alert. Required
+    - `[SubProvider <String>]`: Specific subprovider (under aggregating provider); for example, WindowsDefenderATP.SmartScreen.
+    - `[Vendor <String>]`: Name of the alert vendor (for example, Microsoft, Dell, FireEye). Required
 
 LOGONUSERS <IMicrosoftGraphLogonUser[]>: .
   - `[AccountDomain <String>]`: 
@@ -507,6 +478,13 @@ NETWORKINTERFACES <IMicrosoftGraphNetworkInterface[]>: .
   - `[IPV6Address <String>]`: 
   - `[LocalIPV6Address <String>]`: 
   - `[MacAddress <String>]`: 
+
+VENDORINFORMATION <IMicrosoftGraphSecurityVendorInformation>: securityVendorInformation
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[Provider <String>]`: Specific provider (product/service - not vendor company); for example, WindowsDefenderATP.
+  - `[ProviderVersion <String>]`: Version of the provider or subprovider, if it exists, that generated the alert. Required
+  - `[SubProvider <String>]`: Specific subprovider (under aggregating provider); for example, WindowsDefenderATP.SmartScreen.
+  - `[Vendor <String>]`: Name of the alert vendor (for example, Microsoft, Dell, FireEye). Required
 
 ## RELATED LINKS
 

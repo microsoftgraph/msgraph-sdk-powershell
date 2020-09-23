@@ -12,31 +12,31 @@ Update the navigation property bucketTaskBoardFormat in planner
 
 ## SYNTAX
 
-### UpdateExpanded1 (Default)
+### UpdateExpanded (Default)
 ```
 Update-MgPlannerPlanBucketTaskBoardFormat -PlannerBucketId <String> -PlannerPlanId <String>
- -PlannerTaskId <String> [-Id <String>] [-OrderHint <String>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -PlannerTaskId <String> [-AdditionalProperties <Hashtable>] [-Id <String>] [-OrderHint <String>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Update1
+### Update
 ```
 Update-MgPlannerPlanBucketTaskBoardFormat -PlannerBucketId <String> -PlannerPlanId <String>
  -PlannerTaskId <String> -BodyParameter <IMicrosoftGraphPlannerBucketTaskBoardTaskFormat> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentity1
+### UpdateViaIdentity
 ```
 Update-MgPlannerPlanBucketTaskBoardFormat -InputObject <IPlannerIdentity>
  -BodyParameter <IMicrosoftGraphPlannerBucketTaskBoardTaskFormat> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
-### UpdateViaIdentityExpanded1
+### UpdateViaIdentityExpanded
 ```
-Update-MgPlannerPlanBucketTaskBoardFormat -InputObject <IPlannerIdentity> [-Id <String>] [-OrderHint <String>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgPlannerPlanBucketTaskBoardFormat -InputObject <IPlannerIdentity> [-AdditionalProperties <Hashtable>]
+ [-Id <String>] [-OrderHint <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -64,13 +64,28 @@ PS C:\> {{ Add code here }}
 
 ## PARAMETERS
 
+### -AdditionalProperties
+Additional Parameters
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -BodyParameter
 plannerBucketTaskBoardTaskFormat
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerBucketTaskBoardTaskFormat
-Parameter Sets: Update1, UpdateViaIdentity1
+Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
 Required: True
@@ -85,7 +100,7 @@ Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -101,7 +116,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPlannerIdentity
-Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -117,7 +132,7 @@ The format is defined as outlined here.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -143,11 +158,11 @@ Accept wildcard characters: False
 ```
 
 ### -PlannerBucketId
-key: plannerBucket-id of plannerBucket
+key: id of plannerBucket
 
 ```yaml
 Type: System.String
-Parameter Sets: Update1, UpdateExpanded1
+Parameter Sets: Update, UpdateExpanded
 Aliases:
 
 Required: True
@@ -158,11 +173,11 @@ Accept wildcard characters: False
 ```
 
 ### -PlannerPlanId
-key: plannerPlan-id of plannerPlan
+key: id of plannerPlan
 
 ```yaml
 Type: System.String
-Parameter Sets: Update1, UpdateExpanded1
+Parameter Sets: Update, UpdateExpanded
 Aliases:
 
 Required: True
@@ -173,11 +188,11 @@ Accept wildcard characters: False
 ```
 
 ### -PlannerTaskId
-key: plannerTask-id of plannerTask
+key: id of plannerTask
 
 ```yaml
 Type: System.String
-Parameter Sets: Update1, UpdateExpanded1
+Parameter Sets: Update, UpdateExpanded
 Aliases:
 
 Required: True
@@ -241,13 +256,17 @@ To create the parameters described below, construct a hash table containing the 
 
 
 BODYPARAMETER <IMicrosoftGraphPlannerBucketTaskBoardTaskFormat>: plannerBucketTaskBoardTaskFormat
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
   - `[OrderHint <String>]`: Hint used to order tasks in the Bucket view of the Task Board. The format is defined as outlined here.
 
 INPUTOBJECT <IPlannerIdentity>: Identity Parameter
-  - `[PlannerBucketId <String>]`: key: plannerBucket-id of plannerBucket
-  - `[PlannerPlanId <String>]`: key: plannerPlan-id of plannerPlan
-  - `[PlannerTaskId <String>]`: key: plannerTask-id of plannerTask
+  - `[GroupId <String>]`: key: id of group
+  - `[PlannerBucketId <String>]`: key: id of plannerBucket
+  - `[PlannerDeltaId <String>]`: key: id of plannerDelta
+  - `[PlannerPlanId <String>]`: key: id of plannerPlan
+  - `[PlannerTaskId <String>]`: key: id of plannerTask
+  - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
 

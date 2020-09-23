@@ -12,19 +12,19 @@ while(-not $mockingPath) {
 . ($mockingPath | Select-Object -First 1).FullName
 
 Describe 'Invoke-MgForwardUserMessage' {
-    It 'ForwardExpanded1' -skip {
+    It 'ForwardExpanded' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'Forward1' -skip {
+    It 'Forward' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'ForwardViaIdentityExpanded1' -skip {
+    It 'ForwardViaIdentityExpanded' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'ForwardViaIdentity1' -skip {
+    It 'ForwardViaIdentity' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 }

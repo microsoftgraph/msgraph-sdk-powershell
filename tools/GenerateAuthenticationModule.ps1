@@ -8,7 +8,8 @@ Param(
   [switch] $Pack,
   [switch] $Publish,
   [switch] $EnableSigning,
-  [switch] $BuildWhenEqual
+  [switch] $BuildWhenEqual,
+  [int] $ModulePreviewNumber = -1
 )
 enum VersionState {
   Invalid
@@ -37,25 +38,32 @@ if ($null -eq $ManifestContent.ModuleVersion) {
   # Module version not set in module manifest (psd1).
   Write-Error "Version number is not set on $ModulePrefix.$ModuleName module. Please set 'ModuleVersion' in $AuthModulePath\$AuthModuleManifest."
 }
-
+$AllowPreRelease = $true
+if($ModulePreviewNumber -eq -1) {
+    $AllowPreRelease = $false
+}
+Write-Warning $ManifestContent
 # Validate module version with the one on PSGallery.
-[VersionState]$VersionState = & $ValidateUpdatedModuleVersionPS1 -ModuleName "$ModulePrefix.$ModuleName" -NextVersion $ManifestContent.ModuleVersion
+[VersionState]$VersionState = & $ValidateUpdatedModuleVersionPS1 -ModuleName "$ModulePrefix.$ModuleName" -NextVersion $ManifestContent.ModuleVersion -PSRepository $RepositoryName -ModulePreviewNumber $ModulePreviewNumber
 
 if ($VersionState.Equals([VersionState]::Invalid)) {
-  Write-Error "The specified version in $ModulePrefix.$ModuleName module is either higher or lower than what's on $RepositoryName. Update 'ModuleVersion' in $AuthModulePath$AuthModuleManifest."
+  Write-Warning "The specified version in $ModulePrefix.$ModuleName module is either higher or lower than what's on $RepositoryName. Update 'ModuleVersion' in $AuthModulePath$AuthModuleManifest."
 }
 elseif ($VersionState.Equals([VersionState]::EqualToFeed) -and !$BuildWhenEqual) {
   Write-Warning "$ModulePrefix.$ModuleName module skipped. Version has not changed and is equal to what's on $RepositoryName."
 }
 elseif ($VersionState.Equals([VersionState]::Valid) -or $VersionState.Equals([VersionState]::NotOnFeed) -or $BuildWhenEqual) {
   $ModuleVersion = $VersionState.Equals([VersionState]::NotOnFeed) ? "0.1.1" : $ManifestContent.ModuleVersion
+  Write-Warning $VersionState
+  Write-Warning $ModuleVersion
+  Write-Warning $ManifestContent.ModuleVersion
   # Build and pack generated module.
   if ($Build) {
     if ($EnableSigning) {
-      & $BuildModulePS1 -Module $ModuleName -ModulePrefix $ModulePrefix -ModuleVersion $ModuleVersion -ReleaseNotes $ManifestContent.PrivateData.PSData.ReleaseNotes -EnableSigning
+      & $BuildModulePS1 -Module $ModuleName -ModulePrefix $ModulePrefix -ModuleVersion $ModuleVersion -ModulePreviewNumber $ModulePreviewNumber -ReleaseNotes $ManifestContent.PrivateData.PSData.ReleaseNotes -EnableSigning
     }
     else {
-      & $BuildModulePS1 -Module $ModuleName -ModulePrefix $ModulePrefix -ModuleVersion $ModuleVersion -ReleaseNotes $ManifestContent.PrivateData.PSData.ReleaseNotes
+      & $BuildModulePS1 -Module $ModuleName -ModulePrefix $ModulePrefix -ModuleVersion $ModuleVersion -ModulePreviewNumber $ModulePreviewNumber -ReleaseNotes $ManifestContent.PrivateData.PSData.ReleaseNotes
     }
   }
 

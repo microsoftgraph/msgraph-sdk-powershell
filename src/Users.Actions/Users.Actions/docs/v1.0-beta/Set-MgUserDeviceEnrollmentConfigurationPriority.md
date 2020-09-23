@@ -15,7 +15,7 @@ Invoke action setPriority
 ### SetExpanded (Default)
 ```
 Set-MgUserDeviceEnrollmentConfigurationPriority -DeviceEnrollmentConfigurationId <String> -UserId <String>
- [-Priority <Int32>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-Priority <Int32>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Set
@@ -34,8 +34,8 @@ Set-MgUserDeviceEnrollmentConfigurationPriority -InputObject <IUsersActionsIdent
 
 ### SetViaIdentityExpanded
 ```
-Set-MgUserDeviceEnrollmentConfigurationPriority -InputObject <IUsersActionsIdentity> [-Priority <Int32>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Set-MgUserDeviceEnrollmentConfigurationPriority -InputObject <IUsersActionsIdentity>
+ [-AdditionalProperties <Hashtable>] [-Priority <Int32>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -63,6 +63,21 @@ PS C:\> {{ Add code here }}
 
 ## PARAMETERS
 
+### -AdditionalProperties
+Additional Parameters
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: SetExpanded, SetViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -BodyParameter
 .
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
@@ -80,7 +95,7 @@ Accept wildcard characters: False
 ```
 
 ### -DeviceEnrollmentConfigurationId
-key: deviceEnrollmentConfiguration-id of deviceEnrollmentConfiguration
+key: id of deviceEnrollmentConfiguration
 
 ```yaml
 Type: System.String
@@ -141,7 +156,7 @@ Accept wildcard characters: False
 ```
 
 ### -UserId
-key: user-id of user
+key: id of user
 
 ```yaml
 Type: System.String
@@ -209,31 +224,31 @@ To create the parameters described below, construct a hash table containing the 
 
 
 BODYPARAMETER <IPaths64E37UUsersUserIdDeviceenrollmentconfigurationsDeviceenrollmentconfigurationIdMicrosoftGraphSetpriorityPostRequestbodyContentApplicationJsonSchema>: .
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Priority <Int32?>]`: 
 
 INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
-  - `[AppLogCollectionRequestId <String>]`: key: appLogCollectionRequest-id of appLogCollectionRequest
-  - `[AuthenticationMethodId <String>]`: key: authenticationMethod-id of authenticationMethod
-  - `[CalendarGroupId <String>]`: key: calendarGroup-id of calendarGroup
-  - `[CalendarId <String>]`: key: calendar-id of calendar
-  - `[DeviceEnrollmentConfigurationId <String>]`: key: deviceEnrollmentConfiguration-id of deviceEnrollmentConfiguration
-  - `[EventId <String>]`: key: event-id of event
-  - `[EventId1 <String>]`: key: event-id of event
-  - `[MailFolderId <String>]`: key: mailFolder-id of mailFolder
-  - `[MailFolderId1 <String>]`: key: mailFolder-id of mailFolder
-  - `[ManagedDeviceId <String>]`: key: managedDevice-id of managedDevice
-  - `[MessageId <String>]`: key: message-id of message
-  - `[MobileAppTroubleshootingEventId <String>]`: key: mobileAppTroubleshootingEvent-id of mobileAppTroubleshootingEvent
-  - `[NotebookId <String>]`: key: notebook-id of notebook
-  - `[OnenotePageId <String>]`: key: onenotePage-id of onenotePage
-  - `[OnenoteSectionId <String>]`: key: onenoteSection-id of onenoteSection
-  - `[OutlookTaskFolderId <String>]`: key: outlookTaskFolder-id of outlookTaskFolder
-  - `[OutlookTaskGroupId <String>]`: key: outlookTaskGroup-id of outlookTaskGroup
-  - `[OutlookTaskId <String>]`: key: outlookTask-id of outlookTask
-  - `[SectionGroupId <String>]`: key: sectionGroup-id of sectionGroup
-  - `[TeamsAppInstallationId <String>]`: key: teamsAppInstallation-id of teamsAppInstallation
-  - `[UserId <String>]`: key: user-id of user
-  - `[WindowsInformationProtectionDeviceRegistrationId <String>]`: key: windowsInformationProtectionDeviceRegistration-id of windowsInformationProtectionDeviceRegistration
+  - `[AccessReviewInstanceId <String>]`: key: id of accessReviewInstance
+  - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest
+  - `[AuthenticationMethodId <String>]`: key: id of authenticationMethod
+  - `[CalendarId <String>]`: key: id of calendar
+  - `[DeviceEnrollmentConfigurationId <String>]`: key: id of deviceEnrollmentConfiguration
+  - `[DeviceLogCollectionResponseId <String>]`: key: id of deviceLogCollectionResponse
+  - `[EventId <String>]`: key: id of event
+  - `[EventId1 <String>]`: key: id of event
+  - `[MailFolderId <String>]`: key: id of mailFolder
+  - `[MailFolderId1 <String>]`: key: id of mailFolder
+  - `[ManagedDeviceId <String>]`: key: id of managedDevice
+  - `[MessageId <String>]`: key: id of message
+  - `[MobileAppTroubleshootingEventId <String>]`: key: id of mobileAppTroubleshootingEvent
+  - `[NotebookId <String>]`: key: id of notebook
+  - `[OnenotePageId <String>]`: key: id of onenotePage
+  - `[OnenoteSectionId <String>]`: key: id of onenoteSection
+  - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
+  - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup
+  - `[OutlookTaskId <String>]`: key: id of outlookTask
+  - `[UserId <String>]`: key: id of user
+  - `[WindowsInformationProtectionDeviceRegistrationId <String>]`: key: id of windowsInformationProtectionDeviceRegistration
 
 ## RELATED LINKS
 

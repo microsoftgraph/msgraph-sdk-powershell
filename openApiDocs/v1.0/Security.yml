@@ -50,6 +50,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.security'
+          links:
+            alerts:
+              operationId: Security.ListAlerts
+            secureScoreControlProfiles:
+              operationId: Security.ListSecureScoreControlProfiles
+            secureScores:
+              operationId: Security.ListSecureScores
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1836,6 +1843,7 @@ components:
       enum:
         - ip
         - icmp
+        - unknown
         - igmp
         - ggp
         - ipv4
@@ -1857,7 +1865,6 @@ components:
         - spx
         - spxII
         - unknownFutureValue
-        - unknown
       type: string
     microsoft.graph.connectionStatus:
       title: connectionStatus

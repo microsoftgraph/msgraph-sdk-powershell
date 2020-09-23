@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Search
-Module Guid: 87c4e537-619a-4cf9-9dbe-91ba1be68892
+Module Guid: 994ad135-2b99-45c2-963c-a3d1eba186df
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.search
 Help Version: 1.0.0.0
 Locale: en-US
@@ -11,18 +11,6 @@ Locale: en-US
 Microsoft Graph PowerShell Cmdlets
 
 ## Microsoft.Graph.Search Cmdlets
-### [Get-MgConnectionExternalConnection](Get-MgConnectionExternalConnection.md)
-Get entity from connections by key
-
-### [Get-MgConnectionItem](Get-MgConnectionItem.md)
-Get items from connections
-
-### [Get-MgConnectionOperation](Get-MgConnectionOperation.md)
-Get operations from connections
-
-### [Get-MgConnectionSchema](Get-MgConnectionSchema.md)
-Get schema from connections
-
 ### [Get-MgExternal](Get-MgExternal.md)
 Get external
 
@@ -35,32 +23,11 @@ Get search
 ### [Invoke-MgQuerySearch](Invoke-MgQuerySearch.md)
 Invoke action query
 
-### [New-MgConnectionExternalConnection](New-MgConnectionExternalConnection.md)
-Add new entity to connections
-
-### [New-MgConnectionItem](New-MgConnectionItem.md)
-Create new navigation property to items for connections
-
-### [New-MgConnectionOperation](New-MgConnectionOperation.md)
-Create new navigation property to operations for connections
-
 ### [New-MgExternalConnection](New-MgExternalConnection.md)
 Create new navigation property to connections for external
 
-### [Remove-MgConnectionExternalConnection](Remove-MgConnectionExternalConnection.md)
-Delete entity from connections
-
-### [Update-MgConnectionExternalConnection](Update-MgConnectionExternalConnection.md)
-Update entity in connections
-
-### [Update-MgConnectionItem](Update-MgConnectionItem.md)
-Update the navigation property items in connections
-
-### [Update-MgConnectionOperation](Update-MgConnectionOperation.md)
-Update the navigation property operations in connections
-
-### [Update-MgConnectionSchema](Update-MgConnectionSchema.md)
-Update the navigation property schema in connections
+### [Remove-MgExternalConnection](Remove-MgExternalConnection.md)
+Delete navigation property connections for external
 
 ### [Update-MgExternal](Update-MgExternal.md)
 Update external

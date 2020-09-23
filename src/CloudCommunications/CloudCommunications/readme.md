@@ -32,21 +32,9 @@ title: $(service-name)
 subject-prefix: ''
 
 ```
-
-### Directives
-
-``` yaml
-directive:
-  - where:
-      verb: Invoke
-      subject: MuteCommunicationCallParticipant
-      variant: MuteViaIdentityExpanded1|MuteExpanded1|MuteViaIdentity1|Mute1
-    set:
-      subject: MuteAllCommunicationCallParticipant
-```
 ### Versioning
 
 ``` yaml
-module-version: 0.9.0
+module-version: 1.0.0
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

@@ -12,11 +12,11 @@ while(-not $mockingPath) {
 . ($mockingPath | Select-Object -First 1).FullName
 
 Describe 'Get-MgUserContactFolderDelta' {
-    It 'Delta' -skip {
+    It 'Delta1' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'DeltaViaIdentity' -skip {
+    It 'DeltaViaIdentity1' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 }
