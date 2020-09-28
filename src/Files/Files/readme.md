@@ -38,11 +38,11 @@ subject-prefix: ''
 
 ``` yaml
 directive:
-  - remove-path-by-operation: .*_(Create|Get|Update|Delete)Activities$|.*\.activities.*$
+  - remove-path-by-operation: .*_(Create|Get|Update|Set|Delete)Activities$|.*\.activities.*$
 ```
 ### Versioning
 
 ``` yaml
-module-version: 1.0.0
+module-version: 1.0.1
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

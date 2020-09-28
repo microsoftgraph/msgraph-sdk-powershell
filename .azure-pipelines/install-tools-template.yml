@@ -57,6 +57,7 @@ steps:
       inputs:
         targetType: inline
         pwsh: true
+        errorActionPreference: 'continue'
         script: |
           $ErrorActionPreference = [System.Management.Automation.ActionPreference]::Continue
           Get-PSRepository
@@ -64,8 +65,10 @@ steps:
           $nugetFeed = '$(NUGETFEED)'
           $user = '$(NUGETBUILDUSER)'
           $credsAzureDevopsServices = New-Object System.Management.Automation.PSCredential($user, $patToken)
-          Register-PackageSource -Name 'LocalNugetPackageSource' -Location $nugetFeed -SkipValidate -Trusted -Verbose -ProviderName 'Nuget'
-          Register-PSRepository -Name 'LocalNugetFeed' -SourceLocation $nugetFeed -PublishLocation $nugetFeed -InstallationPolicy Trusted -Credential $credsAzureDevopsServices -PackageManagementProvider 'Nuget'
+          UnRegister-PackageSource -Name 'LocalNugetPackageSource' -ErrorAction Continue
+          UnRegister-PSRepository -Name 'LocalNugetFeed' -ErrorAction Continue
+          Register-PackageSource -Name 'LocalNugetPackageSource' -Location $nugetFeed -SkipValidate -Trusted -Verbose -ProviderName 'Nuget' -ErrorAction Continue
+          Register-PSRepository -Name 'LocalNugetFeed' -SourceLocation $nugetFeed -PublishLocation $nugetFeed -InstallationPolicy Trusted -Credential $credsAzureDevopsServices -PackageManagementProvider 'Nuget' -ErrorAction Continue
           Get-PSRepository
           Find-Module -Name Microsoft.Graph.Authentication -AllowPrerelease -Credential $credsAzureDevopsServices -AllVersions -Repository 'LocalNugetFeed'
           Find-Module -Name Microsoft.Graph.Authentication -AllowPrerelease -Repository 'LocalNugetFeed'

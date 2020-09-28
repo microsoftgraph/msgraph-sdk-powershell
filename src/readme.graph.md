@@ -457,7 +457,7 @@ directive:
   - from: source-file-csharp
     where: $
     transform: >
-      if (!$documentPath.match(/generated%5Capi%5CModels%5CMicrosoftGraph\w*\d*.cs/gm))
+      if (!$documentPath.match(/generated%5Capi%5CModels%5C\w*MicrosoftGraph\w*\d*.cs/gm))
       {
         return $;
       } else {
