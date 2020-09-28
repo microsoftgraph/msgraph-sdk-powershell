@@ -7,8 +7,8 @@ Get-MgOrganization | Select-Object DisplayName, City, State, Country, PostalCode
 Get-MgOrganization | Select-Object -expand AssignedPlans
 
 ## List application registrations in the tenant
-Get-MgApplication | Select-Object DisplayName, Appid, WebRedirectUris
+Get-MgApplication | Select-Object DisplayName, Appid, SignInAudience
 
 ## List service principals in the tenant
-get-MgServicePrincipal | Select-Object id, AppDisplayName | Where-Object { $_.AppDisplayName -like "*powershell*" }
+Get-MgServicePrincipal | Select-Object id, AppDisplayName | Where-Object { $_.AppDisplayName -like "*powershell*" }
 

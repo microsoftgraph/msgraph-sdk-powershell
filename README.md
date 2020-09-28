@@ -1,4 +1,4 @@
-# Microsoft Graph PowerShell SDK Preview
+# Microsoft Graph PowerShell SDK
 The Microsoft Graph PowerShell SDK is a collection of PowerShell modules that contain commands for calling Microsoft Graph service.
 
 # Modules
