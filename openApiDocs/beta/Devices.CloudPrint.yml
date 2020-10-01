@@ -23,7 +23,6 @@ paths:
             type: array
             items:
               enum:
-                - id
                 - settings
                 - connectors
                 - operations
@@ -6008,47 +6007,45 @@ paths:
 components:
   schemas:
     microsoft.graph.print:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: print
-          type: object
-          properties:
-            settings:
-              $ref: '#/components/schemas/microsoft.graph.printSettings'
-            connectors:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.printConnector'
-            operations:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.printOperation'
-            printers:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.printer'
-            printerShares:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.printerShare'
-            reports:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.reportRoot'
-            services:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.printService'
-            shares:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.printerShare'
-            taskDefinitions:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.printTaskDefinition'
-          additionalProperties:
-            type: object
+      title: print
+      type: object
+      properties:
+        settings:
+          $ref: '#/components/schemas/microsoft.graph.printSettings'
+        connectors:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printConnector'
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printOperation'
+        printers:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printer'
+        printerShares:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printerShare'
+        reports:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.reportRoot'
+        services:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printService'
+        shares:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printerShare'
+        taskDefinitions:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printTaskDefinition'
+      additionalProperties:
+        type: object
     microsoft.graph.printConnector:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -6671,6 +6668,14 @@ components:
               $ref: '#/components/schemas/microsoft.graph.printTaskTrigger'
           additionalProperties:
             type: object
+    microsoft.graph.printSettings:
+      title: printSettings
+      type: object
+      properties:
+        documentConversionEnabled:
+          type: boolean
+      additionalProperties:
+        type: object
     microsoft.graph.entity:
       title: entity
       type: object
@@ -6678,14 +6683,6 @@ components:
         id:
           type: string
           description: Read-only.
-      additionalProperties:
-        type: object
-    microsoft.graph.printSettings:
-      title: printSettings
-      type: object
-      properties:
-        documentConversionEnabled:
-          type: boolean
       additionalProperties:
         type: object
     microsoft.graph.deviceHealth:
