@@ -66,6 +66,7 @@
             GraphSession.Reset();
         }
 
+#if NETCORE
         [Fact]
         public void ShouldUseClientCredentialProviderWhenAppOnlyContextIsProvided()
         {
@@ -133,6 +134,7 @@
                 xStore.Remove(xCertificate);
             }
         }
+#endif
 
     }
 }
