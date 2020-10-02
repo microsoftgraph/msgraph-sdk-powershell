@@ -56,7 +56,7 @@ There are a set of samples in the `samples` folder to help in getting started wi
 2. List users in your tenant.
 
     ```ps
-    Get-User -Top 10 -Property Id, DisplayName, BusinessPhones | Format-Table Id, DisplayName, BusinessPhones
+    Get-MgUser -Top 10 -Property Id, DisplayName, BusinessPhones | Format-Table Id, DisplayName, BusinessPhones
     ```
 
 3. Filter a user in your tenant.
