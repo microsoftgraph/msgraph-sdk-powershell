@@ -49,6 +49,11 @@ namespace Microsoft.Graph.PowerShell.Authentication
         public string SelectedProfile { get; set; } = Constants.DefaultProfile;
 
         /// <summary>
+        /// The selected national cloud environment.
+        /// </summary>
+        public IGraphEnvironment Environment { get; set; }
+
+        /// <summary>
         /// Gets an instance of <see cref="GraphSession"/>.
         /// </summary>
         public static GraphSession Instance

@@ -45,6 +45,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             HelpMessage = "Http Method")]
         public GraphRequestMethod Method { get; set; } = GraphRequestMethod.GET;
 
+        //TODO: Ensure invoke graph supports national cloud.
         /// <summary>
         ///     Uri to call using the Graph HttpClient can be segments such as /beta/me
         ///     or fully qualified url such as https://graph.microsoft.com/beta/me

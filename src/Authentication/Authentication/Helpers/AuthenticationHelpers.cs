@@ -27,6 +27,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
             }
 
             IAuthenticationProvider authProvider = null;
+            string authorityUrl = GetAuthorityUrl(authContext);
             switch (authContext.AuthType)
             {
                 case AuthenticationType.Delegated:
@@ -34,6 +35,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                         IPublicClientApplication publicClientApp = PublicClientApplicationBuilder
                         .Create(authContext.ClientId)
                         .WithTenantId(authContext.TenantId)
+                        .WithAuthority(authorityUrl)
                         .Build();
 
                         ConfigureTokenCache(publicClientApp.UserTokenCache, authContext);
@@ -47,6 +49,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                         IConfidentialClientApplication confidentialClientApp = ConfidentialClientApplicationBuilder
                         .Create(authContext.ClientId)
                         .WithTenantId(authContext.TenantId)
+                        .WithAuthority(authorityUrl)
                         .WithCertificate(string.IsNullOrEmpty(authContext.CertificateThumbprint) ? GetCertificateByName(authContext.CertificateName) : GetCertificateByThumbprint(authContext.CertificateThumbprint))
                         .Build();
 
@@ -65,6 +68,20 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                     }
             }
             return authProvider;
+        }
+
+        private static string GetAuthorityUrl(IAuthContext authContext)
+        {
+            string audience = authContext.TenantId ?? GraphEnvironmentConstants.CommonAdTenant;
+            string defaultInstance = GraphEnvironmentConstants.GraphEnvironmentEndpoints[GraphEnvironmentConstants.EnvironmentName.Global].AzureADEndpoint;
+            string authorityUrl = $"{defaultInstance}/{audience}";
+
+            if (GraphSession.Instance.Environment != null)
+            {
+                authorityUrl = $"{GraphSession.Instance.Environment.AzureADEndpoint}/{audience}";
+            }
+
+            return authorityUrl;
         }
 
         internal static void Logout(IAuthContext authConfig)

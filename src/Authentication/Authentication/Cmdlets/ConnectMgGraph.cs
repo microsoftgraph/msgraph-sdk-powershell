@@ -61,12 +61,39 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             HelpMessage = "Determines the scope of authentication context. This accepts `Process` for the current process, or `CurrentUser` for all sessions started by user.")]
         public ContextScope ContextScope { get; set; }
 
+        [Parameter(Mandatory = false,
+            HelpMessage = "The name of the national cloud environment to connect to. By default, the SDK uses global cloud.")]
+        [Alias("EnvironmentName", "NationalCloud")]
+        [ValidateNotNullOrEmpty]
+        public string Environment { get; set; }
+
         private CancellationTokenSource cancellationTokenSource;
+
+        private IGraphEnvironment environment;
 
         protected override void BeginProcessing()
         {
-            ValidateParameters();
             base.BeginProcessing();
+            ValidateParameters();
+
+            if (GraphEnvironment.GraphEnvironments.ContainsKey(GraphEnvironmentConstants.EnvironmentName.Global))
+            {
+                environment = GraphEnvironment.GraphEnvironments[GraphEnvironmentConstants.EnvironmentName.Global];
+            }
+            else
+            {
+                WriteWarning($"Default environment {GraphEnvironmentConstants.EnvironmentName.Global} cannot be found from environment list.");
+                WriteWarning("You can get current list via [Microsoft.Graph.PowerShell.Authentication.GraphEnvironment]::GraphEnvironments");
+            }
+
+            if (MyInvocation.BoundParameters.ContainsKey(nameof(Environment)))
+            {
+                var settings = new GraphContextSettings();
+                if (!settings.TryGetEnvironment(Environment, out environment))
+                {
+                    throw new PSInvalidOperationException(string.Format(ErrorConstants.Message.InvalidEnvironment, Environment));
+                }
+            }
         }
 
         protected override void EndProcessing()
@@ -79,6 +106,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             base.ProcessRecord();
             IAuthContext authContext = new AuthContext { TenantId = TenantId };
             cancellationTokenSource = new CancellationTokenSource();
+            GraphSession.Instance.Environment = environment;
 
             switch (ParameterSetName)
             {
@@ -259,9 +287,17 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 
         private void ThrowParameterError(string parameterName)
         {
+            ThrowError($"Must specify '{parameterName}'.", ErrorCategory.InvalidArgument);
+        }
+
+        private void ThrowError(string message, ErrorCategory errorCategory)
+        {
             ThrowTerminatingError(
                 new ErrorRecord(
-                    new ArgumentException($"Must specify {parameterName}"), Guid.NewGuid().ToString(), ErrorCategory.InvalidArgument, null)
+                    new ArgumentException(message),
+                    Guid.NewGuid().ToString(),
+                    errorCategory,
+                    null)
                 );
         }
 
