@@ -7,7 +7,7 @@ Description       | Module Name       | PowerShell Gallery Link
 ----------------- | ----------------- | ------------------------
 Microsoft Graph   | `Microsoft.Graph` | [![Mg]][MgGallery]
 
-For a list of modules found in this repository, see the [Microsoft Graph Graph PowerShell modules](https://github.com/microsoftgraph/msgraph-sdk-powershell/wiki/MS-Graph-PowerShell-Modules) document.
+For a list of modules found in this repository, see the [Microsoft Graph PowerShell modules](https://github.com/microsoftgraph/msgraph-sdk-powershell/wiki/MS-Graph-PowerShell-Modules) document.
 
 ## Installation
 ### PowerShell Gallery
@@ -18,45 +18,45 @@ All the modules are published on [PowerShell Gallery](https://www.powershellgall
 Install-Module Microsoft.Graph
 ```
 
-If you are upgrading from our preview modules, run `Install-Module` with AllowClobber and Force parameter to avoid command name conflicts:
+If you are upgrading from our preview modules, run `Install-Module` with AllowClobber and Force parameters to avoid command name conflicts:
 ```ps
  Install-Module Microsoft.Graph -AllowClobber -Force
 ```
-There are a set of samples in the `samples` folder to help in getting started with the library. If you have an older version of these modules installed, there are extra uninstall instructions in the [InstallModule](./samples/0-InstallModule.ps1) script.
+There is a set of samples in the `samples` folder to help in getting started with the library. If you have an older version of these modules installed, there are extra uninstall instructions in the [InstallModule](./samples/0-InstallModule.ps1) script.
 
 ## Usage
 
 1. Authentication
     
-    The SDK supports two types of authentication: delegated access, and app-oly access.
+    The SDK supports two types of authentication: delegated access, and app-only access.
     - Delegated access via Device Code Flow.
 
         ```ps
-        Connect-Graph -Scopes "User.Read.All", "Group.ReadWrite.All"
+        Connect-MgGraph -Scopes "User.Read.All", "Group.ReadWrite.All"
         ```
 
-    - App only access via Client Credential with a certificate.
+    - App-only access via Client Credential with a certificate.
 
-        The certificate will be loaded from `Cert:\CurrentUser\My\` store. Ensure the certificate is present in the store before calling `Connect-Graph`.
+        The certificate will be loaded from `Cert:\CurrentUser\My\` store. Ensure the certificate is present in the store before calling `Connect-MgGraph`.
         
-        You can pass either `-CertificateThumbprint` or `-CertificateName` to `Connect-Graph`.
+        You can pass either `-CertificateThumbprint` or `-CertificateName` to `Connect-MgGraph`.
 
         ```ps
         # Using -CertificateThumbprint
-        Connect-Graph -ClientId "YOUR_APP_ID" -TenantId "YOUR_TENANT_ID" -CertificateThumbprint "YOUR_CERT_THUMBPRINT"
+        Connect-MgGraph -ClientId "YOUR_APP_ID" -TenantId "YOUR_TENANT_ID" -CertificateThumbprint "YOUR_CERT_THUMBPRINT"
         ```
 
         or
 
         ```ps
         # Using -CertificateName
-        Connect-Graph -ClientId "YOUR_APP_ID" -TenantId "YOUR_TENANT_ID" -CertificateName "YOUR_CERT_SUBJECT"
+        Connect-MgGraph -ClientId "YOUR_APP_ID" -TenantId "YOUR_TENANT_ID" -CertificateName "YOUR_CERT_SUBJECT"
         ```
 
 2. List users in your tenant.
 
     ```ps
-    Get-User -Top 10 -Property Id, DisplayName, BusinessPhones | Format-Table Id, DisplayName, BusinessPhones
+    Get-MgUser -Top 10 -Property Id, DisplayName, BusinessPhones | Format-Table Id, DisplayName, BusinessPhones
     ```
 
 3. Filter a user in your tenant.
@@ -76,7 +76,7 @@ There are a set of samples in the `samples` folder to help in getting started wi
 5. Sign out of the current logged-in context i.e. app only or delegated access.
 
     ```ps
-    Disconnect-Graph
+    Disconnect-MgGraph
     ```
 ## API Version
 By default, the SDK uses the Microsoft Graph REST API v1.0. You can change this by using the `Select-MgProfile` command. This reloads all modules and only loads commands that call beta endpoint.
@@ -87,12 +87,12 @@ Select-MgProfile -Name "beta"
 
 ## Troubleshooting Permission Related Errors
 
-When working with various operations in the Graph, you may encounter an error such as "Insufficient privileges to complete the operation."  For example, this particular error can occur when using the `New-MgApplication` command if the appropriate permissions are not granted.
+When working with various operations in the Graph, you may encounter an error such as "Insufficient privileges to complete the operation." For example, this particular error can occur when using the `New-MgApplication` command if the appropriate permissions are not granted.
 
 If permission related errors occur and the user you authenticated with in the popup has the appropriate permissions to perform the operation try these steps.
 
-- You can try running `Disconnect-Graph`, then `Connect-Graph`.  Then, run the code that encountered the permission issues to see if it works.
-- You can try running `Connect-Graph -ForceRefresh`.  This will trigger a refresh of the access token in your cache. MSAL will only refresh the access token in your cache if it has expired (usually an hour), or if you explicitly refresh it via `-ForceRefresh`.  Then, run the code that encountered the permission issues to see if it works.
+- You can try running `Disconnect-MgGraph`, then `Connect-MgGraph`.  Then, run the code that encountered the permission issues to see if it works.
+- You can try running `Connect-MgGraph -ForceRefresh`.  This will trigger a refresh of the access token in your cache. MSAL will only refresh the access token in your cache if it has expired (usually an hour), or if you explicitly refresh it via `-ForceRefresh`. Then, run the code that encountered the permission issues to see if it works.
 
 ## Issues
 If you find any bugs when using the Microsoft Graph PowerShell modules, please file an issue in our GitHub issues page.
