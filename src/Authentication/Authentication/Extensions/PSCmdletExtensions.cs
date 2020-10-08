@@ -3,7 +3,10 @@
 // ------------------------------------------------------------------------------
 namespace Microsoft.Graph.PowerShell
 {
+    using Microsoft.Graph.PowerShell.Authentication;
+    using Microsoft.Graph.PowerShell.Authentication.Common;
     using Microsoft.Graph.PowerShell.Authentication.Extensions;
+    using Microsoft.Graph.PowerShell.Authentication.Helpers;
     using System;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
@@ -84,6 +87,37 @@ namespace Microsoft.Graph.PowerShell
         {
             var propName = ((MemberExpression)propertySelector.Body).Member.Name;
             return cmdlet.IsParameterBound(propName);
+        }
+
+        internal static void ThrowParameterError(this PSCmdlet cmdlet, string message, params object[] parameters)
+        {
+            cmdlet.ThrowError(message.FormatCurrentCulture(parameters), ErrorCategory.InvalidArgument);
+        }
+
+        internal static void ThrowParameterError(this PSCmdlet cmdlet, string parameterName)
+        {
+            cmdlet.ThrowError($"Must specify '{parameterName}'.", ErrorCategory.InvalidArgument);
+        }
+
+        internal static void ThrowError(this PSCmdlet cmdlet, string message, ErrorCategory errorCategory)
+        {
+            cmdlet.ThrowTerminatingError(
+                new ErrorRecord(
+                    new ArgumentException(message),
+                    Guid.NewGuid().ToString(),
+                    errorCategory,
+                    null)
+                );
+        }
+
+        /// <summary>
+        /// Creates a <see cref="GraphSettings"/> with shared read access to the data store.
+        /// </summary>
+        /// <param name="cmdlet">The calling cmdlet.</param>
+        /// <returns>A new instance of <see cref="GraphSettings"/>.</returns>
+        internal static GraphSettings GetContextSettings(this PSCmdlet cmdlet)
+        {
+            return new GraphSettings(ProtectedFileProvider.CreateFileProvider(Constants.ContextSettingFilePath, FileProtection.SharedRead));
         }
     }
 }

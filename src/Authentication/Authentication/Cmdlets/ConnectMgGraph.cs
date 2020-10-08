@@ -16,6 +16,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
     using System.Threading.Tasks;
     using System.Net;
     using System.Globalization;
+    using Microsoft.Graph.PowerShell.Authentication.Common;
 
     [Cmdlet(VerbsCommunications.Connect, "MgGraph", DefaultParameterSetName = Constants.UserParameterSet)]
     [Alias("Connect-Graph")]
@@ -63,8 +64,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 
         [Parameter(Mandatory = false,
             HelpMessage = "The name of the national cloud environment to connect to. By default, the SDK uses global cloud.")]
-        [Alias("EnvironmentName", "NationalCloud")]
         [ValidateNotNullOrEmpty]
+        [Alias("EnvironmentName", "NationalCloud")]
         public string Environment { get; set; }
 
         private CancellationTokenSource cancellationTokenSource;
@@ -88,7 +89,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 
             if (MyInvocation.BoundParameters.ContainsKey(nameof(Environment)))
             {
-                var settings = new GraphContextSettings();
+                GraphSettings settings = this.GetContextSettings();
                 if (!settings.TryGetEnvironment(Environment, out environment))
                 {
                     throw new PSInvalidOperationException(string.Format(ErrorConstants.Message.InvalidEnvironment, Environment));
@@ -106,6 +107,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             base.ProcessRecord();
             IAuthContext authContext = new AuthContext { TenantId = TenantId };
             cancellationTokenSource = new CancellationTokenSource();
+            // Set selected environment to the session object.
             GraphSession.Instance.Environment = environment;
 
             switch (ParameterSetName)
@@ -256,19 +258,19 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                         // Client Id
                         if (string.IsNullOrEmpty(ClientId))
                         {
-                            ThrowParameterError(nameof(ClientId));
+                            this.ThrowParameterError(nameof(ClientId));
                         }
 
                         // Certificate Thumbprint or name
                         if (string.IsNullOrEmpty(CertificateThumbprint) && string.IsNullOrEmpty(CertificateName))
                         {
-                            ThrowParameterError($"{nameof(CertificateThumbprint)} or {nameof(CertificateName)}");
+                            this.ThrowParameterError($"{nameof(CertificateThumbprint)} or {nameof(CertificateName)}");
                         }
 
                         // Tenant Id
                         if (string.IsNullOrEmpty(TenantId))
                         {
-                            ThrowParameterError(nameof(TenantId));
+                            this.ThrowParameterError(nameof(TenantId));
                         }
 
                     }
@@ -278,27 +280,11 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                         // AccessToken
                         if (string.IsNullOrEmpty(AccessToken))
                         {
-                            ThrowParameterError(nameof(AccessToken));
+                            this.ThrowParameterError(nameof(AccessToken));
                         }
                     }
                     break;
             }
-        }
-
-        private void ThrowParameterError(string parameterName)
-        {
-            ThrowError($"Must specify '{parameterName}'.", ErrorCategory.InvalidArgument);
-        }
-
-        private void ThrowError(string message, ErrorCategory errorCategory)
-        {
-            ThrowTerminatingError(
-                new ErrorRecord(
-                    new ArgumentException(message),
-                    Guid.NewGuid().ToString(),
-                    errorCategory,
-                    null)
-                );
         }
 
         private void DecodeJWT(string token, IAccount account, ref IAuthContext authContext)
@@ -336,6 +322,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         public void OnImport()
         {
             GraphSessionInitializer.InitializeSession();
+            GraphSession.Instance.DataStore = new DiskDataStore();
         }
 
         /// <summary>

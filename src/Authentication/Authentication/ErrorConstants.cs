@@ -26,9 +26,11 @@ namespace Microsoft.Graph.PowerShell.Authentication
             internal const string DeviceCodeTimeout = "Device code terminal timed-out after {0} seconds. Please try again.";
             internal const string InvalidUserProvidedToken = "The provided access token is invalid. Set a valid access token to `-{0}` parameter and try again.";
             internal const string ExpiredUserProvidedToken = "The provided access token has expired. Set a valid access token to `-{0}` parameter and try again.";
-            //TODO: Confirm final name of Get-MgEnvironment.
+            internal const string InvalidUrlParameter = "Parameter '{0}' has an invalid endpoint URL. Please use a valid URL with a network protocol i.e. [protocol]://[resource-name].";
             internal const string InvalidNationalCloud = "Parameter `{0}` has an invalid national cloud. Use Get-MgEnvironment to get a list of valid national clouds.";
             internal const string InvalidEnvironment = "Unable to find environment with name '{0}'.";
+            internal const string CannotAccessFile = "Could not {0} file at '{1}'. Please ensure you have access to this file and try again in a few minutes..";
+            internal const string CannotModifyBuiltInEnvironment = "Cannot {0} built-in environment {1}.";
         }
     }
 }

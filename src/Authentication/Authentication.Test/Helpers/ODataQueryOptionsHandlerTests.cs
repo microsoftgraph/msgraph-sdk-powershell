@@ -1,6 +1,6 @@
 namespace Microsoft.Graph.Authentication.Test
 {
-    using Microsoft.Graph.PowerShell.Authentication.Helpers;
+    using Microsoft.Graph.PowerShell.Authentication.Handlers;
     using System;
     using System.Linq;
     using System.Net.Http;

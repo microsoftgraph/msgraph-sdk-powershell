@@ -3,13 +3,13 @@
 // ------------------------------------------------------------------------------
 namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 {
-    using System;
     using Microsoft.Graph.PowerShell.Authentication.Cmdlets;
     using System.Collections.Generic;
     using System.Linq;
     using System.Net.Http;
     using System.Reflection;
     using System.Security.Authentication;
+    using Microsoft.Graph.PowerShell.Authentication.Handlers;
 
     /// <summary>
     /// A HTTP helper class.

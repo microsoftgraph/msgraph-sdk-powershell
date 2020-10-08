@@ -4,9 +4,13 @@
 
 namespace Microsoft.Graph.PowerShell.Authentication
 {
-    public interface IGraphSession
+    using System;
+    using System.IO;
+    public interface IFileProvider : IDisposable
     {
-        IAuthContext AuthContext { get; set; }
-        IDataStore DataStore { get; set; }
+        string FilePath { get; }
+        Stream Stream { get; }
+        StreamReader CreateReader();
+        StreamWriter CreateWriter();
     }
 }

@@ -18,10 +18,12 @@ namespace Microsoft.Graph.PowerShell.Authentication
         /// Creates a new instance of a <see cref="GraphSession"/>.
         /// </summary>
         /// <returns><see cref="GraphSession"/></returns>
-        internal static GraphSession CreateInstance()
+        internal static GraphSession CreateInstance(IDataStore dataStore = null)
         {
-            // This can be used to initialize GraphSession from a file in the future.
-            return new GraphSession();
+            return new GraphSession
+            {
+                DataStore = dataStore ?? new DiskDataStore()
+            };
         }
     }
 }

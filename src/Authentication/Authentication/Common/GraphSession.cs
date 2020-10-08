@@ -7,6 +7,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
     using System;
     using System.Security;
     using System.Threading;
+
     /// <summary>
     /// Contains methods to create, modify or obtain a thread safe static instance of <see cref="GraphSession"/>.
     /// </summary>
@@ -24,6 +25,11 @@ namespace Microsoft.Graph.PowerShell.Authentication
         /// Gets or Sets <see cref="IAuthContext"/>.
         /// </summary>
         public IAuthContext AuthContext { get; set; }
+
+        /// <summary>
+        /// Gets or sets <see cref="IDataStore"/>.
+        /// </summary>
+        public IDataStore DataStore { get; set; }
 
         private byte[] msalToken;
 

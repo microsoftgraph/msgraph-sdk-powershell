@@ -73,7 +73,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
         private static string GetAuthorityUrl(IAuthContext authContext)
         {
             string audience = authContext.TenantId ?? GraphEnvironmentConstants.CommonAdTenant;
-            string defaultInstance = GraphEnvironmentConstants.GraphEnvironmentEndpoints[GraphEnvironmentConstants.EnvironmentName.Global].AzureADEndpoint;
+            string defaultInstance = GraphEnvironmentConstants.BuiltInEnvironments[GraphEnvironmentConstants.EnvironmentName.Global].AzureADEndpoint;
             string authorityUrl = $"{defaultInstance}/{audience}";
 
             if (GraphSession.Instance.Environment != null)

@@ -5,7 +5,7 @@
 namespace Microsoft.Graph.PowerShell.Authentication.Extensions
 {
     using System;
-    public static class StringExtensions
+    internal static class StringExtensions
     {
         /// <summary>
         /// Indicates whether a specified string is null, empty, consists only of white-space, or has the specified search value.
@@ -35,6 +35,16 @@ namespace Microsoft.Graph.PowerShell.Authentication.Extensions
             }
 
             return target.Contains(searchValue);
+        }
+
+        /// <summary>
+        /// Gets the base URL of a URL string.
+        /// </summary>
+        /// <param name="url">A URL string to get its base URL (Authority).</param>
+        public static string GetBaseUrl(this string url)
+        {
+            Uri uri = new Uri(url);
+            return uri.GetLeftPart(UriPartial.Authority);
         }
     }
 }

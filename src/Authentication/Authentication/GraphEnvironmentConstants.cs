@@ -55,7 +55,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
         /// <summary>
         /// Known endpoint values for Microsoft Graph national clouds.
         /// </summary>
-        internal static readonly IDictionary<string, GraphEnvironment> GraphEnvironmentEndpoints = new Dictionary<string, GraphEnvironment>
+        internal static readonly IDictionary<string, GraphEnvironment> BuiltInEnvironments = new Dictionary<string, GraphEnvironment>
         {
             // Global national cloud endpoints.
             {
