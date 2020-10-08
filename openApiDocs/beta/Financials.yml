@@ -23,7 +23,6 @@ paths:
             type: array
             items:
               enum:
-                - id
                 - companies
               type: string
         - name: $expand
@@ -31888,17 +31887,15 @@ paths:
 components:
   schemas:
     microsoft.graph.financials:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: financials
-          type: object
-          properties:
-            companies:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.company'
-          additionalProperties:
-            type: object
+      title: financials
+      type: object
+      properties:
+        companies:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.company'
+      additionalProperties:
+        type: object
     microsoft.graph.company:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'

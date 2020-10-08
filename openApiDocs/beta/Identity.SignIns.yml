@@ -4528,7 +4528,6 @@ paths:
             type: array
             items:
               enum:
-                - id
                 - authenticationFlowsPolicy
                 - b2cAuthenticationMethodsPolicy
                 - deviceRegistrationPolicy
@@ -8268,7 +8267,6 @@ paths:
             type: array
             items:
               enum:
-                - id
                 - keySets
                 - policies
               type: string
@@ -12941,57 +12939,55 @@ components:
           additionalProperties:
             type: object
     microsoft.graph.policyRoot:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: policyRoot
-          type: object
-          properties:
-            authenticationFlowsPolicy:
-              $ref: '#/components/schemas/microsoft.graph.authenticationFlowsPolicy'
-            b2cAuthenticationMethodsPolicy:
-              $ref: '#/components/schemas/microsoft.graph.b2cAuthenticationMethodsPolicy'
-            deviceRegistrationPolicy:
-              $ref: '#/components/schemas/microsoft.graph.deviceRegistrationPolicy'
-            activityBasedTimeoutPolicies:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.activityBasedTimeoutPolicy'
-            authorizationPolicy:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.authorizationPolicy'
-            claimsMappingPolicies:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.claimsMappingPolicy'
-            homeRealmDiscoveryPolicies:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.homeRealmDiscoveryPolicy'
-            permissionGrantPolicies:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.permissionGrantPolicy'
-            tokenIssuancePolicies:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.tokenIssuancePolicy'
-            tokenLifetimePolicies:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.tokenLifetimePolicy'
-            adminConsentRequestPolicy:
-              $ref: '#/components/schemas/microsoft.graph.adminConsentRequestPolicy'
-            directoryRoleAccessReviewPolicy:
-              $ref: '#/components/schemas/microsoft.graph.directoryRoleAccessReviewPolicy'
-            conditionalAccessPolicies:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.conditionalAccessPolicy'
-            identitySecurityDefaultsEnforcementPolicy:
-              $ref: '#/components/schemas/microsoft.graph.identitySecurityDefaultsEnforcementPolicy'
-          additionalProperties:
-            type: object
+      title: policyRoot
+      type: object
+      properties:
+        authenticationFlowsPolicy:
+          $ref: '#/components/schemas/microsoft.graph.authenticationFlowsPolicy'
+        b2cAuthenticationMethodsPolicy:
+          $ref: '#/components/schemas/microsoft.graph.b2cAuthenticationMethodsPolicy'
+        deviceRegistrationPolicy:
+          $ref: '#/components/schemas/microsoft.graph.deviceRegistrationPolicy'
+        activityBasedTimeoutPolicies:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.activityBasedTimeoutPolicy'
+        authorizationPolicy:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.authorizationPolicy'
+        claimsMappingPolicies:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.claimsMappingPolicy'
+        homeRealmDiscoveryPolicies:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.homeRealmDiscoveryPolicy'
+        permissionGrantPolicies:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.permissionGrantPolicy'
+        tokenIssuancePolicies:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.tokenIssuancePolicy'
+        tokenLifetimePolicies:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.tokenLifetimePolicy'
+        adminConsentRequestPolicy:
+          $ref: '#/components/schemas/microsoft.graph.adminConsentRequestPolicy'
+        directoryRoleAccessReviewPolicy:
+          $ref: '#/components/schemas/microsoft.graph.directoryRoleAccessReviewPolicy'
+        conditionalAccessPolicies:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.conditionalAccessPolicy'
+        identitySecurityDefaultsEnforcementPolicy:
+          $ref: '#/components/schemas/microsoft.graph.identitySecurityDefaultsEnforcementPolicy'
+      additionalProperties:
+        type: object
     microsoft.graph.activityBasedTimeoutPolicy:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.stsPolicy'
@@ -13350,21 +13346,19 @@ components:
           additionalProperties:
             type: object
     microsoft.graph.trustFramework:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: trustFramework
-          type: object
-          properties:
-            keySets:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.trustFrameworkKeySet'
-            policies:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.trustFrameworkPolicy'
-          additionalProperties:
-            type: object
+      title: trustFramework
+      type: object
+      properties:
+        keySets:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.trustFrameworkKeySet'
+        policies:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.trustFrameworkPolicy'
+      additionalProperties:
+        type: object
     microsoft.graph.trustFrameworkKeySet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -24957,6 +24951,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.chatMessagePolicyViolationDlpActionTypes'
         justificationText:
           type: string
+          description: Justification text provided by the sender of the message when overriding a policy violation.
           nullable: true
         policyTip:
           $ref: '#/components/schemas/microsoft.graph.chatMessagePolicyViolationPolicyTip'
@@ -26450,15 +26445,18 @@ components:
       properties:
         complianceUrl:
           type: string
+          description: 'The URL a user can visit to read about the data loss prevention policies for the organization. (ie, policies about what users shouldn''t say in chats)'
           nullable: true
         generalText:
           type: string
+          description: Explanatory text shown to the sender of the message.
           nullable: true
         matchedConditionDescriptions:
           type: array
           items:
             type: string
             nullable: true
+          description: 'The list of improper data in the message that was detected by the data loss prevention app. Each DLP app defines its own conditions, examples include ''Credit Card Number'' and ''Social Security Number''.'
       additionalProperties:
         type: object
     microsoft.graph.chatMessagePolicyViolationUserActionTypes:

@@ -16557,7 +16557,7 @@ components:
               nullable: true
             iCalUId:
               type: string
-              description: A unique identifier that is shared by all instances of an event across different calendars. Read-only.
+              description: A unique identifier for an event across calendars. This ID is different for each occurrence in a recurring series. Read-only.
               nullable: true
             importance:
               $ref: '#/components/schemas/microsoft.graph.importance'
@@ -22066,6 +22066,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.chatMessagePolicyViolationDlpActionTypes'
         justificationText:
           type: string
+          description: Justification text provided by the sender of the message when overriding a policy violation.
           nullable: true
         policyTip:
           $ref: '#/components/schemas/microsoft.graph.chatMessagePolicyViolationPolicyTip'
@@ -22342,15 +22343,18 @@ components:
       properties:
         complianceUrl:
           type: string
+          description: 'The URL a user can visit to read about the data loss prevention policies for the organization. (ie, policies about what users shouldn''t say in chats)'
           nullable: true
         generalText:
           type: string
+          description: Explanatory text shown to the sender of the message.
           nullable: true
         matchedConditionDescriptions:
           type: array
           items:
             type: string
             nullable: true
+          description: 'The list of improper data in the message that was detected by the data loss prevention app. Each DLP app defines its own conditions, examples include ''Credit Card Number'' and ''Social Security Number''.'
       additionalProperties:
         type: object
     microsoft.graph.chatMessagePolicyViolationUserActionTypes:

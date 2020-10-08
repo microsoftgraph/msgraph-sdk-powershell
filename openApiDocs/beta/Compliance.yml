@@ -23,7 +23,6 @@ paths:
             type: array
             items:
               enum:
-                - id
                 - ediscovery
               type: string
         - name: $expand
@@ -968,15 +967,13 @@ paths:
 components:
   schemas:
     microsoft.graph.compliance:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: compliance
-          type: object
-          properties:
-            ediscovery:
-              $ref: '#/components/schemas/microsoft.graph.ediscovery'
-          additionalProperties:
-            type: object
+      title: compliance
+      type: object
+      properties:
+        ediscovery:
+          $ref: '#/components/schemas/microsoft.graph.ediscovery'
+      additionalProperties:
+        type: object
     microsoft.graph.ediscovery:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
