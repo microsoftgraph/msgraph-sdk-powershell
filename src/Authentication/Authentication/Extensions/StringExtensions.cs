@@ -44,6 +44,15 @@ namespace Microsoft.Graph.PowerShell.Authentication.Extensions
         public static string GetBaseUrl(this string url)
         {
             Uri uri = new Uri(url);
+            return uri.GetBaseUrl();
+        }
+
+        /// <summary>
+        /// Gets the base URL of URI.
+        /// </summary>
+        /// <param name="url">A URI to get its base URL (Authority).</param>
+        public static string GetBaseUrl(this Uri uri)
+        {
             return uri.GetLeftPart(UriPartial.Authority);
         }
     }

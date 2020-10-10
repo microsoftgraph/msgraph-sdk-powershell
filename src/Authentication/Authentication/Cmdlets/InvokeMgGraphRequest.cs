@@ -10,7 +10,7 @@ using System.Net.Http.Headers;
 using System.Security;
 using System.Text;
 using System.Threading;
-
+using Microsoft.Graph.PowerShell.Authentication.Extensions;
 using Microsoft.Graph.PowerShell.Authentication.Helpers;
 using Microsoft.Graph.PowerShell.Authentication.Models;
 using Microsoft.Graph.PowerShell.Authentication.Properties;
@@ -29,6 +29,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         private readonly CancellationTokenSource _cancellationTokenSource;
         private readonly InvokeGraphRequestUserAgent _graphRequestUserAgent;
         private string _originalFilePath;
+        private IGraphEnvironment _originalEnvironment = null;
 
         public InvokeMgGraphRequest()
         {
@@ -45,7 +46,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             HelpMessage = "Http Method")]
         public GraphRequestMethod Method { get; set; } = GraphRequestMethod.GET;
 
-        //TODO: Ensure invoke graph supports national cloud.
         /// <summary>
         ///     Uri to call using the Graph HttpClient can be segments such as /beta/me
         ///     or fully qualified url such as https://graph.microsoft.com/beta/me
@@ -796,6 +796,21 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         /// </summary>
         internal virtual void PrepareSession()
         {
+            // Swap current GraphSession environment with a temporary environment for this request.
+            // This only occurs when a customer has provided an absolute url and an access token.
+            if (MyInvocation.BoundParameters.ContainsKey(nameof(Uri))
+                && MyInvocation.BoundParameters.ContainsKey(nameof(Token))
+                && Uri.IsAbsoluteUri)
+            {
+                _originalEnvironment = GraphSession.Instance.Environment;
+                GraphSession.Instance.Environment = new GraphEnvironment
+                {
+                    Name = "MSGraphInvokeGraphRequest",
+                    GraphEndpoint = Uri.GetBaseUrl()
+                    // No need to set AAD endpoint since a token is provided.
+                };
+
+            }
             // Create a new GraphRequestSession object to work with if one is not supplied
             GraphRequestSession = GraphRequestSession ?? new GraphRequestSession();
             if (SessionVariable != null)
@@ -853,15 +868,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             {
                 var error = GetValidationError(
                     Resources.InvokeGraphRequestInvalidUriErrorMessage.FormatCurrentCulture(nameof(Uri)),
-                    Errors.InvokeGraphRequestInvalidHost,
-                    nameof(Uri));
-                ThrowTerminatingError(error);
-            }
-            // Ensure that the Passed in Uri has the same Host as the HttpClient. 
-            if (Uri.IsAbsoluteUri && httpClient.BaseAddress.Host != Uri.Host)
-            {
-                var error = GetValidationError(
-                    Resources.InvokeGraphRequestInvalidHostErrorMessage.FormatCurrentCulture(Uri.Host),
                     Errors.InvokeGraphRequestInvalidHost,
                     nameof(Uri));
                 ThrowTerminatingError(error);
@@ -1042,6 +1048,14 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             return resolvedFilePath;
         }
 
+        /// <summary>
+        /// Resets GraphSession environment back to its original state.
+        /// </summary>
+        private void ResetGraphSessionEnvironment()
+        {
+            GraphSession.Instance.Environment = _originalEnvironment;
+        }
+
         #region CmdLet LifeCycle
 
         protected override void BeginProcessing()
@@ -1119,11 +1133,13 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 
         protected override void EndProcessing()
         {
+            ResetGraphSessionEnvironment();
             base.EndProcessing();
         }
 
         protected override void StopProcessing()
         {
+            ResetGraphSessionEnvironment();
             _cancellationTokenSource.Cancel();
             base.StopProcessing();
         }
