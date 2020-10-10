@@ -43,7 +43,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 
             if (ShouldProcess("updating environment", Name))
             {
-                if (GraphEnvironment.GraphEnvironments.Keys.Any((k) => string.Equals(k, Name, StringComparison.CurrentCultureIgnoreCase)))
+                if (GraphEnvironment.BuiltInEnvironments.Keys.Any((k) => string.Equals(k, Name, StringComparison.CurrentCultureIgnoreCase)))
                 {
                     throw new InvalidOperationException(string.Format(CultureInfo.CurrentCulture,
                             "Cannot change built-in environment {0}.", Name));

@@ -77,9 +77,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             base.BeginProcessing();
             ValidateParameters();
 
-            if (GraphEnvironment.GraphEnvironments.ContainsKey(GraphEnvironmentConstants.EnvironmentName.Global))
+            if (GraphEnvironment.BuiltInEnvironments.ContainsKey(GraphEnvironmentConstants.EnvironmentName.Global))
             {
-                environment = GraphEnvironment.GraphEnvironments[GraphEnvironmentConstants.EnvironmentName.Global];
+                environment = GraphEnvironment.BuiltInEnvironments[GraphEnvironmentConstants.EnvironmentName.Global];
             }
             else
             {
@@ -148,7 +148,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 
             try
             {
-                // Gets a static instance of IAuthenticationProvider when the client app hasn't changed. 
+                // Gets a static instance of IAuthenticationProvider when the client app hasn't changed.
                 IAuthenticationProvider authProvider = AuthenticationHelpers.GetAuthProvider(authContext);
                 IClientApplicationBase clientApplication = null;
                 if (ParameterSetName == Constants.UserParameterSet)

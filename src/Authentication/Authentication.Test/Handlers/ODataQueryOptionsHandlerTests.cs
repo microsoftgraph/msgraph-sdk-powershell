@@ -24,8 +24,17 @@ namespace Microsoft.Graph.Authentication.Test
 
         public void Dispose()
         {
-            this._invoker.Dispose();
+            Dispose(true);
         }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                this._invoker.Dispose();
+            }
+        }
+
 
         [Fact]
         public async Task ShouldAddDollarSignToStandardODataQueryOptionsToV1Endpoint()

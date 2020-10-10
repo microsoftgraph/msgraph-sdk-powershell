@@ -13,7 +13,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
         /// <summary>
         /// Predefined Microsoft Graph environments
         /// </summary>
-        public static IDictionary<string, GraphEnvironment> GraphEnvironments { get; } = new ConcurrentDictionary<string, GraphEnvironment>(StringComparer.InvariantCultureIgnoreCase);
+        public static IDictionary<string, GraphEnvironment> BuiltInEnvironments { get; } = new ConcurrentDictionary<string, GraphEnvironment>(StringComparer.InvariantCultureIgnoreCase);
 
         /// <summary>
         /// The name of the environment.
@@ -45,10 +45,10 @@ namespace Microsoft.Graph.PowerShell.Authentication
         /// </summary>
         public static void InitializeEnvironment()
         {
-            GraphEnvironments.Clear();
+            BuiltInEnvironments.Clear();
             foreach (var env in GraphEnvironmentConstants.BuiltInEnvironments)
             {
-                GraphEnvironments.Add(env.Key, env.Value);
+                BuiltInEnvironments.Add(env.Key, env.Value);
             }
         }
     }

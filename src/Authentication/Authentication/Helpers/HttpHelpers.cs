@@ -50,10 +50,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
         /// <param name="httpClient"></param>
         private static void PrependNewSDKVersionHeaders(HttpClient httpClient)
         {
-            IEnumerable<string> previousSDKHeaders =
-                httpClient.DefaultRequestHeaders.GetValues(CoreConstants.Headers.SdkVersionHeaderName);
+            IEnumerable<string> previousSDKHeaders = httpClient.DefaultRequestHeaders.GetValues(CoreConstants.Headers.SdkVersionHeaderName);
             httpClient.DefaultRequestHeaders.Remove(CoreConstants.Headers.SdkVersionHeaderName);
-            httpClient.DefaultRequestHeaders.Add(CoreConstants.Headers.SdkVersionHeaderName,
+            httpClient.DefaultRequestHeaders.Add(
+                CoreConstants.Headers.SdkVersionHeaderName,
                 previousSDKHeaders.Prepend(AuthModuleVersionHeaderValue));
         }
 

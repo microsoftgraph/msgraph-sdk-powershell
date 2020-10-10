@@ -54,7 +54,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                         .Build();
 
                         ConfigureTokenCache(confidentialClientApp.AppTokenCache, authContext);
-                        authProvider = new ClientCredentialProvider(confidentialClientApp);
+                        string graphBaseUrl = GraphSession.Instance.Environment?.GraphEndpoint ?? "https://graph.microsoft.com";
+                        authProvider = new ClientCredentialProvider(confidentialClientApp, $"{graphBaseUrl}/.default");
                         break;
                     }
                 case AuthenticationType.UserProvidedAccessToken:
@@ -73,7 +74,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
         private static string GetAuthorityUrl(IAuthContext authContext)
         {
             string audience = authContext.TenantId ?? GraphEnvironmentConstants.CommonAdTenant;
-            string defaultInstance = GraphEnvironmentConstants.BuiltInEnvironments[GraphEnvironmentConstants.EnvironmentName.Global].AzureADEndpoint;
+            string defaultInstance = GraphEnvironment.BuiltInEnvironments[GraphEnvironmentConstants.EnvironmentName.Global].AzureADEndpoint;
             string authorityUrl = $"{defaultInstance}/{audience}";
 
             if (GraphSession.Instance.Environment != null)

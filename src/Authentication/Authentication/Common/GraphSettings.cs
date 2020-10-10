@@ -39,7 +39,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
         {
             EnvironmentTable = new ConcurrentDictionary<string, IGraphEnvironment>(StringComparer.CurrentCultureIgnoreCase);
 
-            foreach (var env in GraphEnvironment.GraphEnvironments)
+            foreach (var env in GraphEnvironment.BuiltInEnvironments)
             {
                 EnvironmentTable[env.Key] = env.Value;
             }
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
         {
             EnvironmentTable.Clear();
             // Add built-in environments.
-            foreach (var env in GraphEnvironment.GraphEnvironments)
+            foreach (var env in GraphEnvironment.BuiltInEnvironments)
             {
                 EnvironmentTable[env.Key] = env.Value;
             }
@@ -101,7 +101,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
         /// </summary>
         public void Save()
         {
-            Save(Constants.ContextSettingFilePath);
+            Save(Constants.SettingFilePath);
         }
 
         /// <summary>
@@ -122,7 +122,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
         public void Save(IFileProvider provider)
         {
             // Remove built-in environments.
-            foreach (string env in GraphEnvironment.GraphEnvironments.Keys)
+            foreach (string env in GraphEnvironment.BuiltInEnvironments.Keys)
             {
                 EnvironmentTable.Remove(env);
             }
@@ -147,7 +147,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
             finally
             {
                 // Add back built-in environments.
-                foreach (GraphEnvironment env in GraphEnvironment.GraphEnvironments.Values)
+                foreach (GraphEnvironment env in GraphEnvironment.BuiltInEnvironments.Values)
                 {
                     EnvironmentTable[env.Name] = env;
                 }
@@ -162,7 +162,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
         /// <param name="result">An object with deserialized content.</param>
         /// <param name="converter">A <see cref="JsonConverter"/> to use to deserialize JSON content.</param>
         /// <returns>True is successful, otherwise false.</returns>
-        private bool TryDeserializeObject<T>(string serialization, out T result, JsonConverter converter = null)
+        internal bool TryDeserializeObject<T>(string serialization, out T result, JsonConverter converter = null)
         {
             result = default(T);
             bool success = false;
@@ -214,7 +214,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
             {
                 throw new ArgumentNullException(nameof(name), "Environment name deeds to be specified.");
             }
-            if (GraphEnvironment.GraphEnvironments.ContainsKey(name))
+            if (GraphEnvironment.BuiltInEnvironments.ContainsKey(name))
             {
                 throw new ArgumentException(
                     ErrorConstants.Message.CannotModifyBuiltInEnvironment.FormatCurrentCulture("remove", name),
@@ -234,6 +234,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
 
         /// <summary>
         /// Sets a Microsoft Graph environment to the settings file.
+        /// This saves the environment to disk.
         /// </summary>
         /// <param name="environment">An <see cref="IGraphEnvironment"/> object to set.</param>
         /// <param name="mergedEnvironment">An updated <see cref="IGraphEnvironment"/> object with merged changes.</param>
@@ -242,7 +243,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
         {
             bool result = false;
             mergedEnvironment = environment;
-            if (environment != null && !GraphEnvironment.GraphEnvironments.ContainsKey(environment.Name))
+            if (environment != null && !GraphEnvironment.BuiltInEnvironments.ContainsKey(environment.Name))
             {
                 if (EnvironmentTable.ContainsKey(environment.Name))
                 {
@@ -250,10 +251,11 @@ namespace Microsoft.Graph.PowerShell.Authentication
                 }
 
                 EnvironmentTable[environment.Name] = mergedEnvironment;
-                result = true;
 
                 // Persist changes to disk.
                 Save();
+
+                result = true;
             }
 
             return result;

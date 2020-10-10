@@ -31,7 +31,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 
             if (ShouldProcess("removing environment", Name))
             {
-                if (GraphEnvironment.GraphEnvironments.Keys.Any((k) => string.Equals(k, Name, StringComparison.CurrentCultureIgnoreCase)))
+                if (GraphEnvironment.BuiltInEnvironments.Keys.Any((k) => string.Equals(k, Name, StringComparison.CurrentCultureIgnoreCase)))
                 {
                     throw new InvalidOperationException(
                         ErrorConstants.Message.CannotModifyBuiltInEnvironment.FormatCurrentCulture("remove", Name));

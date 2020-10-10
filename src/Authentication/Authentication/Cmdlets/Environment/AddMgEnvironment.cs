@@ -7,7 +7,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
     using Microsoft.Graph.PowerShell.Authentication.Extensions;
     using Microsoft.Graph.PowerShell.Authentication.Helpers;
     using System;
-    using System.Globalization;
     using System.Linq;
     using System.Management.Automation;
 
@@ -43,7 +42,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             base.ProcessRecord();
             if (ShouldProcess("adding environment", Name))
             {
-                if (GraphEnvironment.GraphEnvironments.Keys.Any((k) => string.Equals(k, Name, StringComparison.CurrentCultureIgnoreCase)))
+                if (GraphEnvironment.BuiltInEnvironments.Keys.Any((k) => string.Equals(k, Name, StringComparison.CurrentCultureIgnoreCase)))
                 {
                     throw new InvalidOperationException(
                         ErrorConstants.Message.CannotModifyBuiltInEnvironment.FormatCurrentCulture("add", Name));
