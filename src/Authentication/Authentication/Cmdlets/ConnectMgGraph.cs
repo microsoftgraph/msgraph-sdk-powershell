@@ -16,6 +16,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
     using System.Threading.Tasks;
     using System.Net;
     using System.Globalization;
+    using Microsoft.Graph.PowerShell.Authentication.Interfaces;
     using Microsoft.Graph.PowerShell.Authentication.Common;
 
     [Cmdlet(VerbsCommunications.Connect, "MgGraph", DefaultParameterSetName = Constants.UserParameterSet)]
@@ -77,16 +78,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             base.BeginProcessing();
             ValidateParameters();
 
-            if (GraphEnvironment.BuiltInEnvironments.ContainsKey(GraphEnvironmentConstants.EnvironmentName.Global))
-            {
-                environment = GraphEnvironment.BuiltInEnvironments[GraphEnvironmentConstants.EnvironmentName.Global];
-            }
-            else
-            {
-                WriteWarning($"Default environment {GraphEnvironmentConstants.EnvironmentName.Global} cannot be found from environment list.");
-                WriteWarning("You can get current list via [Microsoft.Graph.PowerShell.Authentication.GraphEnvironment]::GraphEnvironments");
-            }
-
             if (MyInvocation.BoundParameters.ContainsKey(nameof(Environment)))
             {
                 GraphSettings settings = this.GetContextSettings();
@@ -94,6 +85,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 {
                     throw new PSInvalidOperationException(string.Format(ErrorConstants.Message.InvalidEnvironment, Environment));
                 }
+            }
+            else
+            {
+                environment = GraphEnvironment.BuiltInEnvironments[GraphEnvironmentConstants.EnvironmentName.Global];
             }
         }
 

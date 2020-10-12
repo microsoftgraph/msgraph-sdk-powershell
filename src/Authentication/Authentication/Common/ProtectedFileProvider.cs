@@ -5,6 +5,7 @@
 namespace Microsoft.Graph.PowerShell.Authentication.Common
 {
     using Microsoft.Graph.PowerShell.Authentication.Helpers;
+    using Microsoft.Graph.PowerShell.Authentication.Interfaces;
     using System;
     using System.IO;
     using System.Text;
@@ -17,7 +18,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Common
     }
 
     /// <summary>
-    /// Provides a protected access a shared file.
+    /// Provides protected access to a shared file.
     /// The file can be accessed in ReadOnly or ReadWrite mode.
     /// This class MUST be disposed by the caller.
     /// </summary>

@@ -4,7 +4,9 @@
 
 namespace Microsoft.Graph.PowerShell.Authentication
 {
+    using Microsoft.Graph.PowerShell.Authentication.Models;
     using System.Collections.Generic;
+
     internal static class GraphEnvironmentConstants
     {
         /// <summary>

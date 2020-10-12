@@ -1,6 +1,7 @@
 ﻿namespace Microsoft.Graph.Authentication.Test.TokenCache
 {
     using Microsoft.Graph.PowerShell.Authentication;
+    using Microsoft.Graph.PowerShell.Authentication.Common;
     using Microsoft.Graph.PowerShell.Authentication.TokenCache;
     using System;
     using System.Text;

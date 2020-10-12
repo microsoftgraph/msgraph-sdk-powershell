@@ -4,7 +4,9 @@
 
 namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 {
+    using Microsoft.Graph.PowerShell.Authentication.Common;
     using Microsoft.Graph.PowerShell.Authentication.Helpers;
+    using Microsoft.Graph.PowerShell.Authentication.Models;
     using System;
     using System.Globalization;
     using System.Linq;

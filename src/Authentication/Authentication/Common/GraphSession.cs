@@ -4,6 +4,7 @@
 
 namespace Microsoft.Graph.PowerShell.Authentication
 {
+    using Microsoft.Graph.PowerShell.Authentication.Interfaces;
     using System;
     using System.Security;
     using System.Threading;

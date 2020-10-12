@@ -3,12 +3,9 @@
     using Microsoft.Graph.Authentication.Test.Mocks;
     using Microsoft.Graph.PowerShell.Authentication;
     using Microsoft.Graph.PowerShell.Authentication.Common;
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
+    using Microsoft.Graph.PowerShell.Authentication.Interfaces;
+    using Microsoft.Graph.PowerShell.Authentication.Models;
     using System.Linq;
-    using System.Runtime.Serialization.Formatters.Binary;
-    using System.Text;
     using Xunit;
 
     public class GraphSettingsTests

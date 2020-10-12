@@ -4,6 +4,8 @@
 
 namespace Microsoft.Graph.PowerShell.Authentication.Common
 {
+    using Microsoft.Graph.PowerShell.Authentication.Interfaces;
+    using Microsoft.Graph.PowerShell.Authentication.Models;
     using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;

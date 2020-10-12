@@ -4,7 +4,10 @@
 
 namespace Microsoft.Graph.PowerShell.Authentication.Extensions
 {
+    using Microsoft.Graph.PowerShell.Authentication.Interfaces;
+    using Microsoft.Graph.PowerShell.Authentication.Models;
     using System;
+
     public static class IGraphEnvironmentExtensions
     {
         /// <summary>

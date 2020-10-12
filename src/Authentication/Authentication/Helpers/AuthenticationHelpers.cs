@@ -4,6 +4,7 @@
 namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 {
     using Microsoft.Graph.Auth;
+    using Microsoft.Graph.PowerShell.Authentication.Models;
     using Microsoft.Graph.PowerShell.Authentication.TokenCache;
     using Microsoft.Identity.Client;
     using System;

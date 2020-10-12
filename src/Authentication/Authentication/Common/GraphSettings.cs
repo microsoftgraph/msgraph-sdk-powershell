@@ -2,11 +2,13 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
-namespace Microsoft.Graph.PowerShell.Authentication
+namespace Microsoft.Graph.PowerShell.Authentication.Common
 {
     using Microsoft.Graph.PowerShell.Authentication.Common;
     using Microsoft.Graph.PowerShell.Authentication.Extensions;
     using Microsoft.Graph.PowerShell.Authentication.Helpers;
+    using Microsoft.Graph.PowerShell.Authentication.Interfaces;
+    using Microsoft.Graph.PowerShell.Authentication.Models;
     using Newtonsoft.Json;
     using System;
     using System.Collections.Concurrent;
@@ -181,24 +183,22 @@ namespace Microsoft.Graph.PowerShell.Authentication
         /// <summary>
         /// Gets a list of <see cref="IGraphEnvironment"/>.
         /// </summary>
-        /// <param name="name">The name of the environment to remove.</param>
-        /// <returns>A list of <see cref="IGraphEnvironment"/></returns>
-        public List<IGraphEnvironment> ListEnvironments(string name)
+        /// <param name="name">The name of the environment to get. This is optional.</param>
+        /// <returns>A list of <see cref="IGraphEnvironment"/>.</returns>
+        public List<IGraphEnvironment> ListEnvironments(string name = null)
         {
             var result = new List<IGraphEnvironment>();
-            IGraphEnvironment environment;
             if (string.IsNullOrWhiteSpace(name))
             {
                 result.AddRange(Environments);
+                result.Sort((e1, e2) => {
+                    return e1.Type.CompareTo(e2.Type);
+                });
             }
-            else if (TryGetEnvironment(name, out environment))
+            else if (TryGetEnvironment(name, out IGraphEnvironment environment))
             {
                 result.Add(environment);
             }
-
-            result.Sort((e1, e2) => {
-                return e1.Type.CompareTo(e2.Type);
-            });
 
             return result;
         }
@@ -212,7 +212,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
         {
             if (string.IsNullOrEmpty(name))
             {
-                throw new ArgumentNullException(nameof(name), "Environment name deeds to be specified.");
+                throw new ArgumentNullException(nameof(name), "Environment name needs to be specified.");
             }
             if (GraphEnvironment.BuiltInEnvironments.ContainsKey(name))
             {

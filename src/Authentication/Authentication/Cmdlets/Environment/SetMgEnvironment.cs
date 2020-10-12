@@ -4,7 +4,10 @@
 
 namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 {
+    using Microsoft.Graph.PowerShell.Authentication.Common;
     using Microsoft.Graph.PowerShell.Authentication.Extensions;
+    using Microsoft.Graph.PowerShell.Authentication.Interfaces;
+    using Microsoft.Graph.PowerShell.Authentication.Models;
     using System;
     using System.Globalization;
     using System.Linq;
@@ -52,12 +55,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 GraphSettings settings = this.GetContextSettings();
                 if (!settings.TryGetEnvironment(Name, out IGraphEnvironment newEnvironment))
                 {
-                    // Create default environment if it doesn't exist.
-                    newEnvironment = new GraphEnvironment {
-                        Name = Name,
-                        AzureADEndpoint = settings.EnvironmentTable[GraphEnvironmentConstants.EnvironmentName.Global].AzureADEndpoint,
-                        GraphEndpoint = settings.EnvironmentTable[GraphEnvironmentConstants.EnvironmentName.Global].GraphEndpoint
-                    };
+                    newEnvironment = new GraphEnvironment { Name = Name };
                 }
 
                 if (MyInvocation.BoundParameters.ContainsKey(nameof(AzureADEndpoint)))
@@ -70,6 +68,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                     newEnvironment.GraphEndpoint = GraphEndpoint.GetBaseUrl();
                 }
 
+                ValidateEnvironment(newEnvironment);
                 newEnvironment.Type = GraphEnvironmentConstants.EnvironmentType.UserDefined;
                 bool isSuccess = settings.TrySetEnvironment(newEnvironment, out IGraphEnvironment mergedEnvironment);
 
@@ -80,6 +79,19 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 }
 
                 WriteObject(mergedEnvironment);
+            }
+        }
+
+        /// <summary>
+        /// Ensures all required properties are set to <see cref="IGraphEnvironment"/> object.
+        /// </summary>
+        /// <param name="newEnvironment">The new <see cref="IGraphEnvironment"/> object.</param>
+        private void ValidateEnvironment(IGraphEnvironment newEnvironment)
+        {
+            if (string.IsNullOrWhiteSpace(newEnvironment.AzureADEndpoint)
+                || string.IsNullOrWhiteSpace(newEnvironment.GraphEndpoint))
+            {
+                this.ThrowParameterError(ErrorConstants.Message.InvalidUrlParameter, $"{nameof(GraphEndpoint)} or {nameof(AzureADEndpoint)}");
             }
         }
 

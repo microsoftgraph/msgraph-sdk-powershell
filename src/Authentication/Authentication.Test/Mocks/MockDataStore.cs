@@ -1,6 +1,6 @@
 ﻿namespace Microsoft.Graph.Authentication.Test.Mocks
 {
-    using Microsoft.Graph.PowerShell.Authentication;
+    using Microsoft.Graph.PowerShell.Authentication.Interfaces;
     using System;
     using System.Collections.Concurrent;
     using System.Collections.Generic;

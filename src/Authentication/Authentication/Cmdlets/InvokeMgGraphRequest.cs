@@ -12,12 +12,11 @@ using System.Text;
 using System.Threading;
 using Microsoft.Graph.PowerShell.Authentication.Extensions;
 using Microsoft.Graph.PowerShell.Authentication.Helpers;
+using Microsoft.Graph.PowerShell.Authentication.Interfaces;
 using Microsoft.Graph.PowerShell.Authentication.Models;
 using Microsoft.Graph.PowerShell.Authentication.Properties;
 using Microsoft.PowerShell.Commands;
-
 using Newtonsoft.Json;
-
 using DriveNotFoundException = System.Management.Automation.DriveNotFoundException;
 
 namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets

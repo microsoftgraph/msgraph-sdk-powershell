@@ -9,6 +9,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Handlers
     using System.Threading;
     using System.Threading.Tasks;
 
+    /// <summary>
+    /// A <see cref="DelegatingHandler"/> implementation that switches the base URL of a request based on the specified environment\cloud.
+    /// </summary>
     internal class NationalCloudHandler : DelegatingHandler
     {
         /// <summary>
