@@ -57,7 +57,13 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 newEnvironment.AzureADEndpoint = AzureADEndpoint.GetBaseUrl();
                 newEnvironment.GraphEndpoint = GraphEndpoint.GetBaseUrl();
                 newEnvironment.Type = GraphEnvironmentConstants.EnvironmentType.UserDefined;
-                settings.TrySetEnvironment(newEnvironment, out IGraphEnvironment mergedEnvironment);
+                bool isSuccess = settings.TrySetEnvironment(newEnvironment, out IGraphEnvironment mergedEnvironment);
+
+                // Update environment session object.
+                if (isSuccess && GraphSession.Instance.Environment?.Name == mergedEnvironment?.Name)
+                {
+                    GraphSession.Instance.Environment = mergedEnvironment;
+                }
 
                 WriteObject(mergedEnvironment);
             }
