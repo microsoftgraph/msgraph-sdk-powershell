@@ -63,7 +63,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         public ContextScope ContextScope { get; set; }
 
         [Parameter(Mandatory = false,
-            HelpMessage = "The name of the national cloud environment to connect to. By default, the SDK uses global cloud.")]
+            HelpMessage = "The name of the national cloud environment to connect to. By default global cloud is used.")]
         [ValidateNotNullOrEmpty]
         [Alias("EnvironmentName", "NationalCloud")]
         public string Environment { get; set; }

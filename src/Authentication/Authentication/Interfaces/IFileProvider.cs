@@ -6,6 +6,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
 {
     using System;
     using System.IO;
+
     public interface IFileProvider : IDisposable
     {
         string FilePath { get; }

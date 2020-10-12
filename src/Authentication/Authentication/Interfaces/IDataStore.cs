@@ -95,7 +95,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
         void EmptyDirectory(string dirPath);
 
         /// <summary>
-        /// Checks for existence of the given directory.
+        /// Checks for the existence of the given directory.
         /// </summary>
         /// <param name="path">The directory path to check.</param>
         /// <returns>True if the directory exists, otherwise false.</returns>
