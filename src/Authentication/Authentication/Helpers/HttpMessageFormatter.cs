@@ -245,6 +245,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
         private static void SerializeStatusLine(StringBuilder message, HttpResponseMessage httpResponse)
         {
             Contract.Assert(message != null, "message cannot be null");
+            message.Append(httpResponse.RequestMessage?.Method + SP);
+            message.Append(httpResponse.RequestMessage?.RequestUri.AbsoluteUri + CRLF);
             message.Append($"HTTP/{(httpResponse.Version != null ? httpResponse.Version.ToString(2) : "1.1")}{SP}");
             message.Append((int) httpResponse.StatusCode + SP);
             message.Append(httpResponse.ReasonPhrase + CRLF);
