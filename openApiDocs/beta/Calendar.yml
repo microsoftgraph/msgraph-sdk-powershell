@@ -464,6 +464,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - importance
                 - importance desc
                 - isAllDay
@@ -547,6 +549,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -712,6 +715,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -1393,6 +1397,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - importance
                 - importance desc
                 - isAllDay
@@ -1476,6 +1482,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -1643,6 +1650,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -2154,6 +2162,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - importance
                 - importance desc
                 - isAllDay
@@ -2237,6 +2247,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -2404,6 +2415,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -3179,6 +3191,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - importance
                 - importance desc
                 - isAllDay
@@ -3262,6 +3276,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -3415,6 +3430,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -4096,6 +4112,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - importance
                 - importance desc
                 - isAllDay
@@ -4179,6 +4197,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -4346,6 +4365,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -4857,6 +4877,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - importance
                 - importance desc
                 - isAllDay
@@ -4940,6 +4962,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -5107,6 +5130,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -6358,6 +6382,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - importance
                 - importance desc
                 - isAllDay
@@ -6441,6 +6467,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -6606,6 +6633,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -7570,6 +7598,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - importance
                 - importance desc
                 - isAllDay
@@ -7653,6 +7683,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -7820,6 +7851,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -8068,6 +8100,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - importance
                 - importance desc
                 - isAllDay
@@ -8151,6 +8185,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -8318,6 +8353,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -9100,6 +9136,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - importance
                 - importance desc
                 - isAllDay
@@ -9183,6 +9221,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -9350,6 +9389,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -9861,6 +9901,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - importance
                 - importance desc
                 - isAllDay
@@ -9944,6 +9986,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -10111,6 +10154,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -10886,6 +10930,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - importance
                 - importance desc
                 - isAllDay
@@ -10969,6 +11015,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -11122,6 +11169,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -12086,6 +12134,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - importance
                 - importance desc
                 - isAllDay
@@ -12169,6 +12219,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -12336,6 +12387,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -12584,6 +12636,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - importance
                 - importance desc
                 - isAllDay
@@ -12667,6 +12721,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -12834,6 +12889,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -13616,6 +13672,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - importance
                 - importance desc
                 - isAllDay
@@ -13699,6 +13757,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -13866,6 +13925,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -14377,6 +14437,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - importance
                 - importance desc
                 - isAllDay
@@ -14460,6 +14522,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -14627,6 +14690,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -16015,6 +16079,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - importance
                 - importance desc
                 - isAllDay
@@ -16098,6 +16164,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -16263,6 +16330,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -16944,6 +17012,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - importance
                 - importance desc
                 - isAllDay
@@ -17027,6 +17097,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -17194,6 +17265,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -17705,6 +17777,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - importance
                 - importance desc
                 - isAllDay
@@ -17788,6 +17862,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -17955,6 +18030,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -18730,6 +18806,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - importance
                 - importance desc
                 - isAllDay
@@ -18813,6 +18891,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -18966,6 +19045,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -19647,6 +19727,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - importance
                 - importance desc
                 - isAllDay
@@ -19730,6 +19812,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -19897,6 +19980,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -20408,6 +20492,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - importance
                 - importance desc
                 - isAllDay
@@ -20491,6 +20577,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -20658,6 +20745,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -22857,6 +22945,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - importance
                 - importance desc
                 - isAllDay
@@ -22940,6 +23030,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -23121,6 +23212,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -23980,6 +24072,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - importance
                 - importance desc
                 - isAllDay
@@ -24063,6 +24157,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -24258,6 +24353,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -24895,6 +24991,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - importance
                 - importance desc
                 - isAllDay
@@ -24978,6 +25076,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -25173,6 +25272,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -26144,6 +26244,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - importance
                 - importance desc
                 - isAllDay
@@ -26227,6 +26329,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -26408,6 +26511,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -27267,6 +27371,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - importance
                 - importance desc
                 - isAllDay
@@ -27350,6 +27456,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -27545,6 +27652,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -28182,6 +28290,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - importance
                 - importance desc
                 - isAllDay
@@ -28265,6 +28375,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -28460,6 +28571,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -30661,6 +30773,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - importance
                 - importance desc
                 - isAllDay
@@ -30744,6 +30858,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -30923,6 +31038,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -31693,6 +31809,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - importance
                 - importance desc
                 - isAllDay
@@ -31776,6 +31894,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -31957,6 +32076,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -32531,6 +32651,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - importance
                 - importance desc
                 - isAllDay
@@ -32614,6 +32736,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -32795,6 +32918,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -33668,6 +33792,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - importance
                 - importance desc
                 - isAllDay
@@ -33751,6 +33877,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -33918,6 +34045,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -34688,6 +34816,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - importance
                 - importance desc
                 - isAllDay
@@ -34771,6 +34901,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -34952,6 +35083,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -35526,6 +35658,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - importance
                 - importance desc
                 - isAllDay
@@ -35609,6 +35743,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -35790,6 +35925,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -37202,6 +37338,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - importance
                 - importance desc
                 - isAllDay
@@ -37285,6 +37423,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -37450,6 +37589,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -38414,6 +38554,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - importance
                 - importance desc
                 - isAllDay
@@ -38497,6 +38639,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -38664,6 +38807,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -38912,6 +39056,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - importance
                 - importance desc
                 - isAllDay
@@ -38995,6 +39141,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -39162,6 +39309,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -39944,6 +40092,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - importance
                 - importance desc
                 - isAllDay
@@ -40027,6 +40177,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -40194,6 +40345,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -40705,6 +40857,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - importance
                 - importance desc
                 - isAllDay
@@ -40788,6 +40942,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -40955,6 +41110,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -41730,6 +41886,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - importance
                 - importance desc
                 - isAllDay
@@ -41813,6 +41971,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -41966,6 +42125,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -42930,6 +43090,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - importance
                 - importance desc
                 - isAllDay
@@ -43013,6 +43175,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -43180,6 +43343,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -43428,6 +43592,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - importance
                 - importance desc
                 - isAllDay
@@ -43511,6 +43677,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -43678,6 +43845,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -44460,6 +44628,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - importance
                 - importance desc
                 - isAllDay
@@ -44543,6 +44713,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -44710,6 +44881,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -45221,6 +45393,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - importance
                 - importance desc
                 - isAllDay
@@ -45304,6 +45478,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -45471,6 +45646,7 @@ paths:
                 - cancelledOccurrences
                 - end
                 - hasAttachments
+                - hideAttendees
                 - importance
                 - isAllDay
                 - isCancelled
@@ -46338,6 +46514,9 @@ components:
             hasAttachments:
               type: boolean
               description: Set to true if the event has attachments.
+              nullable: true
+            hideAttendees:
+              type: boolean
               nullable: true
             importance:
               $ref: '#/components/schemas/microsoft.graph.importance'

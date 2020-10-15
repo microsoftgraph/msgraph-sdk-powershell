@@ -12487,6 +12487,114 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content':
+    get:
+      tags:
+        - groups.group
+      summary: Get media content for group from groups
+      operationId: groups.group_GetContent
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: notebook-id
+          in: path
+          description: 'key: id of notebook'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: sectionGroup-id
+          in: path
+          description: 'key: id of sectionGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: 'key: id of onenoteSection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - groups.group
+      summary: Update media content for group in groups
+      operationId: groups.group_SetContent
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: notebook-id
+          in: path
+          description: 'key: id of notebook'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: sectionGroup-id
+          in: path
+          description: 'key: id of sectionGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: 'key: id of onenoteSection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.copyToSection':
     post:
       tags:
@@ -13102,6 +13210,100 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content':
+    get:
+      tags:
+        - groups.group
+      summary: Get media content for group from groups
+      operationId: groups.group_GetContent
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: notebook-id
+          in: path
+          description: 'key: id of notebook'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: onenoteSection-id
+          in: path
+          description: 'key: id of onenoteSection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - groups.group
+      summary: Update media content for group in groups
+      operationId: groups.group_SetContent
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: notebook-id
+          in: path
+          description: 'key: id of notebook'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: onenoteSection-id
+          in: path
+          description: 'key: id of onenoteSection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.copyToSection':
     post:
       tags:
@@ -13814,6 +14016,72 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  '/groups/{group-id}/onenote/pages/{onenotePage-id}/content':
+    get:
+      tags:
+        - groups.group
+      summary: Get media content for group from groups
+      operationId: groups.group_GetContent
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - groups.group
+      summary: Update media content for group in groups
+      operationId: groups.group_SetContent
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/groups/{group-id}/onenote/pages/{onenotePage-id}/microsoft.graph.copyToSection':
     post:
       tags:
@@ -14198,6 +14466,114 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/groups/{group-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id1}/content':
+    get:
+      tags:
+        - groups.group
+      summary: Get media content for group from groups
+      operationId: groups.group_GetContent
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+        - name: sectionGroup-id
+          in: path
+          description: 'key: id of sectionGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: 'key: id of onenoteSection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id1
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - groups.group
+      summary: Update media content for group in groups
+      operationId: groups.group_SetContent
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+        - name: sectionGroup-id
+          in: path
+          description: 'key: id of sectionGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: 'key: id of onenoteSection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id1
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/groups/{group-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id1}/microsoft.graph.copyToSection':
     post:
       tags:
@@ -14582,6 +14958,100 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/groups/{group-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/pages/{onenotePage-id1}/content':
+    get:
+      tags:
+        - groups.group
+      summary: Get media content for group from groups
+      operationId: groups.group_GetContent
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+        - name: onenoteSection-id
+          in: path
+          description: 'key: id of onenoteSection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id1
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - groups.group
+      summary: Update media content for group in groups
+      operationId: groups.group_SetContent
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+        - name: onenoteSection-id
+          in: path
+          description: 'key: id of onenoteSection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id1
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/groups/{group-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/pages/{onenotePage-id1}/microsoft.graph.copyToSection':
     post:
       tags:
@@ -15127,6 +15597,86 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/groups/{group-id}/onenote/pages/{onenotePage-id}/parentSection/pages/{onenotePage-id1}/content':
+    get:
+      tags:
+        - groups.group
+      summary: Get media content for group from groups
+      operationId: groups.group_GetContent
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+        - name: onenotePage-id1
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - groups.group
+      summary: Update media content for group in groups
+      operationId: groups.group_SetContent
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+        - name: onenotePage-id1
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/groups/{group-id}/onenote/pages/{onenotePage-id}/parentSection/pages/{onenotePage-id1}/microsoft.graph.copyToSection':
     post:
       tags:
@@ -15966,6 +16516,72 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/groups/{group-id}/onenote/resources/{onenoteResource-id}/content':
+    get:
+      tags:
+        - groups.group
+      summary: Get media content for group from groups
+      operationId: groups.group_GetContent
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: onenoteResource-id
+          in: path
+          description: 'key: id of onenoteResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteResource
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - groups.group
+      summary: Update media content for group in groups
+      operationId: groups.group_SetContent
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: onenoteResource-id
+          in: path
+          description: 'key: id of onenoteResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteResource
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/microsoft.graph.copyNotebook':
     post:
       tags:
@@ -16148,6 +16764,100 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sections/{onenoteSection-id}/pages/{onenotePage-id}/content':
+    get:
+      tags:
+        - groups.group
+      summary: Get media content for group from groups
+      operationId: groups.group_GetContent
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: sectionGroup-id
+          in: path
+          description: 'key: id of sectionGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: 'key: id of onenoteSection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - groups.group
+      summary: Update media content for group in groups
+      operationId: groups.group_SetContent
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: sectionGroup-id
+          in: path
+          description: 'key: id of sectionGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: 'key: id of onenoteSection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.copyToSection':
     post:
       tags:
@@ -16714,6 +17424,100 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content':
+    get:
+      tags:
+        - groups.group
+      summary: Get media content for group from groups
+      operationId: groups.group_GetContent
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: sectionGroup-id
+          in: path
+          description: 'key: id of sectionGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: 'key: id of onenoteSection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - groups.group
+      summary: Update media content for group in groups
+      operationId: groups.group_SetContent
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: sectionGroup-id
+          in: path
+          description: 'key: id of sectionGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: 'key: id of onenoteSection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.copyToSection':
     post:
       tags:
@@ -17560,6 +18364,86 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/groups/{group-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/content':
+    get:
+      tags:
+        - groups.group
+      summary: Get media content for group from groups
+      operationId: groups.group_GetContent
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: onenoteSection-id
+          in: path
+          description: 'key: id of onenoteSection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - groups.group
+      summary: Update media content for group in groups
+      operationId: groups.group_SetContent
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: onenoteSection-id
+          in: path
+          description: 'key: id of onenoteSection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/groups/{group-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.copyToSection':
     post:
       tags:
@@ -19477,6 +20361,58 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/photo/$value':
+    get:
+      tags:
+        - groups.group
+      summary: Get media content for group from groups
+      operationId: groups.group_GetContent
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - groups.group
+      summary: Update media content for group in groups
+      operationId: groups.group_SetContent
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/groups/{group-id}/photos':
     get:
       tags:
@@ -19707,6 +20643,72 @@ paths:
           description: ETag
           schema:
             type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/photos/{profilePhoto-id}/$value':
+    get:
+      tags:
+        - groups.group
+      summary: Get media content for group from groups
+      operationId: groups.group_GetContent
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: profilePhoto-id
+          in: path
+          description: 'key: id of profilePhoto'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: profilePhoto
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - groups.group
+      summary: Update media content for group in groups
+      operationId: groups.group_SetContent
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: profilePhoto-id
+          in: path
+          description: 'key: id of profilePhoto'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: profilePhoto
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
       responses:
         '204':
           description: Success
@@ -24136,7 +25138,7 @@ components:
               nullable: true
             mailNickname:
               type: string
-              description: 'The mail alias for the group, unique in the organization. This property must be specified when a group is created. Returned by default. Supports $filter.'
+              description: 'The mail alias for the group, unique in the organization. This property must be specified when a group is created. These characters cannot be used in the mailNickName: @()/[]'';:.<>,SPACE. Returned by default. Supports $filter.'
               nullable: true
             mdmAppId:
               type: string
@@ -24203,10 +25205,12 @@ components:
               type: array
               items:
                 type: string
+              description: 'Specifies the group behaviors that can be set for a Microsoft 365 group during creation. This can be set only as part of creation (POST). Possible values are AllowOnlyMembersToPost, HideGroupInOutlook, SubscribeNewGroupMembers, WelcomeEmailDisabled. For more information, see Set Microsoft 365 group behaviors and provisioning options.'
             resourceProvisioningOptions:
               type: array
               items:
                 type: string
+              description: 'Specifies the group resources that are provisioned as part of Microsoft 365 group creation, that are not normally part of default group creation. Possible value is Team. For more information, see Set Microsoft 365 group behaviors and provisioning options.'
             securityEnabled:
               type: boolean
               description: Specifies whether the group is a security group. Returned by default. Supports $filter.
@@ -24535,6 +25539,9 @@ components:
             hasAttachments:
               type: boolean
               description: Set to true if the event has attachments.
+              nullable: true
+            hideAttendees:
+              type: boolean
               nullable: true
             importance:
               $ref: '#/components/schemas/microsoft.graph.importance'
@@ -26928,6 +27935,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Read only. Timestamp at which the channel was created.
               format: date-time
               nullable: true
             description:
@@ -26943,6 +27951,7 @@ components:
               nullable: true
             isFavoriteByDefault:
               type: boolean
+              description: 'Indicates whether the channel should automatically be marked ''favorite'' for all members of the team. Can only be set programmatically with Create team. Default: false.'
               nullable: true
             membershipType:
               $ref: '#/components/schemas/microsoft.graph.channelMembershipType'
@@ -26950,7 +27959,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.channelModerationSettings'
             webUrl:
               type: string
-              description: 'A hyperlink that will navigate to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.'
+              description: 'A hyperlink that will go to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.'
               nullable: true
             filesFolder:
               $ref: '#/components/schemas/microsoft.graph.driveItem'
@@ -28576,6 +29585,7 @@ components:
               nullable: true
             latestSupportedTlsVersion:
               type: string
+              description: 'Specifies the latest version of Transport Layer Security (TLS) that the notification endpoint, specified by notificationUrl, supports. The possible values are: v1_0, v1_1, v1_2, v1_3. For subscribers whose notification endpoint supports a version lower than the currently recommended version (TLS 1.2), specifying this property by a set timeline allows them to temporarily use their deprecated version of TLS before completing their upgrade to TLS 1.2. For these subscribers, not setting this property per the timeline would result in subscription operations failing. For subscribers whose notification endpoint already supports TLS 1.2, setting this property is optional. In such cases, Microsoft Graph defaults the property to v1_2.'
               nullable: true
             lifecycleNotificationUrl:
               type: string
@@ -31547,22 +32557,24 @@ components:
               type: string
               description: 'Type of trust for the joined device. Read-only. Possible values: Workplace - indicates bring your own personal devicesAzureAd - Cloud only joined devicesServerAd - on-premises domain joined devices joined to Azure AD. For more details, see Introduction to device management in Azure Active Directory'
               nullable: true
-            Kind:
+            kind:
               type: string
               nullable: true
-            Manufacturer:
+            manufacturer:
+              type: string
+              description: Manufacturer of the device. Read-only.
+              nullable: true
+            model:
+              type: string
+              description: Model of the device. Read-only.
+              nullable: true
+            name:
               type: string
               nullable: true
-            Model:
+            platform:
               type: string
               nullable: true
-            Name:
-              type: string
-              nullable: true
-            Platform:
-              type: string
-              nullable: true
-            Status:
+            status:
               type: string
               nullable: true
             memberOf:
@@ -32801,6 +33813,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.chatMessagePolicyViolationDlpActionTypes'
         justificationText:
           type: string
+          description: Justification text provided by the sender of the message when overriding a policy violation.
           nullable: true
         policyTip:
           $ref: '#/components/schemas/microsoft.graph.chatMessagePolicyViolationPolicyTip'
@@ -33424,7 +34437,7 @@ components:
           type: object
           properties:
             createdBy:
-              $ref: '#/components/schemas/microsoft.graph.userIdentity'
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -33433,6 +34446,8 @@ components:
             reason:
               type: string
               nullable: true
+            status:
+              type: string
           additionalProperties:
             type: object
     microsoft.graph.approvalStep:
@@ -35316,27 +36331,27 @@ components:
         - title: command
           type: object
           properties:
-            AppServiceName:
+            appServiceName:
               type: string
               nullable: true
-            Error:
+            error:
               type: string
               nullable: true
-            PackageFamilyName:
+            packageFamilyName:
               type: string
               nullable: true
-            Payload:
-              $ref: '#/components/schemas/microsoft.graph.PayloadRequest'
-            PermissionTicket:
+            payload:
+              $ref: '#/components/schemas/microsoft.graph.payloadRequest'
+            permissionTicket:
               type: string
               nullable: true
-            PostBackUri:
+            postBackUri:
               type: string
               nullable: true
-            Status:
+            status:
               type: string
               nullable: true
-            Type:
+            type:
               type: string
               nullable: true
             responsepayload:
@@ -35854,15 +36869,18 @@ components:
       properties:
         complianceUrl:
           type: string
+          description: 'The URL a user can visit to read about the data loss prevention policies for the organization. (ie, policies about what users shouldn''t say in chats)'
           nullable: true
         generalText:
           type: string
+          description: Explanatory text shown to the sender of the message.
           nullable: true
         matchedConditionDescriptions:
           type: array
           items:
             type: string
             nullable: true
+          description: 'The list of improper data in the message that was detected by the data loss prevention app. Each DLP app defines its own conditions, examples include ''Credit Card Number'' and ''Social Security Number''.'
       additionalProperties:
         type: object
     microsoft.graph.chatMessagePolicyViolationUserActionTypes:
@@ -37142,8 +38160,8 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.PayloadRequest:
-      title: PayloadRequest
+    microsoft.graph.payloadRequest:
+      title: payloadRequest
       type: object
       additionalProperties:
         type: object

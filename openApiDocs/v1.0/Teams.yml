@@ -1186,6 +1186,72 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/teams/{team-id}/channels/{channel-id}/filesFolder/content':
+    get:
+      tags:
+        - teams.team
+      summary: Get media content for team from teams
+      operationId: teams.team_GetContent
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - teams.team
+      summary: Update media content for team in teams
+      operationId: teams.team_SetContent
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/teams/{team-id}/channels/{channel-id}/members':
     get:
       tags:
@@ -2105,6 +2171,100 @@ paths:
           description: ETag
           schema:
             type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teams/{team-id}/channels/{channel-id}/messages/{chatMessage-id}/hostedContents/{chatMessageHostedContent-id}/$value':
+    get:
+      tags:
+        - teams.team
+      summary: Get media content for team from teams
+      operationId: teams.team_GetContent
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: 'key: id of chatMessageHostedContent'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - teams.team
+      summary: Update media content for team in teams
+      operationId: teams.team_SetContent
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: 'key: id of chatMessageHostedContent'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
       responses:
         '204':
           description: Success
@@ -4925,6 +5085,58 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/teams/{team-id}/primaryChannel/filesFolder/content':
+    get:
+      tags:
+        - teams.team
+      summary: Get media content for team from teams
+      operationId: teams.team_GetContent
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - teams.team
+      summary: Update media content for team in teams
+      operationId: teams.team_SetContent
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/teams/{team-id}/primaryChannel/members':
     get:
       tags:
@@ -5737,6 +5949,86 @@ paths:
           description: ETag
           schema:
             type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teams/{team-id}/primaryChannel/messages/{chatMessage-id}/hostedContents/{chatMessageHostedContent-id}/$value':
+    get:
+      tags:
+        - teams.team
+      summary: Get media content for team from teams
+      operationId: teams.team_GetContent
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: 'key: id of chatMessageHostedContent'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - teams.team
+      summary: Update media content for team in teams
+      operationId: teams.team_SetContent
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: 'key: id of chatMessageHostedContent'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
       responses:
         '204':
           description: Success
@@ -9912,6 +10204,519 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/teamwork':
+    get:
+      tags:
+        - users.userTeamwork
+      summary: Get teamwork from users
+      operationId: users_GetTeamwork
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - installedApps
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - installedApps
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.userTeamwork'
+          links:
+            installedApps:
+              operationId: users.Teamwork.ListInstalledApps
+              parameters:
+                user-id: $request.path.user-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - users.userTeamwork
+      summary: Update the navigation property teamwork in users
+      operationId: users_UpdateTeamwork
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.userTeamwork'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.userTeamwork
+      summary: Delete navigation property teamwork for users
+      operationId: users_DeleteTeamwork
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/teamwork/installedApps':
+    get:
+      tags:
+        - users.userTeamwork
+      summary: Get installedApps from users
+      operationId: users.teamwork_ListInstalledApps
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - teamsApp
+                - teamsAppDefinition
+                - chat
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - teamsApp
+                - teamsAppDefinition
+                - chat
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of userScopeTeamsAppInstallation
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.userScopeTeamsAppInstallation'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - users.userTeamwork
+      summary: Create new navigation property to installedApps for users
+      operationId: users.teamwork_CreateInstalledApps
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.userScopeTeamsAppInstallation'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.userScopeTeamsAppInstallation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/teamwork/installedApps/{userScopeTeamsAppInstallation-id}':
+    get:
+      tags:
+        - users.userTeamwork
+      summary: Get installedApps from users
+      operationId: users.teamwork_GetInstalledApps
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: userScopeTeamsAppInstallation-id
+          in: path
+          description: 'key: id of userScopeTeamsAppInstallation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userScopeTeamsAppInstallation
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - teamsApp
+                - teamsAppDefinition
+                - chat
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - teamsApp
+                - teamsAppDefinition
+                - chat
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.userScopeTeamsAppInstallation'
+          links:
+            teamsApp:
+              operationId: users.teamwork.InstalledApps.GetTeamsApp
+              parameters:
+                user-id: $request.path.user-id
+                userScopeTeamsAppInstallation-id: $request.path.userScopeTeamsAppInstallation-id
+            teamsAppDefinition:
+              operationId: users.teamwork.InstalledApps.GetTeamsAppDefinition
+              parameters:
+                user-id: $request.path.user-id
+                userScopeTeamsAppInstallation-id: $request.path.userScopeTeamsAppInstallation-id
+            chat:
+              operationId: users.teamwork.InstalledApps.GetChat
+              parameters:
+                user-id: $request.path.user-id
+                userScopeTeamsAppInstallation-id: $request.path.userScopeTeamsAppInstallation-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - users.userTeamwork
+      summary: Update the navigation property installedApps in users
+      operationId: users.teamwork_UpdateInstalledApps
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: userScopeTeamsAppInstallation-id
+          in: path
+          description: 'key: id of userScopeTeamsAppInstallation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userScopeTeamsAppInstallation
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.userScopeTeamsAppInstallation'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.userTeamwork
+      summary: Delete navigation property installedApps for users
+      operationId: users.teamwork_DeleteInstalledApps
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: userScopeTeamsAppInstallation-id
+          in: path
+          description: 'key: id of userScopeTeamsAppInstallation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userScopeTeamsAppInstallation
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/teamwork/installedApps/{userScopeTeamsAppInstallation-id}/chat':
+    get:
+      tags:
+        - users.userTeamwork
+      summary: Get chat from users
+      operationId: users.teamwork.installedApps_GetChat
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: userScopeTeamsAppInstallation-id
+          in: path
+          description: 'key: id of userScopeTeamsAppInstallation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userScopeTeamsAppInstallation
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chat'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/teamwork/installedApps/{userScopeTeamsAppInstallation-id}/chat/$ref':
+    get:
+      tags:
+        - users.userTeamwork
+      summary: Get ref of chat from users
+      operationId: users.teamwork.installedApps_GetRefChat
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: userScopeTeamsAppInstallation-id
+          in: path
+          description: 'key: id of userScopeTeamsAppInstallation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userScopeTeamsAppInstallation
+      responses:
+        '200':
+          description: Retrieved navigation property link
+          content:
+            application/json:
+              schema:
+                type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - users.userTeamwork
+      summary: Update the ref of navigation property chat in users
+      operationId: users.teamwork.installedApps_SetRefChat
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: userScopeTeamsAppInstallation-id
+          in: path
+          description: 'key: id of userScopeTeamsAppInstallation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userScopeTeamsAppInstallation
+      requestBody:
+        description: New navigation property ref values
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.userTeamwork
+      summary: Delete ref of navigation property chat for users
+      operationId: users.teamwork.installedApps_DeleteRefChat
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: userScopeTeamsAppInstallation-id
+          in: path
+          description: 'key: id of userScopeTeamsAppInstallation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userScopeTeamsAppInstallation
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
 components:
   schemas:
     microsoft.graph.chat:
@@ -10100,7 +10905,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.channelMembershipType'
             webUrl:
               type: string
-              description: 'A hyperlink that will navigate to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.'
+              description: 'A hyperlink that will go to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.'
               nullable: true
             filesFolder:
               $ref: '#/components/schemas/microsoft.graph.driveItem'
@@ -10342,7 +11147,7 @@ components:
               nullable: true
             mailNickname:
               type: string
-              description: 'The mail alias for the group, unique in the organization. This property must be specified when a group is created. Returned by default. Supports $filter.'
+              description: 'The mail alias for the group, unique in the organization. This property must be specified when a group is created. These characters cannot be used in the mailNickName: @()/[]'';:.<>,SPACE. Returned by default. Supports $filter.'
               nullable: true
             membershipRule:
               type: string
@@ -10947,6 +11752,29 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.userTeamwork:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: userTeamwork
+          type: object
+          properties:
+            installedApps:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.userScopeTeamsAppInstallation'
+              description: The apps installed in the personal scope of this user.
+          additionalProperties:
+            type: object
+    microsoft.graph.userScopeTeamsAppInstallation:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.teamsAppInstallation'
+        - title: userScopeTeamsAppInstallation
+          type: object
+          properties:
+            chat:
+              $ref: '#/components/schemas/microsoft.graph.chat'
+          additionalProperties:
+            type: object
     microsoft.graph.entity:
       title: entity
       type: object
@@ -11053,6 +11881,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.chatMessagePolicyViolationDlpActionTypes'
         justificationText:
           type: string
+          description: Justification text provided by the sender of the message when overriding a policy violation.
           nullable: true
         policyTip:
           $ref: '#/components/schemas/microsoft.graph.chatMessagePolicyViolationPolicyTip'
@@ -11871,6 +12700,7 @@ components:
               nullable: true
             latestSupportedTlsVersion:
               type: string
+              description: 'Specifies the latest version of Transport Layer Security (TLS) that the notification endpoint, specified by notificationUrl, supports. The possible values are: v1_0, v1_1, v1_2, v1_3. For subscribers whose notification endpoint supports a version lower than the currently recommended version (TLS 1.2), specifying this property by a set timeline allows them to temporarily use their deprecated version of TLS before completing their upgrade to TLS 1.2. For these subscribers, not setting this property per the timeline would result in subscription operations failing. For subscribers whose notification endpoint already supports TLS 1.2, setting this property is optional. In such cases, Microsoft Graph defaults the property to v1_2.'
               nullable: true
             lifecycleNotificationUrl:
               type: string
@@ -12122,6 +12952,9 @@ components:
               $ref: '#/components/schemas/microsoft.graph.calendarColor'
             defaultOnlineMeetingProvider:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingProviderType'
+            hexColor:
+              type: string
+              nullable: true
             isRemovable:
               type: boolean
               description: Indicates whether this user calendar can be deleted from the user mailbox.
@@ -12192,7 +13025,7 @@ components:
               nullable: true
             iCalUId:
               type: string
-              description: A unique identifier that is shared by all instances of an event across different calendars. Read-only.
+              description: A unique identifier for an event across calendars. This ID is different for each occurrence in a recurring series. Read-only.
               nullable: true
             importance:
               $ref: '#/components/schemas/microsoft.graph.importance'
@@ -12203,6 +13036,9 @@ components:
             isCancelled:
               type: boolean
               description: Set to true if the event has been canceled.
+              nullable: true
+            isDraft:
+              type: boolean
               nullable: true
             isOnlineMeeting:
               type: boolean
@@ -12828,15 +13664,18 @@ components:
       properties:
         complianceUrl:
           type: string
+          description: 'The URL a user can visit to read about the data loss prevention policies for the organization. (ie, policies about what users shouldn''t say in chats)'
           nullable: true
         generalText:
           type: string
+          description: Explanatory text shown to the sender of the message.
           nullable: true
         matchedConditionDescriptions:
           type: array
           items:
             type: string
             nullable: true
+          description: 'The list of improper data in the message that was detected by the data loss prevention app. Each DLP app defines its own conditions, examples include ''Credit Card Number'' and ''Social Security Number''.'
       additionalProperties:
         type: object
     microsoft.graph.chatMessagePolicyViolationUserActionTypes:
@@ -13357,6 +14196,8 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.team'
+            teamwork:
+              $ref: '#/components/schemas/microsoft.graph.userTeamwork'
           additionalProperties:
             type: object
           description: Represents an Azure Active Directory user object.

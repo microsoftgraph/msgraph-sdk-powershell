@@ -3192,6 +3192,86 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/sites/{site-id}/lists/{list-id}/activities/{itemActivityOLD-id}/driveItem/content':
+    get:
+      tags:
+        - sites.site
+      summary: Get media content for site from sites
+      operationId: sites.site_GetContent
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: list-id
+          in: path
+          description: 'key: id of list'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: list
+        - name: itemActivityOLD-id
+          in: path
+          description: 'key: id of itemActivityOLD'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: itemActivityOLD
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - sites.site
+      summary: Update media content for site in sites
+      operationId: sites.site_SetContent
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: list-id
+          in: path
+          description: 'key: id of list'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: list
+        - name: itemActivityOLD-id
+          in: path
+          description: 'key: id of itemActivityOLD'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: itemActivityOLD
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/sites/{site-id}/lists/{list-id}/activities/{itemActivityOLD-id}/listItem':
     get:
       tags:
@@ -4218,6 +4298,86 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/sites/{site-id}/lists/{list-id}/activities/{itemActivityOLD-id}/listItem/driveItem/content':
+    get:
+      tags:
+        - sites.site
+      summary: Get media content for site from sites
+      operationId: sites.site_GetContent
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: list-id
+          in: path
+          description: 'key: id of list'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: list
+        - name: itemActivityOLD-id
+          in: path
+          description: 'key: id of itemActivityOLD'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: itemActivityOLD
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - sites.site
+      summary: Update media content for site in sites
+      operationId: sites.site_SetContent
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: list-id
+          in: path
+          description: 'key: id of list'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: list
+        - name: itemActivityOLD-id
+          in: path
+          description: 'key: id of itemActivityOLD'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: itemActivityOLD
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/sites/{site-id}/lists/{list-id}/activities/{itemActivityOLD-id}/listItem/fields':
     get:
       tags:
@@ -4358,6 +4518,71 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/sites/{site-id}/lists/{list-id}/activities/{itemActivityOLD-id}/listItem/microsoft.graph.createLink':
+    post:
+      tags:
+        - sites.Actions
+      summary: Invoke action createLink
+      operationId: sites.lists.activities.listItem_createLink
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: list-id
+          in: path
+          description: 'key: id of list'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: list
+        - name: itemActivityOLD-id
+          in: path
+          description: 'key: id of itemActivityOLD'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: itemActivityOLD
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                type:
+                  type: string
+                scope:
+                  type: string
+                  nullable: true
+                expirationDateTime:
+                  pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+                  type: string
+                  format: date-time
+                  nullable: true
+                password:
+                  type: string
+                  nullable: true
+                recipients:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.driveRecipient'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.permission'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/sites/{site-id}/lists/{list-id}/activities/{itemActivityOLD-id}/listItem/microsoft.graph.getActivitiesByInterval(startDateTime=''{startDateTime}'',endDateTime=''{endDateTime}'',interval=''{interval}'')':
     get:
       tags:
@@ -7096,6 +7321,100 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/sites/{site-id}/lists/{list-id}/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem/content':
+    get:
+      tags:
+        - sites.site
+      summary: Get media content for site from sites
+      operationId: sites.site_GetContent
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: list-id
+          in: path
+          description: 'key: id of list'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: list
+        - name: listItem-id
+          in: path
+          description: 'key: id of listItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: listItem
+        - name: itemActivityOLD-id
+          in: path
+          description: 'key: id of itemActivityOLD'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: itemActivityOLD
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - sites.site
+      summary: Update media content for site in sites
+      operationId: sites.site_SetContent
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: list-id
+          in: path
+          description: 'key: id of list'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: list
+        - name: listItem-id
+          in: path
+          description: 'key: id of listItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: listItem
+        - name: itemActivityOLD-id
+          in: path
+          description: 'key: id of itemActivityOLD'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: itemActivityOLD
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/sites/{site-id}/lists/{list-id}/items/{listItem-id}/activities/{itemActivityOLD-id}/listItem':
     get:
       tags:
@@ -7332,6 +7651,78 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/sites/{site-id}/lists/{list-id}/items/{listItem-id}/activities/{itemActivityOLD-id}/listItem/microsoft.graph.createLink':
+    post:
+      tags:
+        - sites.Actions
+      summary: Invoke action createLink
+      operationId: sites.lists.items.activities.listItem_createLink
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: list-id
+          in: path
+          description: 'key: id of list'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: list
+        - name: listItem-id
+          in: path
+          description: 'key: id of listItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: listItem
+        - name: itemActivityOLD-id
+          in: path
+          description: 'key: id of itemActivityOLD'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: itemActivityOLD
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                type:
+                  type: string
+                scope:
+                  type: string
+                  nullable: true
+                expirationDateTime:
+                  pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+                  type: string
+                  format: date-time
+                  nullable: true
+                password:
+                  type: string
+                  nullable: true
+                recipients:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.driveRecipient'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.permission'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/sites/{site-id}/lists/{list-id}/items/{listItem-id}/activities/{itemActivityOLD-id}/listItem/microsoft.graph.getActivitiesByInterval(startDateTime=''{startDateTime}'',endDateTime=''{endDateTime}'',interval=''{interval}'')':
     get:
       tags:
@@ -7882,6 +8273,86 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/sites/{site-id}/lists/{list-id}/items/{listItem-id}/driveItem/content':
+    get:
+      tags:
+        - sites.site
+      summary: Get media content for site from sites
+      operationId: sites.site_GetContent
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: list-id
+          in: path
+          description: 'key: id of list'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: list
+        - name: listItem-id
+          in: path
+          description: 'key: id of listItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: listItem
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - sites.site
+      summary: Update media content for site in sites
+      operationId: sites.site_SetContent
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: list-id
+          in: path
+          description: 'key: id of list'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: list
+        - name: listItem-id
+          in: path
+          description: 'key: id of listItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: listItem
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/sites/{site-id}/lists/{list-id}/items/{listItem-id}/fields':
     get:
       tags:
@@ -8022,6 +8493,71 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/sites/{site-id}/lists/{list-id}/items/{listItem-id}/microsoft.graph.createLink':
+    post:
+      tags:
+        - sites.Actions
+      summary: Invoke action createLink
+      operationId: sites.lists.items_createLink
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: list-id
+          in: path
+          description: 'key: id of list'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: list
+        - name: listItem-id
+          in: path
+          description: 'key: id of listItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: listItem
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                type:
+                  type: string
+                scope:
+                  type: string
+                  nullable: true
+                expirationDateTime:
+                  pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+                  type: string
+                  format: date-time
+                  nullable: true
+                password:
+                  type: string
+                  nullable: true
+                recipients:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.driveRecipient'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.permission'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/sites/{site-id}/lists/{list-id}/items/{listItem-id}/microsoft.graph.getActivitiesByInterval(startDateTime=''{startDateTime}'',endDateTime=''{endDateTime}'',interval=''{interval}'')':
     get:
       tags:
@@ -9252,6 +9788,114 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content':
+    get:
+      tags:
+        - sites.site
+      summary: Get media content for site from sites
+      operationId: sites.site_GetContent
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: notebook-id
+          in: path
+          description: 'key: id of notebook'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: sectionGroup-id
+          in: path
+          description: 'key: id of sectionGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: 'key: id of onenoteSection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - sites.site
+      summary: Update media content for site in sites
+      operationId: sites.site_SetContent
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: notebook-id
+          in: path
+          description: 'key: id of notebook'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: sectionGroup-id
+          in: path
+          description: 'key: id of sectionGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: 'key: id of onenoteSection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.copyToSection':
     post:
       tags:
@@ -9867,6 +10511,100 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content':
+    get:
+      tags:
+        - sites.site
+      summary: Get media content for site from sites
+      operationId: sites.site_GetContent
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: notebook-id
+          in: path
+          description: 'key: id of notebook'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: onenoteSection-id
+          in: path
+          description: 'key: id of onenoteSection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - sites.site
+      summary: Update media content for site in sites
+      operationId: sites.site_SetContent
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: notebook-id
+          in: path
+          description: 'key: id of notebook'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: onenoteSection-id
+          in: path
+          description: 'key: id of onenoteSection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.copyToSection':
     post:
       tags:
@@ -10579,6 +11317,72 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  '/sites/{site-id}/onenote/pages/{onenotePage-id}/content':
+    get:
+      tags:
+        - sites.site
+      summary: Get media content for site from sites
+      operationId: sites.site_GetContent
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - sites.site
+      summary: Update media content for site in sites
+      operationId: sites.site_SetContent
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/sites/{site-id}/onenote/pages/{onenotePage-id}/microsoft.graph.copyToSection':
     post:
       tags:
@@ -10963,6 +11767,114 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/sites/{site-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id1}/content':
+    get:
+      tags:
+        - sites.site
+      summary: Get media content for site from sites
+      operationId: sites.site_GetContent
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+        - name: sectionGroup-id
+          in: path
+          description: 'key: id of sectionGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: 'key: id of onenoteSection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id1
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - sites.site
+      summary: Update media content for site in sites
+      operationId: sites.site_SetContent
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+        - name: sectionGroup-id
+          in: path
+          description: 'key: id of sectionGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: 'key: id of onenoteSection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id1
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/sites/{site-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id1}/microsoft.graph.copyToSection':
     post:
       tags:
@@ -11347,6 +12259,100 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/sites/{site-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/pages/{onenotePage-id1}/content':
+    get:
+      tags:
+        - sites.site
+      summary: Get media content for site from sites
+      operationId: sites.site_GetContent
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+        - name: onenoteSection-id
+          in: path
+          description: 'key: id of onenoteSection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id1
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - sites.site
+      summary: Update media content for site in sites
+      operationId: sites.site_SetContent
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+        - name: onenoteSection-id
+          in: path
+          description: 'key: id of onenoteSection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id1
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/sites/{site-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/pages/{onenotePage-id1}/microsoft.graph.copyToSection':
     post:
       tags:
@@ -11892,6 +12898,86 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/sites/{site-id}/onenote/pages/{onenotePage-id}/parentSection/pages/{onenotePage-id1}/content':
+    get:
+      tags:
+        - sites.site
+      summary: Get media content for site from sites
+      operationId: sites.site_GetContent
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+        - name: onenotePage-id1
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - sites.site
+      summary: Update media content for site in sites
+      operationId: sites.site_SetContent
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+        - name: onenotePage-id1
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/sites/{site-id}/onenote/pages/{onenotePage-id}/parentSection/pages/{onenotePage-id1}/microsoft.graph.copyToSection':
     post:
       tags:
@@ -12731,6 +13817,72 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/sites/{site-id}/onenote/resources/{onenoteResource-id}/content':
+    get:
+      tags:
+        - sites.site
+      summary: Get media content for site from sites
+      operationId: sites.site_GetContent
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: onenoteResource-id
+          in: path
+          description: 'key: id of onenoteResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteResource
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - sites.site
+      summary: Update media content for site in sites
+      operationId: sites.site_SetContent
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: onenoteResource-id
+          in: path
+          description: 'key: id of onenoteResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteResource
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/microsoft.graph.copyNotebook':
     post:
       tags:
@@ -12913,6 +14065,100 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sections/{onenoteSection-id}/pages/{onenotePage-id}/content':
+    get:
+      tags:
+        - sites.site
+      summary: Get media content for site from sites
+      operationId: sites.site_GetContent
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sectionGroup-id
+          in: path
+          description: 'key: id of sectionGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: 'key: id of onenoteSection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - sites.site
+      summary: Update media content for site in sites
+      operationId: sites.site_SetContent
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sectionGroup-id
+          in: path
+          description: 'key: id of sectionGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: 'key: id of onenoteSection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.copyToSection':
     post:
       tags:
@@ -13479,6 +14725,100 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content':
+    get:
+      tags:
+        - sites.site
+      summary: Get media content for site from sites
+      operationId: sites.site_GetContent
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sectionGroup-id
+          in: path
+          description: 'key: id of sectionGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: 'key: id of onenoteSection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - sites.site
+      summary: Update media content for site in sites
+      operationId: sites.site_SetContent
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sectionGroup-id
+          in: path
+          description: 'key: id of sectionGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: 'key: id of onenoteSection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.copyToSection':
     post:
       tags:
@@ -14325,6 +15665,86 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/content':
+    get:
+      tags:
+        - sites.site
+      summary: Get media content for site from sites
+      operationId: sites.site_GetContent
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: onenoteSection-id
+          in: path
+          description: 'key: id of onenoteSection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - sites.site
+      summary: Update media content for site in sites
+      operationId: sites.site_SetContent
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: onenoteSection-id
+          in: path
+          description: 'key: id of onenoteSection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.copyToSection':
     post:
       tags:
@@ -17229,6 +18649,65 @@ components:
           type: object
           additionalProperties:
             type: object
+    microsoft.graph.driveRecipient:
+      title: driveRecipient
+      type: object
+      properties:
+        alias:
+          type: string
+          description: 'The alias of the domain object, for cases where an email address is unavailable (e.g. security groups).'
+          nullable: true
+        email:
+          type: string
+          description: 'The email address for the recipient, if the recipient has an associated email address.'
+          nullable: true
+        objectId:
+          type: string
+          description: The unique identifier for the recipient in the directory.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.permission:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: permission
+          type: object
+          properties:
+            expirationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there is no expiration set for this permission. Optional.
+              format: date-time
+              nullable: true
+            grantedTo:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            grantedToIdentities:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.identitySet'
+              description: 'For link type permissions, the details of the users to whom permission was granted. Read-only.'
+            hasPassword:
+              type: boolean
+              description: 'This indicates whether password is set for this permission, it''s only showing in response. Optional and Read-only and for OneDrive Personal only.'
+              nullable: true
+            inheritedFrom:
+              $ref: '#/components/schemas/microsoft.graph.itemReference'
+            invitation:
+              $ref: '#/components/schemas/microsoft.graph.sharingInvitation'
+            link:
+              $ref: '#/components/schemas/microsoft.graph.sharingLink'
+            roles:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: 'The type of permission, e.g. read. See below for the full list of roles. Read-only.'
+            shareId:
+              type: string
+              description: A unique token that can be used to access this shared item via the **shares** API. Read-only.
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.itemActivityStat:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -17323,6 +18802,7 @@ components:
               nullable: true
             latestSupportedTlsVersion:
               type: string
+              description: 'Specifies the latest version of Transport Layer Security (TLS) that the notification endpoint, specified by notificationUrl, supports. The possible values are: v1_0, v1_1, v1_2, v1_3. For subscribers whose notification endpoint supports a version lower than the currently recommended version (TLS 1.2), specifying this property by a set timeline allows them to temporarily use their deprecated version of TLS before completing their upgrade to TLS 1.2. For these subscribers, not setting this property per the timeline would result in subscription operations failing. For subscribers whose notification endpoint already supports TLS 1.2, setting this property is optional. In such cases, Microsoft Graph defaults the property to v1_2.'
               nullable: true
             lifecycleNotificationUrl:
               type: string
@@ -18475,47 +19955,6 @@ components:
               description: Represents a collection of worksheets associated with the workbook. Read-only.
           additionalProperties:
             type: object
-    microsoft.graph.permission:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: permission
-          type: object
-          properties:
-            expirationDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there is no expiration set for this permission. Optional.
-              format: date-time
-              nullable: true
-            grantedTo:
-              $ref: '#/components/schemas/microsoft.graph.identitySet'
-            grantedToIdentities:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.identitySet'
-              description: 'For link type permissions, the details of the users to whom permission was granted. Read-only.'
-            hasPassword:
-              type: boolean
-              description: 'This indicates whether password is set for this permission, it''s only showing in response. Optional and Read-only and for OneDrive Personal only.'
-              nullable: true
-            inheritedFrom:
-              $ref: '#/components/schemas/microsoft.graph.itemReference'
-            invitation:
-              $ref: '#/components/schemas/microsoft.graph.sharingInvitation'
-            link:
-              $ref: '#/components/schemas/microsoft.graph.sharingLink'
-            roles:
-              type: array
-              items:
-                type: string
-                nullable: true
-              description: 'The type of permission, e.g. read. See below for the full list of roles. Read-only.'
-            shareId:
-              type: string
-              description: A unique token that can be used to access this shared item via the **shares** API. Read-only.
-              nullable: true
-          additionalProperties:
-            type: object
     microsoft.graph.thumbnailSet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -18561,6 +20000,56 @@ components:
         name:
           type: string
           description: The name of the content type.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.sharingInvitation:
+      title: sharingInvitation
+      type: object
+      properties:
+        email:
+          type: string
+          description: The email address provided for the recipient of the sharing invitation. Read-only.
+          nullable: true
+        invitedBy:
+          $ref: '#/components/schemas/microsoft.graph.identitySet'
+        redeemedBy:
+          type: string
+          nullable: true
+        signInRequired:
+          type: boolean
+          description: If true the recipient of the invitation needs to sign in in order to access the shared item. Read-only.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.sharingLink:
+      title: sharingLink
+      type: object
+      properties:
+        application:
+          $ref: '#/components/schemas/microsoft.graph.identity'
+        configuratorUrl:
+          type: string
+          nullable: true
+        preventsDownload:
+          type: boolean
+          description: 'If true then the user can only use this link to view the item on the web, and cannot use it to download the contents of the item. Only for OneDrive for Business and SharePoint.'
+          nullable: true
+        scope:
+          type: string
+          description: 'The scope of the link represented by this permission. Value anonymous indicates the link is usable by anyone, organization indicates the link is only usable for users signed into the same tenant.'
+          nullable: true
+        type:
+          type: string
+          description: The type of the link created.
+          nullable: true
+        webHtml:
+          type: string
+          description: 'For embed links, this property contains the HTML code for an <iframe> element that will embed the item in a webpage.'
+          nullable: true
+        webUrl:
+          type: string
+          description: A URL that opens the item in the browser on the OneDrive website.
           nullable: true
       additionalProperties:
         type: object
@@ -19846,56 +21335,6 @@ components:
               description: Collection of tables that are part of the worksheet. Read-only.
           additionalProperties:
             type: object
-    microsoft.graph.sharingInvitation:
-      title: sharingInvitation
-      type: object
-      properties:
-        email:
-          type: string
-          description: The email address provided for the recipient of the sharing invitation. Read-only.
-          nullable: true
-        invitedBy:
-          $ref: '#/components/schemas/microsoft.graph.identitySet'
-        redeemedBy:
-          type: string
-          nullable: true
-        signInRequired:
-          type: boolean
-          description: If true the recipient of the invitation needs to sign in in order to access the shared item. Read-only.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.sharingLink:
-      title: sharingLink
-      type: object
-      properties:
-        application:
-          $ref: '#/components/schemas/microsoft.graph.identity'
-        configuratorUrl:
-          type: string
-          nullable: true
-        preventsDownload:
-          type: boolean
-          description: 'If true then the user can only use this link to view the item on the web, and cannot use it to download the contents of the item. Only for OneDrive for Business and SharePoint.'
-          nullable: true
-        scope:
-          type: string
-          description: 'The scope of the link represented by this permission. Value anonymous indicates the link is usable by anyone, organization indicates the link is only usable for users signed into the same tenant.'
-          nullable: true
-        type:
-          type: string
-          description: The type of the link created.
-          nullable: true
-        webHtml:
-          type: string
-          description: 'For embed links, this property contains the HTML code for an <iframe> element that will embed the item in a webpage.'
-          nullable: true
-        webUrl:
-          type: string
-          description: A URL that opens the item in the browser on the OneDrive website.
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.thumbnail:
       title: thumbnail
       type: object
@@ -20554,6 +21993,9 @@ components:
               type: boolean
               description: Set to true if the event has attachments.
               nullable: true
+            hideAttendees:
+              type: boolean
+              nullable: true
             importance:
               $ref: '#/components/schemas/microsoft.graph.importance'
             isAllDay:
@@ -20972,7 +22414,7 @@ components:
               nullable: true
             mailNickname:
               type: string
-              description: 'The mail alias for the group, unique in the organization. This property must be specified when a group is created. Returned by default. Supports $filter.'
+              description: 'The mail alias for the group, unique in the organization. This property must be specified when a group is created. These characters cannot be used in the mailNickName: @()/[]'';:.<>,SPACE. Returned by default. Supports $filter.'
               nullable: true
             mdmAppId:
               type: string
@@ -21039,10 +22481,12 @@ components:
               type: array
               items:
                 type: string
+              description: 'Specifies the group behaviors that can be set for a Microsoft 365 group during creation. This can be set only as part of creation (POST). Possible values are AllowOnlyMembersToPost, HideGroupInOutlook, SubscribeNewGroupMembers, WelcomeEmailDisabled. For more information, see Set Microsoft 365 group behaviors and provisioning options.'
             resourceProvisioningOptions:
               type: array
               items:
                 type: string
+              description: 'Specifies the group resources that are provisioned as part of Microsoft 365 group creation, that are not normally part of default group creation. Possible value is Team. For more information, see Set Microsoft 365 group behaviors and provisioning options.'
             securityEnabled:
               type: boolean
               description: Specifies whether the group is a security group. Returned by default. Supports $filter.
@@ -22626,22 +24070,24 @@ components:
               type: string
               description: 'Type of trust for the joined device. Read-only. Possible values: Workplace - indicates bring your own personal devicesAzureAd - Cloud only joined devicesServerAd - on-premises domain joined devices joined to Azure AD. For more details, see Introduction to device management in Azure Active Directory'
               nullable: true
-            Kind:
+            kind:
               type: string
               nullable: true
-            Manufacturer:
+            manufacturer:
+              type: string
+              description: Manufacturer of the device. Read-only.
+              nullable: true
+            model:
+              type: string
+              description: Model of the device. Read-only.
+              nullable: true
+            name:
               type: string
               nullable: true
-            Model:
+            platform:
               type: string
               nullable: true
-            Name:
-              type: string
-              nullable: true
-            Platform:
-              type: string
-              nullable: true
-            Status:
+            status:
               type: string
               nullable: true
             memberOf:
@@ -24398,7 +25844,7 @@ components:
           type: object
           properties:
             createdBy:
-              $ref: '#/components/schemas/microsoft.graph.userIdentity'
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -24407,6 +25853,8 @@ components:
             reason:
               type: string
               nullable: true
+            status:
+              type: string
           additionalProperties:
             type: object
     microsoft.graph.approvalStep:
@@ -26440,27 +27888,27 @@ components:
         - title: command
           type: object
           properties:
-            AppServiceName:
+            appServiceName:
               type: string
               nullable: true
-            Error:
+            error:
               type: string
               nullable: true
-            PackageFamilyName:
+            packageFamilyName:
               type: string
               nullable: true
-            Payload:
-              $ref: '#/components/schemas/microsoft.graph.PayloadRequest'
-            PermissionTicket:
+            payload:
+              $ref: '#/components/schemas/microsoft.graph.payloadRequest'
+            permissionTicket:
               type: string
               nullable: true
-            PostBackUri:
+            postBackUri:
               type: string
               nullable: true
-            Status:
+            status:
               type: string
               nullable: true
-            Type:
+            type:
               type: string
               nullable: true
             responsepayload:
@@ -27016,6 +28464,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Read only. Timestamp at which the channel was created.
               format: date-time
               nullable: true
             description:
@@ -27031,6 +28480,7 @@ components:
               nullable: true
             isFavoriteByDefault:
               type: boolean
+              description: 'Indicates whether the channel should automatically be marked ''favorite'' for all members of the team. Can only be set programmatically with Create team. Default: false.'
               nullable: true
             membershipType:
               $ref: '#/components/schemas/microsoft.graph.channelMembershipType'
@@ -27038,7 +28488,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.channelModerationSettings'
             webUrl:
               type: string
-              description: 'A hyperlink that will navigate to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.'
+              description: 'A hyperlink that will go to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.'
               nullable: true
             filesFolder:
               $ref: '#/components/schemas/microsoft.graph.driveItem'
@@ -29034,8 +30484,8 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.PayloadRequest:
-      title: PayloadRequest
+    microsoft.graph.payloadRequest:
+      title: payloadRequest
       type: object
       additionalProperties:
         type: object
@@ -29240,6 +30690,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.chatMessagePolicyViolationDlpActionTypes'
         justificationText:
           type: string
+          description: Justification text provided by the sender of the message when overriding a policy violation.
           nullable: true
         policyTip:
           $ref: '#/components/schemas/microsoft.graph.chatMessagePolicyViolationPolicyTip'
@@ -30286,15 +31737,18 @@ components:
       properties:
         complianceUrl:
           type: string
+          description: 'The URL a user can visit to read about the data loss prevention policies for the organization. (ie, policies about what users shouldn''t say in chats)'
           nullable: true
         generalText:
           type: string
+          description: Explanatory text shown to the sender of the message.
           nullable: true
         matchedConditionDescriptions:
           type: array
           items:
             type: string
             nullable: true
+          description: 'The list of improper data in the message that was detected by the data loss prevention app. Each DLP app defines its own conditions, examples include ''Credit Card Number'' and ''Social Security Number''.'
       additionalProperties:
         type: object
     microsoft.graph.chatMessagePolicyViolationUserActionTypes:

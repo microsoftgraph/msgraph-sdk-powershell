@@ -8338,6 +8338,974 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/connectorGroups/{connectorGroup-id}/applications':
+    get:
+      tags:
+        - onPremisesPublishingProfiles.connectorGroup
+      summary: Get applications from onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.connectorGroups_ListApplications
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: connectorGroup-id
+          in: path
+          description: 'key: id of connectorGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectorGroup
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+                - api
+                - api desc
+                - appId
+                - appId desc
+                - appRoles
+                - appRoles desc
+                - createdDateTime
+                - createdDateTime desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+                - groupMembershipClaims
+                - groupMembershipClaims desc
+                - identifierUris
+                - identifierUris desc
+                - info
+                - info desc
+                - isDeviceOnlyAuthSupported
+                - isDeviceOnlyAuthSupported desc
+                - isFallbackPublicClient
+                - isFallbackPublicClient desc
+                - keyCredentials
+                - keyCredentials desc
+                - logo
+                - logo desc
+                - notes
+                - notes desc
+                - optionalClaims
+                - optionalClaims desc
+                - parentalControlSettings
+                - parentalControlSettings desc
+                - passwordCredentials
+                - passwordCredentials desc
+                - publicClient
+                - publicClient desc
+                - publisherDomain
+                - publisherDomain desc
+                - requiredResourceAccess
+                - requiredResourceAccess desc
+                - signInAudience
+                - signInAudience desc
+                - spa
+                - spa desc
+                - tags
+                - tags desc
+                - tokenEncryptionKeyId
+                - tokenEncryptionKeyId desc
+                - uniqueName
+                - uniqueName desc
+                - web
+                - web desc
+                - onPremisesPublishing
+                - onPremisesPublishing desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+                - api
+                - appId
+                - appRoles
+                - createdDateTime
+                - description
+                - displayName
+                - groupMembershipClaims
+                - identifierUris
+                - info
+                - isDeviceOnlyAuthSupported
+                - isFallbackPublicClient
+                - keyCredentials
+                - logo
+                - notes
+                - optionalClaims
+                - parentalControlSettings
+                - passwordCredentials
+                - publicClient
+                - publisherDomain
+                - requiredResourceAccess
+                - signInAudience
+                - spa
+                - tags
+                - tokenEncryptionKeyId
+                - uniqueName
+                - web
+                - onPremisesPublishing
+                - createdOnBehalfOf
+                - extensionProperties
+                - homeRealmDiscoveryPolicies
+                - owners
+                - tokenIssuancePolicies
+                - tokenLifetimePolicies
+                - connectorGroup
+                - synchronization
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - createdOnBehalfOf
+                - extensionProperties
+                - homeRealmDiscoveryPolicies
+                - owners
+                - tokenIssuancePolicies
+                - tokenLifetimePolicies
+                - connectorGroup
+                - synchronization
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of application
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.application'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/connectorGroups/{connectorGroup-id}/applications/$ref':
+    get:
+      tags:
+        - onPremisesPublishingProfiles.connectorGroup
+      summary: Get ref of applications from onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.connectorGroups_ListRefApplications
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: connectorGroup-id
+          in: path
+          description: 'key: id of connectorGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectorGroup
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+                - api
+                - api desc
+                - appId
+                - appId desc
+                - appRoles
+                - appRoles desc
+                - createdDateTime
+                - createdDateTime desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+                - groupMembershipClaims
+                - groupMembershipClaims desc
+                - identifierUris
+                - identifierUris desc
+                - info
+                - info desc
+                - isDeviceOnlyAuthSupported
+                - isDeviceOnlyAuthSupported desc
+                - isFallbackPublicClient
+                - isFallbackPublicClient desc
+                - keyCredentials
+                - keyCredentials desc
+                - logo
+                - logo desc
+                - notes
+                - notes desc
+                - optionalClaims
+                - optionalClaims desc
+                - parentalControlSettings
+                - parentalControlSettings desc
+                - passwordCredentials
+                - passwordCredentials desc
+                - publicClient
+                - publicClient desc
+                - publisherDomain
+                - publisherDomain desc
+                - requiredResourceAccess
+                - requiredResourceAccess desc
+                - signInAudience
+                - signInAudience desc
+                - spa
+                - spa desc
+                - tags
+                - tags desc
+                - tokenEncryptionKeyId
+                - tokenEncryptionKeyId desc
+                - uniqueName
+                - uniqueName desc
+                - web
+                - web desc
+                - onPremisesPublishing
+                - onPremisesPublishing desc
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property links
+          content:
+            application/json:
+              schema:
+                title: Collection of links of application
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - onPremisesPublishingProfiles.connectorGroup
+      summary: Create new navigation property ref to applications for onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.connectorGroups_CreateRefApplications
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: connectorGroup-id
+          in: path
+          description: 'key: id of connectorGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectorGroup
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '201':
+          description: Created navigation property link.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/connectorGroups/{connectorGroup-id}/members':
+    get:
+      tags:
+        - onPremisesPublishingProfiles.connectorGroup
+      summary: Get members from onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.connectorGroups_ListMembers
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: connectorGroup-id
+          in: path
+          description: 'key: id of connectorGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectorGroup
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - externalIp
+                - externalIp desc
+                - machineName
+                - machineName desc
+                - status
+                - status desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - externalIp
+                - machineName
+                - status
+                - memberOf
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - memberOf
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of connector
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.connector'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - onPremisesPublishingProfiles.connectorGroup
+      summary: Create new navigation property to members for onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.connectorGroups_CreateMembers
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: connectorGroup-id
+          in: path
+          description: 'key: id of connectorGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectorGroup
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.connector'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.connector'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/connectorGroups/{connectorGroup-id}/members/{connector-id}':
+    get:
+      tags:
+        - onPremisesPublishingProfiles.connectorGroup
+      summary: Get members from onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.connectorGroups_GetMembers
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: connectorGroup-id
+          in: path
+          description: 'key: id of connectorGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectorGroup
+        - name: connector-id
+          in: path
+          description: 'key: id of connector'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connector
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - externalIp
+                - machineName
+                - status
+                - memberOf
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - memberOf
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.connector'
+          links:
+            memberOf:
+              operationId: onPremisesPublishingProfiles.connectorGroups.Members.ListMemberOf
+              parameters:
+                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
+                connectorGroup-id: $request.path.connectorGroup-id
+                connector-id: $request.path.connector-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - onPremisesPublishingProfiles.connectorGroup
+      summary: Update the navigation property members in onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.connectorGroups_UpdateMembers
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: connectorGroup-id
+          in: path
+          description: 'key: id of connectorGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectorGroup
+        - name: connector-id
+          in: path
+          description: 'key: id of connector'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connector
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.connector'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - onPremisesPublishingProfiles.connectorGroup
+      summary: Delete navigation property members for onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.connectorGroups_DeleteMembers
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: connectorGroup-id
+          in: path
+          description: 'key: id of connectorGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectorGroup
+        - name: connector-id
+          in: path
+          description: 'key: id of connector'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connector
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/connectorGroups/{connectorGroup-id}/members/{connector-id}/memberOf':
+    get:
+      tags:
+        - onPremisesPublishingProfiles.connectorGroup
+      summary: Get memberOf from onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.connectorGroups.members_ListMemberOf
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: connectorGroup-id
+          in: path
+          description: 'key: id of connectorGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectorGroup
+        - name: connector-id
+          in: path
+          description: 'key: id of connector'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connector
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - connectorGroupType
+                - connectorGroupType desc
+                - isDefault
+                - isDefault desc
+                - name
+                - name desc
+                - region
+                - region desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - connectorGroupType
+                - isDefault
+                - name
+                - region
+                - applications
+                - members
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - applications
+                - members
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of connectorGroup
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.connectorGroup'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - onPremisesPublishingProfiles.connectorGroup
+      summary: Create new navigation property to memberOf for onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.connectorGroups.members_CreateMemberOf
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: connectorGroup-id
+          in: path
+          description: 'key: id of connectorGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectorGroup
+        - name: connector-id
+          in: path
+          description: 'key: id of connector'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connector
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.connectorGroup'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.connectorGroup'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/connectorGroups/{connectorGroup-id}/members/{connector-id}/memberOf/{connectorGroup-id1}':
+    get:
+      tags:
+        - onPremisesPublishingProfiles.connectorGroup
+      summary: Get memberOf from onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.connectorGroups.members_GetMemberOf
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: connectorGroup-id
+          in: path
+          description: 'key: id of connectorGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectorGroup
+        - name: connector-id
+          in: path
+          description: 'key: id of connector'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connector
+        - name: connectorGroup-id1
+          in: path
+          description: 'key: id of connectorGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectorGroup
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - connectorGroupType
+                - isDefault
+                - name
+                - region
+                - applications
+                - members
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - applications
+                - members
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.connectorGroup'
+          links:
+            applications:
+              operationId: onPremisesPublishingProfiles.connectorGroups.members.MemberOf.ListApplications
+              parameters:
+                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
+                connectorGroup-id: $request.path.connectorGroup-id
+                connector-id: $request.path.connector-id
+                connectorGroup-id1: $request.path.connectorGroup-id1
+            members:
+              operationId: onPremisesPublishingProfiles.connectorGroups.members.MemberOf.ListMembers
+              parameters:
+                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
+                connectorGroup-id: $request.path.connectorGroup-id
+                connector-id: $request.path.connector-id
+                connectorGroup-id1: $request.path.connectorGroup-id1
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - onPremisesPublishingProfiles.connectorGroup
+      summary: Update the navigation property memberOf in onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.connectorGroups.members_UpdateMemberOf
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: connectorGroup-id
+          in: path
+          description: 'key: id of connectorGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectorGroup
+        - name: connector-id
+          in: path
+          description: 'key: id of connector'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connector
+        - name: connectorGroup-id1
+          in: path
+          description: 'key: id of connectorGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectorGroup
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.connectorGroup'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - onPremisesPublishingProfiles.connectorGroup
+      summary: Delete navigation property memberOf for onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.connectorGroups.members_DeleteMemberOf
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: connectorGroup-id
+          in: path
+          description: 'key: id of connectorGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectorGroup
+        - name: connector-id
+          in: path
+          description: 'key: id of connector'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connector
+        - name: connectorGroup-id1
+          in: path
+          description: 'key: id of connectorGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectorGroup
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/connectors':
     get:
       tags:
@@ -8571,6 +9539,994 @@ paths:
             type: string
           x-ms-docs-key-type: onPremisesPublishingProfile
         - name: connector-id
+          in: path
+          description: 'key: id of connector'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connector
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/connectors/{connector-id}/memberOf':
+    get:
+      tags:
+        - onPremisesPublishingProfiles.connector
+      summary: Get memberOf from onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.connectors_ListMemberOf
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: connector-id
+          in: path
+          description: 'key: id of connector'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connector
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - connectorGroupType
+                - connectorGroupType desc
+                - isDefault
+                - isDefault desc
+                - name
+                - name desc
+                - region
+                - region desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - connectorGroupType
+                - isDefault
+                - name
+                - region
+                - applications
+                - members
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - applications
+                - members
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of connectorGroup
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.connectorGroup'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - onPremisesPublishingProfiles.connector
+      summary: Create new navigation property to memberOf for onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.connectors_CreateMemberOf
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: connector-id
+          in: path
+          description: 'key: id of connector'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connector
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.connectorGroup'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.connectorGroup'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/connectors/{connector-id}/memberOf/{connectorGroup-id}':
+    get:
+      tags:
+        - onPremisesPublishingProfiles.connector
+      summary: Get memberOf from onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.connectors_GetMemberOf
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: connector-id
+          in: path
+          description: 'key: id of connector'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connector
+        - name: connectorGroup-id
+          in: path
+          description: 'key: id of connectorGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectorGroup
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - connectorGroupType
+                - isDefault
+                - name
+                - region
+                - applications
+                - members
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - applications
+                - members
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.connectorGroup'
+          links:
+            applications:
+              operationId: onPremisesPublishingProfiles.connectors.MemberOf.ListApplications
+              parameters:
+                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
+                connector-id: $request.path.connector-id
+                connectorGroup-id: $request.path.connectorGroup-id
+            members:
+              operationId: onPremisesPublishingProfiles.connectors.MemberOf.ListMembers
+              parameters:
+                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
+                connector-id: $request.path.connector-id
+                connectorGroup-id: $request.path.connectorGroup-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - onPremisesPublishingProfiles.connector
+      summary: Update the navigation property memberOf in onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.connectors_UpdateMemberOf
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: connector-id
+          in: path
+          description: 'key: id of connector'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connector
+        - name: connectorGroup-id
+          in: path
+          description: 'key: id of connectorGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectorGroup
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.connectorGroup'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - onPremisesPublishingProfiles.connector
+      summary: Delete navigation property memberOf for onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.connectors_DeleteMemberOf
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: connector-id
+          in: path
+          description: 'key: id of connector'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connector
+        - name: connectorGroup-id
+          in: path
+          description: 'key: id of connectorGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectorGroup
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/connectors/{connector-id}/memberOf/{connectorGroup-id}/applications':
+    get:
+      tags:
+        - onPremisesPublishingProfiles.connector
+      summary: Get applications from onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.connectors.memberOf_ListApplications
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: connector-id
+          in: path
+          description: 'key: id of connector'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connector
+        - name: connectorGroup-id
+          in: path
+          description: 'key: id of connectorGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectorGroup
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+                - api
+                - api desc
+                - appId
+                - appId desc
+                - appRoles
+                - appRoles desc
+                - createdDateTime
+                - createdDateTime desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+                - groupMembershipClaims
+                - groupMembershipClaims desc
+                - identifierUris
+                - identifierUris desc
+                - info
+                - info desc
+                - isDeviceOnlyAuthSupported
+                - isDeviceOnlyAuthSupported desc
+                - isFallbackPublicClient
+                - isFallbackPublicClient desc
+                - keyCredentials
+                - keyCredentials desc
+                - logo
+                - logo desc
+                - notes
+                - notes desc
+                - optionalClaims
+                - optionalClaims desc
+                - parentalControlSettings
+                - parentalControlSettings desc
+                - passwordCredentials
+                - passwordCredentials desc
+                - publicClient
+                - publicClient desc
+                - publisherDomain
+                - publisherDomain desc
+                - requiredResourceAccess
+                - requiredResourceAccess desc
+                - signInAudience
+                - signInAudience desc
+                - spa
+                - spa desc
+                - tags
+                - tags desc
+                - tokenEncryptionKeyId
+                - tokenEncryptionKeyId desc
+                - uniqueName
+                - uniqueName desc
+                - web
+                - web desc
+                - onPremisesPublishing
+                - onPremisesPublishing desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+                - api
+                - appId
+                - appRoles
+                - createdDateTime
+                - description
+                - displayName
+                - groupMembershipClaims
+                - identifierUris
+                - info
+                - isDeviceOnlyAuthSupported
+                - isFallbackPublicClient
+                - keyCredentials
+                - logo
+                - notes
+                - optionalClaims
+                - parentalControlSettings
+                - passwordCredentials
+                - publicClient
+                - publisherDomain
+                - requiredResourceAccess
+                - signInAudience
+                - spa
+                - tags
+                - tokenEncryptionKeyId
+                - uniqueName
+                - web
+                - onPremisesPublishing
+                - createdOnBehalfOf
+                - extensionProperties
+                - homeRealmDiscoveryPolicies
+                - owners
+                - tokenIssuancePolicies
+                - tokenLifetimePolicies
+                - connectorGroup
+                - synchronization
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - createdOnBehalfOf
+                - extensionProperties
+                - homeRealmDiscoveryPolicies
+                - owners
+                - tokenIssuancePolicies
+                - tokenLifetimePolicies
+                - connectorGroup
+                - synchronization
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of application
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.application'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/connectors/{connector-id}/memberOf/{connectorGroup-id}/applications/$ref':
+    get:
+      tags:
+        - onPremisesPublishingProfiles.connector
+      summary: Get ref of applications from onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.connectors.memberOf_ListRefApplications
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: connector-id
+          in: path
+          description: 'key: id of connector'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connector
+        - name: connectorGroup-id
+          in: path
+          description: 'key: id of connectorGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectorGroup
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+                - api
+                - api desc
+                - appId
+                - appId desc
+                - appRoles
+                - appRoles desc
+                - createdDateTime
+                - createdDateTime desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+                - groupMembershipClaims
+                - groupMembershipClaims desc
+                - identifierUris
+                - identifierUris desc
+                - info
+                - info desc
+                - isDeviceOnlyAuthSupported
+                - isDeviceOnlyAuthSupported desc
+                - isFallbackPublicClient
+                - isFallbackPublicClient desc
+                - keyCredentials
+                - keyCredentials desc
+                - logo
+                - logo desc
+                - notes
+                - notes desc
+                - optionalClaims
+                - optionalClaims desc
+                - parentalControlSettings
+                - parentalControlSettings desc
+                - passwordCredentials
+                - passwordCredentials desc
+                - publicClient
+                - publicClient desc
+                - publisherDomain
+                - publisherDomain desc
+                - requiredResourceAccess
+                - requiredResourceAccess desc
+                - signInAudience
+                - signInAudience desc
+                - spa
+                - spa desc
+                - tags
+                - tags desc
+                - tokenEncryptionKeyId
+                - tokenEncryptionKeyId desc
+                - uniqueName
+                - uniqueName desc
+                - web
+                - web desc
+                - onPremisesPublishing
+                - onPremisesPublishing desc
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property links
+          content:
+            application/json:
+              schema:
+                title: Collection of links of application
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - onPremisesPublishingProfiles.connector
+      summary: Create new navigation property ref to applications for onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.connectors.memberOf_CreateRefApplications
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: connector-id
+          in: path
+          description: 'key: id of connector'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connector
+        - name: connectorGroup-id
+          in: path
+          description: 'key: id of connectorGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectorGroup
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '201':
+          description: Created navigation property link.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/connectors/{connector-id}/memberOf/{connectorGroup-id}/members':
+    get:
+      tags:
+        - onPremisesPublishingProfiles.connector
+      summary: Get members from onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.connectors.memberOf_ListMembers
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: connector-id
+          in: path
+          description: 'key: id of connector'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connector
+        - name: connectorGroup-id
+          in: path
+          description: 'key: id of connectorGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectorGroup
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - externalIp
+                - externalIp desc
+                - machineName
+                - machineName desc
+                - status
+                - status desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - externalIp
+                - machineName
+                - status
+                - memberOf
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - memberOf
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of connector
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.connector'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - onPremisesPublishingProfiles.connector
+      summary: Create new navigation property to members for onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.connectors.memberOf_CreateMembers
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: connector-id
+          in: path
+          description: 'key: id of connector'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connector
+        - name: connectorGroup-id
+          in: path
+          description: 'key: id of connectorGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectorGroup
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.connector'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.connector'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/connectors/{connector-id}/memberOf/{connectorGroup-id}/members/{connector-id1}':
+    get:
+      tags:
+        - onPremisesPublishingProfiles.connector
+      summary: Get members from onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.connectors.memberOf_GetMembers
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: connector-id
+          in: path
+          description: 'key: id of connector'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connector
+        - name: connectorGroup-id
+          in: path
+          description: 'key: id of connectorGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectorGroup
+        - name: connector-id1
+          in: path
+          description: 'key: id of connector'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connector
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - externalIp
+                - machineName
+                - status
+                - memberOf
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - memberOf
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.connector'
+          links:
+            memberOf:
+              operationId: onPremisesPublishingProfiles.connectors.memberOf.Members.ListMemberOf
+              parameters:
+                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
+                connector-id: $request.path.connector-id
+                connectorGroup-id: $request.path.connectorGroup-id
+                connector-id1: $request.path.connector-id1
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - onPremisesPublishingProfiles.connector
+      summary: Update the navigation property members in onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.connectors.memberOf_UpdateMembers
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: connector-id
+          in: path
+          description: 'key: id of connector'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connector
+        - name: connectorGroup-id
+          in: path
+          description: 'key: id of connectorGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectorGroup
+        - name: connector-id1
+          in: path
+          description: 'key: id of connector'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connector
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.connector'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - onPremisesPublishingProfiles.connector
+      summary: Delete navigation property members for onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.connectors.memberOf_DeleteMembers
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: connector-id
+          in: path
+          description: 'key: id of connector'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connector
+        - name: connectorGroup-id
+          in: path
+          description: 'key: id of connectorGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectorGroup
+        - name: connector-id1
           in: path
           description: 'key: id of connector'
           required: true
@@ -16335,7 +18291,7 @@ components:
               description: Specifies resources that this application requires access to and the set of OAuth permission scopes and application roles that it needs under each of those resources. This pre-configuration of required resource access drives the consent experience. Not nullable.
             signInAudience:
               type: string
-              description: 'Specifies the Microsoft accounts that are supported for the current application. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization’s Azure AD tenant (single tenant)AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization’s Azure AD tenant (multi-tenant)AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization’s Azure AD tenant.'
+              description: 'Specifies the Microsoft accounts that are supported for the current application. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization’s Azure AD tenant (single tenant)AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization’s Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization’s Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.'
               nullable: true
             spa:
               $ref: '#/components/schemas/microsoft.graph.spaApplication'
@@ -17409,7 +19365,7 @@ components:
           type: array
           items:
             type: string
-          description: 'Specifies whether this app role can be assigned to users and groups (by setting to [''User'']), to other application''s (by setting to [''Application''], or both (by setting to [''User'', ''Application'']). App roles supporting assignment of other applications'' service principals are also known as application permissions.'
+          description: 'Specifies whether this app role can be assigned to users and groups (by setting to [''User'']), to other application''s (by setting to [''Application''], or both (by setting to [''User'', ''Application'']). App roles supporting assignment to other applications'' service principals are also known as application permissions. The ''Application'' value is only supported for app roles defined on application entities.'
         description:
           type: string
           description: 'The description for the app role. This is displayed when the app role is being assigned and, if the app role functions as an application permission, during  consent experiences.'
@@ -18199,9 +20155,9 @@ components:
       title: onPremisesPublishingSingleSignOn
       type: object
       properties:
-        KerberosSignOnSettings:
+        kerberosSignOnSettings:
           $ref: '#/components/schemas/microsoft.graph.kerberosSignOnSettings'
-        SingleSignOnMode:
+        singleSignOnMode:
           $ref: '#/components/schemas/microsoft.graph.singleSignOnMode'
       additionalProperties:
         type: object
@@ -18521,10 +20477,10 @@ components:
       title: kerberosSignOnSettings
       type: object
       properties:
-        KerberosServicePrincipalName:
+        kerberosServicePrincipalName:
           type: string
           nullable: true
-        KerberosSignOnMappingAttributeType:
+        kerberosSignOnMappingAttributeType:
           $ref: '#/components/schemas/microsoft.graph.kerberosSignOnMappingAttributeType'
       additionalProperties:
         type: object
@@ -18534,6 +20490,9 @@ components:
         - none
         - onPremisesKerberos
         - saml
+        - pingHeaderBased
+        - aadHeaderBased
+        - unknownFutureValue
       type: string
     microsoft.graph.synchronizationError:
       title: synchronizationError
