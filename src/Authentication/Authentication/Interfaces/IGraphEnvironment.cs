@@ -4,9 +4,11 @@
 
 namespace Microsoft.Graph.PowerShell.Authentication.Interfaces
 {
-    public interface IGraphSession
+    public interface IGraphEnvironment
     {
-        IAuthContext AuthContext { get; set; }
-        IDataStore DataStore { get; set; }
+        string Name { get; set; }
+        string Type { get; set; }
+        string AzureADEndpoint { get; set; }
+        string GraphEndpoint { get; set; }
     }
 }

@@ -29,8 +29,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.TokenCache
             }
 
             // Try to create directory if it doesn't exist.
-            Directory.CreateDirectory(Constants.TokenCacheDirectory);
-            string tokenCacheFilePath = Path.Combine(Constants.TokenCacheDirectory, $"{appId}cache.bin3");
+            Directory.CreateDirectory(Constants.GraphDirectoryPath);
+            string tokenCacheFilePath = Path.Combine(Constants.GraphDirectoryPath, $"{appId}cache.bin3");
 
             return File.Exists(tokenCacheFilePath) ?
                 ProtectedData.Unprotect(
@@ -60,8 +60,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.TokenCache
             }
 
             // Try to create directory if it doesn't exist.
-            Directory.CreateDirectory(Constants.TokenCacheDirectory);
-            string tokenCacheFilePath = Path.Combine(Constants.TokenCacheDirectory, $"{appId}cache.bin3");
+            Directory.CreateDirectory(Constants.GraphDirectoryPath);
+            string tokenCacheFilePath = Path.Combine(Constants.GraphDirectoryPath, $"{appId}cache.bin3");
 
             File.WriteAllBytes(tokenCacheFilePath,
                 ProtectedData.Protect(
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.TokenCache
                     nameof(appId)));
             }
 
-            string tokenCacheFilePath = Path.Combine(Constants.TokenCacheDirectory, $"{appId}cache.bin3");
+            string tokenCacheFilePath = Path.Combine(Constants.GraphDirectoryPath, $"{appId}cache.bin3");
             if (File.Exists(tokenCacheFilePath))
             {
                 File.Delete(tokenCacheFilePath);
