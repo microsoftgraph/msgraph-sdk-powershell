@@ -555,6 +555,48 @@ directive:
         return $;
       }
 
+# Modify generated .cs file download cmdlets.
+  - from: source-file-csharp
+    where: $
+    transform: >
+      if (!$documentPath.match(/generated%2Fcmdlets%2FGet\w*\d*.cs/gm))
+      {
+        return $;
+      } else {
+        let outFileParameterRegex = /(^\s*)public\s*global::System\.String\s*OutFile\s*/gmi
+        if($.match(outFileParameterRegex)) {
+          let overrideOnOkCallRegex = /(^\s*)(overrideOnOk\(\s*responseMessage\s*,\s*response\s*,\s*ref\s*_returnNow\s*\);)/gmi
+          // Handle file download.
+          $ = $.replace(overrideOnOkCallRegex, '$1$2\n$1using(var stream = await response){ this.WriteToFile(stream, this.GetProviderPath(OutFile, false), _cancellationTokenSource.Token); _returnNow = global::System.Threading.Tasks.Task<bool>.FromResult(true);}\n$1');
+        }
+        return $;
+      }
+
+# Modify generated .cs file upload cmdlets.
+  - from: source-file-csharp
+    where: $
+    transform: >
+      if (!$documentPath.match(/generated%2Fcmdlets%2FSet\w*\d*.cs/gm))
+      {
+        return $;
+      } else {
+        let streamBodyParameterRegex = /(^\s*)public\s*global::System.IO.Stream\s*BodyParameter\s*/gmi
+        if($.match(streamBodyParameterRegex)) {
+          // Replace base class with FileUploadCmdlet.
+          let psBaseClassImplementationRegex = /(\s*:\s*)(global::System.Management.Automation.PSCmdlet)/gmi
+          $ = $.replace(psBaseClassImplementationRegex, '$1Microsoft.Graph.PowerShell.Cmdlets.Custom.FileUploadCmdlet');
+
+          // Set bodyParameter to required to false.
+          let streamBodyParameterAnnotation = /(global::System\.IO\.Stream _bodyParameter;\s*\[global::System\.Management\.Automation\.Parameter\(Mandatory\s*=\s*)(true)/gmi
+          $ = $.replace(streamBodyParameterAnnotation, '$1false');
+
+          // Handle file upload.
+          let processRecordCallRegex = /(^\s*)(asyncCommandRuntime\.Wait\(\s*ProcessRecordAsync\s*\(\))/gmi
+          $ = $.replace(processRecordCallRegex, 'if (!MyInvocation.BoundParameters.ContainsKey(nameof(BodyParameter))){BodyParameter = GetFileAsStream() ?? BodyParameter;}\n$1$2');
+        }
+        return $;
+      }
+
 # Modify generated runtime TypeConverterExtensions class.
   - from: source-file-csharp
     where: $
