@@ -564,10 +564,11 @@ directive:
         return $;
       } else {
         let outFileParameterRegex = /(^\s*)public\s*global::System\.String\s*OutFile\s*/gmi
-        if($.match(outFileParameterRegex)) {
-          let overrideOnOkCallRegex = /(^\s*)(overrideOnOk\(\s*responseMessage\s*,\s*response\s*,\s*ref\s*_returnNow\s*\);)/gmi
+        let streamResponseRegex = /global::System\.Threading\.Tasks\.Task<global::System\.IO\.Stream>\s*response/gmi
+        if($.match(outFileParameterRegex) && $.match(streamResponseRegex)) {
           // Handle file download.
-          $ = $.replace(overrideOnOkCallRegex, '$1$2\n$1using(var stream = await response){ this.WriteToFile(stream, this.GetProviderPath(OutFile, false), _cancellationTokenSource.Token); _returnNow = global::System.Threading.Tasks.Task<bool>.FromResult(true);}\n$1');
+          let overrideOnOkCallRegex = /(^\s*)(overrideOnOk\(\s*responseMessage\s*,\s*response\s*,\s*ref\s*_returnNow\s*\);)/gmi
+          $ = $.replace(overrideOnOkCallRegex, '$1$2\n$1using(var stream = await response){ this.WriteToFile(responseMessage, stream, this.GetProviderPath(OutFile, false), _cancellationTokenSource.Token); _returnNow = global::System.Threading.Tasks.Task<bool>.FromResult(true);}\n$1');
         }
         return $;
       }
@@ -592,7 +593,7 @@ directive:
 
           // Handle file upload.
           let processRecordCallRegex = /(^\s*)(asyncCommandRuntime\.Wait\(\s*ProcessRecordAsync\s*\(\))/gmi
-          $ = $.replace(processRecordCallRegex, 'if (!MyInvocation.BoundParameters.ContainsKey(nameof(BodyParameter))){BodyParameter = GetFileAsStream() ?? BodyParameter;}\n$1$2');
+          $ = $.replace(processRecordCallRegex, '$1if (!MyInvocation.BoundParameters.ContainsKey(nameof(BodyParameter))){BodyParameter = GetFileAsStream() ?? BodyParameter;}\n$1$2');
         }
         return $;
       }
