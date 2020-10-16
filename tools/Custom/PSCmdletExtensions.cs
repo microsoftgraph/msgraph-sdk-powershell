@@ -3,6 +3,7 @@
 // ------------------------------------------------------------------------------
 namespace Microsoft.Graph.PowerShell
 {
+    using Microsoft.Graph.PowerShell.Authentication.Common;
     using System;
     using System.Collections.ObjectModel;
     using System.IO;
@@ -62,9 +63,9 @@ namespace Microsoft.Graph.PowerShell
         /// <param name="cancellationToken">A cancellation token that will be used to cancel the operation by the user.</param>
         internal static void WriteToFile(this PSCmdlet cmdlet, Stream inputStream, string filePath, CancellationToken cancellationToken)
         {
-            using (FileStream fileStream = new FileStream(filePath, FileMode.Create, FileAccess.Write, FileShare.Read))
+            using (var fileProvider = ProtectedFileProvider.CreateFileProvider(filePath, FileProtection.ExclusiveWrite, new DiskDataStore()))
             {
-                cmdlet.WriteToStream(inputStream, fileStream, cancellationToken);
+                cmdlet.WriteToStream(inputStream, fileProvider.Stream, cancellationToken);
             }
         }
 

@@ -3,6 +3,7 @@
 // ------------------------------------------------------------------------------
 namespace Microsoft.Graph.PowerShell.Cmdlets.Custom
 {
+    using Microsoft.Graph.PowerShell.Authentication.Common;
     using System.IO;
     using System.Management.Automation;
 
@@ -31,7 +32,8 @@ namespace Microsoft.Graph.PowerShell.Cmdlets.Custom
             if (MyInvocation.BoundParameters.ContainsKey(nameof(InFile)))
             {
                 string resolvedFilePath = this.GetProviderPath(InFile, true);
-                return new FileStream(resolvedFilePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+                var fileProvider = ProtectedFileProvider.CreateFileProvider(resolvedFilePath, FileProtection.SharedRead, new DiskDataStore());
+                return fileProvider.Stream;
             }
             else
             {
