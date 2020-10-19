@@ -3,13 +3,13 @@
 // ------------------------------------------------------------------------------
 namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 {
-    using System;
     using Microsoft.Graph.PowerShell.Authentication.Cmdlets;
     using System.Collections.Generic;
     using System.Linq;
     using System.Net.Http;
     using System.Reflection;
     using System.Security.Authentication;
+    using Microsoft.Graph.PowerShell.Authentication.Handlers;
 
     /// <summary>
     /// A HTTP helper class.
@@ -41,17 +41,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
             }
 
             IAuthenticationProvider authProvider = AuthenticationHelpers.GetAuthProvider(authContext);
-            IList<DelegatingHandler> defaultHandlers = GraphClientFactory.CreateDefaultHandlers(authProvider);
-
-            // Register ODataQueryOptionsHandler after AuthHandler.
-            defaultHandlers.Insert(1, (new ODataQueryOptionsHandler()));
-
-            HttpClient httpClient = GraphClientFactory.Create(defaultHandlers);
-
-            // Prepend new SDKVersionHeaders
-            PrependNewSDKVersionHeaders(httpClient);
-
-            return httpClient;
+            return GetGraphHttpClient(authProvider);
         }
 
         /// <summary>
@@ -60,25 +50,27 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
         /// <param name="httpClient"></param>
         private static void PrependNewSDKVersionHeaders(HttpClient httpClient)
         {
-            IEnumerable<string> previousSDKHeaders =
-                httpClient.DefaultRequestHeaders.GetValues(CoreConstants.Headers.SdkVersionHeaderName);
+            IEnumerable<string> previousSDKHeaders = httpClient.DefaultRequestHeaders.GetValues(CoreConstants.Headers.SdkVersionHeaderName);
             httpClient.DefaultRequestHeaders.Remove(CoreConstants.Headers.SdkVersionHeaderName);
-            httpClient.DefaultRequestHeaders.Add(CoreConstants.Headers.SdkVersionHeaderName,
+            httpClient.DefaultRequestHeaders.Add(
+                CoreConstants.Headers.SdkVersionHeaderName,
                 previousSDKHeaders.Prepend(AuthModuleVersionHeaderValue));
         }
 
         /// <summary>
         /// Creates a pre-configured Microsoft Graph <see cref="HttpClient"/>.
-        /// with a custom authenticationProvider
+        /// with an <see cref="IAuthenticationProvider"/>
         /// </summary>
-        /// <param name="customAuthProvider">Custom AuthProvider</param>
+        /// <param name="authProvider">Custom AuthProvider</param>
         /// <returns></returns>
-        public static HttpClient GetGraphHttpClient(IAuthenticationProvider customAuthProvider)
+        public static HttpClient GetGraphHttpClient(IAuthenticationProvider authProvider)
         {
-            IList<DelegatingHandler> defaultHandlers = GraphClientFactory.CreateDefaultHandlers(customAuthProvider);
+            IList<DelegatingHandler> defaultHandlers = GraphClientFactory.CreateDefaultHandlers(authProvider);
 
-            // Register ODataQueryOptionsHandler after AuthHandler.
-            defaultHandlers.Insert(1, (new ODataQueryOptionsHandler()));
+            // Register NationalCloudHandler after AuthHandler.
+            defaultHandlers.Insert(1, new NationalCloudHandler());
+            // Register ODataQueryOptionsHandler after NationalCloudHandler.
+            defaultHandlers.Insert(2, new ODataQueryOptionsHandler());
 
             HttpClient httpClient = GraphClientFactory.Create(defaultHandlers);
 

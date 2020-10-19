@@ -2,8 +2,10 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
-namespace Microsoft.Graph.PowerShell.Authentication
+namespace Microsoft.Graph.PowerShell.Authentication.Common
 {
+    using Microsoft.Graph.PowerShell.Authentication.Interfaces;
+
     public static class GraphSessionInitializer
     {
         /// <summary>
@@ -18,10 +20,12 @@ namespace Microsoft.Graph.PowerShell.Authentication
         /// Creates a new instance of a <see cref="GraphSession"/>.
         /// </summary>
         /// <returns><see cref="GraphSession"/></returns>
-        internal static GraphSession CreateInstance()
+        internal static GraphSession CreateInstance(IDataStore dataStore = null)
         {
-            // This can be used to initialize GraphSession from a file in the future.
-            return new GraphSession();
+            return new GraphSession
+            {
+                DataStore = dataStore ?? new DiskDataStore()
+            };
         }
     }
 }

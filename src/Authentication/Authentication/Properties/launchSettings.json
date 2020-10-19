@@ -3,7 +3,7 @@
     "Graph.Authentication": {
       "commandName": "Executable",
       "executablePath": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
-      "commandLineArgs": "-NoProfile -NoExit"
+      "commandLineArgs": "-NoExit"
     }
   }
 }

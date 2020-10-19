@@ -2,7 +2,7 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
-namespace Microsoft.Graph.PowerShell.Authentication.Helpers
+namespace Microsoft.Graph.PowerShell.Authentication.Handlers
 {
     using System;
     using System.Collections.Generic;
@@ -14,7 +14,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
     /// <summary>
     /// A <see cref="DelegatingHandler"/> implementation that is used to properly format OData query parameters.
     /// </summary>
-    public class ODataQueryOptionsHandler : DelegatingHandler
+    internal class ODataQueryOptionsHandler : DelegatingHandler
     {
         private List<string> _standardODataQueryOptions = new List<string>
         {
