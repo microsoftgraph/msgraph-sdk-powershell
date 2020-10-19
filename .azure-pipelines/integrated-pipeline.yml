@@ -27,6 +27,7 @@ trigger:
       - dev
       - releases/*
       - bugfixes/*
+      - features/*
 
 stages:
 - stage: ComputeVersion
