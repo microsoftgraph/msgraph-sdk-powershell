@@ -6,7 +6,7 @@
 azure: false
 powershell: true
 version: latest
-use: "@autorest/powershell@latest"
+use: "@autorest/powershell@2.1.401"
 metadata:
     authors: Microsoft Corporation
     owners: Microsoft Corporation
