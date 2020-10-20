@@ -94,6 +94,9 @@ If permission related errors occur and the user you authenticated with in the po
 - You can try running `Disconnect-MgGraph`, then `Connect-MgGraph`.  Then, run the code that encountered the permission issues to see if it works.
 - You can try running `Connect-MgGraph -ForceRefresh`.  This will trigger a refresh of the access token in your cache. MSAL will only refresh the access token in your cache if it has expired (usually an hour), or if you explicitly refresh it via `-ForceRefresh`. Then, run the code that encountered the permission issues to see if it works.
 
+## Known Issues
+- If you attempt to run `Connect-Graph` from the PowerShell ISE (integrated scripting environment) the command fails with an error "Device code terminal timed-out after {X} seconds".  This is a known issue and it is recommended to use a PowerShell host other than the ISE. 
+
 ## Issues
 If you find any bugs when using the Microsoft Graph PowerShell modules, please file an issue in our GitHub issues page.
 
