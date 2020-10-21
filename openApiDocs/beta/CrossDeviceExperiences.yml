@@ -898,18 +898,18 @@ paths:
                 - systemLabels desc
                 - trustType
                 - trustType desc
-                - Kind
-                - Kind desc
-                - Manufacturer
-                - Manufacturer desc
-                - Model
-                - Model desc
-                - Name
-                - Name desc
-                - Platform
-                - Platform desc
-                - Status
-                - Status desc
+                - kind
+                - kind desc
+                - manufacturer
+                - manufacturer desc
+                - model
+                - model desc
+                - name
+                - name desc
+                - platform
+                - platform desc
+                - status
+                - status desc
               type: string
         - name: $select
           in: query
@@ -950,12 +950,12 @@ paths:
                 - registrationDateTime
                 - systemLabels
                 - trustType
-                - Kind
-                - Manufacturer
-                - Model
-                - Name
-                - Platform
-                - Status
+                - kind
+                - manufacturer
+                - model
+                - name
+                - platform
+                - status
                 - memberOf
                 - registeredOwners
                 - registeredUsers
@@ -1094,12 +1094,12 @@ paths:
                 - registrationDateTime
                 - systemLabels
                 - trustType
-                - Kind
-                - Manufacturer
-                - Model
-                - Name
-                - Platform
-                - Status
+                - kind
+                - manufacturer
+                - model
+                - name
+                - platform
+                - status
                 - memberOf
                 - registeredOwners
                 - registeredUsers
@@ -1464,22 +1464,24 @@ components:
               type: string
               description: 'Type of trust for the joined device. Read-only. Possible values: Workplace - indicates bring your own personal devicesAzureAd - Cloud only joined devicesServerAd - on-premises domain joined devices joined to Azure AD. For more details, see Introduction to device management in Azure Active Directory'
               nullable: true
-            Kind:
+            kind:
               type: string
               nullable: true
-            Manufacturer:
+            manufacturer:
+              type: string
+              description: Manufacturer of the device. Read-only.
+              nullable: true
+            model:
+              type: string
+              description: Model of the device. Read-only.
+              nullable: true
+            name:
               type: string
               nullable: true
-            Model:
+            platform:
               type: string
               nullable: true
-            Name:
-              type: string
-              nullable: true
-            Platform:
-              type: string
-              nullable: true
-            Status:
+            status:
               type: string
               nullable: true
             memberOf:
@@ -1672,27 +1674,27 @@ components:
         - title: command
           type: object
           properties:
-            AppServiceName:
+            appServiceName:
               type: string
               nullable: true
-            Error:
+            error:
               type: string
               nullable: true
-            PackageFamilyName:
+            packageFamilyName:
               type: string
               nullable: true
-            Payload:
-              $ref: '#/components/schemas/microsoft.graph.PayloadRequest'
-            PermissionTicket:
+            payload:
+              $ref: '#/components/schemas/microsoft.graph.payloadRequest'
+            permissionTicket:
               type: string
               nullable: true
-            PostBackUri:
+            postBackUri:
               type: string
               nullable: true
-            Status:
+            status:
               type: string
               nullable: true
-            Type:
+            type:
               type: string
               nullable: true
             responsepayload:
@@ -1729,8 +1731,8 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.PayloadRequest:
-      title: PayloadRequest
+    microsoft.graph.payloadRequest:
+      title: payloadRequest
       type: object
       additionalProperties:
         type: object

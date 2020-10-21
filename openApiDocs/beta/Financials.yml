@@ -23,7 +23,6 @@ paths:
             type: array
             items:
               enum:
-                - id
                 - companies
               type: string
         - name: $expand
@@ -1617,6 +1616,72 @@ paths:
           description: ETag
           schema:
             type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/companyInformation/{companyInformation-id}/picture':
+    get:
+      tags:
+        - financials.company
+      summary: Get media content for the navigation property companyInformation from financials
+      operationId: financials.companies_GetCompanyInformationPicture
+      parameters:
+        - name: company-id
+          in: path
+          description: 'key: id of company'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: companyInformation-id
+          in: path
+          description: 'key: id of companyInformation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: companyInformation
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - financials.company
+      summary: Update media content for the navigation property companyInformation in financials
+      operationId: financials.companies_SetCompanyInformationPicture
+      parameters:
+        - name: company-id
+          in: path
+          description: 'key: id of company'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: companyInformation-id
+          in: path
+          description: 'key: id of companyInformation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: companyInformation
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
       responses:
         '204':
           description: Success
@@ -3790,6 +3855,100 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/customerPaymentJournals/{customerPaymentJournal-id}/customerPayments/{customerPayment-id}/customer/picture/{picture-id}/content':
+    get:
+      tags:
+        - financials.company
+      summary: Get media content for the navigation property picture from financials
+      operationId: financials.companies.customerPaymentJournals.customerPayments.customer_GetPictureContent
+      parameters:
+        - name: company-id
+          in: path
+          description: 'key: id of company'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: customerPaymentJournal-id
+          in: path
+          description: 'key: id of customerPaymentJournal'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: customerPaymentJournal
+        - name: customerPayment-id
+          in: path
+          description: 'key: id of customerPayment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: customerPayment
+        - name: picture-id
+          in: path
+          description: 'key: id of picture'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: picture
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - financials.company
+      summary: Update media content for the navigation property picture in financials
+      operationId: financials.companies.customerPaymentJournals.customerPayments.customer_SetPictureContent
+      parameters:
+        - name: company-id
+          in: path
+          description: 'key: id of company'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: customerPaymentJournal-id
+          in: path
+          description: 'key: id of customerPaymentJournal'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: customerPaymentJournal
+        - name: customerPayment-id
+          in: path
+          description: 'key: id of customerPayment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: customerPayment
+        - name: picture-id
+          in: path
+          description: 'key: id of picture'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: picture
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/financials/companies/{company-id}/customerPaymentJournals/{customerPaymentJournal-id}/customerPayments/{customerPayment-id}/customer/shipmentMethod':
     get:
       tags:
@@ -5052,6 +5211,86 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/customerPayments/{customerPayment-id}/customer/picture/{picture-id}/content':
+    get:
+      tags:
+        - financials.company
+      summary: Get media content for the navigation property picture from financials
+      operationId: financials.companies.customerPayments.customer_GetPictureContent
+      parameters:
+        - name: company-id
+          in: path
+          description: 'key: id of company'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: customerPayment-id
+          in: path
+          description: 'key: id of customerPayment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: customerPayment
+        - name: picture-id
+          in: path
+          description: 'key: id of picture'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: picture
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - financials.company
+      summary: Update media content for the navigation property picture in financials
+      operationId: financials.companies.customerPayments.customer_SetPictureContent
+      parameters:
+        - name: company-id
+          in: path
+          description: 'key: id of company'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: customerPayment-id
+          in: path
+          description: 'key: id of customerPayment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: customerPayment
+        - name: picture-id
+          in: path
+          description: 'key: id of picture'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: picture
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/financials/companies/{company-id}/customerPayments/{customerPayment-id}/customer/shipmentMethod':
     get:
       tags:
@@ -6166,6 +6405,86 @@ paths:
           description: ETag
           schema:
             type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/customers/{customer-id}/picture/{picture-id}/content':
+    get:
+      tags:
+        - financials.company
+      summary: Get media content for the navigation property picture from financials
+      operationId: financials.companies.customers_GetPictureContent
+      parameters:
+        - name: company-id
+          in: path
+          description: 'key: id of company'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: customer-id
+          in: path
+          description: 'key: id of customer'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: customer
+        - name: picture-id
+          in: path
+          description: 'key: id of picture'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: picture
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - financials.company
+      summary: Update media content for the navigation property picture in financials
+      operationId: financials.companies.customers_SetPictureContent
+      parameters:
+        - name: company-id
+          in: path
+          description: 'key: id of company'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: customer-id
+          in: path
+          description: 'key: id of customer'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: customer
+        - name: picture-id
+          in: path
+          description: 'key: id of picture'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: picture
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
       responses:
         '204':
           description: Success
@@ -7644,6 +7963,86 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/employees/{employee-id}/picture/{picture-id}/content':
+    get:
+      tags:
+        - financials.company
+      summary: Get media content for the navigation property picture from financials
+      operationId: financials.companies.employees_GetPictureContent
+      parameters:
+        - name: company-id
+          in: path
+          description: 'key: id of company'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: employee-id
+          in: path
+          description: 'key: id of employee'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: employee
+        - name: picture-id
+          in: path
+          description: 'key: id of picture'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: picture
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - financials.company
+      summary: Update media content for the navigation property picture in financials
+      operationId: financials.companies.employees_SetPictureContent
+      parameters:
+        - name: company-id
+          in: path
+          description: 'key: id of company'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: employee-id
+          in: path
+          description: 'key: id of employee'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: employee
+        - name: picture-id
+          in: path
+          description: 'key: id of picture'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: picture
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/financials/companies/{company-id}/generalLedgerEntries':
     get:
       tags:
@@ -8985,6 +9384,86 @@ paths:
           description: ETag
           schema:
             type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/items/{item-id}/picture/{picture-id}/content':
+    get:
+      tags:
+        - financials.company
+      summary: Get media content for the navigation property picture from financials
+      operationId: financials.companies.items_GetPictureContent
+      parameters:
+        - name: company-id
+          in: path
+          description: 'key: id of company'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: item-id
+          in: path
+          description: 'key: id of item'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: item
+        - name: picture-id
+          in: path
+          description: 'key: id of picture'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: picture
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - financials.company
+      summary: Update media content for the navigation property picture in financials
+      operationId: financials.companies.items_SetPictureContent
+      parameters:
+        - name: company-id
+          in: path
+          description: 'key: id of company'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: item-id
+          in: path
+          description: 'key: id of item'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: item
+        - name: picture-id
+          in: path
+          description: 'key: id of picture'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: picture
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
       responses:
         '204':
           description: Success
@@ -11021,6 +11500,72 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/picture/{picture-id}/content':
+    get:
+      tags:
+        - financials.company
+      summary: Get media content for the navigation property picture from financials
+      operationId: financials.companies_GetPictureContent
+      parameters:
+        - name: company-id
+          in: path
+          description: 'key: id of company'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: picture-id
+          in: path
+          description: 'key: id of picture'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: picture
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - financials.company
+      summary: Update media content for the navigation property picture in financials
+      operationId: financials.companies_SetPictureContent
+      parameters:
+        - name: company-id
+          in: path
+          description: 'key: id of company'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: picture-id
+          in: path
+          description: 'key: id of picture'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: picture
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/financials/companies/{company-id}/purchaseInvoiceLines':
     get:
       tags:
@@ -12021,6 +12566,86 @@ paths:
           description: ETag
           schema:
             type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/purchaseInvoiceLines/{purchaseInvoiceLine-id}/item/picture/{picture-id}/content':
+    get:
+      tags:
+        - financials.company
+      summary: Get media content for the navigation property picture from financials
+      operationId: financials.companies.purchaseInvoiceLines.item_GetPictureContent
+      parameters:
+        - name: company-id
+          in: path
+          description: 'key: id of company'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: purchaseInvoiceLine-id
+          in: path
+          description: 'key: id of purchaseInvoiceLine'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: purchaseInvoiceLine
+        - name: picture-id
+          in: path
+          description: 'key: id of picture'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: picture
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - financials.company
+      summary: Update media content for the navigation property picture in financials
+      operationId: financials.companies.purchaseInvoiceLines.item_SetPictureContent
+      parameters:
+        - name: company-id
+          in: path
+          description: 'key: id of company'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: purchaseInvoiceLine-id
+          in: path
+          description: 'key: id of purchaseInvoiceLine'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: purchaseInvoiceLine
+        - name: picture-id
+          in: path
+          description: 'key: id of picture'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: picture
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
       responses:
         '204':
           description: Success
@@ -13682,6 +14307,100 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/purchaseInvoices/{purchaseInvoice-id}/purchaseInvoiceLines/{purchaseInvoiceLine-id}/item/picture/{picture-id}/content':
+    get:
+      tags:
+        - financials.company
+      summary: Get media content for the navigation property picture from financials
+      operationId: financials.companies.purchaseInvoices.purchaseInvoiceLines.item_GetPictureContent
+      parameters:
+        - name: company-id
+          in: path
+          description: 'key: id of company'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: purchaseInvoice-id
+          in: path
+          description: 'key: id of purchaseInvoice'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: purchaseInvoice
+        - name: purchaseInvoiceLine-id
+          in: path
+          description: 'key: id of purchaseInvoiceLine'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: purchaseInvoiceLine
+        - name: picture-id
+          in: path
+          description: 'key: id of picture'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: picture
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - financials.company
+      summary: Update media content for the navigation property picture in financials
+      operationId: financials.companies.purchaseInvoices.purchaseInvoiceLines.item_SetPictureContent
+      parameters:
+        - name: company-id
+          in: path
+          description: 'key: id of company'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: purchaseInvoice-id
+          in: path
+          description: 'key: id of purchaseInvoice'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: purchaseInvoice
+        - name: purchaseInvoiceLine-id
+          in: path
+          description: 'key: id of purchaseInvoiceLine'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: purchaseInvoiceLine
+        - name: picture-id
+          in: path
+          description: 'key: id of picture'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: picture
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/financials/companies/{company-id}/purchaseInvoices/{purchaseInvoice-id}/vendor':
     get:
       tags:
@@ -14491,6 +15210,86 @@ paths:
           description: ETag
           schema:
             type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/purchaseInvoices/{purchaseInvoice-id}/vendor/picture/{picture-id}/content':
+    get:
+      tags:
+        - financials.company
+      summary: Get media content for the navigation property picture from financials
+      operationId: financials.companies.purchaseInvoices.vendor_GetPictureContent
+      parameters:
+        - name: company-id
+          in: path
+          description: 'key: id of company'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: purchaseInvoice-id
+          in: path
+          description: 'key: id of purchaseInvoice'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: purchaseInvoice
+        - name: picture-id
+          in: path
+          description: 'key: id of picture'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: picture
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - financials.company
+      summary: Update media content for the navigation property picture in financials
+      operationId: financials.companies.purchaseInvoices.vendor_SetPictureContent
+      parameters:
+        - name: company-id
+          in: path
+          description: 'key: id of company'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: purchaseInvoice-id
+          in: path
+          description: 'key: id of purchaseInvoice'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: purchaseInvoice
+        - name: picture-id
+          in: path
+          description: 'key: id of picture'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: picture
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
       responses:
         '204':
           description: Success
@@ -15501,6 +16300,86 @@ paths:
           description: ETag
           schema:
             type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/salesCreditMemoLines/{salesCreditMemoLine-id}/item/picture/{picture-id}/content':
+    get:
+      tags:
+        - financials.company
+      summary: Get media content for the navigation property picture from financials
+      operationId: financials.companies.salesCreditMemoLines.item_GetPictureContent
+      parameters:
+        - name: company-id
+          in: path
+          description: 'key: id of company'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: salesCreditMemoLine-id
+          in: path
+          description: 'key: id of salesCreditMemoLine'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: salesCreditMemoLine
+        - name: picture-id
+          in: path
+          description: 'key: id of picture'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: picture
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - financials.company
+      summary: Update media content for the navigation property picture in financials
+      operationId: financials.companies.salesCreditMemoLines.item_SetPictureContent
+      parameters:
+        - name: company-id
+          in: path
+          description: 'key: id of company'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: salesCreditMemoLine-id
+          in: path
+          description: 'key: id of salesCreditMemoLine'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: salesCreditMemoLine
+        - name: picture-id
+          in: path
+          description: 'key: id of picture'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: picture
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
       responses:
         '204':
           description: Success
@@ -16828,6 +17707,86 @@ paths:
           description: ETag
           schema:
             type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/salesCreditMemos/{salesCreditMemo-id}/customer/picture/{picture-id}/content':
+    get:
+      tags:
+        - financials.company
+      summary: Get media content for the navigation property picture from financials
+      operationId: financials.companies.salesCreditMemos.customer_GetPictureContent
+      parameters:
+        - name: company-id
+          in: path
+          description: 'key: id of company'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: salesCreditMemo-id
+          in: path
+          description: 'key: id of salesCreditMemo'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: salesCreditMemo
+        - name: picture-id
+          in: path
+          description: 'key: id of picture'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: picture
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - financials.company
+      summary: Update media content for the navigation property picture in financials
+      operationId: financials.companies.salesCreditMemos.customer_SetPictureContent
+      parameters:
+        - name: company-id
+          in: path
+          description: 'key: id of company'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: salesCreditMemo-id
+          in: path
+          description: 'key: id of salesCreditMemo'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: salesCreditMemo
+        - name: picture-id
+          in: path
+          description: 'key: id of picture'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: picture
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
       responses:
         '204':
           description: Success
@@ -18229,6 +19188,100 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/salesCreditMemos/{salesCreditMemo-id}/salesCreditMemoLines/{salesCreditMemoLine-id}/item/picture/{picture-id}/content':
+    get:
+      tags:
+        - financials.company
+      summary: Get media content for the navigation property picture from financials
+      operationId: financials.companies.salesCreditMemos.salesCreditMemoLines.item_GetPictureContent
+      parameters:
+        - name: company-id
+          in: path
+          description: 'key: id of company'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: salesCreditMemo-id
+          in: path
+          description: 'key: id of salesCreditMemo'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: salesCreditMemo
+        - name: salesCreditMemoLine-id
+          in: path
+          description: 'key: id of salesCreditMemoLine'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: salesCreditMemoLine
+        - name: picture-id
+          in: path
+          description: 'key: id of picture'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: picture
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - financials.company
+      summary: Update media content for the navigation property picture in financials
+      operationId: financials.companies.salesCreditMemos.salesCreditMemoLines.item_SetPictureContent
+      parameters:
+        - name: company-id
+          in: path
+          description: 'key: id of company'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: salesCreditMemo-id
+          in: path
+          description: 'key: id of salesCreditMemo'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: salesCreditMemo
+        - name: salesCreditMemoLine-id
+          in: path
+          description: 'key: id of salesCreditMemoLine'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: salesCreditMemoLine
+        - name: picture-id
+          in: path
+          description: 'key: id of picture'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: picture
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/financials/companies/{company-id}/salesInvoiceLines':
     get:
       tags:
@@ -19233,6 +20286,86 @@ paths:
           description: ETag
           schema:
             type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/salesInvoiceLines/{salesInvoiceLine-id}/item/picture/{picture-id}/content':
+    get:
+      tags:
+        - financials.company
+      summary: Get media content for the navigation property picture from financials
+      operationId: financials.companies.salesInvoiceLines.item_GetPictureContent
+      parameters:
+        - name: company-id
+          in: path
+          description: 'key: id of company'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: salesInvoiceLine-id
+          in: path
+          description: 'key: id of salesInvoiceLine'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: salesInvoiceLine
+        - name: picture-id
+          in: path
+          description: 'key: id of picture'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: picture
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - financials.company
+      summary: Update media content for the navigation property picture in financials
+      operationId: financials.companies.salesInvoiceLines.item_SetPictureContent
+      parameters:
+        - name: company-id
+          in: path
+          description: 'key: id of company'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: salesInvoiceLine-id
+          in: path
+          description: 'key: id of salesInvoiceLine'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: salesInvoiceLine
+        - name: picture-id
+          in: path
+          description: 'key: id of picture'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: picture
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
       responses:
         '204':
           description: Success
@@ -20589,6 +21722,86 @@ paths:
           description: ETag
           schema:
             type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/salesInvoices/{salesInvoice-id}/customer/picture/{picture-id}/content':
+    get:
+      tags:
+        - financials.company
+      summary: Get media content for the navigation property picture from financials
+      operationId: financials.companies.salesInvoices.customer_GetPictureContent
+      parameters:
+        - name: company-id
+          in: path
+          description: 'key: id of company'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: salesInvoice-id
+          in: path
+          description: 'key: id of salesInvoice'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: salesInvoice
+        - name: picture-id
+          in: path
+          description: 'key: id of picture'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: picture
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - financials.company
+      summary: Update media content for the navigation property picture in financials
+      operationId: financials.companies.salesInvoices.customer_SetPictureContent
+      parameters:
+        - name: company-id
+          in: path
+          description: 'key: id of company'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: salesInvoice-id
+          in: path
+          description: 'key: id of salesInvoice'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: salesInvoice
+        - name: picture-id
+          in: path
+          description: 'key: id of picture'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: picture
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
       responses:
         '204':
           description: Success
@@ -22125,6 +23338,100 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/salesInvoices/{salesInvoice-id}/salesInvoiceLines/{salesInvoiceLine-id}/item/picture/{picture-id}/content':
+    get:
+      tags:
+        - financials.company
+      summary: Get media content for the navigation property picture from financials
+      operationId: financials.companies.salesInvoices.salesInvoiceLines.item_GetPictureContent
+      parameters:
+        - name: company-id
+          in: path
+          description: 'key: id of company'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: salesInvoice-id
+          in: path
+          description: 'key: id of salesInvoice'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: salesInvoice
+        - name: salesInvoiceLine-id
+          in: path
+          description: 'key: id of salesInvoiceLine'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: salesInvoiceLine
+        - name: picture-id
+          in: path
+          description: 'key: id of picture'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: picture
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - financials.company
+      summary: Update media content for the navigation property picture in financials
+      operationId: financials.companies.salesInvoices.salesInvoiceLines.item_SetPictureContent
+      parameters:
+        - name: company-id
+          in: path
+          description: 'key: id of company'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: salesInvoice-id
+          in: path
+          description: 'key: id of salesInvoice'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: salesInvoice
+        - name: salesInvoiceLine-id
+          in: path
+          description: 'key: id of salesInvoiceLine'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: salesInvoiceLine
+        - name: picture-id
+          in: path
+          description: 'key: id of picture'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: picture
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/financials/companies/{company-id}/salesInvoices/{salesInvoice-id}/shipmentMethod':
     get:
       tags:
@@ -23267,6 +24574,86 @@ paths:
           description: ETag
           schema:
             type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/salesOrderLines/{salesOrderLine-id}/item/picture/{picture-id}/content':
+    get:
+      tags:
+        - financials.company
+      summary: Get media content for the navigation property picture from financials
+      operationId: financials.companies.salesOrderLines.item_GetPictureContent
+      parameters:
+        - name: company-id
+          in: path
+          description: 'key: id of company'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: salesOrderLine-id
+          in: path
+          description: 'key: id of salesOrderLine'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: salesOrderLine
+        - name: picture-id
+          in: path
+          description: 'key: id of picture'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: picture
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - financials.company
+      summary: Update media content for the navigation property picture in financials
+      operationId: financials.companies.salesOrderLines.item_SetPictureContent
+      parameters:
+        - name: company-id
+          in: path
+          description: 'key: id of company'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: salesOrderLine-id
+          in: path
+          description: 'key: id of salesOrderLine'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: salesOrderLine
+        - name: picture-id
+          in: path
+          description: 'key: id of picture'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: picture
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
       responses:
         '204':
           description: Success
@@ -24606,6 +25993,86 @@ paths:
           description: ETag
           schema:
             type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/salesOrders/{salesOrder-id}/customer/picture/{picture-id}/content':
+    get:
+      tags:
+        - financials.company
+      summary: Get media content for the navigation property picture from financials
+      operationId: financials.companies.salesOrders.customer_GetPictureContent
+      parameters:
+        - name: company-id
+          in: path
+          description: 'key: id of company'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: salesOrder-id
+          in: path
+          description: 'key: id of salesOrder'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: salesOrder
+        - name: picture-id
+          in: path
+          description: 'key: id of picture'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: picture
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - financials.company
+      summary: Update media content for the navigation property picture in financials
+      operationId: financials.companies.salesOrders.customer_SetPictureContent
+      parameters:
+        - name: company-id
+          in: path
+          description: 'key: id of company'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: salesOrder-id
+          in: path
+          description: 'key: id of salesOrder'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: salesOrder
+        - name: picture-id
+          in: path
+          description: 'key: id of picture'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: picture
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
       responses:
         '204':
           description: Success
@@ -26023,6 +27490,100 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/salesOrders/{salesOrder-id}/salesOrderLines/{salesOrderLine-id}/item/picture/{picture-id}/content':
+    get:
+      tags:
+        - financials.company
+      summary: Get media content for the navigation property picture from financials
+      operationId: financials.companies.salesOrders.salesOrderLines.item_GetPictureContent
+      parameters:
+        - name: company-id
+          in: path
+          description: 'key: id of company'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: salesOrder-id
+          in: path
+          description: 'key: id of salesOrder'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: salesOrder
+        - name: salesOrderLine-id
+          in: path
+          description: 'key: id of salesOrderLine'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: salesOrderLine
+        - name: picture-id
+          in: path
+          description: 'key: id of picture'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: picture
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - financials.company
+      summary: Update media content for the navigation property picture in financials
+      operationId: financials.companies.salesOrders.salesOrderLines.item_SetPictureContent
+      parameters:
+        - name: company-id
+          in: path
+          description: 'key: id of company'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: salesOrder-id
+          in: path
+          description: 'key: id of salesOrder'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: salesOrder
+        - name: salesOrderLine-id
+          in: path
+          description: 'key: id of salesOrderLine'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: salesOrderLine
+        - name: picture-id
+          in: path
+          description: 'key: id of picture'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: picture
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/financials/companies/{company-id}/salesQuoteLines':
     get:
       tags:
@@ -27019,6 +28580,86 @@ paths:
           description: ETag
           schema:
             type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/salesQuoteLines/{salesQuoteLine-id}/item/picture/{picture-id}/content':
+    get:
+      tags:
+        - financials.company
+      summary: Get media content for the navigation property picture from financials
+      operationId: financials.companies.salesQuoteLines.item_GetPictureContent
+      parameters:
+        - name: company-id
+          in: path
+          description: 'key: id of company'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: salesQuoteLine-id
+          in: path
+          description: 'key: id of salesQuoteLine'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: salesQuoteLine
+        - name: picture-id
+          in: path
+          description: 'key: id of picture'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: picture
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - financials.company
+      summary: Update media content for the navigation property picture in financials
+      operationId: financials.companies.salesQuoteLines.item_SetPictureContent
+      parameters:
+        - name: company-id
+          in: path
+          description: 'key: id of company'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: salesQuoteLine-id
+          in: path
+          description: 'key: id of salesQuoteLine'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: salesQuoteLine
+        - name: picture-id
+          in: path
+          description: 'key: id of picture'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: picture
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
       responses:
         '204':
           description: Success
@@ -28367,6 +30008,86 @@ paths:
           description: ETag
           schema:
             type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/salesQuotes/{salesQuote-id}/customer/picture/{picture-id}/content':
+    get:
+      tags:
+        - financials.company
+      summary: Get media content for the navigation property picture from financials
+      operationId: financials.companies.salesQuotes.customer_GetPictureContent
+      parameters:
+        - name: company-id
+          in: path
+          description: 'key: id of company'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: salesQuote-id
+          in: path
+          description: 'key: id of salesQuote'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: salesQuote
+        - name: picture-id
+          in: path
+          description: 'key: id of picture'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: picture
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - financials.company
+      summary: Update media content for the navigation property picture in financials
+      operationId: financials.companies.salesQuotes.customer_SetPictureContent
+      parameters:
+        - name: company-id
+          in: path
+          description: 'key: id of company'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: salesQuote-id
+          in: path
+          description: 'key: id of salesQuote'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: salesQuote
+        - name: picture-id
+          in: path
+          description: 'key: id of picture'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: picture
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
       responses:
         '204':
           description: Success
@@ -29808,6 +31529,100 @@ paths:
           description: ETag
           schema:
             type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/salesQuotes/{salesQuote-id}/salesQuoteLines/{salesQuoteLine-id}/item/picture/{picture-id}/content':
+    get:
+      tags:
+        - financials.company
+      summary: Get media content for the navigation property picture from financials
+      operationId: financials.companies.salesQuotes.salesQuoteLines.item_GetPictureContent
+      parameters:
+        - name: company-id
+          in: path
+          description: 'key: id of company'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: salesQuote-id
+          in: path
+          description: 'key: id of salesQuote'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: salesQuote
+        - name: salesQuoteLine-id
+          in: path
+          description: 'key: id of salesQuoteLine'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: salesQuoteLine
+        - name: picture-id
+          in: path
+          description: 'key: id of picture'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: picture
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - financials.company
+      summary: Update media content for the navigation property picture in financials
+      operationId: financials.companies.salesQuotes.salesQuoteLines.item_SetPictureContent
+      parameters:
+        - name: company-id
+          in: path
+          description: 'key: id of company'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: salesQuote-id
+          in: path
+          description: 'key: id of salesQuote'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: salesQuote
+        - name: salesQuoteLine-id
+          in: path
+          description: 'key: id of salesQuoteLine'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: salesQuoteLine
+        - name: picture-id
+          in: path
+          description: 'key: id of picture'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: picture
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
       responses:
         '204':
           description: Success
@@ -31885,20 +33700,98 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/financials/companies/{company-id}/vendors/{vendor-id}/picture/{picture-id}/content':
+    get:
+      tags:
+        - financials.company
+      summary: Get media content for the navigation property picture from financials
+      operationId: financials.companies.vendors_GetPictureContent
+      parameters:
+        - name: company-id
+          in: path
+          description: 'key: id of company'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: vendor-id
+          in: path
+          description: 'key: id of vendor'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: vendor
+        - name: picture-id
+          in: path
+          description: 'key: id of picture'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: picture
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - financials.company
+      summary: Update media content for the navigation property picture in financials
+      operationId: financials.companies.vendors_SetPictureContent
+      parameters:
+        - name: company-id
+          in: path
+          description: 'key: id of company'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: company
+        - name: vendor-id
+          in: path
+          description: 'key: id of vendor'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: vendor
+        - name: picture-id
+          in: path
+          description: 'key: id of picture'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: picture
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
 components:
   schemas:
     microsoft.graph.financials:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: financials
-          type: object
-          properties:
-            companies:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.company'
-          additionalProperties:
-            type: object
+      title: financials
+      type: object
+      properties:
+        companies:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.company'
+      additionalProperties:
+        type: object
     microsoft.graph.company:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
