@@ -11,7 +11,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Common
     /// <summary>
     /// Disk data store based on System.IO APIs.
     /// </summary>
-    internal class DiskDataStore : IDataStore
+    public class DiskDataStore : IDataStore
     {
         /// <summary>
         /// Writes the given contents to the specified file.
