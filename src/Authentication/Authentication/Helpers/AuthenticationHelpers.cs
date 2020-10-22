@@ -76,10 +76,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
             return authProvider;
         }
         /// <summary>
-        ///     CGet a 
+        ///     Gets a  certificate based on the current context.
         /// </summary>
-        /// <param name="context"></param>
-        /// <returns></returns>
+        /// <param name="context">Current <see cref="IAuthContext"/> context</param>
+        /// <returns>A <see cref="X509Certificate2"/> based on provided <see cref="IAuthContext"/> context</returns>
         private static X509Certificate2 GetCertificate(IAuthContext context)
         {
             if (!string.IsNullOrWhiteSpace(context.CertificateThumbprint))

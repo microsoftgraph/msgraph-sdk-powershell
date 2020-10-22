@@ -116,6 +116,7 @@
             Assert.Equal(clientCredentialProvider.ClientApplication.AppConfig.ClientCredentialCertificate, certificate);
             GraphSession.Reset();
         }
+
         /// <summary>
         ///     Create and Store a Self Signed Certificate
         /// </summary>
@@ -129,6 +130,7 @@
                 store.Add(cert);
             }
         }
+
         /// <summary>
         ///     Create a Self Signed Certificate
         /// </summary>
