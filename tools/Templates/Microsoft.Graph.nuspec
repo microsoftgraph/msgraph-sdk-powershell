@@ -2,12 +2,12 @@
 <package>
   <metadata>
     <id>Microsoft.Graph</id>
-    <version>1.0.1</version>
+    <version>1.1.0</version>
     <authors>Microsoft</authors>
     <owners>Microsoft</owners>
     <licenseUrl>https://aka.ms/devservicesagreement</licenseUrl>
     <projectUrl>https://github.com/microsoftgraph/msgraph-sdk-powershell</projectUrl>
-    <iconUrl>https://raw.githubusercontent.com/microsoftgraph/g-raph/master/g-raph.png</iconUrl>
+    <iconUrl>https://raw.githubusercontent.com/microsoftgraph/msgraph-sdk-powershell/po/release1.1.0/documentation/images/graph_color256.png</iconUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>Microsoft Graph PowerShell module</description>
     <copyright>© Microsoft Corporation. All rights reserved.</copyright>

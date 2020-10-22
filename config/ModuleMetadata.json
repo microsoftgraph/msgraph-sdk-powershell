@@ -6,9 +6,9 @@
     "copyright": "© Microsoft Corporation. All rights reserved.",
     "licenseUri": "https://aka.ms/devservicesagreement",
     "projectUri": "https://github.com/microsoftgraph/msgraph-sdk-powershell",
-    "iconUri": "https://raw.githubusercontent.com/microsoftgraph/g-raph/master/g-raph.png",
+    "iconUri": "https://raw.githubusercontent.com/microsoftgraph/msgraph-sdk-powershell/po/release1.1.0/documentation/images/graph_color256.png",
     "tags": "MicrosoftGraph;Microsoft;Office365;Graph;PowerShell;GraphServiceClient;Outlook;OneDrive;AzureAD;GraphAPI;Productivity;SharePoint;Intune;SDK;",
     "releaseNotes": "See https://aka.ms/GraphPowerShell-Release.",
     "assemblyOriginatorKeyFile": "35MSSharedLib1024.snk",
-    "version": "1.0.1"
+    "version": "1.1.0"
 }
