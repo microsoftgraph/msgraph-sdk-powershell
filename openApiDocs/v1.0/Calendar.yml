@@ -38,6 +38,7 @@ paths:
                 - changeKey
                 - color
                 - defaultOnlineMeetingProvider
+                - hexColor
                 - isRemovable
                 - isTallyingResponses
                 - name
@@ -465,6 +466,8 @@ paths:
                 - isAllDay desc
                 - isCancelled
                 - isCancelled desc
+                - isDraft
+                - isDraft desc
                 - isOnlineMeeting
                 - isOnlineMeeting desc
                 - isOrganizer
@@ -539,6 +542,7 @@ paths:
                 - importance
                 - isAllDay
                 - isCancelled
+                - isDraft
                 - isOnlineMeeting
                 - isOrganizer
                 - isReminderOn
@@ -699,6 +703,7 @@ paths:
                 - importance
                 - isAllDay
                 - isCancelled
+                - isDraft
                 - isOnlineMeeting
                 - isOrganizer
                 - isReminderOn
@@ -1175,6 +1180,7 @@ paths:
                 - changeKey
                 - color
                 - defaultOnlineMeetingProvider
+                - hexColor
                 - isRemovable
                 - isTallyingResponses
                 - name
@@ -1631,6 +1637,8 @@ paths:
                 - isAllDay desc
                 - isCancelled
                 - isCancelled desc
+                - isDraft
+                - isDraft desc
                 - isOnlineMeeting
                 - isOnlineMeeting desc
                 - isOrganizer
@@ -1705,6 +1713,7 @@ paths:
                 - importance
                 - isAllDay
                 - isCancelled
+                - isDraft
                 - isOnlineMeeting
                 - isOrganizer
                 - isReminderOn
@@ -1867,6 +1876,7 @@ paths:
                 - importance
                 - isAllDay
                 - isCancelled
+                - isDraft
                 - isOnlineMeeting
                 - isOrganizer
                 - isReminderOn
@@ -2634,6 +2644,8 @@ paths:
                 - isAllDay desc
                 - isCancelled
                 - isCancelled desc
+                - isDraft
+                - isDraft desc
                 - isOnlineMeeting
                 - isOnlineMeeting desc
                 - isOrganizer
@@ -2708,6 +2720,7 @@ paths:
                 - importance
                 - isAllDay
                 - isCancelled
+                - isDraft
                 - isOnlineMeeting
                 - isOrganizer
                 - isReminderOn
@@ -2856,6 +2869,7 @@ paths:
                 - importance
                 - isAllDay
                 - isCancelled
+                - isDraft
                 - isOnlineMeeting
                 - isOrganizer
                 - isReminderOn
@@ -3332,6 +3346,7 @@ paths:
                 - changeKey
                 - color
                 - defaultOnlineMeetingProvider
+                - hexColor
                 - isRemovable
                 - isTallyingResponses
                 - name
@@ -3788,6 +3803,8 @@ paths:
                 - isAllDay desc
                 - isCancelled
                 - isCancelled desc
+                - isDraft
+                - isDraft desc
                 - isOnlineMeeting
                 - isOnlineMeeting desc
                 - isOrganizer
@@ -3862,6 +3879,7 @@ paths:
                 - importance
                 - isAllDay
                 - isCancelled
+                - isDraft
                 - isOnlineMeeting
                 - isOrganizer
                 - isReminderOn
@@ -4024,6 +4042,7 @@ paths:
                 - importance
                 - isAllDay
                 - isCancelled
+                - isDraft
                 - isOnlineMeeting
                 - isOrganizer
                 - isReminderOn
@@ -5267,6 +5286,8 @@ paths:
                 - isAllDay desc
                 - isCancelled
                 - isCancelled desc
+                - isDraft
+                - isDraft desc
                 - isOnlineMeeting
                 - isOnlineMeeting desc
                 - isOrganizer
@@ -5341,6 +5362,7 @@ paths:
                 - importance
                 - isAllDay
                 - isCancelled
+                - isDraft
                 - isOnlineMeeting
                 - isOrganizer
                 - isReminderOn
@@ -5501,6 +5523,7 @@ paths:
                 - importance
                 - isAllDay
                 - isCancelled
+                - isDraft
                 - isOnlineMeeting
                 - isOrganizer
                 - isReminderOn
@@ -5977,6 +6000,7 @@ paths:
                 - changeKey
                 - color
                 - defaultOnlineMeetingProvider
+                - hexColor
                 - isRemovable
                 - isTallyingResponses
                 - name
@@ -6453,6 +6477,8 @@ paths:
                 - isAllDay desc
                 - isCancelled
                 - isCancelled desc
+                - isDraft
+                - isDraft desc
                 - isOnlineMeeting
                 - isOnlineMeeting desc
                 - isOrganizer
@@ -6527,6 +6553,7 @@ paths:
                 - importance
                 - isAllDay
                 - isCancelled
+                - isDraft
                 - isOnlineMeeting
                 - isOrganizer
                 - isReminderOn
@@ -6689,6 +6716,7 @@ paths:
                 - importance
                 - isAllDay
                 - isCancelled
+                - isDraft
                 - isOnlineMeeting
                 - isOrganizer
                 - isReminderOn
@@ -6929,6 +6957,8 @@ paths:
                 - isAllDay desc
                 - isCancelled
                 - isCancelled desc
+                - isDraft
+                - isDraft desc
                 - isOnlineMeeting
                 - isOnlineMeeting desc
                 - isOrganizer
@@ -7003,6 +7033,7 @@ paths:
                 - importance
                 - isAllDay
                 - isCancelled
+                - isDraft
                 - isOnlineMeeting
                 - isOrganizer
                 - isReminderOn
@@ -7165,6 +7196,7 @@ paths:
                 - importance
                 - isAllDay
                 - isCancelled
+                - isDraft
                 - isOnlineMeeting
                 - isOrganizer
                 - isReminderOn
@@ -8202,6 +8234,8 @@ paths:
                 - isAllDay desc
                 - isCancelled
                 - isCancelled desc
+                - isDraft
+                - isDraft desc
                 - isOnlineMeeting
                 - isOnlineMeeting desc
                 - isOrganizer
@@ -8276,6 +8310,7 @@ paths:
                 - importance
                 - isAllDay
                 - isCancelled
+                - isDraft
                 - isOnlineMeeting
                 - isOrganizer
                 - isReminderOn
@@ -8438,6 +8473,7 @@ paths:
                 - importance
                 - isAllDay
                 - isCancelled
+                - isDraft
                 - isOnlineMeeting
                 - isOrganizer
                 - isReminderOn
@@ -9205,6 +9241,8 @@ paths:
                 - isAllDay desc
                 - isCancelled
                 - isCancelled desc
+                - isDraft
+                - isDraft desc
                 - isOnlineMeeting
                 - isOnlineMeeting desc
                 - isOrganizer
@@ -9279,6 +9317,7 @@ paths:
                 - importance
                 - isAllDay
                 - isCancelled
+                - isDraft
                 - isOnlineMeeting
                 - isOrganizer
                 - isReminderOn
@@ -9427,6 +9466,7 @@ paths:
                 - importance
                 - isAllDay
                 - isCancelled
+                - isDraft
                 - isOnlineMeeting
                 - isOrganizer
                 - isReminderOn
@@ -9903,6 +9943,7 @@ paths:
                 - changeKey
                 - color
                 - defaultOnlineMeetingProvider
+                - hexColor
                 - isRemovable
                 - isTallyingResponses
                 - name
@@ -10379,6 +10420,8 @@ paths:
                 - isAllDay desc
                 - isCancelled
                 - isCancelled desc
+                - isDraft
+                - isDraft desc
                 - isOnlineMeeting
                 - isOnlineMeeting desc
                 - isOrganizer
@@ -10453,6 +10496,7 @@ paths:
                 - importance
                 - isAllDay
                 - isCancelled
+                - isDraft
                 - isOnlineMeeting
                 - isOrganizer
                 - isReminderOn
@@ -10615,6 +10659,7 @@ paths:
                 - importance
                 - isAllDay
                 - isCancelled
+                - isDraft
                 - isOnlineMeeting
                 - isOrganizer
                 - isReminderOn
@@ -10855,6 +10900,8 @@ paths:
                 - isAllDay desc
                 - isCancelled
                 - isCancelled desc
+                - isDraft
+                - isDraft desc
                 - isOnlineMeeting
                 - isOnlineMeeting desc
                 - isOrganizer
@@ -10929,6 +10976,7 @@ paths:
                 - importance
                 - isAllDay
                 - isCancelled
+                - isDraft
                 - isOnlineMeeting
                 - isOrganizer
                 - isReminderOn
@@ -11091,6 +11139,7 @@ paths:
                 - importance
                 - isAllDay
                 - isCancelled
+                - isDraft
                 - isOnlineMeeting
                 - isOrganizer
                 - isReminderOn
@@ -12128,6 +12177,8 @@ paths:
                 - isAllDay desc
                 - isCancelled
                 - isCancelled desc
+                - isDraft
+                - isDraft desc
                 - isOnlineMeeting
                 - isOnlineMeeting desc
                 - isOrganizer
@@ -12202,6 +12253,7 @@ paths:
                 - importance
                 - isAllDay
                 - isCancelled
+                - isDraft
                 - isOnlineMeeting
                 - isOrganizer
                 - isReminderOn
@@ -12364,6 +12416,7 @@ paths:
                 - importance
                 - isAllDay
                 - isCancelled
+                - isDraft
                 - isOnlineMeeting
                 - isOrganizer
                 - isReminderOn
@@ -13312,6 +13365,7 @@ paths:
                 - changeKey
                 - color
                 - defaultOnlineMeetingProvider
+                - hexColor
                 - isRemovable
                 - isTallyingResponses
                 - name
@@ -13739,6 +13793,8 @@ paths:
                 - isAllDay desc
                 - isCancelled
                 - isCancelled desc
+                - isDraft
+                - isDraft desc
                 - isOnlineMeeting
                 - isOnlineMeeting desc
                 - isOrganizer
@@ -13813,6 +13869,7 @@ paths:
                 - importance
                 - isAllDay
                 - isCancelled
+                - isDraft
                 - isOnlineMeeting
                 - isOrganizer
                 - isReminderOn
@@ -13973,6 +14030,7 @@ paths:
                 - importance
                 - isAllDay
                 - isCancelled
+                - isDraft
                 - isOnlineMeeting
                 - isOrganizer
                 - isReminderOn
@@ -14449,6 +14507,7 @@ paths:
                 - changeKey
                 - color
                 - defaultOnlineMeetingProvider
+                - hexColor
                 - isRemovable
                 - isTallyingResponses
                 - name
@@ -14905,6 +14964,8 @@ paths:
                 - isAllDay desc
                 - isCancelled
                 - isCancelled desc
+                - isDraft
+                - isDraft desc
                 - isOnlineMeeting
                 - isOnlineMeeting desc
                 - isOrganizer
@@ -14979,6 +15040,7 @@ paths:
                 - importance
                 - isAllDay
                 - isCancelled
+                - isDraft
                 - isOnlineMeeting
                 - isOrganizer
                 - isReminderOn
@@ -15141,6 +15203,7 @@ paths:
                 - importance
                 - isAllDay
                 - isCancelled
+                - isDraft
                 - isOnlineMeeting
                 - isOrganizer
                 - isReminderOn
@@ -15908,6 +15971,8 @@ paths:
                 - isAllDay desc
                 - isCancelled
                 - isCancelled desc
+                - isDraft
+                - isDraft desc
                 - isOnlineMeeting
                 - isOnlineMeeting desc
                 - isOrganizer
@@ -15982,6 +16047,7 @@ paths:
                 - importance
                 - isAllDay
                 - isCancelled
+                - isDraft
                 - isOnlineMeeting
                 - isOrganizer
                 - isReminderOn
@@ -16130,6 +16196,7 @@ paths:
                 - importance
                 - isAllDay
                 - isCancelled
+                - isDraft
                 - isOnlineMeeting
                 - isOrganizer
                 - isReminderOn
@@ -16606,6 +16673,7 @@ paths:
                 - changeKey
                 - color
                 - defaultOnlineMeetingProvider
+                - hexColor
                 - isRemovable
                 - isTallyingResponses
                 - name
@@ -17062,6 +17130,8 @@ paths:
                 - isAllDay desc
                 - isCancelled
                 - isCancelled desc
+                - isDraft
+                - isDraft desc
                 - isOnlineMeeting
                 - isOnlineMeeting desc
                 - isOrganizer
@@ -17136,6 +17206,7 @@ paths:
                 - importance
                 - isAllDay
                 - isCancelled
+                - isDraft
                 - isOnlineMeeting
                 - isOrganizer
                 - isReminderOn
@@ -17298,6 +17369,7 @@ paths:
                 - importance
                 - isAllDay
                 - isCancelled
+                - isDraft
                 - isOnlineMeeting
                 - isOrganizer
                 - isReminderOn
@@ -18772,6 +18844,8 @@ paths:
                 - color desc
                 - defaultOnlineMeetingProvider
                 - defaultOnlineMeetingProvider desc
+                - hexColor
+                - hexColor desc
                 - isRemovable
                 - isRemovable desc
                 - isTallyingResponses
@@ -18799,6 +18873,7 @@ paths:
                 - changeKey
                 - color
                 - defaultOnlineMeetingProvider
+                - hexColor
                 - isRemovable
                 - isTallyingResponses
                 - name
@@ -18932,6 +19007,7 @@ paths:
                 - changeKey
                 - color
                 - defaultOnlineMeetingProvider
+                - hexColor
                 - isRemovable
                 - isTallyingResponses
                 - name
@@ -19469,6 +19545,8 @@ paths:
                 - isAllDay desc
                 - isCancelled
                 - isCancelled desc
+                - isDraft
+                - isDraft desc
                 - isOnlineMeeting
                 - isOnlineMeeting desc
                 - isOrganizer
@@ -19543,6 +19621,7 @@ paths:
                 - importance
                 - isAllDay
                 - isCancelled
+                - isDraft
                 - isOnlineMeeting
                 - isOrganizer
                 - isReminderOn
@@ -19719,6 +19798,7 @@ paths:
                 - importance
                 - isAllDay
                 - isCancelled
+                - isDraft
                 - isOnlineMeeting
                 - isOrganizer
                 - isReminderOn
@@ -20319,6 +20399,7 @@ paths:
                 - changeKey
                 - color
                 - defaultOnlineMeetingProvider
+                - hexColor
                 - isRemovable
                 - isTallyingResponses
                 - name
@@ -20897,6 +20978,8 @@ paths:
                 - isAllDay desc
                 - isCancelled
                 - isCancelled desc
+                - isDraft
+                - isDraft desc
                 - isOnlineMeeting
                 - isOnlineMeeting desc
                 - isOrganizer
@@ -20971,6 +21054,7 @@ paths:
                 - importance
                 - isAllDay
                 - isCancelled
+                - isDraft
                 - isOnlineMeeting
                 - isOrganizer
                 - isReminderOn
@@ -21161,6 +21245,7 @@ paths:
                 - importance
                 - isAllDay
                 - isCancelled
+                - isDraft
                 - isOnlineMeeting
                 - isOrganizer
                 - isReminderOn
@@ -22122,6 +22207,8 @@ paths:
                 - isAllDay desc
                 - isCancelled
                 - isCancelled desc
+                - isDraft
+                - isDraft desc
                 - isOnlineMeeting
                 - isOnlineMeeting desc
                 - isOrganizer
@@ -22196,6 +22283,7 @@ paths:
                 - importance
                 - isAllDay
                 - isCancelled
+                - isDraft
                 - isOnlineMeeting
                 - isOrganizer
                 - isReminderOn
@@ -22372,6 +22460,7 @@ paths:
                 - importance
                 - isAllDay
                 - isCancelled
+                - isDraft
                 - isOnlineMeeting
                 - isOrganizer
                 - isReminderOn
@@ -22972,6 +23061,7 @@ paths:
                 - changeKey
                 - color
                 - defaultOnlineMeetingProvider
+                - hexColor
                 - isRemovable
                 - isTallyingResponses
                 - name
@@ -23550,6 +23640,8 @@ paths:
                 - isAllDay desc
                 - isCancelled
                 - isCancelled desc
+                - isDraft
+                - isDraft desc
                 - isOnlineMeeting
                 - isOnlineMeeting desc
                 - isOrganizer
@@ -23624,6 +23716,7 @@ paths:
                 - importance
                 - isAllDay
                 - isCancelled
+                - isDraft
                 - isOnlineMeeting
                 - isOrganizer
                 - isReminderOn
@@ -23814,6 +23907,7 @@ paths:
                 - importance
                 - isAllDay
                 - isCancelled
+                - isDraft
                 - isOnlineMeeting
                 - isOrganizer
                 - isReminderOn
@@ -25351,6 +25445,8 @@ paths:
                 - color desc
                 - defaultOnlineMeetingProvider
                 - defaultOnlineMeetingProvider desc
+                - hexColor
+                - hexColor desc
                 - isRemovable
                 - isRemovable desc
                 - isTallyingResponses
@@ -25378,6 +25474,7 @@ paths:
                 - changeKey
                 - color
                 - defaultOnlineMeetingProvider
+                - hexColor
                 - isRemovable
                 - isTallyingResponses
                 - name
@@ -25497,6 +25594,7 @@ paths:
                 - changeKey
                 - color
                 - defaultOnlineMeetingProvider
+                - hexColor
                 - isRemovable
                 - isTallyingResponses
                 - name
@@ -25985,6 +26083,8 @@ paths:
                 - isAllDay desc
                 - isCancelled
                 - isCancelled desc
+                - isDraft
+                - isDraft desc
                 - isOnlineMeeting
                 - isOnlineMeeting desc
                 - isOrganizer
@@ -26059,6 +26159,7 @@ paths:
                 - importance
                 - isAllDay
                 - isCancelled
+                - isDraft
                 - isOnlineMeeting
                 - isOrganizer
                 - isReminderOn
@@ -26233,6 +26334,7 @@ paths:
                 - importance
                 - isAllDay
                 - isCancelled
+                - isDraft
                 - isOnlineMeeting
                 - isOrganizer
                 - isReminderOn
@@ -26771,6 +26873,7 @@ paths:
                 - changeKey
                 - color
                 - defaultOnlineMeetingProvider
+                - hexColor
                 - isRemovable
                 - isTallyingResponses
                 - name
@@ -27288,6 +27391,8 @@ paths:
                 - isAllDay desc
                 - isCancelled
                 - isCancelled desc
+                - isDraft
+                - isDraft desc
                 - isOnlineMeeting
                 - isOnlineMeeting desc
                 - isOrganizer
@@ -27362,6 +27467,7 @@ paths:
                 - importance
                 - isAllDay
                 - isCancelled
+                - isDraft
                 - isOnlineMeeting
                 - isOrganizer
                 - isReminderOn
@@ -27538,6 +27644,7 @@ paths:
                 - importance
                 - isAllDay
                 - isCancelled
+                - isDraft
                 - isOnlineMeeting
                 - isOrganizer
                 - isReminderOn
@@ -28402,6 +28509,8 @@ paths:
                 - isAllDay desc
                 - isCancelled
                 - isCancelled desc
+                - isDraft
+                - isDraft desc
                 - isOnlineMeeting
                 - isOnlineMeeting desc
                 - isOrganizer
@@ -28476,6 +28585,7 @@ paths:
                 - importance
                 - isAllDay
                 - isCancelled
+                - isDraft
                 - isOnlineMeeting
                 - isOrganizer
                 - isReminderOn
@@ -28638,6 +28748,7 @@ paths:
                 - importance
                 - isAllDay
                 - isCancelled
+                - isDraft
                 - isOnlineMeeting
                 - isOrganizer
                 - isReminderOn
@@ -29176,6 +29287,7 @@ paths:
                 - changeKey
                 - color
                 - defaultOnlineMeetingProvider
+                - hexColor
                 - isRemovable
                 - isTallyingResponses
                 - name
@@ -29693,6 +29805,8 @@ paths:
                 - isAllDay desc
                 - isCancelled
                 - isCancelled desc
+                - isDraft
+                - isDraft desc
                 - isOnlineMeeting
                 - isOnlineMeeting desc
                 - isOrganizer
@@ -29767,6 +29881,7 @@ paths:
                 - importance
                 - isAllDay
                 - isCancelled
+                - isDraft
                 - isOnlineMeeting
                 - isOrganizer
                 - isReminderOn
@@ -29943,6 +30058,7 @@ paths:
                 - importance
                 - isAllDay
                 - isCancelled
+                - isDraft
                 - isOnlineMeeting
                 - isOrganizer
                 - isReminderOn
@@ -31346,6 +31462,8 @@ paths:
                 - isAllDay desc
                 - isCancelled
                 - isCancelled desc
+                - isDraft
+                - isDraft desc
                 - isOnlineMeeting
                 - isOnlineMeeting desc
                 - isOrganizer
@@ -31420,6 +31538,7 @@ paths:
                 - importance
                 - isAllDay
                 - isCancelled
+                - isDraft
                 - isOnlineMeeting
                 - isOrganizer
                 - isReminderOn
@@ -31580,6 +31699,7 @@ paths:
                 - importance
                 - isAllDay
                 - isCancelled
+                - isDraft
                 - isOnlineMeeting
                 - isOrganizer
                 - isReminderOn
@@ -32056,6 +32176,7 @@ paths:
                 - changeKey
                 - color
                 - defaultOnlineMeetingProvider
+                - hexColor
                 - isRemovable
                 - isTallyingResponses
                 - name
@@ -32532,6 +32653,8 @@ paths:
                 - isAllDay desc
                 - isCancelled
                 - isCancelled desc
+                - isDraft
+                - isDraft desc
                 - isOnlineMeeting
                 - isOnlineMeeting desc
                 - isOrganizer
@@ -32606,6 +32729,7 @@ paths:
                 - importance
                 - isAllDay
                 - isCancelled
+                - isDraft
                 - isOnlineMeeting
                 - isOrganizer
                 - isReminderOn
@@ -32768,6 +32892,7 @@ paths:
                 - importance
                 - isAllDay
                 - isCancelled
+                - isDraft
                 - isOnlineMeeting
                 - isOrganizer
                 - isReminderOn
@@ -33008,6 +33133,8 @@ paths:
                 - isAllDay desc
                 - isCancelled
                 - isCancelled desc
+                - isDraft
+                - isDraft desc
                 - isOnlineMeeting
                 - isOnlineMeeting desc
                 - isOrganizer
@@ -33082,6 +33209,7 @@ paths:
                 - importance
                 - isAllDay
                 - isCancelled
+                - isDraft
                 - isOnlineMeeting
                 - isOrganizer
                 - isReminderOn
@@ -33244,6 +33372,7 @@ paths:
                 - importance
                 - isAllDay
                 - isCancelled
+                - isDraft
                 - isOnlineMeeting
                 - isOrganizer
                 - isReminderOn
@@ -34281,6 +34410,8 @@ paths:
                 - isAllDay desc
                 - isCancelled
                 - isCancelled desc
+                - isDraft
+                - isDraft desc
                 - isOnlineMeeting
                 - isOnlineMeeting desc
                 - isOrganizer
@@ -34355,6 +34486,7 @@ paths:
                 - importance
                 - isAllDay
                 - isCancelled
+                - isDraft
                 - isOnlineMeeting
                 - isOrganizer
                 - isReminderOn
@@ -34517,6 +34649,7 @@ paths:
                 - importance
                 - isAllDay
                 - isCancelled
+                - isDraft
                 - isOnlineMeeting
                 - isOrganizer
                 - isReminderOn
@@ -35284,6 +35417,8 @@ paths:
                 - isAllDay desc
                 - isCancelled
                 - isCancelled desc
+                - isDraft
+                - isDraft desc
                 - isOnlineMeeting
                 - isOnlineMeeting desc
                 - isOrganizer
@@ -35358,6 +35493,7 @@ paths:
                 - importance
                 - isAllDay
                 - isCancelled
+                - isDraft
                 - isOnlineMeeting
                 - isOrganizer
                 - isReminderOn
@@ -35506,6 +35642,7 @@ paths:
                 - importance
                 - isAllDay
                 - isCancelled
+                - isDraft
                 - isOnlineMeeting
                 - isOrganizer
                 - isReminderOn
@@ -35982,6 +36119,7 @@ paths:
                 - changeKey
                 - color
                 - defaultOnlineMeetingProvider
+                - hexColor
                 - isRemovable
                 - isTallyingResponses
                 - name
@@ -36458,6 +36596,8 @@ paths:
                 - isAllDay desc
                 - isCancelled
                 - isCancelled desc
+                - isDraft
+                - isDraft desc
                 - isOnlineMeeting
                 - isOnlineMeeting desc
                 - isOrganizer
@@ -36532,6 +36672,7 @@ paths:
                 - importance
                 - isAllDay
                 - isCancelled
+                - isDraft
                 - isOnlineMeeting
                 - isOrganizer
                 - isReminderOn
@@ -36694,6 +36835,7 @@ paths:
                 - importance
                 - isAllDay
                 - isCancelled
+                - isDraft
                 - isOnlineMeeting
                 - isOrganizer
                 - isReminderOn
@@ -36934,6 +37076,8 @@ paths:
                 - isAllDay desc
                 - isCancelled
                 - isCancelled desc
+                - isDraft
+                - isDraft desc
                 - isOnlineMeeting
                 - isOnlineMeeting desc
                 - isOrganizer
@@ -37008,6 +37152,7 @@ paths:
                 - importance
                 - isAllDay
                 - isCancelled
+                - isDraft
                 - isOnlineMeeting
                 - isOrganizer
                 - isReminderOn
@@ -37170,6 +37315,7 @@ paths:
                 - importance
                 - isAllDay
                 - isCancelled
+                - isDraft
                 - isOnlineMeeting
                 - isOrganizer
                 - isReminderOn
@@ -38207,6 +38353,8 @@ paths:
                 - isAllDay desc
                 - isCancelled
                 - isCancelled desc
+                - isDraft
+                - isDraft desc
                 - isOnlineMeeting
                 - isOnlineMeeting desc
                 - isOrganizer
@@ -38281,6 +38429,7 @@ paths:
                 - importance
                 - isAllDay
                 - isCancelled
+                - isDraft
                 - isOnlineMeeting
                 - isOrganizer
                 - isReminderOn
@@ -38443,6 +38592,7 @@ paths:
                 - importance
                 - isAllDay
                 - isCancelled
+                - isDraft
                 - isOnlineMeeting
                 - isOrganizer
                 - isReminderOn
@@ -39184,6 +39334,9 @@ components:
               $ref: '#/components/schemas/microsoft.graph.calendarColor'
             defaultOnlineMeetingProvider:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingProviderType'
+            hexColor:
+              type: string
+              nullable: true
             isRemovable:
               type: boolean
               description: Indicates whether this user calendar can be deleted from the user mailbox.
@@ -39279,7 +39432,7 @@ components:
               nullable: true
             iCalUId:
               type: string
-              description: A unique identifier that is shared by all instances of an event across different calendars. Read-only.
+              description: A unique identifier for an event across calendars. This ID is different for each occurrence in a recurring series. Read-only.
               nullable: true
             importance:
               $ref: '#/components/schemas/microsoft.graph.importance'
@@ -39290,6 +39443,9 @@ components:
             isCancelled:
               type: boolean
               description: Set to true if the event has been canceled.
+              nullable: true
+            isDraft:
+              type: boolean
               nullable: true
             isOnlineMeeting:
               type: boolean

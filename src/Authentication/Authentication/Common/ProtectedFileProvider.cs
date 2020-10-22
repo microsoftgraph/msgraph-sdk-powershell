@@ -22,7 +22,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Common
     /// The file can be accessed in ReadOnly or ReadWrite mode.
     /// This class MUST be disposed by the caller.
     /// </summary>
-    internal abstract class ProtectedFileProvider : IFileProvider, IDisposable
+    public abstract class ProtectedFileProvider : IFileProvider, IDisposable
     {
         protected Stream _stream;
         public const int MaxTries = 30;

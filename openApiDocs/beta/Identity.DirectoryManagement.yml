@@ -13,6 +13,16 @@ paths:
       summary: Get entities from administrativeUnits
       operationId: administrativeUnits.administrativeUnit_ListAdministrativeUnit
       parameters:
+        - name: ConsistencyLevel
+          in: header
+          description: Indicates the requested consistency level.
+          schema:
+            type: string
+          example: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -132,6 +142,16 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: administrativeUnit
+        - name: ConsistencyLevel
+          in: header
+          description: Indicates the requested consistency level.
+          schema:
+            type: string
+          example: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
         - name: $select
           in: query
           description: Select properties to be returned
@@ -1194,6 +1214,16 @@ paths:
       summary: Get entities from contacts
       operationId: contacts.orgContact_ListOrgContact
       parameters:
+        - name: ConsistencyLevel
+          in: header
+          description: Indicates the requested consistency level.
+          schema:
+            type: string
+          example: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -1348,6 +1378,16 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: orgContact
+        - name: ConsistencyLevel
+          in: header
+          description: Indicates the requested consistency level.
+          schema:
+            type: string
+          example: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
         - name: $select
           in: query
           description: Select properties to be returned
@@ -2931,6 +2971,16 @@ paths:
       summary: Get entities from devices
       operationId: devices.device_ListDevice
       parameters:
+        - name: ConsistencyLevel
+          in: header
+          description: Indicates the requested consistency level.
+          schema:
+            type: string
+          example: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -3004,18 +3054,18 @@ paths:
                 - systemLabels desc
                 - trustType
                 - trustType desc
-                - Kind
-                - Kind desc
-                - Manufacturer
-                - Manufacturer desc
-                - Model
-                - Model desc
-                - Name
-                - Name desc
-                - Platform
-                - Platform desc
-                - Status
-                - Status desc
+                - kind
+                - kind desc
+                - manufacturer
+                - manufacturer desc
+                - model
+                - model desc
+                - name
+                - name desc
+                - platform
+                - platform desc
+                - status
+                - status desc
               type: string
         - name: $select
           in: query
@@ -3056,12 +3106,12 @@ paths:
                 - registrationDateTime
                 - systemLabels
                 - trustType
-                - Kind
-                - Manufacturer
-                - Model
-                - Name
-                - Platform
-                - Status
+                - kind
+                - manufacturer
+                - model
+                - name
+                - platform
+                - status
                 - memberOf
                 - registeredOwners
                 - registeredUsers
@@ -3146,6 +3196,16 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: device
+        - name: ConsistencyLevel
+          in: header
+          description: Indicates the requested consistency level.
+          schema:
+            type: string
+          example: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
         - name: $select
           in: query
           description: Select properties to be returned
@@ -3185,12 +3245,12 @@ paths:
                 - registrationDateTime
                 - systemLabels
                 - trustType
-                - Kind
-                - Manufacturer
-                - Model
-                - Name
-                - Platform
-                - Status
+                - kind
+                - manufacturer
+                - model
+                - name
+                - platform
+                - status
                 - memberOf
                 - registeredOwners
                 - registeredUsers
@@ -3332,22 +3392,22 @@ paths:
               enum:
                 - id
                 - id desc
-                - AppServiceName
-                - AppServiceName desc
-                - Error
-                - Error desc
-                - PackageFamilyName
-                - PackageFamilyName desc
-                - Payload
-                - Payload desc
-                - PermissionTicket
-                - PermissionTicket desc
-                - PostBackUri
-                - PostBackUri desc
-                - Status
-                - Status desc
-                - Type
-                - Type desc
+                - appServiceName
+                - appServiceName desc
+                - error
+                - error desc
+                - packageFamilyName
+                - packageFamilyName desc
+                - payload
+                - payload desc
+                - permissionTicket
+                - permissionTicket desc
+                - postBackUri
+                - postBackUri desc
+                - status
+                - status desc
+                - type
+                - type desc
               type: string
         - name: $select
           in: query
@@ -3360,14 +3420,14 @@ paths:
             items:
               enum:
                 - id
-                - AppServiceName
-                - Error
-                - PackageFamilyName
-                - Payload
-                - PermissionTicket
-                - PostBackUri
-                - Status
-                - Type
+                - appServiceName
+                - error
+                - packageFamilyName
+                - payload
+                - permissionTicket
+                - postBackUri
+                - status
+                - type
                 - responsepayload
               type: string
         - name: $expand
@@ -3468,14 +3528,14 @@ paths:
             items:
               enum:
                 - id
-                - AppServiceName
-                - Error
-                - PackageFamilyName
-                - Payload
-                - PermissionTicket
-                - PostBackUri
-                - Status
-                - Type
+                - appServiceName
+                - error
+                - packageFamilyName
+                - payload
+                - permissionTicket
+                - postBackUri
+                - status
+                - type
                 - responsepayload
               type: string
         - name: $expand
@@ -10319,7 +10379,7 @@ components:
               nullable: true
             visibility:
               type: string
-              description: 'Controls whether the adminstrative unit and its members are hidden or public. Can be set to HiddenMembership or Public. If not set, default behavior is Public. When set to HiddenMembership, only members of the administrative unit can list other members of the adminstrative unit.'
+              description: 'Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership or Public. If not set, default behavior is Public. When set to HiddenMembership, only members of the administrative unit can list other members of the adminstrative unit.'
               nullable: true
             members:
               type: array
@@ -10591,22 +10651,24 @@ components:
               type: string
               description: 'Type of trust for the joined device. Read-only. Possible values: Workplace - indicates bring your own personal devicesAzureAd - Cloud only joined devicesServerAd - on-premises domain joined devices joined to Azure AD. For more details, see Introduction to device management in Azure Active Directory'
               nullable: true
-            Kind:
+            kind:
               type: string
               nullable: true
-            Manufacturer:
+            manufacturer:
+              type: string
+              description: Manufacturer of the device. Read-only.
+              nullable: true
+            model:
+              type: string
+              description: Model of the device. Read-only.
+              nullable: true
+            name:
               type: string
               nullable: true
-            Model:
+            platform:
               type: string
               nullable: true
-            Name:
-              type: string
-              nullable: true
-            Platform:
-              type: string
-              nullable: true
-            Status:
+            status:
               type: string
               nullable: true
             memberOf:
@@ -10646,27 +10708,27 @@ components:
         - title: command
           type: object
           properties:
-            AppServiceName:
+            appServiceName:
               type: string
               nullable: true
-            Error:
+            error:
               type: string
               nullable: true
-            PackageFamilyName:
+            packageFamilyName:
               type: string
               nullable: true
-            Payload:
-              $ref: '#/components/schemas/microsoft.graph.PayloadRequest'
-            PermissionTicket:
+            payload:
+              $ref: '#/components/schemas/microsoft.graph.payloadRequest'
+            permissionTicket:
               type: string
               nullable: true
-            PostBackUri:
+            postBackUri:
               type: string
               nullable: true
-            Status:
+            status:
               type: string
               nullable: true
-            Type:
+            type:
               type: string
               nullable: true
             responsepayload:
@@ -11244,8 +11306,8 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.PayloadRequest:
-      title: PayloadRequest
+    microsoft.graph.payloadRequest:
+      title: payloadRequest
       type: object
       additionalProperties:
         type: object
