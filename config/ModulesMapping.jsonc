@@ -13,7 +13,7 @@
     "Files": "^drives\\.|^shares\\.|^users.drive$|^groups.drive$",
     "Financials": "^financials\\.",
     "Groups": "^groups.group$|^groups.directoryObject$|^groups.conversation$|^groups.endpoint$|^groups.extension$|^groups.resourceSpecificPermissionGrant$|^groups.profilePhoto$|^groups.conversationThread$|^groupLifecyclePolicies\\.|^users.group$|^groups.directorySetting$|^groups.Actions$|^groups.Functions$",
-    "Identity.DirectoryManagement": "^administrativeUnits\\.|^contacts\\.|^devices\\.|^domains\\.|^directoryRoles\\.|^directoryRoleTemplates\\.|^directorySettingTemplates\\.|^settings\\.|^subscribedSkus\\.|^contracts\\.|^directory\\.|^users.scopedRoleMembership$|^organization.organization$|^organization.organizationalBranding$|^organization.organizationSettings $|^organization.Actions$|^organization.extension$",
+    "Identity.DirectoryManagement": "^administrativeUnits\\.|^contacts\\.|^devices\\.|^domains\\.|^directoryRoles\\.|^directoryRoleTemplates\\.|^directorySettingTemplates\\.|^settings\\.|^subscribedSkus\\.|^contracts\\.|^directory\\.|^users.scopedRoleMembership$|^organization.organization$|^organization.organizationalBranding$|^organization.organizationSettings$|^organization.Actions$|^organization.extension$",
     "Identity.Governance": "^accessReviews\\.|^businessFlowTemplates\\.|^programs\\.|^programControls\\.|^programControlTypes\\.|^privilegedRoles\\.|^privilegedRoleAssignments\\.|^privilegedRoleAssignmentRequests\\.|^privilegedApproval\\.|^privilegedOperationEvents\\.|^privilegedAccess\\.|^agreements\\.|^users.agreementAcceptance$|^identityGovernance.entitlementManagement$|^identityGovernance.Functions$|^identityGovernance.Actions$",
     "Identity.SignIns": "^organization.certificateBasedAuthConfiguration$|^invitations\\.|^identityProviders\\.|^oauth2PermissionGrants\\.|^riskDetections\\.|^riskyUsers\\.|^dataPolicyOperations\\.|^identity.identityUserFlow$|^trustFramework\\.|^informationProtection\\.|^policies\\.|^users.authentication$|^users.informationProtection$|^identity.conditionalAccessRoot$",
     "Mail": "^users.inferenceClassification$|^users.mailFolder$|^users.message$",
@@ -26,7 +26,7 @@
     "Search": "^search\\.|^external\\.",
     "Security": "^Security\\.",
     "Sites": "^sites.site$|^sites.itemAnalytics$|^sites.columnDefinition$|^sites.contentType$|^sites.drive$|^sites.list$|^sites.sitePage$|^users.site$|^groups.site$|^sites.Functions$|^sites.Actions$",
-    "Teams": "^teams\\.|^chats\\.|^users.chat$|^appCatalogs$|^users.userTeamwork$|^teamwork\\.|^users.team$|^users.userTeamwork$|^groups.team$",
+    "Teams": "^teams\\.|^chats\\.|^users.chat$|^appCatalogs.teamsApp$|^users.userTeamwork$|^teamwork\\.|^users.team$|^groups.team$",
     "Users": "^users.user$|^users.directoryObject$|^users.licenseDetails$|^users.notification$|^users.outlookUser$|^users.profilePhoto$|^users.userSettings$|^users.extension$|^users.oAuth2PermissionGrant$|^users.todo$",
     "Users.Actions": "^users.Actions$",
     "Users.Functions": "^users.Functions$"
