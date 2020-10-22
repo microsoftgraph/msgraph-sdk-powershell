@@ -13,6 +13,16 @@ paths:
       summary: Get entities from applications
       operationId: applications.application_ListApplication
       parameters:
+        - name: ConsistencyLevel
+          in: header
+          description: Indicates the requested consistency level.
+          schema:
+            type: string
+          example: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -210,6 +220,16 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
+        - name: ConsistencyLevel
+          in: header
+          description: Indicates the requested consistency level.
+          schema:
+            type: string
+          example: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
         - name: $select
           in: query
           description: Select properties to be returned
@@ -2266,6 +2286,16 @@ paths:
       summary: Get entities from servicePrincipals
       operationId: servicePrincipals.servicePrincipal_ListServicePrincipal
       parameters:
+        - name: ConsistencyLevel
+          in: header
+          description: Indicates the requested consistency level.
+          schema:
+            type: string
+          example: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -2483,6 +2513,16 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
+        - name: ConsistencyLevel
+          in: header
+          description: Indicates the requested consistency level.
+          schema:
+            type: string
+          example: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
         - name: $select
           in: query
           description: Select properties to be returned
@@ -6093,7 +6133,7 @@ components:
               description: Specifies resources that this application requires access to and the set of OAuth permission scopes and application roles that it needs under each of those resources. This pre-configuration of required resource access drives the consent experience. Not nullable.
             signInAudience:
               type: string
-              description: 'Specifies the Microsoft accounts that are supported for the current application. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization’s Azure AD tenant (single tenant)AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization’s Azure AD tenant (multi-tenant)AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization’s Azure AD tenant.'
+              description: 'Specifies the Microsoft accounts that are supported for the current application. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization’s Azure AD tenant (single tenant)AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization’s Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization’s Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.'
               nullable: true
             tags:
               type: array
@@ -6646,7 +6686,7 @@ components:
           type: array
           items:
             type: string
-          description: 'Specifies whether this app role can be assigned to users and groups (by setting to [''User'']), to other application''s (by setting to [''Application''], or both (by setting to [''User'', ''Application'']). App roles supporting assignment of other applications'' service principals are also known as application permissions.'
+          description: 'Specifies whether this app role can be assigned to users and groups (by setting to [''User'']), to other application''s (by setting to [''Application''], or both (by setting to [''User'', ''Application'']). App roles supporting assignment to other applications'' service principals are also known as application permissions. The ''Application'' value is only supported for app roles defined on application entities.'
         description:
           type: string
           description: 'The description for the app role. This is displayed when the app role is being assigned and, if the app role functions as an application permission, during  consent experiences.'

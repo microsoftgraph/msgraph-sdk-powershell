@@ -291,6 +291,16 @@ paths:
       summary: Get entities from groups
       operationId: groups.group_ListGroup
       parameters:
+        - name: ConsistencyLevel
+          in: header
+          description: Indicates the requested consistency level.
+          schema:
+            type: string
+          example: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -558,6 +568,16 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: group
+        - name: ConsistencyLevel
+          in: header
+          description: Indicates the requested consistency level.
+          schema:
+            type: string
+          example: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
         - name: $select
           in: query
           description: Select properties to be returned
@@ -1259,6 +1279,53 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/groups/{group-id}/calendar/calendarView/{event-id}/instances/{event-id1}/microsoft.graph.cancel':
+    post:
+      tags:
+        - groups.Actions
+      summary: Invoke action cancel
+      operationId: groups.calendar.calendarView.instances_cancel
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: event-id
+          in: path
+          description: 'key: id of event'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: event
+        - name: event-id1
+          in: path
+          description: 'key: id of event'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: event
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                Comment:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/groups/{group-id}/calendar/calendarView/{event-id}/instances/{event-id1}/microsoft.graph.decline':
     post:
       tags:
@@ -1338,6 +1405,57 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/groups/{group-id}/calendar/calendarView/{event-id}/instances/{event-id1}/microsoft.graph.forward':
+    post:
+      tags:
+        - groups.Actions
+      summary: Invoke action forward
+      operationId: groups.calendar.calendarView.instances_forward
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: event-id
+          in: path
+          description: 'key: id of event'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: event
+        - name: event-id1
+          in: path
+          description: 'key: id of event'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: event
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ToRecipients:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.recipient'
+                Comment:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -1518,6 +1636,46 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/groups/{group-id}/calendar/calendarView/{event-id}/microsoft.graph.cancel':
+    post:
+      tags:
+        - groups.Actions
+      summary: Invoke action cancel
+      operationId: groups.calendar.calendarView_cancel
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: event-id
+          in: path
+          description: 'key: id of event'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: event
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                Comment:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/groups/{group-id}/calendar/calendarView/{event-id}/microsoft.graph.decline':
     post:
       tags:
@@ -1583,6 +1741,50 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/groups/{group-id}/calendar/calendarView/{event-id}/microsoft.graph.forward':
+    post:
+      tags:
+        - groups.Actions
+      summary: Invoke action forward
+      operationId: groups.calendar.calendarView_forward
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: event-id
+          in: path
+          description: 'key: id of event'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: event
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ToRecipients:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.recipient'
+                Comment:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -1888,6 +2090,53 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/groups/{group-id}/calendar/events/{event-id}/instances/{event-id1}/microsoft.graph.cancel':
+    post:
+      tags:
+        - groups.Actions
+      summary: Invoke action cancel
+      operationId: groups.calendar.events.instances_cancel
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: event-id
+          in: path
+          description: 'key: id of event'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: event
+        - name: event-id1
+          in: path
+          description: 'key: id of event'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: event
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                Comment:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/groups/{group-id}/calendar/events/{event-id}/instances/{event-id1}/microsoft.graph.decline':
     post:
       tags:
@@ -1967,6 +2216,57 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/groups/{group-id}/calendar/events/{event-id}/instances/{event-id1}/microsoft.graph.forward':
+    post:
+      tags:
+        - groups.Actions
+      summary: Invoke action forward
+      operationId: groups.calendar.events.instances_forward
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: event-id
+          in: path
+          description: 'key: id of event'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: event
+        - name: event-id1
+          in: path
+          description: 'key: id of event'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: event
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ToRecipients:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.recipient'
+                Comment:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -2147,6 +2447,46 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/groups/{group-id}/calendar/events/{event-id}/microsoft.graph.cancel':
+    post:
+      tags:
+        - groups.Actions
+      summary: Invoke action cancel
+      operationId: groups.calendar.events_cancel
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: event-id
+          in: path
+          description: 'key: id of event'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: event
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                Comment:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/groups/{group-id}/calendar/events/{event-id}/microsoft.graph.decline':
     post:
       tags:
@@ -2212,6 +2552,50 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/groups/{group-id}/calendar/events/{event-id}/microsoft.graph.forward':
+    post:
+      tags:
+        - groups.Actions
+      summary: Invoke action forward
+      operationId: groups.calendar.events_forward
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: event-id
+          in: path
+          description: 'key: id of event'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: event
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ToRecipients:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.recipient'
+                Comment:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -2503,6 +2887,53 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/groups/{group-id}/calendarView/{event-id}/calendar/calendarView/{event-id1}/microsoft.graph.cancel':
+    post:
+      tags:
+        - groups.Actions
+      summary: Invoke action cancel
+      operationId: groups.calendarView.calendar.calendarView_cancel
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: event-id
+          in: path
+          description: 'key: id of event'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: event
+        - name: event-id1
+          in: path
+          description: 'key: id of event'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: event
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                Comment:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/groups/{group-id}/calendarView/{event-id}/calendar/calendarView/{event-id1}/microsoft.graph.decline':
     post:
       tags:
@@ -2582,6 +3013,57 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/groups/{group-id}/calendarView/{event-id}/calendar/calendarView/{event-id1}/microsoft.graph.forward':
+    post:
+      tags:
+        - groups.Actions
+      summary: Invoke action forward
+      operationId: groups.calendarView.calendar.calendarView_forward
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: event-id
+          in: path
+          description: 'key: id of event'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: event
+        - name: event-id1
+          in: path
+          description: 'key: id of event'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: event
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ToRecipients:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.recipient'
+                Comment:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -2769,6 +3251,53 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/groups/{group-id}/calendarView/{event-id}/calendar/events/{event-id1}/microsoft.graph.cancel':
+    post:
+      tags:
+        - groups.Actions
+      summary: Invoke action cancel
+      operationId: groups.calendarView.calendar.events_cancel
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: event-id
+          in: path
+          description: 'key: id of event'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: event
+        - name: event-id1
+          in: path
+          description: 'key: id of event'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: event
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                Comment:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/groups/{group-id}/calendarView/{event-id}/calendar/events/{event-id1}/microsoft.graph.decline':
     post:
       tags:
@@ -2848,6 +3377,57 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/groups/{group-id}/calendarView/{event-id}/calendar/events/{event-id1}/microsoft.graph.forward':
+    post:
+      tags:
+        - groups.Actions
+      summary: Invoke action forward
+      operationId: groups.calendarView.calendar.events_forward
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: event-id
+          in: path
+          description: 'key: id of event'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: event
+        - name: event-id1
+          in: path
+          description: 'key: id of event'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: event
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ToRecipients:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.recipient'
+                Comment:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -3131,6 +3711,53 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/groups/{group-id}/calendarView/{event-id}/instances/{event-id1}/microsoft.graph.cancel':
+    post:
+      tags:
+        - groups.Actions
+      summary: Invoke action cancel
+      operationId: groups.calendarView.instances_cancel
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: event-id
+          in: path
+          description: 'key: id of event'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: event
+        - name: event-id1
+          in: path
+          description: 'key: id of event'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: event
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                Comment:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/groups/{group-id}/calendarView/{event-id}/instances/{event-id1}/microsoft.graph.decline':
     post:
       tags:
@@ -3210,6 +3837,57 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/groups/{group-id}/calendarView/{event-id}/instances/{event-id1}/microsoft.graph.forward':
+    post:
+      tags:
+        - groups.Actions
+      summary: Invoke action forward
+      operationId: groups.calendarView.instances_forward
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: event-id
+          in: path
+          description: 'key: id of event'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: event
+        - name: event-id1
+          in: path
+          description: 'key: id of event'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: event
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ToRecipients:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.recipient'
+                Comment:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -3390,6 +4068,46 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/groups/{group-id}/calendarView/{event-id}/microsoft.graph.cancel':
+    post:
+      tags:
+        - groups.Actions
+      summary: Invoke action cancel
+      operationId: groups.calendarView_cancel
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: event-id
+          in: path
+          description: 'key: id of event'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: event
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                Comment:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/groups/{group-id}/calendarView/{event-id}/microsoft.graph.decline':
     post:
       tags:
@@ -3455,6 +4173,50 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/groups/{group-id}/calendarView/{event-id}/microsoft.graph.forward':
+    post:
+      tags:
+        - groups.Actions
+      summary: Invoke action forward
+      operationId: groups.calendarView_forward
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: event-id
+          in: path
+          description: 'key: id of event'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: event
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ToRecipients:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.recipient'
+                Comment:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -6659,6 +7421,53 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/groups/{group-id}/events/{event-id}/calendar/calendarView/{event-id1}/microsoft.graph.cancel':
+    post:
+      tags:
+        - groups.Actions
+      summary: Invoke action cancel
+      operationId: groups.events.calendar.calendarView_cancel
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: event-id
+          in: path
+          description: 'key: id of event'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: event
+        - name: event-id1
+          in: path
+          description: 'key: id of event'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: event
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                Comment:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/groups/{group-id}/events/{event-id}/calendar/calendarView/{event-id1}/microsoft.graph.decline':
     post:
       tags:
@@ -6738,6 +7547,57 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/groups/{group-id}/events/{event-id}/calendar/calendarView/{event-id1}/microsoft.graph.forward':
+    post:
+      tags:
+        - groups.Actions
+      summary: Invoke action forward
+      operationId: groups.events.calendar.calendarView_forward
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: event-id
+          in: path
+          description: 'key: id of event'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: event
+        - name: event-id1
+          in: path
+          description: 'key: id of event'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: event
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ToRecipients:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.recipient'
+                Comment:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -6925,6 +7785,53 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/groups/{group-id}/events/{event-id}/calendar/events/{event-id1}/microsoft.graph.cancel':
+    post:
+      tags:
+        - groups.Actions
+      summary: Invoke action cancel
+      operationId: groups.events.calendar.events_cancel
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: event-id
+          in: path
+          description: 'key: id of event'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: event
+        - name: event-id1
+          in: path
+          description: 'key: id of event'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: event
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                Comment:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/groups/{group-id}/events/{event-id}/calendar/events/{event-id1}/microsoft.graph.decline':
     post:
       tags:
@@ -7004,6 +7911,57 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/groups/{group-id}/events/{event-id}/calendar/events/{event-id1}/microsoft.graph.forward':
+    post:
+      tags:
+        - groups.Actions
+      summary: Invoke action forward
+      operationId: groups.events.calendar.events_forward
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: event-id
+          in: path
+          description: 'key: id of event'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: event
+        - name: event-id1
+          in: path
+          description: 'key: id of event'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: event
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ToRecipients:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.recipient'
+                Comment:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -7287,6 +8245,53 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/groups/{group-id}/events/{event-id}/instances/{event-id1}/microsoft.graph.cancel':
+    post:
+      tags:
+        - groups.Actions
+      summary: Invoke action cancel
+      operationId: groups.events.instances_cancel
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: event-id
+          in: path
+          description: 'key: id of event'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: event
+        - name: event-id1
+          in: path
+          description: 'key: id of event'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: event
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                Comment:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/groups/{group-id}/events/{event-id}/instances/{event-id1}/microsoft.graph.decline':
     post:
       tags:
@@ -7366,6 +8371,57 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/groups/{group-id}/events/{event-id}/instances/{event-id1}/microsoft.graph.forward':
+    post:
+      tags:
+        - groups.Actions
+      summary: Invoke action forward
+      operationId: groups.events.instances_forward
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: event-id
+          in: path
+          description: 'key: id of event'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: event
+        - name: event-id1
+          in: path
+          description: 'key: id of event'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: event
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ToRecipients:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.recipient'
+                Comment:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -7546,6 +8602,46 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/groups/{group-id}/events/{event-id}/microsoft.graph.cancel':
+    post:
+      tags:
+        - groups.Actions
+      summary: Invoke action cancel
+      operationId: groups.events_cancel
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: event-id
+          in: path
+          description: 'key: id of event'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: event
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                Comment:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/groups/{group-id}/events/{event-id}/microsoft.graph.decline':
     post:
       tags:
@@ -7611,6 +8707,50 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/groups/{group-id}/events/{event-id}/microsoft.graph.forward':
+    post:
+      tags:
+        - groups.Actions
+      summary: Invoke action forward
+      operationId: groups.events_forward
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: event-id
+          in: path
+          description: 'key: id of event'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: event
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ToRecipients:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.recipient'
+                Comment:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -15859,6 +16999,58 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/photo/$value':
+    get:
+      tags:
+        - groups.profilePhoto
+      summary: Get media content for the navigation property photo from groups
+      operationId: groups_GetPhotoContent
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - groups.profilePhoto
+      summary: Update media content for the navigation property photo in groups
+      operationId: groups_SetPhotoContent
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/groups/{group-id}/photos':
     get:
       tags:
@@ -16089,6 +17281,72 @@ paths:
           description: ETag
           schema:
             type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/photos/{profilePhoto-id}/$value':
+    get:
+      tags:
+        - groups.profilePhoto
+      summary: Get media content for the navigation property photos from groups
+      operationId: groups_GetPhotosContent
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: profilePhoto-id
+          in: path
+          description: 'key: id of profilePhoto'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: profilePhoto
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - groups.profilePhoto
+      summary: Update media content for the navigation property photos in groups
+      operationId: groups_SetPhotosContent
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: profilePhoto-id
+          in: path
+          description: 'key: id of profilePhoto'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: profilePhoto
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
       responses:
         '204':
           description: Success
@@ -19210,7 +20468,6 @@ components:
               nullable: true
             mailNickname:
               type: string
-              description: 'The mail alias for the group, unique in the organization. This property must be specified when a group is created. Returned by default. Supports $filter.'
               nullable: true
             membershipRule:
               type: string
@@ -19222,23 +20479,19 @@ components:
               nullable: true
             onPremisesDomainName:
               type: string
-              description: 'Contains the on-premises domain FQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect.Returned by default. Read-only.'
               nullable: true
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Indicates the last time at which the group was synced with the on-premises directory.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Returned by default. Read-only. Supports $filter.'
               format: date-time
               nullable: true
             onPremisesNetBiosName:
               type: string
-              description: Contains the on-premises netBios name synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect.Returned by default. Read-only.
               nullable: true
             onPremisesProvisioningErrors:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onPremisesProvisioningError'
-              description: Errors when using Microsoft synchronization product during provisioning. Returned by default.
             onPremisesSamAccountName:
               type: string
               description: Contains the on-premises SAM account name synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect.Returned by default. Read-only.
@@ -19534,6 +20787,14 @@ components:
           $ref: '#/components/schemas/microsoft.graph.workingHours'
       additionalProperties:
         type: object
+    microsoft.graph.recipient:
+      title: recipient
+      type: object
+      properties:
+        emailAddress:
+          $ref: '#/components/schemas/microsoft.graph.emailAddress'
+      additionalProperties:
+        type: object
     microsoft.graph.event:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.outlookItem'
@@ -19563,7 +20824,7 @@ components:
               nullable: true
             iCalUId:
               type: string
-              description: A unique identifier that is shared by all instances of an event across different calendars. Read-only.
+              description: A unique identifier for an event across calendars. This ID is different for each occurrence in a recurring series. Read-only.
               nullable: true
             importance:
               $ref: '#/components/schemas/microsoft.graph.importance'
@@ -19574,6 +20835,9 @@ components:
             isCancelled:
               type: boolean
               description: Set to true if the event has been canceled.
+              nullable: true
+            isDraft:
+              type: boolean
               nullable: true
             isOnlineMeeting:
               type: boolean
@@ -19858,14 +21122,6 @@ components:
           type: object
           additionalProperties:
             type: object
-    microsoft.graph.recipient:
-      title: recipient
-      type: object
-      properties:
-        emailAddress:
-          $ref: '#/components/schemas/microsoft.graph.emailAddress'
-      additionalProperties:
-        type: object
     microsoft.graph.multiValueLegacyExtendedProperty:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -20233,6 +21489,9 @@ components:
               $ref: '#/components/schemas/microsoft.graph.calendarColor'
             defaultOnlineMeetingProvider:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingProviderType'
+            hexColor:
+              type: string
+              nullable: true
             isRemovable:
               type: boolean
               description: Indicates whether this user calendar can be deleted from the user mailbox.
@@ -20562,6 +21821,20 @@ components:
           $ref: '#/components/schemas/microsoft.graph.timeZoneBase'
       additionalProperties:
         type: object
+    microsoft.graph.emailAddress:
+      title: emailAddress
+      type: object
+      properties:
+        address:
+          type: string
+          description: The email address of the person or entity.
+          nullable: true
+        name:
+          type: string
+          description: The display name of the person or entity.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.outlookItem:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -20744,20 +22017,6 @@ components:
         - exception
         - seriesMaster
       type: string
-    microsoft.graph.emailAddress:
-      title: emailAddress
-      type: object
-      properties:
-        address:
-          type: string
-          description: The email address of the person or entity.
-          nullable: true
-        name:
-          type: string
-          description: The display name of the person or entity.
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.operation:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -21766,7 +23025,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.channelMembershipType'
             webUrl:
               type: string
-              description: 'A hyperlink that will navigate to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.'
+              description: 'A hyperlink that will go to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.'
               nullable: true
             filesFolder:
               $ref: '#/components/schemas/microsoft.graph.driveItem'
@@ -22632,6 +23891,8 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.team'
+            teamwork:
+              $ref: '#/components/schemas/microsoft.graph.userTeamwork'
           additionalProperties:
             type: object
           description: Represents an Azure Active Directory user object.
@@ -23232,6 +24493,7 @@ components:
               nullable: true
             latestSupportedTlsVersion:
               type: string
+              description: 'Specifies the latest version of Transport Layer Security (TLS) that the notification endpoint, specified by notificationUrl, supports. The possible values are: v1_0, v1_1, v1_2, v1_3. For subscribers whose notification endpoint supports a version lower than the currently recommended version (TLS 1.2), specifying this property by a set timeline allows them to temporarily use their deprecated version of TLS before completing their upgrade to TLS 1.2. For these subscribers, not setting this property per the timeline would result in subscription operations failing. For subscribers whose notification endpoint already supports TLS 1.2, setting this property is optional. In such cases, Microsoft Graph defaults the property to v1_2.'
               nullable: true
             lifecycleNotificationUrl:
               type: string
@@ -25459,6 +26721,19 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.userTeamwork:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: userTeamwork
+          type: object
+          properties:
+            installedApps:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.userScopeTeamsAppInstallation'
+              description: The apps installed in the personal scope of this user.
+          additionalProperties:
+            type: object
     microsoft.graph.hashes:
       title: hashes
       type: object
@@ -26190,6 +27465,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.chatMessagePolicyViolationDlpActionTypes'
         justificationText:
           type: string
+          description: Justification text provided by the sender of the message when overriding a policy violation.
           nullable: true
         policyTip:
           $ref: '#/components/schemas/microsoft.graph.chatMessagePolicyViolationPolicyTip'
@@ -27112,6 +28388,16 @@ components:
           $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
       additionalProperties:
         type: object
+    microsoft.graph.userScopeTeamsAppInstallation:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.teamsAppInstallation'
+        - title: userScopeTeamsAppInstallation
+          type: object
+          properties:
+            chat:
+              $ref: '#/components/schemas/microsoft.graph.chat'
+          additionalProperties:
+            type: object
     microsoft.graph.workbookCommentReply:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -27381,15 +28667,18 @@ components:
       properties:
         complianceUrl:
           type: string
+          description: 'The URL a user can visit to read about the data loss prevention policies for the organization. (ie, policies about what users shouldn''t say in chats)'
           nullable: true
         generalText:
           type: string
+          description: Explanatory text shown to the sender of the message.
           nullable: true
         matchedConditionDescriptions:
           type: array
           items:
             type: string
             nullable: true
+          description: 'The list of improper data in the message that was detected by the data loss prevention app. Each DLP app defines its own conditions, examples include ''Credit Card Number'' and ''Social Security Number''.'
       additionalProperties:
         type: object
     microsoft.graph.chatMessagePolicyViolationUserActionTypes:
@@ -27951,6 +29240,13 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.chat:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: chat
+          type: object
+          additionalProperties:
+            type: object
     microsoft.graph.workbookFilter:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
