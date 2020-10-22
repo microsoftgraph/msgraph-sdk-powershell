@@ -2,6 +2,8 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
+using System.Security.Cryptography.X509Certificates;
+
 namespace Microsoft.Graph.PowerShell.Authentication
 {
     public enum AuthenticationType
@@ -28,5 +30,6 @@ namespace Microsoft.Graph.PowerShell.Authentication
         string Account { get; set; }
         string AppName { get; set; }
         ContextScope ContextScope { get; set; }
+        X509Certificate2 Certificate { get; set; }
     }
 }

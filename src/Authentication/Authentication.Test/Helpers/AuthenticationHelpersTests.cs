@@ -3,6 +3,7 @@
     using Microsoft.Graph.Auth;
     using Microsoft.Graph.PowerShell.Authentication;
     using Microsoft.Graph.PowerShell.Authentication.Helpers;
+
     using System;
     using System.Linq;
     using System.Net;
@@ -10,6 +11,7 @@
     using System.Security.Cryptography;
     using System.Security.Cryptography.X509Certificates;
     using System.Threading.Tasks;
+
     using Xunit;
     public class AuthenticationHelpersTests
     {
@@ -78,7 +80,7 @@
                 CertificateName = "cn=dummyCert",
                 ContextScope = ContextScope.Process
             };
-            CreateSelfSignedCert(appOnlyAuthContext.CertificateName);
+            CreateAndStoreSelfSignedCert(appOnlyAuthContext.CertificateName);
 
             // Act
             IAuthenticationProvider authProvider = AuthenticationHelpers.GetAuthProvider(appOnlyAuthContext);
@@ -89,10 +91,50 @@
             // reset
             DeleteSelfSignedCert(appOnlyAuthContext.CertificateName);
             GraphSession.Reset();
-            
+
         }
 
-        private void CreateSelfSignedCert(string certName)
+        [Fact]
+        public void ShouldUseInMemoryCertificateWhenProvided()
+        {
+            // Arrange
+            var certificate = CreateSelfSignedCert("cn=inmemorycert");
+            AuthContext appOnlyAuthContext = new AuthContext
+            {
+                AuthType = AuthenticationType.AppOnly,
+                ClientId = Guid.NewGuid().ToString(),
+                Certificate = certificate,
+                ContextScope = ContextScope.Process
+            };
+            // Act
+            IAuthenticationProvider authProvider = AuthenticationHelpers.GetAuthProvider(appOnlyAuthContext);
+
+            // Assert
+            Assert.IsType<ClientCredentialProvider>(authProvider);
+            var clientCredentialProvider = (ClientCredentialProvider) authProvider;
+            // Assert: That the certificate created and set above is the same as used here.
+            Assert.Equal(clientCredentialProvider.ClientApplication.AppConfig.ClientCredentialCertificate, certificate);
+            GraphSession.Reset();
+        }
+        /// <summary>
+        ///     Create and Store a Self Signed Certificate
+        /// </summary>
+        /// <param name="certName"></param>
+        private void CreateAndStoreSelfSignedCert(string certName)
+        {
+            var cert = CreateSelfSignedCert(certName);
+            using (var store = new X509Store(StoreName.My, StoreLocation.CurrentUser))
+            {
+                store.Open(OpenFlags.ReadWrite);
+                store.Add(cert);
+            }
+        }
+        /// <summary>
+        ///     Create a Self Signed Certificate
+        /// </summary>
+        /// <param name="certName"></param>
+        /// <returns></returns>
+        private X509Certificate2 CreateSelfSignedCert(string certName)
         {
             ECDsa ecdsaKey = ECDsa.Create();
             CertificateRequest certificateRequest = new CertificateRequest(certName, ecdsaKey, HashAlgorithmName.SHA256);
@@ -108,11 +150,8 @@
             {
                 dummyCert = new X509Certificate2(cert.Export(X509ContentType.Pfx, "P@55w0rd"), "P@55w0rd", X509KeyStorageFlags.PersistKeySet);
             }
-            using (X509Store store = new X509Store(StoreName.My, StoreLocation.CurrentUser))
-            {
-                store.Open(OpenFlags.ReadWrite);
-                store.Add(dummyCert);
-            }
+
+            return dummyCert;
         }
 
         private void DeleteSelfSignedCert(string certificateName)

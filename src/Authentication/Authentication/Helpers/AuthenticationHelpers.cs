@@ -7,6 +7,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
     using Microsoft.Graph.PowerShell.Authentication.Models;
     using Microsoft.Graph.PowerShell.Authentication.TokenCache;
     using Microsoft.Identity.Client;
+
     using System;
     using System.Linq;
     using System.Net;
@@ -14,6 +15,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
     using System.Security.Cryptography.X509Certificates;
     using System.Threading;
     using System.Threading.Tasks;
+
     using AuthenticationException = System.Security.Authentication.AuthenticationException;
 
     internal static class AuthenticationHelpers
@@ -40,7 +42,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                         .Build();
 
                         ConfigureTokenCache(publicClientApp.UserTokenCache, authContext);
-                        authProvider = new DeviceCodeProvider(publicClientApp, authContext.Scopes, async (result) => {
+                        authProvider = new DeviceCodeProvider(publicClientApp, authContext.Scopes, async (result) =>
+                        {
                             await Console.Out.WriteLineAsync(result.Message);
                         });
                         break;
@@ -51,7 +54,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                         .Create(authContext.ClientId)
                         .WithTenantId(authContext.TenantId)
                         .WithAuthority(authorityUrl)
-                        .WithCertificate(string.IsNullOrEmpty(authContext.CertificateThumbprint) ? GetCertificateByName(authContext.CertificateName) : GetCertificateByThumbprint(authContext.CertificateThumbprint))
+                        .WithCertificate(GetCertificate(authContext))
                         .Build();
 
                         ConfigureTokenCache(confidentialClientApp.AppTokenCache, authContext);
@@ -61,7 +64,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                     }
                 case AuthenticationType.UserProvidedAccessToken:
                     {
-                        authProvider = new DelegateAuthenticationProvider((requestMessage) => {
+                        authProvider = new DelegateAuthenticationProvider((requestMessage) =>
+                        {
                             requestMessage.Headers.Authorization = new AuthenticationHeaderValue("Bearer",
                                 new NetworkCredential(string.Empty, GraphSession.Instance.UserProvidedToken).Password);
                             return Task.CompletedTask;
@@ -70,6 +74,27 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                     }
             }
             return authProvider;
+        }
+        /// <summary>
+        ///     CGet a 
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
+        private static X509Certificate2 GetCertificate(IAuthContext context)
+        {
+            if (!string.IsNullOrWhiteSpace(context.CertificateThumbprint))
+            {
+                return GetCertificateByThumbprint(context.CertificateThumbprint);
+            }
+            
+            else if (!string.IsNullOrWhiteSpace(context.CertificateName))
+            {
+                return GetCertificateByName(context.CertificateName);
+            }
+            else
+            {
+                return context.Certificate;
+            }
         }
 
         private static string GetAuthorityUrl(IAuthContext authContext)
@@ -108,7 +133,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 
         private static void ConfigureTokenCache(ITokenCache tokenCache, IAuthContext authContext)
         {
-            tokenCache.SetBeforeAccess((TokenCacheNotificationArgs args) => {
+            tokenCache.SetBeforeAccess((TokenCacheNotificationArgs args) =>
+            {
                 try
                 {
                     _cacheLock.EnterReadLock();
@@ -120,7 +146,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                 }
             });
 
-            tokenCache.SetAfterAccess((TokenCacheNotificationArgs args) => {
+            tokenCache.SetAfterAccess((TokenCacheNotificationArgs args) =>
+            {
                 if (args.HasStateChanged)
                 {
                     try
@@ -164,8 +191,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                     .FirstOrDefault();
             }
             return xCertificate;
-        } 
-        
+        }
+
         /// <summary>
         /// Gets unexpired certificate of the specified certificate subject name for the current user in My store..
         /// </summary>
