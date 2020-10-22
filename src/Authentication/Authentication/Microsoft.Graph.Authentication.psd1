@@ -12,7 +12,7 @@
 RootModule = './Microsoft.Graph.Authentication.psm1'
 
 # Version number of this module.
-ModuleVersion = '1.0.1'
+ModuleVersion = '1.1.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core', 'Desktop'
@@ -106,7 +106,7 @@ PrivateData = @{
         ProjectUri = 'https://github.com/microsoftgraph/msgraph-sdk-powershell'
 
         # A URL to an icon representing this module.
-        IconUri = 'https://raw.githubusercontent.com/microsoftgraph/g-raph/master/g-raph.png'
+        IconUri = 'https://raw.githubusercontent.com/microsoftgraph/msgraph-sdk-powershell/po/release1.1.0/documentation/images/graph_color256.png'
 
         # ReleaseNotes of this module
         ReleaseNotes = 'See https://aka.ms/GraphPowerShell-Release.'
