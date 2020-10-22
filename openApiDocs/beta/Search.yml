@@ -23,7 +23,6 @@ paths:
             type: array
             items:
               enum:
-                - id
                 - connections
               type: string
         - name: $expand
@@ -405,17 +404,15 @@ paths:
 components:
   schemas:
     microsoft.graph.external:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: external
-          type: object
-          properties:
-            connections:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.externalConnection'
-          additionalProperties:
-            type: object
+      title: external
+      type: object
+      properties:
+        connections:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.externalConnection'
+      additionalProperties:
+        type: object
     microsoft.graph.externalConnection:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'

@@ -23,7 +23,6 @@ paths:
             type: array
             items:
               enum:
-                - id
                 - ediscovery
               type: string
         - name: $expand
@@ -968,15 +967,13 @@ paths:
 components:
   schemas:
     microsoft.graph.compliance:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: compliance
-          type: object
-          properties:
-            ediscovery:
-              $ref: '#/components/schemas/microsoft.graph.ediscovery'
-          additionalProperties:
-            type: object
+      title: compliance
+      type: object
+      properties:
+        ediscovery:
+          $ref: '#/components/schemas/microsoft.graph.ediscovery'
+      additionalProperties:
+        type: object
     microsoft.graph.ediscovery:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -996,8 +993,7 @@ components:
           type: object
           properties:
             closedBy:
-              type: string
-              nullable: true
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
             closedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -1018,8 +1014,7 @@ components:
               type: string
               nullable: true
             lastModifiedBy:
-              type: string
-              nullable: true
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -1040,8 +1035,7 @@ components:
           type: object
           properties:
             createdBy:
-              type: string
-              nullable: true
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -1063,8 +1057,7 @@ components:
           type: object
           properties:
             createdBy:
-              type: string
-              nullable: true
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -1074,8 +1067,7 @@ components:
               type: string
               nullable: true
             lastModifiedBy:
-              type: string
-              nullable: true
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -1095,6 +1087,18 @@ components:
           description: Read-only.
       additionalProperties:
         type: object
+    microsoft.graph.identitySet:
+      title: identitySet
+      type: object
+      properties:
+        application:
+          $ref: '#/components/schemas/microsoft.graph.identity'
+        device:
+          $ref: '#/components/schemas/microsoft.graph.identity'
+        user:
+          $ref: '#/components/schemas/microsoft.graph.identity'
+      additionalProperties:
+        type: object
     microsoft.graph.caseStatus:
       title: caseStatus
       enum:
@@ -1112,6 +1116,20 @@ components:
       properties:
         error:
           $ref: '#/components/schemas/odata.error.main'
+      additionalProperties:
+        type: object
+    microsoft.graph.identity:
+      title: identity
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          nullable: true
+        id:
+          type: string
+          description: Unique identifier for the identity.
+          nullable: true
       additionalProperties:
         type: object
     odata.error.main:
