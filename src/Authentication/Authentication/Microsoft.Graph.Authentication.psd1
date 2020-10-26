@@ -12,7 +12,7 @@
 RootModule = './Microsoft.Graph.Authentication.psm1'
 
 # Version number of this module.
-ModuleVersion = '1.0.1'
+ModuleVersion = '1.1.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core', 'Desktop'
@@ -73,7 +73,8 @@ FunctionsToExport = @()
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 CmdletsToExport = 'Connect-MgGraph', 'Disconnect-MgGraph', 'Get-MgContext', 'Get-MgProfile', 
-               'Select-MgProfile', 'Invoke-MgGraphRequest'
+               'Select-MgProfile', 'Invoke-MgGraphRequest', 'Add-MgEnvironment', 'Get-MgEnvironment',
+               'Remove-MgEnvironment', 'Set-MgEnvironment'
 
 # Variables to export from this module
 # VariablesToExport = @()
@@ -105,7 +106,7 @@ PrivateData = @{
         ProjectUri = 'https://github.com/microsoftgraph/msgraph-sdk-powershell'
 
         # A URL to an icon representing this module.
-        IconUri = 'https://raw.githubusercontent.com/microsoftgraph/g-raph/master/g-raph.png'
+        IconUri = 'https://raw.githubusercontent.com/microsoftgraph/msgraph-sdk-powershell/po/release1.1.0/documentation/images/graph_color256.png'
 
         # ReleaseNotes of this module
         ReleaseNotes = 'See https://aka.ms/GraphPowerShell-Release.'

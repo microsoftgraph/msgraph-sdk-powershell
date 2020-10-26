@@ -47,4 +47,4 @@ $app4 = New-MgApplication -"ClientCredentialApp" $AppName `
                     -KeyCredentials @(@{ Type = "AsymmetricX509Cert"; Usage = "Verify"; Key= $Certificate.RawData })
 
 # Create corresponding service principal.
-New-MgServicePrincipal -AppId $appRegistration.AppId
+New-MgServicePrincipal -AppId $app4.AppId

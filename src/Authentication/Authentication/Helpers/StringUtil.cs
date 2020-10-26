@@ -197,7 +197,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
         private static Hashtable PopulateHashTableFromJDictionary(JObject entries, out Exception exception)
         {
             exception = null;
-            Hashtable result = new Hashtable(entries.Count);
+            Hashtable result = new Hashtable(entries.Count, StringComparer.OrdinalIgnoreCase);
             foreach (var entry in entries)
             {
                 // Case sensitive duplicates should normally not occur since JsonConvert.DeserializeObject

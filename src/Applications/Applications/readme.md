@@ -38,6 +38,9 @@ subject-prefix: ''
 
 ``` yaml
 directive:
+# Remove invalid paths.
+  - remove-path-by-operation: onPremisesPublishingProfiles\.(connectors\.memberOf_.*|connectors_GetMemberOf|connectorGroups\.members_.*|connectorGroups_(Get|Create|Update|Delete)Members)
+
 # Remove cmdlets
   - where:
       verb: Test
@@ -69,10 +72,15 @@ directive:
       subject: ^OnPremis(PublishingProfile.*)$
     set:
       subject: OnPremise$1
+# Fix cmdlet name
+  - where:
+      subject: (^OnPremisePublishingProfileConnectorMember$)
+    set:
+      subject: $1Of
 ```
 ### Versioning
 
 ``` yaml
-module-version: 1.0.1
+module-version: 1.1.0
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

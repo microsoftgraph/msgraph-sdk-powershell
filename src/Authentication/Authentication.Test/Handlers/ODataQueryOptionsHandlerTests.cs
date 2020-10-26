@@ -1,7 +1,8 @@
 namespace Microsoft.Graph.Authentication.Test
 {
-    using Microsoft.Graph.PowerShell.Authentication.Helpers;
+    using Microsoft.Graph.PowerShell.Authentication.Handlers;
     using System;
+    using System.Linq;
     using System.Net.Http;
     using System.Threading;
     using System.Threading.Tasks;
@@ -23,8 +24,17 @@ namespace Microsoft.Graph.Authentication.Test
 
         public void Dispose()
         {
-            this._invoker.Dispose();
+            Dispose(true);
         }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                this._invoker.Dispose();
+            }
+        }
+
 
         [Fact]
         public async Task ShouldAddDollarSignToStandardODataQueryOptionsToV1Endpoint()
@@ -51,6 +61,7 @@ namespace Microsoft.Graph.Authentication.Test
             Assert.Contains($"${filterParam}", sentRequestQuery);
             Assert.Contains($"${expandParam}", sentRequestQuery);
             Assert.Equal(5, sentRequestQuery.Split('&').Length);
+            Assert.Equal(1, response.RequestMessage.RequestUri.AbsoluteUri.Count(u => (u == '?')));
         }
 
         [Fact]
