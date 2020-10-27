@@ -228,7 +228,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 
         internal bool ShouldCheckHttpStatus => !SkipHttpErrorCheck;
 
-        private static async Task<ErrorRecord> GenerateHttpErrorRecord(
+        private static async Task<ErrorRecord> GenerateHttpErrorRecordAsync(
             HttpMessageFormatter httpResponseMessageFormatter,
             HttpRequestMessage httpRequestMessage)
         {
@@ -257,7 +257,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         ///     When -Verbose is specified, print out response status
         /// </summary>
         /// <param name="requestMessageFormatter"></param>
-        private async Task ReportRequestStatus(HttpMessageFormatter requestMessageFormatter)
+        private async Task ReportRequestStatusAsync(HttpMessageFormatter requestMessageFormatter)
         {
             using (NoSynchronizationContext)
             {
@@ -280,7 +280,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         ///     When -Verbose is specified, print out response status
         /// </summary>
         /// <param name="responseMessageFormatter"></param>
-        private async Task ReportResponseStatus(HttpMessageFormatter responseMessageFormatter)
+        private async Task ReportResponseStatusASync(HttpMessageFormatter responseMessageFormatter)
         {
             using (NoSynchronizationContext)
             {
@@ -540,7 +540,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         /// <param name="client"></param>
         /// <param name="request"></param>
         /// <returns></returns>
-        private async Task<HttpResponseMessage> GetResponse(HttpClient client, HttpRequestMessage request)
+        private async Task<HttpResponseMessage> GetResponseAsync(HttpClient client, HttpRequestMessage request)
         {
             using (NoSynchronizationContext)
             {
@@ -1100,15 +1100,15 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                                 FillRequestStream(httpRequestMessage);
                                 try
                                 {
-                                    await ReportRequestStatus(httpRequestMessageFormatter);
-                                    var httpResponseMessage = await GetResponse(client, httpRequestMessage);
+                                    await ReportRequestStatusAsync(httpRequestMessageFormatter);
+                                    var httpResponseMessage = await GetResponseAsync(client, httpRequestMessage);
                                     using (var httpResponseMessageFormatter = new HttpMessageFormatter(httpResponseMessage))
                                     {
-                                        await ReportResponseStatus(httpResponseMessageFormatter);
+                                        await ReportResponseStatusASync(httpResponseMessageFormatter);
                                         var isSuccess = httpResponseMessage.IsSuccessStatusCode;
                                         if (ShouldCheckHttpStatus && !isSuccess)
                                         {
-                                            var httpErrorRecord = await GenerateHttpErrorRecord(httpResponseMessageFormatter, httpRequestMessage);
+                                            var httpErrorRecord = await GenerateHttpErrorRecordAsync(httpResponseMessageFormatter, httpRequestMessage);
                                             ThrowTerminatingError(httpErrorRecord);
                                         }
 
