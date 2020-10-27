@@ -173,11 +173,12 @@ namespace Microsoft.Graph.PowerShell.Cmdlets.Custom
         }
 
         /// <summary>
-        /// Adds quote marks around $search values if non exists.
+        /// Adds quotation mark around $search values if none exists.
+        /// This is needed to support KQL e.g. "prop:value".
         /// </summary>
         /// <param name="boundParameters">The bound parameters of the calling cmdlet.</param>
         /// <param name="search">The $search value.</param>
-        /// <returns>A formated search values.</returns>
+        /// <returns>A formated search value.</returns>
         internal string FormatSearchValue(global::System.Collections.Generic.Dictionary<string, object> boundParameters, string search)
         {
             if (!boundParameters.ContainsKey("Search"))
