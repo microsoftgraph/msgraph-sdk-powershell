@@ -76,7 +76,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
             return authProvider;
         }
         /// <summary>
-        ///     Gets a  certificate based on the current context.
+        ///     Gets a certificate based on the current context.
         /// </summary>
         /// <param name="context">Current <see cref="IAuthContext"/> context</param>
         /// <returns>A <see cref="X509Certificate2"/> based on provided <see cref="IAuthContext"/> context</returns>
