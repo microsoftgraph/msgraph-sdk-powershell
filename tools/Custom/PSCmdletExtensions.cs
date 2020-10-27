@@ -39,7 +39,7 @@ namespace Microsoft.Graph.PowerShell
 
                 if (provider.Name != "FileSystem" || paths.Count == 0)
                 {
-                    cmdlet.ThrowTerminatingError(new ErrorRecord(new Exception("Invalid path."), string.Empty, ErrorCategory.InvalidArgument, filePath));
+                    cmdlet.ThrowTerminatingError(new ErrorRecord(new Exception($"Invalid path {filePath}."), string.Empty, ErrorCategory.InvalidArgument, filePath));
                 }
                 if (paths.Count > 1)
                 {
@@ -47,9 +47,9 @@ namespace Microsoft.Graph.PowerShell
                 }
                 providerPath = paths[0];
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                providerPath = filePath;
+                cmdlet.ThrowTerminatingError(new ErrorRecord(ex, string.Empty, ErrorCategory.InvalidArgument, filePath));
             }
 
             return providerPath;

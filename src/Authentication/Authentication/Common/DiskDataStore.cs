@@ -223,6 +223,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Common
         /// <returns>A <see cref="FileStream"/> to the specified path with exclusive write.</returns>
         public Stream OpenForExclusiveWrite(string path)
         {
+            string directory = Path.GetDirectoryName(path);
+            Directory.CreateDirectory(directory);
             return File.Open(path, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.None);
         }
     }
