@@ -32,7 +32,7 @@ param (
     Uninstall-Module $ExistingAuthModule.Name -Force -AllVersions -ErrorAction Continue
     Remove-Module  $ExistingAuthModule.Name -Force -ErrorAction Continue
     Install-Module $ExistingAuthModule.Name -Repository $RepositoryName -Force -AllowClobber -AllowPrerelease:$AllowPreRelease -Scope CurrentUser
-    Import-Module $ExistingAuthModule.Name -Force -Scope Local
+    Import-Module $ExistingAuthModule.Name -Force -Scope Global
     $AuthModuleDirectory = Join-Path $OutputFolder $ExistingAuthModule.Name
     if (-not (Test-Path $AuthModuleDirectory)) {
         New-Item -Path $AuthModuleDirectory -Type Directory -Force

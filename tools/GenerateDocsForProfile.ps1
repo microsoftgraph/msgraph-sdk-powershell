@@ -3,7 +3,7 @@
 
     param (
         [string] $GraphProfile = "beta",
-        [string] $ModuleMappingConfigPath,
+        [string] $ModuleMappingConfigPath =(Join-Path $PSScriptRoot "..\config\ModulesMapping.jsonc"),
         [string] $RepositoryName = "PSGallery",
         [switch] $AllowPreRelease,
         [string] $OutputFolder
@@ -15,11 +15,12 @@
 
         $ModuleMapping.Keys | ForEach-Object {
             $ModuleName = $_
-            $ExistingWorkloadModule = Find-Module "Microsoft.Graph.$ModuleName"-Repository $RepositoryName -AllowPrerelease:$AllowPreRelease
+            $ExistingWorkloadModule = Find-Module "Microsoft.Graph.$ModuleName" -Repository $RepositoryName -AllowPrerelease:$AllowPreRelease
             Write-Warning "$ModuleName $ExistingWorkloadModule"
-            Uninstall-Module $ExistingWorkloadModule.Name -Force -AllVersions
+            Uninstall-Module $ExistingWorkloadModule.Name -Force -AllVersions -ErrorAction Continue
+            Remove-Module $ExistingWorkloadModule.Name -Force -ErrorAction Continue
             Install-Module $ExistingWorkloadModule.Name -Repository $RepositoryName -Force -AllowClobber -AllowPrerelease:$AllowPreRelease -Scope CurrentUser
-            Import-Module $ExistingWorkloadModule.Name -Force -Scope Local
+            Import-Module $ExistingWorkloadModule.Name -Force -Scope Global
             $ExistingWorkloadModulePath = Join-Path $OutputFolder $GraphProfile $ExistingWorkloadModule.Name
             if (-not (Test-Path (Join-Path $ExistingWorkloadModulePath "*"))) {
                 New-Item -Path $ExistingWorkloadModulePath -Type Directory -Force
