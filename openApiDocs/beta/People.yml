@@ -6936,7 +6936,7 @@ components:
               type: string
               format: date-time
             source:
-              $ref: '#/components/schemas/microsoft.graph.personDataSource'
+              $ref: '#/components/schemas/microsoft.graph.personDataSources'
           additionalProperties:
             type: object
     microsoft.graph.localeInfo:
@@ -7036,19 +7036,25 @@ components:
           type: string
           nullable: true
         activities:
-          type: string
-          nullable: true
+          type: array
+          items:
+            type: string
+            nullable: true
         awards:
-          type: string
-          nullable: true
+          type: array
+          items:
+            type: string
+            nullable: true
         description:
           type: string
           nullable: true
         displayName:
           type: string
         fieldsOfStudy:
-          type: string
-          nullable: true
+          type: array
+          items:
+            type: string
+            nullable: true
         grade:
           type: string
           nullable: true
@@ -7319,6 +7325,17 @@ components:
         userHasVerifiedAccuracy:
           type: boolean
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.personDataSources:
+      title: personDataSources
+      type: object
+      properties:
+        type:
+          type: array
+          items:
+            type: string
+            nullable: true
       additionalProperties:
         type: object
     microsoft.graph.physicalAddressType:
