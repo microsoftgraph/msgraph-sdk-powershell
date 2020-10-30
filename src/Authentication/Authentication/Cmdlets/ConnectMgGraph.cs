@@ -3,10 +3,6 @@
 // ------------------------------------------------------------------------------
 namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 {
-    using Microsoft.Graph.Auth;
-    using Microsoft.Graph.PowerShell.Authentication.Helpers;
-    using Microsoft.Graph.PowerShell.Authentication.Models;
-    using Microsoft.Identity.Client;
     using System;
     using System.Collections.Generic;
     using System.Linq;
@@ -16,13 +12,25 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
     using System.Threading.Tasks;
     using System.Net;
     using System.Globalization;
+    using System.Collections;
+
+    using Microsoft.Identity.Client;
+
+    using Microsoft.Graph.Auth;
+    using Microsoft.Graph.PowerShell.Authentication.Helpers;
+    using Microsoft.Graph.PowerShell.Authentication.Models;
+
     using Microsoft.Graph.PowerShell.Authentication.Interfaces;
     using Microsoft.Graph.PowerShell.Authentication.Common;
+
+    using static Microsoft.Graph.PowerShell.Authentication.Helpers.AsyncHelpers;
 
     [Cmdlet(VerbsCommunications.Connect, "MgGraph", DefaultParameterSetName = Constants.UserParameterSet)]
     [Alias("Connect-Graph")]
     public class ConnectMgGraph : PSCmdlet, IModuleAssemblyInitializer, IModuleAssemblyCleanup
     {
+        private readonly CancellationTokenSource _cancellationTokenSource = new CancellationTokenSource();
+
         [Parameter(ParameterSetName = Constants.UserParameterSet,
             Position = 1,
             HelpMessage = "An array of delegated permissions to consent to.")]
@@ -45,7 +53,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             Position = 3,
             HelpMessage = "The thumbprint of your certificate. The Certificate will be retrieved from the current user's certificate store.")]
         public string CertificateThumbprint { get; set; }
-        
+
         [Parameter(ParameterSetName = Constants.AccessTokenParameterSet,
             Position = 1,
             HelpMessage = "Specifies a bearer token for Microsoft Graph service. Access tokens do timeout and you'll have to handle their refresh.")]
@@ -100,65 +108,103 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
-            IAuthContext authContext = new AuthContext { TenantId = TenantId };
-            cancellationTokenSource = new CancellationTokenSource();
-            // Set selected environment to the session object.
-            GraphSession.Instance.Environment = environment;
-
-            switch (ParameterSetName)
-            {
-                case Constants.UserParameterSet:
-                    {
-                        // 2 mins timeout. 1 min < HTTP timeout.
-                        TimeSpan authTimeout = new TimeSpan(0, 0, Constants.MaxDeviceCodeTimeOut);
-                        cancellationTokenSource = new CancellationTokenSource(authTimeout);
-                        authContext.AuthType = AuthenticationType.Delegated;
-                        string[] processedScopes = ProcessScopes(Scopes);
-                        authContext.Scopes = processedScopes.Length == 0 ? new string[] { "User.Read" } : processedScopes;
-                        // Default to CurrentUser but allow the customer to change this via `ContextScope` param.
-                        authContext.ContextScope = this.IsParameterBound(nameof(ContextScope)) ? ContextScope : ContextScope.CurrentUser;
-                    }
-                    break;
-                case Constants.AppParameterSet:
-                    {
-                        authContext.AuthType = AuthenticationType.AppOnly;
-                        authContext.ClientId = ClientId;
-                        authContext.CertificateThumbprint = CertificateThumbprint;
-                        authContext.CertificateName = CertificateName;
-                        // Default to Process but allow the customer to change this via `ContextScope` param.
-                        authContext.ContextScope = this.IsParameterBound(nameof(ContextScope)) ? ContextScope : ContextScope.Process;
-                    }
-                    break;
-                case Constants.AccessTokenParameterSet:
-                    {
-                        authContext.AuthType = AuthenticationType.UserProvidedAccessToken;
-                        authContext.ContextScope = ContextScope.Process;
-                        // Store user provided access token to a session object.
-                        GraphSession.Instance.UserProvidedToken = new NetworkCredential(string.Empty, AccessToken).SecurePassword;
-                    }
-                    break;
-            }
-
-            CancellationToken cancellationToken = cancellationTokenSource.Token;
-
             try
             {
-                // Gets a static instance of IAuthenticationProvider when the client app hasn't changed.
-                IAuthenticationProvider authProvider = AuthenticationHelpers.GetAuthProvider(authContext);
-                IClientApplicationBase clientApplication = null;
-                if (ParameterSetName == Constants.UserParameterSet)
+                using (var asyncCommandRuntime = new CustomAsyncCommandRuntime(this, _cancellationTokenSource.Token))
                 {
-                    clientApplication = (authProvider as DeviceCodeProvider).ClientApplication;
+                    asyncCommandRuntime.Wait(ProcessRecordAsync(), _cancellationTokenSource.Token);
                 }
-                else if (ParameterSetName == Constants.AppParameterSet)
+            }
+            catch (AggregateException aggregateException)
+            {
+                // unroll the inner exceptions to get the root cause
+                foreach (var innerException in aggregateException.Flatten().InnerExceptions)
                 {
-                    clientApplication = (authProvider as ClientCredentialProvider).ClientApplication;
+                    var errorRecords = innerException.Data;
+                    if (errorRecords.Count < 1)
+                    {
+                        foreach (DictionaryEntry dictionaryEntry in errorRecords)
+                        {
+                            WriteError((ErrorRecord)dictionaryEntry.Value);
+                        }
+                    }
+                    else
+                    {
+                        WriteError(new ErrorRecord(innerException, string.Empty, ErrorCategory.NotSpecified, null));
+                    }
+                }
+            }
+            catch (Exception exception) when (exception as PipelineStoppedException == null ||
+                                              (exception as PipelineStoppedException).InnerException != null)
+            {
+                // Write exception out to error channel.
+                WriteError(new ErrorRecord(exception, string.Empty, ErrorCategory.NotSpecified, null));
+            }
+        }
+
+        private async Task ProcessRecordAsync()
+        {
+            using (NoSynchronizationContext)
+            {
+                IAuthContext authContext = new AuthContext { TenantId = TenantId };
+                cancellationTokenSource = new CancellationTokenSource();
+                // Set selected environment to the session object.
+                GraphSession.Instance.Environment = environment;
+
+                switch (ParameterSetName)
+                {
+                    case Constants.UserParameterSet:
+                        {
+                            // 2 mins timeout. 1 min < HTTP timeout.
+                            TimeSpan authTimeout = new TimeSpan(0, 0, Constants.MaxDeviceCodeTimeOut);
+                            cancellationTokenSource = new CancellationTokenSource(authTimeout);
+                            authContext.AuthType = AuthenticationType.Delegated;
+                            string[] processedScopes = ProcessScopes(Scopes);
+                            authContext.Scopes = processedScopes.Length == 0 ? new string[] { "User.Read" } : processedScopes;
+                            // Default to CurrentUser but allow the customer to change this via `ContextScope` param.
+                            authContext.ContextScope = this.IsParameterBound(nameof(ContextScope)) ? ContextScope : ContextScope.CurrentUser;
+                        }
+                        break;
+                    case Constants.AppParameterSet:
+                        {
+                            authContext.AuthType = AuthenticationType.AppOnly;
+                            authContext.ClientId = ClientId;
+                            authContext.CertificateThumbprint = CertificateThumbprint;
+                            authContext.CertificateName = CertificateName;
+                            // Default to Process but allow the customer to change this via `ContextScope` param.
+                            authContext.ContextScope = this.IsParameterBound(nameof(ContextScope)) ? ContextScope : ContextScope.Process;
+                        }
+                        break;
+                    case Constants.AccessTokenParameterSet:
+                        {
+                            authContext.AuthType = AuthenticationType.UserProvidedAccessToken;
+                            authContext.ContextScope = ContextScope.Process;
+                            // Store user provided access token to a session object.
+                            GraphSession.Instance.UserProvidedToken = new NetworkCredential(string.Empty, AccessToken).SecurePassword;
+                        }
+                        break;
                 }
 
-                // Incremental scope consent without re-instantiating the auth provider. We will use a static instance.
-                GraphRequestContext graphRequestContext = new GraphRequestContext();
-                graphRequestContext.CancellationToken = cancellationToken;
-                graphRequestContext.MiddlewareOptions = new Dictionary<string, IMiddlewareOption>
+                CancellationToken cancellationToken = cancellationTokenSource.Token;
+
+                try
+                {
+                    // Gets a static instance of IAuthenticationProvider when the client app hasn't changed.
+                    IAuthenticationProvider authProvider = AuthenticationHelpers.GetAuthProvider(authContext);
+                    IClientApplicationBase clientApplication = null;
+                    if (ParameterSetName == Constants.UserParameterSet)
+                    {
+                        clientApplication = (authProvider as DeviceCodeProvider).ClientApplication;
+                    }
+                    else if (ParameterSetName == Constants.AppParameterSet)
+                    {
+                        clientApplication = (authProvider as ClientCredentialProvider).ClientApplication;
+                    }
+
+                    // Incremental scope consent without re-instantiating the auth provider. We will use a static instance.
+                    GraphRequestContext graphRequestContext = new GraphRequestContext();
+                    graphRequestContext.CancellationToken = cancellationToken;
+                    graphRequestContext.MiddlewareOptions = new Dictionary<string, IMiddlewareOption>
                 {
                     {
                         typeof(AuthenticationHandlerOption).ToString(),
@@ -173,44 +219,45 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                     }
                 };
 
-                // Trigger consent.
-                HttpRequestMessage httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, "https://graph.microsoft.com/v1.0/me");
-                httpRequestMessage.Properties.Add(typeof(GraphRequestContext).ToString(), graphRequestContext);
-                authProvider.AuthenticateRequestAsync(httpRequestMessage).GetAwaiter().GetResult();
+                    // Trigger consent.
+                    HttpRequestMessage httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, "https://graph.microsoft.com/v1.0/me");
+                    httpRequestMessage.Properties.Add(typeof(GraphRequestContext).ToString(), graphRequestContext);
+                    await authProvider.AuthenticateRequestAsync(httpRequestMessage);
 
-                IAccount account = null;
-                if (clientApplication != null)
-                {
-                    // Only get accounts when we are using MSAL to get an access token.
-                    IEnumerable<IAccount> accounts = clientApplication.GetAccountsAsync().GetAwaiter().GetResult();
-                    account = accounts.FirstOrDefault();
-                }
-                DecodeJWT(httpRequestMessage.Headers.Authorization?.Parameter, account, ref authContext);
+                    IAccount account = null;
+                    if (clientApplication != null)
+                    {
+                        // Only get accounts when we are using MSAL to get an access token.
+                        IEnumerable<IAccount> accounts = clientApplication.GetAccountsAsync().GetAwaiter().GetResult();
+                        account = accounts.FirstOrDefault();
+                    }
+                    DecodeJWT(httpRequestMessage.Headers.Authorization?.Parameter, account, ref authContext);
 
-                // Save auth context to session state.
-                GraphSession.Instance.AuthContext = authContext;
-            }
-            catch (AuthenticationException authEx)
-            {
-                if ((authEx.InnerException is TaskCanceledException) && cancellationToken.IsCancellationRequested)
-                {
-                    // DeviceCodeTimeout
-                    throw new Exception(string.Format(
-                            CultureInfo.CurrentCulture,
-                            ErrorConstants.Message.DeviceCodeTimeout,
-                            Constants.MaxDeviceCodeTimeOut));
+                    // Save auth context to session state.
+                    GraphSession.Instance.AuthContext = authContext;
                 }
-                else
+                catch (AuthenticationException authEx)
                 {
-                    throw authEx.InnerException ?? authEx;
+                    if ((authEx.InnerException is TaskCanceledException) && cancellationToken.IsCancellationRequested)
+                    {
+                        // DeviceCodeTimeout
+                        throw new Exception(string.Format(
+                                CultureInfo.CurrentCulture,
+                                ErrorConstants.Message.DeviceCodeTimeout,
+                                Constants.MaxDeviceCodeTimeOut));
+                    }
+                    else
+                    {
+                        throw authEx.InnerException ?? authEx;
+                    }
                 }
-            }
-            catch (Exception ex)
-            {
-                throw ex.InnerException ?? ex;
-            }
+                catch (Exception ex)
+                {
+                    throw ex.InnerException ?? ex;
+                }
 
-            WriteObject("Welcome To Microsoft Graph!");
+                WriteObject("Welcome To Microsoft Graph!");
+            }
         }
 
         protected override void StopProcessing()

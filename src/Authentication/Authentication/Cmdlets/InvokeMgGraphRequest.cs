@@ -1083,7 +1083,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             base.BeginProcessing();
         }
 
-        protected async Task ProcessRecordAsync()
+        private async Task ProcessRecordAsync()
         {
             using (NoSynchronizationContext)
             {
