@@ -29,8 +29,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
     [Alias("Connect-Graph")]
     public class ConnectMgGraph : PSCmdlet, IModuleAssemblyInitializer, IModuleAssemblyCleanup
     {
-        private readonly CancellationTokenSource _cancellationTokenSource = new CancellationTokenSource();
-
         [Parameter(ParameterSetName = Constants.UserParameterSet,
             Position = 1,
             HelpMessage = "An array of delegated permissions to consent to.")]
@@ -77,7 +75,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         [Alias("EnvironmentName", "NationalCloud")]
         public string Environment { get; set; }
 
-        private CancellationTokenSource cancellationTokenSource;
+        private CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
 
         private IGraphEnvironment environment;
 
@@ -110,9 +108,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             base.ProcessRecord();
             try
             {
-                using (var asyncCommandRuntime = new CustomAsyncCommandRuntime(this, _cancellationTokenSource.Token))
+                using (var asyncCommandRuntime = new CustomAsyncCommandRuntime(this, cancellationTokenSource.Token))
                 {
-                    asyncCommandRuntime.Wait(ProcessRecordAsync(), _cancellationTokenSource.Token);
+                    asyncCommandRuntime.Wait(ProcessRecordAsync(), cancellationTokenSource.Token);
                 }
             }
             catch (AggregateException aggregateException)
@@ -147,7 +145,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             using (NoSynchronizationContext)
             {
                 IAuthContext authContext = new AuthContext { TenantId = TenantId };
-                cancellationTokenSource = new CancellationTokenSource();
                 // Set selected environment to the session object.
                 GraphSession.Instance.Environment = environment;
 
@@ -157,7 +154,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                         {
                             // 2 mins timeout. 1 min < HTTP timeout.
                             TimeSpan authTimeout = new TimeSpan(0, 0, Constants.MaxDeviceCodeTimeOut);
-                            cancellationTokenSource = new CancellationTokenSource(authTimeout);
+                            // To avoid re-initializing the tokenSource, use CancelAfter
+                            cancellationTokenSource.CancelAfter(authTimeout);
                             authContext.AuthType = AuthenticationType.Delegated;
                             string[] processedScopes = ProcessScopes(Scopes);
                             authContext.Scopes = processedScopes.Length == 0 ? new string[] { "User.Read" } : processedScopes;
