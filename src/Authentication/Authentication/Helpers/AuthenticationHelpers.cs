@@ -77,24 +77,32 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
         }
         /// <summary>
         ///     Gets a certificate based on the current context.
+        ///     Priority is Name, ThumbPrint, then In-Memory Cert
         /// </summary>
         /// <param name="context">Current <see cref="IAuthContext"/> context</param>
         /// <returns>A <see cref="X509Certificate2"/> based on provided <see cref="IAuthContext"/> context</returns>
         private static X509Certificate2 GetCertificate(IAuthContext context)
         {
-            if (!string.IsNullOrWhiteSpace(context.CertificateThumbprint))
+            X509Certificate2 certificate;
+            if (!string.IsNullOrWhiteSpace(context.CertificateName))
             {
-                return GetCertificateByThumbprint(context.CertificateThumbprint);
+                certificate = GetCertificateByName(context.CertificateName);
             }
-            
-            else if (!string.IsNullOrWhiteSpace(context.CertificateName))
+            else if (!string.IsNullOrWhiteSpace(context.CertificateThumbprint))
             {
-                return GetCertificateByName(context.CertificateName);
+                certificate = GetCertificateByThumbprint(context.CertificateThumbprint);
             }
             else
             {
-                return context.Certificate;
+                certificate = context.Certificate;
             }
+
+            if (certificate == null)
+            {
+                throw new ArgumentNullException(nameof(certificate), $"Certificate with the Specified ThumbPrint {context.CertificateThumbprint}, Name {context.CertificateName} or In-Memory could not be found");
+            }
+
+            return certificate;
         }
 
         private static string GetAuthorityUrl(IAuthContext authContext)
@@ -211,7 +219,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                     .Find(X509FindType.FindByTimeValid, DateTime.Now, false)
                     .Find(X509FindType.FindBySubjectDistinguishedName, CertificateName, false);
 
-                if (unexpiredCerts == null)
+                if (unexpiredCerts.Count < 1)
                     throw new Exception($"{CertificateName} certificate was not found or has expired.");
 
                 // Only return current cert.
