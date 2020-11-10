@@ -39,6 +39,7 @@ paths:
                 - color
                 - defaultOnlineMeetingProvider
                 - hexColor
+                - isDefaultCalendar
                 - isRemovable
                 - isTallyingResponses
                 - name
@@ -1181,6 +1182,7 @@ paths:
                 - color
                 - defaultOnlineMeetingProvider
                 - hexColor
+                - isDefaultCalendar
                 - isRemovable
                 - isTallyingResponses
                 - name
@@ -3347,6 +3349,7 @@ paths:
                 - color
                 - defaultOnlineMeetingProvider
                 - hexColor
+                - isDefaultCalendar
                 - isRemovable
                 - isTallyingResponses
                 - name
@@ -6001,6 +6004,7 @@ paths:
                 - color
                 - defaultOnlineMeetingProvider
                 - hexColor
+                - isDefaultCalendar
                 - isRemovable
                 - isTallyingResponses
                 - name
@@ -9944,6 +9948,7 @@ paths:
                 - color
                 - defaultOnlineMeetingProvider
                 - hexColor
+                - isDefaultCalendar
                 - isRemovable
                 - isTallyingResponses
                 - name
@@ -13366,6 +13371,7 @@ paths:
                 - color
                 - defaultOnlineMeetingProvider
                 - hexColor
+                - isDefaultCalendar
                 - isRemovable
                 - isTallyingResponses
                 - name
@@ -14508,6 +14514,7 @@ paths:
                 - color
                 - defaultOnlineMeetingProvider
                 - hexColor
+                - isDefaultCalendar
                 - isRemovable
                 - isTallyingResponses
                 - name
@@ -16674,6 +16681,7 @@ paths:
                 - color
                 - defaultOnlineMeetingProvider
                 - hexColor
+                - isDefaultCalendar
                 - isRemovable
                 - isTallyingResponses
                 - name
@@ -18846,6 +18854,8 @@ paths:
                 - defaultOnlineMeetingProvider desc
                 - hexColor
                 - hexColor desc
+                - isDefaultCalendar
+                - isDefaultCalendar desc
                 - isRemovable
                 - isRemovable desc
                 - isTallyingResponses
@@ -18874,6 +18884,7 @@ paths:
                 - color
                 - defaultOnlineMeetingProvider
                 - hexColor
+                - isDefaultCalendar
                 - isRemovable
                 - isTallyingResponses
                 - name
@@ -19008,6 +19019,7 @@ paths:
                 - color
                 - defaultOnlineMeetingProvider
                 - hexColor
+                - isDefaultCalendar
                 - isRemovable
                 - isTallyingResponses
                 - name
@@ -20400,6 +20412,7 @@ paths:
                 - color
                 - defaultOnlineMeetingProvider
                 - hexColor
+                - isDefaultCalendar
                 - isRemovable
                 - isTallyingResponses
                 - name
@@ -23062,6 +23075,7 @@ paths:
                 - color
                 - defaultOnlineMeetingProvider
                 - hexColor
+                - isDefaultCalendar
                 - isRemovable
                 - isTallyingResponses
                 - name
@@ -25447,6 +25461,8 @@ paths:
                 - defaultOnlineMeetingProvider desc
                 - hexColor
                 - hexColor desc
+                - isDefaultCalendar
+                - isDefaultCalendar desc
                 - isRemovable
                 - isRemovable desc
                 - isTallyingResponses
@@ -25475,6 +25491,7 @@ paths:
                 - color
                 - defaultOnlineMeetingProvider
                 - hexColor
+                - isDefaultCalendar
                 - isRemovable
                 - isTallyingResponses
                 - name
@@ -25595,6 +25612,7 @@ paths:
                 - color
                 - defaultOnlineMeetingProvider
                 - hexColor
+                - isDefaultCalendar
                 - isRemovable
                 - isTallyingResponses
                 - name
@@ -26874,6 +26892,7 @@ paths:
                 - color
                 - defaultOnlineMeetingProvider
                 - hexColor
+                - isDefaultCalendar
                 - isRemovable
                 - isTallyingResponses
                 - name
@@ -29288,6 +29307,7 @@ paths:
                 - color
                 - defaultOnlineMeetingProvider
                 - hexColor
+                - isDefaultCalendar
                 - isRemovable
                 - isTallyingResponses
                 - name
@@ -32177,6 +32197,7 @@ paths:
                 - color
                 - defaultOnlineMeetingProvider
                 - hexColor
+                - isDefaultCalendar
                 - isRemovable
                 - isTallyingResponses
                 - name
@@ -36120,6 +36141,7 @@ paths:
                 - color
                 - defaultOnlineMeetingProvider
                 - hexColor
+                - isDefaultCalendar
                 - isRemovable
                 - isTallyingResponses
                 - name
@@ -39336,6 +39358,9 @@ components:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingProviderType'
             hexColor:
               type: string
+              nullable: true
+            isDefaultCalendar:
+              type: boolean
               nullable: true
             isRemovable:
               type: boolean
