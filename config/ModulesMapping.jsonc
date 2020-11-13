@@ -3,7 +3,7 @@
     "Bookings": "^bookingBusinesses\\.|^bookingCurrencies\\.",
     "Calendar": "^places\\.|^users.calendar$|^users.calendarGroup$|^users.event$|^groups.calendar$|^groups.event$",
     "ChangeNotifications": "^subscriptions\\.",
-    "CloudCommunications": "^users.onlineMeeting$|^users.presence$",
+    "CloudCommunications": "^users.onlineMeeting$|^users.presence$|^communications\\.",
     "Compliance": "^compliance\\.",
     "CrossDeviceExperiences": "^users.userActivity$|^users.device$",
     "Devices.CloudPrint": "^print\\.",
@@ -31,7 +31,6 @@
     "Users.Actions": "^users.Actions$",
     "Users.Functions": "^users.Functions$"
 
-    // "CloudCommunications": "^communications\\.", // Needs multi-namespace support.
     // "Devices.CorporateManagement": "^deviceManagement\\.", - Max Limit
     // "WorkBooks": "^workbooks\\.",// Max limit.
 }
