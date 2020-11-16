@@ -172,6 +172,27 @@ namespace Microsoft.Graph.PowerShell.Cmdlets.Custom
             return nextLinkUri.Uri;
         }
 
+        /// <summary>
+        /// Adds quotation mark around $search values if none exists.
+        /// This is needed to support KQL e.g. "prop:value".
+        /// </summary>
+        /// <param name="boundParameters">The bound parameters of the calling cmdlet.</param>
+        /// <param name="search">The $search value.</param>
+        /// <returns>A formated search value.</returns>
+        internal string FormatSearchValue(global::System.Collections.Generic.Dictionary<string, object> boundParameters, string search)
+        {
+            if (!boundParameters.ContainsKey("Search"))
+            {
+                return null;
+            }
+            else if (!string.IsNullOrWhiteSpace(search) && !search.StartsWith("\""))
+            {
+                search = $"\"{search}\"";
+            }
+
+            return search;
+        }
+
         internal void OnBeforeWriteObject(global::System.Collections.Generic.Dictionary<string, object> boundParameters, global::System.Collections.Generic.IDictionary<string, object> additionalProperties)
         {
             // Get odata.count from the response.
