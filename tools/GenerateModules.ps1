@@ -28,16 +28,17 @@ if (!(Get-Module -Name powershell-yaml -ListAvailable)) {
 }
 
 $ModulePrefix = "Microsoft.Graph"
-$ModulesOutputDir = Join-Path $PSScriptRoot "..\src\"
-$ArtifactsLocation = Join-Path $PSScriptRoot "..\artifacts"
+$ScriptRoot = $PSScriptRoot
+$ModulesOutputDir = Join-Path $ScriptRoot "..\src\"
+$ArtifactsLocation = Join-Path $ScriptRoot "..\artifacts"
 $RequiredGraphModules = @()
 # PS Scripts
-$ManageGeneratedModulePS1 = Join-Path $PSScriptRoot ".\ManageGeneratedModule.ps1" -Resolve
-$BuildModulePS1 = Join-Path $PSScriptRoot ".\BuildModule.ps1" -Resolve
-$PackModulePS1 = Join-Path $PSScriptRoot ".\PackModule.ps1" -Resolve
-$PublishModulePS1 = Join-Path $PSScriptRoot ".\PublishModule.ps1" -Resolve
-$ReadModuleReadMePS1 = Join-Path $PSScriptRoot ".\ReadModuleReadMe.ps1" -Resolve
-$ValidateUpdatedModuleVersionPS1 = Join-Path $PSScriptRoot ".\ValidateUpdatedModuleVersion.ps1" -Resolve
+$ManageGeneratedModulePS1 = Join-Path $ScriptRoot ".\ManageGeneratedModule.ps1" -Resolve
+$BuildModulePS1 = Join-Path $ScriptRoot ".\BuildModule.ps1" -Resolve
+$PackModulePS1 = Join-Path $ScriptRoot ".\PackModule.ps1" -Resolve
+$PublishModulePS1 = Join-Path $ScriptRoot ".\PublishModule.ps1" -Resolve
+$ReadModuleReadMePS1 = Join-Path $ScriptRoot ".\ReadModuleReadMe.ps1" -Resolve
+$ValidateUpdatedModuleVersionPS1 = Join-Path $ScriptRoot ".\ValidateUpdatedModuleVersion.ps1" -Resolve
 
 if (-not (Test-Path $ArtifactsLocation)) {
     New-Item -Path $ArtifactsLocation -Type Directory
@@ -89,7 +90,7 @@ $ModuleMapping.Keys | ForEach-Object -ThrottleLimit $ModuleMapping.Keys.Count -P
     # Copy AutoRest readme.md config is none exists.
     if (-not (Test-Path "$ModuleProjectDir\readme.md")) {
         New-Item -Path $ModuleProjectDir -Type Directory -Force
-        Copy-Item (Join-Path $PSScriptRoot "\Templates\readme.md") -Destination $ModuleProjectDir
+        Copy-Item (Join-Path $Using:ScriptRoot "\Templates\readme.md") -Destination $ModuleProjectDir
     }
 
     $ModuleLevelReadMePath = Join-Path $ModuleProjectDir "\readme.md" -Resolve
