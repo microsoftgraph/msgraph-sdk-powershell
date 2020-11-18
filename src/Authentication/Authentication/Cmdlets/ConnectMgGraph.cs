@@ -18,6 +18,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
     using System.Globalization;
     using Microsoft.Graph.PowerShell.Authentication.Interfaces;
     using Microsoft.Graph.PowerShell.Authentication.Common;
+    using System.Security.Cryptography.X509Certificates;
 
     [Cmdlet(VerbsCommunications.Connect, "MgGraph", DefaultParameterSetName = Constants.UserParameterSet)]
     [Alias("Connect-Graph")]
@@ -45,7 +46,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             Position = 3,
             HelpMessage = "The thumbprint of your certificate. The Certificate will be retrieved from the current user's certificate store.")]
         public string CertificateThumbprint { get; set; }
-        
+
         [Parameter(ParameterSetName = Constants.AccessTokenParameterSet,
             Position = 1,
             HelpMessage = "Specifies a bearer token for Microsoft Graph service. Access tokens do timeout and you'll have to handle their refresh.")]
@@ -68,6 +69,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         [ValidateNotNullOrEmpty]
         [Alias("EnvironmentName", "NationalCloud")]
         public string Environment { get; set; }
+
+        [Parameter(ParameterSetName = Constants.AppParameterSet, Mandatory = false, HelpMessage = "An x509 Certificate supplied during invocation")]
+        public X509Certificate2 Certificate { get; set; }
 
         private CancellationTokenSource cancellationTokenSource;
 
@@ -125,6 +129,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                         authContext.ClientId = ClientId;
                         authContext.CertificateThumbprint = CertificateThumbprint;
                         authContext.CertificateName = CertificateName;
+                        authContext.Certificate = Certificate;
                         // Default to Process but allow the customer to change this via `ContextScope` param.
                         authContext.ContextScope = this.IsParameterBound(nameof(ContextScope)) ? ContextScope : ContextScope.Process;
                     }
@@ -256,10 +261,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                             this.ThrowParameterError(nameof(ClientId));
                         }
 
-                        // Certificate Thumbprint or name
-                        if (string.IsNullOrEmpty(CertificateThumbprint) && string.IsNullOrEmpty(CertificateName))
+                        // Certificate Thumbprint, Name or Actual Certificate
+                        if (string.IsNullOrEmpty(CertificateThumbprint) && string.IsNullOrEmpty(CertificateName) && this.Certificate == null)
                         {
-                            this.ThrowParameterError($"{nameof(CertificateThumbprint)} or {nameof(CertificateName)}");
+                            this.ThrowParameterError($"{nameof(CertificateThumbprint)} or {nameof(CertificateName)} or {nameof(Certificate)}");
                         }
 
                         // Tenant Id
