@@ -1,6 +1,9 @@
 ﻿// ------------------------------------------------------------------------------
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
+
+using System.Security.Cryptography.X509Certificates;
+
 namespace Microsoft.Graph.PowerShell.Authentication
 {
     public class AuthContext: IAuthContext
@@ -15,6 +18,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
         public string Account { get; set; }
         public string AppName { get; set; }
         public ContextScope ContextScope { get ; set ; }
+        public X509Certificate2 Certificate { get; set; }
 
         public AuthContext()
         {
