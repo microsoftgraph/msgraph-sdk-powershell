@@ -13,17 +13,18 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
     using System.Net;
     using System.Globalization;
     using System.Collections;
+    using System.Security.Cryptography.X509Certificates;
 
-    using Microsoft.Identity.Client;
+    using Identity.Client;
 
-    using Microsoft.Graph.Auth;
-    using Microsoft.Graph.PowerShell.Authentication.Helpers;
-    using Microsoft.Graph.PowerShell.Authentication.Models;
+    using Auth;
+    using Helpers;
+    using Models;
 
-    using Microsoft.Graph.PowerShell.Authentication.Interfaces;
-    using Microsoft.Graph.PowerShell.Authentication.Common;
+    using Interfaces;
+    using Common;
 
-    using static Microsoft.Graph.PowerShell.Authentication.Helpers.AsyncHelpers;
+    using static Helpers.AsyncHelpers;
 
     [Cmdlet(VerbsCommunications.Connect, "MgGraph", DefaultParameterSetName = Constants.UserParameterSet)]
     [Alias("Connect-Graph")]
@@ -75,7 +76,12 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         [Alias("EnvironmentName", "NationalCloud")]
         public string Environment { get; set; }
 
-        private CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
+        [Parameter(Mandatory = false,
+            ParameterSetName = Constants.AppParameterSet, 
+            HelpMessage = "An x509 Certificate supplied during invocation")]
+        public X509Certificate2 Certificate { get; set; }
+
+        private readonly CancellationTokenSource _cancellationTokenSource = new CancellationTokenSource();
 
         private IGraphEnvironment environment;
 
@@ -108,9 +114,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             base.ProcessRecord();
             try
             {
-                using (var asyncCommandRuntime = new CustomAsyncCommandRuntime(this, cancellationTokenSource.Token))
+                using (var asyncCommandRuntime = new CustomAsyncCommandRuntime(this, _cancellationTokenSource.Token))
                 {
-                    asyncCommandRuntime.Wait(ProcessRecordAsync(), cancellationTokenSource.Token);
+                    asyncCommandRuntime.Wait(ProcessRecordAsync(), _cancellationTokenSource.Token);
                 }
             }
             catch (AggregateException aggregateException)
@@ -155,7 +161,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                             // 2 mins timeout. 1 min < HTTP timeout.
                             TimeSpan authTimeout = new TimeSpan(0, 0, Constants.MaxDeviceCodeTimeOut);
                             // To avoid re-initializing the tokenSource, use CancelAfter
-                            cancellationTokenSource.CancelAfter(authTimeout);
+                            _cancellationTokenSource.CancelAfter(authTimeout);
                             authContext.AuthType = AuthenticationType.Delegated;
                             string[] processedScopes = ProcessScopes(Scopes);
                             authContext.Scopes = processedScopes.Length == 0 ? new string[] { "User.Read" } : processedScopes;
@@ -169,6 +175,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                             authContext.ClientId = ClientId;
                             authContext.CertificateThumbprint = CertificateThumbprint;
                             authContext.CertificateName = CertificateName;
+                            authContext.Certificate = Certificate;
                             // Default to Process but allow the customer to change this via `ContextScope` param.
                             authContext.ContextScope = this.IsParameterBound(nameof(ContextScope)) ? ContextScope : ContextScope.Process;
                         }
@@ -182,8 +189,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                         }
                         break;
                 }
-
-                CancellationToken cancellationToken = cancellationTokenSource.Token;
 
                 try
                 {
@@ -201,7 +206,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 
                     // Incremental scope consent without re-instantiating the auth provider. We will use a static instance.
                     GraphRequestContext graphRequestContext = new GraphRequestContext();
-                    graphRequestContext.CancellationToken = cancellationToken;
+                    graphRequestContext.CancellationToken = _cancellationTokenSource.Token;
                     graphRequestContext.MiddlewareOptions = new Dictionary<string, IMiddlewareOption>
                 {
                     {
@@ -236,7 +241,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 }
                 catch (AuthenticationException authEx)
                 {
-                    if ((authEx.InnerException is TaskCanceledException) && cancellationToken.IsCancellationRequested)
+                    if ((authEx.InnerException is TaskCanceledException) && _cancellationTokenSource.Token.IsCancellationRequested)
                     {
                         // DeviceCodeTimeout
                         throw new Exception(string.Format(
@@ -260,7 +265,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 
         protected override void StopProcessing()
         {
-            cancellationTokenSource.Cancel();
+            _cancellationTokenSource.Cancel();
             base.StopProcessing();
         }
 
@@ -301,10 +306,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                             this.ThrowParameterError(nameof(ClientId));
                         }
 
-                        // Certificate Thumbprint or name
-                        if (string.IsNullOrEmpty(CertificateThumbprint) && string.IsNullOrEmpty(CertificateName))
+                        // Certificate Thumbprint, Name or Actual Certificate
+                        if (string.IsNullOrEmpty(CertificateThumbprint) && string.IsNullOrEmpty(CertificateName) && this.Certificate == null)
                         {
-                            this.ThrowParameterError($"{nameof(CertificateThumbprint)} or {nameof(CertificateName)}");
+                            this.ThrowParameterError($"{nameof(CertificateThumbprint)} or {nameof(CertificateName)} or {nameof(Certificate)}");
                         }
 
                         // Tenant Id
