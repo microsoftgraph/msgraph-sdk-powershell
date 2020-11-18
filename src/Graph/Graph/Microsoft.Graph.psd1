@@ -106,7 +106,7 @@ PrivateData = @{
         ProjectUri = 'https://github.com/microsoftgraph/msgraph-sdk-powershell'
 
         # A URL to an icon representing this module.
-        IconUri = 'https://raw.githubusercontent.com/microsoftgraph/msgraph-sdk-powershell/po/release1.1.0/documentation/images/graph_color256.png'
+        IconUri = 'https://raw.githubusercontent.com/microsoftgraph/msgraph-sdk-powershell/master/documentation/images/graph_color256.png'
 
         # ReleaseNotes of this module
         ReleaseNotes = 'See https://aka.ms/GraphPowerShell-Release.'
