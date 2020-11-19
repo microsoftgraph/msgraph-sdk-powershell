@@ -6,6 +6,2531 @@ servers:
   - url: https://graph.microsoft.com/v1.0/
     description: Core
 paths:
+  /communications:
+    get:
+      tags:
+        - communications.cloudCommunications
+      summary: Get communications
+      operationId: communications.cloudCommunications_GetCloudCommunications
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - calls
+                - callRecords
+                - onlineMeetings
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - calls
+                - callRecords
+                - onlineMeetings
+              type: string
+      responses:
+        '200':
+          description: Retrieved entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.cloudCommunications'
+          links:
+            calls:
+              operationId: communications.ListCalls
+            callRecords:
+              operationId: communications.ListCallRecords
+            onlineMeetings:
+              operationId: communications.ListOnlineMeetings
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - communications.cloudCommunications
+      summary: Update communications
+      operationId: communications.cloudCommunications_UpdateCloudCommunications
+      requestBody:
+        description: New property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.cloudCommunications'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /communications/callRecords:
+    get:
+      tags:
+        - communications.callRecord
+      summary: Get callRecords from communications
+      operationId: communications_ListCallRecords
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - endDateTime
+                - endDateTime desc
+                - joinWebUrl
+                - joinWebUrl desc
+                - lastModifiedDateTime
+                - lastModifiedDateTime desc
+                - modalities
+                - modalities desc
+                - organizer
+                - organizer desc
+                - participants
+                - participants desc
+                - startDateTime
+                - startDateTime desc
+                - type
+                - type desc
+                - version
+                - version desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - endDateTime
+                - joinWebUrl
+                - lastModifiedDateTime
+                - modalities
+                - organizer
+                - participants
+                - startDateTime
+                - type
+                - version
+                - sessions
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - sessions
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of callRecord
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.callRecords.callRecord'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - communications.callRecord
+      summary: Create new navigation property to callRecords for communications
+      operationId: communications_CreateCallRecords
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.callRecords.callRecord'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.callRecords.callRecord'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/communications/callRecords/{callRecord-id}':
+    get:
+      tags:
+        - communications.callRecord
+      summary: Get callRecords from communications
+      operationId: communications_GetCallRecords
+      parameters:
+        - name: callRecord-id
+          in: path
+          description: 'key: id of callRecord'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: callRecord
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - endDateTime
+                - joinWebUrl
+                - lastModifiedDateTime
+                - modalities
+                - organizer
+                - participants
+                - startDateTime
+                - type
+                - version
+                - sessions
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - sessions
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.callRecords.callRecord'
+          links:
+            sessions:
+              operationId: communications.CallRecords.ListSessions
+              parameters:
+                callRecord-id: $request.path.callRecord-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - communications.callRecord
+      summary: Update the navigation property callRecords in communications
+      operationId: communications_UpdateCallRecords
+      parameters:
+        - name: callRecord-id
+          in: path
+          description: 'key: id of callRecord'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: callRecord
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.callRecords.callRecord'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - communications.callRecord
+      summary: Delete navigation property callRecords for communications
+      operationId: communications_DeleteCallRecords
+      parameters:
+        - name: callRecord-id
+          in: path
+          description: 'key: id of callRecord'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: callRecord
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/communications/callRecords/{callRecord-id}/sessions':
+    get:
+      tags:
+        - communications.callRecord
+      summary: Get sessions from communications
+      operationId: communications.callRecords_ListSessions
+      parameters:
+        - name: callRecord-id
+          in: path
+          description: 'key: id of callRecord'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: callRecord
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - callee
+                - callee desc
+                - caller
+                - caller desc
+                - endDateTime
+                - endDateTime desc
+                - failureInfo
+                - failureInfo desc
+                - modalities
+                - modalities desc
+                - startDateTime
+                - startDateTime desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - callee
+                - caller
+                - endDateTime
+                - failureInfo
+                - modalities
+                - startDateTime
+                - segments
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - segments
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of session
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.callRecords.session'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - communications.callRecord
+      summary: Create new navigation property to sessions for communications
+      operationId: communications.callRecords_CreateSessions
+      parameters:
+        - name: callRecord-id
+          in: path
+          description: 'key: id of callRecord'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: callRecord
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.callRecords.session'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.callRecords.session'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/communications/callRecords/{callRecord-id}/sessions/{session-id}':
+    get:
+      tags:
+        - communications.callRecord
+      summary: Get sessions from communications
+      operationId: communications.callRecords_GetSessions
+      parameters:
+        - name: callRecord-id
+          in: path
+          description: 'key: id of callRecord'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: callRecord
+        - name: session-id
+          in: path
+          description: 'key: id of session'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: session
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - callee
+                - caller
+                - endDateTime
+                - failureInfo
+                - modalities
+                - startDateTime
+                - segments
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - segments
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.callRecords.session'
+          links:
+            segments:
+              operationId: communications.callRecords.Sessions.ListSegments
+              parameters:
+                callRecord-id: $request.path.callRecord-id
+                session-id: $request.path.session-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - communications.callRecord
+      summary: Update the navigation property sessions in communications
+      operationId: communications.callRecords_UpdateSessions
+      parameters:
+        - name: callRecord-id
+          in: path
+          description: 'key: id of callRecord'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: callRecord
+        - name: session-id
+          in: path
+          description: 'key: id of session'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: session
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.callRecords.session'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - communications.callRecord
+      summary: Delete navigation property sessions for communications
+      operationId: communications.callRecords_DeleteSessions
+      parameters:
+        - name: callRecord-id
+          in: path
+          description: 'key: id of callRecord'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: callRecord
+        - name: session-id
+          in: path
+          description: 'key: id of session'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: session
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/communications/callRecords/{callRecord-id}/sessions/{session-id}/segments':
+    get:
+      tags:
+        - communications.callRecord
+      summary: Get segments from communications
+      operationId: communications.callRecords.sessions_ListSegments
+      parameters:
+        - name: callRecord-id
+          in: path
+          description: 'key: id of callRecord'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: callRecord
+        - name: session-id
+          in: path
+          description: 'key: id of session'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: session
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - callee
+                - callee desc
+                - caller
+                - caller desc
+                - endDateTime
+                - endDateTime desc
+                - failureInfo
+                - failureInfo desc
+                - media
+                - media desc
+                - startDateTime
+                - startDateTime desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - callee
+                - caller
+                - endDateTime
+                - failureInfo
+                - media
+                - startDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of segment
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.callRecords.segment'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - communications.callRecord
+      summary: Create new navigation property to segments for communications
+      operationId: communications.callRecords.sessions_CreateSegments
+      parameters:
+        - name: callRecord-id
+          in: path
+          description: 'key: id of callRecord'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: callRecord
+        - name: session-id
+          in: path
+          description: 'key: id of session'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: session
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.callRecords.segment'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.callRecords.segment'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/communications/callRecords/{callRecord-id}/sessions/{session-id}/segments/{segment-id}':
+    get:
+      tags:
+        - communications.callRecord
+      summary: Get segments from communications
+      operationId: communications.callRecords.sessions_GetSegments
+      parameters:
+        - name: callRecord-id
+          in: path
+          description: 'key: id of callRecord'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: callRecord
+        - name: session-id
+          in: path
+          description: 'key: id of session'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: session
+        - name: segment-id
+          in: path
+          description: 'key: id of segment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: segment
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - callee
+                - caller
+                - endDateTime
+                - failureInfo
+                - media
+                - startDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.callRecords.segment'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - communications.callRecord
+      summary: Update the navigation property segments in communications
+      operationId: communications.callRecords.sessions_UpdateSegments
+      parameters:
+        - name: callRecord-id
+          in: path
+          description: 'key: id of callRecord'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: callRecord
+        - name: session-id
+          in: path
+          description: 'key: id of session'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: session
+        - name: segment-id
+          in: path
+          description: 'key: id of segment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: segment
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.callRecords.segment'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - communications.callRecord
+      summary: Delete navigation property segments for communications
+      operationId: communications.callRecords.sessions_DeleteSegments
+      parameters:
+        - name: callRecord-id
+          in: path
+          description: 'key: id of callRecord'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: callRecord
+        - name: session-id
+          in: path
+          description: 'key: id of session'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: session
+        - name: segment-id
+          in: path
+          description: 'key: id of segment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: segment
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /communications/calls:
+    get:
+      tags:
+        - communications.call
+      summary: Get calls from communications
+      operationId: communications_ListCalls
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - callbackUri
+                - callbackUri desc
+                - callChainId
+                - callChainId desc
+                - callOptions
+                - callOptions desc
+                - callRoutes
+                - callRoutes desc
+                - chatInfo
+                - chatInfo desc
+                - direction
+                - direction desc
+                - incomingContext
+                - incomingContext desc
+                - mediaConfig
+                - mediaConfig desc
+                - mediaState
+                - mediaState desc
+                - meetingInfo
+                - meetingInfo desc
+                - myParticipantId
+                - myParticipantId desc
+                - requestedModalities
+                - requestedModalities desc
+                - resultInfo
+                - resultInfo desc
+                - source
+                - source desc
+                - state
+                - state desc
+                - subject
+                - subject desc
+                - targets
+                - targets desc
+                - tenantId
+                - tenantId desc
+                - toneInfo
+                - toneInfo desc
+                - transcription
+                - transcription desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - callbackUri
+                - callChainId
+                - callOptions
+                - callRoutes
+                - chatInfo
+                - direction
+                - incomingContext
+                - mediaConfig
+                - mediaState
+                - meetingInfo
+                - myParticipantId
+                - requestedModalities
+                - resultInfo
+                - source
+                - state
+                - subject
+                - targets
+                - tenantId
+                - toneInfo
+                - transcription
+                - operations
+                - participants
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - operations
+                - participants
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of call
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.call'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - communications.call
+      summary: Create new navigation property to calls for communications
+      operationId: communications_CreateCalls
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.call'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.call'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/communications/calls/{call-id}':
+    get:
+      tags:
+        - communications.call
+      summary: Get calls from communications
+      operationId: communications_GetCalls
+      parameters:
+        - name: call-id
+          in: path
+          description: 'key: id of call'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: call
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - callbackUri
+                - callChainId
+                - callOptions
+                - callRoutes
+                - chatInfo
+                - direction
+                - incomingContext
+                - mediaConfig
+                - mediaState
+                - meetingInfo
+                - myParticipantId
+                - requestedModalities
+                - resultInfo
+                - source
+                - state
+                - subject
+                - targets
+                - tenantId
+                - toneInfo
+                - transcription
+                - operations
+                - participants
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - operations
+                - participants
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.call'
+          links:
+            operations:
+              operationId: communications.Calls.ListOperations
+              parameters:
+                call-id: $request.path.call-id
+            participants:
+              operationId: communications.Calls.ListParticipants
+              parameters:
+                call-id: $request.path.call-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - communications.call
+      summary: Update the navigation property calls in communications
+      operationId: communications_UpdateCalls
+      parameters:
+        - name: call-id
+          in: path
+          description: 'key: id of call'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: call
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.call'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - communications.call
+      summary: Delete navigation property calls for communications
+      operationId: communications_DeleteCalls
+      parameters:
+        - name: call-id
+          in: path
+          description: 'key: id of call'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: call
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/communications/calls/{call-id}/microsoft.graph.answer':
+    post:
+      tags:
+        - communications.Actions
+      summary: Invoke action answer
+      operationId: communications.calls_answer
+      parameters:
+        - name: call-id
+          in: path
+          description: 'key: id of call'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: call
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                callbackUri:
+                  type: string
+                mediaConfig:
+                  $ref: '#/components/schemas/microsoft.graph.mediaConfig'
+                acceptedModalities:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.modality'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/communications/calls/{call-id}/microsoft.graph.cancelMediaProcessing':
+    post:
+      tags:
+        - communications.Actions
+      summary: Invoke action cancelMediaProcessing
+      operationId: communications.calls_cancelMediaProcessing
+      parameters:
+        - name: call-id
+          in: path
+          description: 'key: id of call'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: call
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                clientContext:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.cancelMediaProcessingOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/communications/calls/{call-id}/microsoft.graph.changeScreenSharingRole':
+    post:
+      tags:
+        - communications.Actions
+      summary: Invoke action changeScreenSharingRole
+      operationId: communications.calls_changeScreenSharingRole
+      parameters:
+        - name: call-id
+          in: path
+          description: 'key: id of call'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: call
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                role:
+                  $ref: '#/components/schemas/microsoft.graph.screenSharingRole'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/communications/calls/{call-id}/microsoft.graph.keepAlive':
+    post:
+      tags:
+        - communications.Actions
+      summary: Invoke action keepAlive
+      operationId: communications.calls_keepAlive
+      parameters:
+        - name: call-id
+          in: path
+          description: 'key: id of call'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: call
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/communications/calls/{call-id}/microsoft.graph.mute':
+    post:
+      tags:
+        - communications.Actions
+      summary: Invoke action mute
+      operationId: communications.calls_mute
+      parameters:
+        - name: call-id
+          in: path
+          description: 'key: id of call'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: call
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                clientContext:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.muteParticipantOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/communications/calls/{call-id}/microsoft.graph.playPrompt':
+    post:
+      tags:
+        - communications.Actions
+      summary: Invoke action playPrompt
+      operationId: communications.calls_playPrompt
+      parameters:
+        - name: call-id
+          in: path
+          description: 'key: id of call'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: call
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                prompts:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.prompt'
+                clientContext:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.playPromptOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/communications/calls/{call-id}/microsoft.graph.recordResponse':
+    post:
+      tags:
+        - communications.Actions
+      summary: Invoke action recordResponse
+      operationId: communications.calls_recordResponse
+      parameters:
+        - name: call-id
+          in: path
+          description: 'key: id of call'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: call
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                prompts:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.prompt'
+                bargeInAllowed:
+                  type: boolean
+                  default: false
+                  nullable: true
+                initialSilenceTimeoutInSeconds:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                maxSilenceTimeoutInSeconds:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                maxRecordDurationInSeconds:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                playBeep:
+                  type: boolean
+                  default: false
+                  nullable: true
+                stopTones:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                clientContext:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.recordOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/communications/calls/{call-id}/microsoft.graph.redirect':
+    post:
+      tags:
+        - communications.Actions
+      summary: Invoke action redirect
+      operationId: communications.calls_redirect
+      parameters:
+        - name: call-id
+          in: path
+          description: 'key: id of call'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: call
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                targets:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.invitationParticipantInfo'
+                timeout:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                callbackUri:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/communications/calls/{call-id}/microsoft.graph.reject':
+    post:
+      tags:
+        - communications.Actions
+      summary: Invoke action reject
+      operationId: communications.calls_reject
+      parameters:
+        - name: call-id
+          in: path
+          description: 'key: id of call'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: call
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reason:
+                  $ref: '#/components/schemas/microsoft.graph.rejectReason'
+                callbackUri:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/communications/calls/{call-id}/microsoft.graph.subscribeToTone':
+    post:
+      tags:
+        - communications.Actions
+      summary: Invoke action subscribeToTone
+      operationId: communications.calls_subscribeToTone
+      parameters:
+        - name: call-id
+          in: path
+          description: 'key: id of call'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: call
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                clientContext:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.subscribeToToneOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/communications/calls/{call-id}/microsoft.graph.transfer':
+    post:
+      tags:
+        - communications.Actions
+      summary: Invoke action transfer
+      operationId: communications.calls_transfer
+      parameters:
+        - name: call-id
+          in: path
+          description: 'key: id of call'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: call
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                transferTarget:
+                  $ref: '#/components/schemas/microsoft.graph.invitationParticipantInfo'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/communications/calls/{call-id}/microsoft.graph.unmute':
+    post:
+      tags:
+        - communications.Actions
+      summary: Invoke action unmute
+      operationId: communications.calls_unmute
+      parameters:
+        - name: call-id
+          in: path
+          description: 'key: id of call'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: call
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                clientContext:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unmuteParticipantOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/communications/calls/{call-id}/microsoft.graph.updateRecordingStatus':
+    post:
+      tags:
+        - communications.Actions
+      summary: Invoke action updateRecordingStatus
+      operationId: communications.calls_updateRecordingStatus
+      parameters:
+        - name: call-id
+          in: path
+          description: 'key: id of call'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: call
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                status:
+                  $ref: '#/components/schemas/microsoft.graph.recordingStatus'
+                clientContext:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.updateRecordingStatusOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/communications/calls/{call-id}/operations':
+    get:
+      tags:
+        - communications.call
+      summary: Get operations from communications
+      operationId: communications.calls_ListOperations
+      parameters:
+        - name: call-id
+          in: path
+          description: 'key: id of call'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: call
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - clientContext
+                - clientContext desc
+                - resultInfo
+                - resultInfo desc
+                - status
+                - status desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - clientContext
+                - resultInfo
+                - status
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of commsOperation
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.commsOperation'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - communications.call
+      summary: Create new navigation property to operations for communications
+      operationId: communications.calls_CreateOperations
+      parameters:
+        - name: call-id
+          in: path
+          description: 'key: id of call'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: call
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.commsOperation'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.commsOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/communications/calls/{call-id}/operations/{commsOperation-id}':
+    get:
+      tags:
+        - communications.call
+      summary: Get operations from communications
+      operationId: communications.calls_GetOperations
+      parameters:
+        - name: call-id
+          in: path
+          description: 'key: id of call'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: call
+        - name: commsOperation-id
+          in: path
+          description: 'key: id of commsOperation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: commsOperation
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - clientContext
+                - resultInfo
+                - status
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.commsOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - communications.call
+      summary: Update the navigation property operations in communications
+      operationId: communications.calls_UpdateOperations
+      parameters:
+        - name: call-id
+          in: path
+          description: 'key: id of call'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: call
+        - name: commsOperation-id
+          in: path
+          description: 'key: id of commsOperation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: commsOperation
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.commsOperation'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - communications.call
+      summary: Delete navigation property operations for communications
+      operationId: communications.calls_DeleteOperations
+      parameters:
+        - name: call-id
+          in: path
+          description: 'key: id of call'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: call
+        - name: commsOperation-id
+          in: path
+          description: 'key: id of commsOperation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: commsOperation
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/communications/calls/{call-id}/participants':
+    get:
+      tags:
+        - communications.call
+      summary: Get participants from communications
+      operationId: communications.calls_ListParticipants
+      parameters:
+        - name: call-id
+          in: path
+          description: 'key: id of call'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: call
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - info
+                - info desc
+                - isInLobby
+                - isInLobby desc
+                - isMuted
+                - isMuted desc
+                - mediaStreams
+                - mediaStreams desc
+                - recordingInfo
+                - recordingInfo desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - info
+                - isInLobby
+                - isMuted
+                - mediaStreams
+                - recordingInfo
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of participant
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.participant'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - communications.call
+      summary: Create new navigation property to participants for communications
+      operationId: communications.calls_CreateParticipants
+      parameters:
+        - name: call-id
+          in: path
+          description: 'key: id of call'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: call
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.participant'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.participant'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/communications/calls/{call-id}/participants/{participant-id}':
+    get:
+      tags:
+        - communications.call
+      summary: Get participants from communications
+      operationId: communications.calls_GetParticipants
+      parameters:
+        - name: call-id
+          in: path
+          description: 'key: id of call'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: call
+        - name: participant-id
+          in: path
+          description: 'key: id of participant'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: participant
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - info
+                - isInLobby
+                - isMuted
+                - mediaStreams
+                - recordingInfo
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.participant'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - communications.call
+      summary: Update the navigation property participants in communications
+      operationId: communications.calls_UpdateParticipants
+      parameters:
+        - name: call-id
+          in: path
+          description: 'key: id of call'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: call
+        - name: participant-id
+          in: path
+          description: 'key: id of participant'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: participant
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.participant'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - communications.call
+      summary: Delete navigation property participants for communications
+      operationId: communications.calls_DeleteParticipants
+      parameters:
+        - name: call-id
+          in: path
+          description: 'key: id of call'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: call
+        - name: participant-id
+          in: path
+          description: 'key: id of participant'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: participant
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/communications/calls/{call-id}/participants/{participant-id}/microsoft.graph.mute':
+    post:
+      tags:
+        - communications.Actions
+      summary: Invoke action mute
+      operationId: communications.calls.participants_mute
+      parameters:
+        - name: call-id
+          in: path
+          description: 'key: id of call'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: call
+        - name: participant-id
+          in: path
+          description: 'key: id of participant'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: participant
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                clientContext:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.muteParticipantOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/communications/calls/{call-id}/participants/microsoft.graph.invite':
+    post:
+      tags:
+        - communications.Actions
+      summary: Invoke action invite
+      operationId: communications.calls.participants_invite
+      parameters:
+        - name: call-id
+          in: path
+          description: 'key: id of call'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: call
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                participants:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.invitationParticipantInfo'
+                clientContext:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.inviteParticipantsOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /communications/calls/microsoft.graph.logTeleconferenceDeviceQuality:
+    post:
+      tags:
+        - communications.Actions
+      summary: Invoke action logTeleconferenceDeviceQuality
+      operationId: communications.calls_logTeleconferenceDeviceQuality
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                quality:
+                  $ref: '#/components/schemas/microsoft.graph.teleconferenceDeviceQuality'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /communications/onlineMeetings:
+    get:
+      tags:
+        - communications.onlineMeeting
+      summary: Get onlineMeetings from communications
+      operationId: communications_ListOnlineMeetings
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - audioConferencing
+                - audioConferencing desc
+                - chatInfo
+                - chatInfo desc
+                - creationDateTime
+                - creationDateTime desc
+                - endDateTime
+                - endDateTime desc
+                - externalId
+                - externalId desc
+                - joinInformation
+                - joinInformation desc
+                - joinWebUrl
+                - joinWebUrl desc
+                - participants
+                - participants desc
+                - startDateTime
+                - startDateTime desc
+                - subject
+                - subject desc
+                - videoTeleconferenceId
+                - videoTeleconferenceId desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - audioConferencing
+                - chatInfo
+                - creationDateTime
+                - endDateTime
+                - externalId
+                - joinInformation
+                - joinWebUrl
+                - participants
+                - startDateTime
+                - subject
+                - videoTeleconferenceId
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of onlineMeeting
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - communications.onlineMeeting
+      summary: Create new navigation property to onlineMeetings for communications
+      operationId: communications_CreateOnlineMeetings
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/communications/onlineMeetings/{onlineMeeting-id}':
+    get:
+      tags:
+        - communications.onlineMeeting
+      summary: Get onlineMeetings from communications
+      operationId: communications_GetOnlineMeetings
+      parameters:
+        - name: onlineMeeting-id
+          in: path
+          description: 'key: id of onlineMeeting'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - audioConferencing
+                - chatInfo
+                - creationDateTime
+                - endDateTime
+                - externalId
+                - joinInformation
+                - joinWebUrl
+                - participants
+                - startDateTime
+                - subject
+                - videoTeleconferenceId
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - communications.onlineMeeting
+      summary: Update the navigation property onlineMeetings in communications
+      operationId: communications_UpdateOnlineMeetings
+      parameters:
+        - name: onlineMeeting-id
+          in: path
+          description: 'key: id of onlineMeeting'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - communications.onlineMeeting
+      summary: Delete navigation property onlineMeetings for communications
+      operationId: communications_DeleteOnlineMeetings
+      parameters:
+        - name: onlineMeeting-id
+          in: path
+          description: 'key: id of onlineMeeting'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /communications/onlineMeetings/microsoft.graph.createOrGet:
+    post:
+      tags:
+        - communications.Actions
+      summary: Invoke action createOrGet
+      operationId: communications.onlineMeetings_createOrGet
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                chatInfo:
+                  $ref: '#/components/schemas/microsoft.graph.chatInfo'
+                endDateTime:
+                  pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+                  type: string
+                  format: date-time
+                  nullable: true
+                externalId:
+                  type: string
+                participants:
+                  $ref: '#/components/schemas/microsoft.graph.meetingParticipants'
+                startDateTime:
+                  pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+                  type: string
+                  format: date-time
+                  nullable: true
+                subject:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/users/{user-id}/onlineMeetings':
     get:
       tags:
@@ -280,6 +2805,422 @@ paths:
       x-ms-docs-operation-type: operation
 components:
   schemas:
+    microsoft.graph.cloudCommunications:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: cloudCommunications
+          type: object
+          properties:
+            calls:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.call'
+            callRecords:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.callRecords.callRecord'
+            onlineMeetings:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
+          additionalProperties:
+            type: object
+    microsoft.graph.callRecords.callRecord:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: callRecord
+          type: object
+          properties:
+            endDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'UTC time when the last user left the call. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              format: date-time
+            joinWebUrl:
+              type: string
+              description: Meeting URL associated to the call. May not be available for a peerToPeer call record type.
+              nullable: true
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'UTC time when the call record was created. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              format: date-time
+            modalities:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.callRecords.modality'
+              description: 'List of all the modalities used in the call. Possible values are: unknown, audio, video, videoBasedScreenSharing, data, screenSharing, unknownFutureValue.'
+            organizer:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            participants:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.identitySet'
+              description: List of distinct identities involved in the call.
+            startDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'UTC time when the first user joined the call. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              format: date-time
+            type:
+              $ref: '#/components/schemas/microsoft.graph.callRecords.callType'
+            version:
+              type: integer
+              description: Monotonically increasing version of the call record. Higher version call records with the same id includes additional data compared to the lower version.
+              format: int64
+            sessions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.callRecords.session'
+              description: 'List of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.'
+          additionalProperties:
+            type: object
+    microsoft.graph.callRecords.session:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: session
+          type: object
+          properties:
+            callee:
+              $ref: '#/components/schemas/microsoft.graph.callRecords.endpoint'
+            caller:
+              $ref: '#/components/schemas/microsoft.graph.callRecords.endpoint'
+            endDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'UTC time when the last user left the session. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              format: date-time
+            failureInfo:
+              $ref: '#/components/schemas/microsoft.graph.callRecords.failureInfo'
+            modalities:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.callRecords.modality'
+              description: 'List of modalities present in the session. Possible values are: unknown, audio, video, videoBasedScreenSharing, data, screenSharing, unknownFutureValue.'
+            startDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'UTC fime when the first user joined the session. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              format: date-time
+            segments:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.callRecords.segment'
+              description: The list of segments involved in the session. Read-only. Nullable.
+          additionalProperties:
+            type: object
+    microsoft.graph.callRecords.segment:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: segment
+          type: object
+          properties:
+            callee:
+              $ref: '#/components/schemas/microsoft.graph.callRecords.endpoint'
+            caller:
+              $ref: '#/components/schemas/microsoft.graph.callRecords.endpoint'
+            endDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'UTC time when the segment ended. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              format: date-time
+            failureInfo:
+              $ref: '#/components/schemas/microsoft.graph.callRecords.failureInfo'
+            media:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.callRecords.media'
+              description: Media associated with this segment.
+            startDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'UTC time when the segment started. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              format: date-time
+          additionalProperties:
+            type: object
+    microsoft.graph.call:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: call
+          type: object
+          properties:
+            callbackUri:
+              type: string
+              description: The callback URL on which callbacks will be delivered. Must be https.
+            callChainId:
+              type: string
+              description: A unique identifier for all the participant calls in a conference or a unique identifier for two participant calls in a P2P call.  This needs to be copied over from Microsoft.Graph.Call.CallChainId.
+              nullable: true
+            callOptions:
+              $ref: '#/components/schemas/microsoft.graph.callOptions'
+            callRoutes:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.callRoute'
+              description: The routing information on how the call was retargeted. Read-only.
+            chatInfo:
+              $ref: '#/components/schemas/microsoft.graph.chatInfo'
+            direction:
+              $ref: '#/components/schemas/microsoft.graph.callDirection'
+            incomingContext:
+              $ref: '#/components/schemas/microsoft.graph.incomingContext'
+            mediaConfig:
+              $ref: '#/components/schemas/microsoft.graph.mediaConfig'
+            mediaState:
+              $ref: '#/components/schemas/microsoft.graph.callMediaState'
+            meetingInfo:
+              $ref: '#/components/schemas/microsoft.graph.meetingInfo'
+            myParticipantId:
+              type: string
+              nullable: true
+            requestedModalities:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.modality'
+            resultInfo:
+              $ref: '#/components/schemas/microsoft.graph.resultInfo'
+            source:
+              $ref: '#/components/schemas/microsoft.graph.participantInfo'
+            state:
+              $ref: '#/components/schemas/microsoft.graph.callState'
+            subject:
+              type: string
+              nullable: true
+            targets:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.invitationParticipantInfo'
+            tenantId:
+              type: string
+              nullable: true
+            toneInfo:
+              $ref: '#/components/schemas/microsoft.graph.toneInfo'
+            transcription:
+              $ref: '#/components/schemas/microsoft.graph.callTranscriptionInfo'
+            operations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.commsOperation'
+              description: Read-only. Nullable.
+            participants:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.participant'
+              description: Read-only. Nullable.
+          additionalProperties:
+            type: object
+    microsoft.graph.mediaConfig:
+      title: mediaConfig
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.modality:
+      title: modality
+      enum:
+        - audio
+        - video
+        - videoBasedScreenSharing
+        - data
+        - unknownFutureValue
+      type: string
+    microsoft.graph.cancelMediaProcessingOperation:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.commsOperation'
+        - title: cancelMediaProcessingOperation
+          type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.screenSharingRole:
+      title: screenSharingRole
+      enum:
+        - viewer
+        - sharer
+      type: string
+    microsoft.graph.muteParticipantOperation:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.commsOperation'
+        - title: muteParticipantOperation
+          type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.prompt:
+      title: prompt
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.playPromptOperation:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.commsOperation'
+        - title: playPromptOperation
+          type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.recordOperation:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.commsOperation'
+        - title: recordOperation
+          type: object
+          properties:
+            recordingAccessToken:
+              type: string
+              description: The access token required to retrieve the recording.
+              nullable: true
+            recordingLocation:
+              type: string
+              description: The location where the recording is located.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.invitationParticipantInfo:
+      title: invitationParticipantInfo
+      type: object
+      properties:
+        identity:
+          $ref: '#/components/schemas/microsoft.graph.identitySet'
+        replacesCallId:
+          type: string
+          description: Optional. The call which the target identity is currently a part of. This call will be dropped once the participant is added.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.rejectReason:
+      title: rejectReason
+      enum:
+        - none
+        - busy
+        - forbidden
+        - unknownFutureValue
+      type: string
+    microsoft.graph.subscribeToToneOperation:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.commsOperation'
+        - title: subscribeToToneOperation
+          type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.unmuteParticipantOperation:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.commsOperation'
+        - title: unmuteParticipantOperation
+          type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.recordingStatus:
+      title: recordingStatus
+      enum:
+        - unknown
+        - notRecording
+        - recording
+        - failed
+        - unknownFutureValue
+      type: string
+    microsoft.graph.updateRecordingStatusOperation:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.commsOperation'
+        - title: updateRecordingStatusOperation
+          type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.commsOperation:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: commsOperation
+          type: object
+          properties:
+            clientContext:
+              type: string
+              description: Unique Client Context string. Max limit is 256 chars.
+              nullable: true
+            resultInfo:
+              $ref: '#/components/schemas/microsoft.graph.resultInfo'
+            status:
+              $ref: '#/components/schemas/microsoft.graph.operationStatus'
+          additionalProperties:
+            type: object
+    microsoft.graph.participant:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: participant
+          type: object
+          properties:
+            info:
+              $ref: '#/components/schemas/microsoft.graph.participantInfo'
+            isInLobby:
+              type: boolean
+              description: true if the participant is in lobby.
+            isMuted:
+              type: boolean
+              description: true if the participant is muted (client or server muted).
+            mediaStreams:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.mediaStream'
+              description: The list of media streams.
+            recordingInfo:
+              $ref: '#/components/schemas/microsoft.graph.recordingInfo'
+          additionalProperties:
+            type: object
+    microsoft.graph.inviteParticipantsOperation:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.commsOperation'
+        - title: inviteParticipantsOperation
+          type: object
+          properties:
+            participants:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.invitationParticipantInfo'
+              description: The participants to invite.
+          additionalProperties:
+            type: object
+    microsoft.graph.teleconferenceDeviceQuality:
+      title: teleconferenceDeviceQuality
+      type: object
+      properties:
+        callChainId:
+          pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+          type: string
+          description: A unique identifier for all  the participant calls in a conference or a unique identifier for two participant calls in P2P call. This needs to be copied over from Microsoft.Graph.Call.CallChainId.
+          format: uuid
+        cloudServiceDeploymentEnvironment:
+          type: string
+          description: 'A geo-region where the service is deployed, such as ProdNoam.'
+          nullable: true
+        cloudServiceDeploymentId:
+          type: string
+          description: A unique deployment identifier assigned by Azure.
+          nullable: true
+        cloudServiceInstanceName:
+          type: string
+          description: 'The Azure deployed cloud service instance name, such as FrontEnd_IN_3.'
+          nullable: true
+        cloudServiceName:
+          type: string
+          description: 'The Azure deployed cloud service name, such as contoso.cloudapp.net.'
+          nullable: true
+        deviceDescription:
+          type: string
+          description: 'Any additional description, such as VTC Bldg 30/21.'
+        deviceName:
+          type: string
+          description: 'The user media agent name, such as Cisco SX80.'
+        mediaLegId:
+          pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+          type: string
+          description: A unique identifier for a specific media leg of a participant in a conference.  One participant can have multiple media leg identifiers if retargeting happens. CVI partner assigns this value.
+          format: uuid
+        mediaQualityList:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.teleconferenceDeviceMediaQuality'
+          description: 'The list of media qualities in a media session (call), such as audio quality, video quality, and/or screen sharing quality.'
+        participantId:
+          pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+          type: string
+          description: A unique identifier for a specific participant in a conference. The CVI partner needs to copy over Call.MyParticipantId to this property.
+          format: uuid
+      additionalProperties:
+        type: object
     microsoft.graph.onlineMeeting:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -329,6 +3270,36 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.chatInfo:
+      title: chatInfo
+      type: object
+      properties:
+        messageId:
+          type: string
+          description: The unique identifier of a message in a Microsoft Teams channel.
+          nullable: true
+        replyChainMessageId:
+          type: string
+          description: The ID of the reply message.
+          nullable: true
+        threadId:
+          type: string
+          description: The unique identifier for a thread in Microsoft Teams.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.meetingParticipants:
+      title: meetingParticipants
+      type: object
+      properties:
+        attendees:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
+        organizer:
+          $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
+      additionalProperties:
+        type: object
     microsoft.graph.entity:
       title: entity
       type: object
@@ -336,6 +3307,378 @@ components:
         id:
           type: string
           description: Read-only.
+      additionalProperties:
+        type: object
+    microsoft.graph.callRecords.modality:
+      title: modality
+      enum:
+        - audio
+        - video
+        - videoBasedScreenSharing
+        - data
+        - screenSharing
+        - unknownFutureValue
+      type: string
+    microsoft.graph.identitySet:
+      title: identitySet
+      type: object
+      properties:
+        application:
+          $ref: '#/components/schemas/microsoft.graph.identity'
+        device:
+          $ref: '#/components/schemas/microsoft.graph.identity'
+        user:
+          $ref: '#/components/schemas/microsoft.graph.identity'
+      additionalProperties:
+        type: object
+    microsoft.graph.callRecords.callType:
+      title: callType
+      enum:
+        - unknown
+        - groupCall
+        - peerToPeer
+        - unknownFutureValue
+      type: string
+    microsoft.graph.callRecords.endpoint:
+      title: endpoint
+      type: object
+      properties:
+        userAgent:
+          $ref: '#/components/schemas/microsoft.graph.callRecords.userAgent'
+      additionalProperties:
+        type: object
+    microsoft.graph.callRecords.failureInfo:
+      title: failureInfo
+      type: object
+      properties:
+        reason:
+          type: string
+          description: Classification of why a call or portion of a call failed.
+          nullable: true
+        stage:
+          $ref: '#/components/schemas/microsoft.graph.callRecords.failureStage'
+      additionalProperties:
+        type: object
+    microsoft.graph.callRecords.media:
+      title: media
+      type: object
+      properties:
+        calleeDevice:
+          $ref: '#/components/schemas/microsoft.graph.callRecords.deviceInfo'
+        calleeNetwork:
+          $ref: '#/components/schemas/microsoft.graph.callRecords.networkInfo'
+        callerDevice:
+          $ref: '#/components/schemas/microsoft.graph.callRecords.deviceInfo'
+        callerNetwork:
+          $ref: '#/components/schemas/microsoft.graph.callRecords.networkInfo'
+        label:
+          type: string
+          description: How the media was identified during media negotiation stage.
+          nullable: true
+        streams:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.callRecords.mediaStream'
+          description: Network streams associated with this media.
+      additionalProperties:
+        type: object
+    microsoft.graph.callOptions:
+      title: callOptions
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.callRoute:
+      title: callRoute
+      type: object
+      properties:
+        final:
+          $ref: '#/components/schemas/microsoft.graph.identitySet'
+        original:
+          $ref: '#/components/schemas/microsoft.graph.identitySet'
+        routingType:
+          $ref: '#/components/schemas/microsoft.graph.routingType'
+      additionalProperties:
+        type: object
+    microsoft.graph.callDirection:
+      title: callDirection
+      enum:
+        - incoming
+        - outgoing
+      type: string
+    microsoft.graph.incomingContext:
+      title: incomingContext
+      type: object
+      properties:
+        observedParticipantId:
+          type: string
+          description: The ID of the participant that is under observation. Read-only.
+          nullable: true
+        onBehalfOf:
+          $ref: '#/components/schemas/microsoft.graph.identitySet'
+        sourceParticipantId:
+          type: string
+          description: The ID of the participant that triggered the incoming call. Read-only.
+          nullable: true
+        transferor:
+          $ref: '#/components/schemas/microsoft.graph.identitySet'
+      additionalProperties:
+        type: object
+    microsoft.graph.callMediaState:
+      title: callMediaState
+      type: object
+      properties:
+        audio:
+          $ref: '#/components/schemas/microsoft.graph.mediaState'
+      additionalProperties:
+        type: object
+    microsoft.graph.meetingInfo:
+      title: meetingInfo
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.resultInfo:
+      title: resultInfo
+      type: object
+      properties:
+        code:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The result code.
+          format: int32
+        message:
+          type: string
+          description: The message.
+          nullable: true
+        subcode:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The result sub-code.
+          format: int32
+      additionalProperties:
+        type: object
+    microsoft.graph.participantInfo:
+      title: participantInfo
+      type: object
+      properties:
+        countryCode:
+          type: string
+          description: The ISO 3166-1 Alpha-2 country code of the participant's best estimated physical location at the start of the call. Read-only.
+          nullable: true
+        endpointType:
+          $ref: '#/components/schemas/microsoft.graph.endpointType'
+        identity:
+          $ref: '#/components/schemas/microsoft.graph.identitySet'
+        languageId:
+          type: string
+          description: The language culture string. Read-only.
+          nullable: true
+        region:
+          type: string
+          description: 'The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant''s current physical location. Read-only.'
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.callState:
+      title: callState
+      enum:
+        - incoming
+        - establishing
+        - established
+        - hold
+        - transferring
+        - transferAccepted
+        - redirecting
+        - terminating
+        - terminated
+        - unknownFutureValue
+      type: string
+    microsoft.graph.toneInfo:
+      title: toneInfo
+      type: object
+      properties:
+        sequenceId:
+          type: integer
+          description: An incremental identifier used for ordering DTMF events.
+          format: int64
+        tone:
+          $ref: '#/components/schemas/microsoft.graph.tone'
+      additionalProperties:
+        type: object
+    microsoft.graph.callTranscriptionInfo:
+      title: callTranscriptionInfo
+      type: object
+      properties:
+        lastModifiedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The state modified time in UTC.
+          format: date-time
+          nullable: true
+        state:
+          $ref: '#/components/schemas/microsoft.graph.callTranscriptionState'
+      additionalProperties:
+        type: object
+    microsoft.graph.operationStatus:
+      title: operationStatus
+      enum:
+        - NotStarted
+        - Running
+        - Completed
+        - Failed
+      type: string
+    microsoft.graph.mediaStream:
+      title: mediaStream
+      type: object
+      properties:
+        direction:
+          $ref: '#/components/schemas/microsoft.graph.mediaDirection'
+        label:
+          type: string
+          description: The media stream label.
+          nullable: true
+        mediaType:
+          $ref: '#/components/schemas/microsoft.graph.modality'
+        serverMuted:
+          type: boolean
+          description: If the media is muted by the server.
+        sourceId:
+          type: string
+          description: The source ID.
+      additionalProperties:
+        type: object
+    microsoft.graph.recordingInfo:
+      title: recordingInfo
+      type: object
+      properties:
+        initiator:
+          $ref: '#/components/schemas/microsoft.graph.identitySet'
+        recordingStatus:
+          $ref: '#/components/schemas/microsoft.graph.recordingStatus'
+      additionalProperties:
+        type: object
+    microsoft.graph.teleconferenceDeviceMediaQuality:
+      title: teleconferenceDeviceMediaQuality
+      type: object
+      properties:
+        averageInboundJitter:
+          pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+          type: string
+          description: The average inbound stream network jitter.
+          format: duration
+          nullable: true
+        averageInboundPacketLossRateInPercentage:
+          type: number
+          description: 'The average inbound stream packet loss rate in percentage (0-100). For example, 0.01 means 0.01%.'
+          format: double
+          nullable: true
+        averageInboundRoundTripDelay:
+          pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+          type: string
+          description: The average inbound stream network round trip delay.
+          format: duration
+          nullable: true
+        averageOutboundJitter:
+          pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+          type: string
+          description: The average outbound stream network jitter.
+          format: duration
+          nullable: true
+        averageOutboundPacketLossRateInPercentage:
+          type: number
+          description: 'The average outbound stream packet loss rate in percentage (0-100). For example, 0.01 means 0.01%.'
+          format: double
+          nullable: true
+        averageOutboundRoundTripDelay:
+          pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+          type: string
+          description: The average outbound stream network round trip delay.
+          format: duration
+          nullable: true
+        channelIndex:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: 'The channel index of media. Indexing begins with 1.  If a media session contains 3 video modalities, channel indexes will be 1, 2, and 3.'
+          format: int32
+        inboundPackets:
+          type: integer
+          description: The total number of the inbound packets.
+          format: int64
+          nullable: true
+        localIPAddress:
+          type: string
+          description: the local IP address for the media session.
+          nullable: true
+        localPort:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The local media port.
+          format: int32
+          nullable: true
+        maximumInboundJitter:
+          pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+          type: string
+          description: The maximum inbound stream network jitter.
+          format: duration
+          nullable: true
+        maximumInboundPacketLossRateInPercentage:
+          type: number
+          description: 'The maximum inbound stream packet loss rate in percentage (0-100). For example, 0.01 means 0.01%.'
+          format: double
+          nullable: true
+        maximumInboundRoundTripDelay:
+          pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+          type: string
+          description: The maximum inbound stream network round trip delay.
+          format: duration
+          nullable: true
+        maximumOutboundJitter:
+          pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+          type: string
+          description: The maximum outbound stream network jitter.
+          format: duration
+          nullable: true
+        maximumOutboundPacketLossRateInPercentage:
+          type: number
+          description: 'The maximum outbound stream packet loss rate in percentage (0-100). For example, 0.01 means 0.01%.'
+          format: double
+          nullable: true
+        maximumOutboundRoundTripDelay:
+          pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+          type: string
+          description: The maximum outbound stream network round trip delay.
+          format: duration
+          nullable: true
+        mediaDuration:
+          pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+          type: string
+          description: 'The total modality duration. If the media enabled and disabled multiple times, MediaDuration will the summation of all of the durations.'
+          format: duration
+          nullable: true
+        networkLinkSpeedInBytes:
+          type: integer
+          description: The network link speed in bytes
+          format: int64
+          nullable: true
+        outboundPackets:
+          type: integer
+          description: The total number of the outbound packets.
+          format: int64
+          nullable: true
+        remoteIPAddress:
+          type: string
+          description: The remote IP address for the media session.
+          nullable: true
+        remotePort:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The remote media port.
+          format: int32
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.audioConferencing:
@@ -359,24 +3702,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.chatInfo:
-      title: chatInfo
-      type: object
-      properties:
-        messageId:
-          type: string
-          description: The unique identifier of a message in a Microsoft Teams channel.
-          nullable: true
-        replyChainMessageId:
-          type: string
-          description: The ID of the reply message.
-          nullable: true
-        threadId:
-          type: string
-          description: The unique identifier for a thread in Microsoft Teams.
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.itemBody:
       title: itemBody
       type: object
@@ -389,33 +3714,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.bodyType'
       additionalProperties:
         type: object
-    microsoft.graph.meetingParticipants:
-      title: meetingParticipants
-      type: object
-      properties:
-        attendees:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
-        organizer:
-          $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
-      additionalProperties:
-        type: object
-    odata.error:
-      required:
-        - error
-      type: object
-      properties:
-        error:
-          $ref: '#/components/schemas/odata.error.main'
-      additionalProperties:
-        type: object
-    microsoft.graph.bodyType:
-      title: bodyType
-      enum:
-        - text
-        - html
-      type: string
     microsoft.graph.meetingParticipantInfo:
       title: meetingParticipantInfo
       type: object
@@ -428,6 +3726,485 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    odata.error:
+      required:
+        - error
+      type: object
+      properties:
+        error:
+          $ref: '#/components/schemas/odata.error.main'
+      additionalProperties:
+        type: object
+    microsoft.graph.identity:
+      title: identity
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          nullable: true
+        id:
+          type: string
+          description: Unique identifier for the identity.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.callRecords.userAgent:
+      title: userAgent
+      type: object
+      properties:
+        applicationVersion:
+          type: string
+          description: Identifies the version of application software used by this endpoint.
+          nullable: true
+        headerValue:
+          type: string
+          description: User-agent header value reported by this endpoint.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.callRecords.failureStage:
+      title: failureStage
+      enum:
+        - unknown
+        - callSetup
+        - midcall
+        - unknownFutureValue
+      type: string
+    microsoft.graph.callRecords.deviceInfo:
+      title: deviceInfo
+      type: object
+      properties:
+        captureDeviceDriver:
+          type: string
+          description: Name of the capture device driver used by the media endpoint.
+          nullable: true
+        captureDeviceName:
+          type: string
+          description: Name of the capture device used by the media endpoint.
+          nullable: true
+        captureNotFunctioningEventRatio:
+          type: number
+          description: Fraction of the call that the media endpoint detected the capture device was not working properly.
+          format: float
+          nullable: true
+        cpuInsufficentEventRatio:
+          type: number
+          description: Fraction of the call that the media endpoint detected the CPU resources available were insufficient and caused poor quality of the audio sent and received.
+          format: float
+          nullable: true
+        deviceClippingEventRatio:
+          type: number
+          description: Fraction of the call that the media endpoint detected clipping in the captured audio that caused poor quality of the audio being sent.
+          format: float
+          nullable: true
+        deviceGlitchEventRatio:
+          type: number
+          description: Fraction of the call that the media endpoint detected glitches or gaps in the audio played or captured that caused poor quality of the audio being sent or received.
+          format: float
+          nullable: true
+        howlingEventCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Number of times during the call that the media endpoint detected howling or screeching audio.
+          format: int32
+          nullable: true
+        initialSignalLevelRootMeanSquare:
+          type: number
+          description: The root mean square (RMS) of the incoming signal of up to the first 30 seconds of the call.
+          format: float
+          nullable: true
+        lowSpeechLevelEventRatio:
+          type: number
+          description: Fraction of the call that the media endpoint detected low speech level that caused poor quality of the audio being sent.
+          format: float
+          nullable: true
+        lowSpeechToNoiseEventRatio:
+          type: number
+          description: Fraction of the call that the media endpoint detected low speech to noise level that caused poor quality of the audio being sent.
+          format: float
+          nullable: true
+        micGlitchRate:
+          type: number
+          description: Glitches per 5 minute interval for the media endpoint's microphone.
+          format: float
+          nullable: true
+        receivedNoiseLevel:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Average energy level of received audio for audio classified as mono noise or left channel of stereo noise by the media endpoint.
+          format: int32
+          nullable: true
+        receivedSignalLevel:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: 'Average energy level of received audio for audio classified as mono speech, or left channel of stereo speech by the media endpoint.'
+          format: int32
+          nullable: true
+        renderDeviceDriver:
+          type: string
+          description: Name of the render device driver used by the media endpoint.
+          nullable: true
+        renderDeviceName:
+          type: string
+          description: Name of the render device used by the media endpoint.
+          nullable: true
+        renderMuteEventRatio:
+          type: number
+          description: Fraction of the call that media endpoint detected device render is muted.
+          format: float
+          nullable: true
+        renderNotFunctioningEventRatio:
+          type: number
+          description: Fraction of the call that the media endpoint detected the render device was not working properly.
+          format: float
+          nullable: true
+        renderZeroVolumeEventRatio:
+          type: number
+          description: Fraction of the call that media endpoint detected device render volume is set to 0.
+          format: float
+          nullable: true
+        sentNoiseLevel:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Average energy level of sent audio for audio classified as mono noise or left channel of stereo noise by the media endpoint.
+          format: int32
+          nullable: true
+        sentSignalLevel:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: 'Average energy level of sent audio for audio classified as mono speech, or left channel of stereo speech by the media endpoint.'
+          format: int32
+          nullable: true
+        speakerGlitchRate:
+          type: number
+          description: Glitches per 5 minute internal for the media endpoint's loudspeaker.
+          format: float
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.callRecords.networkInfo:
+      title: networkInfo
+      type: object
+      properties:
+        bandwidthLowEventRatio:
+          type: number
+          description: Fraction of the call that the media endpoint detected the available bandwidth or bandwidth policy was low enough to cause poor quality of the audio sent.
+          format: float
+          nullable: true
+        basicServiceSetIdentifier:
+          type: string
+          description: The wireless LAN basic service set identifier of the media endpoint used to connect to the network.
+          nullable: true
+        connectionType:
+          $ref: '#/components/schemas/microsoft.graph.callRecords.networkConnectionType'
+        delayEventRatio:
+          type: number
+          description: Fraction of the call that the media endpoint detected the network delay was significant enough to impact the ability to have real-time two-way communication.
+          format: float
+          nullable: true
+        dnsSuffix:
+          type: string
+          description: DNS suffix associated with the network adapter of the media endpoint.
+          nullable: true
+        ipAddress:
+          type: string
+          description: IP address of the media endpoint.
+          nullable: true
+        linkSpeed:
+          type: integer
+          description: Link speed in bits per second reported by the network adapter used by the media endpoint.
+          format: int64
+          nullable: true
+        macAddress:
+          type: string
+          description: The media access control (MAC) address of the media endpoint's network device.
+          nullable: true
+        port:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Network port number used by media endpoint.
+          format: int32
+          nullable: true
+        receivedQualityEventRatio:
+          type: number
+          description: Fraction of the call that the media endpoint detected the network was causing poor quality of the audio received.
+          format: float
+          nullable: true
+        reflexiveIPAddress:
+          type: string
+          description: IP address of the media endpoint as seen by the media relay server. This is typically the public internet IP address associated to the endpoint.
+          nullable: true
+        relayIPAddress:
+          type: string
+          description: IP address of the media relay server allocated by the media endpoint.
+          nullable: true
+        relayPort:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Network port number allocated on the media relay server by the media endpoint.
+          format: int32
+          nullable: true
+        sentQualityEventRatio:
+          type: number
+          description: Fraction of the call that the media endpoint detected the network was causing poor quality of the audio sent.
+          format: float
+          nullable: true
+        subnet:
+          type: string
+          description: Subnet used for media stream by the media endpoint.
+          nullable: true
+        wifiBand:
+          $ref: '#/components/schemas/microsoft.graph.callRecords.wifiBand'
+        wifiBatteryCharge:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Estimated remaining battery charge in percentage reported by the media endpoint.
+          format: int32
+          nullable: true
+        wifiChannel:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: WiFi channel used by the media endpoint.
+          format: int32
+          nullable: true
+        wifiMicrosoftDriver:
+          type: string
+          description: Name of the Microsoft WiFi driver used by the media endpoint. Value may be localized based on the language used by endpoint.
+          nullable: true
+        wifiMicrosoftDriverVersion:
+          type: string
+          description: Version of the Microsoft WiFi driver used by the media endpoint.
+          nullable: true
+        wifiRadioType:
+          $ref: '#/components/schemas/microsoft.graph.callRecords.wifiRadioType'
+        wifiSignalStrength:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: WiFi signal strength in percentage reported by the media endpoint.
+          format: int32
+          nullable: true
+        wifiVendorDriver:
+          type: string
+          description: Name of the WiFi driver used by the media endpoint. Value may be localized based on the language used by endpoint.
+          nullable: true
+        wifiVendorDriverVersion:
+          type: string
+          description: Version of the WiFi driver used by the media endpoint.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.callRecords.mediaStream:
+      title: mediaStream
+      type: object
+      properties:
+        averageAudioDegradation:
+          type: number
+          description: Average Network Mean Opinion Score degradation for stream. Represents how much the network loss and jitter has impacted the quality of received audio.
+          format: float
+          nullable: true
+        averageAudioNetworkJitter:
+          pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+          type: string
+          description: 'Average jitter for the stream computed as specified in [RFC 3550][], denoted in [ISO 8601][] format. For example, 1 second is denoted as ''PT1S'', where ''P'' is the duration designator, ''T'' is the time designator, and ''S'' is the second designator.'
+          format: duration
+          nullable: true
+        averageBandwidthEstimate:
+          type: integer
+          description: Average estimated bandwidth available between two endpoints in bits per second.
+          format: int64
+          nullable: true
+        averageJitter:
+          pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+          type: string
+          description: 'Average jitter for the stream computed as specified in [RFC 3550][], denoted in [ISO 8601][] format. For example, 1 second is denoted as ''PT1S'', where ''P'' is the duration designator, ''T'' is the time designator, and ''S'' is the second designator.'
+          format: duration
+          nullable: true
+        averagePacketLossRate:
+          type: number
+          description: Average packet loss rate for stream.
+          format: float
+          nullable: true
+        averageRatioOfConcealedSamples:
+          type: number
+          description: Ratio of the number of audio frames with samples generated by packet loss concealment to the total number of audio frames.
+          format: float
+          nullable: true
+        averageReceivedFrameRate:
+          type: number
+          description: Average frames per second received for all video streams computed over the duration of the session.
+          format: float
+          nullable: true
+        averageRoundTripTime:
+          pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+          type: string
+          description: 'Average network propagation round-trip time computed as specified in [RFC 3550][], denoted in [ISO 8601][] format. For example, 1 second is denoted as ''PT1S'', where ''P'' is the duration designator, ''T'' is the time designator, and ''S'' is the second designator.'
+          format: duration
+          nullable: true
+        averageVideoFrameLossPercentage:
+          type: number
+          description: Average percentage of video frames lost as displayed to the user.
+          format: float
+          nullable: true
+        averageVideoFrameRate:
+          type: number
+          description: 'Average frames per second received for a video stream, computed over the duration of the session.'
+          format: float
+          nullable: true
+        averageVideoPacketLossRate:
+          type: number
+          description: 'Average fraction of packets lost, as specified in [RFC 3550][], computed over the duration of the session.'
+          format: float
+          nullable: true
+        endDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'UTC time when the stream ended. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+          format: date-time
+          nullable: true
+        lowFrameRateRatio:
+          type: number
+          description: Fraction of the call where frame rate is less than 7.5 frames per second.
+          format: float
+          nullable: true
+        lowVideoProcessingCapabilityRatio:
+          type: number
+          description: Fraction of the call that the client is running less than 70% expected video processing capability.
+          format: float
+          nullable: true
+        maxAudioNetworkJitter:
+          pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+          type: string
+          description: 'Maximum of audio network jitter computed over each of the 20 second windows during the session, denoted in [ISO 8601][] format. For example, 1 second is denoted as ''PT1S'', where ''P'' is the duration designator, ''T'' is the time designator, and ''S'' is the second designator.'
+          format: duration
+          nullable: true
+        maxJitter:
+          pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+          type: string
+          description: 'Maximum jitter for the stream computed as specified in RFC 3550, denoted in [ISO 8601][] format. For example, 1 second is denoted as ''PT1S'', where ''P'' is the duration designator, ''T'' is the time designator, and ''S'' is the second designator.'
+          format: duration
+          nullable: true
+        maxPacketLossRate:
+          type: number
+          description: Maximum packet loss rate for the stream.
+          format: float
+          nullable: true
+        maxRatioOfConcealedSamples:
+          type: number
+          description: Maximum ratio of packets concealed by the healer.
+          format: float
+          nullable: true
+        maxRoundTripTime:
+          pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+          type: string
+          description: 'Maximum network propagation round-trip time computed as specified in [RFC 3550][], denoted in [ISO 8601][] format. For example, 1 second is denoted as ''PT1S'', where ''P'' is the duration designator, ''T'' is the time designator, and ''S'' is the second designator.'
+          format: duration
+          nullable: true
+        packetUtilization:
+          type: integer
+          description: Packet count for the stream.
+          format: int64
+          nullable: true
+        postForwardErrorCorrectionPacketLossRate:
+          type: number
+          description: Packet loss rate after FEC has been applied aggregated across all video streams and codecs.
+          format: float
+          nullable: true
+        startDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'UTC time when the stream started. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+          format: date-time
+          nullable: true
+        streamDirection:
+          $ref: '#/components/schemas/microsoft.graph.callRecords.mediaStreamDirection'
+        streamId:
+          type: string
+          description: Unique identifier for the stream.
+          nullable: true
+        wasMediaBypassed:
+          type: boolean
+          description: 'True if the media stream bypassed the Mediation Server and went straight between client and PSTN Gateway/PBX, false otherwise.'
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.routingType:
+      title: routingType
+      enum:
+        - forwarded
+        - lookup
+        - selfFork
+        - unknownFutureValue
+      type: string
+    microsoft.graph.mediaState:
+      title: mediaState
+      enum:
+        - active
+        - inactive
+        - unknownFutureValue
+      type: string
+    microsoft.graph.endpointType:
+      title: endpointType
+      enum:
+        - default
+        - voicemail
+        - skypeForBusiness
+        - skypeForBusinessVoipPhone
+        - unknownFutureValue
+      type: string
+    microsoft.graph.tone:
+      title: tone
+      enum:
+        - tone0
+        - tone1
+        - tone2
+        - tone3
+        - tone4
+        - tone5
+        - tone6
+        - tone7
+        - tone8
+        - tone9
+        - star
+        - pound
+        - a
+        - b
+        - c
+        - d
+        - flash
+      type: string
+    microsoft.graph.callTranscriptionState:
+      title: callTranscriptionState
+      enum:
+        - notStarted
+        - active
+        - inactive
+        - unknownFutureValue
+      type: string
+    microsoft.graph.mediaDirection:
+      title: mediaDirection
+      enum:
+        - inactive
+        - sendOnly
+        - receiveOnly
+        - sendReceive
+      type: string
+    microsoft.graph.bodyType:
+      title: bodyType
+      enum:
+        - text
+        - html
+      type: string
     odata.error.main:
       required:
         - code
@@ -451,18 +4228,43 @@ components:
           description: The structure of this object is service-specific
       additionalProperties:
         type: object
-    microsoft.graph.identitySet:
-      title: identitySet
-      type: object
-      properties:
-        application:
-          $ref: '#/components/schemas/microsoft.graph.identity'
-        device:
-          $ref: '#/components/schemas/microsoft.graph.identity'
-        user:
-          $ref: '#/components/schemas/microsoft.graph.identity'
-      additionalProperties:
-        type: object
+    microsoft.graph.callRecords.networkConnectionType:
+      title: networkConnectionType
+      enum:
+        - unknown
+        - wired
+        - wifi
+        - mobile
+        - tunnel
+        - unknownFutureValue
+      type: string
+    microsoft.graph.callRecords.wifiBand:
+      title: wifiBand
+      enum:
+        - unknown
+        - frequency24GHz
+        - frequency50GHz
+        - frequency60GHz
+        - unknownFutureValue
+      type: string
+    microsoft.graph.callRecords.wifiRadioType:
+      title: wifiRadioType
+      enum:
+        - unknown
+        - wifi80211a
+        - wifi80211b
+        - wifi80211g
+        - wifi80211n
+        - wifi80211ac
+        - wifi80211ax
+        - unknownFutureValue
+      type: string
+    microsoft.graph.callRecords.mediaStreamDirection:
+      title: mediaStreamDirection
+      enum:
+        - callerToCallee
+        - calleeToCaller
+      type: string
     odata.error.detail:
       required:
         - code
@@ -475,20 +4277,6 @@ components:
           type: string
         target:
           type: string
-      additionalProperties:
-        type: object
-    microsoft.graph.identity:
-      title: identity
-      type: object
-      properties:
-        displayName:
-          type: string
-          description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
-          nullable: true
-        id:
-          type: string
-          description: Unique identifier for the identity.
-          nullable: true
       additionalProperties:
         type: object
   responses:
