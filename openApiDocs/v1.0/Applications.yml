@@ -2369,6 +2369,8 @@ paths:
                 - servicePrincipalNames desc
                 - servicePrincipalType
                 - servicePrincipalType desc
+                - signInAudience
+                - signInAudience desc
                 - tags
                 - tags desc
                 - tokenEncryptionKeyId
@@ -2413,6 +2415,7 @@ paths:
                 - samlSingleSignOnSettings
                 - servicePrincipalNames
                 - servicePrincipalType
+                - signInAudience
                 - tags
                 - tokenEncryptionKeyId
                 - appRoleAssignedTo
@@ -2564,6 +2567,7 @@ paths:
                 - samlSingleSignOnSettings
                 - servicePrincipalNames
                 - servicePrincipalType
+                - signInAudience
                 - tags
                 - tokenEncryptionKeyId
                 - appRoleAssignedTo
@@ -6494,7 +6498,7 @@ components:
           nullable: true
         key:
           type: string
-          description: Value for the key credential. Should be a base 64 encoded value.
+          description: 'The certificate''s raw data in byte array converted to Base64 string; for example, [System.Convert]::ToBase64String($Cert.GetRawCertData()).'
           format: base64url
           nullable: true
         keyId:
@@ -6734,6 +6738,9 @@ components:
             servicePrincipalType:
               type: string
               description: Identifies if the service principal represents an application or a managed identity. This is set by Azure AD internally. For a service principal that represents an application this is set as Application. For a service principal that represent a managed identity this is set as ManagedIdentity.
+              nullable: true
+            signInAudience:
+              type: string
               nullable: true
             tags:
               type: array
