@@ -73,6 +73,8 @@ jobs:
     inputs:
       targetType: 'inline'
       script: |
+        git config --global user.email 'GraphTooling@service.microsoft.com'
+        git config --global user.name 'Microsoft Graph DevX Tooling'
         git status
         git add .
         git commit -m 'Docs Generation'
