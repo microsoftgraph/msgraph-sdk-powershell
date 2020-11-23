@@ -85,6 +85,7 @@ directive:
     - microsoft.graph.governanceRoleAssignment
     - microsoft.graph.governanceRoleDefinition
     - microsoft.graph.workbookOperationError
+    - microsoft.graph.parentLabelDetails
 
   # Set parameter alias
   - where:
