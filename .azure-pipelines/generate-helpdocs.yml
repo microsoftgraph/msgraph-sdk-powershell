@@ -50,11 +50,13 @@ jobs:
     displayName: Generate Docs
     continueOnError: false
     inputs:
-      filePath: '$(System.DefaultWorkingDirectory)/tools/GenerateHelpDocs.ps1'
+      targetType: 'inline'
       pwsh: true
+      script: | 
+        pwsh $(System.DefaultWorkingDirectory)/tools/GenerateHelpDocs.ps1 -RepositoryName "LocalNugetFeed"
 
   - task: Bash@3
-    displayName : "Create PR $(BRANCH)"
+    displayName : "Create PR"
     inputs:
       targetType: 'inline'
       script: |
