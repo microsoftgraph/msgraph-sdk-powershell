@@ -6,22 +6,33 @@ name: PowerShell Generate Help Docs
 
 pool: MsGraphDevXAzureAgents
 
-variables:
-  BRANCH: 'generate-helpdocs'
-  GitUserEmail: 'GraphTooling@service.microsoft.com'
-  GitUserName: 'Microsoft Graph DevX Tooling'
-  BaseBranch: 'dev'
+parameters:
+  - name: BRANCH
+    displayName: 'Branch'
+    type: string
+    default: 'generate-helpdocs'
+  - name: GitUserEmail
+    displayName: 'Git User Email'
+    default: 'GraphTooling@service.microsoft.com'
+    type: string
+  - name: GitUserName
+    displayName: 'Git User Name'
+    type: string
+    default: 'Microsoft Graph DevX Tooling'
+  - name: BaseBranch
+    type: string
+    default: 'dev'
+    displayName: 'Base Branch'
 
-steps:
-  - checkout: self
-    persistCredentials: true
-    clean: true
-    fetchDepth: 1
+jobs:
+- job: MSGraphPSSDKHelpDocsGeneration
+  displayName:  Microsoft Graph PowerShell SDK Roll-Up Module Generation
+  pool: MsGraphDevXAzureAgents
+  timeoutInMinutes: 600
+  condition: and(succeeded(), eq(eq(variables['Build.SourceBranch'], 'refs/heads/master'), false))
 
-  - task: securedevelopmentteam.vss-secure-development-tools.build-task-credscan.CredScan@2
-    displayName: 'Run CredScan'
-    inputs:
-      debugMode: false
+  steps:
+  - template: ./install-tools-template.yml
 
   - task: PowerShell@2
     displayName: "Compute Branch"

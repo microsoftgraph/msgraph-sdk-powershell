@@ -98,6 +98,11 @@ stages:
       EnableSigning: true
       BUILDNUMBER: $(BUILDNUMBER)
 
+- stage: GenerateHelpDocs
+  displayName: 'Generate Help Docs'
+  jobs:
+  - template: /generate-helpdocs.yml
+
 - stage: SecurityPostChecks
   displayName: 'Security Post Checks'
   jobs:
