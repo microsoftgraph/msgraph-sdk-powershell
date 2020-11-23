@@ -1,0 +1,5466 @@
+
+[Update-MarkdownHelpModule] 11/23/2020 14:52:51 Determined module name for '.\src\Teams\Teams\help' as 'Microsoft.Graph.Teams'.
+[Update-MarkdownHelpModule] 11/23/2020 14:52:51 [Update-MarkdownHelpModule]11/23/2020 2:52:51 PM
+[Update-MarkdownHelpModule] 11/23/2020 14:52:51 Updating documents for module 'Microsoft.Graph.Teams' in .\src\Teams\Teams\help
+---- UPDATING Cmdlet : Copy-MgTeam ----
+
+	Parameter Set Added: Clone
+
+	Parameter Set Added: CloneExpanded
+
+	Parameter Set Added: CloneViaIdentity
+
+	Parameter Set Added: CloneViaIdentityExpanded
+
+	Parameter Set Deleted: Clone1
+
+	Parameter Set Deleted: CloneExpanded1
+
+	Parameter Set Deleted: CloneViaIdentity1
+
+	Parameter Set Deleted: CloneViaIdentityExpanded1
+
+	Parameter Set Name Updated: CloneExpanded
+		Old Set: CloneExpanded1
+		New Set: CloneExpanded
+
+	Parameter Set Name Updated: Clone
+		Old Set: Clone1
+		New Set: Clone
+
+	Parameter Set Name Updated: CloneViaIdentityExpanded
+		Old Set: CloneViaIdentityExpanded1
+		New Set: CloneViaIdentityExpanded
+
+	Parameter Set Name Updated: CloneViaIdentity
+		Old Set: CloneViaIdentity1
+		New Set: CloneViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Copy-MgTeam ----
+
+
+---- UPDATING Cmdlet : Get-MgAppCatalogTeamApp ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgAppCatalogTeamApp ----
+
+
+---- UPDATING Cmdlet : Get-MgAppCatalogTeamAppDefinition ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: List
+
+	Parameter Set Name Updated: List1
+		Old Set: List
+		New Set: List1
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgAppCatalogTeamAppDefinition ----
+
+
+---- UPDATING Cmdlet : Get-MgChat ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgChat ----
+
+
+---- UPDATING Cmdlet : Get-MgChatMessage ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: Get2
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: Get2
+		Old Set: 
+		New Set: Get2
+
+	Parameter Added: All
+
+	Parameter Added: ChatId
+
+	Parameter Added: ChatMessageId
+
+	Parameter Added: CountVariable
+
+	Parameter Added: ExpandProperty
+
+	Parameter Added: Filter
+
+	Parameter Added: InputObject
+
+	Parameter Added: PageSize
+
+	Parameter Added: Property
+
+	Parameter Added: Search
+
+	Parameter Added: Skip
+
+	Parameter Added: Sort
+
+	Parameter Added: Top
+
+---- COMPLETED UPDATING Cmdlet : Get-MgChatMessage ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupTeam ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupTeam ----
+
+
+---- UPDATING Cmdlet : Get-MgTeam ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgTeam ----
+
+
+---- UPDATING Cmdlet : Get-MgTeamChannel ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: List
+
+	Parameter Set Name Updated: List1
+		Old Set: List
+		New Set: List1
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgTeamChannel ----
+
+
+---- UPDATING Cmdlet : Get-MgTeamChannelFileFolder ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgTeamChannelFileFolder ----
+
+
+---- UPDATING Cmdlet : Get-MgTeamChannelFileFolderContent ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgTeamChannelFileFolderContent ----
+
+
+---- UPDATING Cmdlet : Get-MgTeamChannelMember ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: List
+
+	Parameter Set Name Updated: List1
+		Old Set: List
+		New Set: List1
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgTeamChannelMember ----
+
+
+---- UPDATING Cmdlet : Get-MgTeamChannelMessage ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: Get2
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: GetViaIdentity2
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List
+
+	Parameter Set Name Updated: List1
+		Old Set: List
+		New Set: List1
+
+	Parameter Set Name Updated: Get2
+		Old Set: Get1
+		New Set: Get2
+
+	Parameter Set Name Updated: GetViaIdentity2
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity2
+
+---- COMPLETED UPDATING Cmdlet : Get-MgTeamChannelMessage ----
+
+
+---- UPDATING Cmdlet : Get-MgTeamChannelMessageHostedContent ----
+
+	Parameter Set Added: Get2
+
+	Parameter Set Added: Get3
+
+	Parameter Set Added: GetViaIdentity2
+
+	Parameter Set Added: GetViaIdentity3
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List
+
+	Parameter Set Name Updated: List1
+		Old Set: List
+		New Set: List1
+
+	Parameter Set Name Updated: Get3
+		Old Set: Get1
+		New Set: Get3
+
+	Parameter Set Name Updated: Get2
+		Old Set: Get
+		New Set: Get2
+
+	Parameter Set Name Updated: GetViaIdentity3
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity3
+
+	Parameter Set Name Updated: GetViaIdentity2
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity2
+
+---- COMPLETED UPDATING Cmdlet : Get-MgTeamChannelMessageHostedContent ----
+
+
+---- UPDATING Cmdlet : Get-MgTeamChannelMessageReply ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgTeamChannelMessageReply ----
+
+
+---- UPDATING Cmdlet : Get-MgTeamChannelTab ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgTeamChannelTab ----
+
+
+---- UPDATING Cmdlet : Get-MgTeamChannelTabTeamApp ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgTeamChannelTabTeamApp ----
+
+
+---- UPDATING Cmdlet : Get-MgTeamChannelTabTeamAppByRef ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgTeamChannelTabTeamAppByRef ----
+
+
+---- UPDATING Cmdlet : Get-MgTeamGroupByRef ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgTeamGroupByRef ----
+
+
+---- UPDATING Cmdlet : Get-MgTeamInstalledApp ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgTeamInstalledApp ----
+
+
+---- UPDATING Cmdlet : Get-MgTeamInstalledAppTeamApp ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgTeamInstalledAppTeamApp ----
+
+
+---- UPDATING Cmdlet : Get-MgTeamInstalledAppTeamAppByRef ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgTeamInstalledAppTeamAppByRef ----
+
+
+---- UPDATING Cmdlet : Get-MgTeamInstalledAppTeamAppDefinition ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgTeamInstalledAppTeamAppDefinition ----
+
+
+---- UPDATING Cmdlet : Get-MgTeamInstalledAppTeamAppDefinitionByRef ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgTeamInstalledAppTeamAppDefinitionByRef ----
+
+
+---- UPDATING Cmdlet : Get-MgTeamMember ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgTeamMember ----
+
+
+---- UPDATING Cmdlet : Get-MgTeamMessage ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: Get
+		Old Set: 
+		New Set: Get
+
+---- COMPLETED UPDATING Cmdlet : Get-MgTeamMessage ----
+
+
+---- UPDATING Cmdlet : Get-MgTeamOperation ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgTeamOperation ----
+
+
+---- UPDATING Cmdlet : Get-MgTeamPrimaryChannel ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgTeamPrimaryChannel ----
+
+
+---- UPDATING Cmdlet : Get-MgTeamPrimaryChannelFileFolder ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgTeamPrimaryChannelFileFolder ----
+
+
+---- UPDATING Cmdlet : Get-MgTeamPrimaryChannelFileFolderContent ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgTeamPrimaryChannelFileFolderContent ----
+
+
+---- UPDATING Cmdlet : Get-MgTeamPrimaryChannelMember ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgTeamPrimaryChannelMember ----
+
+
+---- UPDATING Cmdlet : Get-MgTeamPrimaryChannelMessage ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgTeamPrimaryChannelMessage ----
+
+
+---- UPDATING Cmdlet : Get-MgTeamPrimaryChannelMessageHostedContent ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get2
+
+	Parameter Set Deleted: Get3
+
+	Parameter Set Deleted: GetViaIdentity2
+
+	Parameter Set Deleted: GetViaIdentity3
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get3
+		New Set: Get1
+
+	Parameter Set Name Updated: Get
+		Old Set: Get2
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity3
+		New Set: GetViaIdentity1
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity2
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgTeamPrimaryChannelMessageHostedContent ----
+
+
+---- UPDATING Cmdlet : Get-MgTeamPrimaryChannelMessageReply ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgTeamPrimaryChannelMessageReply ----
+
+
+---- UPDATING Cmdlet : Get-MgTeamPrimaryChannelTab ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgTeamPrimaryChannelTab ----
+
+
+---- UPDATING Cmdlet : Get-MgTeamPrimaryChannelTabTeamApp ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgTeamPrimaryChannelTabTeamApp ----
+
+
+---- UPDATING Cmdlet : Get-MgTeamPrimaryChannelTabTeamAppByRef ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgTeamPrimaryChannelTabTeamAppByRef ----
+
+
+---- UPDATING Cmdlet : Get-MgTeamSchedule ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgTeamSchedule ----
+
+
+---- UPDATING Cmdlet : Get-MgTeamScheduleOfferShiftRequest ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgTeamScheduleOfferShiftRequest ----
+
+
+---- UPDATING Cmdlet : Get-MgTeamScheduleOpenShift ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgTeamScheduleOpenShift ----
+
+
+---- UPDATING Cmdlet : Get-MgTeamScheduleOpenShiftChangeRequest ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgTeamScheduleOpenShiftChangeRequest ----
+
+
+---- UPDATING Cmdlet : Get-MgTeamScheduleSchedulingGroup ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgTeamScheduleSchedulingGroup ----
+
+
+---- UPDATING Cmdlet : Get-MgTeamScheduleShift ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgTeamScheduleShift ----
+
+
+---- UPDATING Cmdlet : Get-MgTeamScheduleSwapShiftChangeRequest ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgTeamScheduleSwapShiftChangeRequest ----
+
+
+---- UPDATING Cmdlet : Get-MgTeamScheduleTimeOff ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgTeamScheduleTimeOff ----
+
+
+---- UPDATING Cmdlet : Get-MgTeamScheduleTimeOffReason ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgTeamScheduleTimeOffReason ----
+
+
+---- UPDATING Cmdlet : Get-MgTeamScheduleTimeOffRequest ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgTeamScheduleTimeOffRequest ----
+
+
+---- UPDATING Cmdlet : Get-MgTeamTemplate ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgTeamTemplate ----
+
+
+---- UPDATING Cmdlet : Get-MgTeamTemplateByRef ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgTeamTemplateByRef ----
+
+
+---- UPDATING Cmdlet : Get-MgTeamwork ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: Get
+		Old Set: 
+		New Set: Get
+
+---- COMPLETED UPDATING Cmdlet : Get-MgTeamwork ----
+
+
+---- UPDATING Cmdlet : Get-MgTeamworkWorkforceIntegration ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgTeamworkWorkforceIntegration ----
+
+
+---- UPDATING Cmdlet : Get-MgUserJoinedTeam ----
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Deleted: InputObject
+
+	Parameter Deleted: TeamId
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserJoinedTeam ----
+
+
+---- UPDATING Cmdlet : Get-MgUserTeamwork ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserTeamwork ----
+
+
+---- UPDATING Cmdlet : Get-MgUserTeamworkInstalledApp ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserTeamworkInstalledApp ----
+
+
+---- UPDATING Cmdlet : Get-MgUserTeamworkInstalledAppChat ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserTeamworkInstalledAppChat ----
+
+
+---- UPDATING Cmdlet : Get-MgUserTeamworkInstalledAppChatByRef ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserTeamworkInstalledAppChatByRef ----
+
+
+---- UPDATING Cmdlet : Invoke-MgArchiveTeam ----
+
+	Parameter Set Added: Archive
+
+	Parameter Set Added: ArchiveExpanded
+
+	Parameter Set Added: ArchiveViaIdentity
+
+	Parameter Set Added: ArchiveViaIdentityExpanded
+
+	Parameter Set Deleted: Archive1
+
+	Parameter Set Deleted: ArchiveExpanded1
+
+	Parameter Set Deleted: ArchiveViaIdentity1
+
+	Parameter Set Deleted: ArchiveViaIdentityExpanded1
+
+	Parameter Set Name Updated: ArchiveExpanded
+		Old Set: ArchiveExpanded1
+		New Set: ArchiveExpanded
+
+	Parameter Set Name Updated: Archive
+		Old Set: Archive1
+		New Set: Archive
+
+	Parameter Set Name Updated: ArchiveViaIdentityExpanded
+		Old Set: ArchiveViaIdentityExpanded1
+		New Set: ArchiveViaIdentityExpanded
+
+	Parameter Set Name Updated: ArchiveViaIdentity
+		Old Set: ArchiveViaIdentity1
+		New Set: ArchiveViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgArchiveTeam ----
+
+
+---- UPDATING Cmdlet : Invoke-MgShareTeamSchedule ----
+
+	Parameter Set Added: Share
+
+	Parameter Set Added: ShareExpanded
+
+	Parameter Set Added: ShareViaIdentity
+
+	Parameter Set Added: ShareViaIdentityExpanded
+
+	Parameter Set Deleted: Share1
+
+	Parameter Set Deleted: ShareExpanded1
+
+	Parameter Set Deleted: ShareViaIdentity1
+
+	Parameter Set Deleted: ShareViaIdentityExpanded1
+
+	Parameter Set Name Updated: ShareExpanded
+		Old Set: ShareExpanded1
+		New Set: ShareExpanded
+
+	Parameter Set Name Updated: Share
+		Old Set: Share1
+		New Set: Share
+
+	Parameter Set Name Updated: ShareViaIdentityExpanded
+		Old Set: ShareViaIdentityExpanded1
+		New Set: ShareViaIdentityExpanded
+
+	Parameter Set Name Updated: ShareViaIdentity
+		Old Set: ShareViaIdentity1
+		New Set: ShareViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgShareTeamSchedule ----
+
+
+---- UPDATING Cmdlet : Invoke-MgUnarchiveTeam ----
+
+	Parameter Set Added: Unarchive
+
+	Parameter Set Added: UnarchiveViaIdentity
+
+	Parameter Set Deleted: Unarchive1
+
+	Parameter Set Deleted: UnarchiveViaIdentity1
+
+	Parameter Set Name Updated: Unarchive
+		Old Set: Unarchive1
+		New Set: Unarchive
+
+	Parameter Set Name Updated: UnarchiveViaIdentity
+		Old Set: UnarchiveViaIdentity1
+		New Set: UnarchiveViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgUnarchiveTeam ----
+
+
+---- UPDATING Cmdlet : New-MgAppCatalogTeamApp ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Updated: AppDefinitions
+		Type updated from IMicrosoftGraphTeamsAppDefinition1[] to IMicrosoftGraphTeamsAppDefinition[]
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphTeamsApp1 to IMicrosoftGraphTeamsApp
+
+---- COMPLETED UPDATING Cmdlet : New-MgAppCatalogTeamApp ----
+
+
+---- UPDATING Cmdlet : New-MgAppCatalogTeamAppDefinition ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+	Parameter Added: AzureAdAppId
+
+	Parameter Added: CreatedBy
+
+	Parameter Added: Description
+
+	Parameter Added: LastModifiedDateTime
+
+	Parameter Added: PublishingState
+
+	Parameter Added: Shortdescription
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphTeamsAppDefinition1 to IMicrosoftGraphTeamsAppDefinition
+
+---- COMPLETED UPDATING Cmdlet : New-MgAppCatalogTeamAppDefinition ----
+
+
+---- UPDATING Cmdlet : New-MgChat ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Added: ChatType
+
+	Parameter Added: CreatedDateTime
+
+	Parameter Added: InstalledApps
+
+	Parameter Added: LastUpdatedDateTime
+
+	Parameter Added: Members
+
+	Parameter Added: Messages
+
+	Parameter Added: Tabs
+
+	Parameter Added: Topic
+
+	Parameter Updated: BodyParameter
+		Type updated from Hashtable to IMicrosoftGraphChat
+
+---- COMPLETED UPDATING Cmdlet : New-MgChat ----
+
+
+---- UPDATING Cmdlet : New-MgTeam ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Added: CreatedDateTime
+
+	Parameter Added: DiscoverySettings
+
+	Parameter Added: IsMembershipLimitedToOwners
+
+	Parameter Added: Owners
+
+	Parameter Added: Photo
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphTeam1 to IMicrosoftGraphTeam
+
+	Parameter Updated: Channels
+		Type updated from IMicrosoftGraphChannel1[] to IMicrosoftGraphChannel[]
+
+	Parameter Updated: Group
+		Type updated from IMicrosoftGraphGroup1 to IMicrosoftGraphGroup
+
+	Parameter Updated: InstalledApps
+		Type updated from IMicrosoftGraphTeamsAppInstallation1[] to IMicrosoftGraphTeamsAppInstallation[]
+
+	Parameter Updated: PrimaryChannel
+		Type updated from IMicrosoftGraphChannel1 to IMicrosoftGraphChannel
+
+	Parameter Updated: Schedule
+		Type updated from IMicrosoftGraphSchedule1 to IMicrosoftGraphSchedule
+
+---- COMPLETED UPDATING Cmdlet : New-MgTeam ----
+
+
+---- UPDATING Cmdlet : New-MgTeamChannel ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+	Parameter Added: CreatedDateTime
+
+	Parameter Added: ModerationSettings
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphChannel1 to IMicrosoftGraphChannel
+
+	Parameter Updated: FilesFolder
+		Type updated from IMicrosoftGraphDriveItem1 to IMicrosoftGraphDriveItem
+
+	Parameter Updated: Messages
+		Type updated from IMicrosoftGraphChatMessage1[] to IMicrosoftGraphChatMessage[]
+
+	Parameter Updated: Tabs
+		Type updated from IMicrosoftGraphTeamsTab1[] to IMicrosoftGraphTeamsTab[]
+
+---- COMPLETED UPDATING Cmdlet : New-MgTeamChannel ----
+
+
+---- UPDATING Cmdlet : New-MgTeamChannelMember ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateExpanded1
+		Old Set: CreateExpanded
+		New Set: CreateExpanded1
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded1
+		Old Set: CreateViaIdentityExpanded
+		New Set: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : New-MgTeamChannelMember ----
+
+
+---- UPDATING Cmdlet : New-MgTeamChannelMessage ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+	Parameter Added: ChannelIdentity
+
+	Parameter Added: ChatId
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphChatMessage1 to IMicrosoftGraphChatMessage
+
+	Parameter Updated: HostedContents
+		Type updated from IMicrosoftGraphChatMessageHostedContent1[] to IMicrosoftGraphChatMessageHostedContent[]
+
+	Parameter Updated: Replies
+		Type updated from IMicrosoftGraphChatMessage1[] to IMicrosoftGraphChatMessage[]
+
+---- COMPLETED UPDATING Cmdlet : New-MgTeamChannelMessage ----
+
+
+---- UPDATING Cmdlet : New-MgTeamChannelMessageHostedContent ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+	Parameter Added: ContentBytesInputFile
+
+	Parameter Added: ContentType
+
+	Parameter Updated: BodyParameter
+		Type updated from Hashtable to IMicrosoftGraphChatMessageHostedContent
+
+---- COMPLETED UPDATING Cmdlet : New-MgTeamChannelMessageHostedContent ----
+
+
+---- UPDATING Cmdlet : New-MgTeamChannelMessageReply ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+	Parameter Added: ChannelIdentity
+
+	Parameter Added: ChatId
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphChatMessage1 to IMicrosoftGraphChatMessage
+
+	Parameter Updated: HostedContents
+		Type updated from IMicrosoftGraphChatMessageHostedContent1[] to IMicrosoftGraphChatMessageHostedContent[]
+
+	Parameter Updated: Replies
+		Type updated from IMicrosoftGraphChatMessage1[] to IMicrosoftGraphChatMessage[]
+
+---- COMPLETED UPDATING Cmdlet : New-MgTeamChannelMessageReply ----
+
+
+---- UPDATING Cmdlet : New-MgTeamChannelTab ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+	Parameter Added: MessageId
+
+	Parameter Added: SortOrderIndex
+
+	Parameter Added: TeamsAppId
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphTeamsTab1 to IMicrosoftGraphTeamsTab
+
+	Parameter Updated: TeamsApp
+		Type updated from IMicrosoftGraphTeamsApp1 to IMicrosoftGraphTeamsApp
+
+---- COMPLETED UPDATING Cmdlet : New-MgTeamChannelTab ----
+
+
+---- UPDATING Cmdlet : New-MgTeamInstalledApp ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded
+		Old Set: CreateViaIdentityExpanded1
+		New Set: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphTeamsAppInstallation1 to IMicrosoftGraphTeamsAppInstallation
+
+	Parameter Updated: TeamsApp
+		Type updated from IMicrosoftGraphTeamsApp1 to IMicrosoftGraphTeamsApp
+
+	Parameter Updated: TeamsAppDefinition
+		Type updated from IMicrosoftGraphTeamsAppDefinition1 to IMicrosoftGraphTeamsAppDefinition
+
+---- COMPLETED UPDATING Cmdlet : New-MgTeamInstalledApp ----
+
+
+---- UPDATING Cmdlet : New-MgTeamMember ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded
+		Old Set: CreateViaIdentityExpanded1
+		New Set: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : New-MgTeamMember ----
+
+
+---- UPDATING Cmdlet : New-MgTeamOperation ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded
+		Old Set: CreateViaIdentityExpanded1
+		New Set: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : New-MgTeamOperation ----
+
+
+---- UPDATING Cmdlet : New-MgTeamPrimaryChannelMember ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded
+		Old Set: CreateViaIdentityExpanded1
+		New Set: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : New-MgTeamPrimaryChannelMember ----
+
+
+---- UPDATING Cmdlet : New-MgTeamPrimaryChannelMessage ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+	Parameter Added: ChannelIdentity
+
+	Parameter Added: ChatId
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphChatMessage1 to IMicrosoftGraphChatMessage
+
+	Parameter Updated: HostedContents
+		Type updated from IMicrosoftGraphChatMessageHostedContent1[] to IMicrosoftGraphChatMessageHostedContent[]
+
+	Parameter Updated: Replies
+		Type updated from IMicrosoftGraphChatMessage1[] to IMicrosoftGraphChatMessage[]
+
+---- COMPLETED UPDATING Cmdlet : New-MgTeamPrimaryChannelMessage ----
+
+
+---- UPDATING Cmdlet : New-MgTeamPrimaryChannelMessageHostedContent ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+	Parameter Added: ContentBytesInputFile
+
+	Parameter Added: ContentType
+
+	Parameter Updated: BodyParameter
+		Type updated from Hashtable to IMicrosoftGraphChatMessageHostedContent
+
+---- COMPLETED UPDATING Cmdlet : New-MgTeamPrimaryChannelMessageHostedContent ----
+
+
+---- UPDATING Cmdlet : New-MgTeamPrimaryChannelMessageReply ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+	Parameter Added: ChannelIdentity
+
+	Parameter Added: ChatId
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphChatMessage1 to IMicrosoftGraphChatMessage
+
+	Parameter Updated: HostedContents
+		Type updated from IMicrosoftGraphChatMessageHostedContent1[] to IMicrosoftGraphChatMessageHostedContent[]
+
+	Parameter Updated: Replies
+		Type updated from IMicrosoftGraphChatMessage1[] to IMicrosoftGraphChatMessage[]
+
+---- COMPLETED UPDATING Cmdlet : New-MgTeamPrimaryChannelMessageReply ----
+
+
+---- UPDATING Cmdlet : New-MgTeamPrimaryChannelTab ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+	Parameter Added: MessageId
+
+	Parameter Added: SortOrderIndex
+
+	Parameter Added: TeamsAppId
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphTeamsTab1 to IMicrosoftGraphTeamsTab
+
+	Parameter Updated: TeamsApp
+		Type updated from IMicrosoftGraphTeamsApp1 to IMicrosoftGraphTeamsApp
+
+---- COMPLETED UPDATING Cmdlet : New-MgTeamPrimaryChannelTab ----
+
+
+---- UPDATING Cmdlet : New-MgTeamScheduleOfferShiftRequest ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+	Parameter Added: CreatedBy
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphOfferShiftRequest1 to IMicrosoftGraphOfferShiftRequest
+
+---- COMPLETED UPDATING Cmdlet : New-MgTeamScheduleOfferShiftRequest ----
+
+
+---- UPDATING Cmdlet : New-MgTeamScheduleOpenShift ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+	Parameter Added: CreatedBy
+
+	Parameter Added: IsStagedForDeletion
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphOpenShift1 to IMicrosoftGraphOpenShift
+
+---- COMPLETED UPDATING Cmdlet : New-MgTeamScheduleOpenShift ----
+
+
+---- UPDATING Cmdlet : New-MgTeamScheduleOpenShiftChangeRequest ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+	Parameter Added: CreatedBy
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphOpenShiftChangeRequest1 to IMicrosoftGraphOpenShiftChangeRequest
+
+---- COMPLETED UPDATING Cmdlet : New-MgTeamScheduleOpenShiftChangeRequest ----
+
+
+---- UPDATING Cmdlet : New-MgTeamScheduleSchedulingGroup ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+	Parameter Added: CreatedBy
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphSchedulingGroup1 to IMicrosoftGraphSchedulingGroup
+
+---- COMPLETED UPDATING Cmdlet : New-MgTeamScheduleSchedulingGroup ----
+
+
+---- UPDATING Cmdlet : New-MgTeamScheduleShift ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+	Parameter Added: CreatedBy
+
+	Parameter Added: IsStagedForDeletion
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphShift1 to IMicrosoftGraphShift
+
+---- COMPLETED UPDATING Cmdlet : New-MgTeamScheduleShift ----
+
+
+---- UPDATING Cmdlet : New-MgTeamScheduleSwapShiftChangeRequest ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+	Parameter Added: CreatedBy
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphSwapShiftsChangeRequest1 to IMicrosoftGraphSwapShiftsChangeRequest
+
+---- COMPLETED UPDATING Cmdlet : New-MgTeamScheduleSwapShiftChangeRequest ----
+
+
+---- UPDATING Cmdlet : New-MgTeamScheduleTimeOff ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+	Parameter Added: CreatedBy
+
+	Parameter Added: IsStagedForDeletion
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphTimeOff1 to IMicrosoftGraphTimeOff
+
+---- COMPLETED UPDATING Cmdlet : New-MgTeamScheduleTimeOff ----
+
+
+---- UPDATING Cmdlet : New-MgTeamScheduleTimeOffReason ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+	Parameter Added: CreatedBy
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphTimeOffReason1 to IMicrosoftGraphTimeOffReason
+
+---- COMPLETED UPDATING Cmdlet : New-MgTeamScheduleTimeOffReason ----
+
+
+---- UPDATING Cmdlet : New-MgTeamScheduleTimeOffRequest ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+	Parameter Added: CreatedBy
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphTimeOffRequest1 to IMicrosoftGraphTimeOffRequest
+
+---- COMPLETED UPDATING Cmdlet : New-MgTeamScheduleTimeOffRequest ----
+
+
+---- UPDATING Cmdlet : New-MgTeamworkWorkforceIntegration ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Added: CreatedBy
+
+	Parameter Added: EligibilityFilteringEnabledEntities
+
+	Parameter Added: Supports
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphWorkforceIntegration1 to IMicrosoftGraphWorkforceIntegration
+
+---- COMPLETED UPDATING Cmdlet : New-MgTeamworkWorkforceIntegration ----
+
+
+[Update-MarkdownHelp] 11/23/2020 14:57:32 Command 'New-MgUserJoinedTeam' not found in the session, skipping upgrade for 'C:\a\1\s\src\Teams\Teams\help\New-MgUserJoinedTeam.md'.
+---- UPDATING Cmdlet : New-MgUserTeamworkInstalledApp ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded
+		Old Set: CreateViaIdentityExpanded1
+		New Set: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphUserScopeTeamsAppInstallation1 to IMicrosoftGraphUserScopeTeamsAppInstallation
+
+	Parameter Updated: Chat
+		Type updated from Hashtable to IMicrosoftGraphChat
+
+	Parameter Updated: TeamsApp
+		Type updated from IMicrosoftGraphTeamsApp1 to IMicrosoftGraphTeamsApp
+
+	Parameter Updated: TeamsAppDefinition
+		Type updated from IMicrosoftGraphTeamsAppDefinition1 to IMicrosoftGraphTeamsAppDefinition
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserTeamworkInstalledApp ----
+
+
+---- UPDATING Cmdlet : Remove-MgAppCatalogTeamApp ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgAppCatalogTeamApp ----
+
+
+---- UPDATING Cmdlet : Remove-MgAppCatalogTeamAppDefinition ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgAppCatalogTeamAppDefinition ----
+
+
+---- UPDATING Cmdlet : Remove-MgChat ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgChat ----
+
+
+---- UPDATING Cmdlet : Remove-MgGroupTeam ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgGroupTeam ----
+
+
+---- UPDATING Cmdlet : Remove-MgTeam ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgTeam ----
+
+
+---- UPDATING Cmdlet : Remove-MgTeamChannel ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgTeamChannel ----
+
+
+---- UPDATING Cmdlet : Remove-MgTeamChannelFileFolder ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgTeamChannelFileFolder ----
+
+
+---- UPDATING Cmdlet : Remove-MgTeamChannelMember ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgTeamChannelMember ----
+
+
+---- UPDATING Cmdlet : Remove-MgTeamChannelMessage ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgTeamChannelMessage ----
+
+
+---- UPDATING Cmdlet : Remove-MgTeamChannelMessageHostedContent ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgTeamChannelMessageHostedContent ----
+
+
+---- UPDATING Cmdlet : Remove-MgTeamChannelMessageReply ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgTeamChannelMessageReply ----
+
+
+---- UPDATING Cmdlet : Remove-MgTeamChannelTab ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgTeamChannelTab ----
+
+
+---- UPDATING Cmdlet : Remove-MgTeamChannelTabTeamAppByRef ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgTeamChannelTabTeamAppByRef ----
+
+
+---- UPDATING Cmdlet : Remove-MgTeamGroupByRef ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgTeamGroupByRef ----
+
+
+---- UPDATING Cmdlet : Remove-MgTeamInstalledApp ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgTeamInstalledApp ----
+
+
+---- UPDATING Cmdlet : Remove-MgTeamInstalledAppTeamAppByRef ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgTeamInstalledAppTeamAppByRef ----
+
+
+---- UPDATING Cmdlet : Remove-MgTeamInstalledAppTeamAppDefinitionByRef ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgTeamInstalledAppTeamAppDefinitionByRef ----
+
+
+---- UPDATING Cmdlet : Remove-MgTeamMember ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgTeamMember ----
+
+
+---- UPDATING Cmdlet : Remove-MgTeamOperation ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgTeamOperation ----
+
+
+---- UPDATING Cmdlet : Remove-MgTeamPrimaryChannel ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgTeamPrimaryChannel ----
+
+
+---- UPDATING Cmdlet : Remove-MgTeamPrimaryChannelFileFolder ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgTeamPrimaryChannelFileFolder ----
+
+
+---- UPDATING Cmdlet : Remove-MgTeamPrimaryChannelMember ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgTeamPrimaryChannelMember ----
+
+
+---- UPDATING Cmdlet : Remove-MgTeamPrimaryChannelMessage ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgTeamPrimaryChannelMessage ----
+
+
+---- UPDATING Cmdlet : Remove-MgTeamPrimaryChannelMessageHostedContent ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgTeamPrimaryChannelMessageHostedContent ----
+
+
+---- UPDATING Cmdlet : Remove-MgTeamPrimaryChannelMessageReply ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgTeamPrimaryChannelMessageReply ----
+
+
+---- UPDATING Cmdlet : Remove-MgTeamPrimaryChannelTab ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgTeamPrimaryChannelTab ----
+
+
+---- UPDATING Cmdlet : Remove-MgTeamPrimaryChannelTabTeamAppByRef ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgTeamPrimaryChannelTabTeamAppByRef ----
+
+
+---- UPDATING Cmdlet : Remove-MgTeamSchedule ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgTeamSchedule ----
+
+
+---- UPDATING Cmdlet : Remove-MgTeamScheduleOfferShiftRequest ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgTeamScheduleOfferShiftRequest ----
+
+
+---- UPDATING Cmdlet : Remove-MgTeamScheduleOpenShift ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgTeamScheduleOpenShift ----
+
+
+---- UPDATING Cmdlet : Remove-MgTeamScheduleOpenShiftChangeRequest ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgTeamScheduleOpenShiftChangeRequest ----
+
+
+---- UPDATING Cmdlet : Remove-MgTeamScheduleSchedulingGroup ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgTeamScheduleSchedulingGroup ----
+
+
+---- UPDATING Cmdlet : Remove-MgTeamScheduleShift ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgTeamScheduleShift ----
+
+
+---- UPDATING Cmdlet : Remove-MgTeamScheduleSwapShiftChangeRequest ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgTeamScheduleSwapShiftChangeRequest ----
+
+
+---- UPDATING Cmdlet : Remove-MgTeamScheduleTimeOff ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgTeamScheduleTimeOff ----
+
+
+---- UPDATING Cmdlet : Remove-MgTeamScheduleTimeOffReason ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgTeamScheduleTimeOffReason ----
+
+
+---- UPDATING Cmdlet : Remove-MgTeamScheduleTimeOffRequest ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgTeamScheduleTimeOffRequest ----
+
+
+---- UPDATING Cmdlet : Remove-MgTeamTemplateByRef ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgTeamTemplateByRef ----
+
+
+---- UPDATING Cmdlet : Remove-MgTeamworkWorkforceIntegration ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgTeamworkWorkforceIntegration ----
+
+
+[Update-MarkdownHelp] 11/23/2020 14:58:41 Command 'Remove-MgUserJoinedTeam' not found in the session, skipping upgrade for 'C:\a\1\s\src\Teams\Teams\help\Remove-MgUserJoinedTeam.md'.
+---- UPDATING Cmdlet : Remove-MgUserTeamwork ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserTeamwork ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserTeamworkInstalledApp ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserTeamworkInstalledApp ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserTeamworkInstalledAppChatByRef ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserTeamworkInstalledAppChatByRef ----
+
+
+---- UPDATING Cmdlet : Set-MgTeamChannelFileFolderContent ----
+
+	Parameter Set Added: Set1
+
+	Parameter Set Added: SetViaIdentity1
+
+	Parameter Set Deleted: Set
+
+	Parameter Set Deleted: SetViaIdentity
+
+	Parameter Set Name Updated: Set1
+		Old Set: Set
+		New Set: Set1
+
+	Parameter Set Name Updated: SetViaIdentity1
+		Old Set: SetViaIdentity
+		New Set: SetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Set-MgTeamChannelFileFolderContent ----
+
+
+---- UPDATING Cmdlet : Set-MgTeamChannelMessageHostedContent ----
+
+	Parameter Set Added: Set
+
+	Parameter Set Added: SetViaIdentity
+
+	Parameter Set Deleted: Set1
+
+	Parameter Set Deleted: SetViaIdentity1
+
+	Parameter Set Name Updated: Set
+		Old Set: Set1
+		New Set: Set
+
+	Parameter Set Name Updated: SetViaIdentity
+		Old Set: SetViaIdentity1
+		New Set: SetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Set-MgTeamChannelMessageHostedContent ----
+
+
+---- UPDATING Cmdlet : Set-MgTeamChannelTabTeamAppByRef ----
+
+	Parameter Set Added: Set
+
+	Parameter Set Added: SetExpanded
+
+	Parameter Set Added: SetViaIdentity
+
+	Parameter Set Added: SetViaIdentityExpanded
+
+	Parameter Set Deleted: Set1
+
+	Parameter Set Deleted: SetExpanded1
+
+	Parameter Set Deleted: SetViaIdentity1
+
+	Parameter Set Deleted: SetViaIdentityExpanded1
+
+	Parameter Set Name Updated: SetExpanded
+		Old Set: SetExpanded1
+		New Set: SetExpanded
+
+	Parameter Set Name Updated: Set
+		Old Set: Set1
+		New Set: Set
+
+	Parameter Set Name Updated: SetViaIdentityExpanded
+		Old Set: SetViaIdentityExpanded1
+		New Set: SetViaIdentityExpanded
+
+	Parameter Set Name Updated: SetViaIdentity
+		Old Set: SetViaIdentity1
+		New Set: SetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Set-MgTeamChannelTabTeamAppByRef ----
+
+
+---- UPDATING Cmdlet : Set-MgTeamGroupByRef ----
+
+	Parameter Set Added: Set
+
+	Parameter Set Added: SetExpanded
+
+	Parameter Set Added: SetViaIdentity
+
+	Parameter Set Added: SetViaIdentityExpanded
+
+	Parameter Set Deleted: Set1
+
+	Parameter Set Deleted: SetExpanded1
+
+	Parameter Set Deleted: SetViaIdentity1
+
+	Parameter Set Deleted: SetViaIdentityExpanded1
+
+	Parameter Set Name Updated: SetExpanded
+		Old Set: SetExpanded1
+		New Set: SetExpanded
+
+	Parameter Set Name Updated: Set
+		Old Set: Set1
+		New Set: Set
+
+	Parameter Set Name Updated: SetViaIdentityExpanded
+		Old Set: SetViaIdentityExpanded1
+		New Set: SetViaIdentityExpanded
+
+	Parameter Set Name Updated: SetViaIdentity
+		Old Set: SetViaIdentity1
+		New Set: SetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Set-MgTeamGroupByRef ----
+
+
+---- UPDATING Cmdlet : Set-MgTeamInstalledAppTeamAppByRef ----
+
+	Parameter Set Added: Set
+
+	Parameter Set Added: SetExpanded
+
+	Parameter Set Added: SetViaIdentity
+
+	Parameter Set Added: SetViaIdentityExpanded
+
+	Parameter Set Deleted: Set1
+
+	Parameter Set Deleted: SetExpanded1
+
+	Parameter Set Deleted: SetViaIdentity1
+
+	Parameter Set Deleted: SetViaIdentityExpanded1
+
+	Parameter Set Name Updated: SetExpanded
+		Old Set: SetExpanded1
+		New Set: SetExpanded
+
+	Parameter Set Name Updated: Set
+		Old Set: Set1
+		New Set: Set
+
+	Parameter Set Name Updated: SetViaIdentityExpanded
+		Old Set: SetViaIdentityExpanded1
+		New Set: SetViaIdentityExpanded
+
+	Parameter Set Name Updated: SetViaIdentity
+		Old Set: SetViaIdentity1
+		New Set: SetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Set-MgTeamInstalledAppTeamAppByRef ----
+
+
+---- UPDATING Cmdlet : Set-MgTeamInstalledAppTeamAppDefinitionByRef ----
+
+	Parameter Set Added: Set
+
+	Parameter Set Added: SetExpanded
+
+	Parameter Set Added: SetViaIdentity
+
+	Parameter Set Added: SetViaIdentityExpanded
+
+	Parameter Set Deleted: Set1
+
+	Parameter Set Deleted: SetExpanded1
+
+	Parameter Set Deleted: SetViaIdentity1
+
+	Parameter Set Deleted: SetViaIdentityExpanded1
+
+	Parameter Set Name Updated: SetExpanded
+		Old Set: SetExpanded1
+		New Set: SetExpanded
+
+	Parameter Set Name Updated: Set
+		Old Set: Set1
+		New Set: Set
+
+	Parameter Set Name Updated: SetViaIdentityExpanded
+		Old Set: SetViaIdentityExpanded1
+		New Set: SetViaIdentityExpanded
+
+	Parameter Set Name Updated: SetViaIdentity
+		Old Set: SetViaIdentity1
+		New Set: SetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Set-MgTeamInstalledAppTeamAppDefinitionByRef ----
+
+
+---- UPDATING Cmdlet : Set-MgTeamPrimaryChannelFileFolderContent ----
+
+	Parameter Set Added: Set
+
+	Parameter Set Added: SetViaIdentity
+
+	Parameter Set Deleted: Set1
+
+	Parameter Set Deleted: SetViaIdentity1
+
+	Parameter Set Name Updated: Set
+		Old Set: Set1
+		New Set: Set
+
+	Parameter Set Name Updated: SetViaIdentity
+		Old Set: SetViaIdentity1
+		New Set: SetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Set-MgTeamPrimaryChannelFileFolderContent ----
+
+
+---- UPDATING Cmdlet : Set-MgTeamPrimaryChannelMessageHostedContent ----
+
+	Parameter Set Added: Set
+
+	Parameter Set Added: SetViaIdentity
+
+	Parameter Set Deleted: Set1
+
+	Parameter Set Deleted: SetViaIdentity1
+
+	Parameter Set Name Updated: Set
+		Old Set: Set1
+		New Set: Set
+
+	Parameter Set Name Updated: SetViaIdentity
+		Old Set: SetViaIdentity1
+		New Set: SetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Set-MgTeamPrimaryChannelMessageHostedContent ----
+
+
+---- UPDATING Cmdlet : Set-MgTeamPrimaryChannelTabTeamAppByRef ----
+
+	Parameter Set Added: Set
+
+	Parameter Set Added: SetExpanded
+
+	Parameter Set Added: SetViaIdentity
+
+	Parameter Set Added: SetViaIdentityExpanded
+
+	Parameter Set Deleted: Set1
+
+	Parameter Set Deleted: SetExpanded1
+
+	Parameter Set Deleted: SetViaIdentity1
+
+	Parameter Set Deleted: SetViaIdentityExpanded1
+
+	Parameter Set Name Updated: SetExpanded
+		Old Set: SetExpanded1
+		New Set: SetExpanded
+
+	Parameter Set Name Updated: Set
+		Old Set: Set1
+		New Set: Set
+
+	Parameter Set Name Updated: SetViaIdentityExpanded
+		Old Set: SetViaIdentityExpanded1
+		New Set: SetViaIdentityExpanded
+
+	Parameter Set Name Updated: SetViaIdentity
+		Old Set: SetViaIdentity1
+		New Set: SetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Set-MgTeamPrimaryChannelTabTeamAppByRef ----
+
+
+---- UPDATING Cmdlet : Set-MgTeamTemplateByRef ----
+
+	Parameter Set Added: Set
+
+	Parameter Set Added: SetExpanded
+
+	Parameter Set Added: SetViaIdentity
+
+	Parameter Set Added: SetViaIdentityExpanded
+
+	Parameter Set Deleted: Set1
+
+	Parameter Set Deleted: SetExpanded1
+
+	Parameter Set Deleted: SetViaIdentity1
+
+	Parameter Set Deleted: SetViaIdentityExpanded1
+
+	Parameter Set Name Updated: SetExpanded
+		Old Set: SetExpanded1
+		New Set: SetExpanded
+
+	Parameter Set Name Updated: Set
+		Old Set: Set1
+		New Set: Set
+
+	Parameter Set Name Updated: SetViaIdentityExpanded
+		Old Set: SetViaIdentityExpanded1
+		New Set: SetViaIdentityExpanded
+
+	Parameter Set Name Updated: SetViaIdentity
+		Old Set: SetViaIdentity1
+		New Set: SetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Set-MgTeamTemplateByRef ----
+
+
+---- UPDATING Cmdlet : Set-MgUserTeamworkInstalledAppChatByRef ----
+
+	Parameter Set Added: Set
+
+	Parameter Set Added: SetExpanded
+
+	Parameter Set Added: SetViaIdentity
+
+	Parameter Set Added: SetViaIdentityExpanded
+
+	Parameter Set Deleted: Set1
+
+	Parameter Set Deleted: SetExpanded1
+
+	Parameter Set Deleted: SetViaIdentity1
+
+	Parameter Set Deleted: SetViaIdentityExpanded1
+
+	Parameter Set Name Updated: SetExpanded
+		Old Set: SetExpanded1
+		New Set: SetExpanded
+
+	Parameter Set Name Updated: Set
+		Old Set: Set1
+		New Set: Set
+
+	Parameter Set Name Updated: SetViaIdentityExpanded
+		Old Set: SetViaIdentityExpanded1
+		New Set: SetViaIdentityExpanded
+
+	Parameter Set Name Updated: SetViaIdentity
+		Old Set: SetViaIdentity1
+		New Set: SetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Set-MgUserTeamworkInstalledAppChatByRef ----
+
+
+---- UPDATING Cmdlet : Update-MgAppCatalogTeamApp ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateExpanded1
+		Old Set: UpdateExpanded
+		New Set: UpdateExpanded1
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded1
+		Old Set: UpdateViaIdentityExpanded
+		New Set: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+	Parameter Updated: AppDefinitions
+		Type updated from IMicrosoftGraphTeamsAppDefinition1[] to IMicrosoftGraphTeamsAppDefinition[]
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphTeamsApp1 to IMicrosoftGraphTeamsApp
+
+---- COMPLETED UPDATING Cmdlet : Update-MgAppCatalogTeamApp ----
+
+
+---- UPDATING Cmdlet : Update-MgAppCatalogTeamAppDefinition ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+	Parameter Added: AzureAdAppId
+
+	Parameter Added: CreatedBy
+
+	Parameter Added: Description
+
+	Parameter Added: LastModifiedDateTime
+
+	Parameter Added: PublishingState
+
+	Parameter Added: Shortdescription
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphTeamsAppDefinition1 to IMicrosoftGraphTeamsAppDefinition
+
+---- COMPLETED UPDATING Cmdlet : Update-MgAppCatalogTeamAppDefinition ----
+
+
+---- UPDATING Cmdlet : Update-MgChat ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Added: ChatType
+
+	Parameter Added: CreatedDateTime
+
+	Parameter Added: InstalledApps
+
+	Parameter Added: LastUpdatedDateTime
+
+	Parameter Added: Members
+
+	Parameter Added: Messages
+
+	Parameter Added: Tabs
+
+	Parameter Added: Topic
+
+	Parameter Updated: BodyParameter
+		Type updated from Hashtable to IMicrosoftGraphChat
+
+---- COMPLETED UPDATING Cmdlet : Update-MgChat ----
+
+
+---- UPDATING Cmdlet : Update-MgGroupTeam ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+	Parameter Added: CreatedDateTime
+
+	Parameter Added: DiscoverySettings
+
+	Parameter Added: IsMembershipLimitedToOwners
+
+	Parameter Added: Owners
+
+	Parameter Added: Photo
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphTeam1 to IMicrosoftGraphTeam
+
+	Parameter Updated: Channels
+		Type updated from IMicrosoftGraphChannel1[] to IMicrosoftGraphChannel[]
+
+	Parameter Updated: Group
+		Type updated from IMicrosoftGraphGroup1 to IMicrosoftGraphGroup
+
+	Parameter Updated: InstalledApps
+		Type updated from IMicrosoftGraphTeamsAppInstallation1[] to IMicrosoftGraphTeamsAppInstallation[]
+
+	Parameter Updated: PrimaryChannel
+		Type updated from IMicrosoftGraphChannel1 to IMicrosoftGraphChannel
+
+	Parameter Updated: Schedule
+		Type updated from IMicrosoftGraphSchedule1 to IMicrosoftGraphSchedule
+
+---- COMPLETED UPDATING Cmdlet : Update-MgGroupTeam ----
+
+
+---- UPDATING Cmdlet : Update-MgTeam ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+	Parameter Added: CreatedDateTime
+
+	Parameter Added: DiscoverySettings
+
+	Parameter Added: IsMembershipLimitedToOwners
+
+	Parameter Added: Owners
+
+	Parameter Added: Photo
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphTeam1 to IMicrosoftGraphTeam
+
+	Parameter Updated: Channels
+		Type updated from IMicrosoftGraphChannel1[] to IMicrosoftGraphChannel[]
+
+	Parameter Updated: Group
+		Type updated from IMicrosoftGraphGroup1 to IMicrosoftGraphGroup
+
+	Parameter Updated: InstalledApps
+		Type updated from IMicrosoftGraphTeamsAppInstallation1[] to IMicrosoftGraphTeamsAppInstallation[]
+
+	Parameter Updated: PrimaryChannel
+		Type updated from IMicrosoftGraphChannel1 to IMicrosoftGraphChannel
+
+	Parameter Updated: Schedule
+		Type updated from IMicrosoftGraphSchedule1 to IMicrosoftGraphSchedule
+
+---- COMPLETED UPDATING Cmdlet : Update-MgTeam ----
+
+
+---- UPDATING Cmdlet : Update-MgTeamChannel ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+	Parameter Added: CreatedDateTime
+
+	Parameter Added: ModerationSettings
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphChannel1 to IMicrosoftGraphChannel
+
+	Parameter Updated: FilesFolder
+		Type updated from IMicrosoftGraphDriveItem1 to IMicrosoftGraphDriveItem
+
+	Parameter Updated: Messages
+		Type updated from IMicrosoftGraphChatMessage1[] to IMicrosoftGraphChatMessage[]
+
+	Parameter Updated: Tabs
+		Type updated from IMicrosoftGraphTeamsTab1[] to IMicrosoftGraphTeamsTab[]
+
+---- COMPLETED UPDATING Cmdlet : Update-MgTeamChannel ----
+
+
+---- UPDATING Cmdlet : Update-MgTeamChannelFileFolder ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+	Parameter Added: Activities
+
+	Parameter Added: Bundle
+
+	Parameter Updated: Analytics
+		Type updated from IMicrosoftGraphItemAnalytics1 to IMicrosoftGraphItemAnalytics
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphDriveItem1 to IMicrosoftGraphDriveItem
+
+	Parameter Updated: Children
+		Type updated from IMicrosoftGraphDriveItem1[] to IMicrosoftGraphDriveItem[]
+
+	Parameter Updated: CreatedByUser
+		Type updated from IMicrosoftGraphUser1 to IMicrosoftGraphUser
+
+	Parameter Updated: LastModifiedByUser
+		Type updated from IMicrosoftGraphUser1 to IMicrosoftGraphUser
+
+	Parameter Updated: ListItem
+		Type updated from IMicrosoftGraphListItem1 to IMicrosoftGraphListItem
+
+	Parameter Updated: Permissions
+		Type updated from IMicrosoftGraphPermission1[] to IMicrosoftGraphPermission[]
+
+	Parameter Updated: Subscriptions
+		Type updated from IMicrosoftGraphSubscription1[] to IMicrosoftGraphSubscription[]
+
+	Parameter Updated: Workbook
+		Type updated from IMicrosoftGraphWorkbook1 to IMicrosoftGraphWorkbook
+
+---- COMPLETED UPDATING Cmdlet : Update-MgTeamChannelFileFolder ----
+
+
+---- UPDATING Cmdlet : Update-MgTeamChannelMember ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateExpanded1
+		Old Set: UpdateExpanded
+		New Set: UpdateExpanded1
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded1
+		Old Set: UpdateViaIdentityExpanded
+		New Set: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Update-MgTeamChannelMember ----
+
+
+---- UPDATING Cmdlet : Update-MgTeamChannelMessage ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+	Parameter Added: ChannelIdentity
+
+	Parameter Added: ChatId
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphChatMessage1 to IMicrosoftGraphChatMessage
+
+	Parameter Updated: HostedContents
+		Type updated from IMicrosoftGraphChatMessageHostedContent1[] to IMicrosoftGraphChatMessageHostedContent[]
+
+	Parameter Updated: Replies
+		Type updated from IMicrosoftGraphChatMessage1[] to IMicrosoftGraphChatMessage[]
+
+---- COMPLETED UPDATING Cmdlet : Update-MgTeamChannelMessage ----
+
+
+---- UPDATING Cmdlet : Update-MgTeamChannelMessageHostedContent ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+	Parameter Added: ContentBytesInputFile
+
+	Parameter Added: ContentType
+
+	Parameter Updated: BodyParameter
+		Type updated from Hashtable to IMicrosoftGraphChatMessageHostedContent
+
+---- COMPLETED UPDATING Cmdlet : Update-MgTeamChannelMessageHostedContent ----
+
+
+---- UPDATING Cmdlet : Update-MgTeamChannelMessageReply ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Added: ChannelIdentity
+
+	Parameter Added: ChatId
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphChatMessage1 to IMicrosoftGraphChatMessage
+
+	Parameter Updated: HostedContents
+		Type updated from IMicrosoftGraphChatMessageHostedContent1[] to IMicrosoftGraphChatMessageHostedContent[]
+
+	Parameter Updated: Replies
+		Type updated from IMicrosoftGraphChatMessage1[] to IMicrosoftGraphChatMessage[]
+
+---- COMPLETED UPDATING Cmdlet : Update-MgTeamChannelMessageReply ----
+
+
+---- UPDATING Cmdlet : Update-MgTeamChannelTab ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Added: MessageId
+
+	Parameter Added: SortOrderIndex
+
+	Parameter Added: TeamsAppId
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphTeamsTab1 to IMicrosoftGraphTeamsTab
+
+	Parameter Updated: TeamsApp
+		Type updated from IMicrosoftGraphTeamsApp1 to IMicrosoftGraphTeamsApp
+
+---- COMPLETED UPDATING Cmdlet : Update-MgTeamChannelTab ----
+
+
+---- UPDATING Cmdlet : Update-MgTeamInstalledApp ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Added: Upgrade
+
+	Parameter Set Added: UpgradeViaIdentity
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Upgrade1
+
+	Parameter Set Deleted: UpgradeViaIdentity1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Upgrade
+		Old Set: Upgrade1
+		New Set: Upgrade
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpgradeViaIdentity
+		Old Set: UpgradeViaIdentity1
+		New Set: UpgradeViaIdentity
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphTeamsAppInstallation1 to IMicrosoftGraphTeamsAppInstallation
+
+	Parameter Updated: TeamsApp
+		Type updated from IMicrosoftGraphTeamsApp1 to IMicrosoftGraphTeamsApp
+
+	Parameter Updated: TeamsAppDefinition
+		Type updated from IMicrosoftGraphTeamsAppDefinition1 to IMicrosoftGraphTeamsAppDefinition
+
+---- COMPLETED UPDATING Cmdlet : Update-MgTeamInstalledApp ----
+
+
+---- UPDATING Cmdlet : Update-MgTeamMember ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Update-MgTeamMember ----
+
+
+---- UPDATING Cmdlet : Update-MgTeamOperation ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Update-MgTeamOperation ----
+
+
+---- UPDATING Cmdlet : Update-MgTeamPrimaryChannel ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Added: CreatedDateTime
+
+	Parameter Added: ModerationSettings
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphChannel1 to IMicrosoftGraphChannel
+
+	Parameter Updated: FilesFolder
+		Type updated from IMicrosoftGraphDriveItem1 to IMicrosoftGraphDriveItem
+
+	Parameter Updated: Messages
+		Type updated from IMicrosoftGraphChatMessage1[] to IMicrosoftGraphChatMessage[]
+
+	Parameter Updated: Tabs
+		Type updated from IMicrosoftGraphTeamsTab1[] to IMicrosoftGraphTeamsTab[]
+
+---- COMPLETED UPDATING Cmdlet : Update-MgTeamPrimaryChannel ----
+
+
+---- UPDATING Cmdlet : Update-MgTeamPrimaryChannelFileFolder ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Added: Activities
+
+	Parameter Added: Bundle
+
+	Parameter Updated: Analytics
+		Type updated from IMicrosoftGraphItemAnalytics1 to IMicrosoftGraphItemAnalytics
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphDriveItem1 to IMicrosoftGraphDriveItem
+
+	Parameter Updated: Children
+		Type updated from IMicrosoftGraphDriveItem1[] to IMicrosoftGraphDriveItem[]
+
+	Parameter Updated: CreatedByUser
+		Type updated from IMicrosoftGraphUser1 to IMicrosoftGraphUser
+
+	Parameter Updated: LastModifiedByUser
+		Type updated from IMicrosoftGraphUser1 to IMicrosoftGraphUser
+
+	Parameter Updated: ListItem
+		Type updated from IMicrosoftGraphListItem1 to IMicrosoftGraphListItem
+
+	Parameter Updated: Permissions
+		Type updated from IMicrosoftGraphPermission1[] to IMicrosoftGraphPermission[]
+
+	Parameter Updated: Subscriptions
+		Type updated from IMicrosoftGraphSubscription1[] to IMicrosoftGraphSubscription[]
+
+	Parameter Updated: Workbook
+		Type updated from IMicrosoftGraphWorkbook1 to IMicrosoftGraphWorkbook
+
+---- COMPLETED UPDATING Cmdlet : Update-MgTeamPrimaryChannelFileFolder ----
+
+
+---- UPDATING Cmdlet : Update-MgTeamPrimaryChannelMember ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Update-MgTeamPrimaryChannelMember ----
+
+
+---- UPDATING Cmdlet : Update-MgTeamPrimaryChannelMessage ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Added: ChannelIdentity
+
+	Parameter Added: ChatId
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphChatMessage1 to IMicrosoftGraphChatMessage
+
+	Parameter Updated: HostedContents
+		Type updated from IMicrosoftGraphChatMessageHostedContent1[] to IMicrosoftGraphChatMessageHostedContent[]
+
+	Parameter Updated: Replies
+		Type updated from IMicrosoftGraphChatMessage1[] to IMicrosoftGraphChatMessage[]
+
+---- COMPLETED UPDATING Cmdlet : Update-MgTeamPrimaryChannelMessage ----
+
+
+---- UPDATING Cmdlet : Update-MgTeamPrimaryChannelMessageHostedContent ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Added: ContentBytesInputFile
+
+	Parameter Added: ContentType
+
+	Parameter Updated: BodyParameter
+		Type updated from Hashtable to IMicrosoftGraphChatMessageHostedContent
+
+---- COMPLETED UPDATING Cmdlet : Update-MgTeamPrimaryChannelMessageHostedContent ----
+
+
+---- UPDATING Cmdlet : Update-MgTeamPrimaryChannelMessageReply ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Added: ChannelIdentity
+
+	Parameter Added: ChatId
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphChatMessage1 to IMicrosoftGraphChatMessage
+
+	Parameter Updated: HostedContents
+		Type updated from IMicrosoftGraphChatMessageHostedContent1[] to IMicrosoftGraphChatMessageHostedContent[]
+
+	Parameter Updated: Replies
+		Type updated from IMicrosoftGraphChatMessage1[] to IMicrosoftGraphChatMessage[]
+
+---- COMPLETED UPDATING Cmdlet : Update-MgTeamPrimaryChannelMessageReply ----
+
+
+---- UPDATING Cmdlet : Update-MgTeamPrimaryChannelTab ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Added: MessageId
+
+	Parameter Added: SortOrderIndex
+
+	Parameter Added: TeamsAppId
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphTeamsTab1 to IMicrosoftGraphTeamsTab
+
+	Parameter Updated: TeamsApp
+		Type updated from IMicrosoftGraphTeamsApp1 to IMicrosoftGraphTeamsApp
+
+---- COMPLETED UPDATING Cmdlet : Update-MgTeamPrimaryChannelTab ----
+
+
+---- UPDATING Cmdlet : Update-MgTeamSchedule ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Added: TimeCards
+
+	Parameter Added: TimeClockSettings
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphSchedule1 to IMicrosoftGraphSchedule
+
+	Parameter Updated: OfferShiftRequests
+		Type updated from IMicrosoftGraphOfferShiftRequest1[] to IMicrosoftGraphOfferShiftRequest[]
+
+	Parameter Updated: OpenShiftChangeRequests
+		Type updated from IMicrosoftGraphOpenShiftChangeRequest1[] to IMicrosoftGraphOpenShiftChangeRequest[]
+
+	Parameter Updated: OpenShifts
+		Type updated from IMicrosoftGraphOpenShift1[] to IMicrosoftGraphOpenShift[]
+
+	Parameter Updated: SchedulingGroups
+		Type updated from IMicrosoftGraphSchedulingGroup1[] to IMicrosoftGraphSchedulingGroup[]
+
+	Parameter Updated: Shifts
+		Type updated from IMicrosoftGraphShift1[] to IMicrosoftGraphShift[]
+
+	Parameter Updated: SwapShiftsChangeRequests
+		Type updated from IMicrosoftGraphSwapShiftsChangeRequest1[] to IMicrosoftGraphSwapShiftsChangeRequest[]
+
+	Parameter Updated: TimeOffReasons
+		Type updated from IMicrosoftGraphTimeOffReason1[] to IMicrosoftGraphTimeOffReason[]
+
+	Parameter Updated: TimeOffRequests
+		Type updated from IMicrosoftGraphTimeOffRequest1[] to IMicrosoftGraphTimeOffRequest[]
+
+	Parameter Updated: TimesOff
+		Type updated from IMicrosoftGraphTimeOff1[] to IMicrosoftGraphTimeOff[]
+
+---- COMPLETED UPDATING Cmdlet : Update-MgTeamSchedule ----
+
+
+---- UPDATING Cmdlet : Update-MgTeamScheduleOfferShiftRequest ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Added: CreatedBy
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphOfferShiftRequest1 to IMicrosoftGraphOfferShiftRequest
+
+---- COMPLETED UPDATING Cmdlet : Update-MgTeamScheduleOfferShiftRequest ----
+
+
+---- UPDATING Cmdlet : Update-MgTeamScheduleOpenShift ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Added: CreatedBy
+
+	Parameter Added: IsStagedForDeletion
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphOpenShift1 to IMicrosoftGraphOpenShift
+
+---- COMPLETED UPDATING Cmdlet : Update-MgTeamScheduleOpenShift ----
+
+
+---- UPDATING Cmdlet : Update-MgTeamScheduleOpenShiftChangeRequest ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Added: CreatedBy
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphOpenShiftChangeRequest1 to IMicrosoftGraphOpenShiftChangeRequest
+
+---- COMPLETED UPDATING Cmdlet : Update-MgTeamScheduleOpenShiftChangeRequest ----
+
+
+---- UPDATING Cmdlet : Update-MgTeamScheduleSchedulingGroup ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Added: CreatedBy
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphSchedulingGroup1 to IMicrosoftGraphSchedulingGroup
+
+---- COMPLETED UPDATING Cmdlet : Update-MgTeamScheduleSchedulingGroup ----
+
+
+---- UPDATING Cmdlet : Update-MgTeamScheduleShift ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Added: CreatedBy
+
+	Parameter Added: IsStagedForDeletion
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphShift1 to IMicrosoftGraphShift
+
+---- COMPLETED UPDATING Cmdlet : Update-MgTeamScheduleShift ----
+
+
+---- UPDATING Cmdlet : Update-MgTeamScheduleSwapShiftChangeRequest ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Added: CreatedBy
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphSwapShiftsChangeRequest1 to IMicrosoftGraphSwapShiftsChangeRequest
+
+---- COMPLETED UPDATING Cmdlet : Update-MgTeamScheduleSwapShiftChangeRequest ----
+
+
+---- UPDATING Cmdlet : Update-MgTeamScheduleTimeOff ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Added: CreatedBy
+
+	Parameter Added: IsStagedForDeletion
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphTimeOff1 to IMicrosoftGraphTimeOff
+
+---- COMPLETED UPDATING Cmdlet : Update-MgTeamScheduleTimeOff ----
+
+
+---- UPDATING Cmdlet : Update-MgTeamScheduleTimeOffReason ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Added: CreatedBy
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphTimeOffReason1 to IMicrosoftGraphTimeOffReason
+
+---- COMPLETED UPDATING Cmdlet : Update-MgTeamScheduleTimeOffReason ----
+
+
+---- UPDATING Cmdlet : Update-MgTeamScheduleTimeOffRequest ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Added: CreatedBy
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphTimeOffRequest1 to IMicrosoftGraphTimeOffRequest
+
+---- COMPLETED UPDATING Cmdlet : Update-MgTeamScheduleTimeOffRequest ----
+
+
+---- UPDATING Cmdlet : Update-MgTeamwork ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphTeamwork1 to IMicrosoftGraphTeamwork
+
+	Parameter Updated: WorkforceIntegrations
+		Type updated from IMicrosoftGraphWorkforceIntegration1[] to IMicrosoftGraphWorkforceIntegration[]
+
+---- COMPLETED UPDATING Cmdlet : Update-MgTeamwork ----
+
+
+---- UPDATING Cmdlet : Update-MgTeamworkWorkforceIntegration ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Added: CreatedBy
+
+	Parameter Added: EligibilityFilteringEnabledEntities
+
+	Parameter Added: Supports
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphWorkforceIntegration1 to IMicrosoftGraphWorkforceIntegration
+
+---- COMPLETED UPDATING Cmdlet : Update-MgTeamworkWorkforceIntegration ----
+
+
+[Update-MarkdownHelp] 11/23/2020 15:00:50 Command 'Update-MgUserJoinedTeam' not found in the session, skipping upgrade for 'C:\a\1\s\src\Teams\Teams\help\Update-MgUserJoinedTeam.md'.
+---- UPDATING Cmdlet : Update-MgUserTeamwork ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphUserTeamwork1 to IMicrosoftGraphUserTeamwork
+
+	Parameter Updated: InstalledApps
+		Type updated from IMicrosoftGraphUserScopeTeamsAppInstallation1[] to IMicrosoftGraphUserScopeTeamsAppInstallation[]
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserTeamwork ----
+
+
+---- UPDATING Cmdlet : Update-MgUserTeamworkInstalledApp ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphUserScopeTeamsAppInstallation1 to IMicrosoftGraphUserScopeTeamsAppInstallation
+
+	Parameter Updated: Chat
+		Type updated from Hashtable to IMicrosoftGraphChat
+
+	Parameter Updated: TeamsApp
+		Type updated from IMicrosoftGraphTeamsApp1 to IMicrosoftGraphTeamsApp
+
+	Parameter Updated: TeamsAppDefinition
+		Type updated from IMicrosoftGraphTeamsAppDefinition1 to IMicrosoftGraphTeamsAppDefinition
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserTeamworkInstalledApp ----
+
+
+[Update-MarkdownHelpModule] 11/23/2020 15:00:54 Creating new markdown for command 'Add-MgChatMember'
+[Update-MarkdownHelpModule] 11/23/2020 15:00:55 Creating new markdown for command 'Add-MgTeamChannelMember'
+[Update-MarkdownHelpModule] 11/23/2020 15:00:56 Creating new markdown for command 'Add-MgTeamMember'
+[Update-MarkdownHelpModule] 11/23/2020 15:00:58 Creating new markdown for command 'Add-MgTeamPrimaryChannelMember'
+[Update-MarkdownHelpModule] 11/23/2020 15:00:59 Creating new markdown for command 'Complete-MgTeamChannelMigration'
+[Update-MarkdownHelpModule] 11/23/2020 15:01:00 Creating new markdown for command 'Complete-MgTeamMigration'
+[Update-MarkdownHelpModule] 11/23/2020 15:01:01 Creating new markdown for command 'Complete-MgTeamPrimaryChannelMigration'
+[Update-MarkdownHelpModule] 11/23/2020 15:01:02 Creating new markdown for command 'Confirm-MgTeamScheduleTimeCard'
+[Update-MarkdownHelpModule] 11/23/2020 15:01:02 Creating new markdown for command 'Get-MgChatInstalledApp'
+[Update-MarkdownHelpModule] 11/23/2020 15:01:03 Creating new markdown for command 'Get-MgChatInstalledAppTeamApp'
+[Update-MarkdownHelpModule] 11/23/2020 15:01:04 Creating new markdown for command 'Get-MgChatInstalledAppTeamAppByRef'
+[Update-MarkdownHelpModule] 11/23/2020 15:01:05 Creating new markdown for command 'Get-MgChatInstalledAppTeamAppDefinition'
+[Update-MarkdownHelpModule] 11/23/2020 15:01:06 Creating new markdown for command 'Get-MgChatInstalledAppTeamAppDefinitionByRef'
+[Update-MarkdownHelpModule] 11/23/2020 15:01:07 Creating new markdown for command 'Get-MgChatMember'
+[Update-MarkdownHelpModule] 11/23/2020 15:01:08 Creating new markdown for command 'Get-MgChatMessageDelta'
+[Update-MarkdownHelpModule] 11/23/2020 15:01:09 Creating new markdown for command 'Get-MgChatMessageHostedContent'
+[Update-MarkdownHelpModule] 11/23/2020 15:01:10 Creating new markdown for command 'Get-MgChatMessageReply'
+[Update-MarkdownHelpModule] 11/23/2020 15:01:12 Creating new markdown for command 'Get-MgChatMessageReplyDelta'
+[Update-MarkdownHelpModule] 11/23/2020 15:01:12 Creating new markdown for command 'Get-MgChatTab'
+[Update-MarkdownHelpModule] 11/23/2020 15:01:14 Creating new markdown for command 'Get-MgChatTabTeamApp'
+[Update-MarkdownHelpModule] 11/23/2020 15:01:14 Creating new markdown for command 'Get-MgChatTabTeamAppByRef'
+[Update-MarkdownHelpModule] 11/23/2020 15:01:15 Creating new markdown for command 'Get-MgTeamChannelMessageDelta'
+[Update-MarkdownHelpModule] 11/23/2020 15:01:16 Creating new markdown for command 'Get-MgTeamChannelMessageReplyDelta'
+[Update-MarkdownHelpModule] 11/23/2020 15:01:17 Creating new markdown for command 'Get-MgTeamOwner'
+[Update-MarkdownHelpModule] 11/23/2020 15:01:18 Creating new markdown for command 'Get-MgTeamOwnerByRef'
+[Update-MarkdownHelpModule] 11/23/2020 15:01:19 Creating new markdown for command 'Get-MgTeamPhoto'
+[Update-MarkdownHelpModule] 11/23/2020 15:01:20 Creating new markdown for command 'Get-MgTeamPhotoContent'
+[Update-MarkdownHelpModule] 11/23/2020 15:01:21 Creating new markdown for command 'Get-MgTeamPrimaryChannelMessageDelta'
+[Update-MarkdownHelpModule] 11/23/2020 15:01:21 Creating new markdown for command 'Get-MgTeamPrimaryChannelMessageReplyDelta'
+[Update-MarkdownHelpModule] 11/23/2020 15:01:22 Creating new markdown for command 'Get-MgTeamScheduleTimeCard'
+[Update-MarkdownHelpModule] 11/23/2020 15:01:23 Creating new markdown for command 'Get-MgUserChat'
+[Update-MarkdownHelpModule] 11/23/2020 15:01:24 Creating new markdown for command 'Get-MgUserJoinedTeamByRef'
+[Update-MarkdownHelpModule] 11/23/2020 15:01:25 Creating new markdown for command 'Invoke-MgClockTeamScheduleTimeCardIn'
+[Update-MarkdownHelpModule] 11/23/2020 15:01:26 Creating new markdown for command 'Invoke-MgClockTeamScheduleTimeCardOut'
+[Update-MarkdownHelpModule] 11/23/2020 15:01:27 Creating new markdown for command 'Invoke-MgMessageChat'
+[Update-MarkdownHelpModule] 11/23/2020 15:01:28 Creating new markdown for command 'Invoke-MgMessageTeam'
+[Update-MarkdownHelpModule] 11/23/2020 15:01:29 Creating new markdown for command 'Invoke-MgMessageTeamChannel'
+[Update-MarkdownHelpModule] 11/23/2020 15:01:30 Creating new markdown for command 'New-MgChatInstalledApp'
+[Update-MarkdownHelpModule] 11/23/2020 15:01:31 Creating new markdown for command 'New-MgChatMember'
+[Update-MarkdownHelpModule] 11/23/2020 15:01:32 Creating new markdown for command 'New-MgChatMessage'
+[Update-MarkdownHelpModule] 11/23/2020 15:01:33 Creating new markdown for command 'New-MgChatMessageHostedContent'
+[Update-MarkdownHelpModule] 11/23/2020 15:01:34 Creating new markdown for command 'New-MgChatMessageReply'
+[Update-MarkdownHelpModule] 11/23/2020 15:01:36 Creating new markdown for command 'New-MgChatTab'
+[Update-MarkdownHelpModule] 11/23/2020 15:01:36 Creating new markdown for command 'New-MgTeamOwnerByRef'
+[Update-MarkdownHelpModule] 11/23/2020 15:01:38 Creating new markdown for command 'New-MgTeamScheduleTimeCard'
+[Update-MarkdownHelpModule] 11/23/2020 15:01:39 Creating new markdown for command 'New-MgUserChat'
+[Update-MarkdownHelpModule] 11/23/2020 15:01:40 Creating new markdown for command 'New-MgUserJoinedTeamByRef'
+[Update-MarkdownHelpModule] 11/23/2020 15:01:41 Creating new markdown for command 'Remove-MgChatInstalledApp'
+[Update-MarkdownHelpModule] 11/23/2020 15:01:42 Creating new markdown for command 'Remove-MgChatInstalledAppTeamAppByRef'
+[Update-MarkdownHelpModule] 11/23/2020 15:01:43 Creating new markdown for command 'Remove-MgChatInstalledAppTeamAppDefinitionByRef'
+[Update-MarkdownHelpModule] 11/23/2020 15:01:44 Creating new markdown for command 'Remove-MgChatMember'
+[Update-MarkdownHelpModule] 11/23/2020 15:01:45 Creating new markdown for command 'Remove-MgChatMessage'
+[Update-MarkdownHelpModule] 11/23/2020 15:01:46 Creating new markdown for command 'Remove-MgChatMessageHostedContent'
+[Update-MarkdownHelpModule] 11/23/2020 15:01:47 Creating new markdown for command 'Remove-MgChatMessageReply'
+[Update-MarkdownHelpModule] 11/23/2020 15:01:47 Creating new markdown for command 'Remove-MgChatTab'
+[Update-MarkdownHelpModule] 11/23/2020 15:01:48 Creating new markdown for command 'Remove-MgChatTabTeamAppByRef'
+[Update-MarkdownHelpModule] 11/23/2020 15:01:49 Creating new markdown for command 'Remove-MgTeamPhoto'
+[Update-MarkdownHelpModule] 11/23/2020 15:01:50 Creating new markdown for command 'Remove-MgTeamScheduleTimeCard'
+[Update-MarkdownHelpModule] 11/23/2020 15:01:51 Creating new markdown for command 'Remove-MgUserChat'
+[Update-MarkdownHelpModule] 11/23/2020 15:01:52 Creating new markdown for command 'Send-MgChatActivityNotification'
+[Update-MarkdownHelpModule] 11/23/2020 15:01:53 Creating new markdown for command 'Send-MgTeamActivityNotification'
+[Update-MarkdownHelpModule] 11/23/2020 15:01:54 Creating new markdown for command 'Set-MgChatInstalledAppTeamAppByRef'
+[Update-MarkdownHelpModule] 11/23/2020 15:01:55 Creating new markdown for command 'Set-MgChatInstalledAppTeamAppDefinitionByRef'
+[Update-MarkdownHelpModule] 11/23/2020 15:01:57 Creating new markdown for command 'Set-MgChatMessageHostedContent'
+[Update-MarkdownHelpModule] 11/23/2020 15:01:57 Creating new markdown for command 'Set-MgChatTabTeamAppByRef'
+[Update-MarkdownHelpModule] 11/23/2020 15:01:58 Creating new markdown for command 'Set-MgTeamPhotoContent'
+[Update-MarkdownHelpModule] 11/23/2020 15:01:59 Creating new markdown for command 'Start-MgTeamScheduleTimeCardBreak'
+[Update-MarkdownHelpModule] 11/23/2020 15:02:00 Creating new markdown for command 'Stop-MgTeamScheduleTimeCardBreak'
+[Update-MarkdownHelpModule] 11/23/2020 15:02:01 Creating new markdown for command 'Update-MgChatInstalledApp'
+[Update-MarkdownHelpModule] 11/23/2020 15:02:02 Creating new markdown for command 'Update-MgChatMember'
+[Update-MarkdownHelpModule] 11/23/2020 15:02:04 Creating new markdown for command 'Update-MgChatMessage'
+[Update-MarkdownHelpModule] 11/23/2020 15:02:06 Creating new markdown for command 'Update-MgChatMessageHostedContent'
+[Update-MarkdownHelpModule] 11/23/2020 15:02:07 Creating new markdown for command 'Update-MgChatMessageReply'
+[Update-MarkdownHelpModule] 11/23/2020 15:02:08 Creating new markdown for command 'Update-MgChatTab'
+[Update-MarkdownHelpModule] 11/23/2020 15:02:09 Creating new markdown for command 'Update-MgTeamPhoto'
+[Update-MarkdownHelpModule] 11/23/2020 15:02:10 Creating new markdown for command 'Update-MgTeamScheduleTimeCard'
+[Update-MarkdownHelpModule] 11/23/2020 15:02:11 Creating new markdown for command 'Update-MgUserChat'

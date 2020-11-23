@@ -1,0 +1,1444 @@
+
+[Update-MarkdownHelpModule] 11/23/2020 14:53:25 Determined module name for '.\src\Reports\Reports\help' as 'Microsoft.Graph.Reports'.
+[Update-MarkdownHelpModule] 11/23/2020 14:53:25 [Update-MarkdownHelpModule]11/23/2020 2:53:25 PM
+[Update-MarkdownHelpModule] 11/23/2020 14:53:25 Updating documents for module 'Microsoft.Graph.Reports' in .\src\Reports\Reports\help
+---- UPDATING Cmdlet : Get-MgAuditLogDirectoryAudit ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgAuditLogDirectoryAudit ----
+
+
+---- UPDATING Cmdlet : Get-MgAuditLogRestrictedSignIn ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: List
+
+	Parameter Set Name Updated: List1
+		Old Set: List
+		New Set: List1
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgAuditLogRestrictedSignIn ----
+
+
+---- UPDATING Cmdlet : Get-MgAuditLogSignIn ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: List
+
+	Parameter Set Name Updated: List1
+		Old Set: List
+		New Set: List1
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgAuditLogSignIn ----
+
+
+---- UPDATING Cmdlet : Get-MgReportDeviceConfigurationDeviceActivity ----
+
+	Parameter Set Added: Device1
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: Device1
+		Old Set: 
+		New Set: Device1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportDeviceConfigurationDeviceActivity ----
+
+
+---- UPDATING Cmdlet : Get-MgReportDeviceConfigurationUserActivity ----
+
+	Parameter Set Added: Device1
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: Device1
+		Old Set: 
+		New Set: Device1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportDeviceConfigurationUserActivity ----
+
+
+---- UPDATING Cmdlet : Get-MgReportEmailActivityCount ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Deleted: OutFile
+
+	Parameter Deleted: PassThru
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportEmailActivityCount ----
+
+
+---- UPDATING Cmdlet : Get-MgReportEmailActivityUserCount ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Deleted: OutFile
+
+	Parameter Deleted: PassThru
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportEmailActivityUserCount ----
+
+
+---- UPDATING Cmdlet : Get-MgReportEmailActivityUserDetailDdb2 ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Deleted: OutFile
+
+	Parameter Deleted: PassThru
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportEmailActivityUserDetailDdb2 ----
+
+
+---- UPDATING Cmdlet : Get-MgReportEmailActivityUserDetailFe32 ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Deleted: OutFile
+
+	Parameter Deleted: PassThru
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportEmailActivityUserDetailFe32 ----
+
+
+---- UPDATING Cmdlet : Get-MgReportEmailAppUsageAppUserCount ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Deleted: OutFile
+
+	Parameter Deleted: PassThru
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportEmailAppUsageAppUserCount ----
+
+
+---- UPDATING Cmdlet : Get-MgReportEmailAppUsageUserCount ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Deleted: OutFile
+
+	Parameter Deleted: PassThru
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportEmailAppUsageUserCount ----
+
+
+---- UPDATING Cmdlet : Get-MgReportEmailAppUsageUserDetail546B ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Deleted: OutFile
+
+	Parameter Deleted: PassThru
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportEmailAppUsageUserDetail546B ----
+
+
+---- UPDATING Cmdlet : Get-MgReportEmailAppUsageUserDetail62Ec ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Deleted: OutFile
+
+	Parameter Deleted: PassThru
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportEmailAppUsageUserDetail62Ec ----
+
+
+---- UPDATING Cmdlet : Get-MgReportEmailAppUsageVersionUserCount ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Deleted: OutFile
+
+	Parameter Deleted: PassThru
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportEmailAppUsageVersionUserCount ----
+
+
+---- UPDATING Cmdlet : Get-MgReportMailboxUsageDetail ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Deleted: OutFile
+
+	Parameter Deleted: PassThru
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportMailboxUsageDetail ----
+
+
+---- UPDATING Cmdlet : Get-MgReportMailboxUsageMailboxCount ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Deleted: OutFile
+
+	Parameter Deleted: PassThru
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportMailboxUsageMailboxCount ----
+
+
+---- UPDATING Cmdlet : Get-MgReportMailboxUsageQuotaStatusMailboxCount ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Deleted: OutFile
+
+	Parameter Deleted: PassThru
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportMailboxUsageQuotaStatusMailboxCount ----
+
+
+---- UPDATING Cmdlet : Get-MgReportMailboxUsageStorage ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Deleted: OutFile
+
+	Parameter Deleted: PassThru
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportMailboxUsageStorage ----
+
+
+---- UPDATING Cmdlet : Get-MgReportManagedDeviceEnrollmentFailureDetail027E ----
+
+	Parameter Set Added: Managed
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: Managed
+		Old Set: 
+		New Set: Managed
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportManagedDeviceEnrollmentFailureDetail027E ----
+
+
+---- UPDATING Cmdlet : Get-MgReportManagedDeviceEnrollmentFailureDetail2B3D ----
+
+	Parameter Set Added: Managed
+
+	Parameter Set Added: ManagedViaIdentity
+
+	Parameter Set Deleted: Managed1
+
+	Parameter Set Deleted: ManagedViaIdentity1
+
+	Parameter Set Name Updated: Managed
+		Old Set: Managed1
+		New Set: Managed
+
+	Parameter Set Name Updated: ManagedViaIdentity
+		Old Set: ManagedViaIdentity1
+		New Set: ManagedViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportManagedDeviceEnrollmentFailureDetail2B3D ----
+
+
+---- UPDATING Cmdlet : Get-MgReportManagedDeviceEnrollmentTopFailures ----
+
+	Parameter Set Added: Top
+
+	Parameter Set Added: Top1
+
+	Parameter Set Added: TopViaIdentity
+
+	Parameter Set Deleted: Top3
+
+	Parameter Set Deleted: TopViaIdentity1
+
+	Parameter Set Name Updated: Top1
+		Old Set: Top3
+		New Set: Top1
+
+	Parameter Set Name Updated: TopViaIdentity
+		Old Set: TopViaIdentity1
+		New Set: TopViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportManagedDeviceEnrollmentTopFailures ----
+
+
+---- UPDATING Cmdlet : Get-MgReportOffice365ActivationCount ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Deleted: 
+
+	Parameter Deleted: OutFile
+
+	Parameter Deleted: PassThru
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportOffice365ActivationCount ----
+
+
+---- UPDATING Cmdlet : Get-MgReportOffice365ActivationUserCount ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Deleted: 
+
+	Parameter Deleted: OutFile
+
+	Parameter Deleted: PassThru
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportOffice365ActivationUserCount ----
+
+
+---- UPDATING Cmdlet : Get-MgReportOffice365ActivationUserDetail ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Deleted: 
+
+	Parameter Deleted: OutFile
+
+	Parameter Deleted: PassThru
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportOffice365ActivationUserDetail ----
+
+
+---- UPDATING Cmdlet : Get-MgReportOffice365ActiveUserCount ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Deleted: OutFile
+
+	Parameter Deleted: PassThru
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportOffice365ActiveUserCount ----
+
+
+---- UPDATING Cmdlet : Get-MgReportOffice365ActiveUserDetail68Ad ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Deleted: OutFile
+
+	Parameter Deleted: PassThru
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportOffice365ActiveUserDetail68Ad ----
+
+
+---- UPDATING Cmdlet : Get-MgReportOffice365ActiveUserDetailD389 ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Deleted: OutFile
+
+	Parameter Deleted: PassThru
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportOffice365ActiveUserDetailD389 ----
+
+
+---- UPDATING Cmdlet : Get-MgReportOffice365GroupActivityCount ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Deleted: OutFile
+
+	Parameter Deleted: PassThru
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportOffice365GroupActivityCount ----
+
+
+---- UPDATING Cmdlet : Get-MgReportOffice365GroupActivityDetail38F6 ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Deleted: OutFile
+
+	Parameter Deleted: PassThru
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportOffice365GroupActivityDetail38F6 ----
+
+
+---- UPDATING Cmdlet : Get-MgReportOffice365GroupActivityDetail81Cc ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Deleted: OutFile
+
+	Parameter Deleted: PassThru
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportOffice365GroupActivityDetail81Cc ----
+
+
+---- UPDATING Cmdlet : Get-MgReportOffice365GroupActivityFileCount ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Deleted: OutFile
+
+	Parameter Deleted: PassThru
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportOffice365GroupActivityFileCount ----
+
+
+---- UPDATING Cmdlet : Get-MgReportOffice365GroupActivityGroupCount ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Deleted: OutFile
+
+	Parameter Deleted: PassThru
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportOffice365GroupActivityGroupCount ----
+
+
+---- UPDATING Cmdlet : Get-MgReportOffice365GroupActivityStorage ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Deleted: OutFile
+
+	Parameter Deleted: PassThru
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportOffice365GroupActivityStorage ----
+
+
+---- UPDATING Cmdlet : Get-MgReportOffice365ServiceUserCount ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Deleted: OutFile
+
+	Parameter Deleted: PassThru
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportOffice365ServiceUserCount ----
+
+
+---- UPDATING Cmdlet : Get-MgReportOneDriveActivityFileCount ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Deleted: OutFile
+
+	Parameter Deleted: PassThru
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportOneDriveActivityFileCount ----
+
+
+---- UPDATING Cmdlet : Get-MgReportOneDriveActivityUserCount ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Deleted: OutFile
+
+	Parameter Deleted: PassThru
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportOneDriveActivityUserCount ----
+
+
+---- UPDATING Cmdlet : Get-MgReportOneDriveActivityUserDetail05F1 ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Deleted: OutFile
+
+	Parameter Deleted: PassThru
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportOneDriveActivityUserDetail05F1 ----
+
+
+---- UPDATING Cmdlet : Get-MgReportOneDriveActivityUserDetailC424 ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Deleted: OutFile
+
+	Parameter Deleted: PassThru
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportOneDriveActivityUserDetailC424 ----
+
+
+---- UPDATING Cmdlet : Get-MgReportOneDriveUsageAccountCount ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Deleted: OutFile
+
+	Parameter Deleted: PassThru
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportOneDriveUsageAccountCount ----
+
+
+---- UPDATING Cmdlet : Get-MgReportOneDriveUsageAccountDetailDd7F ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Deleted: OutFile
+
+	Parameter Deleted: PassThru
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportOneDriveUsageAccountDetailDd7F ----
+
+
+---- UPDATING Cmdlet : Get-MgReportOneDriveUsageAccountDetailE827 ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Deleted: OutFile
+
+	Parameter Deleted: PassThru
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportOneDriveUsageAccountDetailE827 ----
+
+
+---- UPDATING Cmdlet : Get-MgReportOneDriveUsageFileCount ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Deleted: OutFile
+
+	Parameter Deleted: PassThru
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportOneDriveUsageFileCount ----
+
+
+---- UPDATING Cmdlet : Get-MgReportOneDriveUsageStorage ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Deleted: OutFile
+
+	Parameter Deleted: PassThru
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportOneDriveUsageStorage ----
+
+
+---- UPDATING Cmdlet : Get-MgReportSharePointActivityFileCount ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Deleted: OutFile
+
+	Parameter Deleted: PassThru
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportSharePointActivityFileCount ----
+
+
+---- UPDATING Cmdlet : Get-MgReportSharePointActivityPage ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Deleted: OutFile
+
+	Parameter Deleted: PassThru
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportSharePointActivityPage ----
+
+
+---- UPDATING Cmdlet : Get-MgReportSharePointActivityUserCount ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Deleted: OutFile
+
+	Parameter Deleted: PassThru
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportSharePointActivityUserCount ----
+
+
+---- UPDATING Cmdlet : Get-MgReportSharePointActivityUserDetailB778 ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Deleted: OutFile
+
+	Parameter Deleted: PassThru
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportSharePointActivityUserDetailB778 ----
+
+
+---- UPDATING Cmdlet : Get-MgReportSharePointActivityUserDetailF3Be ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Deleted: OutFile
+
+	Parameter Deleted: PassThru
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportSharePointActivityUserDetailF3Be ----
+
+
+---- UPDATING Cmdlet : Get-MgReportSharePointSiteUsageDetail204B ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Deleted: OutFile
+
+	Parameter Deleted: PassThru
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportSharePointSiteUsageDetail204B ----
+
+
+---- UPDATING Cmdlet : Get-MgReportSharePointSiteUsageDetailD27A ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Deleted: OutFile
+
+	Parameter Deleted: PassThru
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportSharePointSiteUsageDetailD27A ----
+
+
+---- UPDATING Cmdlet : Get-MgReportSharePointSiteUsageFileCount ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Deleted: OutFile
+
+	Parameter Deleted: PassThru
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportSharePointSiteUsageFileCount ----
+
+
+---- UPDATING Cmdlet : Get-MgReportSharePointSiteUsagePage ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Deleted: OutFile
+
+	Parameter Deleted: PassThru
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportSharePointSiteUsagePage ----
+
+
+---- UPDATING Cmdlet : Get-MgReportSharePointSiteUsageSiteCount ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Deleted: OutFile
+
+	Parameter Deleted: PassThru
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportSharePointSiteUsageSiteCount ----
+
+
+---- UPDATING Cmdlet : Get-MgReportSharePointSiteUsageStorage ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Deleted: OutFile
+
+	Parameter Deleted: PassThru
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportSharePointSiteUsageStorage ----
+
+
+---- UPDATING Cmdlet : Get-MgReportSkype ----
+
+	Parameter Set Added: Get17
+
+	Parameter Set Added: Get18
+
+	Parameter Set Added: Get19
+
+	Parameter Set Added: Get20
+
+	Parameter Set Added: Get21
+
+	Parameter Set Added: Get22
+
+	Parameter Set Added: Get23
+
+	Parameter Set Added: Get24
+
+	Parameter Set Added: Get25
+
+	Parameter Set Added: Get26
+
+	Parameter Set Added: Get27
+
+	Parameter Set Added: Get28
+
+	Parameter Set Added: Get29
+
+	Parameter Set Added: Get30
+
+	Parameter Set Added: Get31
+
+	Parameter Set Added: Get32
+
+	Parameter Set Added: Get33
+
+	Parameter Set Added: GetViaIdentity19
+
+	Parameter Set Added: GetViaIdentity20
+
+	Parameter Set Added: GetViaIdentity21
+
+	Parameter Set Added: GetViaIdentity22
+
+	Parameter Set Added: GetViaIdentity23
+
+	Parameter Set Added: GetViaIdentity24
+
+	Parameter Set Added: GetViaIdentity25
+
+	Parameter Set Added: GetViaIdentity26
+
+	Parameter Set Added: GetViaIdentity27
+
+	Parameter Set Added: GetViaIdentity28
+
+	Parameter Set Added: GetViaIdentity29
+
+	Parameter Set Added: GetViaIdentity30
+
+	Parameter Set Added: GetViaIdentity31
+
+	Parameter Set Added: GetViaIdentity32
+
+	Parameter Set Added: GetViaIdentity33
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: Get10
+
+	Parameter Set Deleted: Get11
+
+	Parameter Set Deleted: Get12
+
+	Parameter Set Deleted: Get13
+
+	Parameter Set Deleted: Get14
+
+	Parameter Set Deleted: Get15
+
+	Parameter Set Deleted: Get16
+
+	Parameter Set Deleted: Get2
+
+	Parameter Set Deleted: Get3
+
+	Parameter Set Deleted: Get4
+
+	Parameter Set Deleted: Get5
+
+	Parameter Set Deleted: Get6
+
+	Parameter Set Deleted: Get7
+
+	Parameter Set Deleted: Get8
+
+	Parameter Set Deleted: Get9
+
+	Parameter Set Deleted: GetViaIdentity10
+
+	Parameter Set Deleted: GetViaIdentity11
+
+	Parameter Set Deleted: GetViaIdentity12
+
+	Parameter Set Deleted: GetViaIdentity13
+
+	Parameter Set Deleted: GetViaIdentity14
+
+	Parameter Set Deleted: GetViaIdentity15
+
+	Parameter Set Deleted: GetViaIdentity16
+
+	Parameter Set Deleted: GetViaIdentity2
+
+	Parameter Set Deleted: GetViaIdentity3
+
+	Parameter Set Deleted: GetViaIdentity4
+
+	Parameter Set Deleted: GetViaIdentity5
+
+	Parameter Set Deleted: GetViaIdentity6
+
+	Parameter Set Deleted: GetViaIdentity7
+
+	Parameter Set Deleted: GetViaIdentity8
+
+	Parameter Set Deleted: GetViaIdentity9
+
+	Parameter Deleted: OutFile
+
+	Parameter Deleted: PassThru
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportSkype ----
+
+
+---- UPDATING Cmdlet : Get-MgReportTeamDeviceUsageDistributionUserCount ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Deleted: OutFile
+
+	Parameter Deleted: PassThru
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportTeamDeviceUsageDistributionUserCount ----
+
+
+---- UPDATING Cmdlet : Get-MgReportTeamDeviceUsageUserCount ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Deleted: OutFile
+
+	Parameter Deleted: PassThru
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportTeamDeviceUsageUserCount ----
+
+
+---- UPDATING Cmdlet : Get-MgReportTeamDeviceUsageUserDetail7148 ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Deleted: OutFile
+
+	Parameter Deleted: PassThru
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportTeamDeviceUsageUserDetail7148 ----
+
+
+---- UPDATING Cmdlet : Get-MgReportTeamDeviceUsageUserDetail7565 ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Deleted: OutFile
+
+	Parameter Deleted: PassThru
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportTeamDeviceUsageUserDetail7565 ----
+
+
+---- UPDATING Cmdlet : Get-MgReportTeamUserActivityCount ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Deleted: OutFile
+
+	Parameter Deleted: PassThru
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportTeamUserActivityCount ----
+
+
+---- UPDATING Cmdlet : Get-MgReportTeamUserActivityUserCount ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Deleted: OutFile
+
+	Parameter Deleted: PassThru
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportTeamUserActivityUserCount ----
+
+
+---- UPDATING Cmdlet : Get-MgReportTeamUserActivityUserDetailA3F1 ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Deleted: OutFile
+
+	Parameter Deleted: PassThru
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportTeamUserActivityUserDetailA3F1 ----
+
+
+---- UPDATING Cmdlet : Get-MgReportTeamUserActivityUserDetailEb13 ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Deleted: OutFile
+
+	Parameter Deleted: PassThru
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportTeamUserActivityUserDetailEb13 ----
+
+
+---- UPDATING Cmdlet : Get-MgReportYammerActivityCount ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Deleted: OutFile
+
+	Parameter Deleted: PassThru
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportYammerActivityCount ----
+
+
+---- UPDATING Cmdlet : Get-MgReportYammerActivityUserCount ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Deleted: OutFile
+
+	Parameter Deleted: PassThru
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportYammerActivityUserCount ----
+
+
+---- UPDATING Cmdlet : Get-MgReportYammerActivityUserDetail15A5 ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Deleted: OutFile
+
+	Parameter Deleted: PassThru
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportYammerActivityUserDetail15A5 ----
+
+
+---- UPDATING Cmdlet : Get-MgReportYammerActivityUserDetailAc30 ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Deleted: OutFile
+
+	Parameter Deleted: PassThru
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportYammerActivityUserDetailAc30 ----
+
+
+---- UPDATING Cmdlet : Get-MgReportYammerDeviceUsageDistributionUserCount ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Deleted: OutFile
+
+	Parameter Deleted: PassThru
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportYammerDeviceUsageDistributionUserCount ----
+
+
+---- UPDATING Cmdlet : Get-MgReportYammerDeviceUsageUserCount ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Deleted: OutFile
+
+	Parameter Deleted: PassThru
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportYammerDeviceUsageUserCount ----
+
+
+---- UPDATING Cmdlet : Get-MgReportYammerDeviceUsageUserDetailCfad ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Deleted: OutFile
+
+	Parameter Deleted: PassThru
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportYammerDeviceUsageUserDetailCfad ----
+
+
+---- UPDATING Cmdlet : Get-MgReportYammerDeviceUsageUserDetailD0Ac ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Deleted: OutFile
+
+	Parameter Deleted: PassThru
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportYammerDeviceUsageUserDetailD0Ac ----
+
+
+---- UPDATING Cmdlet : Get-MgReportYammerGroupActivityCount ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Deleted: OutFile
+
+	Parameter Deleted: PassThru
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportYammerGroupActivityCount ----
+
+
+---- UPDATING Cmdlet : Get-MgReportYammerGroupActivityDetail0D7D ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Deleted: OutFile
+
+	Parameter Deleted: PassThru
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportYammerGroupActivityDetail0D7D ----
+
+
+---- UPDATING Cmdlet : Get-MgReportYammerGroupActivityDetailDa9A ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Deleted: OutFile
+
+	Parameter Deleted: PassThru
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportYammerGroupActivityDetailDa9A ----
+
+
+---- UPDATING Cmdlet : Get-MgReportYammerGroupActivityGroupCount ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Deleted: OutFile
+
+	Parameter Deleted: PassThru
+
+---- COMPLETED UPDATING Cmdlet : Get-MgReportYammerGroupActivityGroupCount ----
+
+
+[Update-MarkdownHelpModule] 11/23/2020 14:55:10 Creating new markdown for command 'Get-MgAuditLogDirectoryProvisioning'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:12 Creating new markdown for command 'Get-MgAuditLogProvisioning'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:13 Creating new markdown for command 'Get-MgReportApplicationSign'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:14 Creating new markdown for command 'Get-MgReportAzureAdApplicationSign'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:14 Creating new markdown for command 'Get-MgReportAzureAdFeatureUsage'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:15 Creating new markdown for command 'Get-MgReportAzureAdLicenseUsage'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:16 Creating new markdown for command 'Get-MgReportAzureAdUserFeatureUsage'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:16 Creating new markdown for command 'Get-MgReportCredentialUsageSummary'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:17 Creating new markdown for command 'Get-MgReportCredentialUserRegistrationCount'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:17 Creating new markdown for command 'Get-MgReportCredentialUserRegistrationDetail'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:18 Creating new markdown for command 'Get-MgReportDailyPrintUsageSummaryByPrinter'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:19 Creating new markdown for command 'Get-MgReportDailyPrintUsageSummaryByUser'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:20 Creating new markdown for command 'Get-MgReportM365AppPlatformUserCount'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:21 Creating new markdown for command 'Get-MgReportM365AppUserCount'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:22 Creating new markdown for command 'Get-MgReportM365AppUserDetail2B20'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:22 Creating new markdown for command 'Get-MgReportM365AppUserDetailC8Df'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:23 Creating new markdown for command 'Get-MgReportManagedDeviceEnrollmentAbandonmentDetail'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:24 Creating new markdown for command 'Get-MgReportManagedDeviceEnrollmentAbandonmentSummary'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:25 Creating new markdown for command 'Get-MgReportManagedDeviceEnrollmentFailureTrend'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:26 Creating new markdown for command 'Get-MgReportMonthlyPrintUsageSummaryByPrinter'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:27 Creating new markdown for command 'Get-MgReportMonthlyPrintUsageSummaryByUser'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:28 Creating new markdown for command 'Get-MgReportRelyingPartyDetailedSummary'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:28 Creating new markdown for command 'Get-MgReportUserCredentialUsageDetail'

@@ -1,0 +1,1228 @@
+
+[Update-MarkdownHelpModule] 11/23/2020 14:56:46 Determined module name for '.\src\Users\Users\help' as 'Microsoft.Graph.Users'.
+[Update-MarkdownHelpModule] 11/23/2020 14:56:46 [Update-MarkdownHelpModule]11/23/2020 2:56:46 PM
+[Update-MarkdownHelpModule] 11/23/2020 14:56:46 Updating documents for module 'Microsoft.Graph.Users' in .\src\Users\Users\help
+---- UPDATING Cmdlet : Get-MgUser ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUser ----
+
+
+---- UPDATING Cmdlet : Get-MgUserCreatedObject ----
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List1
+		Old Set: 
+		New Set: List1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserCreatedObject ----
+
+
+---- UPDATING Cmdlet : Get-MgUserCreatedObjectByRef ----
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List1
+		Old Set: 
+		New Set: List1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserCreatedObjectByRef ----
+
+
+---- UPDATING Cmdlet : Get-MgUserDirectReport ----
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List1
+		Old Set: 
+		New Set: List1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserDirectReport ----
+
+
+---- UPDATING Cmdlet : Get-MgUserDirectReportByRef ----
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List1
+		Old Set: 
+		New Set: List1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserDirectReportByRef ----
+
+
+---- UPDATING Cmdlet : Get-MgUserExtension ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserExtension ----
+
+
+---- UPDATING Cmdlet : Get-MgUserLicenseDetail ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserLicenseDetail ----
+
+
+---- UPDATING Cmdlet : Get-MgUserManager ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserManager ----
+
+
+---- UPDATING Cmdlet : Get-MgUserManagerByRef ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserManagerByRef ----
+
+
+---- UPDATING Cmdlet : Get-MgUserMember ----
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List1
+		Old Set: 
+		New Set: List1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserMember ----
+
+
+---- UPDATING Cmdlet : Get-MgUserMemberByRef ----
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List1
+		Old Set: 
+		New Set: List1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserMemberByRef ----
+
+
+---- UPDATING Cmdlet : Get-MgUserNotification ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserNotification ----
+
+
+---- UPDATING Cmdlet : Get-MgUserOutlookMasterCategory ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserOutlookMasterCategory ----
+
+
+---- UPDATING Cmdlet : Get-MgUserOutlookTask ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserOutlookTask ----
+
+
+---- UPDATING Cmdlet : Get-MgUserOutlookTaskAttachment ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserOutlookTaskAttachment ----
+
+
+---- UPDATING Cmdlet : Get-MgUserOutlookTaskFolder ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserOutlookTaskFolder ----
+
+
+---- UPDATING Cmdlet : Get-MgUserOutlookTaskFolderMultiValueExtendedProperty ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserOutlookTaskFolderMultiValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : Get-MgUserOutlookTaskFolderSingleValueExtendedProperty ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserOutlookTaskFolderSingleValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : Get-MgUserOutlookTaskFolderTask ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserOutlookTaskFolderTask ----
+
+
+---- UPDATING Cmdlet : Get-MgUserOutlookTaskFolderTaskAttachment ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserOutlookTaskFolderTaskAttachment ----
+
+
+---- UPDATING Cmdlet : Get-MgUserOutlookTaskFolderTaskMultiValueExtendedProperty ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserOutlookTaskFolderTaskMultiValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : Get-MgUserOutlookTaskFolderTaskSingleValueExtendedProperty ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserOutlookTaskFolderTaskSingleValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : Get-MgUserOutlookTaskGroup ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserOutlookTaskGroup ----
+
+
+---- UPDATING Cmdlet : Get-MgUserOutlookTaskGroupTaskFolder ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserOutlookTaskGroupTaskFolder ----
+
+
+---- UPDATING Cmdlet : Get-MgUserOutlookTaskGroupTaskFolderMultiValueExtendedProperty ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserOutlookTaskGroupTaskFolderMultiValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : Get-MgUserOutlookTaskGroupTaskFolderSingleValueExtendedProperty ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserOutlookTaskGroupTaskFolderSingleValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : Get-MgUserOutlookTaskGroupTaskFolderTask ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserOutlookTaskGroupTaskFolderTask ----
+
+
+---- UPDATING Cmdlet : Get-MgUserOutlookTaskGroupTaskFolderTaskAttachment ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserOutlookTaskGroupTaskFolderTaskAttachment ----
+
+
+---- UPDATING Cmdlet : Get-MgUserOutlookTaskGroupTaskFolderTaskMultiValueExtendedProperty ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserOutlookTaskGroupTaskFolderTaskMultiValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : Get-MgUserOutlookTaskGroupTaskFolderTaskSingleValueExtendedProperty ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserOutlookTaskGroupTaskFolderTaskSingleValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : Get-MgUserOutlookTaskMultiValueExtendedProperty ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserOutlookTaskMultiValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : Get-MgUserOutlookTaskSingleValueExtendedProperty ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserOutlookTaskSingleValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : Get-MgUserOwnedDevice ----
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List
+		Old Set: 
+		New Set: List
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserOwnedDevice ----
+
+
+---- UPDATING Cmdlet : Get-MgUserOwnedDeviceByRef ----
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List
+		Old Set: 
+		New Set: List
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserOwnedDeviceByRef ----
+
+
+---- UPDATING Cmdlet : Get-MgUserOwnedObject ----
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List
+		Old Set: 
+		New Set: List
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserOwnedObject ----
+
+
+---- UPDATING Cmdlet : Get-MgUserOwnedObjectByRef ----
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List
+		Old Set: 
+		New Set: List
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserOwnedObjectByRef ----
+
+
+---- UPDATING Cmdlet : Get-MgUserPhoto ----
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserPhoto ----
+
+
+---- UPDATING Cmdlet : Get-MgUserPhotoContent ----
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserPhotoContent ----
+
+
+---- UPDATING Cmdlet : Get-MgUserRegisteredDevice ----
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List
+		Old Set: 
+		New Set: List
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserRegisteredDevice ----
+
+
+---- UPDATING Cmdlet : Get-MgUserRegisteredDeviceByRef ----
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List
+		Old Set: 
+		New Set: List
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserRegisteredDeviceByRef ----
+
+
+---- UPDATING Cmdlet : Get-MgUserSetting ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserSetting ----
+
+
+---- UPDATING Cmdlet : Get-MgUserSettingRegionalAndLanguageSetting ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserSettingRegionalAndLanguageSetting ----
+
+
+---- UPDATING Cmdlet : Get-MgUserSettingShiftPerenceByRef ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserSettingShiftPerenceByRef ----
+
+
+---- UPDATING Cmdlet : Get-MgUserTodoList ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserTodoList ----
+
+
+---- UPDATING Cmdlet : Get-MgUserTodoListExtension ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserTodoListExtension ----
+
+
+---- UPDATING Cmdlet : Get-MgUserTodoListTask ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserTodoListTask ----
+
+
+---- UPDATING Cmdlet : Get-MgUserTodoListTaskExtension ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserTodoListTaskExtension ----
+
+
+---- UPDATING Cmdlet : Get-MgUserTodoListTaskLinkedResource ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserTodoListTaskLinkedResource ----
+
+
+---- UPDATING Cmdlet : Get-MgUserTransitiveMember ----
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List
+		Old Set: 
+		New Set: List
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserTransitiveMember ----
+
+
+---- UPDATING Cmdlet : Get-MgUserTransitiveMemberByRef ----
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List
+		Old Set: 
+		New Set: List
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserTransitiveMemberByRef ----
+
+
+---- UPDATING Cmdlet : New-MgUser ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgUser ----
+
+
+---- UPDATING Cmdlet : New-MgUserCreatedObjectByRef ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserCreatedObjectByRef ----
+
+
+---- UPDATING Cmdlet : New-MgUserDirectReportByRef ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserDirectReportByRef ----
+
+
+---- UPDATING Cmdlet : New-MgUserExtension ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserExtension ----
+
+
+---- UPDATING Cmdlet : New-MgUserLicenseDetail ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserLicenseDetail ----
+
+
+---- UPDATING Cmdlet : New-MgUserMemberByRef ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserMemberByRef ----
+
+
+---- UPDATING Cmdlet : New-MgUserNotification ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserNotification ----
+
+
+---- UPDATING Cmdlet : New-MgUserOutlookMasterCategory ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserOutlookMasterCategory ----
+
+
+---- UPDATING Cmdlet : New-MgUserOutlookTask ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserOutlookTask ----
+
+
+---- UPDATING Cmdlet : New-MgUserOutlookTaskAttachment ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserOutlookTaskAttachment ----
+
+
+---- UPDATING Cmdlet : New-MgUserOutlookTaskFolder ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserOutlookTaskFolder ----
+
+
+---- UPDATING Cmdlet : New-MgUserOutlookTaskFolderMultiValueExtendedProperty ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserOutlookTaskFolderMultiValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : New-MgUserOutlookTaskFolderSingleValueExtendedProperty ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserOutlookTaskFolderSingleValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : New-MgUserOutlookTaskFolderTask ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserOutlookTaskFolderTask ----
+
+
+---- UPDATING Cmdlet : New-MgUserOutlookTaskFolderTaskAttachment ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserOutlookTaskFolderTaskAttachment ----
+
+
+---- UPDATING Cmdlet : New-MgUserOutlookTaskFolderTaskMultiValueExtendedProperty ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserOutlookTaskFolderTaskMultiValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : New-MgUserOutlookTaskFolderTaskSingleValueExtendedProperty ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserOutlookTaskFolderTaskSingleValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : New-MgUserOutlookTaskGroup ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserOutlookTaskGroup ----
+
+
+---- UPDATING Cmdlet : New-MgUserOutlookTaskGroupTaskFolder ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserOutlookTaskGroupTaskFolder ----
+
+
+---- UPDATING Cmdlet : New-MgUserOutlookTaskGroupTaskFolderMultiValueExtendedProperty ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserOutlookTaskGroupTaskFolderMultiValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : New-MgUserOutlookTaskGroupTaskFolderSingleValueExtendedProperty ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserOutlookTaskGroupTaskFolderSingleValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : New-MgUserOutlookTaskGroupTaskFolderTask ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserOutlookTaskGroupTaskFolderTask ----
+
+
+---- UPDATING Cmdlet : New-MgUserOutlookTaskGroupTaskFolderTaskAttachment ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserOutlookTaskGroupTaskFolderTaskAttachment ----
+
+
+---- UPDATING Cmdlet : New-MgUserOutlookTaskGroupTaskFolderTaskMultiValueExtendedProperty ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserOutlookTaskGroupTaskFolderTaskMultiValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : New-MgUserOutlookTaskGroupTaskFolderTaskSingleValueExtendedProperty ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserOutlookTaskGroupTaskFolderTaskSingleValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : New-MgUserOutlookTaskMultiValueExtendedProperty ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserOutlookTaskMultiValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : New-MgUserOutlookTaskSingleValueExtendedProperty ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserOutlookTaskSingleValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : New-MgUserOwnedDeviceByRef ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserOwnedDeviceByRef ----
+
+
+---- UPDATING Cmdlet : New-MgUserOwnedObjectByRef ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserOwnedObjectByRef ----
+
+
+---- UPDATING Cmdlet : New-MgUserPhoto ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserPhoto ----
+
+
+---- UPDATING Cmdlet : New-MgUserRegisteredDeviceByRef ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserRegisteredDeviceByRef ----
+
+
+---- UPDATING Cmdlet : New-MgUserTodoList ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserTodoList ----
+
+
+---- UPDATING Cmdlet : New-MgUserTodoListExtension ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserTodoListExtension ----
+
+
+---- UPDATING Cmdlet : New-MgUserTodoListTask ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserTodoListTask ----
+
+
+---- UPDATING Cmdlet : New-MgUserTodoListTaskExtension ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserTodoListTaskExtension ----
+
+
+---- UPDATING Cmdlet : New-MgUserTodoListTaskLinkedResource ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserTodoListTaskLinkedResource ----
+
+
+---- UPDATING Cmdlet : New-MgUserTransitiveMemberByRef ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserTransitiveMemberByRef ----
+
+
+---- UPDATING Cmdlet : Remove-MgUser ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUser ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserExtension ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserExtension ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserLicenseDetail ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserLicenseDetail ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserManagerByRef ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserManagerByRef ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserNotification ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserNotification ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserOutlookMasterCategory ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserOutlookMasterCategory ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserOutlookTask ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserOutlookTask ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserOutlookTaskAttachment ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserOutlookTaskAttachment ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserOutlookTaskFolder ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserOutlookTaskFolder ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserOutlookTaskFolderMultiValueExtendedProperty ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserOutlookTaskFolderMultiValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserOutlookTaskFolderSingleValueExtendedProperty ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserOutlookTaskFolderSingleValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserOutlookTaskFolderTask ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserOutlookTaskFolderTask ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserOutlookTaskFolderTaskAttachment ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserOutlookTaskFolderTaskAttachment ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserOutlookTaskFolderTaskMultiValueExtendedProperty ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserOutlookTaskFolderTaskMultiValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserOutlookTaskFolderTaskSingleValueExtendedProperty ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserOutlookTaskFolderTaskSingleValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserOutlookTaskGroup ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserOutlookTaskGroup ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserOutlookTaskGroupTaskFolder ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserOutlookTaskGroupTaskFolder ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserOutlookTaskGroupTaskFolderMultiValueExtendedProperty ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserOutlookTaskGroupTaskFolderMultiValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserOutlookTaskGroupTaskFolderSingleValueExtendedProperty ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserOutlookTaskGroupTaskFolderSingleValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserOutlookTaskGroupTaskFolderTask ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserOutlookTaskGroupTaskFolderTask ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserOutlookTaskGroupTaskFolderTaskAttachment ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserOutlookTaskGroupTaskFolderTaskAttachment ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserOutlookTaskGroupTaskFolderTaskMultiValueExtendedProperty ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserOutlookTaskGroupTaskFolderTaskMultiValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserOutlookTaskGroupTaskFolderTaskSingleValueExtendedProperty ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserOutlookTaskGroupTaskFolderTaskSingleValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserOutlookTaskMultiValueExtendedProperty ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserOutlookTaskMultiValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserOutlookTaskSingleValueExtendedProperty ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserOutlookTaskSingleValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserPhoto ----
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserPhoto ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserSetting ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserSetting ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserSettingRegionalAndLanguageSetting ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserSettingRegionalAndLanguageSetting ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserSettingShiftPerenceByRef ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserSettingShiftPerenceByRef ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserTodoList ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserTodoList ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserTodoListExtension ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserTodoListExtension ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserTodoListTask ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserTodoListTask ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserTodoListTaskExtension ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserTodoListTaskExtension ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserTodoListTaskLinkedResource ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserTodoListTaskLinkedResource ----
+
+
+---- UPDATING Cmdlet : Set-MgUserManagerByRef ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Set-MgUserManagerByRef ----
+
+
+---- UPDATING Cmdlet : Set-MgUserPhotoContent ----
+
+	Parameter Set Name Updated: SetViaIdentity1
+		Old Set: SetViaIdentity
+		New Set: SetViaIdentity1
+
+	Parameter Set Name Updated: SetViaIdentity
+		Old Set: SetViaIdentity1
+		New Set: SetViaIdentity
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Set-MgUserPhotoContent ----
+
+
+---- UPDATING Cmdlet : Update-MgUser ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUser ----
+
+
+---- UPDATING Cmdlet : Update-MgUserExtension ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserExtension ----
+
+
+---- UPDATING Cmdlet : Update-MgUserLicenseDetail ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserLicenseDetail ----
+
+
+---- UPDATING Cmdlet : Update-MgUserNotification ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserNotification ----
+
+
+---- UPDATING Cmdlet : Update-MgUserOutlookMasterCategory ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserOutlookMasterCategory ----
+
+
+---- UPDATING Cmdlet : Update-MgUserOutlookTask ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserOutlookTask ----
+
+
+---- UPDATING Cmdlet : Update-MgUserOutlookTaskAttachment ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserOutlookTaskAttachment ----
+
+
+---- UPDATING Cmdlet : Update-MgUserOutlookTaskFolder ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserOutlookTaskFolder ----
+
+
+---- UPDATING Cmdlet : Update-MgUserOutlookTaskFolderMultiValueExtendedProperty ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserOutlookTaskFolderMultiValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : Update-MgUserOutlookTaskFolderSingleValueExtendedProperty ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserOutlookTaskFolderSingleValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : Update-MgUserOutlookTaskFolderTask ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserOutlookTaskFolderTask ----
+
+
+---- UPDATING Cmdlet : Update-MgUserOutlookTaskFolderTaskAttachment ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserOutlookTaskFolderTaskAttachment ----
+
+
+---- UPDATING Cmdlet : Update-MgUserOutlookTaskFolderTaskMultiValueExtendedProperty ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserOutlookTaskFolderTaskMultiValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : Update-MgUserOutlookTaskFolderTaskSingleValueExtendedProperty ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserOutlookTaskFolderTaskSingleValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : Update-MgUserOutlookTaskGroup ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserOutlookTaskGroup ----
+
+
+---- UPDATING Cmdlet : Update-MgUserOutlookTaskGroupTaskFolder ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserOutlookTaskGroupTaskFolder ----
+
+
+---- UPDATING Cmdlet : Update-MgUserOutlookTaskGroupTaskFolderMultiValueExtendedProperty ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserOutlookTaskGroupTaskFolderMultiValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : Update-MgUserOutlookTaskGroupTaskFolderSingleValueExtendedProperty ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserOutlookTaskGroupTaskFolderSingleValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : Update-MgUserOutlookTaskGroupTaskFolderTask ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserOutlookTaskGroupTaskFolderTask ----
+
+
+---- UPDATING Cmdlet : Update-MgUserOutlookTaskGroupTaskFolderTaskAttachment ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserOutlookTaskGroupTaskFolderTaskAttachment ----
+
+
+---- UPDATING Cmdlet : Update-MgUserOutlookTaskGroupTaskFolderTaskMultiValueExtendedProperty ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserOutlookTaskGroupTaskFolderTaskMultiValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : Update-MgUserOutlookTaskGroupTaskFolderTaskSingleValueExtendedProperty ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserOutlookTaskGroupTaskFolderTaskSingleValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : Update-MgUserOutlookTaskMultiValueExtendedProperty ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserOutlookTaskMultiValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : Update-MgUserOutlookTaskSingleValueExtendedProperty ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserOutlookTaskSingleValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : Update-MgUserPhoto ----
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded1
+		Old Set: UpdateViaIdentityExpanded
+		New Set: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserPhoto ----
+
+
+---- UPDATING Cmdlet : Update-MgUserSetting ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserSetting ----
+
+
+---- UPDATING Cmdlet : Update-MgUserSettingRegionalAndLanguageSetting ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserSettingRegionalAndLanguageSetting ----
+
+
+---- UPDATING Cmdlet : Update-MgUserSettingShiftPerenceByRef ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserSettingShiftPerenceByRef ----
+
+
+---- UPDATING Cmdlet : Update-MgUserTodoList ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserTodoList ----
+
+
+---- UPDATING Cmdlet : Update-MgUserTodoListExtension ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserTodoListExtension ----
+
+
+---- UPDATING Cmdlet : Update-MgUserTodoListTask ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserTodoListTask ----
+
+
+---- UPDATING Cmdlet : Update-MgUserTodoListTaskExtension ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserTodoListTaskExtension ----
+
+
+---- UPDATING Cmdlet : Update-MgUserTodoListTaskLinkedResource ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserTodoListTaskLinkedResource ----
+
+

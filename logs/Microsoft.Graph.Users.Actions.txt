@@ -1,0 +1,606 @@
+
+[Update-MarkdownHelpModule] 11/23/2020 14:49:59 Determined module name for '.\src\Users.Actions\Users.Actions\help' as 'Microsoft.Graph.Users.Actions'.
+[Update-MarkdownHelpModule] 11/23/2020 14:49:59 [Update-MarkdownHelpModule]11/23/2020 2:49:59 PM
+[Update-MarkdownHelpModule] 11/23/2020 14:49:59 Updating documents for module 'Microsoft.Graph.Users.Actions' in .\src\Users.Actions\Users.Actions\help
+---- UPDATING Cmdlet : Clear-MgUserManagedAppRegistrationByDeviceTag ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Clear-MgUserManagedAppRegistrationByDeviceTag ----
+
+
+---- UPDATING Cmdlet : Clear-MgUserManagedDevice ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Clear-MgUserManagedDevice ----
+
+
+---- UPDATING Cmdlet : Confirm-MgUserMemberGroup ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Confirm-MgUserMemberGroup ----
+
+
+---- UPDATING Cmdlet : Confirm-MgUserMemberObject ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Confirm-MgUserMemberObject ----
+
+
+---- UPDATING Cmdlet : Copy-MgUserMailFolder ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Copy-MgUserMailFolder ----
+
+
+---- UPDATING Cmdlet : Copy-MgUserMailFolderChildFolder ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Copy-MgUserMailFolderChildFolder ----
+
+
+---- UPDATING Cmdlet : Copy-MgUserMailFolderMessage ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Copy-MgUserMailFolderMessage ----
+
+
+---- UPDATING Cmdlet : Copy-MgUserMessage ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Copy-MgUserMessage ----
+
+
+---- UPDATING Cmdlet : Copy-MgUserOnenoteNotebook ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Copy-MgUserOnenoteNotebook ----
+
+
+---- UPDATING Cmdlet : Copy-MgUserOnenotePageToSection ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Copy-MgUserOnenotePageToSection ----
+
+
+---- UPDATING Cmdlet : Copy-MgUserOnenoteSectionToNotebook ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Copy-MgUserOnenoteSectionToNotebook ----
+
+
+---- UPDATING Cmdlet : Copy-MgUserOnenoteSectionToSectionGroup ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Copy-MgUserOnenoteSectionToSectionGroup ----
+
+
+---- UPDATING Cmdlet : Disable-MgUserManagedDeviceLostMode ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Disable-MgUserManagedDeviceLostMode ----
+
+
+---- UPDATING Cmdlet : Export-MgUserPersonalData ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Export-MgUserPersonalData ----
+
+
+---- UPDATING Cmdlet : Find-MgUserManagedDevice ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Find-MgUserManagedDevice ----
+
+
+---- UPDATING Cmdlet : Find-MgUserMeetingTime ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Find-MgUserMeetingTime ----
+
+
+---- UPDATING Cmdlet : Get-MgUserAvailableExtensionProperty ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserAvailableExtensionProperty ----
+
+
+---- UPDATING Cmdlet : Get-MgUserById ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserById ----
+
+
+---- UPDATING Cmdlet : Get-MgUserCalendarSchedule ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserCalendarSchedule ----
+
+
+---- UPDATING Cmdlet : Get-MgUserDefaultCalendarSchedule ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserDefaultCalendarSchedule ----
+
+
+---- UPDATING Cmdlet : Get-MgUserEventCalendarSchedule ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserEventCalendarSchedule ----
+
+
+---- UPDATING Cmdlet : Get-MgUserMailTip ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserMailTip ----
+
+
+---- UPDATING Cmdlet : Get-MgUserMemberGroup ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserMemberGroup ----
+
+
+---- UPDATING Cmdlet : Get-MgUserMemberObject ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserMemberObject ----
+
+
+---- UPDATING Cmdlet : Get-MgUserOnenoteNotebookFromWebUrl ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserOnenoteNotebookFromWebUrl ----
+
+
+---- UPDATING Cmdlet : Invoke-MgAcceptUserEvent ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgAcceptUserEvent ----
+
+
+---- UPDATING Cmdlet : Invoke-MgAcceptUserEventInstance ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgAcceptUserEventInstance ----
+
+
+---- UPDATING Cmdlet : Invoke-MgAcceptUserEventInstanceTentatively ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgAcceptUserEventInstanceTentatively ----
+
+
+---- UPDATING Cmdlet : Invoke-MgAcceptUserEventTentatively ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgAcceptUserEventTentatively ----
+
+
+---- UPDATING Cmdlet : Invoke-MgCleanUserManagedDeviceWindowDevice ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgCleanUserManagedDeviceWindowDevice ----
+
+
+---- UPDATING Cmdlet : Invoke-MgCreateOrGetUserOnlineMeeting ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgCreateOrGetUserOnlineMeeting ----
+
+
+---- UPDATING Cmdlet : Invoke-MgDeclineUserEvent ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgDeclineUserEvent ----
+
+
+---- UPDATING Cmdlet : Invoke-MgDeclineUserEventInstance ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgDeclineUserEventInstance ----
+
+
+---- UPDATING Cmdlet : Invoke-MgDismissUserEventInstanceReminder ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgDismissUserEventInstanceReminder ----
+
+
+---- UPDATING Cmdlet : Invoke-MgDismissUserEventReminder ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgDismissUserEventReminder ----
+
+
+---- UPDATING Cmdlet : Invoke-MgDownUserManagedDeviceShut ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgDownUserManagedDeviceShut ----
+
+
+---- UPDATING Cmdlet : Invoke-MgForwardUserEvent ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgForwardUserEvent ----
+
+
+---- UPDATING Cmdlet : Invoke-MgForwardUserEventInstance ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgForwardUserEventInstance ----
+
+
+---- UPDATING Cmdlet : Invoke-MgForwardUserMailFolderMessage ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgForwardUserMailFolderMessage ----
+
+
+---- UPDATING Cmdlet : Invoke-MgForwardUserMessage ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgForwardUserMessage ----
+
+
+---- UPDATING Cmdlet : Invoke-MgLicenseUser ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgLicenseUser ----
+
+
+---- UPDATING Cmdlet : Invoke-MgLogoutUserManagedDeviceSharedAppleDeviceActiveUser ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgLogoutUserManagedDeviceSharedAppleDeviceActiveUser ----
+
+
+---- UPDATING Cmdlet : Invoke-MgReplyAllUserMailFolderMessage ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgReplyAllUserMailFolderMessage ----
+
+
+---- UPDATING Cmdlet : Invoke-MgReplyAllUserMessage ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgReplyAllUserMessage ----
+
+
+---- UPDATING Cmdlet : Invoke-MgReplyUserMailFolderMessage ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgReplyUserMailFolderMessage ----
+
+
+---- UPDATING Cmdlet : Invoke-MgReplyUserMessage ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgReplyUserMessage ----
+
+
+---- UPDATING Cmdlet : Invoke-MgRetireUserManagedDevice ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgRetireUserManagedDevice ----
+
+
+---- UPDATING Cmdlet : Invoke-MgScanUserManagedDeviceWindowDefender ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgScanUserManagedDeviceWindowDefender ----
+
+
+---- UPDATING Cmdlet : Invoke-MgSnoozeUserEventInstanceReminder ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgSnoozeUserEventInstanceReminder ----
+
+
+---- UPDATING Cmdlet : Invoke-MgSnoozeUserEventReminder ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgSnoozeUserEventReminder ----
+
+
+---- UPDATING Cmdlet : Invoke-MgTranslateUserExchangeId ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgTranslateUserExchangeId ----
+
+
+---- UPDATING Cmdlet : Lock-MgUserManagedDeviceRemote ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Lock-MgUserManagedDeviceRemote ----
+
+
+---- UPDATING Cmdlet : Move-MgUserMailFolder ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Move-MgUserMailFolder ----
+
+
+---- UPDATING Cmdlet : Move-MgUserMailFolderChildFolder ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Move-MgUserMailFolderChildFolder ----
+
+
+---- UPDATING Cmdlet : Move-MgUserMailFolderMessage ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Move-MgUserMailFolderMessage ----
+
+
+---- UPDATING Cmdlet : Move-MgUserMessage ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Move-MgUserMessage ----
+
+
+---- UPDATING Cmdlet : New-MgUserEventAttachmentUploadSession ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserEventAttachmentUploadSession ----
+
+
+---- UPDATING Cmdlet : New-MgUserMailFolderMessageAttachmentUploadSession ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserMailFolderMessageAttachmentUploadSession ----
+
+
+---- UPDATING Cmdlet : New-MgUserMailFolderMessageForward ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserMailFolderMessageForward ----
+
+
+---- UPDATING Cmdlet : New-MgUserMailFolderMessageReply ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserMailFolderMessageReply ----
+
+
+---- UPDATING Cmdlet : New-MgUserMailFolderMessageReplyAll ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserMailFolderMessageReplyAll ----
+
+
+---- UPDATING Cmdlet : New-MgUserManagedDeviceWindowsDefenderUpdateSignature ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserManagedDeviceWindowsDefenderUpdateSignature ----
+
+
+---- UPDATING Cmdlet : New-MgUserMessageAttachmentUploadSession ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserMessageAttachmentUploadSession ----
+
+
+---- UPDATING Cmdlet : New-MgUserMessageForward ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserMessageForward ----
+
+
+---- UPDATING Cmdlet : New-MgUserMessageReply ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserMessageReply ----
+
+
+---- UPDATING Cmdlet : New-MgUserMessageReplyAll ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserMessageReplyAll ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserDeviceFromManagement ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserDeviceFromManagement ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserManagedDeviceUserFromSharedAppleDevice ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserManagedDeviceUserFromSharedAppleDevice ----
+
+
+---- UPDATING Cmdlet : Request-MgUserManagedDeviceRemoteAssistance ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Request-MgUserManagedDeviceRemoteAssistance ----
+
+
+---- UPDATING Cmdlet : Reset-MgUserManagedDevicePasscode ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Reset-MgUserManagedDevicePasscode ----
+
+
+---- UPDATING Cmdlet : Reset-MgUserPassword ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Reset-MgUserPassword ----
+
+
+---- UPDATING Cmdlet : Restart-MgUserManagedDeviceNow ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Restart-MgUserManagedDeviceNow ----
+
+
+---- UPDATING Cmdlet : Restore-MgUser ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Restore-MgUser ----
+
+
+---- UPDATING Cmdlet : Restore-MgUserManagedDevicePasscode ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Restore-MgUserManagedDevicePasscode ----
+
+
+---- UPDATING Cmdlet : Revoke-MgUserSign ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Revoke-MgUserSign ----
+
+
+---- UPDATING Cmdlet : Send-MgUserMail ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Send-MgUserMail ----
+
+
+---- UPDATING Cmdlet : Send-MgUserMailFolderMessage ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Send-MgUserMailFolderMessage ----
+
+
+---- UPDATING Cmdlet : Send-MgUserMessage ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Send-MgUserMessage ----
+
+
+---- UPDATING Cmdlet : Set-MgUserLicense ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Set-MgUserLicense ----
+
+
+---- UPDATING Cmdlet : Skip-MgUserManagedDeviceActivationLock ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Skip-MgUserManagedDeviceActivationLock ----
+
+
+---- UPDATING Cmdlet : Stop-MgUserEvent ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Stop-MgUserEvent ----
+
+
+---- UPDATING Cmdlet : Stop-MgUserEventInstance ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Stop-MgUserEventInstance ----
+
+
+---- UPDATING Cmdlet : Sync-MgUserManagedDevice ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Sync-MgUserManagedDevice ----
+
+
+---- UPDATING Cmdlet : Test-MgUserProperty ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Test-MgUserProperty ----
+
+
+---- UPDATING Cmdlet : Update-MgUserManagedDeviceWindowDeviceAccount ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserManagedDeviceWindowDeviceAccount ----
+
+
+---- UPDATING Cmdlet : Update-MgUserOnenotePageContent ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserOnenotePageContent ----
+
+

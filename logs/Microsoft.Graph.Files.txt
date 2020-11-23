@@ -1,0 +1,1524 @@
+
+[Update-MarkdownHelpModule] 11/23/2020 15:01:06 Determined module name for '.\src\Files\Files\help' as 'Microsoft.Graph.Files'.
+[Update-MarkdownHelpModule] 11/23/2020 15:01:06 [Update-MarkdownHelpModule]11/23/2020 3:01:06 PM
+[Update-MarkdownHelpModule] 11/23/2020 15:01:06 Updating documents for module 'Microsoft.Graph.Files' in .\src\Files\Files\help
+---- UPDATING Cmdlet : Get-MgDrive ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDrive ----
+
+
+---- UPDATING Cmdlet : Get-MgDriveActivity ----
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List
+		Old Set: 
+		New Set: List
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDriveActivity ----
+
+
+---- UPDATING Cmdlet : Get-MgDriveBundle ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDriveBundle ----
+
+
+---- UPDATING Cmdlet : Get-MgDriveBundleContent ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDriveBundleContent ----
+
+
+---- UPDATING Cmdlet : Get-MgDriveFollowing ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDriveFollowing ----
+
+
+---- UPDATING Cmdlet : Get-MgDriveFollowingContent ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDriveFollowingContent ----
+
+
+---- UPDATING Cmdlet : Get-MgDriveItem ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDriveItem ----
+
+
+---- UPDATING Cmdlet : Get-MgDriveItemContent ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDriveItemContent ----
+
+
+---- UPDATING Cmdlet : Get-MgDriveList ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDriveList ----
+
+
+---- UPDATING Cmdlet : Get-MgDriveListActivity ----
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List
+		Old Set: 
+		New Set: List
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDriveListActivity ----
+
+
+---- UPDATING Cmdlet : Get-MgDriveListColumn ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDriveListColumn ----
+
+
+---- UPDATING Cmdlet : Get-MgDriveListContentType ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDriveListContentType ----
+
+
+---- UPDATING Cmdlet : Get-MgDriveListContentTypeColumnLink ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDriveListContentTypeColumnLink ----
+
+
+---- UPDATING Cmdlet : Get-MgDriveListDrive ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDriveListDrive ----
+
+
+---- UPDATING Cmdlet : Get-MgDriveListItem ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDriveListItem ----
+
+
+---- UPDATING Cmdlet : Get-MgDriveListItemActivity ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDriveListItemActivity ----
+
+
+---- UPDATING Cmdlet : Get-MgDriveListItemAnalytic ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDriveListItemAnalytic ----
+
+
+---- UPDATING Cmdlet : Get-MgDriveListItemAnalyticByRef ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDriveListItemAnalyticByRef ----
+
+
+---- UPDATING Cmdlet : Get-MgDriveListItemDriveItem ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDriveListItemDriveItem ----
+
+
+---- UPDATING Cmdlet : Get-MgDriveListItemDriveItemContent ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDriveListItemDriveItemContent ----
+
+
+---- UPDATING Cmdlet : Get-MgDriveListItemField ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDriveListItemField ----
+
+
+---- UPDATING Cmdlet : Get-MgDriveListItemVersion ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDriveListItemVersion ----
+
+
+---- UPDATING Cmdlet : Get-MgDriveListItemVersionField ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDriveListItemVersionField ----
+
+
+---- UPDATING Cmdlet : Get-MgDriveListSubscription ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDriveListSubscription ----
+
+
+---- UPDATING Cmdlet : Get-MgDriveRoot ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDriveRoot ----
+
+
+---- UPDATING Cmdlet : Get-MgDriveRootContent ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDriveRootContent ----
+
+
+---- UPDATING Cmdlet : Get-MgDriveSpecial ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDriveSpecial ----
+
+
+---- UPDATING Cmdlet : Get-MgDriveSpecialContent ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDriveSpecialContent ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupDrive ----
+
+	Parameter Set Name Updated: GetViaIdentity3
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity3
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity3
+		New Set: GetViaIdentity
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupDrive ----
+
+
+---- UPDATING Cmdlet : Get-MgShareDriveItem ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgShareDriveItem ----
+
+
+---- UPDATING Cmdlet : Get-MgShareDriveItemContent ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgShareDriveItemContent ----
+
+
+---- UPDATING Cmdlet : Get-MgShareItem ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgShareItem ----
+
+
+---- UPDATING Cmdlet : Get-MgShareItemContent ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgShareItemContent ----
+
+
+---- UPDATING Cmdlet : Get-MgShareList ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgShareList ----
+
+
+---- UPDATING Cmdlet : Get-MgShareListActivity ----
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List
+		Old Set: 
+		New Set: List
+
+---- COMPLETED UPDATING Cmdlet : Get-MgShareListActivity ----
+
+
+---- UPDATING Cmdlet : Get-MgShareListColumn ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgShareListColumn ----
+
+
+---- UPDATING Cmdlet : Get-MgShareListContentType ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgShareListContentType ----
+
+
+---- UPDATING Cmdlet : Get-MgShareListContentTypeColumnLink ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgShareListContentTypeColumnLink ----
+
+
+---- UPDATING Cmdlet : Get-MgShareListDrive ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgShareListDrive ----
+
+
+---- UPDATING Cmdlet : Get-MgShareListItem ----
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgShareListItem ----
+
+
+---- UPDATING Cmdlet : Get-MgShareListItemActivity ----
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgShareListItemActivity ----
+
+
+---- UPDATING Cmdlet : Get-MgShareListItemAnalytic ----
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgShareListItemAnalytic ----
+
+
+---- UPDATING Cmdlet : Get-MgShareListItemAnalyticByRef ----
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgShareListItemAnalyticByRef ----
+
+
+---- UPDATING Cmdlet : Get-MgShareListItemDriveItem ----
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgShareListItemDriveItem ----
+
+
+---- UPDATING Cmdlet : Get-MgShareListItemDriveItemContent ----
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgShareListItemDriveItemContent ----
+
+
+---- UPDATING Cmdlet : Get-MgShareListItemField ----
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgShareListItemField ----
+
+
+---- UPDATING Cmdlet : Get-MgShareListItemVersion ----
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgShareListItemVersion ----
+
+
+---- UPDATING Cmdlet : Get-MgShareListItemVersionField ----
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgShareListItemVersionField ----
+
+
+---- UPDATING Cmdlet : Get-MgShareListSubscription ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgShareListSubscription ----
+
+
+---- UPDATING Cmdlet : Get-MgSharePermission ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgSharePermission ----
+
+
+---- UPDATING Cmdlet : Get-MgShareRoot ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgShareRoot ----
+
+
+---- UPDATING Cmdlet : Get-MgShareRootContent ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgShareRootContent ----
+
+
+---- UPDATING Cmdlet : Get-MgShareSharedDriveItemSharedDriveItem ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgShareSharedDriveItemSharedDriveItem ----
+
+
+---- UPDATING Cmdlet : Get-MgShareSite ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgShareSite ----
+
+
+---- UPDATING Cmdlet : Get-MgUserDrive ----
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserDrive ----
+
+
+---- UPDATING Cmdlet : Grant-MgSharePermission ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Grant-MgSharePermission ----
+
+
+---- UPDATING Cmdlet : Invoke-MgRecentDrive ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgRecentDrive ----
+
+
+---- UPDATING Cmdlet : Invoke-MgSharedDrive ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgSharedDrive ----
+
+
+---- UPDATING Cmdlet : New-MgDrive ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgDrive ----
+
+
+---- UPDATING Cmdlet : New-MgDriveBundle ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgDriveBundle ----
+
+
+---- UPDATING Cmdlet : New-MgDriveFollowing ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgDriveFollowing ----
+
+
+---- UPDATING Cmdlet : New-MgDriveItem ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgDriveItem ----
+
+
+---- UPDATING Cmdlet : New-MgDriveListColumn ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgDriveListColumn ----
+
+
+---- UPDATING Cmdlet : New-MgDriveListContentType ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgDriveListContentType ----
+
+
+---- UPDATING Cmdlet : New-MgDriveListContentTypeColumnLink ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgDriveListContentTypeColumnLink ----
+
+
+---- UPDATING Cmdlet : New-MgDriveListItem ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgDriveListItem ----
+
+
+---- UPDATING Cmdlet : New-MgDriveListItemLink ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgDriveListItemLink ----
+
+
+---- UPDATING Cmdlet : New-MgDriveListItemVersion ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgDriveListItemVersion ----
+
+
+---- UPDATING Cmdlet : New-MgDriveListSubscription ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgDriveListSubscription ----
+
+
+---- UPDATING Cmdlet : New-MgDriveSpecial ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgDriveSpecial ----
+
+
+---- UPDATING Cmdlet : New-MgGroupDrive ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgGroupDrive ----
+
+
+---- UPDATING Cmdlet : New-MgShareItem ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgShareItem ----
+
+
+---- UPDATING Cmdlet : New-MgShareListColumn ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgShareListColumn ----
+
+
+---- UPDATING Cmdlet : New-MgShareListContentType ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgShareListContentType ----
+
+
+---- UPDATING Cmdlet : New-MgShareListContentTypeColumnLink ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgShareListContentTypeColumnLink ----
+
+
+---- UPDATING Cmdlet : New-MgShareListItem ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgShareListItem ----
+
+
+---- UPDATING Cmdlet : New-MgShareListItemVersion ----
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded1
+		Old Set: CreateViaIdentityExpanded
+		New Set: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded
+		Old Set: CreateViaIdentityExpanded1
+		New Set: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgShareListItemVersion ----
+
+
+---- UPDATING Cmdlet : New-MgShareListSubscription ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgShareListSubscription ----
+
+
+---- UPDATING Cmdlet : New-MgShareSharedDriveItemSharedDriveItem ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgShareSharedDriveItemSharedDriveItem ----
+
+
+---- UPDATING Cmdlet : New-MgUserDrive ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserDrive ----
+
+
+---- UPDATING Cmdlet : Remove-MgDrive ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgDrive ----
+
+
+---- UPDATING Cmdlet : Remove-MgDriveBundle ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgDriveBundle ----
+
+
+---- UPDATING Cmdlet : Remove-MgDriveFollowing ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgDriveFollowing ----
+
+
+---- UPDATING Cmdlet : Remove-MgDriveItem ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgDriveItem ----
+
+
+---- UPDATING Cmdlet : Remove-MgDriveList ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgDriveList ----
+
+
+---- UPDATING Cmdlet : Remove-MgDriveListColumn ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgDriveListColumn ----
+
+
+---- UPDATING Cmdlet : Remove-MgDriveListContentType ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgDriveListContentType ----
+
+
+---- UPDATING Cmdlet : Remove-MgDriveListContentTypeColumnLink ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgDriveListContentTypeColumnLink ----
+
+
+---- UPDATING Cmdlet : Remove-MgDriveListDrive ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgDriveListDrive ----
+
+
+---- UPDATING Cmdlet : Remove-MgDriveListItem ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgDriveListItem ----
+
+
+---- UPDATING Cmdlet : Remove-MgDriveListItemAnalyticByRef ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgDriveListItemAnalyticByRef ----
+
+
+---- UPDATING Cmdlet : Remove-MgDriveListItemDriveItem ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgDriveListItemDriveItem ----
+
+
+---- UPDATING Cmdlet : Remove-MgDriveListItemField ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgDriveListItemField ----
+
+
+---- UPDATING Cmdlet : Remove-MgDriveListItemVersion ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgDriveListItemVersion ----
+
+
+---- UPDATING Cmdlet : Remove-MgDriveListItemVersionField ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgDriveListItemVersionField ----
+
+
+---- UPDATING Cmdlet : Remove-MgDriveListSubscription ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgDriveListSubscription ----
+
+
+---- UPDATING Cmdlet : Remove-MgDriveRoot ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgDriveRoot ----
+
+
+---- UPDATING Cmdlet : Remove-MgDriveSpecial ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgDriveSpecial ----
+
+
+---- UPDATING Cmdlet : Remove-MgGroupDrive ----
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgGroupDrive ----
+
+
+---- UPDATING Cmdlet : Remove-MgShareDriveItem ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgShareDriveItem ----
+
+
+---- UPDATING Cmdlet : Remove-MgShareItem ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgShareItem ----
+
+
+---- UPDATING Cmdlet : Remove-MgShareList ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgShareList ----
+
+
+---- UPDATING Cmdlet : Remove-MgShareListColumn ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgShareListColumn ----
+
+
+---- UPDATING Cmdlet : Remove-MgShareListContentType ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgShareListContentType ----
+
+
+---- UPDATING Cmdlet : Remove-MgShareListContentTypeColumnLink ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgShareListContentTypeColumnLink ----
+
+
+---- UPDATING Cmdlet : Remove-MgShareListDrive ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgShareListDrive ----
+
+
+---- UPDATING Cmdlet : Remove-MgShareListItem ----
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgShareListItem ----
+
+
+---- UPDATING Cmdlet : Remove-MgShareListItemAnalyticByRef ----
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgShareListItemAnalyticByRef ----
+
+
+---- UPDATING Cmdlet : Remove-MgShareListItemDriveItem ----
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgShareListItemDriveItem ----
+
+
+---- UPDATING Cmdlet : Remove-MgShareListItemField ----
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgShareListItemField ----
+
+
+---- UPDATING Cmdlet : Remove-MgShareListItemVersion ----
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgShareListItemVersion ----
+
+
+---- UPDATING Cmdlet : Remove-MgShareListItemVersionField ----
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgShareListItemVersionField ----
+
+
+---- UPDATING Cmdlet : Remove-MgShareListSubscription ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgShareListSubscription ----
+
+
+---- UPDATING Cmdlet : Remove-MgSharePermission ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgSharePermission ----
+
+
+---- UPDATING Cmdlet : Remove-MgShareRoot ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgShareRoot ----
+
+
+---- UPDATING Cmdlet : Remove-MgShareSharedDriveItemSharedDriveItem ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgShareSharedDriveItemSharedDriveItem ----
+
+
+---- UPDATING Cmdlet : Remove-MgShareSite ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgShareSite ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserDrive ----
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserDrive ----
+
+
+---- UPDATING Cmdlet : Restore-MgDriveListItemVersion ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Restore-MgDriveListItemVersion ----
+
+
+---- UPDATING Cmdlet : Restore-MgShareListItemVersion ----
+
+	Parameter Set Name Updated: RestoreViaIdentity1
+		Old Set: RestoreViaIdentity
+		New Set: RestoreViaIdentity1
+
+	Parameter Set Name Updated: RestoreViaIdentity
+		Old Set: RestoreViaIdentity1
+		New Set: RestoreViaIdentity
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Restore-MgShareListItemVersion ----
+
+
+---- UPDATING Cmdlet : Revoke-MgSharePermissionGrant ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Revoke-MgSharePermissionGrant ----
+
+
+---- UPDATING Cmdlet : Search-MgDrive ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Search-MgDrive ----
+
+
+---- UPDATING Cmdlet : Set-MgDriveBundleContent ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Set-MgDriveBundleContent ----
+
+
+---- UPDATING Cmdlet : Set-MgDriveFollowingContent ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Set-MgDriveFollowingContent ----
+
+
+---- UPDATING Cmdlet : Set-MgDriveItemContent ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Set-MgDriveItemContent ----
+
+
+---- UPDATING Cmdlet : Set-MgDriveListItemAnalyticByRef ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Set-MgDriveListItemAnalyticByRef ----
+
+
+---- UPDATING Cmdlet : Set-MgDriveListItemDriveItemContent ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Set-MgDriveListItemDriveItemContent ----
+
+
+---- UPDATING Cmdlet : Set-MgDriveRootContent ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Set-MgDriveRootContent ----
+
+
+---- UPDATING Cmdlet : Set-MgDriveSpecialContent ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Set-MgDriveSpecialContent ----
+
+
+---- UPDATING Cmdlet : Set-MgShareDriveItemContent ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Set-MgShareDriveItemContent ----
+
+
+---- UPDATING Cmdlet : Set-MgShareItemContent ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Set-MgShareItemContent ----
+
+
+---- UPDATING Cmdlet : Set-MgShareListItemAnalyticByRef ----
+
+	Parameter Set Name Updated: SetViaIdentityExpanded1
+		Old Set: SetViaIdentityExpanded
+		New Set: SetViaIdentityExpanded1
+
+	Parameter Set Name Updated: SetViaIdentityExpanded
+		Old Set: SetViaIdentityExpanded1
+		New Set: SetViaIdentityExpanded
+
+	Parameter Set Name Updated: SetViaIdentity1
+		Old Set: SetViaIdentity
+		New Set: SetViaIdentity1
+
+	Parameter Set Name Updated: SetViaIdentity
+		Old Set: SetViaIdentity1
+		New Set: SetViaIdentity
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Set-MgShareListItemAnalyticByRef ----
+
+
+---- UPDATING Cmdlet : Set-MgShareListItemDriveItemContent ----
+
+	Parameter Set Name Updated: SetViaIdentity1
+		Old Set: SetViaIdentity
+		New Set: SetViaIdentity1
+
+	Parameter Set Name Updated: SetViaIdentity
+		Old Set: SetViaIdentity1
+		New Set: SetViaIdentity
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Set-MgShareListItemDriveItemContent ----
+
+
+---- UPDATING Cmdlet : Set-MgShareRootContent ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Set-MgShareRootContent ----
+
+
+---- UPDATING Cmdlet : Update-MgDrive ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgDrive ----
+
+
+---- UPDATING Cmdlet : Update-MgDriveBundle ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgDriveBundle ----
+
+
+---- UPDATING Cmdlet : Update-MgDriveFollowing ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgDriveFollowing ----
+
+
+---- UPDATING Cmdlet : Update-MgDriveItem ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgDriveItem ----
+
+
+---- UPDATING Cmdlet : Update-MgDriveList ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgDriveList ----
+
+
+---- UPDATING Cmdlet : Update-MgDriveListColumn ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgDriveListColumn ----
+
+
+---- UPDATING Cmdlet : Update-MgDriveListContentType ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgDriveListContentType ----
+
+
+---- UPDATING Cmdlet : Update-MgDriveListContentTypeColumnLink ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgDriveListContentTypeColumnLink ----
+
+
+---- UPDATING Cmdlet : Update-MgDriveListDrive ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgDriveListDrive ----
+
+
+---- UPDATING Cmdlet : Update-MgDriveListItem ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgDriveListItem ----
+
+
+---- UPDATING Cmdlet : Update-MgDriveListItemDriveItem ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgDriveListItemDriveItem ----
+
+
+---- UPDATING Cmdlet : Update-MgDriveListItemField ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgDriveListItemField ----
+
+
+---- UPDATING Cmdlet : Update-MgDriveListItemVersion ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgDriveListItemVersion ----
+
+
+---- UPDATING Cmdlet : Update-MgDriveListItemVersionField ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgDriveListItemVersionField ----
+
+
+---- UPDATING Cmdlet : Update-MgDriveListSubscription ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgDriveListSubscription ----
+
+
+---- UPDATING Cmdlet : Update-MgDriveRoot ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgDriveRoot ----
+
+
+---- UPDATING Cmdlet : Update-MgDriveSpecial ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgDriveSpecial ----
+
+
+---- UPDATING Cmdlet : Update-MgGroupDrive ----
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded3
+		Old Set: UpdateViaIdentityExpanded
+		New Set: UpdateViaIdentityExpanded3
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded3
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity3
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity3
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity3
+		New Set: UpdateViaIdentity
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgGroupDrive ----
+
+
+---- UPDATING Cmdlet : Update-MgShareDriveItem ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgShareDriveItem ----
+
+
+---- UPDATING Cmdlet : Update-MgShareItem ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgShareItem ----
+
+
+---- UPDATING Cmdlet : Update-MgShareList ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgShareList ----
+
+
+---- UPDATING Cmdlet : Update-MgShareListColumn ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgShareListColumn ----
+
+
+---- UPDATING Cmdlet : Update-MgShareListContentType ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgShareListContentType ----
+
+
+---- UPDATING Cmdlet : Update-MgShareListContentTypeColumnLink ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgShareListContentTypeColumnLink ----
+
+
+---- UPDATING Cmdlet : Update-MgShareListDrive ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgShareListDrive ----
+
+
+---- UPDATING Cmdlet : Update-MgShareListItem ----
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded1
+		Old Set: UpdateViaIdentityExpanded
+		New Set: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgShareListItem ----
+
+
+---- UPDATING Cmdlet : Update-MgShareListItemDriveItem ----
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded1
+		Old Set: UpdateViaIdentityExpanded
+		New Set: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgShareListItemDriveItem ----
+
+
+---- UPDATING Cmdlet : Update-MgShareListItemField ----
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded1
+		Old Set: UpdateViaIdentityExpanded
+		New Set: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgShareListItemField ----
+
+
+---- UPDATING Cmdlet : Update-MgShareListItemVersion ----
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded1
+		Old Set: UpdateViaIdentityExpanded
+		New Set: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgShareListItemVersion ----
+
+
+---- UPDATING Cmdlet : Update-MgShareListItemVersionField ----
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded1
+		Old Set: UpdateViaIdentityExpanded
+		New Set: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgShareListItemVersionField ----
+
+
+---- UPDATING Cmdlet : Update-MgShareListSubscription ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgShareListSubscription ----
+
+
+---- UPDATING Cmdlet : Update-MgSharePermission ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgSharePermission ----
+
+
+---- UPDATING Cmdlet : Update-MgShareRoot ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgShareRoot ----
+
+
+---- UPDATING Cmdlet : Update-MgShareSharedDriveItemSharedDriveItem ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgShareSharedDriveItemSharedDriveItem ----
+
+
+---- UPDATING Cmdlet : Update-MgShareSite ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgShareSite ----
+
+
+---- UPDATING Cmdlet : Update-MgUserDrive ----
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded1
+		Old Set: UpdateViaIdentityExpanded
+		New Set: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserDrive ----
+
+

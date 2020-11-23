@@ -1,0 +1,3115 @@
+
+[Update-MarkdownHelpModule] 11/23/2020 14:47:50 Determined module name for '.\src\Notes\Notes\help' as 'Microsoft.Graph.Notes'.
+[Update-MarkdownHelpModule] 11/23/2020 14:47:50 [Update-MarkdownHelpModule]11/23/2020 2:47:50 PM
+[Update-MarkdownHelpModule] 11/23/2020 14:47:50 Updating documents for module 'Microsoft.Graph.Notes' in .\src\Notes\Notes\help
+---- UPDATING Cmdlet : Get-MgGroupOnenoteNotebook ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupOnenoteNotebook ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupOnenoteNotebookSection ----
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List1
+		Old Set: 
+		New Set: List1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupOnenoteNotebookSection ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupOnenoteNotebookSectionGroup ----
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List1
+		Old Set: 
+		New Set: List1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupOnenoteNotebookSectionGroup ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupOnenoteOperation ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupOnenoteOperation ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupOnenotePage ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupOnenotePage ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupOnenotePageContent ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupOnenotePageContent ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupOnenoteResource ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupOnenoteResource ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupOnenoteResourceContent ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupOnenoteResourceContent ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupOnenoteSection ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: List
+
+	Parameter Set Name Updated: List1
+		Old Set: List
+		New Set: List1
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupOnenoteSection ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupOnenoteSectionGroup ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: List2
+
+	Parameter Set Added: List3
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: List
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List2
+		Old Set: List
+		New Set: List2
+
+	Parameter Set Name Updated: List3
+		Old Set: List1
+		New Set: List3
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupOnenoteSectionGroup ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupOnenoteSectionGroupSection ----
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List1
+		Old Set: 
+		New Set: List1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupOnenoteSectionGroupSection ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupOnenoteSectionPage ----
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List1
+		Old Set: 
+		New Set: List1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupOnenoteSectionPage ----
+
+
+---- UPDATING Cmdlet : Get-MgSiteOnenoteNotebook ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: List
+
+	Parameter Set Name Updated: List1
+		Old Set: List
+		New Set: List1
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgSiteOnenoteNotebook ----
+
+
+---- UPDATING Cmdlet : Get-MgSiteOnenoteNotebookSection ----
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List1
+		Old Set: 
+		New Set: List1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgSiteOnenoteNotebookSection ----
+
+
+---- UPDATING Cmdlet : Get-MgSiteOnenoteNotebookSectionGroup ----
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List1
+		Old Set: 
+		New Set: List1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgSiteOnenoteNotebookSectionGroup ----
+
+
+---- UPDATING Cmdlet : Get-MgSiteOnenoteOperation ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgSiteOnenoteOperation ----
+
+
+---- UPDATING Cmdlet : Get-MgSiteOnenotePage ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: List
+
+	Parameter Set Name Updated: List1
+		Old Set: List
+		New Set: List1
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgSiteOnenotePage ----
+
+
+---- UPDATING Cmdlet : Get-MgSiteOnenotePageContent ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgSiteOnenotePageContent ----
+
+
+---- UPDATING Cmdlet : Get-MgSiteOnenoteResource ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgSiteOnenoteResource ----
+
+
+---- UPDATING Cmdlet : Get-MgSiteOnenoteResourceContent ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgSiteOnenoteResourceContent ----
+
+
+---- UPDATING Cmdlet : Get-MgSiteOnenoteSection ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: List
+
+	Parameter Set Name Updated: List1
+		Old Set: List
+		New Set: List1
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgSiteOnenoteSection ----
+
+
+---- UPDATING Cmdlet : Get-MgSiteOnenoteSectionGroup ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: List2
+
+	Parameter Set Added: List3
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: List
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List2
+		Old Set: List
+		New Set: List2
+
+	Parameter Set Name Updated: List3
+		Old Set: List1
+		New Set: List3
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgSiteOnenoteSectionGroup ----
+
+
+---- UPDATING Cmdlet : Get-MgSiteOnenoteSectionGroupSection ----
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List1
+		Old Set: 
+		New Set: List1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgSiteOnenoteSectionGroupSection ----
+
+
+---- UPDATING Cmdlet : Get-MgSiteOnenoteSectionPage ----
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List1
+		Old Set: 
+		New Set: List1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgSiteOnenoteSectionPage ----
+
+
+---- UPDATING Cmdlet : Get-MgUserOnenoteNotebook ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: List
+
+	Parameter Set Name Updated: List1
+		Old Set: List
+		New Set: List1
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserOnenoteNotebook ----
+
+
+---- UPDATING Cmdlet : Get-MgUserOnenoteNotebookSection ----
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List1
+		Old Set: 
+		New Set: List1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserOnenoteNotebookSection ----
+
+
+---- UPDATING Cmdlet : Get-MgUserOnenoteNotebookSectionGroup ----
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List1
+		Old Set: 
+		New Set: List1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserOnenoteNotebookSectionGroup ----
+
+
+---- UPDATING Cmdlet : Get-MgUserOnenoteOperation ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserOnenoteOperation ----
+
+
+---- UPDATING Cmdlet : Get-MgUserOnenotePage ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: List
+
+	Parameter Set Name Updated: List1
+		Old Set: List
+		New Set: List1
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserOnenotePage ----
+
+
+---- UPDATING Cmdlet : Get-MgUserOnenotePageContent ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserOnenotePageContent ----
+
+
+---- UPDATING Cmdlet : Get-MgUserOnenoteResource ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserOnenoteResource ----
+
+
+---- UPDATING Cmdlet : Get-MgUserOnenoteResourceContent ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserOnenoteResourceContent ----
+
+
+---- UPDATING Cmdlet : Get-MgUserOnenoteSection ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserOnenoteSection ----
+
+
+---- UPDATING Cmdlet : Get-MgUserOnenoteSectionGroup ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: List2
+
+	Parameter Set Added: List3
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: List
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List2
+		Old Set: List
+		New Set: List2
+
+	Parameter Set Name Updated: List3
+		Old Set: List1
+		New Set: List3
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserOnenoteSectionGroup ----
+
+
+---- UPDATING Cmdlet : Get-MgUserOnenoteSectionGroupSection ----
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List
+		Old Set: 
+		New Set: List
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserOnenoteSectionGroupSection ----
+
+
+---- UPDATING Cmdlet : Get-MgUserOnenoteSectionPage ----
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List
+		Old Set: 
+		New Set: List
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserOnenoteSectionPage ----
+
+
+---- UPDATING Cmdlet : New-MgGroupOnenoteNotebook ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded
+		Old Set: CreateViaIdentityExpanded1
+		New Set: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphNotebook to IMicrosoftGraphNotebook1
+
+	Parameter Updated: SectionGroups
+		Type updated from IMicrosoftGraphSectionGroup[] to IMicrosoftGraphSectionGroup1[]
+
+	Parameter Updated: Sections
+		Type updated from IMicrosoftGraphOnenoteSection[] to IMicrosoftGraphOnenoteSection1[]
+
+---- COMPLETED UPDATING Cmdlet : New-MgGroupOnenoteNotebook ----
+
+
+---- UPDATING Cmdlet : New-MgGroupOnenoteNotebookSection ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateExpanded1
+		Old Set: CreateExpanded
+		New Set: CreateExpanded1
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded1
+		Old Set: CreateViaIdentityExpanded
+		New Set: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphOnenoteSection to IMicrosoftGraphOnenoteSection1
+
+	Parameter Updated: Pages
+		Type updated from IMicrosoftGraphOnenotePage1[] to IMicrosoftGraphOnenotePage[]
+
+	Parameter Updated: ParentNotebook
+		Type updated from IMicrosoftGraphNotebook to IMicrosoftGraphNotebook1
+
+	Parameter Updated: ParentSectionGroup
+		Type updated from IMicrosoftGraphSectionGroup to IMicrosoftGraphSectionGroup1
+
+---- COMPLETED UPDATING Cmdlet : New-MgGroupOnenoteNotebookSection ----
+
+
+---- UPDATING Cmdlet : New-MgGroupOnenoteNotebookSectionGroup ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateExpanded1
+		Old Set: CreateExpanded
+		New Set: CreateExpanded1
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded1
+		Old Set: CreateViaIdentityExpanded
+		New Set: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphSectionGroup to IMicrosoftGraphSectionGroup1
+
+	Parameter Updated: ParentNotebook
+		Type updated from IMicrosoftGraphNotebook to IMicrosoftGraphNotebook1
+
+	Parameter Updated: ParentSectionGroup
+		Type updated from IMicrosoftGraphSectionGroup to IMicrosoftGraphSectionGroup1
+
+	Parameter Updated: SectionGroups
+		Type updated from IMicrosoftGraphSectionGroup[] to IMicrosoftGraphSectionGroup1[]
+
+	Parameter Updated: Sections
+		Type updated from IMicrosoftGraphOnenoteSection[] to IMicrosoftGraphOnenoteSection1[]
+
+---- COMPLETED UPDATING Cmdlet : New-MgGroupOnenoteNotebookSectionGroup ----
+
+
+---- UPDATING Cmdlet : New-MgGroupOnenotePage ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded
+		Old Set: CreateViaIdentityExpanded1
+		New Set: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphOnenotePage1 to IMicrosoftGraphOnenotePage
+
+	Parameter Updated: ParentNotebook
+		Type updated from IMicrosoftGraphNotebook to IMicrosoftGraphNotebook1
+
+	Parameter Updated: ParentSection
+		Type updated from IMicrosoftGraphOnenoteSection to IMicrosoftGraphOnenoteSection1
+
+---- COMPLETED UPDATING Cmdlet : New-MgGroupOnenotePage ----
+
+
+---- UPDATING Cmdlet : New-MgGroupOnenoteSection ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateExpanded1
+		Old Set: CreateExpanded
+		New Set: CreateExpanded1
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded1
+		Old Set: CreateViaIdentityExpanded
+		New Set: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphOnenoteSection to IMicrosoftGraphOnenoteSection1
+
+	Parameter Updated: Pages
+		Type updated from IMicrosoftGraphOnenotePage1[] to IMicrosoftGraphOnenotePage[]
+
+	Parameter Updated: ParentNotebook
+		Type updated from IMicrosoftGraphNotebook to IMicrosoftGraphNotebook1
+
+	Parameter Updated: ParentSectionGroup
+		Type updated from IMicrosoftGraphSectionGroup to IMicrosoftGraphSectionGroup1
+
+---- COMPLETED UPDATING Cmdlet : New-MgGroupOnenoteSection ----
+
+
+---- UPDATING Cmdlet : New-MgGroupOnenoteSectionGroup ----
+
+	Parameter Set Added: Create2
+
+	Parameter Set Added: Create3
+
+	Parameter Set Added: CreateExpanded2
+
+	Parameter Set Added: CreateExpanded3
+
+	Parameter Set Added: CreateViaIdentity2
+
+	Parameter Set Added: CreateViaIdentity3
+
+	Parameter Set Added: CreateViaIdentityExpanded2
+
+	Parameter Set Added: CreateViaIdentityExpanded3
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateExpanded2
+		Old Set: CreateExpanded
+		New Set: CreateExpanded2
+
+	Parameter Set Name Updated: CreateExpanded3
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded3
+
+	Parameter Set Name Updated: Create3
+		Old Set: Create1
+		New Set: Create3
+
+	Parameter Set Name Updated: Create2
+		Old Set: Create
+		New Set: Create2
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded3
+		Old Set: CreateViaIdentityExpanded1
+		New Set: CreateViaIdentityExpanded3
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded3
+		Old Set: CreateViaIdentityExpanded
+		New Set: CreateViaIdentityExpanded3
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded2
+		Old Set: CreateViaIdentityExpanded1
+		New Set: CreateViaIdentityExpanded2
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded2
+		Old Set: CreateViaIdentityExpanded
+		New Set: CreateViaIdentityExpanded2
+
+	Parameter Set Name Updated: CreateViaIdentity3
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity3
+
+	Parameter Set Name Updated: CreateViaIdentity3
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity3
+
+	Parameter Set Name Updated: CreateViaIdentity2
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity2
+
+	Parameter Set Name Updated: CreateViaIdentity2
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity2
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphSectionGroup to IMicrosoftGraphSectionGroup1
+
+	Parameter Updated: ParentNotebook
+		Type updated from IMicrosoftGraphNotebook to IMicrosoftGraphNotebook1
+
+	Parameter Updated: ParentSectionGroup
+		Type updated from IMicrosoftGraphSectionGroup to IMicrosoftGraphSectionGroup1
+
+	Parameter Updated: SectionGroups
+		Type updated from IMicrosoftGraphSectionGroup[] to IMicrosoftGraphSectionGroup1[]
+
+	Parameter Updated: Sections
+		Type updated from IMicrosoftGraphOnenoteSection[] to IMicrosoftGraphOnenoteSection1[]
+
+---- COMPLETED UPDATING Cmdlet : New-MgGroupOnenoteSectionGroup ----
+
+
+---- UPDATING Cmdlet : New-MgGroupOnenoteSectionGroupSection ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateExpanded1
+		Old Set: CreateExpanded
+		New Set: CreateExpanded1
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded1
+		Old Set: CreateViaIdentityExpanded
+		New Set: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphOnenoteSection to IMicrosoftGraphOnenoteSection1
+
+	Parameter Updated: Pages
+		Type updated from IMicrosoftGraphOnenotePage1[] to IMicrosoftGraphOnenotePage[]
+
+	Parameter Updated: ParentNotebook
+		Type updated from IMicrosoftGraphNotebook to IMicrosoftGraphNotebook1
+
+	Parameter Updated: ParentSectionGroup
+		Type updated from IMicrosoftGraphSectionGroup to IMicrosoftGraphSectionGroup1
+
+---- COMPLETED UPDATING Cmdlet : New-MgGroupOnenoteSectionGroupSection ----
+
+
+---- UPDATING Cmdlet : New-MgGroupOnenoteSectionPage ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateExpanded1
+		Old Set: CreateExpanded
+		New Set: CreateExpanded1
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded1
+		Old Set: CreateViaIdentityExpanded
+		New Set: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphOnenotePage1 to IMicrosoftGraphOnenotePage
+
+	Parameter Updated: ParentNotebook
+		Type updated from IMicrosoftGraphNotebook to IMicrosoftGraphNotebook1
+
+	Parameter Updated: ParentSection
+		Type updated from IMicrosoftGraphOnenoteSection to IMicrosoftGraphOnenoteSection1
+
+---- COMPLETED UPDATING Cmdlet : New-MgGroupOnenoteSectionPage ----
+
+
+---- UPDATING Cmdlet : New-MgSiteOnenoteNotebook ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateExpanded1
+		Old Set: CreateExpanded
+		New Set: CreateExpanded1
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded1
+		Old Set: CreateViaIdentityExpanded
+		New Set: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphNotebook to IMicrosoftGraphNotebook1
+
+	Parameter Updated: SectionGroups
+		Type updated from IMicrosoftGraphSectionGroup[] to IMicrosoftGraphSectionGroup1[]
+
+	Parameter Updated: Sections
+		Type updated from IMicrosoftGraphOnenoteSection[] to IMicrosoftGraphOnenoteSection1[]
+
+---- COMPLETED UPDATING Cmdlet : New-MgSiteOnenoteNotebook ----
+
+
+---- UPDATING Cmdlet : New-MgSiteOnenoteNotebookSection ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateExpanded1
+		Old Set: CreateExpanded
+		New Set: CreateExpanded1
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded1
+		Old Set: CreateViaIdentityExpanded
+		New Set: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphOnenoteSection to IMicrosoftGraphOnenoteSection1
+
+	Parameter Updated: Pages
+		Type updated from IMicrosoftGraphOnenotePage1[] to IMicrosoftGraphOnenotePage[]
+
+	Parameter Updated: ParentNotebook
+		Type updated from IMicrosoftGraphNotebook to IMicrosoftGraphNotebook1
+
+	Parameter Updated: ParentSectionGroup
+		Type updated from IMicrosoftGraphSectionGroup to IMicrosoftGraphSectionGroup1
+
+---- COMPLETED UPDATING Cmdlet : New-MgSiteOnenoteNotebookSection ----
+
+
+---- UPDATING Cmdlet : New-MgSiteOnenoteNotebookSectionGroup ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateExpanded1
+		Old Set: CreateExpanded
+		New Set: CreateExpanded1
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded1
+		Old Set: CreateViaIdentityExpanded
+		New Set: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphSectionGroup to IMicrosoftGraphSectionGroup1
+
+	Parameter Updated: ParentNotebook
+		Type updated from IMicrosoftGraphNotebook to IMicrosoftGraphNotebook1
+
+	Parameter Updated: ParentSectionGroup
+		Type updated from IMicrosoftGraphSectionGroup to IMicrosoftGraphSectionGroup1
+
+	Parameter Updated: SectionGroups
+		Type updated from IMicrosoftGraphSectionGroup[] to IMicrosoftGraphSectionGroup1[]
+
+	Parameter Updated: Sections
+		Type updated from IMicrosoftGraphOnenoteSection[] to IMicrosoftGraphOnenoteSection1[]
+
+---- COMPLETED UPDATING Cmdlet : New-MgSiteOnenoteNotebookSectionGroup ----
+
+
+---- UPDATING Cmdlet : New-MgSiteOnenotePage ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateExpanded1
+		Old Set: CreateExpanded
+		New Set: CreateExpanded1
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded1
+		Old Set: CreateViaIdentityExpanded
+		New Set: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphOnenotePage1 to IMicrosoftGraphOnenotePage
+
+	Parameter Updated: ParentNotebook
+		Type updated from IMicrosoftGraphNotebook to IMicrosoftGraphNotebook1
+
+	Parameter Updated: ParentSection
+		Type updated from IMicrosoftGraphOnenoteSection to IMicrosoftGraphOnenoteSection1
+
+---- COMPLETED UPDATING Cmdlet : New-MgSiteOnenotePage ----
+
+
+---- UPDATING Cmdlet : New-MgSiteOnenoteSection ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateExpanded1
+		Old Set: CreateExpanded
+		New Set: CreateExpanded1
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded1
+		Old Set: CreateViaIdentityExpanded
+		New Set: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphOnenoteSection to IMicrosoftGraphOnenoteSection1
+
+	Parameter Updated: Pages
+		Type updated from IMicrosoftGraphOnenotePage1[] to IMicrosoftGraphOnenotePage[]
+
+	Parameter Updated: ParentNotebook
+		Type updated from IMicrosoftGraphNotebook to IMicrosoftGraphNotebook1
+
+	Parameter Updated: ParentSectionGroup
+		Type updated from IMicrosoftGraphSectionGroup to IMicrosoftGraphSectionGroup1
+
+---- COMPLETED UPDATING Cmdlet : New-MgSiteOnenoteSection ----
+
+
+---- UPDATING Cmdlet : New-MgSiteOnenoteSectionGroup ----
+
+	Parameter Set Added: Create2
+
+	Parameter Set Added: Create3
+
+	Parameter Set Added: CreateExpanded2
+
+	Parameter Set Added: CreateExpanded3
+
+	Parameter Set Added: CreateViaIdentity2
+
+	Parameter Set Added: CreateViaIdentity3
+
+	Parameter Set Added: CreateViaIdentityExpanded2
+
+	Parameter Set Added: CreateViaIdentityExpanded3
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateExpanded2
+		Old Set: CreateExpanded
+		New Set: CreateExpanded2
+
+	Parameter Set Name Updated: CreateExpanded3
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded3
+
+	Parameter Set Name Updated: Create3
+		Old Set: Create1
+		New Set: Create3
+
+	Parameter Set Name Updated: Create2
+		Old Set: Create
+		New Set: Create2
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded3
+		Old Set: CreateViaIdentityExpanded1
+		New Set: CreateViaIdentityExpanded3
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded3
+		Old Set: CreateViaIdentityExpanded
+		New Set: CreateViaIdentityExpanded3
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded2
+		Old Set: CreateViaIdentityExpanded1
+		New Set: CreateViaIdentityExpanded2
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded2
+		Old Set: CreateViaIdentityExpanded
+		New Set: CreateViaIdentityExpanded2
+
+	Parameter Set Name Updated: CreateViaIdentity3
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity3
+
+	Parameter Set Name Updated: CreateViaIdentity3
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity3
+
+	Parameter Set Name Updated: CreateViaIdentity2
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity2
+
+	Parameter Set Name Updated: CreateViaIdentity2
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity2
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphSectionGroup to IMicrosoftGraphSectionGroup1
+
+	Parameter Updated: ParentNotebook
+		Type updated from IMicrosoftGraphNotebook to IMicrosoftGraphNotebook1
+
+	Parameter Updated: ParentSectionGroup
+		Type updated from IMicrosoftGraphSectionGroup to IMicrosoftGraphSectionGroup1
+
+	Parameter Updated: SectionGroups
+		Type updated from IMicrosoftGraphSectionGroup[] to IMicrosoftGraphSectionGroup1[]
+
+	Parameter Updated: Sections
+		Type updated from IMicrosoftGraphOnenoteSection[] to IMicrosoftGraphOnenoteSection1[]
+
+---- COMPLETED UPDATING Cmdlet : New-MgSiteOnenoteSectionGroup ----
+
+
+---- UPDATING Cmdlet : New-MgSiteOnenoteSectionGroupSection ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateExpanded1
+		Old Set: CreateExpanded
+		New Set: CreateExpanded1
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded1
+		Old Set: CreateViaIdentityExpanded
+		New Set: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphOnenoteSection to IMicrosoftGraphOnenoteSection1
+
+	Parameter Updated: Pages
+		Type updated from IMicrosoftGraphOnenotePage1[] to IMicrosoftGraphOnenotePage[]
+
+	Parameter Updated: ParentNotebook
+		Type updated from IMicrosoftGraphNotebook to IMicrosoftGraphNotebook1
+
+	Parameter Updated: ParentSectionGroup
+		Type updated from IMicrosoftGraphSectionGroup to IMicrosoftGraphSectionGroup1
+
+---- COMPLETED UPDATING Cmdlet : New-MgSiteOnenoteSectionGroupSection ----
+
+
+---- UPDATING Cmdlet : New-MgSiteOnenoteSectionPage ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateExpanded1
+		Old Set: CreateExpanded
+		New Set: CreateExpanded1
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded1
+		Old Set: CreateViaIdentityExpanded
+		New Set: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphOnenotePage1 to IMicrosoftGraphOnenotePage
+
+	Parameter Updated: ParentNotebook
+		Type updated from IMicrosoftGraphNotebook to IMicrosoftGraphNotebook1
+
+	Parameter Updated: ParentSection
+		Type updated from IMicrosoftGraphOnenoteSection to IMicrosoftGraphOnenoteSection1
+
+---- COMPLETED UPDATING Cmdlet : New-MgSiteOnenoteSectionPage ----
+
+
+---- UPDATING Cmdlet : New-MgUserOnenoteNotebook ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateExpanded1
+		Old Set: CreateExpanded
+		New Set: CreateExpanded1
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded1
+		Old Set: CreateViaIdentityExpanded
+		New Set: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphNotebook to IMicrosoftGraphNotebook1
+
+	Parameter Updated: SectionGroups
+		Type updated from IMicrosoftGraphSectionGroup[] to IMicrosoftGraphSectionGroup1[]
+
+	Parameter Updated: Sections
+		Type updated from IMicrosoftGraphOnenoteSection[] to IMicrosoftGraphOnenoteSection1[]
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserOnenoteNotebook ----
+
+
+---- UPDATING Cmdlet : New-MgUserOnenoteNotebookSection ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateExpanded1
+		Old Set: CreateExpanded
+		New Set: CreateExpanded1
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded1
+		Old Set: CreateViaIdentityExpanded
+		New Set: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphOnenoteSection to IMicrosoftGraphOnenoteSection1
+
+	Parameter Updated: Pages
+		Type updated from IMicrosoftGraphOnenotePage1[] to IMicrosoftGraphOnenotePage[]
+
+	Parameter Updated: ParentNotebook
+		Type updated from IMicrosoftGraphNotebook to IMicrosoftGraphNotebook1
+
+	Parameter Updated: ParentSectionGroup
+		Type updated from IMicrosoftGraphSectionGroup to IMicrosoftGraphSectionGroup1
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserOnenoteNotebookSection ----
+
+
+---- UPDATING Cmdlet : New-MgUserOnenoteNotebookSectionGroup ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateExpanded1
+		Old Set: CreateExpanded
+		New Set: CreateExpanded1
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded1
+		Old Set: CreateViaIdentityExpanded
+		New Set: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphSectionGroup to IMicrosoftGraphSectionGroup1
+
+	Parameter Updated: ParentNotebook
+		Type updated from IMicrosoftGraphNotebook to IMicrosoftGraphNotebook1
+
+	Parameter Updated: ParentSectionGroup
+		Type updated from IMicrosoftGraphSectionGroup to IMicrosoftGraphSectionGroup1
+
+	Parameter Updated: SectionGroups
+		Type updated from IMicrosoftGraphSectionGroup[] to IMicrosoftGraphSectionGroup1[]
+
+	Parameter Updated: Sections
+		Type updated from IMicrosoftGraphOnenoteSection[] to IMicrosoftGraphOnenoteSection1[]
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserOnenoteNotebookSectionGroup ----
+
+
+---- UPDATING Cmdlet : New-MgUserOnenotePage ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateExpanded1
+		Old Set: CreateExpanded
+		New Set: CreateExpanded1
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded1
+		Old Set: CreateViaIdentityExpanded
+		New Set: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphOnenotePage1 to IMicrosoftGraphOnenotePage
+
+	Parameter Updated: ParentNotebook
+		Type updated from IMicrosoftGraphNotebook to IMicrosoftGraphNotebook1
+
+	Parameter Updated: ParentSection
+		Type updated from IMicrosoftGraphOnenoteSection to IMicrosoftGraphOnenoteSection1
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserOnenotePage ----
+
+
+---- UPDATING Cmdlet : New-MgUserOnenoteSection ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded
+		Old Set: CreateViaIdentityExpanded1
+		New Set: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphOnenoteSection to IMicrosoftGraphOnenoteSection1
+
+	Parameter Updated: Pages
+		Type updated from IMicrosoftGraphOnenotePage1[] to IMicrosoftGraphOnenotePage[]
+
+	Parameter Updated: ParentNotebook
+		Type updated from IMicrosoftGraphNotebook to IMicrosoftGraphNotebook1
+
+	Parameter Updated: ParentSectionGroup
+		Type updated from IMicrosoftGraphSectionGroup to IMicrosoftGraphSectionGroup1
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserOnenoteSection ----
+
+
+---- UPDATING Cmdlet : New-MgUserOnenoteSectionGroup ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: Create3
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateExpanded3
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentity3
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Added: CreateViaIdentityExpanded3
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: Create2
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateExpanded2
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentity2
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded2
+
+	Parameter Set Name Updated: CreateExpanded3
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded3
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded2
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create2
+		New Set: Create
+
+	Parameter Set Name Updated: Create3
+		Old Set: Create1
+		New Set: Create3
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded3
+		Old Set: CreateViaIdentityExpanded2
+		New Set: CreateViaIdentityExpanded3
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded3
+		Old Set: CreateViaIdentityExpanded1
+		New Set: CreateViaIdentityExpanded3
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded
+		Old Set: CreateViaIdentityExpanded2
+		New Set: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded
+		Old Set: CreateViaIdentityExpanded1
+		New Set: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateViaIdentity3
+		Old Set: CreateViaIdentity2
+		New Set: CreateViaIdentity3
+
+	Parameter Set Name Updated: CreateViaIdentity3
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity3
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity2
+		New Set: CreateViaIdentity
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphSectionGroup to IMicrosoftGraphSectionGroup1
+
+	Parameter Updated: ParentNotebook
+		Type updated from IMicrosoftGraphNotebook to IMicrosoftGraphNotebook1
+
+	Parameter Updated: ParentSectionGroup
+		Type updated from IMicrosoftGraphSectionGroup to IMicrosoftGraphSectionGroup1
+
+	Parameter Updated: SectionGroups
+		Type updated from IMicrosoftGraphSectionGroup[] to IMicrosoftGraphSectionGroup1[]
+
+	Parameter Updated: Sections
+		Type updated from IMicrosoftGraphOnenoteSection[] to IMicrosoftGraphOnenoteSection1[]
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserOnenoteSectionGroup ----
+
+
+---- UPDATING Cmdlet : New-MgUserOnenoteSectionGroupSection ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded
+		Old Set: CreateViaIdentityExpanded1
+		New Set: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphOnenoteSection to IMicrosoftGraphOnenoteSection1
+
+	Parameter Updated: Pages
+		Type updated from IMicrosoftGraphOnenotePage1[] to IMicrosoftGraphOnenotePage[]
+
+	Parameter Updated: ParentNotebook
+		Type updated from IMicrosoftGraphNotebook to IMicrosoftGraphNotebook1
+
+	Parameter Updated: ParentSectionGroup
+		Type updated from IMicrosoftGraphSectionGroup to IMicrosoftGraphSectionGroup1
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserOnenoteSectionGroupSection ----
+
+
+---- UPDATING Cmdlet : New-MgUserOnenoteSectionPage ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded
+		Old Set: CreateViaIdentityExpanded1
+		New Set: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphOnenotePage1 to IMicrosoftGraphOnenotePage
+
+	Parameter Updated: ParentNotebook
+		Type updated from IMicrosoftGraphNotebook to IMicrosoftGraphNotebook1
+
+	Parameter Updated: ParentSection
+		Type updated from IMicrosoftGraphOnenoteSection to IMicrosoftGraphOnenoteSection1
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserOnenoteSectionPage ----
+
+
+---- UPDATING Cmdlet : Remove-MgGroupOnenoteNotebook ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgGroupOnenoteNotebook ----
+
+
+---- UPDATING Cmdlet : Remove-MgGroupOnenotePage ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgGroupOnenotePage ----
+
+
+---- UPDATING Cmdlet : Remove-MgGroupOnenoteSection ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgGroupOnenoteSection ----
+
+
+---- UPDATING Cmdlet : Remove-MgGroupOnenoteSectionGroup ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgGroupOnenoteSectionGroup ----
+
+
+---- UPDATING Cmdlet : Remove-MgSiteOnenoteNotebook ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgSiteOnenoteNotebook ----
+
+
+---- UPDATING Cmdlet : Remove-MgSiteOnenotePage ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgSiteOnenotePage ----
+
+
+---- UPDATING Cmdlet : Remove-MgSiteOnenoteSection ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgSiteOnenoteSection ----
+
+
+---- UPDATING Cmdlet : Remove-MgSiteOnenoteSectionGroup ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgSiteOnenoteSectionGroup ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserOnenoteNotebook ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserOnenoteNotebook ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserOnenotePage ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserOnenotePage ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserOnenoteSection ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserOnenoteSection ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserOnenoteSectionGroup ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserOnenoteSectionGroup ----
+
+
+---- UPDATING Cmdlet : Set-MgGroupOnenotePageContent ----
+
+	Parameter Set Added: Set1
+
+	Parameter Set Added: SetViaIdentity1
+
+	Parameter Set Deleted: Set
+
+	Parameter Set Deleted: SetViaIdentity
+
+	Parameter Set Name Updated: Set1
+		Old Set: Set
+		New Set: Set1
+
+	Parameter Set Name Updated: SetViaIdentity1
+		Old Set: SetViaIdentity
+		New Set: SetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Set-MgGroupOnenotePageContent ----
+
+
+---- UPDATING Cmdlet : Set-MgGroupOnenoteResourceContent ----
+
+	Parameter Set Added: Set1
+
+	Parameter Set Added: SetViaIdentity1
+
+	Parameter Set Deleted: Set
+
+	Parameter Set Deleted: SetViaIdentity
+
+	Parameter Set Name Updated: Set1
+		Old Set: Set
+		New Set: Set1
+
+	Parameter Set Name Updated: SetViaIdentity1
+		Old Set: SetViaIdentity
+		New Set: SetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Set-MgGroupOnenoteResourceContent ----
+
+
+---- UPDATING Cmdlet : Set-MgGroupOnenoteSectionPageContent ----
+
+	Parameter Set Added: Set1
+
+	Parameter Set Added: SetViaIdentity1
+
+	Parameter Set Deleted: Set
+
+	Parameter Set Deleted: SetViaIdentity
+
+	Parameter Set Name Updated: Set1
+		Old Set: Set
+		New Set: Set1
+
+	Parameter Set Name Updated: SetViaIdentity1
+		Old Set: SetViaIdentity
+		New Set: SetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Set-MgGroupOnenoteSectionPageContent ----
+
+
+---- UPDATING Cmdlet : Set-MgSiteOnenotePageContent ----
+
+	Parameter Set Added: Set1
+
+	Parameter Set Added: SetViaIdentity1
+
+	Parameter Set Deleted: Set
+
+	Parameter Set Deleted: SetViaIdentity
+
+	Parameter Set Name Updated: Set1
+		Old Set: Set
+		New Set: Set1
+
+	Parameter Set Name Updated: SetViaIdentity1
+		Old Set: SetViaIdentity
+		New Set: SetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Set-MgSiteOnenotePageContent ----
+
+
+---- UPDATING Cmdlet : Set-MgSiteOnenoteResourceContent ----
+
+	Parameter Set Added: Set1
+
+	Parameter Set Added: SetViaIdentity1
+
+	Parameter Set Deleted: Set
+
+	Parameter Set Deleted: SetViaIdentity
+
+	Parameter Set Name Updated: Set1
+		Old Set: Set
+		New Set: Set1
+
+	Parameter Set Name Updated: SetViaIdentity1
+		Old Set: SetViaIdentity
+		New Set: SetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Set-MgSiteOnenoteResourceContent ----
+
+
+---- UPDATING Cmdlet : Set-MgSiteOnenoteSectionPageContent ----
+
+	Parameter Set Added: Set1
+
+	Parameter Set Added: SetViaIdentity1
+
+	Parameter Set Deleted: Set
+
+	Parameter Set Deleted: SetViaIdentity
+
+	Parameter Set Name Updated: Set1
+		Old Set: Set
+		New Set: Set1
+
+	Parameter Set Name Updated: SetViaIdentity1
+		Old Set: SetViaIdentity
+		New Set: SetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Set-MgSiteOnenoteSectionPageContent ----
+
+
+---- UPDATING Cmdlet : Set-MgUserOnenotePageContent ----
+
+	Parameter Set Added: Set1
+
+	Parameter Set Added: SetViaIdentity1
+
+	Parameter Set Deleted: Set
+
+	Parameter Set Deleted: SetViaIdentity
+
+	Parameter Set Name Updated: Set1
+		Old Set: Set
+		New Set: Set1
+
+	Parameter Set Name Updated: SetViaIdentity1
+		Old Set: SetViaIdentity
+		New Set: SetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Set-MgUserOnenotePageContent ----
+
+
+---- UPDATING Cmdlet : Set-MgUserOnenoteResourceContent ----
+
+	Parameter Set Added: Set1
+
+	Parameter Set Added: SetViaIdentity1
+
+	Parameter Set Deleted: Set
+
+	Parameter Set Deleted: SetViaIdentity
+
+	Parameter Set Name Updated: Set1
+		Old Set: Set
+		New Set: Set1
+
+	Parameter Set Name Updated: SetViaIdentity1
+		Old Set: SetViaIdentity
+		New Set: SetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Set-MgUserOnenoteResourceContent ----
+
+
+---- UPDATING Cmdlet : Set-MgUserOnenoteSectionPageContent ----
+
+	Parameter Set Added: Set
+
+	Parameter Set Added: SetViaIdentity
+
+	Parameter Set Deleted: Set1
+
+	Parameter Set Deleted: SetViaIdentity1
+
+	Parameter Set Name Updated: Set
+		Old Set: Set1
+		New Set: Set
+
+	Parameter Set Name Updated: SetViaIdentity
+		Old Set: SetViaIdentity1
+		New Set: SetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Set-MgUserOnenoteSectionPageContent ----
+
+
+---- UPDATING Cmdlet : Update-MgGroupOnenoteNotebook ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateExpanded1
+		Old Set: UpdateExpanded
+		New Set: UpdateExpanded1
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded1
+		Old Set: UpdateViaIdentityExpanded
+		New Set: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphNotebook to IMicrosoftGraphNotebook1
+
+	Parameter Updated: SectionGroups
+		Type updated from IMicrosoftGraphSectionGroup[] to IMicrosoftGraphSectionGroup1[]
+
+	Parameter Updated: Sections
+		Type updated from IMicrosoftGraphOnenoteSection[] to IMicrosoftGraphOnenoteSection1[]
+
+---- COMPLETED UPDATING Cmdlet : Update-MgGroupOnenoteNotebook ----
+
+
+---- UPDATING Cmdlet : Update-MgGroupOnenotePage ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateExpanded1
+		Old Set: UpdateExpanded
+		New Set: UpdateExpanded1
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded1
+		Old Set: UpdateViaIdentityExpanded
+		New Set: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphOnenotePage1 to IMicrosoftGraphOnenotePage
+
+	Parameter Updated: ParentNotebook
+		Type updated from IMicrosoftGraphNotebook to IMicrosoftGraphNotebook1
+
+	Parameter Updated: ParentSection
+		Type updated from IMicrosoftGraphOnenoteSection to IMicrosoftGraphOnenoteSection1
+
+---- COMPLETED UPDATING Cmdlet : Update-MgGroupOnenotePage ----
+
+
+---- UPDATING Cmdlet : Update-MgGroupOnenoteSection ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateExpanded1
+		Old Set: UpdateExpanded
+		New Set: UpdateExpanded1
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded1
+		Old Set: UpdateViaIdentityExpanded
+		New Set: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphOnenoteSection to IMicrosoftGraphOnenoteSection1
+
+	Parameter Updated: Pages
+		Type updated from IMicrosoftGraphOnenotePage1[] to IMicrosoftGraphOnenotePage[]
+
+	Parameter Updated: ParentNotebook
+		Type updated from IMicrosoftGraphNotebook to IMicrosoftGraphNotebook1
+
+	Parameter Updated: ParentSectionGroup
+		Type updated from IMicrosoftGraphSectionGroup to IMicrosoftGraphSectionGroup1
+
+---- COMPLETED UPDATING Cmdlet : Update-MgGroupOnenoteSection ----
+
+
+---- UPDATING Cmdlet : Update-MgGroupOnenoteSectionGroup ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateExpanded1
+		Old Set: UpdateExpanded
+		New Set: UpdateExpanded1
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded1
+		Old Set: UpdateViaIdentityExpanded
+		New Set: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphSectionGroup to IMicrosoftGraphSectionGroup1
+
+	Parameter Updated: ParentNotebook
+		Type updated from IMicrosoftGraphNotebook to IMicrosoftGraphNotebook1
+
+	Parameter Updated: ParentSectionGroup
+		Type updated from IMicrosoftGraphSectionGroup to IMicrosoftGraphSectionGroup1
+
+	Parameter Updated: SectionGroups
+		Type updated from IMicrosoftGraphSectionGroup[] to IMicrosoftGraphSectionGroup1[]
+
+	Parameter Updated: Sections
+		Type updated from IMicrosoftGraphOnenoteSection[] to IMicrosoftGraphOnenoteSection1[]
+
+---- COMPLETED UPDATING Cmdlet : Update-MgGroupOnenoteSectionGroup ----
+
+
+---- UPDATING Cmdlet : Update-MgSiteOnenoteNotebook ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateExpanded1
+		Old Set: UpdateExpanded
+		New Set: UpdateExpanded1
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded1
+		Old Set: UpdateViaIdentityExpanded
+		New Set: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphNotebook to IMicrosoftGraphNotebook1
+
+	Parameter Updated: SectionGroups
+		Type updated from IMicrosoftGraphSectionGroup[] to IMicrosoftGraphSectionGroup1[]
+
+	Parameter Updated: Sections
+		Type updated from IMicrosoftGraphOnenoteSection[] to IMicrosoftGraphOnenoteSection1[]
+
+---- COMPLETED UPDATING Cmdlet : Update-MgSiteOnenoteNotebook ----
+
+
+---- UPDATING Cmdlet : Update-MgSiteOnenotePage ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateExpanded1
+		Old Set: UpdateExpanded
+		New Set: UpdateExpanded1
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded1
+		Old Set: UpdateViaIdentityExpanded
+		New Set: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphOnenotePage1 to IMicrosoftGraphOnenotePage
+
+	Parameter Updated: ParentNotebook
+		Type updated from IMicrosoftGraphNotebook to IMicrosoftGraphNotebook1
+
+	Parameter Updated: ParentSection
+		Type updated from IMicrosoftGraphOnenoteSection to IMicrosoftGraphOnenoteSection1
+
+---- COMPLETED UPDATING Cmdlet : Update-MgSiteOnenotePage ----
+
+
+---- UPDATING Cmdlet : Update-MgSiteOnenoteSection ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateExpanded1
+		Old Set: UpdateExpanded
+		New Set: UpdateExpanded1
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded1
+		Old Set: UpdateViaIdentityExpanded
+		New Set: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphOnenoteSection to IMicrosoftGraphOnenoteSection1
+
+	Parameter Updated: Pages
+		Type updated from IMicrosoftGraphOnenotePage1[] to IMicrosoftGraphOnenotePage[]
+
+	Parameter Updated: ParentNotebook
+		Type updated from IMicrosoftGraphNotebook to IMicrosoftGraphNotebook1
+
+	Parameter Updated: ParentSectionGroup
+		Type updated from IMicrosoftGraphSectionGroup to IMicrosoftGraphSectionGroup1
+
+---- COMPLETED UPDATING Cmdlet : Update-MgSiteOnenoteSection ----
+
+
+---- UPDATING Cmdlet : Update-MgSiteOnenoteSectionGroup ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateExpanded1
+		Old Set: UpdateExpanded
+		New Set: UpdateExpanded1
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded1
+		Old Set: UpdateViaIdentityExpanded
+		New Set: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphSectionGroup to IMicrosoftGraphSectionGroup1
+
+	Parameter Updated: ParentNotebook
+		Type updated from IMicrosoftGraphNotebook to IMicrosoftGraphNotebook1
+
+	Parameter Updated: ParentSectionGroup
+		Type updated from IMicrosoftGraphSectionGroup to IMicrosoftGraphSectionGroup1
+
+	Parameter Updated: SectionGroups
+		Type updated from IMicrosoftGraphSectionGroup[] to IMicrosoftGraphSectionGroup1[]
+
+	Parameter Updated: Sections
+		Type updated from IMicrosoftGraphOnenoteSection[] to IMicrosoftGraphOnenoteSection1[]
+
+---- COMPLETED UPDATING Cmdlet : Update-MgSiteOnenoteSectionGroup ----
+
+
+---- UPDATING Cmdlet : Update-MgUserOnenoteNotebook ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateExpanded1
+		Old Set: UpdateExpanded
+		New Set: UpdateExpanded1
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded1
+		Old Set: UpdateViaIdentityExpanded
+		New Set: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphNotebook to IMicrosoftGraphNotebook1
+
+	Parameter Updated: SectionGroups
+		Type updated from IMicrosoftGraphSectionGroup[] to IMicrosoftGraphSectionGroup1[]
+
+	Parameter Updated: Sections
+		Type updated from IMicrosoftGraphOnenoteSection[] to IMicrosoftGraphOnenoteSection1[]
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserOnenoteNotebook ----
+
+
+---- UPDATING Cmdlet : Update-MgUserOnenotePage ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateExpanded1
+		Old Set: UpdateExpanded
+		New Set: UpdateExpanded1
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded1
+		Old Set: UpdateViaIdentityExpanded
+		New Set: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphOnenotePage1 to IMicrosoftGraphOnenotePage
+
+	Parameter Updated: ParentNotebook
+		Type updated from IMicrosoftGraphNotebook to IMicrosoftGraphNotebook1
+
+	Parameter Updated: ParentSection
+		Type updated from IMicrosoftGraphOnenoteSection to IMicrosoftGraphOnenoteSection1
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserOnenotePage ----
+
+
+---- UPDATING Cmdlet : Update-MgUserOnenoteSection ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphOnenoteSection to IMicrosoftGraphOnenoteSection1
+
+	Parameter Updated: Pages
+		Type updated from IMicrosoftGraphOnenotePage1[] to IMicrosoftGraphOnenotePage[]
+
+	Parameter Updated: ParentNotebook
+		Type updated from IMicrosoftGraphNotebook to IMicrosoftGraphNotebook1
+
+	Parameter Updated: ParentSectionGroup
+		Type updated from IMicrosoftGraphSectionGroup to IMicrosoftGraphSectionGroup1
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserOnenoteSection ----
+
+
+---- UPDATING Cmdlet : Update-MgUserOnenoteSectionGroup ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateExpanded1
+		Old Set: UpdateExpanded
+		New Set: UpdateExpanded1
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded1
+		Old Set: UpdateViaIdentityExpanded
+		New Set: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphSectionGroup to IMicrosoftGraphSectionGroup1
+
+	Parameter Updated: ParentNotebook
+		Type updated from IMicrosoftGraphNotebook to IMicrosoftGraphNotebook1
+
+	Parameter Updated: ParentSectionGroup
+		Type updated from IMicrosoftGraphSectionGroup to IMicrosoftGraphSectionGroup1
+
+	Parameter Updated: SectionGroups
+		Type updated from IMicrosoftGraphSectionGroup[] to IMicrosoftGraphSectionGroup1[]
+
+	Parameter Updated: Sections
+		Type updated from IMicrosoftGraphOnenoteSection[] to IMicrosoftGraphOnenoteSection1[]
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserOnenoteSectionGroup ----
+
+

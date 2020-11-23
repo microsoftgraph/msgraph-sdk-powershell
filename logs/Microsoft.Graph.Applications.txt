@@ -1,0 +1,2903 @@
+
+[Update-MarkdownHelpModule] 11/23/2020 14:46:57 Determined module name for '.\src\Applications\Applications\help' as 'Microsoft.Graph.Applications'.
+[Update-MarkdownHelpModule] 11/23/2020 14:46:57 [Update-MarkdownHelpModule]11/23/2020 2:46:57 PM
+[Update-MarkdownHelpModule] 11/23/2020 14:46:57 Updating documents for module 'Microsoft.Graph.Applications' in .\src\Applications\Applications\help
+---- UPDATING Cmdlet : Add-MgApplicationKey ----
+
+	Parameter Set Added: Add
+
+	Parameter Set Added: AddExpanded
+
+	Parameter Set Added: AddViaIdentity
+
+	Parameter Set Added: AddViaIdentityExpanded
+
+	Parameter Set Deleted: Add1
+
+	Parameter Set Deleted: AddExpanded1
+
+	Parameter Set Deleted: AddViaIdentity1
+
+	Parameter Set Deleted: AddViaIdentityExpanded1
+
+	Parameter Set Name Updated: AddExpanded
+		Old Set: AddExpanded1
+		New Set: AddExpanded
+
+	Parameter Set Name Updated: Add
+		Old Set: Add1
+		New Set: Add
+
+	Parameter Set Name Updated: AddViaIdentityExpanded
+		Old Set: AddViaIdentityExpanded1
+		New Set: AddViaIdentityExpanded
+
+	Parameter Set Name Updated: AddViaIdentity
+		Old Set: AddViaIdentity1
+		New Set: AddViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Add-MgApplicationKey ----
+
+
+---- UPDATING Cmdlet : Add-MgApplicationPassword ----
+
+	Parameter Set Added: Add
+
+	Parameter Set Added: AddExpanded
+
+	Parameter Set Added: AddViaIdentity
+
+	Parameter Set Added: AddViaIdentityExpanded
+
+	Parameter Set Deleted: Add1
+
+	Parameter Set Deleted: AddExpanded1
+
+	Parameter Set Deleted: AddViaIdentity1
+
+	Parameter Set Deleted: AddViaIdentityExpanded1
+
+	Parameter Set Name Updated: AddExpanded
+		Old Set: AddExpanded1
+		New Set: AddExpanded
+
+	Parameter Set Name Updated: Add
+		Old Set: Add1
+		New Set: Add
+
+	Parameter Set Name Updated: AddViaIdentityExpanded
+		Old Set: AddViaIdentityExpanded1
+		New Set: AddViaIdentityExpanded
+
+	Parameter Set Name Updated: AddViaIdentity
+		Old Set: AddViaIdentity1
+		New Set: AddViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Add-MgApplicationPassword ----
+
+
+[Update-MarkdownHelp] 11/23/2020 14:47:02 Command 'Add-MgServicePrincipalKey' not found in the session, skipping upgrade for 'C:\a\1\s\src\Applications\Applications\help\Add-MgServicePrincipalKey.md'.
+[Update-MarkdownHelp] 11/23/2020 14:47:03 Command 'Add-MgServicePrincipalPassword' not found in the session, skipping upgrade for 'C:\a\1\s\src\Applications\Applications\help\Add-MgServicePrincipalPassword.md'.
+---- UPDATING Cmdlet : Confirm-MgApplicationMemberGroup ----
+
+	Parameter Set Added: Check
+
+	Parameter Set Added: CheckExpanded
+
+	Parameter Set Added: CheckViaIdentity
+
+	Parameter Set Added: CheckViaIdentityExpanded
+
+	Parameter Set Deleted: Check1
+
+	Parameter Set Deleted: CheckExpanded1
+
+	Parameter Set Deleted: CheckViaIdentity1
+
+	Parameter Set Deleted: CheckViaIdentityExpanded1
+
+	Parameter Set Name Updated: CheckExpanded
+		Old Set: CheckExpanded1
+		New Set: CheckExpanded
+
+	Parameter Set Name Updated: Check
+		Old Set: Check1
+		New Set: Check
+
+	Parameter Set Name Updated: CheckViaIdentityExpanded
+		Old Set: CheckViaIdentityExpanded1
+		New Set: CheckViaIdentityExpanded
+
+	Parameter Set Name Updated: CheckViaIdentity
+		Old Set: CheckViaIdentity1
+		New Set: CheckViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Confirm-MgApplicationMemberGroup ----
+
+
+---- UPDATING Cmdlet : Confirm-MgApplicationMemberObject ----
+
+	Parameter Set Added: Check
+
+	Parameter Set Added: CheckExpanded
+
+	Parameter Set Added: CheckViaIdentity
+
+	Parameter Set Added: CheckViaIdentityExpanded
+
+	Parameter Set Deleted: Check1
+
+	Parameter Set Deleted: CheckExpanded1
+
+	Parameter Set Deleted: CheckViaIdentity1
+
+	Parameter Set Deleted: CheckViaIdentityExpanded1
+
+	Parameter Set Name Updated: CheckExpanded
+		Old Set: CheckExpanded1
+		New Set: CheckExpanded
+
+	Parameter Set Name Updated: Check
+		Old Set: Check1
+		New Set: Check
+
+	Parameter Set Name Updated: CheckViaIdentityExpanded
+		Old Set: CheckViaIdentityExpanded1
+		New Set: CheckViaIdentityExpanded
+
+	Parameter Set Name Updated: CheckViaIdentity
+		Old Set: CheckViaIdentity1
+		New Set: CheckViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Confirm-MgApplicationMemberObject ----
+
+
+---- UPDATING Cmdlet : Confirm-MgServicePrincipalMemberGroup ----
+
+	Parameter Set Added: Check
+
+	Parameter Set Added: CheckExpanded
+
+	Parameter Set Added: CheckViaIdentity
+
+	Parameter Set Added: CheckViaIdentityExpanded
+
+	Parameter Set Deleted: Check1
+
+	Parameter Set Deleted: CheckExpanded1
+
+	Parameter Set Deleted: CheckViaIdentity1
+
+	Parameter Set Deleted: CheckViaIdentityExpanded1
+
+	Parameter Set Name Updated: CheckExpanded
+		Old Set: CheckExpanded1
+		New Set: CheckExpanded
+
+	Parameter Set Name Updated: Check
+		Old Set: Check1
+		New Set: Check
+
+	Parameter Set Name Updated: CheckViaIdentityExpanded
+		Old Set: CheckViaIdentityExpanded1
+		New Set: CheckViaIdentityExpanded
+
+	Parameter Set Name Updated: CheckViaIdentity
+		Old Set: CheckViaIdentity1
+		New Set: CheckViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Confirm-MgServicePrincipalMemberGroup ----
+
+
+---- UPDATING Cmdlet : Confirm-MgServicePrincipalMemberObject ----
+
+	Parameter Set Added: Check
+
+	Parameter Set Added: CheckExpanded
+
+	Parameter Set Added: CheckViaIdentity
+
+	Parameter Set Added: CheckViaIdentityExpanded
+
+	Parameter Set Deleted: Check1
+
+	Parameter Set Deleted: CheckExpanded1
+
+	Parameter Set Deleted: CheckViaIdentity1
+
+	Parameter Set Deleted: CheckViaIdentityExpanded1
+
+	Parameter Set Name Updated: CheckExpanded
+		Old Set: CheckExpanded1
+		New Set: CheckExpanded
+
+	Parameter Set Name Updated: Check
+		Old Set: Check1
+		New Set: Check
+
+	Parameter Set Name Updated: CheckViaIdentityExpanded
+		Old Set: CheckViaIdentityExpanded1
+		New Set: CheckViaIdentityExpanded
+
+	Parameter Set Name Updated: CheckViaIdentity
+		Old Set: CheckViaIdentity1
+		New Set: CheckViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Confirm-MgServicePrincipalMemberObject ----
+
+
+---- UPDATING Cmdlet : Get-MgApplication ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgApplication ----
+
+
+[Update-MarkdownHelp] 11/23/2020 14:47:13 Command 'Get-MgApplicationAvailableExtensionProperty' not found in the session, skipping upgrade for 'C:\a\1\s\src\Applications\Applications\help\Get-MgApplicationAvailableExtensionProperty.md'.
+---- UPDATING Cmdlet : Get-MgApplicationById ----
+
+	Parameter Set Added: Get3
+
+	Parameter Set Added: GetExpanded1
+
+	Parameter Set Deleted: Get2
+
+	Parameter Set Deleted: GetExpanded
+
+	Parameter Set Name Updated: GetExpanded1
+		Old Set: GetExpanded
+		New Set: GetExpanded1
+
+	Parameter Set Name Updated: Get3
+		Old Set: Get2
+		New Set: Get3
+
+---- COMPLETED UPDATING Cmdlet : Get-MgApplicationById ----
+
+
+---- UPDATING Cmdlet : Get-MgApplicationCreatedOnBehalf ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgApplicationCreatedOnBehalf ----
+
+
+---- UPDATING Cmdlet : Get-MgApplicationCreatedOnBehalfByRef ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgApplicationCreatedOnBehalfByRef ----
+
+
+---- UPDATING Cmdlet : Get-MgApplicationDelta ----
+
+	Parameter Set Added: Delta1
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: Delta1
+		Old Set: 
+		New Set: Delta1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgApplicationDelta ----
+
+
+---- UPDATING Cmdlet : Get-MgApplicationExtensionProperty ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgApplicationExtensionProperty ----
+
+
+---- UPDATING Cmdlet : Get-MgApplicationHomeRealmDiscoveryPolicy ----
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List
+		Old Set: 
+		New Set: List
+
+---- COMPLETED UPDATING Cmdlet : Get-MgApplicationHomeRealmDiscoveryPolicy ----
+
+
+---- UPDATING Cmdlet : Get-MgApplicationHomeRealmDiscoveryPolicyByRef ----
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List
+		Old Set: 
+		New Set: List
+
+---- COMPLETED UPDATING Cmdlet : Get-MgApplicationHomeRealmDiscoveryPolicyByRef ----
+
+
+---- UPDATING Cmdlet : Get-MgApplicationLogo ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgApplicationLogo ----
+
+
+---- UPDATING Cmdlet : Get-MgApplicationMemberGroup ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetExpanded
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: GetViaIdentityExpanded
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetExpanded1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: GetViaIdentityExpanded1
+
+	Parameter Set Name Updated: GetExpanded
+		Old Set: GetExpanded1
+		New Set: GetExpanded
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentityExpanded
+		Old Set: GetViaIdentityExpanded1
+		New Set: GetViaIdentityExpanded
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgApplicationMemberGroup ----
+
+
+---- UPDATING Cmdlet : Get-MgApplicationMemberObject ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetExpanded
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: GetViaIdentityExpanded
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetExpanded1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: GetViaIdentityExpanded1
+
+	Parameter Set Name Updated: GetExpanded
+		Old Set: GetExpanded1
+		New Set: GetExpanded
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentityExpanded
+		Old Set: GetViaIdentityExpanded1
+		New Set: GetViaIdentityExpanded
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgApplicationMemberObject ----
+
+
+---- UPDATING Cmdlet : Get-MgApplicationOwner ----
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List
+		Old Set: 
+		New Set: List
+
+---- COMPLETED UPDATING Cmdlet : Get-MgApplicationOwner ----
+
+
+---- UPDATING Cmdlet : Get-MgApplicationOwnerByRef ----
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List
+		Old Set: 
+		New Set: List
+
+---- COMPLETED UPDATING Cmdlet : Get-MgApplicationOwnerByRef ----
+
+
+---- UPDATING Cmdlet : Get-MgApplicationTokenIssuancePolicy ----
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List1
+		Old Set: 
+		New Set: List1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgApplicationTokenIssuancePolicy ----
+
+
+---- UPDATING Cmdlet : Get-MgApplicationTokenIssuancePolicyByRef ----
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List1
+		Old Set: 
+		New Set: List1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgApplicationTokenIssuancePolicyByRef ----
+
+
+---- UPDATING Cmdlet : Get-MgApplicationTokenLifetimePolicy ----
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List1
+		Old Set: 
+		New Set: List1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgApplicationTokenLifetimePolicy ----
+
+
+---- UPDATING Cmdlet : Get-MgApplicationTokenLifetimePolicyByRef ----
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List1
+		Old Set: 
+		New Set: List1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgApplicationTokenLifetimePolicyByRef ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupAppRoleAssignment ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: List
+
+	Parameter Set Name Updated: List1
+		Old Set: List
+		New Set: List1
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupAppRoleAssignment ----
+
+
+---- UPDATING Cmdlet : Get-MgServicePrincipal ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get2
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get2
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgServicePrincipal ----
+
+
+---- UPDATING Cmdlet : Get-MgServicePrincipalAppRoleAssignedTo ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgServicePrincipalAppRoleAssignedTo ----
+
+
+---- UPDATING Cmdlet : Get-MgServicePrincipalAppRoleAssignment ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgServicePrincipalAppRoleAssignment ----
+
+
+[Update-MarkdownHelp] 11/23/2020 14:47:46 Command 'Get-MgServicePrincipalAvailableExtensionProperty' not found in the session, skipping upgrade for 'C:\a\1\s\src\Applications\Applications\help\Get-MgServicePrincipalAvailableExtensionProperty.md'.
+---- UPDATING Cmdlet : Get-MgServicePrincipalById ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetExpanded
+
+	Parameter Set Deleted: Get3
+
+	Parameter Set Deleted: GetExpanded1
+
+	Parameter Set Name Updated: GetExpanded
+		Old Set: GetExpanded1
+		New Set: GetExpanded
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get3
+		New Set: Get1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgServicePrincipalById ----
+
+
+---- UPDATING Cmdlet : Get-MgServicePrincipalClaimMappingPolicy ----
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List
+		Old Set: 
+		New Set: List
+
+---- COMPLETED UPDATING Cmdlet : Get-MgServicePrincipalClaimMappingPolicy ----
+
+
+---- UPDATING Cmdlet : Get-MgServicePrincipalClaimMappingPolicyByRef ----
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List
+		Old Set: 
+		New Set: List
+
+---- COMPLETED UPDATING Cmdlet : Get-MgServicePrincipalClaimMappingPolicyByRef ----
+
+
+---- UPDATING Cmdlet : Get-MgServicePrincipalCreatedObject ----
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List
+		Old Set: 
+		New Set: List
+
+---- COMPLETED UPDATING Cmdlet : Get-MgServicePrincipalCreatedObject ----
+
+
+---- UPDATING Cmdlet : Get-MgServicePrincipalCreatedObjectByRef ----
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List
+		Old Set: 
+		New Set: List
+
+---- COMPLETED UPDATING Cmdlet : Get-MgServicePrincipalCreatedObjectByRef ----
+
+
+---- UPDATING Cmdlet : Get-MgServicePrincipalDelegatedPermissionClassification ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgServicePrincipalDelegatedPermissionClassification ----
+
+
+---- UPDATING Cmdlet : Get-MgServicePrincipalDelta ----
+
+	Parameter Set Added: Delta
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: Delta
+		Old Set: 
+		New Set: Delta
+
+---- COMPLETED UPDATING Cmdlet : Get-MgServicePrincipalDelta ----
+
+
+---- UPDATING Cmdlet : Get-MgServicePrincipalEndpoint ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgServicePrincipalEndpoint ----
+
+
+---- UPDATING Cmdlet : Get-MgServicePrincipalHomeRealmDiscoveryPolicy ----
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List
+		Old Set: 
+		New Set: List
+
+---- COMPLETED UPDATING Cmdlet : Get-MgServicePrincipalHomeRealmDiscoveryPolicy ----
+
+
+---- UPDATING Cmdlet : Get-MgServicePrincipalHomeRealmDiscoveryPolicyByRef ----
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List
+		Old Set: 
+		New Set: List
+
+---- COMPLETED UPDATING Cmdlet : Get-MgServicePrincipalHomeRealmDiscoveryPolicyByRef ----
+
+
+---- UPDATING Cmdlet : Get-MgServicePrincipalMember ----
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List
+		Old Set: 
+		New Set: List
+
+---- COMPLETED UPDATING Cmdlet : Get-MgServicePrincipalMember ----
+
+
+---- UPDATING Cmdlet : Get-MgServicePrincipalMemberByRef ----
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List
+		Old Set: 
+		New Set: List
+
+---- COMPLETED UPDATING Cmdlet : Get-MgServicePrincipalMemberByRef ----
+
+
+---- UPDATING Cmdlet : Get-MgServicePrincipalMemberGroup ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetExpanded
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: GetViaIdentityExpanded
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetExpanded1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: GetViaIdentityExpanded1
+
+	Parameter Set Name Updated: GetExpanded
+		Old Set: GetExpanded1
+		New Set: GetExpanded
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentityExpanded
+		Old Set: GetViaIdentityExpanded1
+		New Set: GetViaIdentityExpanded
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgServicePrincipalMemberGroup ----
+
+
+---- UPDATING Cmdlet : Get-MgServicePrincipalMemberObject ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetExpanded
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: GetViaIdentityExpanded
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetExpanded1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: GetViaIdentityExpanded1
+
+	Parameter Set Name Updated: GetExpanded
+		Old Set: GetExpanded1
+		New Set: GetExpanded
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentityExpanded
+		Old Set: GetViaIdentityExpanded1
+		New Set: GetViaIdentityExpanded
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgServicePrincipalMemberObject ----
+
+
+---- UPDATING Cmdlet : Get-MgServicePrincipalOauth2PermissionGrant ----
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List
+		Old Set: 
+		New Set: List
+
+---- COMPLETED UPDATING Cmdlet : Get-MgServicePrincipalOauth2PermissionGrant ----
+
+
+---- UPDATING Cmdlet : Get-MgServicePrincipalOauth2PermissionGrantByRef ----
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List
+		Old Set: 
+		New Set: List
+
+---- COMPLETED UPDATING Cmdlet : Get-MgServicePrincipalOauth2PermissionGrantByRef ----
+
+
+---- UPDATING Cmdlet : Get-MgServicePrincipalOwnedObject ----
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List
+		Old Set: 
+		New Set: List
+
+---- COMPLETED UPDATING Cmdlet : Get-MgServicePrincipalOwnedObject ----
+
+
+---- UPDATING Cmdlet : Get-MgServicePrincipalOwnedObjectByRef ----
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List
+		Old Set: 
+		New Set: List
+
+---- COMPLETED UPDATING Cmdlet : Get-MgServicePrincipalOwnedObjectByRef ----
+
+
+---- UPDATING Cmdlet : Get-MgServicePrincipalOwner ----
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List
+		Old Set: 
+		New Set: List
+
+---- COMPLETED UPDATING Cmdlet : Get-MgServicePrincipalOwner ----
+
+
+---- UPDATING Cmdlet : Get-MgServicePrincipalOwnerByRef ----
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List
+		Old Set: 
+		New Set: List
+
+---- COMPLETED UPDATING Cmdlet : Get-MgServicePrincipalOwnerByRef ----
+
+
+---- UPDATING Cmdlet : Get-MgServicePrincipalTokenIssuancePolicy ----
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List
+		Old Set: 
+		New Set: List
+
+---- COMPLETED UPDATING Cmdlet : Get-MgServicePrincipalTokenIssuancePolicy ----
+
+
+---- UPDATING Cmdlet : Get-MgServicePrincipalTokenIssuancePolicyByRef ----
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List
+		Old Set: 
+		New Set: List
+
+---- COMPLETED UPDATING Cmdlet : Get-MgServicePrincipalTokenIssuancePolicyByRef ----
+
+
+---- UPDATING Cmdlet : Get-MgServicePrincipalTokenLifetimePolicy ----
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List
+		Old Set: 
+		New Set: List
+
+---- COMPLETED UPDATING Cmdlet : Get-MgServicePrincipalTokenLifetimePolicy ----
+
+
+---- UPDATING Cmdlet : Get-MgServicePrincipalTokenLifetimePolicyByRef ----
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List
+		Old Set: 
+		New Set: List
+
+---- COMPLETED UPDATING Cmdlet : Get-MgServicePrincipalTokenLifetimePolicyByRef ----
+
+
+---- UPDATING Cmdlet : Get-MgServicePrincipalTransitiveMember ----
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List
+		Old Set: 
+		New Set: List
+
+---- COMPLETED UPDATING Cmdlet : Get-MgServicePrincipalTransitiveMember ----
+
+
+---- UPDATING Cmdlet : Get-MgServicePrincipalTransitiveMemberByRef ----
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List
+		Old Set: 
+		New Set: List
+
+---- COMPLETED UPDATING Cmdlet : Get-MgServicePrincipalTransitiveMemberByRef ----
+
+
+---- UPDATING Cmdlet : Get-MgUserAppRoleAssignment ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserAppRoleAssignment ----
+
+
+---- UPDATING Cmdlet : Get-MgUserAppRoleAssignment ----
+
+---- ERROR UPDATING Cmdlet : Get-MgUserAppRoleAssignment----
+
+    Exception Creating Merged Object: 
+Object reference not set to an instance of an object.
+
+---- ERROR UPDATING Cmdlet : Get-MgUserAppRoleAssignment----
+
+    Exception Links: 
+Object reference not set to an instance of an object.
+
+---- ERROR UPDATING Cmdlet : Get-MgUserAppRoleAssignment----
+
+    Exception Examples: 
+Object reference not set to an instance of an object.
+
+---- ERROR UPDATING Cmdlet : Get-MgUserAppRoleAssignment----
+
+    Exception Inputs and Outputs: 
+Object reference not set to an instance of an object.
+
+---- ERROR UPDATING Cmdlet : Get-MgUserAppRoleAssignment----
+
+    Exception adding parameter syntax to merge: 
+Object reference not set to an instance of an object.
+
+---- ERROR UPDATING Cmdlet : Get-MgUserAppRoleAssignment----
+
+    Exception parameter merge: 
+Object reference not set to an instance of an object.
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserAppRoleAssignment ----
+
+
+---- UPDATING Cmdlet : New-MgApplicationExtensionProperty ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded
+		Old Set: CreateViaIdentityExpanded1
+		New Set: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : New-MgApplicationExtensionProperty ----
+
+
+---- UPDATING Cmdlet : New-MgApplicationHomeRealmDiscoveryPolicyByRef ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded
+		Old Set: CreateViaIdentityExpanded1
+		New Set: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : New-MgApplicationHomeRealmDiscoveryPolicyByRef ----
+
+
+---- UPDATING Cmdlet : New-MgApplicationOwnerByRef ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded
+		Old Set: CreateViaIdentityExpanded1
+		New Set: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : New-MgApplicationOwnerByRef ----
+
+
+---- UPDATING Cmdlet : New-MgApplicationTokenIssuancePolicyByRef ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateExpanded1
+		Old Set: CreateExpanded
+		New Set: CreateExpanded1
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded1
+		Old Set: CreateViaIdentityExpanded
+		New Set: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : New-MgApplicationTokenIssuancePolicyByRef ----
+
+
+---- UPDATING Cmdlet : New-MgApplicationTokenLifetimePolicyByRef ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateExpanded1
+		Old Set: CreateExpanded
+		New Set: CreateExpanded1
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded1
+		Old Set: CreateViaIdentityExpanded
+		New Set: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : New-MgApplicationTokenLifetimePolicyByRef ----
+
+
+---- UPDATING Cmdlet : New-MgGroupAppRoleAssignment ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+	Parameter Added: CreationTimestamp
+
+	Parameter Deleted: CreatedDateTime
+
+	Parameter Deleted: DeletedDateTime
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphAppRoleAssignment to IMicrosoftGraphAppRoleAssignment1
+
+---- COMPLETED UPDATING Cmdlet : New-MgGroupAppRoleAssignment ----
+
+
+---- UPDATING Cmdlet : New-MgGroupAppRoleAssignment ----
+
+---- ERROR UPDATING Cmdlet : New-MgGroupAppRoleAssignment----
+
+    Exception Creating Merged Object: 
+Object reference not set to an instance of an object.
+
+---- ERROR UPDATING Cmdlet : New-MgGroupAppRoleAssignment----
+
+    Exception Links: 
+Object reference not set to an instance of an object.
+
+---- ERROR UPDATING Cmdlet : New-MgGroupAppRoleAssignment----
+
+    Exception Examples: 
+Object reference not set to an instance of an object.
+
+---- ERROR UPDATING Cmdlet : New-MgGroupAppRoleAssignment----
+
+    Exception Inputs and Outputs: 
+Object reference not set to an instance of an object.
+
+---- ERROR UPDATING Cmdlet : New-MgGroupAppRoleAssignment----
+
+    Exception adding parameter syntax to merge: 
+Object reference not set to an instance of an object.
+
+---- ERROR UPDATING Cmdlet : New-MgGroupAppRoleAssignment----
+
+    Exception parameter merge: 
+Object reference not set to an instance of an object.
+
+---- COMPLETED UPDATING Cmdlet : New-MgGroupAppRoleAssignment ----
+
+
+---- UPDATING Cmdlet : New-MgServicePrincipalAppRoleAssignedTo ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+	Parameter Added: CreationTimestamp
+
+	Parameter Deleted: CreatedDateTime
+
+	Parameter Deleted: DeletedDateTime
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphAppRoleAssignment to IMicrosoftGraphAppRoleAssignment1
+
+---- COMPLETED UPDATING Cmdlet : New-MgServicePrincipalAppRoleAssignedTo ----
+
+
+---- UPDATING Cmdlet : New-MgServicePrincipalAppRoleAssignment ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+	Parameter Added: CreationTimestamp
+
+	Parameter Deleted: CreatedDateTime
+
+	Parameter Deleted: DeletedDateTime
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphAppRoleAssignment to IMicrosoftGraphAppRoleAssignment1
+
+---- COMPLETED UPDATING Cmdlet : New-MgServicePrincipalAppRoleAssignment ----
+
+
+---- UPDATING Cmdlet : New-MgServicePrincipalClaimMappingPolicyByRef ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded
+		Old Set: CreateViaIdentityExpanded1
+		New Set: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : New-MgServicePrincipalClaimMappingPolicyByRef ----
+
+
+---- UPDATING Cmdlet : New-MgServicePrincipalCreatedObjectByRef ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded
+		Old Set: CreateViaIdentityExpanded1
+		New Set: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : New-MgServicePrincipalCreatedObjectByRef ----
+
+
+---- UPDATING Cmdlet : New-MgServicePrincipalDelegatedPermissionClassification ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded
+		Old Set: CreateViaIdentityExpanded1
+		New Set: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : New-MgServicePrincipalDelegatedPermissionClassification ----
+
+
+---- UPDATING Cmdlet : New-MgServicePrincipalEndpoint ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded
+		Old Set: CreateViaIdentityExpanded1
+		New Set: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : New-MgServicePrincipalEndpoint ----
+
+
+---- UPDATING Cmdlet : New-MgServicePrincipalHomeRealmDiscoveryPolicyByRef ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded
+		Old Set: CreateViaIdentityExpanded1
+		New Set: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : New-MgServicePrincipalHomeRealmDiscoveryPolicyByRef ----
+
+
+---- UPDATING Cmdlet : New-MgServicePrincipalMemberByRef ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded
+		Old Set: CreateViaIdentityExpanded1
+		New Set: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : New-MgServicePrincipalMemberByRef ----
+
+
+---- UPDATING Cmdlet : New-MgServicePrincipalOauth2PermissionGrantByRef ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded
+		Old Set: CreateViaIdentityExpanded1
+		New Set: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : New-MgServicePrincipalOauth2PermissionGrantByRef ----
+
+
+---- UPDATING Cmdlet : New-MgServicePrincipalOwnedObjectByRef ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded
+		Old Set: CreateViaIdentityExpanded1
+		New Set: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : New-MgServicePrincipalOwnedObjectByRef ----
+
+
+---- UPDATING Cmdlet : New-MgServicePrincipalOwnerByRef ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded
+		Old Set: CreateViaIdentityExpanded1
+		New Set: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : New-MgServicePrincipalOwnerByRef ----
+
+
+---- UPDATING Cmdlet : New-MgServicePrincipalTokenIssuancePolicyByRef ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded
+		Old Set: CreateViaIdentityExpanded1
+		New Set: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : New-MgServicePrincipalTokenIssuancePolicyByRef ----
+
+
+---- UPDATING Cmdlet : New-MgServicePrincipalTokenLifetimePolicyByRef ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded
+		Old Set: CreateViaIdentityExpanded1
+		New Set: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : New-MgServicePrincipalTokenLifetimePolicyByRef ----
+
+
+---- UPDATING Cmdlet : New-MgServicePrincipalTransitiveMemberByRef ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded
+		Old Set: CreateViaIdentityExpanded1
+		New Set: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : New-MgServicePrincipalTransitiveMemberByRef ----
+
+
+---- UPDATING Cmdlet : New-MgUserAppRoleAssignment ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+	Parameter Added: CreationTimestamp
+
+	Parameter Deleted: CreatedDateTime
+
+	Parameter Deleted: DeletedDateTime
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphAppRoleAssignment to IMicrosoftGraphAppRoleAssignment1
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserAppRoleAssignment ----
+
+
+---- UPDATING Cmdlet : Remove-MgApplication ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgApplication ----
+
+
+---- UPDATING Cmdlet : Remove-MgApplicationCreatedOnBehalfByRef ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgApplicationCreatedOnBehalfByRef ----
+
+
+---- UPDATING Cmdlet : Remove-MgApplicationExtensionProperty ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgApplicationExtensionProperty ----
+
+
+---- UPDATING Cmdlet : Remove-MgApplicationKey ----
+
+	Parameter Set Added: Remove
+
+	Parameter Set Added: RemoveExpanded
+
+	Parameter Set Added: RemoveViaIdentity
+
+	Parameter Set Added: RemoveViaIdentityExpanded
+
+	Parameter Set Deleted: Remove1
+
+	Parameter Set Deleted: RemoveExpanded1
+
+	Parameter Set Deleted: RemoveViaIdentity1
+
+	Parameter Set Deleted: RemoveViaIdentityExpanded1
+
+	Parameter Set Name Updated: RemoveExpanded
+		Old Set: RemoveExpanded1
+		New Set: RemoveExpanded
+
+	Parameter Set Name Updated: Remove
+		Old Set: Remove1
+		New Set: Remove
+
+	Parameter Set Name Updated: RemoveViaIdentityExpanded
+		Old Set: RemoveViaIdentityExpanded1
+		New Set: RemoveViaIdentityExpanded
+
+	Parameter Set Name Updated: RemoveViaIdentity
+		Old Set: RemoveViaIdentity1
+		New Set: RemoveViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgApplicationKey ----
+
+
+---- UPDATING Cmdlet : Remove-MgApplicationPassword ----
+
+	Parameter Set Added: Remove
+
+	Parameter Set Added: RemoveExpanded
+
+	Parameter Set Added: RemoveViaIdentity
+
+	Parameter Set Added: RemoveViaIdentityExpanded
+
+	Parameter Set Deleted: Remove1
+
+	Parameter Set Deleted: RemoveExpanded1
+
+	Parameter Set Deleted: RemoveViaIdentity1
+
+	Parameter Set Deleted: RemoveViaIdentityExpanded1
+
+	Parameter Set Name Updated: RemoveExpanded
+		Old Set: RemoveExpanded1
+		New Set: RemoveExpanded
+
+	Parameter Set Name Updated: Remove
+		Old Set: Remove1
+		New Set: Remove
+
+	Parameter Set Name Updated: RemoveViaIdentityExpanded
+		Old Set: RemoveViaIdentityExpanded1
+		New Set: RemoveViaIdentityExpanded
+
+	Parameter Set Name Updated: RemoveViaIdentity
+		Old Set: RemoveViaIdentity1
+		New Set: RemoveViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgApplicationPassword ----
+
+
+---- UPDATING Cmdlet : Remove-MgGroupAppRoleAssignment ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgGroupAppRoleAssignment ----
+
+
+---- UPDATING Cmdlet : Remove-MgServicePrincipal ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgServicePrincipal ----
+
+
+---- UPDATING Cmdlet : Remove-MgServicePrincipalAppRoleAssignedTo ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgServicePrincipalAppRoleAssignedTo ----
+
+
+---- UPDATING Cmdlet : Remove-MgServicePrincipalAppRoleAssignment ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgServicePrincipalAppRoleAssignment ----
+
+
+---- UPDATING Cmdlet : Remove-MgServicePrincipalDelegatedPermissionClassification ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgServicePrincipalDelegatedPermissionClassification ----
+
+
+---- UPDATING Cmdlet : Remove-MgServicePrincipalEndpoint ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgServicePrincipalEndpoint ----
+
+
+[Update-MarkdownHelp] 11/23/2020 14:50:16 Command 'Remove-MgServicePrincipalKey' not found in the session, skipping upgrade for 'C:\a\1\s\src\Applications\Applications\help\Remove-MgServicePrincipalKey.md'.
+[Update-MarkdownHelp] 11/23/2020 14:50:17 Command 'Remove-MgServicePrincipalPassword' not found in the session, skipping upgrade for 'C:\a\1\s\src\Applications\Applications\help\Remove-MgServicePrincipalPassword.md'.
+---- UPDATING Cmdlet : Remove-MgUserAppRoleAssignment ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserAppRoleAssignment ----
+
+
+---- UPDATING Cmdlet : Restore-MgApplication ----
+
+	Parameter Set Added: Restore
+
+	Parameter Set Added: RestoreViaIdentity
+
+	Parameter Set Deleted: Restore1
+
+	Parameter Set Deleted: RestoreViaIdentity1
+
+	Parameter Set Name Updated: Restore
+		Old Set: Restore1
+		New Set: Restore
+
+	Parameter Set Name Updated: RestoreViaIdentity
+		Old Set: RestoreViaIdentity1
+		New Set: RestoreViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Restore-MgApplication ----
+
+
+---- UPDATING Cmdlet : Restore-MgServicePrincipal ----
+
+	Parameter Set Added: Restore
+
+	Parameter Set Added: RestoreViaIdentity
+
+	Parameter Set Deleted: Restore1
+
+	Parameter Set Deleted: RestoreViaIdentity1
+
+	Parameter Set Name Updated: Restore
+		Old Set: Restore1
+		New Set: Restore
+
+	Parameter Set Name Updated: RestoreViaIdentity
+		Old Set: RestoreViaIdentity1
+		New Set: RestoreViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Restore-MgServicePrincipal ----
+
+
+---- UPDATING Cmdlet : Set-MgApplicationCreatedOnBehalfByRef ----
+
+	Parameter Set Added: Set
+
+	Parameter Set Added: SetExpanded
+
+	Parameter Set Added: SetViaIdentity
+
+	Parameter Set Added: SetViaIdentityExpanded
+
+	Parameter Set Deleted: Set1
+
+	Parameter Set Deleted: SetExpanded1
+
+	Parameter Set Deleted: SetViaIdentity1
+
+	Parameter Set Deleted: SetViaIdentityExpanded1
+
+	Parameter Set Name Updated: SetExpanded
+		Old Set: SetExpanded1
+		New Set: SetExpanded
+
+	Parameter Set Name Updated: Set
+		Old Set: Set1
+		New Set: Set
+
+	Parameter Set Name Updated: SetViaIdentityExpanded
+		Old Set: SetViaIdentityExpanded1
+		New Set: SetViaIdentityExpanded
+
+	Parameter Set Name Updated: SetViaIdentity
+		Old Set: SetViaIdentity1
+		New Set: SetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Set-MgApplicationCreatedOnBehalfByRef ----
+
+
+---- UPDATING Cmdlet : Set-MgApplicationLogo ----
+
+	Parameter Set Added: Set
+
+	Parameter Set Added: SetViaIdentity
+
+	Parameter Set Deleted: Set1
+
+	Parameter Set Deleted: SetViaIdentity1
+
+	Parameter Set Name Updated: Set
+		Old Set: Set1
+		New Set: Set
+
+	Parameter Set Name Updated: SetViaIdentity
+		Old Set: SetViaIdentity1
+		New Set: SetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Set-MgApplicationLogo ----
+
+
+---- UPDATING Cmdlet : Test-MgApplicationProperty ----
+
+	Parameter Set Added: Validate1
+
+	Parameter Set Added: ValidateExpanded1
+
+	Parameter Set Deleted: Validate
+
+	Parameter Set Deleted: ValidateExpanded
+
+	Parameter Set Name Updated: ValidateExpanded1
+		Old Set: ValidateExpanded
+		New Set: ValidateExpanded1
+
+	Parameter Set Name Updated: Validate1
+		Old Set: Validate
+		New Set: Validate1
+
+---- COMPLETED UPDATING Cmdlet : Test-MgApplicationProperty ----
+
+
+---- UPDATING Cmdlet : Test-MgServicePrincipalProperty ----
+
+	Parameter Set Added: Validate
+
+	Parameter Set Added: ValidateExpanded
+
+	Parameter Set Deleted: Validate1
+
+	Parameter Set Deleted: ValidateExpanded1
+
+	Parameter Set Name Updated: ValidateExpanded
+		Old Set: ValidateExpanded1
+		New Set: ValidateExpanded
+
+	Parameter Set Name Updated: Validate
+		Old Set: Validate1
+		New Set: Validate
+
+---- COMPLETED UPDATING Cmdlet : Test-MgServicePrincipalProperty ----
+
+
+---- UPDATING Cmdlet : Test-MgServicePrincipalProperty ----
+
+---- ERROR UPDATING Cmdlet : Test-MgServicePrincipalProperty----
+
+    Exception Creating Merged Object: 
+Object reference not set to an instance of an object.
+
+---- ERROR UPDATING Cmdlet : Test-MgServicePrincipalProperty----
+
+    Exception Links: 
+Object reference not set to an instance of an object.
+
+---- ERROR UPDATING Cmdlet : Test-MgServicePrincipalProperty----
+
+    Exception Examples: 
+Object reference not set to an instance of an object.
+
+---- ERROR UPDATING Cmdlet : Test-MgServicePrincipalProperty----
+
+    Exception Inputs and Outputs: 
+Object reference not set to an instance of an object.
+
+---- ERROR UPDATING Cmdlet : Test-MgServicePrincipalProperty----
+
+    Exception adding parameter syntax to merge: 
+Object reference not set to an instance of an object.
+
+---- ERROR UPDATING Cmdlet : Test-MgServicePrincipalProperty----
+
+    Exception parameter merge: 
+Object reference not set to an instance of an object.
+
+---- COMPLETED UPDATING Cmdlet : Test-MgServicePrincipalProperty ----
+
+
+---- UPDATING Cmdlet : Update-MgApplicationExtensionProperty ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Update-MgApplicationExtensionProperty ----
+
+
+---- UPDATING Cmdlet : Update-MgGroupAppRoleAssignment ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Added: CreationTimestamp
+
+	Parameter Deleted: CreatedDateTime
+
+	Parameter Deleted: DeletedDateTime
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphAppRoleAssignment to IMicrosoftGraphAppRoleAssignment1
+
+---- COMPLETED UPDATING Cmdlet : Update-MgGroupAppRoleAssignment ----
+
+
+---- UPDATING Cmdlet : Update-MgGroupAppRoleAssignment ----
+
+---- ERROR UPDATING Cmdlet : Update-MgGroupAppRoleAssignment----
+
+    Exception Creating Merged Object: 
+Object reference not set to an instance of an object.
+
+---- ERROR UPDATING Cmdlet : Update-MgGroupAppRoleAssignment----
+
+    Exception Links: 
+Object reference not set to an instance of an object.
+
+---- ERROR UPDATING Cmdlet : Update-MgGroupAppRoleAssignment----
+
+    Exception Examples: 
+Object reference not set to an instance of an object.
+
+---- ERROR UPDATING Cmdlet : Update-MgGroupAppRoleAssignment----
+
+    Exception Inputs and Outputs: 
+Object reference not set to an instance of an object.
+
+---- ERROR UPDATING Cmdlet : Update-MgGroupAppRoleAssignment----
+
+    Exception adding parameter syntax to merge: 
+Object reference not set to an instance of an object.
+
+---- ERROR UPDATING Cmdlet : Update-MgGroupAppRoleAssignment----
+
+    Exception parameter merge: 
+Object reference not set to an instance of an object.
+
+---- COMPLETED UPDATING Cmdlet : Update-MgGroupAppRoleAssignment ----
+
+
+---- UPDATING Cmdlet : Update-MgServicePrincipalAppRoleAssignedTo ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Added: CreationTimestamp
+
+	Parameter Deleted: CreatedDateTime
+
+	Parameter Deleted: DeletedDateTime
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphAppRoleAssignment to IMicrosoftGraphAppRoleAssignment1
+
+---- COMPLETED UPDATING Cmdlet : Update-MgServicePrincipalAppRoleAssignedTo ----
+
+
+---- UPDATING Cmdlet : Update-MgServicePrincipalAppRoleAssignment ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Added: CreationTimestamp
+
+	Parameter Deleted: CreatedDateTime
+
+	Parameter Deleted: DeletedDateTime
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphAppRoleAssignment to IMicrosoftGraphAppRoleAssignment1
+
+---- COMPLETED UPDATING Cmdlet : Update-MgServicePrincipalAppRoleAssignment ----
+
+
+---- UPDATING Cmdlet : Update-MgServicePrincipalDelegatedPermissionClassification ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Update-MgServicePrincipalDelegatedPermissionClassification ----
+
+
+---- UPDATING Cmdlet : Update-MgServicePrincipalEndpoint ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Update-MgServicePrincipalEndpoint ----
+
+
+---- UPDATING Cmdlet : Update-MgUserAppRoleAssignment ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Added: CreationTimestamp
+
+	Parameter Deleted: CreatedDateTime
+
+	Parameter Deleted: DeletedDateTime
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphAppRoleAssignment to IMicrosoftGraphAppRoleAssignment1
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserAppRoleAssignment ----
+
+
+[Update-MarkdownHelpModule] 11/23/2020 14:51:19 Creating new markdown for command 'Find-MgApplicationSynchronizationJobSchemaDirectory'
+[Update-MarkdownHelpModule] 11/23/2020 14:51:21 Creating new markdown for command 'Find-MgApplicationSynchronizationTemplateSchemaDirectory'
+[Update-MarkdownHelpModule] 11/23/2020 14:51:23 Creating new markdown for command 'Find-MgServicePrincipalSynchronizationJobSchemaDirectory'
+[Update-MarkdownHelpModule] 11/23/2020 14:51:25 Creating new markdown for command 'Find-MgServicePrincipalSynchronizationTemplateSchemaDirectory'
+[Update-MarkdownHelpModule] 11/23/2020 14:51:27 Creating new markdown for command 'Get-MgApplicationConnectorGroup'
+[Update-MarkdownHelpModule] 11/23/2020 14:51:29 Creating new markdown for command 'Get-MgApplicationConnectorGroupByRef'
+[Update-MarkdownHelpModule] 11/23/2020 14:51:31 Creating new markdown for command 'Get-MgApplicationSynchronization'
+[Update-MarkdownHelpModule] 11/23/2020 14:51:33 Creating new markdown for command 'Get-MgApplicationSynchronizationAccessToken'
+[Update-MarkdownHelpModule] 11/23/2020 14:51:35 Creating new markdown for command 'Get-MgApplicationSynchronizationJob'
+[Update-MarkdownHelpModule] 11/23/2020 14:51:38 Creating new markdown for command 'Get-MgApplicationSynchronizationJobSchema'
+[Update-MarkdownHelpModule] 11/23/2020 14:51:39 Creating new markdown for command 'Get-MgApplicationSynchronizationJobSchemaDirectory'
+[Update-MarkdownHelpModule] 11/23/2020 14:51:42 Creating new markdown for command 'Get-MgApplicationSynchronizationTemplate'
+[Update-MarkdownHelpModule] 11/23/2020 14:51:44 Creating new markdown for command 'Get-MgApplicationSynchronizationTemplateSchema'
+[Update-MarkdownHelpModule] 11/23/2020 14:51:46 Creating new markdown for command 'Get-MgApplicationSynchronizationTemplateSchemaDirectory'
+[Update-MarkdownHelpModule] 11/23/2020 14:51:49 Creating new markdown for command 'Get-MgApplicationTemplate'
+[Update-MarkdownHelpModule] 11/23/2020 14:51:52 Creating new markdown for command 'Get-MgApplicationUserOwnedObject'
+[Update-MarkdownHelpModule] 11/23/2020 14:51:54 Creating new markdown for command 'Get-MgOnPremisePublishingProfile'
+[Update-MarkdownHelpModule] 11/23/2020 14:51:57 Creating new markdown for command 'Get-MgOnPremisePublishingProfileAgent'
+[Update-MarkdownHelpModule] 11/23/2020 14:51:59 Creating new markdown for command 'Get-MgOnPremisePublishingProfileAgentGroup'
+[Update-MarkdownHelpModule] 11/23/2020 14:52:03 Creating new markdown for command 'Get-MgOnPremisePublishingProfileAgentGroupAgent'
+[Update-MarkdownHelpModule] 11/23/2020 14:52:06 Creating new markdown for command 'Get-MgOnPremisePublishingProfileAgentGroupPublishedResource'
+[Update-MarkdownHelpModule] 11/23/2020 14:52:09 Creating new markdown for command 'Get-MgOnPremisePublishingProfileAgentGroupPublishedResourceAgentGroup'
+[Update-MarkdownHelpModule] 11/23/2020 14:52:12 Creating new markdown for command 'Get-MgOnPremisePublishingProfileConnector'
+[Update-MarkdownHelpModule] 11/23/2020 14:52:14 Creating new markdown for command 'Get-MgOnPremisePublishingProfileConnectorGroup'
+[Update-MarkdownHelpModule] 11/23/2020 14:52:17 Creating new markdown for command 'Get-MgOnPremisePublishingProfileConnectorGroupApplication'
+[Update-MarkdownHelpModule] 11/23/2020 14:52:19 Creating new markdown for command 'Get-MgOnPremisePublishingProfileConnectorGroupApplicationByRef'
+[Update-MarkdownHelpModule] 11/23/2020 14:52:21 Creating new markdown for command 'Get-MgOnPremisePublishingProfileConnectorGroupMember'
+[Update-MarkdownHelpModule] 11/23/2020 14:52:24 Creating new markdown for command 'Get-MgOnPremisePublishingProfileConnectorMemberOf'
+[Update-MarkdownHelpModule] 11/23/2020 14:52:26 Creating new markdown for command 'Get-MgOnPremisePublishingProfilePublishedResource'
+[Update-MarkdownHelpModule] 11/23/2020 14:52:28 Creating new markdown for command 'Get-MgOnPremisePublishingProfilePublishedResourceAgentGroup'
+[Update-MarkdownHelpModule] 11/23/2020 14:52:32 Creating new markdown for command 'Get-MgOnPremisePublishingProfilePublishedResourceAgentGroupAgent'
+[Update-MarkdownHelpModule] 11/23/2020 14:52:34 Creating new markdown for command 'Get-MgOnPremisePublishingProfilePublishedResourceAgentGroupPublishedResource'
+[Update-MarkdownHelpModule] 11/23/2020 14:52:37 Creating new markdown for command 'Get-MgServicePrincipalLicenseDetail'
+[Update-MarkdownHelpModule] 11/23/2020 14:52:39 Creating new markdown for command 'Get-MgServicePrincipalPasswordSingleSignOnCredentials'
+[Update-MarkdownHelpModule] 11/23/2020 14:52:42 Creating new markdown for command 'Get-MgServicePrincipalSynchronization'
+[Update-MarkdownHelpModule] 11/23/2020 14:52:44 Creating new markdown for command 'Get-MgServicePrincipalSynchronizationAccessToken'
+[Update-MarkdownHelpModule] 11/23/2020 14:52:46 Creating new markdown for command 'Get-MgServicePrincipalSynchronizationJob'
+[Update-MarkdownHelpModule] 11/23/2020 14:52:48 Creating new markdown for command 'Get-MgServicePrincipalSynchronizationJobSchema'
+[Update-MarkdownHelpModule] 11/23/2020 14:52:50 Creating new markdown for command 'Get-MgServicePrincipalSynchronizationJobSchemaDirectory'
+[Update-MarkdownHelpModule] 11/23/2020 14:52:53 Creating new markdown for command 'Get-MgServicePrincipalSynchronizationTemplate'
+[Update-MarkdownHelpModule] 11/23/2020 14:52:55 Creating new markdown for command 'Get-MgServicePrincipalSynchronizationTemplateSchema'
+[Update-MarkdownHelpModule] 11/23/2020 14:52:57 Creating new markdown for command 'Get-MgServicePrincipalSynchronizationTemplateSchemaDirectory'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:00 Creating new markdown for command 'Get-MgServicePrincipalUserOwnedObject'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:02 Creating new markdown for command 'Invoke-MgFilterApplicationSynchronizationJobSchemaOperator'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:04 Creating new markdown for command 'Invoke-MgFilterApplicationSynchronizationTemplateSchemaOperator'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:06 Creating new markdown for command 'Invoke-MgFilterServicePrincipalSynchronizationJobSchemaOperator'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:08 Creating new markdown for command 'Invoke-MgFilterServicePrincipalSynchronizationTemplateSchemaOperator'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:10 Creating new markdown for command 'Invoke-MgFunctionApplicationSynchronizationJobSchema'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:13 Creating new markdown for command 'Invoke-MgFunctionApplicationSynchronizationTemplateSchema'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:14 Creating new markdown for command 'Invoke-MgFunctionServicePrincipalSynchronizationJobSchema'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:17 Creating new markdown for command 'Invoke-MgFunctionServicePrincipalSynchronizationTemplateSchema'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:19 Creating new markdown for command 'Invoke-MgInstantiateApplicationTemplate'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:21 Creating new markdown for command 'Invoke-MgParseApplicationSynchronizationJobSchemaExpression'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:24 Creating new markdown for command 'Invoke-MgParseApplicationSynchronizationTemplateSchemaExpression'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:27 Creating new markdown for command 'Invoke-MgParseServicePrincipalSynchronizationJobSchemaExpression'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:30 Creating new markdown for command 'Invoke-MgParseServicePrincipalSynchronizationTemplateSchemaExpression'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:33 Creating new markdown for command 'New-MgApplicationSynchronizationJob'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:36 Creating new markdown for command 'New-MgApplicationSynchronizationJobOnDemand'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:39 Creating new markdown for command 'New-MgApplicationSynchronizationJobSchemaDirectory'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:41 Creating new markdown for command 'New-MgApplicationSynchronizationTemplate'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:44 Creating new markdown for command 'New-MgApplicationSynchronizationTemplateSchemaDirectory'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:46 Creating new markdown for command 'New-MgApplicationTemplate'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:48 Creating new markdown for command 'New-MgOnPremisePublishingProfile'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:50 Creating new markdown for command 'New-MgOnPremisePublishingProfileAgent'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:53 Creating new markdown for command 'New-MgOnPremisePublishingProfileAgentGroup'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:57 Creating new markdown for command 'New-MgOnPremisePublishingProfileAgentGroupAgent'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:01 Creating new markdown for command 'New-MgOnPremisePublishingProfileAgentGroupPublishedResource'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:04 Creating new markdown for command 'New-MgOnPremisePublishingProfileAgentGroupPublishedResourceAgentGroup'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:07 Creating new markdown for command 'New-MgOnPremisePublishingProfileConnector'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:09 Creating new markdown for command 'New-MgOnPremisePublishingProfileConnectorGroup'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:12 Creating new markdown for command 'New-MgOnPremisePublishingProfileConnectorGroupApplicationByRef'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:13 Creating new markdown for command 'New-MgOnPremisePublishingProfileConnectorMemberOf'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:16 Creating new markdown for command 'New-MgOnPremisePublishingProfilePublishedResource'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:18 Creating new markdown for command 'New-MgOnPremisePublishingProfilePublishedResourceAgentGroup'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:22 Creating new markdown for command 'New-MgOnPremisePublishingProfilePublishedResourceAgentGroupAgent'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:24 Creating new markdown for command 'New-MgOnPremisePublishingProfilePublishedResourceAgentGroupPublishedResource'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:26 Creating new markdown for command 'New-MgServicePrincipalLicenseDetail'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:28 Creating new markdown for command 'New-MgServicePrincipalPasswordSingleSignOnCredentials'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:31 Creating new markdown for command 'New-MgServicePrincipalSynchronizationJob'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:33 Creating new markdown for command 'New-MgServicePrincipalSynchronizationJobOnDemand'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:35 Creating new markdown for command 'New-MgServicePrincipalSynchronizationJobSchemaDirectory'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:38 Creating new markdown for command 'New-MgServicePrincipalSynchronizationTemplate'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:40 Creating new markdown for command 'New-MgServicePrincipalSynchronizationTemplateSchemaDirectory'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:42 Creating new markdown for command 'Ping-MgApplicationsSynchronization'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:44 Creating new markdown for command 'Ping-MgServicePrincipalsSynchronization'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:45 Creating new markdown for command 'Remove-MgApplicationConnectorGroupByRef'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:47 Creating new markdown for command 'Remove-MgApplicationSynchronization'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:49 Creating new markdown for command 'Remove-MgApplicationSynchronizationJob'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:51 Creating new markdown for command 'Remove-MgApplicationSynchronizationJobSchema'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:53 Creating new markdown for command 'Remove-MgApplicationSynchronizationJobSchemaDirectory'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:55 Creating new markdown for command 'Remove-MgApplicationSynchronizationTemplate'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:57 Creating new markdown for command 'Remove-MgApplicationSynchronizationTemplateSchema'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:58 Creating new markdown for command 'Remove-MgApplicationSynchronizationTemplateSchemaDirectory'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:00 Creating new markdown for command 'Remove-MgApplicationTemplate'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:02 Creating new markdown for command 'Remove-MgOnPremisePublishingProfile'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:04 Creating new markdown for command 'Remove-MgOnPremisePublishingProfileAgent'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:05 Creating new markdown for command 'Remove-MgOnPremisePublishingProfileAgentGroup'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:08 Creating new markdown for command 'Remove-MgOnPremisePublishingProfileAgentGroupAgent'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:10 Creating new markdown for command 'Remove-MgOnPremisePublishingProfileAgentGroupPublishedResource'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:13 Creating new markdown for command 'Remove-MgOnPremisePublishingProfileAgentGroupPublishedResourceAgentGroup'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:15 Creating new markdown for command 'Remove-MgOnPremisePublishingProfileConnector'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:17 Creating new markdown for command 'Remove-MgOnPremisePublishingProfileConnectorGroup'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:19 Creating new markdown for command 'Remove-MgOnPremisePublishingProfileConnectorMemberOf'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:21 Creating new markdown for command 'Remove-MgOnPremisePublishingProfilePublishedResource'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:23 Creating new markdown for command 'Remove-MgOnPremisePublishingProfilePublishedResourceAgentGroup'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:25 Creating new markdown for command 'Remove-MgOnPremisePublishingProfilePublishedResourceAgentGroupAgent'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:27 Creating new markdown for command 'Remove-MgOnPremisePublishingProfilePublishedResourceAgentGroupPublishedResource'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:29 Creating new markdown for command 'Remove-MgServicePrincipalLicenseDetail'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:31 Creating new markdown for command 'Remove-MgServicePrincipalPasswordSingleSignOnCredentials'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:33 Creating new markdown for command 'Remove-MgServicePrincipalSynchronization'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:34 Creating new markdown for command 'Remove-MgServicePrincipalSynchronizationJob'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:36 Creating new markdown for command 'Remove-MgServicePrincipalSynchronizationJobSchema'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:38 Creating new markdown for command 'Remove-MgServicePrincipalSynchronizationJobSchemaDirectory'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:42 Creating new markdown for command 'Remove-MgServicePrincipalSynchronizationTemplate'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:43 Creating new markdown for command 'Remove-MgServicePrincipalSynchronizationTemplateSchema'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:45 Creating new markdown for command 'Remove-MgServicePrincipalSynchronizationTemplateSchemaDirectory'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:46 Creating new markdown for command 'Restart-MgApplicationSynchronizationJob'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:48 Creating new markdown for command 'Restart-MgServicePrincipalSynchronizationJob'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:49 Creating new markdown for command 'Set-MgApplicationConnectorGroupByRef'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:51 Creating new markdown for command 'Start-MgApplicationSynchronizationJob'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:53 Creating new markdown for command 'Start-MgServicePrincipalSynchronizationJob'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:54 Creating new markdown for command 'Stop-MgApplicationSynchronizationJob'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:55 Creating new markdown for command 'Stop-MgServicePrincipalSynchronizationJob'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:57 Creating new markdown for command 'Suspend-MgApplicationSynchronizationJob'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:58 Creating new markdown for command 'Suspend-MgServicePrincipalSynchronizationJob'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:59 Creating new markdown for command 'Test-MgApplicationSynchronizationJobCredentials'
+[Update-MarkdownHelpModule] 11/23/2020 14:56:01 Creating new markdown for command 'Test-MgServicePrincipalSynchronizationJobCredentials'
+[Update-MarkdownHelpModule] 11/23/2020 14:56:03 Creating new markdown for command 'Update-MgApplicationSynchronization'
+[Update-MarkdownHelpModule] 11/23/2020 14:56:05 Creating new markdown for command 'Update-MgApplicationSynchronizationJob'
+[Update-MarkdownHelpModule] 11/23/2020 14:56:07 Creating new markdown for command 'Update-MgApplicationSynchronizationJobSchema'
+[Update-MarkdownHelpModule] 11/23/2020 14:56:09 Creating new markdown for command 'Update-MgApplicationSynchronizationJobSchemaDirectory'
+[Update-MarkdownHelpModule] 11/23/2020 14:56:10 Creating new markdown for command 'Update-MgApplicationSynchronizationTemplate'
+[Update-MarkdownHelpModule] 11/23/2020 14:56:12 Creating new markdown for command 'Update-MgApplicationSynchronizationTemplateSchema'
+[Update-MarkdownHelpModule] 11/23/2020 14:56:14 Creating new markdown for command 'Update-MgApplicationSynchronizationTemplateSchemaDirectory'
+[Update-MarkdownHelpModule] 11/23/2020 14:56:16 Creating new markdown for command 'Update-MgApplicationTemplate'
+[Update-MarkdownHelpModule] 11/23/2020 14:56:17 Creating new markdown for command 'Update-MgOnPremisePublishingProfile'
+[Update-MarkdownHelpModule] 11/23/2020 14:56:19 Creating new markdown for command 'Update-MgOnPremisePublishingProfileAgent'
+[Update-MarkdownHelpModule] 11/23/2020 14:56:21 Creating new markdown for command 'Update-MgOnPremisePublishingProfileAgentGroup'
+[Update-MarkdownHelpModule] 11/23/2020 14:56:24 Creating new markdown for command 'Update-MgOnPremisePublishingProfileAgentGroupAgent'
+[Update-MarkdownHelpModule] 11/23/2020 14:56:26 Creating new markdown for command 'Update-MgOnPremisePublishingProfileAgentGroupPublishedResource'
+[Update-MarkdownHelpModule] 11/23/2020 14:56:28 Creating new markdown for command 'Update-MgOnPremisePublishingProfileAgentGroupPublishedResourceAgentGroup'
+[Update-MarkdownHelpModule] 11/23/2020 14:56:31 Creating new markdown for command 'Update-MgOnPremisePublishingProfileConnector'
+[Update-MarkdownHelpModule] 11/23/2020 14:56:33 Creating new markdown for command 'Update-MgOnPremisePublishingProfileConnectorGroup'
+[Update-MarkdownHelpModule] 11/23/2020 14:56:35 Creating new markdown for command 'Update-MgOnPremisePublishingProfileConnectorMemberOf'
+[Update-MarkdownHelpModule] 11/23/2020 14:56:36 Creating new markdown for command 'Update-MgOnPremisePublishingProfilePublishedResource'
+[Update-MarkdownHelpModule] 11/23/2020 14:56:38 Creating new markdown for command 'Update-MgOnPremisePublishingProfilePublishedResourceAgentGroup'
+[Update-MarkdownHelpModule] 11/23/2020 14:56:40 Creating new markdown for command 'Update-MgOnPremisePublishingProfilePublishedResourceAgentGroupAgent'
+[Update-MarkdownHelpModule] 11/23/2020 14:56:42 Creating new markdown for command 'Update-MgOnPremisePublishingProfilePublishedResourceAgentGroupPublishedResource'
+[Update-MarkdownHelpModule] 11/23/2020 14:56:43 Creating new markdown for command 'Update-MgServicePrincipalLicenseDetail'
+[Update-MarkdownHelpModule] 11/23/2020 14:56:45 Creating new markdown for command 'Update-MgServicePrincipalPasswordSingleSignOnCredentials'
+[Update-MarkdownHelpModule] 11/23/2020 14:56:46 Creating new markdown for command 'Update-MgServicePrincipalSynchronization'
+[Update-MarkdownHelpModule] 11/23/2020 14:56:48 Creating new markdown for command 'Update-MgServicePrincipalSynchronizationJob'
+[Update-MarkdownHelpModule] 11/23/2020 14:56:50 Creating new markdown for command 'Update-MgServicePrincipalSynchronizationJobSchema'
+[Update-MarkdownHelpModule] 11/23/2020 14:56:52 Creating new markdown for command 'Update-MgServicePrincipalSynchronizationJobSchemaDirectory'
+[Update-MarkdownHelpModule] 11/23/2020 14:56:53 Creating new markdown for command 'Update-MgServicePrincipalSynchronizationTemplate'
+[Update-MarkdownHelpModule] 11/23/2020 14:56:54 Creating new markdown for command 'Update-MgServicePrincipalSynchronizationTemplateSchema'
+[Update-MarkdownHelpModule] 11/23/2020 14:56:56 Creating new markdown for command 'Update-MgServicePrincipalSynchronizationTemplateSchemaDirectory'

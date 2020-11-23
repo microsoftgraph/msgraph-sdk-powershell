@@ -1,0 +1,1489 @@
+
+[Update-MarkdownHelpModule] 11/23/2020 14:51:36 Determined module name for '.\src\CloudCommunications\CloudCommunications\help' as 'Microsoft.Graph.CloudCommunications'.
+[Update-MarkdownHelpModule] 11/23/2020 14:51:36 [Update-MarkdownHelpModule]11/23/2020 2:51:36 PM
+[Update-MarkdownHelpModule] 11/23/2020 14:51:36 Updating documents for module 'Microsoft.Graph.CloudCommunications' in .\src\CloudCommunications\CloudCommunications\help
+---- UPDATING Cmdlet : Get-MgCommunicationCall ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgCommunicationCall ----
+
+
+---- UPDATING Cmdlet : Get-MgCommunicationCallOperation ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgCommunicationCallOperation ----
+
+
+---- UPDATING Cmdlet : Get-MgCommunicationCallParticipant ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: List
+
+	Parameter Set Name Updated: List1
+		Old Set: List
+		New Set: List1
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgCommunicationCallParticipant ----
+
+
+---- UPDATING Cmdlet : Get-MgCommunicationCallRecord ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgCommunicationCallRecord ----
+
+
+---- UPDATING Cmdlet : Get-MgCommunicationCallRecordSession ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgCommunicationCallRecordSession ----
+
+
+---- UPDATING Cmdlet : Get-MgCommunicationOnlineMeeting ----
+
+	Parameter Set Added: Get2
+
+	Parameter Set Added: Get3
+
+	Parameter Set Added: GetExpanded1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetExpanded
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: List
+
+	Parameter Set Name Updated: GetExpanded1
+		Old Set: GetExpanded
+		New Set: GetExpanded1
+
+	Parameter Set Name Updated: Get2
+		Old Set: Get
+		New Set: Get2
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+	Parameter Set Name Updated: List1
+		Old Set: List
+		New Set: List1
+
+	Parameter Set Name Updated: Get3
+		Old Set: Get1
+		New Set: Get3
+
+	Parameter Updated: BodyParameter
+		Type updated from IPaths1Pc6SxrCommunicationsOnlinemeetingsMicrosoftGraphCreateorgetPostRequestbodyContentApplicationJsonSchema1 to IPaths1Pc6SxrCommunicationsOnlinemeetingsMicrosoftGraphCreateorgetPostRequestbodyContentApplicationJsonSchema
+
+	Parameter Updated: Participants
+		Type updated from IMicrosoftGraphMeetingParticipants to IMicrosoftGraphMeetingParticipants1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgCommunicationOnlineMeeting ----
+
+
+---- UPDATING Cmdlet : Get-MgUserOnlineMeeting ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: List
+
+	Parameter Set Name Updated: List1
+		Old Set: List
+		New Set: List1
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserOnlineMeeting ----
+
+
+---- UPDATING Cmdlet : Invoke-MgAnswerCommunicationCall ----
+
+	Parameter Set Added: Answer
+
+	Parameter Set Added: AnswerExpanded
+
+	Parameter Set Added: AnswerViaIdentity
+
+	Parameter Set Added: AnswerViaIdentityExpanded
+
+	Parameter Set Deleted: Answer1
+
+	Parameter Set Deleted: AnswerExpanded1
+
+	Parameter Set Deleted: AnswerViaIdentity1
+
+	Parameter Set Deleted: AnswerViaIdentityExpanded1
+
+	Parameter Set Name Updated: Answer
+		Old Set: Answer1
+		New Set: Answer
+
+	Parameter Set Name Updated: AnswerViaIdentity
+		Old Set: AnswerViaIdentity1
+		New Set: AnswerViaIdentity
+
+	Parameter Added: ParticipantCapacity
+
+	Parameter Updated: BodyParameter
+		Type updated from IPathsQvpqn4CommunicationsCallsCallIdMicrosoftGraphAnswerPostRequestbodyContentApplicationJsonSchema1 to IPathsQvpqn4CommunicationsCallsCallIdMicrosoftGraphAnswerPostRequestbodyContentApplicationJsonSchema
+
+	Parameter Updated: MediaConfig
+		Type updated from Hashtable to IMicrosoftGraphMediaConfig1
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgAnswerCommunicationCall ----
+
+
+---- UPDATING Cmdlet : Invoke-MgCreateOrGetCommunicationOnlineMeeting ----
+
+	Parameter Set Added: Create2
+
+	Parameter Set Added: CreateExpanded2
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Name Updated: Create2
+		Old Set: Create
+		New Set: Create2
+
+	Parameter Added: AccessLevel
+
+	Parameter Added: AlternativeRecordingInputFile
+
+	Parameter Added: AttendeeReportInputFile
+
+	Parameter Added: BroadcastSettings
+
+	Parameter Added: CanceledDateTime
+
+	Parameter Added: Capabilities
+
+	Parameter Added: EntryExitAnnouncement
+
+	Parameter Added: ExpirationDateTime
+
+	Parameter Added: IsBroadcast
+
+	Parameter Added: IsCancelled
+
+	Parameter Added: JoinUrl
+
+	Parameter Added: RecordingInputFile
+
+	Parameter Deleted: JoinWebUrl
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphOnlineMeeting to IMicrosoftGraphOnlineMeeting1
+
+	Parameter Updated: Participants
+		Type updated from IMicrosoftGraphMeetingParticipants to IMicrosoftGraphMeetingParticipants1
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgCreateOrGetCommunicationOnlineMeeting ----
+
+
+---- UPDATING Cmdlet : Invoke-MgInviteCommunicationCallParticipant ----
+
+	Parameter Set Added: Invite1
+
+	Parameter Set Added: InviteExpanded1
+
+	Parameter Set Added: InviteViaIdentity1
+
+	Parameter Set Added: InviteViaIdentityExpanded1
+
+	Parameter Set Deleted: Invite
+
+	Parameter Set Deleted: InviteExpanded
+
+	Parameter Set Deleted: InviteViaIdentity
+
+	Parameter Set Deleted: InviteViaIdentityExpanded
+
+	Parameter Set Name Updated: InviteExpanded1
+		Old Set: InviteExpanded
+		New Set: InviteExpanded1
+
+	Parameter Set Name Updated: Invite1
+		Old Set: Invite
+		New Set: Invite1
+
+	Parameter Set Name Updated: InviteViaIdentityExpanded1
+		Old Set: InviteViaIdentityExpanded
+		New Set: InviteViaIdentityExpanded1
+
+	Parameter Set Name Updated: InviteViaIdentity1
+		Old Set: InviteViaIdentity
+		New Set: InviteViaIdentity1
+
+	Parameter Updated: BodyParameter
+		Type updated from IPaths1Bh76WaCommunicationsCallsCallIdParticipantsMicrosoftGraphInvitePostRequestbodyContentApplicationJsonSchema1 to IPaths1Bh76WaCommunicationsCallsCallIdParticipantsMicrosoftGraphInvitePostRequestbodyContentApplicationJsonSchema
+
+	Parameter Updated: Participants
+		Type updated from IMicrosoftGraphInvitationParticipantInfo[] to IMicrosoftGraphInvitationParticipantInfo1[]
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgInviteCommunicationCallParticipant ----
+
+
+---- UPDATING Cmdlet : Invoke-MgKeepCommunicationCallAlive ----
+
+	Parameter Set Added: Keep
+
+	Parameter Set Added: KeepViaIdentity
+
+	Parameter Set Deleted: Keep1
+
+	Parameter Set Deleted: KeepViaIdentity1
+
+	Parameter Set Name Updated: Keep
+		Old Set: Keep1
+		New Set: Keep
+
+	Parameter Set Name Updated: KeepViaIdentity
+		Old Set: KeepViaIdentity1
+		New Set: KeepViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgKeepCommunicationCallAlive ----
+
+
+---- UPDATING Cmdlet : Invoke-MgLogCommunicationCallTeleconferenceDeviceQuality ----
+
+	Parameter Set Added: Log1
+
+	Parameter Set Added: LogExpanded1
+
+	Parameter Set Deleted: Log
+
+	Parameter Set Deleted: LogExpanded
+
+	Parameter Set Name Updated: LogExpanded1
+		Old Set: LogExpanded
+		New Set: LogExpanded1
+
+	Parameter Set Name Updated: Log1
+		Old Set: Log
+		New Set: Log1
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgLogCommunicationCallTeleconferenceDeviceQuality ----
+
+
+---- UPDATING Cmdlet : Invoke-MgMuteCommunicationCall ----
+
+	Parameter Set Added: Mute
+
+	Parameter Set Added: MuteExpanded
+
+	Parameter Set Added: MuteViaIdentity
+
+	Parameter Set Added: MuteViaIdentityExpanded
+
+	Parameter Set Deleted: Mute1
+
+	Parameter Set Deleted: MuteExpanded1
+
+	Parameter Set Deleted: MuteViaIdentity1
+
+	Parameter Set Deleted: MuteViaIdentityExpanded1
+
+	Parameter Set Name Updated: MuteExpanded
+		Old Set: MuteExpanded1
+		New Set: MuteExpanded
+
+	Parameter Set Name Updated: Mute
+		Old Set: Mute1
+		New Set: Mute
+
+	Parameter Set Name Updated: MuteViaIdentityExpanded
+		Old Set: MuteViaIdentityExpanded1
+		New Set: MuteViaIdentityExpanded
+
+	Parameter Set Name Updated: MuteViaIdentity
+		Old Set: MuteViaIdentity1
+		New Set: MuteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgMuteCommunicationCall ----
+
+
+---- UPDATING Cmdlet : Invoke-MgMuteCommunicationCallParticipant ----
+
+	Parameter Set Added: Mute2
+
+	Parameter Set Added: MuteExpanded2
+
+	Parameter Set Added: MuteViaIdentity2
+
+	Parameter Set Added: MuteViaIdentityExpanded2
+
+	Parameter Set Deleted: Mute
+
+	Parameter Set Deleted: MuteExpanded
+
+	Parameter Set Deleted: MuteViaIdentity
+
+	Parameter Set Deleted: MuteViaIdentityExpanded
+
+	Parameter Set Name Updated: MuteViaIdentity2
+		Old Set: MuteViaIdentity
+		New Set: MuteViaIdentity2
+
+	Parameter Added: Participants
+
+	Parameter Deleted: ParticipantId
+
+	Parameter Updated: BodyParameter
+		Type updated from IPathsTobgxoCommunicationsCallsCallIdParticipantsParticipantIdMicrosoftGraphMutePostRequestbodyContentApplicationJsonSchema to IPathsKpvac3CommunicationsCallsCallIdParticipantsMicrosoftGraphMuteallPostRequestbodyContentApplicationJsonSchema
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgMuteCommunicationCallParticipant ----
+
+
+---- UPDATING Cmdlet : Invoke-MgPlayCommunicationCallPrompt ----
+
+	Parameter Set Added: Play
+
+	Parameter Set Added: PlayExpanded
+
+	Parameter Set Added: PlayViaIdentity
+
+	Parameter Set Added: PlayViaIdentityExpanded
+
+	Parameter Set Deleted: Play1
+
+	Parameter Set Deleted: PlayExpanded1
+
+	Parameter Set Deleted: PlayViaIdentity1
+
+	Parameter Set Deleted: PlayViaIdentityExpanded1
+
+	Parameter Set Name Updated: Play
+		Old Set: Play1
+		New Set: Play
+
+	Parameter Set Name Updated: PlayViaIdentity
+		Old Set: PlayViaIdentity1
+		New Set: PlayViaIdentity
+
+	Parameter Added: Loop
+
+	Parameter Updated: BodyParameter
+		Type updated from IPaths1Gzqcv2CommunicationsCallsCallIdMicrosoftGraphPlaypromptPostRequestbodyContentApplicationJsonSchema to IPaths1Gzqcv2CommunicationsCallsCallIdMicrosoftGraphPlaypromptPostRequestbodyContentApplicationJsonSchema1
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgPlayCommunicationCallPrompt ----
+
+
+---- UPDATING Cmdlet : Invoke-MgRecordCommunicationCallResponse ----
+
+	Parameter Set Added: Record
+
+	Parameter Set Added: RecordExpanded
+
+	Parameter Set Added: RecordViaIdentity
+
+	Parameter Set Added: RecordViaIdentityExpanded
+
+	Parameter Set Deleted: Record1
+
+	Parameter Set Deleted: RecordExpanded1
+
+	Parameter Set Deleted: RecordViaIdentity1
+
+	Parameter Set Deleted: RecordViaIdentityExpanded1
+
+	Parameter Set Name Updated: Record
+		Old Set: Record1
+		New Set: Record
+
+	Parameter Set Name Updated: RecordViaIdentity
+		Old Set: RecordViaIdentity1
+		New Set: RecordViaIdentity
+
+	Parameter Added: StreamWhileRecording
+
+	Parameter Updated: BodyParameter
+		Type updated from IPaths14Wb7KqCommunicationsCallsCallIdMicrosoftGraphRecordresponsePostRequestbodyContentApplicationJsonSchema to IPaths14Wb7KqCommunicationsCallsCallIdMicrosoftGraphRecordresponsePostRequestbodyContentApplicationJsonSchema1
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgRecordCommunicationCallResponse ----
+
+
+---- UPDATING Cmdlet : Invoke-MgRedirectCommunicationCall ----
+
+	Parameter Set Added: Redirect
+
+	Parameter Set Added: RedirectExpanded
+
+	Parameter Set Added: RedirectViaIdentity
+
+	Parameter Set Added: RedirectViaIdentityExpanded
+
+	Parameter Set Deleted: Redirect1
+
+	Parameter Set Deleted: RedirectExpanded1
+
+	Parameter Set Deleted: RedirectViaIdentity1
+
+	Parameter Set Deleted: RedirectViaIdentityExpanded1
+
+	Parameter Set Name Updated: Redirect
+		Old Set: Redirect1
+		New Set: Redirect
+
+	Parameter Set Name Updated: RedirectViaIdentity
+		Old Set: RedirectViaIdentity1
+		New Set: RedirectViaIdentity
+
+	Parameter Added: MaskCallee
+
+	Parameter Added: MaskCaller
+
+	Parameter Added: TargetDisposition
+
+	Parameter Updated: BodyParameter
+		Type updated from IPaths183Gi8UCommunicationsCallsCallIdMicrosoftGraphRedirectPostRequestbodyContentApplicationJsonSchema to IPaths183Gi8UCommunicationsCallsCallIdMicrosoftGraphRedirectPostRequestbodyContentApplicationJsonSchema1
+
+	Parameter Updated: Targets
+		Type updated from IMicrosoftGraphInvitationParticipantInfo[] to IMicrosoftGraphInvitationParticipantInfo1[]
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgRedirectCommunicationCall ----
+
+
+---- UPDATING Cmdlet : Invoke-MgRejectCommunicationCall ----
+
+	Parameter Set Added: Reject
+
+	Parameter Set Added: RejectExpanded
+
+	Parameter Set Added: RejectViaIdentity
+
+	Parameter Set Added: RejectViaIdentityExpanded
+
+	Parameter Set Deleted: Reject1
+
+	Parameter Set Deleted: RejectExpanded1
+
+	Parameter Set Deleted: RejectViaIdentity1
+
+	Parameter Set Deleted: RejectViaIdentityExpanded1
+
+	Parameter Set Name Updated: RejectExpanded
+		Old Set: RejectExpanded1
+		New Set: RejectExpanded
+
+	Parameter Set Name Updated: Reject
+		Old Set: Reject1
+		New Set: Reject
+
+	Parameter Set Name Updated: RejectViaIdentityExpanded
+		Old Set: RejectViaIdentityExpanded1
+		New Set: RejectViaIdentityExpanded
+
+	Parameter Set Name Updated: RejectViaIdentity
+		Old Set: RejectViaIdentity1
+		New Set: RejectViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgRejectCommunicationCall ----
+
+
+---- UPDATING Cmdlet : Invoke-MgSubscribeCommunicationCallToTone ----
+
+	Parameter Set Added: Subscribe
+
+	Parameter Set Added: SubscribeExpanded
+
+	Parameter Set Added: SubscribeViaIdentity
+
+	Parameter Set Added: SubscribeViaIdentityExpanded
+
+	Parameter Set Deleted: Subscribe1
+
+	Parameter Set Deleted: SubscribeExpanded1
+
+	Parameter Set Deleted: SubscribeViaIdentity1
+
+	Parameter Set Deleted: SubscribeViaIdentityExpanded1
+
+	Parameter Set Name Updated: SubscribeExpanded
+		Old Set: SubscribeExpanded1
+		New Set: SubscribeExpanded
+
+	Parameter Set Name Updated: Subscribe
+		Old Set: Subscribe1
+		New Set: Subscribe
+
+	Parameter Set Name Updated: SubscribeViaIdentityExpanded
+		Old Set: SubscribeViaIdentityExpanded1
+		New Set: SubscribeViaIdentityExpanded
+
+	Parameter Set Name Updated: SubscribeViaIdentity
+		Old Set: SubscribeViaIdentity1
+		New Set: SubscribeViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgSubscribeCommunicationCallToTone ----
+
+
+---- UPDATING Cmdlet : Invoke-MgUnmuteCommunicationCall ----
+
+	Parameter Set Added: Unmute
+
+	Parameter Set Added: UnmuteExpanded
+
+	Parameter Set Added: UnmuteViaIdentity
+
+	Parameter Set Added: UnmuteViaIdentityExpanded
+
+	Parameter Set Deleted: Unmute1
+
+	Parameter Set Deleted: UnmuteExpanded1
+
+	Parameter Set Deleted: UnmuteViaIdentity1
+
+	Parameter Set Deleted: UnmuteViaIdentityExpanded1
+
+	Parameter Set Name Updated: UnmuteExpanded
+		Old Set: UnmuteExpanded1
+		New Set: UnmuteExpanded
+
+	Parameter Set Name Updated: Unmute
+		Old Set: Unmute1
+		New Set: Unmute
+
+	Parameter Set Name Updated: UnmuteViaIdentityExpanded
+		Old Set: UnmuteViaIdentityExpanded1
+		New Set: UnmuteViaIdentityExpanded
+
+	Parameter Set Name Updated: UnmuteViaIdentity
+		Old Set: UnmuteViaIdentity1
+		New Set: UnmuteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgUnmuteCommunicationCall ----
+
+
+---- UPDATING Cmdlet : Move-MgCommunicationCall ----
+
+	Parameter Set Added: Transfer
+
+	Parameter Set Added: TransferExpanded
+
+	Parameter Set Added: TransferViaIdentity
+
+	Parameter Set Added: TransferViaIdentityExpanded
+
+	Parameter Set Deleted: Transfer1
+
+	Parameter Set Deleted: TransferExpanded1
+
+	Parameter Set Deleted: TransferViaIdentity1
+
+	Parameter Set Deleted: TransferViaIdentityExpanded1
+
+	Parameter Set Name Updated: TransferExpanded
+		Old Set: TransferExpanded1
+		New Set: TransferExpanded
+
+	Parameter Set Name Updated: Transfer
+		Old Set: Transfer1
+		New Set: Transfer
+
+	Parameter Set Name Updated: TransferViaIdentityExpanded
+		Old Set: TransferViaIdentityExpanded1
+		New Set: TransferViaIdentityExpanded
+
+	Parameter Set Name Updated: TransferViaIdentity
+		Old Set: TransferViaIdentity1
+		New Set: TransferViaIdentity
+
+	Parameter Updated: BodyParameter
+		Type updated from IPaths4Zbm7LCommunicationsCallsCallIdMicrosoftGraphTransferPostRequestbodyContentApplicationJsonSchema1 to IPaths4Zbm7LCommunicationsCallsCallIdMicrosoftGraphTransferPostRequestbodyContentApplicationJsonSchema
+
+	Parameter Updated: TransferTarget
+		Type updated from IMicrosoftGraphInvitationParticipantInfo to IMicrosoftGraphInvitationParticipantInfo1
+
+---- COMPLETED UPDATING Cmdlet : Move-MgCommunicationCall ----
+
+
+---- UPDATING Cmdlet : New-MgCommunicationCall ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Added: ActiveModalities
+
+	Parameter Added: AnsweredBy
+
+	Parameter Added: AudioRoutingGroups
+
+	Parameter Added: MeetingCapability
+
+	Parameter Added: RingingTimeoutInSeconds
+
+	Parameter Added: RoutingPolicies
+
+	Parameter Added: TerminationReason
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphCall to IMicrosoftGraphCall1
+
+	Parameter Updated: MediaConfig
+		Type updated from Hashtable to IMicrosoftGraphMediaConfig1
+
+	Parameter Updated: MeetingInfo
+		Type updated from Hashtable to IMicrosoftGraphMeetingInfo1
+
+	Parameter Updated: Operations
+		Type updated from IMicrosoftGraphCommsOperation[] to IMicrosoftGraphCommsOperation1[]
+
+	Parameter Updated: Participants
+		Type updated from IMicrosoftGraphParticipant[] to IMicrosoftGraphParticipant1[]
+
+	Parameter Updated: ResultInfo
+		Type updated from IMicrosoftGraphResultInfo to IMicrosoftGraphResultInfo1
+
+	Parameter Updated: Source
+		Type updated from IMicrosoftGraphParticipantInfo to IMicrosoftGraphParticipantInfo1
+
+	Parameter Updated: Targets
+		Type updated from IMicrosoftGraphInvitationParticipantInfo[] to IMicrosoftGraphInvitationParticipantInfo1[]
+
+---- COMPLETED UPDATING Cmdlet : New-MgCommunicationCall ----
+
+
+---- UPDATING Cmdlet : New-MgCommunicationCallOperation ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded
+		Old Set: CreateViaIdentityExpanded1
+		New Set: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphCommsOperation to IMicrosoftGraphCommsOperation1
+
+	Parameter Updated: ResultInfo
+		Type updated from IMicrosoftGraphResultInfo to IMicrosoftGraphResultInfo1
+
+---- COMPLETED UPDATING Cmdlet : New-MgCommunicationCallOperation ----
+
+
+---- UPDATING Cmdlet : New-MgCommunicationCallParticipant ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+	Parameter Added: Metadata
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphParticipant to IMicrosoftGraphParticipant1
+
+	Parameter Updated: Info
+		Type updated from IMicrosoftGraphParticipantInfo to IMicrosoftGraphParticipantInfo1
+
+	Parameter Updated: MediaStreams
+		Type updated from IMicrosoftGraphMediaStream[] to IMicrosoftGraphMediaStream1[]
+
+	Parameter Updated: RecordingInfo
+		Type updated from IMicrosoftGraphRecordingInfo to IMicrosoftGraphRecordingInfo1
+
+---- COMPLETED UPDATING Cmdlet : New-MgCommunicationCallParticipant ----
+
+
+---- UPDATING Cmdlet : New-MgCommunicationCallRecordSession ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded
+		Old Set: CreateViaIdentityExpanded1
+		New Set: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : New-MgCommunicationCallRecordSession ----
+
+
+---- UPDATING Cmdlet : New-MgCommunicationOnlineMeeting ----
+
+	Parameter Set Added: Create3
+
+	Parameter Set Added: CreateExpanded3
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Name Updated: CreateExpanded3
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded3
+
+	Parameter Set Name Updated: Create3
+		Old Set: Create1
+		New Set: Create3
+
+	Parameter Updated: BodyParameter
+		Type updated from IPaths1Pc6SxrCommunicationsOnlinemeetingsMicrosoftGraphCreateorgetPostRequestbodyContentApplicationJsonSchema1 to IPaths1Pc6SxrCommunicationsOnlinemeetingsMicrosoftGraphCreateorgetPostRequestbodyContentApplicationJsonSchema
+
+	Parameter Updated: Participants
+		Type updated from IMicrosoftGraphMeetingParticipants to IMicrosoftGraphMeetingParticipants1
+
+---- COMPLETED UPDATING Cmdlet : New-MgCommunicationOnlineMeeting ----
+
+
+---- UPDATING Cmdlet : New-MgUserOnlineMeeting ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+	Parameter Added: AccessLevel
+
+	Parameter Added: AlternativeRecordingInputFile
+
+	Parameter Added: AttendeeReportInputFile
+
+	Parameter Added: BroadcastSettings
+
+	Parameter Added: CanceledDateTime
+
+	Parameter Added: Capabilities
+
+	Parameter Added: EntryExitAnnouncement
+
+	Parameter Added: ExpirationDateTime
+
+	Parameter Added: IsBroadcast
+
+	Parameter Added: IsCancelled
+
+	Parameter Added: JoinUrl
+
+	Parameter Added: RecordingInputFile
+
+	Parameter Deleted: JoinWebUrl
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphOnlineMeeting to IMicrosoftGraphOnlineMeeting1
+
+	Parameter Updated: Participants
+		Type updated from IMicrosoftGraphMeetingParticipants to IMicrosoftGraphMeetingParticipants1
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserOnlineMeeting ----
+
+
+---- UPDATING Cmdlet : Remove-MgCommunicationCall ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgCommunicationCall ----
+
+
+---- UPDATING Cmdlet : Remove-MgCommunicationCallOperation ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgCommunicationCallOperation ----
+
+
+---- UPDATING Cmdlet : Remove-MgCommunicationCallParticipant ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgCommunicationCallParticipant ----
+
+
+---- UPDATING Cmdlet : Remove-MgCommunicationCallRecordSession ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgCommunicationCallRecordSession ----
+
+
+---- UPDATING Cmdlet : Remove-MgCommunicationOnlineMeeting ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgCommunicationOnlineMeeting ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserOnlineMeeting ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserOnlineMeeting ----
+
+
+---- UPDATING Cmdlet : Rename-MgCommunicationCallScreenSharingRole ----
+
+	Parameter Set Added: Change
+
+	Parameter Set Added: ChangeExpanded
+
+	Parameter Set Added: ChangeViaIdentity
+
+	Parameter Set Added: ChangeViaIdentityExpanded
+
+	Parameter Set Deleted: Change1
+
+	Parameter Set Deleted: ChangeExpanded1
+
+	Parameter Set Deleted: ChangeViaIdentity1
+
+	Parameter Set Deleted: ChangeViaIdentityExpanded1
+
+	Parameter Set Name Updated: ChangeExpanded
+		Old Set: ChangeExpanded1
+		New Set: ChangeExpanded
+
+	Parameter Set Name Updated: Change
+		Old Set: Change1
+		New Set: Change
+
+	Parameter Set Name Updated: ChangeViaIdentityExpanded
+		Old Set: ChangeViaIdentityExpanded1
+		New Set: ChangeViaIdentityExpanded
+
+	Parameter Set Name Updated: ChangeViaIdentity
+		Old Set: ChangeViaIdentity1
+		New Set: ChangeViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Rename-MgCommunicationCallScreenSharingRole ----
+
+
+---- UPDATING Cmdlet : Stop-MgCommunicationCallMediaProcessing ----
+
+	Parameter Set Added: Cancel
+
+	Parameter Set Added: CancelExpanded
+
+	Parameter Set Added: CancelViaIdentity
+
+	Parameter Set Added: CancelViaIdentityExpanded
+
+	Parameter Set Deleted: Cancel1
+
+	Parameter Set Deleted: CancelExpanded1
+
+	Parameter Set Deleted: CancelViaIdentity1
+
+	Parameter Set Deleted: CancelViaIdentityExpanded1
+
+	Parameter Set Name Updated: CancelExpanded
+		Old Set: CancelExpanded1
+		New Set: CancelExpanded
+
+	Parameter Set Name Updated: Cancel
+		Old Set: Cancel1
+		New Set: Cancel
+
+	Parameter Set Name Updated: CancelViaIdentityExpanded
+		Old Set: CancelViaIdentityExpanded1
+		New Set: CancelViaIdentityExpanded
+
+	Parameter Set Name Updated: CancelViaIdentity
+		Old Set: CancelViaIdentity1
+		New Set: CancelViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Stop-MgCommunicationCallMediaProcessing ----
+
+
+---- UPDATING Cmdlet : Update-MgCommunicationCallOperation ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphCommsOperation to IMicrosoftGraphCommsOperation1
+
+	Parameter Updated: ResultInfo
+		Type updated from IMicrosoftGraphResultInfo to IMicrosoftGraphResultInfo1
+
+---- COMPLETED UPDATING Cmdlet : Update-MgCommunicationCallOperation ----
+
+
+---- UPDATING Cmdlet : Update-MgCommunicationCallParticipant ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+	Parameter Added: Metadata
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphParticipant to IMicrosoftGraphParticipant1
+
+	Parameter Updated: Info
+		Type updated from IMicrosoftGraphParticipantInfo to IMicrosoftGraphParticipantInfo1
+
+	Parameter Updated: MediaStreams
+		Type updated from IMicrosoftGraphMediaStream[] to IMicrosoftGraphMediaStream1[]
+
+	Parameter Updated: RecordingInfo
+		Type updated from IMicrosoftGraphRecordingInfo to IMicrosoftGraphRecordingInfo1
+
+---- COMPLETED UPDATING Cmdlet : Update-MgCommunicationCallParticipant ----
+
+
+---- UPDATING Cmdlet : Update-MgCommunicationCallRecordingStatus ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Update-MgCommunicationCallRecordingStatus ----
+
+
+---- UPDATING Cmdlet : Update-MgCommunicationCallRecordSession ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Update-MgCommunicationCallRecordSession ----
+
+
+---- UPDATING Cmdlet : Update-MgCommunicationOnlineMeeting ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+	Parameter Added: AccessLevel
+
+	Parameter Added: AlternativeRecordingInputFile
+
+	Parameter Added: AttendeeReportInputFile
+
+	Parameter Added: BroadcastSettings
+
+	Parameter Added: CanceledDateTime
+
+	Parameter Added: Capabilities
+
+	Parameter Added: EntryExitAnnouncement
+
+	Parameter Added: ExpirationDateTime
+
+	Parameter Added: IsBroadcast
+
+	Parameter Added: IsCancelled
+
+	Parameter Added: JoinUrl
+
+	Parameter Added: RecordingInputFile
+
+	Parameter Deleted: JoinWebUrl
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphOnlineMeeting to IMicrosoftGraphOnlineMeeting1
+
+	Parameter Updated: Participants
+		Type updated from IMicrosoftGraphMeetingParticipants to IMicrosoftGraphMeetingParticipants1
+
+---- COMPLETED UPDATING Cmdlet : Update-MgCommunicationOnlineMeeting ----
+
+
+---- UPDATING Cmdlet : Update-MgUserOnlineMeeting ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+	Parameter Added: AccessLevel
+
+	Parameter Added: AlternativeRecordingInputFile
+
+	Parameter Added: AttendeeReportInputFile
+
+	Parameter Added: BroadcastSettings
+
+	Parameter Added: CanceledDateTime
+
+	Parameter Added: Capabilities
+
+	Parameter Added: EntryExitAnnouncement
+
+	Parameter Added: ExpirationDateTime
+
+	Parameter Added: IsBroadcast
+
+	Parameter Added: IsCancelled
+
+	Parameter Added: JoinUrl
+
+	Parameter Added: RecordingInputFile
+
+	Parameter Deleted: JoinWebUrl
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphOnlineMeeting to IMicrosoftGraphOnlineMeeting1
+
+	Parameter Updated: Participants
+		Type updated from IMicrosoftGraphMeetingParticipants to IMicrosoftGraphMeetingParticipants1
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserOnlineMeeting ----
+
+
+[Update-MarkdownHelpModule] 11/23/2020 14:53:42 Creating new markdown for command 'Get-MgCommunicationCallAudioRoutingGroup'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:43 Creating new markdown for command 'Get-MgCommunicationOnlineMeetingAlternativeRecording'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:44 Creating new markdown for command 'Get-MgCommunicationOnlineMeetingAttendeeReport'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:45 Creating new markdown for command 'Get-MgCommunicationOnlineMeetingRecording'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:46 Creating new markdown for command 'Get-MgCommunicationPresence'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:47 Creating new markdown for command 'Get-MgUserOnlineMeetingAlternativeRecording'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:48 Creating new markdown for command 'Get-MgUserOnlineMeetingAttendeeReport'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:49 Creating new markdown for command 'Get-MgUserOnlineMeetingRecording'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:49 Creating new markdown for command 'Get-MgUserPresence'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:50 Creating new markdown for command 'Invoke-MgMuteAllCommunicationCallParticipant'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:51 Creating new markdown for command 'Invoke-MgRecordCommunicationCall'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:53 Creating new markdown for command 'New-MgCommunicationCallAudioRoutingGroup'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:54 Creating new markdown for command 'New-MgCommunicationPresence'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:55 Creating new markdown for command 'Remove-MgCommunicationCallAudioRoutingGroup'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:56 Creating new markdown for command 'Remove-MgCommunicationPresence'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:57 Creating new markdown for command 'Remove-MgUserPresence'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:58 Creating new markdown for command 'Set-MgCommunicationOnlineMeetingAlternativeRecording'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:59 Creating new markdown for command 'Set-MgCommunicationOnlineMeetingAttendeeReport'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:00 Creating new markdown for command 'Set-MgCommunicationOnlineMeetingRecording'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:00 Creating new markdown for command 'Set-MgUserOnlineMeetingAlternativeRecording'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:01 Creating new markdown for command 'Set-MgUserOnlineMeetingAttendeeReport'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:02 Creating new markdown for command 'Set-MgUserOnlineMeetingRecording'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:03 Creating new markdown for command 'Update-MgCommunicationCallAudioRoutingGroup'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:04 Creating new markdown for command 'Update-MgCommunicationPresence'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:06 Creating new markdown for command 'Update-MgUserPresence'

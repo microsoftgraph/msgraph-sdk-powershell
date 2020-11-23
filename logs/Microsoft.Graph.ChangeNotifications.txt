@@ -1,0 +1,114 @@
+
+[Update-MarkdownHelpModule] 11/23/2020 14:46:45 Determined module name for '.\src\ChangeNotifications\ChangeNotifications\help' as 'Microsoft.Graph.ChangeNotifications'.
+[Update-MarkdownHelpModule] 11/23/2020 14:46:45 [Update-MarkdownHelpModule]11/23/2020 2:46:45 PM
+[Update-MarkdownHelpModule] 11/23/2020 14:46:45 Updating documents for module 'Microsoft.Graph.ChangeNotifications' in .\src\ChangeNotifications\ChangeNotifications\help
+---- UPDATING Cmdlet : Get-MgSubscription ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgSubscription ----
+
+
+---- UPDATING Cmdlet : New-MgSubscription ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Added: IncludeProperties
+
+	Parameter Added: NotificationQueryOptions
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphSubscription to IMicrosoftGraphSubscription1
+
+---- COMPLETED UPDATING Cmdlet : New-MgSubscription ----
+
+
+---- UPDATING Cmdlet : Remove-MgSubscription ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgSubscription ----
+
+
+---- UPDATING Cmdlet : Update-MgSubscription ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Added: IncludeProperties
+
+	Parameter Added: NotificationQueryOptions
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphSubscription to IMicrosoftGraphSubscription1
+
+---- COMPLETED UPDATING Cmdlet : Update-MgSubscription ----
+
+

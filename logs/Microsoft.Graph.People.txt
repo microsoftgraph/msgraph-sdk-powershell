@@ -1,0 +1,263 @@
+
+[Update-MarkdownHelpModule] 11/23/2020 14:52:21 Determined module name for '.\src\People\People\help' as 'Microsoft.Graph.People'.
+[Update-MarkdownHelpModule] 11/23/2020 14:52:21 [Update-MarkdownHelpModule]11/23/2020 2:52:21 PM
+[Update-MarkdownHelpModule] 11/23/2020 14:52:21 Updating documents for module 'Microsoft.Graph.People' in .\src\People\People\help
+[Update-MarkdownHelp] 11/23/2020 14:52:22 Command 'Get-MgUserLastSharedMethodInsight' not found in the session, skipping upgrade for 'C:\a\1\s\src\People\People\help\Get-MgUserLastSharedMethodInsight.md'.
+---- UPDATING Cmdlet : Get-MgUserPerson ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: List
+
+	Parameter Set Name Updated: List1
+		Old Set: List
+		New Set: List1
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserPerson ----
+
+
+[Update-MarkdownHelp] 11/23/2020 14:52:26 Command 'Get-MgUserSharedInsight' not found in the session, skipping upgrade for 'C:\a\1\s\src\People\People\help\Get-MgUserSharedInsight.md'.
+[Update-MarkdownHelp] 11/23/2020 14:52:27 Command 'Get-MgUserSharedLastSharedMethodInsightByRef' not found in the session, skipping upgrade for 'C:\a\1\s\src\People\People\help\Get-MgUserSharedLastSharedMethodInsightByRef.md'.
+[Update-MarkdownHelp] 11/23/2020 14:52:28 Command 'Get-MgUserSharedResourceInsight' not found in the session, skipping upgrade for 'C:\a\1\s\src\People\People\help\Get-MgUserSharedResourceInsight.md'.
+[Update-MarkdownHelp] 11/23/2020 14:52:29 Command 'Get-MgUserSharedResourceInsightByRef' not found in the session, skipping upgrade for 'C:\a\1\s\src\People\People\help\Get-MgUserSharedResourceInsightByRef.md'.
+[Update-MarkdownHelp] 11/23/2020 14:52:31 Command 'Get-MgUserTrendingInsight' not found in the session, skipping upgrade for 'C:\a\1\s\src\People\People\help\Get-MgUserTrendingInsight.md'.
+[Update-MarkdownHelp] 11/23/2020 14:52:32 Command 'Get-MgUserTrendingResourceInsight' not found in the session, skipping upgrade for 'C:\a\1\s\src\People\People\help\Get-MgUserTrendingResourceInsight.md'.
+[Update-MarkdownHelp] 11/23/2020 14:52:33 Command 'Get-MgUserTrendingResourceInsightByRef' not found in the session, skipping upgrade for 'C:\a\1\s\src\People\People\help\Get-MgUserTrendingResourceInsightByRef.md'.
+[Update-MarkdownHelp] 11/23/2020 14:52:34 Command 'Get-MgUserUsedInsight' not found in the session, skipping upgrade for 'C:\a\1\s\src\People\People\help\Get-MgUserUsedInsight.md'.
+[Update-MarkdownHelp] 11/23/2020 14:52:35 Command 'Get-MgUserUsedResourceInsight' not found in the session, skipping upgrade for 'C:\a\1\s\src\People\People\help\Get-MgUserUsedResourceInsight.md'.
+[Update-MarkdownHelp] 11/23/2020 14:52:36 Command 'Get-MgUserUsedResourceInsightByRef' not found in the session, skipping upgrade for 'C:\a\1\s\src\People\People\help\Get-MgUserUsedResourceInsightByRef.md'.
+---- UPDATING Cmdlet : New-MgUserPerson ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+	Parameter Added: EmailAddresses
+
+	Parameter Added: MailboxType
+
+	Parameter Added: Sources
+
+	Parameter Added: Title
+
+	Parameter Deleted: ImAddress
+
+	Parameter Deleted: JobTitle
+
+	Parameter Deleted: ScoredEmailAddresses
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPerson to IMicrosoftGraphPerson1
+
+	Parameter Updated: PersonType
+		Type updated from IMicrosoftGraphPersonType to String
+
+	Parameter Updated: Phones
+		Type updated from IMicrosoftGraphPhone[] to IMicrosoftGraphPhone1[]
+
+	Parameter Updated: PostalAddresses
+		Type updated from IMicrosoftGraphLocation[] to IMicrosoftGraphLocation1[]
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserPerson ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserPerson ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserPerson ----
+
+
+[Update-MarkdownHelp] 11/23/2020 14:52:45 Command 'Remove-MgUserSharedLastSharedMethodInsightByRef' not found in the session, skipping upgrade for 'C:\a\1\s\src\People\People\help\Remove-MgUserSharedLastSharedMethodInsightByRef.md'.
+[Update-MarkdownHelp] 11/23/2020 14:52:46 Command 'Remove-MgUserSharedResourceInsightByRef' not found in the session, skipping upgrade for 'C:\a\1\s\src\People\People\help\Remove-MgUserSharedResourceInsightByRef.md'.
+[Update-MarkdownHelp] 11/23/2020 14:52:48 Command 'Remove-MgUserTrendingResourceInsightByRef' not found in the session, skipping upgrade for 'C:\a\1\s\src\People\People\help\Remove-MgUserTrendingResourceInsightByRef.md'.
+[Update-MarkdownHelp] 11/23/2020 14:52:49 Command 'Remove-MgUserUsedResourceInsightByRef' not found in the session, skipping upgrade for 'C:\a\1\s\src\People\People\help\Remove-MgUserUsedResourceInsightByRef.md'.
+[Update-MarkdownHelp] 11/23/2020 14:52:50 Command 'Set-MgUserSharedLastSharedMethodInsightByRef' not found in the session, skipping upgrade for 'C:\a\1\s\src\People\People\help\Set-MgUserSharedLastSharedMethodInsightByRef.md'.
+[Update-MarkdownHelp] 11/23/2020 14:52:51 Command 'Set-MgUserSharedResourceInsightByRef' not found in the session, skipping upgrade for 'C:\a\1\s\src\People\People\help\Set-MgUserSharedResourceInsightByRef.md'.
+[Update-MarkdownHelp] 11/23/2020 14:52:52 Command 'Set-MgUserTrendingResourceInsightByRef' not found in the session, skipping upgrade for 'C:\a\1\s\src\People\People\help\Set-MgUserTrendingResourceInsightByRef.md'.
+[Update-MarkdownHelp] 11/23/2020 14:52:54 Command 'Set-MgUserUsedResourceInsightByRef' not found in the session, skipping upgrade for 'C:\a\1\s\src\People\People\help\Set-MgUserUsedResourceInsightByRef.md'.
+---- UPDATING Cmdlet : Update-MgUserPerson ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+	Parameter Added: EmailAddresses
+
+	Parameter Added: MailboxType
+
+	Parameter Added: Sources
+
+	Parameter Added: Title
+
+	Parameter Deleted: ImAddress
+
+	Parameter Deleted: JobTitle
+
+	Parameter Deleted: ScoredEmailAddresses
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPerson to IMicrosoftGraphPerson1
+
+	Parameter Updated: PersonType
+		Type updated from IMicrosoftGraphPersonType to String
+
+	Parameter Updated: Phones
+		Type updated from IMicrosoftGraphPhone[] to IMicrosoftGraphPhone1[]
+
+	Parameter Updated: PostalAddresses
+		Type updated from IMicrosoftGraphLocation[] to IMicrosoftGraphLocation1[]
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserPerson ----
+
+
+[Update-MarkdownHelpModule] 11/23/2020 14:53:00 Creating new markdown for command 'Get-MgUserActivityStatistics'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:02 Creating new markdown for command 'Get-MgUserProfile'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:03 Creating new markdown for command 'Get-MgUserProfileAccount'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:04 Creating new markdown for command 'Get-MgUserProfileAddress'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:06 Creating new markdown for command 'Get-MgUserProfileAnniversary'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:07 Creating new markdown for command 'Get-MgUserProfileAward'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:09 Creating new markdown for command 'Get-MgUserProfileCertification'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:11 Creating new markdown for command 'Get-MgUserProfileEducationalActivity'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:12 Creating new markdown for command 'Get-MgUserProfileEmail'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:14 Creating new markdown for command 'Get-MgUserProfileInterest'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:15 Creating new markdown for command 'Get-MgUserProfileLanguage'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:17 Creating new markdown for command 'Get-MgUserProfileName'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:19 Creating new markdown for command 'Get-MgUserProfileNote'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:20 Creating new markdown for command 'Get-MgUserProfilePatent'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:22 Creating new markdown for command 'Get-MgUserProfilePhone'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:23 Creating new markdown for command 'Get-MgUserProfilePosition'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:25 Creating new markdown for command 'Get-MgUserProfileProject'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:27 Creating new markdown for command 'Get-MgUserProfilePublication'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:28 Creating new markdown for command 'Get-MgUserProfileSkill'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:30 Creating new markdown for command 'Get-MgUserProfileWebAccount'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:32 Creating new markdown for command 'Get-MgUserProfileWebsite'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:33 Creating new markdown for command 'New-MgUserProfileAccount'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:36 Creating new markdown for command 'New-MgUserProfileAddress'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:38 Creating new markdown for command 'New-MgUserProfileAnniversary'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:40 Creating new markdown for command 'New-MgUserProfileAward'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:42 Creating new markdown for command 'New-MgUserProfileCertification'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:44 Creating new markdown for command 'New-MgUserProfileEducationalActivity'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:46 Creating new markdown for command 'New-MgUserProfileEmail'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:48 Creating new markdown for command 'New-MgUserProfileInterest'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:50 Creating new markdown for command 'New-MgUserProfileLanguage'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:52 Creating new markdown for command 'New-MgUserProfileName'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:54 Creating new markdown for command 'New-MgUserProfileNote'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:57 Creating new markdown for command 'New-MgUserProfilePatent'
+[Update-MarkdownHelpModule] 11/23/2020 14:53:59 Creating new markdown for command 'New-MgUserProfilePhone'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:01 Creating new markdown for command 'New-MgUserProfilePosition'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:02 Creating new markdown for command 'New-MgUserProfileProject'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:05 Creating new markdown for command 'New-MgUserProfilePublication'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:06 Creating new markdown for command 'New-MgUserProfileSkill'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:08 Creating new markdown for command 'New-MgUserProfileWebAccount'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:10 Creating new markdown for command 'New-MgUserProfileWebsite'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:12 Creating new markdown for command 'Remove-MgUserProfile'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:13 Creating new markdown for command 'Remove-MgUserProfileAccount'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:14 Creating new markdown for command 'Remove-MgUserProfileAddress'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:15 Creating new markdown for command 'Remove-MgUserProfileAnniversary'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:16 Creating new markdown for command 'Remove-MgUserProfileAward'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:17 Creating new markdown for command 'Remove-MgUserProfileCertification'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:18 Creating new markdown for command 'Remove-MgUserProfileEducationalActivity'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:19 Creating new markdown for command 'Remove-MgUserProfileEmail'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:20 Creating new markdown for command 'Remove-MgUserProfileInterest'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:21 Creating new markdown for command 'Remove-MgUserProfileLanguage'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:22 Creating new markdown for command 'Remove-MgUserProfileName'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:23 Creating new markdown for command 'Remove-MgUserProfileNote'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:24 Creating new markdown for command 'Remove-MgUserProfilePatent'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:25 Creating new markdown for command 'Remove-MgUserProfilePhone'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:26 Creating new markdown for command 'Remove-MgUserProfilePosition'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:27 Creating new markdown for command 'Remove-MgUserProfileProject'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:28 Creating new markdown for command 'Remove-MgUserProfilePublication'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:30 Creating new markdown for command 'Remove-MgUserProfileSkill'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:31 Creating new markdown for command 'Remove-MgUserProfileWebAccount'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:32 Creating new markdown for command 'Remove-MgUserProfileWebsite'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:33 Creating new markdown for command 'Update-MgUserProfile'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:35 Creating new markdown for command 'Update-MgUserProfileAccount'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:37 Creating new markdown for command 'Update-MgUserProfileAddress'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:39 Creating new markdown for command 'Update-MgUserProfileAnniversary'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:41 Creating new markdown for command 'Update-MgUserProfileAward'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:43 Creating new markdown for command 'Update-MgUserProfileCertification'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:45 Creating new markdown for command 'Update-MgUserProfileEducationalActivity'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:47 Creating new markdown for command 'Update-MgUserProfileEmail'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:49 Creating new markdown for command 'Update-MgUserProfileInterest'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:51 Creating new markdown for command 'Update-MgUserProfileLanguage'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:53 Creating new markdown for command 'Update-MgUserProfileName'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:55 Creating new markdown for command 'Update-MgUserProfileNote'
+[Update-MarkdownHelpModule] 11/23/2020 14:54:57 Creating new markdown for command 'Update-MgUserProfilePatent'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:00 Creating new markdown for command 'Update-MgUserProfilePhone'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:01 Creating new markdown for command 'Update-MgUserProfilePosition'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:03 Creating new markdown for command 'Update-MgUserProfileProject'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:05 Creating new markdown for command 'Update-MgUserProfilePublication'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:07 Creating new markdown for command 'Update-MgUserProfileSkill'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:09 Creating new markdown for command 'Update-MgUserProfileWebAccount'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:11 Creating new markdown for command 'Update-MgUserProfileWebsite'

@@ -1,0 +1,112 @@
+
+[Update-MarkdownHelpModule] 11/23/2020 14:45:19 Determined module name for '.\src\SchemaExtensions\SchemaExtensions\help' as 'Microsoft.Graph.SchemaExtensions'.
+[Update-MarkdownHelpModule] 11/23/2020 14:45:19 [Update-MarkdownHelpModule]11/23/2020 2:45:19 PM
+[Update-MarkdownHelpModule] 11/23/2020 14:45:19 Updating documents for module 'Microsoft.Graph.SchemaExtensions' in .\src\SchemaExtensions\SchemaExtensions\help
+---- UPDATING Cmdlet : Get-MgSchemaExtension ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgSchemaExtension ----
+
+
+---- UPDATING Cmdlet : New-MgSchemaExtension ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+---- COMPLETED UPDATING Cmdlet : New-MgSchemaExtension ----
+
+
+---- UPDATING Cmdlet : Remove-MgSchemaExtension ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgSchemaExtension ----
+
+
+---- UPDATING Cmdlet : Update-MgSchemaExtension ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Update-MgSchemaExtension ----
+
+

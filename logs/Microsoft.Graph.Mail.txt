@@ -1,0 +1,2195 @@
+
+[Update-MarkdownHelpModule] 11/23/2020 14:51:46 Determined module name for '.\src\Mail\Mail\help' as 'Microsoft.Graph.Mail'.
+[Update-MarkdownHelpModule] 11/23/2020 14:51:46 [Update-MarkdownHelpModule]11/23/2020 2:51:46 PM
+[Update-MarkdownHelpModule] 11/23/2020 14:51:46 Updating documents for module 'Microsoft.Graph.Mail' in .\src\Mail\Mail\help
+---- UPDATING Cmdlet : Get-MgUserInferenceClassification ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserInferenceClassification ----
+
+
+---- UPDATING Cmdlet : Get-MgUserInferenceClassificationOverride ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: List
+
+	Parameter Set Name Updated: List1
+		Old Set: List
+		New Set: List1
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserInferenceClassificationOverride ----
+
+
+---- UPDATING Cmdlet : Get-MgUserMailFolder ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List
+
+	Parameter Set Name Updated: List1
+		Old Set: List
+		New Set: List1
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserMailFolder ----
+
+
+---- UPDATING Cmdlet : Get-MgUserMailFolderChildFolder ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: List
+
+	Parameter Set Name Updated: List1
+		Old Set: List
+		New Set: List1
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserMailFolderChildFolder ----
+
+
+---- UPDATING Cmdlet : Get-MgUserMailFolderMessage ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: List
+
+	Parameter Set Name Updated: List1
+		Old Set: List
+		New Set: List1
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserMailFolderMessage ----
+
+
+---- UPDATING Cmdlet : Get-MgUserMailFolderMessageAttachment ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: List
+
+	Parameter Set Name Updated: List1
+		Old Set: List
+		New Set: List1
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserMailFolderMessageAttachment ----
+
+
+---- UPDATING Cmdlet : Get-MgUserMailFolderMessageContent ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserMailFolderMessageContent ----
+
+
+---- UPDATING Cmdlet : Get-MgUserMailFolderMessageExtension ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: List
+
+	Parameter Set Name Updated: List1
+		Old Set: List
+		New Set: List1
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserMailFolderMessageExtension ----
+
+
+---- UPDATING Cmdlet : Get-MgUserMailFolderMessageMultiValueExtendedProperty ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: List
+
+	Parameter Set Name Updated: List1
+		Old Set: List
+		New Set: List1
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserMailFolderMessageMultiValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : Get-MgUserMailFolderMessageRule ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: List
+
+	Parameter Set Name Updated: List1
+		Old Set: List
+		New Set: List1
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserMailFolderMessageRule ----
+
+
+---- UPDATING Cmdlet : Get-MgUserMailFolderMessageSingleValueExtendedProperty ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: List
+
+	Parameter Set Name Updated: List1
+		Old Set: List
+		New Set: List1
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserMailFolderMessageSingleValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : Get-MgUserMailFolderMultiValueExtendedProperty ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: List
+
+	Parameter Set Name Updated: List1
+		Old Set: List
+		New Set: List1
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserMailFolderMultiValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : Get-MgUserMailFolderSingleValueExtendedProperty ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: List
+
+	Parameter Set Name Updated: List1
+		Old Set: List
+		New Set: List1
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserMailFolderSingleValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : Get-MgUserMessage ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: List
+
+	Parameter Set Name Updated: List1
+		Old Set: List
+		New Set: List1
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserMessage ----
+
+
+---- UPDATING Cmdlet : Get-MgUserMessageAttachment ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: List
+
+	Parameter Set Name Updated: List1
+		Old Set: List
+		New Set: List1
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserMessageAttachment ----
+
+
+---- UPDATING Cmdlet : Get-MgUserMessageContent ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserMessageContent ----
+
+
+---- UPDATING Cmdlet : Get-MgUserMessageExtension ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: List
+
+	Parameter Set Name Updated: List1
+		Old Set: List
+		New Set: List1
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserMessageExtension ----
+
+
+---- UPDATING Cmdlet : Get-MgUserMessageMultiValueExtendedProperty ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: List
+
+	Parameter Set Name Updated: List1
+		Old Set: List
+		New Set: List1
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserMessageMultiValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : Get-MgUserMessageSingleValueExtendedProperty ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: List
+
+	Parameter Set Name Updated: List1
+		Old Set: List
+		New Set: List1
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserMessageSingleValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : New-MgUserInferenceClassificationOverride ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateExpanded1
+		Old Set: CreateExpanded
+		New Set: CreateExpanded1
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded1
+		Old Set: CreateViaIdentityExpanded
+		New Set: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserInferenceClassificationOverride ----
+
+
+---- UPDATING Cmdlet : New-MgUserMailFolder ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+	Parameter Added: UserConfigurations
+
+	Parameter Added: WellKnownName
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphMailFolder to IMicrosoftGraphMailFolder1
+
+	Parameter Updated: ChildFolders
+		Type updated from IMicrosoftGraphMailFolder[] to IMicrosoftGraphMailFolder1[]
+
+	Parameter Updated: Messages
+		Type updated from IMicrosoftGraphMessage[] to IMicrosoftGraphMessage1[]
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserMailFolder ----
+
+
+---- UPDATING Cmdlet : New-MgUserMailFolderChildFolder ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+	Parameter Added: UserConfigurations
+
+	Parameter Added: WellKnownName
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphMailFolder to IMicrosoftGraphMailFolder1
+
+	Parameter Updated: ChildFolders
+		Type updated from IMicrosoftGraphMailFolder[] to IMicrosoftGraphMailFolder1[]
+
+	Parameter Updated: Messages
+		Type updated from IMicrosoftGraphMessage[] to IMicrosoftGraphMessage1[]
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserMailFolderChildFolder ----
+
+
+---- UPDATING Cmdlet : New-MgUserMailFolderMessage ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+	Parameter Added: Mentions
+
+	Parameter Added: MentionsPreview
+
+	Parameter Added: UnsubscribeData
+
+	Parameter Added: UnsubscribeEnabled
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphMessage to IMicrosoftGraphMessage1
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserMailFolderMessage ----
+
+
+---- UPDATING Cmdlet : New-MgUserMailFolderMessageAttachment ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateExpanded1
+		Old Set: CreateExpanded
+		New Set: CreateExpanded1
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded1
+		Old Set: CreateViaIdentityExpanded
+		New Set: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserMailFolderMessageAttachment ----
+
+
+---- UPDATING Cmdlet : New-MgUserMailFolderMessageExtension ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateExpanded1
+		Old Set: CreateExpanded
+		New Set: CreateExpanded1
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded1
+		Old Set: CreateViaIdentityExpanded
+		New Set: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserMailFolderMessageExtension ----
+
+
+---- UPDATING Cmdlet : New-MgUserMailFolderMessageMultiValueExtendedProperty ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateExpanded1
+		Old Set: CreateExpanded
+		New Set: CreateExpanded1
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded1
+		Old Set: CreateViaIdentityExpanded
+		New Set: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserMailFolderMessageMultiValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : New-MgUserMailFolderMessageRule ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateExpanded1
+		Old Set: CreateExpanded
+		New Set: CreateExpanded1
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded1
+		Old Set: CreateViaIdentityExpanded
+		New Set: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserMailFolderMessageRule ----
+
+
+---- UPDATING Cmdlet : New-MgUserMailFolderMessageSingleValueExtendedProperty ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateExpanded1
+		Old Set: CreateExpanded
+		New Set: CreateExpanded1
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded1
+		Old Set: CreateViaIdentityExpanded
+		New Set: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserMailFolderMessageSingleValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : New-MgUserMailFolderMultiValueExtendedProperty ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateExpanded1
+		Old Set: CreateExpanded
+		New Set: CreateExpanded1
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded1
+		Old Set: CreateViaIdentityExpanded
+		New Set: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserMailFolderMultiValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : New-MgUserMailFolderSingleValueExtendedProperty ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateExpanded1
+		Old Set: CreateExpanded
+		New Set: CreateExpanded1
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded1
+		Old Set: CreateViaIdentityExpanded
+		New Set: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserMailFolderSingleValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : New-MgUserMessage ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+	Parameter Added: Mentions
+
+	Parameter Added: MentionsPreview
+
+	Parameter Added: UnsubscribeData
+
+	Parameter Added: UnsubscribeEnabled
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphMessage to IMicrosoftGraphMessage1
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserMessage ----
+
+
+---- UPDATING Cmdlet : New-MgUserMessageAttachment ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateExpanded1
+		Old Set: CreateExpanded
+		New Set: CreateExpanded1
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded1
+		Old Set: CreateViaIdentityExpanded
+		New Set: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserMessageAttachment ----
+
+
+---- UPDATING Cmdlet : New-MgUserMessageExtension ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateExpanded1
+		Old Set: CreateExpanded
+		New Set: CreateExpanded1
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded1
+		Old Set: CreateViaIdentityExpanded
+		New Set: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserMessageExtension ----
+
+
+---- UPDATING Cmdlet : New-MgUserMessageMultiValueExtendedProperty ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateExpanded1
+		Old Set: CreateExpanded
+		New Set: CreateExpanded1
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded1
+		Old Set: CreateViaIdentityExpanded
+		New Set: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserMessageMultiValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : New-MgUserMessageSingleValueExtendedProperty ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateExpanded1
+		Old Set: CreateExpanded
+		New Set: CreateExpanded1
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded1
+		Old Set: CreateViaIdentityExpanded
+		New Set: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserMessageSingleValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserInferenceClassification ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserInferenceClassification ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserInferenceClassificationOverride ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserInferenceClassificationOverride ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserMailFolder ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserMailFolder ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserMailFolderChildFolder ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserMailFolderChildFolder ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserMailFolderMessage ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserMailFolderMessage ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserMailFolderMessageAttachment ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserMailFolderMessageAttachment ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserMailFolderMessageExtension ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserMailFolderMessageExtension ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserMailFolderMessageMultiValueExtendedProperty ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserMailFolderMessageMultiValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserMailFolderMessageRule ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserMailFolderMessageRule ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserMailFolderMessageSingleValueExtendedProperty ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserMailFolderMessageSingleValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserMailFolderMultiValueExtendedProperty ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserMailFolderMultiValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserMailFolderSingleValueExtendedProperty ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserMailFolderSingleValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserMessage ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserMessage ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserMessageAttachment ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserMessageAttachment ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserMessageExtension ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserMessageExtension ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserMessageMultiValueExtendedProperty ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserMessageMultiValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserMessageSingleValueExtendedProperty ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserMessageSingleValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : Set-MgUserMailFolderMessageContent ----
+
+	Parameter Set Added: Set1
+
+	Parameter Set Added: SetViaIdentity1
+
+	Parameter Set Deleted: Set
+
+	Parameter Set Deleted: SetViaIdentity
+
+	Parameter Set Name Updated: Set1
+		Old Set: Set
+		New Set: Set1
+
+	Parameter Set Name Updated: SetViaIdentity1
+		Old Set: SetViaIdentity
+		New Set: SetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Set-MgUserMailFolderMessageContent ----
+
+
+---- UPDATING Cmdlet : Set-MgUserMessageContent ----
+
+	Parameter Set Added: Set1
+
+	Parameter Set Added: SetViaIdentity1
+
+	Parameter Set Deleted: Set
+
+	Parameter Set Deleted: SetViaIdentity
+
+	Parameter Set Name Updated: Set1
+		Old Set: Set
+		New Set: Set1
+
+	Parameter Set Name Updated: SetViaIdentity1
+		Old Set: SetViaIdentity
+		New Set: SetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Set-MgUserMessageContent ----
+
+
+---- UPDATING Cmdlet : Update-MgUserInferenceClassification ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserInferenceClassification ----
+
+
+---- UPDATING Cmdlet : Update-MgUserInferenceClassificationOverride ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateExpanded1
+		Old Set: UpdateExpanded
+		New Set: UpdateExpanded1
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded1
+		Old Set: UpdateViaIdentityExpanded
+		New Set: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserInferenceClassificationOverride ----
+
+
+---- UPDATING Cmdlet : Update-MgUserMailFolder ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Added: UserConfigurations
+
+	Parameter Added: WellKnownName
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphMailFolder to IMicrosoftGraphMailFolder1
+
+	Parameter Updated: ChildFolders
+		Type updated from IMicrosoftGraphMailFolder[] to IMicrosoftGraphMailFolder1[]
+
+	Parameter Updated: Messages
+		Type updated from IMicrosoftGraphMessage[] to IMicrosoftGraphMessage1[]
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserMailFolder ----
+
+
+---- UPDATING Cmdlet : Update-MgUserMailFolderChildFolder ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+	Parameter Added: UserConfigurations
+
+	Parameter Added: WellKnownName
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphMailFolder to IMicrosoftGraphMailFolder1
+
+	Parameter Updated: ChildFolders
+		Type updated from IMicrosoftGraphMailFolder[] to IMicrosoftGraphMailFolder1[]
+
+	Parameter Updated: Messages
+		Type updated from IMicrosoftGraphMessage[] to IMicrosoftGraphMessage1[]
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserMailFolderChildFolder ----
+
+
+---- UPDATING Cmdlet : Update-MgUserMailFolderMessage ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+	Parameter Added: Mentions
+
+	Parameter Added: MentionsPreview
+
+	Parameter Added: UnsubscribeData
+
+	Parameter Added: UnsubscribeEnabled
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphMessage to IMicrosoftGraphMessage1
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserMailFolderMessage ----
+
+
+---- UPDATING Cmdlet : Update-MgUserMailFolderMessageAttachment ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateExpanded1
+		Old Set: UpdateExpanded
+		New Set: UpdateExpanded1
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded1
+		Old Set: UpdateViaIdentityExpanded
+		New Set: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserMailFolderMessageAttachment ----
+
+
+---- UPDATING Cmdlet : Update-MgUserMailFolderMessageExtension ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateExpanded1
+		Old Set: UpdateExpanded
+		New Set: UpdateExpanded1
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded1
+		Old Set: UpdateViaIdentityExpanded
+		New Set: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserMailFolderMessageExtension ----
+
+
+---- UPDATING Cmdlet : Update-MgUserMailFolderMessageMultiValueExtendedProperty ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateExpanded1
+		Old Set: UpdateExpanded
+		New Set: UpdateExpanded1
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded1
+		Old Set: UpdateViaIdentityExpanded
+		New Set: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserMailFolderMessageMultiValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : Update-MgUserMailFolderMessageRule ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateExpanded1
+		Old Set: UpdateExpanded
+		New Set: UpdateExpanded1
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded1
+		Old Set: UpdateViaIdentityExpanded
+		New Set: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserMailFolderMessageRule ----
+
+
+---- UPDATING Cmdlet : Update-MgUserMailFolderMessageSingleValueExtendedProperty ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateExpanded1
+		Old Set: UpdateExpanded
+		New Set: UpdateExpanded1
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded1
+		Old Set: UpdateViaIdentityExpanded
+		New Set: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserMailFolderMessageSingleValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : Update-MgUserMailFolderMultiValueExtendedProperty ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateExpanded1
+		Old Set: UpdateExpanded
+		New Set: UpdateExpanded1
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded1
+		Old Set: UpdateViaIdentityExpanded
+		New Set: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserMailFolderMultiValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : Update-MgUserMailFolderSingleValueExtendedProperty ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateExpanded1
+		Old Set: UpdateExpanded
+		New Set: UpdateExpanded1
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded1
+		Old Set: UpdateViaIdentityExpanded
+		New Set: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserMailFolderSingleValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : Update-MgUserMessage ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+	Parameter Added: Mentions
+
+	Parameter Added: MentionsPreview
+
+	Parameter Added: UnsubscribeData
+
+	Parameter Added: UnsubscribeEnabled
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphMessage to IMicrosoftGraphMessage1
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserMessage ----
+
+
+---- UPDATING Cmdlet : Update-MgUserMessageAttachment ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateExpanded1
+		Old Set: UpdateExpanded
+		New Set: UpdateExpanded1
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded1
+		Old Set: UpdateViaIdentityExpanded
+		New Set: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserMessageAttachment ----
+
+
+---- UPDATING Cmdlet : Update-MgUserMessageExtension ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateExpanded1
+		Old Set: UpdateExpanded
+		New Set: UpdateExpanded1
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded1
+		Old Set: UpdateViaIdentityExpanded
+		New Set: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserMessageExtension ----
+
+
+---- UPDATING Cmdlet : Update-MgUserMessageMultiValueExtendedProperty ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateExpanded1
+		Old Set: UpdateExpanded
+		New Set: UpdateExpanded1
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded1
+		Old Set: UpdateViaIdentityExpanded
+		New Set: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserMessageMultiValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : Update-MgUserMessageSingleValueExtendedProperty ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserMessageSingleValueExtendedProperty ----
+
+
+[Update-MarkdownHelpModule] 11/23/2020 14:55:14 Creating new markdown for command 'Get-MgUserMailFolderMessageMention'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:16 Creating new markdown for command 'Get-MgUserMailFolderUserConfiguration'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:17 Creating new markdown for command 'Get-MgUserMessageMention'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:18 Creating new markdown for command 'New-MgUserMailFolderMessageMention'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:20 Creating new markdown for command 'New-MgUserMailFolderUserConfiguration'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:21 Creating new markdown for command 'New-MgUserMessageMention'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:23 Creating new markdown for command 'Remove-MgUserMailFolderMessageMention'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:24 Creating new markdown for command 'Remove-MgUserMailFolderUserConfiguration'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:25 Creating new markdown for command 'Remove-MgUserMessageMention'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:26 Creating new markdown for command 'Update-MgUserMailFolderMessageMention'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:28 Creating new markdown for command 'Update-MgUserMailFolderUserConfiguration'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:29 Creating new markdown for command 'Update-MgUserMessageMention'

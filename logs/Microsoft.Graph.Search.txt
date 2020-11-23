@@ -1,0 +1,71 @@
+
+[Update-MarkdownHelpModule] 11/23/2020 14:46:08 Determined module name for '.\src\Search\Search\help' as 'Microsoft.Graph.Search'.
+[Update-MarkdownHelpModule] 11/23/2020 14:46:08 [Update-MarkdownHelpModule]11/23/2020 2:46:08 PM
+[Update-MarkdownHelpModule] 11/23/2020 14:46:08 Updating documents for module 'Microsoft.Graph.Search' in .\src\Search\Search\help
+---- UPDATING Cmdlet : Get-MgSearchEntity ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: Get1
+		Old Set: 
+		New Set: Get1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgSearchEntity ----
+
+
+---- UPDATING Cmdlet : Invoke-MgQuerySearch ----
+
+	Parameter Set Added: Query1
+
+	Parameter Set Added: QueryExpanded1
+
+	Parameter Set Deleted: Query
+
+	Parameter Set Deleted: QueryExpanded
+
+	Parameter Set Name Updated: QueryExpanded1
+		Old Set: QueryExpanded
+		New Set: QueryExpanded1
+
+	Parameter Set Name Updated: Query1
+		Old Set: Query
+		New Set: Query1
+
+	Parameter Updated: BodyParameter
+		Type updated from IPaths1Kd2XrlSearchMicrosoftGraphQueryPostRequestbodyContentApplicationJsonSchema to IPaths1Kd2XrlSearchMicrosoftGraphQueryPostRequestbodyContentApplicationJsonSchema1
+
+	Parameter Updated: Requests
+		Type updated from IMicrosoftGraphSearchRequest[] to IMicrosoftGraphSearchRequest1[]
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgQuerySearch ----
+
+
+---- UPDATING Cmdlet : Update-MgSearchEntity ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Name Updated: UpdateExpanded1
+		Old Set: UpdateExpanded
+		New Set: UpdateExpanded1
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+---- COMPLETED UPDATING Cmdlet : Update-MgSearchEntity ----
+
+
+[Update-MarkdownHelpModule] 11/23/2020 14:46:10 Creating new markdown for command 'Get-MgExternal'
+[Update-MarkdownHelpModule] 11/23/2020 14:46:10 Creating new markdown for command 'Get-MgExternalConnection'
+[Update-MarkdownHelpModule] 11/23/2020 14:46:10 Creating new markdown for command 'New-MgExternalConnection'
+[Update-MarkdownHelpModule] 11/23/2020 14:46:10 Creating new markdown for command 'Remove-MgExternalConnection'
+[Update-MarkdownHelpModule] 11/23/2020 14:46:11 Creating new markdown for command 'Update-MgExternal'
+[Update-MarkdownHelpModule] 11/23/2020 14:46:11 Creating new markdown for command 'Update-MgExternalConnection'

@@ -1,0 +1,260 @@
+---
+external help file: Microsoft.Graph.Sites-help.xml
+Module Name: Microsoft.Graph.Sites
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/new-mgsitelistcontenttypecolumnlink
+schema: 2.0.0
+---
+
+# New-MgSiteListContentTypeColumnLink
+
+## SYNOPSIS
+Create new navigation property to columnLinks for sites
+
+## SYNTAX
+
+### CreateExpanded1 (Default)
+```
+New-MgSiteListContentTypeColumnLink -ContentTypeId <String> -ListId <String> -SiteId <String>
+ [-AdditionalProperties <Hashtable>] [-Id <String>] [-Name <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### Create1
+```
+New-MgSiteListContentTypeColumnLink -ContentTypeId <String> -ListId <String> -SiteId <String>
+ -BodyParameter <IMicrosoftGraphColumnLink> [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### CreateViaIdentityExpanded1
+```
+New-MgSiteListContentTypeColumnLink -InputObject <ISitesIdentity> [-AdditionalProperties <Hashtable>]
+ [-Id <String>] [-Name <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### CreateViaIdentity1
+```
+New-MgSiteListContentTypeColumnLink -InputObject <ISitesIdentity> -BodyParameter <IMicrosoftGraphColumnLink>
+ [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## DESCRIPTION
+Create new navigation property to columnLinks for sites
+
+## EXAMPLES
+
+### EXAMPLE 1
+```
+{{ Add code here }}
+```
+
+{{ Add output here }}
+
+### EXAMPLE 2
+```
+{{ Add code here }}
+```
+
+{{ Add output here }}
+
+## PARAMETERS
+
+### -AdditionalProperties
+Additional Parameters
+
+```yaml
+Type: Hashtable
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -BodyParameter
+columnLink
+To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+
+```yaml
+Type: IMicrosoftGraphColumnLink
+Parameter Sets: Create1, CreateViaIdentity1
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -ContentTypeId
+key: id of contentType
+
+```yaml
+Type: String
+Parameter Sets: CreateExpanded1, Create1
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Id
+Read-only.
+
+```yaml
+Type: String
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -InputObject
+Identity Parameter
+To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+
+```yaml
+Type: ISitesIdentity
+Parameter Sets: CreateViaIdentityExpanded1, CreateViaIdentity1
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -ListId
+key: id of list
+
+```yaml
+Type: String
+Parameter Sets: CreateExpanded1, Create1
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Name
+The name of the column in this content type.
+
+```yaml
+Type: String
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SiteId
+key: id of site
+
+```yaml
+Type: String
+Parameter Sets: CreateExpanded1, Create1
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphColumnLink
+### Microsoft.Graph.PowerShell.Models.ISitesIdentity
+## OUTPUTS
+
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphColumnLink
+## NOTES
+COMPLEX PARAMETER PROPERTIES
+
+To create the parameters described below, construct a hash table containing the appropriate properties.
+For information on hash tables, run Get-Help about_Hash_Tables.
+
+BODYPARAMETER \<IMicrosoftGraphColumnLink\>: columnLink
+  \[(Any) \<Object\>\]: This indicates any property can be added to this object.
+  \[Id \<String\>\]: Read-only.
+  \[Name \<String\>\]: The name of the column  in this content type.
+
+INPUTOBJECT \<ISitesIdentity\>: Identity Parameter
+  \[ColumnDefinitionId \<String\>\]: key: id of columnDefinition
+  \[ColumnLinkId \<String\>\]: key: id of columnLink
+  \[ContentTypeId \<String\>\]: key: id of contentType
+  \[DriveId \<String\>\]: key: id of drive
+  \[EndDateTime \<String\>\]: 
+  \[GroupId \<String\>\]: key: id of group
+  \[IncludePersonalNotebooks \<Boolean?\>\]: 
+  \[Interval \<String\>\]: 
+  \[ListId \<String\>\]: key: id of list
+  \[ListItemId \<String\>\]: key: id of listItem
+  \[ListItemVersionId \<String\>\]: key: id of listItemVersion
+  \[NotebookId \<String\>\]: key: id of notebook
+  \[OnenotePageId \<String\>\]: key: id of onenotePage
+  \[OnenoteSectionId \<String\>\]: key: id of onenoteSection
+  \[Path \<String\>\]: 
+  \[SiteId \<String\>\]: key: id of site
+  \[SiteId1 \<String\>\]: key: id of site
+  \[SitePageId \<String\>\]: key: id of sitePage
+  \[StartDateTime \<String\>\]: 
+  \[SubscriptionId \<String\>\]: key: id of subscription
+  \[UserId \<String\>\]: key: id of user
+
+## RELATED LINKS
+
+[https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/new-mgsitelistcontenttypecolumnlink](https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/new-mgsitelistcontenttypecolumnlink)
+

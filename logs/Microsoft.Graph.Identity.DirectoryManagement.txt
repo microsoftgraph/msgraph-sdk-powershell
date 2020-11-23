@@ -1,0 +1,4110 @@
+
+[Update-MarkdownHelpModule] 11/23/2020 14:55:04 Determined module name for '.\src\Identity.DirectoryManagement\Identity.DirectoryManagement\help' as 'Microsoft.Graph.Identity.DirectoryManagement'.
+[Update-MarkdownHelpModule] 11/23/2020 14:55:04 [Update-MarkdownHelpModule]11/23/2020 2:55:04 PM
+[Update-MarkdownHelpModule] 11/23/2020 14:55:04 Updating documents for module 'Microsoft.Graph.Identity.DirectoryManagement' in .\src\Identity.DirectoryManagement\Identity.DirectoryManagement\help
+---- UPDATING Cmdlet : Confirm-MgContactMemberGroup ----
+
+	Parameter Set Added: Check1
+
+	Parameter Set Added: CheckExpanded1
+
+	Parameter Set Added: CheckViaIdentity1
+
+	Parameter Set Added: CheckViaIdentityExpanded1
+
+	Parameter Set Deleted: Check
+
+	Parameter Set Deleted: CheckExpanded
+
+	Parameter Set Deleted: CheckViaIdentity
+
+	Parameter Set Deleted: CheckViaIdentityExpanded
+
+	Parameter Set Name Updated: CheckExpanded1
+		Old Set: CheckExpanded
+		New Set: CheckExpanded1
+
+	Parameter Set Name Updated: Check1
+		Old Set: Check
+		New Set: Check1
+
+	Parameter Set Name Updated: CheckViaIdentityExpanded1
+		Old Set: CheckViaIdentityExpanded
+		New Set: CheckViaIdentityExpanded1
+
+	Parameter Set Name Updated: CheckViaIdentity1
+		Old Set: CheckViaIdentity
+		New Set: CheckViaIdentity1
+
+	Parameter Updated: BodyParameter
+		Type updated from IPaths175Njh2ContactsOrgcontactIdMicrosoftGraphCheckmembergroupsPostRequestbodyContentApplicationJsonSchema to IPaths175Njh2ContactsOrgcontactIdMicrosoftGraphCheckmembergroupsPostRequestbodyContentApplicationJsonSchema1
+
+---- COMPLETED UPDATING Cmdlet : Confirm-MgContactMemberGroup ----
+
+
+---- UPDATING Cmdlet : Confirm-MgContactMemberObject ----
+
+	Parameter Set Added: Check1
+
+	Parameter Set Added: CheckExpanded1
+
+	Parameter Set Added: CheckViaIdentity1
+
+	Parameter Set Added: CheckViaIdentityExpanded1
+
+	Parameter Set Deleted: Check
+
+	Parameter Set Deleted: CheckExpanded
+
+	Parameter Set Deleted: CheckViaIdentity
+
+	Parameter Set Deleted: CheckViaIdentityExpanded
+
+	Parameter Set Name Updated: CheckExpanded1
+		Old Set: CheckExpanded
+		New Set: CheckExpanded1
+
+	Parameter Set Name Updated: Check1
+		Old Set: Check
+		New Set: Check1
+
+	Parameter Set Name Updated: CheckViaIdentityExpanded1
+		Old Set: CheckViaIdentityExpanded
+		New Set: CheckViaIdentityExpanded1
+
+	Parameter Set Name Updated: CheckViaIdentity1
+		Old Set: CheckViaIdentity
+		New Set: CheckViaIdentity1
+
+	Parameter Updated: BodyParameter
+		Type updated from IPaths8Ke2VbContactsOrgcontactIdMicrosoftGraphCheckmemberobjectsPostRequestbodyContentApplicationJsonSchema to IPaths8Ke2VbContactsOrgcontactIdMicrosoftGraphCheckmemberobjectsPostRequestbodyContentApplicationJsonSchema1
+
+---- COMPLETED UPDATING Cmdlet : Confirm-MgContactMemberObject ----
+
+
+---- UPDATING Cmdlet : Confirm-MgContractMemberGroup ----
+
+	Parameter Set Added: Check1
+
+	Parameter Set Added: CheckExpanded1
+
+	Parameter Set Added: CheckViaIdentity1
+
+	Parameter Set Added: CheckViaIdentityExpanded1
+
+	Parameter Set Deleted: Check
+
+	Parameter Set Deleted: CheckExpanded
+
+	Parameter Set Deleted: CheckViaIdentity
+
+	Parameter Set Deleted: CheckViaIdentityExpanded
+
+	Parameter Set Name Updated: CheckExpanded1
+		Old Set: CheckExpanded
+		New Set: CheckExpanded1
+
+	Parameter Set Name Updated: Check1
+		Old Set: Check
+		New Set: Check1
+
+	Parameter Set Name Updated: CheckViaIdentityExpanded1
+		Old Set: CheckViaIdentityExpanded
+		New Set: CheckViaIdentityExpanded1
+
+	Parameter Set Name Updated: CheckViaIdentity1
+		Old Set: CheckViaIdentity
+		New Set: CheckViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Confirm-MgContractMemberGroup ----
+
+
+---- UPDATING Cmdlet : Confirm-MgContractMemberObject ----
+
+	Parameter Set Added: Check1
+
+	Parameter Set Added: CheckExpanded1
+
+	Parameter Set Added: CheckViaIdentity1
+
+	Parameter Set Added: CheckViaIdentityExpanded1
+
+	Parameter Set Deleted: Check
+
+	Parameter Set Deleted: CheckExpanded
+
+	Parameter Set Deleted: CheckViaIdentity
+
+	Parameter Set Deleted: CheckViaIdentityExpanded
+
+	Parameter Set Name Updated: CheckExpanded1
+		Old Set: CheckExpanded
+		New Set: CheckExpanded1
+
+	Parameter Set Name Updated: Check1
+		Old Set: Check
+		New Set: Check1
+
+	Parameter Set Name Updated: CheckViaIdentityExpanded1
+		Old Set: CheckViaIdentityExpanded
+		New Set: CheckViaIdentityExpanded1
+
+	Parameter Set Name Updated: CheckViaIdentity1
+		Old Set: CheckViaIdentity
+		New Set: CheckViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Confirm-MgContractMemberObject ----
+
+
+---- UPDATING Cmdlet : Confirm-MgDeviceMemberGroup ----
+
+	Parameter Set Added: Check1
+
+	Parameter Set Added: CheckExpanded1
+
+	Parameter Set Added: CheckViaIdentity1
+
+	Parameter Set Added: CheckViaIdentityExpanded1
+
+	Parameter Set Deleted: Check
+
+	Parameter Set Deleted: CheckExpanded
+
+	Parameter Set Deleted: CheckViaIdentity
+
+	Parameter Set Deleted: CheckViaIdentityExpanded
+
+	Parameter Set Name Updated: CheckExpanded1
+		Old Set: CheckExpanded
+		New Set: CheckExpanded1
+
+	Parameter Set Name Updated: Check1
+		Old Set: Check
+		New Set: Check1
+
+	Parameter Set Name Updated: CheckViaIdentityExpanded1
+		Old Set: CheckViaIdentityExpanded
+		New Set: CheckViaIdentityExpanded1
+
+	Parameter Set Name Updated: CheckViaIdentity1
+		Old Set: CheckViaIdentity
+		New Set: CheckViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Confirm-MgDeviceMemberGroup ----
+
+
+---- UPDATING Cmdlet : Confirm-MgDeviceMemberObject ----
+
+	Parameter Set Added: Check1
+
+	Parameter Set Added: CheckExpanded1
+
+	Parameter Set Added: CheckViaIdentity1
+
+	Parameter Set Added: CheckViaIdentityExpanded1
+
+	Parameter Set Deleted: Check
+
+	Parameter Set Deleted: CheckExpanded
+
+	Parameter Set Deleted: CheckViaIdentity
+
+	Parameter Set Deleted: CheckViaIdentityExpanded
+
+	Parameter Set Name Updated: CheckExpanded1
+		Old Set: CheckExpanded
+		New Set: CheckExpanded1
+
+	Parameter Set Name Updated: Check1
+		Old Set: Check
+		New Set: Check1
+
+	Parameter Set Name Updated: CheckViaIdentityExpanded1
+		Old Set: CheckViaIdentityExpanded
+		New Set: CheckViaIdentityExpanded1
+
+	Parameter Set Name Updated: CheckViaIdentity1
+		Old Set: CheckViaIdentity
+		New Set: CheckViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Confirm-MgDeviceMemberObject ----
+
+
+---- UPDATING Cmdlet : Confirm-MgDirectoryRoleMemberGroup ----
+
+	Parameter Set Added: Check
+
+	Parameter Set Added: CheckExpanded
+
+	Parameter Set Added: CheckViaIdentity
+
+	Parameter Set Added: CheckViaIdentityExpanded
+
+	Parameter Set Deleted: Check1
+
+	Parameter Set Deleted: CheckExpanded1
+
+	Parameter Set Deleted: CheckViaIdentity1
+
+	Parameter Set Deleted: CheckViaIdentityExpanded1
+
+	Parameter Set Name Updated: CheckExpanded
+		Old Set: CheckExpanded1
+		New Set: CheckExpanded
+
+	Parameter Set Name Updated: Check
+		Old Set: Check1
+		New Set: Check
+
+	Parameter Set Name Updated: CheckViaIdentityExpanded
+		Old Set: CheckViaIdentityExpanded1
+		New Set: CheckViaIdentityExpanded
+
+	Parameter Set Name Updated: CheckViaIdentity
+		Old Set: CheckViaIdentity1
+		New Set: CheckViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Confirm-MgDirectoryRoleMemberGroup ----
+
+
+---- UPDATING Cmdlet : Confirm-MgDirectoryRoleMemberObject ----
+
+	Parameter Set Added: Check
+
+	Parameter Set Added: CheckExpanded
+
+	Parameter Set Added: CheckViaIdentity
+
+	Parameter Set Added: CheckViaIdentityExpanded
+
+	Parameter Set Deleted: Check1
+
+	Parameter Set Deleted: CheckExpanded1
+
+	Parameter Set Deleted: CheckViaIdentity1
+
+	Parameter Set Deleted: CheckViaIdentityExpanded1
+
+	Parameter Set Name Updated: CheckExpanded
+		Old Set: CheckExpanded1
+		New Set: CheckExpanded
+
+	Parameter Set Name Updated: Check
+		Old Set: Check1
+		New Set: Check
+
+	Parameter Set Name Updated: CheckViaIdentityExpanded
+		Old Set: CheckViaIdentityExpanded1
+		New Set: CheckViaIdentityExpanded
+
+	Parameter Set Name Updated: CheckViaIdentity
+		Old Set: CheckViaIdentity1
+		New Set: CheckViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Confirm-MgDirectoryRoleMemberObject ----
+
+
+---- UPDATING Cmdlet : Confirm-MgDirectoryRoleTemplateMemberGroup ----
+
+	Parameter Set Added: Check
+
+	Parameter Set Added: CheckExpanded
+
+	Parameter Set Added: CheckViaIdentity
+
+	Parameter Set Added: CheckViaIdentityExpanded
+
+	Parameter Set Deleted: Check1
+
+	Parameter Set Deleted: CheckExpanded1
+
+	Parameter Set Deleted: CheckViaIdentity1
+
+	Parameter Set Deleted: CheckViaIdentityExpanded1
+
+	Parameter Set Name Updated: CheckExpanded
+		Old Set: CheckExpanded1
+		New Set: CheckExpanded
+
+	Parameter Set Name Updated: Check
+		Old Set: Check1
+		New Set: Check
+
+	Parameter Set Name Updated: CheckViaIdentityExpanded
+		Old Set: CheckViaIdentityExpanded1
+		New Set: CheckViaIdentityExpanded
+
+	Parameter Set Name Updated: CheckViaIdentity
+		Old Set: CheckViaIdentity1
+		New Set: CheckViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Confirm-MgDirectoryRoleTemplateMemberGroup ----
+
+
+---- UPDATING Cmdlet : Confirm-MgDirectoryRoleTemplateMemberObject ----
+
+	Parameter Set Added: Check
+
+	Parameter Set Added: CheckExpanded
+
+	Parameter Set Added: CheckViaIdentity
+
+	Parameter Set Added: CheckViaIdentityExpanded
+
+	Parameter Set Deleted: Check1
+
+	Parameter Set Deleted: CheckExpanded1
+
+	Parameter Set Deleted: CheckViaIdentity1
+
+	Parameter Set Deleted: CheckViaIdentityExpanded1
+
+	Parameter Set Name Updated: CheckExpanded
+		Old Set: CheckExpanded1
+		New Set: CheckExpanded
+
+	Parameter Set Name Updated: Check
+		Old Set: Check1
+		New Set: Check
+
+	Parameter Set Name Updated: CheckViaIdentityExpanded
+		Old Set: CheckViaIdentityExpanded1
+		New Set: CheckViaIdentityExpanded
+
+	Parameter Set Name Updated: CheckViaIdentity
+		Old Set: CheckViaIdentity1
+		New Set: CheckViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Confirm-MgDirectoryRoleTemplateMemberObject ----
+
+
+---- UPDATING Cmdlet : Confirm-MgOrganizationMemberGroup ----
+
+	Parameter Set Added: Check
+
+	Parameter Set Added: CheckExpanded
+
+	Parameter Set Added: CheckViaIdentity
+
+	Parameter Set Added: CheckViaIdentityExpanded
+
+	Parameter Set Deleted: Check1
+
+	Parameter Set Deleted: CheckExpanded1
+
+	Parameter Set Deleted: CheckViaIdentity1
+
+	Parameter Set Deleted: CheckViaIdentityExpanded1
+
+	Parameter Set Name Updated: CheckExpanded
+		Old Set: CheckExpanded1
+		New Set: CheckExpanded
+
+	Parameter Set Name Updated: Check
+		Old Set: Check1
+		New Set: Check
+
+	Parameter Set Name Updated: CheckViaIdentityExpanded
+		Old Set: CheckViaIdentityExpanded1
+		New Set: CheckViaIdentityExpanded
+
+	Parameter Set Name Updated: CheckViaIdentity
+		Old Set: CheckViaIdentity1
+		New Set: CheckViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Confirm-MgOrganizationMemberGroup ----
+
+
+---- UPDATING Cmdlet : Confirm-MgOrganizationMemberObject ----
+
+	Parameter Set Added: Check
+
+	Parameter Set Added: CheckExpanded
+
+	Parameter Set Added: CheckViaIdentity
+
+	Parameter Set Added: CheckViaIdentityExpanded
+
+	Parameter Set Deleted: Check1
+
+	Parameter Set Deleted: CheckExpanded1
+
+	Parameter Set Deleted: CheckViaIdentity1
+
+	Parameter Set Deleted: CheckViaIdentityExpanded1
+
+	Parameter Set Name Updated: CheckExpanded
+		Old Set: CheckExpanded1
+		New Set: CheckExpanded
+
+	Parameter Set Name Updated: Check
+		Old Set: Check1
+		New Set: Check
+
+	Parameter Set Name Updated: CheckViaIdentityExpanded
+		Old Set: CheckViaIdentityExpanded1
+		New Set: CheckViaIdentityExpanded
+
+	Parameter Set Name Updated: CheckViaIdentity
+		Old Set: CheckViaIdentity1
+		New Set: CheckViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Confirm-MgOrganizationMemberObject ----
+
+
+---- UPDATING Cmdlet : Get-MgContact ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: List
+
+	Parameter Set Name Updated: List1
+		Old Set: List
+		New Set: List1
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgContact ----
+
+
+[Update-MarkdownHelp] 11/23/2020 14:55:42 Command 'Get-MgContactAvailableExtensionProperty' not found in the session, skipping upgrade for 'C:\a\1\s\src\Identity.DirectoryManagement\Identity.DirectoryManagement\help\Get-MgContactAvailableExtensionProperty.md'.
+---- UPDATING Cmdlet : Get-MgContactById ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetExpanded1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetExpanded
+
+	Parameter Set Name Updated: GetExpanded1
+		Old Set: GetExpanded
+		New Set: GetExpanded1
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Updated: BodyParameter
+		Type updated from IPaths12Azg33ContactsMicrosoftGraphGetbyidsPostRequestbodyContentApplicationJsonSchema to IPaths12Azg33ContactsMicrosoftGraphGetbyidsPostRequestbodyContentApplicationJsonSchema1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgContactById ----
+
+
+---- UPDATING Cmdlet : Get-MgContactDelta ----
+
+	Parameter Set Added: Delta1
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: Delta1
+		Old Set: 
+		New Set: Delta1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgContactDelta ----
+
+
+---- UPDATING Cmdlet : Get-MgContactDirectReport ----
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List1
+		Old Set: 
+		New Set: List1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgContactDirectReport ----
+
+
+---- UPDATING Cmdlet : Get-MgContactDirectReportByRef ----
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List1
+		Old Set: 
+		New Set: List1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgContactDirectReportByRef ----
+
+
+---- UPDATING Cmdlet : Get-MgContactManager ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgContactManager ----
+
+
+---- UPDATING Cmdlet : Get-MgContactManagerByRef ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgContactManagerByRef ----
+
+
+---- UPDATING Cmdlet : Get-MgContactMember ----
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List1
+		Old Set: 
+		New Set: List1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgContactMember ----
+
+
+---- UPDATING Cmdlet : Get-MgContactMemberByRef ----
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List1
+		Old Set: 
+		New Set: List1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgContactMemberByRef ----
+
+
+---- UPDATING Cmdlet : Get-MgContactMemberGroup ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetExpanded1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: GetViaIdentityExpanded1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetExpanded
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: GetViaIdentityExpanded
+
+	Parameter Set Name Updated: GetExpanded1
+		Old Set: GetExpanded
+		New Set: GetExpanded1
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentityExpanded1
+		Old Set: GetViaIdentityExpanded
+		New Set: GetViaIdentityExpanded1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgContactMemberGroup ----
+
+
+---- UPDATING Cmdlet : Get-MgContactMemberObject ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetExpanded1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: GetViaIdentityExpanded1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetExpanded
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: GetViaIdentityExpanded
+
+	Parameter Set Name Updated: GetExpanded1
+		Old Set: GetExpanded
+		New Set: GetExpanded1
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentityExpanded1
+		Old Set: GetViaIdentityExpanded
+		New Set: GetViaIdentityExpanded1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgContactMemberObject ----
+
+
+---- UPDATING Cmdlet : Get-MgContactTransitiveMember ----
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List1
+		Old Set: 
+		New Set: List1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgContactTransitiveMember ----
+
+
+---- UPDATING Cmdlet : Get-MgContactTransitiveMemberByRef ----
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List1
+		Old Set: 
+		New Set: List1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgContactTransitiveMemberByRef ----
+
+
+---- UPDATING Cmdlet : Get-MgContract ----
+
+	Parameter Set Added: Get2
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: List
+
+	Parameter Set Name Updated: List1
+		Old Set: List
+		New Set: List1
+
+	Parameter Set Name Updated: Get2
+		Old Set: Get
+		New Set: Get2
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgContract ----
+
+
+[Update-MarkdownHelp] 11/23/2020 14:56:05 Command 'Get-MgContractAvailableExtensionProperty' not found in the session, skipping upgrade for 'C:\a\1\s\src\Identity.DirectoryManagement\Identity.DirectoryManagement\help\Get-MgContractAvailableExtensionProperty.md'.
+---- UPDATING Cmdlet : Get-MgContractById ----
+
+	Parameter Set Added: Get3
+
+	Parameter Set Added: GetExpanded1
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetExpanded
+
+	Parameter Set Name Updated: GetExpanded1
+		Old Set: GetExpanded
+		New Set: GetExpanded1
+
+	Parameter Set Name Updated: Get3
+		Old Set: Get1
+		New Set: Get3
+
+---- COMPLETED UPDATING Cmdlet : Get-MgContractById ----
+
+
+---- UPDATING Cmdlet : Get-MgContractMemberGroup ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetExpanded1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: GetViaIdentityExpanded1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetExpanded
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: GetViaIdentityExpanded
+
+	Parameter Set Name Updated: GetExpanded1
+		Old Set: GetExpanded
+		New Set: GetExpanded1
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentityExpanded1
+		Old Set: GetViaIdentityExpanded
+		New Set: GetViaIdentityExpanded1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgContractMemberGroup ----
+
+
+---- UPDATING Cmdlet : Get-MgContractMemberObject ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetExpanded1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: GetViaIdentityExpanded1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetExpanded
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: GetViaIdentityExpanded
+
+	Parameter Set Name Updated: GetExpanded1
+		Old Set: GetExpanded
+		New Set: GetExpanded1
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentityExpanded1
+		Old Set: GetViaIdentityExpanded
+		New Set: GetViaIdentityExpanded1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgContractMemberObject ----
+
+
+---- UPDATING Cmdlet : Get-MgDevice ----
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List1
+		Old Set: 
+		New Set: List1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDevice ----
+
+
+[Update-MarkdownHelp] 11/23/2020 14:56:13 Command 'Get-MgDeviceAvailableExtensionProperty' not found in the session, skipping upgrade for 'C:\a\1\s\src\Identity.DirectoryManagement\Identity.DirectoryManagement\help\Get-MgDeviceAvailableExtensionProperty.md'.
+---- UPDATING Cmdlet : Get-MgDeviceById ----
+
+	Parameter Set Added: Get2
+
+	Parameter Set Added: Get3
+
+	Parameter Set Added: GetExpanded1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetExpanded
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Name Updated: GetExpanded1
+		Old Set: GetExpanded
+		New Set: GetExpanded1
+
+	Parameter Set Name Updated: Get2
+		Old Set: Get
+		New Set: Get2
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+	Parameter Set Name Updated: Get3
+		Old Set: Get1
+		New Set: Get3
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDeviceById ----
+
+
+---- UPDATING Cmdlet : Get-MgDeviceExtension ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: List
+
+	Parameter Set Name Updated: List1
+		Old Set: List
+		New Set: List1
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDeviceExtension ----
+
+
+---- UPDATING Cmdlet : Get-MgDeviceMember ----
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List1
+		Old Set: 
+		New Set: List1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDeviceMember ----
+
+
+---- UPDATING Cmdlet : Get-MgDeviceMemberByRef ----
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List1
+		Old Set: 
+		New Set: List1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDeviceMemberByRef ----
+
+
+---- UPDATING Cmdlet : Get-MgDeviceMemberGroup ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetExpanded1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: GetViaIdentityExpanded1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetExpanded
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: GetViaIdentityExpanded
+
+	Parameter Set Name Updated: GetExpanded1
+		Old Set: GetExpanded
+		New Set: GetExpanded1
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentityExpanded1
+		Old Set: GetViaIdentityExpanded
+		New Set: GetViaIdentityExpanded1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDeviceMemberGroup ----
+
+
+---- UPDATING Cmdlet : Get-MgDeviceMemberObject ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetExpanded1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: GetViaIdentityExpanded1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetExpanded
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: GetViaIdentityExpanded
+
+	Parameter Set Name Updated: GetExpanded1
+		Old Set: GetExpanded
+		New Set: GetExpanded1
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentityExpanded1
+		Old Set: GetViaIdentityExpanded
+		New Set: GetViaIdentityExpanded1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDeviceMemberObject ----
+
+
+---- UPDATING Cmdlet : Get-MgDeviceRegisteredOwner ----
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List1
+		Old Set: 
+		New Set: List1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDeviceRegisteredOwner ----
+
+
+---- UPDATING Cmdlet : Get-MgDeviceRegisteredOwnerByRef ----
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List1
+		Old Set: 
+		New Set: List1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDeviceRegisteredOwnerByRef ----
+
+
+---- UPDATING Cmdlet : Get-MgDeviceRegisteredUser ----
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List1
+		Old Set: 
+		New Set: List1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDeviceRegisteredUser ----
+
+
+---- UPDATING Cmdlet : Get-MgDeviceRegisteredUserByRef ----
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List1
+		Old Set: 
+		New Set: List1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDeviceRegisteredUserByRef ----
+
+
+---- UPDATING Cmdlet : Get-MgDeviceTransitiveMember ----
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List1
+		Old Set: 
+		New Set: List1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDeviceTransitiveMember ----
+
+
+---- UPDATING Cmdlet : Get-MgDeviceTransitiveMemberByRef ----
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List1
+		Old Set: 
+		New Set: List1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDeviceTransitiveMemberByRef ----
+
+
+---- UPDATING Cmdlet : Get-MgDirectory ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: Get
+		Old Set: 
+		New Set: Get
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDirectory ----
+
+
+---- UPDATING Cmdlet : Get-MgDirectoryAdministrativeUnit ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDirectoryAdministrativeUnit ----
+
+
+[Update-MarkdownHelp] 11/23/2020 14:56:35 Command 'Get-MgDirectoryAdministrativeUnitDelta' not found in the session, skipping upgrade for 'C:\a\1\s\src\Identity.DirectoryManagement\Identity.DirectoryManagement\help\Get-MgDirectoryAdministrativeUnitDelta.md'.
+[Update-MarkdownHelp] 11/23/2020 14:56:36 Command 'Get-MgDirectoryAdministrativeUnitExtension' not found in the session, skipping upgrade for 'C:\a\1\s\src\Identity.DirectoryManagement\Identity.DirectoryManagement\help\Get-MgDirectoryAdministrativeUnitExtension.md'.
+[Update-MarkdownHelp] 11/23/2020 14:56:37 Command 'Get-MgDirectoryAdministrativeUnitMember' not found in the session, skipping upgrade for 'C:\a\1\s\src\Identity.DirectoryManagement\Identity.DirectoryManagement\help\Get-MgDirectoryAdministrativeUnitMember.md'.
+[Update-MarkdownHelp] 11/23/2020 14:56:38 Command 'Get-MgDirectoryAdministrativeUnitMemberByRef' not found in the session, skipping upgrade for 'C:\a\1\s\src\Identity.DirectoryManagement\Identity.DirectoryManagement\help\Get-MgDirectoryAdministrativeUnitMemberByRef.md'.
+[Update-MarkdownHelp] 11/23/2020 14:56:38 Command 'Get-MgDirectoryAdministrativeUnitScopedRoleMember' not found in the session, skipping upgrade for 'C:\a\1\s\src\Identity.DirectoryManagement\Identity.DirectoryManagement\help\Get-MgDirectoryAdministrativeUnitScopedRoleMember.md'.
+---- UPDATING Cmdlet : Get-MgDirectoryDeletedItem ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDirectoryDeletedItem ----
+
+
+---- UPDATING Cmdlet : Get-MgDirectoryRole ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get2
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get2
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDirectoryRole ----
+
+
+[Update-MarkdownHelp] 11/23/2020 14:56:43 Command 'Get-MgDirectoryRoleAvailableExtensionProperty' not found in the session, skipping upgrade for 'C:\a\1\s\src\Identity.DirectoryManagement\Identity.DirectoryManagement\help\Get-MgDirectoryRoleAvailableExtensionProperty.md'.
+---- UPDATING Cmdlet : Get-MgDirectoryRoleById ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetExpanded
+
+	Parameter Set Deleted: Get3
+
+	Parameter Set Deleted: GetExpanded1
+
+	Parameter Set Name Updated: GetExpanded
+		Old Set: GetExpanded1
+		New Set: GetExpanded
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get3
+		New Set: Get1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDirectoryRoleById ----
+
+
+---- UPDATING Cmdlet : Get-MgDirectoryRoleDelta ----
+
+	Parameter Set Added: Delta
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: Delta
+		Old Set: 
+		New Set: Delta
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDirectoryRoleDelta ----
+
+
+---- UPDATING Cmdlet : Get-MgDirectoryRoleMember ----
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List
+		Old Set: 
+		New Set: List
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDirectoryRoleMember ----
+
+
+---- UPDATING Cmdlet : Get-MgDirectoryRoleMemberByRef ----
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List
+		Old Set: 
+		New Set: List
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDirectoryRoleMemberByRef ----
+
+
+---- UPDATING Cmdlet : Get-MgDirectoryRoleMemberGroup ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetExpanded
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: GetViaIdentityExpanded
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetExpanded1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: GetViaIdentityExpanded1
+
+	Parameter Set Name Updated: GetExpanded
+		Old Set: GetExpanded1
+		New Set: GetExpanded
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentityExpanded
+		Old Set: GetViaIdentityExpanded1
+		New Set: GetViaIdentityExpanded
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDirectoryRoleMemberGroup ----
+
+
+---- UPDATING Cmdlet : Get-MgDirectoryRoleMemberObject ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetExpanded
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: GetViaIdentityExpanded
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetExpanded1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: GetViaIdentityExpanded1
+
+	Parameter Set Name Updated: GetExpanded
+		Old Set: GetExpanded1
+		New Set: GetExpanded
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentityExpanded
+		Old Set: GetViaIdentityExpanded1
+		New Set: GetViaIdentityExpanded
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDirectoryRoleMemberObject ----
+
+
+---- UPDATING Cmdlet : Get-MgDirectoryRoleScopedMember ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDirectoryRoleScopedMember ----
+
+
+---- UPDATING Cmdlet : Get-MgDirectoryRoleTemplate ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDirectoryRoleTemplate ----
+
+
+[Update-MarkdownHelp] 11/23/2020 14:56:56 Command 'Get-MgDirectoryRoleTemplateAvailableExtensionProperty' not found in the session, skipping upgrade for 'C:\a\1\s\src\Identity.DirectoryManagement\Identity.DirectoryManagement\help\Get-MgDirectoryRoleTemplateAvailableExtensionProperty.md'.
+---- UPDATING Cmdlet : Get-MgDirectoryRoleTemplateById ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetExpanded
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetExpanded1
+
+	Parameter Set Name Updated: GetExpanded
+		Old Set: GetExpanded1
+		New Set: GetExpanded
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDirectoryRoleTemplateById ----
+
+
+---- UPDATING Cmdlet : Get-MgDirectoryRoleTemplateMemberGroup ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetExpanded
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: GetViaIdentityExpanded
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetExpanded1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: GetViaIdentityExpanded1
+
+	Parameter Set Name Updated: GetExpanded
+		Old Set: GetExpanded1
+		New Set: GetExpanded
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentityExpanded
+		Old Set: GetViaIdentityExpanded1
+		New Set: GetViaIdentityExpanded
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDirectoryRoleTemplateMemberGroup ----
+
+
+---- UPDATING Cmdlet : Get-MgDirectoryRoleTemplateMemberObject ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetExpanded
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: GetViaIdentityExpanded
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetExpanded1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: GetViaIdentityExpanded1
+
+	Parameter Set Name Updated: GetExpanded
+		Old Set: GetExpanded1
+		New Set: GetExpanded
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentityExpanded
+		Old Set: GetViaIdentityExpanded1
+		New Set: GetViaIdentityExpanded
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDirectoryRoleTemplateMemberObject ----
+
+
+---- UPDATING Cmdlet : Get-MgDomain ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDomain ----
+
+
+---- UPDATING Cmdlet : Get-MgDomainNameerenceByRef ----
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List
+		Old Set: 
+		New Set: List
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDomainNameerenceByRef ----
+
+
+---- UPDATING Cmdlet : Get-MgDomainRefDomainNameerenceByRef ----
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List
+		Old Set: 
+		New Set: List
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDomainRefDomainNameerenceByRef ----
+
+
+---- UPDATING Cmdlet : Get-MgDomainServiceConfigurationRecord ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDomainServiceConfigurationRecord ----
+
+
+---- UPDATING Cmdlet : Get-MgDomainVerificationDnsRecord ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDomainVerificationDnsRecord ----
+
+
+---- UPDATING Cmdlet : Get-MgOrganization ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get2
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get2
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgOrganization ----
+
+
+[Update-MarkdownHelp] 11/23/2020 14:57:10 Command 'Get-MgOrganizationAvailableExtensionProperty' not found in the session, skipping upgrade for 'C:\a\1\s\src\Identity.DirectoryManagement\Identity.DirectoryManagement\help\Get-MgOrganizationAvailableExtensionProperty.md'.
+---- UPDATING Cmdlet : Get-MgOrganizationById ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetExpanded
+
+	Parameter Set Deleted: Get3
+
+	Parameter Set Deleted: GetExpanded1
+
+	Parameter Set Name Updated: GetExpanded
+		Old Set: GetExpanded1
+		New Set: GetExpanded
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get3
+		New Set: Get1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgOrganizationById ----
+
+
+---- UPDATING Cmdlet : Get-MgOrganizationExtension ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgOrganizationExtension ----
+
+
+---- UPDATING Cmdlet : Get-MgOrganizationMemberGroup ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetExpanded
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: GetViaIdentityExpanded
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetExpanded1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: GetViaIdentityExpanded1
+
+	Parameter Set Name Updated: GetExpanded
+		Old Set: GetExpanded1
+		New Set: GetExpanded
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentityExpanded
+		Old Set: GetViaIdentityExpanded1
+		New Set: GetViaIdentityExpanded
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgOrganizationMemberGroup ----
+
+
+---- UPDATING Cmdlet : Get-MgOrganizationMemberObject ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetExpanded
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: GetViaIdentityExpanded
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetExpanded1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: GetViaIdentityExpanded1
+
+	Parameter Set Name Updated: GetExpanded
+		Old Set: GetExpanded1
+		New Set: GetExpanded
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentityExpanded
+		Old Set: GetViaIdentityExpanded1
+		New Set: GetViaIdentityExpanded
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgOrganizationMemberObject ----
+
+
+---- UPDATING Cmdlet : Get-MgSubscribedSku ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgSubscribedSku ----
+
+
+---- UPDATING Cmdlet : Get-MgUserScopedRoleMember ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserScopedRoleMember ----
+
+
+---- UPDATING Cmdlet : Invoke-MgForceDomainDelete ----
+
+	Parameter Set Added: Force
+
+	Parameter Set Added: ForceExpanded
+
+	Parameter Set Added: ForceViaIdentity
+
+	Parameter Set Added: ForceViaIdentityExpanded
+
+	Parameter Set Deleted: Force1
+
+	Parameter Set Deleted: ForceExpanded1
+
+	Parameter Set Deleted: ForceViaIdentity1
+
+	Parameter Set Deleted: ForceViaIdentityExpanded1
+
+	Parameter Set Name Updated: ForceExpanded
+		Old Set: ForceExpanded1
+		New Set: ForceExpanded
+
+	Parameter Set Name Updated: Force
+		Old Set: Force1
+		New Set: Force
+
+	Parameter Set Name Updated: ForceViaIdentityExpanded
+		Old Set: ForceViaIdentityExpanded1
+		New Set: ForceViaIdentityExpanded
+
+	Parameter Set Name Updated: ForceViaIdentity
+		Old Set: ForceViaIdentity1
+		New Set: ForceViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgForceDomainDelete ----
+
+
+---- UPDATING Cmdlet : New-MgContact ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Name Updated: CreateExpanded1
+		Old Set: CreateExpanded
+		New Set: CreateExpanded1
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphOrgContact to IMicrosoftGraphOrgContact1
+
+	Parameter Updated: Phones
+		Type updated from IMicrosoftGraphPhone[] to IMicrosoftGraphPhone1[]
+
+---- COMPLETED UPDATING Cmdlet : New-MgContact ----
+
+
+---- UPDATING Cmdlet : New-MgContactDirectReportByRef ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateExpanded1
+		Old Set: CreateExpanded
+		New Set: CreateExpanded1
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded1
+		Old Set: CreateViaIdentityExpanded
+		New Set: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : New-MgContactDirectReportByRef ----
+
+
+---- UPDATING Cmdlet : New-MgContactMemberByRef ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateExpanded1
+		Old Set: CreateExpanded
+		New Set: CreateExpanded1
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded1
+		Old Set: CreateViaIdentityExpanded
+		New Set: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : New-MgContactMemberByRef ----
+
+
+---- UPDATING Cmdlet : New-MgContactTransitiveMemberByRef ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateExpanded1
+		Old Set: CreateExpanded
+		New Set: CreateExpanded1
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded1
+		Old Set: CreateViaIdentityExpanded
+		New Set: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : New-MgContactTransitiveMemberByRef ----
+
+
+---- UPDATING Cmdlet : New-MgContract ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Name Updated: CreateExpanded1
+		Old Set: CreateExpanded
+		New Set: CreateExpanded1
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+---- COMPLETED UPDATING Cmdlet : New-MgContract ----
+
+
+---- UPDATING Cmdlet : New-MgDevice ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Added: Commands
+
+	Parameter Added: DeviceCategory
+
+	Parameter Added: DeviceOwnership
+
+	Parameter Added: DomainName
+
+	Parameter Added: EnrollmentProfileName
+
+	Parameter Added: EnrollmentType
+
+	Parameter Added: ExtensionAttributes
+
+	Parameter Added: IsRooted
+
+	Parameter Added: Kind
+
+	Parameter Added: ManagementType
+
+	Parameter Added: Manufacturer
+
+	Parameter Added: Model
+
+	Parameter Added: Name
+
+	Parameter Added: Platform
+
+	Parameter Added: RegistrationDateTime
+
+	Parameter Added: Status
+
+	Parameter Deleted: MdmAppId
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphDevice to IMicrosoftGraphDevice1
+
+---- COMPLETED UPDATING Cmdlet : New-MgDevice ----
+
+
+---- UPDATING Cmdlet : New-MgDeviceExtension ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateExpanded1
+		Old Set: CreateExpanded
+		New Set: CreateExpanded1
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded1
+		Old Set: CreateViaIdentityExpanded
+		New Set: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : New-MgDeviceExtension ----
+
+
+---- UPDATING Cmdlet : New-MgDeviceMemberByRef ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateExpanded1
+		Old Set: CreateExpanded
+		New Set: CreateExpanded1
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded1
+		Old Set: CreateViaIdentityExpanded
+		New Set: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : New-MgDeviceMemberByRef ----
+
+
+---- UPDATING Cmdlet : New-MgDeviceRegisteredOwnerByRef ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateExpanded1
+		Old Set: CreateExpanded
+		New Set: CreateExpanded1
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded1
+		Old Set: CreateViaIdentityExpanded
+		New Set: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : New-MgDeviceRegisteredOwnerByRef ----
+
+
+---- UPDATING Cmdlet : New-MgDeviceRegisteredUserByRef ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateExpanded1
+		Old Set: CreateExpanded
+		New Set: CreateExpanded1
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded1
+		Old Set: CreateViaIdentityExpanded
+		New Set: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : New-MgDeviceRegisteredUserByRef ----
+
+
+---- UPDATING Cmdlet : New-MgDeviceTransitiveMemberByRef ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateExpanded1
+		Old Set: CreateExpanded
+		New Set: CreateExpanded1
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded1
+		Old Set: CreateViaIdentityExpanded
+		New Set: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : New-MgDeviceTransitiveMemberByRef ----
+
+
+---- UPDATING Cmdlet : New-MgDirectoryAdministrativeUnit ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+---- COMPLETED UPDATING Cmdlet : New-MgDirectoryAdministrativeUnit ----
+
+
+[Update-MarkdownHelp] 11/23/2020 14:57:43 Command 'New-MgDirectoryAdministrativeUnitExtension' not found in the session, skipping upgrade for 'C:\a\1\s\src\Identity.DirectoryManagement\Identity.DirectoryManagement\help\New-MgDirectoryAdministrativeUnitExtension.md'.
+[Update-MarkdownHelp] 11/23/2020 14:57:44 Command 'New-MgDirectoryAdministrativeUnitMemberByRef' not found in the session, skipping upgrade for 'C:\a\1\s\src\Identity.DirectoryManagement\Identity.DirectoryManagement\help\New-MgDirectoryAdministrativeUnitMemberByRef.md'.
+[Update-MarkdownHelp] 11/23/2020 14:57:45 Command 'New-MgDirectoryAdministrativeUnitScopedRoleMember' not found in the session, skipping upgrade for 'C:\a\1\s\src\Identity.DirectoryManagement\Identity.DirectoryManagement\help\New-MgDirectoryAdministrativeUnitScopedRoleMember.md'.
+---- UPDATING Cmdlet : New-MgDirectoryDeletedItem ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+---- COMPLETED UPDATING Cmdlet : New-MgDirectoryDeletedItem ----
+
+
+---- UPDATING Cmdlet : New-MgDirectoryRole ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+---- COMPLETED UPDATING Cmdlet : New-MgDirectoryRole ----
+
+
+---- UPDATING Cmdlet : New-MgDirectoryRoleMemberByRef ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded
+		Old Set: CreateViaIdentityExpanded1
+		New Set: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : New-MgDirectoryRoleMemberByRef ----
+
+
+---- UPDATING Cmdlet : New-MgDirectoryRoleScopedMember ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded
+		Old Set: CreateViaIdentityExpanded1
+		New Set: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : New-MgDirectoryRoleScopedMember ----
+
+
+---- UPDATING Cmdlet : New-MgDirectoryRoleTemplate ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+---- COMPLETED UPDATING Cmdlet : New-MgDirectoryRoleTemplate ----
+
+
+---- UPDATING Cmdlet : New-MgDomain ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Added: SharedEmailDomainInvitations
+
+	Parameter Deleted: Manufacturer
+
+	Parameter Deleted: Model
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphDomain to IMicrosoftGraphDomain1
+
+---- COMPLETED UPDATING Cmdlet : New-MgDomain ----
+
+
+---- UPDATING Cmdlet : New-MgDomainRefDomainNameerenceByRef ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded
+		Old Set: CreateViaIdentityExpanded1
+		New Set: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : New-MgDomainRefDomainNameerenceByRef ----
+
+
+---- UPDATING Cmdlet : New-MgDomainServiceConfigurationRecord ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded
+		Old Set: CreateViaIdentityExpanded1
+		New Set: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : New-MgDomainServiceConfigurationRecord ----
+
+
+---- UPDATING Cmdlet : New-MgDomainVerificationDnsRecord ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded
+		Old Set: CreateViaIdentityExpanded1
+		New Set: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : New-MgDomainVerificationDnsRecord ----
+
+
+---- UPDATING Cmdlet : New-MgOrganization ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Added: Branding
+
+	Parameter Added: CertificateConnectorSetting
+
+	Parameter Added: DirectorySizeQuota
+
+	Parameter Added: IsMultipleDataLocationsForServicesEnabled
+
+	Parameter Added: Settings
+
+	Parameter Deleted: TenantType
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphOrganization to IMicrosoftGraphOrganization1
+
+---- COMPLETED UPDATING Cmdlet : New-MgOrganization ----
+
+
+---- UPDATING Cmdlet : New-MgOrganizationExtension ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded
+		Old Set: CreateViaIdentityExpanded1
+		New Set: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : New-MgOrganizationExtension ----
+
+
+---- UPDATING Cmdlet : New-MgSubscribedSku ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+---- COMPLETED UPDATING Cmdlet : New-MgSubscribedSku ----
+
+
+---- UPDATING Cmdlet : New-MgUserScopedRoleMember ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded
+		Old Set: CreateViaIdentityExpanded1
+		New Set: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserScopedRoleMember ----
+
+
+---- UPDATING Cmdlet : Remove-MgContact ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgContact ----
+
+
+---- UPDATING Cmdlet : Remove-MgContactManagerByRef ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgContactManagerByRef ----
+
+
+---- UPDATING Cmdlet : Remove-MgContract ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgContract ----
+
+
+---- UPDATING Cmdlet : Remove-MgDevice ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgDevice ----
+
+
+---- UPDATING Cmdlet : Remove-MgDeviceExtension ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgDeviceExtension ----
+
+
+---- UPDATING Cmdlet : Remove-MgDirectoryAdministrativeUnit ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgDirectoryAdministrativeUnit ----
+
+
+[Update-MarkdownHelp] 11/23/2020 14:58:19 Command 'Remove-MgDirectoryAdministrativeUnitExtension' not found in the session, skipping upgrade for 'C:\a\1\s\src\Identity.DirectoryManagement\Identity.DirectoryManagement\help\Remove-MgDirectoryAdministrativeUnitExtension.md'.
+[Update-MarkdownHelp] 11/23/2020 14:58:19 Command 'Remove-MgDirectoryAdministrativeUnitScopedRoleMember' not found in the session, skipping upgrade for 'C:\a\1\s\src\Identity.DirectoryManagement\Identity.DirectoryManagement\help\Remove-MgDirectoryAdministrativeUnitScopedRoleMember.md'.
+---- UPDATING Cmdlet : Remove-MgDirectoryDeletedItem ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgDirectoryDeletedItem ----
+
+
+---- UPDATING Cmdlet : Remove-MgDirectoryRole ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgDirectoryRole ----
+
+
+---- UPDATING Cmdlet : Remove-MgDirectoryRoleScopedMember ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgDirectoryRoleScopedMember ----
+
+
+---- UPDATING Cmdlet : Remove-MgDirectoryRoleTemplate ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgDirectoryRoleTemplate ----
+
+
+---- UPDATING Cmdlet : Remove-MgDomain ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgDomain ----
+
+
+---- UPDATING Cmdlet : Remove-MgDomainServiceConfigurationRecord ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgDomainServiceConfigurationRecord ----
+
+
+---- UPDATING Cmdlet : Remove-MgDomainVerificationDnsRecord ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgDomainVerificationDnsRecord ----
+
+
+---- UPDATING Cmdlet : Remove-MgOrganization ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgOrganization ----
+
+
+---- UPDATING Cmdlet : Remove-MgOrganizationExtension ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgOrganizationExtension ----
+
+
+---- UPDATING Cmdlet : Remove-MgSubscribedSku ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgSubscribedSku ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserScopedRoleMember ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserScopedRoleMember ----
+
+
+---- UPDATING Cmdlet : Restore-MgContact ----
+
+	Parameter Set Added: Restore1
+
+	Parameter Set Added: RestoreViaIdentity1
+
+	Parameter Set Deleted: Restore
+
+	Parameter Set Deleted: RestoreViaIdentity
+
+	Parameter Set Name Updated: Restore1
+		Old Set: Restore
+		New Set: Restore1
+
+	Parameter Set Name Updated: RestoreViaIdentity1
+		Old Set: RestoreViaIdentity
+		New Set: RestoreViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Restore-MgContact ----
+
+
+---- UPDATING Cmdlet : Restore-MgContract ----
+
+	Parameter Set Added: Restore1
+
+	Parameter Set Added: RestoreViaIdentity1
+
+	Parameter Set Deleted: Restore
+
+	Parameter Set Deleted: RestoreViaIdentity
+
+	Parameter Set Name Updated: Restore1
+		Old Set: Restore
+		New Set: Restore1
+
+	Parameter Set Name Updated: RestoreViaIdentity1
+		Old Set: RestoreViaIdentity
+		New Set: RestoreViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Restore-MgContract ----
+
+
+---- UPDATING Cmdlet : Restore-MgDevice ----
+
+	Parameter Set Added: Restore1
+
+	Parameter Set Added: RestoreViaIdentity1
+
+	Parameter Set Deleted: Restore
+
+	Parameter Set Deleted: RestoreViaIdentity
+
+	Parameter Set Name Updated: Restore1
+		Old Set: Restore
+		New Set: Restore1
+
+	Parameter Set Name Updated: RestoreViaIdentity1
+		Old Set: RestoreViaIdentity
+		New Set: RestoreViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Restore-MgDevice ----
+
+
+---- UPDATING Cmdlet : Restore-MgDirectoryRole ----
+
+	Parameter Set Added: Restore
+
+	Parameter Set Added: RestoreViaIdentity
+
+	Parameter Set Deleted: Restore1
+
+	Parameter Set Deleted: RestoreViaIdentity1
+
+	Parameter Set Name Updated: Restore
+		Old Set: Restore1
+		New Set: Restore
+
+	Parameter Set Name Updated: RestoreViaIdentity
+		Old Set: RestoreViaIdentity1
+		New Set: RestoreViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Restore-MgDirectoryRole ----
+
+
+---- UPDATING Cmdlet : Restore-MgDirectoryRoleTemplate ----
+
+	Parameter Set Added: Restore
+
+	Parameter Set Added: RestoreViaIdentity
+
+	Parameter Set Deleted: Restore1
+
+	Parameter Set Deleted: RestoreViaIdentity1
+
+	Parameter Set Name Updated: Restore
+		Old Set: Restore1
+		New Set: Restore
+
+	Parameter Set Name Updated: RestoreViaIdentity
+		Old Set: RestoreViaIdentity1
+		New Set: RestoreViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Restore-MgDirectoryRoleTemplate ----
+
+
+---- UPDATING Cmdlet : Restore-MgOrganization ----
+
+	Parameter Set Added: Restore
+
+	Parameter Set Added: RestoreViaIdentity
+
+	Parameter Set Deleted: Restore1
+
+	Parameter Set Deleted: RestoreViaIdentity1
+
+	Parameter Set Name Updated: Restore
+		Old Set: Restore1
+		New Set: Restore
+
+	Parameter Set Name Updated: RestoreViaIdentity
+		Old Set: RestoreViaIdentity1
+		New Set: RestoreViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Restore-MgOrganization ----
+
+
+---- UPDATING Cmdlet : Set-MgContactManagerByRef ----
+
+	Parameter Set Added: Set1
+
+	Parameter Set Added: SetExpanded1
+
+	Parameter Set Added: SetViaIdentity1
+
+	Parameter Set Added: SetViaIdentityExpanded1
+
+	Parameter Set Deleted: Set
+
+	Parameter Set Deleted: SetExpanded
+
+	Parameter Set Deleted: SetViaIdentity
+
+	Parameter Set Deleted: SetViaIdentityExpanded
+
+	Parameter Set Name Updated: SetExpanded1
+		Old Set: SetExpanded
+		New Set: SetExpanded1
+
+	Parameter Set Name Updated: Set1
+		Old Set: Set
+		New Set: Set1
+
+	Parameter Set Name Updated: SetViaIdentityExpanded1
+		Old Set: SetViaIdentityExpanded
+		New Set: SetViaIdentityExpanded1
+
+	Parameter Set Name Updated: SetViaIdentity1
+		Old Set: SetViaIdentity
+		New Set: SetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Set-MgContactManagerByRef ----
+
+
+---- UPDATING Cmdlet : Set-MgOrganizationMobileDeviceManagementAuthority ----
+
+	Parameter Set Added: Set
+
+	Parameter Set Added: SetViaIdentity
+
+	Parameter Set Deleted: Set1
+
+	Parameter Set Deleted: SetViaIdentity1
+
+	Parameter Set Name Updated: Set
+		Old Set: Set1
+		New Set: Set
+
+	Parameter Set Name Updated: SetViaIdentity
+		Old Set: SetViaIdentity1
+		New Set: SetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Set-MgOrganizationMobileDeviceManagementAuthority ----
+
+
+---- UPDATING Cmdlet : Test-MgContactProperty ----
+
+	Parameter Set Added: Validate1
+
+	Parameter Set Added: ValidateExpanded1
+
+	Parameter Set Deleted: Validate
+
+	Parameter Set Deleted: ValidateExpanded
+
+	Parameter Set Name Updated: ValidateExpanded1
+		Old Set: ValidateExpanded
+		New Set: ValidateExpanded1
+
+	Parameter Set Name Updated: Validate1
+		Old Set: Validate
+		New Set: Validate1
+
+	Parameter Updated: BodyParameter
+		Type updated from IPaths7Cg04SContactsMicrosoftGraphValidatepropertiesPostRequestbodyContentApplicationJsonSchema to IPaths7Cg04SContactsMicrosoftGraphValidatepropertiesPostRequestbodyContentApplicationJsonSchema1
+
+---- COMPLETED UPDATING Cmdlet : Test-MgContactProperty ----
+
+
+---- UPDATING Cmdlet : Test-MgContractProperty ----
+
+	Parameter Set Added: Validate1
+
+	Parameter Set Added: ValidateExpanded1
+
+	Parameter Set Deleted: Validate
+
+	Parameter Set Deleted: ValidateExpanded
+
+	Parameter Set Name Updated: ValidateExpanded1
+		Old Set: ValidateExpanded
+		New Set: ValidateExpanded1
+
+	Parameter Set Name Updated: Validate1
+		Old Set: Validate
+		New Set: Validate1
+
+---- COMPLETED UPDATING Cmdlet : Test-MgContractProperty ----
+
+
+---- UPDATING Cmdlet : Test-MgDeviceProperty ----
+
+	Parameter Set Added: Validate
+
+	Parameter Set Added: ValidateExpanded
+
+	Parameter Set Deleted: Validate1
+
+	Parameter Set Deleted: ValidateExpanded1
+
+	Parameter Set Name Updated: ValidateExpanded
+		Old Set: ValidateExpanded1
+		New Set: ValidateExpanded
+
+	Parameter Set Name Updated: Validate
+		Old Set: Validate1
+		New Set: Validate
+
+---- COMPLETED UPDATING Cmdlet : Test-MgDeviceProperty ----
+
+
+---- UPDATING Cmdlet : Test-MgDirectoryRoleProperty ----
+
+	Parameter Set Added: Validate
+
+	Parameter Set Added: ValidateExpanded
+
+	Parameter Set Deleted: Validate1
+
+	Parameter Set Deleted: ValidateExpanded1
+
+	Parameter Set Name Updated: ValidateExpanded
+		Old Set: ValidateExpanded1
+		New Set: ValidateExpanded
+
+	Parameter Set Name Updated: Validate
+		Old Set: Validate1
+		New Set: Validate
+
+---- COMPLETED UPDATING Cmdlet : Test-MgDirectoryRoleProperty ----
+
+
+---- UPDATING Cmdlet : Test-MgDirectoryRoleTemplateProperty ----
+
+	Parameter Set Added: Validate
+
+	Parameter Set Added: ValidateExpanded
+
+	Parameter Set Deleted: Validate1
+
+	Parameter Set Deleted: ValidateExpanded1
+
+	Parameter Set Name Updated: ValidateExpanded
+		Old Set: ValidateExpanded1
+		New Set: ValidateExpanded
+
+	Parameter Set Name Updated: Validate
+		Old Set: Validate1
+		New Set: Validate
+
+---- COMPLETED UPDATING Cmdlet : Test-MgDirectoryRoleTemplateProperty ----
+
+
+---- UPDATING Cmdlet : Test-MgDomain ----
+
+	Parameter Set Added: Verify
+
+	Parameter Set Added: VerifyViaIdentity
+
+	Parameter Set Deleted: Verify1
+
+	Parameter Set Deleted: VerifyViaIdentity1
+
+	Parameter Set Name Updated: Verify
+		Old Set: Verify1
+		New Set: Verify
+
+	Parameter Set Name Updated: VerifyViaIdentity
+		Old Set: VerifyViaIdentity1
+		New Set: VerifyViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Test-MgDomain ----
+
+
+---- UPDATING Cmdlet : Test-MgOrganizationProperty ----
+
+	Parameter Set Added: Validate
+
+	Parameter Set Added: ValidateExpanded
+
+	Parameter Set Deleted: Validate1
+
+	Parameter Set Deleted: ValidateExpanded1
+
+	Parameter Set Name Updated: ValidateExpanded
+		Old Set: ValidateExpanded1
+		New Set: ValidateExpanded
+
+	Parameter Set Name Updated: Validate
+		Old Set: Validate1
+		New Set: Validate
+
+---- COMPLETED UPDATING Cmdlet : Test-MgOrganizationProperty ----
+
+
+---- UPDATING Cmdlet : Update-MgContact ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateExpanded1
+		Old Set: UpdateExpanded
+		New Set: UpdateExpanded1
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded1
+		Old Set: UpdateViaIdentityExpanded
+		New Set: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphOrgContact to IMicrosoftGraphOrgContact1
+
+	Parameter Updated: Phones
+		Type updated from IMicrosoftGraphPhone[] to IMicrosoftGraphPhone1[]
+
+---- COMPLETED UPDATING Cmdlet : Update-MgContact ----
+
+
+---- UPDATING Cmdlet : Update-MgContract ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateExpanded1
+		Old Set: UpdateExpanded
+		New Set: UpdateExpanded1
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded1
+		Old Set: UpdateViaIdentityExpanded
+		New Set: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Update-MgContract ----
+
+
+---- UPDATING Cmdlet : Update-MgDevice ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+	Parameter Added: Commands
+
+	Parameter Added: DeviceCategory
+
+	Parameter Added: DeviceOwnership
+
+	Parameter Added: DomainName
+
+	Parameter Added: EnrollmentProfileName
+
+	Parameter Added: EnrollmentType
+
+	Parameter Added: ExtensionAttributes
+
+	Parameter Added: IsRooted
+
+	Parameter Added: Kind
+
+	Parameter Added: ManagementType
+
+	Parameter Added: Manufacturer
+
+	Parameter Added: Model
+
+	Parameter Added: Name
+
+	Parameter Added: Platform
+
+	Parameter Added: RegistrationDateTime
+
+	Parameter Added: Status
+
+	Parameter Deleted: MdmAppId
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphDevice to IMicrosoftGraphDevice1
+
+---- COMPLETED UPDATING Cmdlet : Update-MgDevice ----
+
+
+---- UPDATING Cmdlet : Update-MgDeviceExtension ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateExpanded1
+		Old Set: UpdateExpanded
+		New Set: UpdateExpanded1
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded1
+		Old Set: UpdateViaIdentityExpanded
+		New Set: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Update-MgDeviceExtension ----
+
+
+---- UPDATING Cmdlet : Update-MgDirectory ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Added: FeatureRolloutPolicies
+
+	Parameter Added: SharedEmailDomains
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphDirectory1 to IMicrosoftGraphDirectory
+
+---- COMPLETED UPDATING Cmdlet : Update-MgDirectory ----
+
+
+---- UPDATING Cmdlet : Update-MgDirectoryAdministrativeUnit ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Update-MgDirectoryAdministrativeUnit ----
+
+
+[Update-MarkdownHelp] 11/23/2020 14:59:06 Command 'Update-MgDirectoryAdministrativeUnitExtension' not found in the session, skipping upgrade for 'C:\a\1\s\src\Identity.DirectoryManagement\Identity.DirectoryManagement\help\Update-MgDirectoryAdministrativeUnitExtension.md'.
+[Update-MarkdownHelp] 11/23/2020 14:59:07 Command 'Update-MgDirectoryAdministrativeUnitScopedRoleMember' not found in the session, skipping upgrade for 'C:\a\1\s\src\Identity.DirectoryManagement\Identity.DirectoryManagement\help\Update-MgDirectoryAdministrativeUnitScopedRoleMember.md'.
+---- UPDATING Cmdlet : Update-MgDirectoryDeletedItem ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Update-MgDirectoryDeletedItem ----
+
+
+---- UPDATING Cmdlet : Update-MgDirectoryRole ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Update-MgDirectoryRole ----
+
+
+---- UPDATING Cmdlet : Update-MgDirectoryRoleScopedMember ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Update-MgDirectoryRoleScopedMember ----
+
+
+---- UPDATING Cmdlet : Update-MgDirectoryRoleTemplate ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Update-MgDirectoryRoleTemplate ----
+
+
+---- UPDATING Cmdlet : Update-MgDomain ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Added: SharedEmailDomainInvitations
+
+	Parameter Deleted: Manufacturer
+
+	Parameter Deleted: Model
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphDomain to IMicrosoftGraphDomain1
+
+---- COMPLETED UPDATING Cmdlet : Update-MgDomain ----
+
+
+---- UPDATING Cmdlet : Update-MgDomainServiceConfigurationRecord ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Update-MgDomainServiceConfigurationRecord ----
+
+
+---- UPDATING Cmdlet : Update-MgDomainVerificationDnsRecord ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Update-MgDomainVerificationDnsRecord ----
+
+
+---- UPDATING Cmdlet : Update-MgOrganization ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Added: Branding
+
+	Parameter Added: CertificateConnectorSetting
+
+	Parameter Added: DirectorySizeQuota
+
+	Parameter Added: IsMultipleDataLocationsForServicesEnabled
+
+	Parameter Added: Settings
+
+	Parameter Deleted: TenantType
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphOrganization to IMicrosoftGraphOrganization1
+
+---- COMPLETED UPDATING Cmdlet : Update-MgOrganization ----
+
+
+---- UPDATING Cmdlet : Update-MgOrganizationExtension ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Update-MgOrganizationExtension ----
+
+
+---- UPDATING Cmdlet : Update-MgSubscribedSku ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Update-MgSubscribedSku ----
+
+
+---- UPDATING Cmdlet : Update-MgUserScopedRoleMember ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserScopedRoleMember ----
+
+
+[Update-MarkdownHelpModule] 11/23/2020 14:59:31 Creating new markdown for command 'Confirm-MgAdministrativeUnitMemberGroup'
+[Update-MarkdownHelpModule] 11/23/2020 14:59:32 Creating new markdown for command 'Confirm-MgAdministrativeUnitMemberObject'
+[Update-MarkdownHelpModule] 11/23/2020 14:59:33 Creating new markdown for command 'Confirm-MgDirectorySettingTemplateMemberGroup'
+[Update-MarkdownHelpModule] 11/23/2020 14:59:34 Creating new markdown for command 'Confirm-MgDirectorySettingTemplateMemberObject'
+[Update-MarkdownHelpModule] 11/23/2020 14:59:35 Creating new markdown for command 'Get-MgAdministrativeUnit'
+[Update-MarkdownHelpModule] 11/23/2020 14:59:36 Creating new markdown for command 'Get-MgAdministrativeUnitById'
+[Update-MarkdownHelpModule] 11/23/2020 14:59:37 Creating new markdown for command 'Get-MgAdministrativeUnitDelta'
+[Update-MarkdownHelpModule] 11/23/2020 14:59:37 Creating new markdown for command 'Get-MgAdministrativeUnitExtension'
+[Update-MarkdownHelpModule] 11/23/2020 14:59:38 Creating new markdown for command 'Get-MgAdministrativeUnitMember'
+[Update-MarkdownHelpModule] 11/23/2020 14:59:39 Creating new markdown for command 'Get-MgAdministrativeUnitMemberByRef'
+[Update-MarkdownHelpModule] 11/23/2020 14:59:39 Creating new markdown for command 'Get-MgAdministrativeUnitMemberGroup'
+[Update-MarkdownHelpModule] 11/23/2020 14:59:40 Creating new markdown for command 'Get-MgAdministrativeUnitMemberObject'
+[Update-MarkdownHelpModule] 11/23/2020 14:59:41 Creating new markdown for command 'Get-MgAdministrativeUnitScopedRoleMember'
+[Update-MarkdownHelpModule] 11/23/2020 14:59:42 Creating new markdown for command 'Get-MgAdministrativeUnitUserOwnedObject'
+[Update-MarkdownHelpModule] 11/23/2020 14:59:43 Creating new markdown for command 'Get-MgContactUserOwnedObject'
+[Update-MarkdownHelpModule] 11/23/2020 14:59:44 Creating new markdown for command 'Get-MgContractUserOwnedObject'
+[Update-MarkdownHelpModule] 11/23/2020 14:59:44 Creating new markdown for command 'Get-MgDeviceCommand'
+[Update-MarkdownHelpModule] 11/23/2020 14:59:46 Creating new markdown for command 'Get-MgDeviceUserOwnedObject'
+[Update-MarkdownHelpModule] 11/23/2020 14:59:46 Creating new markdown for command 'Get-MgDirectoryFeatureRolloutPolicy'
+[Update-MarkdownHelpModule] 11/23/2020 14:59:47 Creating new markdown for command 'Get-MgDirectoryFeatureRolloutPolicyApplyTo'
+[Update-MarkdownHelpModule] 11/23/2020 14:59:48 Creating new markdown for command 'Get-MgDirectoryRoleTemplateUserOwnedObject'
+[Update-MarkdownHelpModule] 11/23/2020 14:59:49 Creating new markdown for command 'Get-MgDirectoryRoleUserOwnedObject'
+[Update-MarkdownHelpModule] 11/23/2020 14:59:50 Creating new markdown for command 'Get-MgDirectorySetting'
+[Update-MarkdownHelpModule] 11/23/2020 14:59:51 Creating new markdown for command 'Get-MgDirectorySettingTemplate'
+[Update-MarkdownHelpModule] 11/23/2020 14:59:52 Creating new markdown for command 'Get-MgDirectorySettingTemplateById'
+[Update-MarkdownHelpModule] 11/23/2020 14:59:53 Creating new markdown for command 'Get-MgDirectorySettingTemplateMemberGroup'
+[Update-MarkdownHelpModule] 11/23/2020 14:59:54 Creating new markdown for command 'Get-MgDirectorySettingTemplateMemberObject'
+[Update-MarkdownHelpModule] 11/23/2020 14:59:54 Creating new markdown for command 'Get-MgDirectorySettingTemplateUserOwnedObject'
+[Update-MarkdownHelpModule] 11/23/2020 14:59:55 Creating new markdown for command 'Get-MgDirectorySharedEmailDomain'
+[Update-MarkdownHelpModule] 11/23/2020 14:59:56 Creating new markdown for command 'Get-MgDomainSharedEmailDomainInvitation'
+[Update-MarkdownHelpModule] 11/23/2020 14:59:57 Creating new markdown for command 'Get-MgOrganizationBranding'
+[Update-MarkdownHelpModule] 11/23/2020 14:59:58 Creating new markdown for command 'Get-MgOrganizationSetting'
+[Update-MarkdownHelpModule] 11/23/2020 14:59:59 Creating new markdown for command 'Get-MgOrganizationSettingItemInsight'
+[Update-MarkdownHelpModule] 11/23/2020 15:00:00 Creating new markdown for command 'Get-MgOrganizationSettingProfileCardProperty'
+[Update-MarkdownHelpModule] 11/23/2020 15:00:01 Creating new markdown for command 'Get-MgOrganizationUserOwnedObject'
+[Update-MarkdownHelpModule] 11/23/2020 15:00:01 Creating new markdown for command 'New-MgAdministrativeUnit'
+[Update-MarkdownHelpModule] 11/23/2020 15:00:02 Creating new markdown for command 'New-MgAdministrativeUnitExtension'
+[Update-MarkdownHelpModule] 11/23/2020 15:00:03 Creating new markdown for command 'New-MgAdministrativeUnitMemberByRef'
+[Update-MarkdownHelpModule] 11/23/2020 15:00:04 Creating new markdown for command 'New-MgAdministrativeUnitScopedRoleMember'
+[Update-MarkdownHelpModule] 11/23/2020 15:00:05 Creating new markdown for command 'New-MgDeviceCommand'
+[Update-MarkdownHelpModule] 11/23/2020 15:00:06 Creating new markdown for command 'New-MgDirectoryFeatureRolloutPolicy'
+[Update-MarkdownHelpModule] 11/23/2020 15:00:07 Creating new markdown for command 'New-MgDirectoryFeatureRolloutPolicyApplyTo'
+[Update-MarkdownHelpModule] 11/23/2020 15:00:08 Creating new markdown for command 'New-MgDirectorySetting'
+[Update-MarkdownHelpModule] 11/23/2020 15:00:08 Creating new markdown for command 'New-MgDirectorySettingTemplate'
+[Update-MarkdownHelpModule] 11/23/2020 15:00:09 Creating new markdown for command 'New-MgDirectorySharedEmailDomain'
+[Update-MarkdownHelpModule] 11/23/2020 15:00:10 Creating new markdown for command 'New-MgDomainSharedEmailDomainInvitation'
+[Update-MarkdownHelpModule] 11/23/2020 15:00:11 Creating new markdown for command 'New-MgOrganizationSettingProfileCardProperty'
+[Update-MarkdownHelpModule] 11/23/2020 15:00:12 Creating new markdown for command 'Remove-MgAdministrativeUnit'
+[Update-MarkdownHelpModule] 11/23/2020 15:00:12 Creating new markdown for command 'Remove-MgAdministrativeUnitExtension'
+[Update-MarkdownHelpModule] 11/23/2020 15:00:13 Creating new markdown for command 'Remove-MgAdministrativeUnitScopedRoleMember'
+[Update-MarkdownHelpModule] 11/23/2020 15:00:14 Creating new markdown for command 'Remove-MgDeviceCommand'
+[Update-MarkdownHelpModule] 11/23/2020 15:00:15 Creating new markdown for command 'Remove-MgDirectoryFeatureRolloutPolicy'
+[Update-MarkdownHelpModule] 11/23/2020 15:00:15 Creating new markdown for command 'Remove-MgDirectoryFeatureRolloutPolicyApplyTo'
+[Update-MarkdownHelpModule] 11/23/2020 15:00:16 Creating new markdown for command 'Remove-MgDirectorySetting'
+[Update-MarkdownHelpModule] 11/23/2020 15:00:17 Creating new markdown for command 'Remove-MgDirectorySettingTemplate'
+[Update-MarkdownHelpModule] 11/23/2020 15:00:18 Creating new markdown for command 'Remove-MgDirectorySharedEmailDomain'
+[Update-MarkdownHelpModule] 11/23/2020 15:00:18 Creating new markdown for command 'Remove-MgDomainSharedEmailDomainInvitation'
+[Update-MarkdownHelpModule] 11/23/2020 15:00:20 Creating new markdown for command 'Remove-MgOrganizationBranding'
+[Update-MarkdownHelpModule] 11/23/2020 15:00:20 Creating new markdown for command 'Remove-MgOrganizationSetting'
+[Update-MarkdownHelpModule] 11/23/2020 15:00:21 Creating new markdown for command 'Remove-MgOrganizationSettingItemInsight'
+[Update-MarkdownHelpModule] 11/23/2020 15:00:21 Creating new markdown for command 'Remove-MgOrganizationSettingProfileCardProperty'
+[Update-MarkdownHelpModule] 11/23/2020 15:00:22 Creating new markdown for command 'Restore-MgAdministrativeUnit'
+[Update-MarkdownHelpModule] 11/23/2020 15:00:23 Creating new markdown for command 'Restore-MgDirectorySettingTemplate'
+[Update-MarkdownHelpModule] 11/23/2020 15:00:24 Creating new markdown for command 'Test-MgAdministrativeUnitProperty'
+[Update-MarkdownHelpModule] 11/23/2020 15:00:25 Creating new markdown for command 'Test-MgDirectorySettingTemplateProperty'
+[Update-MarkdownHelpModule] 11/23/2020 15:00:26 Creating new markdown for command 'Update-MgAdministrativeUnit'
+[Update-MarkdownHelpModule] 11/23/2020 15:00:27 Creating new markdown for command 'Update-MgAdministrativeUnitExtension'
+[Update-MarkdownHelpModule] 11/23/2020 15:00:27 Creating new markdown for command 'Update-MgAdministrativeUnitScopedRoleMember'
+[Update-MarkdownHelpModule] 11/23/2020 15:00:28 Creating new markdown for command 'Update-MgDeviceCommand'
+[Update-MarkdownHelpModule] 11/23/2020 15:00:29 Creating new markdown for command 'Update-MgDirectoryFeatureRolloutPolicy'
+[Update-MarkdownHelpModule] 11/23/2020 15:00:30 Creating new markdown for command 'Update-MgDirectoryFeatureRolloutPolicyApplyTo'
+[Update-MarkdownHelpModule] 11/23/2020 15:00:31 Creating new markdown for command 'Update-MgDirectorySetting'
+[Update-MarkdownHelpModule] 11/23/2020 15:00:32 Creating new markdown for command 'Update-MgDirectorySettingTemplate'
+[Update-MarkdownHelpModule] 11/23/2020 15:00:33 Creating new markdown for command 'Update-MgDirectorySharedEmailDomain'
+[Update-MarkdownHelpModule] 11/23/2020 15:00:34 Creating new markdown for command 'Update-MgDomainSharedEmailDomainInvitation'
+[Update-MarkdownHelpModule] 11/23/2020 15:00:35 Creating new markdown for command 'Update-MgOrganizationBranding'
+[Update-MarkdownHelpModule] 11/23/2020 15:00:36 Creating new markdown for command 'Update-MgOrganizationSetting'
+[Update-MarkdownHelpModule] 11/23/2020 15:00:37 Creating new markdown for command 'Update-MgOrganizationSettingItemInsight'
+[Update-MarkdownHelpModule] 11/23/2020 15:00:38 Creating new markdown for command 'Update-MgOrganizationSettingProfileCardProperty'

@@ -1,0 +1,6152 @@
+
+[Update-MarkdownHelpModule] 11/23/2020 14:56:21 Determined module name for '.\src\Devices.CorporateManagement\Devices.CorporateManagement\help' as 'Microsoft.Graph.Devices.CorporateManagement'.
+[Update-MarkdownHelpModule] 11/23/2020 14:56:21 [Update-MarkdownHelpModule]11/23/2020 2:56:21 PM
+[Update-MarkdownHelpModule] 11/23/2020 14:56:21 Updating documents for module 'Microsoft.Graph.Devices.CorporateManagement' in .\src\Devices.CorporateManagement\Devices.CorporateManagement\help
+---- UPDATING Cmdlet : Get-MgDeviceAppMgt ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: Get
+		Old Set: 
+		New Set: Get
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDeviceAppMgt ----
+
+
+---- UPDATING Cmdlet : Get-MgDeviceAppMgtAndroidManagedAppProtection ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDeviceAppMgtAndroidManagedAppProtection ----
+
+
+---- UPDATING Cmdlet : Get-MgDeviceAppMgtAndroidManagedAppProtectionApp ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: List
+
+	Parameter Set Name Updated: List1
+		Old Set: List
+		New Set: List1
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDeviceAppMgtAndroidManagedAppProtectionApp ----
+
+
+---- UPDATING Cmdlet : Get-MgDeviceAppMgtAndroidManagedAppProtectionDeploymentSummary ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDeviceAppMgtAndroidManagedAppProtectionDeploymentSummary ----
+
+
+---- UPDATING Cmdlet : Get-MgDeviceAppMgtDefaultManagedAppProtection ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDeviceAppMgtDefaultManagedAppProtection ----
+
+
+---- UPDATING Cmdlet : Get-MgDeviceAppMgtDefaultManagedAppProtectionApp ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDeviceAppMgtDefaultManagedAppProtectionApp ----
+
+
+---- UPDATING Cmdlet : Get-MgDeviceAppMgtDefaultManagedAppProtectionDeploymentSummary ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDeviceAppMgtDefaultManagedAppProtectionDeploymentSummary ----
+
+
+---- UPDATING Cmdlet : Get-MgDeviceAppMgtiOSManagedAppProtection ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: List
+
+	Parameter Set Name Updated: List1
+		Old Set: List
+		New Set: List1
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDeviceAppMgtiOSManagedAppProtection ----
+
+
+---- UPDATING Cmdlet : Get-MgDeviceAppMgtiOSManagedAppProtectionApp ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: List
+
+	Parameter Set Name Updated: List1
+		Old Set: List
+		New Set: List1
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDeviceAppMgtiOSManagedAppProtectionApp ----
+
+
+---- UPDATING Cmdlet : Get-MgDeviceAppMgtiOSManagedAppProtectionDeploymentSummary ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDeviceAppMgtiOSManagedAppProtectionDeploymentSummary ----
+
+
+---- UPDATING Cmdlet : Get-MgDeviceAppMgtManagedAppPolicy ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: List
+
+	Parameter Set Name Updated: List1
+		Old Set: List
+		New Set: List1
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDeviceAppMgtManagedAppPolicy ----
+
+
+---- UPDATING Cmdlet : Get-MgDeviceAppMgtManagedAppRegistration ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: List
+
+	Parameter Set Name Updated: List1
+		Old Set: List
+		New Set: List1
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDeviceAppMgtManagedAppRegistration ----
+
+
+---- UPDATING Cmdlet : Get-MgDeviceAppMgtManagedAppRegistrationAppliedPolicy ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: List
+
+	Parameter Set Name Updated: List1
+		Old Set: List
+		New Set: List1
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDeviceAppMgtManagedAppRegistrationAppliedPolicy ----
+
+
+---- UPDATING Cmdlet : Get-MgDeviceAppMgtManagedAppRegistrationIntendedPolicy ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List
+
+	Parameter Set Name Updated: List1
+		Old Set: List
+		New Set: List1
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDeviceAppMgtManagedAppRegistrationIntendedPolicy ----
+
+
+---- UPDATING Cmdlet : Get-MgDeviceAppMgtManagedAppRegistrationOperation ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDeviceAppMgtManagedAppRegistrationOperation ----
+
+
+---- UPDATING Cmdlet : Get-MgDeviceAppMgtManagedAppRegistrationUserId ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: Get
+		Old Set: 
+		New Set: Get
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDeviceAppMgtManagedAppRegistrationUserId ----
+
+
+---- UPDATING Cmdlet : Get-MgDeviceAppMgtManagedAppStatuses ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDeviceAppMgtManagedAppStatuses ----
+
+
+---- UPDATING Cmdlet : Get-MgDeviceAppMgtManagedEBook ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDeviceAppMgtManagedEBook ----
+
+
+---- UPDATING Cmdlet : Get-MgDeviceAppMgtManagedEBookAssignment ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDeviceAppMgtManagedEBookAssignment ----
+
+
+---- UPDATING Cmdlet : Get-MgDeviceAppMgtManagedEBookDeviceState ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDeviceAppMgtManagedEBookDeviceState ----
+
+
+---- UPDATING Cmdlet : Get-MgDeviceAppMgtManagedEBookInstallSummary ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDeviceAppMgtManagedEBookInstallSummary ----
+
+
+---- UPDATING Cmdlet : Get-MgDeviceAppMgtManagedEBookUserStateSummary ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDeviceAppMgtManagedEBookUserStateSummary ----
+
+
+---- UPDATING Cmdlet : Get-MgDeviceAppMgtManagedEBookUserStateSummaryDeviceState ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDeviceAppMgtManagedEBookUserStateSummaryDeviceState ----
+
+
+---- UPDATING Cmdlet : Get-MgDeviceAppMgtMdmWindowInformationProtectionPolicy ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDeviceAppMgtMdmWindowInformationProtectionPolicy ----
+
+
+---- UPDATING Cmdlet : Get-MgDeviceAppMgtMobileApp ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDeviceAppMgtMobileApp ----
+
+
+---- UPDATING Cmdlet : Get-MgDeviceAppMgtMobileAppAssignment ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDeviceAppMgtMobileAppAssignment ----
+
+
+---- UPDATING Cmdlet : Get-MgDeviceAppMgtMobileAppCategory ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List2
+
+	Parameter Set Deleted: List3
+
+	Parameter Set Name Updated: List
+		Old Set: List2
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+	Parameter Set Name Updated: List1
+		Old Set: List3
+		New Set: List1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDeviceAppMgtMobileAppCategory ----
+
+
+---- UPDATING Cmdlet : Get-MgDeviceAppMgtMobileAppCategoryByRef ----
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List
+		Old Set: 
+		New Set: List
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDeviceAppMgtMobileAppCategoryByRef ----
+
+
+---- UPDATING Cmdlet : Get-MgDeviceAppMgtMobileAppConfiguration ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDeviceAppMgtMobileAppConfiguration ----
+
+
+---- UPDATING Cmdlet : Get-MgDeviceAppMgtMobileAppConfigurationAssignment ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDeviceAppMgtMobileAppConfigurationAssignment ----
+
+
+---- UPDATING Cmdlet : Get-MgDeviceAppMgtMobileAppConfigurationDeviceStatuses ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDeviceAppMgtMobileAppConfigurationDeviceStatuses ----
+
+
+---- UPDATING Cmdlet : Get-MgDeviceAppMgtMobileAppConfigurationDeviceStatusSummary ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDeviceAppMgtMobileAppConfigurationDeviceStatusSummary ----
+
+
+---- UPDATING Cmdlet : Get-MgDeviceAppMgtMobileAppConfigurationUserStatuses ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDeviceAppMgtMobileAppConfigurationUserStatuses ----
+
+
+---- UPDATING Cmdlet : Get-MgDeviceAppMgtMobileAppConfigurationUserStatusSummary ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDeviceAppMgtMobileAppConfigurationUserStatusSummary ----
+
+
+---- UPDATING Cmdlet : Get-MgDeviceAppMgtTargetedManagedAppConfiguration ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDeviceAppMgtTargetedManagedAppConfiguration ----
+
+
+---- UPDATING Cmdlet : Get-MgDeviceAppMgtTargetedManagedAppConfigurationApp ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDeviceAppMgtTargetedManagedAppConfigurationApp ----
+
+
+---- UPDATING Cmdlet : Get-MgDeviceAppMgtTargetedManagedAppConfigurationAssignment ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDeviceAppMgtTargetedManagedAppConfigurationAssignment ----
+
+
+---- UPDATING Cmdlet : Get-MgDeviceAppMgtTargetedManagedAppConfigurationDeploymentSummary ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDeviceAppMgtTargetedManagedAppConfigurationDeploymentSummary ----
+
+
+---- UPDATING Cmdlet : Get-MgDeviceAppMgtVppToken ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDeviceAppMgtVppToken ----
+
+
+---- UPDATING Cmdlet : Get-MgDeviceAppMgtWindowInformationProtectionPolicy ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDeviceAppMgtWindowInformationProtectionPolicy ----
+
+
+---- UPDATING Cmdlet : Get-MgUserDeviceManagementTroubleshootingEvent ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserDeviceManagementTroubleshootingEvent ----
+
+
+---- UPDATING Cmdlet : Get-MgUserManagedAppRegistration ----
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List
+		Old Set: 
+		New Set: List
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserManagedAppRegistration ----
+
+
+---- UPDATING Cmdlet : Get-MgUserManagedAppRegistrationByRef ----
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List
+		Old Set: 
+		New Set: List
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserManagedAppRegistrationByRef ----
+
+
+---- UPDATING Cmdlet : Get-MgUserManagedDevice ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserManagedDevice ----
+
+
+---- UPDATING Cmdlet : Get-MgUserManagedDeviceCategory ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserManagedDeviceCategory ----
+
+
+---- UPDATING Cmdlet : Get-MgUserManagedDeviceCompliancePolicyState ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserManagedDeviceCompliancePolicyState ----
+
+
+---- UPDATING Cmdlet : Get-MgUserManagedDeviceConfigurationState ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserManagedDeviceConfigurationState ----
+
+
+---- UPDATING Cmdlet : Invoke-MgTargetDeviceAppMgtManagedAppPolicyApp ----
+
+	Parameter Set Added: Target1
+
+	Parameter Set Added: TargetExpanded1
+
+	Parameter Set Added: TargetViaIdentity1
+
+	Parameter Set Added: TargetViaIdentityExpanded1
+
+	Parameter Set Deleted: Target
+
+	Parameter Set Deleted: TargetExpanded
+
+	Parameter Set Deleted: TargetViaIdentity
+
+	Parameter Set Deleted: TargetViaIdentityExpanded
+
+	Parameter Set Name Updated: TargetExpanded1
+		Old Set: TargetExpanded
+		New Set: TargetExpanded1
+
+	Parameter Set Name Updated: Target1
+		Old Set: Target
+		New Set: Target1
+
+	Parameter Set Name Updated: TargetViaIdentityExpanded1
+		Old Set: TargetViaIdentityExpanded
+		New Set: TargetViaIdentityExpanded1
+
+	Parameter Set Name Updated: TargetViaIdentity1
+		Old Set: TargetViaIdentity
+		New Set: TargetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgTargetDeviceAppMgtManagedAppPolicyApp ----
+
+
+---- UPDATING Cmdlet : Invoke-MgTargetDeviceAppMgtManagedAppRegistrationAppliedPolicyApp ----
+
+	Parameter Set Added: Target1
+
+	Parameter Set Added: TargetExpanded1
+
+	Parameter Set Added: TargetViaIdentity1
+
+	Parameter Set Added: TargetViaIdentityExpanded1
+
+	Parameter Set Deleted: Target
+
+	Parameter Set Deleted: TargetExpanded
+
+	Parameter Set Deleted: TargetViaIdentity
+
+	Parameter Set Deleted: TargetViaIdentityExpanded
+
+	Parameter Set Name Updated: TargetExpanded1
+		Old Set: TargetExpanded
+		New Set: TargetExpanded1
+
+	Parameter Set Name Updated: Target1
+		Old Set: Target
+		New Set: Target1
+
+	Parameter Set Name Updated: TargetViaIdentityExpanded1
+		Old Set: TargetViaIdentityExpanded
+		New Set: TargetViaIdentityExpanded1
+
+	Parameter Set Name Updated: TargetViaIdentity1
+		Old Set: TargetViaIdentity
+		New Set: TargetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgTargetDeviceAppMgtManagedAppRegistrationAppliedPolicyApp ----
+
+
+---- UPDATING Cmdlet : Invoke-MgTargetDeviceAppMgtManagedAppRegistrationIntendedPolicyApp ----
+
+	Parameter Set Added: Target
+
+	Parameter Set Added: TargetExpanded
+
+	Parameter Set Added: TargetViaIdentity
+
+	Parameter Set Added: TargetViaIdentityExpanded
+
+	Parameter Set Deleted: Target1
+
+	Parameter Set Deleted: TargetExpanded1
+
+	Parameter Set Deleted: TargetViaIdentity1
+
+	Parameter Set Deleted: TargetViaIdentityExpanded1
+
+	Parameter Set Name Updated: TargetExpanded
+		Old Set: TargetExpanded1
+		New Set: TargetExpanded
+
+	Parameter Set Name Updated: Target
+		Old Set: Target1
+		New Set: Target
+
+	Parameter Set Name Updated: TargetViaIdentityExpanded
+		Old Set: TargetViaIdentityExpanded1
+		New Set: TargetViaIdentityExpanded
+
+	Parameter Set Name Updated: TargetViaIdentity
+		Old Set: TargetViaIdentity1
+		New Set: TargetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgTargetDeviceAppMgtManagedAppRegistrationIntendedPolicyApp ----
+
+
+---- UPDATING Cmdlet : Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp ----
+
+	Parameter Set Added: Target
+
+	Parameter Set Added: TargetExpanded
+
+	Parameter Set Added: TargetViaIdentity
+
+	Parameter Set Added: TargetViaIdentityExpanded
+
+	Parameter Set Deleted: Target1
+
+	Parameter Set Deleted: TargetExpanded1
+
+	Parameter Set Deleted: TargetViaIdentity1
+
+	Parameter Set Deleted: TargetViaIdentityExpanded1
+
+	Parameter Set Name Updated: TargetExpanded
+		Old Set: TargetExpanded1
+		New Set: TargetExpanded
+
+	Parameter Set Name Updated: Target
+		Old Set: Target1
+		New Set: Target
+
+	Parameter Set Name Updated: TargetViaIdentityExpanded
+		Old Set: TargetViaIdentityExpanded1
+		New Set: TargetViaIdentityExpanded
+
+	Parameter Set Name Updated: TargetViaIdentity
+		Old Set: TargetViaIdentity1
+		New Set: TargetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp ----
+
+
+---- UPDATING Cmdlet : New-MgDeviceAppMgtAndroidManagedAppProtection ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Added: AllowedAndroidDeviceManufacturers
+
+	Parameter Added: AllowedAndroidDeviceModels
+
+	Parameter Added: AllowedDataIngestionLocations
+
+	Parameter Added: AllowedOutboundClipboardSharingExceptionLength
+
+	Parameter Added: AppActionIfAndroidDeviceManufacturerNotAllowed
+
+	Parameter Added: AppActionIfAndroidDeviceModelNotAllowed
+
+	Parameter Added: AppActionIfAndroidSafetyNetAppsVerificationFailed
+
+	Parameter Added: AppActionIfAndroidSafetyNetDeviceAttestationFailed
+
+	Parameter Added: AppActionIfDeviceComplianceRequired
+
+	Parameter Added: AppActionIfDeviceLockNotSet
+
+	Parameter Added: AppActionIfMaximumPinRetriesExceeded
+
+	Parameter Added: AppActionIfUnableToAuthenticateUser
+
+	Parameter Added: ApprovedKeyboards
+
+	Parameter Added: BiometricAuthenticationBlocked
+
+	Parameter Added: BlockAfterCompanyPortalUpdateDeferralInDays
+
+	Parameter Added: BlockDataIngestionIntoOrganizationDocuments
+
+	Parameter Added: CustomDialerAppDisplayName
+
+	Parameter Added: CustomDialerAppPackageId
+
+	Parameter Added: DeviceLockRequired
+
+	Parameter Added: DialerRestrictionLevel
+
+	Parameter Added: ExemptedAppPackages
+
+	Parameter Added: KeyboardsRestricted
+
+	Parameter Added: MaximumAllowedDeviceThreatLevel
+
+	Parameter Added: MinimumRequiredCompanyPortalVersion
+
+	Parameter Added: MinimumWarningCompanyPortalVersion
+
+	Parameter Added: MinimumWipeAppVersion
+
+	Parameter Added: MinimumWipeCompanyPortalVersion
+
+	Parameter Added: MinimumWipeOSVersion
+
+	Parameter Added: MinimumWipePatchVersion
+
+	Parameter Added: MobileThreatDefenseRemediationAction
+
+	Parameter Added: NotificationRestriction
+
+	Parameter Added: PinRequiredInsteadOfBiometricTimeout
+
+	Parameter Added: PreviousPinBlockCount
+
+	Parameter Added: RequiredAndroidSafetyNetAppsVerificationType
+
+	Parameter Added: RequiredAndroidSafetyNetDeviceAttestationType
+
+	Parameter Added: RequiredAndroidSafetyNetEvaluationType
+
+	Parameter Added: RoleScopeTagIds
+
+	Parameter Added: TargetedAppManagementLevels
+
+	Parameter Added: WarnAfterCompanyPortalUpdateDeferralInDays
+
+	Parameter Added: WipeAfterCompanyPortalUpdateDeferralInDays
+
+	Parameter Updated: Assignments
+		Type updated from IMicrosoftGraphTargetedManagedAppPolicyAssignment1[] to IMicrosoftGraphTargetedManagedAppPolicyAssignment[]
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphAndroidManagedAppProtection to IMicrosoftGraphAndroidManagedAppProtection1
+
+---- COMPLETED UPDATING Cmdlet : New-MgDeviceAppMgtAndroidManagedAppProtection ----
+
+
+---- UPDATING Cmdlet : New-MgDeviceAppMgtAndroidManagedAppProtectionApp ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateExpanded1
+		Old Set: CreateExpanded
+		New Set: CreateExpanded1
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded1
+		Old Set: CreateViaIdentityExpanded
+		New Set: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : New-MgDeviceAppMgtAndroidManagedAppProtectionApp ----
+
+
+---- UPDATING Cmdlet : New-MgDeviceAppMgtDefaultManagedAppProtection ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Added: AllowedAndroidDeviceManufacturers
+
+	Parameter Added: AllowedAndroidDeviceModels
+
+	Parameter Added: AllowedDataIngestionLocations
+
+	Parameter Added: AllowedIosDeviceModels
+
+	Parameter Added: AllowedOutboundClipboardSharingExceptionLength
+
+	Parameter Added: AppActionIfAndroidDeviceManufacturerNotAllowed
+
+	Parameter Added: AppActionIfAndroidDeviceModelNotAllowed
+
+	Parameter Added: AppActionIfAndroidSafetyNetAppsVerificationFailed
+
+	Parameter Added: AppActionIfAndroidSafetyNetDeviceAttestationFailed
+
+	Parameter Added: AppActionIfDeviceComplianceRequired
+
+	Parameter Added: AppActionIfDeviceLockNotSet
+
+	Parameter Added: AppActionIfIosDeviceModelNotAllowed
+
+	Parameter Added: AppActionIfMaximumPinRetriesExceeded
+
+	Parameter Added: AppActionIfUnableToAuthenticateUser
+
+	Parameter Added: BiometricAuthenticationBlocked
+
+	Parameter Added: BlockAfterCompanyPortalUpdateDeferralInDays
+
+	Parameter Added: BlockDataIngestionIntoOrganizationDocuments
+
+	Parameter Added: CustomBrowserDisplayName
+
+	Parameter Added: CustomBrowserPackageId
+
+	Parameter Added: CustomBrowserProtocol
+
+	Parameter Added: CustomDialerAppDisplayName
+
+	Parameter Added: CustomDialerAppPackageId
+
+	Parameter Added: CustomDialerAppProtocol
+
+	Parameter Added: DeviceLockRequired
+
+	Parameter Added: DialerRestrictionLevel
+
+	Parameter Added: DisableProtectionOfManagedOutboundOpenInData
+
+	Parameter Added: ExemptedAppPackages
+
+	Parameter Added: ExemptedAppProtocols
+
+	Parameter Added: FilterOpenInToOnlyManagedApps
+
+	Parameter Added: MaximumAllowedDeviceThreatLevel
+
+	Parameter Added: MinimumRequiredCompanyPortalVersion
+
+	Parameter Added: MinimumWarningCompanyPortalVersion
+
+	Parameter Added: MinimumWipeAppVersion
+
+	Parameter Added: MinimumWipeCompanyPortalVersion
+
+	Parameter Added: MinimumWipeOSVersion
+
+	Parameter Added: MinimumWipePatchVersion
+
+	Parameter Added: MinimumWipeSdkVersion
+
+	Parameter Added: MobileThreatDefenseRemediationAction
+
+	Parameter Added: NotificationRestriction
+
+	Parameter Added: PinRequiredInsteadOfBiometricTimeout
+
+	Parameter Added: PreviousPinBlockCount
+
+	Parameter Added: ProtectInboundDataFromUnknownSources
+
+	Parameter Added: RequiredAndroidSafetyNetAppsVerificationType
+
+	Parameter Added: RequiredAndroidSafetyNetDeviceAttestationType
+
+	Parameter Added: RequiredAndroidSafetyNetEvaluationType
+
+	Parameter Added: RoleScopeTagIds
+
+	Parameter Added: ThirdPartyKeyboardsBlocked
+
+	Parameter Added: WarnAfterCompanyPortalUpdateDeferralInDays
+
+	Parameter Added: WipeAfterCompanyPortalUpdateDeferralInDays
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphDefaultManagedAppProtection to IMicrosoftGraphDefaultManagedAppProtection1
+
+---- COMPLETED UPDATING Cmdlet : New-MgDeviceAppMgtDefaultManagedAppProtection ----
+
+
+---- UPDATING Cmdlet : New-MgDeviceAppMgtDefaultManagedAppProtectionApp ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded
+		Old Set: CreateViaIdentityExpanded1
+		New Set: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : New-MgDeviceAppMgtDefaultManagedAppProtectionApp ----
+
+
+---- UPDATING Cmdlet : New-MgDeviceAppMgtiOSManagedAppProtection ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Added: AllowedDataIngestionLocations
+
+	Parameter Added: AllowedIosDeviceModels
+
+	Parameter Added: AllowedOutboundClipboardSharingExceptionLength
+
+	Parameter Added: AppActionIfDeviceComplianceRequired
+
+	Parameter Added: AppActionIfIosDeviceModelNotAllowed
+
+	Parameter Added: AppActionIfMaximumPinRetriesExceeded
+
+	Parameter Added: AppActionIfUnableToAuthenticateUser
+
+	Parameter Added: BlockDataIngestionIntoOrganizationDocuments
+
+	Parameter Added: CustomDialerAppProtocol
+
+	Parameter Added: DialerRestrictionLevel
+
+	Parameter Added: DisableProtectionOfManagedOutboundOpenInData
+
+	Parameter Added: ExemptedAppProtocols
+
+	Parameter Added: FilterOpenInToOnlyManagedApps
+
+	Parameter Added: MaximumAllowedDeviceThreatLevel
+
+	Parameter Added: MinimumWipeAppVersion
+
+	Parameter Added: MinimumWipeOSVersion
+
+	Parameter Added: MinimumWipeSdkVersion
+
+	Parameter Added: MobileThreatDefenseRemediationAction
+
+	Parameter Added: NotificationRestriction
+
+	Parameter Added: PinRequiredInsteadOfBiometricTimeout
+
+	Parameter Added: PreviousPinBlockCount
+
+	Parameter Added: ProtectInboundDataFromUnknownSources
+
+	Parameter Added: RoleScopeTagIds
+
+	Parameter Added: TargetedAppManagementLevels
+
+	Parameter Added: ThirdPartyKeyboardsBlocked
+
+	Parameter Updated: Assignments
+		Type updated from IMicrosoftGraphTargetedManagedAppPolicyAssignment1[] to IMicrosoftGraphTargetedManagedAppPolicyAssignment[]
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphIosManagedAppProtection to IMicrosoftGraphIosManagedAppProtection1
+
+---- COMPLETED UPDATING Cmdlet : New-MgDeviceAppMgtiOSManagedAppProtection ----
+
+
+---- UPDATING Cmdlet : New-MgDeviceAppMgtiOSManagedAppProtectionApp ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateExpanded1
+		Old Set: CreateExpanded
+		New Set: CreateExpanded1
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded1
+		Old Set: CreateViaIdentityExpanded
+		New Set: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : New-MgDeviceAppMgtiOSManagedAppProtectionApp ----
+
+
+---- UPDATING Cmdlet : New-MgDeviceAppMgtManagedAppPolicy ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Added: RoleScopeTagIds
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphManagedAppPolicy to IMicrosoftGraphManagedAppPolicy1
+
+---- COMPLETED UPDATING Cmdlet : New-MgDeviceAppMgtManagedAppPolicy ----
+
+
+---- UPDATING Cmdlet : New-MgDeviceAppMgtManagedAppRegistration ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Added: AzureAdDeviceId
+
+	Parameter Added: DeviceManufacturer
+
+	Parameter Added: DeviceModel
+
+	Parameter Added: ManagedDeviceId
+
+	Parameter Updated: AppliedPolicies
+		Type updated from IMicrosoftGraphManagedAppPolicy[] to IMicrosoftGraphManagedAppPolicy1[]
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphManagedAppRegistration to IMicrosoftGraphManagedAppRegistration1
+
+	Parameter Updated: IntendedPolicies
+		Type updated from IMicrosoftGraphManagedAppPolicy[] to IMicrosoftGraphManagedAppPolicy1[]
+
+---- COMPLETED UPDATING Cmdlet : New-MgDeviceAppMgtManagedAppRegistration ----
+
+
+---- UPDATING Cmdlet : New-MgDeviceAppMgtManagedAppRegistrationAppliedPolicy ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+	Parameter Added: RoleScopeTagIds
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphManagedAppPolicy to IMicrosoftGraphManagedAppPolicy1
+
+---- COMPLETED UPDATING Cmdlet : New-MgDeviceAppMgtManagedAppRegistrationAppliedPolicy ----
+
+
+---- UPDATING Cmdlet : New-MgDeviceAppMgtManagedAppRegistrationIntendedPolicy ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+	Parameter Added: RoleScopeTagIds
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphManagedAppPolicy to IMicrosoftGraphManagedAppPolicy1
+
+---- COMPLETED UPDATING Cmdlet : New-MgDeviceAppMgtManagedAppRegistrationIntendedPolicy ----
+
+
+---- UPDATING Cmdlet : New-MgDeviceAppMgtManagedAppRegistrationOperation ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded
+		Old Set: CreateViaIdentityExpanded1
+		New Set: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : New-MgDeviceAppMgtManagedAppRegistrationOperation ----
+
+
+---- UPDATING Cmdlet : New-MgDeviceAppMgtManagedAppStatuses ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+---- COMPLETED UPDATING Cmdlet : New-MgDeviceAppMgtManagedAppStatuses ----
+
+
+---- UPDATING Cmdlet : New-MgDeviceAppMgtManagedEBook ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Added: Categories
+
+	Parameter Updated: Assignments
+		Type updated from IMicrosoftGraphManagedEBookAssignment1[] to IMicrosoftGraphManagedEBookAssignment[]
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphManagedEBook1 to IMicrosoftGraphManagedEBook
+
+---- COMPLETED UPDATING Cmdlet : New-MgDeviceAppMgtManagedEBook ----
+
+
+---- UPDATING Cmdlet : New-MgDeviceAppMgtManagedEBookAssignment ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded
+		Old Set: CreateViaIdentityExpanded1
+		New Set: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphManagedEBookAssignment1 to IMicrosoftGraphManagedEBookAssignment
+
+	Parameter Updated: Target
+		Type updated from Hashtable to IMicrosoftGraphDeviceAndAppManagementAssignmentTarget
+
+---- COMPLETED UPDATING Cmdlet : New-MgDeviceAppMgtManagedEBookAssignment ----
+
+
+---- UPDATING Cmdlet : New-MgDeviceAppMgtManagedEBookDeviceState ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded
+		Old Set: CreateViaIdentityExpanded1
+		New Set: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : New-MgDeviceAppMgtManagedEBookDeviceState ----
+
+
+---- UPDATING Cmdlet : New-MgDeviceAppMgtManagedEBookUserStateSummary ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded
+		Old Set: CreateViaIdentityExpanded1
+		New Set: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : New-MgDeviceAppMgtManagedEBookUserStateSummary ----
+
+
+---- UPDATING Cmdlet : New-MgDeviceAppMgtManagedEBookUserStateSummaryDeviceState ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded
+		Old Set: CreateViaIdentityExpanded1
+		New Set: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : New-MgDeviceAppMgtManagedEBookUserStateSummaryDeviceState ----
+
+
+---- UPDATING Cmdlet : New-MgDeviceAppMgtMdmWindowInformationProtectionPolicy ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Added: RoleScopeTagIds
+
+	Parameter Updated: Assignments
+		Type updated from IMicrosoftGraphTargetedManagedAppPolicyAssignment1[] to IMicrosoftGraphTargetedManagedAppPolicyAssignment[]
+
+---- COMPLETED UPDATING Cmdlet : New-MgDeviceAppMgtMdmWindowInformationProtectionPolicy ----
+
+
+---- UPDATING Cmdlet : New-MgDeviceAppMgtMobileApp ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Added: DependentAppCount
+
+	Parameter Added: DeviceStatuses
+
+	Parameter Added: InstallSummary
+
+	Parameter Added: IsAssigned
+
+	Parameter Added: Relationships
+
+	Parameter Added: RoleScopeTagIds
+
+	Parameter Added: SupersededAppCount
+
+	Parameter Added: SupersedingAppCount
+
+	Parameter Added: UploadState
+
+	Parameter Added: UserStatuses
+
+	Parameter Updated: Assignments
+		Type updated from IMicrosoftGraphMobileAppAssignment1[] to IMicrosoftGraphMobileAppAssignment[]
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphMobileApp1 to IMicrosoftGraphMobileApp
+
+---- COMPLETED UPDATING Cmdlet : New-MgDeviceAppMgtMobileApp ----
+
+
+---- UPDATING Cmdlet : New-MgDeviceAppMgtMobileAppAssignment ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+	Parameter Added: Source
+
+	Parameter Added: SourceId
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphMobileAppAssignment1 to IMicrosoftGraphMobileAppAssignment
+
+	Parameter Updated: Target
+		Type updated from Hashtable to IMicrosoftGraphDeviceAndAppManagementAssignmentTarget
+
+---- COMPLETED UPDATING Cmdlet : New-MgDeviceAppMgtMobileAppAssignment ----
+
+
+---- UPDATING Cmdlet : New-MgDeviceAppMgtMobileAppCategory ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+---- COMPLETED UPDATING Cmdlet : New-MgDeviceAppMgtMobileAppCategory ----
+
+
+---- UPDATING Cmdlet : New-MgDeviceAppMgtMobileAppCategoryByRef ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded
+		Old Set: CreateViaIdentityExpanded1
+		New Set: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : New-MgDeviceAppMgtMobileAppCategoryByRef ----
+
+
+---- UPDATING Cmdlet : New-MgDeviceAppMgtMobileAppConfiguration ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Added: RoleScopeTagIds
+
+	Parameter Updated: Assignments
+		Type updated from IMicrosoftGraphManagedDeviceMobileAppConfigurationAssignment1[] to IMicrosoftGraphManagedDeviceMobileAppConfigurationAssignment[]
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphManagedDeviceMobileAppConfiguration1 to IMicrosoftGraphManagedDeviceMobileAppConfiguration
+
+	Parameter Updated: DeviceStatuses
+		Type updated from IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus[] to IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus1[]
+
+	Parameter Updated: DeviceStatusSummary
+		Type updated from IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceSummary1 to IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceSummary
+
+	Parameter Updated: UserStatusSummary
+		Type updated from IMicrosoftGraphManagedDeviceMobileAppConfigurationUserSummary1 to IMicrosoftGraphManagedDeviceMobileAppConfigurationUserSummary
+
+---- COMPLETED UPDATING Cmdlet : New-MgDeviceAppMgtMobileAppConfiguration ----
+
+
+---- UPDATING Cmdlet : New-MgDeviceAppMgtMobileAppConfigurationAssignment ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded
+		Old Set: CreateViaIdentityExpanded1
+		New Set: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphManagedDeviceMobileAppConfigurationAssignment1 to IMicrosoftGraphManagedDeviceMobileAppConfigurationAssignment
+
+	Parameter Updated: Target
+		Type updated from Hashtable to IMicrosoftGraphDeviceAndAppManagementAssignmentTarget
+
+---- COMPLETED UPDATING Cmdlet : New-MgDeviceAppMgtMobileAppConfigurationAssignment ----
+
+
+---- UPDATING Cmdlet : New-MgDeviceAppMgtMobileAppConfigurationDeviceStatuses ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+	Parameter Added: Platform
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus to IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus1
+
+---- COMPLETED UPDATING Cmdlet : New-MgDeviceAppMgtMobileAppConfigurationDeviceStatuses ----
+
+
+---- UPDATING Cmdlet : New-MgDeviceAppMgtMobileAppConfigurationUserStatuses ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded
+		Old Set: CreateViaIdentityExpanded1
+		New Set: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : New-MgDeviceAppMgtMobileAppConfigurationUserStatuses ----
+
+
+---- UPDATING Cmdlet : New-MgDeviceAppMgtTargetedManagedAppConfiguration ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Added: RoleScopeTagIds
+
+	Parameter Updated: Assignments
+		Type updated from IMicrosoftGraphTargetedManagedAppPolicyAssignment1[] to IMicrosoftGraphTargetedManagedAppPolicyAssignment[]
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphTargetedManagedAppConfiguration1 to IMicrosoftGraphTargetedManagedAppConfiguration
+
+---- COMPLETED UPDATING Cmdlet : New-MgDeviceAppMgtTargetedManagedAppConfiguration ----
+
+
+---- UPDATING Cmdlet : New-MgDeviceAppMgtTargetedManagedAppConfigurationApp ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded
+		Old Set: CreateViaIdentityExpanded1
+		New Set: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : New-MgDeviceAppMgtTargetedManagedAppConfigurationApp ----
+
+
+---- UPDATING Cmdlet : New-MgDeviceAppMgtTargetedManagedAppConfigurationAssignment ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+	Parameter Added: Source
+
+	Parameter Added: SourceId
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphTargetedManagedAppPolicyAssignment1 to IMicrosoftGraphTargetedManagedAppPolicyAssignment
+
+	Parameter Updated: Target
+		Type updated from Hashtable to IMicrosoftGraphDeviceAndAppManagementAssignmentTarget
+
+---- COMPLETED UPDATING Cmdlet : New-MgDeviceAppMgtTargetedManagedAppConfigurationAssignment ----
+
+
+---- UPDATING Cmdlet : New-MgDeviceAppMgtVppToken ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Added: ClaimTokenManagementFromExternalMdm
+
+	Parameter Added: DataSharingConsentGranted
+
+	Parameter Added: DisplayName
+
+	Parameter Added: LocationName
+
+	Parameter Added: RoleScopeTagIds
+
+	Parameter Added: TokenActionResults
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphVppToken1 to IMicrosoftGraphVppToken
+
+---- COMPLETED UPDATING Cmdlet : New-MgDeviceAppMgtVppToken ----
+
+
+---- UPDATING Cmdlet : New-MgDeviceAppMgtWindowInformationProtectionPolicy ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Added: RoleScopeTagIds
+
+	Parameter Updated: Assignments
+		Type updated from IMicrosoftGraphTargetedManagedAppPolicyAssignment1[] to IMicrosoftGraphTargetedManagedAppPolicyAssignment[]
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphWindowsInformationProtectionPolicy1 to IMicrosoftGraphWindowsInformationProtectionPolicy
+
+---- COMPLETED UPDATING Cmdlet : New-MgDeviceAppMgtWindowInformationProtectionPolicy ----
+
+
+---- UPDATING Cmdlet : New-MgUserDeviceManagementTroubleshootingEvent ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+	Parameter Added: AdditionalInformation
+
+	Parameter Added: EventName
+
+	Parameter Added: TroubleshootingErrorDetails
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphDeviceManagementTroubleshootingEvent1 to IMicrosoftGraphDeviceManagementTroubleshootingEvent
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserDeviceManagementTroubleshootingEvent ----
+
+
+---- UPDATING Cmdlet : New-MgUserManagedAppRegistrationByRef ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded
+		Old Set: CreateViaIdentityExpanded1
+		New Set: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserManagedAppRegistrationByRef ----
+
+
+---- UPDATING Cmdlet : New-MgUserManagedDevice ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+	Parameter Added: AadRegistered
+
+	Parameter Added: AutopilotEnrolled
+
+	Parameter Added: AzureActiveDirectoryDeviceId
+
+	Parameter Added: ChassisType
+
+	Parameter Added: ConfigurationManagerClientHealthState
+
+	Parameter Added: ConfigurationManagerClientInformation
+
+	Parameter Added: DetectedApps
+
+	Parameter Added: DeviceType
+
+	Parameter Added: EthernetMacAddress
+
+	Parameter Added: HardwareInformation
+
+	Parameter Added: Iccid
+
+	Parameter Added: JoinType
+
+	Parameter Added: LogCollectionRequests
+
+	Parameter Added: LostModeState
+
+	Parameter Added: ManagedDeviceMobileAppConfigurationStates
+
+	Parameter Added: ManagementCertificateExpirationDate
+
+	Parameter Added: ManagementFeatures
+
+	Parameter Added: ManagementState
+
+	Parameter Added: Notes
+
+	Parameter Added: OwnerType
+
+	Parameter Added: PhysicalMemoryInBytes
+
+	Parameter Added: PreferMdmOverGroupPolicyAppliedDateTime
+
+	Parameter Added: ProcessorArchitecture
+
+	Parameter Added: RequireUserEnrollmentApproval
+
+	Parameter Added: RetireAfterDateTime
+
+	Parameter Added: RoleScopeTagIds
+
+	Parameter Added: SecurityBaselineStates
+
+	Parameter Added: SkuFamily
+
+	Parameter Added: SkuNumber
+
+	Parameter Added: SpecificationVersion
+
+	Parameter Added: Udid
+
+	Parameter Added: Users
+
+	Parameter Added: UsersLoggedOn
+
+	Parameter Added: WindowsActiveMalwareCount
+
+	Parameter Added: WindowsProtectionState
+
+	Parameter Added: WindowsRemediatedMalwareCount
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphManagedDevice1 to IMicrosoftGraphManagedDevice
+
+	Parameter Updated: ConfigurationManagerClientEnabledFeatures
+		Type updated from IMicrosoftGraphConfigurationManagerClientEnabledFeatures1 to IMicrosoftGraphConfigurationManagerClientEnabledFeatures
+
+	Parameter Updated: DeviceCategory
+		Type updated from IMicrosoftGraphDeviceCategory2 to IMicrosoftGraphDeviceCategory
+
+	Parameter Updated: DeviceCompliancePolicyStates
+		Type updated from IMicrosoftGraphDeviceCompliancePolicyState1[] to IMicrosoftGraphDeviceCompliancePolicyState[]
+
+	Parameter Updated: DeviceConfigurationStates
+		Type updated from IMicrosoftGraphDeviceConfigurationState1[] to IMicrosoftGraphDeviceConfigurationState[]
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserManagedDevice ----
+
+
+---- UPDATING Cmdlet : New-MgUserManagedDeviceCompliancePolicyState ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+	Parameter Added: UserId1
+
+	Parameter Added: UserPrincipalName
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphDeviceCompliancePolicyState1 to IMicrosoftGraphDeviceCompliancePolicyState
+
+	Parameter Updated: SettingStates
+		Type updated from IMicrosoftGraphDeviceCompliancePolicySettingState1[] to IMicrosoftGraphDeviceCompliancePolicySettingState[]
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserManagedDeviceCompliancePolicyState ----
+
+
+---- UPDATING Cmdlet : New-MgUserManagedDeviceConfigurationState ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+	Parameter Added: UserId1
+
+	Parameter Added: UserPrincipalName
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphDeviceConfigurationState1 to IMicrosoftGraphDeviceConfigurationState
+
+	Parameter Updated: SettingStates
+		Type updated from IMicrosoftGraphDeviceConfigurationSettingState1[] to IMicrosoftGraphDeviceConfigurationSettingState[]
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserManagedDeviceConfigurationState ----
+
+
+---- UPDATING Cmdlet : Remove-MgDeviceAppMgtAndroidManagedAppProtection ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgDeviceAppMgtAndroidManagedAppProtection ----
+
+
+---- UPDATING Cmdlet : Remove-MgDeviceAppMgtAndroidManagedAppProtectionApp ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgDeviceAppMgtAndroidManagedAppProtectionApp ----
+
+
+---- UPDATING Cmdlet : Remove-MgDeviceAppMgtAndroidManagedAppProtectionDeploymentSummary ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgDeviceAppMgtAndroidManagedAppProtectionDeploymentSummary ----
+
+
+---- UPDATING Cmdlet : Remove-MgDeviceAppMgtDefaultManagedAppProtection ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgDeviceAppMgtDefaultManagedAppProtection ----
+
+
+---- UPDATING Cmdlet : Remove-MgDeviceAppMgtDefaultManagedAppProtectionApp ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgDeviceAppMgtDefaultManagedAppProtectionApp ----
+
+
+---- UPDATING Cmdlet : Remove-MgDeviceAppMgtDefaultManagedAppProtectionDeploymentSummary ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgDeviceAppMgtDefaultManagedAppProtectionDeploymentSummary ----
+
+
+---- UPDATING Cmdlet : Remove-MgDeviceAppMgtiOSManagedAppProtection ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgDeviceAppMgtiOSManagedAppProtection ----
+
+
+---- UPDATING Cmdlet : Remove-MgDeviceAppMgtiOSManagedAppProtectionApp ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgDeviceAppMgtiOSManagedAppProtectionApp ----
+
+
+---- UPDATING Cmdlet : Remove-MgDeviceAppMgtiOSManagedAppProtectionDeploymentSummary ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgDeviceAppMgtiOSManagedAppProtectionDeploymentSummary ----
+
+
+---- UPDATING Cmdlet : Remove-MgDeviceAppMgtManagedAppPolicy ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgDeviceAppMgtManagedAppPolicy ----
+
+
+---- UPDATING Cmdlet : Remove-MgDeviceAppMgtManagedAppRegistration ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgDeviceAppMgtManagedAppRegistration ----
+
+
+---- UPDATING Cmdlet : Remove-MgDeviceAppMgtManagedAppRegistrationAppliedPolicy ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgDeviceAppMgtManagedAppRegistrationAppliedPolicy ----
+
+
+---- UPDATING Cmdlet : Remove-MgDeviceAppMgtManagedAppRegistrationIntendedPolicy ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgDeviceAppMgtManagedAppRegistrationIntendedPolicy ----
+
+
+---- UPDATING Cmdlet : Remove-MgDeviceAppMgtManagedAppRegistrationOperation ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgDeviceAppMgtManagedAppRegistrationOperation ----
+
+
+---- UPDATING Cmdlet : Remove-MgDeviceAppMgtManagedAppStatuses ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgDeviceAppMgtManagedAppStatuses ----
+
+
+---- UPDATING Cmdlet : Remove-MgDeviceAppMgtManagedEBook ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgDeviceAppMgtManagedEBook ----
+
+
+---- UPDATING Cmdlet : Remove-MgDeviceAppMgtManagedEBookAssignment ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgDeviceAppMgtManagedEBookAssignment ----
+
+
+---- UPDATING Cmdlet : Remove-MgDeviceAppMgtManagedEBookDeviceState ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgDeviceAppMgtManagedEBookDeviceState ----
+
+
+---- UPDATING Cmdlet : Remove-MgDeviceAppMgtManagedEBookInstallSummary ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgDeviceAppMgtManagedEBookInstallSummary ----
+
+
+---- UPDATING Cmdlet : Remove-MgDeviceAppMgtManagedEBookUserStateSummary ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgDeviceAppMgtManagedEBookUserStateSummary ----
+
+
+---- UPDATING Cmdlet : Remove-MgDeviceAppMgtManagedEBookUserStateSummaryDeviceState ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgDeviceAppMgtManagedEBookUserStateSummaryDeviceState ----
+
+
+---- UPDATING Cmdlet : Remove-MgDeviceAppMgtMdmWindowInformationProtectionPolicy ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgDeviceAppMgtMdmWindowInformationProtectionPolicy ----
+
+
+---- UPDATING Cmdlet : Remove-MgDeviceAppMgtMobileApp ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgDeviceAppMgtMobileApp ----
+
+
+---- UPDATING Cmdlet : Remove-MgDeviceAppMgtMobileAppAssignment ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgDeviceAppMgtMobileAppAssignment ----
+
+
+---- UPDATING Cmdlet : Remove-MgDeviceAppMgtMobileAppCategory ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgDeviceAppMgtMobileAppCategory ----
+
+
+---- UPDATING Cmdlet : Remove-MgDeviceAppMgtMobileAppConfiguration ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgDeviceAppMgtMobileAppConfiguration ----
+
+
+---- UPDATING Cmdlet : Remove-MgDeviceAppMgtMobileAppConfigurationAssignment ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgDeviceAppMgtMobileAppConfigurationAssignment ----
+
+
+---- UPDATING Cmdlet : Remove-MgDeviceAppMgtMobileAppConfigurationDeviceStatuses ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgDeviceAppMgtMobileAppConfigurationDeviceStatuses ----
+
+
+---- UPDATING Cmdlet : Remove-MgDeviceAppMgtMobileAppConfigurationDeviceStatusSummary ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgDeviceAppMgtMobileAppConfigurationDeviceStatusSummary ----
+
+
+---- UPDATING Cmdlet : Remove-MgDeviceAppMgtMobileAppConfigurationUserStatuses ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgDeviceAppMgtMobileAppConfigurationUserStatuses ----
+
+
+---- UPDATING Cmdlet : Remove-MgDeviceAppMgtMobileAppConfigurationUserStatusSummary ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgDeviceAppMgtMobileAppConfigurationUserStatusSummary ----
+
+
+---- UPDATING Cmdlet : Remove-MgDeviceAppMgtTargetedManagedAppConfiguration ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgDeviceAppMgtTargetedManagedAppConfiguration ----
+
+
+---- UPDATING Cmdlet : Remove-MgDeviceAppMgtTargetedManagedAppConfigurationApp ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgDeviceAppMgtTargetedManagedAppConfigurationApp ----
+
+
+---- UPDATING Cmdlet : Remove-MgDeviceAppMgtTargetedManagedAppConfigurationAssignment ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgDeviceAppMgtTargetedManagedAppConfigurationAssignment ----
+
+
+---- UPDATING Cmdlet : Remove-MgDeviceAppMgtTargetedManagedAppConfigurationDeploymentSummary ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgDeviceAppMgtTargetedManagedAppConfigurationDeploymentSummary ----
+
+
+---- UPDATING Cmdlet : Remove-MgDeviceAppMgtVppToken ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgDeviceAppMgtVppToken ----
+
+
+---- UPDATING Cmdlet : Remove-MgDeviceAppMgtWindowInformationProtectionPolicy ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgDeviceAppMgtWindowInformationProtectionPolicy ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserDeviceManagementTroubleshootingEvent ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserDeviceManagementTroubleshootingEvent ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserManagedDevice ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserManagedDevice ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserManagedDeviceCategory ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserManagedDeviceCategory ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserManagedDeviceCompliancePolicyState ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserManagedDeviceCompliancePolicyState ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserManagedDeviceConfigurationState ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserManagedDeviceConfigurationState ----
+
+
+---- UPDATING Cmdlet : Set-MgDeviceAppMgtManagedEBook ----
+
+	Parameter Set Added: Assign
+
+	Parameter Set Added: AssignExpanded
+
+	Parameter Set Added: AssignViaIdentity
+
+	Parameter Set Added: AssignViaIdentityExpanded
+
+	Parameter Set Deleted: Assign1
+
+	Parameter Set Deleted: AssignExpanded1
+
+	Parameter Set Deleted: AssignViaIdentity1
+
+	Parameter Set Deleted: AssignViaIdentityExpanded1
+
+	Parameter Set Name Updated: AssignExpanded
+		Old Set: AssignExpanded1
+		New Set: AssignExpanded
+
+	Parameter Set Name Updated: Assign
+		Old Set: Assign1
+		New Set: Assign
+
+	Parameter Set Name Updated: AssignViaIdentityExpanded
+		Old Set: AssignViaIdentityExpanded1
+		New Set: AssignViaIdentityExpanded
+
+	Parameter Set Name Updated: AssignViaIdentity
+		Old Set: AssignViaIdentity1
+		New Set: AssignViaIdentity
+
+	Parameter Updated: BodyParameter
+		Type updated from IPathsWfdti0DeviceappmanagementManagedebooksManagedebookIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema to IPathsWfdti0DeviceappmanagementManagedebooksManagedebookIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema1
+
+	Parameter Updated: ManagedEBookAssignments
+		Type updated from IMicrosoftGraphManagedEBookAssignment1[] to IMicrosoftGraphManagedEBookAssignment[]
+
+---- COMPLETED UPDATING Cmdlet : Set-MgDeviceAppMgtManagedEBook ----
+
+
+---- UPDATING Cmdlet : Set-MgDeviceAppMgtMobileApp ----
+
+	Parameter Set Added: Assign
+
+	Parameter Set Added: AssignExpanded
+
+	Parameter Set Added: AssignViaIdentity
+
+	Parameter Set Added: AssignViaIdentityExpanded
+
+	Parameter Set Deleted: Assign1
+
+	Parameter Set Deleted: AssignExpanded1
+
+	Parameter Set Deleted: AssignViaIdentity1
+
+	Parameter Set Deleted: AssignViaIdentityExpanded1
+
+	Parameter Set Name Updated: AssignExpanded
+		Old Set: AssignExpanded1
+		New Set: AssignExpanded
+
+	Parameter Set Name Updated: Assign
+		Old Set: Assign1
+		New Set: Assign
+
+	Parameter Set Name Updated: AssignViaIdentityExpanded
+		Old Set: AssignViaIdentityExpanded1
+		New Set: AssignViaIdentityExpanded
+
+	Parameter Set Name Updated: AssignViaIdentity
+		Old Set: AssignViaIdentity1
+		New Set: AssignViaIdentity
+
+	Parameter Updated: BodyParameter
+		Type updated from IPaths12NzrcrDeviceappmanagementMobileappsMobileappIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema to IPaths12NzrcrDeviceappmanagementMobileappsMobileappIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema1
+
+	Parameter Updated: MobileAppAssignments
+		Type updated from IMicrosoftGraphMobileAppAssignment1[] to IMicrosoftGraphMobileAppAssignment[]
+
+---- COMPLETED UPDATING Cmdlet : Set-MgDeviceAppMgtMobileApp ----
+
+
+---- UPDATING Cmdlet : Set-MgDeviceAppMgtMobileAppConfiguration ----
+
+	Parameter Set Added: Assign
+
+	Parameter Set Added: AssignExpanded
+
+	Parameter Set Added: AssignViaIdentity
+
+	Parameter Set Added: AssignViaIdentityExpanded
+
+	Parameter Set Deleted: Assign1
+
+	Parameter Set Deleted: AssignExpanded1
+
+	Parameter Set Deleted: AssignViaIdentity1
+
+	Parameter Set Deleted: AssignViaIdentityExpanded1
+
+	Parameter Set Name Updated: AssignExpanded
+		Old Set: AssignExpanded1
+		New Set: AssignExpanded
+
+	Parameter Set Name Updated: Assign
+		Old Set: Assign1
+		New Set: Assign
+
+	Parameter Set Name Updated: AssignViaIdentityExpanded
+		Old Set: AssignViaIdentityExpanded1
+		New Set: AssignViaIdentityExpanded
+
+	Parameter Set Name Updated: AssignViaIdentity
+		Old Set: AssignViaIdentity1
+		New Set: AssignViaIdentity
+
+	Parameter Updated: Assignments
+		Type updated from IMicrosoftGraphManagedDeviceMobileAppConfigurationAssignment1[] to IMicrosoftGraphManagedDeviceMobileAppConfigurationAssignment[]
+
+	Parameter Updated: BodyParameter
+		Type updated from IPaths1Pwcjs5DeviceappmanagementMobileappconfigurationsManageddevicemobileappconfigurationIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema to IPaths1Pwcjs5DeviceappmanagementMobileappconfigurationsManageddevicemobileappconfigurationIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema1
+
+---- COMPLETED UPDATING Cmdlet : Set-MgDeviceAppMgtMobileAppConfiguration ----
+
+
+---- UPDATING Cmdlet : Set-MgDeviceAppMgtTargetedManagedAppConfiguration ----
+
+	Parameter Set Added: Assign
+
+	Parameter Set Added: AssignExpanded
+
+	Parameter Set Added: AssignViaIdentity
+
+	Parameter Set Added: AssignViaIdentityExpanded
+
+	Parameter Set Deleted: Assign1
+
+	Parameter Set Deleted: AssignExpanded1
+
+	Parameter Set Deleted: AssignViaIdentity1
+
+	Parameter Set Deleted: AssignViaIdentityExpanded1
+
+	Parameter Set Name Updated: AssignExpanded
+		Old Set: AssignExpanded1
+		New Set: AssignExpanded
+
+	Parameter Set Name Updated: Assign
+		Old Set: Assign1
+		New Set: Assign
+
+	Parameter Set Name Updated: AssignViaIdentityExpanded
+		Old Set: AssignViaIdentityExpanded1
+		New Set: AssignViaIdentityExpanded
+
+	Parameter Set Name Updated: AssignViaIdentity
+		Old Set: AssignViaIdentity1
+		New Set: AssignViaIdentity
+
+	Parameter Updated: Assignments
+		Type updated from IMicrosoftGraphTargetedManagedAppPolicyAssignment1[] to IMicrosoftGraphTargetedManagedAppPolicyAssignment[]
+
+	Parameter Updated: BodyParameter
+		Type updated from IPathsZxn05FDeviceappmanagementTargetedmanagedappconfigurationsTargetedmanagedappconfigurationIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema1 to IPathsZxn05FDeviceappmanagementTargetedmanagedappconfigurationsTargetedmanagedappconfigurationIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema
+
+---- COMPLETED UPDATING Cmdlet : Set-MgDeviceAppMgtTargetedManagedAppConfiguration ----
+
+
+---- UPDATING Cmdlet : Sync-MgDeviceAppMgtMicrosoftStore ----
+
+	Parameter Set Added: Sync
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: Sync
+		Old Set: 
+		New Set: Sync
+
+---- COMPLETED UPDATING Cmdlet : Sync-MgDeviceAppMgtMicrosoftStore ----
+
+
+---- UPDATING Cmdlet : Sync-MgDeviceAppMgtVppTokenLicense ----
+
+	Parameter Set Added: Sync
+
+	Parameter Set Added: SyncViaIdentity
+
+	Parameter Set Deleted: Sync1
+
+	Parameter Set Deleted: SyncViaIdentity1
+
+	Parameter Set Name Updated: Sync
+		Old Set: Sync1
+		New Set: Sync
+
+	Parameter Set Name Updated: SyncViaIdentity
+		Old Set: SyncViaIdentity1
+		New Set: SyncViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Sync-MgDeviceAppMgtVppTokenLicense ----
+
+
+---- UPDATING Cmdlet : Update-MgDeviceAppMgt ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Added: DeviceAppManagementTasks
+
+	Parameter Added: EnterpriseCodeSigningCertificates
+
+	Parameter Added: IosLobAppProvisioningConfigurations
+
+	Parameter Added: ManagedEBookCategories
+
+	Parameter Added: MicrosoftStoreForBusinessPortalSelection
+
+	Parameter Added: PolicySets
+
+	Parameter Added: SideLoadingKeys
+
+	Parameter Added: SymantecCodeSigningCertificate
+
+	Parameter Added: WdacSupplementalPolicies
+
+	Parameter Added: WindowsInformationProtectionDeviceRegistrations
+
+	Parameter Added: WindowsInformationProtectionWipeActions
+
+	Parameter Added: WindowsManagementApp
+
+	Parameter Updated: AndroidManagedAppProtections
+		Type updated from IMicrosoftGraphAndroidManagedAppProtection[] to IMicrosoftGraphAndroidManagedAppProtection1[]
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphDeviceAppManagement1 to IMicrosoftGraphDeviceAppManagement
+
+	Parameter Updated: DefaultManagedAppProtections
+		Type updated from IMicrosoftGraphDefaultManagedAppProtection[] to IMicrosoftGraphDefaultManagedAppProtection1[]
+
+	Parameter Updated: IosManagedAppProtections
+		Type updated from IMicrosoftGraphIosManagedAppProtection[] to IMicrosoftGraphIosManagedAppProtection1[]
+
+	Parameter Updated: ManagedAppPolicies
+		Type updated from IMicrosoftGraphManagedAppPolicy[] to IMicrosoftGraphManagedAppPolicy1[]
+
+	Parameter Updated: ManagedAppRegistrations
+		Type updated from IMicrosoftGraphManagedAppRegistration[] to IMicrosoftGraphManagedAppRegistration1[]
+
+	Parameter Updated: ManagedEBooks
+		Type updated from IMicrosoftGraphManagedEBook1[] to IMicrosoftGraphManagedEBook[]
+
+	Parameter Updated: MdmWindowsInformationProtectionPolicies
+		Type updated from IMicrosoftGraphMdmWindowsInformationProtectionPolicy1[] to IMicrosoftGraphMdmWindowsInformationProtectionPolicy[]
+
+	Parameter Updated: MobileAppConfigurations
+		Type updated from IMicrosoftGraphManagedDeviceMobileAppConfiguration1[] to IMicrosoftGraphManagedDeviceMobileAppConfiguration[]
+
+	Parameter Updated: MobileApps
+		Type updated from IMicrosoftGraphMobileApp1[] to IMicrosoftGraphMobileApp[]
+
+	Parameter Updated: TargetedManagedAppConfigurations
+		Type updated from IMicrosoftGraphTargetedManagedAppConfiguration1[] to IMicrosoftGraphTargetedManagedAppConfiguration[]
+
+	Parameter Updated: VppTokens
+		Type updated from IMicrosoftGraphVppToken1[] to IMicrosoftGraphVppToken[]
+
+	Parameter Updated: WindowsInformationProtectionPolicies
+		Type updated from IMicrosoftGraphWindowsInformationProtectionPolicy1[] to IMicrosoftGraphWindowsInformationProtectionPolicy[]
+
+---- COMPLETED UPDATING Cmdlet : Update-MgDeviceAppMgt ----
+
+
+---- UPDATING Cmdlet : Update-MgDeviceAppMgtAndroidManagedAppProtection ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+	Parameter Added: AllowedAndroidDeviceManufacturers
+
+	Parameter Added: AllowedAndroidDeviceModels
+
+	Parameter Added: AllowedDataIngestionLocations
+
+	Parameter Added: AllowedOutboundClipboardSharingExceptionLength
+
+	Parameter Added: AppActionIfAndroidDeviceManufacturerNotAllowed
+
+	Parameter Added: AppActionIfAndroidDeviceModelNotAllowed
+
+	Parameter Added: AppActionIfAndroidSafetyNetAppsVerificationFailed
+
+	Parameter Added: AppActionIfAndroidSafetyNetDeviceAttestationFailed
+
+	Parameter Added: AppActionIfDeviceComplianceRequired
+
+	Parameter Added: AppActionIfDeviceLockNotSet
+
+	Parameter Added: AppActionIfMaximumPinRetriesExceeded
+
+	Parameter Added: AppActionIfUnableToAuthenticateUser
+
+	Parameter Added: ApprovedKeyboards
+
+	Parameter Added: BiometricAuthenticationBlocked
+
+	Parameter Added: BlockAfterCompanyPortalUpdateDeferralInDays
+
+	Parameter Added: BlockDataIngestionIntoOrganizationDocuments
+
+	Parameter Added: CustomDialerAppDisplayName
+
+	Parameter Added: CustomDialerAppPackageId
+
+	Parameter Added: DeviceLockRequired
+
+	Parameter Added: DialerRestrictionLevel
+
+	Parameter Added: ExemptedAppPackages
+
+	Parameter Added: KeyboardsRestricted
+
+	Parameter Added: MaximumAllowedDeviceThreatLevel
+
+	Parameter Added: MinimumRequiredCompanyPortalVersion
+
+	Parameter Added: MinimumWarningCompanyPortalVersion
+
+	Parameter Added: MinimumWipeAppVersion
+
+	Parameter Added: MinimumWipeCompanyPortalVersion
+
+	Parameter Added: MinimumWipeOSVersion
+
+	Parameter Added: MinimumWipePatchVersion
+
+	Parameter Added: MobileThreatDefenseRemediationAction
+
+	Parameter Added: NotificationRestriction
+
+	Parameter Added: PinRequiredInsteadOfBiometricTimeout
+
+	Parameter Added: PreviousPinBlockCount
+
+	Parameter Added: RequiredAndroidSafetyNetAppsVerificationType
+
+	Parameter Added: RequiredAndroidSafetyNetDeviceAttestationType
+
+	Parameter Added: RequiredAndroidSafetyNetEvaluationType
+
+	Parameter Added: RoleScopeTagIds
+
+	Parameter Added: TargetedAppManagementLevels
+
+	Parameter Added: WarnAfterCompanyPortalUpdateDeferralInDays
+
+	Parameter Added: WipeAfterCompanyPortalUpdateDeferralInDays
+
+	Parameter Updated: Assignments
+		Type updated from IMicrosoftGraphTargetedManagedAppPolicyAssignment1[] to IMicrosoftGraphTargetedManagedAppPolicyAssignment[]
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphAndroidManagedAppProtection to IMicrosoftGraphAndroidManagedAppProtection1
+
+---- COMPLETED UPDATING Cmdlet : Update-MgDeviceAppMgtAndroidManagedAppProtection ----
+
+
+---- UPDATING Cmdlet : Update-MgDeviceAppMgtAndroidManagedAppProtectionApp ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Update-MgDeviceAppMgtAndroidManagedAppProtectionApp ----
+
+
+---- UPDATING Cmdlet : Update-MgDeviceAppMgtAndroidManagedAppProtectionDeploymentSummary ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Update-MgDeviceAppMgtAndroidManagedAppProtectionDeploymentSummary ----
+
+
+---- UPDATING Cmdlet : Update-MgDeviceAppMgtDefaultManagedAppProtection ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Added: AllowedAndroidDeviceManufacturers
+
+	Parameter Added: AllowedAndroidDeviceModels
+
+	Parameter Added: AllowedDataIngestionLocations
+
+	Parameter Added: AllowedIosDeviceModels
+
+	Parameter Added: AllowedOutboundClipboardSharingExceptionLength
+
+	Parameter Added: AppActionIfAndroidDeviceManufacturerNotAllowed
+
+	Parameter Added: AppActionIfAndroidDeviceModelNotAllowed
+
+	Parameter Added: AppActionIfAndroidSafetyNetAppsVerificationFailed
+
+	Parameter Added: AppActionIfAndroidSafetyNetDeviceAttestationFailed
+
+	Parameter Added: AppActionIfDeviceComplianceRequired
+
+	Parameter Added: AppActionIfDeviceLockNotSet
+
+	Parameter Added: AppActionIfIosDeviceModelNotAllowed
+
+	Parameter Added: AppActionIfMaximumPinRetriesExceeded
+
+	Parameter Added: AppActionIfUnableToAuthenticateUser
+
+	Parameter Added: BiometricAuthenticationBlocked
+
+	Parameter Added: BlockAfterCompanyPortalUpdateDeferralInDays
+
+	Parameter Added: BlockDataIngestionIntoOrganizationDocuments
+
+	Parameter Added: CustomBrowserDisplayName
+
+	Parameter Added: CustomBrowserPackageId
+
+	Parameter Added: CustomBrowserProtocol
+
+	Parameter Added: CustomDialerAppDisplayName
+
+	Parameter Added: CustomDialerAppPackageId
+
+	Parameter Added: CustomDialerAppProtocol
+
+	Parameter Added: DeviceLockRequired
+
+	Parameter Added: DialerRestrictionLevel
+
+	Parameter Added: DisableProtectionOfManagedOutboundOpenInData
+
+	Parameter Added: ExemptedAppPackages
+
+	Parameter Added: ExemptedAppProtocols
+
+	Parameter Added: FilterOpenInToOnlyManagedApps
+
+	Parameter Added: MaximumAllowedDeviceThreatLevel
+
+	Parameter Added: MinimumRequiredCompanyPortalVersion
+
+	Parameter Added: MinimumWarningCompanyPortalVersion
+
+	Parameter Added: MinimumWipeAppVersion
+
+	Parameter Added: MinimumWipeCompanyPortalVersion
+
+	Parameter Added: MinimumWipeOSVersion
+
+	Parameter Added: MinimumWipePatchVersion
+
+	Parameter Added: MinimumWipeSdkVersion
+
+	Parameter Added: MobileThreatDefenseRemediationAction
+
+	Parameter Added: NotificationRestriction
+
+	Parameter Added: PinRequiredInsteadOfBiometricTimeout
+
+	Parameter Added: PreviousPinBlockCount
+
+	Parameter Added: ProtectInboundDataFromUnknownSources
+
+	Parameter Added: RequiredAndroidSafetyNetAppsVerificationType
+
+	Parameter Added: RequiredAndroidSafetyNetDeviceAttestationType
+
+	Parameter Added: RequiredAndroidSafetyNetEvaluationType
+
+	Parameter Added: RoleScopeTagIds
+
+	Parameter Added: ThirdPartyKeyboardsBlocked
+
+	Parameter Added: WarnAfterCompanyPortalUpdateDeferralInDays
+
+	Parameter Added: WipeAfterCompanyPortalUpdateDeferralInDays
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphDefaultManagedAppProtection to IMicrosoftGraphDefaultManagedAppProtection1
+
+---- COMPLETED UPDATING Cmdlet : Update-MgDeviceAppMgtDefaultManagedAppProtection ----
+
+
+---- UPDATING Cmdlet : Update-MgDeviceAppMgtDefaultManagedAppProtectionApp ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Update-MgDeviceAppMgtDefaultManagedAppProtectionApp ----
+
+
+---- UPDATING Cmdlet : Update-MgDeviceAppMgtDefaultManagedAppProtectionDeploymentSummary ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Update-MgDeviceAppMgtDefaultManagedAppProtectionDeploymentSummary ----
+
+
+---- UPDATING Cmdlet : Update-MgDeviceAppMgtiOSManagedAppProtection ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+	Parameter Added: AllowedDataIngestionLocations
+
+	Parameter Added: AllowedIosDeviceModels
+
+	Parameter Added: AllowedOutboundClipboardSharingExceptionLength
+
+	Parameter Added: AppActionIfDeviceComplianceRequired
+
+	Parameter Added: AppActionIfIosDeviceModelNotAllowed
+
+	Parameter Added: AppActionIfMaximumPinRetriesExceeded
+
+	Parameter Added: AppActionIfUnableToAuthenticateUser
+
+	Parameter Added: BlockDataIngestionIntoOrganizationDocuments
+
+	Parameter Added: CustomDialerAppProtocol
+
+	Parameter Added: DialerRestrictionLevel
+
+	Parameter Added: DisableProtectionOfManagedOutboundOpenInData
+
+	Parameter Added: ExemptedAppProtocols
+
+	Parameter Added: FilterOpenInToOnlyManagedApps
+
+	Parameter Added: MaximumAllowedDeviceThreatLevel
+
+	Parameter Added: MinimumWipeAppVersion
+
+	Parameter Added: MinimumWipeOSVersion
+
+	Parameter Added: MinimumWipeSdkVersion
+
+	Parameter Added: MobileThreatDefenseRemediationAction
+
+	Parameter Added: NotificationRestriction
+
+	Parameter Added: PinRequiredInsteadOfBiometricTimeout
+
+	Parameter Added: PreviousPinBlockCount
+
+	Parameter Added: ProtectInboundDataFromUnknownSources
+
+	Parameter Added: RoleScopeTagIds
+
+	Parameter Added: TargetedAppManagementLevels
+
+	Parameter Added: ThirdPartyKeyboardsBlocked
+
+	Parameter Updated: Assignments
+		Type updated from IMicrosoftGraphTargetedManagedAppPolicyAssignment1[] to IMicrosoftGraphTargetedManagedAppPolicyAssignment[]
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphIosManagedAppProtection to IMicrosoftGraphIosManagedAppProtection1
+
+---- COMPLETED UPDATING Cmdlet : Update-MgDeviceAppMgtiOSManagedAppProtection ----
+
+
+---- UPDATING Cmdlet : Update-MgDeviceAppMgtiOSManagedAppProtectionApp ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateExpanded1
+		Old Set: UpdateExpanded
+		New Set: UpdateExpanded1
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded1
+		Old Set: UpdateViaIdentityExpanded
+		New Set: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Update-MgDeviceAppMgtiOSManagedAppProtectionApp ----
+
+
+---- UPDATING Cmdlet : Update-MgDeviceAppMgtiOSManagedAppProtectionDeploymentSummary ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateExpanded1
+		Old Set: UpdateExpanded
+		New Set: UpdateExpanded1
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded1
+		Old Set: UpdateViaIdentityExpanded
+		New Set: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Update-MgDeviceAppMgtiOSManagedAppProtectionDeploymentSummary ----
+
+
+---- UPDATING Cmdlet : Update-MgDeviceAppMgtManagedAppPolicy ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+	Parameter Added: RoleScopeTagIds
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphManagedAppPolicy to IMicrosoftGraphManagedAppPolicy1
+
+---- COMPLETED UPDATING Cmdlet : Update-MgDeviceAppMgtManagedAppPolicy ----
+
+
+---- UPDATING Cmdlet : Update-MgDeviceAppMgtManagedAppRegistration ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+	Parameter Added: AzureAdDeviceId
+
+	Parameter Added: DeviceManufacturer
+
+	Parameter Added: DeviceModel
+
+	Parameter Added: ManagedDeviceId
+
+	Parameter Updated: AppliedPolicies
+		Type updated from IMicrosoftGraphManagedAppPolicy[] to IMicrosoftGraphManagedAppPolicy1[]
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphManagedAppRegistration to IMicrosoftGraphManagedAppRegistration1
+
+	Parameter Updated: IntendedPolicies
+		Type updated from IMicrosoftGraphManagedAppPolicy[] to IMicrosoftGraphManagedAppPolicy1[]
+
+---- COMPLETED UPDATING Cmdlet : Update-MgDeviceAppMgtManagedAppRegistration ----
+
+
+---- UPDATING Cmdlet : Update-MgDeviceAppMgtManagedAppRegistrationAppliedPolicy ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+	Parameter Added: RoleScopeTagIds
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphManagedAppPolicy to IMicrosoftGraphManagedAppPolicy1
+
+---- COMPLETED UPDATING Cmdlet : Update-MgDeviceAppMgtManagedAppRegistrationAppliedPolicy ----
+
+
+---- UPDATING Cmdlet : Update-MgDeviceAppMgtManagedAppRegistrationIntendedPolicy ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Added: RoleScopeTagIds
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphManagedAppPolicy to IMicrosoftGraphManagedAppPolicy1
+
+---- COMPLETED UPDATING Cmdlet : Update-MgDeviceAppMgtManagedAppRegistrationIntendedPolicy ----
+
+
+---- UPDATING Cmdlet : Update-MgDeviceAppMgtManagedAppRegistrationOperation ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Update-MgDeviceAppMgtManagedAppRegistrationOperation ----
+
+
+---- UPDATING Cmdlet : Update-MgDeviceAppMgtManagedAppStatuses ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Update-MgDeviceAppMgtManagedAppStatuses ----
+
+
+---- UPDATING Cmdlet : Update-MgDeviceAppMgtManagedEBook ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Added: Categories
+
+	Parameter Updated: Assignments
+		Type updated from IMicrosoftGraphManagedEBookAssignment1[] to IMicrosoftGraphManagedEBookAssignment[]
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphManagedEBook1 to IMicrosoftGraphManagedEBook
+
+---- COMPLETED UPDATING Cmdlet : Update-MgDeviceAppMgtManagedEBook ----
+
+
+---- UPDATING Cmdlet : Update-MgDeviceAppMgtManagedEBookAssignment ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphManagedEBookAssignment1 to IMicrosoftGraphManagedEBookAssignment
+
+	Parameter Updated: Target
+		Type updated from Hashtable to IMicrosoftGraphDeviceAndAppManagementAssignmentTarget
+
+---- COMPLETED UPDATING Cmdlet : Update-MgDeviceAppMgtManagedEBookAssignment ----
+
+
+---- UPDATING Cmdlet : Update-MgDeviceAppMgtManagedEBookDeviceState ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Update-MgDeviceAppMgtManagedEBookDeviceState ----
+
+
+---- UPDATING Cmdlet : Update-MgDeviceAppMgtManagedEBookInstallSummary ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Update-MgDeviceAppMgtManagedEBookInstallSummary ----
+
+
+---- UPDATING Cmdlet : Update-MgDeviceAppMgtManagedEBookUserStateSummary ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Update-MgDeviceAppMgtManagedEBookUserStateSummary ----
+
+
+---- UPDATING Cmdlet : Update-MgDeviceAppMgtManagedEBookUserStateSummaryDeviceState ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Update-MgDeviceAppMgtManagedEBookUserStateSummaryDeviceState ----
+
+
+---- UPDATING Cmdlet : Update-MgDeviceAppMgtMdmWindowInformationProtectionPolicy ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Added: RoleScopeTagIds
+
+	Parameter Updated: Assignments
+		Type updated from IMicrosoftGraphTargetedManagedAppPolicyAssignment1[] to IMicrosoftGraphTargetedManagedAppPolicyAssignment[]
+
+---- COMPLETED UPDATING Cmdlet : Update-MgDeviceAppMgtMdmWindowInformationProtectionPolicy ----
+
+
+---- UPDATING Cmdlet : Update-MgDeviceAppMgtMobileApp ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Added: DependentAppCount
+
+	Parameter Added: DeviceStatuses
+
+	Parameter Added: InstallSummary
+
+	Parameter Added: IsAssigned
+
+	Parameter Added: Relationships
+
+	Parameter Added: RoleScopeTagIds
+
+	Parameter Added: SupersededAppCount
+
+	Parameter Added: SupersedingAppCount
+
+	Parameter Added: UploadState
+
+	Parameter Added: UserStatuses
+
+	Parameter Updated: Assignments
+		Type updated from IMicrosoftGraphMobileAppAssignment1[] to IMicrosoftGraphMobileAppAssignment[]
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphMobileApp1 to IMicrosoftGraphMobileApp
+
+---- COMPLETED UPDATING Cmdlet : Update-MgDeviceAppMgtMobileApp ----
+
+
+---- UPDATING Cmdlet : Update-MgDeviceAppMgtMobileAppAssignment ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Added: Source
+
+	Parameter Added: SourceId
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphMobileAppAssignment1 to IMicrosoftGraphMobileAppAssignment
+
+	Parameter Updated: Target
+		Type updated from Hashtable to IMicrosoftGraphDeviceAndAppManagementAssignmentTarget
+
+---- COMPLETED UPDATING Cmdlet : Update-MgDeviceAppMgtMobileAppAssignment ----
+
+
+---- UPDATING Cmdlet : Update-MgDeviceAppMgtMobileAppCategory ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Update-MgDeviceAppMgtMobileAppCategory ----
+
+
+---- UPDATING Cmdlet : Update-MgDeviceAppMgtMobileAppConfiguration ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Added: RoleScopeTagIds
+
+	Parameter Updated: Assignments
+		Type updated from IMicrosoftGraphManagedDeviceMobileAppConfigurationAssignment1[] to IMicrosoftGraphManagedDeviceMobileAppConfigurationAssignment[]
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphManagedDeviceMobileAppConfiguration1 to IMicrosoftGraphManagedDeviceMobileAppConfiguration
+
+	Parameter Updated: DeviceStatuses
+		Type updated from IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus[] to IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus1[]
+
+	Parameter Updated: DeviceStatusSummary
+		Type updated from IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceSummary1 to IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceSummary
+
+	Parameter Updated: UserStatusSummary
+		Type updated from IMicrosoftGraphManagedDeviceMobileAppConfigurationUserSummary1 to IMicrosoftGraphManagedDeviceMobileAppConfigurationUserSummary
+
+---- COMPLETED UPDATING Cmdlet : Update-MgDeviceAppMgtMobileAppConfiguration ----
+
+
+---- UPDATING Cmdlet : Update-MgDeviceAppMgtMobileAppConfigurationAssignment ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphManagedDeviceMobileAppConfigurationAssignment1 to IMicrosoftGraphManagedDeviceMobileAppConfigurationAssignment
+
+	Parameter Updated: Target
+		Type updated from Hashtable to IMicrosoftGraphDeviceAndAppManagementAssignmentTarget
+
+---- COMPLETED UPDATING Cmdlet : Update-MgDeviceAppMgtMobileAppConfigurationAssignment ----
+
+
+---- UPDATING Cmdlet : Update-MgDeviceAppMgtMobileAppConfigurationDeviceStatuses ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Added: Platform
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus to IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus1
+
+---- COMPLETED UPDATING Cmdlet : Update-MgDeviceAppMgtMobileAppConfigurationDeviceStatuses ----
+
+
+---- UPDATING Cmdlet : Update-MgDeviceAppMgtMobileAppConfigurationDeviceStatusSummary ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Added: ConflictCount
+
+	Parameter Added: NotApplicablePlatformCount
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceSummary1 to IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceSummary
+
+---- COMPLETED UPDATING Cmdlet : Update-MgDeviceAppMgtMobileAppConfigurationDeviceStatusSummary ----
+
+
+---- UPDATING Cmdlet : Update-MgDeviceAppMgtMobileAppConfigurationUserStatuses ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Update-MgDeviceAppMgtMobileAppConfigurationUserStatuses ----
+
+
+---- UPDATING Cmdlet : Update-MgDeviceAppMgtMobileAppConfigurationUserStatusSummary ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Added: ConflictCount
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphManagedDeviceMobileAppConfigurationUserSummary1 to IMicrosoftGraphManagedDeviceMobileAppConfigurationUserSummary
+
+---- COMPLETED UPDATING Cmdlet : Update-MgDeviceAppMgtMobileAppConfigurationUserStatusSummary ----
+
+
+---- UPDATING Cmdlet : Update-MgDeviceAppMgtTargetedManagedAppConfiguration ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Added: RoleScopeTagIds
+
+	Parameter Updated: Assignments
+		Type updated from IMicrosoftGraphTargetedManagedAppPolicyAssignment1[] to IMicrosoftGraphTargetedManagedAppPolicyAssignment[]
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphTargetedManagedAppConfiguration1 to IMicrosoftGraphTargetedManagedAppConfiguration
+
+---- COMPLETED UPDATING Cmdlet : Update-MgDeviceAppMgtTargetedManagedAppConfiguration ----
+
+
+---- UPDATING Cmdlet : Update-MgDeviceAppMgtTargetedManagedAppConfigurationApp ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Update-MgDeviceAppMgtTargetedManagedAppConfigurationApp ----
+
+
+---- UPDATING Cmdlet : Update-MgDeviceAppMgtTargetedManagedAppConfigurationAssignment ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Added: Source
+
+	Parameter Added: SourceId
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphTargetedManagedAppPolicyAssignment1 to IMicrosoftGraphTargetedManagedAppPolicyAssignment
+
+	Parameter Updated: Target
+		Type updated from Hashtable to IMicrosoftGraphDeviceAndAppManagementAssignmentTarget
+
+---- COMPLETED UPDATING Cmdlet : Update-MgDeviceAppMgtTargetedManagedAppConfigurationAssignment ----
+
+
+---- UPDATING Cmdlet : Update-MgDeviceAppMgtTargetedManagedAppConfigurationDeploymentSummary ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Update-MgDeviceAppMgtTargetedManagedAppConfigurationDeploymentSummary ----
+
+
+---- UPDATING Cmdlet : Update-MgDeviceAppMgtVppToken ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Added: ClaimTokenManagementFromExternalMdm
+
+	Parameter Added: DataSharingConsentGranted
+
+	Parameter Added: DisplayName
+
+	Parameter Added: LocationName
+
+	Parameter Added: RoleScopeTagIds
+
+	Parameter Added: TokenActionResults
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphVppToken1 to IMicrosoftGraphVppToken
+
+---- COMPLETED UPDATING Cmdlet : Update-MgDeviceAppMgtVppToken ----
+
+
+---- UPDATING Cmdlet : Update-MgDeviceAppMgtWindowInformationProtectionPolicy ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Added: RoleScopeTagIds
+
+	Parameter Updated: Assignments
+		Type updated from IMicrosoftGraphTargetedManagedAppPolicyAssignment1[] to IMicrosoftGraphTargetedManagedAppPolicyAssignment[]
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphWindowsInformationProtectionPolicy1 to IMicrosoftGraphWindowsInformationProtectionPolicy
+
+---- COMPLETED UPDATING Cmdlet : Update-MgDeviceAppMgtWindowInformationProtectionPolicy ----
+
+
+---- UPDATING Cmdlet : Update-MgUserDeviceManagementTroubleshootingEvent ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Added: AdditionalInformation
+
+	Parameter Added: EventName
+
+	Parameter Added: TroubleshootingErrorDetails
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphDeviceManagementTroubleshootingEvent1 to IMicrosoftGraphDeviceManagementTroubleshootingEvent
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserDeviceManagementTroubleshootingEvent ----
+
+
+---- UPDATING Cmdlet : Update-MgUserManagedDevice ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Added: AadRegistered
+
+	Parameter Added: AutopilotEnrolled
+
+	Parameter Added: AzureActiveDirectoryDeviceId
+
+	Parameter Added: ChassisType
+
+	Parameter Added: ConfigurationManagerClientHealthState
+
+	Parameter Added: ConfigurationManagerClientInformation
+
+	Parameter Added: DetectedApps
+
+	Parameter Added: DeviceType
+
+	Parameter Added: EthernetMacAddress
+
+	Parameter Added: HardwareInformation
+
+	Parameter Added: Iccid
+
+	Parameter Added: JoinType
+
+	Parameter Added: LogCollectionRequests
+
+	Parameter Added: LostModeState
+
+	Parameter Added: ManagedDeviceMobileAppConfigurationStates
+
+	Parameter Added: ManagementCertificateExpirationDate
+
+	Parameter Added: ManagementFeatures
+
+	Parameter Added: ManagementState
+
+	Parameter Added: Notes
+
+	Parameter Added: OwnerType
+
+	Parameter Added: PhysicalMemoryInBytes
+
+	Parameter Added: PreferMdmOverGroupPolicyAppliedDateTime
+
+	Parameter Added: ProcessorArchitecture
+
+	Parameter Added: RequireUserEnrollmentApproval
+
+	Parameter Added: RetireAfterDateTime
+
+	Parameter Added: RoleScopeTagIds
+
+	Parameter Added: SecurityBaselineStates
+
+	Parameter Added: SkuFamily
+
+	Parameter Added: SkuNumber
+
+	Parameter Added: SpecificationVersion
+
+	Parameter Added: Udid
+
+	Parameter Added: Users
+
+	Parameter Added: UsersLoggedOn
+
+	Parameter Added: WindowsActiveMalwareCount
+
+	Parameter Added: WindowsProtectionState
+
+	Parameter Added: WindowsRemediatedMalwareCount
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphManagedDevice1 to IMicrosoftGraphManagedDevice
+
+	Parameter Updated: ConfigurationManagerClientEnabledFeatures
+		Type updated from IMicrosoftGraphConfigurationManagerClientEnabledFeatures1 to IMicrosoftGraphConfigurationManagerClientEnabledFeatures
+
+	Parameter Updated: DeviceCategory
+		Type updated from IMicrosoftGraphDeviceCategory2 to IMicrosoftGraphDeviceCategory
+
+	Parameter Updated: DeviceCompliancePolicyStates
+		Type updated from IMicrosoftGraphDeviceCompliancePolicyState1[] to IMicrosoftGraphDeviceCompliancePolicyState[]
+
+	Parameter Updated: DeviceConfigurationStates
+		Type updated from IMicrosoftGraphDeviceConfigurationState1[] to IMicrosoftGraphDeviceConfigurationState[]
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserManagedDevice ----
+
+
+---- UPDATING Cmdlet : Update-MgUserManagedDeviceCategory ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Added: RoleScopeTagIds
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphDeviceCategory2 to IMicrosoftGraphDeviceCategory
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserManagedDeviceCategory ----
+
+
+---- UPDATING Cmdlet : Update-MgUserManagedDeviceCompliancePolicyState ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Added: UserId1
+
+	Parameter Added: UserPrincipalName
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphDeviceCompliancePolicyState1 to IMicrosoftGraphDeviceCompliancePolicyState
+
+	Parameter Updated: SettingStates
+		Type updated from IMicrosoftGraphDeviceCompliancePolicySettingState1[] to IMicrosoftGraphDeviceCompliancePolicySettingState[]
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserManagedDeviceCompliancePolicyState ----
+
+
+---- UPDATING Cmdlet : Update-MgUserManagedDeviceConfigurationState ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Added: UserId1
+
+	Parameter Added: UserPrincipalName
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphDeviceConfigurationState1 to IMicrosoftGraphDeviceConfigurationState
+
+	Parameter Updated: SettingStates
+		Type updated from IMicrosoftGraphDeviceConfigurationSettingState1[] to IMicrosoftGraphDeviceConfigurationSettingState[]
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserManagedDeviceConfigurationState ----
+
+
+[Update-MarkdownHelpModule] 11/23/2020 15:03:40 Creating new markdown for command 'Clear-MgDeviceAppMgtWindowInformationProtectionDeviceRegistration'
+[Update-MarkdownHelpModule] 11/23/2020 15:03:41 Creating new markdown for command 'Get-MgDeviceAppMgtEnterpriseCodeSigningCertificate'
+[Update-MarkdownHelpModule] 11/23/2020 15:03:42 Creating new markdown for command 'Get-MgDeviceAppMgtiOSLobAppProvisioningConfiguration'
+[Update-MarkdownHelpModule] 11/23/2020 15:03:42 Creating new markdown for command 'Get-MgDeviceAppMgtiOSLobAppProvisioningConfigurationAssignment'
+[Update-MarkdownHelpModule] 11/23/2020 15:03:43 Creating new markdown for command 'Get-MgDeviceAppMgtiOSLobAppProvisioningConfigurationDeviceStatuses'
+[Update-MarkdownHelpModule] 11/23/2020 15:03:44 Creating new markdown for command 'Get-MgDeviceAppMgtiOSLobAppProvisioningConfigurationGroupAssignment'
+[Update-MarkdownHelpModule] 11/23/2020 15:03:44 Creating new markdown for command 'Get-MgDeviceAppMgtiOSLobAppProvisioningConfigurationUserStatuses'
+[Update-MarkdownHelpModule] 11/23/2020 15:03:45 Creating new markdown for command 'Get-MgDeviceAppMgtManagedEBookCategory'
+[Update-MarkdownHelpModule] 11/23/2020 15:03:46 Creating new markdown for command 'Get-MgDeviceAppMgtManagedEBookCategoryByRef'
+[Update-MarkdownHelpModule] 11/23/2020 15:03:46 Creating new markdown for command 'Get-MgDeviceAppMgtMobileAppCount'
+[Update-MarkdownHelpModule] 11/23/2020 15:03:47 Creating new markdown for command 'Get-MgDeviceAppMgtMobileAppDeviceStatuses'
+[Update-MarkdownHelpModule] 11/23/2020 15:03:48 Creating new markdown for command 'Get-MgDeviceAppMgtMobileAppDeviceStatusesApp'
+[Update-MarkdownHelpModule] 11/23/2020 15:03:48 Creating new markdown for command 'Get-MgDeviceAppMgtMobileAppDeviceStatusesAppByRef'
+[Update-MarkdownHelpModule] 11/23/2020 15:03:49 Creating new markdown for command 'Get-MgDeviceAppMgtMobileAppDeviceStatusesAppRelatedAppState'
+[Update-MarkdownHelpModule] 11/23/2020 15:03:49 Creating new markdown for command 'Get-MgDeviceAppMgtMobileAppInstallSummary'
+[Update-MarkdownHelpModule] 11/23/2020 15:03:50 Creating new markdown for command 'Get-MgDeviceAppMgtMobileAppRelatedAppState'
+[Update-MarkdownHelpModule] 11/23/2020 15:03:51 Creating new markdown for command 'Get-MgDeviceAppMgtMobileAppRelationship'
+[Update-MarkdownHelpModule] 11/23/2020 15:03:51 Creating new markdown for command 'Get-MgDeviceAppMgtMobileAppTopMobileApp'
+[Update-MarkdownHelpModule] 11/23/2020 15:03:52 Creating new markdown for command 'Get-MgDeviceAppMgtMobileAppUserStatuses'
+[Update-MarkdownHelpModule] 11/23/2020 15:03:53 Creating new markdown for command 'Get-MgDeviceAppMgtMobileAppUserStatusesApp'
+[Update-MarkdownHelpModule] 11/23/2020 15:03:53 Creating new markdown for command 'Get-MgDeviceAppMgtMobileAppUserStatusesAppByRef'
+[Update-MarkdownHelpModule] 11/23/2020 15:03:54 Creating new markdown for command 'Get-MgDeviceAppMgtMobileAppUserStatusesAppRelatedAppState'
+[Update-MarkdownHelpModule] 11/23/2020 15:03:55 Creating new markdown for command 'Get-MgDeviceAppMgtMobileAppUserStatusesDeviceStatuses'
+[Update-MarkdownHelpModule] 11/23/2020 15:03:55 Creating new markdown for command 'Get-MgDeviceAppMgtMobileAppUserStatusesDeviceStatusesApp'
+[Update-MarkdownHelpModule] 11/23/2020 15:03:56 Creating new markdown for command 'Get-MgDeviceAppMgtMobileAppUserStatusesDeviceStatusesAppByRef'
+[Update-MarkdownHelpModule] 11/23/2020 15:03:57 Creating new markdown for command 'Get-MgDeviceAppMgtMobileAppUserStatusesDeviceStatusesAppRelatedAppState'
+[Update-MarkdownHelpModule] 11/23/2020 15:03:57 Creating new markdown for command 'Get-MgDeviceAppMgtPolicySet'
+[Update-MarkdownHelpModule] 11/23/2020 15:03:58 Creating new markdown for command 'Get-MgDeviceAppMgtPolicySetAssignment'
+[Update-MarkdownHelpModule] 11/23/2020 15:03:59 Creating new markdown for command 'Get-MgDeviceAppMgtPolicySetItem'
+[Update-MarkdownHelpModule] 11/23/2020 15:03:59 Creating new markdown for command 'Get-MgDeviceAppMgtSideLoadingKey'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:00 Creating new markdown for command 'Get-MgDeviceAppMgtSymantecCodeSigningCertificate'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:01 Creating new markdown for command 'Get-MgDeviceAppMgtTask'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:02 Creating new markdown for command 'Get-MgDeviceAppMgtVppTokenLicense'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:02 Creating new markdown for command 'Get-MgDeviceAppMgtWdacSupplementalPolicy'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:03 Creating new markdown for command 'Get-MgDeviceAppMgtWdacSupplementalPolicyAssignment'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:04 Creating new markdown for command 'Get-MgDeviceAppMgtWdacSupplementalPolicyDeploySummary'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:05 Creating new markdown for command 'Get-MgDeviceAppMgtWdacSupplementalPolicyDeviceStatuses'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:05 Creating new markdown for command 'Get-MgDeviceAppMgtWindowInformationProtectionDeviceRegistration'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:06 Creating new markdown for command 'Get-MgDeviceAppMgtWindowInformationProtectionWipeAction'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:06 Creating new markdown for command 'Get-MgDeviceAppMgtWindowManagementApp'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:07 Creating new markdown for command 'Get-MgDeviceAppMgtWindowManagementAppByRef'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:08 Creating new markdown for command 'Get-MgOfficeClientConfiguration'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:08 Creating new markdown for command 'Get-MgOfficeClientConfigurationAssignment'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:09 Creating new markdown for command 'Get-MgOfficeClientConfigurationPolicyPayload'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:10 Creating new markdown for command 'Get-MgOfficeClientConfigurationUserPerencePayloadByRef'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:10 Creating new markdown for command 'Get-MgOfficeConfiguration'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:11 Creating new markdown for command 'Get-MgUserDeviceEnrollmentConfiguration'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:12 Creating new markdown for command 'Get-MgUserDeviceEnrollmentConfigurationAssignment'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:12 Creating new markdown for command 'Get-MgUserManagedDeviceDetectedApp'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:13 Creating new markdown for command 'Get-MgUserManagedDeviceDetectedAppByRef'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:14 Creating new markdown for command 'Get-MgUserManagedDeviceLogCollectionResponse'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:15 Creating new markdown for command 'Get-MgUserManagedDeviceMobileAppConfigurationState'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:16 Creating new markdown for command 'Get-MgUserManagedDeviceSecurityBaselineState'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:16 Creating new markdown for command 'Get-MgUserManagedDeviceSecurityBaselineStateSettingState'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:17 Creating new markdown for command 'Get-MgUserManagedDeviceUser'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:18 Creating new markdown for command 'Get-MgUserManagedDeviceWindowProtectionState'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:18 Creating new markdown for command 'Get-MgUserManagedDeviceWindowProtectionStateDetectedMalwareState'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:19 Creating new markdown for command 'Get-MgUserMobileAppIntentAndState'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:20 Creating new markdown for command 'Get-MgUserMobileAppTroubleshootingEvent'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:20 Creating new markdown for command 'Get-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:21 Creating new markdown for command 'Get-MgUserWindowInformationProtectionDeviceRegistration'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:22 Creating new markdown for command 'Get-MgUserWindowInformationProtectionDeviceRegistrationByRef'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:22 Creating new markdown for command 'Invoke-MgHasDeviceAppMgtAndroidManagedAppProtectionPayloadLink'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:23 Creating new markdown for command 'Invoke-MgHasDeviceAppMgtiOSLobAppProvisioningConfigurationPayloadLink'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:24 Creating new markdown for command 'Invoke-MgHasDeviceAppMgtiOSManagedAppProtectionPayloadLink'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:24 Creating new markdown for command 'Invoke-MgHasDeviceAppMgtMdmWindowInformationProtectionPolicyPayloadLink'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:25 Creating new markdown for command 'Invoke-MgHasDeviceAppMgtMobileAppPayloadLink'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:26 Creating new markdown for command 'Invoke-MgHasDeviceAppMgtTargetedManagedAppConfigurationPayloadLink'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:26 Creating new markdown for command 'New-MgDeviceAppMgtEnterpriseCodeSigningCertificate'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:27 Creating new markdown for command 'New-MgDeviceAppMgtiOSLobAppProvisioningConfiguration'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:28 Creating new markdown for command 'New-MgDeviceAppMgtiOSLobAppProvisioningConfigurationAssignment'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:29 Creating new markdown for command 'New-MgDeviceAppMgtiOSLobAppProvisioningConfigurationDeviceStatuses'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:29 Creating new markdown for command 'New-MgDeviceAppMgtiOSLobAppProvisioningConfigurationGroupAssignment'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:30 Creating new markdown for command 'New-MgDeviceAppMgtiOSLobAppProvisioningConfigurationUserStatuses'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:31 Creating new markdown for command 'New-MgDeviceAppMgtManagedEBookCategory'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:31 Creating new markdown for command 'New-MgDeviceAppMgtManagedEBookCategoryByRef'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:32 Creating new markdown for command 'New-MgDeviceAppMgtMobileAppDeviceStatuses'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:33 Creating new markdown for command 'New-MgDeviceAppMgtMobileAppRelationship'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:34 Creating new markdown for command 'New-MgDeviceAppMgtMobileAppUserStatuses'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:34 Creating new markdown for command 'New-MgDeviceAppMgtMobileAppUserStatusesDeviceStatuses'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:35 Creating new markdown for command 'New-MgDeviceAppMgtPolicySet'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:36 Creating new markdown for command 'New-MgDeviceAppMgtPolicySetAssignment'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:37 Creating new markdown for command 'New-MgDeviceAppMgtPolicySetItem'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:37 Creating new markdown for command 'New-MgDeviceAppMgtSideLoadingKey'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:38 Creating new markdown for command 'New-MgDeviceAppMgtTask'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:39 Creating new markdown for command 'New-MgDeviceAppMgtWdacSupplementalPolicy'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:40 Creating new markdown for command 'New-MgDeviceAppMgtWdacSupplementalPolicyAssignment'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:40 Creating new markdown for command 'New-MgDeviceAppMgtWdacSupplementalPolicyDeviceStatuses'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:41 Creating new markdown for command 'New-MgDeviceAppMgtWindowInformationProtectionDeviceRegistration'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:42 Creating new markdown for command 'New-MgDeviceAppMgtWindowInformationProtectionWipeAction'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:42 Creating new markdown for command 'New-MgOfficeClientConfiguration'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:43 Creating new markdown for command 'New-MgOfficeClientConfigurationAssignment'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:44 Creating new markdown for command 'New-MgUserDeviceEnrollmentConfiguration'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:45 Creating new markdown for command 'New-MgUserDeviceEnrollmentConfigurationAssignment'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:45 Creating new markdown for command 'New-MgUserManagedDeviceDetectedAppByRef'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:46 Creating new markdown for command 'New-MgUserManagedDeviceLogCollectionResponse'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:47 Creating new markdown for command 'New-MgUserManagedDeviceMobileAppConfigurationState'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:48 Creating new markdown for command 'New-MgUserManagedDeviceSecurityBaselineState'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:48 Creating new markdown for command 'New-MgUserManagedDeviceSecurityBaselineStateSettingState'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:49 Creating new markdown for command 'New-MgUserManagedDeviceUser'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:52 Creating new markdown for command 'New-MgUserManagedDeviceWindowProtectionStateDetectedMalwareState'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:53 Creating new markdown for command 'New-MgUserMobileAppIntentAndState'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:53 Creating new markdown for command 'New-MgUserMobileAppTroubleshootingEvent'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:54 Creating new markdown for command 'New-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:55 Creating new markdown for command 'New-MgUserWindowInformationProtectionDeviceRegistrationByRef'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:56 Creating new markdown for command 'Remove-MgDeviceAppMgtEnterpriseCodeSigningCertificate'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:56 Creating new markdown for command 'Remove-MgDeviceAppMgtiOSLobAppProvisioningConfiguration'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:57 Creating new markdown for command 'Remove-MgDeviceAppMgtiOSLobAppProvisioningConfigurationAssignment'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:58 Creating new markdown for command 'Remove-MgDeviceAppMgtiOSLobAppProvisioningConfigurationDeviceStatuses'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:58 Creating new markdown for command 'Remove-MgDeviceAppMgtiOSLobAppProvisioningConfigurationGroupAssignment'
+[Update-MarkdownHelpModule] 11/23/2020 15:04:59 Creating new markdown for command 'Remove-MgDeviceAppMgtiOSLobAppProvisioningConfigurationUserStatuses'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:00 Creating new markdown for command 'Remove-MgDeviceAppMgtManagedEBookCategory'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:00 Creating new markdown for command 'Remove-MgDeviceAppMgtMobileAppDeviceStatuses'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:01 Creating new markdown for command 'Remove-MgDeviceAppMgtMobileAppDeviceStatusesAppByRef'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:02 Creating new markdown for command 'Remove-MgDeviceAppMgtMobileAppInstallSummary'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:03 Creating new markdown for command 'Remove-MgDeviceAppMgtMobileAppRelationship'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:03 Creating new markdown for command 'Remove-MgDeviceAppMgtMobileAppUserStatuses'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:04 Creating new markdown for command 'Remove-MgDeviceAppMgtMobileAppUserStatusesAppByRef'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:05 Creating new markdown for command 'Remove-MgDeviceAppMgtMobileAppUserStatusesDeviceStatuses'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:05 Creating new markdown for command 'Remove-MgDeviceAppMgtMobileAppUserStatusesDeviceStatusesAppByRef'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:06 Creating new markdown for command 'Remove-MgDeviceAppMgtPolicySet'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:06 Creating new markdown for command 'Remove-MgDeviceAppMgtPolicySetAssignment'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:07 Creating new markdown for command 'Remove-MgDeviceAppMgtPolicySetItem'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:08 Creating new markdown for command 'Remove-MgDeviceAppMgtSideLoadingKey'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:09 Creating new markdown for command 'Remove-MgDeviceAppMgtSymantecCodeSigningCertificate'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:09 Creating new markdown for command 'Remove-MgDeviceAppMgtTask'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:10 Creating new markdown for command 'Remove-MgDeviceAppMgtWdacSupplementalPolicy'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:10 Creating new markdown for command 'Remove-MgDeviceAppMgtWdacSupplementalPolicyAssignment'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:11 Creating new markdown for command 'Remove-MgDeviceAppMgtWdacSupplementalPolicyDeploySummary'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:12 Creating new markdown for command 'Remove-MgDeviceAppMgtWdacSupplementalPolicyDeviceStatuses'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:12 Creating new markdown for command 'Remove-MgDeviceAppMgtWindowInformationProtectionDeviceRegistration'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:13 Creating new markdown for command 'Remove-MgDeviceAppMgtWindowInformationProtectionWipeAction'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:13 Creating new markdown for command 'Remove-MgDeviceAppMgtWindowManagementAppByRef'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:14 Creating new markdown for command 'Remove-MgOfficeClientConfiguration'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:15 Creating new markdown for command 'Remove-MgOfficeClientConfigurationAssignment'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:16 Creating new markdown for command 'Remove-MgUserDeviceEnrollmentConfiguration'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:16 Creating new markdown for command 'Remove-MgUserDeviceEnrollmentConfigurationAssignment'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:17 Creating new markdown for command 'Remove-MgUserManagedDeviceLogCollectionResponse'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:17 Creating new markdown for command 'Remove-MgUserManagedDeviceMobileAppConfigurationState'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:18 Creating new markdown for command 'Remove-MgUserManagedDeviceSecurityBaselineState'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:19 Creating new markdown for command 'Remove-MgUserManagedDeviceSecurityBaselineStateSettingState'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:19 Creating new markdown for command 'Remove-MgUserManagedDeviceUser'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:20 Creating new markdown for command 'Remove-MgUserManagedDeviceWindowProtectionState'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:21 Creating new markdown for command 'Remove-MgUserManagedDeviceWindowProtectionStateDetectedMalwareState'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:21 Creating new markdown for command 'Remove-MgUserMobileAppIntentAndState'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:22 Creating new markdown for command 'Remove-MgUserMobileAppTroubleshootingEvent'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:23 Creating new markdown for command 'Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:23 Creating new markdown for command 'Revoke-MgDeviceAppMgtVppTokenLicense'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:24 Creating new markdown for command 'Set-MgDeviceAppMgtiOSLobAppProvisioningConfiguration'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:25 Creating new markdown for command 'Set-MgDeviceAppMgtMobileAppDeviceStatusesApp'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:26 Creating new markdown for command 'Set-MgDeviceAppMgtMobileAppDeviceStatusesAppByRef'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:26 Creating new markdown for command 'Set-MgDeviceAppMgtMobileAppUserStatusesApp'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:27 Creating new markdown for command 'Set-MgDeviceAppMgtMobileAppUserStatusesAppByRef'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:27 Creating new markdown for command 'Set-MgDeviceAppMgtMobileAppUserStatusesDeviceStatusesApp'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:28 Creating new markdown for command 'Set-MgDeviceAppMgtMobileAppUserStatusesDeviceStatusesAppByRef'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:29 Creating new markdown for command 'Set-MgDeviceAppMgtWdacSupplementalPolicy'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:30 Creating new markdown for command 'Set-MgDeviceAppMgtWindowManagementAppByRef'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:30 Creating new markdown for command 'Set-MgOfficeClientConfiguration'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:31 Creating new markdown for command 'Set-MgOfficeClientConfigurationPolicyPayload'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:31 Creating new markdown for command 'Set-MgOfficeClientConfigurationUserPerencePayloadByRef'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:32 Creating new markdown for command 'Sync-MgDeviceAppMgtVppTokenLicenseCount'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:33 Creating new markdown for command 'Test-MgDeviceAppMgtMobileAppXml'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:33 Creating new markdown for command 'Update-MgDeviceAppMgtEnterpriseCodeSigningCertificate'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:34 Creating new markdown for command 'Update-MgDeviceAppMgtiOSLobAppProvisioningConfiguration'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:35 Creating new markdown for command 'Update-MgDeviceAppMgtiOSLobAppProvisioningConfigurationAssignment'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:36 Creating new markdown for command 'Update-MgDeviceAppMgtiOSLobAppProvisioningConfigurationDeviceStatuses'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:37 Creating new markdown for command 'Update-MgDeviceAppMgtiOSLobAppProvisioningConfigurationGroupAssignment'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:37 Creating new markdown for command 'Update-MgDeviceAppMgtiOSLobAppProvisioningConfigurationUserStatuses'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:38 Creating new markdown for command 'Update-MgDeviceAppMgtManagedEBookCategory'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:39 Creating new markdown for command 'Update-MgDeviceAppMgtMobileAppDeviceStatuses'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:40 Creating new markdown for command 'Update-MgDeviceAppMgtMobileAppDeviceStatusesAppRelationship'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:40 Creating new markdown for command 'Update-MgDeviceAppMgtMobileAppInstallSummary'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:41 Creating new markdown for command 'Update-MgDeviceAppMgtMobileAppRelationship'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:42 Creating new markdown for command 'Update-MgDeviceAppMgtMobileAppUserStatuses'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:43 Creating new markdown for command 'Update-MgDeviceAppMgtMobileAppUserStatusesAppRelationship'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:43 Creating new markdown for command 'Update-MgDeviceAppMgtMobileAppUserStatusesDeviceStatuses'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:44 Creating new markdown for command 'Update-MgDeviceAppMgtMobileAppUserStatusesDeviceStatusesAppRelationship'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:45 Creating new markdown for command 'Update-MgDeviceAppMgtMultipleMobileAppRelationship'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:46 Creating new markdown for command 'Update-MgDeviceAppMgtMultiplePolicySet'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:46 Creating new markdown for command 'Update-MgDeviceAppMgtPolicySet'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:47 Creating new markdown for command 'Update-MgDeviceAppMgtPolicySetAssignment'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:48 Creating new markdown for command 'Update-MgDeviceAppMgtPolicySetItem'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:49 Creating new markdown for command 'Update-MgDeviceAppMgtSideLoadingKey'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:49 Creating new markdown for command 'Update-MgDeviceAppMgtSymantecCodeSigningCertificate'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:50 Creating new markdown for command 'Update-MgDeviceAppMgtTask'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:51 Creating new markdown for command 'Update-MgDeviceAppMgtTaskStatus'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:51 Creating new markdown for command 'Update-MgDeviceAppMgtWdacSupplementalPolicy'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:52 Creating new markdown for command 'Update-MgDeviceAppMgtWdacSupplementalPolicyAssignment'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:53 Creating new markdown for command 'Update-MgDeviceAppMgtWdacSupplementalPolicyDeploySummary'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:53 Creating new markdown for command 'Update-MgDeviceAppMgtWdacSupplementalPolicyDeviceStatuses'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:54 Creating new markdown for command 'Update-MgDeviceAppMgtWindowInformationProtectionDeviceRegistration'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:55 Creating new markdown for command 'Update-MgDeviceAppMgtWindowInformationProtectionWipeAction'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:56 Creating new markdown for command 'Update-MgOfficeClientConfiguration'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:56 Creating new markdown for command 'Update-MgOfficeClientConfigurationAssignment'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:57 Creating new markdown for command 'Update-MgOfficeClientConfigurationPriority'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:58 Creating new markdown for command 'Update-MgOfficeConfiguration'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:59 Creating new markdown for command 'Update-MgUserDeviceEnrollmentConfiguration'
+[Update-MarkdownHelpModule] 11/23/2020 15:05:59 Creating new markdown for command 'Update-MgUserDeviceEnrollmentConfigurationAssignment'
+[Update-MarkdownHelpModule] 11/23/2020 15:06:00 Creating new markdown for command 'Update-MgUserManagedDeviceLogCollectionResponse'
+[Update-MarkdownHelpModule] 11/23/2020 15:06:01 Creating new markdown for command 'Update-MgUserManagedDeviceMobileAppConfigurationState'
+[Update-MarkdownHelpModule] 11/23/2020 15:06:02 Creating new markdown for command 'Update-MgUserManagedDeviceSecurityBaselineState'
+[Update-MarkdownHelpModule] 11/23/2020 15:06:03 Creating new markdown for command 'Update-MgUserManagedDeviceSecurityBaselineStateSettingState'
+[Update-MarkdownHelpModule] 11/23/2020 15:06:03 Creating new markdown for command 'Update-MgUserManagedDeviceUser'
+[Update-MarkdownHelpModule] 11/23/2020 15:06:06 Creating new markdown for command 'Update-MgUserManagedDeviceWindowProtectionState'
+[Update-MarkdownHelpModule] 11/23/2020 15:06:07 Creating new markdown for command 'Update-MgUserManagedDeviceWindowProtectionStateDetectedMalwareState'
+[Update-MarkdownHelpModule] 11/23/2020 15:06:08 Creating new markdown for command 'Update-MgUserMobileAppIntentAndState'
+[Update-MarkdownHelpModule] 11/23/2020 15:06:10 Creating new markdown for command 'Update-MgUserMobileAppTroubleshootingEvent'
+[Update-MarkdownHelpModule] 11/23/2020 15:06:11 Creating new markdown for command 'Update-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest'

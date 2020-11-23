@@ -1,0 +1,270 @@
+---
+external help file: Microsoft.Graph.Users.Actions-help.xml
+Module Name: Microsoft.Graph.Users.Actions
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/update-mgusermanageddevicewindowdeviceaccount
+schema: 2.0.0
+---
+
+# Update-MgUserManagedDeviceWindowDeviceAccount
+
+## SYNOPSIS
+Invoke action updateWindowsDeviceAccount
+
+## SYNTAX
+
+### UpdateExpanded (Default)
+```
+Update-MgUserManagedDeviceWindowDeviceAccount -ManagedDeviceId <String> -UserId <String>
+ [-AdditionalProperties <Hashtable>]
+ [-UpdateWindowsDeviceAccountActionParameter <IMicrosoftGraphUpdateWindowsDeviceAccountActionParameter>]
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### Update
+```
+Update-MgUserManagedDeviceWindowDeviceAccount -ManagedDeviceId <String> -UserId <String>
+ -BodyParameter <IPaths1Q6DqpaUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphUpdatewindowsdeviceaccountPostRequestbodyContentApplicationJsonSchema>
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### UpdateViaIdentityExpanded
+```
+Update-MgUserManagedDeviceWindowDeviceAccount -InputObject <IUsersActionsIdentity>
+ [-AdditionalProperties <Hashtable>]
+ [-UpdateWindowsDeviceAccountActionParameter <IMicrosoftGraphUpdateWindowsDeviceAccountActionParameter>]
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### UpdateViaIdentity
+```
+Update-MgUserManagedDeviceWindowDeviceAccount -InputObject <IUsersActionsIdentity>
+ -BodyParameter <IPaths1Q6DqpaUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphUpdatewindowsdeviceaccountPostRequestbodyContentApplicationJsonSchema>
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## DESCRIPTION
+Invoke action updateWindowsDeviceAccount
+
+## EXAMPLES
+
+### EXAMPLE 1
+```
+{{ Add code here }}
+```
+
+{{ Add output here }}
+
+### EXAMPLE 2
+```
+{{ Add code here }}
+```
+
+{{ Add output here }}
+
+## PARAMETERS
+
+### -AdditionalProperties
+Additional Parameters
+
+```yaml
+Type: Hashtable
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -BodyParameter
+.
+To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+
+```yaml
+Type: IPaths1Q6DqpaUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphUpdatewindowsdeviceaccountPostRequestbodyContentApplicationJsonSchema
+Parameter Sets: Update, UpdateViaIdentity
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -InputObject
+Identity Parameter
+To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+
+```yaml
+Type: IUsersActionsIdentity
+Parameter Sets: UpdateViaIdentityExpanded, UpdateViaIdentity
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -ManagedDeviceId
+key: id of managedDevice
+
+```yaml
+Type: String
+Parameter Sets: UpdateExpanded, Update
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PassThru
+Returns true when the command succeeds
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UpdateWindowsDeviceAccountActionParameter
+updateWindowsDeviceAccountActionParameter
+To construct, see NOTES section for UPDATEWINDOWSDEVICEACCOUNTACTIONPARAMETER properties and create a hash table.
+
+```yaml
+Type: IMicrosoftGraphUpdateWindowsDeviceAccountActionParameter
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UserId
+key: id of user
+
+```yaml
+Type: String
+Parameter Sets: UpdateExpanded, Update
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+### Microsoft.Graph.PowerShell.Models.IPaths1Q6DqpaUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphUpdatewindowsdeviceaccountPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+## OUTPUTS
+
+### System.Boolean
+## NOTES
+COMPLEX PARAMETER PROPERTIES
+
+To create the parameters described below, construct a hash table containing the appropriate properties.
+For information on hash tables, run Get-Help about_Hash_Tables.
+
+BODYPARAMETER \<IPaths1Q6DqpaUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphUpdatewindowsdeviceaccountPostRequestbodyContentApplicationJsonSchema\>: .
+  \[(Any) \<Object\>\]: This indicates any property can be added to this object.
+  \[UpdateWindowsDeviceAccountActionParameter \<IMicrosoftGraphUpdateWindowsDeviceAccountActionParameter\>\]: updateWindowsDeviceAccountActionParameter
+    \[(Any) \<Object\>\]: This indicates any property can be added to this object.
+    \[CalendarSyncEnabled \<Boolean?\>\]: Not yet documented
+    \[DeviceAccount \<IMicrosoftGraphWindowsDeviceAccount\>\]: windowsDeviceAccount
+      \[(Any) \<Object\>\]: This indicates any property can be added to this object.
+      \[Password \<String\>\]: Not yet documented
+    \[DeviceAccountEmail \<String\>\]: Not yet documented
+    \[ExchangeServer \<String\>\]: Not yet documented
+    \[PasswordRotationEnabled \<Boolean?\>\]: Not yet documented
+    \[SessionInitiationProtocalAddress \<String\>\]: Not yet documented
+
+INPUTOBJECT \<IUsersActionsIdentity\>: Identity Parameter
+  \[AccessReviewInstanceId \<String\>\]: key: id of accessReviewInstance
+  \[AppLogCollectionRequestId \<String\>\]: key: id of appLogCollectionRequest
+  \[AuthenticationMethodId \<String\>\]: key: id of authenticationMethod
+  \[CalendarId \<String\>\]: key: id of calendar
+  \[DeviceEnrollmentConfigurationId \<String\>\]: key: id of deviceEnrollmentConfiguration
+  \[DeviceLogCollectionResponseId \<String\>\]: key: id of deviceLogCollectionResponse
+  \[EventId \<String\>\]: key: id of event
+  \[EventId1 \<String\>\]: key: id of event
+  \[MailFolderId \<String\>\]: key: id of mailFolder
+  \[MailFolderId1 \<String\>\]: key: id of mailFolder
+  \[ManagedDeviceId \<String\>\]: key: id of managedDevice
+  \[MessageId \<String\>\]: key: id of message
+  \[MobileAppTroubleshootingEventId \<String\>\]: key: id of mobileAppTroubleshootingEvent
+  \[NotebookId \<String\>\]: key: id of notebook
+  \[OnenotePageId \<String\>\]: key: id of onenotePage
+  \[OnenoteSectionId \<String\>\]: key: id of onenoteSection
+  \[OutlookTaskFolderId \<String\>\]: key: id of outlookTaskFolder
+  \[OutlookTaskGroupId \<String\>\]: key: id of outlookTaskGroup
+  \[OutlookTaskId \<String\>\]: key: id of outlookTask
+  \[UserId \<String\>\]: key: id of user
+
+UPDATEWINDOWSDEVICEACCOUNTACTIONPARAMETER \<IMicrosoftGraphUpdateWindowsDeviceAccountActionParameter\>: updateWindowsDeviceAccountActionParameter
+  \[(Any) \<Object\>\]: This indicates any property can be added to this object.
+  \[CalendarSyncEnabled \<Boolean?\>\]: Not yet documented
+  \[DeviceAccount \<IMicrosoftGraphWindowsDeviceAccount\>\]: windowsDeviceAccount
+    \[(Any) \<Object\>\]: This indicates any property can be added to this object.
+    \[Password \<String\>\]: Not yet documented
+  \[DeviceAccountEmail \<String\>\]: Not yet documented
+  \[ExchangeServer \<String\>\]: Not yet documented
+  \[PasswordRotationEnabled \<Boolean?\>\]: Not yet documented
+  \[SessionInitiationProtocalAddress \<String\>\]: Not yet documented
+
+## RELATED LINKS
+
+[https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/update-mgusermanageddevicewindowdeviceaccount](https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/update-mgusermanageddevicewindowdeviceaccount)
+

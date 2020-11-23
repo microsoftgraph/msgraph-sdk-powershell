@@ -1,0 +1,325 @@
+
+[Update-MarkdownHelpModule] 11/23/2020 14:50:19 Determined module name for '.\src\DirectoryObjects\DirectoryObjects\help' as 'Microsoft.Graph.DirectoryObjects'.
+[Update-MarkdownHelpModule] 11/23/2020 14:50:19 [Update-MarkdownHelpModule]11/23/2020 2:50:19 PM
+[Update-MarkdownHelpModule] 11/23/2020 14:50:19 Updating documents for module 'Microsoft.Graph.DirectoryObjects' in .\src\DirectoryObjects\DirectoryObjects\help
+---- UPDATING Cmdlet : Confirm-MgDirectoryObjectMemberGroup ----
+
+	Parameter Set Added: Check1
+
+	Parameter Set Added: CheckExpanded1
+
+	Parameter Set Added: CheckViaIdentity1
+
+	Parameter Set Added: CheckViaIdentityExpanded1
+
+	Parameter Set Deleted: Check
+
+	Parameter Set Deleted: CheckExpanded
+
+	Parameter Set Deleted: CheckViaIdentity
+
+	Parameter Set Deleted: CheckViaIdentityExpanded
+
+	Parameter Set Name Updated: CheckExpanded1
+		Old Set: CheckExpanded
+		New Set: CheckExpanded1
+
+	Parameter Set Name Updated: Check1
+		Old Set: Check
+		New Set: Check1
+
+	Parameter Set Name Updated: CheckViaIdentityExpanded1
+		Old Set: CheckViaIdentityExpanded
+		New Set: CheckViaIdentityExpanded1
+
+	Parameter Set Name Updated: CheckViaIdentity1
+		Old Set: CheckViaIdentity
+		New Set: CheckViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Confirm-MgDirectoryObjectMemberGroup ----
+
+
+---- UPDATING Cmdlet : Confirm-MgDirectoryObjectMemberObject ----
+
+	Parameter Set Added: Check1
+
+	Parameter Set Added: CheckExpanded1
+
+	Parameter Set Added: CheckViaIdentity1
+
+	Parameter Set Added: CheckViaIdentityExpanded1
+
+	Parameter Set Deleted: Check
+
+	Parameter Set Deleted: CheckExpanded
+
+	Parameter Set Deleted: CheckViaIdentity
+
+	Parameter Set Deleted: CheckViaIdentityExpanded
+
+	Parameter Set Name Updated: CheckExpanded1
+		Old Set: CheckExpanded
+		New Set: CheckExpanded1
+
+	Parameter Set Name Updated: Check1
+		Old Set: Check
+		New Set: Check1
+
+	Parameter Set Name Updated: CheckViaIdentityExpanded1
+		Old Set: CheckViaIdentityExpanded
+		New Set: CheckViaIdentityExpanded1
+
+	Parameter Set Name Updated: CheckViaIdentity1
+		Old Set: CheckViaIdentity
+		New Set: CheckViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Confirm-MgDirectoryObjectMemberObject ----
+
+
+---- UPDATING Cmdlet : Get-MgDirectoryObject ----
+
+	Parameter Set Added: Get2
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get2
+		Old Set: Get1
+		New Set: Get2
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDirectoryObject ----
+
+
+[Update-MarkdownHelp] 11/23/2020 14:50:25 Command 'Get-MgDirectoryObjectAvailableExtensionProperty' not found in the session, skipping upgrade for 'C:\a\1\s\src\DirectoryObjects\DirectoryObjects\help\Get-MgDirectoryObjectAvailableExtensionProperty.md'.
+---- UPDATING Cmdlet : Get-MgDirectoryObjectById ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetExpanded
+
+	Parameter Set Deleted: Get3
+
+	Parameter Set Deleted: GetExpanded1
+
+	Parameter Set Name Updated: GetExpanded
+		Old Set: GetExpanded1
+		New Set: GetExpanded
+
+	Parameter Set Name Updated: Get
+		Old Set: Get3
+		New Set: Get
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDirectoryObjectById ----
+
+
+---- UPDATING Cmdlet : Get-MgDirectoryObjectMemberGroup ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetExpanded1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: GetViaIdentityExpanded1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetExpanded
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: GetViaIdentityExpanded
+
+	Parameter Set Name Updated: GetExpanded1
+		Old Set: GetExpanded
+		New Set: GetExpanded1
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentityExpanded1
+		Old Set: GetViaIdentityExpanded
+		New Set: GetViaIdentityExpanded1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDirectoryObjectMemberGroup ----
+
+
+---- UPDATING Cmdlet : Get-MgDirectoryObjectMemberObject ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetExpanded1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: GetViaIdentityExpanded1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetExpanded
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: GetViaIdentityExpanded
+
+	Parameter Set Name Updated: GetExpanded1
+		Old Set: GetExpanded
+		New Set: GetExpanded1
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentityExpanded1
+		Old Set: GetViaIdentityExpanded
+		New Set: GetViaIdentityExpanded1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgDirectoryObjectMemberObject ----
+
+
+---- UPDATING Cmdlet : New-MgDirectoryObject ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+---- COMPLETED UPDATING Cmdlet : New-MgDirectoryObject ----
+
+
+---- UPDATING Cmdlet : Remove-MgDirectoryObject ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgDirectoryObject ----
+
+
+---- UPDATING Cmdlet : Restore-MgDirectoryObject ----
+
+	Parameter Set Added: Restore1
+
+	Parameter Set Added: RestoreViaIdentity1
+
+	Parameter Set Deleted: Restore
+
+	Parameter Set Deleted: RestoreViaIdentity
+
+	Parameter Set Name Updated: Restore1
+		Old Set: Restore
+		New Set: Restore1
+
+	Parameter Set Name Updated: RestoreViaIdentity1
+		Old Set: RestoreViaIdentity
+		New Set: RestoreViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Restore-MgDirectoryObject ----
+
+
+---- UPDATING Cmdlet : Test-MgDirectoryObjectProperty ----
+
+	Parameter Set Added: Validate
+
+	Parameter Set Added: ValidateExpanded
+
+	Parameter Set Deleted: Validate1
+
+	Parameter Set Deleted: ValidateExpanded1
+
+	Parameter Set Name Updated: ValidateExpanded
+		Old Set: ValidateExpanded1
+		New Set: ValidateExpanded
+
+	Parameter Set Name Updated: Validate
+		Old Set: Validate1
+		New Set: Validate
+
+---- COMPLETED UPDATING Cmdlet : Test-MgDirectoryObjectProperty ----
+
+
+---- UPDATING Cmdlet : Update-MgDirectoryObject ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateExpanded1
+		Old Set: UpdateExpanded
+		New Set: UpdateExpanded1
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded1
+		Old Set: UpdateViaIdentityExpanded
+		New Set: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Update-MgDirectoryObject ----
+
+
+[Update-MarkdownHelpModule] 11/23/2020 14:50:36 Creating new markdown for command 'Get-MgDirectoryObjectUserOwnedObject'

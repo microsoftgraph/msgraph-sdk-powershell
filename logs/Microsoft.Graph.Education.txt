@@ -1,0 +1,549 @@
+
+[Update-MarkdownHelpModule] 11/23/2020 14:50:14 Determined module name for '.\src\Education\Education\help' as 'Microsoft.Graph.Education'.
+[Update-MarkdownHelpModule] 11/23/2020 14:50:14 [Update-MarkdownHelpModule]11/23/2020 2:50:14 PM
+[Update-MarkdownHelpModule] 11/23/2020 14:50:14 Updating documents for module 'Microsoft.Graph.Education' in .\src\Education\Education\help
+---- UPDATING Cmdlet : Get-MgEducationClass ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgEducationClass ----
+
+
+---- UPDATING Cmdlet : Get-MgEducationClassGroup ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgEducationClassGroup ----
+
+
+---- UPDATING Cmdlet : Get-MgEducationClassGroupByRef ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgEducationClassGroupByRef ----
+
+
+---- UPDATING Cmdlet : Get-MgEducationClassMember ----
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List
+		Old Set: 
+		New Set: List
+
+---- COMPLETED UPDATING Cmdlet : Get-MgEducationClassMember ----
+
+
+---- UPDATING Cmdlet : Get-MgEducationClassMemberByRef ----
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List
+		Old Set: 
+		New Set: List
+
+---- COMPLETED UPDATING Cmdlet : Get-MgEducationClassMemberByRef ----
+
+
+---- UPDATING Cmdlet : Get-MgEducationClassSchool ----
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List
+		Old Set: 
+		New Set: List
+
+---- COMPLETED UPDATING Cmdlet : Get-MgEducationClassSchool ----
+
+
+---- UPDATING Cmdlet : Get-MgEducationClassSchoolByRef ----
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List
+		Old Set: 
+		New Set: List
+
+---- COMPLETED UPDATING Cmdlet : Get-MgEducationClassSchoolByRef ----
+
+
+---- UPDATING Cmdlet : Get-MgEducationClassTeacher ----
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List
+		Old Set: 
+		New Set: List
+
+---- COMPLETED UPDATING Cmdlet : Get-MgEducationClassTeacher ----
+
+
+---- UPDATING Cmdlet : Get-MgEducationClassTeacherByRef ----
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List
+		Old Set: 
+		New Set: List
+
+---- COMPLETED UPDATING Cmdlet : Get-MgEducationClassTeacherByRef ----
+
+
+---- UPDATING Cmdlet : Get-MgEducationMe ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: Get
+		Old Set: 
+		New Set: Get
+
+---- COMPLETED UPDATING Cmdlet : Get-MgEducationMe ----
+
+
+---- UPDATING Cmdlet : Get-MgEducationMeClass ----
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List1
+		Old Set: 
+		New Set: List1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgEducationMeClass ----
+
+
+---- UPDATING Cmdlet : Get-MgEducationMeClassByRef ----
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List1
+		Old Set: 
+		New Set: List1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgEducationMeClassByRef ----
+
+
+---- UPDATING Cmdlet : Get-MgEducationMeSchool ----
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List1
+		Old Set: 
+		New Set: List1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgEducationMeSchool ----
+
+
+---- UPDATING Cmdlet : Get-MgEducationMeSchoolByRef ----
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List1
+		Old Set: 
+		New Set: List1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgEducationMeSchoolByRef ----
+
+
+---- UPDATING Cmdlet : Get-MgEducationMeUser ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: Get1
+		Old Set: 
+		New Set: Get1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgEducationMeUser ----
+
+
+---- UPDATING Cmdlet : Get-MgEducationMeUserByRef ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: Get1
+		Old Set: 
+		New Set: Get1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgEducationMeUserByRef ----
+
+
+---- UPDATING Cmdlet : Get-MgEducationRoot ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: Get1
+		Old Set: 
+		New Set: Get1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgEducationRoot ----
+
+
+---- UPDATING Cmdlet : Get-MgEducationSchool ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgEducationSchool ----
+
+
+---- UPDATING Cmdlet : Get-MgEducationSchoolClass ----
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List1
+		Old Set: 
+		New Set: List1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgEducationSchoolClass ----
+
+
+---- UPDATING Cmdlet : Get-MgEducationSchoolClassByRef ----
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List1
+		Old Set: 
+		New Set: List1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgEducationSchoolClassByRef ----
+
+
+---- UPDATING Cmdlet : Get-MgEducationSchoolUser ----
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List1
+		Old Set: 
+		New Set: List1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgEducationSchoolUser ----
+
+
+---- UPDATING Cmdlet : Get-MgEducationSchoolUserByRef ----
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List1
+		Old Set: 
+		New Set: List1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgEducationSchoolUserByRef ----
+
+
+---- UPDATING Cmdlet : Get-MgEducationUser ----
+
+	Parameter Set Name Updated: Get3
+		Old Set: Get2
+		New Set: Get3
+
+	Parameter Set Name Updated: Get2
+		Old Set: Get3
+		New Set: Get2
+
+	Parameter Set Name Updated: GetViaIdentity3
+		Old Set: GetViaIdentity2
+		New Set: GetViaIdentity3
+
+	Parameter Set Name Updated: GetViaIdentity2
+		Old Set: GetViaIdentity3
+		New Set: GetViaIdentity2
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgEducationUser ----
+
+
+---- UPDATING Cmdlet : Get-MgEducationUserClass ----
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List1
+		Old Set: 
+		New Set: List1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgEducationUserClass ----
+
+
+---- UPDATING Cmdlet : Get-MgEducationUserClassByRef ----
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List1
+		Old Set: 
+		New Set: List1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgEducationUserClassByRef ----
+
+
+---- UPDATING Cmdlet : Get-MgEducationUserSchool ----
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List1
+		Old Set: 
+		New Set: List1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgEducationUserSchool ----
+
+
+---- UPDATING Cmdlet : Get-MgEducationUserSchoolByRef ----
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List1
+		Old Set: 
+		New Set: List1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgEducationUserSchoolByRef ----
+
+
+---- UPDATING Cmdlet : Get-MgEducationUserUserByRef ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Get-MgEducationUserUserByRef ----
+
+
+---- UPDATING Cmdlet : New-MgEducationClass ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgEducationClass ----
+
+
+---- UPDATING Cmdlet : New-MgEducationClassMemberByRef ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgEducationClassMemberByRef ----
+
+
+---- UPDATING Cmdlet : New-MgEducationClassSchoolByRef ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgEducationClassSchoolByRef ----
+
+
+---- UPDATING Cmdlet : New-MgEducationClassTeacherByRef ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgEducationClassTeacherByRef ----
+
+
+---- UPDATING Cmdlet : New-MgEducationMeClassByRef ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgEducationMeClassByRef ----
+
+
+---- UPDATING Cmdlet : New-MgEducationMeSchoolByRef ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgEducationMeSchoolByRef ----
+
+
+---- UPDATING Cmdlet : New-MgEducationSchool ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgEducationSchool ----
+
+
+---- UPDATING Cmdlet : New-MgEducationSchoolClassByRef ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgEducationSchoolClassByRef ----
+
+
+---- UPDATING Cmdlet : New-MgEducationSchoolUserByRef ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgEducationSchoolUserByRef ----
+
+
+---- UPDATING Cmdlet : New-MgEducationUser ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgEducationUser ----
+
+
+---- UPDATING Cmdlet : New-MgEducationUserClassByRef ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgEducationUserClassByRef ----
+
+
+---- UPDATING Cmdlet : New-MgEducationUserSchoolByRef ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : New-MgEducationUserSchoolByRef ----
+
+
+---- UPDATING Cmdlet : Remove-MgEducationClass ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgEducationClass ----
+
+
+---- UPDATING Cmdlet : Remove-MgEducationClassGroupByRef ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgEducationClassGroupByRef ----
+
+
+---- UPDATING Cmdlet : Remove-MgEducationMe ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: Delete
+		Old Set: 
+		New Set: Delete
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgEducationMe ----
+
+
+---- UPDATING Cmdlet : Remove-MgEducationMeUserByRef ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: Delete1
+		Old Set: 
+		New Set: Delete1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgEducationMeUserByRef ----
+
+
+---- UPDATING Cmdlet : Remove-MgEducationSchool ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgEducationSchool ----
+
+
+---- UPDATING Cmdlet : Remove-MgEducationUser ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgEducationUser ----
+
+
+---- UPDATING Cmdlet : Remove-MgEducationUserUserByRef ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgEducationUserUserByRef ----
+
+
+---- UPDATING Cmdlet : Set-MgEducationClassGroupByRef ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Set-MgEducationClassGroupByRef ----
+
+
+---- UPDATING Cmdlet : Set-MgEducationMeUserByRef ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Set-MgEducationMeUserByRef ----
+
+
+---- UPDATING Cmdlet : Set-MgEducationUserUserByRef ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Set-MgEducationUserUserByRef ----
+
+
+---- UPDATING Cmdlet : Update-MgEducationClass ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgEducationClass ----
+
+
+---- UPDATING Cmdlet : Update-MgEducationMe ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgEducationMe ----
+
+
+---- UPDATING Cmdlet : Update-MgEducationRoot ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgEducationRoot ----
+
+
+---- UPDATING Cmdlet : Update-MgEducationSchool ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgEducationSchool ----
+
+
+---- UPDATING Cmdlet : Update-MgEducationUser ----
+
+	No updates done
+
+---- COMPLETED UPDATING Cmdlet : Update-MgEducationUser ----
+
+

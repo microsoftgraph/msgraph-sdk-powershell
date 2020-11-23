@@ -1,0 +1,5400 @@
+
+[Update-MarkdownHelpModule] 11/23/2020 14:47:06 Determined module name for '.\src\Groups\Groups\help' as 'Microsoft.Graph.Groups'.
+[Update-MarkdownHelpModule] 11/23/2020 14:47:06 [Update-MarkdownHelpModule]11/23/2020 2:47:06 PM
+[Update-MarkdownHelpModule] 11/23/2020 14:47:06 Updating documents for module 'Microsoft.Graph.Groups' in .\src\Groups\Groups\help
+---- UPDATING Cmdlet : Add-MgGroupFavorite ----
+
+	Parameter Set Added: Add
+
+	Parameter Set Added: AddViaIdentity
+
+	Parameter Set Deleted: Add1
+
+	Parameter Set Deleted: AddViaIdentity1
+
+	Parameter Set Name Updated: Add
+		Old Set: Add1
+		New Set: Add
+
+	Parameter Set Name Updated: AddViaIdentity
+		Old Set: AddViaIdentity1
+		New Set: AddViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Add-MgGroupFavorite ----
+
+
+---- UPDATING Cmdlet : Add-MgGroupToLifecyclePolicy ----
+
+	Parameter Set Added: Add1
+
+	Parameter Set Added: AddExpanded1
+
+	Parameter Set Added: AddViaIdentity1
+
+	Parameter Set Added: AddViaIdentityExpanded1
+
+	Parameter Set Deleted: Add
+
+	Parameter Set Deleted: AddExpanded
+
+	Parameter Set Deleted: AddViaIdentity
+
+	Parameter Set Deleted: AddViaIdentityExpanded
+
+	Parameter Set Name Updated: AddExpanded1
+		Old Set: AddExpanded
+		New Set: AddExpanded1
+
+	Parameter Set Name Updated: Add1
+		Old Set: Add
+		New Set: Add1
+
+	Parameter Set Name Updated: AddViaIdentityExpanded1
+		Old Set: AddViaIdentityExpanded
+		New Set: AddViaIdentityExpanded1
+
+	Parameter Set Name Updated: AddViaIdentity1
+		Old Set: AddViaIdentity
+		New Set: AddViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Add-MgGroupToLifecyclePolicy ----
+
+
+---- UPDATING Cmdlet : Confirm-MgGroupGrantedPermission ----
+
+	Parameter Set Added: Check
+
+	Parameter Set Added: CheckViaIdentity
+
+	Parameter Set Deleted: Check1
+
+	Parameter Set Deleted: CheckViaIdentity1
+
+	Parameter Set Name Updated: Check
+		Old Set: Check1
+		New Set: Check
+
+	Parameter Set Name Updated: CheckViaIdentity
+		Old Set: CheckViaIdentity1
+		New Set: CheckViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Confirm-MgGroupGrantedPermission ----
+
+
+---- UPDATING Cmdlet : Confirm-MgGroupMemberGroup ----
+
+	Parameter Set Added: Check
+
+	Parameter Set Added: CheckExpanded
+
+	Parameter Set Added: CheckViaIdentity
+
+	Parameter Set Added: CheckViaIdentityExpanded
+
+	Parameter Set Deleted: Check1
+
+	Parameter Set Deleted: CheckExpanded1
+
+	Parameter Set Deleted: CheckViaIdentity1
+
+	Parameter Set Deleted: CheckViaIdentityExpanded1
+
+	Parameter Set Name Updated: CheckExpanded
+		Old Set: CheckExpanded1
+		New Set: CheckExpanded
+
+	Parameter Set Name Updated: Check
+		Old Set: Check1
+		New Set: Check
+
+	Parameter Set Name Updated: CheckViaIdentityExpanded
+		Old Set: CheckViaIdentityExpanded1
+		New Set: CheckViaIdentityExpanded
+
+	Parameter Set Name Updated: CheckViaIdentity
+		Old Set: CheckViaIdentity1
+		New Set: CheckViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Confirm-MgGroupMemberGroup ----
+
+
+---- UPDATING Cmdlet : Confirm-MgGroupMemberObject ----
+
+	Parameter Set Added: Check
+
+	Parameter Set Added: CheckExpanded
+
+	Parameter Set Added: CheckViaIdentity
+
+	Parameter Set Added: CheckViaIdentityExpanded
+
+	Parameter Set Deleted: Check1
+
+	Parameter Set Deleted: CheckExpanded1
+
+	Parameter Set Deleted: CheckViaIdentity1
+
+	Parameter Set Deleted: CheckViaIdentityExpanded1
+
+	Parameter Set Name Updated: CheckExpanded
+		Old Set: CheckExpanded1
+		New Set: CheckExpanded
+
+	Parameter Set Name Updated: Check
+		Old Set: Check1
+		New Set: Check
+
+	Parameter Set Name Updated: CheckViaIdentityExpanded
+		Old Set: CheckViaIdentityExpanded1
+		New Set: CheckViaIdentityExpanded
+
+	Parameter Set Name Updated: CheckViaIdentity
+		Old Set: CheckViaIdentity1
+		New Set: CheckViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Confirm-MgGroupMemberObject ----
+
+
+---- UPDATING Cmdlet : Copy-MgGroupOnenoteNotebook ----
+
+	Parameter Set Added: Copy
+
+	Parameter Set Added: CopyExpanded
+
+	Parameter Set Added: CopyViaIdentity
+
+	Parameter Set Added: CopyViaIdentityExpanded
+
+	Parameter Set Deleted: Copy1
+
+	Parameter Set Deleted: CopyExpanded1
+
+	Parameter Set Deleted: CopyViaIdentity1
+
+	Parameter Set Deleted: CopyViaIdentityExpanded1
+
+	Parameter Set Name Updated: CopyExpanded
+		Old Set: CopyExpanded1
+		New Set: CopyExpanded
+
+	Parameter Set Name Updated: CopyViaIdentityExpanded
+		Old Set: CopyViaIdentityExpanded1
+		New Set: CopyViaIdentityExpanded
+
+	Parameter Set Name Updated: Copy
+		Old Set: Copy1
+		New Set: Copy
+
+	Parameter Set Name Updated: CopyViaIdentity
+		Old Set: CopyViaIdentity1
+		New Set: CopyViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Copy-MgGroupOnenoteNotebook ----
+
+
+---- UPDATING Cmdlet : Copy-MgGroupOnenotePageToSection ----
+
+	Parameter Set Added: Copy
+
+	Parameter Set Added: CopyExpanded
+
+	Parameter Set Added: CopyViaIdentity
+
+	Parameter Set Added: CopyViaIdentityExpanded
+
+	Parameter Set Deleted: Copy1
+
+	Parameter Set Deleted: CopyExpanded1
+
+	Parameter Set Deleted: CopyViaIdentity1
+
+	Parameter Set Deleted: CopyViaIdentityExpanded1
+
+	Parameter Set Name Updated: CopyExpanded
+		Old Set: CopyExpanded1
+		New Set: CopyExpanded
+
+	Parameter Set Name Updated: CopyViaIdentityExpanded
+		Old Set: CopyViaIdentityExpanded1
+		New Set: CopyViaIdentityExpanded
+
+	Parameter Set Name Updated: Copy
+		Old Set: Copy1
+		New Set: Copy
+
+	Parameter Set Name Updated: CopyViaIdentity
+		Old Set: CopyViaIdentity1
+		New Set: CopyViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Copy-MgGroupOnenotePageToSection ----
+
+
+---- UPDATING Cmdlet : Copy-MgGroupOnenoteSectionToNotebook ----
+
+	Parameter Set Added: Copy
+
+	Parameter Set Added: CopyExpanded
+
+	Parameter Set Added: CopyViaIdentity
+
+	Parameter Set Added: CopyViaIdentityExpanded
+
+	Parameter Set Deleted: Copy1
+
+	Parameter Set Deleted: CopyExpanded1
+
+	Parameter Set Deleted: CopyViaIdentity1
+
+	Parameter Set Deleted: CopyViaIdentityExpanded1
+
+	Parameter Set Name Updated: CopyExpanded
+		Old Set: CopyExpanded1
+		New Set: CopyExpanded
+
+	Parameter Set Name Updated: CopyViaIdentityExpanded
+		Old Set: CopyViaIdentityExpanded1
+		New Set: CopyViaIdentityExpanded
+
+	Parameter Set Name Updated: Copy
+		Old Set: Copy1
+		New Set: Copy
+
+	Parameter Set Name Updated: CopyViaIdentity
+		Old Set: CopyViaIdentity1
+		New Set: CopyViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Copy-MgGroupOnenoteSectionToNotebook ----
+
+
+---- UPDATING Cmdlet : Copy-MgGroupOnenoteSectionToSectionGroup ----
+
+	Parameter Set Added: Copy
+
+	Parameter Set Added: CopyExpanded
+
+	Parameter Set Added: CopyViaIdentity
+
+	Parameter Set Added: CopyViaIdentityExpanded
+
+	Parameter Set Deleted: Copy1
+
+	Parameter Set Deleted: CopyExpanded1
+
+	Parameter Set Deleted: CopyViaIdentity1
+
+	Parameter Set Deleted: CopyViaIdentityExpanded1
+
+	Parameter Set Name Updated: CopyExpanded
+		Old Set: CopyExpanded1
+		New Set: CopyExpanded
+
+	Parameter Set Name Updated: CopyViaIdentityExpanded
+		Old Set: CopyViaIdentityExpanded1
+		New Set: CopyViaIdentityExpanded
+
+	Parameter Set Name Updated: Copy
+		Old Set: Copy1
+		New Set: Copy
+
+	Parameter Set Name Updated: CopyViaIdentity
+		Old Set: CopyViaIdentity1
+		New Set: CopyViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Copy-MgGroupOnenoteSectionToSectionGroup ----
+
+
+---- UPDATING Cmdlet : Get-MgGroup ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: Get2
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List
+
+	Parameter Set Name Updated: List1
+		Old Set: List
+		New Set: List1
+
+	Parameter Set Name Updated: Get
+		Old Set: Get2
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroup ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupAcceptedSender ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupAcceptedSender ----
+
+
+[Update-MarkdownHelp] 11/23/2020 14:47:26 Command 'Get-MgGroupAvailableExtensionProperty' not found in the session, skipping upgrade for 'C:\a\1\s\src\Groups\Groups\help\Get-MgGroupAvailableExtensionProperty.md'.
+---- UPDATING Cmdlet : Get-MgGroupById ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetExpanded
+
+	Parameter Set Deleted: Get3
+
+	Parameter Set Deleted: GetExpanded1
+
+	Parameter Set Name Updated: GetExpanded
+		Old Set: GetExpanded1
+		New Set: GetExpanded
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get3
+		New Set: Get1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupById ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupCalendarEventDelta ----
+
+	Parameter Set Added: Delta1
+
+	Parameter Set Added: DeltaViaIdentity1
+
+	Parameter Set Deleted: Delta
+
+	Parameter Set Deleted: DeltaViaIdentity
+
+	Parameter Set Name Updated: Delta1
+		Old Set: Delta
+		New Set: Delta1
+
+	Parameter Set Name Updated: DeltaViaIdentity1
+		Old Set: DeltaViaIdentity
+		New Set: DeltaViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupCalendarEventDelta ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupCalendarSchedule ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetExpanded1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: GetViaIdentityExpanded1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetExpanded
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: GetViaIdentityExpanded
+
+	Parameter Set Name Updated: GetExpanded1
+		Old Set: GetExpanded
+		New Set: GetExpanded1
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentityExpanded1
+		Old Set: GetViaIdentityExpanded
+		New Set: GetViaIdentityExpanded1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupCalendarSchedule ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupConversation ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: List
+
+	Parameter Set Name Updated: List1
+		Old Set: List
+		New Set: List1
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupConversation ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupConversationThread ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: List
+
+	Parameter Set Name Updated: List1
+		Old Set: List
+		New Set: List1
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupConversationThread ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupConversationThreadPost ----
+
+	Parameter Set Added: Get2
+
+	Parameter Set Added: Get3
+
+	Parameter Set Added: GetViaIdentity2
+
+	Parameter Set Added: GetViaIdentity3
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List
+
+	Parameter Set Name Updated: List1
+		Old Set: List
+		New Set: List1
+
+	Parameter Set Name Updated: Get3
+		Old Set: Get1
+		New Set: Get3
+
+	Parameter Set Name Updated: Get3
+		Old Set: Get
+		New Set: Get3
+
+	Parameter Set Name Updated: Get2
+		Old Set: Get1
+		New Set: Get2
+
+	Parameter Set Name Updated: Get2
+		Old Set: Get
+		New Set: Get2
+
+	Parameter Set Name Updated: GetViaIdentity3
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity3
+
+	Parameter Set Name Updated: GetViaIdentity3
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity3
+
+	Parameter Set Name Updated: GetViaIdentity2
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity2
+
+	Parameter Set Name Updated: GetViaIdentity2
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity2
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupConversationThreadPost ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupConversationThreadPostAttachment ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: List
+
+	Parameter Set Name Updated: List1
+		Old Set: List
+		New Set: List1
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupConversationThreadPostAttachment ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupConversationThreadPostExtension ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: List
+
+	Parameter Set Name Updated: List1
+		Old Set: List
+		New Set: List1
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupConversationThreadPostExtension ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupConversationThreadPostMultiValueExtendedProperty ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: List
+
+	Parameter Set Name Updated: List1
+		Old Set: List
+		New Set: List1
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupConversationThreadPostMultiValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupConversationThreadPostSingleValueExtendedProperty ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: List
+
+	Parameter Set Name Updated: List1
+		Old Set: List
+		New Set: List1
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupConversationThreadPostSingleValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupCreatedOnBehalf ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupCreatedOnBehalf ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupCreatedOnBehalfByRef ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupCreatedOnBehalfByRef ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupDelta ----
+
+	Parameter Set Added: Delta
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: Delta
+		Old Set: 
+		New Set: Delta
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupDelta ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupEventDelta ----
+
+	Parameter Set Added: Delta1
+
+	Parameter Set Added: DeltaViaIdentity1
+
+	Parameter Set Deleted: Delta
+
+	Parameter Set Deleted: DeltaViaIdentity
+
+	Parameter Set Name Updated: Delta1
+		Old Set: Delta
+		New Set: Delta1
+
+	Parameter Set Name Updated: DeltaViaIdentity1
+		Old Set: DeltaViaIdentity
+		New Set: DeltaViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupEventDelta ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupExtension ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: List
+
+	Parameter Set Name Updated: List1
+		Old Set: List
+		New Set: List1
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupExtension ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupLifecyclePolicy ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupLifecyclePolicy ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupMember ----
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List
+		Old Set: 
+		New Set: List
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupMember ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupMemberByRef ----
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List1
+		Old Set: 
+		New Set: List1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupMemberByRef ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupMemberGroup ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetExpanded
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: GetViaIdentityExpanded
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetExpanded1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: GetViaIdentityExpanded1
+
+	Parameter Set Name Updated: GetExpanded
+		Old Set: GetExpanded1
+		New Set: GetExpanded
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentityExpanded
+		Old Set: GetViaIdentityExpanded1
+		New Set: GetViaIdentityExpanded
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupMemberGroup ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupMemberObject ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetExpanded
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: GetViaIdentityExpanded
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetExpanded1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: GetViaIdentityExpanded1
+
+	Parameter Set Name Updated: GetExpanded
+		Old Set: GetExpanded1
+		New Set: GetExpanded
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentityExpanded
+		Old Set: GetViaIdentityExpanded1
+		New Set: GetViaIdentityExpanded
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupMemberObject ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupMemberOf ----
+
+	Parameter Set Added: List5
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List5
+		Old Set: 
+		New Set: List5
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupMemberOf ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupMemberOfByRef ----
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List
+		Old Set: 
+		New Set: List
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupMemberOfByRef ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupMemberWithLicenseError ----
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List1
+		Old Set: 
+		New Set: List1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupMemberWithLicenseError ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupMemberWithLicenseErrorByRef ----
+
+	Parameter Set Added: List2
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List2
+		Old Set: 
+		New Set: List2
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupMemberWithLicenseErrorByRef ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupOnenoteNotebookFromWebUrl ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetExpanded
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: GetViaIdentityExpanded
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetExpanded1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: GetViaIdentityExpanded1
+
+	Parameter Set Name Updated: GetExpanded
+		Old Set: GetExpanded1
+		New Set: GetExpanded
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentityExpanded
+		Old Set: GetViaIdentityExpanded1
+		New Set: GetViaIdentityExpanded
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupOnenoteNotebookFromWebUrl ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupOnenoteRecentNotebook ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupOnenoteRecentNotebook ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupOwner ----
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List
+		Old Set: 
+		New Set: List
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupOwner ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupOwnerByRef ----
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List
+		Old Set: 
+		New Set: List
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupOwnerByRef ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupPermissionGrant ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupPermissionGrant ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupPhoto ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get2
+
+	Parameter Set Deleted: Get3
+
+	Parameter Set Deleted: GetViaIdentity2
+
+	Parameter Set Deleted: GetViaIdentity3
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: Get
+		Old Set: Get2
+		New Set: Get
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get3
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity3
+		New Set: GetViaIdentity1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity2
+		New Set: GetViaIdentity1
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity3
+		New Set: GetViaIdentity
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity2
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupPhoto ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupPhotoContent ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get2
+
+	Parameter Set Deleted: Get3
+
+	Parameter Set Deleted: GetViaIdentity2
+
+	Parameter Set Deleted: GetViaIdentity3
+
+	Parameter Set Name Updated: Get
+		Old Set: Get2
+		New Set: Get
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get3
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity3
+		New Set: GetViaIdentity1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity2
+		New Set: GetViaIdentity1
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity3
+		New Set: GetViaIdentity
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity2
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupPhotoContent ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupRejectedSender ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupRejectedSender ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupThread ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupThread ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupThreadPost ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get2
+
+	Parameter Set Deleted: Get3
+
+	Parameter Set Deleted: GetViaIdentity2
+
+	Parameter Set Deleted: GetViaIdentity3
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get3
+		New Set: Get1
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get2
+		New Set: Get1
+
+	Parameter Set Name Updated: Get
+		Old Set: Get3
+		New Set: Get
+
+	Parameter Set Name Updated: Get
+		Old Set: Get2
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity3
+		New Set: GetViaIdentity1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity2
+		New Set: GetViaIdentity1
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity3
+		New Set: GetViaIdentity
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity2
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupThreadPost ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupThreadPostAttachment ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupThreadPostAttachment ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupThreadPostExtension ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupThreadPostExtension ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupThreadPostMultiValueExtendedProperty ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupThreadPostMultiValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupThreadPostSingleValueExtendedProperty ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupThreadPostSingleValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupTransitiveMember ----
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List1
+		Old Set: 
+		New Set: List1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupTransitiveMember ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupTransitiveMemberByRef ----
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List1
+		Old Set: 
+		New Set: List1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupTransitiveMemberByRef ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupTransitiveMemberOf ----
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List
+		Old Set: 
+		New Set: List
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupTransitiveMemberOf ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupTransitiveMemberOfByRef ----
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: List
+		Old Set: 
+		New Set: List
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupTransitiveMemberOfByRef ----
+
+
+---- UPDATING Cmdlet : Invoke-MgAcceptGroupCalendarEvent ----
+
+	Parameter Set Added: Accept
+
+	Parameter Set Added: AcceptExpanded
+
+	Parameter Set Added: AcceptViaIdentity
+
+	Parameter Set Added: AcceptViaIdentityExpanded
+
+	Parameter Set Deleted: Accept1
+
+	Parameter Set Deleted: AcceptExpanded1
+
+	Parameter Set Deleted: AcceptViaIdentity1
+
+	Parameter Set Deleted: AcceptViaIdentityExpanded1
+
+	Parameter Set Name Updated: AcceptExpanded
+		Old Set: AcceptExpanded1
+		New Set: AcceptExpanded
+
+	Parameter Set Name Updated: Accept
+		Old Set: Accept1
+		New Set: Accept
+
+	Parameter Set Name Updated: AcceptViaIdentityExpanded
+		Old Set: AcceptViaIdentityExpanded1
+		New Set: AcceptViaIdentityExpanded
+
+	Parameter Set Name Updated: AcceptViaIdentity
+		Old Set: AcceptViaIdentity1
+		New Set: AcceptViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgAcceptGroupCalendarEvent ----
+
+
+---- UPDATING Cmdlet : Invoke-MgAcceptGroupCalendarEventTentatively ----
+
+	Parameter Set Added: Accept
+
+	Parameter Set Added: AcceptExpanded
+
+	Parameter Set Added: AcceptViaIdentity
+
+	Parameter Set Added: AcceptViaIdentityExpanded
+
+	Parameter Set Deleted: Accept1
+
+	Parameter Set Deleted: AcceptExpanded1
+
+	Parameter Set Deleted: AcceptViaIdentity1
+
+	Parameter Set Deleted: AcceptViaIdentityExpanded1
+
+	Parameter Set Name Updated: AcceptExpanded
+		Old Set: AcceptExpanded1
+		New Set: AcceptExpanded
+
+	Parameter Set Name Updated: Accept
+		Old Set: Accept1
+		New Set: Accept
+
+	Parameter Set Name Updated: AcceptViaIdentityExpanded
+		Old Set: AcceptViaIdentityExpanded1
+		New Set: AcceptViaIdentityExpanded
+
+	Parameter Set Name Updated: AcceptViaIdentity
+		Old Set: AcceptViaIdentity1
+		New Set: AcceptViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgAcceptGroupCalendarEventTentatively ----
+
+
+---- UPDATING Cmdlet : Invoke-MgAcceptGroupEvent ----
+
+	Parameter Set Added: Accept1
+
+	Parameter Set Added: AcceptExpanded1
+
+	Parameter Set Added: AcceptViaIdentity1
+
+	Parameter Set Added: AcceptViaIdentityExpanded1
+
+	Parameter Set Deleted: Accept
+
+	Parameter Set Deleted: AcceptExpanded
+
+	Parameter Set Deleted: AcceptViaIdentity
+
+	Parameter Set Deleted: AcceptViaIdentityExpanded
+
+	Parameter Set Name Updated: AcceptExpanded1
+		Old Set: AcceptExpanded
+		New Set: AcceptExpanded1
+
+	Parameter Set Name Updated: Accept1
+		Old Set: Accept
+		New Set: Accept1
+
+	Parameter Set Name Updated: AcceptViaIdentityExpanded1
+		Old Set: AcceptViaIdentityExpanded
+		New Set: AcceptViaIdentityExpanded1
+
+	Parameter Set Name Updated: AcceptViaIdentity1
+		Old Set: AcceptViaIdentity
+		New Set: AcceptViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgAcceptGroupEvent ----
+
+
+---- UPDATING Cmdlet : Invoke-MgAcceptGroupEventTentatively ----
+
+	Parameter Set Added: Accept1
+
+	Parameter Set Added: AcceptExpanded1
+
+	Parameter Set Added: AcceptViaIdentity1
+
+	Parameter Set Added: AcceptViaIdentityExpanded1
+
+	Parameter Set Deleted: Accept
+
+	Parameter Set Deleted: AcceptExpanded
+
+	Parameter Set Deleted: AcceptViaIdentity
+
+	Parameter Set Deleted: AcceptViaIdentityExpanded
+
+	Parameter Set Name Updated: AcceptExpanded1
+		Old Set: AcceptExpanded
+		New Set: AcceptExpanded1
+
+	Parameter Set Name Updated: Accept1
+		Old Set: Accept
+		New Set: Accept1
+
+	Parameter Set Name Updated: AcceptViaIdentityExpanded1
+		Old Set: AcceptViaIdentityExpanded
+		New Set: AcceptViaIdentityExpanded1
+
+	Parameter Set Name Updated: AcceptViaIdentity1
+		Old Set: AcceptViaIdentity
+		New Set: AcceptViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgAcceptGroupEventTentatively ----
+
+
+---- UPDATING Cmdlet : Invoke-MgCalendarGroupCalendar ----
+
+	Parameter Set Added: Calendar1
+
+	Parameter Set Added: CalendarViaIdentity1
+
+	Parameter Set Deleted: Calendar
+
+	Parameter Set Deleted: CalendarViaIdentity
+
+	Parameter Set Name Updated: Calendar1
+		Old Set: Calendar
+		New Set: Calendar1
+
+	Parameter Set Name Updated: CalendarViaIdentity1
+		Old Set: CalendarViaIdentity
+		New Set: CalendarViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgCalendarGroupCalendar ----
+
+
+---- UPDATING Cmdlet : Invoke-MgDeclineGroupCalendarEvent ----
+
+	Parameter Set Added: Decline
+
+	Parameter Set Added: DeclineExpanded
+
+	Parameter Set Added: DeclineViaIdentity
+
+	Parameter Set Added: DeclineViaIdentityExpanded
+
+	Parameter Set Deleted: Decline1
+
+	Parameter Set Deleted: DeclineExpanded1
+
+	Parameter Set Deleted: DeclineViaIdentity1
+
+	Parameter Set Deleted: DeclineViaIdentityExpanded1
+
+	Parameter Set Name Updated: DeclineExpanded
+		Old Set: DeclineExpanded1
+		New Set: DeclineExpanded
+
+	Parameter Set Name Updated: Decline
+		Old Set: Decline1
+		New Set: Decline
+
+	Parameter Set Name Updated: DeclineViaIdentityExpanded
+		Old Set: DeclineViaIdentityExpanded1
+		New Set: DeclineViaIdentityExpanded
+
+	Parameter Set Name Updated: DeclineViaIdentity
+		Old Set: DeclineViaIdentity1
+		New Set: DeclineViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgDeclineGroupCalendarEvent ----
+
+
+---- UPDATING Cmdlet : Invoke-MgDeclineGroupEvent ----
+
+	Parameter Set Added: Decline1
+
+	Parameter Set Added: DeclineExpanded1
+
+	Parameter Set Added: DeclineViaIdentity1
+
+	Parameter Set Added: DeclineViaIdentityExpanded1
+
+	Parameter Set Deleted: Decline
+
+	Parameter Set Deleted: DeclineExpanded
+
+	Parameter Set Deleted: DeclineViaIdentity
+
+	Parameter Set Deleted: DeclineViaIdentityExpanded
+
+	Parameter Set Name Updated: DeclineExpanded1
+		Old Set: DeclineExpanded
+		New Set: DeclineExpanded1
+
+	Parameter Set Name Updated: Decline1
+		Old Set: Decline
+		New Set: Decline1
+
+	Parameter Set Name Updated: DeclineViaIdentityExpanded1
+		Old Set: DeclineViaIdentityExpanded
+		New Set: DeclineViaIdentityExpanded1
+
+	Parameter Set Name Updated: DeclineViaIdentity1
+		Old Set: DeclineViaIdentity
+		New Set: DeclineViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgDeclineGroupEvent ----
+
+
+---- UPDATING Cmdlet : Invoke-MgDismissGroupCalendarEventReminder ----
+
+	Parameter Set Added: Dismiss
+
+	Parameter Set Added: DismissViaIdentity
+
+	Parameter Set Deleted: Dismiss1
+
+	Parameter Set Deleted: DismissViaIdentity1
+
+	Parameter Set Name Updated: Dismiss
+		Old Set: Dismiss1
+		New Set: Dismiss
+
+	Parameter Set Name Updated: DismissViaIdentity
+		Old Set: DismissViaIdentity1
+		New Set: DismissViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgDismissGroupCalendarEventReminder ----
+
+
+---- UPDATING Cmdlet : Invoke-MgDismissGroupEventReminder ----
+
+	Parameter Set Added: Dismiss1
+
+	Parameter Set Added: DismissViaIdentity1
+
+	Parameter Set Deleted: Dismiss
+
+	Parameter Set Deleted: DismissViaIdentity
+
+	Parameter Set Name Updated: Dismiss1
+		Old Set: Dismiss
+		New Set: Dismiss1
+
+	Parameter Set Name Updated: DismissViaIdentity1
+		Old Set: DismissViaIdentity
+		New Set: DismissViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgDismissGroupEventReminder ----
+
+
+---- UPDATING Cmdlet : Invoke-MgForwardGroupCalendarEvent ----
+
+	Parameter Set Added: Forward
+
+	Parameter Set Added: ForwardExpanded
+
+	Parameter Set Added: ForwardViaIdentity
+
+	Parameter Set Added: ForwardViaIdentityExpanded
+
+	Parameter Set Deleted: Forward1
+
+	Parameter Set Deleted: ForwardExpanded1
+
+	Parameter Set Deleted: ForwardViaIdentity1
+
+	Parameter Set Deleted: ForwardViaIdentityExpanded1
+
+	Parameter Set Name Updated: ForwardExpanded
+		Old Set: ForwardExpanded1
+		New Set: ForwardExpanded
+
+	Parameter Set Name Updated: Forward
+		Old Set: Forward1
+		New Set: Forward
+
+	Parameter Set Name Updated: ForwardViaIdentityExpanded
+		Old Set: ForwardViaIdentityExpanded1
+		New Set: ForwardViaIdentityExpanded
+
+	Parameter Set Name Updated: ForwardViaIdentity
+		Old Set: ForwardViaIdentity1
+		New Set: ForwardViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgForwardGroupCalendarEvent ----
+
+
+---- UPDATING Cmdlet : Invoke-MgForwardGroupConversationThreadPost ----
+
+	Parameter Set Added: Forward1
+
+	Parameter Set Added: ForwardExpanded1
+
+	Parameter Set Added: ForwardViaIdentity1
+
+	Parameter Set Added: ForwardViaIdentityExpanded1
+
+	Parameter Set Deleted: Forward
+
+	Parameter Set Deleted: ForwardExpanded
+
+	Parameter Set Deleted: ForwardViaIdentity
+
+	Parameter Set Deleted: ForwardViaIdentityExpanded
+
+	Parameter Set Name Updated: ForwardExpanded1
+		Old Set: ForwardExpanded
+		New Set: ForwardExpanded1
+
+	Parameter Set Name Updated: Forward1
+		Old Set: Forward
+		New Set: Forward1
+
+	Parameter Set Name Updated: ForwardViaIdentityExpanded1
+		Old Set: ForwardViaIdentityExpanded
+		New Set: ForwardViaIdentityExpanded1
+
+	Parameter Set Name Updated: ForwardViaIdentity1
+		Old Set: ForwardViaIdentity
+		New Set: ForwardViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgForwardGroupConversationThreadPost ----
+
+
+---- UPDATING Cmdlet : Invoke-MgForwardGroupConversationThreadPostInReplyTo ----
+
+	Parameter Set Added: Forward1
+
+	Parameter Set Added: ForwardExpanded1
+
+	Parameter Set Added: ForwardViaIdentity1
+
+	Parameter Set Added: ForwardViaIdentityExpanded1
+
+	Parameter Set Deleted: Forward
+
+	Parameter Set Deleted: ForwardExpanded
+
+	Parameter Set Deleted: ForwardViaIdentity
+
+	Parameter Set Deleted: ForwardViaIdentityExpanded
+
+	Parameter Set Name Updated: ForwardExpanded1
+		Old Set: ForwardExpanded
+		New Set: ForwardExpanded1
+
+	Parameter Set Name Updated: Forward1
+		Old Set: Forward
+		New Set: Forward1
+
+	Parameter Set Name Updated: ForwardViaIdentityExpanded1
+		Old Set: ForwardViaIdentityExpanded
+		New Set: ForwardViaIdentityExpanded1
+
+	Parameter Set Name Updated: ForwardViaIdentity1
+		Old Set: ForwardViaIdentity
+		New Set: ForwardViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgForwardGroupConversationThreadPostInReplyTo ----
+
+
+---- UPDATING Cmdlet : Invoke-MgForwardGroupEvent ----
+
+	Parameter Set Added: Forward1
+
+	Parameter Set Added: ForwardExpanded1
+
+	Parameter Set Added: ForwardViaIdentity1
+
+	Parameter Set Added: ForwardViaIdentityExpanded1
+
+	Parameter Set Deleted: Forward
+
+	Parameter Set Deleted: ForwardExpanded
+
+	Parameter Set Deleted: ForwardViaIdentity
+
+	Parameter Set Deleted: ForwardViaIdentityExpanded
+
+	Parameter Set Name Updated: ForwardExpanded1
+		Old Set: ForwardExpanded
+		New Set: ForwardExpanded1
+
+	Parameter Set Name Updated: Forward1
+		Old Set: Forward
+		New Set: Forward1
+
+	Parameter Set Name Updated: ForwardViaIdentityExpanded1
+		Old Set: ForwardViaIdentityExpanded
+		New Set: ForwardViaIdentityExpanded1
+
+	Parameter Set Name Updated: ForwardViaIdentity1
+		Old Set: ForwardViaIdentity
+		New Set: ForwardViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgForwardGroupEvent ----
+
+
+---- UPDATING Cmdlet : Invoke-MgForwardGroupThreadPost ----
+
+	Parameter Set Added: Forward
+
+	Parameter Set Added: ForwardExpanded
+
+	Parameter Set Added: ForwardViaIdentity
+
+	Parameter Set Added: ForwardViaIdentityExpanded
+
+	Parameter Set Deleted: Forward1
+
+	Parameter Set Deleted: ForwardExpanded1
+
+	Parameter Set Deleted: ForwardViaIdentity1
+
+	Parameter Set Deleted: ForwardViaIdentityExpanded1
+
+	Parameter Set Name Updated: ForwardExpanded
+		Old Set: ForwardExpanded1
+		New Set: ForwardExpanded
+
+	Parameter Set Name Updated: Forward
+		Old Set: Forward1
+		New Set: Forward
+
+	Parameter Set Name Updated: ForwardViaIdentityExpanded
+		Old Set: ForwardViaIdentityExpanded1
+		New Set: ForwardViaIdentityExpanded
+
+	Parameter Set Name Updated: ForwardViaIdentity
+		Old Set: ForwardViaIdentity1
+		New Set: ForwardViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgForwardGroupThreadPost ----
+
+
+---- UPDATING Cmdlet : Invoke-MgForwardGroupThreadPostInReplyTo ----
+
+	Parameter Set Added: Forward
+
+	Parameter Set Added: ForwardExpanded
+
+	Parameter Set Added: ForwardViaIdentity
+
+	Parameter Set Added: ForwardViaIdentityExpanded
+
+	Parameter Set Deleted: Forward1
+
+	Parameter Set Deleted: ForwardExpanded1
+
+	Parameter Set Deleted: ForwardViaIdentity1
+
+	Parameter Set Deleted: ForwardViaIdentityExpanded1
+
+	Parameter Set Name Updated: ForwardExpanded
+		Old Set: ForwardExpanded1
+		New Set: ForwardExpanded
+
+	Parameter Set Name Updated: Forward
+		Old Set: Forward1
+		New Set: Forward
+
+	Parameter Set Name Updated: ForwardViaIdentityExpanded
+		Old Set: ForwardViaIdentityExpanded1
+		New Set: ForwardViaIdentityExpanded
+
+	Parameter Set Name Updated: ForwardViaIdentity
+		Old Set: ForwardViaIdentity1
+		New Set: ForwardViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgForwardGroupThreadPostInReplyTo ----
+
+
+---- UPDATING Cmdlet : Invoke-MgPreviewGroupOnenotePage ----
+
+	Parameter Set Added: Preview
+
+	Parameter Set Added: PreviewViaIdentity
+
+	Parameter Set Deleted: Preview1
+
+	Parameter Set Deleted: PreviewViaIdentity1
+
+	Parameter Set Name Updated: Preview
+		Old Set: Preview1
+		New Set: Preview
+
+	Parameter Set Name Updated: PreviewViaIdentity
+		Old Set: PreviewViaIdentity1
+		New Set: PreviewViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgPreviewGroupOnenotePage ----
+
+
+---- UPDATING Cmdlet : Invoke-MgRenewGroup ----
+
+	Parameter Set Added: Renew
+
+	Parameter Set Added: RenewViaIdentity
+
+	Parameter Set Deleted: Renew1
+
+	Parameter Set Deleted: RenewViaIdentity1
+
+	Parameter Set Name Updated: Renew
+		Old Set: Renew1
+		New Set: Renew
+
+	Parameter Set Name Updated: RenewViaIdentity
+		Old Set: RenewViaIdentity1
+		New Set: RenewViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgRenewGroup ----
+
+
+---- UPDATING Cmdlet : Invoke-MgReplyGroupConversationThread ----
+
+	Parameter Set Added: Reply1
+
+	Parameter Set Added: ReplyExpanded1
+
+	Parameter Set Added: ReplyViaIdentity1
+
+	Parameter Set Added: ReplyViaIdentityExpanded1
+
+	Parameter Set Deleted: Reply
+
+	Parameter Set Deleted: ReplyExpanded
+
+	Parameter Set Deleted: ReplyViaIdentity
+
+	Parameter Set Deleted: ReplyViaIdentityExpanded
+
+	Parameter Set Name Updated: ReplyExpanded1
+		Old Set: ReplyExpanded
+		New Set: ReplyExpanded1
+
+	Parameter Set Name Updated: Reply1
+		Old Set: Reply
+		New Set: Reply1
+
+	Parameter Set Name Updated: ReplyViaIdentityExpanded1
+		Old Set: ReplyViaIdentityExpanded
+		New Set: ReplyViaIdentityExpanded1
+
+	Parameter Set Name Updated: ReplyViaIdentity1
+		Old Set: ReplyViaIdentity
+		New Set: ReplyViaIdentity1
+
+	Parameter Updated: BodyParameter
+		Type updated from IPathsQgkmepGroupsGroupIdConversationsConversationIdThreadsConversationthreadIdMicrosoftGraphReplyPostRequestbodyContentApplicationJsonSchema1 to IPathsQgkmepGroupsGroupIdConversationsConversationIdThreadsConversationthreadIdMicrosoftGraphReplyPostRequestbodyContentApplicationJsonSchema
+
+	Parameter Updated: Post
+		Type updated from IMicrosoftGraphPost1 to IMicrosoftGraphPost
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgReplyGroupConversationThread ----
+
+
+---- UPDATING Cmdlet : Invoke-MgReplyGroupConversationThreadPost ----
+
+	Parameter Set Added: Reply1
+
+	Parameter Set Added: ReplyExpanded1
+
+	Parameter Set Added: ReplyViaIdentity1
+
+	Parameter Set Added: ReplyViaIdentityExpanded1
+
+	Parameter Set Deleted: Reply
+
+	Parameter Set Deleted: ReplyExpanded
+
+	Parameter Set Deleted: ReplyViaIdentity
+
+	Parameter Set Deleted: ReplyViaIdentityExpanded
+
+	Parameter Set Name Updated: ReplyExpanded1
+		Old Set: ReplyExpanded
+		New Set: ReplyExpanded1
+
+	Parameter Set Name Updated: Reply1
+		Old Set: Reply
+		New Set: Reply1
+
+	Parameter Set Name Updated: ReplyViaIdentityExpanded1
+		Old Set: ReplyViaIdentityExpanded
+		New Set: ReplyViaIdentityExpanded1
+
+	Parameter Set Name Updated: ReplyViaIdentity1
+		Old Set: ReplyViaIdentity
+		New Set: ReplyViaIdentity1
+
+	Parameter Updated: BodyParameter
+		Type updated from IPaths23Qv37GroupsGroupIdConversationsConversationIdThreadsConversationthreadIdPostsPostIdMicrosoftGraphReplyPostRequestbodyContentApplicationJsonSchema1 to IPaths23Qv37GroupsGroupIdConversationsConversationIdThreadsConversationthreadIdPostsPostIdMicrosoftGraphReplyPostRequestbodyContentApplicationJsonSchema
+
+	Parameter Updated: Post
+		Type updated from IMicrosoftGraphPost1 to IMicrosoftGraphPost
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgReplyGroupConversationThreadPost ----
+
+
+---- UPDATING Cmdlet : Invoke-MgReplyGroupConversationThreadPostInReplyTo ----
+
+	Parameter Set Added: Reply1
+
+	Parameter Set Added: ReplyExpanded1
+
+	Parameter Set Added: ReplyViaIdentity1
+
+	Parameter Set Added: ReplyViaIdentityExpanded1
+
+	Parameter Set Deleted: Reply
+
+	Parameter Set Deleted: ReplyExpanded
+
+	Parameter Set Deleted: ReplyViaIdentity
+
+	Parameter Set Deleted: ReplyViaIdentityExpanded
+
+	Parameter Set Name Updated: ReplyExpanded1
+		Old Set: ReplyExpanded
+		New Set: ReplyExpanded1
+
+	Parameter Set Name Updated: Reply1
+		Old Set: Reply
+		New Set: Reply1
+
+	Parameter Set Name Updated: ReplyViaIdentityExpanded1
+		Old Set: ReplyViaIdentityExpanded
+		New Set: ReplyViaIdentityExpanded1
+
+	Parameter Set Name Updated: ReplyViaIdentity1
+		Old Set: ReplyViaIdentity
+		New Set: ReplyViaIdentity1
+
+	Parameter Updated: BodyParameter
+		Type updated from IPathsIcm6SjGroupsGroupIdConversationsConversationIdThreadsConversationthreadIdPostsPostIdInreplytoMicrosoftGraphReplyPostRequestbodyContentApplicationJsonSchema1 to IPathsIcm6SjGroupsGroupIdConversationsConversationIdThreadsConversationthreadIdPostsPostIdInreplytoMicrosoftGraphReplyPostRequestbodyContentApplicationJsonSchema
+
+	Parameter Updated: Post
+		Type updated from IMicrosoftGraphPost1 to IMicrosoftGraphPost
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgReplyGroupConversationThreadPostInReplyTo ----
+
+
+---- UPDATING Cmdlet : Invoke-MgReplyGroupThread ----
+
+	Parameter Set Added: Reply
+
+	Parameter Set Added: ReplyExpanded
+
+	Parameter Set Added: ReplyViaIdentity
+
+	Parameter Set Added: ReplyViaIdentityExpanded
+
+	Parameter Set Deleted: Reply1
+
+	Parameter Set Deleted: ReplyExpanded1
+
+	Parameter Set Deleted: ReplyViaIdentity1
+
+	Parameter Set Deleted: ReplyViaIdentityExpanded1
+
+	Parameter Set Name Updated: ReplyExpanded
+		Old Set: ReplyExpanded1
+		New Set: ReplyExpanded
+
+	Parameter Set Name Updated: Reply
+		Old Set: Reply1
+		New Set: Reply
+
+	Parameter Set Name Updated: ReplyViaIdentityExpanded
+		Old Set: ReplyViaIdentityExpanded1
+		New Set: ReplyViaIdentityExpanded
+
+	Parameter Set Name Updated: ReplyViaIdentity
+		Old Set: ReplyViaIdentity1
+		New Set: ReplyViaIdentity
+
+	Parameter Updated: BodyParameter
+		Type updated from IPathsPlnw85GroupsGroupIdThreadsConversationthreadIdMicrosoftGraphReplyPostRequestbodyContentApplicationJsonSchema to IPathsPlnw85GroupsGroupIdThreadsConversationthreadIdMicrosoftGraphReplyPostRequestbodyContentApplicationJsonSchema1
+
+	Parameter Updated: Post
+		Type updated from IMicrosoftGraphPost1 to IMicrosoftGraphPost
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgReplyGroupThread ----
+
+
+---- UPDATING Cmdlet : Invoke-MgReplyGroupThreadPost ----
+
+	Parameter Set Added: Reply
+
+	Parameter Set Added: ReplyExpanded
+
+	Parameter Set Added: ReplyViaIdentity
+
+	Parameter Set Added: ReplyViaIdentityExpanded
+
+	Parameter Set Deleted: Reply1
+
+	Parameter Set Deleted: ReplyExpanded1
+
+	Parameter Set Deleted: ReplyViaIdentity1
+
+	Parameter Set Deleted: ReplyViaIdentityExpanded1
+
+	Parameter Set Name Updated: ReplyExpanded
+		Old Set: ReplyExpanded1
+		New Set: ReplyExpanded
+
+	Parameter Set Name Updated: Reply
+		Old Set: Reply1
+		New Set: Reply
+
+	Parameter Set Name Updated: ReplyViaIdentityExpanded
+		Old Set: ReplyViaIdentityExpanded1
+		New Set: ReplyViaIdentityExpanded
+
+	Parameter Set Name Updated: ReplyViaIdentity
+		Old Set: ReplyViaIdentity1
+		New Set: ReplyViaIdentity
+
+	Parameter Updated: BodyParameter
+		Type updated from IPaths1B2Nw99GroupsGroupIdThreadsConversationthreadIdPostsPostIdMicrosoftGraphReplyPostRequestbodyContentApplicationJsonSchema1 to IPaths1B2Nw99GroupsGroupIdThreadsConversationthreadIdPostsPostIdMicrosoftGraphReplyPostRequestbodyContentApplicationJsonSchema
+
+	Parameter Updated: Post
+		Type updated from IMicrosoftGraphPost1 to IMicrosoftGraphPost
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgReplyGroupThreadPost ----
+
+
+---- UPDATING Cmdlet : Invoke-MgReplyGroupThreadPostInReplyTo ----
+
+	Parameter Set Added: Reply
+
+	Parameter Set Added: ReplyExpanded
+
+	Parameter Set Added: ReplyViaIdentity
+
+	Parameter Set Added: ReplyViaIdentityExpanded
+
+	Parameter Set Deleted: Reply1
+
+	Parameter Set Deleted: ReplyExpanded1
+
+	Parameter Set Deleted: ReplyViaIdentity1
+
+	Parameter Set Deleted: ReplyViaIdentityExpanded1
+
+	Parameter Set Name Updated: ReplyExpanded
+		Old Set: ReplyExpanded1
+		New Set: ReplyExpanded
+
+	Parameter Set Name Updated: Reply
+		Old Set: Reply1
+		New Set: Reply
+
+	Parameter Set Name Updated: ReplyViaIdentityExpanded
+		Old Set: ReplyViaIdentityExpanded1
+		New Set: ReplyViaIdentityExpanded
+
+	Parameter Set Name Updated: ReplyViaIdentity
+		Old Set: ReplyViaIdentity1
+		New Set: ReplyViaIdentity
+
+	Parameter Updated: BodyParameter
+		Type updated from IPaths1EjehpoGroupsGroupIdThreadsConversationthreadIdPostsPostIdInreplytoMicrosoftGraphReplyPostRequestbodyContentApplicationJsonSchema to IPaths1EjehpoGroupsGroupIdThreadsConversationthreadIdPostsPostIdInreplytoMicrosoftGraphReplyPostRequestbodyContentApplicationJsonSchema1
+
+	Parameter Updated: Post
+		Type updated from IMicrosoftGraphPost1 to IMicrosoftGraphPost
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgReplyGroupThreadPostInReplyTo ----
+
+
+---- UPDATING Cmdlet : Invoke-MgSnoozeGroupCalendarEventReminder ----
+
+	Parameter Set Added: Snooze
+
+	Parameter Set Added: SnoozeExpanded
+
+	Parameter Set Added: SnoozeViaIdentity
+
+	Parameter Set Added: SnoozeViaIdentityExpanded
+
+	Parameter Set Deleted: Snooze1
+
+	Parameter Set Deleted: SnoozeExpanded1
+
+	Parameter Set Deleted: SnoozeViaIdentity1
+
+	Parameter Set Deleted: SnoozeViaIdentityExpanded1
+
+	Parameter Set Name Updated: SnoozeExpanded
+		Old Set: SnoozeExpanded1
+		New Set: SnoozeExpanded
+
+	Parameter Set Name Updated: Snooze
+		Old Set: Snooze1
+		New Set: Snooze
+
+	Parameter Set Name Updated: SnoozeViaIdentityExpanded
+		Old Set: SnoozeViaIdentityExpanded1
+		New Set: SnoozeViaIdentityExpanded
+
+	Parameter Set Name Updated: SnoozeViaIdentity
+		Old Set: SnoozeViaIdentity1
+		New Set: SnoozeViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgSnoozeGroupCalendarEventReminder ----
+
+
+---- UPDATING Cmdlet : Invoke-MgSnoozeGroupEventReminder ----
+
+	Parameter Set Added: Snooze1
+
+	Parameter Set Added: SnoozeExpanded1
+
+	Parameter Set Added: SnoozeViaIdentity1
+
+	Parameter Set Added: SnoozeViaIdentityExpanded1
+
+	Parameter Set Deleted: Snooze
+
+	Parameter Set Deleted: SnoozeExpanded
+
+	Parameter Set Deleted: SnoozeViaIdentity
+
+	Parameter Set Deleted: SnoozeViaIdentityExpanded
+
+	Parameter Set Name Updated: SnoozeExpanded1
+		Old Set: SnoozeExpanded
+		New Set: SnoozeExpanded1
+
+	Parameter Set Name Updated: Snooze1
+		Old Set: Snooze
+		New Set: Snooze1
+
+	Parameter Set Name Updated: SnoozeViaIdentityExpanded1
+		Old Set: SnoozeViaIdentityExpanded
+		New Set: SnoozeViaIdentityExpanded1
+
+	Parameter Set Name Updated: SnoozeViaIdentity1
+		Old Set: SnoozeViaIdentity
+		New Set: SnoozeViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgSnoozeGroupEventReminder ----
+
+
+---- UPDATING Cmdlet : Invoke-MgSubscribeGroup ----
+
+	Parameter Set Added: Subscribe
+
+	Parameter Set Added: SubscribeViaIdentity
+
+	Parameter Set Deleted: Subscribe1
+
+	Parameter Set Deleted: SubscribeViaIdentity1
+
+	Parameter Set Name Updated: Subscribe
+		Old Set: Subscribe1
+		New Set: Subscribe
+
+	Parameter Set Name Updated: SubscribeViaIdentity
+		Old Set: SubscribeViaIdentity1
+		New Set: SubscribeViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgSubscribeGroup ----
+
+
+---- UPDATING Cmdlet : Invoke-MgUnsubscribeGroup ----
+
+	Parameter Set Added: Unsubscribe
+
+	Parameter Set Added: UnsubscribeViaIdentity
+
+	Parameter Set Deleted: Unsubscribe1
+
+	Parameter Set Deleted: UnsubscribeViaIdentity1
+
+	Parameter Set Name Updated: Unsubscribe
+		Old Set: Unsubscribe1
+		New Set: Unsubscribe
+
+	Parameter Set Name Updated: UnsubscribeViaIdentity
+		Old Set: UnsubscribeViaIdentity1
+		New Set: UnsubscribeViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgUnsubscribeGroup ----
+
+
+---- UPDATING Cmdlet : New-MgGroup ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Added: AccessType
+
+	Parameter Added: CreatedByAppId
+
+	Parameter Added: Endpoints
+
+	Parameter Added: InfoCatalogs
+
+	Parameter Added: IsAssignableToRole
+
+	Parameter Added: IsFavorite
+
+	Parameter Added: MdmAppId
+
+	Parameter Added: ResourceBehaviorOptions
+
+	Parameter Added: ResourceProvisioningOptions
+
+	Parameter Added: UnseenConversationsCount
+
+	Parameter Added: UnseenMessagesCount
+
+	Parameter Updated: AppRoleAssignments
+		Type updated from IMicrosoftGraphAppRoleAssignment1[] to IMicrosoftGraphAppRoleAssignment[]
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphGroup1 to IMicrosoftGraphGroup
+
+	Parameter Updated: Calendar
+		Type updated from IMicrosoftGraphCalendar1 to IMicrosoftGraphCalendar
+
+	Parameter Updated: CalendarView
+		Type updated from IMicrosoftGraphEvent1[] to IMicrosoftGraphEvent[]
+
+	Parameter Updated: Conversations
+		Type updated from IMicrosoftGraphConversation1[] to IMicrosoftGraphConversation[]
+
+	Parameter Updated: Drive
+		Type updated from IMicrosoftGraphDrive1 to IMicrosoftGraphDrive
+
+	Parameter Updated: Drives
+		Type updated from IMicrosoftGraphDrive1[] to IMicrosoftGraphDrive[]
+
+	Parameter Updated: Events
+		Type updated from IMicrosoftGraphEvent1[] to IMicrosoftGraphEvent[]
+
+	Parameter Updated: Onenote
+		Type updated from IMicrosoftGraphOnenote1 to IMicrosoftGraphOnenote
+
+	Parameter Updated: Planner
+		Type updated from IMicrosoftGraphPlannerGroup1 to IMicrosoftGraphPlannerGroup
+
+	Parameter Updated: Settings
+		Type updated from IMicrosoftGraphGroupSetting[] to IMicrosoftGraphDirectorySetting[]
+
+	Parameter Updated: Sites
+		Type updated from IMicrosoftGraphSite1[] to IMicrosoftGraphSite[]
+
+	Parameter Updated: Team
+		Type updated from IMicrosoftGraphTeam1 to IMicrosoftGraphTeam
+
+	Parameter Updated: Threads
+		Type updated from IMicrosoftGraphConversationThread1[] to IMicrosoftGraphConversationThread[]
+
+---- COMPLETED UPDATING Cmdlet : New-MgGroup ----
+
+
+---- UPDATING Cmdlet : New-MgGroupAcceptedSender ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded
+		Old Set: CreateViaIdentityExpanded1
+		New Set: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : New-MgGroupAcceptedSender ----
+
+
+---- UPDATING Cmdlet : New-MgGroupConversation ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateExpanded1
+		Old Set: CreateExpanded
+		New Set: CreateExpanded1
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded1
+		Old Set: CreateViaIdentityExpanded
+		New Set: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphConversation1 to IMicrosoftGraphConversation
+
+	Parameter Updated: Threads
+		Type updated from IMicrosoftGraphConversationThread1[] to IMicrosoftGraphConversationThread[]
+
+---- COMPLETED UPDATING Cmdlet : New-MgGroupConversation ----
+
+
+---- UPDATING Cmdlet : New-MgGroupConversationThread ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateExpanded1
+		Old Set: CreateExpanded
+		New Set: CreateExpanded1
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded1
+		Old Set: CreateViaIdentityExpanded
+		New Set: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphConversationThread1 to IMicrosoftGraphConversationThread
+
+	Parameter Updated: Posts
+		Type updated from IMicrosoftGraphPost1[] to IMicrosoftGraphPost[]
+
+---- COMPLETED UPDATING Cmdlet : New-MgGroupConversationThread ----
+
+
+---- UPDATING Cmdlet : New-MgGroupConversationThreadPost ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+	Parameter Added: Importance
+
+	Parameter Added: Mentions
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPost1 to IMicrosoftGraphPost
+
+	Parameter Updated: InReplyTo
+		Type updated from IMicrosoftGraphPost1 to IMicrosoftGraphPost
+
+---- COMPLETED UPDATING Cmdlet : New-MgGroupConversationThreadPost ----
+
+
+---- UPDATING Cmdlet : New-MgGroupConversationThreadPostAttachment ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateExpanded1
+		Old Set: CreateExpanded
+		New Set: CreateExpanded1
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded1
+		Old Set: CreateViaIdentityExpanded
+		New Set: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : New-MgGroupConversationThreadPostAttachment ----
+
+
+---- UPDATING Cmdlet : New-MgGroupConversationThreadPostAttachmentUploadSession ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateExpanded1
+		Old Set: CreateExpanded
+		New Set: CreateExpanded1
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded1
+		Old Set: CreateViaIdentityExpanded
+		New Set: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : New-MgGroupConversationThreadPostAttachmentUploadSession ----
+
+
+---- UPDATING Cmdlet : New-MgGroupConversationThreadPostExtension ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateExpanded1
+		Old Set: CreateExpanded
+		New Set: CreateExpanded1
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded1
+		Old Set: CreateViaIdentityExpanded
+		New Set: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : New-MgGroupConversationThreadPostExtension ----
+
+
+---- UPDATING Cmdlet : New-MgGroupConversationThreadPostMultiValueExtendedProperty ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateExpanded1
+		Old Set: CreateExpanded
+		New Set: CreateExpanded1
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded1
+		Old Set: CreateViaIdentityExpanded
+		New Set: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : New-MgGroupConversationThreadPostMultiValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : New-MgGroupConversationThreadPostSingleValueExtendedProperty ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateExpanded1
+		Old Set: CreateExpanded
+		New Set: CreateExpanded1
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded1
+		Old Set: CreateViaIdentityExpanded
+		New Set: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : New-MgGroupConversationThreadPostSingleValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : New-MgGroupExtension ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateExpanded1
+		Old Set: CreateExpanded
+		New Set: CreateExpanded1
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded1
+		Old Set: CreateViaIdentityExpanded
+		New Set: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : New-MgGroupExtension ----
+
+
+---- UPDATING Cmdlet : New-MgGroupLifecyclePolicy ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+---- COMPLETED UPDATING Cmdlet : New-MgGroupLifecyclePolicy ----
+
+
+---- UPDATING Cmdlet : New-MgGroupMember ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded
+		Old Set: CreateViaIdentityExpanded1
+		New Set: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : New-MgGroupMember ----
+
+
+---- UPDATING Cmdlet : New-MgGroupMemberByRef ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create4
+
+	Parameter Set Deleted: CreateExpanded4
+
+	Parameter Set Deleted: CreateViaIdentity4
+
+	Parameter Set Deleted: CreateViaIdentityExpanded4
+
+	Parameter Set Name Updated: CreateExpanded1
+		Old Set: CreateExpanded4
+		New Set: CreateExpanded1
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create4
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded1
+		Old Set: CreateViaIdentityExpanded4
+		New Set: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity4
+		New Set: CreateViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : New-MgGroupMemberByRef ----
+
+
+---- UPDATING Cmdlet : New-MgGroupMemberOfByRef ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create3
+
+	Parameter Set Deleted: CreateExpanded3
+
+	Parameter Set Deleted: CreateViaIdentity3
+
+	Parameter Set Deleted: CreateViaIdentityExpanded3
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded3
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create3
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded
+		Old Set: CreateViaIdentityExpanded3
+		New Set: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity3
+		New Set: CreateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : New-MgGroupMemberOfByRef ----
+
+
+---- UPDATING Cmdlet : New-MgGroupMemberWithLicenseErrorByRef ----
+
+	Parameter Set Added: Create2
+
+	Parameter Set Added: CreateExpanded2
+
+	Parameter Set Added: CreateViaIdentity2
+
+	Parameter Set Added: CreateViaIdentityExpanded2
+
+	Parameter Set Deleted: Create5
+
+	Parameter Set Deleted: CreateExpanded5
+
+	Parameter Set Deleted: CreateViaIdentity5
+
+	Parameter Set Deleted: CreateViaIdentityExpanded5
+
+	Parameter Set Name Updated: CreateExpanded2
+		Old Set: CreateExpanded5
+		New Set: CreateExpanded2
+
+	Parameter Set Name Updated: Create2
+		Old Set: Create5
+		New Set: Create2
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded2
+		Old Set: CreateViaIdentityExpanded5
+		New Set: CreateViaIdentityExpanded2
+
+	Parameter Set Name Updated: CreateViaIdentity2
+		Old Set: CreateViaIdentity5
+		New Set: CreateViaIdentity2
+
+---- COMPLETED UPDATING Cmdlet : New-MgGroupMemberWithLicenseErrorByRef ----
+
+
+---- UPDATING Cmdlet : New-MgGroupOwnerByRef ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded
+		Old Set: CreateViaIdentityExpanded1
+		New Set: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : New-MgGroupOwnerByRef ----
+
+
+---- UPDATING Cmdlet : New-MgGroupPermissionGrant ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded
+		Old Set: CreateViaIdentityExpanded1
+		New Set: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : New-MgGroupPermissionGrant ----
+
+
+---- UPDATING Cmdlet : New-MgGroupPhoto ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded
+		Old Set: CreateViaIdentityExpanded1
+		New Set: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : New-MgGroupPhoto ----
+
+
+---- UPDATING Cmdlet : New-MgGroupRejectedSender ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded
+		Old Set: CreateViaIdentityExpanded1
+		New Set: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : New-MgGroupRejectedSender ----
+
+
+---- UPDATING Cmdlet : New-MgGroupThread ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded
+		Old Set: CreateViaIdentityExpanded1
+		New Set: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphConversationThread1 to IMicrosoftGraphConversationThread
+
+	Parameter Updated: Posts
+		Type updated from IMicrosoftGraphPost1[] to IMicrosoftGraphPost[]
+
+---- COMPLETED UPDATING Cmdlet : New-MgGroupThread ----
+
+
+---- UPDATING Cmdlet : New-MgGroupThreadPost ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+	Parameter Added: Importance
+
+	Parameter Added: Mentions
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPost1 to IMicrosoftGraphPost
+
+	Parameter Updated: InReplyTo
+		Type updated from IMicrosoftGraphPost1 to IMicrosoftGraphPost
+
+---- COMPLETED UPDATING Cmdlet : New-MgGroupThreadPost ----
+
+
+---- UPDATING Cmdlet : New-MgGroupThreadPostAttachment ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded
+		Old Set: CreateViaIdentityExpanded1
+		New Set: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : New-MgGroupThreadPostAttachment ----
+
+
+---- UPDATING Cmdlet : New-MgGroupThreadPostAttachmentUploadSession ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded
+		Old Set: CreateViaIdentityExpanded1
+		New Set: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : New-MgGroupThreadPostAttachmentUploadSession ----
+
+
+---- UPDATING Cmdlet : New-MgGroupThreadPostExtension ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded
+		Old Set: CreateViaIdentityExpanded1
+		New Set: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : New-MgGroupThreadPostExtension ----
+
+
+---- UPDATING Cmdlet : New-MgGroupThreadPostMultiValueExtendedProperty ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded
+		Old Set: CreateViaIdentityExpanded1
+		New Set: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : New-MgGroupThreadPostMultiValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : New-MgGroupThreadPostSingleValueExtendedProperty ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded
+		Old Set: CreateViaIdentityExpanded1
+		New Set: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : New-MgGroupThreadPostSingleValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : New-MgGroupTransitiveMemberByRef ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create2
+
+	Parameter Set Deleted: Create3
+
+	Parameter Set Deleted: CreateExpanded2
+
+	Parameter Set Deleted: CreateExpanded3
+
+	Parameter Set Deleted: CreateViaIdentity2
+
+	Parameter Set Deleted: CreateViaIdentity3
+
+	Parameter Set Deleted: CreateViaIdentityExpanded2
+
+	Parameter Set Deleted: CreateViaIdentityExpanded3
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded2
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded3
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: CreateExpanded1
+		Old Set: CreateExpanded2
+		New Set: CreateExpanded1
+
+	Parameter Set Name Updated: CreateExpanded1
+		Old Set: CreateExpanded3
+		New Set: CreateExpanded1
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create3
+		New Set: Create1
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create2
+		New Set: Create1
+
+	Parameter Set Name Updated: Create
+		Old Set: Create3
+		New Set: Create
+
+	Parameter Set Name Updated: Create
+		Old Set: Create2
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded1
+		Old Set: CreateViaIdentityExpanded3
+		New Set: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded1
+		Old Set: CreateViaIdentityExpanded2
+		New Set: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded
+		Old Set: CreateViaIdentityExpanded3
+		New Set: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded
+		Old Set: CreateViaIdentityExpanded2
+		New Set: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity3
+		New Set: CreateViaIdentity1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity2
+		New Set: CreateViaIdentity1
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity3
+		New Set: CreateViaIdentity
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity2
+		New Set: CreateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : New-MgGroupTransitiveMemberByRef ----
+
+
+---- UPDATING Cmdlet : Remove-MgGroup ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgGroup ----
+
+
+---- UPDATING Cmdlet : Remove-MgGroupAcceptedSender ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgGroupAcceptedSender ----
+
+
+---- UPDATING Cmdlet : Remove-MgGroupConversation ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgGroupConversation ----
+
+
+---- UPDATING Cmdlet : Remove-MgGroupConversationThread ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgGroupConversationThread ----
+
+
+---- UPDATING Cmdlet : Remove-MgGroupConversationThreadPost ----
+
+	Parameter Set Added: Delete2
+
+	Parameter Set Added: Delete3
+
+	Parameter Set Added: DeleteViaIdentity2
+
+	Parameter Set Added: DeleteViaIdentity3
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete2
+		Old Set: Delete
+		New Set: Delete2
+
+	Parameter Set Name Updated: Delete2
+		Old Set: Delete1
+		New Set: Delete2
+
+	Parameter Set Name Updated: Delete3
+		Old Set: Delete
+		New Set: Delete3
+
+	Parameter Set Name Updated: Delete3
+		Old Set: Delete1
+		New Set: Delete3
+
+	Parameter Set Name Updated: DeleteViaIdentity3
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity3
+
+	Parameter Set Name Updated: DeleteViaIdentity3
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity3
+
+	Parameter Set Name Updated: DeleteViaIdentity2
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity2
+
+	Parameter Set Name Updated: DeleteViaIdentity2
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity2
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgGroupConversationThreadPost ----
+
+
+---- UPDATING Cmdlet : Remove-MgGroupConversationThreadPostAttachment ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgGroupConversationThreadPostAttachment ----
+
+
+---- UPDATING Cmdlet : Remove-MgGroupConversationThreadPostExtension ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgGroupConversationThreadPostExtension ----
+
+
+---- UPDATING Cmdlet : Remove-MgGroupConversationThreadPostMultiValueExtendedProperty ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgGroupConversationThreadPostMultiValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : Remove-MgGroupConversationThreadPostSingleValueExtendedProperty ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgGroupConversationThreadPostSingleValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : Remove-MgGroupCreatedOnBehalfByRef ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgGroupCreatedOnBehalfByRef ----
+
+
+---- UPDATING Cmdlet : Remove-MgGroupExtension ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgGroupExtension ----
+
+
+---- UPDATING Cmdlet : Remove-MgGroupFavorite ----
+
+	Parameter Set Added: Remove
+
+	Parameter Set Added: RemoveViaIdentity
+
+	Parameter Set Deleted: Remove1
+
+	Parameter Set Deleted: RemoveViaIdentity1
+
+	Parameter Set Name Updated: Remove
+		Old Set: Remove1
+		New Set: Remove
+
+	Parameter Set Name Updated: RemoveViaIdentity
+		Old Set: RemoveViaIdentity1
+		New Set: RemoveViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgGroupFavorite ----
+
+
+---- UPDATING Cmdlet : Remove-MgGroupFromLifecyclePolicy ----
+
+	Parameter Set Added: Remove1
+
+	Parameter Set Added: RemoveExpanded1
+
+	Parameter Set Added: RemoveViaIdentity1
+
+	Parameter Set Added: RemoveViaIdentityExpanded1
+
+	Parameter Set Deleted: Remove
+
+	Parameter Set Deleted: RemoveExpanded
+
+	Parameter Set Deleted: RemoveViaIdentity
+
+	Parameter Set Deleted: RemoveViaIdentityExpanded
+
+	Parameter Set Name Updated: RemoveExpanded1
+		Old Set: RemoveExpanded
+		New Set: RemoveExpanded1
+
+	Parameter Set Name Updated: Remove1
+		Old Set: Remove
+		New Set: Remove1
+
+	Parameter Set Name Updated: RemoveViaIdentityExpanded1
+		Old Set: RemoveViaIdentityExpanded
+		New Set: RemoveViaIdentityExpanded1
+
+	Parameter Set Name Updated: RemoveViaIdentity1
+		Old Set: RemoveViaIdentity
+		New Set: RemoveViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgGroupFromLifecyclePolicy ----
+
+
+---- UPDATING Cmdlet : Remove-MgGroupLifecyclePolicy ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgGroupLifecyclePolicy ----
+
+
+---- UPDATING Cmdlet : Remove-MgGroupPermissionGrant ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgGroupPermissionGrant ----
+
+
+---- UPDATING Cmdlet : Remove-MgGroupPhoto ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete2
+
+	Parameter Set Deleted: Delete3
+
+	Parameter Set Deleted: DeleteViaIdentity2
+
+	Parameter Set Deleted: DeleteViaIdentity3
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete2
+		New Set: Delete
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete3
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity3
+		New Set: DeleteViaIdentity1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity2
+		New Set: DeleteViaIdentity1
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity3
+		New Set: DeleteViaIdentity
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity2
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgGroupPhoto ----
+
+
+---- UPDATING Cmdlet : Remove-MgGroupRejectedSender ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgGroupRejectedSender ----
+
+
+---- UPDATING Cmdlet : Remove-MgGroupThread ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgGroupThread ----
+
+
+---- UPDATING Cmdlet : Remove-MgGroupThreadPost ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete2
+
+	Parameter Set Deleted: Delete3
+
+	Parameter Set Deleted: DeleteViaIdentity2
+
+	Parameter Set Deleted: DeleteViaIdentity3
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete2
+		New Set: Delete
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete3
+		New Set: Delete
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete2
+		New Set: Delete1
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete3
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity3
+		New Set: DeleteViaIdentity1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity2
+		New Set: DeleteViaIdentity1
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity3
+		New Set: DeleteViaIdentity
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity2
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgGroupThreadPost ----
+
+
+---- UPDATING Cmdlet : Remove-MgGroupThreadPostAttachment ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgGroupThreadPostAttachment ----
+
+
+---- UPDATING Cmdlet : Remove-MgGroupThreadPostExtension ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgGroupThreadPostExtension ----
+
+
+---- UPDATING Cmdlet : Remove-MgGroupThreadPostMultiValueExtendedProperty ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgGroupThreadPostMultiValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : Remove-MgGroupThreadPostSingleValueExtendedProperty ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgGroupThreadPostSingleValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : Reset-MgGroupUnseenCount ----
+
+	Parameter Set Added: Reset
+
+	Parameter Set Added: ResetViaIdentity
+
+	Parameter Set Deleted: Reset1
+
+	Parameter Set Deleted: ResetViaIdentity1
+
+	Parameter Set Name Updated: Reset
+		Old Set: Reset1
+		New Set: Reset
+
+	Parameter Set Name Updated: ResetViaIdentity
+		Old Set: ResetViaIdentity1
+		New Set: ResetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Reset-MgGroupUnseenCount ----
+
+
+---- UPDATING Cmdlet : Restore-MgGroup ----
+
+	Parameter Set Added: Restore
+
+	Parameter Set Added: RestoreViaIdentity
+
+	Parameter Set Deleted: Restore1
+
+	Parameter Set Deleted: RestoreViaIdentity1
+
+	Parameter Set Name Updated: Restore
+		Old Set: Restore1
+		New Set: Restore
+
+	Parameter Set Name Updated: RestoreViaIdentity
+		Old Set: RestoreViaIdentity1
+		New Set: RestoreViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Restore-MgGroup ----
+
+
+---- UPDATING Cmdlet : Set-MgGroupCreatedOnBehalfByRef ----
+
+	Parameter Set Added: Set1
+
+	Parameter Set Added: SetExpanded1
+
+	Parameter Set Added: SetViaIdentity1
+
+	Parameter Set Added: SetViaIdentityExpanded1
+
+	Parameter Set Deleted: Set
+
+	Parameter Set Deleted: SetExpanded
+
+	Parameter Set Deleted: SetViaIdentity
+
+	Parameter Set Deleted: SetViaIdentityExpanded
+
+	Parameter Set Name Updated: SetExpanded1
+		Old Set: SetExpanded
+		New Set: SetExpanded1
+
+	Parameter Set Name Updated: Set1
+		Old Set: Set
+		New Set: Set1
+
+	Parameter Set Name Updated: SetViaIdentityExpanded1
+		Old Set: SetViaIdentityExpanded
+		New Set: SetViaIdentityExpanded1
+
+	Parameter Set Name Updated: SetViaIdentity1
+		Old Set: SetViaIdentity
+		New Set: SetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Set-MgGroupCreatedOnBehalfByRef ----
+
+
+---- UPDATING Cmdlet : Set-MgGroupLicense ----
+
+	Parameter Set Added: Assign
+
+	Parameter Set Added: AssignExpanded
+
+	Parameter Set Added: AssignViaIdentity
+
+	Parameter Set Added: AssignViaIdentityExpanded
+
+	Parameter Set Deleted: Assign1
+
+	Parameter Set Deleted: AssignExpanded1
+
+	Parameter Set Deleted: AssignViaIdentity1
+
+	Parameter Set Deleted: AssignViaIdentityExpanded1
+
+	Parameter Set Name Updated: AssignExpanded
+		Old Set: AssignExpanded1
+		New Set: AssignExpanded
+
+	Parameter Set Name Updated: Assign
+		Old Set: Assign1
+		New Set: Assign
+
+	Parameter Set Name Updated: AssignViaIdentityExpanded
+		Old Set: AssignViaIdentityExpanded1
+		New Set: AssignViaIdentityExpanded
+
+	Parameter Set Name Updated: AssignViaIdentity
+		Old Set: AssignViaIdentity1
+		New Set: AssignViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Set-MgGroupLicense ----
+
+
+---- UPDATING Cmdlet : Set-MgGroupPhotoContent ----
+
+	Parameter Set Added: Set
+
+	Parameter Set Added: Set1
+
+	Parameter Set Added: SetViaIdentity
+
+	Parameter Set Added: SetViaIdentity1
+
+	Parameter Set Deleted: Set2
+
+	Parameter Set Deleted: Set3
+
+	Parameter Set Deleted: SetViaIdentity2
+
+	Parameter Set Deleted: SetViaIdentity3
+
+	Parameter Set Name Updated: Set
+		Old Set: Set2
+		New Set: Set
+
+	Parameter Set Name Updated: Set1
+		Old Set: Set3
+		New Set: Set1
+
+	Parameter Set Name Updated: SetViaIdentity1
+		Old Set: SetViaIdentity3
+		New Set: SetViaIdentity1
+
+	Parameter Set Name Updated: SetViaIdentity1
+		Old Set: SetViaIdentity2
+		New Set: SetViaIdentity1
+
+	Parameter Set Name Updated: SetViaIdentity
+		Old Set: SetViaIdentity3
+		New Set: SetViaIdentity
+
+	Parameter Set Name Updated: SetViaIdentity
+		Old Set: SetViaIdentity2
+		New Set: SetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Set-MgGroupPhotoContent ----
+
+
+---- UPDATING Cmdlet : Stop-MgGroupCalendarEvent ----
+
+	Parameter Set Added: Cancel
+
+	Parameter Set Added: CancelExpanded
+
+	Parameter Set Added: CancelViaIdentity
+
+	Parameter Set Added: CancelViaIdentityExpanded
+
+	Parameter Set Deleted: Cancel1
+
+	Parameter Set Deleted: CancelExpanded1
+
+	Parameter Set Deleted: CancelViaIdentity1
+
+	Parameter Set Deleted: CancelViaIdentityExpanded1
+
+	Parameter Set Name Updated: CancelExpanded
+		Old Set: CancelExpanded1
+		New Set: CancelExpanded
+
+	Parameter Set Name Updated: Cancel
+		Old Set: Cancel1
+		New Set: Cancel
+
+	Parameter Set Name Updated: CancelViaIdentityExpanded
+		Old Set: CancelViaIdentityExpanded1
+		New Set: CancelViaIdentityExpanded
+
+	Parameter Set Name Updated: CancelViaIdentity
+		Old Set: CancelViaIdentity1
+		New Set: CancelViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Stop-MgGroupCalendarEvent ----
+
+
+---- UPDATING Cmdlet : Stop-MgGroupEvent ----
+
+	Parameter Set Added: Cancel1
+
+	Parameter Set Added: CancelExpanded1
+
+	Parameter Set Added: CancelViaIdentity1
+
+	Parameter Set Added: CancelViaIdentityExpanded1
+
+	Parameter Set Deleted: Cancel
+
+	Parameter Set Deleted: CancelExpanded
+
+	Parameter Set Deleted: CancelViaIdentity
+
+	Parameter Set Deleted: CancelViaIdentityExpanded
+
+	Parameter Set Name Updated: CancelExpanded1
+		Old Set: CancelExpanded
+		New Set: CancelExpanded1
+
+	Parameter Set Name Updated: Cancel1
+		Old Set: Cancel
+		New Set: Cancel1
+
+	Parameter Set Name Updated: CancelViaIdentityExpanded1
+		Old Set: CancelViaIdentityExpanded
+		New Set: CancelViaIdentityExpanded1
+
+	Parameter Set Name Updated: CancelViaIdentity1
+		Old Set: CancelViaIdentity
+		New Set: CancelViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Stop-MgGroupEvent ----
+
+
+---- UPDATING Cmdlet : Test-MgGroupProperty ----
+
+	Parameter Set Added: Validate
+
+	Parameter Set Added: ValidateExpanded
+
+	Parameter Set Added: ValidateViaIdentity
+
+	Parameter Set Added: ValidateViaIdentityExpanded
+
+	Parameter Set Deleted: Validate2
+
+	Parameter Set Deleted: ValidateExpanded2
+
+	Parameter Set Deleted: ValidateViaIdentity1
+
+	Parameter Set Deleted: ValidateViaIdentityExpanded1
+
+	Parameter Set Name Updated: ValidateExpanded
+		Old Set: ValidateExpanded2
+		New Set: ValidateExpanded
+
+	Parameter Set Name Updated: Validate
+		Old Set: Validate2
+		New Set: Validate
+
+	Parameter Set Name Updated: ValidateViaIdentityExpanded
+		Old Set: ValidateViaIdentityExpanded1
+		New Set: ValidateViaIdentityExpanded
+
+	Parameter Set Name Updated: ValidateViaIdentity
+		Old Set: ValidateViaIdentity1
+		New Set: ValidateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Test-MgGroupProperty ----
+
+
+---- UPDATING Cmdlet : Update-MgGroup ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Added: AccessType
+
+	Parameter Added: CreatedByAppId
+
+	Parameter Added: Endpoints
+
+	Parameter Added: InfoCatalogs
+
+	Parameter Added: IsAssignableToRole
+
+	Parameter Added: IsFavorite
+
+	Parameter Added: MdmAppId
+
+	Parameter Added: ResourceBehaviorOptions
+
+	Parameter Added: ResourceProvisioningOptions
+
+	Parameter Added: UnseenConversationsCount
+
+	Parameter Added: UnseenMessagesCount
+
+	Parameter Updated: AppRoleAssignments
+		Type updated from IMicrosoftGraphAppRoleAssignment1[] to IMicrosoftGraphAppRoleAssignment[]
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphGroup1 to IMicrosoftGraphGroup
+
+	Parameter Updated: Calendar
+		Type updated from IMicrosoftGraphCalendar1 to IMicrosoftGraphCalendar
+
+	Parameter Updated: CalendarView
+		Type updated from IMicrosoftGraphEvent1[] to IMicrosoftGraphEvent[]
+
+	Parameter Updated: Conversations
+		Type updated from IMicrosoftGraphConversation1[] to IMicrosoftGraphConversation[]
+
+	Parameter Updated: Drive
+		Type updated from IMicrosoftGraphDrive1 to IMicrosoftGraphDrive
+
+	Parameter Updated: Drives
+		Type updated from IMicrosoftGraphDrive1[] to IMicrosoftGraphDrive[]
+
+	Parameter Updated: Events
+		Type updated from IMicrosoftGraphEvent1[] to IMicrosoftGraphEvent[]
+
+	Parameter Updated: Onenote
+		Type updated from IMicrosoftGraphOnenote1 to IMicrosoftGraphOnenote
+
+	Parameter Updated: Planner
+		Type updated from IMicrosoftGraphPlannerGroup1 to IMicrosoftGraphPlannerGroup
+
+	Parameter Updated: Settings
+		Type updated from IMicrosoftGraphGroupSetting[] to IMicrosoftGraphDirectorySetting[]
+
+	Parameter Updated: Sites
+		Type updated from IMicrosoftGraphSite1[] to IMicrosoftGraphSite[]
+
+	Parameter Updated: Team
+		Type updated from IMicrosoftGraphTeam1 to IMicrosoftGraphTeam
+
+	Parameter Updated: Threads
+		Type updated from IMicrosoftGraphConversationThread1[] to IMicrosoftGraphConversationThread[]
+
+---- COMPLETED UPDATING Cmdlet : Update-MgGroup ----
+
+
+---- UPDATING Cmdlet : Update-MgGroupAcceptedSender ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Update-MgGroupAcceptedSender ----
+
+
+---- UPDATING Cmdlet : Update-MgGroupConversation ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateExpanded1
+		Old Set: UpdateExpanded
+		New Set: UpdateExpanded1
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded1
+		Old Set: UpdateViaIdentityExpanded
+		New Set: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphConversation1 to IMicrosoftGraphConversation
+
+	Parameter Updated: Threads
+		Type updated from IMicrosoftGraphConversationThread1[] to IMicrosoftGraphConversationThread[]
+
+---- COMPLETED UPDATING Cmdlet : Update-MgGroupConversation ----
+
+
+---- UPDATING Cmdlet : Update-MgGroupConversationThread ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateExpanded1
+		Old Set: UpdateExpanded
+		New Set: UpdateExpanded1
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded1
+		Old Set: UpdateViaIdentityExpanded
+		New Set: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphConversationThread1 to IMicrosoftGraphConversationThread
+
+	Parameter Updated: Posts
+		Type updated from IMicrosoftGraphPost1[] to IMicrosoftGraphPost[]
+
+---- COMPLETED UPDATING Cmdlet : Update-MgGroupConversationThread ----
+
+
+---- UPDATING Cmdlet : Update-MgGroupConversationThreadPost ----
+
+	Parameter Set Added: Update2
+
+	Parameter Set Added: Update3
+
+	Parameter Set Added: UpdateExpanded2
+
+	Parameter Set Added: UpdateExpanded3
+
+	Parameter Set Added: UpdateViaIdentity2
+
+	Parameter Set Added: UpdateViaIdentity3
+
+	Parameter Set Added: UpdateViaIdentityExpanded2
+
+	Parameter Set Added: UpdateViaIdentityExpanded3
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Update3
+		Old Set: Update1
+		New Set: Update3
+
+	Parameter Set Name Updated: Update3
+		Old Set: Update
+		New Set: Update3
+
+	Parameter Set Name Updated: Update2
+		Old Set: Update1
+		New Set: Update2
+
+	Parameter Set Name Updated: Update2
+		Old Set: Update
+		New Set: Update2
+
+	Parameter Set Name Updated: UpdateViaIdentity3
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity3
+
+	Parameter Set Name Updated: UpdateViaIdentity3
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity3
+
+	Parameter Set Name Updated: UpdateViaIdentity2
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity2
+
+	Parameter Set Name Updated: UpdateViaIdentity2
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity2
+
+	Parameter Added: Importance
+
+	Parameter Added: Mentions
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPost1 to IMicrosoftGraphPost
+
+	Parameter Updated: InReplyTo
+		Type updated from IMicrosoftGraphPost1 to IMicrosoftGraphPost
+
+---- COMPLETED UPDATING Cmdlet : Update-MgGroupConversationThreadPost ----
+
+
+---- UPDATING Cmdlet : Update-MgGroupConversationThreadPostAttachment ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateExpanded1
+		Old Set: UpdateExpanded
+		New Set: UpdateExpanded1
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded1
+		Old Set: UpdateViaIdentityExpanded
+		New Set: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Update-MgGroupConversationThreadPostAttachment ----
+
+
+---- UPDATING Cmdlet : Update-MgGroupConversationThreadPostExtension ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateExpanded1
+		Old Set: UpdateExpanded
+		New Set: UpdateExpanded1
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded1
+		Old Set: UpdateViaIdentityExpanded
+		New Set: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Update-MgGroupConversationThreadPostExtension ----
+
+
+---- UPDATING Cmdlet : Update-MgGroupConversationThreadPostMultiValueExtendedProperty ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateExpanded1
+		Old Set: UpdateExpanded
+		New Set: UpdateExpanded1
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded1
+		Old Set: UpdateViaIdentityExpanded
+		New Set: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Update-MgGroupConversationThreadPostMultiValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : Update-MgGroupConversationThreadPostSingleValueExtendedProperty ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateExpanded1
+		Old Set: UpdateExpanded
+		New Set: UpdateExpanded1
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded1
+		Old Set: UpdateViaIdentityExpanded
+		New Set: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Update-MgGroupConversationThreadPostSingleValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : Update-MgGroupExtension ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateExpanded1
+		Old Set: UpdateExpanded
+		New Set: UpdateExpanded1
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded1
+		Old Set: UpdateViaIdentityExpanded
+		New Set: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Update-MgGroupExtension ----
+
+
+---- UPDATING Cmdlet : Update-MgGroupLifecyclePolicy ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateExpanded1
+		Old Set: UpdateExpanded
+		New Set: UpdateExpanded1
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded1
+		Old Set: UpdateViaIdentityExpanded
+		New Set: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Update-MgGroupLifecyclePolicy ----
+
+
+---- UPDATING Cmdlet : Update-MgGroupOnenotePageContent ----
+
+	Parameter Set Added: Patch
+
+	Parameter Set Added: PatchExpanded
+
+	Parameter Set Added: PatchViaIdentity
+
+	Parameter Set Added: PatchViaIdentityExpanded
+
+	Parameter Set Deleted: Patch1
+
+	Parameter Set Deleted: PatchExpanded1
+
+	Parameter Set Deleted: PatchViaIdentity1
+
+	Parameter Set Deleted: PatchViaIdentityExpanded1
+
+	Parameter Set Name Updated: PatchExpanded
+		Old Set: PatchExpanded1
+		New Set: PatchExpanded
+
+	Parameter Set Name Updated: Patch
+		Old Set: Patch1
+		New Set: Patch
+
+	Parameter Set Name Updated: PatchViaIdentityExpanded
+		Old Set: PatchViaIdentityExpanded1
+		New Set: PatchViaIdentityExpanded
+
+	Parameter Set Name Updated: PatchViaIdentity
+		Old Set: PatchViaIdentity1
+		New Set: PatchViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Update-MgGroupOnenotePageContent ----
+
+
+---- UPDATING Cmdlet : Update-MgGroupPermissionGrant ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Update-MgGroupPermissionGrant ----
+
+
+---- UPDATING Cmdlet : Update-MgGroupPhoto ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update2
+
+	Parameter Set Deleted: Update3
+
+	Parameter Set Deleted: UpdateExpanded2
+
+	Parameter Set Deleted: UpdateExpanded3
+
+	Parameter Set Deleted: UpdateViaIdentity2
+
+	Parameter Set Deleted: UpdateViaIdentity3
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded2
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded3
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded2
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: UpdateExpanded1
+		Old Set: UpdateExpanded3
+		New Set: UpdateExpanded1
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update3
+		New Set: Update1
+
+	Parameter Set Name Updated: Update
+		Old Set: Update2
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded1
+		Old Set: UpdateViaIdentityExpanded3
+		New Set: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded1
+		Old Set: UpdateViaIdentityExpanded2
+		New Set: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded3
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded2
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity3
+		New Set: UpdateViaIdentity1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity2
+		New Set: UpdateViaIdentity1
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity3
+		New Set: UpdateViaIdentity
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity2
+		New Set: UpdateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Update-MgGroupPhoto ----
+
+
+---- UPDATING Cmdlet : Update-MgGroupRejectedSender ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Update-MgGroupRejectedSender ----
+
+
+---- UPDATING Cmdlet : Update-MgGroupThread ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphConversationThread1 to IMicrosoftGraphConversationThread
+
+	Parameter Updated: Posts
+		Type updated from IMicrosoftGraphPost1[] to IMicrosoftGraphPost[]
+
+---- COMPLETED UPDATING Cmdlet : Update-MgGroupThread ----
+
+
+---- UPDATING Cmdlet : Update-MgGroupThreadPost ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update2
+
+	Parameter Set Deleted: Update3
+
+	Parameter Set Deleted: UpdateExpanded2
+
+	Parameter Set Deleted: UpdateExpanded3
+
+	Parameter Set Deleted: UpdateViaIdentity2
+
+	Parameter Set Deleted: UpdateViaIdentity3
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded2
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded3
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update3
+		New Set: Update1
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update2
+		New Set: Update1
+
+	Parameter Set Name Updated: Update
+		Old Set: Update3
+		New Set: Update
+
+	Parameter Set Name Updated: Update
+		Old Set: Update2
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity3
+		New Set: UpdateViaIdentity1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity2
+		New Set: UpdateViaIdentity1
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity3
+		New Set: UpdateViaIdentity
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity2
+		New Set: UpdateViaIdentity
+
+	Parameter Added: Importance
+
+	Parameter Added: Mentions
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPost1 to IMicrosoftGraphPost
+
+	Parameter Updated: InReplyTo
+		Type updated from IMicrosoftGraphPost1 to IMicrosoftGraphPost
+
+---- COMPLETED UPDATING Cmdlet : Update-MgGroupThreadPost ----
+
+
+---- UPDATING Cmdlet : Update-MgGroupThreadPostAttachment ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Update-MgGroupThreadPostAttachment ----
+
+
+---- UPDATING Cmdlet : Update-MgGroupThreadPostExtension ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Update-MgGroupThreadPostExtension ----
+
+
+---- UPDATING Cmdlet : Update-MgGroupThreadPostMultiValueExtendedProperty ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Update-MgGroupThreadPostMultiValueExtendedProperty ----
+
+
+---- UPDATING Cmdlet : Update-MgGroupThreadPostSingleValueExtendedProperty ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Update-MgGroupThreadPostSingleValueExtendedProperty ----
+
+
+[Update-MarkdownHelpModule] 11/23/2020 14:55:21 Creating new markdown for command 'Get-MgGroupConversationThreadPostMention'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:23 Creating new markdown for command 'Get-MgGroupEndpoint'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:25 Creating new markdown for command 'Get-MgGroupSetting'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:27 Creating new markdown for command 'Get-MgGroupThreadPostMention'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:29 Creating new markdown for command 'Get-MgGroupUserOwnedObject'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:31 Creating new markdown for command 'Get-MgUserJoinedGroup'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:32 Creating new markdown for command 'Invoke-MgRenewGroupLifecyclePolicy'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:33 Creating new markdown for command 'New-MgGroupConversationThreadPostMention'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:36 Creating new markdown for command 'New-MgGroupEndpoint'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:37 Creating new markdown for command 'New-MgGroupSetting'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:42 Creating new markdown for command 'New-MgGroupThreadPostMention'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:44 Creating new markdown for command 'New-MgUserJoinedGroup'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:52 Creating new markdown for command 'Remove-MgGroupConversationThreadPostMention'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:54 Creating new markdown for command 'Remove-MgGroupEndpoint'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:55 Creating new markdown for command 'Remove-MgGroupSetting'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:56 Creating new markdown for command 'Remove-MgGroupThreadPostMention'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:57 Creating new markdown for command 'Remove-MgUserJoinedGroup'
+[Update-MarkdownHelpModule] 11/23/2020 14:55:59 Creating new markdown for command 'Test-MgGroupDynamicMembership'
+[Update-MarkdownHelpModule] 11/23/2020 14:56:00 Creating new markdown for command 'Update-MgGroupConversationThreadPostMention'
+[Update-MarkdownHelpModule] 11/23/2020 14:56:02 Creating new markdown for command 'Update-MgGroupEndpoint'
+[Update-MarkdownHelpModule] 11/23/2020 14:56:04 Creating new markdown for command 'Update-MgGroupSetting'
+[Update-MarkdownHelpModule] 11/23/2020 14:56:06 Creating new markdown for command 'Update-MgGroupThreadPostMention'
+[Update-MarkdownHelpModule] 11/23/2020 14:56:08 Creating new markdown for command 'Update-MgUserJoinedGroup'

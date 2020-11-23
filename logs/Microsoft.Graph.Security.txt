@@ -1,0 +1,370 @@
+
+[Update-MarkdownHelpModule] 11/23/2020 14:45:33 Determined module name for '.\src\Security\Security\help' as 'Microsoft.Graph.Security'.
+[Update-MarkdownHelpModule] 11/23/2020 14:45:33 [Update-MarkdownHelpModule]11/23/2020 2:45:33 PM
+[Update-MarkdownHelpModule] 11/23/2020 14:45:33 Updating documents for module 'Microsoft.Graph.Security' in .\src\Security\Security\help
+---- UPDATING Cmdlet : Get-MgSecurityAlert ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgSecurityAlert ----
+
+
+---- UPDATING Cmdlet : Get-MgSecuritySecureScore ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgSecuritySecureScore ----
+
+
+---- UPDATING Cmdlet : Get-MgSecuritySecureScoreControlProfile ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgSecuritySecureScoreControlProfile ----
+
+
+---- UPDATING Cmdlet : New-MgSecurityAlert ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+---- COMPLETED UPDATING Cmdlet : New-MgSecurityAlert ----
+
+
+---- UPDATING Cmdlet : New-MgSecuritySecureScore ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+---- COMPLETED UPDATING Cmdlet : New-MgSecuritySecureScore ----
+
+
+---- UPDATING Cmdlet : New-MgSecuritySecureScoreControlProfile ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+---- COMPLETED UPDATING Cmdlet : New-MgSecuritySecureScoreControlProfile ----
+
+
+---- UPDATING Cmdlet : Remove-MgSecurityAlert ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgSecurityAlert ----
+
+
+---- UPDATING Cmdlet : Remove-MgSecuritySecureScore ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgSecuritySecureScore ----
+
+
+---- UPDATING Cmdlet : Remove-MgSecuritySecureScoreControlProfile ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgSecuritySecureScoreControlProfile ----
+
+
+---- UPDATING Cmdlet : Update-MgSecurityAlert ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update2
+
+	Parameter Set Deleted: UpdateExpanded2
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded2
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update2
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Update-MgSecurityAlert ----
+
+
+---- UPDATING Cmdlet : Update-MgSecuritySecureScore ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Update-MgSecuritySecureScore ----
+
+
+---- UPDATING Cmdlet : Update-MgSecuritySecureScoreControlProfile ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Update-MgSecuritySecureScoreControlProfile ----
+
+
+[Update-MarkdownHelpModule] 11/23/2020 14:45:48 Creating new markdown for command 'Get-MgSecurityAction'
+[Update-MarkdownHelpModule] 11/23/2020 14:45:48 Creating new markdown for command 'Get-MgSecurityCloudAppSecurityProfile'
+[Update-MarkdownHelpModule] 11/23/2020 14:45:49 Creating new markdown for command 'Get-MgSecurityDomainSecurityProfile'
+[Update-MarkdownHelpModule] 11/23/2020 14:45:49 Creating new markdown for command 'Get-MgSecurityFileSecurityProfile'
+[Update-MarkdownHelpModule] 11/23/2020 14:45:50 Creating new markdown for command 'Get-MgSecurityHostSecurityProfile'
+[Update-MarkdownHelpModule] 11/23/2020 14:45:50 Creating new markdown for command 'Get-MgSecurityIPSecurityProfile'
+[Update-MarkdownHelpModule] 11/23/2020 14:45:51 Creating new markdown for command 'Get-MgSecurityProviderTenantSetting'
+[Update-MarkdownHelpModule] 11/23/2020 14:45:51 Creating new markdown for command 'Get-MgSecurityTiIndicator'
+[Update-MarkdownHelpModule] 11/23/2020 14:45:51 Creating new markdown for command 'Get-MgSecurityUserSecurityProfile'
+[Update-MarkdownHelpModule] 11/23/2020 14:45:52 Creating new markdown for command 'New-MgSecurityAction'
+[Update-MarkdownHelpModule] 11/23/2020 14:45:52 Creating new markdown for command 'New-MgSecurityCloudAppSecurityProfile'
+[Update-MarkdownHelpModule] 11/23/2020 14:45:53 Creating new markdown for command 'New-MgSecurityDomainSecurityProfile'
+[Update-MarkdownHelpModule] 11/23/2020 14:45:53 Creating new markdown for command 'New-MgSecurityFileSecurityProfile'
+[Update-MarkdownHelpModule] 11/23/2020 14:45:54 Creating new markdown for command 'New-MgSecurityHostSecurityProfile'
+[Update-MarkdownHelpModule] 11/23/2020 14:45:54 Creating new markdown for command 'New-MgSecurityIPSecurityProfile'
+[Update-MarkdownHelpModule] 11/23/2020 14:45:55 Creating new markdown for command 'New-MgSecurityProviderTenantSetting'
+[Update-MarkdownHelpModule] 11/23/2020 14:45:55 Creating new markdown for command 'New-MgSecurityTiIndicator'
+[Update-MarkdownHelpModule] 11/23/2020 14:45:57 Creating new markdown for command 'New-MgSecurityUserSecurityProfile'
+[Update-MarkdownHelpModule] 11/23/2020 14:45:57 Creating new markdown for command 'Remove-MgSecurityAction'
+[Update-MarkdownHelpModule] 11/23/2020 14:45:58 Creating new markdown for command 'Remove-MgSecurityCloudAppSecurityProfile'
+[Update-MarkdownHelpModule] 11/23/2020 14:45:58 Creating new markdown for command 'Remove-MgSecurityDomainSecurityProfile'
+[Update-MarkdownHelpModule] 11/23/2020 14:45:58 Creating new markdown for command 'Remove-MgSecurityFileSecurityProfile'
+[Update-MarkdownHelpModule] 11/23/2020 14:45:59 Creating new markdown for command 'Remove-MgSecurityHostSecurityProfile'
+[Update-MarkdownHelpModule] 11/23/2020 14:45:59 Creating new markdown for command 'Remove-MgSecurityIPSecurityProfile'
+[Update-MarkdownHelpModule] 11/23/2020 14:46:00 Creating new markdown for command 'Remove-MgSecurityProviderTenantSetting'
+[Update-MarkdownHelpModule] 11/23/2020 14:46:00 Creating new markdown for command 'Remove-MgSecurityTiIndicator'
+[Update-MarkdownHelpModule] 11/23/2020 14:46:00 Creating new markdown for command 'Remove-MgSecurityTiIndicatorByExternalId'
+[Update-MarkdownHelpModule] 11/23/2020 14:46:01 Creating new markdown for command 'Remove-MgSecurityTiIndicatorMultiple'
+[Update-MarkdownHelpModule] 11/23/2020 14:46:01 Creating new markdown for command 'Remove-MgSecurityUserSecurityProfile'
+[Update-MarkdownHelpModule] 11/23/2020 14:46:02 Creating new markdown for command 'Stop-MgSecurityAction'
+[Update-MarkdownHelpModule] 11/23/2020 14:46:02 Creating new markdown for command 'Submit-MgSecurityTiIndicator'
+[Update-MarkdownHelpModule] 11/23/2020 14:46:03 Creating new markdown for command 'Update-MgSecurityAction'
+[Update-MarkdownHelpModule] 11/23/2020 14:46:04 Creating new markdown for command 'Update-MgSecurityAlertMultiple'
+[Update-MarkdownHelpModule] 11/23/2020 14:46:04 Creating new markdown for command 'Update-MgSecurityCloudAppSecurityProfile'
+[Update-MarkdownHelpModule] 11/23/2020 14:46:05 Creating new markdown for command 'Update-MgSecurityDomainSecurityProfile'
+[Update-MarkdownHelpModule] 11/23/2020 14:46:07 Creating new markdown for command 'Update-MgSecurityFileSecurityProfile'
+[Update-MarkdownHelpModule] 11/23/2020 14:46:08 Creating new markdown for command 'Update-MgSecurityHostSecurityProfile'
+[Update-MarkdownHelpModule] 11/23/2020 14:46:09 Creating new markdown for command 'Update-MgSecurityIPSecurityProfile'
+[Update-MarkdownHelpModule] 11/23/2020 14:46:09 Creating new markdown for command 'Update-MgSecurityProviderTenantSetting'
+[Update-MarkdownHelpModule] 11/23/2020 14:46:10 Creating new markdown for command 'Update-MgSecurityTiIndicator'
+[Update-MarkdownHelpModule] 11/23/2020 14:46:13 Creating new markdown for command 'Update-MgSecurityTiIndicatorMultiple'
+[Update-MarkdownHelpModule] 11/23/2020 14:46:13 Creating new markdown for command 'Update-MgSecurityUserSecurityProfile'

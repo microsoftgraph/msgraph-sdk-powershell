@@ -1,0 +1,607 @@
+
+[Update-MarkdownHelpModule] 11/23/2020 14:46:08 Determined module name for '.\src\Users.Functions\Users.Functions\help' as 'Microsoft.Graph.Users.Functions'.
+[Update-MarkdownHelpModule] 11/23/2020 14:46:08 [Update-MarkdownHelpModule]11/23/2020 2:46:08 PM
+[Update-MarkdownHelpModule] 11/23/2020 14:46:08 Updating documents for module 'Microsoft.Graph.Users.Functions' in .\src\Users.Functions\Users.Functions\help
+---- UPDATING Cmdlet : Get-MgUserCalendarEventDelta ----
+
+	Parameter Set Added: Delta
+
+	Parameter Set Added: Delta1
+
+	Parameter Set Added: DeltaViaIdentity
+
+	Parameter Set Added: DeltaViaIdentity1
+
+	Parameter Set Deleted: Delta2
+
+	Parameter Set Deleted: Delta3
+
+	Parameter Set Deleted: DeltaViaIdentity2
+
+	Parameter Set Deleted: DeltaViaIdentity3
+
+	Parameter Set Name Updated: Delta
+		Old Set: Delta2
+		New Set: Delta
+
+	Parameter Set Name Updated: Delta1
+		Old Set: Delta3
+		New Set: Delta1
+
+	Parameter Set Name Updated: DeltaViaIdentity1
+		Old Set: DeltaViaIdentity3
+		New Set: DeltaViaIdentity1
+
+	Parameter Set Name Updated: DeltaViaIdentity1
+		Old Set: DeltaViaIdentity2
+		New Set: DeltaViaIdentity1
+
+	Parameter Set Name Updated: DeltaViaIdentity
+		Old Set: DeltaViaIdentity3
+		New Set: DeltaViaIdentity
+
+	Parameter Set Name Updated: DeltaViaIdentity
+		Old Set: DeltaViaIdentity2
+		New Set: DeltaViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserCalendarEventDelta ----
+
+
+---- UPDATING Cmdlet : Get-MgUserContactDelta ----
+
+	Parameter Set Added: Delta1
+
+	Parameter Set Added: DeltaViaIdentity1
+
+	Parameter Set Deleted: Delta
+
+	Parameter Set Deleted: DeltaViaIdentity
+
+	Parameter Set Name Updated: Delta1
+		Old Set: Delta
+		New Set: Delta1
+
+	Parameter Set Name Updated: DeltaViaIdentity1
+		Old Set: DeltaViaIdentity
+		New Set: DeltaViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserContactDelta ----
+
+
+---- UPDATING Cmdlet : Get-MgUserContactFolderChildFolderDelta ----
+
+	Parameter Set Added: Delta1
+
+	Parameter Set Added: DeltaViaIdentity1
+
+	Parameter Set Deleted: Delta
+
+	Parameter Set Deleted: DeltaViaIdentity
+
+	Parameter Set Name Updated: Delta1
+		Old Set: Delta
+		New Set: Delta1
+
+	Parameter Set Name Updated: DeltaViaIdentity1
+		Old Set: DeltaViaIdentity
+		New Set: DeltaViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserContactFolderChildFolderDelta ----
+
+
+---- UPDATING Cmdlet : Get-MgUserContactFolderContactDelta ----
+
+	Parameter Set Added: Delta1
+
+	Parameter Set Added: DeltaViaIdentity1
+
+	Parameter Set Deleted: Delta
+
+	Parameter Set Deleted: DeltaViaIdentity
+
+	Parameter Set Name Updated: Delta1
+		Old Set: Delta
+		New Set: Delta1
+
+	Parameter Set Name Updated: DeltaViaIdentity1
+		Old Set: DeltaViaIdentity
+		New Set: DeltaViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserContactFolderContactDelta ----
+
+
+---- UPDATING Cmdlet : Get-MgUserContactFolderDelta ----
+
+	Parameter Set Added: Delta1
+
+	Parameter Set Added: DeltaViaIdentity1
+
+	Parameter Set Deleted: Delta
+
+	Parameter Set Deleted: DeltaViaIdentity
+
+	Parameter Set Name Updated: Delta1
+		Old Set: Delta
+		New Set: Delta1
+
+	Parameter Set Name Updated: DeltaViaIdentity1
+		Old Set: DeltaViaIdentity
+		New Set: DeltaViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserContactFolderDelta ----
+
+
+---- UPDATING Cmdlet : Get-MgUserDelta ----
+
+	Parameter Set Added: Delta
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: Delta
+		Old Set: 
+		New Set: Delta
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserDelta ----
+
+
+---- UPDATING Cmdlet : Get-MgUserEventDelta ----
+
+	Parameter Set Added: Delta
+
+	Parameter Set Added: DeltaViaIdentity
+
+	Parameter Set Deleted: Delta1
+
+	Parameter Set Deleted: DeltaViaIdentity1
+
+	Parameter Set Name Updated: Delta
+		Old Set: Delta1
+		New Set: Delta
+
+	Parameter Set Name Updated: DeltaViaIdentity
+		Old Set: DeltaViaIdentity1
+		New Set: DeltaViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserEventDelta ----
+
+
+---- UPDATING Cmdlet : Get-MgUserEventInstanceDelta ----
+
+	Parameter Set Added: Delta
+
+	Parameter Set Added: DeltaViaIdentity
+
+	Parameter Set Deleted: Delta1
+
+	Parameter Set Deleted: DeltaViaIdentity1
+
+	Parameter Set Name Updated: Delta
+		Old Set: Delta1
+		New Set: Delta
+
+	Parameter Set Name Updated: DeltaViaIdentity
+		Old Set: DeltaViaIdentity1
+		New Set: DeltaViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserEventInstanceDelta ----
+
+
+---- UPDATING Cmdlet : Get-MgUserMailFolderChildFolderDelta ----
+
+	Parameter Set Added: Delta
+
+	Parameter Set Added: DeltaViaIdentity
+
+	Parameter Set Deleted: Delta1
+
+	Parameter Set Deleted: DeltaViaIdentity1
+
+	Parameter Set Name Updated: Delta
+		Old Set: Delta1
+		New Set: Delta
+
+	Parameter Set Name Updated: DeltaViaIdentity
+		Old Set: DeltaViaIdentity1
+		New Set: DeltaViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserMailFolderChildFolderDelta ----
+
+
+---- UPDATING Cmdlet : Get-MgUserMailFolderDelta ----
+
+	Parameter Set Added: Delta
+
+	Parameter Set Added: DeltaViaIdentity
+
+	Parameter Set Deleted: Delta1
+
+	Parameter Set Deleted: DeltaViaIdentity1
+
+	Parameter Set Name Updated: Delta
+		Old Set: Delta1
+		New Set: Delta
+
+	Parameter Set Name Updated: DeltaViaIdentity
+		Old Set: DeltaViaIdentity1
+		New Set: DeltaViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserMailFolderDelta ----
+
+
+---- UPDATING Cmdlet : Get-MgUserMailFolderMessageDelta ----
+
+	Parameter Set Added: Delta
+
+	Parameter Set Added: DeltaViaIdentity
+
+	Parameter Set Deleted: Delta1
+
+	Parameter Set Deleted: DeltaViaIdentity1
+
+	Parameter Set Name Updated: Delta
+		Old Set: Delta1
+		New Set: Delta
+
+	Parameter Set Name Updated: DeltaViaIdentity
+		Old Set: DeltaViaIdentity1
+		New Set: DeltaViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserMailFolderMessageDelta ----
+
+
+---- UPDATING Cmdlet : Get-MgUserManagedAppDiagnosticStatuses ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserManagedAppDiagnosticStatuses ----
+
+
+---- UPDATING Cmdlet : Get-MgUserManagedAppPolicy ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserManagedAppPolicy ----
+
+
+---- UPDATING Cmdlet : Get-MgUserManagedAppRegistrationUserId ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserManagedAppRegistrationUserId ----
+
+
+---- UPDATING Cmdlet : Get-MgUserMessageDelta ----
+
+	Parameter Set Added: Delta
+
+	Parameter Set Added: DeltaViaIdentity
+
+	Parameter Set Deleted: Delta1
+
+	Parameter Set Deleted: DeltaViaIdentity1
+
+	Parameter Set Name Updated: Delta
+		Old Set: Delta1
+		New Set: Delta
+
+	Parameter Set Name Updated: DeltaViaIdentity
+		Old Set: DeltaViaIdentity1
+		New Set: DeltaViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserMessageDelta ----
+
+
+---- UPDATING Cmdlet : Get-MgUserOnenoteRecentNotebook ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserOnenoteRecentNotebook ----
+
+
+---- UPDATING Cmdlet : Get-MgUserTodoListDelta ----
+
+	Parameter Set Added: Delta
+
+	Parameter Set Added: DeltaViaIdentity
+
+	Parameter Set Deleted: Delta1
+
+	Parameter Set Deleted: DeltaViaIdentity1
+
+	Parameter Set Name Updated: Delta
+		Old Set: Delta1
+		New Set: Delta
+
+	Parameter Set Name Updated: DeltaViaIdentity
+		Old Set: DeltaViaIdentity1
+		New Set: DeltaViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserTodoListDelta ----
+
+
+---- UPDATING Cmdlet : Get-MgUserTodoListTaskDelta ----
+
+	Parameter Set Added: Delta
+
+	Parameter Set Added: DeltaViaIdentity
+
+	Parameter Set Deleted: Delta1
+
+	Parameter Set Deleted: DeltaViaIdentity1
+
+	Parameter Set Name Updated: Delta
+		Old Set: Delta1
+		New Set: Delta
+
+	Parameter Set Name Updated: DeltaViaIdentity
+		Old Set: DeltaViaIdentity1
+		New Set: DeltaViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserTodoListTaskDelta ----
+
+
+---- UPDATING Cmdlet : Invoke-MgCalendarUserCalendarAllowedCalendarSharingRoles ----
+
+	Parameter Set Added: Calendar
+
+	Parameter Set Added: Calendar1
+
+	Parameter Set Added: CalendarViaIdentity
+
+	Parameter Set Added: CalendarViaIdentity1
+
+	Parameter Set Deleted: Calendar2
+
+	Parameter Set Deleted: Calendar3
+
+	Parameter Set Deleted: CalendarViaIdentity2
+
+	Parameter Set Deleted: CalendarViaIdentity3
+
+	Parameter Set Name Updated: Calendar
+		Old Set: Calendar2
+		New Set: Calendar
+
+	Parameter Set Name Updated: Calendar1
+		Old Set: Calendar3
+		New Set: Calendar1
+
+	Parameter Set Name Updated: CalendarViaIdentity1
+		Old Set: CalendarViaIdentity3
+		New Set: CalendarViaIdentity1
+
+	Parameter Set Name Updated: CalendarViaIdentity1
+		Old Set: CalendarViaIdentity2
+		New Set: CalendarViaIdentity1
+
+	Parameter Set Name Updated: CalendarViaIdentity
+		Old Set: CalendarViaIdentity3
+		New Set: CalendarViaIdentity
+
+	Parameter Set Name Updated: CalendarViaIdentity
+		Old Set: CalendarViaIdentity2
+		New Set: CalendarViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgCalendarUserCalendarAllowedCalendarSharingRoles ----
+
+
+---- UPDATING Cmdlet : Invoke-MgCalendarUserEventCalendarAllowedCalendarSharingRoles ----
+
+	Parameter Set Added: Calendar1
+
+	Parameter Set Added: CalendarViaIdentity1
+
+	Parameter Set Deleted: Calendar
+
+	Parameter Set Deleted: CalendarViaIdentity
+
+	Parameter Set Name Updated: Calendar1
+		Old Set: Calendar
+		New Set: Calendar1
+
+	Parameter Set Name Updated: CalendarViaIdentity1
+		Old Set: CalendarViaIdentity
+		New Set: CalendarViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgCalendarUserEventCalendarAllowedCalendarSharingRoles ----
+
+
+---- UPDATING Cmdlet : Invoke-MgPreviewUserOnenotePage ----
+
+	Parameter Set Added: Preview
+
+	Parameter Set Added: PreviewViaIdentity
+
+	Parameter Set Deleted: Preview1
+
+	Parameter Set Deleted: PreviewViaIdentity1
+
+	Parameter Set Name Updated: Preview
+		Old Set: Preview1
+		New Set: Preview
+
+	Parameter Set Name Updated: PreviewViaIdentity
+		Old Set: PreviewViaIdentity1
+		New Set: PreviewViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgPreviewUserOnenotePage ----
+
+
+---- UPDATING Cmdlet : Invoke-MgRecentUserActivity ----
+
+	Parameter Set Added: Recent
+
+	Parameter Set Added: RecentViaIdentity
+
+	Parameter Set Deleted: Recent1
+
+	Parameter Set Deleted: RecentViaIdentity1
+
+	Parameter Set Name Updated: Recent
+		Old Set: Recent1
+		New Set: Recent
+
+	Parameter Set Name Updated: RecentViaIdentity
+		Old Set: RecentViaIdentity1
+		New Set: RecentViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgRecentUserActivity ----
+
+
+---- UPDATING Cmdlet : Invoke-MgSupportedUserOutlookLanguage ----
+
+	Parameter Set Added: Supported
+
+	Parameter Set Added: SupportedViaIdentity
+
+	Parameter Set Deleted: Supported1
+
+	Parameter Set Deleted: SupportedViaIdentity1
+
+	Parameter Set Name Updated: Supported
+		Old Set: Supported1
+		New Set: Supported
+
+	Parameter Set Name Updated: SupportedViaIdentity
+		Old Set: SupportedViaIdentity1
+		New Set: SupportedViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgSupportedUserOutlookLanguage ----
+
+
+---- UPDATING Cmdlet : Invoke-MgTimeUserOutlook ----
+
+	Parameter Set Added: Time
+
+	Parameter Set Added: Time1
+
+	Parameter Set Added: TimeViaIdentity
+
+	Parameter Set Added: TimeViaIdentity1
+
+	Parameter Set Deleted: Time2
+
+	Parameter Set Deleted: Time3
+
+	Parameter Set Deleted: TimeViaIdentity2
+
+	Parameter Set Deleted: TimeViaIdentity3
+
+	Parameter Set Name Updated: Time
+		Old Set: Time2
+		New Set: Time
+
+	Parameter Set Name Updated: Time1
+		Old Set: Time3
+		New Set: Time1
+
+	Parameter Set Name Updated: TimeViaIdentity1
+		Old Set: TimeViaIdentity3
+		New Set: TimeViaIdentity1
+
+	Parameter Set Name Updated: TimeViaIdentity1
+		Old Set: TimeViaIdentity2
+		New Set: TimeViaIdentity1
+
+	Parameter Set Name Updated: TimeViaIdentity
+		Old Set: TimeViaIdentity3
+		New Set: TimeViaIdentity
+
+	Parameter Set Name Updated: TimeViaIdentity
+		Old Set: TimeViaIdentity2
+		New Set: TimeViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgTimeUserOutlook ----
+
+
+---- UPDATING Cmdlet : Invoke-MgViewUserReminder ----
+
+	Parameter Set Added: View
+
+	Parameter Set Added: ViewViaIdentity
+
+	Parameter Set Deleted: View1
+
+	Parameter Set Deleted: ViewViaIdentity1
+
+	Parameter Set Name Updated: View
+		Old Set: View1
+		New Set: View
+
+	Parameter Set Name Updated: ViewViaIdentity
+		Old Set: ViewViaIdentity1
+		New Set: ViewViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Invoke-MgViewUserReminder ----
+
+
+[Update-MarkdownHelpModule] 11/23/2020 14:46:24 Creating new markdown for command 'Export-MgUserDeviceAndAppManagementData623C'
+[Update-MarkdownHelpModule] 11/23/2020 14:46:24 Creating new markdown for command 'Export-MgUserDeviceAndAppManagementDataD390'
+[Update-MarkdownHelpModule] 11/23/2020 14:46:25 Creating new markdown for command 'Find-MgUserRoomAc49'
+[Update-MarkdownHelpModule] 11/23/2020 14:46:25 Creating new markdown for command 'Find-MgUserRoomD266'
+[Update-MarkdownHelpModule] 11/23/2020 14:46:25 Creating new markdown for command 'Find-MgUserRoomList'
+[Update-MarkdownHelpModule] 11/23/2020 14:46:26 Creating new markdown for command 'Get-MgUsefectiveDeviceEnrollmentConfigurationByRef'
+[Update-MarkdownHelpModule] 11/23/2020 14:46:26 Creating new markdown for command 'Get-MgUserLoggedOnManagedDevice'
+[Update-MarkdownHelpModule] 11/23/2020 14:46:26 Creating new markdown for command 'Get-MgUserManagedAppBlockedUser'
+[Update-MarkdownHelpModule] 11/23/2020 14:46:27 Creating new markdown for command 'Get-MgUserManagedDeviceFileVaultKey'
+[Update-MarkdownHelpModule] 11/23/2020 14:46:27 Creating new markdown for command 'Get-MgUserManagedDeviceNonCompliantSetting'
+[Update-MarkdownHelpModule] 11/23/2020 14:46:27 Creating new markdown for command 'Get-MgUserManagedDeviceWithAppFailure'
+[Update-MarkdownHelpModule] 11/23/2020 14:46:27 Creating new markdown for command 'Get-MgUserPlannerAllDelta'
+[Update-MarkdownHelpModule] 11/23/2020 14:46:28 Creating new markdown for command 'Invoke-MgPendingUserApp'
+[Update-MarkdownHelpModule] 11/23/2020 14:46:28 Creating new markdown for command 'Test-MgUserManagedAppUserBlocked'

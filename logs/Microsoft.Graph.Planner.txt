@@ -1,0 +1,5629 @@
+
+[Update-MarkdownHelpModule] 11/23/2020 14:57:14 Determined module name for '.\src\Planner\Planner\help' as 'Microsoft.Graph.Planner'.
+[Update-MarkdownHelpModule] 11/23/2020 14:57:14 [Update-MarkdownHelpModule]11/23/2020 2:57:14 PM
+[Update-MarkdownHelpModule] 11/23/2020 14:57:14 Updating documents for module 'Microsoft.Graph.Planner' in .\src\Planner\Planner\help
+---- UPDATING Cmdlet : Get-MgGroupPlanner ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupPlanner ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupPlannerPlan ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: List
+
+	Parameter Set Name Updated: List1
+		Old Set: List
+		New Set: List1
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupPlannerPlan ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupPlannerPlanBucket ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List
+
+	Parameter Set Name Updated: List1
+		Old Set: List
+		New Set: List1
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupPlannerPlanBucket ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupPlannerPlanBucketTask ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupPlannerPlanBucketTask ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupPlannerPlanBucketTaskAssignedToTaskBoardFormat ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupPlannerPlanBucketTaskAssignedToTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupPlannerPlanBucketTaskBoardFormat ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupPlannerPlanBucketTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupPlannerPlanBucketTaskDetail ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupPlannerPlanBucketTaskDetail ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupPlannerPlanBucketTaskProgressTaskBoardFormat ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupPlannerPlanBucketTaskProgressTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupPlannerPlanDetail ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupPlannerPlanDetail ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupPlannerPlanTask ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: List
+
+	Parameter Set Name Updated: List1
+		Old Set: List
+		New Set: List1
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupPlannerPlanTask ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupPlannerPlanTaskAssignedToTaskBoardFormat ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupPlannerPlanTaskAssignedToTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupPlannerPlanTaskBucketTaskBoardFormat ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupPlannerPlanTaskBucketTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupPlannerPlanTaskDetail ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupPlannerPlanTaskDetail ----
+
+
+---- UPDATING Cmdlet : Get-MgGroupPlannerPlanTaskProgressTaskBoardFormat ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgGroupPlannerPlanTaskProgressTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Get-MgPlanner ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Deleted: 
+
+	Parameter Set Name Updated: Get1
+		Old Set: 
+		New Set: Get1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgPlanner ----
+
+
+---- UPDATING Cmdlet : Get-MgPlannerBucket ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: List
+
+	Parameter Set Name Updated: List1
+		Old Set: List
+		New Set: List1
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgPlannerBucket ----
+
+
+---- UPDATING Cmdlet : Get-MgPlannerBucketTask ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: List
+
+	Parameter Set Name Updated: List1
+		Old Set: List
+		New Set: List1
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgPlannerBucketTask ----
+
+
+---- UPDATING Cmdlet : Get-MgPlannerBucketTaskAssignedToTaskBoardFormat ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgPlannerBucketTaskAssignedToTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Get-MgPlannerBucketTaskBoardFormat ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgPlannerBucketTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Get-MgPlannerBucketTaskDetail ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgPlannerBucketTaskDetail ----
+
+
+---- UPDATING Cmdlet : Get-MgPlannerBucketTaskProgressTaskBoardFormat ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgPlannerBucketTaskProgressTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Get-MgPlannerPlan ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: List
+
+	Parameter Set Name Updated: List1
+		Old Set: List
+		New Set: List1
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgPlannerPlan ----
+
+
+---- UPDATING Cmdlet : Get-MgPlannerPlanBucket ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: List
+
+	Parameter Set Name Updated: List1
+		Old Set: List
+		New Set: List1
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgPlannerPlanBucket ----
+
+
+---- UPDATING Cmdlet : Get-MgPlannerPlanBucketTask ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: List1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Deleted: List
+
+	Parameter Set Name Updated: List1
+		Old Set: List
+		New Set: List1
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgPlannerPlanBucketTask ----
+
+
+---- UPDATING Cmdlet : Get-MgPlannerPlanBucketTaskAssignedToTaskBoardFormat ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgPlannerPlanBucketTaskAssignedToTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Get-MgPlannerPlanBucketTaskBoardFormat ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgPlannerPlanBucketTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Get-MgPlannerPlanBucketTaskDetail ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgPlannerPlanBucketTaskDetail ----
+
+
+---- UPDATING Cmdlet : Get-MgPlannerPlanBucketTaskProgressTaskBoardFormat ----
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Deleted: Get
+
+	Parameter Set Deleted: GetViaIdentity
+
+	Parameter Set Name Updated: Get1
+		Old Set: Get
+		New Set: Get1
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity
+		New Set: GetViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Get-MgPlannerPlanBucketTaskProgressTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Get-MgPlannerPlanDetail ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgPlannerPlanDetail ----
+
+
+---- UPDATING Cmdlet : Get-MgPlannerPlanTask ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgPlannerPlanTask ----
+
+
+---- UPDATING Cmdlet : Get-MgPlannerPlanTaskAssignedToTaskBoardFormat ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgPlannerPlanTaskAssignedToTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Get-MgPlannerPlanTaskBucketTaskBoardFormat ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgPlannerPlanTaskBucketTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Get-MgPlannerPlanTaskDetail ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgPlannerPlanTaskDetail ----
+
+
+---- UPDATING Cmdlet : Get-MgPlannerPlanTaskProgressTaskBoardFormat ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgPlannerPlanTaskProgressTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Get-MgPlannerTask ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgPlannerTask ----
+
+
+---- UPDATING Cmdlet : Get-MgPlannerTaskAssignedToTaskBoardFormat ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgPlannerTaskAssignedToTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Get-MgPlannerTaskBucketTaskBoardFormat ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgPlannerTaskBucketTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Get-MgPlannerTaskDetail ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgPlannerTaskDetail ----
+
+
+---- UPDATING Cmdlet : Get-MgPlannerTaskProgressTaskBoardFormat ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgPlannerTaskProgressTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Get-MgUserPlanner ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: Get1
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: GetViaIdentity1
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get2
+
+	Parameter Set Deleted: GetViaIdentity2
+
+	Parameter Set Name Updated: Get
+		Old Set: Get2
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity1
+		Old Set: GetViaIdentity2
+		New Set: GetViaIdentity1
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity2
+		New Set: GetViaIdentity
+
+	Parameter Added: All
+
+	Parameter Added: CountVariable
+
+	Parameter Added: Filter
+
+	Parameter Added: PageSize
+
+	Parameter Added: PlannerDeltaId
+
+	Parameter Added: Search
+
+	Parameter Added: Skip
+
+	Parameter Added: Sort
+
+	Parameter Added: Top
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserPlanner ----
+
+
+---- UPDATING Cmdlet : Get-MgUserPlannerPlan ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserPlannerPlan ----
+
+
+---- UPDATING Cmdlet : Get-MgUserPlannerPlanBucket ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserPlannerPlanBucket ----
+
+
+---- UPDATING Cmdlet : Get-MgUserPlannerPlanBucketTask ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserPlannerPlanBucketTask ----
+
+
+---- UPDATING Cmdlet : Get-MgUserPlannerPlanBucketTaskAssignedToTaskBoardFormat ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserPlannerPlanBucketTaskAssignedToTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Get-MgUserPlannerPlanBucketTaskBoardFormat ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserPlannerPlanBucketTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Get-MgUserPlannerPlanBucketTaskDetail ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserPlannerPlanBucketTaskDetail ----
+
+
+---- UPDATING Cmdlet : Get-MgUserPlannerPlanBucketTaskProgressTaskBoardFormat ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserPlannerPlanBucketTaskProgressTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Get-MgUserPlannerPlanDetail ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserPlannerPlanDetail ----
+
+
+---- UPDATING Cmdlet : Get-MgUserPlannerPlanTask ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserPlannerPlanTask ----
+
+
+---- UPDATING Cmdlet : Get-MgUserPlannerPlanTaskAssignedToTaskBoardFormat ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserPlannerPlanTaskAssignedToTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Get-MgUserPlannerPlanTaskBucketTaskBoardFormat ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserPlannerPlanTaskBucketTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Get-MgUserPlannerPlanTaskDetail ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserPlannerPlanTaskDetail ----
+
+
+---- UPDATING Cmdlet : Get-MgUserPlannerPlanTaskProgressTaskBoardFormat ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserPlannerPlanTaskProgressTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Get-MgUserPlannerTask ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Added: List
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Deleted: List1
+
+	Parameter Set Name Updated: List
+		Old Set: List1
+		New Set: List
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserPlannerTask ----
+
+
+---- UPDATING Cmdlet : Get-MgUserPlannerTaskAssignedToTaskBoardFormat ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserPlannerTaskAssignedToTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Get-MgUserPlannerTaskBucketTaskBoardFormat ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserPlannerTaskBucketTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Get-MgUserPlannerTaskDetail ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserPlannerTaskDetail ----
+
+
+---- UPDATING Cmdlet : Get-MgUserPlannerTaskProgressTaskBoardFormat ----
+
+	Parameter Set Added: Get
+
+	Parameter Set Added: GetViaIdentity
+
+	Parameter Set Deleted: Get1
+
+	Parameter Set Deleted: GetViaIdentity1
+
+	Parameter Set Name Updated: Get
+		Old Set: Get1
+		New Set: Get
+
+	Parameter Set Name Updated: GetViaIdentity
+		Old Set: GetViaIdentity1
+		New Set: GetViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Get-MgUserPlannerTaskProgressTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : New-MgGroupPlannerPlan ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+	Parameter Added: Contexts
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerPlan1 to IMicrosoftGraphPlannerPlan
+
+	Parameter Updated: Buckets
+		Type updated from IMicrosoftGraphPlannerBucket1[] to IMicrosoftGraphPlannerBucket[]
+
+	Parameter Updated: Details
+		Type updated from IMicrosoftGraphPlannerPlanDetails1 to IMicrosoftGraphPlannerPlanDetails
+
+	Parameter Updated: Tasks
+		Type updated from IMicrosoftGraphPlannerTask1[] to IMicrosoftGraphPlannerTask[]
+
+---- COMPLETED UPDATING Cmdlet : New-MgGroupPlannerPlan ----
+
+
+---- UPDATING Cmdlet : New-MgGroupPlannerPlanBucket ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateExpanded1
+		Old Set: CreateExpanded
+		New Set: CreateExpanded1
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded1
+		Old Set: CreateViaIdentityExpanded
+		New Set: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerBucket1 to IMicrosoftGraphPlannerBucket
+
+	Parameter Updated: Tasks
+		Type updated from IMicrosoftGraphPlannerTask1[] to IMicrosoftGraphPlannerTask[]
+
+---- COMPLETED UPDATING Cmdlet : New-MgGroupPlannerPlanBucket ----
+
+
+---- UPDATING Cmdlet : New-MgGroupPlannerPlanBucketTask ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+	Parameter Added: Priority
+
+	Parameter Updated: AssignedToTaskBoardFormat
+		Type updated from IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat1 to IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerTask1 to IMicrosoftGraphPlannerTask
+
+	Parameter Updated: BucketTaskBoardFormat
+		Type updated from IMicrosoftGraphPlannerBucketTaskBoardTaskFormat1 to IMicrosoftGraphPlannerBucketTaskBoardTaskFormat
+
+	Parameter Updated: Details
+		Type updated from IMicrosoftGraphPlannerTaskDetails1 to IMicrosoftGraphPlannerTaskDetails
+
+	Parameter Updated: ProgressTaskBoardFormat
+		Type updated from IMicrosoftGraphPlannerProgressTaskBoardTaskFormat1 to IMicrosoftGraphPlannerProgressTaskBoardTaskFormat
+
+---- COMPLETED UPDATING Cmdlet : New-MgGroupPlannerPlanBucketTask ----
+
+
+---- UPDATING Cmdlet : New-MgGroupPlannerPlanTask ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+	Parameter Added: Priority
+
+	Parameter Updated: AssignedToTaskBoardFormat
+		Type updated from IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat1 to IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerTask1 to IMicrosoftGraphPlannerTask
+
+	Parameter Updated: BucketTaskBoardFormat
+		Type updated from IMicrosoftGraphPlannerBucketTaskBoardTaskFormat1 to IMicrosoftGraphPlannerBucketTaskBoardTaskFormat
+
+	Parameter Updated: Details
+		Type updated from IMicrosoftGraphPlannerTaskDetails1 to IMicrosoftGraphPlannerTaskDetails
+
+	Parameter Updated: ProgressTaskBoardFormat
+		Type updated from IMicrosoftGraphPlannerProgressTaskBoardTaskFormat1 to IMicrosoftGraphPlannerProgressTaskBoardTaskFormat
+
+---- COMPLETED UPDATING Cmdlet : New-MgGroupPlannerPlanTask ----
+
+
+---- UPDATING Cmdlet : New-MgPlannerBucket ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Name Updated: CreateExpanded1
+		Old Set: CreateExpanded
+		New Set: CreateExpanded1
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerBucket1 to IMicrosoftGraphPlannerBucket
+
+	Parameter Updated: Tasks
+		Type updated from IMicrosoftGraphPlannerTask1[] to IMicrosoftGraphPlannerTask[]
+
+---- COMPLETED UPDATING Cmdlet : New-MgPlannerBucket ----
+
+
+---- UPDATING Cmdlet : New-MgPlannerBucketTask ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+	Parameter Added: Priority
+
+	Parameter Updated: AssignedToTaskBoardFormat
+		Type updated from IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat1 to IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerTask1 to IMicrosoftGraphPlannerTask
+
+	Parameter Updated: BucketTaskBoardFormat
+		Type updated from IMicrosoftGraphPlannerBucketTaskBoardTaskFormat1 to IMicrosoftGraphPlannerBucketTaskBoardTaskFormat
+
+	Parameter Updated: Details
+		Type updated from IMicrosoftGraphPlannerTaskDetails1 to IMicrosoftGraphPlannerTaskDetails
+
+	Parameter Updated: ProgressTaskBoardFormat
+		Type updated from IMicrosoftGraphPlannerProgressTaskBoardTaskFormat1 to IMicrosoftGraphPlannerProgressTaskBoardTaskFormat
+
+---- COMPLETED UPDATING Cmdlet : New-MgPlannerBucketTask ----
+
+
+---- UPDATING Cmdlet : New-MgPlannerPlan ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Added: Contexts
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerPlan1 to IMicrosoftGraphPlannerPlan
+
+	Parameter Updated: Buckets
+		Type updated from IMicrosoftGraphPlannerBucket1[] to IMicrosoftGraphPlannerBucket[]
+
+	Parameter Updated: Details
+		Type updated from IMicrosoftGraphPlannerPlanDetails1 to IMicrosoftGraphPlannerPlanDetails
+
+	Parameter Updated: Tasks
+		Type updated from IMicrosoftGraphPlannerTask1[] to IMicrosoftGraphPlannerTask[]
+
+---- COMPLETED UPDATING Cmdlet : New-MgPlannerPlan ----
+
+
+---- UPDATING Cmdlet : New-MgPlannerPlanBucket ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateExpanded1
+		Old Set: CreateExpanded
+		New Set: CreateExpanded1
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded1
+		Old Set: CreateViaIdentityExpanded
+		New Set: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerBucket1 to IMicrosoftGraphPlannerBucket
+
+	Parameter Updated: Tasks
+		Type updated from IMicrosoftGraphPlannerTask1[] to IMicrosoftGraphPlannerTask[]
+
+---- COMPLETED UPDATING Cmdlet : New-MgPlannerPlanBucket ----
+
+
+---- UPDATING Cmdlet : New-MgPlannerPlanBucketTask ----
+
+	Parameter Set Added: Create1
+
+	Parameter Set Added: CreateExpanded1
+
+	Parameter Set Added: CreateViaIdentity1
+
+	Parameter Set Added: CreateViaIdentityExpanded1
+
+	Parameter Set Deleted: Create
+
+	Parameter Set Deleted: CreateExpanded
+
+	Parameter Set Deleted: CreateViaIdentity
+
+	Parameter Set Deleted: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: Create1
+		Old Set: Create
+		New Set: Create1
+
+	Parameter Set Name Updated: CreateViaIdentity1
+		Old Set: CreateViaIdentity
+		New Set: CreateViaIdentity1
+
+	Parameter Added: Priority
+
+	Parameter Updated: AssignedToTaskBoardFormat
+		Type updated from IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat1 to IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerTask1 to IMicrosoftGraphPlannerTask
+
+	Parameter Updated: BucketTaskBoardFormat
+		Type updated from IMicrosoftGraphPlannerBucketTaskBoardTaskFormat1 to IMicrosoftGraphPlannerBucketTaskBoardTaskFormat
+
+	Parameter Updated: Details
+		Type updated from IMicrosoftGraphPlannerTaskDetails1 to IMicrosoftGraphPlannerTaskDetails
+
+	Parameter Updated: ProgressTaskBoardFormat
+		Type updated from IMicrosoftGraphPlannerProgressTaskBoardTaskFormat1 to IMicrosoftGraphPlannerProgressTaskBoardTaskFormat
+
+---- COMPLETED UPDATING Cmdlet : New-MgPlannerPlanBucketTask ----
+
+
+---- UPDATING Cmdlet : New-MgPlannerPlanTask ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+	Parameter Added: Priority
+
+	Parameter Updated: AssignedToTaskBoardFormat
+		Type updated from IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat1 to IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerTask1 to IMicrosoftGraphPlannerTask
+
+	Parameter Updated: BucketTaskBoardFormat
+		Type updated from IMicrosoftGraphPlannerBucketTaskBoardTaskFormat1 to IMicrosoftGraphPlannerBucketTaskBoardTaskFormat
+
+	Parameter Updated: Details
+		Type updated from IMicrosoftGraphPlannerTaskDetails1 to IMicrosoftGraphPlannerTaskDetails
+
+	Parameter Updated: ProgressTaskBoardFormat
+		Type updated from IMicrosoftGraphPlannerProgressTaskBoardTaskFormat1 to IMicrosoftGraphPlannerProgressTaskBoardTaskFormat
+
+---- COMPLETED UPDATING Cmdlet : New-MgPlannerPlanTask ----
+
+
+---- UPDATING Cmdlet : New-MgPlannerTask ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Added: Priority
+
+	Parameter Updated: AssignedToTaskBoardFormat
+		Type updated from IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat1 to IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerTask1 to IMicrosoftGraphPlannerTask
+
+	Parameter Updated: BucketTaskBoardFormat
+		Type updated from IMicrosoftGraphPlannerBucketTaskBoardTaskFormat1 to IMicrosoftGraphPlannerBucketTaskBoardTaskFormat
+
+	Parameter Updated: Details
+		Type updated from IMicrosoftGraphPlannerTaskDetails1 to IMicrosoftGraphPlannerTaskDetails
+
+	Parameter Updated: ProgressTaskBoardFormat
+		Type updated from IMicrosoftGraphPlannerProgressTaskBoardTaskFormat1 to IMicrosoftGraphPlannerProgressTaskBoardTaskFormat
+
+---- COMPLETED UPDATING Cmdlet : New-MgPlannerTask ----
+
+
+---- UPDATING Cmdlet : New-MgUserPlannerPlan ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+	Parameter Added: Contexts
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerPlan1 to IMicrosoftGraphPlannerPlan
+
+	Parameter Updated: Buckets
+		Type updated from IMicrosoftGraphPlannerBucket1[] to IMicrosoftGraphPlannerBucket[]
+
+	Parameter Updated: Details
+		Type updated from IMicrosoftGraphPlannerPlanDetails1 to IMicrosoftGraphPlannerPlanDetails
+
+	Parameter Updated: Tasks
+		Type updated from IMicrosoftGraphPlannerTask1[] to IMicrosoftGraphPlannerTask[]
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserPlannerPlan ----
+
+
+---- UPDATING Cmdlet : New-MgUserPlannerPlanBucket ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: CreateExpanded
+		Old Set: CreateExpanded1
+		New Set: CreateExpanded
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentityExpanded
+		Old Set: CreateViaIdentityExpanded1
+		New Set: CreateViaIdentityExpanded
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerBucket1 to IMicrosoftGraphPlannerBucket
+
+	Parameter Updated: Tasks
+		Type updated from IMicrosoftGraphPlannerTask1[] to IMicrosoftGraphPlannerTask[]
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserPlannerPlanBucket ----
+
+
+---- UPDATING Cmdlet : New-MgUserPlannerPlanBucketTask ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+	Parameter Added: Priority
+
+	Parameter Updated: AssignedToTaskBoardFormat
+		Type updated from IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat1 to IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerTask1 to IMicrosoftGraphPlannerTask
+
+	Parameter Updated: BucketTaskBoardFormat
+		Type updated from IMicrosoftGraphPlannerBucketTaskBoardTaskFormat1 to IMicrosoftGraphPlannerBucketTaskBoardTaskFormat
+
+	Parameter Updated: Details
+		Type updated from IMicrosoftGraphPlannerTaskDetails1 to IMicrosoftGraphPlannerTaskDetails
+
+	Parameter Updated: ProgressTaskBoardFormat
+		Type updated from IMicrosoftGraphPlannerProgressTaskBoardTaskFormat1 to IMicrosoftGraphPlannerProgressTaskBoardTaskFormat
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserPlannerPlanBucketTask ----
+
+
+---- UPDATING Cmdlet : New-MgUserPlannerPlanTask ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+	Parameter Added: Priority
+
+	Parameter Updated: AssignedToTaskBoardFormat
+		Type updated from IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat1 to IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerTask1 to IMicrosoftGraphPlannerTask
+
+	Parameter Updated: BucketTaskBoardFormat
+		Type updated from IMicrosoftGraphPlannerBucketTaskBoardTaskFormat1 to IMicrosoftGraphPlannerBucketTaskBoardTaskFormat
+
+	Parameter Updated: Details
+		Type updated from IMicrosoftGraphPlannerTaskDetails1 to IMicrosoftGraphPlannerTaskDetails
+
+	Parameter Updated: ProgressTaskBoardFormat
+		Type updated from IMicrosoftGraphPlannerProgressTaskBoardTaskFormat1 to IMicrosoftGraphPlannerProgressTaskBoardTaskFormat
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserPlannerPlanTask ----
+
+
+---- UPDATING Cmdlet : New-MgUserPlannerTask ----
+
+	Parameter Set Added: Create
+
+	Parameter Set Added: CreateExpanded
+
+	Parameter Set Added: CreateViaIdentity
+
+	Parameter Set Added: CreateViaIdentityExpanded
+
+	Parameter Set Deleted: Create1
+
+	Parameter Set Deleted: CreateExpanded1
+
+	Parameter Set Deleted: CreateViaIdentity1
+
+	Parameter Set Deleted: CreateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Create
+		Old Set: Create1
+		New Set: Create
+
+	Parameter Set Name Updated: CreateViaIdentity
+		Old Set: CreateViaIdentity1
+		New Set: CreateViaIdentity
+
+	Parameter Added: Priority
+
+	Parameter Updated: AssignedToTaskBoardFormat
+		Type updated from IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat1 to IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerTask1 to IMicrosoftGraphPlannerTask
+
+	Parameter Updated: BucketTaskBoardFormat
+		Type updated from IMicrosoftGraphPlannerBucketTaskBoardTaskFormat1 to IMicrosoftGraphPlannerBucketTaskBoardTaskFormat
+
+	Parameter Updated: Details
+		Type updated from IMicrosoftGraphPlannerTaskDetails1 to IMicrosoftGraphPlannerTaskDetails
+
+	Parameter Updated: ProgressTaskBoardFormat
+		Type updated from IMicrosoftGraphPlannerProgressTaskBoardTaskFormat1 to IMicrosoftGraphPlannerProgressTaskBoardTaskFormat
+
+---- COMPLETED UPDATING Cmdlet : New-MgUserPlannerTask ----
+
+
+---- UPDATING Cmdlet : Remove-MgGroupPlanner ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgGroupPlanner ----
+
+
+---- UPDATING Cmdlet : Remove-MgGroupPlannerPlan ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgGroupPlannerPlan ----
+
+
+---- UPDATING Cmdlet : Remove-MgGroupPlannerPlanBucket ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgGroupPlannerPlanBucket ----
+
+
+---- UPDATING Cmdlet : Remove-MgGroupPlannerPlanBucketTask ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgGroupPlannerPlanBucketTask ----
+
+
+---- UPDATING Cmdlet : Remove-MgGroupPlannerPlanBucketTaskAssignedToTaskBoardFormat ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgGroupPlannerPlanBucketTaskAssignedToTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Remove-MgGroupPlannerPlanBucketTaskBoardFormat ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgGroupPlannerPlanBucketTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Remove-MgGroupPlannerPlanBucketTaskDetail ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgGroupPlannerPlanBucketTaskDetail ----
+
+
+---- UPDATING Cmdlet : Remove-MgGroupPlannerPlanBucketTaskProgressTaskBoardFormat ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgGroupPlannerPlanBucketTaskProgressTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Remove-MgGroupPlannerPlanDetail ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgGroupPlannerPlanDetail ----
+
+
+---- UPDATING Cmdlet : Remove-MgGroupPlannerPlanTask ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgGroupPlannerPlanTask ----
+
+
+---- UPDATING Cmdlet : Remove-MgGroupPlannerPlanTaskAssignedToTaskBoardFormat ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgGroupPlannerPlanTaskAssignedToTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Remove-MgGroupPlannerPlanTaskBucketTaskBoardFormat ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgGroupPlannerPlanTaskBucketTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Remove-MgGroupPlannerPlanTaskDetail ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgGroupPlannerPlanTaskDetail ----
+
+
+---- UPDATING Cmdlet : Remove-MgGroupPlannerPlanTaskProgressTaskBoardFormat ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgGroupPlannerPlanTaskProgressTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Remove-MgPlannerBucket ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgPlannerBucket ----
+
+
+---- UPDATING Cmdlet : Remove-MgPlannerBucketTask ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgPlannerBucketTask ----
+
+
+---- UPDATING Cmdlet : Remove-MgPlannerBucketTaskAssignedToTaskBoardFormat ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgPlannerBucketTaskAssignedToTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Remove-MgPlannerBucketTaskBoardFormat ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgPlannerBucketTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Remove-MgPlannerBucketTaskDetail ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgPlannerBucketTaskDetail ----
+
+
+---- UPDATING Cmdlet : Remove-MgPlannerBucketTaskProgressTaskBoardFormat ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgPlannerBucketTaskProgressTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Remove-MgPlannerPlan ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgPlannerPlan ----
+
+
+---- UPDATING Cmdlet : Remove-MgPlannerPlanBucket ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgPlannerPlanBucket ----
+
+
+---- UPDATING Cmdlet : Remove-MgPlannerPlanBucketTask ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgPlannerPlanBucketTask ----
+
+
+---- UPDATING Cmdlet : Remove-MgPlannerPlanBucketTaskAssignedToTaskBoardFormat ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgPlannerPlanBucketTaskAssignedToTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Remove-MgPlannerPlanBucketTaskBoardFormat ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgPlannerPlanBucketTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Remove-MgPlannerPlanBucketTaskDetail ----
+
+	Parameter Set Added: Delete1
+
+	Parameter Set Added: DeleteViaIdentity1
+
+	Parameter Set Deleted: Delete
+
+	Parameter Set Deleted: DeleteViaIdentity
+
+	Parameter Set Name Updated: Delete1
+		Old Set: Delete
+		New Set: Delete1
+
+	Parameter Set Name Updated: DeleteViaIdentity1
+		Old Set: DeleteViaIdentity
+		New Set: DeleteViaIdentity1
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgPlannerPlanBucketTaskDetail ----
+
+
+---- UPDATING Cmdlet : Remove-MgPlannerPlanBucketTaskProgressTaskBoardFormat ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgPlannerPlanBucketTaskProgressTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Remove-MgPlannerPlanDetail ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgPlannerPlanDetail ----
+
+
+---- UPDATING Cmdlet : Remove-MgPlannerPlanTask ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgPlannerPlanTask ----
+
+
+---- UPDATING Cmdlet : Remove-MgPlannerPlanTaskAssignedToTaskBoardFormat ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgPlannerPlanTaskAssignedToTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Remove-MgPlannerPlanTaskBucketTaskBoardFormat ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgPlannerPlanTaskBucketTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Remove-MgPlannerPlanTaskDetail ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgPlannerPlanTaskDetail ----
+
+
+---- UPDATING Cmdlet : Remove-MgPlannerPlanTaskProgressTaskBoardFormat ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgPlannerPlanTaskProgressTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Remove-MgPlannerTask ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgPlannerTask ----
+
+
+---- UPDATING Cmdlet : Remove-MgPlannerTaskAssignedToTaskBoardFormat ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgPlannerTaskAssignedToTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Remove-MgPlannerTaskBucketTaskBoardFormat ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgPlannerTaskBucketTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Remove-MgPlannerTaskDetail ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgPlannerTaskDetail ----
+
+
+---- UPDATING Cmdlet : Remove-MgPlannerTaskProgressTaskBoardFormat ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgPlannerTaskProgressTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserPlanner ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserPlanner ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserPlannerPlan ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserPlannerPlan ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserPlannerPlanBucket ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserPlannerPlanBucket ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserPlannerPlanBucketTask ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserPlannerPlanBucketTask ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserPlannerPlanBucketTaskAssignedToTaskBoardFormat ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserPlannerPlanBucketTaskAssignedToTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserPlannerPlanBucketTaskBoardFormat ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserPlannerPlanBucketTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserPlannerPlanBucketTaskDetail ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserPlannerPlanBucketTaskDetail ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserPlannerPlanBucketTaskProgressTaskBoardFormat ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserPlannerPlanBucketTaskProgressTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserPlannerPlanDetail ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserPlannerPlanDetail ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserPlannerPlanTask ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserPlannerPlanTask ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserPlannerPlanTaskAssignedToTaskBoardFormat ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserPlannerPlanTaskAssignedToTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserPlannerPlanTaskBucketTaskBoardFormat ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserPlannerPlanTaskBucketTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserPlannerPlanTaskDetail ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserPlannerPlanTaskDetail ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserPlannerPlanTaskProgressTaskBoardFormat ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserPlannerPlanTaskProgressTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserPlannerTask ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserPlannerTask ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserPlannerTaskAssignedToTaskBoardFormat ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserPlannerTaskAssignedToTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserPlannerTaskBucketTaskBoardFormat ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserPlannerTaskBucketTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserPlannerTaskDetail ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserPlannerTaskDetail ----
+
+
+---- UPDATING Cmdlet : Remove-MgUserPlannerTaskProgressTaskBoardFormat ----
+
+	Parameter Set Added: Delete
+
+	Parameter Set Added: DeleteViaIdentity
+
+	Parameter Set Deleted: Delete1
+
+	Parameter Set Deleted: DeleteViaIdentity1
+
+	Parameter Set Name Updated: Delete
+		Old Set: Delete1
+		New Set: Delete
+
+	Parameter Set Name Updated: DeleteViaIdentity
+		Old Set: DeleteViaIdentity1
+		New Set: DeleteViaIdentity
+
+---- COMPLETED UPDATING Cmdlet : Remove-MgUserPlannerTaskProgressTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Update-MgGroupPlanner ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerGroup to IMicrosoftGraphPlannerGroup1
+
+	Parameter Updated: Plans
+		Type updated from IMicrosoftGraphPlannerPlan1[] to IMicrosoftGraphPlannerPlan[]
+
+---- COMPLETED UPDATING Cmdlet : Update-MgGroupPlanner ----
+
+
+---- UPDATING Cmdlet : Update-MgGroupPlannerPlan ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+	Parameter Added: Contexts
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerPlan1 to IMicrosoftGraphPlannerPlan
+
+	Parameter Updated: Buckets
+		Type updated from IMicrosoftGraphPlannerBucket1[] to IMicrosoftGraphPlannerBucket[]
+
+	Parameter Updated: Details
+		Type updated from IMicrosoftGraphPlannerPlanDetails1 to IMicrosoftGraphPlannerPlanDetails
+
+	Parameter Updated: Tasks
+		Type updated from IMicrosoftGraphPlannerTask1[] to IMicrosoftGraphPlannerTask[]
+
+---- COMPLETED UPDATING Cmdlet : Update-MgGroupPlannerPlan ----
+
+
+---- UPDATING Cmdlet : Update-MgGroupPlannerPlanBucket ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerBucket1 to IMicrosoftGraphPlannerBucket
+
+	Parameter Updated: Tasks
+		Type updated from IMicrosoftGraphPlannerTask1[] to IMicrosoftGraphPlannerTask[]
+
+---- COMPLETED UPDATING Cmdlet : Update-MgGroupPlannerPlanBucket ----
+
+
+---- UPDATING Cmdlet : Update-MgGroupPlannerPlanBucketTask ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Added: Priority
+
+	Parameter Updated: AssignedToTaskBoardFormat
+		Type updated from IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat1 to IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerTask1 to IMicrosoftGraphPlannerTask
+
+	Parameter Updated: BucketTaskBoardFormat
+		Type updated from IMicrosoftGraphPlannerBucketTaskBoardTaskFormat1 to IMicrosoftGraphPlannerBucketTaskBoardTaskFormat
+
+	Parameter Updated: Details
+		Type updated from IMicrosoftGraphPlannerTaskDetails1 to IMicrosoftGraphPlannerTaskDetails
+
+	Parameter Updated: ProgressTaskBoardFormat
+		Type updated from IMicrosoftGraphPlannerProgressTaskBoardTaskFormat1 to IMicrosoftGraphPlannerProgressTaskBoardTaskFormat
+
+---- COMPLETED UPDATING Cmdlet : Update-MgGroupPlannerPlanBucketTask ----
+
+
+---- UPDATING Cmdlet : Update-MgGroupPlannerPlanBucketTaskAssignedToTaskBoardFormat ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat1 to IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat
+
+---- COMPLETED UPDATING Cmdlet : Update-MgGroupPlannerPlanBucketTaskAssignedToTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Update-MgGroupPlannerPlanBucketTaskBoardFormat ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerBucketTaskBoardTaskFormat1 to IMicrosoftGraphPlannerBucketTaskBoardTaskFormat
+
+---- COMPLETED UPDATING Cmdlet : Update-MgGroupPlannerPlanBucketTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Update-MgGroupPlannerPlanBucketTaskDetail ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateExpanded1
+		Old Set: UpdateExpanded
+		New Set: UpdateExpanded1
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded1
+		Old Set: UpdateViaIdentityExpanded
+		New Set: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerTaskDetails1 to IMicrosoftGraphPlannerTaskDetails
+
+---- COMPLETED UPDATING Cmdlet : Update-MgGroupPlannerPlanBucketTaskDetail ----
+
+
+---- UPDATING Cmdlet : Update-MgGroupPlannerPlanBucketTaskProgressTaskBoardFormat ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateExpanded1
+		Old Set: UpdateExpanded
+		New Set: UpdateExpanded1
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded1
+		Old Set: UpdateViaIdentityExpanded
+		New Set: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerProgressTaskBoardTaskFormat1 to IMicrosoftGraphPlannerProgressTaskBoardTaskFormat
+
+---- COMPLETED UPDATING Cmdlet : Update-MgGroupPlannerPlanBucketTaskProgressTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Update-MgGroupPlannerPlanDetail ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+	Parameter Added: ContextDetails
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerPlanDetails1 to IMicrosoftGraphPlannerPlanDetails
+
+---- COMPLETED UPDATING Cmdlet : Update-MgGroupPlannerPlanDetail ----
+
+
+---- UPDATING Cmdlet : Update-MgGroupPlannerPlanTask ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+	Parameter Added: Priority
+
+	Parameter Updated: AssignedToTaskBoardFormat
+		Type updated from IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat1 to IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerTask1 to IMicrosoftGraphPlannerTask
+
+	Parameter Updated: BucketTaskBoardFormat
+		Type updated from IMicrosoftGraphPlannerBucketTaskBoardTaskFormat1 to IMicrosoftGraphPlannerBucketTaskBoardTaskFormat
+
+	Parameter Updated: Details
+		Type updated from IMicrosoftGraphPlannerTaskDetails1 to IMicrosoftGraphPlannerTaskDetails
+
+	Parameter Updated: ProgressTaskBoardFormat
+		Type updated from IMicrosoftGraphPlannerProgressTaskBoardTaskFormat1 to IMicrosoftGraphPlannerProgressTaskBoardTaskFormat
+
+---- COMPLETED UPDATING Cmdlet : Update-MgGroupPlannerPlanTask ----
+
+
+---- UPDATING Cmdlet : Update-MgGroupPlannerPlanTaskAssignedToTaskBoardFormat ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateExpanded1
+		Old Set: UpdateExpanded
+		New Set: UpdateExpanded1
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded1
+		Old Set: UpdateViaIdentityExpanded
+		New Set: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat1 to IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat
+
+---- COMPLETED UPDATING Cmdlet : Update-MgGroupPlannerPlanTaskAssignedToTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Update-MgGroupPlannerPlanTaskBucketTaskBoardFormat ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateExpanded1
+		Old Set: UpdateExpanded
+		New Set: UpdateExpanded1
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded1
+		Old Set: UpdateViaIdentityExpanded
+		New Set: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerBucketTaskBoardTaskFormat1 to IMicrosoftGraphPlannerBucketTaskBoardTaskFormat
+
+---- COMPLETED UPDATING Cmdlet : Update-MgGroupPlannerPlanTaskBucketTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Update-MgGroupPlannerPlanTaskDetail ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateExpanded1
+		Old Set: UpdateExpanded
+		New Set: UpdateExpanded1
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded1
+		Old Set: UpdateViaIdentityExpanded
+		New Set: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerTaskDetails1 to IMicrosoftGraphPlannerTaskDetails
+
+---- COMPLETED UPDATING Cmdlet : Update-MgGroupPlannerPlanTaskDetail ----
+
+
+---- UPDATING Cmdlet : Update-MgGroupPlannerPlanTaskProgressTaskBoardFormat ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateExpanded1
+		Old Set: UpdateExpanded
+		New Set: UpdateExpanded1
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded1
+		Old Set: UpdateViaIdentityExpanded
+		New Set: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerProgressTaskBoardTaskFormat1 to IMicrosoftGraphPlannerProgressTaskBoardTaskFormat
+
+---- COMPLETED UPDATING Cmdlet : Update-MgGroupPlannerPlanTaskProgressTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Update-MgPlanner ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Name Updated: UpdateExpanded1
+		Old Set: UpdateExpanded
+		New Set: UpdateExpanded1
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlanner1 to IMicrosoftGraphPlanner
+
+	Parameter Updated: Buckets
+		Type updated from IMicrosoftGraphPlannerBucket1[] to IMicrosoftGraphPlannerBucket[]
+
+	Parameter Updated: Plans
+		Type updated from IMicrosoftGraphPlannerPlan1[] to IMicrosoftGraphPlannerPlan[]
+
+	Parameter Updated: Tasks
+		Type updated from IMicrosoftGraphPlannerTask1[] to IMicrosoftGraphPlannerTask[]
+
+---- COMPLETED UPDATING Cmdlet : Update-MgPlanner ----
+
+
+---- UPDATING Cmdlet : Update-MgPlannerBucket ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateExpanded1
+		Old Set: UpdateExpanded
+		New Set: UpdateExpanded1
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded1
+		Old Set: UpdateViaIdentityExpanded
+		New Set: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerBucket1 to IMicrosoftGraphPlannerBucket
+
+	Parameter Updated: Tasks
+		Type updated from IMicrosoftGraphPlannerTask1[] to IMicrosoftGraphPlannerTask[]
+
+---- COMPLETED UPDATING Cmdlet : Update-MgPlannerBucket ----
+
+
+---- UPDATING Cmdlet : Update-MgPlannerBucketTask ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+	Parameter Added: Priority
+
+	Parameter Updated: AssignedToTaskBoardFormat
+		Type updated from IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat1 to IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerTask1 to IMicrosoftGraphPlannerTask
+
+	Parameter Updated: BucketTaskBoardFormat
+		Type updated from IMicrosoftGraphPlannerBucketTaskBoardTaskFormat1 to IMicrosoftGraphPlannerBucketTaskBoardTaskFormat
+
+	Parameter Updated: Details
+		Type updated from IMicrosoftGraphPlannerTaskDetails1 to IMicrosoftGraphPlannerTaskDetails
+
+	Parameter Updated: ProgressTaskBoardFormat
+		Type updated from IMicrosoftGraphPlannerProgressTaskBoardTaskFormat1 to IMicrosoftGraphPlannerProgressTaskBoardTaskFormat
+
+---- COMPLETED UPDATING Cmdlet : Update-MgPlannerBucketTask ----
+
+
+---- UPDATING Cmdlet : Update-MgPlannerBucketTaskAssignedToTaskBoardFormat ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateExpanded1
+		Old Set: UpdateExpanded
+		New Set: UpdateExpanded1
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded1
+		Old Set: UpdateViaIdentityExpanded
+		New Set: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat1 to IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat
+
+---- COMPLETED UPDATING Cmdlet : Update-MgPlannerBucketTaskAssignedToTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Update-MgPlannerBucketTaskBoardFormat ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateExpanded1
+		Old Set: UpdateExpanded
+		New Set: UpdateExpanded1
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded1
+		Old Set: UpdateViaIdentityExpanded
+		New Set: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerBucketTaskBoardTaskFormat1 to IMicrosoftGraphPlannerBucketTaskBoardTaskFormat
+
+---- COMPLETED UPDATING Cmdlet : Update-MgPlannerBucketTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Update-MgPlannerBucketTaskDetail ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateExpanded1
+		Old Set: UpdateExpanded
+		New Set: UpdateExpanded1
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded1
+		Old Set: UpdateViaIdentityExpanded
+		New Set: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerTaskDetails1 to IMicrosoftGraphPlannerTaskDetails
+
+---- COMPLETED UPDATING Cmdlet : Update-MgPlannerBucketTaskDetail ----
+
+
+---- UPDATING Cmdlet : Update-MgPlannerBucketTaskProgressTaskBoardFormat ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateExpanded1
+		Old Set: UpdateExpanded
+		New Set: UpdateExpanded1
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded1
+		Old Set: UpdateViaIdentityExpanded
+		New Set: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerProgressTaskBoardTaskFormat1 to IMicrosoftGraphPlannerProgressTaskBoardTaskFormat
+
+---- COMPLETED UPDATING Cmdlet : Update-MgPlannerBucketTaskProgressTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Update-MgPlannerPlan ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+	Parameter Added: Contexts
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerPlan1 to IMicrosoftGraphPlannerPlan
+
+	Parameter Updated: Buckets
+		Type updated from IMicrosoftGraphPlannerBucket1[] to IMicrosoftGraphPlannerBucket[]
+
+	Parameter Updated: Details
+		Type updated from IMicrosoftGraphPlannerPlanDetails1 to IMicrosoftGraphPlannerPlanDetails
+
+	Parameter Updated: Tasks
+		Type updated from IMicrosoftGraphPlannerTask1[] to IMicrosoftGraphPlannerTask[]
+
+---- COMPLETED UPDATING Cmdlet : Update-MgPlannerPlan ----
+
+
+---- UPDATING Cmdlet : Update-MgPlannerPlanBucket ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateExpanded1
+		Old Set: UpdateExpanded
+		New Set: UpdateExpanded1
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded1
+		Old Set: UpdateViaIdentityExpanded
+		New Set: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerBucket1 to IMicrosoftGraphPlannerBucket
+
+	Parameter Updated: Tasks
+		Type updated from IMicrosoftGraphPlannerTask1[] to IMicrosoftGraphPlannerTask[]
+
+---- COMPLETED UPDATING Cmdlet : Update-MgPlannerPlanBucket ----
+
+
+---- UPDATING Cmdlet : Update-MgPlannerPlanBucketTask ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+	Parameter Added: Priority
+
+	Parameter Updated: AssignedToTaskBoardFormat
+		Type updated from IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat1 to IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerTask1 to IMicrosoftGraphPlannerTask
+
+	Parameter Updated: BucketTaskBoardFormat
+		Type updated from IMicrosoftGraphPlannerBucketTaskBoardTaskFormat1 to IMicrosoftGraphPlannerBucketTaskBoardTaskFormat
+
+	Parameter Updated: Details
+		Type updated from IMicrosoftGraphPlannerTaskDetails1 to IMicrosoftGraphPlannerTaskDetails
+
+	Parameter Updated: ProgressTaskBoardFormat
+		Type updated from IMicrosoftGraphPlannerProgressTaskBoardTaskFormat1 to IMicrosoftGraphPlannerProgressTaskBoardTaskFormat
+
+---- COMPLETED UPDATING Cmdlet : Update-MgPlannerPlanBucketTask ----
+
+
+---- UPDATING Cmdlet : Update-MgPlannerPlanBucketTaskAssignedToTaskBoardFormat ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateExpanded1
+		Old Set: UpdateExpanded
+		New Set: UpdateExpanded1
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded1
+		Old Set: UpdateViaIdentityExpanded
+		New Set: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat1 to IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat
+
+---- COMPLETED UPDATING Cmdlet : Update-MgPlannerPlanBucketTaskAssignedToTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Update-MgPlannerPlanBucketTaskBoardFormat ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateExpanded1
+		Old Set: UpdateExpanded
+		New Set: UpdateExpanded1
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded1
+		Old Set: UpdateViaIdentityExpanded
+		New Set: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerBucketTaskBoardTaskFormat1 to IMicrosoftGraphPlannerBucketTaskBoardTaskFormat
+
+---- COMPLETED UPDATING Cmdlet : Update-MgPlannerPlanBucketTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Update-MgPlannerPlanBucketTaskDetail ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateExpanded1
+		Old Set: UpdateExpanded
+		New Set: UpdateExpanded1
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded1
+		Old Set: UpdateViaIdentityExpanded
+		New Set: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerTaskDetails1 to IMicrosoftGraphPlannerTaskDetails
+
+---- COMPLETED UPDATING Cmdlet : Update-MgPlannerPlanBucketTaskDetail ----
+
+
+---- UPDATING Cmdlet : Update-MgPlannerPlanBucketTaskProgressTaskBoardFormat ----
+
+	Parameter Set Added: Update1
+
+	Parameter Set Added: UpdateExpanded1
+
+	Parameter Set Added: UpdateViaIdentity1
+
+	Parameter Set Added: UpdateViaIdentityExpanded1
+
+	Parameter Set Deleted: Update
+
+	Parameter Set Deleted: UpdateExpanded
+
+	Parameter Set Deleted: UpdateViaIdentity
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateExpanded1
+		Old Set: UpdateExpanded
+		New Set: UpdateExpanded1
+
+	Parameter Set Name Updated: Update1
+		Old Set: Update
+		New Set: Update1
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded1
+		Old Set: UpdateViaIdentityExpanded
+		New Set: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateViaIdentity1
+		Old Set: UpdateViaIdentity
+		New Set: UpdateViaIdentity1
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerProgressTaskBoardTaskFormat1 to IMicrosoftGraphPlannerProgressTaskBoardTaskFormat
+
+---- COMPLETED UPDATING Cmdlet : Update-MgPlannerPlanBucketTaskProgressTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Update-MgPlannerPlanDetail ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Added: ContextDetails
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerPlanDetails1 to IMicrosoftGraphPlannerPlanDetails
+
+---- COMPLETED UPDATING Cmdlet : Update-MgPlannerPlanDetail ----
+
+
+---- UPDATING Cmdlet : Update-MgPlannerPlanTask ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Added: Priority
+
+	Parameter Updated: AssignedToTaskBoardFormat
+		Type updated from IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat1 to IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerTask1 to IMicrosoftGraphPlannerTask
+
+	Parameter Updated: BucketTaskBoardFormat
+		Type updated from IMicrosoftGraphPlannerBucketTaskBoardTaskFormat1 to IMicrosoftGraphPlannerBucketTaskBoardTaskFormat
+
+	Parameter Updated: Details
+		Type updated from IMicrosoftGraphPlannerTaskDetails1 to IMicrosoftGraphPlannerTaskDetails
+
+	Parameter Updated: ProgressTaskBoardFormat
+		Type updated from IMicrosoftGraphPlannerProgressTaskBoardTaskFormat1 to IMicrosoftGraphPlannerProgressTaskBoardTaskFormat
+
+---- COMPLETED UPDATING Cmdlet : Update-MgPlannerPlanTask ----
+
+
+---- UPDATING Cmdlet : Update-MgPlannerPlanTaskAssignedToTaskBoardFormat ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat1 to IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat
+
+---- COMPLETED UPDATING Cmdlet : Update-MgPlannerPlanTaskAssignedToTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Update-MgPlannerPlanTaskBucketTaskBoardFormat ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerBucketTaskBoardTaskFormat1 to IMicrosoftGraphPlannerBucketTaskBoardTaskFormat
+
+---- COMPLETED UPDATING Cmdlet : Update-MgPlannerPlanTaskBucketTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Update-MgPlannerPlanTaskDetail ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerTaskDetails1 to IMicrosoftGraphPlannerTaskDetails
+
+---- COMPLETED UPDATING Cmdlet : Update-MgPlannerPlanTaskDetail ----
+
+
+---- UPDATING Cmdlet : Update-MgPlannerPlanTaskProgressTaskBoardFormat ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerProgressTaskBoardTaskFormat1 to IMicrosoftGraphPlannerProgressTaskBoardTaskFormat
+
+---- COMPLETED UPDATING Cmdlet : Update-MgPlannerPlanTaskProgressTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Update-MgPlannerTask ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Added: Priority
+
+	Parameter Updated: AssignedToTaskBoardFormat
+		Type updated from IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat1 to IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerTask1 to IMicrosoftGraphPlannerTask
+
+	Parameter Updated: BucketTaskBoardFormat
+		Type updated from IMicrosoftGraphPlannerBucketTaskBoardTaskFormat1 to IMicrosoftGraphPlannerBucketTaskBoardTaskFormat
+
+	Parameter Updated: Details
+		Type updated from IMicrosoftGraphPlannerTaskDetails1 to IMicrosoftGraphPlannerTaskDetails
+
+	Parameter Updated: ProgressTaskBoardFormat
+		Type updated from IMicrosoftGraphPlannerProgressTaskBoardTaskFormat1 to IMicrosoftGraphPlannerProgressTaskBoardTaskFormat
+
+---- COMPLETED UPDATING Cmdlet : Update-MgPlannerTask ----
+
+
+---- UPDATING Cmdlet : Update-MgPlannerTaskAssignedToTaskBoardFormat ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat1 to IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat
+
+---- COMPLETED UPDATING Cmdlet : Update-MgPlannerTaskAssignedToTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Update-MgPlannerTaskBucketTaskBoardFormat ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerBucketTaskBoardTaskFormat1 to IMicrosoftGraphPlannerBucketTaskBoardTaskFormat
+
+---- COMPLETED UPDATING Cmdlet : Update-MgPlannerTaskBucketTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Update-MgPlannerTaskDetail ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerTaskDetails1 to IMicrosoftGraphPlannerTaskDetails
+
+---- COMPLETED UPDATING Cmdlet : Update-MgPlannerTaskDetail ----
+
+
+---- UPDATING Cmdlet : Update-MgPlannerTaskProgressTaskBoardFormat ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerProgressTaskBoardTaskFormat1 to IMicrosoftGraphPlannerProgressTaskBoardTaskFormat
+
+---- COMPLETED UPDATING Cmdlet : Update-MgPlannerTaskProgressTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Update-MgUserPlanner ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Added: All
+
+	Parameter Added: FavoritePlanReferences
+
+	Parameter Added: FavoritePlans
+
+	Parameter Added: RecentPlanReferences
+
+	Parameter Added: RecentPlans
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerUser1 to IMicrosoftGraphPlannerUser
+
+	Parameter Updated: Plans
+		Type updated from IMicrosoftGraphPlannerPlan1[] to IMicrosoftGraphPlannerPlan[]
+
+	Parameter Updated: Tasks
+		Type updated from IMicrosoftGraphPlannerTask1[] to IMicrosoftGraphPlannerTask[]
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserPlanner ----
+
+
+---- UPDATING Cmdlet : Update-MgUserPlannerPlan ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Added: Contexts
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerPlan1 to IMicrosoftGraphPlannerPlan
+
+	Parameter Updated: Buckets
+		Type updated from IMicrosoftGraphPlannerBucket1[] to IMicrosoftGraphPlannerBucket[]
+
+	Parameter Updated: Details
+		Type updated from IMicrosoftGraphPlannerPlanDetails1 to IMicrosoftGraphPlannerPlanDetails
+
+	Parameter Updated: Tasks
+		Type updated from IMicrosoftGraphPlannerTask1[] to IMicrosoftGraphPlannerTask[]
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserPlannerPlan ----
+
+
+---- UPDATING Cmdlet : Update-MgUserPlannerPlanBucket ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerBucket1 to IMicrosoftGraphPlannerBucket
+
+	Parameter Updated: Tasks
+		Type updated from IMicrosoftGraphPlannerTask1[] to IMicrosoftGraphPlannerTask[]
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserPlannerPlanBucket ----
+
+
+---- UPDATING Cmdlet : Update-MgUserPlannerPlanBucketTask ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Added: Priority
+
+	Parameter Updated: AssignedToTaskBoardFormat
+		Type updated from IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat1 to IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerTask1 to IMicrosoftGraphPlannerTask
+
+	Parameter Updated: BucketTaskBoardFormat
+		Type updated from IMicrosoftGraphPlannerBucketTaskBoardTaskFormat1 to IMicrosoftGraphPlannerBucketTaskBoardTaskFormat
+
+	Parameter Updated: Details
+		Type updated from IMicrosoftGraphPlannerTaskDetails1 to IMicrosoftGraphPlannerTaskDetails
+
+	Parameter Updated: ProgressTaskBoardFormat
+		Type updated from IMicrosoftGraphPlannerProgressTaskBoardTaskFormat1 to IMicrosoftGraphPlannerProgressTaskBoardTaskFormat
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserPlannerPlanBucketTask ----
+
+
+---- UPDATING Cmdlet : Update-MgUserPlannerPlanBucketTaskAssignedToTaskBoardFormat ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat1 to IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserPlannerPlanBucketTaskAssignedToTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Update-MgUserPlannerPlanBucketTaskBoardFormat ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerBucketTaskBoardTaskFormat1 to IMicrosoftGraphPlannerBucketTaskBoardTaskFormat
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserPlannerPlanBucketTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Update-MgUserPlannerPlanBucketTaskDetail ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerTaskDetails1 to IMicrosoftGraphPlannerTaskDetails
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserPlannerPlanBucketTaskDetail ----
+
+
+---- UPDATING Cmdlet : Update-MgUserPlannerPlanBucketTaskProgressTaskBoardFormat ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerProgressTaskBoardTaskFormat1 to IMicrosoftGraphPlannerProgressTaskBoardTaskFormat
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserPlannerPlanBucketTaskProgressTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Update-MgUserPlannerPlanDetail ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Added: ContextDetails
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerPlanDetails1 to IMicrosoftGraphPlannerPlanDetails
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserPlannerPlanDetail ----
+
+
+---- UPDATING Cmdlet : Update-MgUserPlannerPlanTask ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Added: Priority
+
+	Parameter Updated: AssignedToTaskBoardFormat
+		Type updated from IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat1 to IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerTask1 to IMicrosoftGraphPlannerTask
+
+	Parameter Updated: BucketTaskBoardFormat
+		Type updated from IMicrosoftGraphPlannerBucketTaskBoardTaskFormat1 to IMicrosoftGraphPlannerBucketTaskBoardTaskFormat
+
+	Parameter Updated: Details
+		Type updated from IMicrosoftGraphPlannerTaskDetails1 to IMicrosoftGraphPlannerTaskDetails
+
+	Parameter Updated: ProgressTaskBoardFormat
+		Type updated from IMicrosoftGraphPlannerProgressTaskBoardTaskFormat1 to IMicrosoftGraphPlannerProgressTaskBoardTaskFormat
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserPlannerPlanTask ----
+
+
+---- UPDATING Cmdlet : Update-MgUserPlannerPlanTaskAssignedToTaskBoardFormat ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat1 to IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserPlannerPlanTaskAssignedToTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Update-MgUserPlannerPlanTaskBucketTaskBoardFormat ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerBucketTaskBoardTaskFormat1 to IMicrosoftGraphPlannerBucketTaskBoardTaskFormat
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserPlannerPlanTaskBucketTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Update-MgUserPlannerPlanTaskDetail ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerTaskDetails1 to IMicrosoftGraphPlannerTaskDetails
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserPlannerPlanTaskDetail ----
+
+
+---- UPDATING Cmdlet : Update-MgUserPlannerPlanTaskProgressTaskBoardFormat ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerProgressTaskBoardTaskFormat1 to IMicrosoftGraphPlannerProgressTaskBoardTaskFormat
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserPlannerPlanTaskProgressTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Update-MgUserPlannerTask ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Added: Priority
+
+	Parameter Updated: AssignedToTaskBoardFormat
+		Type updated from IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat1 to IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerTask1 to IMicrosoftGraphPlannerTask
+
+	Parameter Updated: BucketTaskBoardFormat
+		Type updated from IMicrosoftGraphPlannerBucketTaskBoardTaskFormat1 to IMicrosoftGraphPlannerBucketTaskBoardTaskFormat
+
+	Parameter Updated: Details
+		Type updated from IMicrosoftGraphPlannerTaskDetails1 to IMicrosoftGraphPlannerTaskDetails
+
+	Parameter Updated: ProgressTaskBoardFormat
+		Type updated from IMicrosoftGraphPlannerProgressTaskBoardTaskFormat1 to IMicrosoftGraphPlannerProgressTaskBoardTaskFormat
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserPlannerTask ----
+
+
+---- UPDATING Cmdlet : Update-MgUserPlannerTaskAssignedToTaskBoardFormat ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat1 to IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserPlannerTaskAssignedToTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Update-MgUserPlannerTaskBucketTaskBoardFormat ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerBucketTaskBoardTaskFormat1 to IMicrosoftGraphPlannerBucketTaskBoardTaskFormat
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserPlannerTaskBucketTaskBoardFormat ----
+
+
+---- UPDATING Cmdlet : Update-MgUserPlannerTaskDetail ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerTaskDetails1 to IMicrosoftGraphPlannerTaskDetails
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserPlannerTaskDetail ----
+
+
+---- UPDATING Cmdlet : Update-MgUserPlannerTaskProgressTaskBoardFormat ----
+
+	Parameter Set Added: Update
+
+	Parameter Set Added: UpdateExpanded
+
+	Parameter Set Added: UpdateViaIdentity
+
+	Parameter Set Added: UpdateViaIdentityExpanded
+
+	Parameter Set Deleted: Update1
+
+	Parameter Set Deleted: UpdateExpanded1
+
+	Parameter Set Deleted: UpdateViaIdentity1
+
+	Parameter Set Deleted: UpdateViaIdentityExpanded1
+
+	Parameter Set Name Updated: UpdateExpanded
+		Old Set: UpdateExpanded1
+		New Set: UpdateExpanded
+
+	Parameter Set Name Updated: Update
+		Old Set: Update1
+		New Set: Update
+
+	Parameter Set Name Updated: UpdateViaIdentityExpanded
+		Old Set: UpdateViaIdentityExpanded1
+		New Set: UpdateViaIdentityExpanded
+
+	Parameter Set Name Updated: UpdateViaIdentity
+		Old Set: UpdateViaIdentity1
+		New Set: UpdateViaIdentity
+
+	Parameter Updated: BodyParameter
+		Type updated from IMicrosoftGraphPlannerProgressTaskBoardTaskFormat1 to IMicrosoftGraphPlannerProgressTaskBoardTaskFormat
+
+---- COMPLETED UPDATING Cmdlet : Update-MgUserPlannerTaskProgressTaskBoardFormat ----
+
+
+[Update-MarkdownHelpModule] 11/23/2020 15:02:03 Creating new markdown for command 'Get-MgUserPlannerFavoritePlan'
+[Update-MarkdownHelpModule] 11/23/2020 15:02:03 Creating new markdown for command 'Get-MgUserPlannerFavoritePlanByRef'
+[Update-MarkdownHelpModule] 11/23/2020 15:02:04 Creating new markdown for command 'Get-MgUserPlannerRecentPlan'
+[Update-MarkdownHelpModule] 11/23/2020 15:02:04 Creating new markdown for command 'Get-MgUserPlannerRecentPlanByRef'
+[Update-MarkdownHelpModule] 11/23/2020 15:02:05 Creating new markdown for command 'New-MgUserPlannerFavoritePlanByRef'
+[Update-MarkdownHelpModule] 11/23/2020 15:02:06 Creating new markdown for command 'New-MgUserPlannerRecentPlanByRef'
