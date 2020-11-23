@@ -28,6 +28,8 @@ jobs:
   condition: and(succeeded(), eq(eq(variables['Build.SourceBranch'], 'refs/heads/master'), false))
 
   steps:
+  - checkout: self
+    persistCredentials: true
   - template: ./install-tools-template.yml
 
   - task: PowerShell@2
