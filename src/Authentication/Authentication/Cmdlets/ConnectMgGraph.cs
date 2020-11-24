@@ -17,9 +17,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 
     using Identity.Client;
 
-    using Auth;
-    using Helpers;
-    using Models;
+    using Microsoft.Graph.Auth;
+    using Microsoft.Graph.PowerShell.Authentication.Helpers;
+    using Microsoft.Graph.PowerShell.Authentication.Models;
 
     using Interfaces;
     using Common;
