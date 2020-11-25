@@ -11633,7 +11633,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'The telephone numbers for the user. NOTE: Although this is a string collection, only one number can be set for this property.'
+              description: 'The telephone numbers for the user. NOTE: Although this is a string collection, only one number can be set for this property. Read-only for users synced from on-premises directory.'
             city:
               type: string
               description: The city in which the user is located. Supports $filter.
@@ -11752,7 +11752,7 @@ components:
               nullable: true
             mobilePhone:
               type: string
-              description: The primary cellular telephone number for the user.
+              description: The primary cellular telephone number for the user. Read-only for users synced from on-premises directory.
               nullable: true
             officeLocation:
               type: string
@@ -12526,6 +12526,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.todoTaskList'
+              description: The task lists in the users mailbox.
           additionalProperties:
             type: object
     microsoft.graph.todoTaskList:
@@ -12536,21 +12537,26 @@ components:
           properties:
             displayName:
               type: string
+              description: The name of the task list.
               nullable: true
             isOwner:
               type: boolean
+              description: True if the user is owner of the given task list.
             isShared:
               type: boolean
+              description: True if the task list is shared with other users
             wellknownListName:
               $ref: '#/components/schemas/microsoft.graph.wellknownListName'
             extensions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
+              description: The collection of open extensions defined for the task list. Nullable.
             tasks:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.todoTask'
+              description: The tasks in this task list. Read-only. Nullable.
           additionalProperties:
             type: object
     microsoft.graph.todoTask:
@@ -12564,12 +12570,14 @@ components:
             bodyLastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: ''2020-01-01T00:00:00Z''.'
               format: date-time
             completedDateTime:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when the task was created. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format. For example, midnight UTC on Jan 1, 2020 would look like this: ''2020-01-01T00:00:00Z''.'
               format: date-time
             dueDateTime:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
@@ -12577,9 +12585,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.importance'
             isReminderOn:
               type: boolean
+              description: Set to true if an alert is set to remind the user of the task.
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: ''2020-01-01T00:00:00Z''.'
               format: date-time
             recurrence:
               $ref: '#/components/schemas/microsoft.graph.patternedRecurrence'
@@ -12589,15 +12599,18 @@ components:
               $ref: '#/components/schemas/microsoft.graph.taskStatus'
             title:
               type: string
+              description: A brief description of the task.
               nullable: true
             extensions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
+              description: The collection of open extensions defined for the task. Nullable.
             linkedResources:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.linkedResource'
+              description: A collection of resources linked to the task.
           additionalProperties:
             type: object
     microsoft.graph.linkedResource:
@@ -12608,15 +12621,19 @@ components:
           properties:
             applicationName:
               type: string
+              description: Field indicating the app name of the source that is sending the linkedResource.
               nullable: true
             displayName:
               type: string
+              description: Field indicating the title of the linkedResource.
               nullable: true
             externalId:
               type: string
+              description: Id of the object that is associated with this task on the third-party/partner system.
               nullable: true
             webUrl:
               type: string
+              description: Deep link to the linkedResource.
               nullable: true
           additionalProperties:
             type: object
@@ -12936,8 +12953,8 @@ components:
         - title: informationProtection
           type: object
           properties:
-            policy:
-              $ref: '#/components/schemas/microsoft.graph.informationProtectionPolicy'
+            bitlocker:
+              $ref: '#/components/schemas/microsoft.graph.bitlocker'
             dataLossPreventionPolicies:
               type: array
               items:
@@ -12948,6 +12965,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
             sensitivityPolicySettings:
               $ref: '#/components/schemas/microsoft.graph.sensitivityPolicySettings'
+            policy:
+              $ref: '#/components/schemas/microsoft.graph.informationProtectionPolicy'
             threatAssessmentRequests:
               type: array
               items:
@@ -13261,7 +13280,7 @@ components:
               nullable: true
             webLink:
               type: string
-              description: 'The URL to open the event in Outlook on the web.Outlook on the web opens the event in the browser if you are signed in to your mailbox. Otherwise, Outlook on the web prompts you to sign in.This URL can be accessed from within an iFrame.'
+              description: 'The URL to open the event in Outlook on the web.Outlook on the web opens the event in the browser if you are signed in to your mailbox. Otherwise, Outlook on the web prompts you to sign in.This URL cannot be accessed from within an iFrame.'
               nullable: true
             attachments:
               type: array
@@ -15337,8 +15356,18 @@ components:
               $ref: '#/components/schemas/microsoft.graph.accessLevel'
             allowedPresenters:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingPresenters'
+            alternativeRecording:
+              type: string
+              format: base64url
+              nullable: true
+            attendeeReport:
+              type: string
+              format: base64url
+              nullable: true
             audioConferencing:
               $ref: '#/components/schemas/microsoft.graph.audioConferencing'
+            broadcastSettings:
+              $ref: '#/components/schemas/microsoft.graph.broadcastMeetingSettings'
             canceledDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -15381,6 +15410,7 @@ components:
               nullable: true
             isEntryExitAnnounced:
               type: boolean
+              description: Whether or not to announce when callers join or leave.
               nullable: true
             joinInformation:
               $ref: '#/components/schemas/microsoft.graph.itemBody'
@@ -15391,6 +15421,10 @@ components:
               $ref: '#/components/schemas/microsoft.graph.lobbyBypassSettings'
             participants:
               $ref: '#/components/schemas/microsoft.graph.meetingParticipants'
+            recording:
+              type: string
+              format: base64url
+              nullable: true
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -15439,14 +15473,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
-            microsoftAuthenticatorMethods:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.microsoftAuthenticatorAuthenticationMethod'
-            oathMethods:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.softwareOathAuthenticationMethod'
             operations:
               type: array
               items:
@@ -15463,14 +15489,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.phoneAuthenticationMethod'
-            securityQuestionMethods:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.securityQuestionAuthenticationMethod'
-            temporaryAccessPassMethods:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.temporaryAccessPassAuthenticationMethod'
           additionalProperties:
             type: object
     microsoft.graph.chat:
@@ -15479,6 +15497,8 @@ components:
         - title: chat
           type: object
           properties:
+            chatType:
+              $ref: '#/components/schemas/microsoft.graph.chatType'
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -16001,16 +16021,16 @@ components:
               nullable: true
           additionalProperties:
             type: object
-    microsoft.graph.informationProtectionPolicy:
+    microsoft.graph.bitlocker:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: informationProtectionPolicy
+        - title: bitlocker
           type: object
           properties:
-            labels:
+            recoveryKeys:
               type: array
               items:
-                $ref: '#/components/schemas/microsoft.graph.informationProtectionLabel'
+                $ref: '#/components/schemas/microsoft.graph.bitlockerRecoveryKey'
           additionalProperties:
             type: object
     microsoft.graph.dataLossPreventionPolicy:
@@ -16091,6 +16111,18 @@ components:
             isMandatory:
               type: boolean
               nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.informationProtectionPolicy:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: informationProtectionPolicy
+          type: object
+          properties:
+            labels:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.informationProtectionLabel'
           additionalProperties:
             type: object
     microsoft.graph.threatAssessmentRequest:
@@ -17338,6 +17370,10 @@ components:
         - title: accessReviewScheduleDefinition
           type: object
           properties:
+            backupReviewers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScope'
             createdBy:
               $ref: '#/components/schemas/microsoft.graph.userIdentity'
             createdDateTime:
@@ -18243,6 +18279,10 @@ components:
               type: boolean
               description: Full scan required or not?
               nullable: true
+            isVirtualMachine:
+              type: boolean
+              description: Indicates whether the device is a virtual machine.
+              nullable: true
             lastFullScanDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -18277,6 +18317,8 @@ components:
               type: boolean
               description: Network inspection system enabled or not?
               nullable: true
+            productStatus:
+              $ref: '#/components/schemas/microsoft.graph.windowsDefenderProductStatus'
             quickScanOverdue:
               type: boolean
               description: Quick scan overdue or not?
@@ -18296,6 +18338,10 @@ components:
             signatureVersion:
               type: string
               description: Current malware definitions version
+              nullable: true
+            tamperProtectionEnabled:
+              type: boolean
+              description: Indicates whether the Windows Defender tamper protection feature is enabled.
               nullable: true
             detectedMalwareState:
               type: array
@@ -19496,6 +19542,26 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.broadcastMeetingSettings:
+      title: broadcastMeetingSettings
+      type: object
+      properties:
+        allowedAudience:
+          $ref: '#/components/schemas/microsoft.graph.broadcastMeetingAudience'
+        isAttendeeReportEnabled:
+          type: boolean
+          nullable: true
+        isQuestionAndAnswerEnabled:
+          type: boolean
+          nullable: true
+        isRecordingEnabled:
+          type: boolean
+          nullable: true
+        isVideoOnDemandEnabled:
+          type: boolean
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.meetingCapabilities:
       title: meetingCapabilities
       enum:
@@ -19526,6 +19592,7 @@ components:
       properties:
         isDialInBypassEnabled:
           type: boolean
+          description: Specifies whether or not to always let dial-in callers bypass the lobby. Optional.
           nullable: true
         scope:
           $ref: '#/components/schemas/microsoft.graph.lobbyBypassScope'
@@ -19556,6 +19623,10 @@ components:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
         - title: emailAuthenticationMethod
           type: object
+          properties:
+            emailAddress:
+              type: string
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.fido2AuthenticationMethod:
@@ -19563,26 +19634,39 @@ components:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
         - title: fido2AuthenticationMethod
           type: object
+          properties:
+            aaGuid:
+              type: string
+              nullable: true
+            attestationCertificates:
+              type: array
+              items:
+                type: string
+                nullable: true
+            attestationLevel:
+              $ref: '#/components/schemas/microsoft.graph.attestationLevel'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            creationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            displayName:
+              type: string
+              nullable: true
+            model:
+              type: string
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.authenticationMethod:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
         - title: authenticationMethod
-          type: object
-          additionalProperties:
-            type: object
-    microsoft.graph.microsoftAuthenticatorAuthenticationMethod:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
-        - title: microsoftAuthenticatorAuthenticationMethod
-          type: object
-          additionalProperties:
-            type: object
-    microsoft.graph.softwareOathAuthenticationMethod:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
-        - title: softwareOathAuthenticationMethod
           type: object
           additionalProperties:
             type: object
@@ -19617,6 +19701,22 @@ components:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
         - title: passwordlessMicrosoftAuthenticatorAuthenticationMethod
           type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            creationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            displayName:
+              type: string
+              nullable: true
+            device:
+              $ref: '#/components/schemas/microsoft.graph.device'
           additionalProperties:
             type: object
     microsoft.graph.passwordAuthenticationMethod:
@@ -19625,6 +19725,11 @@ components:
         - title: passwordAuthenticationMethod
           type: object
           properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
             creationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -19650,20 +19755,14 @@ components:
               $ref: '#/components/schemas/microsoft.graph.authenticationMethodSignInState'
           additionalProperties:
             type: object
-    microsoft.graph.securityQuestionAuthenticationMethod:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
-        - title: securityQuestionAuthenticationMethod
-          type: object
-          additionalProperties:
-            type: object
-    microsoft.graph.temporaryAccessPassAuthenticationMethod:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
-        - title: temporaryAccessPassAuthenticationMethod
-          type: object
-          additionalProperties:
-            type: object
+    microsoft.graph.chatType:
+      title: chatType
+      enum:
+        - oneOnOne
+        - group
+        - meeting
+        - unknownFutureValue
+      type: string
     microsoft.graph.teamsAppInstallation:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -20302,33 +20401,23 @@ components:
         - Chat
         - Call
       type: string
-    microsoft.graph.informationProtectionLabel:
+    microsoft.graph.bitlockerRecoveryKey:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: informationProtectionLabel
+        - title: bitlockerRecoveryKey
           type: object
           properties:
-            color:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            deviceId:
               type: string
               nullable: true
-            description:
+            key:
               type: string
-              nullable: true
-            isActive:
-              type: boolean
-            name:
-              type: string
-              nullable: true
-            parent:
-              $ref: '#/components/schemas/microsoft.graph.parentLabelDetails'
-            sensitivity:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              format: int32
-            tooltip:
-              type: string
-              nullable: true
+            volumeType:
+              $ref: '#/components/schemas/microsoft.graph.volumeType'
           additionalProperties:
             type: object
     microsoft.graph.sensitivityLabelTarget:
@@ -20380,6 +20469,35 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.informationProtectionLabel:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: informationProtectionLabel
+          type: object
+          properties:
+            color:
+              type: string
+              nullable: true
+            description:
+              type: string
+              nullable: true
+            isActive:
+              type: boolean
+            name:
+              type: string
+              nullable: true
+            parent:
+              $ref: '#/components/schemas/microsoft.graph.parentLabelDetails'
+            sensitivity:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+            tooltip:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.threatCategory:
       title: threatCategory
       enum:
@@ -21541,6 +21659,9 @@ components:
               type: string
               description: 'The URL of the endpoint that receives lifecycle notifications, including subscriptionRemoved and missed notifications. This URL must make use of the HTTPS protocol. Optional. Read more about how Outlook resources use lifecycle notifications.'
               nullable: true
+            notificationQueryOptions:
+              type: string
+              nullable: true
             notificationUrl:
               type: string
               description: Required. The URL of the endpoint that will receive the change notifications. This URL must make use of the HTTPS protocol.
@@ -22307,6 +22428,36 @@ components:
         - offlineScanPending
         - critical
       type: string
+    microsoft.graph.windowsDefenderProductStatus:
+      title: windowsDefenderProductStatus
+      enum:
+        - noStatus
+        - serviceNotRunning
+        - serviceStartedWithoutMalwareProtection
+        - pendingFullScanDueToThreatAction
+        - pendingRebootDueToThreatAction
+        - pendingManualStepsDueToThreatAction
+        - avSignaturesOutOfDate
+        - asSignaturesOutOfDate
+        - noQuickScanHappenedForSpecifiedPeriod
+        - noFullScanHappenedForSpecifiedPeriod
+        - systemInitiatedScanInProgress
+        - systemInitiatedCleanInProgress
+        - samplesPendingSubmission
+        - productRunningInEvaluationMode
+        - productRunningInNonGenuineMode
+        - productExpired
+        - offlineScanRequired
+        - serviceShutdownAsPartOfSystemShutdown
+        - threatRemediationFailedCritically
+        - threatRemediationFailedNonCritically
+        - noStatusFlagsSet
+        - platformOutOfDate
+        - platformUpdateInProgress
+        - platformAboutToBeOutdated
+        - signatureOrPlatformEndOfLifeIsPastOrIsImpending
+        - windowsSModeSignaturesInUseOnNonWin10SInstall
+      type: string
     microsoft.graph.windowsDeviceMalwareState:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -22951,6 +23102,14 @@ components:
           type: object
           additionalProperties:
             type: object
+    microsoft.graph.broadcastMeetingAudience:
+      title: broadcastMeetingAudience
+      enum:
+        - roleIsAttendee
+        - organization
+        - everyone
+        - unknownFutureValue
+      type: string
     microsoft.graph.lobbyBypassScope:
       title: lobbyBypassScope
       enum:
@@ -22974,6 +23133,13 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.attestationLevel:
+      title: attestationLevel
+      enum:
+        - attested
+        - notAttested
+        - unknownFutureValue
+      type: string
     microsoft.graph.longRunningOperationStatus:
       title: longRunningOperationStatus
       enum:
@@ -23528,6 +23694,14 @@ components:
           type: string
       additionalProperties:
         type: object
+    microsoft.graph.volumeType:
+      title: volumeType
+      enum:
+        - operatingSystemVolume
+        - fixedDataVolume
+        - removableDataVolume
+        - unknownFutureValue
+      type: string
     microsoft.graph.parentLabelDetails:
       title: parentLabelDetails
       type: object
@@ -24507,6 +24681,7 @@ components:
       enum:
         - attendee
         - presenter
+        - producer
         - unknownFutureValue
       type: string
     microsoft.graph.teamsAppDistributionMethod:
