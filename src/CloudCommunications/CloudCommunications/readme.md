@@ -56,10 +56,9 @@ directive:
       verb: Invoke
       subject: CreateOrGet$1
 ```
-
 ### Versioning
 
 ``` yaml
-module-version: 1.1.0
+module-version: 1.2.0
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```
