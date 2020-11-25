@@ -7,6 +7,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
     using Microsoft.Graph.PowerShell.Authentication.Models;
     using Microsoft.Graph.PowerShell.Authentication.TokenCache;
     using Microsoft.Identity.Client;
+
     using System;
     using System.Linq;
     using System.Net;
@@ -14,6 +15,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
     using System.Security.Cryptography.X509Certificates;
     using System.Threading;
     using System.Threading.Tasks;
+
     using AuthenticationException = System.Security.Authentication.AuthenticationException;
 
     internal static class AuthenticationHelpers
@@ -40,7 +42,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                         .Build();
 
                         ConfigureTokenCache(publicClientApp.UserTokenCache, authContext);
-                        authProvider = new DeviceCodeProvider(publicClientApp, authContext.Scopes, async (result) => {
+                        authProvider = new DeviceCodeProvider(publicClientApp, authContext.Scopes, async (result) =>
+                        {
                             await Console.Out.WriteLineAsync(result.Message);
                         });
                         break;
@@ -51,7 +54,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                         .Create(authContext.ClientId)
                         .WithTenantId(authContext.TenantId)
                         .WithAuthority(authorityUrl)
-                        .WithCertificate(string.IsNullOrEmpty(authContext.CertificateThumbprint) ? GetCertificateByName(authContext.CertificateName) : GetCertificateByThumbprint(authContext.CertificateThumbprint))
+                        .WithCertificate(GetCertificate(authContext))
                         .Build();
 
                         ConfigureTokenCache(confidentialClientApp.AppTokenCache, authContext);
@@ -61,7 +64,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                     }
                 case AuthenticationType.UserProvidedAccessToken:
                     {
-                        authProvider = new DelegateAuthenticationProvider((requestMessage) => {
+                        authProvider = new DelegateAuthenticationProvider((requestMessage) =>
+                        {
                             requestMessage.Headers.Authorization = new AuthenticationHeaderValue("Bearer",
                                 new NetworkCredential(string.Empty, GraphSession.Instance.UserProvidedToken).Password);
                             return Task.CompletedTask;
@@ -70,6 +74,35 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                     }
             }
             return authProvider;
+        }
+        /// <summary>
+        ///     Gets a certificate based on the current context.
+        ///     Priority is Name, ThumbPrint, then In-Memory Cert
+        /// </summary>
+        /// <param name="context">Current <see cref="IAuthContext"/> context</param>
+        /// <returns>A <see cref="X509Certificate2"/> based on provided <see cref="IAuthContext"/> context</returns>
+        private static X509Certificate2 GetCertificate(IAuthContext context)
+        {
+            X509Certificate2 certificate;
+            if (!string.IsNullOrWhiteSpace(context.CertificateName))
+            {
+                certificate = GetCertificateByName(context.CertificateName);
+            }
+            else if (!string.IsNullOrWhiteSpace(context.CertificateThumbprint))
+            {
+                certificate = GetCertificateByThumbprint(context.CertificateThumbprint);
+            }
+            else
+            {
+                certificate = context.Certificate;
+            }
+
+            if (certificate == null)
+            {
+                throw new ArgumentNullException(nameof(certificate), $"Certificate with the Specified ThumbPrint {context.CertificateThumbprint}, Name {context.CertificateName} or In-Memory could not be found");
+            }
+
+            return certificate;
         }
 
         private static string GetAuthorityUrl(IAuthContext authContext)
@@ -108,7 +141,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 
         private static void ConfigureTokenCache(ITokenCache tokenCache, IAuthContext authContext)
         {
-            tokenCache.SetBeforeAccess((TokenCacheNotificationArgs args) => {
+            tokenCache.SetBeforeAccess((TokenCacheNotificationArgs args) =>
+            {
                 try
                 {
                     _cacheLock.EnterReadLock();
@@ -120,7 +154,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                 }
             });
 
-            tokenCache.SetAfterAccess((TokenCacheNotificationArgs args) => {
+            tokenCache.SetAfterAccess((TokenCacheNotificationArgs args) =>
+            {
                 if (args.HasStateChanged)
                 {
                     try
@@ -137,11 +172,11 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
         }
 
         /// <summary>
-        /// Gets unexpired certificate of the specified certificate subject name for the current user in My store..
+        /// Gets unexpired certificate of the specified certificate thumbprint for the current user in My store.
         /// </summary>
-        /// <param name="certificateName">Subject name of the certificate to get.</param>
+        /// <param name="certificateThumbprint">Subject name of the certificate to get.</param>
         /// <returns></returns>
-        private static X509Certificate2 GetCertificateByThumbprint(string CertificateThumbprint)
+        private static X509Certificate2 GetCertificateByThumbprint(string certificateThumbprint)
         {
             X509Certificate2 xCertificate = null;
 
@@ -152,10 +187,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                 // Get unexpired certificates with the specified name.
                 X509Certificate2Collection unexpiredCerts = xStore.Certificates
                     .Find(X509FindType.FindByTimeValid, DateTime.Now, false)
-                    .Find(X509FindType.FindByThumbprint, CertificateThumbprint, false);
+                    .Find(X509FindType.FindByThumbprint, certificateThumbprint, false);
 
                 if (unexpiredCerts.Count < 1)
-                    throw new Exception($"{CertificateThumbprint} certificate was not found or has expired.");
+                    throw new Exception($"{certificateThumbprint} certificate was not found or has expired.");
 
                 // Only return current cert.
                 xCertificate = unexpiredCerts
@@ -164,14 +199,14 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                     .FirstOrDefault();
             }
             return xCertificate;
-        } 
-        
+        }
+
         /// <summary>
-        /// Gets unexpired certificate of the specified certificate subject name for the current user in My store..
+        /// Gets unexpired certificate of the specified certificate subject name for the current user in My store.
         /// </summary>
-        /// <param name="certificateName">Subjec name of the certificate to get.</param>
+        /// <param name="certificateName">Subject name of the certificate to get.</param>
         /// <returns></returns>
-        private static X509Certificate2 GetCertificateByName(string CertificateName)
+        private static X509Certificate2 GetCertificateByName(string certificateName)
         {
             X509Certificate2 xCertificate = null;
 
@@ -182,10 +217,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                 // Get unexpired certificates with the specified name.
                 X509Certificate2Collection unexpiredCerts = xStore.Certificates
                     .Find(X509FindType.FindByTimeValid, DateTime.Now, false)
-                    .Find(X509FindType.FindBySubjectDistinguishedName, CertificateName, false);
+                    .Find(X509FindType.FindBySubjectDistinguishedName, certificateName, false);
 
-                if (unexpiredCerts == null)
-                    throw new Exception($"{CertificateName} certificate was not found or has expired.");
+                if (unexpiredCerts.Count < 1)
+                    throw new Exception($"{certificateName} certificate was not found or has expired.");
 
                 // Only return current cert.
                 xCertificate = unexpiredCerts

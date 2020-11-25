@@ -6,12 +6,12 @@ servers:
   - url: https://graph.microsoft.com/v1.0/
     description: Core
 paths:
-  /Security:
+  /security:
     get:
       tags:
-        - Security.security
-      summary: Get Security
-      operationId: Security.security_GetSecurity
+        - security.security
+      summary: Get security
+      operationId: security.security_GetSecurity
       parameters:
         - name: $select
           in: query
@@ -52,19 +52,19 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.security'
           links:
             alerts:
-              operationId: Security.ListAlerts
+              operationId: security.ListAlerts
             secureScoreControlProfiles:
-              operationId: Security.ListSecureScoreControlProfiles
+              operationId: security.ListSecureScoreControlProfiles
             secureScores:
-              operationId: Security.ListSecureScores
+              operationId: security.ListSecureScores
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
-        - Security.security
-      summary: Update Security
-      operationId: Security.security_UpdateSecurity
+        - security.security
+      summary: Update security
+      operationId: security.security_UpdateSecurity
       requestBody:
         description: New property values
         content:
@@ -78,12 +78,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  /Security/alerts:
+  /security/alerts:
     get:
       tags:
-        - Security.alert
-      summary: Get alerts from Security
-      operationId: Security_ListAlerts
+        - security.alert
+      summary: Get alerts from security
+      operationId: security_ListAlerts
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -254,9 +254,9 @@ paths:
       x-ms-docs-operation-type: operation
     post:
       tags:
-        - Security.alert
-      summary: Create new navigation property to alerts for Security
-      operationId: Security_CreateAlerts
+        - security.alert
+      summary: Create new navigation property to alerts for security
+      operationId: security_CreateAlerts
       requestBody:
         description: New navigation property
         content:
@@ -274,12 +274,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/Security/alerts/{alert-id}':
+  '/security/alerts/{alert-id}':
     get:
       tags:
-        - Security.alert
-      summary: Get alerts from Security
-      operationId: Security_GetAlerts
+        - security.alert
+      summary: Get alerts from security
+      operationId: security_GetAlerts
       parameters:
         - name: alert-id
           in: path
@@ -358,9 +358,9 @@ paths:
       x-ms-docs-operation-type: operation
     patch:
       tags:
-        - Security.alert
-      summary: Update the navigation property alerts in Security
-      operationId: Security_UpdateAlerts
+        - security.alert
+      summary: Update the navigation property alerts in security
+      operationId: security_UpdateAlerts
       parameters:
         - name: alert-id
           in: path
@@ -384,9 +384,9 @@ paths:
       x-ms-docs-operation-type: operation
     delete:
       tags:
-        - Security.alert
-      summary: Delete navigation property alerts for Security
-      operationId: Security_DeleteAlerts
+        - security.alert
+      summary: Delete navigation property alerts for security
+      operationId: security_DeleteAlerts
       parameters:
         - name: alert-id
           in: path
@@ -406,12 +406,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  /Security/secureScoreControlProfiles:
+  /security/secureScoreControlProfiles:
     get:
       tags:
-        - Security.secureScoreControlProfile
-      summary: Get secureScoreControlProfiles from Security
-      operationId: Security_ListSecureScoreControlProfiles
+        - security.secureScoreControlProfile
+      summary: Get secureScoreControlProfiles from security
+      operationId: security_ListSecureScoreControlProfiles
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -537,9 +537,9 @@ paths:
       x-ms-docs-operation-type: operation
     post:
       tags:
-        - Security.secureScoreControlProfile
-      summary: Create new navigation property to secureScoreControlProfiles for Security
-      operationId: Security_CreateSecureScoreControlProfiles
+        - security.secureScoreControlProfile
+      summary: Create new navigation property to secureScoreControlProfiles for security
+      operationId: security_CreateSecureScoreControlProfiles
       requestBody:
         description: New navigation property
         content:
@@ -557,12 +557,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/Security/secureScoreControlProfiles/{secureScoreControlProfile-id}':
+  '/security/secureScoreControlProfiles/{secureScoreControlProfile-id}':
     get:
       tags:
-        - Security.secureScoreControlProfile
-      summary: Get secureScoreControlProfiles from Security
-      operationId: Security_GetSecureScoreControlProfiles
+        - security.secureScoreControlProfile
+      summary: Get secureScoreControlProfiles from security
+      operationId: security_GetSecureScoreControlProfiles
       parameters:
         - name: secureScoreControlProfile-id
           in: path
@@ -626,9 +626,9 @@ paths:
       x-ms-docs-operation-type: operation
     patch:
       tags:
-        - Security.secureScoreControlProfile
-      summary: Update the navigation property secureScoreControlProfiles in Security
-      operationId: Security_UpdateSecureScoreControlProfiles
+        - security.secureScoreControlProfile
+      summary: Update the navigation property secureScoreControlProfiles in security
+      operationId: security_UpdateSecureScoreControlProfiles
       parameters:
         - name: secureScoreControlProfile-id
           in: path
@@ -652,9 +652,9 @@ paths:
       x-ms-docs-operation-type: operation
     delete:
       tags:
-        - Security.secureScoreControlProfile
-      summary: Delete navigation property secureScoreControlProfiles for Security
-      operationId: Security_DeleteSecureScoreControlProfiles
+        - security.secureScoreControlProfile
+      summary: Delete navigation property secureScoreControlProfiles for security
+      operationId: security_DeleteSecureScoreControlProfiles
       parameters:
         - name: secureScoreControlProfile-id
           in: path
@@ -674,12 +674,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  /Security/secureScores:
+  /security/secureScores:
     get:
       tags:
-        - Security.secureScore
-      summary: Get secureScores from Security
-      operationId: Security_ListSecureScores
+        - security.secureScore
+      summary: Get secureScores from security
+      operationId: security_ListSecureScores
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -778,9 +778,9 @@ paths:
       x-ms-docs-operation-type: operation
     post:
       tags:
-        - Security.secureScore
-      summary: Create new navigation property to secureScores for Security
-      operationId: Security_CreateSecureScores
+        - security.secureScore
+      summary: Create new navigation property to secureScores for security
+      operationId: security_CreateSecureScores
       requestBody:
         description: New navigation property
         content:
@@ -798,12 +798,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/Security/secureScores/{secureScore-id}':
+  '/security/secureScores/{secureScore-id}':
     get:
       tags:
-        - Security.secureScore
-      summary: Get secureScores from Security
-      operationId: Security_GetSecureScores
+        - security.secureScore
+      summary: Get secureScores from security
+      operationId: security_GetSecureScores
       parameters:
         - name: secureScore-id
           in: path
@@ -858,9 +858,9 @@ paths:
       x-ms-docs-operation-type: operation
     patch:
       tags:
-        - Security.secureScore
-      summary: Update the navigation property secureScores in Security
-      operationId: Security_UpdateSecureScores
+        - security.secureScore
+      summary: Update the navigation property secureScores in security
+      operationId: security_UpdateSecureScores
       parameters:
         - name: secureScore-id
           in: path
@@ -884,9 +884,9 @@ paths:
       x-ms-docs-operation-type: operation
     delete:
       tags:
-        - Security.secureScore
-      summary: Delete navigation property secureScores for Security
-      operationId: Security_DeleteSecureScores
+        - security.secureScore
+      summary: Delete navigation property secureScores for security
+      operationId: security_DeleteSecureScores
       parameters:
         - name: secureScore-id
           in: path

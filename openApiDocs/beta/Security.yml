@@ -6,12 +6,12 @@ servers:
   - url: https://graph.microsoft.com/beta/
     description: Core
 paths:
-  /Security:
+  /security:
     get:
       tags:
-        - Security.security
-      summary: Get Security
-      operationId: Security.security_GetSecurity
+        - security.security
+      summary: Get security
+      operationId: security.security_GetSecurity
       parameters:
         - name: $select
           in: query
@@ -71,37 +71,37 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.security'
           links:
             alerts:
-              operationId: Security.ListAlerts
+              operationId: security.ListAlerts
             cloudAppSecurityProfiles:
-              operationId: Security.ListCloudAppSecurityProfiles
+              operationId: security.ListCloudAppSecurityProfiles
             domainSecurityProfiles:
-              operationId: Security.ListDomainSecurityProfiles
+              operationId: security.ListDomainSecurityProfiles
             fileSecurityProfiles:
-              operationId: Security.ListFileSecurityProfiles
+              operationId: security.ListFileSecurityProfiles
             hostSecurityProfiles:
-              operationId: Security.ListHostSecurityProfiles
+              operationId: security.ListHostSecurityProfiles
             ipSecurityProfiles:
-              operationId: Security.ListIpSecurityProfiles
+              operationId: security.ListIpSecurityProfiles
             providerTenantSettings:
-              operationId: Security.ListProviderTenantSettings
+              operationId: security.ListProviderTenantSettings
             secureScoreControlProfiles:
-              operationId: Security.ListSecureScoreControlProfiles
+              operationId: security.ListSecureScoreControlProfiles
             secureScores:
-              operationId: Security.ListSecureScores
+              operationId: security.ListSecureScores
             securityActions:
-              operationId: Security.ListSecurityActions
+              operationId: security.ListSecurityActions
             tiIndicators:
-              operationId: Security.ListTiIndicators
+              operationId: security.ListTiIndicators
             userSecurityProfiles:
-              operationId: Security.ListUserSecurityProfiles
+              operationId: security.ListUserSecurityProfiles
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
-        - Security.security
-      summary: Update Security
-      operationId: Security.security_UpdateSecurity
+        - security.security
+      summary: Update security
+      operationId: security.security_UpdateSecurity
       requestBody:
         description: New property values
         content:
@@ -115,12 +115,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  /Security/alerts:
+  /security/alerts:
     get:
       tags:
-        - Security.alert
-      summary: Get alerts from Security
-      operationId: Security_ListAlerts
+        - security.alert
+      summary: Get alerts from security
+      operationId: security_ListAlerts
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -291,9 +291,9 @@ paths:
       x-ms-docs-operation-type: operation
     post:
       tags:
-        - Security.alert
-      summary: Create new navigation property to alerts for Security
-      operationId: Security_CreateAlerts
+        - security.alert
+      summary: Create new navigation property to alerts for security
+      operationId: security_CreateAlerts
       requestBody:
         description: New navigation property
         content:
@@ -311,12 +311,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/Security/alerts/{alert-id}':
+  '/security/alerts/{alert-id}':
     get:
       tags:
-        - Security.alert
-      summary: Get alerts from Security
-      operationId: Security_GetAlerts
+        - security.alert
+      summary: Get alerts from security
+      operationId: security_GetAlerts
       parameters:
         - name: alert-id
           in: path
@@ -395,9 +395,9 @@ paths:
       x-ms-docs-operation-type: operation
     patch:
       tags:
-        - Security.alert
-      summary: Update the navigation property alerts in Security
-      operationId: Security_UpdateAlerts
+        - security.alert
+      summary: Update the navigation property alerts in security
+      operationId: security_UpdateAlerts
       parameters:
         - name: alert-id
           in: path
@@ -421,9 +421,9 @@ paths:
       x-ms-docs-operation-type: operation
     delete:
       tags:
-        - Security.alert
-      summary: Delete navigation property alerts for Security
-      operationId: Security_DeleteAlerts
+        - security.alert
+      summary: Delete navigation property alerts for security
+      operationId: security_DeleteAlerts
       parameters:
         - name: alert-id
           in: path
@@ -443,12 +443,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  /Security/alerts/microsoft.graph.updateAlerts:
+  /security/alerts/microsoft.graph.updateAlerts:
     post:
       tags:
-        - Security.Actions
+        - security.Actions
       summary: Invoke action updateAlerts
-      operationId: Security.alerts_updateAlerts
+      operationId: security.alerts_updateAlerts
       requestBody:
         description: Action parameters
         content:
@@ -475,12 +475,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-  /Security/cloudAppSecurityProfiles:
+  /security/cloudAppSecurityProfiles:
     get:
       tags:
-        - Security.cloudAppSecurityProfile
-      summary: Get cloudAppSecurityProfiles from Security
-      operationId: Security_ListCloudAppSecurityProfiles
+        - security.cloudAppSecurityProfile
+      summary: Get cloudAppSecurityProfiles from security
+      operationId: security_ListCloudAppSecurityProfiles
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -600,9 +600,9 @@ paths:
       x-ms-docs-operation-type: operation
     post:
       tags:
-        - Security.cloudAppSecurityProfile
-      summary: Create new navigation property to cloudAppSecurityProfiles for Security
-      operationId: Security_CreateCloudAppSecurityProfiles
+        - security.cloudAppSecurityProfile
+      summary: Create new navigation property to cloudAppSecurityProfiles for security
+      operationId: security_CreateCloudAppSecurityProfiles
       requestBody:
         description: New navigation property
         content:
@@ -620,12 +620,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/Security/cloudAppSecurityProfiles/{cloudAppSecurityProfile-id}':
+  '/security/cloudAppSecurityProfiles/{cloudAppSecurityProfile-id}':
     get:
       tags:
-        - Security.cloudAppSecurityProfile
-      summary: Get cloudAppSecurityProfiles from Security
-      operationId: Security_GetCloudAppSecurityProfiles
+        - security.cloudAppSecurityProfile
+      summary: Get cloudAppSecurityProfiles from security
+      operationId: security_GetCloudAppSecurityProfiles
       parameters:
         - name: cloudAppSecurityProfile-id
           in: path
@@ -687,9 +687,9 @@ paths:
       x-ms-docs-operation-type: operation
     patch:
       tags:
-        - Security.cloudAppSecurityProfile
-      summary: Update the navigation property cloudAppSecurityProfiles in Security
-      operationId: Security_UpdateCloudAppSecurityProfiles
+        - security.cloudAppSecurityProfile
+      summary: Update the navigation property cloudAppSecurityProfiles in security
+      operationId: security_UpdateCloudAppSecurityProfiles
       parameters:
         - name: cloudAppSecurityProfile-id
           in: path
@@ -713,9 +713,9 @@ paths:
       x-ms-docs-operation-type: operation
     delete:
       tags:
-        - Security.cloudAppSecurityProfile
-      summary: Delete navigation property cloudAppSecurityProfiles for Security
-      operationId: Security_DeleteCloudAppSecurityProfiles
+        - security.cloudAppSecurityProfile
+      summary: Delete navigation property cloudAppSecurityProfiles for security
+      operationId: security_DeleteCloudAppSecurityProfiles
       parameters:
         - name: cloudAppSecurityProfile-id
           in: path
@@ -735,12 +735,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  /Security/domainSecurityProfiles:
+  /security/domainSecurityProfiles:
     get:
       tags:
-        - Security.domainSecurityProfile
-      summary: Get domainSecurityProfiles from Security
-      operationId: Security_ListDomainSecurityProfiles
+        - security.domainSecurityProfile
+      summary: Get domainSecurityProfiles from security
+      operationId: security_ListDomainSecurityProfiles
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -851,9 +851,9 @@ paths:
       x-ms-docs-operation-type: operation
     post:
       tags:
-        - Security.domainSecurityProfile
-      summary: Create new navigation property to domainSecurityProfiles for Security
-      operationId: Security_CreateDomainSecurityProfiles
+        - security.domainSecurityProfile
+      summary: Create new navigation property to domainSecurityProfiles for security
+      operationId: security_CreateDomainSecurityProfiles
       requestBody:
         description: New navigation property
         content:
@@ -871,12 +871,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/Security/domainSecurityProfiles/{domainSecurityProfile-id}':
+  '/security/domainSecurityProfiles/{domainSecurityProfile-id}':
     get:
       tags:
-        - Security.domainSecurityProfile
-      summary: Get domainSecurityProfiles from Security
-      operationId: Security_GetDomainSecurityProfiles
+        - security.domainSecurityProfile
+      summary: Get domainSecurityProfiles from security
+      operationId: security_GetDomainSecurityProfiles
       parameters:
         - name: domainSecurityProfile-id
           in: path
@@ -935,9 +935,9 @@ paths:
       x-ms-docs-operation-type: operation
     patch:
       tags:
-        - Security.domainSecurityProfile
-      summary: Update the navigation property domainSecurityProfiles in Security
-      operationId: Security_UpdateDomainSecurityProfiles
+        - security.domainSecurityProfile
+      summary: Update the navigation property domainSecurityProfiles in security
+      operationId: security_UpdateDomainSecurityProfiles
       parameters:
         - name: domainSecurityProfile-id
           in: path
@@ -961,9 +961,9 @@ paths:
       x-ms-docs-operation-type: operation
     delete:
       tags:
-        - Security.domainSecurityProfile
-      summary: Delete navigation property domainSecurityProfiles for Security
-      operationId: Security_DeleteDomainSecurityProfiles
+        - security.domainSecurityProfile
+      summary: Delete navigation property domainSecurityProfiles for security
+      operationId: security_DeleteDomainSecurityProfiles
       parameters:
         - name: domainSecurityProfile-id
           in: path
@@ -983,12 +983,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  /Security/fileSecurityProfiles:
+  /security/fileSecurityProfiles:
     get:
       tags:
-        - Security.fileSecurityProfile
-      summary: Get fileSecurityProfiles from Security
-      operationId: Security_ListFileSecurityProfiles
+        - security.fileSecurityProfile
+      summary: Get fileSecurityProfiles from security
+      operationId: security_ListFileSecurityProfiles
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1105,9 +1105,9 @@ paths:
       x-ms-docs-operation-type: operation
     post:
       tags:
-        - Security.fileSecurityProfile
-      summary: Create new navigation property to fileSecurityProfiles for Security
-      operationId: Security_CreateFileSecurityProfiles
+        - security.fileSecurityProfile
+      summary: Create new navigation property to fileSecurityProfiles for security
+      operationId: security_CreateFileSecurityProfiles
       requestBody:
         description: New navigation property
         content:
@@ -1125,12 +1125,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/Security/fileSecurityProfiles/{fileSecurityProfile-id}':
+  '/security/fileSecurityProfiles/{fileSecurityProfile-id}':
     get:
       tags:
-        - Security.fileSecurityProfile
-      summary: Get fileSecurityProfiles from Security
-      operationId: Security_GetFileSecurityProfiles
+        - security.fileSecurityProfile
+      summary: Get fileSecurityProfiles from security
+      operationId: security_GetFileSecurityProfiles
       parameters:
         - name: fileSecurityProfile-id
           in: path
@@ -1191,9 +1191,9 @@ paths:
       x-ms-docs-operation-type: operation
     patch:
       tags:
-        - Security.fileSecurityProfile
-      summary: Update the navigation property fileSecurityProfiles in Security
-      operationId: Security_UpdateFileSecurityProfiles
+        - security.fileSecurityProfile
+      summary: Update the navigation property fileSecurityProfiles in security
+      operationId: security_UpdateFileSecurityProfiles
       parameters:
         - name: fileSecurityProfile-id
           in: path
@@ -1217,9 +1217,9 @@ paths:
       x-ms-docs-operation-type: operation
     delete:
       tags:
-        - Security.fileSecurityProfile
-      summary: Delete navigation property fileSecurityProfiles for Security
-      operationId: Security_DeleteFileSecurityProfiles
+        - security.fileSecurityProfile
+      summary: Delete navigation property fileSecurityProfiles for security
+      operationId: security_DeleteFileSecurityProfiles
       parameters:
         - name: fileSecurityProfile-id
           in: path
@@ -1239,12 +1239,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  /Security/hostSecurityProfiles:
+  /security/hostSecurityProfiles:
     get:
       tags:
-        - Security.hostSecurityProfile
-      summary: Get hostSecurityProfiles from Security
-      operationId: Security_ListHostSecurityProfiles
+        - security.hostSecurityProfile
+      summary: Get hostSecurityProfiles from security
+      operationId: security_ListHostSecurityProfiles
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1367,9 +1367,9 @@ paths:
       x-ms-docs-operation-type: operation
     post:
       tags:
-        - Security.hostSecurityProfile
-      summary: Create new navigation property to hostSecurityProfiles for Security
-      operationId: Security_CreateHostSecurityProfiles
+        - security.hostSecurityProfile
+      summary: Create new navigation property to hostSecurityProfiles for security
+      operationId: security_CreateHostSecurityProfiles
       requestBody:
         description: New navigation property
         content:
@@ -1387,12 +1387,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/Security/hostSecurityProfiles/{hostSecurityProfile-id}':
+  '/security/hostSecurityProfiles/{hostSecurityProfile-id}':
     get:
       tags:
-        - Security.hostSecurityProfile
-      summary: Get hostSecurityProfiles from Security
-      operationId: Security_GetHostSecurityProfiles
+        - security.hostSecurityProfile
+      summary: Get hostSecurityProfiles from security
+      operationId: security_GetHostSecurityProfiles
       parameters:
         - name: hostSecurityProfile-id
           in: path
@@ -1455,9 +1455,9 @@ paths:
       x-ms-docs-operation-type: operation
     patch:
       tags:
-        - Security.hostSecurityProfile
-      summary: Update the navigation property hostSecurityProfiles in Security
-      operationId: Security_UpdateHostSecurityProfiles
+        - security.hostSecurityProfile
+      summary: Update the navigation property hostSecurityProfiles in security
+      operationId: security_UpdateHostSecurityProfiles
       parameters:
         - name: hostSecurityProfile-id
           in: path
@@ -1481,9 +1481,9 @@ paths:
       x-ms-docs-operation-type: operation
     delete:
       tags:
-        - Security.hostSecurityProfile
-      summary: Delete navigation property hostSecurityProfiles for Security
-      operationId: Security_DeleteHostSecurityProfiles
+        - security.hostSecurityProfile
+      summary: Delete navigation property hostSecurityProfiles for security
+      operationId: security_DeleteHostSecurityProfiles
       parameters:
         - name: hostSecurityProfile-id
           in: path
@@ -1503,12 +1503,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  /Security/ipSecurityProfiles:
+  /security/ipSecurityProfiles:
     get:
       tags:
-        - Security.ipSecurityProfile
-      summary: Get ipSecurityProfiles from Security
-      operationId: Security_ListIpSecurityProfiles
+        - security.ipSecurityProfile
+      summary: Get ipSecurityProfiles from security
+      operationId: security_ListIpSecurityProfiles
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1616,9 +1616,9 @@ paths:
       x-ms-docs-operation-type: operation
     post:
       tags:
-        - Security.ipSecurityProfile
-      summary: Create new navigation property to ipSecurityProfiles for Security
-      operationId: Security_CreateIpSecurityProfiles
+        - security.ipSecurityProfile
+      summary: Create new navigation property to ipSecurityProfiles for security
+      operationId: security_CreateIpSecurityProfiles
       requestBody:
         description: New navigation property
         content:
@@ -1636,12 +1636,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/Security/ipSecurityProfiles/{ipSecurityProfile-id}':
+  '/security/ipSecurityProfiles/{ipSecurityProfile-id}':
     get:
       tags:
-        - Security.ipSecurityProfile
-      summary: Get ipSecurityProfiles from Security
-      operationId: Security_GetIpSecurityProfiles
+        - security.ipSecurityProfile
+      summary: Get ipSecurityProfiles from security
+      operationId: security_GetIpSecurityProfiles
       parameters:
         - name: ipSecurityProfile-id
           in: path
@@ -1699,9 +1699,9 @@ paths:
       x-ms-docs-operation-type: operation
     patch:
       tags:
-        - Security.ipSecurityProfile
-      summary: Update the navigation property ipSecurityProfiles in Security
-      operationId: Security_UpdateIpSecurityProfiles
+        - security.ipSecurityProfile
+      summary: Update the navigation property ipSecurityProfiles in security
+      operationId: security_UpdateIpSecurityProfiles
       parameters:
         - name: ipSecurityProfile-id
           in: path
@@ -1725,9 +1725,9 @@ paths:
       x-ms-docs-operation-type: operation
     delete:
       tags:
-        - Security.ipSecurityProfile
-      summary: Delete navigation property ipSecurityProfiles for Security
-      operationId: Security_DeleteIpSecurityProfiles
+        - security.ipSecurityProfile
+      summary: Delete navigation property ipSecurityProfiles for security
+      operationId: security_DeleteIpSecurityProfiles
       parameters:
         - name: ipSecurityProfile-id
           in: path
@@ -1747,12 +1747,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  /Security/providerTenantSettings:
+  /security/providerTenantSettings:
     get:
       tags:
-        - Security.providerTenantSetting
-      summary: Get providerTenantSettings from Security
-      operationId: Security_ListProviderTenantSettings
+        - security.providerTenantSetting
+      summary: Get providerTenantSettings from security
+      operationId: security_ListProviderTenantSettings
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1836,9 +1836,9 @@ paths:
       x-ms-docs-operation-type: operation
     post:
       tags:
-        - Security.providerTenantSetting
-      summary: Create new navigation property to providerTenantSettings for Security
-      operationId: Security_CreateProviderTenantSettings
+        - security.providerTenantSetting
+      summary: Create new navigation property to providerTenantSettings for security
+      operationId: security_CreateProviderTenantSettings
       requestBody:
         description: New navigation property
         content:
@@ -1856,12 +1856,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/Security/providerTenantSettings/{providerTenantSetting-id}':
+  '/security/providerTenantSettings/{providerTenantSetting-id}':
     get:
       tags:
-        - Security.providerTenantSetting
-      summary: Get providerTenantSettings from Security
-      operationId: Security_GetProviderTenantSettings
+        - security.providerTenantSetting
+      summary: Get providerTenantSettings from security
+      operationId: security_GetProviderTenantSettings
       parameters:
         - name: providerTenantSetting-id
           in: path
@@ -1911,9 +1911,9 @@ paths:
       x-ms-docs-operation-type: operation
     patch:
       tags:
-        - Security.providerTenantSetting
-      summary: Update the navigation property providerTenantSettings in Security
-      operationId: Security_UpdateProviderTenantSettings
+        - security.providerTenantSetting
+      summary: Update the navigation property providerTenantSettings in security
+      operationId: security_UpdateProviderTenantSettings
       parameters:
         - name: providerTenantSetting-id
           in: path
@@ -1937,9 +1937,9 @@ paths:
       x-ms-docs-operation-type: operation
     delete:
       tags:
-        - Security.providerTenantSetting
-      summary: Delete navigation property providerTenantSettings for Security
-      operationId: Security_DeleteProviderTenantSettings
+        - security.providerTenantSetting
+      summary: Delete navigation property providerTenantSettings for security
+      operationId: security_DeleteProviderTenantSettings
       parameters:
         - name: providerTenantSetting-id
           in: path
@@ -1959,12 +1959,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  /Security/secureScoreControlProfiles:
+  /security/secureScoreControlProfiles:
     get:
       tags:
-        - Security.secureScoreControlProfile
-      summary: Get secureScoreControlProfiles from Security
-      operationId: Security_ListSecureScoreControlProfiles
+        - security.secureScoreControlProfile
+      summary: Get secureScoreControlProfiles from security
+      operationId: security_ListSecureScoreControlProfiles
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2090,9 +2090,9 @@ paths:
       x-ms-docs-operation-type: operation
     post:
       tags:
-        - Security.secureScoreControlProfile
-      summary: Create new navigation property to secureScoreControlProfiles for Security
-      operationId: Security_CreateSecureScoreControlProfiles
+        - security.secureScoreControlProfile
+      summary: Create new navigation property to secureScoreControlProfiles for security
+      operationId: security_CreateSecureScoreControlProfiles
       requestBody:
         description: New navigation property
         content:
@@ -2110,12 +2110,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/Security/secureScoreControlProfiles/{secureScoreControlProfile-id}':
+  '/security/secureScoreControlProfiles/{secureScoreControlProfile-id}':
     get:
       tags:
-        - Security.secureScoreControlProfile
-      summary: Get secureScoreControlProfiles from Security
-      operationId: Security_GetSecureScoreControlProfiles
+        - security.secureScoreControlProfile
+      summary: Get secureScoreControlProfiles from security
+      operationId: security_GetSecureScoreControlProfiles
       parameters:
         - name: secureScoreControlProfile-id
           in: path
@@ -2179,9 +2179,9 @@ paths:
       x-ms-docs-operation-type: operation
     patch:
       tags:
-        - Security.secureScoreControlProfile
-      summary: Update the navigation property secureScoreControlProfiles in Security
-      operationId: Security_UpdateSecureScoreControlProfiles
+        - security.secureScoreControlProfile
+      summary: Update the navigation property secureScoreControlProfiles in security
+      operationId: security_UpdateSecureScoreControlProfiles
       parameters:
         - name: secureScoreControlProfile-id
           in: path
@@ -2205,9 +2205,9 @@ paths:
       x-ms-docs-operation-type: operation
     delete:
       tags:
-        - Security.secureScoreControlProfile
-      summary: Delete navigation property secureScoreControlProfiles for Security
-      operationId: Security_DeleteSecureScoreControlProfiles
+        - security.secureScoreControlProfile
+      summary: Delete navigation property secureScoreControlProfiles for security
+      operationId: security_DeleteSecureScoreControlProfiles
       parameters:
         - name: secureScoreControlProfile-id
           in: path
@@ -2227,12 +2227,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  /Security/secureScores:
+  /security/secureScores:
     get:
       tags:
-        - Security.secureScore
-      summary: Get secureScores from Security
-      operationId: Security_ListSecureScores
+        - security.secureScore
+      summary: Get secureScores from security
+      operationId: security_ListSecureScores
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2331,9 +2331,9 @@ paths:
       x-ms-docs-operation-type: operation
     post:
       tags:
-        - Security.secureScore
-      summary: Create new navigation property to secureScores for Security
-      operationId: Security_CreateSecureScores
+        - security.secureScore
+      summary: Create new navigation property to secureScores for security
+      operationId: security_CreateSecureScores
       requestBody:
         description: New navigation property
         content:
@@ -2351,12 +2351,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/Security/secureScores/{secureScore-id}':
+  '/security/secureScores/{secureScore-id}':
     get:
       tags:
-        - Security.secureScore
-      summary: Get secureScores from Security
-      operationId: Security_GetSecureScores
+        - security.secureScore
+      summary: Get secureScores from security
+      operationId: security_GetSecureScores
       parameters:
         - name: secureScore-id
           in: path
@@ -2411,9 +2411,9 @@ paths:
       x-ms-docs-operation-type: operation
     patch:
       tags:
-        - Security.secureScore
-      summary: Update the navigation property secureScores in Security
-      operationId: Security_UpdateSecureScores
+        - security.secureScore
+      summary: Update the navigation property secureScores in security
+      operationId: security_UpdateSecureScores
       parameters:
         - name: secureScore-id
           in: path
@@ -2437,9 +2437,9 @@ paths:
       x-ms-docs-operation-type: operation
     delete:
       tags:
-        - Security.secureScore
-      summary: Delete navigation property secureScores for Security
-      operationId: Security_DeleteSecureScores
+        - security.secureScore
+      summary: Delete navigation property secureScores for security
+      operationId: security_DeleteSecureScores
       parameters:
         - name: secureScore-id
           in: path
@@ -2459,12 +2459,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  /Security/securityActions:
+  /security/securityActions:
     get:
       tags:
-        - Security.securityAction
-      summary: Get securityActions from Security
-      operationId: Security_ListSecurityActions
+        - security.securityAction
+      summary: Get securityActions from security
+      operationId: security_ListSecurityActions
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2575,9 +2575,9 @@ paths:
       x-ms-docs-operation-type: operation
     post:
       tags:
-        - Security.securityAction
-      summary: Create new navigation property to securityActions for Security
-      operationId: Security_CreateSecurityActions
+        - security.securityAction
+      summary: Create new navigation property to securityActions for security
+      operationId: security_CreateSecurityActions
       requestBody:
         description: New navigation property
         content:
@@ -2595,12 +2595,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/Security/securityActions/{securityAction-id}':
+  '/security/securityActions/{securityAction-id}':
     get:
       tags:
-        - Security.securityAction
-      summary: Get securityActions from Security
-      operationId: Security_GetSecurityActions
+        - security.securityAction
+      summary: Get securityActions from security
+      operationId: security_GetSecurityActions
       parameters:
         - name: securityAction-id
           in: path
@@ -2659,9 +2659,9 @@ paths:
       x-ms-docs-operation-type: operation
     patch:
       tags:
-        - Security.securityAction
-      summary: Update the navigation property securityActions in Security
-      operationId: Security_UpdateSecurityActions
+        - security.securityAction
+      summary: Update the navigation property securityActions in security
+      operationId: security_UpdateSecurityActions
       parameters:
         - name: securityAction-id
           in: path
@@ -2685,9 +2685,9 @@ paths:
       x-ms-docs-operation-type: operation
     delete:
       tags:
-        - Security.securityAction
-      summary: Delete navigation property securityActions for Security
-      operationId: Security_DeleteSecurityActions
+        - security.securityAction
+      summary: Delete navigation property securityActions for security
+      operationId: security_DeleteSecurityActions
       parameters:
         - name: securityAction-id
           in: path
@@ -2707,12 +2707,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/Security/securityActions/{securityAction-id}/microsoft.graph.cancelSecurityAction':
+  '/security/securityActions/{securityAction-id}/microsoft.graph.cancelSecurityAction':
     post:
       tags:
-        - Security.Actions
+        - security.Actions
       summary: Invoke action cancelSecurityAction
-      operationId: Security.securityActions_cancelSecurityAction
+      operationId: security.securityActions_cancelSecurityAction
       parameters:
         - name: securityAction-id
           in: path
@@ -2727,12 +2727,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-  /Security/tiIndicators:
+  /security/tiIndicators:
     get:
       tags:
-        - Security.tiIndicator
-      summary: Get tiIndicators from Security
-      operationId: Security_ListTiIndicators
+        - security.tiIndicator
+      summary: Get tiIndicators from security
+      operationId: security_ListTiIndicators
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2975,9 +2975,9 @@ paths:
       x-ms-docs-operation-type: operation
     post:
       tags:
-        - Security.tiIndicator
-      summary: Create new navigation property to tiIndicators for Security
-      operationId: Security_CreateTiIndicators
+        - security.tiIndicator
+      summary: Create new navigation property to tiIndicators for security
+      operationId: security_CreateTiIndicators
       requestBody:
         description: New navigation property
         content:
@@ -2995,12 +2995,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/Security/tiIndicators/{tiIndicator-id}':
+  '/security/tiIndicators/{tiIndicator-id}':
     get:
       tags:
-        - Security.tiIndicator
-      summary: Get tiIndicators from Security
-      operationId: Security_GetTiIndicators
+        - security.tiIndicator
+      summary: Get tiIndicators from security
+      operationId: security_GetTiIndicators
       parameters:
         - name: tiIndicator-id
           in: path
@@ -3103,9 +3103,9 @@ paths:
       x-ms-docs-operation-type: operation
     patch:
       tags:
-        - Security.tiIndicator
-      summary: Update the navigation property tiIndicators in Security
-      operationId: Security_UpdateTiIndicators
+        - security.tiIndicator
+      summary: Update the navigation property tiIndicators in security
+      operationId: security_UpdateTiIndicators
       parameters:
         - name: tiIndicator-id
           in: path
@@ -3129,9 +3129,9 @@ paths:
       x-ms-docs-operation-type: operation
     delete:
       tags:
-        - Security.tiIndicator
-      summary: Delete navigation property tiIndicators for Security
-      operationId: Security_DeleteTiIndicators
+        - security.tiIndicator
+      summary: Delete navigation property tiIndicators for security
+      operationId: security_DeleteTiIndicators
       parameters:
         - name: tiIndicator-id
           in: path
@@ -3151,12 +3151,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  /Security/tiIndicators/microsoft.graph.deleteTiIndicators:
+  /security/tiIndicators/microsoft.graph.deleteTiIndicators:
     post:
       tags:
-        - Security.Actions
+        - security.Actions
       summary: Invoke action deleteTiIndicators
-      operationId: Security.tiIndicators_deleteTiIndicators
+      operationId: security.tiIndicators_deleteTiIndicators
       requestBody:
         description: Action parameters
         content:
@@ -3184,12 +3184,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-  /Security/tiIndicators/microsoft.graph.deleteTiIndicatorsByExternalId:
+  /security/tiIndicators/microsoft.graph.deleteTiIndicatorsByExternalId:
     post:
       tags:
-        - Security.Actions
+        - security.Actions
       summary: Invoke action deleteTiIndicatorsByExternalId
-      operationId: Security.tiIndicators_deleteTiIndicatorsByExternalId
+      operationId: security.tiIndicators_deleteTiIndicatorsByExternalId
       requestBody:
         description: Action parameters
         content:
@@ -3217,12 +3217,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-  /Security/tiIndicators/microsoft.graph.submitTiIndicators:
+  /security/tiIndicators/microsoft.graph.submitTiIndicators:
     post:
       tags:
-        - Security.Actions
+        - security.Actions
       summary: Invoke action submitTiIndicators
-      operationId: Security.tiIndicators_submitTiIndicators
+      operationId: security.tiIndicators_submitTiIndicators
       requestBody:
         description: Action parameters
         content:
@@ -3249,12 +3249,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-  /Security/tiIndicators/microsoft.graph.updateTiIndicators:
+  /security/tiIndicators/microsoft.graph.updateTiIndicators:
     post:
       tags:
-        - Security.Actions
+        - security.Actions
       summary: Invoke action updateTiIndicators
-      operationId: Security.tiIndicators_updateTiIndicators
+      operationId: security.tiIndicators_updateTiIndicators
       requestBody:
         description: Action parameters
         content:
@@ -3281,12 +3281,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-  /Security/userSecurityProfiles:
+  /security/userSecurityProfiles:
     get:
       tags:
-        - Security.userSecurityProfile
-      summary: Get userSecurityProfiles from Security
-      operationId: Security_ListUserSecurityProfiles
+        - security.userSecurityProfile
+      summary: Get userSecurityProfiles from security
+      operationId: security_ListUserSecurityProfiles
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3385,9 +3385,9 @@ paths:
       x-ms-docs-operation-type: operation
     post:
       tags:
-        - Security.userSecurityProfile
-      summary: Create new navigation property to userSecurityProfiles for Security
-      operationId: Security_CreateUserSecurityProfiles
+        - security.userSecurityProfile
+      summary: Create new navigation property to userSecurityProfiles for security
+      operationId: security_CreateUserSecurityProfiles
       requestBody:
         description: New navigation property
         content:
@@ -3405,12 +3405,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/Security/userSecurityProfiles/{userSecurityProfile-id}':
+  '/security/userSecurityProfiles/{userSecurityProfile-id}':
     get:
       tags:
-        - Security.userSecurityProfile
-      summary: Get userSecurityProfiles from Security
-      operationId: Security_GetUserSecurityProfiles
+        - security.userSecurityProfile
+      summary: Get userSecurityProfiles from security
+      operationId: security_GetUserSecurityProfiles
       parameters:
         - name: userSecurityProfile-id
           in: path
@@ -3465,9 +3465,9 @@ paths:
       x-ms-docs-operation-type: operation
     patch:
       tags:
-        - Security.userSecurityProfile
-      summary: Update the navigation property userSecurityProfiles in Security
-      operationId: Security_UpdateUserSecurityProfiles
+        - security.userSecurityProfile
+      summary: Update the navigation property userSecurityProfiles in security
+      operationId: security_UpdateUserSecurityProfiles
       parameters:
         - name: userSecurityProfile-id
           in: path
@@ -3491,9 +3491,9 @@ paths:
       x-ms-docs-operation-type: operation
     delete:
       tags:
-        - Security.userSecurityProfile
-      summary: Delete navigation property userSecurityProfiles for Security
-      operationId: Security_DeleteUserSecurityProfiles
+        - security.userSecurityProfile
+      summary: Delete navigation property userSecurityProfiles for security
+      operationId: security_DeleteUserSecurityProfiles
       parameters:
         - name: userSecurityProfile-id
           in: path
