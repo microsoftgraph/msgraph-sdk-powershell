@@ -172,11 +172,11 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
         }
 
         /// <summary>
-        /// Gets unexpired certificate of the specified certificate subject name for the current user in My store..
+        /// Gets unexpired certificate of the specified certificate thumbprint for the current user in My store.
         /// </summary>
-        /// <param name="certificateName">Subject name of the certificate to get.</param>
+        /// <param name="certificateThumbprint">Subject name of the certificate to get.</param>
         /// <returns></returns>
-        private static X509Certificate2 GetCertificateByThumbprint(string CertificateThumbprint)
+        private static X509Certificate2 GetCertificateByThumbprint(string certificateThumbprint)
         {
             X509Certificate2 xCertificate = null;
 
@@ -187,10 +187,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                 // Get unexpired certificates with the specified name.
                 X509Certificate2Collection unexpiredCerts = xStore.Certificates
                     .Find(X509FindType.FindByTimeValid, DateTime.Now, false)
-                    .Find(X509FindType.FindByThumbprint, CertificateThumbprint, false);
+                    .Find(X509FindType.FindByThumbprint, certificateThumbprint, false);
 
                 if (unexpiredCerts.Count < 1)
-                    throw new Exception($"{CertificateThumbprint} certificate was not found or has expired.");
+                    throw new Exception($"{certificateThumbprint} certificate was not found or has expired.");
 
                 // Only return current cert.
                 xCertificate = unexpiredCerts
@@ -202,11 +202,11 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
         }
 
         /// <summary>
-        /// Gets unexpired certificate of the specified certificate subject name for the current user in My store..
+        /// Gets unexpired certificate of the specified certificate subject name for the current user in My store.
         /// </summary>
-        /// <param name="certificateName">Subjec name of the certificate to get.</param>
+        /// <param name="certificateName">Subject name of the certificate to get.</param>
         /// <returns></returns>
-        private static X509Certificate2 GetCertificateByName(string CertificateName)
+        private static X509Certificate2 GetCertificateByName(string certificateName)
         {
             X509Certificate2 xCertificate = null;
 
@@ -217,10 +217,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                 // Get unexpired certificates with the specified name.
                 X509Certificate2Collection unexpiredCerts = xStore.Certificates
                     .Find(X509FindType.FindByTimeValid, DateTime.Now, false)
-                    .Find(X509FindType.FindBySubjectDistinguishedName, CertificateName, false);
+                    .Find(X509FindType.FindBySubjectDistinguishedName, certificateName, false);
 
                 if (unexpiredCerts.Count < 1)
-                    throw new Exception($"{CertificateName} certificate was not found or has expired.");
+                    throw new Exception($"{certificateName} certificate was not found or has expired.");
 
                 // Only return current cert.
                 xCertificate = unexpiredCerts
