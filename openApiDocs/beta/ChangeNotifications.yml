@@ -52,6 +52,8 @@ paths:
                 - latestSupportedTlsVersion desc
                 - lifecycleNotificationUrl
                 - lifecycleNotificationUrl desc
+                - notificationQueryOptions
+                - notificationQueryOptions desc
                 - notificationUrl
                 - notificationUrl desc
                 - resource
@@ -79,6 +81,7 @@ paths:
                 - includeResourceData
                 - latestSupportedTlsVersion
                 - lifecycleNotificationUrl
+                - notificationQueryOptions
                 - notificationUrl
                 - resource
               type: string
@@ -175,6 +178,7 @@ paths:
                 - includeResourceData
                 - latestSupportedTlsVersion
                 - lifecycleNotificationUrl
+                - notificationQueryOptions
                 - notificationUrl
                 - resource
               type: string
@@ -300,6 +304,9 @@ components:
             lifecycleNotificationUrl:
               type: string
               description: 'The URL of the endpoint that receives lifecycle notifications, including subscriptionRemoved and missed notifications. This URL must make use of the HTTPS protocol. Optional. Read more about how Outlook resources use lifecycle notifications.'
+              nullable: true
+            notificationQueryOptions:
+              type: string
               nullable: true
             notificationUrl:
               type: string
