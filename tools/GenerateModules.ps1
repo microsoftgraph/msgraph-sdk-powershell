@@ -121,7 +121,7 @@ $ModuleMapping.Keys | ForEach-Object -ThrottleLimit $ModuleMapping.Keys.Count -P
         try {
             # Generate PowerShell modules.
             Write-Host -ForegroundColor Green "Generating '$Using:ModulePrefix.$ModuleName' module..."
-            & autorest --module-version:$ModuleVersion --service-name:$ModuleName $ModuleLevelReadMePath --verbose --use:@autorest/powershell@2.1.402
+            & autorest --module-version:$ModuleVersion --service-name:$ModuleName $ModuleLevelReadMePath --verbose
             if ($LASTEXITCODE) {
                 Write-Error "Failed to generate '$ModuleName' module."
             }
