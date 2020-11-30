@@ -1458,6 +1458,12 @@ paths:
                   type: array
                   items:
                     $ref: '#/components/schemas/microsoft.graph.modality'
+                participantCapacity:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -2726,8 +2732,14 @@ paths:
                 - accessLevel desc
                 - allowedPresenters
                 - allowedPresenters desc
+                - alternativeRecording
+                - alternativeRecording desc
+                - attendeeReport
+                - attendeeReport desc
                 - audioConferencing
                 - audioConferencing desc
+                - broadcastSettings
+                - broadcastSettings desc
                 - canceledDateTime
                 - canceledDateTime desc
                 - capabilities
@@ -2758,6 +2770,8 @@ paths:
                 - lobbyBypassSettings desc
                 - participants
                 - participants desc
+                - recording
+                - recording desc
                 - startDateTime
                 - startDateTime desc
                 - subject
@@ -2778,7 +2792,10 @@ paths:
                 - id
                 - accessLevel
                 - allowedPresenters
+                - alternativeRecording
+                - attendeeReport
                 - audioConferencing
+                - broadcastSettings
                 - canceledDateTime
                 - capabilities
                 - chatInfo
@@ -2794,6 +2811,7 @@ paths:
                 - joinUrl
                 - lobbyBypassSettings
                 - participants
+                - recording
                 - startDateTime
                 - subject
                 - videoTeleconferenceId
@@ -2882,7 +2900,10 @@ paths:
                 - id
                 - accessLevel
                 - allowedPresenters
+                - alternativeRecording
+                - attendeeReport
                 - audioConferencing
+                - broadcastSettings
                 - canceledDateTime
                 - capabilities
                 - chatInfo
@@ -2898,6 +2919,7 @@ paths:
                 - joinUrl
                 - lobbyBypassSettings
                 - participants
+                - recording
                 - startDateTime
                 - subject
                 - videoTeleconferenceId
@@ -2968,6 +2990,162 @@ paths:
           description: ETag
           schema:
             type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/communications/onlineMeetings/{onlineMeeting-id}/alternativeRecording':
+    get:
+      tags:
+        - communications.onlineMeeting
+      summary: Get media content for the navigation property onlineMeetings from communications
+      operationId: communications_GetOnlineMeetingsAlternativeRecording
+      parameters:
+        - name: onlineMeeting-id
+          in: path
+          description: 'key: id of onlineMeeting'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - communications.onlineMeeting
+      summary: Update media content for the navigation property onlineMeetings in communications
+      operationId: communications_SetOnlineMeetingsAlternativeRecording
+      parameters:
+        - name: onlineMeeting-id
+          in: path
+          description: 'key: id of onlineMeeting'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/communications/onlineMeetings/{onlineMeeting-id}/attendeeReport':
+    get:
+      tags:
+        - communications.onlineMeeting
+      summary: Get media content for the navigation property onlineMeetings from communications
+      operationId: communications_GetOnlineMeetingsAttendeeReport
+      parameters:
+        - name: onlineMeeting-id
+          in: path
+          description: 'key: id of onlineMeeting'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - communications.onlineMeeting
+      summary: Update media content for the navigation property onlineMeetings in communications
+      operationId: communications_SetOnlineMeetingsAttendeeReport
+      parameters:
+        - name: onlineMeeting-id
+          in: path
+          description: 'key: id of onlineMeeting'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/communications/onlineMeetings/{onlineMeeting-id}/recording':
+    get:
+      tags:
+        - communications.onlineMeeting
+      summary: Get media content for the navigation property onlineMeetings from communications
+      operationId: communications_GetOnlineMeetingsRecording
+      parameters:
+        - name: onlineMeeting-id
+          in: path
+          description: 'key: id of onlineMeeting'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - communications.onlineMeeting
+      summary: Update media content for the navigation property onlineMeetings in communications
+      operationId: communications_SetOnlineMeetingsRecording
+      parameters:
+        - name: onlineMeeting-id
+          in: path
+          description: 'key: id of onlineMeeting'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
       responses:
         '204':
           description: Success
@@ -3254,8 +3432,14 @@ paths:
                 - accessLevel desc
                 - allowedPresenters
                 - allowedPresenters desc
+                - alternativeRecording
+                - alternativeRecording desc
+                - attendeeReport
+                - attendeeReport desc
                 - audioConferencing
                 - audioConferencing desc
+                - broadcastSettings
+                - broadcastSettings desc
                 - canceledDateTime
                 - canceledDateTime desc
                 - capabilities
@@ -3286,6 +3470,8 @@ paths:
                 - lobbyBypassSettings desc
                 - participants
                 - participants desc
+                - recording
+                - recording desc
                 - startDateTime
                 - startDateTime desc
                 - subject
@@ -3306,7 +3492,10 @@ paths:
                 - id
                 - accessLevel
                 - allowedPresenters
+                - alternativeRecording
+                - attendeeReport
                 - audioConferencing
+                - broadcastSettings
                 - canceledDateTime
                 - capabilities
                 - chatInfo
@@ -3322,6 +3511,7 @@ paths:
                 - joinUrl
                 - lobbyBypassSettings
                 - participants
+                - recording
                 - startDateTime
                 - subject
                 - videoTeleconferenceId
@@ -3425,7 +3615,10 @@ paths:
                 - id
                 - accessLevel
                 - allowedPresenters
+                - alternativeRecording
+                - attendeeReport
                 - audioConferencing
+                - broadcastSettings
                 - canceledDateTime
                 - capabilities
                 - chatInfo
@@ -3441,6 +3634,7 @@ paths:
                 - joinUrl
                 - lobbyBypassSettings
                 - participants
+                - recording
                 - startDateTime
                 - subject
                 - videoTeleconferenceId
@@ -3525,6 +3719,204 @@ paths:
           description: ETag
           schema:
             type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/alternativeRecording':
+    get:
+      tags:
+        - users.onlineMeeting
+      summary: Get media content for the navigation property onlineMeetings from users
+      operationId: users_GetOnlineMeetingsAlternativeRecording
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onlineMeeting-id
+          in: path
+          description: 'key: id of onlineMeeting'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - users.onlineMeeting
+      summary: Update media content for the navigation property onlineMeetings in users
+      operationId: users_SetOnlineMeetingsAlternativeRecording
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onlineMeeting-id
+          in: path
+          description: 'key: id of onlineMeeting'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/attendeeReport':
+    get:
+      tags:
+        - users.onlineMeeting
+      summary: Get media content for the navigation property onlineMeetings from users
+      operationId: users_GetOnlineMeetingsAttendeeReport
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onlineMeeting-id
+          in: path
+          description: 'key: id of onlineMeeting'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - users.onlineMeeting
+      summary: Update media content for the navigation property onlineMeetings in users
+      operationId: users_SetOnlineMeetingsAttendeeReport
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onlineMeeting-id
+          in: path
+          description: 'key: id of onlineMeeting'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/recording':
+    get:
+      tags:
+        - users.onlineMeeting
+      summary: Get media content for the navigation property onlineMeetings from users
+      operationId: users_GetOnlineMeetingsRecording
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onlineMeeting-id
+          in: path
+          description: 'key: id of onlineMeeting'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - users.onlineMeeting
+      summary: Update media content for the navigation property onlineMeetings in users
+      operationId: users_SetOnlineMeetingsRecording
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onlineMeeting-id
+          in: path
+          description: 'key: id of onlineMeeting'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
       responses:
         '204':
           description: Success
@@ -4157,8 +4549,18 @@ components:
               $ref: '#/components/schemas/microsoft.graph.accessLevel'
             allowedPresenters:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingPresenters'
+            alternativeRecording:
+              type: string
+              format: base64url
+              nullable: true
+            attendeeReport:
+              type: string
+              format: base64url
+              nullable: true
             audioConferencing:
               $ref: '#/components/schemas/microsoft.graph.audioConferencing'
+            broadcastSettings:
+              $ref: '#/components/schemas/microsoft.graph.broadcastMeetingSettings'
             canceledDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -4201,6 +4603,7 @@ components:
               nullable: true
             isEntryExitAnnounced:
               type: boolean
+              description: Whether or not to announce when callers join or leave.
               nullable: true
             joinInformation:
               $ref: '#/components/schemas/microsoft.graph.itemBody'
@@ -4211,6 +4614,10 @@ components:
               $ref: '#/components/schemas/microsoft.graph.lobbyBypassSettings'
             participants:
               $ref: '#/components/schemas/microsoft.graph.meetingParticipants'
+            recording:
+              type: string
+              format: base64url
+              nullable: true
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -4362,6 +4769,9 @@ components:
         languageId:
           type: string
           description: The language culture string. Read-only.
+          nullable: true
+        platformId:
+          type: string
           nullable: true
         region:
           type: string
@@ -4747,6 +5157,26 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.broadcastMeetingSettings:
+      title: broadcastMeetingSettings
+      type: object
+      properties:
+        allowedAudience:
+          $ref: '#/components/schemas/microsoft.graph.broadcastMeetingAudience'
+        isAttendeeReportEnabled:
+          type: boolean
+          nullable: true
+        isQuestionAndAnswerEnabled:
+          type: boolean
+          nullable: true
+        isRecordingEnabled:
+          type: boolean
+          nullable: true
+        isVideoOnDemandEnabled:
+          type: boolean
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.meetingCapabilities:
       title: meetingCapabilities
       enum:
@@ -4771,6 +5201,7 @@ components:
       properties:
         isDialInBypassEnabled:
           type: boolean
+          description: Specifies whether or not to always let dial-in callers bypass the lobby. Optional.
           nullable: true
         scope:
           $ref: '#/components/schemas/microsoft.graph.lobbyBypassScope'
@@ -5260,6 +5691,14 @@ components:
         - receiveOnly
         - sendReceive
       type: string
+    microsoft.graph.broadcastMeetingAudience:
+      title: broadcastMeetingAudience
+      enum:
+        - roleIsAttendee
+        - organization
+        - everyone
+        - unknownFutureValue
+      type: string
     microsoft.graph.bodyType:
       title: bodyType
       enum:
@@ -5280,6 +5719,7 @@ components:
       enum:
         - attendee
         - presenter
+        - producer
         - unknownFutureValue
       type: string
     odata.error.main:
