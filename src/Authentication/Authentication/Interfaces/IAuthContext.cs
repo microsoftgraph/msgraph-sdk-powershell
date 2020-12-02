@@ -4,6 +4,8 @@
 
 namespace Microsoft.Graph.PowerShell.Authentication
 {
+    using System.Security.Cryptography.X509Certificates;
+
     public enum AuthenticationType
     {
         Delegated,
@@ -28,5 +30,6 @@ namespace Microsoft.Graph.PowerShell.Authentication
         string Account { get; set; }
         string AppName { get; set; }
         ContextScope ContextScope { get; set; }
+        X509Certificate2 Certificate { get; set; }
     }
 }

@@ -2369,6 +2369,8 @@ paths:
                 - servicePrincipalNames desc
                 - servicePrincipalType
                 - servicePrincipalType desc
+                - signInAudience
+                - signInAudience desc
                 - tags
                 - tags desc
                 - tokenEncryptionKeyId
@@ -2413,12 +2415,14 @@ paths:
                 - samlSingleSignOnSettings
                 - servicePrincipalNames
                 - servicePrincipalType
+                - signInAudience
                 - tags
                 - tokenEncryptionKeyId
                 - appRoleAssignedTo
                 - appRoleAssignments
                 - claimsMappingPolicies
                 - createdObjects
+                - delegatedPermissionClassifications
                 - endpoints
                 - homeRealmDiscoveryPolicies
                 - memberOf
@@ -2444,6 +2448,7 @@ paths:
                 - appRoleAssignments
                 - claimsMappingPolicies
                 - createdObjects
+                - delegatedPermissionClassifications
                 - endpoints
                 - homeRealmDiscoveryPolicies
                 - memberOf
@@ -2562,12 +2567,14 @@ paths:
                 - samlSingleSignOnSettings
                 - servicePrincipalNames
                 - servicePrincipalType
+                - signInAudience
                 - tags
                 - tokenEncryptionKeyId
                 - appRoleAssignedTo
                 - appRoleAssignments
                 - claimsMappingPolicies
                 - createdObjects
+                - delegatedPermissionClassifications
                 - endpoints
                 - homeRealmDiscoveryPolicies
                 - memberOf
@@ -2593,6 +2600,7 @@ paths:
                 - appRoleAssignments
                 - claimsMappingPolicies
                 - createdObjects
+                - delegatedPermissionClassifications
                 - endpoints
                 - homeRealmDiscoveryPolicies
                 - memberOf
@@ -2625,6 +2633,10 @@ paths:
                 servicePrincipal-id: $request.path.servicePrincipal-id
             createdObjects:
               operationId: servicePrincipals.ListCreatedObjects
+              parameters:
+                servicePrincipal-id: $request.path.servicePrincipal-id
+            delegatedPermissionClassifications:
+              operationId: servicePrincipals.ListDelegatedPermissionClassifications
               parameters:
                 servicePrincipal-id: $request.path.servicePrincipal-id
             endpoints:
@@ -3601,6 +3613,246 @@ paths:
                 type: object
                 additionalProperties:
                   type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/servicePrincipals/{servicePrincipal-id}/delegatedPermissionClassifications':
+    get:
+      tags:
+        - servicePrincipals.delegatedPermissionClassification
+      summary: Get delegatedPermissionClassifications from servicePrincipals
+      operationId: servicePrincipals_ListDelegatedPermissionClassifications
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: 'key: id of servicePrincipal'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - classification
+                - classification desc
+                - permissionId
+                - permissionId desc
+                - permissionName
+                - permissionName desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - classification
+                - permissionId
+                - permissionName
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of delegatedPermissionClassification
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.delegatedPermissionClassification'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - servicePrincipals.delegatedPermissionClassification
+      summary: Create new navigation property to delegatedPermissionClassifications for servicePrincipals
+      operationId: servicePrincipals_CreateDelegatedPermissionClassifications
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: 'key: id of servicePrincipal'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.delegatedPermissionClassification'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.delegatedPermissionClassification'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/servicePrincipals/{servicePrincipal-id}/delegatedPermissionClassifications/{delegatedPermissionClassification-id}':
+    get:
+      tags:
+        - servicePrincipals.delegatedPermissionClassification
+      summary: Get delegatedPermissionClassifications from servicePrincipals
+      operationId: servicePrincipals_GetDelegatedPermissionClassifications
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: 'key: id of servicePrincipal'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - name: delegatedPermissionClassification-id
+          in: path
+          description: 'key: id of delegatedPermissionClassification'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: delegatedPermissionClassification
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - classification
+                - permissionId
+                - permissionName
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.delegatedPermissionClassification'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - servicePrincipals.delegatedPermissionClassification
+      summary: Update the navigation property delegatedPermissionClassifications in servicePrincipals
+      operationId: servicePrincipals_UpdateDelegatedPermissionClassifications
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: 'key: id of servicePrincipal'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - name: delegatedPermissionClassification-id
+          in: path
+          description: 'key: id of delegatedPermissionClassification'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: delegatedPermissionClassification
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.delegatedPermissionClassification'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - servicePrincipals.delegatedPermissionClassification
+      summary: Delete navigation property delegatedPermissionClassifications for servicePrincipals
+      operationId: servicePrincipals_DeleteDelegatedPermissionClassifications
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: 'key: id of servicePrincipal'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - name: delegatedPermissionClassification-id
+          in: path
+          description: 'key: id of delegatedPermissionClassification'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: delegatedPermissionClassification
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6246,7 +6498,7 @@ components:
           nullable: true
         key:
           type: string
-          description: Value for the key credential. Should be a base 64 encoded value.
+          description: 'The certificate''s raw data in byte array converted to Base64 string; for example, [System.Convert]::ToBase64String($Cert.GetRawCertData()).'
           format: base64url
           nullable: true
         keyId:
@@ -6487,6 +6739,9 @@ components:
               type: string
               description: Identifies if the service principal represents an application or a managed identity. This is set by Azure AD internally. For a service principal that represents an application this is set as Application. For a service principal that represent a managed identity this is set as ManagedIdentity.
               nullable: true
+            signInAudience:
+              type: string
+              nullable: true
             tags:
               type: array
               items:
@@ -6518,6 +6773,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: Directory objects created by this service principal. Read-only. Nullable.
+            delegatedPermissionClassifications:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.delegatedPermissionClassification'
             endpoints:
               type: array
               items:
@@ -6573,6 +6832,22 @@ components:
           additionalProperties:
             type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
+    microsoft.graph.delegatedPermissionClassification:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: delegatedPermissionClassification
+          type: object
+          properties:
+            classification:
+              $ref: '#/components/schemas/microsoft.graph.permissionClassificationType'
+            permissionId:
+              type: string
+              nullable: true
+            permissionName:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.endpoint:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.directoryObject'
@@ -6904,6 +7179,14 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.permissionClassificationType:
+      title: permissionClassificationType
+      enum:
+        - low
+        - medium
+        - high
+        - unknownFutureValue
+      type: string
     odata.error:
       required:
         - error

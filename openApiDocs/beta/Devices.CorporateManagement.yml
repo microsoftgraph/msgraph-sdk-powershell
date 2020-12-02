@@ -305,10 +305,14 @@ paths:
                 - appActionIfAndroidSafetyNetAppsVerificationFailed desc
                 - appActionIfAndroidSafetyNetDeviceAttestationFailed
                 - appActionIfAndroidSafetyNetDeviceAttestationFailed desc
+                - appActionIfDeviceLockNotSet
+                - appActionIfDeviceLockNotSet desc
                 - approvedKeyboards
                 - approvedKeyboards desc
                 - biometricAuthenticationBlocked
                 - biometricAuthenticationBlocked desc
+                - blockAfterCompanyPortalUpdateDeferralInDays
+                - blockAfterCompanyPortalUpdateDeferralInDays desc
                 - customBrowserDisplayName
                 - customBrowserDisplayName desc
                 - customBrowserPackageId
@@ -319,6 +323,8 @@ paths:
                 - customDialerAppPackageId desc
                 - deployedAppCount
                 - deployedAppCount desc
+                - deviceLockRequired
+                - deviceLockRequired desc
                 - disableAppEncryptionIfDeviceEncryptionIsEnabled
                 - disableAppEncryptionIfDeviceEncryptionIsEnabled desc
                 - encryptAppData
@@ -347,6 +353,10 @@ paths:
                 - requiredAndroidSafetyNetEvaluationType desc
                 - screenCaptureBlocked
                 - screenCaptureBlocked desc
+                - warnAfterCompanyPortalUpdateDeferralInDays
+                - warnAfterCompanyPortalUpdateDeferralInDays desc
+                - wipeAfterCompanyPortalUpdateDeferralInDays
+                - wipeAfterCompanyPortalUpdateDeferralInDays desc
               type: string
         - name: $select
           in: query
@@ -414,13 +424,16 @@ paths:
                 - appActionIfAndroidDeviceModelNotAllowed
                 - appActionIfAndroidSafetyNetAppsVerificationFailed
                 - appActionIfAndroidSafetyNetDeviceAttestationFailed
+                - appActionIfDeviceLockNotSet
                 - approvedKeyboards
                 - biometricAuthenticationBlocked
+                - blockAfterCompanyPortalUpdateDeferralInDays
                 - customBrowserDisplayName
                 - customBrowserPackageId
                 - customDialerAppDisplayName
                 - customDialerAppPackageId
                 - deployedAppCount
+                - deviceLockRequired
                 - disableAppEncryptionIfDeviceEncryptionIsEnabled
                 - encryptAppData
                 - exemptedAppPackages
@@ -435,6 +448,8 @@ paths:
                 - requiredAndroidSafetyNetDeviceAttestationType
                 - requiredAndroidSafetyNetEvaluationType
                 - screenCaptureBlocked
+                - warnAfterCompanyPortalUpdateDeferralInDays
+                - wipeAfterCompanyPortalUpdateDeferralInDays
                 - assignments
                 - apps
                 - deploymentSummary
@@ -579,13 +594,16 @@ paths:
                 - appActionIfAndroidDeviceModelNotAllowed
                 - appActionIfAndroidSafetyNetAppsVerificationFailed
                 - appActionIfAndroidSafetyNetDeviceAttestationFailed
+                - appActionIfDeviceLockNotSet
                 - approvedKeyboards
                 - biometricAuthenticationBlocked
+                - blockAfterCompanyPortalUpdateDeferralInDays
                 - customBrowserDisplayName
                 - customBrowserPackageId
                 - customDialerAppDisplayName
                 - customDialerAppPackageId
                 - deployedAppCount
+                - deviceLockRequired
                 - disableAppEncryptionIfDeviceEncryptionIsEnabled
                 - encryptAppData
                 - exemptedAppPackages
@@ -600,6 +618,8 @@ paths:
                 - requiredAndroidSafetyNetDeviceAttestationType
                 - requiredAndroidSafetyNetEvaluationType
                 - screenCaptureBlocked
+                - warnAfterCompanyPortalUpdateDeferralInDays
+                - wipeAfterCompanyPortalUpdateDeferralInDays
                 - assignments
                 - apps
                 - deploymentSummary
@@ -1196,12 +1216,16 @@ paths:
                 - appActionIfAndroidSafetyNetAppsVerificationFailed desc
                 - appActionIfAndroidSafetyNetDeviceAttestationFailed
                 - appActionIfAndroidSafetyNetDeviceAttestationFailed desc
+                - appActionIfDeviceLockNotSet
+                - appActionIfDeviceLockNotSet desc
                 - appActionIfIosDeviceModelNotAllowed
                 - appActionIfIosDeviceModelNotAllowed desc
                 - appDataEncryptionType
                 - appDataEncryptionType desc
                 - biometricAuthenticationBlocked
                 - biometricAuthenticationBlocked desc
+                - blockAfterCompanyPortalUpdateDeferralInDays
+                - blockAfterCompanyPortalUpdateDeferralInDays desc
                 - customBrowserDisplayName
                 - customBrowserDisplayName desc
                 - customBrowserPackageId
@@ -1218,6 +1242,8 @@ paths:
                 - customSettings desc
                 - deployedAppCount
                 - deployedAppCount desc
+                - deviceLockRequired
+                - deviceLockRequired desc
                 - disableAppEncryptionIfDeviceEncryptionIsEnabled
                 - disableAppEncryptionIfDeviceEncryptionIsEnabled desc
                 - disableProtectionOfManagedOutboundOpenInData
@@ -1260,6 +1286,10 @@ paths:
                 - screenCaptureBlocked desc
                 - thirdPartyKeyboardsBlocked
                 - thirdPartyKeyboardsBlocked desc
+                - warnAfterCompanyPortalUpdateDeferralInDays
+                - warnAfterCompanyPortalUpdateDeferralInDays desc
+                - wipeAfterCompanyPortalUpdateDeferralInDays
+                - wipeAfterCompanyPortalUpdateDeferralInDays desc
               type: string
         - name: $select
           in: query
@@ -1326,9 +1356,11 @@ paths:
                 - appActionIfAndroidDeviceModelNotAllowed
                 - appActionIfAndroidSafetyNetAppsVerificationFailed
                 - appActionIfAndroidSafetyNetDeviceAttestationFailed
+                - appActionIfDeviceLockNotSet
                 - appActionIfIosDeviceModelNotAllowed
                 - appDataEncryptionType
                 - biometricAuthenticationBlocked
+                - blockAfterCompanyPortalUpdateDeferralInDays
                 - customBrowserDisplayName
                 - customBrowserPackageId
                 - customBrowserProtocol
@@ -1337,6 +1369,7 @@ paths:
                 - customDialerAppProtocol
                 - customSettings
                 - deployedAppCount
+                - deviceLockRequired
                 - disableAppEncryptionIfDeviceEncryptionIsEnabled
                 - disableProtectionOfManagedOutboundOpenInData
                 - encryptAppData
@@ -1358,6 +1391,8 @@ paths:
                 - requiredAndroidSafetyNetEvaluationType
                 - screenCaptureBlocked
                 - thirdPartyKeyboardsBlocked
+                - warnAfterCompanyPortalUpdateDeferralInDays
+                - wipeAfterCompanyPortalUpdateDeferralInDays
                 - apps
                 - deploymentSummary
               type: string
@@ -1499,9 +1534,11 @@ paths:
                 - appActionIfAndroidDeviceModelNotAllowed
                 - appActionIfAndroidSafetyNetAppsVerificationFailed
                 - appActionIfAndroidSafetyNetDeviceAttestationFailed
+                - appActionIfDeviceLockNotSet
                 - appActionIfIosDeviceModelNotAllowed
                 - appDataEncryptionType
                 - biometricAuthenticationBlocked
+                - blockAfterCompanyPortalUpdateDeferralInDays
                 - customBrowserDisplayName
                 - customBrowserPackageId
                 - customBrowserProtocol
@@ -1510,6 +1547,7 @@ paths:
                 - customDialerAppProtocol
                 - customSettings
                 - deployedAppCount
+                - deviceLockRequired
                 - disableAppEncryptionIfDeviceEncryptionIsEnabled
                 - disableProtectionOfManagedOutboundOpenInData
                 - encryptAppData
@@ -1531,6 +1569,8 @@ paths:
                 - requiredAndroidSafetyNetEvaluationType
                 - screenCaptureBlocked
                 - thirdPartyKeyboardsBlocked
+                - warnAfterCompanyPortalUpdateDeferralInDays
+                - wipeAfterCompanyPortalUpdateDeferralInDays
                 - apps
                 - deploymentSummary
               type: string
@@ -11472,8 +11512,12 @@ paths:
                 - id desc
                 - targetDisplayName
                 - targetDisplayName desc
+                - targetDisplayVersion
+                - targetDisplayVersion desc
                 - targetId
                 - targetId desc
+                - targetPublisher
+                - targetPublisher desc
                 - targetType
                 - targetType desc
               type: string
@@ -11489,7 +11533,9 @@ paths:
               enum:
                 - id
                 - targetDisplayName
+                - targetDisplayVersion
                 - targetId
+                - targetPublisher
                 - targetType
               type: string
         - name: $expand
@@ -11590,7 +11636,9 @@ paths:
               enum:
                 - id
                 - targetDisplayName
+                - targetDisplayVersion
                 - targetId
+                - targetPublisher
                 - targetType
               type: string
         - name: $expand
@@ -21572,6 +21620,8 @@ paths:
                 - displayName desc
                 - securityBaselineTemplateId
                 - securityBaselineTemplateId desc
+                - state
+                - state desc
                 - userPrincipalName
                 - userPrincipalName desc
               type: string
@@ -21588,6 +21638,7 @@ paths:
                 - id
                 - displayName
                 - securityBaselineTemplateId
+                - state
                 - userPrincipalName
                 - settingStates
               type: string
@@ -21705,6 +21756,7 @@ paths:
                 - id
                 - displayName
                 - securityBaselineTemplateId
+                - state
                 - userPrincipalName
                 - settingStates
               type: string
@@ -23327,6 +23379,7 @@ paths:
                 - engineVersion
                 - fullScanOverdue
                 - fullScanRequired
+                - isVirtualMachine
                 - lastFullScanDateTime
                 - lastFullScanSignatureVersion
                 - lastQuickScanDateTime
@@ -23334,11 +23387,13 @@ paths:
                 - lastReportedDateTime
                 - malwareProtectionEnabled
                 - networkInspectionSystemEnabled
+                - productStatus
                 - quickScanOverdue
                 - realTimeProtectionEnabled
                 - rebootRequired
                 - signatureUpdateOverdue
                 - signatureVersion
+                - tamperProtectionEnabled
                 - detectedMalwareState
               type: string
         - name: $expand
@@ -24901,6 +24956,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.managedAppRemediationAction'
             appActionIfAndroidSafetyNetDeviceAttestationFailed:
               $ref: '#/components/schemas/microsoft.graph.managedAppRemediationAction'
+            appActionIfDeviceLockNotSet:
+              $ref: '#/components/schemas/microsoft.graph.managedAppRemediationAction'
             approvedKeyboards:
               type: array
               items:
@@ -24909,6 +24966,12 @@ components:
             biometricAuthenticationBlocked:
               type: boolean
               description: Indicates whether use of the biometric authentication is allowed in place of a pin if PinRequired is set to True.
+            blockAfterCompanyPortalUpdateDeferralInDays:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Maximum number of days Company Portal update can be deferred on the device or app access will be blocked.
+              format: int32
             customBrowserDisplayName:
               type: string
               description: 'Friendly name of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.'
@@ -24931,6 +24994,9 @@ components:
               type: integer
               description: Count of apps to which the current policy is deployed.
               format: int32
+            deviceLockRequired:
+              type: boolean
+              description: Defines if any kind of lock must be required on android device
             disableAppEncryptionIfDeviceEncryptionIsEnabled:
               type: boolean
               description: 'When this setting is enabled, app level encryption is disabled if device level encryption is enabled'
@@ -24978,6 +25044,18 @@ components:
             screenCaptureBlocked:
               type: boolean
               description: Indicates whether a managed user can take screen captures of managed apps
+            warnAfterCompanyPortalUpdateDeferralInDays:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Maximum number of days Company Portal update can be deferred on the device or the user will receive the warning
+              format: int32
+            wipeAfterCompanyPortalUpdateDeferralInDays:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Maximum number of days Company Portal update can be deferred on the device or the company data on the app will be wiped
+              format: int32
             apps:
               type: array
               items:
@@ -25088,6 +25166,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.managedAppRemediationAction'
             appActionIfAndroidSafetyNetDeviceAttestationFailed:
               $ref: '#/components/schemas/microsoft.graph.managedAppRemediationAction'
+            appActionIfDeviceLockNotSet:
+              $ref: '#/components/schemas/microsoft.graph.managedAppRemediationAction'
             appActionIfIosDeviceModelNotAllowed:
               $ref: '#/components/schemas/microsoft.graph.managedAppRemediationAction'
             appDataEncryptionType:
@@ -25095,6 +25175,12 @@ components:
             biometricAuthenticationBlocked:
               type: boolean
               description: Indicates whether use of the biometric authentication is allowed in place of a pin if PinRequired is set to True. (Android Only)
+            blockAfterCompanyPortalUpdateDeferralInDays:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Maximum number of days Company Portal update can be deferred on the device or app access will be blocked.
+              format: int32
             customBrowserDisplayName:
               type: string
               description: Friendly name of the preferred custom browser to open weblink on Android. (Android only)
@@ -25130,6 +25216,9 @@ components:
               type: integer
               description: Count of apps to which the current policy is deployed.
               format: int32
+            deviceLockRequired:
+              type: boolean
+              description: Defines if any kind of lock must be required on device. (android only)
             disableAppEncryptionIfDeviceEncryptionIsEnabled:
               type: boolean
               description: 'When this setting is enabled, app level encryption is disabled if device level encryption is enabled. (Android only)'
@@ -25202,6 +25291,18 @@ components:
             thirdPartyKeyboardsBlocked:
               type: boolean
               description: Defines if third party keyboards are allowed while accessing a managed app. (iOS Only)
+            warnAfterCompanyPortalUpdateDeferralInDays:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Maximum number of days Company Portal update can be deferred on the device or the user will receive the warning
+              format: int32
+            wipeAfterCompanyPortalUpdateDeferralInDays:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Maximum number of days Company Portal update can be deferred on the device or the company data on the app will be wiped
+              format: int32
             apps:
               type: array
               items:
@@ -26391,9 +26492,17 @@ components:
               type: string
               description: The target mobile app's display name.
               nullable: true
+            targetDisplayVersion:
+              type: string
+              description: The target mobile app's display version.
+              nullable: true
             targetId:
               type: string
               description: The target mobile app's app id.
+              nullable: true
+            targetPublisher:
+              type: string
+              description: The target mobile app's publisher.
               nullable: true
             targetType:
               $ref: '#/components/schemas/microsoft.graph.mobileAppRelationshipType'
@@ -27849,6 +27958,8 @@ components:
               type: string
               description: The security baseline template id
               nullable: true
+            state:
+              $ref: '#/components/schemas/microsoft.graph.securityBaselineComplianceState'
             userPrincipalName:
               type: string
               description: User Principal Name
@@ -27931,7 +28042,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'The telephone numbers for the user. NOTE: Although this is a string collection, only one number can be set for this property.'
+              description: 'The telephone numbers for the user. NOTE: Although this is a string collection, only one number can be set for this property. Read-only for users synced from on-premises directory.'
             city:
               type: string
               description: The city in which the user is located. Supports $filter.
@@ -28050,7 +28161,7 @@ components:
               nullable: true
             mobilePhone:
               type: string
-              description: The primary cellular telephone number for the user.
+              description: The primary cellular telephone number for the user. Read-only for users synced from on-premises directory.
               nullable: true
             officeLocation:
               type: string
@@ -28479,6 +28590,10 @@ components:
               type: boolean
               description: Full scan required or not?
               nullable: true
+            isVirtualMachine:
+              type: boolean
+              description: Indicates whether the device is a virtual machine.
+              nullable: true
             lastFullScanDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -28513,6 +28628,8 @@ components:
               type: boolean
               description: Network inspection system enabled or not?
               nullable: true
+            productStatus:
+              $ref: '#/components/schemas/microsoft.graph.windowsDefenderProductStatus'
             quickScanOverdue:
               type: boolean
               description: Quick scan overdue or not?
@@ -28532,6 +28649,10 @@ components:
             signatureVersion:
               type: string
               description: Current malware definitions version
+              nullable: true
+            tamperProtectionEnabled:
+              type: boolean
+              description: Indicates whether the Windows Defender tamper protection feature is enabled.
               nullable: true
             detectedMalwareState:
               type: array
@@ -29782,6 +29903,10 @@ components:
           type: string
           description: IMEI
           nullable: true
+        ipAddressV4:
+          type: string
+          description: IPAddressV4
+          nullable: true
         isEncrypted:
           type: boolean
           description: Encryption status of the device
@@ -29834,6 +29959,10 @@ components:
           items:
             $ref: '#/components/schemas/microsoft.graph.sharedAppleDeviceUser'
           description: All users on the shared Apple device
+        subnetAddress:
+          type: string
+          description: SubnetAddress
+          nullable: true
         subscriberCarrier:
           type: string
           description: Subscriber carrier of the device
@@ -30147,6 +30276,16 @@ components:
       additionalProperties:
         type: object
       description: Managed Device Mobile App Configuration Setting State for a given device.
+    microsoft.graph.securityBaselineComplianceState:
+      title: securityBaselineComplianceState
+      enum:
+        - unknown
+        - secure
+        - notApplicable
+        - notSecure
+        - error
+        - conflict
+      type: string
     microsoft.graph.securityBaselineContributingPolicy:
       title: securityBaselineContributingPolicy
       type: object
@@ -30180,16 +30319,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.settingSourceType'
       additionalProperties:
         type: object
-    microsoft.graph.securityBaselineComplianceState:
-      title: securityBaselineComplianceState
-      enum:
-        - unknown
-        - secure
-        - notApplicable
-        - notSecure
-        - error
-        - conflict
-      type: string
     microsoft.graph.directoryObject:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -30520,8 +30649,8 @@ components:
         - title: informationProtection
           type: object
           properties:
-            policy:
-              $ref: '#/components/schemas/microsoft.graph.informationProtectionPolicy'
+            bitlocker:
+              $ref: '#/components/schemas/microsoft.graph.bitlocker'
             dataLossPreventionPolicies:
               type: array
               items:
@@ -30532,6 +30661,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
             sensitivityPolicySettings:
               $ref: '#/components/schemas/microsoft.graph.sensitivityPolicySettings'
+            policy:
+              $ref: '#/components/schemas/microsoft.graph.informationProtectionPolicy'
             threatAssessmentRequests:
               type: array
               items:
@@ -30868,7 +30999,7 @@ components:
               nullable: true
             webLink:
               type: string
-              description: 'The URL to open the event in Outlook on the web.Outlook on the web opens the event in the browser if you are signed in to your mailbox. Otherwise, Outlook on the web prompts you to sign in.This URL can be accessed from within an iFrame.'
+              description: 'The URL to open the event in Outlook on the web.Outlook on the web opens the event in the browser if you are signed in to your mailbox. Otherwise, Outlook on the web prompts you to sign in.This URL cannot be accessed from within an iFrame.'
               nullable: true
             attachments:
               type: array
@@ -31618,7 +31749,7 @@ components:
               nullable: true
             webLink:
               type: string
-              description: 'The URL to open the message in Outlook Web App.You can append an ispopout argument to the end of the URL to change how the message is displayed. If ispopout is not present or if it is set to 1, then the message is shown in a popout window. If ispopout is set to 0, then the browser will show the message in the Outlook Web App review pane.The message will open in the browser if you are logged in to your mailbox via Outlook Web App. You will be prompted to login if you are not already logged in with the browser.This URL can be accessed from within an iFrame.'
+              description: 'The URL to open the message in Outlook on the web.You can append an ispopout argument to the end of the URL to change how the message is displayed. If ispopout is not present or if it is set to 1, then the message is shown in a popout window. If ispopout is set to 0, then the browser will show the message in the Outlook on the web review pane.The message will open in the browser if you are logged in to your mailbox via Outlook on the web. You will be prompted to login if you are not already logged in with the browser.This URL cannot be accessed from within an iFrame.'
               nullable: true
             attachments:
               type: array
@@ -32322,7 +32453,7 @@ components:
               nullable: true
             deviceMetadata:
               type: string
-              description: For interal use only. Set to null.
+              description: For internal use only. Set to null.
               nullable: true
             deviceOwnership:
               type: string
@@ -32331,7 +32462,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: For interal use only.
+              description: For internal use only.
               format: int32
               nullable: true
             displayName:
@@ -32366,7 +32497,7 @@ components:
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The last time at which the object was synced with the on-premises directory.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'' Read-only.'
+              description: 'The last time at which the object was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'' Read-only.'
               format: date-time
               nullable: true
             onPremisesSyncEnabled:
@@ -32385,7 +32516,7 @@ components:
               type: array
               items:
                 type: string
-              description: For interal use only. Not nullable.
+              description: For internal use only. Not nullable.
             profileType:
               type: string
               description: The profile type of the device. Possible values:RegisteredDevice (default)SecureVMPrinterSharedIoT
@@ -32465,8 +32596,18 @@ components:
               $ref: '#/components/schemas/microsoft.graph.accessLevel'
             allowedPresenters:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingPresenters'
+            alternativeRecording:
+              type: string
+              format: base64url
+              nullable: true
+            attendeeReport:
+              type: string
+              format: base64url
+              nullable: true
             audioConferencing:
               $ref: '#/components/schemas/microsoft.graph.audioConferencing'
+            broadcastSettings:
+              $ref: '#/components/schemas/microsoft.graph.broadcastMeetingSettings'
             canceledDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -32509,6 +32650,7 @@ components:
               nullable: true
             isEntryExitAnnounced:
               type: boolean
+              description: Whether or not to announce when callers join or leave.
               nullable: true
             joinInformation:
               $ref: '#/components/schemas/microsoft.graph.itemBody'
@@ -32519,6 +32661,10 @@ components:
               $ref: '#/components/schemas/microsoft.graph.lobbyBypassSettings'
             participants:
               $ref: '#/components/schemas/microsoft.graph.meetingParticipants'
+            recording:
+              type: string
+              format: base64url
+              nullable: true
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -32567,14 +32713,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
-            microsoftAuthenticatorMethods:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.microsoftAuthenticatorAuthenticationMethod'
-            oathMethods:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.softwareOathAuthenticationMethod'
             operations:
               type: array
               items:
@@ -32591,14 +32729,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.phoneAuthenticationMethod'
-            securityQuestionMethods:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.securityQuestionAuthenticationMethod'
-            temporaryAccessPassMethods:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.temporaryAccessPassAuthenticationMethod'
           additionalProperties:
             type: object
     microsoft.graph.chat:
@@ -32607,6 +32737,8 @@ components:
         - title: chat
           type: object
           properties:
+            chatType:
+              $ref: '#/components/schemas/microsoft.graph.chatType'
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -32632,6 +32764,10 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessage'
+            tabs:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.teamsTab'
           additionalProperties:
             type: object
     microsoft.graph.team:
@@ -32745,6 +32881,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.todoTaskList'
+              description: The task lists in the users mailbox.
           additionalProperties:
             type: object
     microsoft.graph.windowsDeviceHealthState:
@@ -32756,6 +32893,36 @@ components:
         - manualStepsPending
         - offlineScanPending
         - critical
+      type: string
+    microsoft.graph.windowsDefenderProductStatus:
+      title: windowsDefenderProductStatus
+      enum:
+        - noStatus
+        - serviceNotRunning
+        - serviceStartedWithoutMalwareProtection
+        - pendingFullScanDueToThreatAction
+        - pendingRebootDueToThreatAction
+        - pendingManualStepsDueToThreatAction
+        - avSignaturesOutOfDate
+        - asSignaturesOutOfDate
+        - noQuickScanHappenedForSpecifiedPeriod
+        - noFullScanHappenedForSpecifiedPeriod
+        - systemInitiatedScanInProgress
+        - systemInitiatedCleanInProgress
+        - samplesPendingSubmission
+        - productRunningInEvaluationMode
+        - productRunningInNonGenuineMode
+        - productExpired
+        - offlineScanRequired
+        - serviceShutdownAsPartOfSystemShutdown
+        - threatRemediationFailedCritically
+        - threatRemediationFailedNonCritically
+        - noStatusFlagsSet
+        - platformOutOfDate
+        - platformUpdateInProgress
+        - platformAboutToBeOutdated
+        - signatureOrPlatformEndOfLifeIsPastOrIsImpending
+        - windowsSModeSignaturesInUseOnNonWin10SInstall
       type: string
     microsoft.graph.windowsMalwareCategory:
       title: windowsMalwareCategory
@@ -33346,16 +33513,16 @@ components:
               nullable: true
           additionalProperties:
             type: object
-    microsoft.graph.informationProtectionPolicy:
+    microsoft.graph.bitlocker:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: informationProtectionPolicy
+        - title: bitlocker
           type: object
           properties:
-            labels:
+            recoveryKeys:
               type: array
               items:
-                $ref: '#/components/schemas/microsoft.graph.informationProtectionLabel'
+                $ref: '#/components/schemas/microsoft.graph.bitlockerRecoveryKey'
           additionalProperties:
             type: object
     microsoft.graph.dataLossPreventionPolicy:
@@ -33436,6 +33603,18 @@ components:
             isMandatory:
               type: boolean
               nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.informationProtectionPolicy:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: informationProtectionPolicy
+          type: object
+          properties:
+            labels:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.informationProtectionLabel'
           additionalProperties:
             type: object
     microsoft.graph.threatAssessmentRequest:
@@ -34974,6 +35153,10 @@ components:
         - title: accessReviewScheduleDefinition
           type: object
           properties:
+            backupReviewers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScope'
             createdBy:
               $ref: '#/components/schemas/microsoft.graph.userIdentity'
             createdDateTime:
@@ -36092,6 +36275,26 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.broadcastMeetingSettings:
+      title: broadcastMeetingSettings
+      type: object
+      properties:
+        allowedAudience:
+          $ref: '#/components/schemas/microsoft.graph.broadcastMeetingAudience'
+        isAttendeeReportEnabled:
+          type: boolean
+          nullable: true
+        isQuestionAndAnswerEnabled:
+          type: boolean
+          nullable: true
+        isRecordingEnabled:
+          type: boolean
+          nullable: true
+        isVideoOnDemandEnabled:
+          type: boolean
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.meetingCapabilities:
       title: meetingCapabilities
       enum:
@@ -36122,6 +36325,7 @@ components:
       properties:
         isDialInBypassEnabled:
           type: boolean
+          description: Specifies whether or not to always let dial-in callers bypass the lobby. Optional.
           nullable: true
         scope:
           $ref: '#/components/schemas/microsoft.graph.lobbyBypassScope'
@@ -36152,6 +36356,10 @@ components:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
         - title: emailAuthenticationMethod
           type: object
+          properties:
+            emailAddress:
+              type: string
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.fido2AuthenticationMethod:
@@ -36159,26 +36367,39 @@ components:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
         - title: fido2AuthenticationMethod
           type: object
+          properties:
+            aaGuid:
+              type: string
+              nullable: true
+            attestationCertificates:
+              type: array
+              items:
+                type: string
+                nullable: true
+            attestationLevel:
+              $ref: '#/components/schemas/microsoft.graph.attestationLevel'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            creationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            displayName:
+              type: string
+              nullable: true
+            model:
+              type: string
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.authenticationMethod:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
         - title: authenticationMethod
-          type: object
-          additionalProperties:
-            type: object
-    microsoft.graph.microsoftAuthenticatorAuthenticationMethod:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
-        - title: microsoftAuthenticatorAuthenticationMethod
-          type: object
-          additionalProperties:
-            type: object
-    microsoft.graph.softwareOathAuthenticationMethod:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
-        - title: softwareOathAuthenticationMethod
           type: object
           additionalProperties:
             type: object
@@ -36213,6 +36434,22 @@ components:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
         - title: passwordlessMicrosoftAuthenticatorAuthenticationMethod
           type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            creationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            displayName:
+              type: string
+              nullable: true
+            device:
+              $ref: '#/components/schemas/microsoft.graph.device'
           additionalProperties:
             type: object
     microsoft.graph.passwordAuthenticationMethod:
@@ -36221,6 +36458,11 @@ components:
         - title: passwordAuthenticationMethod
           type: object
           properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
             creationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -36246,20 +36488,14 @@ components:
               $ref: '#/components/schemas/microsoft.graph.authenticationMethodSignInState'
           additionalProperties:
             type: object
-    microsoft.graph.securityQuestionAuthenticationMethod:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
-        - title: securityQuestionAuthenticationMethod
-          type: object
-          additionalProperties:
-            type: object
-    microsoft.graph.temporaryAccessPassAuthenticationMethod:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
-        - title: temporaryAccessPassAuthenticationMethod
-          type: object
-          additionalProperties:
-            type: object
+    microsoft.graph.chatType:
+      title: chatType
+      enum:
+        - oneOnOne
+        - group
+        - meeting
+        - unknownFutureValue
+      type: string
     microsoft.graph.teamsAppInstallation:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -36379,6 +36615,35 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessage'
+          additionalProperties:
+            type: object
+    microsoft.graph.teamsTab:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamsTab
+          type: object
+          properties:
+            configuration:
+              $ref: '#/components/schemas/microsoft.graph.teamsTabConfiguration'
+            displayName:
+              type: string
+              description: Name of the tab.
+              nullable: true
+            messageId:
+              type: string
+              nullable: true
+            sortOrderIndex:
+              type: string
+              nullable: true
+            teamsAppId:
+              type: string
+              nullable: true
+            webUrl:
+              type: string
+              description: Deep link URL of the tab instance. Read only.
+              nullable: true
+            teamsApp:
+              $ref: '#/components/schemas/microsoft.graph.teamsApp'
           additionalProperties:
             type: object
     microsoft.graph.teamDiscoverySettings:
@@ -36709,21 +36974,26 @@ components:
           properties:
             displayName:
               type: string
+              description: The name of the task list.
               nullable: true
             isOwner:
               type: boolean
+              description: True if the user is owner of the given task list.
             isShared:
               type: boolean
+              description: True if the task list is shared with other users
             wellknownListName:
               $ref: '#/components/schemas/microsoft.graph.wellknownListName'
             extensions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
+              description: The collection of open extensions defined for the task list. Nullable.
             tasks:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.todoTask'
+              description: The tasks in this task list. Read-only. Nullable.
           additionalProperties:
             type: object
     microsoft.graph.mobileAppIntent:
@@ -36840,31 +37110,23 @@ components:
         - Chat
         - Call
       type: string
-    microsoft.graph.informationProtectionLabel:
+    microsoft.graph.bitlockerRecoveryKey:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: informationProtectionLabel
+        - title: bitlockerRecoveryKey
           type: object
           properties:
-            color:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            deviceId:
               type: string
               nullable: true
-            description:
+            key:
               type: string
-              nullable: true
-            isActive:
-              type: boolean
-            name:
-              type: string
-              nullable: true
-            sensitivity:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              format: int32
-            tooltip:
-              type: string
-              nullable: true
+            volumeType:
+              $ref: '#/components/schemas/microsoft.graph.volumeType'
           additionalProperties:
             type: object
     microsoft.graph.sensitivityLabelTarget:
@@ -36916,6 +37178,35 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.informationProtectionLabel:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: informationProtectionLabel
+          type: object
+          properties:
+            color:
+              type: string
+              nullable: true
+            description:
+              type: string
+              nullable: true
+            isActive:
+              type: boolean
+            name:
+              type: string
+              nullable: true
+            parent:
+              $ref: '#/components/schemas/microsoft.graph.parentLabelDetails'
+            sensitivity:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+            tooltip:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.threatCategory:
       title: threatCategory
       enum:
@@ -38185,6 +38476,10 @@ components:
               nullable: true
             lifecycleNotificationUrl:
               type: string
+              description: 'The URL of the endpoint that receives lifecycle notifications, including subscriptionRemoved and missed notifications. This URL must make use of the HTTPS protocol. Optional. Read more about how Outlook resources use lifecycle notifications.'
+              nullable: true
+            notificationQueryOptions:
+              type: string
               nullable: true
             notificationUrl:
               type: string
@@ -39005,7 +39300,7 @@ components:
               type: string
               format: date-time
             source:
-              $ref: '#/components/schemas/microsoft.graph.personDataSource'
+              $ref: '#/components/schemas/microsoft.graph.personDataSources'
           additionalProperties:
             type: object
     microsoft.graph.anniversaryType:
@@ -39039,19 +39334,25 @@ components:
           type: string
           nullable: true
         activities:
-          type: string
-          nullable: true
+          type: array
+          items:
+            type: string
+            nullable: true
         awards:
-          type: string
-          nullable: true
+          type: array
+          items:
+            type: string
+            nullable: true
         description:
           type: string
           nullable: true
         displayName:
           type: string
         fieldsOfStudy:
-          type: string
-          nullable: true
+          type: array
+          items:
+            type: string
+            nullable: true
         grade:
           type: string
           nullable: true
@@ -39213,6 +39514,14 @@ components:
           type: object
           additionalProperties:
             type: object
+    microsoft.graph.broadcastMeetingAudience:
+      title: broadcastMeetingAudience
+      enum:
+        - roleIsAttendee
+        - organization
+        - everyone
+        - unknownFutureValue
+      type: string
     microsoft.graph.lobbyBypassScope:
       title: lobbyBypassScope
       enum:
@@ -39236,6 +39545,13 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.attestationLevel:
+      title: attestationLevel
+      enum:
+        - attested
+        - notAttested
+        - unknownFutureValue
+      type: string
     microsoft.graph.longRunningOperationStatus:
       title: longRunningOperationStatus
       enum:
@@ -39446,6 +39762,28 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.teamsTabConfiguration:
+      title: teamsTabConfiguration
+      type: object
+      properties:
+        contentUrl:
+          type: string
+          description: Url used for rendering tab contents in Teams. Required.
+          nullable: true
+        entityId:
+          type: string
+          description: Identifier for the entity hosted by the tab provider.
+          nullable: true
+        removeUrl:
+          type: string
+          description: Url called by Teams client when a Tab is removed using the Teams Client.
+          nullable: true
+        websiteUrl:
+          type: string
+          description: Url for showing tab contents outside of Teams.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.giphyRatingType:
       title: giphyRatingType
       enum:
@@ -39694,35 +40032,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.userNewMessageRestriction'
       additionalProperties:
         type: object
-    microsoft.graph.teamsTab:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: teamsTab
-          type: object
-          properties:
-            configuration:
-              $ref: '#/components/schemas/microsoft.graph.teamsTabConfiguration'
-            displayName:
-              type: string
-              description: Name of the tab.
-              nullable: true
-            messageId:
-              type: string
-              nullable: true
-            sortOrderIndex:
-              type: string
-              nullable: true
-            teamsAppId:
-              type: string
-              nullable: true
-            webUrl:
-              type: string
-              description: Deep link URL of the tab instance. Read only.
-              nullable: true
-            teamsApp:
-              $ref: '#/components/schemas/microsoft.graph.teamsApp'
-          additionalProperties:
-            type: object
     microsoft.graph.operationError:
       title: operationError
       type: object
@@ -39776,12 +40085,14 @@ components:
             bodyLastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: ''2020-01-01T00:00:00Z''.'
               format: date-time
             completedDateTime:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when the task was created. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format. For example, midnight UTC on Jan 1, 2020 would look like this: ''2020-01-01T00:00:00Z''.'
               format: date-time
             dueDateTime:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
@@ -39789,9 +40100,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.importance'
             isReminderOn:
               type: boolean
+              description: Set to true if an alert is set to remind the user of the task.
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: ''2020-01-01T00:00:00Z''.'
               format: date-time
             recurrence:
               $ref: '#/components/schemas/microsoft.graph.patternedRecurrence'
@@ -39801,15 +40114,18 @@ components:
               $ref: '#/components/schemas/microsoft.graph.taskStatus'
             title:
               type: string
+              description: A brief description of the task.
               nullable: true
             extensions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
+              description: The collection of open extensions defined for the task. Nullable.
             linkedResources:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.linkedResource'
+              description: A collection of resources linked to the task.
           additionalProperties:
             type: object
     odata.error.detail:
@@ -39824,6 +40140,44 @@ components:
           type: string
         target:
           type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.volumeType:
+      title: volumeType
+      enum:
+        - operatingSystemVolume
+        - fixedDataVolume
+        - removableDataVolume
+        - unknownFutureValue
+      type: string
+    microsoft.graph.parentLabelDetails:
+      title: parentLabelDetails
+      type: object
+      properties:
+        color:
+          type: string
+          nullable: true
+        description:
+          type: string
+          nullable: true
+        id:
+          type: string
+          nullable: true
+        isActive:
+          type: boolean
+        name:
+          type: string
+          nullable: true
+        parent:
+          $ref: '#/components/schemas/microsoft.graph.parentLabelDetails'
+        sensitivity:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+        tooltip:
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.threatAssessmentResultType:
@@ -40640,6 +40994,17 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.personDataSources:
+      title: personDataSources
+      type: object
+      properties:
+        type:
+          type: array
+          items:
+            type: string
+            nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.personRelationship:
       title: personRelationship
       enum:
@@ -40665,6 +41030,7 @@ components:
       enum:
         - attendee
         - presenter
+        - producer
         - unknownFutureValue
       type: string
     microsoft.graph.teamsAppDistributionMethod:
@@ -40908,28 +41274,6 @@ components:
         - moderators
         - unknownFutureValue
       type: string
-    microsoft.graph.teamsTabConfiguration:
-      title: teamsTabConfiguration
-      type: object
-      properties:
-        contentUrl:
-          type: string
-          description: Url used for rendering tab contents in Teams. Required.
-          nullable: true
-        entityId:
-          type: string
-          description: Identifier for the entity hosted by the tab provider.
-          nullable: true
-        removeUrl:
-          type: string
-          description: Url called by Teams client when a Tab is removed using the Teams Client.
-          nullable: true
-        websiteUrl:
-          type: string
-          description: Url for showing tab contents outside of Teams.
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.linkedResource:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -40938,15 +41282,19 @@ components:
           properties:
             applicationName:
               type: string
+              description: Field indicating the app name of the source that is sending the linkedResource.
               nullable: true
             displayName:
               type: string
+              description: Field indicating the title of the linkedResource.
               nullable: true
             externalId:
               type: string
+              description: Id of the object that is associated with this task on the third-party/partner system.
               nullable: true
             webUrl:
               type: string
+              description: Deep link to the linkedResource.
               nullable: true
           additionalProperties:
             type: object

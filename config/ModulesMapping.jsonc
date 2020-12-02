@@ -3,7 +3,7 @@
     "Bookings": "^bookingBusinesses\\.|^bookingCurrencies\\.",
     "Calendar": "^places\\.|^users.calendar$|^users.calendarGroup$|^users.event$|^groups.calendar$|^groups.event$",
     "ChangeNotifications": "^subscriptions\\.",
-    "CloudCommunications": "^users.onlineMeeting$|^users.presence$",
+    "CloudCommunications": "^users.onlineMeeting$|^users.presence$|^communications\\.",
     "Compliance": "^compliance\\.",
     "CrossDeviceExperiences": "^users.userActivity$|^users.device$",
     "Devices.CloudPrint": "^print\\.",
@@ -24,14 +24,13 @@
     "Reports": "^reports\\.|^auditLogs\\.",
     "SchemaExtensions": "^schemaExtensions\\.",
     "Search": "^search\\.|^external\\.",
-    "Security": "^Security\\.",
+    "Security": "^security\\.",
     "Sites": "^sites.site$|^sites.itemAnalytics$|^sites.columnDefinition$|^sites.contentType$|^sites.drive$|^sites.list$|^sites.sitePage$|^users.site$|^groups.site$|^sites.Functions$|^sites.Actions$",
     "Teams": "^teams\\.|^chats\\.|^users.chat$|^appCatalogs.teamsApp$|^users.userTeamwork$|^teamwork\\.|^users.team$|^groups.team$",
     "Users": "^users.user$|^users.directoryObject$|^users.licenseDetails$|^users.notification$|^users.outlookUser$|^users.profilePhoto$|^users.userSettings$|^users.extension$|^users.oAuth2PermissionGrant$|^users.todo$",
     "Users.Actions": "^users.Actions$",
     "Users.Functions": "^users.Functions$"
 
-    // "CloudCommunications": "^communications\\.", // Needs multi-namespace support.
     // "Devices.CorporateManagement": "^deviceManagement\\.", - Max Limit
     // "WorkBooks": "^workbooks\\.",// Max limit.
 }

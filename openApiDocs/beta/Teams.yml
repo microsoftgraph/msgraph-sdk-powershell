@@ -507,6 +507,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - chatType
+                - chatType desc
                 - createdDateTime
                 - createdDateTime desc
                 - lastUpdatedDateTime
@@ -525,12 +527,14 @@ paths:
             items:
               enum:
                 - id
+                - chatType
                 - createdDateTime
                 - lastUpdatedDateTime
                 - topic
                 - installedApps
                 - members
                 - messages
+                - tabs
               type: string
         - name: $expand
           in: query
@@ -546,6 +550,7 @@ paths:
                 - installedApps
                 - members
                 - messages
+                - tabs
               type: string
       responses:
         '200':
@@ -617,12 +622,14 @@ paths:
             items:
               enum:
                 - id
+                - chatType
                 - createdDateTime
                 - lastUpdatedDateTime
                 - topic
                 - installedApps
                 - members
                 - messages
+                - tabs
               type: string
         - name: $expand
           in: query
@@ -638,6 +645,7 @@ paths:
                 - installedApps
                 - members
                 - messages
+                - tabs
               type: string
       responses:
         '200':
@@ -657,6 +665,10 @@ paths:
                 chat-id: $request.path.chat-id
             messages:
               operationId: chats.ListMessages
+              parameters:
+                chat-id: $request.path.chat-id
+            tabs:
+              operationId: chats.ListTabs
               parameters:
                 chat-id: $request.path.chat-id
         default:
@@ -2740,6 +2752,437 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/chats/{chat-id}/tabs':
+    get:
+      tags:
+        - chats.teamsTab
+      summary: Get tabs from chats
+      operationId: chats_ListTabs
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: id of chat'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - configuration
+                - configuration desc
+                - displayName
+                - displayName desc
+                - messageId
+                - messageId desc
+                - sortOrderIndex
+                - sortOrderIndex desc
+                - teamsAppId
+                - teamsAppId desc
+                - webUrl
+                - webUrl desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - configuration
+                - displayName
+                - messageId
+                - sortOrderIndex
+                - teamsAppId
+                - webUrl
+                - teamsApp
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - teamsApp
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of teamsTab
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.teamsTab'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - chats.teamsTab
+      summary: Create new navigation property to tabs for chats
+      operationId: chats_CreateTabs
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: id of chat'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.teamsTab'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamsTab'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/chats/{chat-id}/tabs/{teamsTab-id}':
+    get:
+      tags:
+        - chats.teamsTab
+      summary: Get tabs from chats
+      operationId: chats_GetTabs
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: id of chat'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: teamsTab-id
+          in: path
+          description: 'key: id of teamsTab'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsTab
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - configuration
+                - displayName
+                - messageId
+                - sortOrderIndex
+                - teamsAppId
+                - webUrl
+                - teamsApp
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - teamsApp
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamsTab'
+          links:
+            teamsApp:
+              operationId: chats.Tabs.GetTeamsApp
+              parameters:
+                chat-id: $request.path.chat-id
+                teamsTab-id: $request.path.teamsTab-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - chats.teamsTab
+      summary: Update the navigation property tabs in chats
+      operationId: chats_UpdateTabs
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: id of chat'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: teamsTab-id
+          in: path
+          description: 'key: id of teamsTab'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsTab
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.teamsTab'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - chats.teamsTab
+      summary: Delete navigation property tabs for chats
+      operationId: chats_DeleteTabs
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: id of chat'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: teamsTab-id
+          in: path
+          description: 'key: id of teamsTab'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsTab
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/chats/{chat-id}/tabs/{teamsTab-id}/teamsApp':
+    get:
+      tags:
+        - chats.teamsTab
+      summary: Get teamsApp from chats
+      operationId: chats.tabs_GetTeamsApp
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: id of chat'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: teamsTab-id
+          in: path
+          description: 'key: id of teamsTab'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsTab
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - distributionMethod
+                - externalId
+                - appDefinitions
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - appDefinitions
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamsApp'
+          links:
+            appDefinitions:
+              operationId: chats.tabs.TeamsApp.ListAppDefinitions
+              parameters:
+                chat-id: $request.path.chat-id
+                teamsTab-id: $request.path.teamsTab-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/chats/{chat-id}/tabs/{teamsTab-id}/teamsApp/$ref':
+    get:
+      tags:
+        - chats.teamsTab
+      summary: Get ref of teamsApp from chats
+      operationId: chats.tabs_GetRefTeamsApp
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: id of chat'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: teamsTab-id
+          in: path
+          description: 'key: id of teamsTab'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsTab
+      responses:
+        '200':
+          description: Retrieved navigation property link
+          content:
+            application/json:
+              schema:
+                type: string
+          links:
+            appDefinitions:
+              operationId: chats.tabs.TeamsApp.ListAppDefinitions
+              parameters:
+                chat-id: $request.path.chat-id
+                teamsTab-id: $request.path.teamsTab-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - chats.teamsTab
+      summary: Update the ref of navigation property teamsApp in chats
+      operationId: chats.tabs_SetRefTeamsApp
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: id of chat'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: teamsTab-id
+          in: path
+          description: 'key: id of teamsTab'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsTab
+      requestBody:
+        description: New navigation property ref values
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - chats.teamsTab
+      summary: Delete ref of navigation property teamsApp for chats
+      operationId: chats.tabs_DeleteRefTeamsApp
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: id of chat'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: teamsTab-id
+          in: path
+          description: 'key: id of teamsTab'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsTab
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   /chats/microsoft.graph.allMessages():
     get:
       tags:
@@ -5961,6 +6404,32 @@ paths:
         - teams.Functions
       summary: Invoke function allMessages
       operationId: teams.channels_allMessages
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.chatMessage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/teams/{team-id}/channels/microsoft.graph.getAllMessages()':
+    get:
+      tags:
+        - teams.Functions
+      summary: Invoke function getAllMessages
+      operationId: teams.channels_getAllMessages
       parameters:
         - name: team-id
           in: path
@@ -14413,6 +14882,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - chatType
+                - chatType desc
                 - createdDateTime
                 - createdDateTime desc
                 - lastUpdatedDateTime
@@ -14431,12 +14902,14 @@ paths:
             items:
               enum:
                 - id
+                - chatType
                 - createdDateTime
                 - lastUpdatedDateTime
                 - topic
                 - installedApps
                 - members
                 - messages
+                - tabs
               type: string
         - name: $expand
           in: query
@@ -14452,6 +14925,7 @@ paths:
                 - installedApps
                 - members
                 - messages
+                - tabs
               type: string
       responses:
         '200':
@@ -14538,12 +15012,14 @@ paths:
             items:
               enum:
                 - id
+                - chatType
                 - createdDateTime
                 - lastUpdatedDateTime
                 - topic
                 - installedApps
                 - members
                 - messages
+                - tabs
               type: string
         - name: $expand
           in: query
@@ -14559,6 +15035,7 @@ paths:
                 - installedApps
                 - members
                 - messages
+                - tabs
               type: string
       responses:
         '200':
@@ -14580,6 +15057,11 @@ paths:
                 chat-id: $request.path.chat-id
             messages:
               operationId: users.Chats.ListMessages
+              parameters:
+                user-id: $request.path.user-id
+                chat-id: $request.path.chat-id
+            tabs:
+              operationId: users.Chats.ListTabs
               parameters:
                 user-id: $request.path.user-id
                 chat-id: $request.path.chat-id
@@ -14794,42 +15276,12 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - users.team
-      summary: Create new navigation property to joinedTeams for users
-      operationId: users_CreateJoinedTeams
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-      requestBody:
-        description: New navigation property
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.team'
-        required: true
-      responses:
-        '201':
-          description: Created navigation property.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.team'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/users/{user-id}/joinedTeams/{team-id}':
+  '/users/{user-id}/joinedTeams/$ref':
     get:
       tags:
         - users.team
-      summary: Get joinedTeams from users
-      operationId: users_GetJoinedTeams
+      summary: Get ref of joinedTeams from users
+      operationId: users_ListRefJoinedTeams
       parameters:
         - name: user-id
           in: path
@@ -14838,16 +15290,14 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: user
-        - name: team-id
-          in: path
-          description: 'key: id of team'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: team
-        - name: $select
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
           in: query
-          description: Select properties to be returned
+          description: Order items by property values
           style: form
           explode: false
           schema:
@@ -14856,120 +15306,66 @@ paths:
             items:
               enum:
                 - id
+                - id desc
                 - classification
+                - classification desc
                 - createdDateTime
+                - createdDateTime desc
                 - description
+                - description desc
                 - discoverySettings
+                - discoverySettings desc
                 - displayName
+                - displayName desc
                 - funSettings
+                - funSettings desc
                 - guestSettings
+                - guestSettings desc
                 - internalId
+                - internalId desc
                 - isArchived
+                - isArchived desc
                 - isMembershipLimitedToOwners
+                - isMembershipLimitedToOwners desc
                 - memberSettings
+                - memberSettings desc
                 - messagingSettings
+                - messagingSettings desc
                 - specialization
+                - specialization desc
                 - visibility
+                - visibility desc
                 - webUrl
-                - schedule
-                - channels
-                - group
-                - installedApps
-                - members
-                - operations
-                - owners
-                - photo
-                - primaryChannel
-                - template
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - schedule
-                - channels
-                - group
-                - installedApps
-                - members
-                - operations
-                - owners
-                - photo
-                - primaryChannel
-                - template
+                - webUrl desc
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
+          description: Retrieved navigation property links
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.team'
-          links:
-            schedule:
-              operationId: users.JoinedTeams.GetSchedule
-              parameters:
-                user-id: $request.path.user-id
-                team-id: $request.path.team-id
-            channels:
-              operationId: users.JoinedTeams.ListChannels
-              parameters:
-                user-id: $request.path.user-id
-                team-id: $request.path.team-id
-            group:
-              operationId: users.JoinedTeams.GetGroup
-              parameters:
-                user-id: $request.path.user-id
-                team-id: $request.path.team-id
-            installedApps:
-              operationId: users.JoinedTeams.ListInstalledApps
-              parameters:
-                user-id: $request.path.user-id
-                team-id: $request.path.team-id
-            members:
-              operationId: users.JoinedTeams.ListMembers
-              parameters:
-                user-id: $request.path.user-id
-                team-id: $request.path.team-id
-            operations:
-              operationId: users.JoinedTeams.ListOperations
-              parameters:
-                user-id: $request.path.user-id
-                team-id: $request.path.team-id
-            owners:
-              operationId: users.JoinedTeams.ListOwners
-              parameters:
-                user-id: $request.path.user-id
-                team-id: $request.path.team-id
-            photo:
-              operationId: users.JoinedTeams.GetPhoto
-              parameters:
-                user-id: $request.path.user-id
-                team-id: $request.path.team-id
-            primaryChannel:
-              operationId: users.JoinedTeams.GetPrimaryChannel
-              parameters:
-                user-id: $request.path.user-id
-                team-id: $request.path.team-id
-            template:
-              operationId: users.JoinedTeams.GetTemplate
-              parameters:
-                user-id: $request.path.user-id
-                team-id: $request.path.team-id
+                title: Collection of links of team
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
-    patch:
+    post:
       tags:
         - users.team
-      summary: Update the navigation property joinedTeams in users
-      operationId: users_UpdateJoinedTeams
+      summary: Create new navigation property ref to joinedTeams for users
+      operationId: users_CreateRefJoinedTeams
       parameters:
         - name: user-id
           in: path
@@ -14978,54 +15374,24 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: user
-        - name: team-id
-          in: path
-          description: 'key: id of team'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: team
       requestBody:
-        description: New navigation property values
+        description: New navigation property ref value
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/microsoft.graph.team'
+              type: object
+              additionalProperties:
+                type: object
         required: true
       responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - users.team
-      summary: Delete navigation property joinedTeams for users
-      operationId: users_DeleteJoinedTeams
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: team-id
-          in: path
-          description: 'key: id of team'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: team
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
+        '201':
+          description: Created navigation property link.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15422,12 +15788,14 @@ paths:
             items:
               enum:
                 - id
+                - chatType
                 - createdDateTime
                 - lastUpdatedDateTime
                 - topic
                 - installedApps
                 - members
                 - messages
+                - tabs
               type: string
         - name: $expand
           in: query
@@ -15443,6 +15811,7 @@ paths:
                 - installedApps
                 - members
                 - messages
+                - tabs
               type: string
       responses:
         '200':
@@ -15464,6 +15833,11 @@ paths:
                 userScopeTeamsAppInstallation-id: $request.path.userScopeTeamsAppInstallation-id
             messages:
               operationId: users.teamwork.installedApps.Chat.ListMessages
+              parameters:
+                user-id: $request.path.user-id
+                userScopeTeamsAppInstallation-id: $request.path.userScopeTeamsAppInstallation-id
+            tabs:
+              operationId: users.teamwork.installedApps.Chat.ListTabs
               parameters:
                 user-id: $request.path.user-id
                 userScopeTeamsAppInstallation-id: $request.path.userScopeTeamsAppInstallation-id
@@ -15511,6 +15885,11 @@ paths:
                 userScopeTeamsAppInstallation-id: $request.path.userScopeTeamsAppInstallation-id
             messages:
               operationId: users.teamwork.installedApps.Chat.ListMessages
+              parameters:
+                user-id: $request.path.user-id
+                userScopeTeamsAppInstallation-id: $request.path.userScopeTeamsAppInstallation-id
+            tabs:
+              operationId: users.teamwork.installedApps.Chat.ListTabs
               parameters:
                 user-id: $request.path.user-id
                 userScopeTeamsAppInstallation-id: $request.path.userScopeTeamsAppInstallation-id
@@ -15652,6 +16031,8 @@ components:
         - title: chat
           type: object
           properties:
+            chatType:
+              $ref: '#/components/schemas/microsoft.graph.chatType'
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -15677,6 +16058,10 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessage'
+            tabs:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.teamsTab'
           additionalProperties:
             type: object
     microsoft.graph.teamsAppInstallation:
@@ -15866,6 +16251,35 @@ components:
       type: object
       additionalProperties:
         type: object
+    microsoft.graph.teamsTab:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamsTab
+          type: object
+          properties:
+            configuration:
+              $ref: '#/components/schemas/microsoft.graph.teamsTabConfiguration'
+            displayName:
+              type: string
+              description: Name of the tab.
+              nullable: true
+            messageId:
+              type: string
+              nullable: true
+            sortOrderIndex:
+              type: string
+              nullable: true
+            teamsAppId:
+              type: string
+              nullable: true
+            webUrl:
+              type: string
+              description: Deep link URL of the tab instance. Read only.
+              nullable: true
+            teamsApp:
+              $ref: '#/components/schemas/microsoft.graph.teamsApp'
+          additionalProperties:
+            type: object
     microsoft.graph.team:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -16105,35 +16519,6 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.driveItemVersion'
               description: 'The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.'
-          additionalProperties:
-            type: object
-    microsoft.graph.teamsTab:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: teamsTab
-          type: object
-          properties:
-            configuration:
-              $ref: '#/components/schemas/microsoft.graph.teamsTabConfiguration'
-            displayName:
-              type: string
-              description: Name of the tab.
-              nullable: true
-            messageId:
-              type: string
-              nullable: true
-            sortOrderIndex:
-              type: string
-              nullable: true
-            teamsAppId:
-              type: string
-              nullable: true
-            webUrl:
-              type: string
-              description: Deep link URL of the tab instance. Read only.
-              nullable: true
-            teamsApp:
-              $ref: '#/components/schemas/microsoft.graph.teamsApp'
           additionalProperties:
             type: object
     microsoft.graph.group:
@@ -16540,7 +16925,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'The telephone numbers for the user. NOTE: Although this is a string collection, only one number can be set for this property.'
+              description: 'The telephone numbers for the user. NOTE: Although this is a string collection, only one number can be set for this property. Read-only for users synced from on-premises directory.'
             city:
               type: string
               description: The city in which the user is located. Supports $filter.
@@ -16659,7 +17044,7 @@ components:
               nullable: true
             mobilePhone:
               type: string
-              description: The primary cellular telephone number for the user.
+              description: The primary cellular telephone number for the user. Read-only for users synced from on-premises directory.
               nullable: true
             officeLocation:
               type: string
@@ -17495,6 +17880,14 @@ components:
         - published
         - unknownFutureValue
       type: string
+    microsoft.graph.chatType:
+      title: chatType
+      enum:
+        - oneOnOne
+        - group
+        - meeting
+        - unknownFutureValue
+      type: string
     microsoft.graph.publicError:
       title: publicError
       type: object
@@ -17635,6 +18028,28 @@ components:
         - text
         - html
       type: string
+    microsoft.graph.teamsTabConfiguration:
+      title: teamsTabConfiguration
+      type: object
+      properties:
+        contentUrl:
+          type: string
+          description: Url used for rendering tab contents in Teams. Required.
+          nullable: true
+        entityId:
+          type: string
+          description: Identifier for the entity hosted by the tab provider.
+          nullable: true
+        removeUrl:
+          type: string
+          description: Url called by Teams client when a Tab is removed using the Teams Client.
+          nullable: true
+        websiteUrl:
+          type: string
+          description: Url for showing tab contents outside of Teams.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.teamDiscoverySettings:
       title: teamDiscoverySettings
       type: object
@@ -18499,6 +18914,10 @@ components:
               nullable: true
             lifecycleNotificationUrl:
               type: string
+              description: 'The URL of the endpoint that receives lifecycle notifications, including subscriptionRemoved and missed notifications. This URL must make use of the HTTPS protocol. Optional. Read more about how Outlook resources use lifecycle notifications.'
+              nullable: true
+            notificationQueryOptions:
+              type: string
               nullable: true
             notificationUrl:
               type: string
@@ -18542,28 +18961,6 @@ components:
               nullable: true
           additionalProperties:
             type: object
-    microsoft.graph.teamsTabConfiguration:
-      title: teamsTabConfiguration
-      type: object
-      properties:
-        contentUrl:
-          type: string
-          description: Url used for rendering tab contents in Teams. Required.
-          nullable: true
-        entityId:
-          type: string
-          description: Identifier for the entity hosted by the tab provider.
-          nullable: true
-        removeUrl:
-          type: string
-          description: Url called by Teams client when a Tab is removed using the Teams Client.
-          nullable: true
-        websiteUrl:
-          type: string
-          description: Url for showing tab contents outside of Teams.
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.directoryObject:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -18985,7 +19382,7 @@ components:
               nullable: true
             webLink:
               type: string
-              description: 'The URL to open the event in Outlook on the web.Outlook on the web opens the event in the browser if you are signed in to your mailbox. Otherwise, Outlook on the web prompts you to sign in.This URL can be accessed from within an iFrame.'
+              description: 'The URL to open the event in Outlook on the web.Outlook on the web opens the event in the browser if you are signed in to your mailbox. Otherwise, Outlook on the web prompts you to sign in.This URL cannot be accessed from within an iFrame.'
               nullable: true
             attachments:
               type: array
@@ -19592,8 +19989,8 @@ components:
         - title: informationProtection
           type: object
           properties:
-            policy:
-              $ref: '#/components/schemas/microsoft.graph.informationProtectionPolicy'
+            bitlocker:
+              $ref: '#/components/schemas/microsoft.graph.bitlocker'
             dataLossPreventionPolicies:
               type: array
               items:
@@ -19604,6 +20001,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
             sensitivityPolicySettings:
               $ref: '#/components/schemas/microsoft.graph.sensitivityPolicySettings'
+            policy:
+              $ref: '#/components/schemas/microsoft.graph.informationProtectionPolicy'
             threatAssessmentRequests:
               type: array
               items:
@@ -20072,7 +20471,7 @@ components:
               nullable: true
             webLink:
               type: string
-              description: 'The URL to open the message in Outlook Web App.You can append an ispopout argument to the end of the URL to change how the message is displayed. If ispopout is not present or if it is set to 1, then the message is shown in a popout window. If ispopout is set to 0, then the browser will show the message in the Outlook Web App review pane.The message will open in the browser if you are logged in to your mailbox via Outlook Web App. You will be prompted to login if you are not already logged in with the browser.This URL can be accessed from within an iFrame.'
+              description: 'The URL to open the message in Outlook on the web.You can append an ispopout argument to the end of the URL to change how the message is displayed. If ispopout is not present or if it is set to 1, then the message is shown in a popout window. If ispopout is set to 0, then the browser will show the message in the Outlook on the web review pane.The message will open in the browser if you are logged in to your mailbox via Outlook on the web. You will be prompted to login if you are not already logged in with the browser.This URL cannot be accessed from within an iFrame.'
               nullable: true
             attachments:
               type: array
@@ -21181,7 +21580,7 @@ components:
               nullable: true
             deviceMetadata:
               type: string
-              description: For interal use only. Set to null.
+              description: For internal use only. Set to null.
               nullable: true
             deviceOwnership:
               type: string
@@ -21190,7 +21589,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: For interal use only.
+              description: For internal use only.
               format: int32
               nullable: true
             displayName:
@@ -21225,7 +21624,7 @@ components:
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The last time at which the object was synced with the on-premises directory.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'' Read-only.'
+              description: 'The last time at which the object was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'' Read-only.'
               format: date-time
               nullable: true
             onPremisesSyncEnabled:
@@ -21244,7 +21643,7 @@ components:
               type: array
               items:
                 type: string
-              description: For interal use only. Not nullable.
+              description: For internal use only. Not nullable.
             profileType:
               type: string
               description: The profile type of the device. Possible values:RegisteredDevice (default)SecureVMPrinterSharedIoT
@@ -21324,8 +21723,18 @@ components:
               $ref: '#/components/schemas/microsoft.graph.accessLevel'
             allowedPresenters:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingPresenters'
+            alternativeRecording:
+              type: string
+              format: base64url
+              nullable: true
+            attendeeReport:
+              type: string
+              format: base64url
+              nullable: true
             audioConferencing:
               $ref: '#/components/schemas/microsoft.graph.audioConferencing'
+            broadcastSettings:
+              $ref: '#/components/schemas/microsoft.graph.broadcastMeetingSettings'
             canceledDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -21368,6 +21777,7 @@ components:
               nullable: true
             isEntryExitAnnounced:
               type: boolean
+              description: Whether or not to announce when callers join or leave.
               nullable: true
             joinInformation:
               $ref: '#/components/schemas/microsoft.graph.itemBody'
@@ -21378,6 +21788,10 @@ components:
               $ref: '#/components/schemas/microsoft.graph.lobbyBypassSettings'
             participants:
               $ref: '#/components/schemas/microsoft.graph.meetingParticipants'
+            recording:
+              type: string
+              format: base64url
+              nullable: true
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -21426,14 +21840,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
-            microsoftAuthenticatorMethods:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.microsoftAuthenticatorAuthenticationMethod'
-            oathMethods:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.softwareOathAuthenticationMethod'
             operations:
               type: array
               items:
@@ -21450,14 +21856,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.phoneAuthenticationMethod'
-            securityQuestionMethods:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.securityQuestionAuthenticationMethod'
-            temporaryAccessPassMethods:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.temporaryAccessPassAuthenticationMethod'
           additionalProperties:
             type: object
     microsoft.graph.todo:
@@ -21470,6 +21868,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.todoTaskList'
+              description: The task lists in the users mailbox.
           additionalProperties:
             type: object
     microsoft.graph.operationStatus:
@@ -23293,16 +23692,16 @@ components:
               nullable: true
           additionalProperties:
             type: object
-    microsoft.graph.informationProtectionPolicy:
+    microsoft.graph.bitlocker:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: informationProtectionPolicy
+        - title: bitlocker
           type: object
           properties:
-            labels:
+            recoveryKeys:
               type: array
               items:
-                $ref: '#/components/schemas/microsoft.graph.informationProtectionLabel'
+                $ref: '#/components/schemas/microsoft.graph.bitlockerRecoveryKey'
           additionalProperties:
             type: object
     microsoft.graph.dataLossPreventionPolicy:
@@ -23383,6 +23782,18 @@ components:
             isMandatory:
               type: boolean
               nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.informationProtectionPolicy:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: informationProtectionPolicy
+          type: object
+          properties:
+            labels:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.informationProtectionLabel'
           additionalProperties:
             type: object
     microsoft.graph.threatAssessmentRequest:
@@ -23911,6 +24322,10 @@ components:
         - title: accessReviewScheduleDefinition
           type: object
           properties:
+            backupReviewers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScope'
             createdBy:
               $ref: '#/components/schemas/microsoft.graph.userIdentity'
             createdDateTime:
@@ -24354,6 +24769,10 @@ components:
           type: string
           description: IMEI
           nullable: true
+        ipAddressV4:
+          type: string
+          description: IPAddressV4
+          nullable: true
         isEncrypted:
           type: boolean
           description: Encryption status of the device
@@ -24406,6 +24825,10 @@ components:
           items:
             $ref: '#/components/schemas/microsoft.graph.sharedAppleDeviceUser'
           description: All users on the shared Apple device
+        subnetAddress:
+          type: string
+          description: SubnetAddress
+          nullable: true
         subscriberCarrier:
           type: string
           description: Subscriber carrier of the device
@@ -24544,6 +24967,8 @@ components:
               type: string
               description: The security baseline template id
               nullable: true
+            state:
+              $ref: '#/components/schemas/microsoft.graph.securityBaselineComplianceState'
             userPrincipalName:
               type: string
               description: User Principal Name
@@ -24806,6 +25231,10 @@ components:
               type: boolean
               description: Full scan required or not?
               nullable: true
+            isVirtualMachine:
+              type: boolean
+              description: Indicates whether the device is a virtual machine.
+              nullable: true
             lastFullScanDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -24840,6 +25269,8 @@ components:
               type: boolean
               description: Network inspection system enabled or not?
               nullable: true
+            productStatus:
+              $ref: '#/components/schemas/microsoft.graph.windowsDefenderProductStatus'
             quickScanOverdue:
               type: boolean
               description: Quick scan overdue or not?
@@ -24859,6 +25290,10 @@ components:
             signatureVersion:
               type: string
               description: Current malware definitions version
+              nullable: true
+            tamperProtectionEnabled:
+              type: boolean
+              description: Indicates whether the Windows Defender tamper protection feature is enabled.
               nullable: true
             detectedMalwareState:
               type: array
@@ -25883,6 +26318,26 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.broadcastMeetingSettings:
+      title: broadcastMeetingSettings
+      type: object
+      properties:
+        allowedAudience:
+          $ref: '#/components/schemas/microsoft.graph.broadcastMeetingAudience'
+        isAttendeeReportEnabled:
+          type: boolean
+          nullable: true
+        isQuestionAndAnswerEnabled:
+          type: boolean
+          nullable: true
+        isRecordingEnabled:
+          type: boolean
+          nullable: true
+        isVideoOnDemandEnabled:
+          type: boolean
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.meetingCapabilities:
       title: meetingCapabilities
       enum:
@@ -25913,6 +26368,7 @@ components:
       properties:
         isDialInBypassEnabled:
           type: boolean
+          description: Specifies whether or not to always let dial-in callers bypass the lobby. Optional.
           nullable: true
         scope:
           $ref: '#/components/schemas/microsoft.graph.lobbyBypassScope'
@@ -25943,6 +26399,10 @@ components:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
         - title: emailAuthenticationMethod
           type: object
+          properties:
+            emailAddress:
+              type: string
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.fido2AuthenticationMethod:
@@ -25950,26 +26410,39 @@ components:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
         - title: fido2AuthenticationMethod
           type: object
+          properties:
+            aaGuid:
+              type: string
+              nullable: true
+            attestationCertificates:
+              type: array
+              items:
+                type: string
+                nullable: true
+            attestationLevel:
+              $ref: '#/components/schemas/microsoft.graph.attestationLevel'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            creationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            displayName:
+              type: string
+              nullable: true
+            model:
+              type: string
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.authenticationMethod:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
         - title: authenticationMethod
-          type: object
-          additionalProperties:
-            type: object
-    microsoft.graph.microsoftAuthenticatorAuthenticationMethod:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
-        - title: microsoftAuthenticatorAuthenticationMethod
-          type: object
-          additionalProperties:
-            type: object
-    microsoft.graph.softwareOathAuthenticationMethod:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
-        - title: softwareOathAuthenticationMethod
           type: object
           additionalProperties:
             type: object
@@ -26004,6 +26477,22 @@ components:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
         - title: passwordlessMicrosoftAuthenticatorAuthenticationMethod
           type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            creationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            displayName:
+              type: string
+              nullable: true
+            device:
+              $ref: '#/components/schemas/microsoft.graph.device'
           additionalProperties:
             type: object
     microsoft.graph.passwordAuthenticationMethod:
@@ -26012,6 +26501,11 @@ components:
         - title: passwordAuthenticationMethod
           type: object
           properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
             creationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -26037,20 +26531,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.authenticationMethodSignInState'
           additionalProperties:
             type: object
-    microsoft.graph.securityQuestionAuthenticationMethod:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
-        - title: securityQuestionAuthenticationMethod
-          type: object
-          additionalProperties:
-            type: object
-    microsoft.graph.temporaryAccessPassAuthenticationMethod:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
-        - title: temporaryAccessPassAuthenticationMethod
-          type: object
-          additionalProperties:
-            type: object
     microsoft.graph.todoTaskList:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -26059,21 +26539,26 @@ components:
           properties:
             displayName:
               type: string
+              description: The name of the task list.
               nullable: true
             isOwner:
               type: boolean
+              description: True if the user is owner of the given task list.
             isShared:
               type: boolean
+              description: True if the task list is shared with other users
             wellknownListName:
               $ref: '#/components/schemas/microsoft.graph.wellknownListName'
             extensions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
+              description: The collection of open extensions defined for the task list. Nullable.
             tasks:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.todoTask'
+              description: The tasks in this task list. Read-only. Nullable.
           additionalProperties:
             type: object
     microsoft.graph.scheduleChangeRequestActor:
@@ -27126,31 +27611,23 @@ components:
         - Chat
         - Call
       type: string
-    microsoft.graph.informationProtectionLabel:
+    microsoft.graph.bitlockerRecoveryKey:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: informationProtectionLabel
+        - title: bitlockerRecoveryKey
           type: object
           properties:
-            color:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            deviceId:
               type: string
               nullable: true
-            description:
+            key:
               type: string
-              nullable: true
-            isActive:
-              type: boolean
-            name:
-              type: string
-              nullable: true
-            sensitivity:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              format: int32
-            tooltip:
-              type: string
-              nullable: true
+            volumeType:
+              $ref: '#/components/schemas/microsoft.graph.volumeType'
           additionalProperties:
             type: object
     microsoft.graph.sensitivityLabelTarget:
@@ -27202,6 +27679,35 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.informationProtectionLabel:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: informationProtectionLabel
+          type: object
+          properties:
+            color:
+              type: string
+              nullable: true
+            description:
+              type: string
+              nullable: true
+            isActive:
+              type: boolean
+            name:
+              type: string
+              nullable: true
+            parent:
+              $ref: '#/components/schemas/microsoft.graph.parentLabelDetails'
+            sensitivity:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+            tooltip:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.threatCategory:
       title: threatCategory
       enum:
@@ -27695,6 +28201,16 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.securityBaselineComplianceState:
+      title: securityBaselineComplianceState
+      enum:
+        - unknown
+        - secure
+        - notApplicable
+        - notSecure
+        - error
+        - conflict
+      type: string
     microsoft.graph.securityBaselineSettingState:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -27944,6 +28460,36 @@ components:
         - manualStepsPending
         - offlineScanPending
         - critical
+      type: string
+    microsoft.graph.windowsDefenderProductStatus:
+      title: windowsDefenderProductStatus
+      enum:
+        - noStatus
+        - serviceNotRunning
+        - serviceStartedWithoutMalwareProtection
+        - pendingFullScanDueToThreatAction
+        - pendingRebootDueToThreatAction
+        - pendingManualStepsDueToThreatAction
+        - avSignaturesOutOfDate
+        - asSignaturesOutOfDate
+        - noQuickScanHappenedForSpecifiedPeriod
+        - noFullScanHappenedForSpecifiedPeriod
+        - systemInitiatedScanInProgress
+        - systemInitiatedCleanInProgress
+        - samplesPendingSubmission
+        - productRunningInEvaluationMode
+        - productRunningInNonGenuineMode
+        - productExpired
+        - offlineScanRequired
+        - serviceShutdownAsPartOfSystemShutdown
+        - threatRemediationFailedCritically
+        - threatRemediationFailedNonCritically
+        - noStatusFlagsSet
+        - platformOutOfDate
+        - platformUpdateInProgress
+        - platformAboutToBeOutdated
+        - signatureOrPlatformEndOfLifeIsPastOrIsImpending
+        - windowsSModeSignaturesInUseOnNonWin10SInstall
       type: string
     microsoft.graph.windowsDeviceMalwareState:
       allOf:
@@ -28266,7 +28812,7 @@ components:
               type: string
               format: date-time
             source:
-              $ref: '#/components/schemas/microsoft.graph.personDataSource'
+              $ref: '#/components/schemas/microsoft.graph.personDataSources'
           additionalProperties:
             type: object
     microsoft.graph.anniversaryType:
@@ -28300,19 +28846,25 @@ components:
           type: string
           nullable: true
         activities:
-          type: string
-          nullable: true
+          type: array
+          items:
+            type: string
+            nullable: true
         awards:
-          type: string
-          nullable: true
+          type: array
+          items:
+            type: string
+            nullable: true
         description:
           type: string
           nullable: true
         displayName:
           type: string
         fieldsOfStudy:
-          type: string
-          nullable: true
+          type: array
+          items:
+            type: string
+            nullable: true
         grade:
           type: string
           nullable: true
@@ -28474,6 +29026,14 @@ components:
           type: object
           additionalProperties:
             type: object
+    microsoft.graph.broadcastMeetingAudience:
+      title: broadcastMeetingAudience
+      enum:
+        - roleIsAttendee
+        - organization
+        - everyone
+        - unknownFutureValue
+      type: string
     microsoft.graph.lobbyBypassScope:
       title: lobbyBypassScope
       enum:
@@ -28497,6 +29057,13 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.attestationLevel:
+      title: attestationLevel
+      enum:
+        - attested
+        - notAttested
+        - unknownFutureValue
+      type: string
     microsoft.graph.longRunningOperationStatus:
       title: longRunningOperationStatus
       enum:
@@ -28543,12 +29110,14 @@ components:
             bodyLastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: ''2020-01-01T00:00:00Z''.'
               format: date-time
             completedDateTime:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when the task was created. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format. For example, midnight UTC on Jan 1, 2020 would look like this: ''2020-01-01T00:00:00Z''.'
               format: date-time
             dueDateTime:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
@@ -28556,9 +29125,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.importance'
             isReminderOn:
               type: boolean
+              description: Set to true if an alert is set to remind the user of the task.
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: ''2020-01-01T00:00:00Z''.'
               format: date-time
             recurrence:
               $ref: '#/components/schemas/microsoft.graph.patternedRecurrence'
@@ -28568,15 +29139,18 @@ components:
               $ref: '#/components/schemas/microsoft.graph.taskStatus'
             title:
               type: string
+              description: A brief description of the task.
               nullable: true
             extensions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
+              description: The collection of open extensions defined for the task. Nullable.
             linkedResources:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.linkedResource'
+              description: A collection of resources linked to the task.
           additionalProperties:
             type: object
     microsoft.graph.scheduleEntityTheme:
@@ -28908,6 +29482,44 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.volumeType:
+      title: volumeType
+      enum:
+        - operatingSystemVolume
+        - fixedDataVolume
+        - removableDataVolume
+        - unknownFutureValue
+      type: string
+    microsoft.graph.parentLabelDetails:
+      title: parentLabelDetails
+      type: object
+      properties:
+        color:
+          type: string
+          nullable: true
+        description:
+          type: string
+          nullable: true
+        id:
+          type: string
+          nullable: true
+        isActive:
+          type: boolean
+        name:
+          type: string
+          nullable: true
+        parent:
+          $ref: '#/components/schemas/microsoft.graph.parentLabelDetails'
+        sensitivity:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+        tooltip:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.threatAssessmentResultType:
       title: threatAssessmentResultType
       enum:
@@ -28994,16 +29606,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.settingSourceType'
       additionalProperties:
         type: object
-    microsoft.graph.securityBaselineComplianceState:
-      title: securityBaselineComplianceState
-      enum:
-        - unknown
-        - secure
-        - notApplicable
-        - notSecure
-        - error
-        - conflict
-      type: string
     microsoft.graph.windowsMalwareCategory:
       title: windowsMalwareCategory
       enum:
@@ -29264,6 +29866,17 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.personDataSources:
+      title: personDataSources
+      type: object
+      properties:
+        type:
+          type: array
+          items:
+            type: string
+            nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.personRelationship:
       title: personRelationship
       enum:
@@ -29289,6 +29902,7 @@ components:
       enum:
         - attendee
         - presenter
+        - producer
         - unknownFutureValue
       type: string
     microsoft.graph.linkedResource:
@@ -29299,15 +29913,19 @@ components:
           properties:
             applicationName:
               type: string
+              description: Field indicating the app name of the source that is sending the linkedResource.
               nullable: true
             displayName:
               type: string
+              description: Field indicating the title of the linkedResource.
               nullable: true
             externalId:
               type: string
+              description: Id of the object that is associated with this task on the third-party/partner system.
               nullable: true
             webUrl:
               type: string
+              description: Deep link to the linkedResource.
               nullable: true
           additionalProperties:
             type: object

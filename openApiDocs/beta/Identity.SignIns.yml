@@ -240,6 +240,7 @@ paths:
             items:
               enum:
                 - id
+                - authenticationContextClassReferences
                 - namedLocations
                 - policies
               type: string
@@ -254,6 +255,7 @@ paths:
             items:
               enum:
                 - '*'
+                - authenticationContextClassReferences
                 - namedLocations
                 - policies
               type: string
@@ -265,6 +267,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.conditionalAccessRoot'
           links:
+            authenticationContextClassReferences:
+              operationId: identity.ConditionalAccess.ListAuthenticationContextClassReferences
             namedLocations:
               operationId: identity.ConditionalAccess.ListNamedLocations
             policies:
@@ -296,6 +300,210 @@ paths:
       summary: Delete navigation property conditionalAccess for identity
       operationId: identity_DeleteConditionalAccess
       parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /identity/conditionalAccess/authenticationContextClassReferences:
+    get:
+      tags:
+        - identity.conditionalAccessRoot
+      summary: Get authenticationContextClassReferences from identity
+      operationId: identity.conditionalAccess_ListAuthenticationContextClassReferences
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+                - isAvailable
+                - isAvailable desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - description
+                - displayName
+                - isAvailable
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of authenticationContextClassReference
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.authenticationContextClassReference'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - identity.conditionalAccessRoot
+      summary: Create new navigation property to authenticationContextClassReferences for identity
+      operationId: identity.conditionalAccess_CreateAuthenticationContextClassReferences
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.authenticationContextClassReference'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.authenticationContextClassReference'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identity/conditionalAccess/authenticationContextClassReferences/{authenticationContextClassReference-id}':
+    get:
+      tags:
+        - identity.conditionalAccessRoot
+      summary: Get authenticationContextClassReferences from identity
+      operationId: identity.conditionalAccess_GetAuthenticationContextClassReferences
+      parameters:
+        - name: authenticationContextClassReference-id
+          in: path
+          description: 'key: id of authenticationContextClassReference'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: authenticationContextClassReference
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - description
+                - displayName
+                - isAvailable
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.authenticationContextClassReference'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - identity.conditionalAccessRoot
+      summary: Update the navigation property authenticationContextClassReferences in identity
+      operationId: identity.conditionalAccess_UpdateAuthenticationContextClassReferences
+      parameters:
+        - name: authenticationContextClassReference-id
+          in: path
+          description: 'key: id of authenticationContextClassReference'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: authenticationContextClassReference
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.authenticationContextClassReference'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identity.conditionalAccessRoot
+      summary: Delete navigation property authenticationContextClassReferences for identity
+      operationId: identity.conditionalAccess_DeleteAuthenticationContextClassReferences
+      parameters:
+        - name: authenticationContextClassReference-id
+          in: path
+          description: 'key: id of authenticationContextClassReference'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: authenticationContextClassReference
         - name: If-Match
           in: header
           description: ETag
@@ -1180,10 +1388,11 @@ paths:
             items:
               enum:
                 - id
-                - policy
+                - bitlocker
                 - dataLossPreventionPolicies
                 - sensitivityLabels
                 - sensitivityPolicySettings
+                - policy
                 - threatAssessmentRequests
               type: string
         - name: $expand
@@ -1197,10 +1406,11 @@ paths:
             items:
               enum:
                 - '*'
-                - policy
+                - bitlocker
                 - dataLossPreventionPolicies
                 - sensitivityLabels
                 - sensitivityPolicySettings
+                - policy
                 - threatAssessmentRequests
               type: string
       responses:
@@ -1211,14 +1421,16 @@ paths:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.informationProtection'
           links:
-            policy:
-              operationId: informationProtection.GetPolicy
+            bitlocker:
+              operationId: informationProtection.GetBitlocker
             dataLossPreventionPolicies:
               operationId: informationProtection.ListDataLossPreventionPolicies
             sensitivityLabels:
               operationId: informationProtection.ListSensitivityLabels
             sensitivityPolicySettings:
               operationId: informationProtection.GetSensitivityPolicySettings
+            policy:
+              operationId: informationProtection.GetPolicy
             threatAssessmentRequests:
               operationId: informationProtection.ListThreatAssessmentRequests
         default:
@@ -1236,6 +1448,87 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.informationProtection'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /informationProtection/bitlocker:
+    get:
+      tags:
+        - informationProtection.bitlocker
+      summary: Get bitlocker from informationProtection
+      operationId: informationProtection_GetBitlocker
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - recoveryKeys
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - recoveryKeys
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.bitlocker'
+          links:
+            recoveryKeys:
+              operationId: informationProtection.Bitlocker.ListRecoveryKeys
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - informationProtection.bitlocker
+      summary: Update the navigation property bitlocker in informationProtection
+      operationId: informationProtection_UpdateBitlocker
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.bitlocker'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - informationProtection.bitlocker
+      summary: Delete navigation property bitlocker for informationProtection
+      operationId: informationProtection_DeleteBitlocker
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -1616,6 +1909,8 @@ paths:
                 - isActive desc
                 - name
                 - name desc
+                - parent
+                - parent desc
                 - sensitivity
                 - sensitivity desc
                 - tooltip
@@ -1636,6 +1931,7 @@ paths:
                 - description
                 - isActive
                 - name
+                - parent
                 - sensitivity
                 - tooltip
               type: string
@@ -1725,6 +2021,7 @@ paths:
                 - description
                 - isActive
                 - name
+                - parent
                 - sensitivity
                 - tooltip
               type: string
@@ -6974,7 +7271,7 @@ paths:
   /policies/privateLinkResourcePolicies:
     get:
       tags:
-        - policies.privateLinkResource
+        - policies.privateLinkResourcePolicy
       summary: Get privateLinkResourcePolicies from policies
       operationId: policies_ListPrivateLinkResourcePolicies
       parameters:
@@ -6995,10 +7292,10 @@ paths:
               enum:
                 - id
                 - id desc
-                - allowedTenantIds
-                - allowedTenantIds desc
-                - armResourceId
-                - armResourceId desc
+                - externalPrivateLinkId
+                - externalPrivateLinkId desc
+                - tenantApprovals
+                - tenantApprovals desc
               type: string
         - name: $select
           in: query
@@ -7011,8 +7308,8 @@ paths:
             items:
               enum:
                 - id
-                - allowedTenantIds
-                - armResourceId
+                - externalPrivateLinkId
+                - tenantApprovals
               type: string
         - name: $expand
           in: query
@@ -7032,13 +7329,13 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of privateLinkResource
+                title: Collection of privateLinkResourcePolicy
                 type: object
                 properties:
                   value:
                     type: array
                     items:
-                      $ref: '#/components/schemas/microsoft.graph.privateLinkResource'
+                      $ref: '#/components/schemas/microsoft.graph.privateLinkResourcePolicy'
                   '@odata.nextLink':
                     type: string
                 additionalProperties:
@@ -7051,7 +7348,7 @@ paths:
       x-ms-docs-operation-type: operation
     post:
       tags:
-        - policies.privateLinkResource
+        - policies.privateLinkResourcePolicy
       summary: Create new navigation property to privateLinkResourcePolicies for policies
       operationId: policies_CreatePrivateLinkResourcePolicies
       requestBody:
@@ -7059,7 +7356,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/microsoft.graph.privateLinkResource'
+              $ref: '#/components/schemas/microsoft.graph.privateLinkResourcePolicy'
         required: true
       responses:
         '201':
@@ -7067,24 +7364,24 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.privateLinkResource'
+                $ref: '#/components/schemas/microsoft.graph.privateLinkResourcePolicy'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/policies/privateLinkResourcePolicies/{privateLinkResource-id}':
+  '/policies/privateLinkResourcePolicies/{privateLinkResourcePolicy-id}':
     get:
       tags:
-        - policies.privateLinkResource
+        - policies.privateLinkResourcePolicy
       summary: Get privateLinkResourcePolicies from policies
       operationId: policies_GetPrivateLinkResourcePolicies
       parameters:
-        - name: privateLinkResource-id
+        - name: privateLinkResourcePolicy-id
           in: path
-          description: 'key: id of privateLinkResource'
+          description: 'key: id of privateLinkResourcePolicy'
           required: true
           schema:
             type: string
-          x-ms-docs-key-type: privateLinkResource
+          x-ms-docs-key-type: privateLinkResourcePolicy
         - name: $select
           in: query
           description: Select properties to be returned
@@ -7096,8 +7393,8 @@ paths:
             items:
               enum:
                 - id
-                - allowedTenantIds
-                - armResourceId
+                - externalPrivateLinkId
+                - tenantApprovals
               type: string
         - name: $expand
           in: query
@@ -7117,29 +7414,29 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.privateLinkResource'
+                $ref: '#/components/schemas/microsoft.graph.privateLinkResourcePolicy'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
-        - policies.privateLinkResource
+        - policies.privateLinkResourcePolicy
       summary: Update the navigation property privateLinkResourcePolicies in policies
       operationId: policies_UpdatePrivateLinkResourcePolicies
       parameters:
-        - name: privateLinkResource-id
+        - name: privateLinkResourcePolicy-id
           in: path
-          description: 'key: id of privateLinkResource'
+          description: 'key: id of privateLinkResourcePolicy'
           required: true
           schema:
             type: string
-          x-ms-docs-key-type: privateLinkResource
+          x-ms-docs-key-type: privateLinkResourcePolicy
       requestBody:
         description: New navigation property values
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/microsoft.graph.privateLinkResource'
+              $ref: '#/components/schemas/microsoft.graph.privateLinkResourcePolicy'
         required: true
       responses:
         '204':
@@ -7149,17 +7446,17 @@ paths:
       x-ms-docs-operation-type: operation
     delete:
       tags:
-        - policies.privateLinkResource
+        - policies.privateLinkResourcePolicy
       summary: Delete navigation property privateLinkResourcePolicies for policies
       operationId: policies_DeletePrivateLinkResourcePolicies
       parameters:
-        - name: privateLinkResource-id
+        - name: privateLinkResourcePolicy-id
           in: path
-          description: 'key: id of privateLinkResource'
+          description: 'key: id of privateLinkResourcePolicy'
           required: true
           schema:
             type: string
-          x-ms-docs-key-type: privateLinkResource
+          x-ms-docs-key-type: privateLinkResourcePolicy
         - name: If-Match
           in: header
           description: ETag
@@ -9186,14 +9483,10 @@ paths:
                 - emailMethods
                 - fido2Methods
                 - methods
-                - microsoftAuthenticatorMethods
-                - oathMethods
                 - operations
                 - passwordlessMicrosoftAuthenticatorMethods
                 - passwordMethods
                 - phoneMethods
-                - securityQuestionMethods
-                - temporaryAccessPassMethods
               type: string
         - name: $expand
           in: query
@@ -9209,14 +9502,10 @@ paths:
                 - emailMethods
                 - fido2Methods
                 - methods
-                - microsoftAuthenticatorMethods
-                - oathMethods
                 - operations
                 - passwordlessMicrosoftAuthenticatorMethods
                 - passwordMethods
                 - phoneMethods
-                - securityQuestionMethods
-                - temporaryAccessPassMethods
               type: string
       responses:
         '200':
@@ -9238,14 +9527,6 @@ paths:
               operationId: users.Authentication.ListMethods
               parameters:
                 user-id: $request.path.user-id
-            microsoftAuthenticatorMethods:
-              operationId: users.Authentication.ListMicrosoftAuthenticatorMethods
-              parameters:
-                user-id: $request.path.user-id
-            oathMethods:
-              operationId: users.Authentication.ListOathMethods
-              parameters:
-                user-id: $request.path.user-id
             operations:
               operationId: users.Authentication.ListOperations
               parameters:
@@ -9260,14 +9541,6 @@ paths:
                 user-id: $request.path.user-id
             phoneMethods:
               operationId: users.Authentication.ListPhoneMethods
-              parameters:
-                user-id: $request.path.user-id
-            securityQuestionMethods:
-              operationId: users.Authentication.ListSecurityQuestionMethods
-              parameters:
-                user-id: $request.path.user-id
-            temporaryAccessPassMethods:
-              operationId: users.Authentication.ListTemporaryAccessPassMethods
               parameters:
                 user-id: $request.path.user-id
         default:
@@ -9354,6 +9627,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - emailAddress
+                - emailAddress desc
               type: string
         - name: $select
           in: query
@@ -9366,6 +9641,7 @@ paths:
             items:
               enum:
                 - id
+                - emailAddress
               type: string
         - name: $expand
           in: query
@@ -9464,6 +9740,7 @@ paths:
             items:
               enum:
                 - id
+                - emailAddress
               type: string
         - name: $expand
           in: query
@@ -9582,6 +9859,20 @@ paths:
               enum:
                 - id
                 - id desc
+                - aaGuid
+                - aaGuid desc
+                - attestationCertificates
+                - attestationCertificates desc
+                - attestationLevel
+                - attestationLevel desc
+                - createdDateTime
+                - createdDateTime desc
+                - creationDateTime
+                - creationDateTime desc
+                - displayName
+                - displayName desc
+                - model
+                - model desc
               type: string
         - name: $select
           in: query
@@ -9594,6 +9885,13 @@ paths:
             items:
               enum:
                 - id
+                - aaGuid
+                - attestationCertificates
+                - attestationLevel
+                - createdDateTime
+                - creationDateTime
+                - displayName
+                - model
               type: string
         - name: $expand
           in: query
@@ -9692,6 +9990,13 @@ paths:
             items:
               enum:
                 - id
+                - aaGuid
+                - attestationCertificates
+                - attestationLevel
+                - createdDateTime
+                - creationDateTime
+                - displayName
+                - model
               type: string
         - name: $expand
           in: query
@@ -10007,462 +10312,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/users/{user-id}/authentication/microsoftAuthenticatorMethods':
-    get:
-      tags:
-        - users.authentication
-      summary: Get microsoftAuthenticatorMethods from users
-      operationId: users.authentication_ListMicrosoftAuthenticatorMethods
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - id desc
-              type: string
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of microsoftAuthenticatorAuthenticationMethod
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.microsoftAuthenticatorAuthenticationMethod'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - users.authentication
-      summary: Create new navigation property to microsoftAuthenticatorMethods for users
-      operationId: users.authentication_CreateMicrosoftAuthenticatorMethods
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-      requestBody:
-        description: New navigation property
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.microsoftAuthenticatorAuthenticationMethod'
-        required: true
-      responses:
-        '201':
-          description: Created navigation property.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.microsoftAuthenticatorAuthenticationMethod'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/users/{user-id}/authentication/microsoftAuthenticatorMethods/{microsoftAuthenticatorAuthenticationMethod-id}':
-    get:
-      tags:
-        - users.authentication
-      summary: Get microsoftAuthenticatorMethods from users
-      operationId: users.authentication_GetMicrosoftAuthenticatorMethods
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: microsoftAuthenticatorAuthenticationMethod-id
-          in: path
-          description: 'key: id of microsoftAuthenticatorAuthenticationMethod'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: microsoftAuthenticatorAuthenticationMethod
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.microsoftAuthenticatorAuthenticationMethod'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - users.authentication
-      summary: Update the navigation property microsoftAuthenticatorMethods in users
-      operationId: users.authentication_UpdateMicrosoftAuthenticatorMethods
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: microsoftAuthenticatorAuthenticationMethod-id
-          in: path
-          description: 'key: id of microsoftAuthenticatorAuthenticationMethod'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: microsoftAuthenticatorAuthenticationMethod
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.microsoftAuthenticatorAuthenticationMethod'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - users.authentication
-      summary: Delete navigation property microsoftAuthenticatorMethods for users
-      operationId: users.authentication_DeleteMicrosoftAuthenticatorMethods
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: microsoftAuthenticatorAuthenticationMethod-id
-          in: path
-          description: 'key: id of microsoftAuthenticatorAuthenticationMethod'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: microsoftAuthenticatorAuthenticationMethod
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/users/{user-id}/authentication/oathMethods':
-    get:
-      tags:
-        - users.authentication
-      summary: Get oathMethods from users
-      operationId: users.authentication_ListOathMethods
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - id desc
-              type: string
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of softwareOathAuthenticationMethod
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.softwareOathAuthenticationMethod'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - users.authentication
-      summary: Create new navigation property to oathMethods for users
-      operationId: users.authentication_CreateOathMethods
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-      requestBody:
-        description: New navigation property
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.softwareOathAuthenticationMethod'
-        required: true
-      responses:
-        '201':
-          description: Created navigation property.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.softwareOathAuthenticationMethod'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/users/{user-id}/authentication/oathMethods/{softwareOathAuthenticationMethod-id}':
-    get:
-      tags:
-        - users.authentication
-      summary: Get oathMethods from users
-      operationId: users.authentication_GetOathMethods
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: softwareOathAuthenticationMethod-id
-          in: path
-          description: 'key: id of softwareOathAuthenticationMethod'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: softwareOathAuthenticationMethod
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.softwareOathAuthenticationMethod'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - users.authentication
-      summary: Update the navigation property oathMethods in users
-      operationId: users.authentication_UpdateOathMethods
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: softwareOathAuthenticationMethod-id
-          in: path
-          description: 'key: id of softwareOathAuthenticationMethod'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: softwareOathAuthenticationMethod
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.softwareOathAuthenticationMethod'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - users.authentication
-      summary: Delete navigation property oathMethods for users
-      operationId: users.authentication_DeleteOathMethods
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: softwareOathAuthenticationMethod-id
-          in: path
-          description: 'key: id of softwareOathAuthenticationMethod'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: softwareOathAuthenticationMethod
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/users/{user-id}/authentication/operations':
     get:
       tags:
@@ -10742,6 +10591,12 @@ paths:
               enum:
                 - id
                 - id desc
+                - createdDateTime
+                - createdDateTime desc
+                - creationDateTime
+                - creationDateTime desc
+                - displayName
+                - displayName desc
               type: string
         - name: $select
           in: query
@@ -10754,6 +10609,10 @@ paths:
             items:
               enum:
                 - id
+                - createdDateTime
+                - creationDateTime
+                - displayName
+                - device
               type: string
         - name: $expand
           in: query
@@ -10766,6 +10625,7 @@ paths:
             items:
               enum:
                 - '*'
+                - device
               type: string
       responses:
         '200':
@@ -10852,6 +10712,10 @@ paths:
             items:
               enum:
                 - id
+                - createdDateTime
+                - creationDateTime
+                - displayName
+                - device
               type: string
         - name: $expand
           in: query
@@ -10864,6 +10728,7 @@ paths:
             items:
               enum:
                 - '*'
+                - device
               type: string
       responses:
         '200':
@@ -10872,6 +10737,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.passwordlessMicrosoftAuthenticatorAuthenticationMethod'
+          links:
+            device:
+              operationId: users.authentication.PasswordlessMicrosoftAuthenticatorMethods.GetDevice
+              parameters:
+                user-id: $request.path.user-id
+                passwordlessMicrosoftAuthenticatorAuthenticationMethod-id: $request.path.passwordlessMicrosoftAuthenticatorAuthenticationMethod-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10939,6 +10810,202 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/authentication/passwordlessMicrosoftAuthenticatorMethods/{passwordlessMicrosoftAuthenticatorAuthenticationMethod-id}/device':
+    get:
+      tags:
+        - users.authentication
+      summary: Get device from users
+      operationId: users.authentication.passwordlessMicrosoftAuthenticatorMethods_GetDevice
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: passwordlessMicrosoftAuthenticatorAuthenticationMethod-id
+          in: path
+          description: 'key: id of passwordlessMicrosoftAuthenticatorAuthenticationMethod'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: passwordlessMicrosoftAuthenticatorAuthenticationMethod
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+                - accountEnabled
+                - alternativeSecurityIds
+                - approximateLastSignInDateTime
+                - complianceExpirationDateTime
+                - deviceCategory
+                - deviceId
+                - deviceMetadata
+                - deviceOwnership
+                - deviceVersion
+                - displayName
+                - domainName
+                - enrollmentProfileName
+                - enrollmentType
+                - extensionAttributes
+                - isCompliant
+                - isManaged
+                - isRooted
+                - managementType
+                - onPremisesLastSyncDateTime
+                - onPremisesSyncEnabled
+                - operatingSystem
+                - operatingSystemVersion
+                - physicalIds
+                - profileType
+                - registrationDateTime
+                - systemLabels
+                - trustType
+                - kind
+                - manufacturer
+                - model
+                - name
+                - platform
+                - status
+                - memberOf
+                - registeredOwners
+                - registeredUsers
+                - transitiveMemberOf
+                - extensions
+                - commands
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - memberOf
+                - registeredOwners
+                - registeredUsers
+                - transitiveMemberOf
+                - extensions
+                - commands
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.device'
+          links:
+            memberOf:
+              operationId: users.authentication.passwordlessMicrosoftAuthenticatorMethods.Device.ListMemberOf
+              parameters:
+                user-id: $request.path.user-id
+                passwordlessMicrosoftAuthenticatorAuthenticationMethod-id: $request.path.passwordlessMicrosoftAuthenticatorAuthenticationMethod-id
+            registeredOwners:
+              operationId: users.authentication.passwordlessMicrosoftAuthenticatorMethods.Device.ListRegisteredOwners
+              parameters:
+                user-id: $request.path.user-id
+                passwordlessMicrosoftAuthenticatorAuthenticationMethod-id: $request.path.passwordlessMicrosoftAuthenticatorAuthenticationMethod-id
+            registeredUsers:
+              operationId: users.authentication.passwordlessMicrosoftAuthenticatorMethods.Device.ListRegisteredUsers
+              parameters:
+                user-id: $request.path.user-id
+                passwordlessMicrosoftAuthenticatorAuthenticationMethod-id: $request.path.passwordlessMicrosoftAuthenticatorAuthenticationMethod-id
+            transitiveMemberOf:
+              operationId: users.authentication.passwordlessMicrosoftAuthenticatorMethods.Device.ListTransitiveMemberOf
+              parameters:
+                user-id: $request.path.user-id
+                passwordlessMicrosoftAuthenticatorAuthenticationMethod-id: $request.path.passwordlessMicrosoftAuthenticatorAuthenticationMethod-id
+            extensions:
+              operationId: users.authentication.passwordlessMicrosoftAuthenticatorMethods.Device.ListExtensions
+              parameters:
+                user-id: $request.path.user-id
+                passwordlessMicrosoftAuthenticatorAuthenticationMethod-id: $request.path.passwordlessMicrosoftAuthenticatorAuthenticationMethod-id
+            commands:
+              operationId: users.authentication.passwordlessMicrosoftAuthenticatorMethods.Device.ListCommands
+              parameters:
+                user-id: $request.path.user-id
+                passwordlessMicrosoftAuthenticatorAuthenticationMethod-id: $request.path.passwordlessMicrosoftAuthenticatorAuthenticationMethod-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - users.authentication
+      summary: Update the navigation property device in users
+      operationId: users.authentication.passwordlessMicrosoftAuthenticatorMethods_UpdateDevice
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: passwordlessMicrosoftAuthenticatorAuthenticationMethod-id
+          in: path
+          description: 'key: id of passwordlessMicrosoftAuthenticatorAuthenticationMethod'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: passwordlessMicrosoftAuthenticatorAuthenticationMethod
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.device'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.authentication
+      summary: Delete navigation property device for users
+      operationId: users.authentication.passwordlessMicrosoftAuthenticatorMethods_DeleteDevice
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: passwordlessMicrosoftAuthenticatorAuthenticationMethod-id
+          in: path
+          description: 'key: id of passwordlessMicrosoftAuthenticatorAuthenticationMethod'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: passwordlessMicrosoftAuthenticatorAuthenticationMethod
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/authentication/passwordMethods':
     get:
       tags:
@@ -10970,6 +11037,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - createdDateTime
+                - createdDateTime desc
                 - creationDateTime
                 - creationDateTime desc
                 - password
@@ -10986,6 +11055,7 @@ paths:
             items:
               enum:
                 - id
+                - createdDateTime
                 - creationDateTime
                 - password
               type: string
@@ -11086,6 +11156,7 @@ paths:
             items:
               enum:
                 - id
+                - createdDateTime
                 - creationDateTime
                 - password
               type: string
@@ -11415,462 +11486,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/users/{user-id}/authentication/securityQuestionMethods':
-    get:
-      tags:
-        - users.authentication
-      summary: Get securityQuestionMethods from users
-      operationId: users.authentication_ListSecurityQuestionMethods
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - id desc
-              type: string
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of securityQuestionAuthenticationMethod
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.securityQuestionAuthenticationMethod'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - users.authentication
-      summary: Create new navigation property to securityQuestionMethods for users
-      operationId: users.authentication_CreateSecurityQuestionMethods
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-      requestBody:
-        description: New navigation property
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.securityQuestionAuthenticationMethod'
-        required: true
-      responses:
-        '201':
-          description: Created navigation property.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.securityQuestionAuthenticationMethod'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/users/{user-id}/authentication/securityQuestionMethods/{securityQuestionAuthenticationMethod-id}':
-    get:
-      tags:
-        - users.authentication
-      summary: Get securityQuestionMethods from users
-      operationId: users.authentication_GetSecurityQuestionMethods
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: securityQuestionAuthenticationMethod-id
-          in: path
-          description: 'key: id of securityQuestionAuthenticationMethod'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: securityQuestionAuthenticationMethod
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.securityQuestionAuthenticationMethod'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - users.authentication
-      summary: Update the navigation property securityQuestionMethods in users
-      operationId: users.authentication_UpdateSecurityQuestionMethods
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: securityQuestionAuthenticationMethod-id
-          in: path
-          description: 'key: id of securityQuestionAuthenticationMethod'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: securityQuestionAuthenticationMethod
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.securityQuestionAuthenticationMethod'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - users.authentication
-      summary: Delete navigation property securityQuestionMethods for users
-      operationId: users.authentication_DeleteSecurityQuestionMethods
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: securityQuestionAuthenticationMethod-id
-          in: path
-          description: 'key: id of securityQuestionAuthenticationMethod'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: securityQuestionAuthenticationMethod
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/users/{user-id}/authentication/temporaryAccessPassMethods':
-    get:
-      tags:
-        - users.authentication
-      summary: Get temporaryAccessPassMethods from users
-      operationId: users.authentication_ListTemporaryAccessPassMethods
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - id desc
-              type: string
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of temporaryAccessPassAuthenticationMethod
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.temporaryAccessPassAuthenticationMethod'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - users.authentication
-      summary: Create new navigation property to temporaryAccessPassMethods for users
-      operationId: users.authentication_CreateTemporaryAccessPassMethods
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-      requestBody:
-        description: New navigation property
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.temporaryAccessPassAuthenticationMethod'
-        required: true
-      responses:
-        '201':
-          description: Created navigation property.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.temporaryAccessPassAuthenticationMethod'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/users/{user-id}/authentication/temporaryAccessPassMethods/{temporaryAccessPassAuthenticationMethod-id}':
-    get:
-      tags:
-        - users.authentication
-      summary: Get temporaryAccessPassMethods from users
-      operationId: users.authentication_GetTemporaryAccessPassMethods
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: temporaryAccessPassAuthenticationMethod-id
-          in: path
-          description: 'key: id of temporaryAccessPassAuthenticationMethod'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: temporaryAccessPassAuthenticationMethod
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.temporaryAccessPassAuthenticationMethod'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - users.authentication
-      summary: Update the navigation property temporaryAccessPassMethods in users
-      operationId: users.authentication_UpdateTemporaryAccessPassMethods
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: temporaryAccessPassAuthenticationMethod-id
-          in: path
-          description: 'key: id of temporaryAccessPassAuthenticationMethod'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: temporaryAccessPassAuthenticationMethod
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.temporaryAccessPassAuthenticationMethod'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - users.authentication
-      summary: Delete navigation property temporaryAccessPassMethods for users
-      operationId: users.authentication_DeleteTemporaryAccessPassMethods
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: temporaryAccessPassAuthenticationMethod-id
-          in: path
-          description: 'key: id of temporaryAccessPassAuthenticationMethod'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: temporaryAccessPassAuthenticationMethod
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/users/{user-id}/informationProtection':
     get:
       tags:
@@ -11896,10 +11511,11 @@ paths:
             items:
               enum:
                 - id
-                - policy
+                - bitlocker
                 - dataLossPreventionPolicies
                 - sensitivityLabels
                 - sensitivityPolicySettings
+                - policy
                 - threatAssessmentRequests
               type: string
         - name: $expand
@@ -11913,10 +11529,11 @@ paths:
             items:
               enum:
                 - '*'
-                - policy
+                - bitlocker
                 - dataLossPreventionPolicies
                 - sensitivityLabels
                 - sensitivityPolicySettings
+                - policy
                 - threatAssessmentRequests
               type: string
       responses:
@@ -11927,8 +11544,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.informationProtection'
           links:
-            policy:
-              operationId: users.InformationProtection.GetPolicy
+            bitlocker:
+              operationId: users.InformationProtection.GetBitlocker
               parameters:
                 user-id: $request.path.user-id
             dataLossPreventionPolicies:
@@ -11941,6 +11558,10 @@ paths:
                 user-id: $request.path.user-id
             sensitivityPolicySettings:
               operationId: users.InformationProtection.GetSensitivityPolicySettings
+              parameters:
+                user-id: $request.path.user-id
+            policy:
+              operationId: users.InformationProtection.GetPolicy
               parameters:
                 user-id: $request.path.user-id
             threatAssessmentRequests:
@@ -12040,6 +11661,10 @@ components:
         - title: conditionalAccessRoot
           type: object
           properties:
+            authenticationContextClassReferences:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.authenticationContextClassReference'
             namedLocations:
               type: array
               items:
@@ -12048,6 +11673,23 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.conditionalAccessPolicy'
+          additionalProperties:
+            type: object
+    microsoft.graph.authenticationContextClassReference:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: authenticationContextClassReference
+          type: object
+          properties:
+            description:
+              type: string
+              nullable: true
+            displayName:
+              type: string
+              nullable: true
+            isAvailable:
+              type: boolean
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.namedLocation:
@@ -12146,8 +11788,8 @@ components:
         - title: informationProtection
           type: object
           properties:
-            policy:
-              $ref: '#/components/schemas/microsoft.graph.informationProtectionPolicy'
+            bitlocker:
+              $ref: '#/components/schemas/microsoft.graph.bitlocker'
             dataLossPreventionPolicies:
               type: array
               items:
@@ -12158,10 +11800,24 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
             sensitivityPolicySettings:
               $ref: '#/components/schemas/microsoft.graph.sensitivityPolicySettings'
+            policy:
+              $ref: '#/components/schemas/microsoft.graph.informationProtectionPolicy'
             threatAssessmentRequests:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.threatAssessmentRequest'
+          additionalProperties:
+            type: object
+    microsoft.graph.bitlocker:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: bitlocker
+          type: object
+          properties:
+            recoveryKeys:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.bitlockerRecoveryKey'
           additionalProperties:
             type: object
     microsoft.graph.dataLossPreventionPolicy:
@@ -12242,6 +11898,8 @@ components:
             fileExtension:
               type: string
               nullable: true
+            matchTolerancesToInclude:
+              $ref: '#/components/schemas/microsoft.graph.mlClassificationMatchTolerance'
             scopesToRun:
               $ref: '#/components/schemas/microsoft.graph.sensitiveTypeScope'
             sensitiveTypeIds:
@@ -12293,6 +11951,8 @@ components:
             name:
               type: string
               nullable: true
+            parent:
+              $ref: '#/components/schemas/microsoft.graph.parentLabelDetails'
             sensitivity:
               maximum: 2147483647
               minimum: -2147483648
@@ -12627,7 +12287,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'The telephone numbers for the user. NOTE: Although this is a string collection, only one number can be set for this property.'
+              description: 'The telephone numbers for the user. NOTE: Although this is a string collection, only one number can be set for this property. Read-only for users synced from on-premises directory.'
             city:
               type: string
               description: The city in which the user is located. Supports $filter.
@@ -12746,7 +12406,7 @@ components:
               nullable: true
             mobilePhone:
               type: string
-              description: The primary cellular telephone number for the user.
+              description: The primary cellular telephone number for the user. Read-only for users synced from on-premises directory.
               nullable: true
             officeLocation:
               type: string
@@ -13233,7 +12893,7 @@ components:
         privateLinkResourcePolicies:
           type: array
           items:
-            $ref: '#/components/schemas/microsoft.graph.privateLinkResource'
+            $ref: '#/components/schemas/microsoft.graph.privateLinkResourcePolicy'
         tokenIssuancePolicies:
           type: array
           items:
@@ -13458,18 +13118,18 @@ components:
               nullable: true
           additionalProperties:
             type: object
-    microsoft.graph.privateLinkResource:
+    microsoft.graph.privateLinkResourcePolicy:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: privateLinkResource
+        - title: privateLinkResourcePolicy
           type: object
           properties:
-            allowedTenantIds:
+            externalPrivateLinkId:
+              type: string
+            tenantApprovals:
               type: array
               items:
-                type: string
-            armResourceId:
-              type: string
+                $ref: '#/components/schemas/microsoft.graph.tenantApprovals'
           additionalProperties:
             type: object
     microsoft.graph.tokenIssuancePolicy:
@@ -13734,14 +13394,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
-            microsoftAuthenticatorMethods:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.microsoftAuthenticatorAuthenticationMethod'
-            oathMethods:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.softwareOathAuthenticationMethod'
             operations:
               type: array
               items:
@@ -13758,14 +13410,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.phoneAuthenticationMethod'
-            securityQuestionMethods:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.securityQuestionAuthenticationMethod'
-            temporaryAccessPassMethods:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.temporaryAccessPassAuthenticationMethod'
           additionalProperties:
             type: object
     microsoft.graph.emailAuthenticationMethod:
@@ -13773,6 +13417,10 @@ components:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
         - title: emailAuthenticationMethod
           type: object
+          properties:
+            emailAddress:
+              type: string
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.fido2AuthenticationMethod:
@@ -13780,26 +13428,39 @@ components:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
         - title: fido2AuthenticationMethod
           type: object
+          properties:
+            aaGuid:
+              type: string
+              nullable: true
+            attestationCertificates:
+              type: array
+              items:
+                type: string
+                nullable: true
+            attestationLevel:
+              $ref: '#/components/schemas/microsoft.graph.attestationLevel'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            creationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            displayName:
+              type: string
+              nullable: true
+            model:
+              type: string
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.authenticationMethod:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
         - title: authenticationMethod
-          type: object
-          additionalProperties:
-            type: object
-    microsoft.graph.microsoftAuthenticatorAuthenticationMethod:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
-        - title: microsoftAuthenticatorAuthenticationMethod
-          type: object
-          additionalProperties:
-            type: object
-    microsoft.graph.softwareOathAuthenticationMethod:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
-        - title: softwareOathAuthenticationMethod
           type: object
           additionalProperties:
             type: object
@@ -13834,14 +13495,204 @@ components:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
         - title: passwordlessMicrosoftAuthenticatorAuthenticationMethod
           type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            creationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            displayName:
+              type: string
+              nullable: true
+            device:
+              $ref: '#/components/schemas/microsoft.graph.device'
           additionalProperties:
             type: object
+    microsoft.graph.device:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        - title: device
+          type: object
+          properties:
+            accountEnabled:
+              type: boolean
+              description: 'true if the account is enabled; otherwise, false. Required.'
+              nullable: true
+            alternativeSecurityIds:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.alternativeSecurityId'
+              description: For internal use only. Not nullable.
+            approximateLastSignInDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Read-only.'
+              format: date-time
+              nullable: true
+            complianceExpirationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The timestamp when the device is no longer deemed compliant. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Read-only.'
+              format: date-time
+              nullable: true
+            deviceCategory:
+              type: string
+              nullable: true
+            deviceId:
+              type: string
+              description: Unique identifier set by Azure Device Registration Service at the time of registration.
+              nullable: true
+            deviceMetadata:
+              type: string
+              description: For internal use only. Set to null.
+              nullable: true
+            deviceOwnership:
+              type: string
+              nullable: true
+            deviceVersion:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: For internal use only.
+              format: int32
+              nullable: true
+            displayName:
+              type: string
+              description: The display name for the device. Required.
+              nullable: true
+            domainName:
+              type: string
+              nullable: true
+            enrollmentProfileName:
+              type: string
+              nullable: true
+            enrollmentType:
+              type: string
+              nullable: true
+            extensionAttributes:
+              $ref: '#/components/schemas/microsoft.graph.onPremisesExtensionAttributes'
+            isCompliant:
+              type: boolean
+              description: 'true if the device complies with Mobile Device Management (MDM) policies; otherwise, false. Read-only. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices.'
+              nullable: true
+            isManaged:
+              type: boolean
+              description: 'true if the device is managed by a Mobile Device Management (MDM) app; otherwise, false. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices.'
+              nullable: true
+            isRooted:
+              type: boolean
+              nullable: true
+            managementType:
+              type: string
+              nullable: true
+            onPremisesLastSyncDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The last time at which the object was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'' Read-only.'
+              format: date-time
+              nullable: true
+            onPremisesSyncEnabled:
+              type: boolean
+              description: true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only.
+              nullable: true
+            operatingSystem:
+              type: string
+              description: The type of operating system on the device. Required.
+              nullable: true
+            operatingSystemVersion:
+              type: string
+              description: The version of the operating system on the device. Required.
+              nullable: true
+            physicalIds:
+              type: array
+              items:
+                type: string
+              description: For internal use only. Not nullable.
+            profileType:
+              type: string
+              description: The profile type of the device. Possible values:RegisteredDevice (default)SecureVMPrinterSharedIoT
+              nullable: true
+            registrationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            systemLabels:
+              type: array
+              items:
+                type: string
+              description: List of labels applied to the device by the system.
+            trustType:
+              type: string
+              description: 'Type of trust for the joined device. Read-only. Possible values: Workplace - indicates bring your own personal devicesAzureAd - Cloud only joined devicesServerAd - on-premises domain joined devices joined to Azure AD. For more details, see Introduction to device management in Azure Active Directory'
+              nullable: true
+            kind:
+              type: string
+              nullable: true
+            manufacturer:
+              type: string
+              description: Manufacturer of the device. Read-only.
+              nullable: true
+            model:
+              type: string
+              description: Model of the device. Read-only.
+              nullable: true
+            name:
+              type: string
+              nullable: true
+            platform:
+              type: string
+              nullable: true
+            status:
+              type: string
+              nullable: true
+            memberOf:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: 'Groups that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable.'
+            registeredOwners:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable.'
+            registeredUsers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: 'Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable.'
+            transitiveMemberOf:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+            extensions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.extension'
+              description: The collection of open extensions defined for the device. Read-only. Nullable.
+            commands:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.command'
+          additionalProperties:
+            type: object
+          description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
     microsoft.graph.passwordAuthenticationMethod:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
         - title: passwordAuthenticationMethod
           type: object
           properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
             creationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -13865,20 +13716,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.authenticationPhoneType'
             smsSignInState:
               $ref: '#/components/schemas/microsoft.graph.authenticationMethodSignInState'
-          additionalProperties:
-            type: object
-    microsoft.graph.securityQuestionAuthenticationMethod:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
-        - title: securityQuestionAuthenticationMethod
-          type: object
-          additionalProperties:
-            type: object
-    microsoft.graph.temporaryAccessPassAuthenticationMethod:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
-        - title: temporaryAccessPassAuthenticationMethod
-          type: object
           additionalProperties:
             type: object
     microsoft.graph.entity:
@@ -13905,6 +13742,8 @@ components:
       properties:
         applications:
           $ref: '#/components/schemas/microsoft.graph.conditionalAccessApplications'
+        clientApplications:
+          $ref: '#/components/schemas/microsoft.graph.conditionalAccessClientApplications'
         clientAppTypes:
           type: array
           items:
@@ -13988,6 +13827,25 @@ components:
         - resourceOwner
         - unknownFutureValue
       type: string
+    microsoft.graph.bitlockerRecoveryKey:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: bitlockerRecoveryKey
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            deviceId:
+              type: string
+              nullable: true
+            key:
+              type: string
+            volumeType:
+              $ref: '#/components/schemas/microsoft.graph.volumeType'
+          additionalProperties:
+            type: object
     microsoft.graph.accessScope:
       title: accessScope
       enum:
@@ -14038,6 +13896,12 @@ components:
             $ref: '#/components/schemas/microsoft.graph.matchingDlpRule'
       additionalProperties:
         type: object
+    microsoft.graph.mlClassificationMatchTolerance:
+      title: mlClassificationMatchTolerance
+      enum:
+        - exact
+        - near
+      type: string
     microsoft.graph.sensitiveTypeScope:
       title: sensitiveTypeScope
       enum:
@@ -14054,6 +13918,36 @@ components:
           $ref: '#/components/schemas/microsoft.graph.dlpPoliciesJobResult'
         sensitivityLabelsResult:
           $ref: '#/components/schemas/microsoft.graph.evaluateLabelJobResultGroup'
+      additionalProperties:
+        type: object
+    microsoft.graph.parentLabelDetails:
+      title: parentLabelDetails
+      type: object
+      properties:
+        color:
+          type: string
+          nullable: true
+        description:
+          type: string
+          nullable: true
+        id:
+          type: string
+          nullable: true
+        isActive:
+          type: boolean
+        name:
+          type: string
+          nullable: true
+        parent:
+          $ref: '#/components/schemas/microsoft.graph.parentLabelDetails'
+        sensitivity:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+        tooltip:
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.contentFormat:
@@ -14090,33 +13984,12 @@ components:
         - auto
       type: string
     microsoft.graph.labelDetails:
-      title: labelDetails
-      type: object
-      properties:
-        color:
-          type: string
-          nullable: true
-        description:
-          type: string
-          nullable: true
-        id:
-          type: string
-          nullable: true
-        isActive:
-          type: boolean
-        name:
-          type: string
-          nullable: true
-        sensitivity:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          format: int32
-        tooltip:
-          type: string
-          nullable: true
-      additionalProperties:
-        type: object
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.parentLabelDetails'
+        - title: labelDetails
+          type: object
+          additionalProperties:
+            type: object
     microsoft.graph.sensitivityLabelTarget:
       title: sensitivityLabelTarget
       enum:
@@ -14921,7 +14794,7 @@ components:
               nullable: true
             webLink:
               type: string
-              description: 'The URL to open the event in Outlook on the web.Outlook on the web opens the event in the browser if you are signed in to your mailbox. Otherwise, Outlook on the web prompts you to sign in.This URL can be accessed from within an iFrame.'
+              description: 'The URL to open the event in Outlook on the web.Outlook on the web opens the event in the browser if you are signed in to your mailbox. Otherwise, Outlook on the web prompts you to sign in.This URL cannot be accessed from within an iFrame.'
               nullable: true
             attachments:
               type: array
@@ -15671,7 +15544,7 @@ components:
               nullable: true
             webLink:
               type: string
-              description: 'The URL to open the message in Outlook Web App.You can append an ispopout argument to the end of the URL to change how the message is displayed. If ispopout is not present or if it is set to 1, then the message is shown in a popout window. If ispopout is set to 0, then the browser will show the message in the Outlook Web App review pane.The message will open in the browser if you are logged in to your mailbox via Outlook Web App. You will be prompted to login if you are not already logged in with the browser.This URL can be accessed from within an iFrame.'
+              description: 'The URL to open the message in Outlook on the web.You can append an ispopout argument to the end of the URL to change how the message is displayed. If ispopout is not present or if it is set to 1, then the message is shown in a popout window. If ispopout is set to 0, then the browser will show the message in the Outlook on the web review pane.The message will open in the browser if you are logged in to your mailbox via Outlook on the web. You will be prompted to login if you are not already logged in with the browser.This URL cannot be accessed from within an iFrame.'
               nullable: true
             attachments:
               type: array
@@ -16918,175 +16791,6 @@ components:
               description: Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
           additionalProperties:
             type: object
-    microsoft.graph.device:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.directoryObject'
-        - title: device
-          type: object
-          properties:
-            accountEnabled:
-              type: boolean
-              description: 'true if the account is enabled; otherwise, false. Required.'
-              nullable: true
-            alternativeSecurityIds:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.alternativeSecurityId'
-              description: For internal use only. Not nullable.
-            approximateLastSignInDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Read-only.'
-              format: date-time
-              nullable: true
-            complianceExpirationDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'The timestamp when the device is no longer deemed compliant. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Read-only.'
-              format: date-time
-              nullable: true
-            deviceCategory:
-              type: string
-              nullable: true
-            deviceId:
-              type: string
-              description: Unique identifier set by Azure Device Registration Service at the time of registration.
-              nullable: true
-            deviceMetadata:
-              type: string
-              description: For interal use only. Set to null.
-              nullable: true
-            deviceOwnership:
-              type: string
-              nullable: true
-            deviceVersion:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              description: For interal use only.
-              format: int32
-              nullable: true
-            displayName:
-              type: string
-              description: The display name for the device. Required.
-              nullable: true
-            domainName:
-              type: string
-              nullable: true
-            enrollmentProfileName:
-              type: string
-              nullable: true
-            enrollmentType:
-              type: string
-              nullable: true
-            extensionAttributes:
-              $ref: '#/components/schemas/microsoft.graph.onPremisesExtensionAttributes'
-            isCompliant:
-              type: boolean
-              description: 'true if the device complies with Mobile Device Management (MDM) policies; otherwise, false. Read-only. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices.'
-              nullable: true
-            isManaged:
-              type: boolean
-              description: 'true if the device is managed by a Mobile Device Management (MDM) app; otherwise, false. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices.'
-              nullable: true
-            isRooted:
-              type: boolean
-              nullable: true
-            managementType:
-              type: string
-              nullable: true
-            onPremisesLastSyncDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'The last time at which the object was synced with the on-premises directory.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'' Read-only.'
-              format: date-time
-              nullable: true
-            onPremisesSyncEnabled:
-              type: boolean
-              description: true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only.
-              nullable: true
-            operatingSystem:
-              type: string
-              description: The type of operating system on the device. Required.
-              nullable: true
-            operatingSystemVersion:
-              type: string
-              description: The version of the operating system on the device. Required.
-              nullable: true
-            physicalIds:
-              type: array
-              items:
-                type: string
-              description: For interal use only. Not nullable.
-            profileType:
-              type: string
-              description: The profile type of the device. Possible values:RegisteredDevice (default)SecureVMPrinterSharedIoT
-              nullable: true
-            registrationDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              format: date-time
-              nullable: true
-            systemLabels:
-              type: array
-              items:
-                type: string
-              description: List of labels applied to the device by the system.
-            trustType:
-              type: string
-              description: 'Type of trust for the joined device. Read-only. Possible values: Workplace - indicates bring your own personal devicesAzureAd - Cloud only joined devicesServerAd - on-premises domain joined devices joined to Azure AD. For more details, see Introduction to device management in Azure Active Directory'
-              nullable: true
-            kind:
-              type: string
-              nullable: true
-            manufacturer:
-              type: string
-              description: Manufacturer of the device. Read-only.
-              nullable: true
-            model:
-              type: string
-              description: Model of the device. Read-only.
-              nullable: true
-            name:
-              type: string
-              nullable: true
-            platform:
-              type: string
-              nullable: true
-            status:
-              type: string
-              nullable: true
-            memberOf:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Groups that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable.'
-            registeredOwners:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable.'
-            registeredUsers:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable.'
-            transitiveMemberOf:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.directoryObject'
-            extensions:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.extension'
-              description: The collection of open extensions defined for the device. Read-only. Nullable.
-            commands:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.command'
-          additionalProperties:
-            type: object
-          description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
     microsoft.graph.onlineMeeting:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -17097,8 +16801,18 @@ components:
               $ref: '#/components/schemas/microsoft.graph.accessLevel'
             allowedPresenters:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingPresenters'
+            alternativeRecording:
+              type: string
+              format: base64url
+              nullable: true
+            attendeeReport:
+              type: string
+              format: base64url
+              nullable: true
             audioConferencing:
               $ref: '#/components/schemas/microsoft.graph.audioConferencing'
+            broadcastSettings:
+              $ref: '#/components/schemas/microsoft.graph.broadcastMeetingSettings'
             canceledDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -17141,6 +16855,7 @@ components:
               nullable: true
             isEntryExitAnnounced:
               type: boolean
+              description: Whether or not to announce when callers join or leave.
               nullable: true
             joinInformation:
               $ref: '#/components/schemas/microsoft.graph.itemBody'
@@ -17151,6 +16866,10 @@ components:
               $ref: '#/components/schemas/microsoft.graph.lobbyBypassSettings'
             participants:
               $ref: '#/components/schemas/microsoft.graph.meetingParticipants'
+            recording:
+              type: string
+              format: base64url
+              nullable: true
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -17187,6 +16906,8 @@ components:
         - title: chat
           type: object
           properties:
+            chatType:
+              $ref: '#/components/schemas/microsoft.graph.chatType'
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -17212,6 +16933,10 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessage'
+            tabs:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.teamsTab'
           additionalProperties:
             type: object
     microsoft.graph.team:
@@ -17325,6 +17050,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.todoTaskList'
+              description: The task lists in the users mailbox.
           additionalProperties:
             type: object
     microsoft.graph.certificateAuthority:
@@ -17471,6 +17197,20 @@ components:
         - delegated
         - delegatedUserConsentable
       type: string
+    microsoft.graph.tenantApprovals:
+      title: tenantApprovals
+      type: object
+      properties:
+        state:
+          type: string
+          nullable: true
+        tenantId:
+          pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+          type: string
+          format: uuid
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.activityType:
       title: activityType
       enum:
@@ -17588,6 +17328,13 @@ components:
           description: The type of risk event detected.
       additionalProperties:
         type: object
+    microsoft.graph.attestationLevel:
+      title: attestationLevel
+      enum:
+        - attested
+        - notAttested
+        - unknownFutureValue
+      type: string
     microsoft.graph.longRunningOperationStatus:
       title: longRunningOperationStatus
       enum:
@@ -17596,6 +17343,61 @@ components:
         - succeeded
         - failed
       type: string
+    microsoft.graph.alternativeSecurityId:
+      title: alternativeSecurityId
+      type: object
+      properties:
+        identityProvider:
+          type: string
+          description: For internal use only
+          nullable: true
+        key:
+          type: string
+          description: For internal use only
+          format: base64url
+          nullable: true
+        type:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: For internal use only
+          format: int32
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.command:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: command
+          type: object
+          properties:
+            appServiceName:
+              type: string
+              nullable: true
+            error:
+              type: string
+              nullable: true
+            packageFamilyName:
+              type: string
+              nullable: true
+            payload:
+              $ref: '#/components/schemas/microsoft.graph.payloadRequest'
+            permissionTicket:
+              type: string
+              nullable: true
+            postBackUri:
+              type: string
+              nullable: true
+            status:
+              type: string
+              nullable: true
+            type:
+              type: string
+              nullable: true
+            responsepayload:
+              $ref: '#/components/schemas/microsoft.graph.payloadResponse'
+          additionalProperties:
+            type: object
     microsoft.graph.authenticationPhoneType:
       title: authenticationPhoneType
       enum:
@@ -17643,6 +17445,20 @@ components:
           items:
             type: string
           description: 'User actions to include. For example, urn:user:registersecurityinfo'
+      additionalProperties:
+        type: object
+    microsoft.graph.conditionalAccessClientApplications:
+      title: conditionalAccessClientApplications
+      type: object
+      properties:
+        excludeServicePrincipals:
+          type: array
+          items:
+            type: string
+        includeServicePrincipals:
+          type: array
+          items:
+            type: string
       additionalProperties:
         type: object
     microsoft.graph.conditionalAccessClientApp:
@@ -17808,6 +17624,14 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.volumeType:
+      title: volumeType
+      enum:
+        - operatingSystemVolume
+        - fixedDataVolume
+        - removableDataVolume
+        - unknownFutureValue
+      type: string
     microsoft.graph.classificationError:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.classifcationErrorBase'
@@ -19482,6 +19306,10 @@ components:
         - title: accessReviewScheduleDefinition
           type: object
           properties:
+            backupReviewers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScope'
             createdBy:
               $ref: '#/components/schemas/microsoft.graph.userIdentity'
             createdDateTime:
@@ -19925,6 +19753,10 @@ components:
           type: string
           description: IMEI
           nullable: true
+        ipAddressV4:
+          type: string
+          description: IPAddressV4
+          nullable: true
         isEncrypted:
           type: boolean
           description: Encryption status of the device
@@ -19977,6 +19809,10 @@ components:
           items:
             $ref: '#/components/schemas/microsoft.graph.sharedAppleDeviceUser'
           description: All users on the shared Apple device
+        subnetAddress:
+          type: string
+          description: SubnetAddress
+          nullable: true
         subscriberCarrier:
           type: string
           description: Subscriber carrier of the device
@@ -20115,6 +19951,8 @@ components:
               type: string
               description: The security baseline template id
               nullable: true
+            state:
+              $ref: '#/components/schemas/microsoft.graph.securityBaselineComplianceState'
             userPrincipalName:
               type: string
               description: User Principal Name
@@ -20377,6 +20215,10 @@ components:
               type: boolean
               description: Full scan required or not?
               nullable: true
+            isVirtualMachine:
+              type: boolean
+              description: Indicates whether the device is a virtual machine.
+              nullable: true
             lastFullScanDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -20411,6 +20253,8 @@ components:
               type: boolean
               description: Network inspection system enabled or not?
               nullable: true
+            productStatus:
+              $ref: '#/components/schemas/microsoft.graph.windowsDefenderProductStatus'
             quickScanOverdue:
               type: boolean
               description: Quick scan overdue or not?
@@ -20430,6 +20274,10 @@ components:
             signatureVersion:
               type: string
               description: Current malware definitions version
+              nullable: true
+            tamperProtectionEnabled:
+              type: boolean
+              description: Indicates whether the Windows Defender tamper protection feature is enabled.
               nullable: true
             detectedMalwareState:
               type: array
@@ -21587,61 +21435,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.userActivity'
           additionalProperties:
             type: object
-    microsoft.graph.alternativeSecurityId:
-      title: alternativeSecurityId
-      type: object
-      properties:
-        identityProvider:
-          type: string
-          description: For internal use only
-          nullable: true
-        key:
-          type: string
-          description: For internal use only
-          format: base64url
-          nullable: true
-        type:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: For internal use only
-          format: int32
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.command:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: command
-          type: object
-          properties:
-            appServiceName:
-              type: string
-              nullable: true
-            error:
-              type: string
-              nullable: true
-            packageFamilyName:
-              type: string
-              nullable: true
-            payload:
-              $ref: '#/components/schemas/microsoft.graph.payloadRequest'
-            permissionTicket:
-              type: string
-              nullable: true
-            postBackUri:
-              type: string
-              nullable: true
-            status:
-              type: string
-              nullable: true
-            type:
-              type: string
-              nullable: true
-            responsepayload:
-              $ref: '#/components/schemas/microsoft.graph.payloadResponse'
-          additionalProperties:
-            type: object
     microsoft.graph.accessLevel:
       title: accessLevel
       enum:
@@ -21681,6 +21474,26 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.broadcastMeetingSettings:
+      title: broadcastMeetingSettings
+      type: object
+      properties:
+        allowedAudience:
+          $ref: '#/components/schemas/microsoft.graph.broadcastMeetingAudience'
+        isAttendeeReportEnabled:
+          type: boolean
+          nullable: true
+        isQuestionAndAnswerEnabled:
+          type: boolean
+          nullable: true
+        isRecordingEnabled:
+          type: boolean
+          nullable: true
+        isVideoOnDemandEnabled:
+          type: boolean
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.meetingCapabilities:
       title: meetingCapabilities
       enum:
@@ -21711,6 +21524,7 @@ components:
       properties:
         isDialInBypassEnabled:
           type: boolean
+          description: Specifies whether or not to always let dial-in callers bypass the lobby. Optional.
           nullable: true
         scope:
           $ref: '#/components/schemas/microsoft.graph.lobbyBypassScope'
@@ -21736,6 +21550,14 @@ components:
             $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
       additionalProperties:
         type: object
+    microsoft.graph.chatType:
+      title: chatType
+      enum:
+        - oneOnOne
+        - group
+        - meeting
+        - unknownFutureValue
+      type: string
     microsoft.graph.teamsAppInstallation:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -21855,6 +21677,35 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessage'
+          additionalProperties:
+            type: object
+    microsoft.graph.teamsTab:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamsTab
+          type: object
+          properties:
+            configuration:
+              $ref: '#/components/schemas/microsoft.graph.teamsTabConfiguration'
+            displayName:
+              type: string
+              description: Name of the tab.
+              nullable: true
+            messageId:
+              type: string
+              nullable: true
+            sortOrderIndex:
+              type: string
+              nullable: true
+            teamsAppId:
+              type: string
+              nullable: true
+            webUrl:
+              type: string
+              description: Deep link URL of the tab instance. Read only.
+              nullable: true
+            teamsApp:
+              $ref: '#/components/schemas/microsoft.graph.teamsApp'
           additionalProperties:
             type: object
     microsoft.graph.teamDiscoverySettings:
@@ -22185,21 +22036,26 @@ components:
           properties:
             displayName:
               type: string
+              description: The name of the task list.
               nullable: true
             isOwner:
               type: boolean
+              description: True if the user is owner of the given task list.
             isShared:
               type: boolean
+              description: True if the task list is shared with other users
             wellknownListName:
               $ref: '#/components/schemas/microsoft.graph.wellknownListName'
             extensions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
+              description: The collection of open extensions defined for the task list. Nullable.
             tasks:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.todoTask'
+              description: The tasks in this task list. Read-only. Nullable.
           additionalProperties:
             type: object
     microsoft.graph.accessReviewApplyAction:
@@ -22228,6 +22084,18 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.payloadRequest:
+      title: payloadRequest
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.payloadResponse:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: payloadResponse
+          type: object
+          additionalProperties:
+            type: object
     odata.error.main:
       required:
         - code
@@ -23660,6 +23528,10 @@ components:
               nullable: true
             lifecycleNotificationUrl:
               type: string
+              description: 'The URL of the endpoint that receives lifecycle notifications, including subscriptionRemoved and missed notifications. This URL must make use of the HTTPS protocol. Optional. Read more about how Outlook resources use lifecycle notifications.'
+              nullable: true
+            notificationQueryOptions:
+              type: string
               nullable: true
             notificationUrl:
               type: string
@@ -24135,6 +24007,16 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.securityBaselineComplianceState:
+      title: securityBaselineComplianceState
+      enum:
+        - unknown
+        - secure
+        - notApplicable
+        - notSecure
+        - error
+        - conflict
+      type: string
     microsoft.graph.securityBaselineSettingState:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -24384,6 +24266,36 @@ components:
         - manualStepsPending
         - offlineScanPending
         - critical
+      type: string
+    microsoft.graph.windowsDefenderProductStatus:
+      title: windowsDefenderProductStatus
+      enum:
+        - noStatus
+        - serviceNotRunning
+        - serviceStartedWithoutMalwareProtection
+        - pendingFullScanDueToThreatAction
+        - pendingRebootDueToThreatAction
+        - pendingManualStepsDueToThreatAction
+        - avSignaturesOutOfDate
+        - asSignaturesOutOfDate
+        - noQuickScanHappenedForSpecifiedPeriod
+        - noFullScanHappenedForSpecifiedPeriod
+        - systemInitiatedScanInProgress
+        - systemInitiatedCleanInProgress
+        - samplesPendingSubmission
+        - productRunningInEvaluationMode
+        - productRunningInNonGenuineMode
+        - productExpired
+        - offlineScanRequired
+        - serviceShutdownAsPartOfSystemShutdown
+        - threatRemediationFailedCritically
+        - threatRemediationFailedNonCritically
+        - noStatusFlagsSet
+        - platformOutOfDate
+        - platformUpdateInProgress
+        - platformAboutToBeOutdated
+        - signatureOrPlatformEndOfLifeIsPastOrIsImpending
+        - windowsSModeSignaturesInUseOnNonWin10SInstall
       type: string
     microsoft.graph.windowsDeviceMalwareState:
       allOf:
@@ -24895,7 +24807,7 @@ components:
               type: string
               format: date-time
             source:
-              $ref: '#/components/schemas/microsoft.graph.personDataSource'
+              $ref: '#/components/schemas/microsoft.graph.personDataSources'
           additionalProperties:
             type: object
     microsoft.graph.anniversaryType:
@@ -24929,19 +24841,25 @@ components:
           type: string
           nullable: true
         activities:
-          type: string
-          nullable: true
+          type: array
+          items:
+            type: string
+            nullable: true
         awards:
-          type: string
-          nullable: true
+          type: array
+          items:
+            type: string
+            nullable: true
         description:
           type: string
           nullable: true
         displayName:
           type: string
         fieldsOfStudy:
-          type: string
-          nullable: true
+          type: array
+          items:
+            type: string
+            nullable: true
         grade:
           type: string
           nullable: true
@@ -25091,18 +25009,14 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.payloadRequest:
-      title: payloadRequest
-      type: object
-      additionalProperties:
-        type: object
-    microsoft.graph.payloadResponse:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: payloadResponse
-          type: object
-          additionalProperties:
-            type: object
+    microsoft.graph.broadcastMeetingAudience:
+      title: broadcastMeetingAudience
+      enum:
+        - roleIsAttendee
+        - organization
+        - everyone
+        - unknownFutureValue
+      type: string
     microsoft.graph.lobbyBypassScope:
       title: lobbyBypassScope
       enum:
@@ -25309,6 +25223,28 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.teamsTabConfiguration:
+      title: teamsTabConfiguration
+      type: object
+      properties:
+        contentUrl:
+          type: string
+          description: Url used for rendering tab contents in Teams. Required.
+          nullable: true
+        entityId:
+          type: string
+          description: Identifier for the entity hosted by the tab provider.
+          nullable: true
+        removeUrl:
+          type: string
+          description: Url called by Teams client when a Tab is removed using the Teams Client.
+          nullable: true
+        websiteUrl:
+          type: string
+          description: Url for showing tab contents outside of Teams.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.giphyRatingType:
       title: giphyRatingType
       enum:
@@ -25557,35 +25493,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.userNewMessageRestriction'
       additionalProperties:
         type: object
-    microsoft.graph.teamsTab:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: teamsTab
-          type: object
-          properties:
-            configuration:
-              $ref: '#/components/schemas/microsoft.graph.teamsTabConfiguration'
-            displayName:
-              type: string
-              description: Name of the tab.
-              nullable: true
-            messageId:
-              type: string
-              nullable: true
-            sortOrderIndex:
-              type: string
-              nullable: true
-            teamsAppId:
-              type: string
-              nullable: true
-            webUrl:
-              type: string
-              description: Deep link URL of the tab instance. Read only.
-              nullable: true
-            teamsApp:
-              $ref: '#/components/schemas/microsoft.graph.teamsApp'
-          additionalProperties:
-            type: object
     microsoft.graph.operationError:
       title: operationError
       type: object
@@ -25639,12 +25546,14 @@ components:
             bodyLastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: ''2020-01-01T00:00:00Z''.'
               format: date-time
             completedDateTime:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when the task was created. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format. For example, midnight UTC on Jan 1, 2020 would look like this: ''2020-01-01T00:00:00Z''.'
               format: date-time
             dueDateTime:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
@@ -25652,9 +25561,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.importance'
             isReminderOn:
               type: boolean
+              description: Set to true if an alert is set to remind the user of the task.
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: ''2020-01-01T00:00:00Z''.'
               format: date-time
             recurrence:
               $ref: '#/components/schemas/microsoft.graph.patternedRecurrence'
@@ -25664,15 +25575,18 @@ components:
               $ref: '#/components/schemas/microsoft.graph.taskStatus'
             title:
               type: string
+              description: A brief description of the task.
               nullable: true
             extensions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
+              description: The collection of open extensions defined for the task. Nullable.
             linkedResources:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.linkedResource'
+              description: A collection of resources linked to the task.
           additionalProperties:
             type: object
     odata.error.detail:
@@ -26411,16 +26325,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.settingSourceType'
       additionalProperties:
         type: object
-    microsoft.graph.securityBaselineComplianceState:
-      title: securityBaselineComplianceState
-      enum:
-        - unknown
-        - secure
-        - notApplicable
-        - notSecure
-        - error
-        - conflict
-      type: string
     microsoft.graph.windowsMalwareCategory:
       title: windowsMalwareCategory
       enum:
@@ -26731,6 +26635,17 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.personDataSources:
+      title: personDataSources
+      type: object
+      properties:
+        type:
+          type: array
+          items:
+            type: string
+            nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.personRelationship:
       title: personRelationship
       enum:
@@ -26756,6 +26671,7 @@ components:
       enum:
         - attendee
         - presenter
+        - producer
         - unknownFutureValue
       type: string
     microsoft.graph.teamsAppDistributionMethod:
@@ -26999,28 +26915,6 @@ components:
         - moderators
         - unknownFutureValue
       type: string
-    microsoft.graph.teamsTabConfiguration:
-      title: teamsTabConfiguration
-      type: object
-      properties:
-        contentUrl:
-          type: string
-          description: Url used for rendering tab contents in Teams. Required.
-          nullable: true
-        entityId:
-          type: string
-          description: Identifier for the entity hosted by the tab provider.
-          nullable: true
-        removeUrl:
-          type: string
-          description: Url called by Teams client when a Tab is removed using the Teams Client.
-          nullable: true
-        websiteUrl:
-          type: string
-          description: Url for showing tab contents outside of Teams.
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.linkedResource:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -27029,15 +26923,19 @@ components:
           properties:
             applicationName:
               type: string
+              description: Field indicating the app name of the source that is sending the linkedResource.
               nullable: true
             displayName:
               type: string
+              description: Field indicating the title of the linkedResource.
               nullable: true
             externalId:
               type: string
+              description: Id of the object that is associated with this task on the third-party/partner system.
               nullable: true
             webUrl:
               type: string
+              description: Deep link to the linkedResource.
               nullable: true
           additionalProperties:
             type: object

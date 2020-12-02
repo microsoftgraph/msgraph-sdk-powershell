@@ -294,6 +294,7 @@ paths:
                 - onlineMeetings
                 - joinedTeams
                 - teamwork
+                - todo
               type: string
         - name: $expand
           in: query
@@ -347,6 +348,7 @@ paths:
                 - onlineMeetings
                 - joinedTeams
                 - teamwork
+                - todo
               type: string
       responses:
         '200':
@@ -536,6 +538,7 @@ paths:
                 - onlineMeetings
                 - joinedTeams
                 - teamwork
+                - todo
               type: string
         - name: $expand
           in: query
@@ -589,6 +592,7 @@ paths:
                 - onlineMeetings
                 - joinedTeams
                 - teamwork
+                - todo
               type: string
       responses:
         '200':
@@ -760,6 +764,10 @@ paths:
                 user-id: $request.path.user-id
             teamwork:
               operationId: users.GetTeamwork
+              parameters:
+                user-id: $request.path.user-id
+            todo:
+              operationId: users.GetTodo
               parameters:
                 user-id: $request.path.user-id
         default:
@@ -3643,6 +3651,1581 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/todo':
+    get:
+      tags:
+        - users.todo
+      summary: Get todo from users
+      operationId: users_GetTodo
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - lists
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - lists
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.todo'
+          links:
+            lists:
+              operationId: users.Todo.ListLists
+              parameters:
+                user-id: $request.path.user-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - users.todo
+      summary: Update the navigation property todo in users
+      operationId: users_UpdateTodo
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.todo'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.todo
+      summary: Delete navigation property todo for users
+      operationId: users_DeleteTodo
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/todo/lists':
+    get:
+      tags:
+        - users.todo
+      summary: Get lists from users
+      operationId: users.todo_ListLists
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - displayName
+                - displayName desc
+                - isOwner
+                - isOwner desc
+                - isShared
+                - isShared desc
+                - wellknownListName
+                - wellknownListName desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - isOwner
+                - isShared
+                - wellknownListName
+                - extensions
+                - tasks
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - extensions
+                - tasks
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of todoTaskList
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.todoTaskList'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - users.todo
+      summary: Create new navigation property to lists for users
+      operationId: users.todo_CreateLists
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.todoTaskList'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.todoTaskList'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/todo/lists/{todoTaskList-id}':
+    get:
+      tags:
+        - users.todo
+      summary: Get lists from users
+      operationId: users.todo_GetLists
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: todoTaskList-id
+          in: path
+          description: 'key: id of todoTaskList'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTaskList
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - isOwner
+                - isShared
+                - wellknownListName
+                - extensions
+                - tasks
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - extensions
+                - tasks
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.todoTaskList'
+          links:
+            extensions:
+              operationId: users.todo.Lists.ListExtensions
+              parameters:
+                user-id: $request.path.user-id
+                todoTaskList-id: $request.path.todoTaskList-id
+            tasks:
+              operationId: users.todo.Lists.ListTasks
+              parameters:
+                user-id: $request.path.user-id
+                todoTaskList-id: $request.path.todoTaskList-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - users.todo
+      summary: Update the navigation property lists in users
+      operationId: users.todo_UpdateLists
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: todoTaskList-id
+          in: path
+          description: 'key: id of todoTaskList'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTaskList
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.todoTaskList'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.todo
+      summary: Delete navigation property lists for users
+      operationId: users.todo_DeleteLists
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: todoTaskList-id
+          in: path
+          description: 'key: id of todoTaskList'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTaskList
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/todo/lists/{todoTaskList-id}/extensions':
+    get:
+      tags:
+        - users.todo
+      summary: Get extensions from users
+      operationId: users.todo.lists_ListExtensions
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: todoTaskList-id
+          in: path
+          description: 'key: id of todoTaskList'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTaskList
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of extension
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.extension'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - users.todo
+      summary: Create new navigation property to extensions for users
+      operationId: users.todo.lists_CreateExtensions
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: todoTaskList-id
+          in: path
+          description: 'key: id of todoTaskList'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTaskList
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.extension'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.extension'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/todo/lists/{todoTaskList-id}/extensions/{extension-id}':
+    get:
+      tags:
+        - users.todo
+      summary: Get extensions from users
+      operationId: users.todo.lists_GetExtensions
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: todoTaskList-id
+          in: path
+          description: 'key: id of todoTaskList'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTaskList
+        - name: extension-id
+          in: path
+          description: 'key: id of extension'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: extension
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.extension'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - users.todo
+      summary: Update the navigation property extensions in users
+      operationId: users.todo.lists_UpdateExtensions
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: todoTaskList-id
+          in: path
+          description: 'key: id of todoTaskList'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTaskList
+        - name: extension-id
+          in: path
+          description: 'key: id of extension'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: extension
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.extension'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.todo
+      summary: Delete navigation property extensions for users
+      operationId: users.todo.lists_DeleteExtensions
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: todoTaskList-id
+          in: path
+          description: 'key: id of todoTaskList'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTaskList
+        - name: extension-id
+          in: path
+          description: 'key: id of extension'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: extension
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/todo/lists/{todoTaskList-id}/tasks':
+    get:
+      tags:
+        - users.todo
+      summary: Get tasks from users
+      operationId: users.todo.lists_ListTasks
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: todoTaskList-id
+          in: path
+          description: 'key: id of todoTaskList'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTaskList
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - body
+                - body desc
+                - bodyLastModifiedDateTime
+                - bodyLastModifiedDateTime desc
+                - completedDateTime
+                - completedDateTime desc
+                - createdDateTime
+                - createdDateTime desc
+                - dueDateTime
+                - dueDateTime desc
+                - importance
+                - importance desc
+                - isReminderOn
+                - isReminderOn desc
+                - lastModifiedDateTime
+                - lastModifiedDateTime desc
+                - recurrence
+                - recurrence desc
+                - reminderDateTime
+                - reminderDateTime desc
+                - status
+                - status desc
+                - title
+                - title desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - body
+                - bodyLastModifiedDateTime
+                - completedDateTime
+                - createdDateTime
+                - dueDateTime
+                - importance
+                - isReminderOn
+                - lastModifiedDateTime
+                - recurrence
+                - reminderDateTime
+                - status
+                - title
+                - extensions
+                - linkedResources
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - extensions
+                - linkedResources
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of todoTask
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.todoTask'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - users.todo
+      summary: Create new navigation property to tasks for users
+      operationId: users.todo.lists_CreateTasks
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: todoTaskList-id
+          in: path
+          description: 'key: id of todoTaskList'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTaskList
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.todoTask'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.todoTask'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/todo/lists/{todoTaskList-id}/tasks/{todoTask-id}':
+    get:
+      tags:
+        - users.todo
+      summary: Get tasks from users
+      operationId: users.todo.lists_GetTasks
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: todoTaskList-id
+          in: path
+          description: 'key: id of todoTaskList'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTaskList
+        - name: todoTask-id
+          in: path
+          description: 'key: id of todoTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTask
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - body
+                - bodyLastModifiedDateTime
+                - completedDateTime
+                - createdDateTime
+                - dueDateTime
+                - importance
+                - isReminderOn
+                - lastModifiedDateTime
+                - recurrence
+                - reminderDateTime
+                - status
+                - title
+                - extensions
+                - linkedResources
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - extensions
+                - linkedResources
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.todoTask'
+          links:
+            extensions:
+              operationId: users.todo.lists.Tasks.ListExtensions
+              parameters:
+                user-id: $request.path.user-id
+                todoTaskList-id: $request.path.todoTaskList-id
+                todoTask-id: $request.path.todoTask-id
+            linkedResources:
+              operationId: users.todo.lists.Tasks.ListLinkedResources
+              parameters:
+                user-id: $request.path.user-id
+                todoTaskList-id: $request.path.todoTaskList-id
+                todoTask-id: $request.path.todoTask-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - users.todo
+      summary: Update the navigation property tasks in users
+      operationId: users.todo.lists_UpdateTasks
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: todoTaskList-id
+          in: path
+          description: 'key: id of todoTaskList'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTaskList
+        - name: todoTask-id
+          in: path
+          description: 'key: id of todoTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTask
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.todoTask'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.todo
+      summary: Delete navigation property tasks for users
+      operationId: users.todo.lists_DeleteTasks
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: todoTaskList-id
+          in: path
+          description: 'key: id of todoTaskList'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTaskList
+        - name: todoTask-id
+          in: path
+          description: 'key: id of todoTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTask
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/todo/lists/{todoTaskList-id}/tasks/{todoTask-id}/extensions':
+    get:
+      tags:
+        - users.todo
+      summary: Get extensions from users
+      operationId: users.todo.lists.tasks_ListExtensions
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: todoTaskList-id
+          in: path
+          description: 'key: id of todoTaskList'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTaskList
+        - name: todoTask-id
+          in: path
+          description: 'key: id of todoTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTask
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of extension
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.extension'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - users.todo
+      summary: Create new navigation property to extensions for users
+      operationId: users.todo.lists.tasks_CreateExtensions
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: todoTaskList-id
+          in: path
+          description: 'key: id of todoTaskList'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTaskList
+        - name: todoTask-id
+          in: path
+          description: 'key: id of todoTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTask
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.extension'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.extension'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/todo/lists/{todoTaskList-id}/tasks/{todoTask-id}/extensions/{extension-id}':
+    get:
+      tags:
+        - users.todo
+      summary: Get extensions from users
+      operationId: users.todo.lists.tasks_GetExtensions
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: todoTaskList-id
+          in: path
+          description: 'key: id of todoTaskList'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTaskList
+        - name: todoTask-id
+          in: path
+          description: 'key: id of todoTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTask
+        - name: extension-id
+          in: path
+          description: 'key: id of extension'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: extension
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.extension'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - users.todo
+      summary: Update the navigation property extensions in users
+      operationId: users.todo.lists.tasks_UpdateExtensions
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: todoTaskList-id
+          in: path
+          description: 'key: id of todoTaskList'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTaskList
+        - name: todoTask-id
+          in: path
+          description: 'key: id of todoTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTask
+        - name: extension-id
+          in: path
+          description: 'key: id of extension'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: extension
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.extension'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.todo
+      summary: Delete navigation property extensions for users
+      operationId: users.todo.lists.tasks_DeleteExtensions
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: todoTaskList-id
+          in: path
+          description: 'key: id of todoTaskList'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTaskList
+        - name: todoTask-id
+          in: path
+          description: 'key: id of todoTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTask
+        - name: extension-id
+          in: path
+          description: 'key: id of extension'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: extension
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/todo/lists/{todoTaskList-id}/tasks/{todoTask-id}/linkedResources':
+    get:
+      tags:
+        - users.todo
+      summary: Get linkedResources from users
+      operationId: users.todo.lists.tasks_ListLinkedResources
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: todoTaskList-id
+          in: path
+          description: 'key: id of todoTaskList'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTaskList
+        - name: todoTask-id
+          in: path
+          description: 'key: id of todoTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTask
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - applicationName
+                - applicationName desc
+                - displayName
+                - displayName desc
+                - externalId
+                - externalId desc
+                - webUrl
+                - webUrl desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - applicationName
+                - displayName
+                - externalId
+                - webUrl
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of linkedResource
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.linkedResource'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - users.todo
+      summary: Create new navigation property to linkedResources for users
+      operationId: users.todo.lists.tasks_CreateLinkedResources
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: todoTaskList-id
+          in: path
+          description: 'key: id of todoTaskList'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTaskList
+        - name: todoTask-id
+          in: path
+          description: 'key: id of todoTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTask
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.linkedResource'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.linkedResource'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/todo/lists/{todoTaskList-id}/tasks/{todoTask-id}/linkedResources/{linkedResource-id}':
+    get:
+      tags:
+        - users.todo
+      summary: Get linkedResources from users
+      operationId: users.todo.lists.tasks_GetLinkedResources
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: todoTaskList-id
+          in: path
+          description: 'key: id of todoTaskList'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTaskList
+        - name: todoTask-id
+          in: path
+          description: 'key: id of todoTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTask
+        - name: linkedResource-id
+          in: path
+          description: 'key: id of linkedResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: linkedResource
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - applicationName
+                - displayName
+                - externalId
+                - webUrl
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.linkedResource'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - users.todo
+      summary: Update the navigation property linkedResources in users
+      operationId: users.todo.lists.tasks_UpdateLinkedResources
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: todoTaskList-id
+          in: path
+          description: 'key: id of todoTaskList'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTaskList
+        - name: todoTask-id
+          in: path
+          description: 'key: id of todoTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTask
+        - name: linkedResource-id
+          in: path
+          description: 'key: id of linkedResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: linkedResource
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.linkedResource'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.todo
+      summary: Delete navigation property linkedResources for users
+      operationId: users.todo.lists.tasks_DeleteLinkedResources
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: todoTaskList-id
+          in: path
+          description: 'key: id of todoTaskList'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTaskList
+        - name: todoTask-id
+          in: path
+          description: 'key: id of todoTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTask
+        - name: linkedResource-id
+          in: path
+          description: 'key: id of linkedResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: linkedResource
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/transitiveMemberOf':
     get:
       tags:
@@ -3846,7 +5429,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'The telephone numbers for the user. NOTE: Although this is a string collection, only one number can be set for this property.'
+              description: 'The telephone numbers for the user. NOTE: Although this is a string collection, only one number can be set for this property. Read-only for users synced from on-premises directory.'
             city:
               type: string
               description: The city in which the user is located. Supports $filter.
@@ -3883,7 +5466,7 @@ components:
               nullable: true
             employeeId:
               type: string
-              description: The employee identifier assigned to the user by the organization. Supports $filter.
+              description: The employee identifier assigned to the user by the organization. Returned only on $select. Supports $filter.
               nullable: true
             externalUserState:
               type: string
@@ -3920,7 +5503,7 @@ components:
               nullable: true
             jobTitle:
               type: string
-              description: The user’s job title. Supports $filter.
+              description: The user's job title. Supports $filter.
               nullable: true
             lastPasswordChangeDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -3947,7 +5530,7 @@ components:
               nullable: true
             mobilePhone:
               type: string
-              description: The primary cellular telephone number for the user.
+              description: The primary cellular telephone number for the user. Read-only for users synced from on-premises directory.
               nullable: true
             officeLocation:
               type: string
@@ -3965,7 +5548,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.onPremisesExtensionAttributes'
             onPremisesImmutableId:
               type: string
-              description: 'This property is used to associate an on-premises Active Directory user account to their Azure AD user object. This property must be specified when creating a new user account in the Graph if you are using a federated domain for the user’s userPrincipalName (UPN) property. Important: The $ and _ characters cannot be used when specifying this property. Supports $filter.'
+              description: 'This property is used to associate an on-premises Active Directory user account to their Azure AD user object. This property must be specified when creating a new user account in the Graph if you are using a federated domain for the user''s userPrincipalName (UPN) property. Important: The $ and _ characters cannot be used when specifying this property. Supports $filter.'
               nullable: true
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -4051,7 +5634,7 @@ components:
               nullable: true
             userPrincipalName:
               type: string
-              description: 'The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user''s email name. The general format is alias@domain, where domain must be present in the tenant’s collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization. Supports $filter and $orderby.'
+              description: 'The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user''s email name. The general format is alias@domain, where domain must be present in the tenant''s collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization. Supports $filter and $orderby.'
               nullable: true
             userType:
               type: string
@@ -4077,7 +5660,7 @@ components:
             hireDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              description: 'The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.'
               format: date-time
             interests:
               type: array
@@ -4281,6 +5864,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.team'
             teamwork:
               $ref: '#/components/schemas/microsoft.graph.userTeamwork'
+            todo:
+              $ref: '#/components/schemas/microsoft.graph.todo'
           additionalProperties:
             type: object
           description: Represents an Azure Active Directory user object.
@@ -4428,6 +6013,127 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.shiftAvailability'
               description: Availability of the user to be scheduled for work and its recurrence pattern.
+          additionalProperties:
+            type: object
+    microsoft.graph.todo:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: todo
+          type: object
+          properties:
+            lists:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.todoTaskList'
+              description: The task lists in the users mailbox.
+          additionalProperties:
+            type: object
+    microsoft.graph.todoTaskList:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: todoTaskList
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: The name of the task list.
+              nullable: true
+            isOwner:
+              type: boolean
+              description: True if the user is owner of the given task list.
+            isShared:
+              type: boolean
+              description: True if the task list is shared with other users
+            wellknownListName:
+              $ref: '#/components/schemas/microsoft.graph.wellknownListName'
+            extensions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.extension'
+              description: The collection of open extensions defined for the task list. Nullable.
+            tasks:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.todoTask'
+              description: The tasks in this task list. Read-only. Nullable.
+          additionalProperties:
+            type: object
+    microsoft.graph.todoTask:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: todoTask
+          type: object
+          properties:
+            body:
+              $ref: '#/components/schemas/microsoft.graph.itemBody'
+            bodyLastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: ''2020-01-01T00:00:00Z''.'
+              format: date-time
+            completedDateTime:
+              $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the task was created. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format. For example, midnight UTC on Jan 1, 2020 would look like this: ''2020-01-01T00:00:00Z''.'
+              format: date-time
+            dueDateTime:
+              $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+            importance:
+              $ref: '#/components/schemas/microsoft.graph.importance'
+            isReminderOn:
+              type: boolean
+              description: Set to true if an alert is set to remind the user of the task.
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: ''2020-01-01T00:00:00Z''.'
+              format: date-time
+            recurrence:
+              $ref: '#/components/schemas/microsoft.graph.patternedRecurrence'
+            reminderDateTime:
+              $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+            status:
+              $ref: '#/components/schemas/microsoft.graph.taskStatus'
+            title:
+              type: string
+              description: A brief description of the task.
+              nullable: true
+            extensions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.extension'
+              description: The collection of open extensions defined for the task. Nullable.
+            linkedResources:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.linkedResource'
+              description: A collection of resources linked to the task.
+          additionalProperties:
+            type: object
+    microsoft.graph.linkedResource:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: linkedResource
+          type: object
+          properties:
+            applicationName:
+              type: string
+              description: Field indicating the app name of the source that is sending the linkedResource.
+              nullable: true
+            displayName:
+              type: string
+              description: Field indicating the title of the linkedResource.
+              nullable: true
+            externalId:
+              type: string
+              description: Id of the object that is associated with this task on the third-party/partner system.
+              nullable: true
+            webUrl:
+              type: string
+              description: Deep link to the linkedResource.
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.assignedLicense:
@@ -4769,6 +6475,9 @@ components:
             hexColor:
               type: string
               nullable: true
+            isDefaultCalendar:
+              type: boolean
+              nullable: true
             isRemovable:
               type: boolean
               description: Indicates whether this user calendar can be deleted from the user mailbox.
@@ -4961,7 +6670,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.eventType'
             webLink:
               type: string
-              description: 'The URL to open the event in Outlook on the web.Outlook on the web opens the event in the browser if you are signed in to your mailbox. Otherwise, Outlook on the web prompts you to sign in.This URL can be accessed from within an iFrame.'
+              description: 'The URL to open the event in Outlook on the web.Outlook on the web opens the event in the browser if you are signed in to your mailbox. Otherwise, Outlook on the web prompts you to sign in.This URL cannot be accessed from within an iFrame.'
               nullable: true
             attachments:
               type: array
@@ -5369,7 +7078,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.itemBody'
             webLink:
               type: string
-              description: 'The URL to open the message in Outlook Web App.You can append an ispopout argument to the end of the URL to change how the message is displayed. If ispopout is not present or if it is set to 1, then the message is shown in a popout window. If ispopout is set to 0, then the browser will show the message in the Outlook Web App review pane.The message will open in the browser if you are logged in to your mailbox via Outlook Web App. You will be prompted to login if you are not already logged in with the browser.This URL can be accessed from within an iFrame.'
+              description: 'The URL to open the message in Outlook on the web.You can append an ispopout argument to the end of the URL to change how the message is displayed. If ispopout is not present or if it is set to 1, then the message is shown in a popout window. If ispopout is set to 0, then the browser will show the message in the Outlook on the web review pane.The message will open in the browser if you are logged in to your mailbox via Outlook on the web. You will be prompted to login if you are not already logged in with the browser.This URL cannot be accessed from within an iFrame.'
               nullable: true
             attachments:
               type: array
@@ -6000,6 +7709,8 @@ components:
         - title: onlineMeeting
           type: object
           properties:
+            allowedPresenters:
+              $ref: '#/components/schemas/microsoft.graph.onlineMeetingPresenters'
             audioConferencing:
               $ref: '#/components/schemas/microsoft.graph.audioConferencing'
             chatInfo:
@@ -6019,12 +7730,18 @@ components:
             externalId:
               type: string
               nullable: true
+            isEntryExitAnnounced:
+              type: boolean
+              description: Whether or not to announce when callers join or leave.
+              nullable: true
             joinInformation:
               $ref: '#/components/schemas/microsoft.graph.itemBody'
             joinWebUrl:
               type: string
               description: The join URL of the online meeting. Read-only.
               nullable: true
+            lobbyBypassSettings:
+              $ref: '#/components/schemas/microsoft.graph.lobbyBypassSettings'
             participants:
               $ref: '#/components/schemas/microsoft.graph.meetingParticipants'
             startDateTime:
@@ -6230,6 +7947,65 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.wellknownListName:
+      title: wellknownListName
+      enum:
+        - none
+        - defaultList
+        - flaggedEmails
+        - unknownFutureValue
+      type: string
+    microsoft.graph.itemBody:
+      title: itemBody
+      type: object
+      properties:
+        content:
+          type: string
+          description: The content of the item.
+          nullable: true
+        contentType:
+          $ref: '#/components/schemas/microsoft.graph.bodyType'
+      additionalProperties:
+        type: object
+    microsoft.graph.dateTimeTimeZone:
+      title: dateTimeTimeZone
+      type: object
+      properties:
+        dateTime:
+          type: string
+          description: 'A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).'
+        timeZone:
+          type: string
+          description: 'Represents a time zone, for example, ''Pacific Standard Time''. See below for more possible values.'
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.importance:
+      title: importance
+      enum:
+        - low
+        - normal
+        - high
+      type: string
+    microsoft.graph.patternedRecurrence:
+      title: patternedRecurrence
+      type: object
+      properties:
+        pattern:
+          $ref: '#/components/schemas/microsoft.graph.recurrencePattern'
+        range:
+          $ref: '#/components/schemas/microsoft.graph.recurrenceRange'
+      additionalProperties:
+        type: object
+    microsoft.graph.taskStatus:
+      title: taskStatus
+      enum:
+        - notStarted
+        - inProgress
+        - completed
+        - waitingOnOthers
+        - deferred
+      type: string
     odata.error:
       required:
         - error
@@ -6451,38 +8227,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.responseStatus'
           additionalProperties:
             type: object
-    microsoft.graph.itemBody:
-      title: itemBody
-      type: object
-      properties:
-        content:
-          type: string
-          description: The content of the item.
-          nullable: true
-        contentType:
-          $ref: '#/components/schemas/microsoft.graph.bodyType'
-      additionalProperties:
-        type: object
-    microsoft.graph.dateTimeTimeZone:
-      title: dateTimeTimeZone
-      type: object
-      properties:
-        dateTime:
-          type: string
-          description: 'A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).'
-        timeZone:
-          type: string
-          description: 'Represents a time zone, for example, ''Pacific Standard Time''. See below for more possible values.'
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.importance:
-      title: importance
-      enum:
-        - low
-        - normal
-        - high
-      type: string
     microsoft.graph.location:
       title: location
       type: object
@@ -6552,16 +8296,6 @@ components:
       properties:
         emailAddress:
           $ref: '#/components/schemas/microsoft.graph.emailAddress'
-      additionalProperties:
-        type: object
-    microsoft.graph.patternedRecurrence:
-      title: patternedRecurrence
-      type: object
-      properties:
-        pattern:
-          $ref: '#/components/schemas/microsoft.graph.recurrencePattern'
-        range:
-          $ref: '#/components/schemas/microsoft.graph.recurrenceRange'
       additionalProperties:
         type: object
     microsoft.graph.responseStatus:
@@ -8155,6 +9889,15 @@ components:
               $ref: '#/components/schemas/microsoft.graph.userActivity'
           additionalProperties:
             type: object
+    microsoft.graph.onlineMeetingPresenters:
+      title: onlineMeetingPresenters
+      enum:
+        - everyone
+        - organization
+        - roleIsPresenter
+        - organizer
+        - unknownFutureValue
+      type: string
     microsoft.graph.audioConferencing:
       title: audioConferencing
       type: object
@@ -8192,6 +9935,18 @@ components:
           type: string
           description: The unique identifier for a thread in Microsoft Teams.
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.lobbyBypassSettings:
+      title: lobbyBypassSettings
+      type: object
+      properties:
+        isDialInBypassEnabled:
+          type: boolean
+          description: Specifies whether or not to always let dial-in callers bypass the lobby. Optional.
+          nullable: true
+        scope:
+          $ref: '#/components/schemas/microsoft.graph.lobbyBypassScope'
       additionalProperties:
         type: object
     microsoft.graph.meetingParticipants:
@@ -8420,6 +10175,10 @@ components:
               type: string
               description: The email address for sending messages to the channel. Read-only.
               nullable: true
+            isFavoriteByDefault:
+              type: boolean
+              description: 'Indicates whether the channel should automatically be marked ''favorite'' for all members of the team. Can only be set programmatically with Create team. Default: false.'
+              nullable: true
             membershipType:
               $ref: '#/components/schemas/microsoft.graph.channelMembershipType'
             webUrl:
@@ -8632,6 +10391,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: 'The owners of the group. The owners are a set of non-admin users who are allowed to modify this object. Limited to 100 owners. HTTP Methods: GET (supported for all groups), POST (supported for Microsoft 365 groups, security groups and mail-enabled security groups), DELETE (supported for Microsoft 365 groups and security groups). Nullable.'
+            permissionGrants:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
             settings:
               type: array
               items:
@@ -8818,6 +10581,77 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.bodyType:
+      title: bodyType
+      enum:
+        - text
+        - html
+      type: string
+    microsoft.graph.recurrencePattern:
+      title: recurrencePattern
+      type: object
+      properties:
+        dayOfMonth:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The day of the month on which the event occurs. Required if type is absoluteMonthly or absoluteYearly.
+          format: int32
+        daysOfWeek:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.dayOfWeek'
+          description: 'A collection of the days of the week on which the event occurs. The possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. If type is relativeMonthly or relativeYearly, and daysOfWeek specifies more than one day, the event falls on the first day that satisfies the pattern.  Required if type is weekly, relativeMonthly, or relativeYearly.'
+        firstDayOfWeek:
+          $ref: '#/components/schemas/microsoft.graph.dayOfWeek'
+        index:
+          $ref: '#/components/schemas/microsoft.graph.weekIndex'
+        interval:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: 'The number of units between occurrences, where units can be in days, weeks, months, or years, depending on the type. Required.'
+          format: int32
+        month:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The month in which the event occurs.  This is a number from 1 to 12.
+          format: int32
+        type:
+          $ref: '#/components/schemas/microsoft.graph.recurrencePatternType'
+      additionalProperties:
+        type: object
+    microsoft.graph.recurrenceRange:
+      title: recurrenceRange
+      type: object
+      properties:
+        endDate:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+          type: string
+          description: 'The date to stop applying the recurrence pattern. Depending on the recurrence pattern of the event, the last occurrence of the meeting may not be this date. Required if type is endDate.'
+          format: date
+          nullable: true
+        numberOfOccurrences:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The number of times to repeat the event. Required and must be positive if type is numbered.
+          format: int32
+        recurrenceTimeZone:
+          type: string
+          description: 'Time zone for the startDate and endDate properties. Optional. If not specified, the time zone of the event is used.'
+          nullable: true
+        startDate:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+          type: string
+          description: 'The date to start applying the recurrence pattern. The first occurrence of the meeting may be this date or later, depending on the recurrence pattern of the event. Must be the same value as the start property of the recurring event. Required.'
+          format: date
+          nullable: true
+        type:
+          $ref: '#/components/schemas/microsoft.graph.recurrenceRangeType'
+      additionalProperties:
+        type: object
     odata.error.main:
       required:
         - code
@@ -8908,12 +10742,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
       additionalProperties:
         type: object
-    microsoft.graph.bodyType:
-      title: bodyType
-      enum:
-        - text
-        - html
-      type: string
     microsoft.graph.outlookGeoCoordinates:
       title: outlookGeoCoordinates
       type: object
@@ -8968,71 +10796,6 @@ components:
         - private
         - bing
       type: string
-    microsoft.graph.recurrencePattern:
-      title: recurrencePattern
-      type: object
-      properties:
-        dayOfMonth:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: The day of the month on which the event occurs. Required if type is absoluteMonthly or absoluteYearly.
-          format: int32
-        daysOfWeek:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.dayOfWeek'
-          description: 'A collection of the days of the week on which the event occurs. The possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. If type is relativeMonthly or relativeYearly, and daysOfWeek specifies more than one day, the event falls on the first day that satisfies the pattern.  Required if type is weekly, relativeMonthly, or relativeYearly.'
-        firstDayOfWeek:
-          $ref: '#/components/schemas/microsoft.graph.dayOfWeek'
-        index:
-          $ref: '#/components/schemas/microsoft.graph.weekIndex'
-        interval:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: 'The number of units between occurrences, where units can be in days, weeks, months, or years, depending on the type. Required.'
-          format: int32
-        month:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: The month in which the event occurs.  This is a number from 1 to 12.
-          format: int32
-        type:
-          $ref: '#/components/schemas/microsoft.graph.recurrencePatternType'
-      additionalProperties:
-        type: object
-    microsoft.graph.recurrenceRange:
-      title: recurrenceRange
-      type: object
-      properties:
-        endDate:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-          type: string
-          description: 'The date to stop applying the recurrence pattern. Depending on the recurrence pattern of the event, the last occurrence of the meeting may not be this date. Required if type is endDate.'
-          format: date
-          nullable: true
-        numberOfOccurrences:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: The number of times to repeat the event. Required and must be positive if type is numbered.
-          format: int32
-        recurrenceTimeZone:
-          type: string
-          description: 'Time zone for the startDate and endDate properties. Optional. If not specified, the time zone of the event is used.'
-          nullable: true
-        startDate:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-          type: string
-          description: 'The date to start applying the recurrence pattern. The first occurrence of the meeting may be this date or later, depending on the recurrence pattern of the event. Must be the same value as the start property of the recurring event. Required.'
-          format: date
-          nullable: true
-        type:
-          $ref: '#/components/schemas/microsoft.graph.recurrenceRangeType'
-      additionalProperties:
-        type: object
     microsoft.graph.responseType:
       title: responseType
       enum:
@@ -9902,6 +11665,7 @@ components:
               nullable: true
             lifecycleNotificationUrl:
               type: string
+              description: 'The URL of the endpoint that receives lifecycle notifications, including subscriptionRemoved and missed notifications. This URL must make use of the HTTPS protocol. Optional. Read more about how Outlook resources use lifecycle notifications.'
               nullable: true
             notificationUrl:
               type: string
@@ -10748,12 +12512,23 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.lobbyBypassScope:
+      title: lobbyBypassScope
+      enum:
+        - organizer
+        - organization
+        - organizationAndFederated
+        - everyone
+        - unknownFutureValue
+      type: string
     microsoft.graph.meetingParticipantInfo:
       title: meetingParticipantInfo
       type: object
       properties:
         identity:
           $ref: '#/components/schemas/microsoft.graph.identitySet'
+        role:
+          $ref: '#/components/schemas/microsoft.graph.onlineMeetingRole'
         upn:
           type: string
           description: User principal name of the participant.
@@ -11077,6 +12852,30 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.resourceSpecificPermissionGrant:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        - title: resourceSpecificPermissionGrant
+          type: object
+          properties:
+            clientAppId:
+              type: string
+              nullable: true
+            clientId:
+              type: string
+              nullable: true
+            permission:
+              type: string
+              nullable: true
+            permissionType:
+              type: string
+              nullable: true
+            resourceAppId:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
+          description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
     microsoft.graph.groupSetting:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -11295,27 +13094,6 @@ components:
           type: object
           additionalProperties:
             type: object
-    odata.error.detail:
-      required:
-        - code
-        - message
-      type: object
-      properties:
-        code:
-          type: string
-        message:
-          type: string
-        target:
-          type: string
-      additionalProperties:
-        type: object
-    microsoft.graph.attendeeType:
-      title: attendeeType
-      enum:
-        - required
-        - optional
-        - resource
-      type: string
     microsoft.graph.weekIndex:
       title: weekIndex
       enum:
@@ -11341,6 +13119,27 @@ components:
         - endDate
         - noEnd
         - numbered
+      type: string
+    odata.error.detail:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.attendeeType:
+      title: attendeeType
+      enum:
+        - required
+        - optional
+        - resource
       type: string
     microsoft.graph.messageActionFlag:
       title: messageActionFlag
@@ -11888,6 +13687,13 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.onlineMeetingRole:
+      title: onlineMeetingRole
+      enum:
+        - attendee
+        - presenter
+        - unknownFutureValue
+      type: string
     microsoft.graph.scheduleChangeRequest:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.changeTrackedEntity'
