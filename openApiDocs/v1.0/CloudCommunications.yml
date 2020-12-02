@@ -2274,6 +2274,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - allowedPresenters
+                - allowedPresenters desc
                 - audioConferencing
                 - audioConferencing desc
                 - chatInfo
@@ -2284,10 +2286,14 @@ paths:
                 - endDateTime desc
                 - externalId
                 - externalId desc
+                - isEntryExitAnnounced
+                - isEntryExitAnnounced desc
                 - joinInformation
                 - joinInformation desc
                 - joinWebUrl
                 - joinWebUrl desc
+                - lobbyBypassSettings
+                - lobbyBypassSettings desc
                 - participants
                 - participants desc
                 - startDateTime
@@ -2308,13 +2314,16 @@ paths:
             items:
               enum:
                 - id
+                - allowedPresenters
                 - audioConferencing
                 - chatInfo
                 - creationDateTime
                 - endDateTime
                 - externalId
+                - isEntryExitAnnounced
                 - joinInformation
                 - joinWebUrl
+                - lobbyBypassSettings
                 - participants
                 - startDateTime
                 - subject
@@ -2402,13 +2411,16 @@ paths:
             items:
               enum:
                 - id
+                - allowedPresenters
                 - audioConferencing
                 - chatInfo
                 - creationDateTime
                 - endDateTime
                 - externalId
+                - isEntryExitAnnounced
                 - joinInformation
                 - joinWebUrl
+                - lobbyBypassSettings
                 - participants
                 - startDateTime
                 - subject
@@ -2562,6 +2574,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - allowedPresenters
+                - allowedPresenters desc
                 - audioConferencing
                 - audioConferencing desc
                 - chatInfo
@@ -2572,10 +2586,14 @@ paths:
                 - endDateTime desc
                 - externalId
                 - externalId desc
+                - isEntryExitAnnounced
+                - isEntryExitAnnounced desc
                 - joinInformation
                 - joinInformation desc
                 - joinWebUrl
                 - joinWebUrl desc
+                - lobbyBypassSettings
+                - lobbyBypassSettings desc
                 - participants
                 - participants desc
                 - startDateTime
@@ -2596,13 +2614,16 @@ paths:
             items:
               enum:
                 - id
+                - allowedPresenters
                 - audioConferencing
                 - chatInfo
                 - creationDateTime
                 - endDateTime
                 - externalId
+                - isEntryExitAnnounced
                 - joinInformation
                 - joinWebUrl
+                - lobbyBypassSettings
                 - participants
                 - startDateTime
                 - subject
@@ -2705,13 +2726,16 @@ paths:
             items:
               enum:
                 - id
+                - allowedPresenters
                 - audioConferencing
                 - chatInfo
                 - creationDateTime
                 - endDateTime
                 - externalId
+                - isEntryExitAnnounced
                 - joinInformation
                 - joinWebUrl
+                - lobbyBypassSettings
                 - participants
                 - startDateTime
                 - subject
@@ -3227,6 +3251,8 @@ components:
         - title: onlineMeeting
           type: object
           properties:
+            allowedPresenters:
+              $ref: '#/components/schemas/microsoft.graph.onlineMeetingPresenters'
             audioConferencing:
               $ref: '#/components/schemas/microsoft.graph.audioConferencing'
             chatInfo:
@@ -3246,12 +3272,18 @@ components:
             externalId:
               type: string
               nullable: true
+            isEntryExitAnnounced:
+              type: boolean
+              description: Whether or not to announce when callers join or leave.
+              nullable: true
             joinInformation:
               $ref: '#/components/schemas/microsoft.graph.itemBody'
             joinWebUrl:
               type: string
               description: The join URL of the online meeting. Read-only.
               nullable: true
+            lobbyBypassSettings:
+              $ref: '#/components/schemas/microsoft.graph.lobbyBypassSettings'
             participants:
               $ref: '#/components/schemas/microsoft.graph.meetingParticipants'
             startDateTime:
@@ -3681,6 +3713,15 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.onlineMeetingPresenters:
+      title: onlineMeetingPresenters
+      enum:
+        - everyone
+        - organization
+        - roleIsPresenter
+        - organizer
+        - unknownFutureValue
+      type: string
     microsoft.graph.audioConferencing:
       title: audioConferencing
       type: object
@@ -3714,12 +3755,26 @@ components:
           $ref: '#/components/schemas/microsoft.graph.bodyType'
       additionalProperties:
         type: object
+    microsoft.graph.lobbyBypassSettings:
+      title: lobbyBypassSettings
+      type: object
+      properties:
+        isDialInBypassEnabled:
+          type: boolean
+          description: Specifies whether or not to always let dial-in callers bypass the lobby. Optional.
+          nullable: true
+        scope:
+          $ref: '#/components/schemas/microsoft.graph.lobbyBypassScope'
+      additionalProperties:
+        type: object
     microsoft.graph.meetingParticipantInfo:
       title: meetingParticipantInfo
       type: object
       properties:
         identity:
           $ref: '#/components/schemas/microsoft.graph.identitySet'
+        role:
+          $ref: '#/components/schemas/microsoft.graph.onlineMeetingRole'
         upn:
           type: string
           description: User principal name of the participant.
@@ -4204,6 +4259,22 @@ components:
       enum:
         - text
         - html
+      type: string
+    microsoft.graph.lobbyBypassScope:
+      title: lobbyBypassScope
+      enum:
+        - organizer
+        - organization
+        - organizationAndFederated
+        - everyone
+        - unknownFutureValue
+      type: string
+    microsoft.graph.onlineMeetingRole:
+      title: onlineMeetingRole
+      enum:
+        - attendee
+        - presenter
+        - unknownFutureValue
       type: string
     odata.error.main:
       required:
