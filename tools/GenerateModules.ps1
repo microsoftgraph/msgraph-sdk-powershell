@@ -7,6 +7,7 @@ Param(
     [string] $ModuleMappingConfigPath = (Join-Path $PSScriptRoot "..\config\ModulesMapping.jsonc"),
     [switch] $UpdateAutoRest,
     [switch] $Build,
+    [switch] $Test,
     [switch] $Pack,
     [switch] $Publish,
     [switch] $EnableSigning,
@@ -34,6 +35,7 @@ $RequiredGraphModules = @()
 # PS Scripts
 $ManageGeneratedModulePS1 = Join-Path $PSScriptRoot ".\ManageGeneratedModule.ps1" -Resolve
 $BuildModulePS1 = Join-Path $PSScriptRoot ".\BuildModule.ps1" -Resolve
+$TestModulePS1 = Join-Path $PSScriptRoot ".\TestModule.ps1" -Resolve
 $PackModulePS1 = Join-Path $PSScriptRoot ".\PackModule.ps1" -Resolve
 $PublishModulePS1 = Join-Path $PSScriptRoot ".\PublishModule.ps1" -Resolve
 $ReadModuleReadMePS1 = Join-Path $PSScriptRoot ".\ReadModuleReadMe.ps1" -Resolve
@@ -189,19 +191,22 @@ $ModuleMapping.Keys | ForEach-Object -ThrottleLimit $ModuleMapping.Keys.Count -P
                 }
             }
 
+            if ($Using:Test) {
+                & $Using:TestModulePS1 -ModulePath $ModuleProjectDir -ModuleName $FullyQualifiedModuleName
+            }
+
             if ($Using:Pack) {
                 # Pack generated module.
-                & $Using:PackModulePS1 -Module $ModuleName -ArtifactsLocation $Using:ArtifactsLocation
+                . $Using:PackModulePS1 -Module $ModuleName -ArtifactsLocation $Using:ArtifactsLocation
             }
         }
         catch {
-            Write-Error $_.Exception
+            throw $_
         }
-        Write-Warning "Generating $ModuleName Completed"
+        Write-Host -ForeGroundColor Green "Generating $ModuleName Completed"
     }
 }
 
-Write-Host -ForeGroundColor Green "Requests: $RequestCount"
 if ($Publish) {
     # Publish generated modules.
     & $PublishModulePS1 -Modules $ModuleMapping.Keys -ModulePrefix $ModulePrefix -ArtifactsLocation $ArtifactsLocation -RepositoryName $RepositoryName -RepositoryApiKey $RepositoryApiKey

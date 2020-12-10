@@ -133,7 +133,7 @@ jobs:
     displayName: 'Generate and Build Graph Resource Modules'
     inputs:
       filePath: '$(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1'
-      arguments: '-ArtifactsLocation $(Build.ArtifactStagingDirectory)\ -Build -EnableSigning'
+      arguments: '-ArtifactsLocation $(Build.ArtifactStagingDirectory)\ -Build -Test -EnableSigning'
       pwsh: true
   
   - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
