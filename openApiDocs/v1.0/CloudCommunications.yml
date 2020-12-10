@@ -27,6 +27,7 @@ paths:
                 - calls
                 - callRecords
                 - onlineMeetings
+                - presences
               type: string
         - name: $expand
           in: query
@@ -42,6 +43,7 @@ paths:
                 - calls
                 - callRecords
                 - onlineMeetings
+                - presences
               type: string
       responses:
         '200':
@@ -57,6 +59,8 @@ paths:
               operationId: communications.ListCallRecords
             onlineMeetings:
               operationId: communications.ListOnlineMeetings
+            presences:
+              operationId: communications.ListPresences
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2250,6 +2254,38 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /communications/microsoft.graph.getPresencesByUserId:
+    post:
+      tags:
+        - communications.Actions
+      summary: Invoke action getPresencesByUserId
+      operationId: communications_getPresencesByUserId
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: string
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.presence'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /communications/onlineMeetings:
     get:
       tags:
@@ -2543,6 +2579,206 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /communications/presences:
+    get:
+      tags:
+        - communications.presence
+      summary: Get presences from communications
+      operationId: communications_ListPresences
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - activity
+                - activity desc
+                - availability
+                - availability desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - activity
+                - availability
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of presence
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.presence'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - communications.presence
+      summary: Create new navigation property to presences for communications
+      operationId: communications_CreatePresences
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.presence'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.presence'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/communications/presences/{presence-id}':
+    get:
+      tags:
+        - communications.presence
+      summary: Get presences from communications
+      operationId: communications_GetPresences
+      parameters:
+        - name: presence-id
+          in: path
+          description: 'key: id of presence'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: presence
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - activity
+                - availability
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.presence'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - communications.presence
+      summary: Update the navigation property presences in communications
+      operationId: communications_UpdatePresences
+      parameters:
+        - name: presence-id
+          in: path
+          description: 'key: id of presence'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: presence
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.presence'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - communications.presence
+      summary: Delete navigation property presences for communications
+      operationId: communications_DeletePresences
+      parameters:
+        - name: presence-id
+          in: path
+          description: 'key: id of presence'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: presence
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/onlineMeetings':
     get:
       tags:
@@ -2827,6 +3063,106 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/presence':
+    get:
+      tags:
+        - users.presence
+      summary: Get presence from users
+      operationId: users_GetPresence
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - activity
+                - availability
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.presence'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - users.presence
+      summary: Update the navigation property presence in users
+      operationId: users_UpdatePresence
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.presence'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.presence
+      summary: Delete navigation property presence for users
+      operationId: users_DeletePresence
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
 components:
   schemas:
     microsoft.graph.cloudCommunications:
@@ -2847,6 +3183,10 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
+            presences:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.presence'
           additionalProperties:
             type: object
     microsoft.graph.callRecords.callRecord:
@@ -3245,6 +3585,22 @@ components:
           format: uuid
       additionalProperties:
         type: object
+    microsoft.graph.presence:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: presence
+          type: object
+          properties:
+            activity:
+              type: string
+              description: 'The supplemental information to a user''s availability. Possible values are Available, Away, BeRightBack,Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive,InAMeeting, Offline, OffWork,OutOfOffice, PresenceUnknown,Presenting, UrgentInterruptionsOnly.'
+              nullable: true
+            availability:
+              type: string
+              description: 'The base presence information for a user. Possible values are Available, AvailableIdle,  Away, BeRightBack, Busy, BusyIdle, DoNotDisturb, Offline, PresenceUnknown'
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.onlineMeeting:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'

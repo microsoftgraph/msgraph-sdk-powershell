@@ -149,11 +149,13 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.searchHitsContainer'
+          description: A collection of search results.
         searchTerms:
           type: array
           items:
             type: string
             nullable: true
+          description: Contains the search terms sent in the initial search query.
       additionalProperties:
         type: object
     microsoft.graph.entity:
@@ -184,6 +186,7 @@ components:
       properties:
         queryString:
           type: string
+          description: The search query containing the search terms. Required.
       additionalProperties:
         type: object
     microsoft.graph.searchHitsContainer:
@@ -194,13 +197,16 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.searchHit'
+          description: A collection of the search results.
         moreResultsAvailable:
           type: boolean
+          description: 'Provides information if more results are available. Based on this information, you can adjust the from and size properties of the searchRequest accordingly.'
           nullable: true
         total:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: 'The total number of results. Note this is not the number of results on the page, but the total number of results satisfying the query.'
           format: int32
           nullable: true
       additionalProperties:
@@ -220,18 +226,22 @@ components:
       properties:
         contentSource:
           type: string
+          description: The name of the content source which the externalItem is part of .
           nullable: true
         hitId:
           type: string
+          description: The internal identifier for the item.
           nullable: true
         rank:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: The rank or the order of the result.
           format: int32
           nullable: true
         summary:
           type: string
+          description: 'A summary of the result, if a summary is available.'
           nullable: true
         resource:
           $ref: '#/components/schemas/microsoft.graph.entity'
