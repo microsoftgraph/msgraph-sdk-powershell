@@ -228,6 +228,11 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 
         internal bool ShouldCheckHttpStatus => !SkipHttpErrorCheck;
 
+        /// <summary>
+        ///     Only Set Default Content Type (application/json) for POST, PUT and PATCH requests, where its not specified via `-ContentType`.
+        /// </summary>
+        private bool ShouldSetDefaultContentType => Method == GraphRequestMethod.POST || Method == GraphRequestMethod.PUT || Method == GraphRequestMethod.PATCH;
+
         private static async Task<ErrorRecord> GenerateHttpErrorRecordAsync(
             HttpMessageFormatter httpResponseMessageFormatter,
             HttpRequestMessage httpRequestMessage)
@@ -606,10 +611,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 
             Encoding encoding = null;
             // When contentType is set, coerce to correct encoding. 
-            if (ContentType != null)
+            if (!string.IsNullOrWhiteSpace(ContentType))
             {
                 // If Content-Type contains the encoding format (as CharSet), use this encoding format
-                // to encode the Body of the WebRequest sent to the server. Default Encoding format
+                // to encode the Body of the GraphRequest sent to the server. Default Encoding format
                 // would be used if Charset is not supplied in the Content-Type property.
                 try
                 {
@@ -661,7 +666,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             {
                 GraphRequestSession.ContentHeaders[HttpKnownHeaderNames.ContentType] = ContentType;
             }
-            else if (Method == GraphRequestMethod.POST)
+            else if (ShouldSetDefaultContentType)
             {
                 GraphRequestSession.ContentHeaders.TryGetValue(HttpKnownHeaderNames.ContentType, out var contentType);
                 if (string.IsNullOrWhiteSpace(contentType))
