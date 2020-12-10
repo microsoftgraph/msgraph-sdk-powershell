@@ -21,7 +21,6 @@ Import-Module -Name Pester
 Import-Module -Name $modulePsd1.FullName
 
 $testFolder = Join-Path $ModulePath 'test'
-Write-Host ("$testFolder")
 $PesterConfiguration = [PesterConfiguration]::Default
 $PesterConfiguration.Run.Path =  $testFolder
 $PesterConfiguration.Run.Exit =  $true
