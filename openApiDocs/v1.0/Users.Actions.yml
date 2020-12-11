@@ -16834,7 +16834,7 @@ components:
             receivedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The date and time the message was received.
+              description: 'The date and time the message was received.  The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''.'
               format: date-time
               nullable: true
             replyTo:
@@ -16847,7 +16847,7 @@ components:
             sentDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The date and time the message was sent.
+              description: 'The date and time the message was sent.  The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''.'
               format: date-time
               nullable: true
             subject:
@@ -16997,9 +16997,21 @@ components:
               type: string
               description: 'The name displayed in the address book for the user. This is usually the combination of the user''s first name, middle initial and last name. This property is required when a user is created and it cannot be cleared during updates. Supports $filter and $orderby.'
               nullable: true
+            employeeHireDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time when the user was hired or will start work in case of a future hire. Returned only on $select. Supports $filter.
+              format: date-time
+              nullable: true
             employeeId:
               type: string
               description: The employee identifier assigned to the user by the organization. Returned only on $select. Supports $filter.
+              nullable: true
+            employeeOrgData:
+              $ref: '#/components/schemas/microsoft.graph.employeeOrgData'
+            employeeType:
+              type: string
+              description: 'Captures enterprise worker type: Employee, Contractor, Consultant, Vendor, etc. Returned only on $select. Supports $filter.'
               nullable: true
             externalUserState:
               type: string
@@ -17046,7 +17058,7 @@ components:
               nullable: true
             legalAgeGroupClassification:
               type: string
-              description: 'Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, minorWithOutParentalConsent, minorWithParentalConsent, minorNoParentalConsentRequired, notAdult and adult. Refer to the legal age group property definitions for further information.)'
+              description: 'Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, minorWithOutParentalConsent, minorWithParentalConsent, minorNoParentalConsentRequired, notAdult and adult. Refer to the legal age group property definitions for further information.'
               nullable: true
             licenseAssignmentStates:
               type: array
@@ -17391,6 +17403,8 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
+            presence:
+              $ref: '#/components/schemas/microsoft.graph.presence'
             joinedTeams:
               type: array
               items:
@@ -18071,7 +18085,7 @@ components:
           nullable: true
         capabilityStatus:
           type: string
-          description: 'For example, ''Enabled''.'
+          description: 'Condition of the capability assignment. The possible values are Enabled, Warning, Suspended, Deleted, LockedOut.'
           nullable: true
         service:
           type: string
@@ -18082,6 +18096,20 @@ components:
           type: string
           description: A GUID that identifies the service plan.
           format: uuid
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.employeeOrgData:
+      title: employeeOrgData
+      type: object
+      properties:
+        costCenter:
+          type: string
+          description: The cost center associated with the user. Returned only on $select. Supports $filter.
+          nullable: true
+        division:
+          type: string
+          description: The name of the division in which the user works. Returned only on $select. Supports $filter.
           nullable: true
       additionalProperties:
         type: object
@@ -18525,6 +18553,9 @@ components:
             hasAttachments:
               type: boolean
               description: Set to true if the event has attachments.
+              nullable: true
+            hideAttendees:
+              type: boolean
               nullable: true
             iCalUId:
               type: string
@@ -19515,6 +19546,22 @@ components:
               description: Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
           additionalProperties:
             type: object
+    microsoft.graph.presence:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: presence
+          type: object
+          properties:
+            activity:
+              type: string
+              description: 'The supplemental information to a user''s availability. Possible values are Available, Away, BeRightBack,Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive,InAMeeting, Offline, OffWork,OutOfOffice, PresenceUnknown,Presenting, UrgentInterruptionsOnly.'
+              nullable: true
+            availability:
+              type: string
+              description: 'The base presence information for a user. Possible values are Available, AvailableIdle,  Away, BeRightBack, Busy, BusyIdle, DoNotDisturb, Offline, PresenceUnknown'
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.team:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -19815,9 +19862,9 @@ components:
     microsoft.graph.onenoteUserRole:
       title: onenoteUserRole
       enum:
+        - None
         - Owner
         - Contributor
-        - None
         - Reader
       type: string
     microsoft.graph.meetingParticipantInfo:
@@ -19888,9 +19935,9 @@ components:
     microsoft.graph.freeBusyStatus:
       title: freeBusyStatus
       enum:
+        - unknown
         - free
         - tentative
-        - unknown
         - busy
         - oof
         - workingElsewhere
@@ -20208,9 +20255,9 @@ components:
     microsoft.graph.calendarColor:
       title: calendarColor
       enum:
+        - auto
         - lightBlue
         - lightGreen
-        - auto
         - lightOrange
         - lightGray
         - lightYellow
@@ -22032,6 +22079,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.conversationMember'
+              description: A collection of membership records associated with the channel.
             messages:
               type: array
               items:
@@ -22694,9 +22742,9 @@ components:
     microsoft.graph.categoryColor:
       title: categoryColor
       enum:
+        - none
         - preset0
         - preset1
-        - none
         - preset2
         - preset3
         - preset4
