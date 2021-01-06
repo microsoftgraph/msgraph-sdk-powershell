@@ -1,0 +1,129 @@
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
+
+parameters:
+  - name: Branch
+    type: string
+    default: "weeklyOpenApiDocsDownload"
+  - name: BaseBranch
+    type: string
+    default: "dev"
+
+jobs:
+  - job: GetLatestDocs
+    displayName: Download OpenApiDocs
+    pool: MsGraphDevXAzureAgents
+    steps:
+      - template: ./checkout.yml
+
+      - task: PowerShell@2
+        displayName: Download v1.0 OpenApi docs
+        continueOnError: false
+        enabled: true
+        inputs:
+          filePath: "$(System.DefaultWorkingDirectory)/tools/UpdateOpenApi.ps1"
+          pwsh: true
+
+      - task: PowerShell@2
+        displayName: Download beta OpenApi docs
+        continueOnError: false
+        enabled: false
+        inputs:
+          filePath: "$(System.DefaultWorkingDirectory)/tools/UpdateOpenApi.ps1"
+          arguments: "-BetaGraphVersion"
+          pwsh: true
+
+      - task: PowerShell@2
+        name: OpenAPIDocDiff
+        displayName: Get OpenAPI diff
+        inputs:
+          pwsh: true
+          targetType: "inline"
+          script: |
+            $diff = git diff --name-only
+            $ModulesWithChanges = @{}
+            $diff | %{
+              if (($_ -match 'openApiDocs\/(v1.0|beta)\/(.*).yml') -and !$ModulesWithChanges.ContainsKey($matches.2))
+              {
+                $ModulesWithChanges.Add($matches.2, $matches.1)
+              }
+            }
+            # TEST DATA (PLS REMOVE ME!!)
+            $ModulesWithChanges.Add("CloudCommunications", "CloudCommunications")
+            $ModulesWithChanges.Add("Search", "Search")
+            $ModuleNames = $ModulesWithChanges.Keys
+            Write-Host "##vso[task.setvariable variable=ModulesWithChanges;isOutput=true]$ModuleNames"
+
+      - task: PowerShell@2
+        displayName: Generate profiles
+        condition: and(succeeded(), ne(variables['OpenAPIDocDiff.ModulesWithChanges'], ''))
+        enabled: false
+        continueOnError: false
+        inputs:
+          targetType: filePath
+          pwsh: true
+          filePath: $(System.DefaultWorkingDirectory)/tools/GenerateProfiles.ps1
+
+      - task: PowerShell@2
+        name: CalculateAndBumpServiceModuleVersion
+        displayName: Calculate and bump service module version
+        condition: and(succeeded(), ne(variables['OpenAPIDocDiff.ModulesWithChanges'], ''))
+        inputs:
+          pwsh: true
+          targetType: inline
+          script: |
+            "$(OpenAPIDocDiff.ModulesWithChanges)" -split " " | ForEach-Object {
+              # Get PSGallery version
+              $Module = Find-Module "Microsoft.Graph.$_" -Repository PSGallery
+              $ModuleVersion = [System.Version]($Module.Version)
+              $NewModuleVersion = "$($ModuleVersion.Major).$($ModuleVersion.Minor + 1).$($ModuleVersion.Build)"
+              # Bump minor version
+              . $(System.DefaultWorkingDirectory)/tools/SetServiceModuleVersion.ps1 -VersionNumber $NewModuleVersion -Modules $_
+            }
+
+      - task: PowerShell@2
+        name: CalculateAndBumpMetaModuleVersion
+        displayName: Calculate and bump meta-module version
+        condition: and(succeeded(), ne(variables['OpenAPIDocDiff.ModulesWithChanges'], ''))
+        inputs:
+          pwsh: true
+          targetType: inline
+          script: |
+            # Get PSGallery version
+            $Module = Find-Module "Microsoft.Graph" -Repository PSGallery
+            $ModuleVersion = [System.Version]($Module.Version)
+            $NewModuleVersion = "$($ModuleVersion.Major).$($ModuleVersion.Minor + 1).$($ModuleVersion.Build)"
+            # Bump minor version
+            . $(System.DefaultWorkingDirectory)/tools/SetMetaModuleVersion.ps1 -VersionNumber $NewModuleVersion
+
+      - task: Bash@3
+        displayName: "Create weekly branch: $(Branch)"
+        condition: and(succeeded(), ne(variables['OpenAPIDocDiff.ModulesWithChanges'], ''))
+        inputs:
+          targetType: inline
+          script: |
+            git status
+            git checkout $(BaseBranch)
+            git branch $(Branch)
+            git checkout $(Branch)
+            git status
+
+      - task: Bash@3
+        displayName: "Commit downloaded files"
+        condition: and(succeeded(), ne(variables['OpenAPIDocDiff.ModulesWithChanges'], ''))
+        env:
+          GITHUB_TOKEN: $(GITHUB_TOKEN)
+        inputs:
+          targetType: inline
+          script: |
+            git status
+            git add .
+            git commit -m 'Weekly OpenApiDocs Download'
+            git status
+            git push --set-upstream origin $(Branch)
+            git status
+
+# References
+# [0] https://help.github.com/en/actions/configuring-and-managing-workflows/using-environment-variables
+# [1] https://hub.github.com/hub-pull-request.1.html
+# https://help.github.com/en/actions/configuring-and-managing-workflows/authenticating-with-the-github_token

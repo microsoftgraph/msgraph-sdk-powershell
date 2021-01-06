@@ -1,0 +1,43 @@
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
+
+name: $(BuildDefinitionName)_$(SourceBranchName)_$(Date:yyyyMMdd)$(Rev:.r)
+pool: MsGraphDevXAzureAgents
+
+variables:
+  BranchDate: "$[format('{0:yyyyMMdd}', pipeline.startTime)]"
+  Branch: "testweeklyOpenApiDocsDownload/$(BranchDate)"
+  BaseBranch: "dev"
+
+schedules:
+  - cron: "0 12 * * WED" # Run every wednesday at noon UTC
+    displayName: "Weekly PS SDK generation"
+    branches:
+      include:
+        - dev
+    always: true
+
+stages:
+  - stage: DownloadOpenAPIDocs
+    displayName: Download OpenAPI docs
+    jobs:
+      - template: common-templates/download-openapi-docs.yml
+        parameters:
+          Branch: $(Branch)
+          BaseBranch: $(BaseBranch)
+
+  - stage: GenerateServiceModules
+    displayName: Generate service modules
+    variables:
+      ModulesToGenerate: $[ stageDependencies.DownloadOpenAPIDocs.GetLatestDocs.outputs['OpenAPIDocDiff.ModulesWithChanges'] ]
+    jobs:
+      - template: generation-templates/generate-service-modules.yml
+        parameters:
+          Branch: $(Branch)
+          EnableSigning: true
+  # Git diff on download OpenAPI docs. Store changed modules in a variable.
+  # Commit downloaded docs.
+  # If modules change, bump their minor and meta-module version.
+  # Generate changed modules + run tests.
+  # Commit generated files to weekly branch.
+  # Create PR to dev

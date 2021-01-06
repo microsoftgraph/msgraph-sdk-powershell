@@ -1,6 +1,7 @@
 ﻿# Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
 Param(
+    $ModulesToGenerate = @(),
     [string] $RepositoryApiKey,
     [string] $RepositoryName = "PSGallery",
     [int] $ModulePreviewNumber = -1,
@@ -73,9 +74,13 @@ if ($UpdateAutoRest) {
     # Update AutoRest.
     & autorest --reset
 }
-[HashTable] $ModuleMapping = Get-Content $ModuleMappingConfigPath | ConvertFrom-Json -AsHashTable
 
-$ModuleMapping.Keys | ForEach-Object -ThrottleLimit $ModuleMapping.Keys.Count -Parallel {
+if ($ModulesToGenerate.Count -eq 0) {
+    [HashTable] $ModuleMapping = Get-Content $ModuleMappingConfigPath | ConvertFrom-Json -AsHashTable
+    $ModulesToGenerate = $ModuleMapping.Keys
+}
+
+$ModulesToGenerate | ForEach-Object -ThrottleLimit $ModulesToGenerate.Count -Parallel {
     enum VersionState {
         Invalid
         Valid
