@@ -39,6 +39,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                         .Create(authContext.ClientId)
                         .WithTenantId(authContext.TenantId)
                         .WithAuthority(authorityUrl)
+                        .WithClientCapabilities(new[] { "cp1" })
                         .Build();
 
                         ConfigureTokenCache(publicClientApp.UserTokenCache, authContext);
