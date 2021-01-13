@@ -210,6 +210,34 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         public string UserAgent { get; set; }
 
         /// <summary>
+        ///     Return full Graph Http Response without interpreting
+        /// </summary>
+        [Parameter(Mandatory = false,
+            Position = 19,
+            ParameterSetName = Constants.UserParameterSet,
+            HelpMessage = "Return full Graph Http Response without interpreting. " +
+                          "Specifying -RequestClone stores the original request in a variable")]
+        public SwitchParameter Raw { get; set; }
+
+        /// <summary>
+        ///     Cloned Copy of Original Http Request
+        /// </summary>
+        [Parameter(Position = 20, ParameterSetName = Constants.UserParameterSet,
+            Mandatory = false,
+            HelpMessage = "A clone of the original request will be stored here")]
+        [Alias("ORC")]
+        public string OriginalRequestClone { get; set; }
+
+        /// <summary>
+        ///     Return full JSON Form, without converting to HashTable
+        /// </summary>
+        [Parameter(Mandatory = false,
+            Position = 21,
+            ParameterSetName = Constants.UserParameterSet,
+            HelpMessage = "Return full Json Response")]
+        public SwitchParameter Json { get; set; }
+
+        /// <summary>
         ///     Wait for .NET debugger to attach
         /// </summary>
         [Parameter(Mandatory = false,
@@ -420,7 +448,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         ///     Process Http Response
         /// </summary>
         /// <param name="response"></param>
-        internal void ProcessResponse(HttpResponseMessage response)
+        internal async Task ProcessResponse(HttpResponseMessage response)
         {
             if (response == null) throw new ArgumentNullException(nameof(response));
 
@@ -428,42 +456,65 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 
             if (ShouldWriteToPipeline)
             {
-                using (var responseStream = new BufferingStreamReader(baseResponseStream))
+                //When -Raw is Specified, print out the actual HttpResponse.
+                if (Raw)
                 {
-                    // determine the response type
-                    var returnType = response.CheckReturnType();
-                    // Try to get the response encoding from the ContentType header.
-                    Encoding encoding = null;
-                    var charSet = response.Content.Headers.ContentType?.CharSet;
-                    if (!string.IsNullOrEmpty(charSet))
+                    // if -ORC "originalRequestClone" is specified, clone and store.
+                    if (!string.IsNullOrEmpty(OriginalRequestClone))
                     {
-                        charSet.TryGetEncoding(out encoding);
+                        var vi = SessionState.PSVariable;
+                        var originalRequest = await response.CloneHttpRequestWithContent();
+                        vi.Set(OriginalRequestClone, originalRequest);
                     }
-
-                    if (string.IsNullOrEmpty(charSet) && returnType == RestReturnType.Json)
+                    WriteObject(response);
+                }
+                else
+                {
+                    using (var responseStream = new BufferingStreamReader(baseResponseStream))
                     {
-                        encoding = Encoding.UTF8;
+                        // determine the response type
+                        var returnType = response.CheckReturnType();
+                        // Try to get the response encoding from the ContentType header.
+                        Encoding encoding = null;
+                        var charSet = response.Content.Headers.ContentType?.CharSet;
+                        if (!string.IsNullOrEmpty(charSet))
+                        {
+                            charSet.TryGetEncoding(out encoding);
+                        }
+
+                        if (string.IsNullOrEmpty(charSet) && returnType == RestReturnType.Json)
+                        {
+                            encoding = Encoding.UTF8;
+                        }
+
+                        Exception ex = null;
+
+                        var str = responseStream.DecodeStream(ref encoding);
+
+                        string encodingVerboseName;
+                        try
+                        {
+                            encodingVerboseName = string.IsNullOrEmpty(encoding.HeaderName)
+                                ? encoding.EncodingName
+                                : encoding.HeaderName;
+                        }
+                        catch (NotSupportedException)
+                        {
+                            encodingVerboseName = encoding.EncodingName;
+                        }
+
+                        // NOTE: Tests use this verbose output to verify the encoding.
+                        WriteVerbose(Resources.ContentEncodingVerboseMessage.FormatCurrentCulture(encodingVerboseName));
+                        //If -Json is specified, return the Json string without converting to HashTable
+                        if (Json)
+                        {
+                            WriteObject(str);
+                        }
+                        else
+                        {
+                            WriteObject(str.TryConvertToJson(out var obj, ref ex) ? obj : str);
+                        }
                     }
-
-                    Exception ex = null;
-
-                    var str = responseStream.DecodeStream(ref encoding);
-
-                    string encodingVerboseName;
-                    try
-                    {
-                        encodingVerboseName = string.IsNullOrEmpty(encoding.HeaderName)
-                            ? encoding.EncodingName
-                            : encoding.HeaderName;
-                    }
-                    catch (NotSupportedException)
-                    {
-                        encodingVerboseName = encoding.EncodingName;
-                    }
-
-                    // NOTE: Tests use this verbose output to verify the encoding.
-                    WriteVerbose(Resources.ContentEncodingVerboseMessage.FormatCurrentCulture(encodingVerboseName));
-                    WriteObject(str.TryConvertToJson(out var obj, ref ex) ? obj : str);
                 }
             }
 
@@ -1117,7 +1168,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                                             ThrowTerminatingError(httpErrorRecord);
                                         }
 
-                                        ProcessResponse(httpResponseMessage);
+                                        await ProcessResponse(httpResponseMessage);
                                     }
                                 }
                                 catch (HttpRequestException ex)
