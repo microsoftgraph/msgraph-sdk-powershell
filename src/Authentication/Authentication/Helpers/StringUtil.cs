@@ -72,18 +72,18 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
         ///     Convert a JSON string back to an object of type <see cref="System.Management.Automation.PSObject"/> or
         ///     <see cref="System.Collections.Hashtable"/> depending on parameter <paramref name="returnHashtable"/>.
         /// </summary>
-        /// <param name="input">The JSON text to convert.</param>
+        /// <param name="jsonString">The JSON text to convert.</param>
         /// <param name="returnHashtable">True if the result should be returned as a <see cref="System.Collections.Hashtable"/>
         /// instead of a <see cref="System.Management.Automation.PSObject"/>.</param>
-        /// <param name="maxDepth">The max depth allowed when deserializing the json input. Set to null for no maximum.</param>
+        /// <param name="maxDepth">The max depth allowed when deserializing the json jsonString. Set to null for no maximum.</param>
         /// <param name="error">An error record if the conversion failed.</param>
         /// <returns>A <see cref="System.Management.Automation.PSObject"/> or a <see cref="System.Collections.Hashtable"/>
         /// if the <paramref name="returnHashtable"/> parameter is true.</returns>
-        internal static object ConvertFromJson(this string input, bool returnHashtable, int? maxDepth, out ErrorRecord error)
+        internal static object ConvertFromJson(this string jsonString, bool returnHashtable, int? maxDepth, out ErrorRecord error)
         {
-            if (input == null)
+            if (jsonString == null)
             {
-                throw new ArgumentNullException(nameof(input));
+                throw new ArgumentNullException(nameof(jsonString));
             }
 
             error = null;
@@ -91,22 +91,22 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
             {
                 // JsonConvert.DeserializeObject does not throw an exception when an invalid Json array is passed.
                 // This issue is being tracked by https://github.com/JamesNK/Newtonsoft.Json/issues/1930.
-                // To work around this, we need to identify when input is a Json array, and then try to parse it via JArray.Parse().
+                // To work around this, we need to identify when jsonString is a Json array, and then try to parse it via JArray.Parse().
 
-                // If input starts with '[' (ignoring white spaces).
-                if (Regex.Match(input, @"^\s*\[").Success)
+                // If jsonString starts with '[' (ignoring white spaces).
+                if (Regex.Match(jsonString, @"^\s*\[").Success)
                 {
                     // JArray.Parse() will throw a JsonException if the array is invalid.
                     // This will be caught by the catch block below, and then throw an
                     // ArgumentException - this is done to have same behavior as the JavaScriptSerializer.
-                    JArray.Parse(input);
+                    JArray.Parse(jsonString);
 
                     // Please note that if the Json array is valid, we don't do anything,
                     // we just continue the deserialization.
                 }
 
                 var obj = JsonConvert.DeserializeObject(
-                    input,
+                    jsonString,
                     new JsonSerializerSettings
                     {
                         // This TypeNameHandling setting is required to be secure.
