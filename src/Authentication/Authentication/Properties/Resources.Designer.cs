@@ -142,6 +142,15 @@ namespace Microsoft.Graph.PowerShell.Authentication.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The provided JSON includes a property whose name is an empty string, this is only supported using the -OutputType HashTable switch..
+        /// </summary>
+        internal static string EmptyKeyInJsonString {
+            get {
+                return ResourceManager.GetString("EmptyKeyInJsonString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The cmdlet cannot run because the following conflicting parameters are specified: GraphRequestSession and SessionVariable. Specify either GraphRequestSession or SessionVariable, then retry..
         /// </summary>
         internal static string GraphRequestSessionConflict {
@@ -234,9 +243,27 @@ namespace Microsoft.Graph.PowerShell.Authentication.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Conversion from JSON failed with error: {0}.
         /// </summary>
+        internal static string JsonDeserializationFailed {
+            get {
+                return ResourceManager.GetString("JsonDeserializationFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Conversion from JSON failed with error: {0}.
+        /// </summary>
         internal static string JsonSerializationFailed {
             get {
                 return ResourceManager.GetString("JsonSerializationFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cannot convert the JSON string because it contains keys with different casing. Please use the -OutputType HashTable switch instead. The key that was attempted to be added to the existing key &apos;{0}&apos; was &apos;{1}&apos;..
+        /// </summary>
+        internal static string KeysWithDifferentCasingInJsonString {
+            get {
+                return ResourceManager.GetString("KeysWithDifferentCasingInJsonString", resourceCulture);
             }
         }
         
