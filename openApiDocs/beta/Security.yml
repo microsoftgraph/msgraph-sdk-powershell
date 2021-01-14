@@ -3682,6 +3682,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.alertHistoryState'
+              description: A collection of alertHistoryStates comprising an audit log of all updates made to an alert.
             hostStates:
               type: array
               items:
@@ -4159,14 +4160,16 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.complianceInformation'
+              description: The collection of compliance information associated with secure score control
             controlCategory:
               type: string
-              description: 'Control action category (Identity, Data, Device, Apps, Infrastructure).'
+              description: 'Control action category (Account, Data, Device, Apps, Infrastructure).'
               nullable: true
             controlStateUpdates:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.secureScoreControlStateUpdate'
+              description: 'Flag to indicate where the tenant has marked a control (ignore, thirdParty, reviewed) (supports update).'
             deprecated:
               type: boolean
               description: Flag to indicate if a control is depreciated.
@@ -4183,7 +4186,7 @@ components:
               nullable: true
             maxScore:
               type: number
-              description: max attainable score for the control.
+              description: Current obtained max score on specified date.
               format: double
               nullable: true
             rank:
@@ -4210,9 +4213,10 @@ components:
               items:
                 type: string
                 nullable: true
-              description: 'List of threats the control mitigates (accountBreach,dataDeletion,dataExfiltration,dataSpillage,'
+              description: 'List of threats the control mitigates (accountBreach,dataDeletion,dataExfiltration,dataSpillage,elevationOfPrivilege,maliciousInsider,passwordCracking,phishingOrWhaling,spoofing).'
             tier:
               type: string
+              description: 'Control tier (Core, Defense in Depth, Advanced.)'
               nullable: true
             title:
               type: string
@@ -4220,6 +4224,7 @@ components:
               nullable: true
             userImpact:
               type: string
+              description: 'User impact of implementing control (low, moderate, high).'
               nullable: true
             vendorInformation:
               $ref: '#/components/schemas/microsoft.graph.securityVendorInformation'
@@ -4292,12 +4297,15 @@ components:
           properties:
             actionReason:
               type: string
+              description: Reason for invoking this action.
               nullable: true
             appId:
               type: string
+              description: The Application ID of the calling application that submitted (POST) the action. The appId should be extracted from the auth token and not entered manually by the calling application.
               nullable: true
             azureTenantId:
               type: string
+              description: Azure tenant ID of the entity to determine which tenant the entity belongs to (multi-tenancy support). The azureTenantId should be extracted from the auth token and not entered manually by the calling application.
               nullable: true
             clientContext:
               type: string
@@ -4305,11 +4313,13 @@ components:
             completedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Timestamp when the action was completed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
               format: date-time
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Timestamp when the action is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
               format: date-time
               nullable: true
             errorInfo:
@@ -4317,23 +4327,28 @@ components:
             lastActionDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Timestamp when this action was last updated. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
               format: date-time
               nullable: true
             name:
               type: string
+              description: Action name.
               nullable: true
             parameters:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.keyValuePair'
+              description: 'Collection of parameters (key-value pairs) necessary to invoke the action, e.g. URL or fileHash to block, etc.). Required'
             states:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.securityActionState'
+              description: Collection of securityActionState to keep the history of an action.
             status:
               $ref: '#/components/schemas/microsoft.graph.operationStatus'
             user:
               type: string
+              description: The user principal name of the signed-in user that submitted  (POST) the action. The user should be extracted from the auth token and not entered manually by the calling application.
               nullable: true
             vendorInformation:
               $ref: '#/components/schemas/microsoft.graph.securityVendorInformation'
@@ -4352,20 +4367,25 @@ components:
               items:
                 type: string
                 nullable: true
+              description: The cyber threat intelligence name(s) for the parties responsible for the malicious activity covered by the threat indicator.
             additionalInformation:
               type: string
+              description: A catchall area into which extra data from the indicator not covered by the other tiIndicator properties may be placed. Data placed into additionalInformation will typically not be utilized by the targetProduct security tool.
               nullable: true
             azureTenantId:
               type: string
+              description: Stamped by the system when the indicator is ingested. The Azure Active Directory tenant id of submitting client. Required.
               nullable: true
             confidence:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: An integer representing the confidence the data within the indicator accurately identifies malicious behavior. Acceptable values are 0 – 100 with 100 being the highest.
               format: int32
               nullable: true
             description:
               type: string
+              description: Brief description (100 characters or less) of the threat represented by the indicator. Required.
               nullable: true
             diamondModel:
               $ref: '#/components/schemas/microsoft.graph.diamondModel'
@@ -4402,10 +4422,12 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'DateTime string indicating when the Indicator expires. All indicators must have an expiration date to avoid stale indicators persisting in the system. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Required.'
               format: date-time
               nullable: true
             externalId:
               type: string
+              description: An identification number that ties the indicator back to the indicator provider’s system (e.g. a foreign key).
               nullable: true
             fileCompileDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -4444,22 +4466,27 @@ components:
             ingestedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Stamped by the system when the indicator is ingested. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
               format: date-time
               nullable: true
             isActive:
               type: boolean
+              description: 'Used to deactivate indicators within system. By default, any indicator submitted is set as active. However, providers may submit existing indicators with this set to ‘False’ to deactivate indicators in the system.'
               nullable: true
             killChain:
               type: array
               items:
                 type: string
                 nullable: true
+              description: A JSON array of strings that describes which point or points on the Kill Chain this indicator targets. See ‘killChain values’ below for exact values.
             knownFalsePositives:
               type: string
+              description: Scenarios in which the indicator may cause false positives. This should be human-readable text.
               nullable: true
             lastReportedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The last time the indicator was seen. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
               format: date-time
               nullable: true
             malwareFamilyNames:
@@ -4467,6 +4494,7 @@ components:
               items:
                 type: string
                 nullable: true
+              description: The malware family name associated with an indicator if it exists. Microsoft prefers the Microsoft malware family name if at all possible which can be found via the Windows Defender Security Intelligence threat encyclopedia.
             networkCidrBlock:
               type: string
               nullable: true
@@ -4528,11 +4556,13 @@ components:
               nullable: true
             passiveOnly:
               type: boolean
+              description: 'Determines if the indicator should trigger an event that is visible to an end-user. When set to ‘true,’ security tools will not notify the end user that a ‘hit’ has occurred. This is most often treated as audit or silent mode by security products where they will simply log that a match occurred but will not perform the action. Default value is false.'
               nullable: true
             severity:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: An integer representing the severity of the malicious behavior identified by the data within the indicator. Acceptable values are 0 – 5 where 5 is the most severe and zero is not severe at all. Default value is 3.
               format: int32
               nullable: true
             tags:
@@ -4540,10 +4570,13 @@ components:
               items:
                 type: string
                 nullable: true
+              description: A JSON array of strings that stores arbitrary tags/keywords.
             targetProduct:
               type: string
+              description: 'A string value representing a single security product to which the indicator should be applied. Acceptable values are: Azure Sentinel, Microsoft Defender ATP. Required'
             threatType:
               type: string
+              description: 'Each indicator must have a valid Indicator Threat Type. Possible values are: Botnet, C2, CryptoMining, Darknet, DDoS, MaliciousUrl, Malware, Phishing, Proxy, PUA, WatchList. Required.'
               nullable: true
             tlpLevel:
               $ref: '#/components/schemas/microsoft.graph.tlpLevel'
@@ -4718,15 +4751,18 @@ components:
       properties:
         appId:
           type: string
+          description: The Application ID of the calling application that submitted an update (PATCH) to the alert. The appId should be extracted from the auth token and not entered manually by the calling application.
           nullable: true
         assignedTo:
           type: string
+          description: 'UPN of user the alert was assigned to (note: alert.assignedTo only stores the last value/UPN).'
           nullable: true
         comments:
           type: array
           items:
             type: string
             nullable: true
+          description: Comment entered by signed-in user.
         feedback:
           $ref: '#/components/schemas/microsoft.graph.alertFeedback'
         status:
@@ -4734,10 +4770,12 @@ components:
         updatedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'Date and time of the alert update. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
           format: date-time
           nullable: true
         user:
           type: string
+          description: UPN of the signed-in user that updated the alert (taken from the bearer token - if in user/delegated auth mode).
           nullable: true
       additionalProperties:
         type: object
@@ -4860,7 +4898,7 @@ components:
       properties:
         applicationName:
           type: string
-          description: 'Name of the application managing the network connection (for example, Facebook or SMTP).'
+          description: 'Name of the application managing the network connection (for example, Facebook, SMTP, etc.).'
           nullable: true
         destinationAddress:
           type: string
@@ -5275,29 +5313,35 @@ components:
       properties:
         accountDomain:
           type: string
+          description: Domain of user account used to logon.
           nullable: true
         accountName:
           type: string
+          description: Account name of user account used to logon.
           nullable: true
         accountType:
           $ref: '#/components/schemas/microsoft.graph.userAccountSecurityType'
         firstSeenDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'DateTime at which the earliest logon by this user account occurred (provider-determined period). The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''.'
           format: date-time
           nullable: true
         lastSeenDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'DateTime at which the latest logon by this user account occurred. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''.'
           format: date-time
           nullable: true
         logonId:
           type: string
+          description: User logon ID.
           nullable: true
         logonTypes:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.logonType'
+          description: 'Collection of the logon types observed for the logged on user from when first to last seen. Possible values are: unknown, interactive, remoteInteractive, network, batch, service.'
       additionalProperties:
         type: object
     microsoft.graph.networkInterface:
@@ -5306,18 +5350,23 @@ components:
       properties:
         description:
           type: string
+          description: 'Description of the NIC (e.g. Ethernet adapter, Wireless LAN adapter Local Area Connection <#>, etc.).'
           nullable: true
         ipV4Address:
           type: string
+          description: Last IPv4 address associated with this NIC.
           nullable: true
         ipV6Address:
           type: string
+          description: Last Public (aka global) IPv6 address associated with this NIC.
           nullable: true
         localIpV6Address:
           type: string
+          description: Last local (link-local or site-local) IPv6 address associated with this NIC.
           nullable: true
         macAddress:
           type: string
+          description: MAC address of the NIC on this host.
           nullable: true
       additionalProperties:
         type: object
@@ -5461,16 +5510,19 @@ components:
       properties:
         appId:
           type: string
+          description: The Application ID of the calling application that submitted an update (PATCH) to the action. The appId should be extracted from the auth token and not entered manually by the calling application.
           nullable: true
         status:
           $ref: '#/components/schemas/microsoft.graph.operationStatus'
         updatedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'Timestamp when the actionState was updated. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
           format: date-time
           nullable: true
         user:
           type: string
+          description: The user principal name of the signed-in user that submitted an update (PATCH) to the action. The user should be extracted from the auth token and not entered manually by the calling application.
           nullable: true
       additionalProperties:
         type: object

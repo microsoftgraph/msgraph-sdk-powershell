@@ -1354,7 +1354,7 @@ components:
           properties:
             accountEnabled:
               type: boolean
-              description: 'true if the account is enabled; otherwise, false. Required.'
+              description: 'true if the account is enabled; otherwise, false. default is true.'
               nullable: true
             alternativeSecurityIds:
               type: array
@@ -1439,7 +1439,7 @@ components:
               nullable: true
             operatingSystemVersion:
               type: string
-              description: The version of the operating system on the device. Required.
+              description: Operating system version of the device. Required.
               nullable: true
             physicalIds:
               type: array
@@ -1512,6 +1512,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.command'
+              description: Set of commands sent to this device
           additionalProperties:
             type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
