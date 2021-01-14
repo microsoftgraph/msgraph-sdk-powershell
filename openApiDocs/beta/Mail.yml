@@ -382,6 +382,8 @@ paths:
                 - childFolderCount desc
                 - displayName
                 - displayName desc
+                - isHidden
+                - isHidden desc
                 - parentFolderId
                 - parentFolderId desc
                 - totalItemCount
@@ -404,6 +406,7 @@ paths:
                 - id
                 - childFolderCount
                 - displayName
+                - isHidden
                 - parentFolderId
                 - totalItemCount
                 - unreadItemCount
@@ -520,6 +523,7 @@ paths:
                 - id
                 - childFolderCount
                 - displayName
+                - isHidden
                 - parentFolderId
                 - totalItemCount
                 - unreadItemCount
@@ -696,6 +700,8 @@ paths:
                 - childFolderCount desc
                 - displayName
                 - displayName desc
+                - isHidden
+                - isHidden desc
                 - parentFolderId
                 - parentFolderId desc
                 - totalItemCount
@@ -718,6 +724,7 @@ paths:
                 - id
                 - childFolderCount
                 - displayName
+                - isHidden
                 - parentFolderId
                 - totalItemCount
                 - unreadItemCount
@@ -848,6 +855,7 @@ paths:
                 - id
                 - childFolderCount
                 - displayName
+                - isHidden
                 - parentFolderId
                 - totalItemCount
                 - unreadItemCount
@@ -6065,6 +6073,10 @@ components:
               type: string
               description: The mailFolder's display name.
               nullable: true
+            isHidden:
+              type: boolean
+              description: Indicates whether the mailFolder is hidden. This property can be set only when creating the folder. Find more information in Hidden mail folders.
+              nullable: true
             parentFolderId:
               type: string
               description: The unique identifier for the mailFolder's parent mailFolder.
@@ -6085,6 +6097,7 @@ components:
               nullable: true
             wellKnownName:
               type: string
+              description: 'The well-known folder name for the folder. The possible values are listed above. This property is only set for default folders created by Outlook. For other folders, this property is null.'
               nullable: true
             childFolders:
               type: array
@@ -6169,7 +6182,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.itemBody'
             bodyPreview:
               type: string
-              description: The first 255 characters of the message body. It is in text format.
+              description: 'The first 255 characters of the message body. It is in text format. If the message contains instances of mention, this property would contain a concatenation of these mentions as well.'
               nullable: true
             ccRecipients:
               type: array
@@ -6284,6 +6297,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.mention'
+              description: 'A collection of mentions in the message, ordered by the createdDateTime from the newest to the oldest. By default, a GET /messages does not return this property unless you apply $expand on the property.'
             multiValueExtendedProperties:
               type: array
               items:
@@ -6317,7 +6331,7 @@ components:
               nullable: true
             name:
               type: string
-              description: The attachment's file name.
+              description: The display name of the attachment. This does not need to be the actual file name.
               nullable: true
             size:
               maximum: 2147483647
@@ -6342,28 +6356,34 @@ components:
           properties:
             application:
               type: string
+              description: The name of the application where the mention is created. Optional. Not used and defaulted as null for message.
               nullable: true
             clientReference:
               type: string
+              description: A unique identifier that represents a parent of the resource instance. Optional. Not used and defaulted as null for message.
               nullable: true
             createdBy:
               $ref: '#/components/schemas/microsoft.graph.emailAddress'
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date and time that the mention is created on the client.
               format: date-time
               nullable: true
             deepLink:
               type: string
+              description: A deep web link to the context of the mention in the resource instance. Optional. Not used and defaulted as null for message.
               nullable: true
             mentioned:
               $ref: '#/components/schemas/microsoft.graph.emailAddress'
             mentionText:
               type: string
+              description: 'Optional. Not used and defaulted as null for message. To get the mentions in a message, see the bodyPreview property of the message instead.'
               nullable: true
             serverCreatedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date and time that the mention is created on the server. Optional. Not used and defaulted as null for message.
               format: date-time
               nullable: true
           additionalProperties:
@@ -6427,11 +6447,11 @@ components:
       properties:
         address:
           type: string
-          description: The email address of the person or entity.
+          description: The email address of an entity instance.
           nullable: true
         name:
           type: string
-          description: The display name of the person or entity.
+          description: The display name of an entity instance.
           nullable: true
       additionalProperties:
         type: object
@@ -6481,7 +6501,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.recipient'
-          description: The email addresses to which a message should be redirected.
+          description: The email address to which a message should be redirected.
         stopProcessingRules:
           type: boolean
           description: Indicates whether subsequent rules should be evaluated.
@@ -6713,6 +6733,7 @@ components:
       properties:
         isMentioned:
           type: boolean
+          description: True if the signed-in user is mentioned in the parent resource instance. Read-only. Supports filter.
           nullable: true
       additionalProperties:
         type: object
@@ -6780,10 +6801,10 @@ components:
       properties:
         dateTime:
           type: string
-          description: 'A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).'
+          description: 'A single point of time in a combined date and time representation ({date}T{time}). For example, ''2019-04-16T09:00:00''.'
         timeZone:
           type: string
-          description: 'Represents a time zone, for example, ''Pacific Standard Time''. See below for more possible values.'
+          description: 'Represents a time zone, for example, ''Pacific Standard Time''. See below for possible values.'
           nullable: true
       additionalProperties:
         type: object
