@@ -8,14 +8,14 @@ steps:
     persistCredentials: true
 
   - task: PowerShell@2
-    displayName: Configure user
+    displayName: "Configure user"
     inputs:
-      targetType: inline
+      targetType: "inline"
       script: |
         git config --global user.email "GraphTooling@service.microsoft.com"
         git config --global user.name "Microsoft Graph DevX Tooling"
 
   - task: securedevelopmentteam.vss-secure-development-tools.build-task-credscan.CredScan@2
-    displayName: Run CredScan
+    displayName: "Run CredScan"
     inputs:
       debugMode: false

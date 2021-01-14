@@ -16,10 +16,11 @@ jobs:
     steps:
       - template: ./checkout.yml
 
+      - template: ./install-tools.yml
+
       - task: PowerShell@2
         displayName: Download v1.0 OpenApi docs
         continueOnError: false
-        enabled: true
         inputs:
           filePath: "$(System.DefaultWorkingDirectory)/tools/UpdateOpenApi.ps1"
           pwsh: true
@@ -27,7 +28,6 @@ jobs:
       - task: PowerShell@2
         displayName: Download beta OpenApi docs
         continueOnError: false
-        enabled: false
         inputs:
           filePath: "$(System.DefaultWorkingDirectory)/tools/UpdateOpenApi.ps1"
           arguments: "-BetaGraphVersion"
@@ -35,7 +35,7 @@ jobs:
 
       - task: PowerShell@2
         name: OpenAPIDocDiff
-        displayName: Get OpenAPI diff
+        displayName: Get OpenAPI docs diff
         inputs:
           pwsh: true
           targetType: "inline"
@@ -48,8 +48,9 @@ jobs:
                 $ModulesWithChanges.Add($matches.2, $matches.1)
               }
             }
-            # TEST DATA (PLS REMOVE ME!!)
-            $ModulesWithChanges.Add("CloudCommunications", "CloudCommunications")
+
+            # TEST DATA (PLS REMOVE ME!!)	
+            $ModulesWithChanges.Add("CloudCommunications", "CloudCommunications")	
             $ModulesWithChanges.Add("Search", "Search")
             $ModuleNames = $ModulesWithChanges.Keys
             Write-Host "##vso[task.setvariable variable=ModulesWithChanges;isOutput=true]$ModuleNames"
@@ -57,7 +58,6 @@ jobs:
       - task: PowerShell@2
         displayName: Generate profiles
         condition: and(succeeded(), ne(variables['OpenAPIDocDiff.ModulesWithChanges'], ''))
-        enabled: false
         continueOnError: false
         inputs:
           targetType: filePath
@@ -65,36 +65,39 @@ jobs:
           filePath: $(System.DefaultWorkingDirectory)/tools/GenerateProfiles.ps1
 
       - task: PowerShell@2
-        name: CalculateAndBumpServiceModuleVersion
-        displayName: Calculate and bump service module version
+        name: CalculateAndBumpModuleVersion
+        displayName: Calculate and bump module version
         condition: and(succeeded(), ne(variables['OpenAPIDocDiff.ModulesWithChanges'], ''))
         inputs:
           pwsh: true
           targetType: inline
           script: |
+            # Calculate meta-module version
+            $MetaModule = Find-Module "Microsoft.Graph" -Repository PSGallery
+            $MetaModuleVersion = [System.Version]($MetaModule.Version)
+            $NewMetaModuleVersion = "$($MetaModuleVersion.Major).$($MetaModuleVersion.Minor + 1).$($MetaModuleVersion.Build)"
+            # Bump meta-module minor version
+            Write-Host "Bumping Microsoft.Graph to $NewMetaModuleVersion."
+            & "$(System.DefaultWorkingDirectory)\tools\SetMetaModuleVersion.ps1" -VersionNumber $NewMetaModuleVersion
+
+            # Calculate existing service module version
             "$(OpenAPIDocDiff.ModulesWithChanges)" -split " " | ForEach-Object {
-              # Get PSGallery version
-              $Module = Find-Module "Microsoft.Graph.$_" -Repository PSGallery
-              $ModuleVersion = [System.Version]($Module.Version)
-              $NewModuleVersion = "$($ModuleVersion.Major).$($ModuleVersion.Minor + 1).$($ModuleVersion.Build)"
-              # Bump minor version
-              . $(System.DefaultWorkingDirectory)/tools/SetServiceModuleVersion.ps1 -VersionNumber $NewModuleVersion -Modules $_
+              try {
+                $Module = Find-Module "Microsoft.Graph.$_" -Repository PSGallery -ErrorAction Stop
+                $ModuleVersion = [System.Version]($Module.Version)
+                $NewModuleVersion = "$($ModuleVersion.Major).$($ModuleVersion.Minor + 1).$($ModuleVersion.Build)"
+                Write-Host "Bumping $_ to $NewModuleVersion."
+                . "$(System.DefaultWorkingDirectory)\tools\SetServiceModuleVersion.ps1" -VersionNumber $NewModuleVersion -Modules $_
+              } catch {
+                if ($_.Exception.Message -like "No match*") {
+                  Write-Warning "$_. Version will be set to $NewMetaModuleVersion."      
+                }
+              }
             }
 
-      - task: PowerShell@2
-        name: CalculateAndBumpMetaModuleVersion
-        displayName: Calculate and bump meta-module version
-        condition: and(succeeded(), ne(variables['OpenAPIDocDiff.ModulesWithChanges'], ''))
-        inputs:
-          pwsh: true
-          targetType: inline
-          script: |
-            # Get PSGallery version
-            $Module = Find-Module "Microsoft.Graph" -Repository PSGallery
-            $ModuleVersion = [System.Version]($Module.Version)
-            $NewModuleVersion = "$($ModuleVersion.Major).$($ModuleVersion.Minor + 1).$($ModuleVersion.Build)"
-            # Bump minor version
-            . $(System.DefaultWorkingDirectory)/tools/SetMetaModuleVersion.ps1 -VersionNumber $NewModuleVersion
+            # Calculate new service module version
+            $NewModuleReadMePath = Join-Path $(System.DefaultWorkingDirectory) "/tools/Templates/readme.md"
+            . "$(System.DefaultWorkingDirectory)\tools\WriteToModuleReadMe.ps1" -ReadMePath $NewModuleReadMePath -FieldName "module-version" -NewFieldValue $NewMetaModuleVersion
 
       - task: Bash@3
         displayName: "Create weekly branch: $(Branch)"
@@ -103,13 +106,14 @@ jobs:
           targetType: inline
           script: |
             git status
+            git fetch --all
             git checkout $(BaseBranch)
             git branch $(Branch)
             git checkout $(Branch)
             git status
 
       - task: Bash@3
-        displayName: "Commit downloaded files"
+        displayName: Commit downloaded files
         condition: and(succeeded(), ne(variables['OpenAPIDocDiff.ModulesWithChanges'], ''))
         env:
           GITHUB_TOKEN: $(GITHUB_TOKEN)

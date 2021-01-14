@@ -4,19 +4,14 @@
 parameters:
   - name: AuthModulePath
     type: string
-    default: 'src\Authentication\Authentication\bin\'
   - name: AuthModuleDllPattern
     type: string
-    default: "Microsoft.Graph.Authentication.dll"
   - name: ServiceModulePath
     type: string
-    default: 'src\'
   - name: ModulePrefix
     type: string
-    default: "Microsoft.Graph"
   - name: Branch
     type: string
-    default: ""
   - name: EnableSigning
     type: boolean
     default: false
@@ -32,19 +27,19 @@ jobs:
       - task: Bash@3
         displayName: "Switch branch to $(Branch)"
         condition: and(succeeded(), ne('${{ parameters.Branch }}', ''))
-        enabled: true
         inputs:
           targetType: inline
           script: |
             git status
-            git pull
+            git fetch --all
             git checkout $(Branch)
+            git pull
             git status
 
       # Consider making generate-auth-module a template with a collection of tasks instead to avoid rebuilding and signing auth module here.
       - task: PowerShell@2
         displayName: Build auth module
-        enabled: false
+        enabled: true
         inputs:
           targetType: inline
           pwsh: true
@@ -53,7 +48,7 @@ jobs:
 
       - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
         displayName: ESRP DLL strong name (Auth Module)
-        enabled: false
+        enabled: true
         inputs:
           ConnectedServiceName: "microsoftgraph ESRP CodeSign DLL and NuGet (AKV)"
           FolderPath: $(AuthModulePath)
@@ -80,7 +75,7 @@ jobs:
 
       - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
         displayName: "ESRP DLL code sign (Auth Module)"
-        enabled: false
+        enabled: true
         inputs:
           ConnectedServiceName: "microsoftgraph ESRP CodeSign DLL and NuGet (AKV)"
           FolderPath: $(AuthModulePath)
@@ -129,17 +124,15 @@ jobs:
 
       - task: PowerShell@2
         displayName: Generate and build service modules
-        enabled: true
         inputs:
           targetType: inline
           pwsh: true
           script: |
             $Modules = "$(ModulesToGenerate)" -split " "
-            . $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -Build -Test -UpdateAutoRest -ModulesToGenerate $Modules
+            . $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -Build -Test -UpdateAutoRest -EnableSigning -ModulesToGenerate $Modules
 
       - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
         displayName: ESRP DLL strong name (Service Modules)
-        enabled: false
         inputs:
           ConnectedServiceName: "microsoftgraph ESRP CodeSign DLL and NuGet (AKV)"
           FolderPath: $(ServiceModulePath)
@@ -166,7 +159,6 @@ jobs:
 
       - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
         displayName: "ESRP DLL code sign (Service Modules)"
-        enabled: false
         inputs:
           ConnectedServiceName: "microsoftgraph ESRP CodeSign DLL and NuGet (AKV)"
           FolderPath: $(ServiceModulePath)
@@ -214,7 +206,6 @@ jobs:
 
       - task: PowerShell@2
         displayName: Pack service modules
-        enabled: false
         inputs:
           targetType: inline
           pwsh: true
@@ -229,7 +220,6 @@ jobs:
 
       - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
         displayName: ESRP NuGet code sign (Service Modules)
-        enabled: false
         inputs:
           ConnectedServiceName: "microsoftgraph ESRP CodeSign DLL and NuGet (AKV)"
           FolderPath: '$(Build.ArtifactStagingDirectory)\'
@@ -265,7 +255,6 @@ jobs:
 
       - task: PublishBuildArtifacts@1
         displayName: Publish service modules build artifacts
-        enabled: false
         inputs:
           PathtoPublish: "$(Build.ArtifactStagingDirectory)/"
           ArtifactName: "drop"

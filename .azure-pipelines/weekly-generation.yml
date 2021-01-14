@@ -5,16 +5,18 @@ name: $(BuildDefinitionName)_$(SourceBranchName)_$(Date:yyyyMMdd)$(Rev:.r)
 pool: MsGraphDevXAzureAgents
 
 variables:
-  BranchDate: "$[format('{0:yyyyMMdd}', pipeline.startTime)]"
-  Branch: "testweeklyOpenApiDocsDownload/$(BranchDate)"
+  BranchDate: "$[format('{0:yyyyMMddHHmm}', pipeline.startTime)]"
+  Branch: "test/weeklyOpenApiDocsDownload/$(BranchDate)" #TODO: Remove test data.
   BaseBranch: "dev"
-
+trigger: none
+pr: none
 schedules:
   - cron: "0 12 * * WED" # Run every wednesday at noon UTC
     displayName: "Weekly PS SDK generation"
     branches:
       include:
         - dev
+        - po/* #TODO: Remove test data.
     always: true
 
 stages:
@@ -30,11 +32,19 @@ stages:
     displayName: Generate service modules
     variables:
       ModulesToGenerate: $[ stageDependencies.DownloadOpenAPIDocs.GetLatestDocs.outputs['OpenAPIDocDiff.ModulesWithChanges'] ]
+      AuthModulePath: "src/Authentication/Authentication/bin/"
+      AuthModuleDllPattern: "Microsoft.Graph.Authentication.dll"
+      ServiceModulePath: "src/"
+      ModulePrefix: "Microsoft.Graph"
     jobs:
       - template: generation-templates/generate-service-modules.yml
         parameters:
           Branch: $(Branch)
           EnableSigning: true
+          AuthModulePath: $(AuthModulePath)
+          AuthModuleDllPattern: $(AuthModuleDllPattern)
+          ServiceModulePath: $(ServiceModulePath)
+          ModulePrefix: $(ModulePrefix)
   # Git diff on download OpenAPI docs. Store changed modules in a variable.
   # Commit downloaded docs.
   # If modules change, bump their minor and meta-module version.
