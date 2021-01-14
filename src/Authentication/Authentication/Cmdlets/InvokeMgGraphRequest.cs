@@ -436,7 +436,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         ///     Process Http Response
         /// </summary>
         /// <param name="response"></param>
-        internal async Task ProcessResponse(HttpResponseMessage response)
+        internal async Task ProcessResponseAsync(HttpResponseMessage response)
         {
             if (response == null) throw new ArgumentNullException(nameof(response));
             var responseString = await response.Content.ReadAsStringAsync();
@@ -1116,7 +1116,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                                             ThrowTerminatingError(httpErrorRecord);
                                         }
 
-                                        await ProcessResponse(httpResponseMessage);
+                                        await ProcessResponseAsync(httpResponseMessage);
                                     }
                                 }
                                 catch (HttpRequestException ex)
