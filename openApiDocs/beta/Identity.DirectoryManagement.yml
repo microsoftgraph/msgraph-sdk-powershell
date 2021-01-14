@@ -11274,7 +11274,7 @@ components:
               nullable: true
             visibility:
               type: string
-              description: 'Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership or Public. If not set, default behavior is Public. When set to HiddenMembership, only members of the administrative unit can list other members of the adminstrative unit.'
+              description: 'Controls whether the adminstrative unit and its members are hidden or public. Can be set to HiddenMembership or Public. If not set, default behavior is Public. When set to HiddenMembership, only members of the administrative unit can list other members of the adminstrative unit.'
               nullable: true
             members:
               type: array
@@ -11290,6 +11290,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
+              description: The collection of open extensions defined for this Administrative Unit. Nullable.
           additionalProperties:
             type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
@@ -11340,60 +11341,76 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.physicalOfficeAddress'
+              description: Postal addresses for this organizational contact. For now a contact can only have one physical address.
             companyName:
               type: string
+              description: Name of the company that this organizational contact belong to.
               nullable: true
             department:
               type: string
+              description: The name for the department in which the contact works.
               nullable: true
             displayName:
               type: string
+              description: Display name for this organizational contact.
               nullable: true
             givenName:
               type: string
+              description: First name for this organizational contact.
               nullable: true
             jobTitle:
               type: string
+              description: Job title for this organizational contact.
               nullable: true
             mail:
               type: string
+              description: 'The SMTP address for the contact, for example, ''jeff@contoso.onmicrosoft.com''.'
               nullable: true
             mailNickname:
               type: string
+              description: Email alias (portion of email address pre-pending the @ symbol) for this organizational contact.
               nullable: true
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Date and time when this organizational contact was last synchronized from on-premises AD. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''.'
               format: date-time
               nullable: true
             onPremisesProvisioningErrors:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onPremisesProvisioningError'
+              description: List of any synchronization provisioning errors for this organizational contact.
             onPremisesSyncEnabled:
               type: boolean
+              description: true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced and now mastered in Exchange; null if this object has never been synced from an on-premises directory (default).
               nullable: true
             phones:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.phone'
+              description: 'List of phones for this organizational contact. Phone types can be mobile, business, and businessFax. Only one of each type can ever be present in the collection.'
             proxyAddresses:
               type: array
               items:
                 type: string
+              description: 'For example: ''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com''. The any operator is required for filter expressions on multi-valued properties. Supports $filter.'
             surname:
               type: string
+              description: Last name for this organizational contact.
               nullable: true
             directReports:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: The contact's direct reports. (The users and contacts that have their manager property set to this contact.) Read-only. Nullable.
             manager:
               $ref: '#/components/schemas/microsoft.graph.directoryObject'
             memberOf:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: Groups that this contact is a member of. Read-only. Nullable.
             transitiveMemberOf:
               type: array
               items:
@@ -11436,7 +11453,7 @@ components:
           properties:
             accountEnabled:
               type: boolean
-              description: 'true if the account is enabled; otherwise, false. Required.'
+              description: 'true if the account is enabled; otherwise, false. default is true.'
               nullable: true
             alternativeSecurityIds:
               type: array
@@ -11521,7 +11538,7 @@ components:
               nullable: true
             operatingSystemVersion:
               type: string
-              description: The version of the operating system on the device. Required.
+              description: Operating system version of the device. Required.
               nullable: true
             physicalIds:
               type: array
@@ -11594,6 +11611,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.command'
+              description: Set of commands sent to this device
           additionalProperties:
             type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
@@ -11653,6 +11671,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.featureRolloutPolicy'
+              description: Nullable.
           additionalProperties:
             type: object
     microsoft.graph.featureRolloutPolicy:
@@ -11663,19 +11682,24 @@ components:
           properties:
             description:
               type: string
+              description: A description for this feature rollout policy.
               nullable: true
             displayName:
               type: string
+              description: The display name for this  feature rollout policy.
             feature:
               $ref: '#/components/schemas/microsoft.graph.stagedFeatureName'
             isAppliedToOrganization:
               type: boolean
+              description: Indicates whether this feature rollout policy should be applied to the entire organization.
             isEnabled:
               type: boolean
+              description: Indicates whether the feature rollout is enabled.
             appliesTo:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: Nullable. Specifies a list of directoryObjects that feature is enabled for.
           additionalProperties:
             type: object
     microsoft.graph.sharedEmailDomain:
@@ -11716,6 +11740,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.scopedRoleMembership'
+              description: Members of this directory role that are scoped to administrative units. Read-only. Nullable.
           additionalProperties:
             type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
@@ -11744,14 +11769,17 @@ components:
           properties:
             description:
               type: string
+              description: Description of the template. Read-only.
               nullable: true
             displayName:
               type: string
+              description: Display name of the template. Read-only.
               nullable: true
             values:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.settingTemplateValue'
+              description: 'Collection of settingTemplateValues that list the set of available settings, defaults and types that make up this template.  Read-only.'
           additionalProperties:
             type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
@@ -11763,7 +11791,7 @@ components:
           properties:
             authenticationType:
               type: string
-              description: Indicates the configured authentication type for the domain. The value is either Managed or Federated. Managed indicates a cloud managed domain where Azure AD performs user authentication.Federated indicates authentication is federated with an identity provider such as the tenant's on-premises Active Directory via Active Directory Federation Services. This property is read-only and is not nullable.
+              description: Indicates the configured authentication type for the domain. The value is either Managed or Federated. Managed indicates a cloud managed domain where Azure AD performs user authentication.Federated indicates authentication is federated with an identity provider such as the tenant's on-premises Active Directory via Active Directory Federation Services. This propert is read-only and is not nullable.
             availabilityStatus:
               type: string
               description: 'This property is always null except when the verify action is used. When the verify action is used, a domain entity is returned in the response. The availabilityStatus property of the domain entity in the response is either AvailableImmediately or EmailVerifiedDomainTakeoverScheduled.'
@@ -11886,7 +11914,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'Telephone number for the organization. NOTE: Although this is a string collection, only one number can be set for this property.'
+              description: 'Telephone number for the organization. Note: Although this is a string collection, only one number can be set for this property.'
             city:
               type: string
               description: City name of the address for the organization.
@@ -11923,7 +11951,7 @@ components:
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The time and date at which the tenant was last synced with the on-premise directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Read-only.'
+              description: 'The time and date at which the tenant was last synced with the on-premise directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''.'
               format: date-time
               nullable: true
             onPremisesSyncEnabled:
@@ -11981,12 +12009,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.certificateBasedAuthConfiguration'
-              description: Navigation property to manage certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
+              description: Navigation property to manage  certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
             extensions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
-              description: The collection of open extensions defined for the organization. Read-only. Nullable.
+              description: The collection of open extensions defined for the organization resource. Nullable.
             settings:
               $ref: '#/components/schemas/microsoft.graph.organizationSettings'
           additionalProperties:
@@ -12016,6 +12044,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.profileCardProperty'
+              description: Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card. Get organization settings returns the properties configured for profile cards for the organization.
           additionalProperties:
             type: object
     microsoft.graph.itemInsightsSettings:
@@ -12026,9 +12055,11 @@ components:
           properties:
             disabledForGroup:
               type: string
+              description: 'The ID of an Azure AD group, of which the members'' item insights are disabled. Default is empty. Optional.'
               nullable: true
             isEnabledInOrganization:
               type: boolean
+              description: true if organization item insights are enabled; false if organization item insights are disabled for all users without exceptions. Default is true. Optional.
               nullable: true
           additionalProperties:
             type: object
@@ -12042,8 +12073,10 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.profileCardAnnotation'
+              description: Allows an administrator to set a custom display label for the directory property and localize it for the users in their tenant.
             directoryPropertyName:
               type: string
+              description: 'Identifies a profileCardProperty resource in Get, Update, or Delete operations. Allows an administrator to surface hidden Azure Active Directory (Azure AD) properties on the Microsoft 365 profile card within their tenant. When present, the Azure AD field referenced in this field will be visible to all users in your tenant on the contact pane of the profile card. Allowed values for this field are: UserPrincipalName, Fax, StreetAddress, PostalCode, StateOrProvince, Alias, CustomAttribute1,  CustomAttribute2, CustomAttribute3, CustomAttribute4, CustomAttribute5, CustomAttribute6, CustomAttribute7, CustomAttribute8, CustomAttribute9, CustomAttribute10, CustomAttribute11, CustomAttribute12, CustomAttribute13, CustomAttribute14, CustomAttribute15.'
               nullable: true
           additionalProperties:
             type: object
@@ -12055,14 +12088,17 @@ components:
           properties:
             displayName:
               type: string
+              description: 'Display name of this group of settings, which comes from the associated template. Read-only.'
               nullable: true
             templateId:
               type: string
+              description: Unique identifier for the template used to create this group of settings. Read-only.
               nullable: true
             values:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.settingValue'
+              description: Collection of name value pairs. Must contain and set all the settings defined in the template.
           additionalProperties:
             type: object
     microsoft.graph.subscribedSku:
@@ -12309,19 +12345,19 @@ components:
       properties:
         defaultValue:
           type: string
-          description: Default value for the setting.
+          description: Default value for the setting. Read-only.
           nullable: true
         description:
           type: string
-          description: Description of the setting.
+          description: Description of the setting. Read-only.
           nullable: true
         name:
           type: string
-          description: Name of the setting.
+          description: Name of the setting. Read-only.
           nullable: true
         type:
           type: string
-          description: Type of the setting.
+          description: Type of the setting. Read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -12379,12 +12415,14 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: Total amount of the directory quota.
           format: int32
           nullable: true
         used:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: Used amount of the directory quota.
           format: int32
           nullable: true
       additionalProperties:
@@ -12511,24 +12549,30 @@ components:
           properties:
             backgroundColor:
               type: string
+              description: 'Color that will appear in place of the background image in low-bandwidth connections. The primary color of your banner logo or your organization color is recommended to be used here. Specify this in hexadecimal (for example, white is #FFFFFF).'
               nullable: true
             backgroundImage:
               type: string
+              description: Image that appears as the background of the sign in page. .png or .jpg not larger than 1920x1080 and smaller than 300kb. A smaller image will reduce bandwidth requirements and make page loads more performant.
               format: base64url
               nullable: true
             bannerLogo:
               type: string
+              description: A banner version of your company logo which appears appears on the sign-in page. .png or .jpg no larger than 36x245px. We recommend using a transparent image with no padding around the logo.
               format: base64url
               nullable: true
             signInPageText:
               type: string
+              description: 'Text that appears at the bottom of the sign-in box. You can use this to communicate additional information, such as the phone number to your help desk or a legal statement. This text must be Unicode and not exceed 1024 characters.'
               nullable: true
             squareLogo:
               type: string
+              description: Square version of your company logo. This appears in Windows 10 out-of-box (OOBE) experiences and when Windows Autopilot is enabled for deployment. .png or .jpg no larger than 240x240px and no more than 10kb in size. We recommend using a transparent image with no padding around the logo.
               format: base64url
               nullable: true
             usernameHintText:
               type: string
+              description: 'String that shows as the hint in the username textbox on the sign in screen. This text must be Unicode, without links or code, and can''t exceed 64 characters.'
               nullable: true
           additionalProperties:
             type: object
@@ -12545,11 +12589,13 @@ components:
       properties:
         displayName:
           type: string
+          description: 'If present, the value of this field is used by the profile card as the default property label in the experience (for example, ''Cost Center'').'
           nullable: true
         localizations:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.displayNameLocalization'
+          description: 'Each resource in this collection represents the localized value of the attribute name for a given language, used as the default label for that locale. For example, a user with a no-NB client gets ''Kostnads Senter'' as the attribute label, rather than ''Cost Center.'''
       additionalProperties:
         type: object
     microsoft.graph.settingValue:
@@ -12558,7 +12604,7 @@ components:
       properties:
         name:
           type: string
-          description: Name of the setting (as defined by the groupSettingTemplate).
+          description: Name of the setting (as defined by the directorySettingTemplate).
           nullable: true
         value:
           type: string
@@ -12603,7 +12649,7 @@ components:
           nullable: true
         provisioningStatus:
           type: string
-          description: 'The provisioning status of the service plan. Possible values:''Success'' - Service is fully provisioned.''Disabled'' - Service has been disabled.''PendingInput'' - Service is not yet provisioned; awaiting service confirmation.''PendingActivation'' - Service is provisioned but requires explicit activation by administrator (for example, Intune_O365 service plan)''PendingProvisioning'' - Microsoft has added a new service to the product SKU and it has not been activated in the tenant, yet.'
+          description: 'The provisioning status of the service plan. Possible values:''Success'' - Service is fully provisioned.''Disabled'' - Service has been disabled.''PendingInput'' - Service is not yet provisioned; awaiting service confirmation.''PendingActivation'' - Service is provisioned but requires explicit activation by administrator (for example, Intune_O365 service plan).''PendingProvisioning'' - Microsoft has added a new service to the product SKU and it has not been activated in the tenant, yet.'
           nullable: true
         servicePlanId:
           pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
@@ -12673,9 +12719,11 @@ components:
       properties:
         displayName:
           type: string
+          description: 'If present, the value of this field contains the displayName string that has been set for the language present in the languageTag field.'
           nullable: true
         languageTag:
           type: string
+          description: Provides the language culture-code and friendly name of the language that the displayName field has been provided in.
           nullable: true
       additionalProperties:
         type: object

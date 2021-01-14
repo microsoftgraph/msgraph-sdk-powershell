@@ -5694,7 +5694,7 @@ components:
               format: date-time
             activityDisplayName:
               type: string
-              description: 'Indicates the activity name or the operation name (examples: ''Create User'' and ''Add member to group''). For full list, see Azure AD activity list.'
+              description: 'Indicates the activity name or the operation name (E.g. ''Create User'', ''Add member to group''). For a list of activities logged, refer to Azure Ad activity list.'
             additionalDetails:
               type: array
               items:
@@ -5720,7 +5720,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.operationResult'
             resultReason:
               type: string
-              description: Describes cause of 'failure' or 'timeout' results.
+              description: Indicates the reason for failure if the result is 'Failure' or 'timeout'.
               nullable: true
             targetResources:
               type: array
@@ -5737,36 +5737,44 @@ components:
           properties:
             action:
               type: string
+              description: 'Indicates the activity name or the operation name (for example, Create user, Add member to group). For a list of activities logged, refer to Azure AD activity list.'
               nullable: true
             activityDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
               format: date-time
             changeId:
               type: string
+              description: Unique ID of this change in this cycle.
               nullable: true
             cycleId:
               type: string
+              description: Unique ID per job iteration.
               nullable: true
             durationInMilliseconds:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: Indicates how long this provisioning action took to finish. Measured in milliseconds.
               format: int32
               nullable: true
             initiatedBy:
               $ref: '#/components/schemas/microsoft.graph.initiator'
             jobId:
               type: string
+              description: The unique ID for the whole provisioning job.
               nullable: true
             modifiedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.modifiedProperty'
+              description: Details of each property that was modified in this provisioning action on this object.
             provisioningSteps:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.provisioningStep'
+              description: Details of each step in provisioning.
             servicePrincipal:
               $ref: '#/components/schemas/microsoft.graph.provisioningServicePrincipal'
             sourceIdentity:
@@ -5781,6 +5789,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.provisioningSystemDetails'
             tenantId:
               type: string
+              description: Unique Azure AD tenant ID.
               nullable: true
           additionalProperties:
             type: object
@@ -5805,34 +5814,40 @@ components:
           properties:
             alternateSignInName:
               type: string
+              description: The alternate sign-in identity whenever you use phone number to sign-in.
               nullable: true
             appDisplayName:
               type: string
-              description: App name displayed in the Azure Portal.
+              description: The application name displayed in the Azure Portal.
               nullable: true
             appId:
               type: string
-              description: Unique GUID representing the app ID in the Azure Active Directory.
+              description: The application identifier in Azure Active Directory.
               nullable: true
             appliedConditionalAccessPolicies:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appliedConditionalAccessPolicy'
+              description: A list of conditional access policies that are triggered by the corresponding sign-in activity.
             authenticationDetails:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.authenticationDetail'
+              description: The result of the authentication attempt and additional details on the authentication method.
             authenticationMethodsUsed:
               type: array
               items:
                 type: string
                 nullable: true
+              description: 'The authentication methods used. Possible values: SMS, Authenticator App, App Verification code, Password, FIDO, PTA, or PHS.'
             authenticationProcessingDetails:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.keyValue'
+              description: 'Additional authentication processing details, such as the agent name in case of PTA/PHS or Server/farm name in case of federated authentication.'
             authenticationRequirement:
               type: string
+              description: 'This holds the highest level of authentication needed through all the sign-in steps, for sign-in to succeed.'
               nullable: true
             authenticationRequirementPolicies:
               type: array
@@ -5840,28 +5855,28 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.authenticationRequirementPolicy'
             clientAppUsed:
               type: string
-              description: 'Identifies the legacy client used for sign-in activity.  Includes Browser, Exchange Active Sync, modern clients, IMAP, MAPI, SMTP, and POP.'
+              description: 'The legacy client used for sign-in activity. For example, Browser, Exchange Active Sync,Modern clients, IMAP, MAPI, SMTP, or POP.'
               nullable: true
             conditionalAccessStatus:
               $ref: '#/components/schemas/microsoft.graph.conditionalAccessStatus'
             correlationId:
               type: string
-              description: The request ID sent from the client when the sign-in is initiated; used to troubleshoot sign-in activity.
+              description: The identifier that's sent from the client when sign-in is initiated. This is used for troubleshooting the corresponding sign-in activity when calling for support.
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Date and time (UTC) the sign-in was initiated. Example: midnight on Jan 1, 2014 is reported as ''2014-01-01T00:00:00Z''.'
+              description: 'The date and time the sign-in was initiated. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''.'
               format: date-time
             deviceDetail:
               $ref: '#/components/schemas/microsoft.graph.deviceDetail'
             ipAddress:
               type: string
-              description: IP address of the client used to sign in.
+              description: The IP address of the client from where the sign-in occurred.
               nullable: true
             isInteractive:
               type: boolean
-              description: Indicates if a sign-in is interactive or not.
+              description: Indicates whether a sign-in is interactive or not.
               nullable: true
             location:
               $ref: '#/components/schemas/microsoft.graph.signInLocation'
@@ -5871,22 +5886,25 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.networkLocationDetail'
+              description: 'The network location details, such as IP address, location of the sign-in, the type of network used, and its names. Possible values: Named Netowrk, Extranet, Intranet, or Trusted Network.'
             originalRequestId:
               type: string
+              description: The request identifier of the first request in the authentication sequence.
               nullable: true
             processingTimeInMilliseconds:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: The request processing time in milliseconds in AD STS.
               format: int32
               nullable: true
             resourceDisplayName:
               type: string
-              description: Name of the resource the user signed into.
+              description: The name of the resource that the user signed in to.
               nullable: true
             resourceId:
               type: string
-              description: ID of the resource that the user signed into.
+              description: The identifier of the resource that the user signed in to.
               nullable: true
             resourceTenantId:
               type: string
@@ -5897,7 +5915,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.riskEventType'
-              description: 'Risk event types associated with the sign-in. The possible values are: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, and unknownFutureValue.'
+              description: 'The list of risk event types associated with the sign-in. Possible values: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, or unknownFutureValue.'
             riskEventTypes_v2:
               type: array
               items:
@@ -5912,8 +5930,10 @@ components:
               $ref: '#/components/schemas/microsoft.graph.riskState'
             servicePrincipalId:
               type: string
+              description: The application identifier used for sign-in. This field is populated when you are signing in using an application.
             servicePrincipalName:
               type: string
+              description: The application name used for sign-in. This field is populated when you are signing in using an application.
               nullable: true
             signInEventTypes:
               type: array
@@ -5924,22 +5944,24 @@ components:
               $ref: '#/components/schemas/microsoft.graph.signInStatus'
             tokenIssuerName:
               type: string
+              description: 'The name of the identity provider. For example, sts.microsoft.com.'
               nullable: true
             tokenIssuerType:
               $ref: '#/components/schemas/microsoft.graph.tokenIssuerType'
             userAgent:
               type: string
+              description: The user agent information related to sign-in.
               nullable: true
             userDisplayName:
               type: string
-              description: Display name of the user that initiated the sign-in.
+              description: The display name of the user.
               nullable: true
             userId:
               type: string
-              description: ID of the user that initiated the sign-in.
+              description: The identifier of the user.
             userPrincipalName:
               type: string
-              description: User principal name of the user that initiated the sign-in.
+              description: The UPN of the user.
               nullable: true
           additionalProperties:
             type: object
@@ -5989,14 +6011,18 @@ components:
             aggregatedEventDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''.'
               format: date-time
               nullable: true
             appDisplayName:
               type: string
+              description: Name of the application that the user signed in to.
             appId:
               type: string
+              description: ID of the application that the user signed in to.
             signInCount:
               type: integer
+              description: Count of sign-ins made by the application.
               format: int64
               nullable: true
             status:
@@ -6013,18 +6039,25 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.registrationAuthMethod'
+              description: 'Represents the authentication method that the user has registered. Possible values are: email, mobilePhone, officePhone, securityQuestion (only used for self-service password reset), appNotification, appCode, and alternateMobilePhone (supported only in registration).'
             isCapable:
               type: boolean
+              description: Indicates whether the user is ready to perform self-service password reset or MFA.
             isEnabled:
               type: boolean
+              description: Indiciates whether the user enabled to perform self-service password reset.
             isMfaRegistered:
               type: boolean
+              description: Indiciates whether the user is registered for MFA.
             isRegistered:
               type: boolean
+              description: Indicates whether the user has registered any authentication methods for self-service password reset.
             userDisplayName:
               type: string
+              description: Provides the user name of the corresponding user.
             userPrincipalName:
               type: string
+              description: Provides the user principal name of the corresponding user.
           additionalProperties:
             type: object
     microsoft.graph.PrintUsageSummaryByPrinter:
@@ -6081,7 +6114,7 @@ components:
       properties:
         content:
           type: string
-          description: Not yet documented
+          description: Report content; details vary by report type.
           format: base64url
           nullable: true
       additionalProperties:
@@ -6095,16 +6128,20 @@ components:
           properties:
             appDisplayName:
               type: string
+              description: Name of the application that the user signed in to.
             failedSignInCount:
               type: integer
+              description: Count of failed sign-ins made by the application.
               format: int64
               nullable: true
             successfulSignInCount:
               type: integer
+              description: Count of successful sign-ins made by the application.
               format: int64
               nullable: true
             successPercentage:
               type: number
+              description: Percentage of successful sign-ins made by the application.
               format: double
               nullable: true
           additionalProperties:
@@ -6183,11 +6220,13 @@ components:
               $ref: '#/components/schemas/microsoft.graph.usageAuthMethod'
             failureActivityCount:
               type: integer
+              description: Provides the count of failed resets or registration data.
               format: int64
             feature:
               $ref: '#/components/schemas/microsoft.graph.featureType'
             successfulActivityCount:
               type: integer
+              description: Provides the count of successful registrations or resets.
               format: int64
           additionalProperties:
             type: object
@@ -6199,11 +6238,13 @@ components:
           properties:
             totalUserCount:
               type: integer
+              description: Provides the total user count in the tenant.
               format: int64
             userRegistrationCounts:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.userRegistrationCount'
+              description: A collection of registration count and status information for users in your tenant.
           additionalProperties:
             type: object
     microsoft.graph.emailActivitySummary:
@@ -6695,30 +6736,37 @@ components:
           properties:
             android:
               type: integer
+              description: The activation count on an Android device.
               format: int64
               nullable: true
             ios:
               type: integer
+              description: The activation count on iOS.
               format: int64
               nullable: true
             mac:
               type: integer
+              description: The activation count on Mac OS.
               format: int64
               nullable: true
             productType:
               type: string
+              description: 'The product type, such as ''Microsoft 365 ProPlus'' or ''Project Client''.'
               nullable: true
             reportRefreshDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
+              description: The latest date of the content.
               format: date
               nullable: true
             windows:
               type: integer
+              description: The activation count on Windows. This number includes every activation on any Windows computer.
               format: int64
               nullable: true
             windows10Mobile:
               type: integer
+              description: The activation count on Windows 10 mobile.
               format: int64
               nullable: true
           additionalProperties:
@@ -6731,22 +6779,27 @@ components:
           properties:
             activated:
               type: integer
+              description: The number of users who have activated the product.
               format: int64
               nullable: true
             assigned:
               type: integer
+              description: The number of users have been assigned for the product license.
               format: int64
               nullable: true
             productType:
               type: string
+              description: The product type such as 'Microsoft 365 ProPlus' or 'Project Client'.
               nullable: true
             reportRefreshDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
+              description: The latest date of the content.
               format: date
               nullable: true
             sharedComputerActivation:
               type: integer
+              description: The number of users who have used the product on a shared computer.
               format: int64
               nullable: true
           additionalProperties:
@@ -6759,18 +6812,22 @@ components:
           properties:
             displayName:
               type: string
+              description: 'The name displayed in the address book for the user. This is usually the combination of the user''s first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates.'
               nullable: true
             reportRefreshDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
+              description: The latest date of the content.
               format: date
               nullable: true
             userActivationCounts:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.userActivationCounts'
+              description: The user's latest product activation counts on all the platforms for all the assigned product types.
             userPrincipalName:
               type: string
+              description: 'The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user''s email name. The general format is alias@domain, where domain must be present in the tenant’s collection of verified domains. This property is required when a user is created.'
               nullable: true
           additionalProperties:
             type: object
@@ -6782,43 +6839,53 @@ components:
           properties:
             exchange:
               type: integer
+              description: The number of active users in Exchange. Any user who can read and send email is considered an active user.
               format: int64
               nullable: true
             office365:
               type: integer
+              description: 'The number of active users in Microsoft 365. This number includes all the active users in Exchange, OneDrive, SharePoint, Skype For Business, Yammer, and Microsoft Teams. You can find the definition of active user for each product in the respective property description.'
               format: int64
               nullable: true
             oneDrive:
               type: integer
+              description: 'The number of active users in OneDrive. Any user who viewed or edited files, shared files internally or externally, or synced files is considered an active user.'
               format: int64
               nullable: true
             reportDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
+              description: The date on which a number of users were active.
               format: date
               nullable: true
             reportPeriod:
               type: string
+              description: The number of days the report covers.
               nullable: true
             reportRefreshDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
+              description: The latest date of the content.
               format: date
               nullable: true
             sharePoint:
               type: integer
+              description: 'The number of active users in SharePoint. Any user who viewed or edited files, shared files internally or externally, synced files, or viewed SharePoint pages is considered an active user.'
               format: int64
               nullable: true
             skypeForBusiness:
               type: integer
+              description: 'The number of active users in Skype For Business. Any user who organized or participated in conferences, or joined peer-to-peer sessions is considered an active user.'
               format: int64
               nullable: true
             teams:
               type: integer
+              description: 'The number of active users in Microsoft Teams. Any user who posted messages in team channels, sent messages in private chat sessions, or participated in meetings or calls is considered an active user.'
               format: int64
               nullable: true
             yammer:
               type: integer
+              description: 'The number of active users in Yammer. Any user who can post, read, or like messages is considered an active user.'
               format: int64
               nullable: true
           additionalProperties:
@@ -6834,101 +6901,125 @@ components:
               items:
                 type: string
                 nullable: true
+              description: All the products assigned for the user.
             deletedDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
+              description: The date when the delete operation happened. Default value is 'null' when the user has not been deleted.
               format: date
               nullable: true
             displayName:
               type: string
+              description: 'The name displayed in the address book for the user. This is usually the combination of the user''s first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates.'
               nullable: true
             exchangeLastActivityDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
+              description: The date when user last read or sent email.
               format: date
               nullable: true
             exchangeLicenseAssignDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
+              description: The last date when the user was assigned an Exchange license.
               format: date
               nullable: true
             hasExchangeLicense:
               type: boolean
+              description: Whether the user has been assigned an Exchange license.
               nullable: true
             hasOneDriveLicense:
               type: boolean
+              description: Whether the user has been assigned a OneDrive license.
               nullable: true
             hasSharePointLicense:
               type: boolean
+              description: Whether the user has been assigned a SharePoint license.
               nullable: true
             hasSkypeForBusinessLicense:
               type: boolean
+              description: Whether the user has been assigned a Skype For Business license.
               nullable: true
             hasTeamsLicense:
               type: boolean
+              description: Whether the user has been assigned a Teams license.
               nullable: true
             hasYammerLicense:
               type: boolean
+              description: Whether the user has been assigned a Yammer license.
               nullable: true
             isDeleted:
               type: boolean
+              description: Whether this user has been deleted or soft deleted.
               nullable: true
             oneDriveLastActivityDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
+              description: 'The date when user last viewed or edited files, shared files internally or externally, or synced files.'
               format: date
               nullable: true
             oneDriveLicenseAssignDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
+              description: The last date when the user was assigned a OneDrive license.
               format: date
               nullable: true
             reportRefreshDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
+              description: The latest date of the content.
               format: date
               nullable: true
             sharePointLastActivityDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
+              description: 'The date when user last viewed or edited files, shared files internally or externally, synced files, or viewed SharePoint pages.'
               format: date
               nullable: true
             sharePointLicenseAssignDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
+              description: The last date when the user was assigned a SharePoint license.
               format: date
               nullable: true
             skypeForBusinessLastActivityDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
+              description: 'The date when user last organized or participated in conferences, or joined peer-to-peer sessions.'
               format: date
               nullable: true
             skypeForBusinessLicenseAssignDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
+              description: The last date when the user was assigned a Skype For Business license.
               format: date
               nullable: true
             teamsLastActivityDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
+              description: 'The date when user last posted messages in team channels, sent messages in private chat sessions, or participated in meetings or calls.'
               format: date
               nullable: true
             teamsLicenseAssignDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
+              description: The last date when the user was assigned a Teams license.
               format: date
               nullable: true
             userPrincipalName:
               type: string
+              description: 'The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user''s email name. The general format is alias@domain, where domain must be present in the tenant’s collection of verified domains. This property is required when a user is created.'
               nullable: true
             yammerLastActivityDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
+              description: 'The date when user last posted, read, or liked message.'
               format: date
               nullable: true
             yammerLicenseAssignDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
+              description: The last date when the user was assigned a Yammer license.
               format: date
               nullable: true
           additionalProperties:
@@ -6941,31 +7032,38 @@ components:
           properties:
             exchangeEmailsReceived:
               type: integer
+              description: The number of emails received by Group mailboxes.
               format: int64
               nullable: true
             reportDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
+              description: 'The date on which a number of emails were sent to a group mailbox or a number of messages were posted, read, or liked in a Yammer group'
               format: date
               nullable: true
             reportPeriod:
               type: string
+              description: The number of days the report covers.
               nullable: true
             reportRefreshDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
+              description: The latest date of the content.
               format: date
               nullable: true
             yammerMessagesLiked:
               type: integer
+              description: The number of messages liked in Yammer groups.
               format: int64
               nullable: true
             yammerMessagesPosted:
               type: integer
+              description: The number of messages posted to Yammer groups.
               format: int64
               nullable: true
             yammerMessagesRead:
               type: integer
+              description: The number of messages read in Yammer groups.
               format: int64
               nullable: true
           additionalProperties:
@@ -6978,74 +7076,93 @@ components:
           properties:
             exchangeMailboxStorageUsedInBytes:
               type: integer
+              description: The storage used of the group mailbox.
               format: int64
               nullable: true
             exchangeMailboxTotalItemCount:
               type: integer
+              description: The number of items in the group mailbox.
               format: int64
               nullable: true
             exchangeReceivedEmailCount:
               type: integer
+              description: The number of email that the group mailbox received.
               format: int64
               nullable: true
             externalMemberCount:
               type: integer
+              description: The group external member count.
               format: int64
               nullable: true
             groupDisplayName:
               type: string
+              description: The display name of the group.
               nullable: true
             groupId:
               type: string
+              description: The group id.
               nullable: true
             groupType:
               type: string
+              description: 'The group type. Possible values are: Public or Private.'
               nullable: true
             isDeleted:
               type: boolean
+              description: Whether this user has been deleted or soft deleted.
               nullable: true
             lastActivityDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
+              description: 'The last activity date for the following scenarios:  group mailbox received email; user viewed, edited, shared, or synced files in SharePoint document library; user viewed SharePoint pages; user posted, read, or liked messages in Yammer groups.'
               format: date
               nullable: true
             memberCount:
               type: integer
+              description: The group member count.
               format: int64
               nullable: true
             ownerPrincipalName:
               type: string
+              description: The group owner principal name.
               nullable: true
             reportPeriod:
               type: string
+              description: The number of days the report covers.
               nullable: true
             reportRefreshDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
+              description: The latest date of the content.
               format: date
               nullable: true
             sharePointActiveFileCount:
               type: integer
+              description: The number of active files in SharePoint Group site.
               format: int64
               nullable: true
             sharePointSiteStorageUsedInBytes:
               type: integer
+              description: The storage used by SharePoint Group site.
               format: int64
               nullable: true
             sharePointTotalFileCount:
               type: integer
+              description: The total number of files in SharePoint Group site.
               format: int64
               nullable: true
             yammerLikedMessageCount:
               type: integer
+              description: The number of messages liked in Yammer groups.
               format: int64
               nullable: true
             yammerPostedMessageCount:
               type: integer
+              description: The number of messages posted to Yammer groups.
               format: int64
               nullable: true
             yammerReadMessageCount:
               type: integer
+              description: The number of messages read in Yammer groups.
               format: int64
               nullable: true
           additionalProperties:
@@ -7058,23 +7175,28 @@ components:
           properties:
             active:
               type: integer
+              description: 'The number of files that were viewed, edited, shared, or synced in the group''s SharePoint document library.'
               format: int64
               nullable: true
             reportDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
+              description: The date on which a number of files were active in the group's SharePoint site.
               format: date
               nullable: true
             reportPeriod:
               type: string
+              description: The number of days the report covers.
               nullable: true
             reportRefreshDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
+              description: The latest date of the content.
               format: date
               nullable: true
             total:
               type: integer
+              description: The total number of files in the group's SharePoint document library.
               format: int64
               nullable: true
           additionalProperties:
@@ -7087,23 +7209,28 @@ components:
           properties:
             active:
               type: integer
+              description: 'The number of active groups. A group is considered active if any of the following occurred: group mailbox received email; user viewed, edited, shared, or synced files in SharePoint document library; user viewed SharePoint pages; user posted, read, or liked messages in Yammer groups.'
               format: int64
               nullable: true
             reportDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
+              description: The date on which a number of groups were active.
               format: date
               nullable: true
             reportPeriod:
               type: string
+              description: The number of days the report covers.
               nullable: true
             reportRefreshDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
+              description: The latest date of the content.
               format: date
               nullable: true
             total:
               type: integer
+              description: The total number of groups.
               format: int64
               nullable: true
           additionalProperties:
@@ -7116,23 +7243,28 @@ components:
           properties:
             mailboxStorageUsedInBytes:
               type: integer
+              description: The storage used in group mailbox.
               format: int64
               nullable: true
             reportDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
+              description: The snapshot date for Exchange and SharePoint used storage.
               format: date
               nullable: true
             reportPeriod:
               type: string
+              description: The number of days the report covers.
               nullable: true
             reportRefreshDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
+              description: The latest date of the content.
               format: date
               nullable: true
             siteStorageUsedInBytes:
               type: integer
+              description: The storage used in SharePoint document library.
               format: int64
               nullable: true
           additionalProperties:
@@ -7145,66 +7277,82 @@ components:
           properties:
             exchangeActive:
               type: integer
+              description: The number of active users on Exchange. Any user who can read and send email is considered an active user.
               format: int64
               nullable: true
             exchangeInactive:
               type: integer
+              description: The number of inactive users on Exchange.
               format: int64
               nullable: true
             office365Active:
               type: integer
+              description: The number of active users on Microsoft 365.
               format: int64
               nullable: true
             office365Inactive:
               type: integer
+              description: The number of inactive users on Microsoft 365.
               format: int64
               nullable: true
             oneDriveActive:
               type: integer
+              description: 'The number of active users on OneDrive. Any user who viewed or edited files, shared files internally or externally, or synced files is considered an active user.'
               format: int64
               nullable: true
             oneDriveInactive:
               type: integer
+              description: The number of inactive users on OneDrive.
               format: int64
               nullable: true
             reportPeriod:
               type: string
+              description: The number of days the report covers.
               nullable: true
             reportRefreshDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
+              description: The latest date of the content.
               format: date
               nullable: true
             sharePointActive:
               type: integer
+              description: 'The number of active users on SharePoint. Any user who viewed or edited files, shared files internally or externally, synced files, or viewed SharePoint pages is considered an active user.'
               format: int64
               nullable: true
             sharePointInactive:
               type: integer
+              description: The number of inactive users on SharePoint.
               format: int64
               nullable: true
             skypeForBusinessActive:
               type: integer
+              description: 'The number of active users on Skype For Business. Any user who organized or participated in conferences, or joined peer-to-peer sessions is considered an active user.'
               format: int64
               nullable: true
             skypeForBusinessInactive:
               type: integer
+              description: The number of inactive users on Skype For Business.
               format: int64
               nullable: true
             teamsActive:
               type: integer
+              description: 'The number of active users on Microsoft Teams. Any user who posted messages in team channels, sent messages in private chat sessions, or participated in meetings or calls is considered an active user.'
               format: int64
               nullable: true
             teamsInactive:
               type: integer
+              description: The number of inactive users on Microsoft Teams.
               format: int64
               nullable: true
             yammerActive:
               type: integer
+              description: 'The number of active users on Yammer. Any user who can post, read, or like messages is considered an active user.'
               format: int64
               nullable: true
             yammerInactive:
               type: integer
+              description: The number of inactive users on Yammer.
               format: int64
               nullable: true
           additionalProperties:
@@ -7448,6 +7596,7 @@ components:
           properties:
             failedSignInCount:
               type: integer
+              description: Number of failed sign in on Active Directory Federation Service in the period specified.
               format: int64
             migrationStatus:
               $ref: '#/components/schemas/microsoft.graph.migrationStatus'
@@ -7455,27 +7604,36 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.keyValuePair'
+              description: 'Specifies all the validations check done on applications configuration details to evaluate if the application is ready to be moved to Azure AD. Possible names are: AdditionalWSFedEndpointCheckResult,  AllowedAuthenticationClassReferencesCheckResult, AlwaysRequireAuthenticationCheckResult,   AutoUpdateEnabledCheckResult, ClaimsProviderNameCheckResult, EncryptClaimsCheckResult,  EncryptedNameIdRequiredCheckResult, MonitoringEnabledCheckResult,NotBeforeSkewCheckResult,  RequestMFAFromClaimsProvidersCheckResult, SignedSamlRequestsRequiredCheckResult, AdditionalAuthenticationRulesCheckResult, TokenLifetimeCheckResult,  DelegationAuthorizationRulesCheckResult, IssuanceAuthorizationRulesCheckResult, IssuanceTransformRulesCheckResult. Possible result values are 0, 1, or 2. 0 when the validation check passed, 1 when the validation check failed and 2 when the validation check is a warning.'
             relyingPartyId:
               type: string
+              description: This identifier is used to identify the relying party to this Federation Service. It is used when issuing claims to the relying party.
             relyingPartyName:
               type: string
+              description: Name of application or other entity on the internet that uses an identity provider to authenticate a user who wants to log in.
             replyUrls:
               type: array
               items:
                 type: string
+              description: Specifies where the relying party expects to receive the token.
             serviceId:
               type: string
+              description: Uniquely identifies the Active Directory forest.
             signInSuccessRate:
               type: number
+              description: Number of successful / (number of successful + number of failed sign ins) on Active Directory Federation Service in the period specified.
               format: double
             successfulSignInCount:
               type: integer
+              description: Number of successful sign ins on Active Directory Federation Service.
               format: int64
             totalSignInCount:
               type: integer
+              description: Number of successful + failed sign ins failed sign ins on Active Directory Federation Service in the period specified.
               format: int64
             uniqueUserCount:
               type: integer
+              description: Number of unique users that have signed into the application.
               format: int64
           additionalProperties:
             type: object
@@ -9098,17 +9256,22 @@ components:
             eventDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''.'
               format: date-time
             failureReason:
               type: string
+              description: Provides the failure reason for the corresponding reset or registration workflow.
             feature:
               $ref: '#/components/schemas/microsoft.graph.featureType'
             isSuccess:
               type: boolean
+              description: Indicates success or failure of the workflow.
             userDisplayName:
               type: string
+              description: User name of the user performing the reset or registration workflow.
             userPrincipalName:
               type: string
+              description: User principal name of the user performing the reset or registration workflow.
           additionalProperties:
             type: object
     microsoft.graph.entity:
@@ -9126,11 +9289,11 @@ components:
       properties:
         key:
           type: string
-          description: Key for the key-value pair.
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Value for the key-value pair.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object
@@ -9187,9 +9350,11 @@ components:
       properties:
         displayName:
           type: string
+          description: Name of the person or service that initiated the provisioning event.
           nullable: true
         id:
           type: string
+          description: Uniquely identifies the person or service that initiated the provisioning event.
           nullable: true
         initiatorType:
           $ref: '#/components/schemas/microsoft.graph.initiatorType'
@@ -9201,15 +9366,15 @@ components:
       properties:
         displayName:
           type: string
-          description: Indicates the property name of the target attribute that was changed.
+          description: Name of property that was modified.
           nullable: true
         newValue:
           type: string
-          description: Indicates the updated value for the propery.
+          description: New property value.
           nullable: true
         oldValue:
           type: string
-          description: Indicates the previous value (before the update) for the property.
+          description: Old property value.
           nullable: true
       additionalProperties:
         type: object
@@ -9219,11 +9384,13 @@ components:
       properties:
         description:
           type: string
+          description: Summary of what occurred during the step.
           nullable: true
         details:
           $ref: '#/components/schemas/microsoft.graph.detailsInfo'
         name:
           type: string
+          description: Name of the step.
           nullable: true
         provisioningStepType:
           $ref: '#/components/schemas/microsoft.graph.provisioningStepType'
@@ -9246,12 +9413,15 @@ components:
           $ref: '#/components/schemas/microsoft.graph.detailsInfo'
         displayName:
           type: string
+          description: Display name of the identity.
           nullable: true
         id:
           type: string
+          description: Uniquely identifies the identity.
           nullable: true
         identityType:
           type: string
+          description: 'Type of identity that has been provisioned, such as ''user'' or ''group''.'
           nullable: true
       additionalProperties:
         type: object
@@ -9263,9 +9433,11 @@ components:
           $ref: '#/components/schemas/microsoft.graph.detailsInfo'
         displayName:
           type: string
+          description: Name of the system that a user was provisioned to or from.
           nullable: true
         id:
           type: string
+          description: Identifier of the system that a user was provisioned to or from.
           nullable: true
       additionalProperties:
         type: object
@@ -9315,23 +9487,29 @@ components:
       properties:
         authenticationMethod:
           type: string
+          description: 'The type of authentication method used to perform this step of authentication. Possible values: Password, SMS, Voice, Authenticator App, Software OATH token, Satisfied by token.'
           nullable: true
         authenticationMethodDetail:
           type: string
+          description: 'Details about the authentication method used to perform this authentication step. For example, phone number (for SMS and voice), device name (for Authenticator app), and password source (e.g. cloud, AD FS, PTA, PHS).'
           nullable: true
         authenticationStepDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'Represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''.'
           format: date-time
           nullable: true
         authenticationStepRequirement:
           type: string
+          description: 'The step of authentication that this satisfied. For example, primary authentication, or multi-factor authentication.'
           nullable: true
         authenticationStepResultDetail:
           type: string
+          description: 'Details about why the step succeeded or failed. For examples, user is blocked, fraud code entered, no phone input - timed out, phone unreachable, or claim in token.'
           nullable: true
         succeeded:
           type: boolean
+          description: 'Indicates the status of the authentication step. Possible values: succeeded, failed.'
           nullable: true
       additionalProperties:
         type: object
@@ -9360,34 +9538,34 @@ components:
       properties:
         browser:
           type: string
-          description: Indicates the browser information of the used for signing in.
+          description: Indicates the browser information of the used for signing-in.
           nullable: true
         browserId:
           type: string
           nullable: true
         deviceId:
           type: string
-          description: Refers to the UniqueID of the device used for signing in.
+          description: Refers to the UniqueID of the device used for signing-in.
           nullable: true
         displayName:
           type: string
-          description: Refers to the name of the device used for signing in.
+          description: Refers to the name of the device used for signing-in.
           nullable: true
         isCompliant:
           type: boolean
-          description: Indicates whether the device is compliant.
+          description: Indicates whether the device is compliant or not.
           nullable: true
         isManaged:
           type: boolean
-          description: Indicates whether the device is managed.
+          description: Indicates if the device is managed or not.
           nullable: true
         operatingSystem:
           type: string
-          description: Indicates the operating system name and version used for signing in.
+          description: Indicates the OS name and version used for signing-in.
           nullable: true
         trustType:
           type: string
-          description: 'Provides information about whether the signed-in device is Workplace Joined, AzureAD Joined, Domain Joined.'
+          description: 'Indicates information on whether the signed-in device is Workplace Joined, AzureAD Joined, Domain Joined.'
           nullable: true
       additionalProperties:
         type: object
@@ -9417,9 +9595,11 @@ components:
       properties:
         authDetail:
           type: string
+          description: Indicates the MFA auth detail for the corresponding Sign-in activity when the MFA Required is 'Yes'.
           nullable: true
         authMethod:
           type: string
+          description: 'Indicates the MFA Auth methods (SMS, Phone, Authenticator App are some of the value) for the corresponding sign-in activity when the MFA Required field is ''Yes''.'
           nullable: true
       additionalProperties:
         type: object
@@ -9432,6 +9612,7 @@ components:
           items:
             type: string
             nullable: true
+          description: Provides the name of the network used when signing in.
         networkType:
           $ref: '#/components/schemas/microsoft.graph.networkType'
       additionalProperties:
@@ -9621,6 +9802,7 @@ components:
       properties:
         registrationCount:
           type: integer
+          description: Provides the registration count for your tenant.
           format: int64
         registrationStatus:
           $ref: '#/components/schemas/microsoft.graph.registrationStatusType'
@@ -9632,33 +9814,41 @@ components:
       properties:
         activatedOnSharedComputer:
           type: boolean
+          description: True if the user used the product on a shared computer before.
           nullable: true
         android:
           type: integer
+          description: The activation count on an Android device.
           format: int64
           nullable: true
         ios:
           type: integer
+          description: The activation count on iOS.
           format: int64
           nullable: true
         lastActivatedDate:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
           type: string
+          description: The date of the latest activation.
           format: date
           nullable: true
         mac:
           type: integer
+          description: The activation count on Mac OS.
           format: int64
           nullable: true
         productType:
           type: string
+          description: 'The product type, such as ''Microsoft 365 ProPlus''or ''Project Client''.'
           nullable: true
         windows:
           type: integer
+          description: The activation count on Windows. This number includes every activation on any Windows computer.
           format: int64
           nullable: true
         windows10Mobile:
           type: integer
+          description: The activation count on Windows 10 mobile.
           format: int64
           nullable: true
       additionalProperties:
@@ -9832,12 +10022,12 @@ components:
           nullable: true
         latitude:
           type: number
-          description: 'Optional. The latitude, in decimal, for the item. Read-only.'
+          description: 'Optional. The latitude, in decimal, for the item. Writable on OneDrive Personal.'
           format: double
           nullable: true
         longitude:
           type: number
-          description: 'Optional. The longitude, in decimal, for the item. Read-only.'
+          description: 'Optional. The longitude, in decimal, for the item. Writable on OneDrive Personal.'
           format: double
           nullable: true
       additionalProperties:
