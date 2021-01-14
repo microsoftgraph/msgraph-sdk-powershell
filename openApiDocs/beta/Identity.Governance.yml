@@ -97712,47 +97712,58 @@ components:
           properties:
             businessFlowTemplateId:
               type: string
+              description: The business flow template identifier. Required on create.  This value is case sensitive.
             createdBy:
               $ref: '#/components/schemas/microsoft.graph.userIdentity'
             description:
               type: string
+              description: 'The description provided by the access review creator, to show to the reviewers.'
               nullable: true
             displayName:
               type: string
+              description: The access review name. Required on create.
             endDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The DateTime when the review is scheduled to end. This must be at least one day later than the start date.  Required on create.
               format: date-time
             reviewedEntity:
               $ref: '#/components/schemas/microsoft.graph.identity'
             reviewerType:
               type: string
+              description: 'The relationship type of reviewer to the target object, one of self, delegated or entityOwners. Required on create.'
               nullable: true
             settings:
               $ref: '#/components/schemas/microsoft.graph.accessReviewSettings'
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The DateTime when the review is scheduled to be start.  This could be a date in the future.  Required on create.
               format: date-time
             status:
               type: string
+              description: 'This read-only field specifies the status of an accessReview. The typical states include Initializing, NotStarted, Starting,InProgress, Completing, Completed, AutoReviewing, and AutoReviewed.'
               nullable: true
             decisions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewDecision'
+              description: The collection of decisions for this access review.
             instances:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessReview'
+              description: 'The collection of access reviews instances past, present and future, if this object is a recurring access review.'
             myDecisions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewDecision'
+              description: 'The collection of decisions for the caller, if the caller is a reviewer.'
             reviewers:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewReviewer'
+              description: 'The collection of reviewers for an access review, if access review reviewerType is of type delegated.'
           additionalProperties:
             type: object
     microsoft.graph.accessReviewDecision:
@@ -97763,22 +97774,27 @@ components:
           properties:
             accessRecommendation:
               type: string
+              description: 'The feature- generated recommendation shown to the reviewer, one of Approve, Deny or NotAvailable.'
               nullable: true
             accessReviewId:
               type: string
+              description: The feature-generated id of the access review.
               nullable: true
             appliedBy:
               $ref: '#/components/schemas/microsoft.graph.userIdentity'
             appliedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date and time when the review decision was applied.
               format: date-time
               nullable: true
             applyResult:
               type: string
+              description: 'The outcome of applying the decision, one of NotApplied, Success, Failed, NotFound or NotSupported.'
               nullable: true
             justification:
               type: string
+              description: 'The reviewer''s business justification, if supplied.'
               nullable: true
             reviewedBy:
               $ref: '#/components/schemas/microsoft.graph.userIdentity'
@@ -97789,6 +97805,7 @@ components:
               nullable: true
             reviewResult:
               type: string
+              description: 'The result of the review, one of NotReviewed, Deny, DontKnow or Approve.'
               nullable: true
           additionalProperties:
             type: object
@@ -97814,30 +97831,36 @@ components:
           properties:
             displayName:
               type: string
+              description: Display name of the agreement. The display name is used for internal tracking of the agreement but is not shown to end users who view the agreement.
               nullable: true
             isPerDeviceAcceptanceRequired:
               type: boolean
+              description: 'This setting enables you to require end users to accept this agreement on every device that they are accessing it from. The end user will be required to register their device in Azure AD, if they haven''t already done so.'
               nullable: true
             isViewingBeforeAcceptanceRequired:
               type: boolean
+              description: Indicates whether the user has to expand the agreement before accepting.
               nullable: true
             termsExpiration:
               $ref: '#/components/schemas/microsoft.graph.termsExpiration'
             userReacceptRequiredFrequency:
               pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
               type: string
+              description: The duration after which the user must re-accept the terms of use. The value is represented in ISO 8601 format for durations.
               format: duration
               nullable: true
             acceptances:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.agreementAcceptance'
+              description: Read-only. Information about acceptances of this agreement.
             file:
               $ref: '#/components/schemas/microsoft.graph.agreementFile'
             files:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.agreementFileLocalization'
+              description: 'PDFs linked to this agreement. Note: This property is in the process of being deprecated. Use the  file property instead.'
           additionalProperties:
             type: object
     microsoft.graph.agreementAcceptance:
@@ -97848,45 +97871,57 @@ components:
           properties:
             agreementFileId:
               type: string
+              description: ID of the agreement file accepted by the user.
               nullable: true
             agreementId:
               type: string
+              description: ID of the agreement.
               nullable: true
             deviceDisplayName:
               type: string
+              description: The display name of the device used for accepting the agreement.
               nullable: true
             deviceId:
               type: string
+              description: The unique identifier of the device used for accepting the agreement.
               nullable: true
             deviceOSType:
               type: string
+              description: The operating system used for accepting the agreement.
               nullable: true
             deviceOSVersion:
               type: string
+              description: The operating system version of the device used for accepting the agreement.
               nullable: true
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The expiration date time of the acceptance. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
               format: date-time
               nullable: true
             recordedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
               format: date-time
               nullable: true
             state:
               $ref: '#/components/schemas/microsoft.graph.agreementAcceptanceState'
             userDisplayName:
               type: string
+              description: Display name of the user when the acceptance was recorded.
               nullable: true
             userEmail:
               type: string
+              description: Email of the user when the acceptance was recorded.
               nullable: true
             userId:
               type: string
+              description: ID of the user who accepted the agreement.
               nullable: true
             userPrincipalName:
               type: string
+              description: UPN of the user when the acceptance was recorded.
               nullable: true
           additionalProperties:
             type: object
@@ -97929,6 +97964,7 @@ components:
           properties:
             displayName:
               type: string
+              description: The name of the business flow template
               nullable: true
           additionalProperties:
             type: object
@@ -97990,49 +98026,60 @@ components:
           properties:
             accessPackageId:
               type: string
+              description: ID of the access package.
               nullable: true
             accessReviewSettings:
               $ref: '#/components/schemas/microsoft.graph.assignmentReviewSettings'
             canExtend:
               type: boolean
+              description: Indicates whether a user can extend the access package assignment duration after approval.
               nullable: true
             createdBy:
               type: string
+              description: Read-only.
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
               format: date-time
               nullable: true
             description:
               type: string
+              description: The description of the policy.
               nullable: true
             displayName:
               type: string
+              description: The display name of the policy.
               nullable: true
             durationInDays:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: The number of days in which assignments from this policy last until they are expired.
               format: int32
               nullable: true
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The expiration date for assignments created in this policy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
               format: date-time
               nullable: true
             modifiedBy:
               type: string
+              description: Read-only.
               nullable: true
             modifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
               format: date-time
               nullable: true
             questions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessPackageQuestion'
+              description: Questions that are posed to the  requestor.
             requestApprovalSettings:
               $ref: '#/components/schemas/microsoft.graph.approvalSettings'
             requestorSettings:
@@ -98051,45 +98098,56 @@ components:
           properties:
             catalogId:
               type: string
+              description: ID of the access package catalog referencing this access package. Read-only.
               nullable: true
             createdBy:
               type: string
+              description: UPN of the user or identity of the subject who created this resource. Read-only.
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Read-only.'
               format: date-time
               nullable: true
             description:
               type: string
+              description: The description of the access package.
               nullable: true
             displayName:
               type: string
+              description: The display name of the access package.
               nullable: true
             isHidden:
               type: boolean
+              description: Whether the access package is hidden from the requestor.
               nullable: true
             isRoleScopesVisible:
               type: boolean
+              description: Indicates whether role scopes are visible.
               nullable: true
             modifiedBy:
               type: string
+              description: The UPN of the user who last modified this resource. Read-only.
               nullable: true
             modifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Read-only.'
               format: date-time
               nullable: true
             accessPackageAssignmentPolicies:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessPackageAssignmentPolicy'
+              description: Read-only. Nullable.
             accessPackageCatalog:
               $ref: '#/components/schemas/microsoft.graph.accessPackageCatalog'
             accessPackageResourceRoleScopes:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessPackageResourceRoleScope'
+              description: Nullable.
           additionalProperties:
             type: object
     microsoft.graph.accessPackageCatalog:
@@ -98100,33 +98158,42 @@ components:
           properties:
             catalogStatus:
               type: string
+              description: Has the value Published if the access packages are available for management.
               nullable: true
             catalogType:
               type: string
+              description: One of UserManaged or ServiceDefault.
               nullable: true
             createdBy:
               type: string
+              description: UPN of the user who created this resource. Read-only.
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Read-only.'
               format: date-time
               nullable: true
             description:
               type: string
+              description: The description of the access package catalog.
               nullable: true
             displayName:
               type: string
+              description: The display name of the access package catalog.
               nullable: true
             isExternallyVisible:
               type: boolean
+              description: Whether the access packages in this catalog can be requested by users outside of the tenant.
               nullable: true
             modifiedBy:
               type: string
+              description: The UPN of the user who last modified this resource. Read-only.
               nullable: true
             modifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Read-only.'
               format: date-time
               nullable: true
             accessPackageResourceRoles:
@@ -98137,6 +98204,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessPackageResource'
+              description: Read-only. Nullable.
             accessPackageResourceScopes:
               type: array
               items:
@@ -98145,6 +98213,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessPackage'
+              description: The access packages in this catalog. Read-only. Nullable.
           additionalProperties:
             type: object
     microsoft.graph.accessPackageResourceRole:
@@ -98155,15 +98224,19 @@ components:
           properties:
             description:
               type: string
+              description: A description for the resource role.
               nullable: true
             displayName:
               type: string
+              description: The display name of the resource role such as the role defined by the application.
               nullable: true
             originId:
               type: string
+              description: The unique identifier of the resource role in the origin system.
               nullable: true
             originSystem:
               type: string
+              description: 'The type of the resource in the origin system, such as SharePointOnline, AadApplication or AadGroup.'
               nullable: true
             accessPackageResource:
               $ref: '#/components/schemas/microsoft.graph.accessPackageResource'
@@ -98177,10 +98250,12 @@ components:
           properties:
             addedBy:
               type: string
+              description: Read-only.
               nullable: true
             addedOn:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
               format: date-time
               nullable: true
             attributes:
@@ -98189,33 +98264,42 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.accessPackageResourceAttribute'
             description:
               type: string
+              description: A description for the resource.
               nullable: true
             displayName:
               type: string
+              description: 'The display name of the resource, such as the application name, group name or site name.'
               nullable: true
             isPendingOnboarding:
               type: boolean
+              description: True if the resource is not yet available for assignment.
               nullable: true
             originId:
               type: string
+              description: 'The unique identifier of the resource in the origin system. In the case of an Azure AD group, this is the identifier of the group.'
               nullable: true
             originSystem:
               type: string
+              description: 'The type of the resource in the origin system, such as SharePointOnline, AadApplication or AadGroup.'
               nullable: true
             resourceType:
               type: string
+              description: 'The type of the resource, such as Application if it is an Azure AD connected application, or SharePoint Online Site for a SharePoint Online site.'
               nullable: true
             url:
               type: string
+              description: 'A unique resource locator for the resource, such as the URL for signing a user into an application.'
               nullable: true
             accessPackageResourceRoles:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessPackageResourceRole'
+              description: Read-only. Nullable.
             accessPackageResourceScopes:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessPackageResourceScope'
+              description: Read-only. Nullable.
           additionalProperties:
             type: object
     microsoft.graph.accessPackageResourceScope:
@@ -98226,24 +98310,31 @@ components:
           properties:
             description:
               type: string
+              description: The description of the scope.
               nullable: true
             displayName:
               type: string
+              description: The display name of the scope.
               nullable: true
             isRootScope:
               type: boolean
+              description: True if the scopes are arranged in a hierarchy and this is the top or root scope of the resource.
               nullable: true
             originId:
               type: string
+              description: The unique identifier for the scope in the resource as defined in the origin system.
               nullable: true
             originSystem:
               type: string
+              description: The origin system for the scope.
               nullable: true
             roleOriginId:
               type: string
+              description: 'The origin system for the role, if different.'
               nullable: true
             url:
               type: string
+              description: A resource locator for the scope.
               nullable: true
             accessPackageResource:
               $ref: '#/components/schemas/microsoft.graph.accessPackageResource'
@@ -98257,18 +98348,22 @@ components:
           properties:
             createdBy:
               type: string
+              description: Read-only.
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
               format: date-time
               nullable: true
             modifiedBy:
               type: string
+              description: Read-only.
               nullable: true
             modifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
               format: date-time
               nullable: true
             accessPackageResourceRole:
@@ -98287,14 +98382,17 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessPackageAnswer'
+              description: Answers provided by the requestor to accessPackageQuestions asked of them at the time of request.
             completedDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date of the end of processing, either successful or failure, of a request. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Read-only.'
               format: date-time
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Read-only.'
               format: date-time
               nullable: true
             expirationDateTime:
@@ -98304,18 +98402,23 @@ components:
               nullable: true
             isValidationOnly:
               type: boolean
+              description: True if the request is not to be processed for assignment.
               nullable: true
             justification:
               type: string
+              description: The requestor's supplied justification.
               nullable: true
             requestState:
               type: string
+              description: 'One of PendingApproval, Canceled,  Denied, Delivering, Delivered, PartiallyDelivered, Submitted or Scheduled. Read-only.'
               nullable: true
             requestStatus:
               type: string
+              description: More information on the request processing status. Read-only.
               nullable: true
             requestType:
               type: string
+              description: 'One of UserAdd, UserRemove, AdminAdd, AdminRemove or SystemRemove. A request from the user themselves would have requestType of UserAdd or UserRemove. Read-only.'
               nullable: true
             schedule:
               $ref: '#/components/schemas/microsoft.graph.requestSchedule'
@@ -98335,31 +98438,39 @@ components:
           properties:
             accessPackageId:
               type: string
+              description: The identifier of the access package. Read-only.
               nullable: true
             assignmentPolicyId:
               type: string
+              description: The identifier of the access package assignment policy. Read-only.
               nullable: true
             assignmentState:
               type: string
+              description: 'The state of the access package assignment. Possible values are Delivering, Delivered, or Expired. Read-only.'
               nullable: true
             assignmentStatus:
               type: string
+              description: 'More information about the assignment lifecycle.  Possible values include Delivering, Delivered, NearExpiry1DayNotificationTriggered, or ExpiredNotificationTriggered.  Read-only.'
               nullable: true
             catalogId:
               type: string
+              description: The identifier of the catalog containing the access package. Read-only.
               nullable: true
             expiredDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
               format: date-time
               nullable: true
             isExtended:
               type: boolean
+              description: Indicates whether the access package assignment is extended. Read-only.
               nullable: true
             schedule:
               $ref: '#/components/schemas/microsoft.graph.requestSchedule'
             targetId:
               type: string
+              description: The ID of the subject with the assignment. Read-only.
               nullable: true
             accessPackage:
               $ref: '#/components/schemas/microsoft.graph.accessPackage'
@@ -98373,6 +98484,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessPackageAssignmentResourceRole'
+              description: The resource roles delivered to the target user for this assignment. Read-only. Nullable.
             target:
               $ref: '#/components/schemas/microsoft.graph.accessPackageSubject'
           additionalProperties:
@@ -98385,17 +98497,21 @@ components:
           properties:
             originId:
               type: string
+              description: 'A unique identifier relative to the origin system, corresponding to the originId property of the accessPackageResourceRole.'
               nullable: true
             originSystem:
               type: string
+              description: 'The system where the role assignment is to be created or has been created for an access package assignment, such as SharePointOnline, AadGroup or AadApplication, corresponding to the originSystem property of the accessPackageResourceRole.'
               nullable: true
             status:
               type: string
+              description: 'The value is PendingFulfillment when the access package assignment has not yet been delivered to the origin system, and Fulfilled when the access package assignment has been delivered to the origin system.'
               nullable: true
             accessPackageAssignments:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessPackageAssignment'
+              description: The access package assignments resulting in this role assignment. Read-only. Nullable.
             accessPackageResourceRole:
               $ref: '#/components/schemas/microsoft.graph.accessPackageResourceRole'
             accessPackageResourceScope:
@@ -98418,21 +98534,26 @@ components:
               nullable: true
             displayName:
               type: string
+              description: The display name of the subject.
               nullable: true
             email:
               type: string
+              description: The email address of the subject.
               nullable: true
             objectId:
               type: string
+              description: The object ID of the subject.
               nullable: true
             onPremisesSecurityIdentifier:
               type: string
               nullable: true
             principalName:
               type: string
+              description: 'The principal name, if known, of the subject.'
               nullable: true
             type:
               type: string
+              description: The resource type of the subject.
               nullable: true
             connectedOrganization:
               $ref: '#/components/schemas/microsoft.graph.connectedOrganization'
@@ -98446,17 +98567,21 @@ components:
           properties:
             createdBy:
               type: string
+              description: UPN of the user who created this resource. Read-only.
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Read-only.'
               format: date-time
               nullable: true
             description:
               type: string
+              description: The description of the connected organization.
               nullable: true
             displayName:
               type: string
+              description: The display name of the connected organization.
               nullable: true
             identitySources:
               type: array
@@ -98464,10 +98589,12 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.identitySource'
             modifiedBy:
               type: string
+              description: UPN of the user who last modified this resource. Read-only.
               nullable: true
             modifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Read-only.'
               format: date-time
               nullable: true
             state:
@@ -98476,10 +98603,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: Nullable.
             internalSponsors:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: Nullable.
           additionalProperties:
             type: object
     microsoft.graph.accessPackageResourceRequest:
@@ -98490,6 +98619,7 @@ components:
           properties:
             catalogId:
               type: string
+              description: The unique ID of the access package catalog.
               nullable: true
             executeImmediately:
               type: boolean
@@ -98497,22 +98627,28 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
               format: date-time
               nullable: true
             isValidationOnly:
               type: boolean
+              description: 'If set, does not add the resource.'
               nullable: true
             justification:
               type: string
+              description: The requestor's justification for adding the resource.
               nullable: true
             requestState:
               type: string
+              description: The outcome of whether the service was able to add the resource to the catalog.  The value is Delivered if the resource was added. Read-Only.
               nullable: true
             requestStatus:
               type: string
+              description: Read-only.
               nullable: true
             requestType:
               type: string
+              description: 'Use AdminAdd to add a resource, if the caller is an administrator or resource owner.'
               nullable: true
             accessPackageResource:
               $ref: '#/components/schemas/microsoft.graph.accessPackageResource'
@@ -98544,10 +98680,12 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: 'If externalUserLifecycleAction is BlockSignInAndDelete, the number of days after an external user is blocked from sign in before their account is deleted.'
               format: int32
               nullable: true
             externalUserLifecycleAction:
               type: string
+              description: 'One of None, BlockSignIn, or BlockSignInAndDelete.'
               nullable: true
           additionalProperties:
             type: object
@@ -98559,27 +98697,33 @@ components:
           properties:
             displayName:
               type: string
+              description: The display name of the provider managed by PIM.
               nullable: true
             resources:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.governanceResource'
+              description: A collection of resources for the provider.
             roleAssignmentRequests:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.governanceRoleAssignmentRequest'
+              description: A collection of role assignment requests for the provider.
             roleAssignments:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.governanceRoleAssignment'
+              description: A collection of role assignments for the provider.
             roleDefinitions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.governanceRoleDefinition'
+              description: A collection of role defintions for the provider.
             roleSettings:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.governanceRoleSetting'
+              description: A collection of role settings for the provider.
           additionalProperties:
             type: object
     microsoft.graph.governanceResource:
@@ -98590,23 +98734,29 @@ components:
           properties:
             displayName:
               type: string
+              description: The display name of the resource.
               nullable: true
             externalId:
               type: string
+              description: 'The external id of the resource, representing its original id in the external system. For example, a subscription resource''s external id can be ''/subscriptions/c14ae696-5e0c-4e5d-88cc-bef6637737ac''.'
               nullable: true
             registeredDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Represents the date time when the resource is registered in PIM.
               format: date-time
               nullable: true
             registeredRoot:
               type: string
+              description: 'The externalId of the resource''s root scope that is registered in PIM. The root scope can be the parent, grandparent, or higher ancestor resources.'
               nullable: true
             status:
               type: string
+              description: 'The status of a given resource. For example, it could represent whether the resource is locked or not (values: Active/Locked). Note: This property may be extended in the future to support more scenarios.'
               nullable: true
             type:
               type: string
+              description: 'Required. Resource type. For example, for Azure resources, the type could be ''Subscription'', ''ResourceGroup'', ''Microsoft.Sql/server'', etc.'
               nullable: true
             parent:
               $ref: '#/components/schemas/microsoft.graph.governanceResource'
@@ -98614,18 +98764,22 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.governanceRoleAssignmentRequest'
+              description: The collection of role assignment requests for the resource.
             roleAssignments:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.governanceRoleAssignment'
+              description: The collection of role assignments for the resource.
             roleDefinitions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.governanceRoleDefinition'
+              description: The collection of role defintions for the resource.
             roleSettings:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.governanceRoleSetting'
+              description: The collection of role settings for the resource.
           additionalProperties:
             type: object
     microsoft.graph.governanceRoleAssignmentRequest:
@@ -98636,22 +98790,28 @@ components:
           properties:
             assignmentState:
               type: string
+              description: 'Required. The state of the assignment. The value can be  Eligible for eligible assignment Active - if it is directly assigned Active by administrators, or activated on an eligible assignment by the users.'
             linkedEligibleRoleAssignmentId:
               type: string
+              description: 'If this is a request for role activation, it represents the id of the eligible assignment being referred; Otherwise, the value is null.'
               nullable: true
             reason:
               type: string
+              description: A message provided by users and administrators when create the request about why it is needed.
               nullable: true
             requestedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Read-only. The request create time. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
               format: date-time
               nullable: true
             resourceId:
               type: string
+              description: Required. The id of the resource which the role assignment request is associated with.
               nullable: true
             roleDefinitionId:
               type: string
+              description: Required. The id of the role definition which the role assignment request is associated with.
               nullable: true
             schedule:
               $ref: '#/components/schemas/microsoft.graph.governanceSchedule'
@@ -98659,9 +98819,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.governanceRoleAssignmentRequestStatus'
             subjectId:
               type: string
+              description: Required. The id of the subject which the role assignment request is associated with.
               nullable: true
             type:
               type: string
+              description: 'Required. Representing the type of the operation on the role assignment. The value can be AdminAdd: Administrators assign users/groups to roles;UserAdd: Users activate eligible assignments; AdminUpdate: Administrators change existing role assignmentsAdminRemove: Administrators remove users/groups from roles;UserRemove: Users deactivate active assignments;UserExtend: Users request to extend their expiring assignments;AdminExtend: Administrators extend expiring assignments.UserRenew: Users request to renew their expired assignments;AdminRenew: Administrators extend expiring assignments.'
             resource:
               $ref: '#/components/schemas/microsoft.graph.governanceResource'
             roleDefinition:
@@ -98678,34 +98840,43 @@ components:
           properties:
             assignmentState:
               type: string
+              description: 'The state of the assignment. The value can be  Eligible for eligible assignment Active - if it is directly assigned Active by administrators, or activated on an eligible assignment by the users.'
             endDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'For a non-permanent role assignment, this is the time when the role assignment will be expired. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
               format: date-time
               nullable: true
             externalId:
               type: string
+              description: The external ID the resource that is used to identify the role assignment in the provider.
               nullable: true
             linkedEligibleRoleAssignmentId:
               type: string
+              description: 'If this is an active assignment and created due to activation on an eligible assignment, it represents the ID of that eligible assignment; Otherwise, the value is null.'
               nullable: true
             memberType:
               type: string
+              description: 'The type of member. The value can be: Inherited - the role assignment is inherited from a parent resource scopeGroup- the role assignment is not inherited, but comes from the membership of a group assignmentUser - the role assignment is neither inherited nor from a group assignment.'
             resourceId:
               type: string
+              description: Required. The ID of the resource which the role assignment is associated with.
               nullable: true
             roleDefinitionId:
               type: string
+              description: Required. The ID of the role definition which the role assignment is associated with.
               nullable: true
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The start time of the role assignment. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
               format: date-time
               nullable: true
             status:
               type: string
             subjectId:
               type: string
+              description: Required. The ID of the subject which the role assignment is associated with.
               nullable: true
             linkedEligibleRoleAssignment:
               $ref: '#/components/schemas/microsoft.graph.governanceRoleAssignment'
@@ -98725,12 +98896,15 @@ components:
           properties:
             displayName:
               type: string
+              description: The display name of the role definition.
               nullable: true
             externalId:
               type: string
+              description: The external id of the role definition.
               nullable: true
             resourceId:
               type: string
+              description: Required. The id of the resource associated with the role definition.
               nullable: true
             templateId:
               type: string
@@ -98751,35 +98925,44 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.governanceRuleSetting'
+              description: The rule settings that are evaluated when an administrator tries to add an eligible role assignment.
             adminMemberSettings:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.governanceRuleSetting'
+              description: The rule settings that are evaluated when an administrator tries to add a direct member role assignment.
             isDefault:
               type: boolean
+              description: Read-only. Indicate if the roleSetting is a default roleSetting
               nullable: true
             lastUpdatedBy:
               type: string
+              description: Read-only. The display name of the administrator who last updated the roleSetting.
               nullable: true
             lastUpdatedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Read-only. The time when the role setting was last updated. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
               format: date-time
               nullable: true
             resourceId:
               type: string
+              description: Required. The id of the resource that the role setting is associated with.
               nullable: true
             roleDefinitionId:
               type: string
+              description: Required. The id of the role definition that the role setting is associated with.
               nullable: true
             userEligibleSettings:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.governanceRuleSetting'
+              description: The rule settings that are evaluated when a user tries to add an eligible role assignment. The setting is not supported for now.
             userMemberSettings:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.governanceRuleSetting'
+              description: The rule settings that are evaluated when a user tries to activate his role assignment.
             resource:
               $ref: '#/components/schemas/microsoft.graph.governanceResource'
             roleDefinition:
@@ -98808,6 +98991,7 @@ components:
             endDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
               format: date-time
               nullable: true
             requestorReason:
@@ -98819,6 +99003,7 @@ components:
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
               format: date-time
               nullable: true
             userId:
@@ -98838,37 +99023,47 @@ components:
           properties:
             assignmentState:
               type: string
+              description: 'The state of the assignment. The value can be Eligible for eligible assignment Active - if it is directly assigned Active by administrators, or activated on an eligible assignment by the users.'
               nullable: true
             duration:
               type: string
+              description: The duration of a role assignment.
               nullable: true
             reason:
               type: string
+              description: The reason for the role assignment.
               nullable: true
             requestedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Read-only. The request create time. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''.'
               format: date-time
               nullable: true
             roleId:
               type: string
+              description: The id of the role.
               nullable: true
             schedule:
               $ref: '#/components/schemas/microsoft.graph.governanceSchedule'
             status:
               type: string
+              description: 'Read-only.The status of the role assignment request. The value can be NotStarted,Completed,RequestedApproval,Scheduled,Approved,ApprovalDenied,ApprovalAborted,Cancelling,Cancelled,Revoked,RequestExpired.'
               nullable: true
             ticketNumber:
               type: string
+              description: The ticketNumber for the role assignment.
               nullable: true
             ticketSystem:
               type: string
+              description: The ticketSystem for the role assignment.
               nullable: true
             type:
               type: string
+              description: 'Representing the type of the operation on the role assignment. The value can be AdminAdd: Administrators add users to roles;UserAdd: Users add role assignments.'
               nullable: true
             userId:
               type: string
+              description: The id of the user.
               nullable: true
             roleInfo:
               $ref: '#/components/schemas/microsoft.graph.privilegedRole'
@@ -98882,11 +99077,13 @@ components:
           properties:
             name:
               type: string
+              description: Role name.
               nullable: true
             assignments:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.privilegedRoleAssignment'
+              description: The assignments for this role. Read-only. Nullable.
             settings:
               $ref: '#/components/schemas/microsoft.graph.privilegedRoleSettings'
             summary:
@@ -98901,49 +99098,63 @@ components:
           properties:
             additionalInformation:
               type: string
+              description: Detailed human readable information for the event.
               nullable: true
             creationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Indicates the time when the event is created.
               format: date-time
               nullable: true
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'This is only used when the requestType is ''Activate'', and it indicates the expiration time for the role activation.'
               format: date-time
               nullable: true
             referenceKey:
               type: string
+              description: Incident/Request ticket number during role activation. The value is presented only if the ticket number is provided during role activation.
               nullable: true
             referenceSystem:
               type: string
+              description: Incident/Request ticketing system provided during tole activation. The value is presented only if the ticket system is provided during role activation.
               nullable: true
             requestorId:
               type: string
+              description: The user id of the requestor who initiates the operation.
               nullable: true
             requestorName:
               type: string
+              description: The user name of the requestor who initiates the operation.
               nullable: true
             requestType:
               type: string
+              description: 'The request operation type. The requestType value can be: Assign (role assignment), Activate (role activation), Unassign (remove role assignment), Deactivate (role deactivation), ScanAlersNow (scan security alerts), DismissAlert (dismiss security alert), FixAlertItem (fix a security alert issue), AccessReview_Review (review an Access Review), AccessReview_Create (create an Access Review), AccessReview_Update (update an Access Review), and AccessReview_Delete (delete an Access Review).'
               nullable: true
             roleId:
               type: string
+              description: The id of the role that is associated with the operation.
               nullable: true
             roleName:
               type: string
+              description: The name of the role.
               nullable: true
             tenantId:
               type: string
+              description: The tenant (organization) id.
               nullable: true
             userId:
               type: string
+              description: The id of the user that is associated with the operation.
               nullable: true
             userMail:
               type: string
+              description: The user's email.
               nullable: true
             userName:
               type: string
+              description: The user's display name.
               nullable: true
           additionalProperties:
             type: object
@@ -98956,18 +99167,23 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The UTC DateTime when the temporary privileged role assignment will be expired. For permanent role assignment, the value is null.'
               format: date-time
               nullable: true
             isElevated:
               type: boolean
+              description: true if the role assignment is activated. false if the role assignment is deactivated.
               nullable: true
             resultMessage:
               type: string
+              description: Result message set by the service.
               nullable: true
             roleId:
               type: string
+              description: Role identifier. In GUID string format.
             userId:
               type: string
+              description: User identifier. In GUID string format.
             roleInfo:
               $ref: '#/components/schemas/microsoft.graph.privilegedRole'
           additionalProperties:
@@ -98980,41 +99196,51 @@ components:
           properties:
             approvalOnElevation:
               type: boolean
+              description: true if the approval is required when activate the role. false if the approval is not required when activate the role.
               nullable: true
             approverIds:
               type: array
               items:
                 type: string
                 nullable: true
+              description: 'List of Approval ids, if approval is required for activation.'
             elevationDuration:
               pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
               type: string
+              description: The duration when the role is activated.
               format: duration
               nullable: true
             isMfaOnElevationConfigurable:
               type: boolean
+              description: true if mfaOnElevation is configurable. false if mfaOnElevation is not configurable.
               nullable: true
             lastGlobalAdmin:
               type: boolean
+              description: Internal used only.
               nullable: true
             maxElavationDuration:
               pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
               type: string
+              description: Maximal duration for the activated role.
               format: duration
               nullable: true
             mfaOnElevation:
               type: boolean
+              description: true if MFA is required to activate the role. false if MFA is not required to activate the role.
               nullable: true
             minElevationDuration:
               pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
               type: string
+              description: Minimal duration for the activated role.
               format: duration
               nullable: true
             notificationToUserOnElevation:
               type: boolean
+              description: true if send notification to the end user when the role is activated. false if do not send notification when the role is activated.
               nullable: true
             ticketingInfoOnElevation:
               type: boolean
+              description: true if the ticketing information is required when activate the role. false if the ticketing information is not required when activate the role.
               nullable: true
           additionalProperties:
             type: object
@@ -99028,16 +99254,19 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: The number of users that have the role assigned and the role is activated.
               format: int32
               nullable: true
             managedCount:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: The number of users that have the role assigned but the role is deactivated.
               format: int32
               nullable: true
             mfaEnabled:
               type: boolean
+              description: true if the role activation requires MFA. false if the role activation doesn't require MFA.
               nullable: true
             status:
               $ref: '#/components/schemas/microsoft.graph.roleSummaryStatus'
@@ -99045,6 +99274,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: The number of users that are assigned with the role.
               format: int32
               nullable: true
           additionalProperties:
@@ -99057,23 +99287,29 @@ components:
           properties:
             controlId:
               type: string
+              description: 'The controlId of the control, in particular the identifier of an access review. Required on create.'
             controlTypeId:
               type: string
+              description: 'The programControlType identifies the type of program control - for example, a control linking to guest access reviews. Required on create.'
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The creation date and time of the program control.
               format: date-time
             displayName:
               type: string
+              description: The name of the control.
               nullable: true
             owner:
               $ref: '#/components/schemas/microsoft.graph.userIdentity'
             programId:
               type: string
+              description: The programId of the program this control is a part of. Required on create.
             resource:
               $ref: '#/components/schemas/microsoft.graph.programResource'
             status:
               type: string
+              description: The life cycle status of the control.
               nullable: true
             program:
               $ref: '#/components/schemas/microsoft.graph.program'
@@ -99087,12 +99323,15 @@ components:
           properties:
             description:
               type: string
+              description: The description of the program.
             displayName:
               type: string
+              description: The name of the program.  Required on create.
             controls:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.programControl'
+              description: Controls associated with the program.
           additionalProperties:
             type: object
     microsoft.graph.programControlType:
@@ -99106,6 +99345,7 @@ components:
               nullable: true
             displayName:
               type: string
+              description: The name of the program control type
               nullable: true
           additionalProperties:
             type: object
@@ -99154,25 +99394,32 @@ components:
       properties:
         accessRecommendationsEnabled:
           type: boolean
+          description: Indicates whether showing recommendations to reviewers is enabled.
         activityDurationInDays:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: The number of days of user activities to show to reviewers.
           format: int32
         autoApplyReviewResultsEnabled:
           type: boolean
+          description: 'Indicates whether the auto-apply capability, to automatically change the target object access resource, is enabled.  If not enabled, a user must, after the review completes, apply the access review.'
         autoReviewEnabled:
           type: boolean
+          description: 'Indicates whether a decision should be set if the reviewer did not supply one. For use when auto-apply is enabled. If you don''t want to have a review decision recorded unless the reviewer makes an explicit choice, set it to false.'
         autoReviewSettings:
           $ref: '#/components/schemas/microsoft.graph.autoReviewSettings'
         justificationRequiredOnApproval:
           type: boolean
+          description: Indicates whether reviewers are required to provide a justification when reviewing access.
         mailNotificationsEnabled:
           type: boolean
+          description: Indicates whether sending mails to reviewers and the review creator is enabled.
         recurrenceSettings:
           $ref: '#/components/schemas/microsoft.graph.accessReviewRecurrenceSettings'
         remindersEnabled:
           type: boolean
+          description: Indicates whether sending reminder emails to reviewers is enabled.
       additionalProperties:
         type: object
     microsoft.graph.termsExpiration:
@@ -99182,11 +99429,13 @@ components:
         frequency:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
+          description: 'Represents the frequency at which the terms will expire, after its first expiration as set in startDateTime. The value is represented in ISO 8601 format for durations. For example, PT1M represents a time period of 1 month.'
           format: duration
           nullable: true
         startDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The DateTime when the agreement is set to expire for all users. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''.'
           format: date-time
           nullable: true
       additionalProperties:
@@ -99233,24 +99482,30 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: The number of days to allow input from reviewers.
           format: int32
           nullable: true
         isEnabled:
           type: boolean
+          description: 'If true, access reviews are required for assignments from this policy.'
           nullable: true
         recurrenceType:
           type: string
+          description: 'The interval for recurrence, such as monthly or quarterly.'
           nullable: true
         reviewers:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.userSet'
+          description: 'If the reviewerType is Reviewers, this collection specifies the users who will be reviewers, either by ID or as members of a group, using a collection of singleUser and groupMembers.'
         reviewerType:
           type: string
+          description: 'Who should be asked to do the review, either Self or Reviewers.'
           nullable: true
         startDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: When the first review should start.
           format: date-time
           nullable: true
       additionalProperties:
@@ -99261,14 +99516,17 @@ components:
       properties:
         id:
           type: string
+          description: ID of the question.
           nullable: true
         isRequired:
           type: boolean
+          description: Whether the requestor is required to supply an answer or not.
           nullable: true
         sequence:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: Relative position of this question when displaying a list of questions to the requestor.
           format: int32
           nullable: true
         text:
@@ -99281,19 +99539,24 @@ components:
       properties:
         approvalMode:
           type: string
+          description: 'One of NoApproval, SingleStage or Serial. The NoApproval is used when isApprovalRequired is false.'
           nullable: true
         approvalStages:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.approvalStage'
+          description: 'If approval is required, the one or two elements of this collection define each of the stages of approval. An empty array if no approval is required.'
         isApprovalRequired:
           type: boolean
+          description: 'If false, then approval is not required for requests in this policy.'
           nullable: true
         isApprovalRequiredForExtension:
           type: boolean
+          description: 'If false, then approval is not required for a user who already has an assignment to extend their assignment.'
           nullable: true
         isRequestorJustificationRequired:
           type: boolean
+          description: Indicates whether the requestor is required to supply a justification in their request.
           nullable: true
       additionalProperties:
         type: object
@@ -99303,13 +99566,16 @@ components:
       properties:
         acceptRequests:
           type: boolean
+          description: Indicates whether new requests are accepted on this policy.
           nullable: true
         allowedRequestors:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.userSet'
+          description: 'The users who are allowed to request on this policy, which can be singleUser, groupMembers, and connectedOrganizationMembers.'
         scopeType:
           type: string
+          description: 'Who can request. One of NoSubjects, SpecificDirectorySubjects, SpecificConnectedOrganizationSubjects, AllConfiguredConnectedOrganizationSubjects, AllExistingConnectedOrganizationSubjects, AllExistingDirectoryMemberUsers, AllExistingDirectorySubjects or AllExternalSubjects.'
           nullable: true
       additionalProperties:
         type: object
@@ -99337,6 +99603,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.accessPackageQuestion'
         displayValue:
           type: string
+          description: The display value of the answer. Required.
           nullable: true
       additionalProperties:
         type: object
@@ -99351,6 +99618,7 @@ components:
         startDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''.'
           format: date-time
           nullable: true
       additionalProperties:
@@ -99374,20 +99642,24 @@ components:
         duration:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
+          description: The duration of a role assignment. It is in format of a TimeSpan.
           format: duration
           nullable: true
         endDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The end time of the role assignment. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Note: if the value is null, it indicates a permanent assignment.'
           format: date-time
           nullable: true
         startDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The start time of the role assignment. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
           format: date-time
           nullable: true
         type:
           type: string
+          description: The role assignment schedule type. Only Once is supported for now.
           nullable: true
       additionalProperties:
         type: object
@@ -99415,15 +99687,19 @@ components:
           properties:
             displayName:
               type: string
+              description: The display name of the subject.
               nullable: true
             email:
               type: string
+              description: 'The email address of the user subject. If the subject is in other types, it is empty.'
               nullable: true
             principalName:
               type: string
+              description: 'The principal name of the user subject. If the subject is in other types, it is empty.'
               nullable: true
             type:
               type: string
+              description: 'The type of the subject. The value can be User, Group, and ServicePrincipal.'
               nullable: true
           additionalProperties:
             type: object
@@ -99433,9 +99709,11 @@ components:
       properties:
         ruleIdentifier:
           type: string
+          description: 'The id of the rule. For example, ExpirationRule and MfaRule.'
           nullable: true
         setting:
           type: string
+          description: 'The settings of the rule. The value is a JSON string with a list of pairs in the format of Parameter_Name:Parameter_Value. For example, {''permanentAssignment'':false,''maximumGrantPeriodInMinutes'':129600}'
           nullable: true
       additionalProperties:
         type: object
@@ -99462,6 +99740,7 @@ components:
           properties:
             type:
               type: string
+              description: 'Type of the resource, indicating whether it is a group or an app.'
               nullable: true
           additionalProperties:
             type: object
@@ -99480,6 +99759,7 @@ components:
       properties:
         notReviewedResult:
           type: string
+          description: 'Possible values: Approve, Deny, or Recommendation.  If Recommendation, then accessRecommendationsEnabled in the accessReviewSettings resource should also be set to true. If you want to have the system provide a decision even if the reviewer does not make a choice, set the autoReviewEnabled property in the accessReviewSettings resource to true and include an autoReviewSettings object with the notReviewedResult property. Then, when a review completes, based on the notReviewedResult property, the decision is recorded as either Approve or Deny.'
           nullable: true
       additionalProperties:
         type: object
@@ -99491,17 +99771,21 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: The duration in days for recurrence.
           format: int32
         recurrenceCount:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: 'The count of recurrences, if the value of recurrenceEndType is occurrences, or 0 otherwise.'
           format: int32
         recurrenceEndType:
           type: string
+          description: 'How the recurrence ends. Possible values: never, endBy, occurrences, or recurrenceCount. If it is never, then there is no explicit end of the recurrence series. If it is endBy, then the recurrence ends at a certain date. If it is occurrences, then the series ends after recurrenceCount instances of the review have completed.'
           nullable: true
         recurrenceType:
           type: string
+          description: 'The recurrence interval. Possible vaules: onetime, weekly, monthly, quarterly, halfyearly or annual.'
           nullable: true
       additionalProperties:
         type: object
@@ -99521,6 +99805,7 @@ components:
       properties:
         isBackup:
           type: boolean
+          description: 'For a user in an approval stage, this property indicates whether the user is a backup fallback approver.'
           nullable: true
       additionalProperties:
         type: object
@@ -99530,11 +99815,13 @@ components:
       properties:
         defaultText:
           type: string
+          description: 'The fallback string, which is used when a requested localization is not available. Required.'
           nullable: true
         localizedTexts:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.accessPackageLocalizedText'
+          description: Content represented in a format for a specific locale.
       additionalProperties:
         type: object
     microsoft.graph.approvalStage:
@@ -99545,28 +99832,34 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: The number of days that a request can be pending a response before it is automatically denied.
           format: int32
           nullable: true
         escalationApprovers:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.userSet'
+          description: 'If escalation is enabled and the primary approvers do not respond before the escalation time, the escalationApprovers are the users who will be asked to approve requests. This can be a collection of singleUser, groupMembers, requestorManager, internalSponsors and externalSponsors.'
         escalationTimeInMinutes:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: 'If escalation is required, the time a request can be pending a response from a primary approver.'
           format: int32
           nullable: true
         isApproverJustificationRequired:
           type: boolean
+          description: Indicates whether the approver is required to provide a justification for approving a request.
           nullable: true
         isEscalationEnabled:
           type: boolean
+          description: 'If true, then one or more escalation approvers are configured in this approval stage.'
           nullable: true
         primaryApprovers:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.userSet'
+          description: 'The users who will be asked to approve requests. A collection of singleUser, groupMembers, requestorManager, internalSponsors and externalSponsors.'
       additionalProperties:
         type: object
     microsoft.graph.accessPackageResourceAttributeDestination:
@@ -99586,11 +99879,13 @@ components:
         duration:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
+          description: 'The requestor''s desired duration of access. If specified in a request, endDateTime should not be present.'
           format: duration
           nullable: true
         endDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''.'
           format: date-time
           nullable: true
         type:
@@ -99613,11 +99908,11 @@ components:
       properties:
         key:
           type: string
-          description: Key for the key-value pair.
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Value for the key-value pair.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object
@@ -99650,9 +99945,11 @@ components:
       properties:
         languageCode:
           type: string
+          description: The ISO code for the intended language. Required.
           nullable: true
         text:
           type: string
+          description: The text in the specific language. Required.
           nullable: true
       additionalProperties:
         type: object
@@ -99678,7 +99975,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.dayOfWeek'
-          description: 'A collection of the days of the week on which the event occurs. The possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. If type is relativeMonthly or relativeYearly, and daysOfWeek specifies more than one day, the event falls on the first day that satisfies the pattern.  Required if type is weekly, relativeMonthly, or relativeYearly.'
+          description: 'A collection of the days of the week on which the event occurs. Possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. If type is relativeMonthly or relativeYearly, and daysOfWeek specifies more than one day, the event falls on the first day that satisfies the pattern.  Required if type is weekly, relativeMonthly, or relativeYearly.'
         firstDayOfWeek:
           $ref: '#/components/schemas/microsoft.graph.dayOfWeek'
         index:
