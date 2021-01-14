@@ -50,6 +50,8 @@ paths:
                 - appRoles desc
                 - createdDateTime
                 - createdDateTime desc
+                - defaultRedirectUri
+                - defaultRedirectUri desc
                 - description
                 - description desc
                 - displayName
@@ -113,6 +115,7 @@ paths:
                 - appId
                 - appRoles
                 - createdDateTime
+                - defaultRedirectUri
                 - description
                 - displayName
                 - groupMembershipClaims
@@ -250,6 +253,7 @@ paths:
                 - appId
                 - appRoles
                 - createdDateTime
+                - defaultRedirectUri
                 - description
                 - displayName
                 - groupMembershipClaims
@@ -8406,6 +8410,8 @@ paths:
                 - appRoles desc
                 - createdDateTime
                 - createdDateTime desc
+                - defaultRedirectUri
+                - defaultRedirectUri desc
                 - description
                 - description desc
                 - displayName
@@ -8469,6 +8475,7 @@ paths:
                 - appId
                 - appRoles
                 - createdDateTime
+                - defaultRedirectUri
                 - description
                 - displayName
                 - groupMembershipClaims
@@ -8592,6 +8599,8 @@ paths:
                 - appRoles desc
                 - createdDateTime
                 - createdDateTime desc
+                - defaultRedirectUri
+                - defaultRedirectUri desc
                 - description
                 - description desc
                 - displayName
@@ -9931,6 +9940,8 @@ paths:
                 - appRoles desc
                 - createdDateTime
                 - createdDateTime desc
+                - defaultRedirectUri
+                - defaultRedirectUri desc
                 - description
                 - description desc
                 - displayName
@@ -9994,6 +10005,7 @@ paths:
                 - appId
                 - appRoles
                 - createdDateTime
+                - defaultRedirectUri
                 - description
                 - displayName
                 - groupMembershipClaims
@@ -10124,6 +10136,8 @@ paths:
                 - appRoles desc
                 - createdDateTime
                 - createdDateTime desc
+                - defaultRedirectUri
+                - defaultRedirectUri desc
                 - description
                 - description desc
                 - displayName
@@ -18507,18 +18521,21 @@ components:
               $ref: '#/components/schemas/microsoft.graph.apiApplication'
             appId:
               type: string
-              description: The unique identifier for the application that is assigned to an application by Azure AD. Not nullable. Read-only.
+              description: The unique identifier for the application that is assigned by Azure AD. Not nullable. Read-only.
               nullable: true
             appRoles:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appRole'
-              description: 'The collection of roles the application declares. With app role assignments, these roles can be assigned to users, groups, or other applications'' service principals. Not nullable.'
+              description: 'The collection of roles assigned to the application. With app role assignments, these roles can be assigned to users, groups, or service principals associated with other applications. Not nullable.'
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
               description: The date and time the application was registered. Read-only.
               format: date-time
+              nullable: true
+            defaultRedirectUri:
+              type: string
               nullable: true
             description:
               type: string
@@ -18529,13 +18546,13 @@ components:
               nullable: true
             groupMembershipClaims:
               type: string
-              description: 'Configures the groups claim issued in a user or OAuth 2.0 access token that the application expects. To set this attribute, use one of the following valid string values:NoneSecurityGroup: For security groups and Azure AD rolesAll: This will get all of the security groups, distribution groups, and Azure AD directory roles that the signed-in user is a member of'
+              description: 'Configures the groups claim issued in a user or OAuth 2.0 access token that the application expects. To set this attribute, use one of the following string values:NoneSecurityGroup: For security groups and Azure AD rolesAll: This gets all of the security groups, distribution groups, and Azure AD directory roles that the signed-in user is a member of.'
               nullable: true
             identifierUris:
               type: array
               items:
                 type: string
-              description: 'The URIs that identify the application within its Azure AD tenant, or within a verified custom domain if the application is multi-tenant. For more information see Application Objects and Service Principal Objects. The any operator is required for filter expressions on multi-valued properties. Not nullable.'
+              description: 'The URIs that identify the application within its Azure AD tenant, or within a verified custom domain if the application is multi-tenant. For more information, see Application Objects and Service Principal Objects. The any operator is required for filter expressions on multi-valued properties. Not nullable.'
             info:
               $ref: '#/components/schemas/microsoft.graph.informationalUrl'
             isDeviceOnlyAuthSupported:
@@ -18543,13 +18560,13 @@ components:
               nullable: true
             isFallbackPublicClient:
               type: boolean
-              description: 'Specifies the fallback application type as public client, such as an installed application running on a mobile device. The default value is false which means the fallback application type is confidential client such as web app. There are certain scenarios where Azure AD cannot determine the client application type (e.g. ROPC flow where it is configured without specifying a redirect URI). In those cases Azure AD will interpret the application type based on the value of this property.'
+              description: 'Specifies the fallback application type as public client, such as an installed application running on a mobile device. The default value is false which means the fallback application type is confidential client such as a web app. There are certain scenarios where Azure AD cannot determine the client application type. For example, the ROPC flow where the application is configured without specifying a redirect URI. In those cases Azure AD interprets the application type based on the value of this property.'
               nullable: true
             keyCredentials:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.keyCredential'
-              description: The collection of key credentials associated with the application Not nullable.
+              description: The collection of key credentials associated with the application. Not nullable.
             logo:
               type: string
               description: The main logo for the application. Not nullable.
@@ -18576,10 +18593,10 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.requiredResourceAccess'
-              description: Specifies resources that this application requires access to and the set of OAuth permission scopes and application roles that it needs under each of those resources. This pre-configuration of required resource access drives the consent experience. Not nullable.
+              description: Specifies the resources that the application needs to access. This property also specifies the set of OAuth permission scopes and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. Not nullable.
             signInAudience:
               type: string
-              description: 'Specifies the Microsoft accounts that are supported for the current application. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization’s Azure AD tenant (single tenant)AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization’s Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization’s Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.For authenticating users with Azure AD B2C user flows, use AzureADandPersonalMicrosoftAccount. This value allows for the widest set of user identities including local accounts and user identities from Microsoft, Facebook, Google, Twitter, or any OpenID Connect provider.'
+              description: 'Specifies the Microsoft accounts that are supported for the current application. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization’s Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization’s Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization’s Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.'
               nullable: true
             spa:
               $ref: '#/components/schemas/microsoft.graph.spaApplication'
@@ -18625,6 +18642,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.tokenLifetimePolicy'
+              description: The tokenLifetimePolicies assigned to this application.
             connectorGroup:
               $ref: '#/components/schemas/microsoft.graph.connectorGroup'
             synchronization:
@@ -18642,18 +18660,22 @@ components:
               $ref: '#/components/schemas/microsoft.graph.connectorGroupType'
             isDefault:
               type: boolean
+              description: Indicates if the connectorGroup is the default connectorGroup. Only a single connector group can be the default connectorGroup and this is pre-set by the system. Read-only.
             name:
               type: string
+              description: The name associated with the connectorGroup.
             region:
               $ref: '#/components/schemas/microsoft.graph.connectorGroupRegion'
             applications:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.application'
+              description: Read-only. Nullable.
             members:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.connector'
+              description: Read-only. Nullable.
           additionalProperties:
             type: object
     microsoft.graph.directoryObject:
@@ -18727,7 +18749,7 @@ components:
           nullable: true
         key:
           type: string
-          description: 'The certificate''s raw data in byte array converted to Base64 string; for example, [System.Convert]::ToBase64String($Cert.GetRawCertData()).'
+          description: Value for the key credential. Should be a base 64 encoded value.
           format: base64url
           nullable: true
         keyId:
@@ -18827,8 +18849,10 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.keyValuePair'
+              description: Settings associated with the job. Some settings are inherited from the template.
             templateId:
               type: string
+              description: Identifier of the synchronization template this job is based on.
               nullable: true
             schema:
               $ref: '#/components/schemas/microsoft.graph.synchronizationSchema'
@@ -18840,11 +18864,13 @@ components:
       properties:
         ruleId:
           type: string
+          description: The identifier of a the synchronizationRule to be applied.
           nullable: true
         subjects:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.synchronizationJobSubject'
+          description: The identifiers of one or more objects to which a synchronizationJob is to be applied.
       additionalProperties:
         type: object
     microsoft.graph.stringKeyStringValuePair:
@@ -18853,9 +18879,11 @@ components:
       properties:
         key:
           type: string
+          description: Key.
           nullable: true
         value:
           type: string
+          description: Value.
           nullable: true
       additionalProperties:
         type: object
@@ -18875,6 +18903,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.synchronizationSecret'
         value:
           type: string
+          description: The value of the secret.
           nullable: true
       additionalProperties:
         type: object
@@ -18888,13 +18917,16 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.synchronizationRule'
+              description: A collection of synchronization rules configured for the synchronizationJob or synchronizationTemplate.
             version:
               type: string
+              description: 'The version of the schema, updated automatically with every schema change.'
               nullable: true
             directories:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryDefinition'
+              description: Contains the collection of directories and all of their objects.
           additionalProperties:
             type: object
     microsoft.graph.directoryDefinition:
@@ -18908,19 +18940,23 @@ components:
             discoveryDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Represents the discovery date and time using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
               format: date-time
               nullable: true
             name:
               type: string
+              description: Name of the directory. Must be unique within the synchronization schema. Not nullable.
               nullable: true
             objects:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.objectDefinition'
+              description: Collection of objects supported by the directory.
             readOnly:
               type: boolean
             version:
               type: string
+              description: Read only value that indicates version discovered. Null if discovery has not yet occurred.
               nullable: true
           additionalProperties:
             type: object
@@ -18938,6 +18974,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.attributeType'
+              description: 'Attribute types supported by the operator. Possible values are: Boolean, Binary, Reference, Integer, String.'
           additionalProperties:
             type: object
     microsoft.graph.attributeMappingFunctionSchema:
@@ -18950,6 +18987,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.attributeMappingParameterSchema'
+              description: Collection of function parameters.
           additionalProperties:
             type: object
     microsoft.graph.expressionInputObject:
@@ -18962,6 +19000,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.stringKeyObjectValuePair'
+          description: Property values of the test object.
       additionalProperties:
         type: object
     microsoft.graph.attributeDefinition:
@@ -18970,34 +19009,42 @@ components:
       properties:
         anchor:
           type: boolean
+          description: 'true if the attribute should be used as the anchor for the object. Anchor attributes must have a unique value identifying an object, and must be immutable. Default is false. One, and only one, of the object''s attributes must be designated as the anchor to support synchronization.'
         apiExpressions:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.stringKeyStringValuePair'
         caseExact:
           type: boolean
+          description: true if value of this attribute should be treated as case-sensitive. This setting affects how the synchronization engine detects changes for the attribute.
         defaultValue:
           type: string
           nullable: true
         flowNullValues:
           type: boolean
+          description: '''true'' to allow null values for attributes.'
         metadata:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.metadataEntry'
+          description: 'Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.'
         multivalued:
           type: boolean
+          description: true if an attribute can have multiple values. Default is false.
         mutability:
           $ref: '#/components/schemas/microsoft.graph.mutability'
         name:
           type: string
+          description: Name of the attribute. Must be unique within the object definition. Not nullable.
           nullable: true
         referencedObjects:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.referencedObject'
+          description: 'For attributes with reference type, lists referenced objects (for example, the manager attribute would list User as the referenced object).'
         required:
           type: boolean
+          description: 'true if attribute is required. Object can not be created if any of the required attributes are missing. If during synchronization, the required attribute has no value, the default value will be used. If default the value was not set, synchronization will record an error.'
         type:
           $ref: '#/components/schemas/microsoft.graph.attributeType'
       additionalProperties:
@@ -19013,12 +19060,15 @@ components:
           items:
             type: string
             nullable: true
+          description: A collection of values produced by the evaluation of the expression.
         evaluationSucceeded:
           type: boolean
+          description: true if the evaluation was successful.
         parsedExpression:
           $ref: '#/components/schemas/microsoft.graph.attributeMappingSource'
         parsingSucceeded:
           type: boolean
+          description: true if the expression was parsed successfully.
       additionalProperties:
         type: object
     microsoft.graph.synchronizationTemplate:
@@ -19030,21 +19080,27 @@ components:
             applicationId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
+              description: Identifier of the application this template belongs to.
               format: uuid
             default:
               type: boolean
+              description: true if this template is recommended to be the default for the application.
             description:
               type: string
+              description: Description of the template.
               nullable: true
             discoverable:
               type: boolean
+              description: true if this template should appear in the collection of templates available for the application instance (service principal).
             factoryTag:
               type: string
+              description: One of the well-known factory tags supported by the synchronization engine. The factoryTag tells the synchronization engine which implementation to use when processing jobs based on this template.
               nullable: true
             metadata:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.metadataEntry'
+              description: 'Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.'
             schema:
               $ref: '#/components/schemas/microsoft.graph.synchronizationSchema'
           additionalProperties:
@@ -19076,31 +19132,39 @@ components:
               items:
                 type: string
                 nullable: true
+              description: 'The list of categories for the application. Supported values can be: Collaboration, Business Management, Consumer,Content management, CRM, Data services, Developer services, E-commerce, Education, ERP, Finance, Health, Human resources, IT infrastructure, Mail, Management, Marketing, Media, Productivity, Project management, Telecommunications, Tools, Travel, and Web design & hosting.'
             description:
               type: string
+              description: A description of the application.
               nullable: true
             displayName:
               type: string
+              description: The name of the application.
               nullable: true
             homePageUrl:
               type: string
+              description: The home page URL of the application.
               nullable: true
             logoUrl:
               type: string
+              description: The URL to get the logo for this application.
               nullable: true
             publisher:
               type: string
+              description: The name of the publisher for this application.
               nullable: true
             supportedProvisioningTypes:
               type: array
               items:
                 type: string
                 nullable: true
+              description: The list of provisioning modes supported by this application. The only valid value is sync.
             supportedSingleSignOnModes:
               type: array
               items:
                 type: string
                 nullable: true
+              description: 'The list of single sign-on modes supported by this application. The supported values are password, saml, external, and oidc.'
           additionalProperties:
             type: object
     microsoft.graph.applicationServicePrincipal:
@@ -19166,27 +19230,33 @@ components:
               $ref: '#/components/schemas/microsoft.graph.hybridAgentUpdaterConfiguration'
             isEnabled:
               type: boolean
+              description: Represents if Azure AD Application Proxy is enabled for the tenant.
               nullable: true
             agentGroups:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onPremisesAgentGroup'
+              description: List of existing onPremisesAgentGroup objects. Read-only. Nullable.
             agents:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onPremisesAgent'
+              description: List of existing onPremisesAgent objects. Read-only. Nullable.
             connectorGroups:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.connectorGroup'
+              description: List of existing connectorGroup objects for applications published through Application Proxy. Read-only. Nullable.
             connectors:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.connector'
+              description: List of existing connector objects for applications published through Application Proxy. Read-only. Nullable.
             publishedResources:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.publishedResource'
+              description: List of existing publishedResource objects. Read-only. Nullable.
           additionalProperties:
             type: object
     microsoft.graph.onPremisesAgentGroup:
@@ -19197,18 +19267,22 @@ components:
           properties:
             displayName:
               type: string
+              description: Display name of the onPremisesAgentGroup.
             isDefault:
               type: boolean
+              description: Indicates if the onPremisesAgentGroup is the default agent group. Only a single agent group can be the default onPremisesAgentGroup and is set by the system.
             publishingType:
               $ref: '#/components/schemas/microsoft.graph.onPremisesPublishingType'
             agents:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onPremisesAgent'
+              description: List of onPremisesAgent that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
             publishedResources:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.publishedResource'
+              description: List of publishedResource that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
           additionalProperties:
             type: object
     microsoft.graph.onPremisesAgent:
@@ -19219,8 +19293,10 @@ components:
           properties:
             externalIp:
               type: string
+              description: The external IP address as detected by the service for the agent machine. Read-only
             machineName:
               type: string
+              description: The name of the machine that the aggent is running on. Read-only
             status:
               $ref: '#/components/schemas/microsoft.graph.agentStatus'
             supportedPublishingTypes:
@@ -19231,6 +19307,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onPremisesAgentGroup'
+              description: List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.
           additionalProperties:
             type: object
     microsoft.graph.publishedResource:
@@ -19241,16 +19318,19 @@ components:
           properties:
             displayName:
               type: string
+              description: Display Name of the publishedResource.
               nullable: true
             publishingType:
               $ref: '#/components/schemas/microsoft.graph.onPremisesPublishingType'
             resourceName:
               type: string
+              description: Name of the publishedResource.
               nullable: true
             agentGroups:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onPremisesAgentGroup'
+              description: List of onPremisesAgentGroups that a publishedResource is assigned to. Read-only. Nullable.
           additionalProperties:
             type: object
     microsoft.graph.connector:
@@ -19261,14 +19341,17 @@ components:
           properties:
             externalIp:
               type: string
+              description: The external IP address as detected by the the connector server. Read-only.
             machineName:
               type: string
+              description: The machine name the connector is installed and running on.
             status:
               $ref: '#/components/schemas/microsoft.graph.connectorStatus'
             memberOf:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.connectorGroup'
+              description: The connectorGroup that the connector is a member of. Read-only.
           additionalProperties:
             type: object
     microsoft.graph.servicePrincipal:
@@ -19331,6 +19414,7 @@ components:
               nullable: true
             errorUrl:
               type: string
+              description: Deprecated. Don't use.
               nullable: true
             homepage:
               type: string
@@ -19371,15 +19455,18 @@ components:
             preferredTokenSigningKeyEndDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Specifies the expiration date of the keyCredential used for token signing, marked by preferredTokenSigningKeyThumbprint.'
               format: date-time
               nullable: true
             preferredTokenSigningKeyThumbprint:
               type: string
+              description: Reserved for internal use only. Do not write or otherwise rely on this property. May be removed in future versions.
               nullable: true
             publishedPermissionScopes:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.permissionScope'
+              description: The delegated permissions exposed by the application. For more information see the oauth2PermissionScopes property on the application entity's api property. Not nullable.
             publisherName:
               type: string
               nullable: true
@@ -19390,6 +19477,7 @@ components:
               description: 'The URLs that user tokens are sent to for sign in with the associated application, or the redirect URIs that OAuth 2.0 authorization codes and access tokens are sent to for the associated application. Not nullable.'
             samlMetadataUrl:
               type: string
+              description: The url where the service exposes SAML metadata for federation.
               nullable: true
             samlSingleSignOnSettings:
               $ref: '#/components/schemas/microsoft.graph.samlSingleSignOnSettings'
@@ -19404,6 +19492,7 @@ components:
               nullable: true
             signInAudience:
               type: string
+              description: Specifies what Microsoft accounts are supported for the associated application. Read-only.
               nullable: true
             tags:
               type: array
@@ -19440,6 +19529,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.delegatedPermissionClassification'
+              description: The permission classifications for delegated permissions exposed by the app that this service principal represents.
             endpoints:
               type: array
               items:
@@ -19511,11 +19601,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.permissionClassificationType'
             permissionId:
               type: string
-              description: The unique identifier (id) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal. Required on create. Does not support $filter.
+              description: The unique identifier (id) for the delegated permission listed in the publishedPermissionScopes collection of the servicePrincipal. Required on create. Does not support $filter.
               nullable: true
             permissionName:
               type: string
-              description: The claim value (value) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal. Does not support $filter.
+              description: The claim value (value) for the delegated permission listed in the publishedPermissionScopes collection of the servicePrincipal. Does not support $filter.
               nullable: true
           additionalProperties:
             type: object
@@ -19575,12 +19665,15 @@ components:
       properties:
         fieldId:
           type: string
+          description: 'The name of the field for this credential. e.g, username or password or phoneNumber. This is defined by the application. Must match what is in the html field on singleSignOnSettings/password object.'
           nullable: true
         type:
           type: string
+          description: 'The type for this credential. Valid values: username, password, or other.'
           nullable: true
         value:
           type: string
+          description: 'The value for this credential. e.g, mysuperhiddenpassword. Note the value for passwords is write-only, the value can never be read back.'
           nullable: true
       additionalProperties:
         type: object
@@ -19592,8 +19685,10 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.credential'
+          description: A list of credential objects that define the complete sign in flow.
         id:
           type: string
+          description: The ID of the user or group this credential set belongs to.
       additionalProperties:
         type: object
     microsoft.graph.oAuth2PermissionGrant:
@@ -19612,6 +19707,7 @@ components:
             expiryTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Currently, the end time value is ignored, but a value is required when creating an oAuth2PermissionGrant. Required.'
               format: date-time
               nullable: true
             principalId:
@@ -19628,6 +19724,7 @@ components:
             startTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Currently, the start time value is ignored, but a value is required when creating an oAuth2PermissionGrant. Required.'
               format: date-time
               nullable: true
           additionalProperties:
@@ -19798,6 +19895,7 @@ components:
           type: array
           items:
             type: string
+          description: 'Specifies the URLs where user tokens are sent for sign-in, or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent.'
       additionalProperties:
         type: object
     microsoft.graph.webApplication:
@@ -19830,38 +19928,49 @@ components:
       properties:
         alternateUrl:
           type: string
+          description: 'If you are configuring a traffic manager in front of multiple App Proxy applications, the alternateUrl is the user-friendly URL that will point to the traffic manager.'
           nullable: true
         applicationServerTimeout:
           type: string
+          description: 'The duration the connector will wait for a response from the backend application before closing the connection. Possible values are default, long. When set to default, the backend application timeout has a length of 85 seconds. When set to long, the backend timeout is increased to 180 seconds. Use long if your server takes more than 85 seconds to respond to requests or if you are unable to access the application and the error status is ''Backend Timeout''. Default value is default.'
           nullable: true
         applicationType:
           type: string
+          description: Indicates if this application is an Application Proxy configured application. This is pre-set by the system. Read-only.
           nullable: true
         externalAuthenticationType:
           $ref: '#/components/schemas/microsoft.graph.externalAuthenticationType'
         externalUrl:
           type: string
+          description: 'The published external url for the application. For example, https://intranet-contoso.msappproxy.net/.'
           nullable: true
         internalUrl:
           type: string
+          description: 'The internal url of the application. For example, https://intranet/.'
           nullable: true
         isHttpOnlyCookieEnabled:
           type: boolean
+          description: 'Indicates if the HTTPOnly cookie flag should be set in the HTTP response headers. Set this value to true to have Application Proxy cookies include the HTTPOnly flag in the HTTP response headers. If using Remote Desktop Services, set this value to False. Default value is false.'
           nullable: true
         isOnPremPublishingEnabled:
           type: boolean
+          description: Indicates if the application is currently being published via Application Proxy or not. This is pre-set by the system. Read-only.
           nullable: true
         isPersistentCookieEnabled:
           type: boolean
+          description: 'Indicates if the Persistent cookie flag should be set in the HTTP response headers. Keep this value set to false. Only use this setting for applications that can''t share cookies between processes. For more information about cookie settings, see Cookie settings for accessing on-premises applications in Azure Active Directory. Default value is false.'
           nullable: true
         isSecureCookieEnabled:
           type: boolean
+          description: Indicates if the Secure cookie flag should be set in the HTTP response headers. Set this value to true to transmit cookies over a secure channel such as an encrypted HTTPS request. Default value is true.
           nullable: true
         isTranslateHostHeaderEnabled:
           type: boolean
+          description: Indicates if the application should translate urls in the reponse headers. Keep this value as true unless your application required the original host header in the authentication request. Default value is true.
           nullable: true
         isTranslateLinksInBodyEnabled:
           type: boolean
+          description: 'Indicates if the application should translate urls in the application body. Keep this value as false unless you have hardcoded HTML links to other on-premises applications and don''t use custom domains. For more information, see Link translation with Application Proxy. Default value is false.'
           nullable: true
         singleSignOnSettings:
           $ref: '#/components/schemas/microsoft.graph.onPremisesPublishingSingleSignOn'
@@ -19929,11 +20038,13 @@ components:
         expiration:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'Date and time when this job will expire. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''.'
           format: date-time
           nullable: true
         interval:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
+          description: The interval between synchronization iterations.
           format: duration
         state:
           $ref: '#/components/schemas/microsoft.graph.synchronizationScheduleState'
@@ -19947,9 +20058,11 @@ components:
           $ref: '#/components/schemas/microsoft.graph.synchronizationStatusCode'
         countSuccessiveCompleteFailures:
           type: integer
+          description: Number of consecutive times this job failed.
           format: int64
         escrowsPruned:
           type: boolean
+          description: 'true if the job''s escrows (object-level errors) were pruned during initial synchronization. Escrows can be pruned if during the initial synchronization, you reach the threshold of errors that would normally put the job in quarantine. Instead of going into quarantine, the synchronization process clears the job''s errors and continues until the initial synchronization is completed. When the initial synchronization is completed, the job will pause and wait for the customer to clean up the errors.'
         lastExecution:
           $ref: '#/components/schemas/microsoft.graph.synchronizationTaskExecution'
         lastSuccessfulExecution:
@@ -19960,22 +20073,27 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.synchronizationProgress'
+          description: Details of the progress of a job toward completion.
         quarantine:
           $ref: '#/components/schemas/microsoft.graph.synchronizationQuarantine'
         steadyStateFirstAchievedTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The time when steady state (no more changes to the process) was first achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''.'
           format: date-time
         steadyStateLastAchievedTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The time when steady state (no more changes to the process) was last achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''.'
           format: date-time
         synchronizedEntryCountByType:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.stringKeyLongValuePair'
+          description: 'Count of synchronized objects, listed by object type.'
         troubleshootingUrl:
           type: string
+          description: 'In the event of an error, the URL with the troubleshooting steps for the issue.'
           nullable: true
       additionalProperties:
         type: object
@@ -19998,9 +20116,11 @@ components:
       properties:
         objectId:
           type: string
+          description: The identifier of an object to which a synchronizationJob  is to be applied.
           nullable: true
         objectTypeName:
           type: string
+          description: The type of the object to which a synchronizationJob  is to be applied.
           nullable: true
       additionalProperties:
         type: object
@@ -20066,30 +20186,38 @@ components:
       properties:
         editable:
           type: boolean
+          description: true if the synchronization rule can be customized; false if this rule is read-only and should not be changed.
         id:
           type: string
+          description: Synchronization rule identifier. Must be one of the identifiers recognized by the synchronization engine. Supported rule identifiers can be found in the synchronization template returned by the API.
           nullable: true
         metadata:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.stringKeyStringValuePair'
+          description: 'Additional extension properties. Unless instructed explicitly by the support team, metadata values should not be changed.'
         name:
           type: string
+          description: Human-readable name of the synchronization rule. Not nullable.
           nullable: true
         objectMappings:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.objectMapping'
+          description: Collection of object mappings supported by the rule. Tells the synchronization engine which objects should be synchronized.
         priority:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: Priority relative to other rules in the synchronizationSchema. Rules with the lowest priority number will be processed first.
           format: int32
         sourceDirectoryName:
           type: string
+          description: Name of the source directory. Must match one of the directory definitions in synchronizationSchema.
           nullable: true
         targetDirectoryName:
           type: string
+          description: Name of the target directory. Must match one of the directory definitions in synchronizationSchema.
           nullable: true
       additionalProperties:
         type: object
@@ -20153,11 +20281,14 @@ components:
       properties:
         allowMultipleOccurrences:
           type: boolean
+          description: 'The given parameter can be provided multiple times (for example, multiple input strings in the Concatenate(string,string,...) function).'
         name:
           type: string
+          description: Parameter name.
           nullable: true
         required:
           type: boolean
+          description: true if the parameter is required; otherwise false.
         type:
           $ref: '#/components/schemas/microsoft.graph.attributeType'
       additionalProperties:
@@ -20168,6 +20299,7 @@ components:
       properties:
         key:
           type: string
+          description: Key.
           nullable: true
       additionalProperties:
         type: object
@@ -20177,9 +20309,11 @@ components:
       properties:
         key:
           type: string
+          description: Name of the metadata property.
           nullable: true
         value:
           type: string
+          description: Value of the metadata property.
           nullable: true
       additionalProperties:
         type: object
@@ -20197,9 +20331,11 @@ components:
       properties:
         referencedObjectName:
           type: string
+          description: Name of the referenced object. Must match one of the objects in the directory definition.
           nullable: true
         referencedProperty:
           type: string
+          description: 'Currently not supported. Name of the property in the referenced object, the value for which is used as the reference.'
           nullable: true
       additionalProperties:
         type: object
@@ -20209,18 +20345,22 @@ components:
       properties:
         code:
           type: string
+          description: Represents the error code.
           nullable: true
         details:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.publicErrorDetail'
+          description: Details of the error.
         innerError:
           $ref: '#/components/schemas/microsoft.graph.publicInnerError'
         message:
           type: string
+          description: A non-localized message for the developer.
           nullable: true
         target:
           type: string
+          description: The target of the error.
           nullable: true
       additionalProperties:
         type: object
@@ -20248,9 +20388,11 @@ components:
       properties:
         allowUpdateConfigurationOverride:
           type: boolean
+          description: Indicates if updater configuration will be skipped and the agent will receive an update when the next version of the agent is available.
         deferUpdateDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
           format: date-time
           nullable: true
         updateWindow:
@@ -20376,7 +20518,7 @@ components:
           nullable: true
         provisioningStatus:
           type: string
-          description: 'The provisioning status of the service plan. Possible values:''Success'' - Service is fully provisioned.''Disabled'' - Service has been disabled.''PendingInput'' - Service is not yet provisioned; awaiting service confirmation.''PendingActivation'' - Service is provisioned but requires explicit activation by administrator (for example, Intune_O365 service plan)''PendingProvisioning'' - Microsoft has added a new service to the product SKU and it has not been activated in the tenant, yet.'
+          description: 'The provisioning status of the service plan. Possible values:''Success'' - Service is fully provisioned.''Disabled'' - Service has been disabled.''PendingInput'' - Service is not yet provisioned; awaiting service confirmation.''PendingActivation'' - Service is provisioned but requires explicit activation by administrator (for example, Intune_O365 service plan).''PendingProvisioning'' - Microsoft has added a new service to the product SKU and it has not been activated in the tenant, yet.'
           nullable: true
         servicePlanId:
           pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
@@ -20410,6 +20552,7 @@ components:
           type: array
           items:
             type: string
+          description: The unique identifier for the oauth2PermissionScopes the application requires.
       additionalProperties:
         type: object
     microsoft.graph.optionalClaim:
@@ -20486,21 +20629,26 @@ components:
         expiryDate:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The expiry date of the custom domain certificate. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''.'
           format: date-time
           nullable: true
         issueDate:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The issue date of the custom domain. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''.'
           format: date-time
           nullable: true
         issuerName:
           type: string
+          description: The issuer name of the custom domain certificate.
           nullable: true
         subjectName:
           type: string
+          description: The subject name of the custom domain certificate.
           nullable: true
         thumbprint:
           type: string
+          description: The thumbprint associated with the custom domain certificate.
           nullable: true
       additionalProperties:
         type: object
@@ -20541,33 +20689,43 @@ components:
       properties:
         activityIdentifier:
           type: string
+          description: Identifier of the job run.
           nullable: true
         countEntitled:
           type: integer
+          description: Count of processed entries that were assigned for this application.
           format: int64
         countEntitledForProvisioning:
           type: integer
+          description: Count of processed entries that were assigned for provisioning.
           format: int64
         countEscrowed:
           type: integer
+          description: Count of entries that were escrowed (errors).
           format: int64
         countEscrowedRaw:
           type: integer
+          description: 'Count of entries that were escrowed, including system-generated escrows.'
           format: int64
         countExported:
           type: integer
+          description: Count of exported entries.
           format: int64
         countExports:
           type: integer
+          description: Count of entries that were expected to be exported.
           format: int64
         countImported:
           type: integer
+          description: Count of imported entries.
           format: int64
         countImportedDeltas:
           type: integer
+          description: Count of imported delta-changes.
           format: int64
         countImportedReferenceDeltas:
           type: integer
+          description: Count of imported delta-changes pertaining to reference changes.
           format: int64
         error:
           $ref: '#/components/schemas/microsoft.graph.synchronizationError'
@@ -20576,10 +20734,12 @@ components:
         timeBegan:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'Time when this job run began. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''.'
           format: date-time
         timeEnded:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'Time when this job run ended. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''.'
           format: date-time
       additionalProperties:
         type: object
@@ -20589,16 +20749,20 @@ components:
       properties:
         completedUnits:
           type: integer
+          description: The numerator of a progress ratio; the number of units of changes already processed.
           format: int64
         progressObservationDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: The time of a progress observation as an offset in minutes from UTC.
           format: date-time
         totalUnits:
           type: integer
+          description: The denominator of a progress ratio; a number of units of changes to be processed to accomplish synchronization.
           format: int64
         units:
           type: string
+          description: An optional description of the units.
           nullable: true
       additionalProperties:
         type: object
@@ -20609,21 +20773,25 @@ components:
         currentBegan:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'Date and time when the quarantine was last evaluated and imposed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''.'
           format: date-time
         error:
           $ref: '#/components/schemas/microsoft.graph.synchronizationError'
         nextAttempt:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'Date and time when the next attempt to re-evaluate the quarantine will be made. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''.'
           format: date-time
         reason:
           $ref: '#/components/schemas/microsoft.graph.quarantineReason'
         seriesBegan:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'Date and time when the quarantine was first imposed in this series (a series starts when a quarantine is first imposed, and is reset as soon as the quarantine is lifted). The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''.'
           format: date-time
         seriesCount:
           type: integer
+          description: 'Number of times in this series the quarantine was re-evaluated and left in effect (a series starts when quarantine is first imposed, and is reset as soon as quarantine is lifted).'
           format: int64
       additionalProperties:
         type: object
@@ -20633,9 +20801,11 @@ components:
       properties:
         key:
           type: string
+          description: Key.
           nullable: true
         value:
           type: integer
+          description: Value.
           format: int64
       additionalProperties:
         type: object
@@ -20647,24 +20817,30 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.attributeMapping'
+          description: Attribute mappings define which attributes to map from the source object into the target object and how they should flow. A number of functions are available to support the transformation of the original source values.
         enabled:
           type: boolean
+          description: 'When true, this object mapping will be processed during synchronization. When false, this object mapping will be skipped.'
         flowTypes:
           $ref: '#/components/schemas/microsoft.graph.objectFlowTypes'
         metadata:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.metadataEntry'
+          description: 'Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.'
         name:
           type: string
+          description: Human-friendly name of the object mapping.
           nullable: true
         scope:
           $ref: '#/components/schemas/microsoft.graph.filter'
         sourceObjectName:
           type: string
+          description: Name of the object in the source directory. Must match the object name from the source directory definition.
           nullable: true
         targetObjectName:
           type: string
+          description: Name of the object in target directory. Must match the object name from the target directory definition.
           nullable: true
       additionalProperties:
         type: object
@@ -20674,12 +20850,15 @@ components:
       properties:
         code:
           type: string
+          description: The error code.
           nullable: true
         message:
           type: string
+          description: The error message.
           nullable: true
         target:
           type: string
+          description: The target of the error.
           nullable: true
       additionalProperties:
         type: object
@@ -20689,16 +20868,20 @@ components:
       properties:
         code:
           type: string
+          description: The error code.
           nullable: true
         details:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.publicErrorDetail'
+          description: A collection of error details.
         message:
           type: string
+          description: The error message.
           nullable: true
         target:
           type: string
+          description: The target of the error.
           nullable: true
       additionalProperties:
         type: object
@@ -20708,6 +20891,7 @@ components:
       properties:
         key:
           type: string
+          description: The name of the parameter.
           nullable: true
         value:
           $ref: '#/components/schemas/microsoft.graph.attributeMappingSource'
@@ -20727,11 +20911,13 @@ components:
         updateWindowEndTime:
           pattern: '^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$'
           type: string
+          description: End of a time window during which agents can receive updates
           format: time
           nullable: true
         updateWindowStartTime:
           pattern: '^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$'
           type: string
+          description: Start of a time window during which agents can receive updates
           format: time
           nullable: true
       additionalProperties:
@@ -20742,15 +20928,19 @@ components:
       properties:
         customizedLabel:
           type: string
+          description: Title/label override for customization.
           nullable: true
         defaultLabel:
           type: string
+          description: Label that would be used if no customizedLabel is provided. Read only.
           nullable: true
         fieldId:
           type: string
+          description: 'Id used to identity the field type. This is an internal id and possible values are param_1, param_2, param_userName, param_password.'
           nullable: true
         type:
           type: string
+          description: 'Type of the credential. The values can be text, password.'
           nullable: true
       additionalProperties:
         type: object
@@ -20760,11 +20950,11 @@ components:
       properties:
         key:
           type: string
-          description: Key for the key-value pair.
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Value for the key-value pair.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object
@@ -20797,6 +20987,7 @@ components:
       properties:
         kerberosServicePrincipalName:
           type: string
+          description: The Internal Application SPN of the application server. This SPN needs to be in the list of services to which the connector can present delegated credentials.
           nullable: true
         kerberosSignOnMappingAttributeType:
           $ref: '#/components/schemas/microsoft.graph.kerberosSignOnMappingAttributeType'
@@ -20851,9 +21042,11 @@ components:
       properties:
         defaultValue:
           type: string
+          description: Default value to be used in case the source property was evaluated to null. Optional.
           nullable: true
         exportMissingReferences:
           type: boolean
+          description: For internal use only.
         flowBehavior:
           $ref: '#/components/schemas/microsoft.graph.attributeFlowBehavior'
         flowType:
@@ -20862,11 +21055,13 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: 'If higher than 0, this attribute will be used to perform an initial match of the objects between source and target directories. The synchronization engine will try to find the matching object using attribute with lowest value of matching priority first. If not found, the attribute with the next matching priority will be used, and so on a until match is found or no more matching attributes are left. Only attributes that are expected to have unique values, such as email, should be used as matching attributes.'
           format: int32
         source:
           $ref: '#/components/schemas/microsoft.graph.attributeMappingSource'
         targetAttributeName:
           type: string
+          description: Name of the attribute on the target object.
           nullable: true
       additionalProperties:
         type: object
@@ -20886,14 +21081,17 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.filterGroup'
+          description: '*Experimental* Filter group set used to decide whether given object belongs and should be processed as part of this object mapping. An object is considered in scope if ANY of the groups in the collection is evaluated to true.'
         groups:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.filterGroup'
+          description: 'Filter group set used to decide whether given object is in scope for provisioning. This is the filter which should be used in most cases. If an object used to satisfy this filter at a given moment, and then the object or the filter was changed so that filter is not satisfied any longer, such object will get de-provisioned''. An object is considered in scope if ANY of the groups in the collection is evaluated to true.'
         inputFilterGroups:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.filterGroup'
+          description: '*Experimental* Filter group set used to filter out objects at the early stage of reading them from the directory. If an object doesn''t satisfy this filter it will not be processed further. Important to understand is that if an object used to satisfy this filter at a given moment, and then the object or the filter was changed so that filter is no longer satisfied, such object will NOT get de-provisioned. An object is considered in scope if ANY of the groups in the collection is evaluated to true.'
       additionalProperties:
         type: object
     odata.error.detail:
@@ -20942,8 +21140,10 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.filterClause'
+          description: Filter clauses (conditions) of this group. All clauses in a group must be satisfied in order for the filter group to evaluate to true.
         name:
           type: string
+          description: Human-readable name of the filter group.
           nullable: true
       additionalProperties:
         type: object
@@ -20953,9 +21153,11 @@ components:
       properties:
         operatorName:
           type: string
+          description: Name of the operator to be applied to the source and target operands. Must be one of the supported operators. Supported operators can be discovered.
           nullable: true
         sourceOperandName:
           type: string
+          description: Name of source operand (the operand being tested). The source operand name must match one of the attribute names on the source object.
           nullable: true
         targetOperand:
           $ref: '#/components/schemas/microsoft.graph.filterOperand'
@@ -20970,6 +21172,7 @@ components:
           items:
             type: string
             nullable: true
+          description: Collection of values.
       additionalProperties:
         type: object
   responses:
