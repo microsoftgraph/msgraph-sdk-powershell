@@ -2,6 +2,8 @@
 # Licensed under the MIT License.
 
 parameters:
+  - name: ModulesToGenerate
+    type: string
   - name: AuthModulePath
     type: string
   - name: AuthModuleDllPattern
@@ -15,18 +17,29 @@ parameters:
   - name: EnableSigning
     type: boolean
     default: false
+  - name: PublishToFeed
+    type: boolean
+    default: false
 jobs:
   - job: GenerateServiceModules
     displayName: Service module generation
     pool: MsGraphDevXAzureAgents
     timeoutInMinutes: 360
     condition: and(succeeded(), ne(stageDependencies.DownloadOpenAPIDocs.GetLatestDocs.outputs['OpenAPIDocDiff.ModulesWithChanges'], ''))
+    variables:
+      Branch: ${{ parameters.Branch }}
+      ModulesToGenerate: ${{ parameters.ModulesToGenerate }}
+      AuthModulePath: ${{ parameters.AuthModulePath }}
+      AuthModuleDllPattern: ${{ parameters.AuthModuleDllPattern }}
+      ServiceModulePath: ${{ parameters.ServiceModulePath }}
+      ModulePrefix: ${{ parameters.ModulePrefix }}
+      EnableSigning: ${{ parameters.EnableSigning }}
+      PublishToFeed: ${{ parameters.PublishToFeed }}
     steps:
       - template: ../common-templates/install-tools.yml
 
       - task: Bash@3
         displayName: "Switch branch to $(Branch)"
-        condition: and(succeeded(), ne('${{ parameters.Branch }}', ''))
         inputs:
           targetType: inline
           script: |
@@ -36,7 +49,6 @@ jobs:
             git pull
             git status
 
-      # Consider making generate-auth-module a template with a collection of tasks instead to avoid rebuilding and signing auth module here.
       - task: PowerShell@2
         displayName: Build auth module
         enabled: true
@@ -44,11 +56,12 @@ jobs:
           targetType: inline
           pwsh: true
           script: |
-            . $(System.DefaultWorkingDirectory)/tools/GenerateAuthenticationModule.ps1 -ArtifactsLocation $(Build.ArtifactStagingDirectory) -Build -EnableSigning -BuildWhenEqual -RepositoryName "LocalNugetFeed"
+            [bool]$EnableSigning = if ("$(EnableSigning)" -eq "true") { $true } else { $false }
+            . $(System.DefaultWorkingDirectory)/tools/GenerateAuthenticationModule.ps1 -ArtifactsLocation $(Build.ArtifactStagingDirectory) -Build -EnableSigning:$EnableSigning -BuildWhenEqual -RepositoryName "LocalNugetFeed"
 
       - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
         displayName: ESRP DLL strong name (Auth Module)
-        enabled: true
+        condition: and(succeeded(), eq('${{ parameters.EnableSigning }}', true))
         inputs:
           ConnectedServiceName: "microsoftgraph ESRP CodeSign DLL and NuGet (AKV)"
           FolderPath: $(AuthModulePath)
@@ -75,7 +88,7 @@ jobs:
 
       - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
         displayName: "ESRP DLL code sign (Auth Module)"
-        enabled: true
+        condition: and(succeeded(), eq('${{ parameters.EnableSigning }}', true))
         inputs:
           ConnectedServiceName: "microsoftgraph ESRP CodeSign DLL and NuGet (AKV)"
           FolderPath: $(AuthModulePath)
@@ -120,7 +133,6 @@ jobs:
                 }
             ]
           SessionTimeout: 20
-      # End of suggestion.
 
       - task: PowerShell@2
         displayName: Generate and build service modules
@@ -128,11 +140,13 @@ jobs:
           targetType: inline
           pwsh: true
           script: |
+            [bool]$EnableSigning = if ("$(EnableSigning)" -eq "true") { $true } else { $false }
             $Modules = "$(ModulesToGenerate)" -split " "
-            . $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -Build -Test -UpdateAutoRest -EnableSigning -ModulesToGenerate $Modules
+            . $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -Build -Test -UpdateAutoRest -EnableSigning:$EnableSigning -ModulesToGenerate $Modules
 
       - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
         displayName: ESRP DLL strong name (Service Modules)
+        condition: and(succeeded(), eq('${{ parameters.EnableSigning }}', true))
         inputs:
           ConnectedServiceName: "microsoftgraph ESRP CodeSign DLL and NuGet (AKV)"
           FolderPath: $(ServiceModulePath)
@@ -159,6 +173,7 @@ jobs:
 
       - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
         displayName: "ESRP DLL code sign (Service Modules)"
+        condition: and(succeeded(), eq('${{ parameters.EnableSigning }}', true))
         inputs:
           ConnectedServiceName: "microsoftgraph ESRP CodeSign DLL and NuGet (AKV)"
           FolderPath: $(ServiceModulePath)
@@ -220,6 +235,7 @@ jobs:
 
       - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
         displayName: ESRP NuGet code sign (Service Modules)
+        condition: and(succeeded(), eq('${{ parameters.EnableSigning }}', true))
         inputs:
           ConnectedServiceName: "microsoftgraph ESRP CodeSign DLL and NuGet (AKV)"
           FolderPath: '$(Build.ArtifactStagingDirectory)\'
@@ -244,18 +260,18 @@ jobs:
             ]
           SessionTimeout: 20
 
-      - task: NuGetCommand@2
-        displayName: Publish NuGet to local build feed
-        enabled: false
-        inputs:
-          command: push
-          packagesToPush: "$(Build.ArtifactStagingDirectory)/**/Microsoft.Graph.*.nupkg"
-          publishVstsFeed: "0985d294-5762-4bc2-a565-161ef349ca3e/edc337b9-e5ea-49dd-a2cb-e8d66668ca57"
-          allowPackageConflicts: true
-
       - task: PublishBuildArtifacts@1
         displayName: Publish service modules build artifacts
         inputs:
           PathtoPublish: "$(Build.ArtifactStagingDirectory)/"
           ArtifactName: "drop"
           publishLocation: "Container"
+
+      - task: NuGetCommand@2
+        displayName: Publish NuGet to local build feed
+        condition: and(succeeded(), eq('${{ parameters.PublishToFeed }}', true))
+        inputs:
+          command: push
+          packagesToPush: "$(Build.ArtifactStagingDirectory)/**/Microsoft.Graph.*.nupkg"
+          publishVstsFeed: "0985d294-5762-4bc2-a565-161ef349ca3e/edc337b9-e5ea-49dd-a2cb-e8d66668ca57"
+          allowPackageConflicts: true
