@@ -11422,7 +11422,7 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
+    put:
       tags:
         - users.authentication
       summary: Update the navigation property phoneMethods in users
