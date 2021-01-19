@@ -10,7 +10,7 @@ variables:
 trigger: none
 pr: none
 schedules:
-  - cron: "17 10 * * *" # TODO: Remove test data.
+  - cron: "17 15 * * *" # TODO: Remove test data.
     # - cron: "0 12 * * WED" # Run every wednesday at noon UTC
     displayName: "Weekly PS SDK generation"
     branches:
