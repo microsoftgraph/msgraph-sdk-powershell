@@ -51,7 +51,6 @@ jobs:
 
       - task: PowerShell@2
         displayName: Build auth module
-        enabled: true
         inputs:
           targetType: inline
           pwsh: true

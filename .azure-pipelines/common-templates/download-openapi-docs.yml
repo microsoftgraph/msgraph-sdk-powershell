@@ -69,10 +69,6 @@ jobs:
                 $ModulesWithChanges.Add($matches.2, $matches.1)
               }
             }
-
-            #TODO: Remove test data.
-            $ModulesWithChanges.Add("CloudCommunications", "CloudCommunications")	
-            $ModulesWithChanges.Add("Search", "Search")
             $ModuleNames = $ModulesWithChanges.Keys
             Write-Host "##vso[task.setvariable variable=ModulesWithChanges;isOutput=true]$ModuleNames"
 

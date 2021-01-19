@@ -5,19 +5,16 @@ name: $(BuildDefinitionName)_$(SourceBranchName)_$(Date:yyyyMMdd)$(Rev:.r)
 pool: MsGraphDevXAzureAgents
 
 variables:
-  Branch: "test/WeeklyOpenApiDocsDownload" #TODO: Remove test data.
-  BaseBranch: "features/WeeklyReleaseUpdate" #TODO: Remove test data.
+  Branch: "WeeklyOpenApiDocsDownload"
+  BaseBranch: "dev"
 trigger: none
 pr: none
 schedules:
-  - cron: "21 17 * * *" # TODO: Remove test data.
-    # - cron: "0 12 * * WED" # Run every wednesday at noon UTC
+  - cron: "0 12 * * WED" # Run every wednesday at noon UTC
     displayName: "Weekly PS SDK generation"
     branches:
       include:
         - dev
-        - po/* #TODO: Remove test data.
-        - features/* #TODO: Remove test data.
     always: true
 
 stages:
@@ -40,11 +37,5 @@ stages:
           AuthModuleDllPattern: "Microsoft.Graph.Authentication.dll"
           ServiceModulePath: "src/"
           ModulePrefix: "Microsoft.Graph"
-          EnableSigning: true
+          EnableSigning: false
           PublishToFeed: false
-  # Git diff on download OpenAPI docs. Store changed modules in a variable.
-  # Commit downloaded docs.
-  # If modules change, bump their minor and meta-module version.
-  # Generate changed modules + run tests.
-  # Commit generated files to weekly branch.
-  # Create PR to dev

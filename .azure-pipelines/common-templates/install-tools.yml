@@ -8,12 +8,6 @@ steps:
       debugMode: false
       version: 2.x
 
-  # - task: UseDotNet@2
-  #   displayName: "Use .NET Core SDK 3.x"
-  #   inputs:
-  #     debugMode: false
-  #     version: 3.x
-
   - task: NuGetToolInstaller@1
     displayName: Install Nuget 5.7
     inputs:
@@ -25,7 +19,6 @@ steps:
 
   - task: PowerShell@2
     displayName: Install Powershell core
-    enabled: false
     inputs:
       targetType: inline
       script: |
