@@ -40,7 +40,7 @@ stages:
           AuthModuleDllPattern: "Microsoft.Graph.Authentication.dll"
           ServiceModulePath: "src/"
           ModulePrefix: "Microsoft.Graph"
-          EnableSigning: false
+          EnableSigning: true
           PublishToFeed: false
   # Git diff on download OpenAPI docs. Store changed modules in a variable.
   # Commit downloaded docs.
