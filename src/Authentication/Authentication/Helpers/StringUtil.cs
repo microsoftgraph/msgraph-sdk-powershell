@@ -119,13 +119,19 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                 {
                     case JObject dictionary:
                         // JObject is a IDictionary
-                        return returnHashtable
-                                   ? PopulateHashTableFromJDictionary(dictionary, out error)
-                                   : PopulateFromJDictionary(dictionary, new DuplicateMemberHashSet(), out error);
+                        /* Note: Do not use Ternary operator as HashTable is implicitly convertible to PsObject, thus the ternary operation below, always returns a PSObject.
+                         * return returnHashtable ? PopulateHashTableFromJDictionary(dictionary, out error) : PopulateFromJDictionary(dictionary, new DuplicateMemberHashSet(), out error);
+                         * https://github.com/PowerShell/PowerShell/blob/73f852da4252eabe4097ab48a7b67c5d147a01f3/src/System.Management.Automation/engine/MshObject.cs#L965
+                         */
+                        if (returnHashtable)
+                            return PopulateHashTableFromJDictionary(dictionary, out error);
+                        else
+                            return PopulateFromJDictionary(dictionary, new DuplicateMemberHashSet(), out error);
                     case JArray list:
-                        return returnHashtable
-                                   ? PopulateHashTableFromJArray(list, out error)
-                                   : PopulateFromJArray(list, out error);
+                        if (returnHashtable)
+                            return PopulateHashTableFromJArray(list, out error);
+                        else
+                            return PopulateFromJArray(list, out error);
                     default:
                         return obj;
                 }
@@ -138,6 +144,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                 throw new ArgumentException(msg, je);
             }
         }
+
         private class DuplicateMemberHashSet : HashSet<string>
         {
             public DuplicateMemberHashSet()
@@ -329,7 +336,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
         private static Hashtable PopulateHashTableFromJDictionary(JObject entries, out ErrorRecord error)
         {
             error = null;
-            var result = new Hashtable(entries.Count);
+            var result = new Hashtable(entries.Count, StringComparer.OrdinalIgnoreCase);
             foreach (var entry in entries)
             {
                 // Case sensitive duplicates should normally not occur since JsonConvert.DeserializeObject

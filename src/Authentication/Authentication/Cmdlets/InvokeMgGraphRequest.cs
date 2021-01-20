@@ -442,7 +442,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             var responseString = await response.Content.ReadAsStringAsync();
             if (ShouldWriteToPipeline)
             {
-                ErrorRecord error = null;
+                ErrorRecord error;
                 switch (OutputType)
                 {
                     case OutputType.HashTable:
@@ -863,8 +863,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         /// <summary>
         ///     Validate the Request Uri must have the same Host as GraphHttpClient BaseAddress.
         /// </summary>
-        /// <param name="httpClient"></param>
-        private void ValidateRequestUri(HttpClient httpClient)
+        private void ValidateRequestUri()
         {
             if (Uri == null)
             {
@@ -1096,7 +1095,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                     PrepareSession();
                     using (var client = GetHttpClient())
                     {
-                        ValidateRequestUri(client);
+                        ValidateRequestUri();
                         using (var httpRequestMessage = GetRequest(client, Uri))
                         {
                             using (var httpRequestMessageFormatter = new HttpMessageFormatter(httpRequestMessage))
