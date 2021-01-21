@@ -85,6 +85,7 @@ directive:
     - microsoft.graph.governanceRoleAssignment
     - microsoft.graph.governanceRoleDefinition
     - microsoft.graph.workbookOperationError
+    - microsoft.graph.parentLabelDetails
 
   # Set parameter alias
   - where:
@@ -551,6 +552,10 @@ directive:
           // Call OnBeforeWriteObject to deserialize '@odata.count' from the response object.
           let writeObjectRegex = /^(\s*)(WriteObject\(result\.Value,true\);)$/gm
           $ = $.replace(writeObjectRegex,'\n$1OnBeforeWriteObject(this.InvocationInformation.BoundParameters, result?.AdditionalProperties);\n$1$2');
+
+          // Format all Search values by adding quotes around them.
+          let searchQueryRegex = /this\.InvocationInformation\.BoundParameters\.ContainsKey\("Search"\)\s*\?\s*Search\s*:\s*null/gm
+          $ = $.replace(searchQueryRegex, 'this.FormatSearchValue(this.InvocationInformation.BoundParameters, Search)');
         }
         return $;
       }

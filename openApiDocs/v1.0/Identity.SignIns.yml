@@ -1748,7 +1748,10 @@ paths:
                 - creationType
                 - department
                 - displayName
+                - employeeHireDate
                 - employeeId
+                - employeeOrgData
+                - employeeType
                 - externalUserState
                 - externalUserStateChangeDateTime
                 - faxNumber
@@ -1840,8 +1843,10 @@ paths:
                 - onenote
                 - activities
                 - onlineMeetings
+                - presence
                 - joinedTeams
                 - teamwork
+                - todo
               type: string
         - name: $expand
           in: query
@@ -1893,8 +1898,10 @@ paths:
                 - onenote
                 - activities
                 - onlineMeetings
+                - presence
                 - joinedTeams
                 - teamwork
+                - todo
               type: string
       responses:
         '200':
@@ -2060,12 +2067,20 @@ paths:
               operationId: invitations.InvitedUser.ListOnlineMeetings
               parameters:
                 invitation-id: $request.path.invitation-id
+            presence:
+              operationId: invitations.InvitedUser.GetPresence
+              parameters:
+                invitation-id: $request.path.invitation-id
             joinedTeams:
               operationId: invitations.InvitedUser.ListJoinedTeams
               parameters:
                 invitation-id: $request.path.invitation-id
             teamwork:
               operationId: invitations.InvitedUser.GetTeamwork
+              parameters:
+                invitation-id: $request.path.invitation-id
+            todo:
+              operationId: invitations.InvitedUser.GetTodo
               parameters:
                 invitation-id: $request.path.invitation-id
         default:
@@ -2249,12 +2264,20 @@ paths:
               operationId: invitations.InvitedUser.ListOnlineMeetings
               parameters:
                 invitation-id: $request.path.invitation-id
+            presence:
+              operationId: invitations.InvitedUser.GetPresence
+              parameters:
+                invitation-id: $request.path.invitation-id
             joinedTeams:
               operationId: invitations.InvitedUser.ListJoinedTeams
               parameters:
                 invitation-id: $request.path.invitation-id
             teamwork:
               operationId: invitations.InvitedUser.GetTeamwork
+              parameters:
+                invitation-id: $request.path.invitation-id
+            todo:
+              operationId: invitations.InvitedUser.GetTodo
               parameters:
                 invitation-id: $request.path.invitation-id
         default:
@@ -2734,6 +2757,7 @@ paths:
               enum:
                 - id
                 - activityBasedTimeoutPolicies
+                - authorizationPolicy
                 - claimsMappingPolicies
                 - homeRealmDiscoveryPolicies
                 - permissionGrantPolicies
@@ -2754,6 +2778,7 @@ paths:
               enum:
                 - '*'
                 - activityBasedTimeoutPolicies
+                - authorizationPolicy
                 - claimsMappingPolicies
                 - homeRealmDiscoveryPolicies
                 - permissionGrantPolicies
@@ -2772,6 +2797,8 @@ paths:
           links:
             activityBasedTimeoutPolicies:
               operationId: policies.ListActivityBasedTimeoutPolicies
+            authorizationPolicy:
+              operationId: policies.GetAuthorizationPolicy
             claimsMappingPolicies:
               operationId: policies.ListClaimsMappingPolicies
             homeRealmDiscoveryPolicies:
@@ -3017,6 +3044,91 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: activityBasedTimeoutPolicy
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /policies/authorizationPolicy:
+    get:
+      tags:
+        - policies.authorizationPolicy
+      summary: Get authorizationPolicy from policies
+      operationId: policies_GetAuthorizationPolicy
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+                - description
+                - displayName
+                - allowedToSignUpEmailBasedSubscriptions
+                - allowedToUseSSPR
+                - allowEmailVerifiedUsersToJoinOrganization
+                - allowInvitesFrom
+                - blockMsolPowerShell
+                - defaultUserRolePermissions
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.authorizationPolicy'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - policies.authorizationPolicy
+      summary: Update the navigation property authorizationPolicy in policies
+      operationId: policies_UpdateAuthorizationPolicy
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.authorizationPolicy'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - policies.authorizationPolicy
+      summary: Delete navigation property authorizationPolicy for policies
+      operationId: policies_DeleteAuthorizationPolicy
+      parameters:
         - name: If-Match
           in: header
           description: ETag
@@ -5213,7 +5325,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'The telephone numbers for the user. NOTE: Although this is a string collection, only one number can be set for this property.'
+              description: 'The telephone numbers for the user. NOTE: Although this is a string collection, only one number can be set for this property. Read-only for users synced from on-premises directory.'
             city:
               type: string
               description: The city in which the user is located. Supports $filter.
@@ -5248,9 +5360,21 @@ components:
               type: string
               description: 'The name displayed in the address book for the user. This is usually the combination of the user''s first name, middle initial and last name. This property is required when a user is created and it cannot be cleared during updates. Supports $filter and $orderby.'
               nullable: true
+            employeeHireDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time when the user was hired or will start work in case of a future hire. Returned only on $select. Supports $filter.
+              format: date-time
+              nullable: true
             employeeId:
               type: string
-              description: The employee identifier assigned to the user by the organization. Supports $filter.
+              description: The employee identifier assigned to the user by the organization. Returned only on $select. Supports $filter.
+              nullable: true
+            employeeOrgData:
+              $ref: '#/components/schemas/microsoft.graph.employeeOrgData'
+            employeeType:
+              type: string
+              description: 'Captures enterprise worker type: Employee, Contractor, Consultant, Vendor, etc. Returned only on $select. Supports $filter.'
               nullable: true
             externalUserState:
               type: string
@@ -5287,7 +5411,7 @@ components:
               nullable: true
             jobTitle:
               type: string
-              description: The user’s job title. Supports $filter.
+              description: The user's job title. Supports $filter.
               nullable: true
             lastPasswordChangeDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -5297,7 +5421,7 @@ components:
               nullable: true
             legalAgeGroupClassification:
               type: string
-              description: 'Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, minorWithOutParentalConsent, minorWithParentalConsent, minorNoParentalConsentRequired, notAdult and adult. Refer to the legal age group property definitions for further information.)'
+              description: 'Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, minorWithOutParentalConsent, minorWithParentalConsent, minorNoParentalConsentRequired, notAdult and adult. Refer to the legal age group property definitions for further information.'
               nullable: true
             licenseAssignmentStates:
               type: array
@@ -5314,7 +5438,7 @@ components:
               nullable: true
             mobilePhone:
               type: string
-              description: The primary cellular telephone number for the user.
+              description: The primary cellular telephone number for the user. Read-only for users synced from on-premises directory.
               nullable: true
             officeLocation:
               type: string
@@ -5332,7 +5456,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.onPremisesExtensionAttributes'
             onPremisesImmutableId:
               type: string
-              description: 'This property is used to associate an on-premises Active Directory user account to their Azure AD user object. This property must be specified when creating a new user account in the Graph if you are using a federated domain for the user’s userPrincipalName (UPN) property. Important: The $ and _ characters cannot be used when specifying this property. Supports $filter.'
+              description: 'This property is used to associate an on-premises Active Directory user account to their Azure AD user object. This property must be specified when creating a new user account in the Graph if you are using a federated domain for the user''s userPrincipalName (UPN) property. Important: The $ and _ characters cannot be used when specifying this property. Supports $filter.'
               nullable: true
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -5418,7 +5542,7 @@ components:
               nullable: true
             userPrincipalName:
               type: string
-              description: 'The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user''s email name. The general format is alias@domain, where domain must be present in the tenant’s collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization. Supports $filter and $orderby.'
+              description: 'The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user''s email name. The general format is alias@domain, where domain must be present in the tenant''s collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization. Supports $filter and $orderby.'
               nullable: true
             userType:
               type: string
@@ -5444,7 +5568,7 @@ components:
             hireDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              description: 'The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.'
               format: date-time
             interests:
               type: array
@@ -5642,12 +5766,16 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
+            presence:
+              $ref: '#/components/schemas/microsoft.graph.presence'
             joinedTeams:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.team'
             teamwork:
               $ref: '#/components/schemas/microsoft.graph.userTeamwork'
+            todo:
+              $ref: '#/components/schemas/microsoft.graph.todo'
           additionalProperties:
             type: object
           description: Represents an Azure Active Directory user object.
@@ -5700,6 +5828,8 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.activityBasedTimeoutPolicy'
+            authorizationPolicy:
+              $ref: '#/components/schemas/microsoft.graph.authorizationPolicy'
             claimsMappingPolicies:
               type: array
               items:
@@ -5733,6 +5863,32 @@ components:
         - $ref: '#/components/schemas/microsoft.graph.stsPolicy'
         - title: activityBasedTimeoutPolicy
           type: object
+          additionalProperties:
+            type: object
+          description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
+    microsoft.graph.authorizationPolicy:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.policyBase'
+        - title: authorizationPolicy
+          type: object
+          properties:
+            allowedToSignUpEmailBasedSubscriptions:
+              type: boolean
+              description: Indicates whether users can sign up for email based subscriptions.
+            allowedToUseSSPR:
+              type: boolean
+              description: Indicates whether the Self-Serve Password Reset feature can be used by users on the tenant.
+            allowEmailVerifiedUsersToJoinOrganization:
+              type: boolean
+              description: Indicates whether a user can join the tenant by email validation.
+            allowInvitesFrom:
+              $ref: '#/components/schemas/microsoft.graph.allowInvitesFrom'
+            blockMsolPowerShell:
+              type: boolean
+              description: To disable the use of MSOL PowerShell set this property to true. Setting to true will also disable user-based access to the legacy service endpoint used by MSOL PowerShell. This does not affect Azure AD Connect or Microsoft Graph.
+              nullable: true
+            defaultUserRolePermissions:
+              $ref: '#/components/schemas/microsoft.graph.defaultUserRolePermissions'
           additionalProperties:
             type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
@@ -5774,10 +5930,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.permissionGrantConditionSet'
+              description: Condition sets which are excluded in this permission grant policy. Automatically expanded on GET.
             includes:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.permissionGrantConditionSet'
+              description: Condition sets which are included in this permission grant policy. Automatically expanded on GET.
           additionalProperties:
             type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
@@ -5792,31 +5950,38 @@ components:
               items:
                 type: string
                 nullable: true
+              description: 'A list of appId values for the client applications to match with, or a list with the single value ''all'' to match any client application. Default is the single value ''all''.'
             clientApplicationPublisherIds:
               type: array
               items:
                 type: string
                 nullable: true
+              description: 'A list of Microsoft Partner Network (MPN) IDs for verified publishers of the client application, or a list with the single value ''all'' to match with client apps from any publisher. Default is the single value ''all''.'
             clientApplicationsFromVerifiedPublisherOnly:
               type: boolean
+              description: 'Set to true to only match on client applications with a verified publisher. Set to false to match on any client app, even if it does not have a verified publisher. Default is false.'
               nullable: true
             clientApplicationTenantIds:
               type: array
               items:
                 type: string
                 nullable: true
+              description: 'A list of Azure Active Directory tenant IDs in which the client application is registered, or a list with the single value ''all'' to match with client apps registered in any tenant. Default is the single value ''all''.'
             permissionClassification:
               type: string
+              description: 'The permission classification for the permission being granted, or ''all'' to match with any permission classification (including permissions which are not classified). Default is all.'
               nullable: true
             permissions:
               type: array
               items:
                 type: string
                 nullable: true
+              description: 'The list of id values for the specific permissions to match with, or a list with the single value ''all'' to match with any permission. The id of delegated permissions can be found in the oauth2PermissionScopes property of the API''s **servicePrincipal** object. The id of application permissions can be found in the appRoles property of the API''s **servicePrincipal** object. The id of resource-specific application permissions can be found in the resourceSpecificApplicationPermissions property of the API''s **servicePrincipal** object. Default is the single value ''all''.'
             permissionType:
               $ref: '#/components/schemas/microsoft.graph.permissionType'
             resourceApplication:
               type: string
+              description: 'The appId of the resource application (e.g. the API) for which a permission is being granted, or any to match with any resource application or API. Default is any.'
               nullable: true
           additionalProperties:
             type: object
@@ -6042,7 +6207,7 @@ components:
           nullable: true
         capabilityStatus:
           type: string
-          description: 'For example, ''Enabled''.'
+          description: 'Condition of the capability assignment. The possible values are Enabled, Warning, Suspended, Deleted, LockedOut.'
           nullable: true
         service:
           type: string
@@ -6053,6 +6218,20 @@ components:
           type: string
           description: A GUID that identifies the service plan.
           format: uuid
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.employeeOrgData:
+      title: employeeOrgData
+      type: object
+      properties:
+        costCenter:
+          type: string
+          description: The cost center associated with the user. Returned only on $select. Supports $filter.
+          nullable: true
+        division:
+          type: string
+          description: The name of the division in which the user works. Returned only on $select. Supports $filter.
           nullable: true
       additionalProperties:
         type: object
@@ -6373,6 +6552,9 @@ components:
             hexColor:
               type: string
               nullable: true
+            isDefaultCalendar:
+              type: boolean
+              nullable: true
             isRemovable:
               type: boolean
               description: Indicates whether this user calendar can be deleted from the user mailbox.
@@ -6467,6 +6649,9 @@ components:
             hasAttachments:
               type: boolean
               description: Set to true if the event has attachments.
+              nullable: true
+            hideAttendees:
+              type: boolean
               nullable: true
             iCalUId:
               type: string
@@ -6565,7 +6750,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.eventType'
             webLink:
               type: string
-              description: 'The URL to open the event in Outlook on the web.Outlook on the web opens the event in the browser if you are signed in to your mailbox. Otherwise, Outlook on the web prompts you to sign in.This URL can be accessed from within an iFrame.'
+              description: 'The URL to open the event in Outlook on the web.Outlook on the web opens the event in the browser if you are signed in to your mailbox. Otherwise, Outlook on the web prompts you to sign in.This URL cannot be accessed from within an iFrame.'
               nullable: true
             attachments:
               type: array
@@ -6944,7 +7129,7 @@ components:
             receivedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The date and time the message was received.
+              description: 'The date and time the message was received.  The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''.'
               format: date-time
               nullable: true
             replyTo:
@@ -6957,7 +7142,7 @@ components:
             sentDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The date and time the message was sent.
+              description: 'The date and time the message was sent.  The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''.'
               format: date-time
               nullable: true
             subject:
@@ -6973,7 +7158,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.itemBody'
             webLink:
               type: string
-              description: 'The URL to open the message in Outlook Web App.You can append an ispopout argument to the end of the URL to change how the message is displayed. If ispopout is not present or if it is set to 1, then the message is shown in a popout window. If ispopout is set to 0, then the browser will show the message in the Outlook Web App review pane.The message will open in the browser if you are logged in to your mailbox via Outlook Web App. You will be prompted to login if you are not already logged in with the browser.This URL can be accessed from within an iFrame.'
+              description: 'The URL to open the message in Outlook on the web.You can append an ispopout argument to the end of the URL to change how the message is displayed. If ispopout is not present or if it is set to 1, then the message is shown in a popout window. If ispopout is set to 0, then the browser will show the message in the Outlook on the web review pane.The message will open in the browser if you are logged in to your mailbox via Outlook on the web. You will be prompted to login if you are not already logged in with the browser.This URL cannot be accessed from within an iFrame.'
               nullable: true
             attachments:
               type: array
@@ -7660,6 +7845,8 @@ components:
         - title: onlineMeeting
           type: object
           properties:
+            allowedPresenters:
+              $ref: '#/components/schemas/microsoft.graph.onlineMeetingPresenters'
             audioConferencing:
               $ref: '#/components/schemas/microsoft.graph.audioConferencing'
             chatInfo:
@@ -7679,12 +7866,18 @@ components:
             externalId:
               type: string
               nullable: true
+            isEntryExitAnnounced:
+              type: boolean
+              description: Whether or not to announce when callers join or leave.
+              nullable: true
             joinInformation:
               $ref: '#/components/schemas/microsoft.graph.itemBody'
             joinWebUrl:
               type: string
               description: The join URL of the online meeting. Read-only.
               nullable: true
+            lobbyBypassSettings:
+              $ref: '#/components/schemas/microsoft.graph.lobbyBypassSettings'
             participants:
               $ref: '#/components/schemas/microsoft.graph.meetingParticipants'
             startDateTime:
@@ -7700,6 +7893,22 @@ components:
             videoTeleconferenceId:
               type: string
               description: The video teleconferencing ID. Read-only.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.presence:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: presence
+          type: object
+          properties:
+            activity:
+              type: string
+              description: 'The supplemental information to a user''s availability. Possible values are Available, Away, BeRightBack,Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive,InAMeeting, Offline, OffWork,OutOfOffice, PresenceUnknown,Presenting, UrgentInterruptionsOnly.'
+              nullable: true
+            availability:
+              type: string
+              description: 'The base presence information for a user. Possible values are Available, AvailableIdle,  Away, BeRightBack, Busy, BusyIdle, DoNotDisturb, Offline, PresenceUnknown'
               nullable: true
           additionalProperties:
             type: object
@@ -7788,6 +7997,19 @@ components:
               description: The apps installed in the personal scope of this user.
           additionalProperties:
             type: object
+    microsoft.graph.todo:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: todo
+          type: object
+          properties:
+            lists:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.todoTaskList'
+              description: The task lists in the users mailbox.
+          additionalProperties:
+            type: object
     microsoft.graph.certificateAuthority:
       title: certificateAuthority
       type: object
@@ -7854,6 +8076,36 @@ components:
           additionalProperties:
             type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
+    microsoft.graph.allowInvitesFrom:
+      title: allowInvitesFrom
+      enum:
+        - none
+        - adminsAndGuestInviters
+        - adminsGuestInvitersAndAllMembers
+        - everyone
+        - unknownFutureValue
+      type: string
+    microsoft.graph.defaultUserRolePermissions:
+      title: defaultUserRolePermissions
+      type: object
+      properties:
+        allowedToCreateApps:
+          type: boolean
+          description: Indicates whether the default user role can create applications.
+        allowedToCreateSecurityGroups:
+          type: boolean
+          description: Indicates whether the default user role can create security groups.
+        allowedToReadOtherUsers:
+          type: boolean
+          description: Indicates whether the default user role can read other users.
+        permissionGrantPoliciesAssigned:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: 'Indicates if user consent to apps is allowed, and if it is, which permission to grant consent and which app consent policy (permissionGrantPolicy) govern the permission for users to grant consent. Value should be in the format managePermissionGrantsForSelf.{id}, where {id} is the id of a built-in or custom app consent policy. An empty list indicates user consent to apps is disabled.'
+      additionalProperties:
+        type: object
     microsoft.graph.permissionType:
       title: permissionType
       enum:
@@ -8160,9 +8412,9 @@ components:
     microsoft.graph.calendarColor:
       title: calendarColor
       enum:
+        - auto
         - lightBlue
         - lightGreen
-        - auto
         - lightOrange
         - lightGray
         - lightYellow
@@ -8409,9 +8661,9 @@ components:
     microsoft.graph.freeBusyStatus:
       title: freeBusyStatus
       enum:
+        - unknown
         - free
         - tentative
-        - unknown
         - busy
         - oof
         - workingElsewhere
@@ -9990,6 +10242,15 @@ components:
               $ref: '#/components/schemas/microsoft.graph.userActivity'
           additionalProperties:
             type: object
+    microsoft.graph.onlineMeetingPresenters:
+      title: onlineMeetingPresenters
+      enum:
+        - everyone
+        - organization
+        - roleIsPresenter
+        - organizer
+        - unknownFutureValue
+      type: string
     microsoft.graph.audioConferencing:
       title: audioConferencing
       type: object
@@ -10027,6 +10288,18 @@ components:
           type: string
           description: The unique identifier for a thread in Microsoft Teams.
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.lobbyBypassSettings:
+      title: lobbyBypassSettings
+      type: object
+      properties:
+        isDialInBypassEnabled:
+          type: boolean
+          description: Specifies whether or not to always let dial-in callers bypass the lobby. Optional.
+          nullable: true
+        scope:
+          $ref: '#/components/schemas/microsoft.graph.lobbyBypassScope'
       additionalProperties:
         type: object
     microsoft.graph.meetingParticipants:
@@ -10255,6 +10528,10 @@ components:
               type: string
               description: The email address for sending messages to the channel. Read-only.
               nullable: true
+            isFavoriteByDefault:
+              type: boolean
+              description: 'Indicates whether the channel should automatically be marked ''favorite'' for all members of the team. Can only be set programmatically with Create team. Default: false.'
+              nullable: true
             membershipType:
               $ref: '#/components/schemas/microsoft.graph.channelMembershipType'
             webUrl:
@@ -10267,6 +10544,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.conversationMember'
+              description: A collection of membership records associated with the channel.
             messages:
               type: array
               items:
@@ -10467,6 +10745,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: 'The owners of the group. The owners are a set of non-admin users who are allowed to modify this object. Limited to 100 owners. HTTP Methods: GET (supported for all groups), POST (supported for Microsoft 365 groups, security groups and mail-enabled security groups), DELETE (supported for Microsoft 365 groups and security groups). Nullable.'
+            permissionGrants:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
             settings:
               type: array
               items:
@@ -10633,6 +10915,36 @@ components:
           properties:
             chat:
               $ref: '#/components/schemas/microsoft.graph.chat'
+          additionalProperties:
+            type: object
+    microsoft.graph.todoTaskList:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: todoTaskList
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: The name of the task list.
+              nullable: true
+            isOwner:
+              type: boolean
+              description: True if the user is owner of the given task list.
+            isShared:
+              type: boolean
+              description: True if the task list is shared with other users
+            wellknownListName:
+              $ref: '#/components/schemas/microsoft.graph.wellknownListName'
+            extensions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.extension'
+              description: The collection of open extensions defined for the task list. Nullable.
+            tasks:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.todoTask'
+              description: The tasks in this task list. Read-only. Nullable.
           additionalProperties:
             type: object
     odata.error.main:
@@ -11098,9 +11410,9 @@ components:
     microsoft.graph.categoryColor:
       title: categoryColor
       enum:
+        - none
         - preset0
         - preset1
-        - none
         - preset2
         - preset3
         - preset4
@@ -11790,6 +12102,7 @@ components:
               nullable: true
             lifecycleNotificationUrl:
               type: string
+              description: 'The URL of the endpoint that receives lifecycle notifications, including subscriptionRemoved and missed notifications. This URL must make use of the HTTPS protocol. Optional. Read more about how Outlook resources use lifecycle notifications.'
               nullable: true
             notificationUrl:
               type: string
@@ -12567,9 +12880,9 @@ components:
     microsoft.graph.onenoteUserRole:
       title: onenoteUserRole
       enum:
+        - None
         - Owner
         - Contributor
-        - None
         - Reader
       type: string
     microsoft.graph.operation:
@@ -12675,12 +12988,23 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.lobbyBypassScope:
+      title: lobbyBypassScope
+      enum:
+        - organizer
+        - organization
+        - organizationAndFederated
+        - everyone
+        - unknownFutureValue
+      type: string
     microsoft.graph.meetingParticipantInfo:
       title: meetingParticipantInfo
       type: object
       properties:
         identity:
           $ref: '#/components/schemas/microsoft.graph.identitySet'
+        role:
+          $ref: '#/components/schemas/microsoft.graph.onlineMeetingRole'
         upn:
           type: string
           description: User principal name of the participant.
@@ -13004,6 +13328,30 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.resourceSpecificPermissionGrant:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        - title: resourceSpecificPermissionGrant
+          type: object
+          properties:
+            clientAppId:
+              type: string
+              nullable: true
+            clientId:
+              type: string
+              nullable: true
+            permission:
+              type: string
+              nullable: true
+            permissionType:
+              type: string
+              nullable: true
+            resourceAppId:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
+          description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
     microsoft.graph.groupSetting:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -13220,6 +13568,68 @@ components:
         - $ref: '#/components/schemas/microsoft.graph.entity'
         - title: chat
           type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.wellknownListName:
+      title: wellknownListName
+      enum:
+        - none
+        - defaultList
+        - flaggedEmails
+        - unknownFutureValue
+      type: string
+    microsoft.graph.todoTask:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: todoTask
+          type: object
+          properties:
+            body:
+              $ref: '#/components/schemas/microsoft.graph.itemBody'
+            bodyLastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: ''2020-01-01T00:00:00Z''.'
+              format: date-time
+            completedDateTime:
+              $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the task was created. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format. For example, midnight UTC on Jan 1, 2020 would look like this: ''2020-01-01T00:00:00Z''.'
+              format: date-time
+            dueDateTime:
+              $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+            importance:
+              $ref: '#/components/schemas/microsoft.graph.importance'
+            isReminderOn:
+              type: boolean
+              description: Set to true if an alert is set to remind the user of the task.
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: ''2020-01-01T00:00:00Z''.'
+              format: date-time
+            recurrence:
+              $ref: '#/components/schemas/microsoft.graph.patternedRecurrence'
+            reminderDateTime:
+              $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+            status:
+              $ref: '#/components/schemas/microsoft.graph.taskStatus'
+            title:
+              type: string
+              description: A brief description of the task.
+              nullable: true
+            extensions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.extension'
+              description: The collection of open extensions defined for the task. Nullable.
+            linkedResources:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.linkedResource'
+              description: A collection of resources linked to the task.
           additionalProperties:
             type: object
     odata.error.detail:
@@ -13833,6 +14243,13 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.onlineMeetingRole:
+      title: onlineMeetingRole
+      enum:
+        - attendee
+        - presenter
+        - unknownFutureValue
+      type: string
     microsoft.graph.scheduleChangeRequest:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.changeTrackedEntity'
@@ -14145,6 +14562,39 @@ components:
         - sideloaded
         - unknownFutureValue
       type: string
+    microsoft.graph.taskStatus:
+      title: taskStatus
+      enum:
+        - notStarted
+        - inProgress
+        - completed
+        - waitingOnOthers
+        - deferred
+      type: string
+    microsoft.graph.linkedResource:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: linkedResource
+          type: object
+          properties:
+            applicationName:
+              type: string
+              description: Field indicating the app name of the source that is sending the linkedResource.
+              nullable: true
+            displayName:
+              type: string
+              description: Field indicating the title of the linkedResource.
+              nullable: true
+            externalId:
+              type: string
+              description: Id of the object that is associated with this task on the third-party/partner system.
+              nullable: true
+            webUrl:
+              type: string
+              description: Deep link to the linkedResource.
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.workbookCommentReply:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'

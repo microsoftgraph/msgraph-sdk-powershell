@@ -1,0 +1,303 @@
+openapi: 3.0.1
+info:
+  title: Search
+  version: v1.0
+servers:
+  - url: https://graph.microsoft.com/v1.0/
+    description: Core
+paths:
+  /search:
+    get:
+      tags:
+        - search.searchEntity
+      summary: Get search
+      operationId: search.searchEntity_GetSearchEntity
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.searchEntity'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - search.searchEntity
+      summary: Update search
+      operationId: search.searchEntity_UpdateSearchEntity
+      requestBody:
+        description: New property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.searchEntity'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /search/microsoft.graph.query:
+    post:
+      tags:
+        - search.Actions
+      summary: Invoke action query
+      operationId: search_query
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                requests:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.searchRequest'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.searchResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+components:
+  schemas:
+    microsoft.graph.searchEntity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: searchEntity
+          type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.searchRequest:
+      title: searchRequest
+      type: object
+      properties:
+        contentSources:
+          type: array
+          items:
+            type: string
+            nullable: true
+        enableTopResults:
+          type: boolean
+          nullable: true
+        entityTypes:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.entityType'
+        fields:
+          type: array
+          items:
+            type: string
+            nullable: true
+        from:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+        query:
+          $ref: '#/components/schemas/microsoft.graph.searchQuery'
+        size:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+      additionalProperties:
+        type: object
+    microsoft.graph.searchResponse:
+      title: searchResponse
+      type: object
+      properties:
+        hitsContainers:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.searchHitsContainer'
+          description: A collection of search results.
+        searchTerms:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: Contains the search terms sent in the initial search query.
+      additionalProperties:
+        type: object
+    microsoft.graph.entity:
+      title: entity
+      type: object
+      properties:
+        id:
+          type: string
+          description: Read-only.
+      additionalProperties:
+        type: object
+    microsoft.graph.entityType:
+      title: entityType
+      enum:
+        - event
+        - message
+        - driveItem
+        - externalItem
+        - site
+        - list
+        - listItem
+        - drive
+        - unknownfuturevalue
+      type: string
+    microsoft.graph.searchQuery:
+      title: searchQuery
+      type: object
+      properties:
+        queryString:
+          type: string
+          description: The search query containing the search terms. Required.
+      additionalProperties:
+        type: object
+    microsoft.graph.searchHitsContainer:
+      title: searchHitsContainer
+      type: object
+      properties:
+        hits:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.searchHit'
+          description: A collection of the search results.
+        moreResultsAvailable:
+          type: boolean
+          description: 'Provides information if more results are available. Based on this information, you can adjust the from and size properties of the searchRequest accordingly.'
+          nullable: true
+        total:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: 'The total number of results. Note this is not the number of results on the page, but the total number of results satisfying the query.'
+          format: int32
+          nullable: true
+      additionalProperties:
+        type: object
+    odata.error:
+      required:
+        - error
+      type: object
+      properties:
+        error:
+          $ref: '#/components/schemas/odata.error.main'
+      additionalProperties:
+        type: object
+    microsoft.graph.searchHit:
+      title: searchHit
+      type: object
+      properties:
+        contentSource:
+          type: string
+          description: The name of the content source which the externalItem is part of .
+          nullable: true
+        hitId:
+          type: string
+          description: The internal identifier for the item.
+          nullable: true
+        rank:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The rank or the order of the result.
+          format: int32
+          nullable: true
+        summary:
+          type: string
+          description: 'A summary of the result, if a summary is available.'
+          nullable: true
+        resource:
+          $ref: '#/components/schemas/microsoft.graph.entity'
+      additionalProperties:
+        type: object
+    odata.error.main:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/odata.error.detail'
+        innererror:
+          type: object
+          additionalProperties:
+            type: object
+          description: The structure of this object is service-specific
+      additionalProperties:
+        type: object
+    odata.error.detail:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+      additionalProperties:
+        type: object
+  responses:
+    error:
+      description: error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/odata.error'
+  securitySchemes:
+    azureaadv2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/v2.0/authorize
+          tokenUrl: https://login.microsoftonline.com/common/oauth2/v2.0/token
+          scopes: { }
+security:
+  - azureaadv2: [ ]

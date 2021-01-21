@@ -39,6 +39,7 @@ paths:
                 - color
                 - defaultOnlineMeetingProvider
                 - hexColor
+                - isDefaultCalendar
                 - isRemovable
                 - isTallyingResponses
                 - name
@@ -458,6 +459,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - iCalUId
                 - iCalUId desc
                 - importance
@@ -538,6 +541,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -699,6 +703,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -1181,6 +1186,7 @@ paths:
                 - color
                 - defaultOnlineMeetingProvider
                 - hexColor
+                - isDefaultCalendar
                 - isRemovable
                 - isTallyingResponses
                 - name
@@ -1629,6 +1635,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - iCalUId
                 - iCalUId desc
                 - importance
@@ -1709,6 +1717,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -1872,6 +1881,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -2636,6 +2646,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - iCalUId
                 - iCalUId desc
                 - importance
@@ -2716,6 +2728,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -2865,6 +2878,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -3347,6 +3361,7 @@ paths:
                 - color
                 - defaultOnlineMeetingProvider
                 - hexColor
+                - isDefaultCalendar
                 - isRemovable
                 - isTallyingResponses
                 - name
@@ -3795,6 +3810,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - iCalUId
                 - iCalUId desc
                 - importance
@@ -3875,6 +3892,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -4038,6 +4056,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -5278,6 +5297,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - iCalUId
                 - iCalUId desc
                 - importance
@@ -5358,6 +5379,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -5519,6 +5541,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -6001,6 +6024,7 @@ paths:
                 - color
                 - defaultOnlineMeetingProvider
                 - hexColor
+                - isDefaultCalendar
                 - isRemovable
                 - isTallyingResponses
                 - name
@@ -6469,6 +6493,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - iCalUId
                 - iCalUId desc
                 - importance
@@ -6549,6 +6575,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -6712,6 +6739,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -6949,6 +6977,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - iCalUId
                 - iCalUId desc
                 - importance
@@ -7029,6 +7059,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -7192,6 +7223,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -8226,6 +8258,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - iCalUId
                 - iCalUId desc
                 - importance
@@ -8306,6 +8340,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -8469,6 +8504,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -9233,6 +9269,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - iCalUId
                 - iCalUId desc
                 - importance
@@ -9313,6 +9351,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -9462,6 +9501,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -9944,6 +9984,7 @@ paths:
                 - color
                 - defaultOnlineMeetingProvider
                 - hexColor
+                - isDefaultCalendar
                 - isRemovable
                 - isTallyingResponses
                 - name
@@ -10412,6 +10453,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - iCalUId
                 - iCalUId desc
                 - importance
@@ -10492,6 +10535,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -10655,6 +10699,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -10892,6 +10937,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - iCalUId
                 - iCalUId desc
                 - importance
@@ -10972,6 +11019,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -11135,6 +11183,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -12169,6 +12218,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - iCalUId
                 - iCalUId desc
                 - importance
@@ -12249,6 +12300,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -12412,6 +12464,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -13366,6 +13419,7 @@ paths:
                 - color
                 - defaultOnlineMeetingProvider
                 - hexColor
+                - isDefaultCalendar
                 - isRemovable
                 - isTallyingResponses
                 - name
@@ -13785,6 +13839,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - iCalUId
                 - iCalUId desc
                 - importance
@@ -13865,6 +13921,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -14026,6 +14083,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -14508,6 +14566,7 @@ paths:
                 - color
                 - defaultOnlineMeetingProvider
                 - hexColor
+                - isDefaultCalendar
                 - isRemovable
                 - isTallyingResponses
                 - name
@@ -14956,6 +15015,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - iCalUId
                 - iCalUId desc
                 - importance
@@ -15036,6 +15097,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -15199,6 +15261,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -15963,6 +16026,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - iCalUId
                 - iCalUId desc
                 - importance
@@ -16043,6 +16108,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -16192,6 +16258,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -16674,6 +16741,7 @@ paths:
                 - color
                 - defaultOnlineMeetingProvider
                 - hexColor
+                - isDefaultCalendar
                 - isRemovable
                 - isTallyingResponses
                 - name
@@ -17122,6 +17190,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - iCalUId
                 - iCalUId desc
                 - importance
@@ -17202,6 +17272,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -17365,6 +17436,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -18846,6 +18918,8 @@ paths:
                 - defaultOnlineMeetingProvider desc
                 - hexColor
                 - hexColor desc
+                - isDefaultCalendar
+                - isDefaultCalendar desc
                 - isRemovable
                 - isRemovable desc
                 - isTallyingResponses
@@ -18874,6 +18948,7 @@ paths:
                 - color
                 - defaultOnlineMeetingProvider
                 - hexColor
+                - isDefaultCalendar
                 - isRemovable
                 - isTallyingResponses
                 - name
@@ -19008,6 +19083,7 @@ paths:
                 - color
                 - defaultOnlineMeetingProvider
                 - hexColor
+                - isDefaultCalendar
                 - isRemovable
                 - isTallyingResponses
                 - name
@@ -19537,6 +19613,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - iCalUId
                 - iCalUId desc
                 - importance
@@ -19617,6 +19695,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -19794,6 +19873,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -20400,6 +20480,7 @@ paths:
                 - color
                 - defaultOnlineMeetingProvider
                 - hexColor
+                - isDefaultCalendar
                 - isRemovable
                 - isTallyingResponses
                 - name
@@ -20970,6 +21051,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - iCalUId
                 - iCalUId desc
                 - importance
@@ -21050,6 +21133,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -21241,6 +21325,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -22199,6 +22284,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - iCalUId
                 - iCalUId desc
                 - importance
@@ -22279,6 +22366,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -22456,6 +22544,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -23062,6 +23151,7 @@ paths:
                 - color
                 - defaultOnlineMeetingProvider
                 - hexColor
+                - isDefaultCalendar
                 - isRemovable
                 - isTallyingResponses
                 - name
@@ -23632,6 +23722,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - iCalUId
                 - iCalUId desc
                 - importance
@@ -23712,6 +23804,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -23903,6 +23996,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -25447,6 +25541,8 @@ paths:
                 - defaultOnlineMeetingProvider desc
                 - hexColor
                 - hexColor desc
+                - isDefaultCalendar
+                - isDefaultCalendar desc
                 - isRemovable
                 - isRemovable desc
                 - isTallyingResponses
@@ -25475,6 +25571,7 @@ paths:
                 - color
                 - defaultOnlineMeetingProvider
                 - hexColor
+                - isDefaultCalendar
                 - isRemovable
                 - isTallyingResponses
                 - name
@@ -25595,6 +25692,7 @@ paths:
                 - color
                 - defaultOnlineMeetingProvider
                 - hexColor
+                - isDefaultCalendar
                 - isRemovable
                 - isTallyingResponses
                 - name
@@ -26075,6 +26173,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - iCalUId
                 - iCalUId desc
                 - importance
@@ -26155,6 +26255,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -26330,6 +26431,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -26874,6 +26976,7 @@ paths:
                 - color
                 - defaultOnlineMeetingProvider
                 - hexColor
+                - isDefaultCalendar
                 - isRemovable
                 - isTallyingResponses
                 - name
@@ -27383,6 +27486,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - iCalUId
                 - iCalUId desc
                 - importance
@@ -27463,6 +27568,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -27640,6 +27746,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -28501,6 +28608,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - iCalUId
                 - iCalUId desc
                 - importance
@@ -28581,6 +28690,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -28744,6 +28854,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -29288,6 +29399,7 @@ paths:
                 - color
                 - defaultOnlineMeetingProvider
                 - hexColor
+                - isDefaultCalendar
                 - isRemovable
                 - isTallyingResponses
                 - name
@@ -29797,6 +29909,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - iCalUId
                 - iCalUId desc
                 - importance
@@ -29877,6 +29991,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -30054,6 +30169,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -31454,6 +31570,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - iCalUId
                 - iCalUId desc
                 - importance
@@ -31534,6 +31652,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -31695,6 +31814,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -32177,6 +32297,7 @@ paths:
                 - color
                 - defaultOnlineMeetingProvider
                 - hexColor
+                - isDefaultCalendar
                 - isRemovable
                 - isTallyingResponses
                 - name
@@ -32645,6 +32766,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - iCalUId
                 - iCalUId desc
                 - importance
@@ -32725,6 +32848,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -32888,6 +33012,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -33125,6 +33250,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - iCalUId
                 - iCalUId desc
                 - importance
@@ -33205,6 +33332,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -33368,6 +33496,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -34402,6 +34531,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - iCalUId
                 - iCalUId desc
                 - importance
@@ -34482,6 +34613,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -34645,6 +34777,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -35409,6 +35542,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - iCalUId
                 - iCalUId desc
                 - importance
@@ -35489,6 +35624,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -35638,6 +35774,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -36120,6 +36257,7 @@ paths:
                 - color
                 - defaultOnlineMeetingProvider
                 - hexColor
+                - isDefaultCalendar
                 - isRemovable
                 - isTallyingResponses
                 - name
@@ -36588,6 +36726,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - iCalUId
                 - iCalUId desc
                 - importance
@@ -36668,6 +36808,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -36831,6 +36972,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -37068,6 +37210,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - iCalUId
                 - iCalUId desc
                 - importance
@@ -37148,6 +37292,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -37311,6 +37456,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -38345,6 +38491,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - iCalUId
                 - iCalUId desc
                 - importance
@@ -38425,6 +38573,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -38588,6 +38737,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -39337,6 +39487,9 @@ components:
             hexColor:
               type: string
               nullable: true
+            isDefaultCalendar:
+              type: boolean
+              nullable: true
             isRemovable:
               type: boolean
               description: Indicates whether this user calendar can be deleted from the user mailbox.
@@ -39429,6 +39582,9 @@ components:
             hasAttachments:
               type: boolean
               description: Set to true if the event has attachments.
+              nullable: true
+            hideAttendees:
+              type: boolean
               nullable: true
             iCalUId:
               type: string
@@ -39527,7 +39683,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.eventType'
             webLink:
               type: string
-              description: 'The URL to open the event in Outlook on the web.Outlook on the web opens the event in the browser if you are signed in to your mailbox. Otherwise, Outlook on the web prompts you to sign in.This URL can be accessed from within an iFrame.'
+              description: 'The URL to open the event in Outlook on the web.Outlook on the web opens the event in the browser if you are signed in to your mailbox. Otherwise, Outlook on the web prompts you to sign in.This URL cannot be accessed from within an iFrame.'
               nullable: true
             attachments:
               type: array
@@ -39688,9 +39844,9 @@ components:
     microsoft.graph.calendarColor:
       title: calendarColor
       enum:
+        - auto
         - lightBlue
         - lightGreen
-        - auto
         - lightOrange
         - lightGray
         - lightYellow
@@ -39906,9 +40062,9 @@ components:
     microsoft.graph.freeBusyStatus:
       title: freeBusyStatus
       enum:
+        - unknown
         - free
         - tentative
-        - unknown
         - busy
         - oof
         - workingElsewhere

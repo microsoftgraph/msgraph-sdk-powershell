@@ -6,12 +6,12 @@ servers:
   - url: https://graph.microsoft.com/beta/
     description: Core
 paths:
-  /Security:
+  /security:
     get:
       tags:
-        - Security.security
-      summary: Get Security
-      operationId: Security.security_GetSecurity
+        - security.security
+      summary: Get security
+      operationId: security.security_GetSecurity
       parameters:
         - name: $select
           in: query
@@ -71,37 +71,37 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.security'
           links:
             alerts:
-              operationId: Security.ListAlerts
+              operationId: security.ListAlerts
             cloudAppSecurityProfiles:
-              operationId: Security.ListCloudAppSecurityProfiles
+              operationId: security.ListCloudAppSecurityProfiles
             domainSecurityProfiles:
-              operationId: Security.ListDomainSecurityProfiles
+              operationId: security.ListDomainSecurityProfiles
             fileSecurityProfiles:
-              operationId: Security.ListFileSecurityProfiles
+              operationId: security.ListFileSecurityProfiles
             hostSecurityProfiles:
-              operationId: Security.ListHostSecurityProfiles
+              operationId: security.ListHostSecurityProfiles
             ipSecurityProfiles:
-              operationId: Security.ListIpSecurityProfiles
+              operationId: security.ListIpSecurityProfiles
             providerTenantSettings:
-              operationId: Security.ListProviderTenantSettings
+              operationId: security.ListProviderTenantSettings
             secureScoreControlProfiles:
-              operationId: Security.ListSecureScoreControlProfiles
+              operationId: security.ListSecureScoreControlProfiles
             secureScores:
-              operationId: Security.ListSecureScores
+              operationId: security.ListSecureScores
             securityActions:
-              operationId: Security.ListSecurityActions
+              operationId: security.ListSecurityActions
             tiIndicators:
-              operationId: Security.ListTiIndicators
+              operationId: security.ListTiIndicators
             userSecurityProfiles:
-              operationId: Security.ListUserSecurityProfiles
+              operationId: security.ListUserSecurityProfiles
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
-        - Security.security
-      summary: Update Security
-      operationId: Security.security_UpdateSecurity
+        - security.security
+      summary: Update security
+      operationId: security.security_UpdateSecurity
       requestBody:
         description: New property values
         content:
@@ -115,12 +115,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  /Security/alerts:
+  /security/alerts:
     get:
       tags:
-        - Security.alert
-      summary: Get alerts from Security
-      operationId: Security_ListAlerts
+        - security.alert
+      summary: Get alerts from security
+      operationId: security_ListAlerts
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -141,6 +141,8 @@ paths:
                 - id desc
                 - activityGroupName
                 - activityGroupName desc
+                - alertDetections
+                - alertDetections desc
                 - assignedTo
                 - assignedTo desc
                 - azureSubscriptionId
@@ -175,10 +177,16 @@ paths:
                 - hostStates desc
                 - incidentIds
                 - incidentIds desc
+                - investigationSecurityStates
+                - investigationSecurityStates desc
+                - lastEventDateTime
+                - lastEventDateTime desc
                 - lastModifiedDateTime
                 - lastModifiedDateTime desc
                 - malwareStates
                 - malwareStates desc
+                - messageSecurityStates
+                - messageSecurityStates desc
                 - networkConnections
                 - networkConnections desc
                 - processes
@@ -201,6 +209,8 @@ paths:
                 - title desc
                 - triggers
                 - triggers desc
+                - uriClickSecurityStates
+                - uriClickSecurityStates desc
                 - userStates
                 - userStates desc
                 - vendorInformation
@@ -220,6 +230,7 @@ paths:
               enum:
                 - id
                 - activityGroupName
+                - alertDetections
                 - assignedTo
                 - azureSubscriptionId
                 - azureTenantId
@@ -237,8 +248,11 @@ paths:
                 - historyStates
                 - hostStates
                 - incidentIds
+                - investigationSecurityStates
+                - lastEventDateTime
                 - lastModifiedDateTime
                 - malwareStates
+                - messageSecurityStates
                 - networkConnections
                 - processes
                 - recommendedActions
@@ -250,6 +264,7 @@ paths:
                 - tags
                 - title
                 - triggers
+                - uriClickSecurityStates
                 - userStates
                 - vendorInformation
                 - vulnerabilityStates
@@ -291,9 +306,9 @@ paths:
       x-ms-docs-operation-type: operation
     post:
       tags:
-        - Security.alert
-      summary: Create new navigation property to alerts for Security
-      operationId: Security_CreateAlerts
+        - security.alert
+      summary: Create new navigation property to alerts for security
+      operationId: security_CreateAlerts
       requestBody:
         description: New navigation property
         content:
@@ -311,12 +326,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/Security/alerts/{alert-id}':
+  '/security/alerts/{alert-id}':
     get:
       tags:
-        - Security.alert
-      summary: Get alerts from Security
-      operationId: Security_GetAlerts
+        - security.alert
+      summary: Get alerts from security
+      operationId: security_GetAlerts
       parameters:
         - name: alert-id
           in: path
@@ -337,6 +352,7 @@ paths:
               enum:
                 - id
                 - activityGroupName
+                - alertDetections
                 - assignedTo
                 - azureSubscriptionId
                 - azureTenantId
@@ -354,8 +370,11 @@ paths:
                 - historyStates
                 - hostStates
                 - incidentIds
+                - investigationSecurityStates
+                - lastEventDateTime
                 - lastModifiedDateTime
                 - malwareStates
+                - messageSecurityStates
                 - networkConnections
                 - processes
                 - recommendedActions
@@ -367,6 +386,7 @@ paths:
                 - tags
                 - title
                 - triggers
+                - uriClickSecurityStates
                 - userStates
                 - vendorInformation
                 - vulnerabilityStates
@@ -395,9 +415,9 @@ paths:
       x-ms-docs-operation-type: operation
     patch:
       tags:
-        - Security.alert
-      summary: Update the navigation property alerts in Security
-      operationId: Security_UpdateAlerts
+        - security.alert
+      summary: Update the navigation property alerts in security
+      operationId: security_UpdateAlerts
       parameters:
         - name: alert-id
           in: path
@@ -421,9 +441,9 @@ paths:
       x-ms-docs-operation-type: operation
     delete:
       tags:
-        - Security.alert
-      summary: Delete navigation property alerts for Security
-      operationId: Security_DeleteAlerts
+        - security.alert
+      summary: Delete navigation property alerts for security
+      operationId: security_DeleteAlerts
       parameters:
         - name: alert-id
           in: path
@@ -443,12 +463,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  /Security/alerts/microsoft.graph.updateAlerts:
+  /security/alerts/microsoft.graph.updateAlerts:
     post:
       tags:
-        - Security.Actions
+        - security.Actions
       summary: Invoke action updateAlerts
-      operationId: Security.alerts_updateAlerts
+      operationId: security.alerts_updateAlerts
       requestBody:
         description: Action parameters
         content:
@@ -475,12 +495,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-  /Security/cloudAppSecurityProfiles:
+  /security/cloudAppSecurityProfiles:
     get:
       tags:
-        - Security.cloudAppSecurityProfile
-      summary: Get cloudAppSecurityProfiles from Security
-      operationId: Security_ListCloudAppSecurityProfiles
+        - security.cloudAppSecurityProfile
+      summary: Get cloudAppSecurityProfiles from security
+      operationId: security_ListCloudAppSecurityProfiles
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -600,9 +620,9 @@ paths:
       x-ms-docs-operation-type: operation
     post:
       tags:
-        - Security.cloudAppSecurityProfile
-      summary: Create new navigation property to cloudAppSecurityProfiles for Security
-      operationId: Security_CreateCloudAppSecurityProfiles
+        - security.cloudAppSecurityProfile
+      summary: Create new navigation property to cloudAppSecurityProfiles for security
+      operationId: security_CreateCloudAppSecurityProfiles
       requestBody:
         description: New navigation property
         content:
@@ -620,12 +640,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/Security/cloudAppSecurityProfiles/{cloudAppSecurityProfile-id}':
+  '/security/cloudAppSecurityProfiles/{cloudAppSecurityProfile-id}':
     get:
       tags:
-        - Security.cloudAppSecurityProfile
-      summary: Get cloudAppSecurityProfiles from Security
-      operationId: Security_GetCloudAppSecurityProfiles
+        - security.cloudAppSecurityProfile
+      summary: Get cloudAppSecurityProfiles from security
+      operationId: security_GetCloudAppSecurityProfiles
       parameters:
         - name: cloudAppSecurityProfile-id
           in: path
@@ -687,9 +707,9 @@ paths:
       x-ms-docs-operation-type: operation
     patch:
       tags:
-        - Security.cloudAppSecurityProfile
-      summary: Update the navigation property cloudAppSecurityProfiles in Security
-      operationId: Security_UpdateCloudAppSecurityProfiles
+        - security.cloudAppSecurityProfile
+      summary: Update the navigation property cloudAppSecurityProfiles in security
+      operationId: security_UpdateCloudAppSecurityProfiles
       parameters:
         - name: cloudAppSecurityProfile-id
           in: path
@@ -713,9 +733,9 @@ paths:
       x-ms-docs-operation-type: operation
     delete:
       tags:
-        - Security.cloudAppSecurityProfile
-      summary: Delete navigation property cloudAppSecurityProfiles for Security
-      operationId: Security_DeleteCloudAppSecurityProfiles
+        - security.cloudAppSecurityProfile
+      summary: Delete navigation property cloudAppSecurityProfiles for security
+      operationId: security_DeleteCloudAppSecurityProfiles
       parameters:
         - name: cloudAppSecurityProfile-id
           in: path
@@ -735,12 +755,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  /Security/domainSecurityProfiles:
+  /security/domainSecurityProfiles:
     get:
       tags:
-        - Security.domainSecurityProfile
-      summary: Get domainSecurityProfiles from Security
-      operationId: Security_ListDomainSecurityProfiles
+        - security.domainSecurityProfile
+      summary: Get domainSecurityProfiles from security
+      operationId: security_ListDomainSecurityProfiles
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -851,9 +871,9 @@ paths:
       x-ms-docs-operation-type: operation
     post:
       tags:
-        - Security.domainSecurityProfile
-      summary: Create new navigation property to domainSecurityProfiles for Security
-      operationId: Security_CreateDomainSecurityProfiles
+        - security.domainSecurityProfile
+      summary: Create new navigation property to domainSecurityProfiles for security
+      operationId: security_CreateDomainSecurityProfiles
       requestBody:
         description: New navigation property
         content:
@@ -871,12 +891,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/Security/domainSecurityProfiles/{domainSecurityProfile-id}':
+  '/security/domainSecurityProfiles/{domainSecurityProfile-id}':
     get:
       tags:
-        - Security.domainSecurityProfile
-      summary: Get domainSecurityProfiles from Security
-      operationId: Security_GetDomainSecurityProfiles
+        - security.domainSecurityProfile
+      summary: Get domainSecurityProfiles from security
+      operationId: security_GetDomainSecurityProfiles
       parameters:
         - name: domainSecurityProfile-id
           in: path
@@ -935,9 +955,9 @@ paths:
       x-ms-docs-operation-type: operation
     patch:
       tags:
-        - Security.domainSecurityProfile
-      summary: Update the navigation property domainSecurityProfiles in Security
-      operationId: Security_UpdateDomainSecurityProfiles
+        - security.domainSecurityProfile
+      summary: Update the navigation property domainSecurityProfiles in security
+      operationId: security_UpdateDomainSecurityProfiles
       parameters:
         - name: domainSecurityProfile-id
           in: path
@@ -961,9 +981,9 @@ paths:
       x-ms-docs-operation-type: operation
     delete:
       tags:
-        - Security.domainSecurityProfile
-      summary: Delete navigation property domainSecurityProfiles for Security
-      operationId: Security_DeleteDomainSecurityProfiles
+        - security.domainSecurityProfile
+      summary: Delete navigation property domainSecurityProfiles for security
+      operationId: security_DeleteDomainSecurityProfiles
       parameters:
         - name: domainSecurityProfile-id
           in: path
@@ -983,12 +1003,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  /Security/fileSecurityProfiles:
+  /security/fileSecurityProfiles:
     get:
       tags:
-        - Security.fileSecurityProfile
-      summary: Get fileSecurityProfiles from Security
-      operationId: Security_ListFileSecurityProfiles
+        - security.fileSecurityProfile
+      summary: Get fileSecurityProfiles from security
+      operationId: security_ListFileSecurityProfiles
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1105,9 +1125,9 @@ paths:
       x-ms-docs-operation-type: operation
     post:
       tags:
-        - Security.fileSecurityProfile
-      summary: Create new navigation property to fileSecurityProfiles for Security
-      operationId: Security_CreateFileSecurityProfiles
+        - security.fileSecurityProfile
+      summary: Create new navigation property to fileSecurityProfiles for security
+      operationId: security_CreateFileSecurityProfiles
       requestBody:
         description: New navigation property
         content:
@@ -1125,12 +1145,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/Security/fileSecurityProfiles/{fileSecurityProfile-id}':
+  '/security/fileSecurityProfiles/{fileSecurityProfile-id}':
     get:
       tags:
-        - Security.fileSecurityProfile
-      summary: Get fileSecurityProfiles from Security
-      operationId: Security_GetFileSecurityProfiles
+        - security.fileSecurityProfile
+      summary: Get fileSecurityProfiles from security
+      operationId: security_GetFileSecurityProfiles
       parameters:
         - name: fileSecurityProfile-id
           in: path
@@ -1191,9 +1211,9 @@ paths:
       x-ms-docs-operation-type: operation
     patch:
       tags:
-        - Security.fileSecurityProfile
-      summary: Update the navigation property fileSecurityProfiles in Security
-      operationId: Security_UpdateFileSecurityProfiles
+        - security.fileSecurityProfile
+      summary: Update the navigation property fileSecurityProfiles in security
+      operationId: security_UpdateFileSecurityProfiles
       parameters:
         - name: fileSecurityProfile-id
           in: path
@@ -1217,9 +1237,9 @@ paths:
       x-ms-docs-operation-type: operation
     delete:
       tags:
-        - Security.fileSecurityProfile
-      summary: Delete navigation property fileSecurityProfiles for Security
-      operationId: Security_DeleteFileSecurityProfiles
+        - security.fileSecurityProfile
+      summary: Delete navigation property fileSecurityProfiles for security
+      operationId: security_DeleteFileSecurityProfiles
       parameters:
         - name: fileSecurityProfile-id
           in: path
@@ -1239,12 +1259,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  /Security/hostSecurityProfiles:
+  /security/hostSecurityProfiles:
     get:
       tags:
-        - Security.hostSecurityProfile
-      summary: Get hostSecurityProfiles from Security
-      operationId: Security_ListHostSecurityProfiles
+        - security.hostSecurityProfile
+      summary: Get hostSecurityProfiles from security
+      operationId: security_ListHostSecurityProfiles
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1367,9 +1387,9 @@ paths:
       x-ms-docs-operation-type: operation
     post:
       tags:
-        - Security.hostSecurityProfile
-      summary: Create new navigation property to hostSecurityProfiles for Security
-      operationId: Security_CreateHostSecurityProfiles
+        - security.hostSecurityProfile
+      summary: Create new navigation property to hostSecurityProfiles for security
+      operationId: security_CreateHostSecurityProfiles
       requestBody:
         description: New navigation property
         content:
@@ -1387,12 +1407,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/Security/hostSecurityProfiles/{hostSecurityProfile-id}':
+  '/security/hostSecurityProfiles/{hostSecurityProfile-id}':
     get:
       tags:
-        - Security.hostSecurityProfile
-      summary: Get hostSecurityProfiles from Security
-      operationId: Security_GetHostSecurityProfiles
+        - security.hostSecurityProfile
+      summary: Get hostSecurityProfiles from security
+      operationId: security_GetHostSecurityProfiles
       parameters:
         - name: hostSecurityProfile-id
           in: path
@@ -1455,9 +1475,9 @@ paths:
       x-ms-docs-operation-type: operation
     patch:
       tags:
-        - Security.hostSecurityProfile
-      summary: Update the navigation property hostSecurityProfiles in Security
-      operationId: Security_UpdateHostSecurityProfiles
+        - security.hostSecurityProfile
+      summary: Update the navigation property hostSecurityProfiles in security
+      operationId: security_UpdateHostSecurityProfiles
       parameters:
         - name: hostSecurityProfile-id
           in: path
@@ -1481,9 +1501,9 @@ paths:
       x-ms-docs-operation-type: operation
     delete:
       tags:
-        - Security.hostSecurityProfile
-      summary: Delete navigation property hostSecurityProfiles for Security
-      operationId: Security_DeleteHostSecurityProfiles
+        - security.hostSecurityProfile
+      summary: Delete navigation property hostSecurityProfiles for security
+      operationId: security_DeleteHostSecurityProfiles
       parameters:
         - name: hostSecurityProfile-id
           in: path
@@ -1503,12 +1523,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  /Security/ipSecurityProfiles:
+  /security/ipSecurityProfiles:
     get:
       tags:
-        - Security.ipSecurityProfile
-      summary: Get ipSecurityProfiles from Security
-      operationId: Security_ListIpSecurityProfiles
+        - security.ipSecurityProfile
+      summary: Get ipSecurityProfiles from security
+      operationId: security_ListIpSecurityProfiles
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1616,9 +1636,9 @@ paths:
       x-ms-docs-operation-type: operation
     post:
       tags:
-        - Security.ipSecurityProfile
-      summary: Create new navigation property to ipSecurityProfiles for Security
-      operationId: Security_CreateIpSecurityProfiles
+        - security.ipSecurityProfile
+      summary: Create new navigation property to ipSecurityProfiles for security
+      operationId: security_CreateIpSecurityProfiles
       requestBody:
         description: New navigation property
         content:
@@ -1636,12 +1656,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/Security/ipSecurityProfiles/{ipSecurityProfile-id}':
+  '/security/ipSecurityProfiles/{ipSecurityProfile-id}':
     get:
       tags:
-        - Security.ipSecurityProfile
-      summary: Get ipSecurityProfiles from Security
-      operationId: Security_GetIpSecurityProfiles
+        - security.ipSecurityProfile
+      summary: Get ipSecurityProfiles from security
+      operationId: security_GetIpSecurityProfiles
       parameters:
         - name: ipSecurityProfile-id
           in: path
@@ -1699,9 +1719,9 @@ paths:
       x-ms-docs-operation-type: operation
     patch:
       tags:
-        - Security.ipSecurityProfile
-      summary: Update the navigation property ipSecurityProfiles in Security
-      operationId: Security_UpdateIpSecurityProfiles
+        - security.ipSecurityProfile
+      summary: Update the navigation property ipSecurityProfiles in security
+      operationId: security_UpdateIpSecurityProfiles
       parameters:
         - name: ipSecurityProfile-id
           in: path
@@ -1725,9 +1745,9 @@ paths:
       x-ms-docs-operation-type: operation
     delete:
       tags:
-        - Security.ipSecurityProfile
-      summary: Delete navigation property ipSecurityProfiles for Security
-      operationId: Security_DeleteIpSecurityProfiles
+        - security.ipSecurityProfile
+      summary: Delete navigation property ipSecurityProfiles for security
+      operationId: security_DeleteIpSecurityProfiles
       parameters:
         - name: ipSecurityProfile-id
           in: path
@@ -1747,12 +1767,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  /Security/providerTenantSettings:
+  /security/providerTenantSettings:
     get:
       tags:
-        - Security.providerTenantSetting
-      summary: Get providerTenantSettings from Security
-      operationId: Security_ListProviderTenantSettings
+        - security.providerTenantSetting
+      summary: Get providerTenantSettings from security
+      operationId: security_ListProviderTenantSettings
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1836,9 +1856,9 @@ paths:
       x-ms-docs-operation-type: operation
     post:
       tags:
-        - Security.providerTenantSetting
-      summary: Create new navigation property to providerTenantSettings for Security
-      operationId: Security_CreateProviderTenantSettings
+        - security.providerTenantSetting
+      summary: Create new navigation property to providerTenantSettings for security
+      operationId: security_CreateProviderTenantSettings
       requestBody:
         description: New navigation property
         content:
@@ -1856,12 +1876,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/Security/providerTenantSettings/{providerTenantSetting-id}':
+  '/security/providerTenantSettings/{providerTenantSetting-id}':
     get:
       tags:
-        - Security.providerTenantSetting
-      summary: Get providerTenantSettings from Security
-      operationId: Security_GetProviderTenantSettings
+        - security.providerTenantSetting
+      summary: Get providerTenantSettings from security
+      operationId: security_GetProviderTenantSettings
       parameters:
         - name: providerTenantSetting-id
           in: path
@@ -1911,9 +1931,9 @@ paths:
       x-ms-docs-operation-type: operation
     patch:
       tags:
-        - Security.providerTenantSetting
-      summary: Update the navigation property providerTenantSettings in Security
-      operationId: Security_UpdateProviderTenantSettings
+        - security.providerTenantSetting
+      summary: Update the navigation property providerTenantSettings in security
+      operationId: security_UpdateProviderTenantSettings
       parameters:
         - name: providerTenantSetting-id
           in: path
@@ -1937,9 +1957,9 @@ paths:
       x-ms-docs-operation-type: operation
     delete:
       tags:
-        - Security.providerTenantSetting
-      summary: Delete navigation property providerTenantSettings for Security
-      operationId: Security_DeleteProviderTenantSettings
+        - security.providerTenantSetting
+      summary: Delete navigation property providerTenantSettings for security
+      operationId: security_DeleteProviderTenantSettings
       parameters:
         - name: providerTenantSetting-id
           in: path
@@ -1959,12 +1979,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  /Security/secureScoreControlProfiles:
+  /security/secureScoreControlProfiles:
     get:
       tags:
-        - Security.secureScoreControlProfile
-      summary: Get secureScoreControlProfiles from Security
-      operationId: Security_ListSecureScoreControlProfiles
+        - security.secureScoreControlProfile
+      summary: Get secureScoreControlProfiles from security
+      operationId: security_ListSecureScoreControlProfiles
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2090,9 +2110,9 @@ paths:
       x-ms-docs-operation-type: operation
     post:
       tags:
-        - Security.secureScoreControlProfile
-      summary: Create new navigation property to secureScoreControlProfiles for Security
-      operationId: Security_CreateSecureScoreControlProfiles
+        - security.secureScoreControlProfile
+      summary: Create new navigation property to secureScoreControlProfiles for security
+      operationId: security_CreateSecureScoreControlProfiles
       requestBody:
         description: New navigation property
         content:
@@ -2110,12 +2130,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/Security/secureScoreControlProfiles/{secureScoreControlProfile-id}':
+  '/security/secureScoreControlProfiles/{secureScoreControlProfile-id}':
     get:
       tags:
-        - Security.secureScoreControlProfile
-      summary: Get secureScoreControlProfiles from Security
-      operationId: Security_GetSecureScoreControlProfiles
+        - security.secureScoreControlProfile
+      summary: Get secureScoreControlProfiles from security
+      operationId: security_GetSecureScoreControlProfiles
       parameters:
         - name: secureScoreControlProfile-id
           in: path
@@ -2179,9 +2199,9 @@ paths:
       x-ms-docs-operation-type: operation
     patch:
       tags:
-        - Security.secureScoreControlProfile
-      summary: Update the navigation property secureScoreControlProfiles in Security
-      operationId: Security_UpdateSecureScoreControlProfiles
+        - security.secureScoreControlProfile
+      summary: Update the navigation property secureScoreControlProfiles in security
+      operationId: security_UpdateSecureScoreControlProfiles
       parameters:
         - name: secureScoreControlProfile-id
           in: path
@@ -2205,9 +2225,9 @@ paths:
       x-ms-docs-operation-type: operation
     delete:
       tags:
-        - Security.secureScoreControlProfile
-      summary: Delete navigation property secureScoreControlProfiles for Security
-      operationId: Security_DeleteSecureScoreControlProfiles
+        - security.secureScoreControlProfile
+      summary: Delete navigation property secureScoreControlProfiles for security
+      operationId: security_DeleteSecureScoreControlProfiles
       parameters:
         - name: secureScoreControlProfile-id
           in: path
@@ -2227,12 +2247,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  /Security/secureScores:
+  /security/secureScores:
     get:
       tags:
-        - Security.secureScore
-      summary: Get secureScores from Security
-      operationId: Security_ListSecureScores
+        - security.secureScore
+      summary: Get secureScores from security
+      operationId: security_ListSecureScores
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2331,9 +2351,9 @@ paths:
       x-ms-docs-operation-type: operation
     post:
       tags:
-        - Security.secureScore
-      summary: Create new navigation property to secureScores for Security
-      operationId: Security_CreateSecureScores
+        - security.secureScore
+      summary: Create new navigation property to secureScores for security
+      operationId: security_CreateSecureScores
       requestBody:
         description: New navigation property
         content:
@@ -2351,12 +2371,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/Security/secureScores/{secureScore-id}':
+  '/security/secureScores/{secureScore-id}':
     get:
       tags:
-        - Security.secureScore
-      summary: Get secureScores from Security
-      operationId: Security_GetSecureScores
+        - security.secureScore
+      summary: Get secureScores from security
+      operationId: security_GetSecureScores
       parameters:
         - name: secureScore-id
           in: path
@@ -2411,9 +2431,9 @@ paths:
       x-ms-docs-operation-type: operation
     patch:
       tags:
-        - Security.secureScore
-      summary: Update the navigation property secureScores in Security
-      operationId: Security_UpdateSecureScores
+        - security.secureScore
+      summary: Update the navigation property secureScores in security
+      operationId: security_UpdateSecureScores
       parameters:
         - name: secureScore-id
           in: path
@@ -2437,9 +2457,9 @@ paths:
       x-ms-docs-operation-type: operation
     delete:
       tags:
-        - Security.secureScore
-      summary: Delete navigation property secureScores for Security
-      operationId: Security_DeleteSecureScores
+        - security.secureScore
+      summary: Delete navigation property secureScores for security
+      operationId: security_DeleteSecureScores
       parameters:
         - name: secureScore-id
           in: path
@@ -2459,12 +2479,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  /Security/securityActions:
+  /security/securityActions:
     get:
       tags:
-        - Security.securityAction
-      summary: Get securityActions from Security
-      operationId: Security_ListSecurityActions
+        - security.securityAction
+      summary: Get securityActions from security
+      operationId: security_ListSecurityActions
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2575,9 +2595,9 @@ paths:
       x-ms-docs-operation-type: operation
     post:
       tags:
-        - Security.securityAction
-      summary: Create new navigation property to securityActions for Security
-      operationId: Security_CreateSecurityActions
+        - security.securityAction
+      summary: Create new navigation property to securityActions for security
+      operationId: security_CreateSecurityActions
       requestBody:
         description: New navigation property
         content:
@@ -2595,12 +2615,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/Security/securityActions/{securityAction-id}':
+  '/security/securityActions/{securityAction-id}':
     get:
       tags:
-        - Security.securityAction
-      summary: Get securityActions from Security
-      operationId: Security_GetSecurityActions
+        - security.securityAction
+      summary: Get securityActions from security
+      operationId: security_GetSecurityActions
       parameters:
         - name: securityAction-id
           in: path
@@ -2659,9 +2679,9 @@ paths:
       x-ms-docs-operation-type: operation
     patch:
       tags:
-        - Security.securityAction
-      summary: Update the navigation property securityActions in Security
-      operationId: Security_UpdateSecurityActions
+        - security.securityAction
+      summary: Update the navigation property securityActions in security
+      operationId: security_UpdateSecurityActions
       parameters:
         - name: securityAction-id
           in: path
@@ -2685,9 +2705,9 @@ paths:
       x-ms-docs-operation-type: operation
     delete:
       tags:
-        - Security.securityAction
-      summary: Delete navigation property securityActions for Security
-      operationId: Security_DeleteSecurityActions
+        - security.securityAction
+      summary: Delete navigation property securityActions for security
+      operationId: security_DeleteSecurityActions
       parameters:
         - name: securityAction-id
           in: path
@@ -2707,12 +2727,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/Security/securityActions/{securityAction-id}/microsoft.graph.cancelSecurityAction':
+  '/security/securityActions/{securityAction-id}/microsoft.graph.cancelSecurityAction':
     post:
       tags:
-        - Security.Actions
+        - security.Actions
       summary: Invoke action cancelSecurityAction
-      operationId: Security.securityActions_cancelSecurityAction
+      operationId: security.securityActions_cancelSecurityAction
       parameters:
         - name: securityAction-id
           in: path
@@ -2727,12 +2747,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-  /Security/tiIndicators:
+  /security/tiIndicators:
     get:
       tags:
-        - Security.tiIndicator
-      summary: Get tiIndicators from Security
-      operationId: Security_ListTiIndicators
+        - security.tiIndicator
+      summary: Get tiIndicators from security
+      operationId: security_ListTiIndicators
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2975,9 +2995,9 @@ paths:
       x-ms-docs-operation-type: operation
     post:
       tags:
-        - Security.tiIndicator
-      summary: Create new navigation property to tiIndicators for Security
-      operationId: Security_CreateTiIndicators
+        - security.tiIndicator
+      summary: Create new navigation property to tiIndicators for security
+      operationId: security_CreateTiIndicators
       requestBody:
         description: New navigation property
         content:
@@ -2995,12 +3015,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/Security/tiIndicators/{tiIndicator-id}':
+  '/security/tiIndicators/{tiIndicator-id}':
     get:
       tags:
-        - Security.tiIndicator
-      summary: Get tiIndicators from Security
-      operationId: Security_GetTiIndicators
+        - security.tiIndicator
+      summary: Get tiIndicators from security
+      operationId: security_GetTiIndicators
       parameters:
         - name: tiIndicator-id
           in: path
@@ -3103,9 +3123,9 @@ paths:
       x-ms-docs-operation-type: operation
     patch:
       tags:
-        - Security.tiIndicator
-      summary: Update the navigation property tiIndicators in Security
-      operationId: Security_UpdateTiIndicators
+        - security.tiIndicator
+      summary: Update the navigation property tiIndicators in security
+      operationId: security_UpdateTiIndicators
       parameters:
         - name: tiIndicator-id
           in: path
@@ -3129,9 +3149,9 @@ paths:
       x-ms-docs-operation-type: operation
     delete:
       tags:
-        - Security.tiIndicator
-      summary: Delete navigation property tiIndicators for Security
-      operationId: Security_DeleteTiIndicators
+        - security.tiIndicator
+      summary: Delete navigation property tiIndicators for security
+      operationId: security_DeleteTiIndicators
       parameters:
         - name: tiIndicator-id
           in: path
@@ -3151,12 +3171,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  /Security/tiIndicators/microsoft.graph.deleteTiIndicators:
+  /security/tiIndicators/microsoft.graph.deleteTiIndicators:
     post:
       tags:
-        - Security.Actions
+        - security.Actions
       summary: Invoke action deleteTiIndicators
-      operationId: Security.tiIndicators_deleteTiIndicators
+      operationId: security.tiIndicators_deleteTiIndicators
       requestBody:
         description: Action parameters
         content:
@@ -3180,16 +3200,16 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/microsoft.graph.ResultInfo'
+                  $ref: '#/components/schemas/microsoft.graph.resultInfo'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-  /Security/tiIndicators/microsoft.graph.deleteTiIndicatorsByExternalId:
+  /security/tiIndicators/microsoft.graph.deleteTiIndicatorsByExternalId:
     post:
       tags:
-        - Security.Actions
+        - security.Actions
       summary: Invoke action deleteTiIndicatorsByExternalId
-      operationId: Security.tiIndicators_deleteTiIndicatorsByExternalId
+      operationId: security.tiIndicators_deleteTiIndicatorsByExternalId
       requestBody:
         description: Action parameters
         content:
@@ -3213,16 +3233,16 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/microsoft.graph.ResultInfo'
+                  $ref: '#/components/schemas/microsoft.graph.resultInfo'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-  /Security/tiIndicators/microsoft.graph.submitTiIndicators:
+  /security/tiIndicators/microsoft.graph.submitTiIndicators:
     post:
       tags:
-        - Security.Actions
+        - security.Actions
       summary: Invoke action submitTiIndicators
-      operationId: Security.tiIndicators_submitTiIndicators
+      operationId: security.tiIndicators_submitTiIndicators
       requestBody:
         description: Action parameters
         content:
@@ -3249,12 +3269,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-  /Security/tiIndicators/microsoft.graph.updateTiIndicators:
+  /security/tiIndicators/microsoft.graph.updateTiIndicators:
     post:
       tags:
-        - Security.Actions
+        - security.Actions
       summary: Invoke action updateTiIndicators
-      operationId: Security.tiIndicators_updateTiIndicators
+      operationId: security.tiIndicators_updateTiIndicators
       requestBody:
         description: Action parameters
         content:
@@ -3281,12 +3301,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-  /Security/userSecurityProfiles:
+  /security/userSecurityProfiles:
     get:
       tags:
-        - Security.userSecurityProfile
-      summary: Get userSecurityProfiles from Security
-      operationId: Security_ListUserSecurityProfiles
+        - security.userSecurityProfile
+      summary: Get userSecurityProfiles from security
+      operationId: security_ListUserSecurityProfiles
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3385,9 +3405,9 @@ paths:
       x-ms-docs-operation-type: operation
     post:
       tags:
-        - Security.userSecurityProfile
-      summary: Create new navigation property to userSecurityProfiles for Security
-      operationId: Security_CreateUserSecurityProfiles
+        - security.userSecurityProfile
+      summary: Create new navigation property to userSecurityProfiles for security
+      operationId: security_CreateUserSecurityProfiles
       requestBody:
         description: New navigation property
         content:
@@ -3405,12 +3425,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/Security/userSecurityProfiles/{userSecurityProfile-id}':
+  '/security/userSecurityProfiles/{userSecurityProfile-id}':
     get:
       tags:
-        - Security.userSecurityProfile
-      summary: Get userSecurityProfiles from Security
-      operationId: Security_GetUserSecurityProfiles
+        - security.userSecurityProfile
+      summary: Get userSecurityProfiles from security
+      operationId: security_GetUserSecurityProfiles
       parameters:
         - name: userSecurityProfile-id
           in: path
@@ -3465,9 +3485,9 @@ paths:
       x-ms-docs-operation-type: operation
     patch:
       tags:
-        - Security.userSecurityProfile
-      summary: Update the navigation property userSecurityProfiles in Security
-      operationId: Security_UpdateUserSecurityProfiles
+        - security.userSecurityProfile
+      summary: Update the navigation property userSecurityProfiles in security
+      operationId: security_UpdateUserSecurityProfiles
       parameters:
         - name: userSecurityProfile-id
           in: path
@@ -3491,9 +3511,9 @@ paths:
       x-ms-docs-operation-type: operation
     delete:
       tags:
-        - Security.userSecurityProfile
-      summary: Delete navigation property userSecurityProfiles for Security
-      operationId: Security_DeleteUserSecurityProfiles
+        - security.userSecurityProfile
+      summary: Delete navigation property userSecurityProfiles for security
+      operationId: security_DeleteUserSecurityProfiles
       parameters:
         - name: userSecurityProfile-id
           in: path
@@ -3586,6 +3606,10 @@ components:
               type: string
               description: Name or alias of the activity group (attacker) this alert is attributed to.
               nullable: true
+            alertDetections:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.alertDetection'
             assignedTo:
               type: string
               description: 'Name of the analyst the alert is assigned to for triage, investigation, or remediation (supports update).'
@@ -3658,6 +3682,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.alertHistoryState'
+              description: A collection of alertHistoryStates comprising an audit log of all updates made to an alert.
             hostStates:
               type: array
               items:
@@ -3669,6 +3694,15 @@ components:
                 type: string
                 nullable: true
               description: IDs of incidents related to current alert.
+            investigationSecurityStates:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.investigationSecurityState'
+            lastEventDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -3680,6 +3714,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.malwareState'
               description: Threat Intelligence pertaining to malware related to this alert.
+            messageSecurityStates:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.messageSecurityState'
             networkConnections:
               type: array
               items:
@@ -3731,6 +3769,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.alertTrigger'
               description: 'Security-related information about the specific properties that triggered the alert (properties appearing in the alert). Alerts might contain information about multiple users, hosts, files, ip addresses. This field indicates which properties triggered the alert generation.'
+            uriClickSecurityStates:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.uriClickSecurityState'
             userStates:
               type: array
               items:
@@ -4118,14 +4160,16 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.complianceInformation'
+              description: The collection of compliance information associated with secure score control
             controlCategory:
               type: string
-              description: 'Control action category (Identity, Data, Device, Apps, Infrastructure).'
+              description: 'Control action category (Account, Data, Device, Apps, Infrastructure).'
               nullable: true
             controlStateUpdates:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.secureScoreControlStateUpdate'
+              description: 'Flag to indicate where the tenant has marked a control (ignore, thirdParty, reviewed) (supports update).'
             deprecated:
               type: boolean
               description: Flag to indicate if a control is depreciated.
@@ -4142,7 +4186,7 @@ components:
               nullable: true
             maxScore:
               type: number
-              description: max attainable score for the control.
+              description: Current obtained max score on specified date.
               format: double
               nullable: true
             rank:
@@ -4169,9 +4213,10 @@ components:
               items:
                 type: string
                 nullable: true
-              description: 'List of threats the control mitigates (accountBreach,dataDeletion,dataExfiltration,dataSpillage,'
+              description: 'List of threats the control mitigates (accountBreach,dataDeletion,dataExfiltration,dataSpillage,elevationOfPrivilege,maliciousInsider,passwordCracking,phishingOrWhaling,spoofing).'
             tier:
               type: string
+              description: 'Control tier (Core, Defense in Depth, Advanced.)'
               nullable: true
             title:
               type: string
@@ -4179,6 +4224,7 @@ components:
               nullable: true
             userImpact:
               type: string
+              description: 'User impact of implementing control (low, moderate, high).'
               nullable: true
             vendorInformation:
               $ref: '#/components/schemas/microsoft.graph.securityVendorInformation'
@@ -4251,12 +4297,15 @@ components:
           properties:
             actionReason:
               type: string
+              description: Reason for invoking this action.
               nullable: true
             appId:
               type: string
+              description: The Application ID of the calling application that submitted (POST) the action. The appId should be extracted from the auth token and not entered manually by the calling application.
               nullable: true
             azureTenantId:
               type: string
+              description: Azure tenant ID of the entity to determine which tenant the entity belongs to (multi-tenancy support). The azureTenantId should be extracted from the auth token and not entered manually by the calling application.
               nullable: true
             clientContext:
               type: string
@@ -4264,35 +4313,42 @@ components:
             completedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Timestamp when the action was completed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
               format: date-time
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Timestamp when the action is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
               format: date-time
               nullable: true
             errorInfo:
-              $ref: '#/components/schemas/microsoft.graph.ResultInfo'
+              $ref: '#/components/schemas/microsoft.graph.resultInfo'
             lastActionDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Timestamp when this action was last updated. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
               format: date-time
               nullable: true
             name:
               type: string
+              description: Action name.
               nullable: true
             parameters:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.keyValuePair'
+              description: 'Collection of parameters (key-value pairs) necessary to invoke the action, e.g. URL or fileHash to block, etc.). Required'
             states:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.securityActionState'
+              description: Collection of securityActionState to keep the history of an action.
             status:
               $ref: '#/components/schemas/microsoft.graph.operationStatus'
             user:
               type: string
+              description: The user principal name of the signed-in user that submitted  (POST) the action. The user should be extracted from the auth token and not entered manually by the calling application.
               nullable: true
             vendorInformation:
               $ref: '#/components/schemas/microsoft.graph.securityVendorInformation'
@@ -4311,20 +4367,25 @@ components:
               items:
                 type: string
                 nullable: true
+              description: The cyber threat intelligence name(s) for the parties responsible for the malicious activity covered by the threat indicator.
             additionalInformation:
               type: string
+              description: A catchall area into which extra data from the indicator not covered by the other tiIndicator properties may be placed. Data placed into additionalInformation will typically not be utilized by the targetProduct security tool.
               nullable: true
             azureTenantId:
               type: string
+              description: Stamped by the system when the indicator is ingested. The Azure Active Directory tenant id of submitting client. Required.
               nullable: true
             confidence:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: An integer representing the confidence the data within the indicator accurately identifies malicious behavior. Acceptable values are 0 – 100 with 100 being the highest.
               format: int32
               nullable: true
             description:
               type: string
+              description: Brief description (100 characters or less) of the threat represented by the indicator. Required.
               nullable: true
             diamondModel:
               $ref: '#/components/schemas/microsoft.graph.diamondModel'
@@ -4361,10 +4422,12 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'DateTime string indicating when the Indicator expires. All indicators must have an expiration date to avoid stale indicators persisting in the system. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Required.'
               format: date-time
               nullable: true
             externalId:
               type: string
+              description: An identification number that ties the indicator back to the indicator provider’s system (e.g. a foreign key).
               nullable: true
             fileCompileDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -4403,22 +4466,27 @@ components:
             ingestedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Stamped by the system when the indicator is ingested. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
               format: date-time
               nullable: true
             isActive:
               type: boolean
+              description: 'Used to deactivate indicators within system. By default, any indicator submitted is set as active. However, providers may submit existing indicators with this set to ‘False’ to deactivate indicators in the system.'
               nullable: true
             killChain:
               type: array
               items:
                 type: string
                 nullable: true
+              description: A JSON array of strings that describes which point or points on the Kill Chain this indicator targets. See ‘killChain values’ below for exact values.
             knownFalsePositives:
               type: string
+              description: Scenarios in which the indicator may cause false positives. This should be human-readable text.
               nullable: true
             lastReportedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The last time the indicator was seen. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
               format: date-time
               nullable: true
             malwareFamilyNames:
@@ -4426,14 +4494,13 @@ components:
               items:
                 type: string
                 nullable: true
+              description: The malware family name associated with an indicator if it exists. Microsoft prefers the Microsoft malware family name if at all possible which can be found via the Windows Defender Security Intelligence threat encyclopedia.
             networkCidrBlock:
               type: string
               nullable: true
             networkDestinationAsn:
-              maximum: 2147483647
-              minimum: -2147483648
               type: integer
-              format: int32
+              format: int64
               nullable: true
             networkDestinationCidrBlock:
               type: string
@@ -4469,10 +4536,8 @@ components:
               format: int32
               nullable: true
             networkSourceAsn:
-              maximum: 2147483647
-              minimum: -2147483648
               type: integer
-              format: int32
+              format: int64
               nullable: true
             networkSourceCidrBlock:
               type: string
@@ -4491,11 +4556,13 @@ components:
               nullable: true
             passiveOnly:
               type: boolean
+              description: 'Determines if the indicator should trigger an event that is visible to an end-user. When set to ‘true,’ security tools will not notify the end user that a ‘hit’ has occurred. This is most often treated as audit or silent mode by security products where they will simply log that a match occurred but will not perform the action. Default value is false.'
               nullable: true
             severity:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: An integer representing the severity of the malicious behavior identified by the data within the indicator. Acceptable values are 0 – 5 where 5 is the most severe and zero is not severe at all. Default value is 3.
               format: int32
               nullable: true
             tags:
@@ -4503,10 +4570,13 @@ components:
               items:
                 type: string
                 nullable: true
+              description: A JSON array of strings that stores arbitrary tags/keywords.
             targetProduct:
               type: string
+              description: 'A string value representing a single security product to which the indicator should be applied. Acceptable values are: Azure Sentinel, Microsoft Defender ATP. Required'
             threatType:
               type: string
+              description: 'Each indicator must have a valid Indicator Threat Type. Possible values are: Botnet, C2, CryptoMining, Darknet, DDoS, MaliciousUrl, Malware, Phishing, Proxy, PUA, WatchList. Required.'
               nullable: true
             tlpLevel:
               $ref: '#/components/schemas/microsoft.graph.tlpLevel'
@@ -4518,22 +4588,25 @@ components:
               nullable: true
           additionalProperties:
             type: object
-    microsoft.graph.ResultInfo:
-      title: ResultInfo
+    microsoft.graph.resultInfo:
+      title: resultInfo
       type: object
       properties:
         code:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: The result code.
           format: int32
         message:
           type: string
+          description: The message.
           nullable: true
         subcode:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: The result sub-code.
           format: int32
       additionalProperties:
         type: object
@@ -4610,6 +4683,21 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.alertDetection:
+      title: alertDetection
+      type: object
+      properties:
+        detectionType:
+          type: string
+          nullable: true
+        method:
+          type: string
+          nullable: true
+        name:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.cloudAppSecurityState:
       title: cloudAppSecurityState
       type: object
@@ -4663,15 +4751,18 @@ components:
       properties:
         appId:
           type: string
+          description: The Application ID of the calling application that submitted an update (PATCH) to the alert. The appId should be extracted from the auth token and not entered manually by the calling application.
           nullable: true
         assignedTo:
           type: string
+          description: 'UPN of user the alert was assigned to (note: alert.assignedTo only stores the last value/UPN).'
           nullable: true
         comments:
           type: array
           items:
             type: string
             nullable: true
+          description: Comment entered by signed-in user.
         feedback:
           $ref: '#/components/schemas/microsoft.graph.alertFeedback'
         status:
@@ -4679,10 +4770,12 @@ components:
         updatedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'Date and time of the alert update. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
           format: date-time
           nullable: true
         user:
           type: string
+          description: UPN of the signed-in user that updated the alert (taken from the bearer token - if in user/delegated auth mode).
           nullable: true
       additionalProperties:
         type: object
@@ -4726,6 +4819,18 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.investigationSecurityState:
+      title: investigationSecurityState
+      type: object
+      properties:
+        name:
+          type: string
+          nullable: true
+        status:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.malwareState:
       title: malwareState
       type: object
@@ -4752,13 +4857,48 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.messageSecurityState:
+      title: messageSecurityState
+      type: object
+      properties:
+        connectingIP:
+          type: string
+          nullable: true
+        deliveryAction:
+          type: string
+          nullable: true
+        deliveryLocation:
+          type: string
+          nullable: true
+        directionality:
+          type: string
+          nullable: true
+        internetMessageId:
+          type: string
+          nullable: true
+        messageFingerprint:
+          type: string
+          nullable: true
+        messageReceivedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        messageSubject:
+          type: string
+          nullable: true
+        networkMessageId:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.networkConnection:
       title: networkConnection
       type: object
       properties:
         applicationName:
           type: string
-          description: 'Name of the application managing the network connection (for example, Facebook or SMTP).'
+          description: 'Name of the application managing the network connection (for example, Facebook, SMTP, etc.).'
           nullable: true
         destinationAddress:
           type: string
@@ -4987,6 +5127,32 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.uriClickSecurityState:
+      title: uriClickSecurityState
+      type: object
+      properties:
+        clickAction:
+          type: string
+          nullable: true
+        clickDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        id:
+          type: string
+          nullable: true
+        sourceId:
+          type: string
+          nullable: true
+        uriDomain:
+          type: string
+          nullable: true
+        verdict:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.userSecurityState:
       title: userSecurityState
       type: object
@@ -5147,29 +5313,35 @@ components:
       properties:
         accountDomain:
           type: string
+          description: Domain of user account used to logon.
           nullable: true
         accountName:
           type: string
+          description: Account name of user account used to logon.
           nullable: true
         accountType:
           $ref: '#/components/schemas/microsoft.graph.userAccountSecurityType'
         firstSeenDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'DateTime at which the earliest logon by this user account occurred (provider-determined period). The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''.'
           format: date-time
           nullable: true
         lastSeenDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'DateTime at which the latest logon by this user account occurred. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''.'
           format: date-time
           nullable: true
         logonId:
           type: string
+          description: User logon ID.
           nullable: true
         logonTypes:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.logonType'
+          description: 'Collection of the logon types observed for the logged on user from when first to last seen. Possible values are: unknown, interactive, remoteInteractive, network, batch, service.'
       additionalProperties:
         type: object
     microsoft.graph.networkInterface:
@@ -5178,18 +5350,23 @@ components:
       properties:
         description:
           type: string
+          description: 'Description of the NIC (e.g. Ethernet adapter, Wireless LAN adapter Local Area Connection <#>, etc.).'
           nullable: true
         ipV4Address:
           type: string
+          description: Last IPv4 address associated with this NIC.
           nullable: true
         ipV6Address:
           type: string
+          description: Last Public (aka global) IPv6 address associated with this NIC.
           nullable: true
         localIpV6Address:
           type: string
+          description: Last local (link-local or site-local) IPv6 address associated with this NIC.
           nullable: true
         macAddress:
           type: string
+          description: MAC address of the NIC on this host.
           nullable: true
       additionalProperties:
         type: object
@@ -5213,10 +5390,8 @@ components:
       type: object
       properties:
         asn:
-          maximum: 2147483647
-          minimum: -2147483648
           type: integer
-          format: int32
+          format: int64
           nullable: true
         city:
           type: string
@@ -5335,16 +5510,19 @@ components:
       properties:
         appId:
           type: string
+          description: The Application ID of the calling application that submitted an update (PATCH) to the action. The appId should be extracted from the auth token and not entered manually by the calling application.
           nullable: true
         status:
           $ref: '#/components/schemas/microsoft.graph.operationStatus'
         updatedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'Timestamp when the actionState was updated. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
           format: date-time
           nullable: true
         user:
           type: string
+          description: The user principal name of the signed-in user that submitted an update (PATCH) to the action. The user should be extracted from the auth token and not entered manually by the calling application.
           nullable: true
       additionalProperties:
         type: object
@@ -5442,9 +5620,9 @@ components:
     microsoft.graph.securityNetworkProtocol:
       title: securityNetworkProtocol
       enum:
+        - unknown
         - ip
         - icmp
-        - unknown
         - igmp
         - ggp
         - ipv4

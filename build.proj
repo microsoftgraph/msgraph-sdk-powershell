@@ -31,7 +31,7 @@
     <UpdateAutoRest Condition ="'$(UpdateAutoRest)' == ''">$True</UpdateAutoRest>
     <!-- PS command related -->
     <PowerShellCoreCommandPrefix>pwsh -NonInteractive -NoLogo -NoProfile -Command</PowerShellCoreCommandPrefix>
-    <GenerateModules> $(PowerShellCoreCommandPrefix) &quot; $(RepoTools)/GenerateModules.ps1 -Build -SkipVersionCheck:$(SkipVersionCheck) -EnableSigning:$(EnableSigning) -UpdateAutoRest:$(UpdateAutoRest) &quot; </GenerateModules>
+    <GenerateModules> $(PowerShellCoreCommandPrefix) &quot; $(RepoTools)/GenerateModules.ps1 -Build -Test -SkipVersionCheck:$(SkipVersionCheck) -EnableSigning:$(EnableSigning) -UpdateAutoRest:$(UpdateAutoRest) &quot; </GenerateModules>
     <GenerateRollup> $(PowerShellCoreCommandPrefix) &quot; $(RepoTools)/GenerateRollUpModule.ps1 &quot; </GenerateRollup>
     <GenerateAuth> $(PowerShellCoreCommandPrefix) &quot; $(RepoTools)/GenerateAuthenticationModule.ps1 -Build -BuildWhenEqual:$(BuildWhenEqual) -EnableSigning:$(EnableSigning) &quot; </GenerateAuth>
     <GenerateProfiles> $(PowerShellCoreCommandPrefix) &quot; $(RepoTools)/GenerateProfiles.ps1 &quot; </GenerateProfiles>

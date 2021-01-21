@@ -6,12 +6,12 @@ servers:
   - url: https://graph.microsoft.com/v1.0/
     description: Core
 paths:
-  /Security:
+  /security:
     get:
       tags:
-        - Security.security
-      summary: Get Security
-      operationId: Security.security_GetSecurity
+        - security.security
+      summary: Get security
+      operationId: security.security_GetSecurity
       parameters:
         - name: $select
           in: query
@@ -52,19 +52,19 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.security'
           links:
             alerts:
-              operationId: Security.ListAlerts
+              operationId: security.ListAlerts
             secureScoreControlProfiles:
-              operationId: Security.ListSecureScoreControlProfiles
+              operationId: security.ListSecureScoreControlProfiles
             secureScores:
-              operationId: Security.ListSecureScores
+              operationId: security.ListSecureScores
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
-        - Security.security
-      summary: Update Security
-      operationId: Security.security_UpdateSecurity
+        - security.security
+      summary: Update security
+      operationId: security.security_UpdateSecurity
       requestBody:
         description: New property values
         content:
@@ -78,12 +78,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  /Security/alerts:
+  /security/alerts:
     get:
       tags:
-        - Security.alert
-      summary: Get alerts from Security
-      operationId: Security_ListAlerts
+        - security.alert
+      summary: Get alerts from security
+      operationId: security_ListAlerts
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -104,6 +104,8 @@ paths:
                 - id desc
                 - activityGroupName
                 - activityGroupName desc
+                - alertDetections
+                - alertDetections desc
                 - assignedTo
                 - assignedTo desc
                 - azureSubscriptionId
@@ -138,10 +140,16 @@ paths:
                 - hostStates desc
                 - incidentIds
                 - incidentIds desc
+                - investigationSecurityStates
+                - investigationSecurityStates desc
+                - lastEventDateTime
+                - lastEventDateTime desc
                 - lastModifiedDateTime
                 - lastModifiedDateTime desc
                 - malwareStates
                 - malwareStates desc
+                - messageSecurityStates
+                - messageSecurityStates desc
                 - networkConnections
                 - networkConnections desc
                 - processes
@@ -164,6 +172,8 @@ paths:
                 - title desc
                 - triggers
                 - triggers desc
+                - uriClickSecurityStates
+                - uriClickSecurityStates desc
                 - userStates
                 - userStates desc
                 - vendorInformation
@@ -183,6 +193,7 @@ paths:
               enum:
                 - id
                 - activityGroupName
+                - alertDetections
                 - assignedTo
                 - azureSubscriptionId
                 - azureTenantId
@@ -200,8 +211,11 @@ paths:
                 - historyStates
                 - hostStates
                 - incidentIds
+                - investigationSecurityStates
+                - lastEventDateTime
                 - lastModifiedDateTime
                 - malwareStates
+                - messageSecurityStates
                 - networkConnections
                 - processes
                 - recommendedActions
@@ -213,6 +227,7 @@ paths:
                 - tags
                 - title
                 - triggers
+                - uriClickSecurityStates
                 - userStates
                 - vendorInformation
                 - vulnerabilityStates
@@ -254,9 +269,9 @@ paths:
       x-ms-docs-operation-type: operation
     post:
       tags:
-        - Security.alert
-      summary: Create new navigation property to alerts for Security
-      operationId: Security_CreateAlerts
+        - security.alert
+      summary: Create new navigation property to alerts for security
+      operationId: security_CreateAlerts
       requestBody:
         description: New navigation property
         content:
@@ -274,12 +289,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/Security/alerts/{alert-id}':
+  '/security/alerts/{alert-id}':
     get:
       tags:
-        - Security.alert
-      summary: Get alerts from Security
-      operationId: Security_GetAlerts
+        - security.alert
+      summary: Get alerts from security
+      operationId: security_GetAlerts
       parameters:
         - name: alert-id
           in: path
@@ -300,6 +315,7 @@ paths:
               enum:
                 - id
                 - activityGroupName
+                - alertDetections
                 - assignedTo
                 - azureSubscriptionId
                 - azureTenantId
@@ -317,8 +333,11 @@ paths:
                 - historyStates
                 - hostStates
                 - incidentIds
+                - investigationSecurityStates
+                - lastEventDateTime
                 - lastModifiedDateTime
                 - malwareStates
+                - messageSecurityStates
                 - networkConnections
                 - processes
                 - recommendedActions
@@ -330,6 +349,7 @@ paths:
                 - tags
                 - title
                 - triggers
+                - uriClickSecurityStates
                 - userStates
                 - vendorInformation
                 - vulnerabilityStates
@@ -358,9 +378,9 @@ paths:
       x-ms-docs-operation-type: operation
     patch:
       tags:
-        - Security.alert
-      summary: Update the navigation property alerts in Security
-      operationId: Security_UpdateAlerts
+        - security.alert
+      summary: Update the navigation property alerts in security
+      operationId: security_UpdateAlerts
       parameters:
         - name: alert-id
           in: path
@@ -384,9 +404,9 @@ paths:
       x-ms-docs-operation-type: operation
     delete:
       tags:
-        - Security.alert
-      summary: Delete navigation property alerts for Security
-      operationId: Security_DeleteAlerts
+        - security.alert
+      summary: Delete navigation property alerts for security
+      operationId: security_DeleteAlerts
       parameters:
         - name: alert-id
           in: path
@@ -406,12 +426,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  /Security/secureScoreControlProfiles:
+  /security/secureScoreControlProfiles:
     get:
       tags:
-        - Security.secureScoreControlProfile
-      summary: Get secureScoreControlProfiles from Security
-      operationId: Security_ListSecureScoreControlProfiles
+        - security.secureScoreControlProfile
+      summary: Get secureScoreControlProfiles from security
+      operationId: security_ListSecureScoreControlProfiles
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -537,9 +557,9 @@ paths:
       x-ms-docs-operation-type: operation
     post:
       tags:
-        - Security.secureScoreControlProfile
-      summary: Create new navigation property to secureScoreControlProfiles for Security
-      operationId: Security_CreateSecureScoreControlProfiles
+        - security.secureScoreControlProfile
+      summary: Create new navigation property to secureScoreControlProfiles for security
+      operationId: security_CreateSecureScoreControlProfiles
       requestBody:
         description: New navigation property
         content:
@@ -557,12 +577,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/Security/secureScoreControlProfiles/{secureScoreControlProfile-id}':
+  '/security/secureScoreControlProfiles/{secureScoreControlProfile-id}':
     get:
       tags:
-        - Security.secureScoreControlProfile
-      summary: Get secureScoreControlProfiles from Security
-      operationId: Security_GetSecureScoreControlProfiles
+        - security.secureScoreControlProfile
+      summary: Get secureScoreControlProfiles from security
+      operationId: security_GetSecureScoreControlProfiles
       parameters:
         - name: secureScoreControlProfile-id
           in: path
@@ -626,9 +646,9 @@ paths:
       x-ms-docs-operation-type: operation
     patch:
       tags:
-        - Security.secureScoreControlProfile
-      summary: Update the navigation property secureScoreControlProfiles in Security
-      operationId: Security_UpdateSecureScoreControlProfiles
+        - security.secureScoreControlProfile
+      summary: Update the navigation property secureScoreControlProfiles in security
+      operationId: security_UpdateSecureScoreControlProfiles
       parameters:
         - name: secureScoreControlProfile-id
           in: path
@@ -652,9 +672,9 @@ paths:
       x-ms-docs-operation-type: operation
     delete:
       tags:
-        - Security.secureScoreControlProfile
-      summary: Delete navigation property secureScoreControlProfiles for Security
-      operationId: Security_DeleteSecureScoreControlProfiles
+        - security.secureScoreControlProfile
+      summary: Delete navigation property secureScoreControlProfiles for security
+      operationId: security_DeleteSecureScoreControlProfiles
       parameters:
         - name: secureScoreControlProfile-id
           in: path
@@ -674,12 +694,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  /Security/secureScores:
+  /security/secureScores:
     get:
       tags:
-        - Security.secureScore
-      summary: Get secureScores from Security
-      operationId: Security_ListSecureScores
+        - security.secureScore
+      summary: Get secureScores from security
+      operationId: security_ListSecureScores
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -778,9 +798,9 @@ paths:
       x-ms-docs-operation-type: operation
     post:
       tags:
-        - Security.secureScore
-      summary: Create new navigation property to secureScores for Security
-      operationId: Security_CreateSecureScores
+        - security.secureScore
+      summary: Create new navigation property to secureScores for security
+      operationId: security_CreateSecureScores
       requestBody:
         description: New navigation property
         content:
@@ -798,12 +818,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/Security/secureScores/{secureScore-id}':
+  '/security/secureScores/{secureScore-id}':
     get:
       tags:
-        - Security.secureScore
-      summary: Get secureScores from Security
-      operationId: Security_GetSecureScores
+        - security.secureScore
+      summary: Get secureScores from security
+      operationId: security_GetSecureScores
       parameters:
         - name: secureScore-id
           in: path
@@ -858,9 +878,9 @@ paths:
       x-ms-docs-operation-type: operation
     patch:
       tags:
-        - Security.secureScore
-      summary: Update the navigation property secureScores in Security
-      operationId: Security_UpdateSecureScores
+        - security.secureScore
+      summary: Update the navigation property secureScores in security
+      operationId: security_UpdateSecureScores
       parameters:
         - name: secureScore-id
           in: path
@@ -884,9 +904,9 @@ paths:
       x-ms-docs-operation-type: operation
     delete:
       tags:
-        - Security.secureScore
-      summary: Delete navigation property secureScores for Security
-      operationId: Security_DeleteSecureScores
+        - security.secureScore
+      summary: Delete navigation property secureScores for security
+      operationId: security_DeleteSecureScores
       parameters:
         - name: secureScore-id
           in: path
@@ -939,6 +959,10 @@ components:
               type: string
               description: Name or alias of the activity group (attacker) this alert is attributed to.
               nullable: true
+            alertDetections:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.alertDetection'
             assignedTo:
               type: string
               description: 'Name of the analyst the alert is assigned to for triage, investigation, or remediation (supports update).'
@@ -1022,6 +1046,15 @@ components:
                 type: string
                 nullable: true
               description: IDs of incidents related to current alert.
+            investigationSecurityStates:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.investigationSecurityState'
+            lastEventDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -1033,6 +1066,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.malwareState'
               description: Threat Intelligence pertaining to malware related to this alert.
+            messageSecurityStates:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.messageSecurityState'
             networkConnections:
               type: array
               items:
@@ -1084,6 +1121,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.alertTrigger'
               description: 'Security-related information about the specific properties that triggered the alert (properties appearing in the alert). Alerts might contain information about multiple users, hosts, files, ip addresses. This field indicates which properties triggered the alert generation.'
+            uriClickSecurityStates:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.uriClickSecurityState'
             userStates:
               type: array
               items:
@@ -1253,6 +1294,21 @@ components:
           description: Read-only.
       additionalProperties:
         type: object
+    microsoft.graph.alertDetection:
+      title: alertDetection
+      type: object
+      properties:
+        detectionType:
+          type: string
+          nullable: true
+        method:
+          type: string
+          nullable: true
+        name:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.cloudAppSecurityState:
       title: cloudAppSecurityState
       type: object
@@ -1369,6 +1425,18 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.investigationSecurityState:
+      title: investigationSecurityState
+      type: object
+      properties:
+        name:
+          type: string
+          nullable: true
+        status:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.malwareState:
       title: malwareState
       type: object
@@ -1392,6 +1460,41 @@ components:
         wasRunning:
           type: boolean
           description: Indicates whether the detected file (malware/vulnerability) was running at the time of detection or was detected at rest on the disk.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.messageSecurityState:
+      title: messageSecurityState
+      type: object
+      properties:
+        connectingIP:
+          type: string
+          nullable: true
+        deliveryAction:
+          type: string
+          nullable: true
+        deliveryLocation:
+          type: string
+          nullable: true
+        directionality:
+          type: string
+          nullable: true
+        internetMessageId:
+          type: string
+          nullable: true
+        messageFingerprint:
+          type: string
+          nullable: true
+        messageReceivedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        messageSubject:
+          type: string
+          nullable: true
+        networkMessageId:
+          type: string
           nullable: true
       additionalProperties:
         type: object
@@ -1630,6 +1733,32 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.uriClickSecurityState:
+      title: uriClickSecurityState
+      type: object
+      properties:
+        clickAction:
+          type: string
+          nullable: true
+        clickDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        id:
+          type: string
+          nullable: true
+        sourceId:
+          type: string
+          nullable: true
+        uriDomain:
+          type: string
+          nullable: true
+        verdict:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.userSecurityState:
       title: userSecurityState
       type: object
@@ -1841,9 +1970,9 @@ components:
     microsoft.graph.securityNetworkProtocol:
       title: securityNetworkProtocol
       enum:
+        - unknown
         - ip
         - icmp
-        - unknown
         - igmp
         - ggp
         - ipv4
