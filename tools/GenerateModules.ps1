@@ -1,6 +1,7 @@
 ﻿# Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
 Param(
+    $ModulesToGenerate = @(),
     [string] $RepositoryApiKey,
     [string] $RepositoryName = "PSGallery",
     [int] $ModulePreviewNumber = -1,
@@ -50,7 +51,7 @@ if (-not (Test-Path $ModuleMappingConfigPath)) {
 }
 
 $AllowPreRelease = $true
-if($ModulePreviewNumber -eq -1) {
+if ($ModulePreviewNumber -eq -1) {
     $AllowPreRelease = $false
 }
 # Install module locally in order to specify it as a dependency for other modules down the generation pipeline.
@@ -60,7 +61,7 @@ Write-Host -ForegroundColor Green "Auth Module: $($ExistingAuthModule.Name), $($
 if (!(Get-Module -Name $ExistingAuthModule.Name -ListAvailable)) {
     Install-Module $ExistingAuthModule.Name -Repository $RepositoryName -Force -AllowClobber -AllowPrerelease:$AllowPreRelease
 }
-if($ExistingAuthModule.Version -like '*preview*' ) {
+if ($ExistingAuthModule.Version -like '*preview*' ) {
     $version = $ExistingAuthModule.Version.Remove($ExistingAuthModule.Version.IndexOf('-'))
     Write-Warning "Required Version:  $ModulePrefix.$RequiredModule Version: $version"
     $RequiredGraphModules += @{ ModuleName = $ExistingAuthModule.Name ; ModuleVersion = $version }
@@ -73,9 +74,13 @@ if ($UpdateAutoRest) {
     # Update AutoRest.
     & autorest --reset
 }
-[HashTable] $ModuleMapping = Get-Content $ModuleMappingConfigPath | ConvertFrom-Json -AsHashTable
 
-$ModuleMapping.Keys | ForEach-Object -ThrottleLimit $ModuleMapping.Keys.Count -Parallel {
+if ($ModulesToGenerate.Count -eq 0) {
+    [HashTable] $ModuleMapping = Get-Content $ModuleMappingConfigPath | ConvertFrom-Json -AsHashTable
+    $ModulesToGenerate = $ModuleMapping.Keys
+}
+
+$ModulesToGenerate | ForEach-Object -ThrottleLimit $ModulesToGenerate.Count -Parallel {
     enum VersionState {
         Invalid
         Valid
@@ -87,7 +92,7 @@ $ModuleMapping.Keys | ForEach-Object -ThrottleLimit $ModuleMapping.Keys.Count -P
     $FullyQualifiedModuleName = "$using:ModulePrefix.$ModuleName"
     Write-Host -ForegroundColor Green "Generating '$FullyQualifiedModuleName' module..."
     $ModuleProjectDir = Join-Path $Using:ModulesOutputDir "$ModuleName\$ModuleName"
-
+    
     # Copy AutoRest readme.md config is none exists.
     if (-not (Test-Path "$ModuleProjectDir\readme.md")) {
         New-Item -Path $ModuleProjectDir -Type Directory -Force
@@ -144,7 +149,7 @@ $ModuleMapping.Keys | ForEach-Object -ThrottleLimit $ModuleMapping.Keys.Count -P
 
                 # Get profiles for generated modules.
                 $ModuleExportsPath = Join-Path $ModuleProjectDir "\exports"
-                $Profiles = Get-ChildItem -Path $ModuleExportsPath -Directory | %{ $_.Name}
+                $Profiles = Get-ChildItem -Path $ModuleExportsPath -Directory | % { $_.Name }
 
                 # Update module manifest wiht profiles.
                 $ModuleManifestPath = Join-Path $ModuleProjectDir "$FullyQualifiedModuleName.psd1"
@@ -153,12 +158,13 @@ $ModuleMapping.Keys | ForEach-Object -ThrottleLimit $ModuleMapping.Keys.Count -P
 
                 # Update module psm1 with Graph session profile name.
                 $ModulePsm1 = Join-Path $ModuleProjectDir "/$FullyQualifiedModuleName.psm1"
-                (Get-Content -Path $ModulePsm1) | ForEach-Object{
+                (Get-Content -Path $ModulePsm1) | ForEach-Object {
                     if ($_ -match '\$instance = \[Microsoft.Graph.PowerShell.Module\]::Instance') {
                         # Update main psm1 with Graph session profile name and module name.
                         $_
                         '  $instance.ProfileName = [Microsoft.Graph.PowerShell.Authentication.GraphSession]::Instance.SelectedProfile'
-                    } else {
+                    }
+                    else {
                         # Rename all Azure instances in psm1 to `Microsoft Graph`.
                         $updatedLine = $_ -replace 'Azure', 'Microsoft Graph'
                         # Replace all 'instance.Name' declarations with fully qualified module name.
@@ -171,7 +177,7 @@ $ModuleMapping.Keys | ForEach-Object -ThrottleLimit $ModuleMapping.Keys.Count -P
 
                 # Address AutoREST bug where it looks for exports in the wrong directory.
                 $InternalModulePsm1 = Join-Path $ModuleProjectDir "/internal/$FullyQualifiedModuleName.internal.psm1"
-                (Get-Content -Path $InternalModulePsm1) | ForEach-Object{
+                (Get-Content -Path $InternalModulePsm1) | ForEach-Object {
                     $updatedLine = $_
                     # Address AutoREST bug where it looks for exports in the wrong directory.
                     if ($_ -match '\$exportsPath = \$PSScriptRoot') {

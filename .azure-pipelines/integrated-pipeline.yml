@@ -52,13 +52,6 @@ stages:
   jobs:
   - template: ./security-prechecks-template.yml
 
-- stage: DownloadOpenApiDocs
-  displayName: 'Download Open Api Docs from DevX API'
-  jobs:
-  - template: ./download-openapidocs-template.yml
-    parameters:
-      BUILDNUMBER: $(BUILDNUMBER)
-
 - stage: GenerateAuthModule
   displayName: 'Generate Authentication Module (Microsoft.Graph.Authentication)'
   jobs:

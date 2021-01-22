@@ -51,8 +51,8 @@ try {
                 }
                 # Get crawl data.
                 Write-Host "Crawling '$moduleName' paths for resources and operations ..." -ForegroundColor Green
-                $crawlResult = @{resources= @(); operations = @{}}
-                foreach ($path in $allPaths) {
+                $crawlResult = @{resources= @(); operations = [ordered]@{}}
+                foreach ($path in ($allPaths | Sort-Object -Property endpoint)) {
                     $crawlResult.operations[$path.endpoint] = (@{apiVersion = $path.apiVersion; originalLocation = $path.originalLocation})
                 }
                 $telemetryDir = Join-Path $ModuleProfilesDirectory "crawl-log-$profileName.json"
@@ -60,11 +60,11 @@ try {
                 Write-Host "Telemetry written at $telemetryDir" -ForegroundColor Blue
 
                 # Get profile.
-                $profile =  @{resources = @{}; operations = @{}}
+                $profile =  @{resources = @{}; operations = [ordered]@{}}
                 foreach ($operation in $crawlResult.operations.keys) {
                     $profile.operations[$operation] = $crawlResult.operations[$operation].apiVersion
                 }
-                $profilesNode = @{profiles = @{ $profileName = $profile}}
+                $profilesNode = @{profiles = [ordered]@{ $profileName = $profile}}
                 $profilesInYaml = $profilesNode | ConvertTo-Yaml
                 $profileReadMeContent = @"
 # Microsoft Graph $profileName Profile
