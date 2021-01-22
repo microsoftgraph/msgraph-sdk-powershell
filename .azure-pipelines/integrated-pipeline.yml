@@ -60,6 +60,7 @@ stages:
         RunAsPreJob: true
     
     - task: PowerShell@2
+      displayName: 'Install Test Certificate'
       inputs:
         targetType: 'inline'
         script: |
