@@ -47,6 +47,26 @@ stages:
             Write-Host $(BUILDNUMBER)
             printenv
 
+- stage: GetSecrets
+  displayName: 'Get Secrets From Azure KeyVault'
+  jobs:
+  - job: GetSecrets
+    steps:
+    - task: AzureKeyVault@1
+      inputs:
+        azureSubscription: 'Microsoft Graph Build Agents'
+        KeyVaultName: 'msgraph-build-vault'
+        SecretsFilter: '*'
+        RunAsPreJob: true
+    
+    - task: PowerShell@2
+      inputs:
+        targetType: 'inline'
+        script: |
+          $kvSecretBytes = [System.Convert]::FromBase64String($(PfxSecret))
+          $certCollection = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2Collection
+          $certCollection.Import($kvSecretBytes,$null,[System.Security.Cryptography.X509Certificates.X509KeyStorageFlags]::Exportable)
+
 - stage: SecurityPreChecks
   displayName: 'Security Pre Checks'
   jobs:
@@ -97,6 +117,11 @@ stages:
       MODULE_PREFIX: $(MODULE_PREFIX)
       EnableSigning: true
       BUILDNUMBER: $(BUILDNUMBER)
+
+- stage: GenerateHelpDocs
+  displayName: 'Generate Help Docs'
+  jobs:
+  - template: ./generate-helpdocs.yml
 
 - stage: SecurityPostChecks
   displayName: 'Security Post Checks'

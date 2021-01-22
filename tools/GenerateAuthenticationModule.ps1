@@ -9,6 +9,7 @@ Param(
   [switch] $Publish,
   [switch] $EnableSigning,
   [switch] $BuildWhenEqual,
+  [switch] $Test,
   [int] $ModulePreviewNumber = -1
 )
 enum VersionState {
@@ -31,6 +32,7 @@ $PackModulePS1 = Join-Path $PSScriptRoot ".\PackModule.ps1" -Resolve
 $PublishModulePS1 = Join-Path $PSScriptRoot ".\PublishModule.ps1" -Resolve
 $ValidateUpdatedModuleVersionPS1 = Join-Path $PSScriptRoot ".\ValidateUpdatedModuleVersion.ps1" -Resolve
 $AuthModulePath = Join-Path $PSScriptRoot "..\src\Authentication\Authentication\" -Resolve
+$TestModulePS1 = Join-Path $PSScriptRoot ".\TestModule.ps1" -Resolve
 
 # Read ModuleVersion set on local auth module.
 $ManifestContent = Import-LocalizedData -BaseDirectory $AuthModulePath -FileName $AuthModuleManifest
@@ -42,7 +44,6 @@ $AllowPreRelease = $true
 if($ModulePreviewNumber -eq -1) {
     $AllowPreRelease = $false
 }
-Write-Warning $ManifestContent
 # Validate module version with the one on PSGallery.
 [VersionState]$VersionState = & $ValidateUpdatedModuleVersionPS1 -ModuleName "$ModulePrefix.$ModuleName" -NextVersion $ManifestContent.ModuleVersion -PSRepository $RepositoryName -ModulePreviewNumber $ModulePreviewNumber
 
@@ -54,9 +55,6 @@ elseif ($VersionState.Equals([VersionState]::EqualToFeed) -and !$BuildWhenEqual)
 }
 elseif ($VersionState.Equals([VersionState]::Valid) -or $VersionState.Equals([VersionState]::NotOnFeed) -or $BuildWhenEqual) {
   $ModuleVersion = $VersionState.Equals([VersionState]::NotOnFeed) ? "0.1.1" : $ManifestContent.ModuleVersion
-  Write-Warning $VersionState
-  Write-Warning $ModuleVersion
-  Write-Warning $ManifestContent.ModuleVersion
   # Build and pack generated module.
   if ($Build) {
     if ($EnableSigning) {
@@ -65,6 +63,9 @@ elseif ($VersionState.Equals([VersionState]::Valid) -or $VersionState.Equals([Ve
     else {
       & $BuildModulePS1 -Module $ModuleName -ModulePrefix $ModulePrefix -ModuleVersion $ModuleVersion -ModulePreviewNumber $ModulePreviewNumber -ReleaseNotes $ManifestContent.PrivateData.PSData.ReleaseNotes
     }
+  }
+  if($Test){
+      & $TestModulePS1 -ModulePath $AuthModulePath -ModuleName "$ModulePrefix.$ModuleName"
   }
 
   if ($Pack) {

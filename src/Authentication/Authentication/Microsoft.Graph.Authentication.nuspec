@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <package>
   <metadata>
-    <version>0.5.2</version>
+    <version>1.2.0</version>
     <id>Microsoft.Graph.Authentication</id>
     <description>Microsoft Graph PowerShell authentication module</description>
     <authors>Microsoft</authors>
     <owners>Microsoft</owners>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <licenseUrl>https://aka.ms/devservicesagreement</licenseUrl>
-    <iconUrl>https://raw.githubusercontent.com/microsoftgraph/g-raph/master/g-raph.png</iconUrl>
+    <iconUrl>https://raw.githubusercontent.com/microsoftgraph/msgraph-sdk-powershell/master/documentation/images/graph_color256.png</iconUrl>
     <projectUrl>https://github.com/microsoftgraph/msgraph-sdk-powershell</projectUrl>
     <copyright>© Microsoft Corporation. All rights reserved.</copyright>
     <tags>Microsoft Office365 Graph PowerShell GraphServiceClient Outlook OneDrive AzureAD GraphAPI Productivity SharePoint Intune SDK</tags>

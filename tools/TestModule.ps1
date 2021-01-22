@@ -24,6 +24,8 @@ $testFolder = Join-Path $ModulePath 'test'
 $PesterConfiguration = [PesterConfiguration]::Default
 $PesterConfiguration.Run.Path =  $testFolder
 $PesterConfiguration.Run.Exit =  $true
+$PesterConfiguration.CodeCoverage.Enabled  =  $true
+$PesterConfiguration.TestResult.Enabled = $true
 $PesterConfiguration.TestResult.OutputPath = (Join-Path $testFolder "$moduleName-TestResults.xml")
   
 try {
