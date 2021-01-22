@@ -21,9 +21,10 @@ if (Test-Path -Path (Join-Path $PSScriptRoot $envFile)) {
 $env = @{}
 if (Test-Path -Path $envFilePath) {
     $env = Get-Content (Join-Path $PSScriptRoot $envFile) | ConvertFrom-Json
+    $env:DEFAULTUSERID = $env.DefaultUserIdentifier
 } else {
     $env.TenantIdentifier = ${env:TENANTIDENTIFIER}
     $env.ClientIdentifier = ${env:CLIENTIDENTIFIER}
     $env.CertificateThumbprint = ${env:CERTIFICATETHUMBPRINT}
 }
-$PSDefaultParameterValues=@{"Connect-Graph:TenantId"=$env.TenantIdentifier; "Connect-Graph:ClientId"=$env.ClientIdentifier; "Connect-Graph:CertificateThumbprint"=$env.CertificateThumbprint}
+$PSDefaultParameterValues=@{"Connect-MgGraph:TenantId"=$env.TenantIdentifier; "Connect-MgGraph:ClientId"=$env.ClientIdentifier; "Connect-MgGraph:CertificateThumbprint"=$env.CertificateThumbprint}

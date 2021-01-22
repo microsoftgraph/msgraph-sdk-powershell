@@ -178,11 +178,20 @@ namespace Microsoft.Graph.PowerShell.Authentication.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Could not Infer File Name.
+        ///   Looks up a localized string similar to Could not Infer File Name. Content Disposition Header is Not Present.
         /// </summary>
         internal static string InferredFileNameErrorMessage {
             get {
                 return ResourceManager.GetString("InferredFileNameErrorMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inferred File Name {0} is incorrect and cannot be saved. Please specify -OutputFilePath Explicitly.
+        /// </summary>
+        internal static string InferredFileNameIncorrect {
+            get {
+                return ResourceManager.GetString("InferredFileNameIncorrect", resourceCulture);
             }
         }
         
@@ -268,7 +277,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The cmdlet cannot run because {0} is missing and &apos;Authentication&apos; is set to &apos;Default&apos;. Please call &apos;Connect-Graph&apos; then try again..
+        ///   Looks up a localized string similar to The cmdlet cannot run because {0} is missing and &apos;Authentication&apos; is set to &apos;Default&apos;. Please call &apos;Connect-MgGraph&apos; then try again..
         /// </summary>
         internal static string MissingAuthenticationContext {
             get {
@@ -286,6 +295,24 @@ namespace Microsoft.Graph.PowerShell.Authentication.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Request returned Non-Json response of {0} with Content-Disposition {1}, Please specify &apos;-OutputFilePath&apos; or &apos;-InferOutputFileName&apos; .
+        /// </summary>
+        internal static string NonJsonResponseWithoutInfer {
+            get {
+                return ResourceManager.GetString("NonJsonResponseWithoutInfer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Request returned Non-Json response of {0}, Please specify &apos;-OutputFilePath&apos;.
+        /// </summary>
+        internal static string NonJsonResponseWithoutOutputFilePath {
+            get {
+                return ResourceManager.GetString("NonJsonResponseWithoutOutputFilePath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Path &apos;{0}&apos; cannot be resolved to a file..
         /// </summary>
         internal static string NoPathResolved {
@@ -295,7 +322,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The cmdlet cannot run because Authentication is set to {0} and Connect-Graph was not called. Invoke &apos;Connect-Graph&apos; or specify Authentication to be &apos;UserProvidedToken&apos; and Provide a Token then retry.
+        ///   Looks up a localized string similar to The cmdlet cannot run because Authentication is set to {0} and Connect-MgGraph was not called. Invoke &apos;Connect-MgGraph&apos; or specify Authentication to be &apos;UserProvidedToken&apos; and Provide a Token then retry.
         /// </summary>
         internal static string NotConnectedToGraphException {
             get {

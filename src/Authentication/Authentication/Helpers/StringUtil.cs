@@ -170,7 +170,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                     var errorMsg = string.Format(CultureInfo.CurrentCulture, Resources.EmptyKeyInJsonString);
                     error = new ErrorRecord(
                         new InvalidOperationException(errorMsg),
-                        Errors.InvokeGraphRequestEmptyKeyInJsonString,
+                        ErrorConstants.Codes.InvokeGraphRequestEmptyKeyInJsonString,
                         ErrorCategory.InvalidOperation,
                         null);
                     return null;
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                     var errorMsg = string.Format(CultureInfo.CurrentCulture, Resources.DuplicateKeysInJsonString, entry.Key);
                     error = new ErrorRecord(
                         new InvalidOperationException(errorMsg),
-                        Errors.InvokeGraphRequestDuplicateKeysInJsonString,
+                        ErrorConstants.Codes.InvokeGraphRequestDuplicateKeysInJsonString,
                         ErrorCategory.InvalidOperation,
                         null);
                     return null;
@@ -197,7 +197,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                     var errorMsg = string.Format(CultureInfo.CurrentCulture, Resources.KeysWithDifferentCasingInJsonString, propertyName, entry.Key);
                     error = new ErrorRecord(
                         new InvalidOperationException(errorMsg),
-                        Errors.InvokeGraphRequestKeysWithDifferentCasingInJsonString,
+                        ErrorConstants.Codes.InvokeGraphRequestKeysWithDifferentCasingInJsonString,
                         ErrorCategory.InvalidOperation,
                         null);
                     return null;
@@ -346,7 +346,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                     var errorMsg = string.Format(CultureInfo.CurrentCulture, Resources.DuplicateKeysInJsonString, entry.Key);
                     error = new ErrorRecord(
                         new InvalidOperationException(errorMsg),
-                        Errors.InvokeGraphRequestDuplicateKeysInJsonString,
+                        ErrorConstants.Codes.InvokeGraphRequestDuplicateKeysInJsonString,
                         ErrorCategory.InvalidOperation,
                         null);
                     return null;
