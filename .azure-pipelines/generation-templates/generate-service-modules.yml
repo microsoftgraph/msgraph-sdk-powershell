@@ -1,0 +1,276 @@
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
+
+parameters:
+  - name: ModulesToGenerate
+    type: string
+  - name: AuthModulePath
+    type: string
+  - name: AuthModuleDllPattern
+    type: string
+  - name: ServiceModulePath
+    type: string
+  - name: ModulePrefix
+    type: string
+  - name: Branch
+    type: string
+  - name: EnableSigning
+    type: boolean
+    default: false
+  - name: PublishToFeed
+    type: boolean
+    default: false
+jobs:
+  - job: GenerateServiceModules
+    displayName: Service module generation
+    pool: MsGraphDevXAzureAgents
+    timeoutInMinutes: 360
+    condition: and(succeeded(), ne(stageDependencies.DownloadOpenAPIDocs.GetLatestDocs.outputs['OpenAPIDocDiff.ModulesWithChanges'], ''))
+    variables:
+      Branch: ${{ parameters.Branch }}
+      ModulesToGenerate: ${{ parameters.ModulesToGenerate }}
+      AuthModulePath: ${{ parameters.AuthModulePath }}
+      AuthModuleDllPattern: ${{ parameters.AuthModuleDllPattern }}
+      ServiceModulePath: ${{ parameters.ServiceModulePath }}
+      ModulePrefix: ${{ parameters.ModulePrefix }}
+      EnableSigning: ${{ parameters.EnableSigning }}
+      PublishToFeed: ${{ parameters.PublishToFeed }}
+    steps:
+      - template: ../common-templates/install-tools.yml
+
+      - task: Bash@3
+        displayName: "Switch branch to $(Branch)"
+        inputs:
+          targetType: inline
+          script: |
+            git status
+            git fetch --all
+            git checkout $(Branch)
+            git pull
+            git status
+
+      - task: PowerShell@2
+        displayName: Build auth module
+        inputs:
+          targetType: inline
+          pwsh: true
+          script: |
+            [bool]$EnableSigning = if ("$(EnableSigning)" -eq "true") { $true } else { $false }
+            . $(System.DefaultWorkingDirectory)/tools/GenerateAuthenticationModule.ps1 -ArtifactsLocation $(Build.ArtifactStagingDirectory) -Build -EnableSigning:$EnableSigning -BuildWhenEqual -RepositoryName "LocalNugetFeed"
+
+      - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
+        displayName: ESRP DLL strong name (Auth Module)
+        condition: and(succeeded(), eq('${{ parameters.EnableSigning }}', true))
+        inputs:
+          ConnectedServiceName: "microsoftgraph ESRP CodeSign DLL and NuGet (AKV)"
+          FolderPath: $(AuthModulePath)
+          Pattern: $(AuthModuleDllPattern)
+          signConfigType: inlineSignParams
+          inlineOperation: |
+            [
+                {
+                    "keyCode": "CP-233863-SN",
+                    "operationSetCode": "StrongNameSign",
+                    "parameters": [],
+                    "toolName": "sign",
+                    "toolVersion": "1.0"
+                },
+                {
+                    "keyCode": "CP-233863-SN",
+                    "operationSetCode": "StrongNameVerify",
+                    "parameters": [],
+                    "toolName": "sign",
+                    "toolVersion": "1.0"
+                }
+            ]
+          SessionTimeout: 20
+
+      - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
+        displayName: "ESRP DLL code sign (Auth Module)"
+        condition: and(succeeded(), eq('${{ parameters.EnableSigning }}', true))
+        inputs:
+          ConnectedServiceName: "microsoftgraph ESRP CodeSign DLL and NuGet (AKV)"
+          FolderPath: $(AuthModulePath)
+          Pattern: $(AuthModuleDllPattern)
+          signConfigType: inlineSignParams
+          inlineOperation: |
+            [
+                {
+                    "keyCode": "CP-230012",
+                    "operationSetCode": "SigntoolSign",
+                    "parameters": [
+                        {
+                            "parameterName": "OpusName",
+                            "parameterValue": "Microsoft"
+                        },
+                        {
+                            "parameterName": "OpusInfo",
+                            "parameterValue": "http://www.microsoft.com"
+                        },
+                        {
+                            "parameterName": "FileDigest",
+                            "parameterValue": "/fd \"SHA256\""
+                        },
+                        {
+                            "parameterName": "PageHash",
+                            "parameterValue": "/NPH"
+                        },
+                        {
+                            "parameterName": "TimeStamp",
+                            "parameterValue": "/tr \"http://rfc3161.gtm.corp.microsoft.com/TSS/HttpTspServer\" /td sha256"
+                        }
+                    ],
+                    "toolName": "sign",
+                    "toolVersion": "1.0"
+                },
+                {
+                    "keyCode": "CP-230012",
+                    "operationSetCode": "SigntoolVerify",
+                    "parameters": [],
+                    "toolName": "sign",
+                    "toolVersion": "1.0"
+                }
+            ]
+          SessionTimeout: 20
+
+      - task: PowerShell@2
+        displayName: Generate and build service modules
+        inputs:
+          targetType: inline
+          pwsh: true
+          script: |
+            [bool]$EnableSigning = if ("$(EnableSigning)" -eq "true") { $true } else { $false }
+            $Modules = "$(ModulesToGenerate)" -split " "
+            . $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -Build -Test -UpdateAutoRest -EnableSigning:$EnableSigning -ModulesToGenerate $Modules
+
+      - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
+        displayName: ESRP DLL strong name (Service Modules)
+        condition: and(succeeded(), eq('${{ parameters.EnableSigning }}', true))
+        inputs:
+          ConnectedServiceName: "microsoftgraph ESRP CodeSign DLL and NuGet (AKV)"
+          FolderPath: $(ServiceModulePath)
+          Pattern: "$(ModulePrefix).*.private.dll"
+          signConfigType: inlineSignParams
+          inlineOperation: |
+            [
+                {
+                    "keyCode": "CP-233863-SN",
+                    "operationSetCode": "StrongNameSign",
+                    "parameters": [],
+                    "toolName": "sign",
+                    "toolVersion": "1.0"
+                },
+                {
+                    "keyCode": "CP-233863-SN",
+                    "operationSetCode": "StrongNameVerify",
+                    "parameters": [],
+                    "toolName": "sign",
+                    "toolVersion": "1.0"
+                }
+            ]
+          SessionTimeout: 20
+
+      - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
+        displayName: "ESRP DLL code sign (Service Modules)"
+        condition: and(succeeded(), eq('${{ parameters.EnableSigning }}', true))
+        inputs:
+          ConnectedServiceName: "microsoftgraph ESRP CodeSign DLL and NuGet (AKV)"
+          FolderPath: $(ServiceModulePath)
+          Pattern: "$(ModulePrefix).*.private.dll, $(ModulePrefix).*.psm1, $(ModulePrefix).*.format.ps1xml, ProxyCmdletDefinitions.ps1, load-dependency.ps1"
+          signConfigType: inlineSignParams
+          inlineOperation: |
+            [
+                {
+                    "keyCode": "CP-230012",
+                    "operationSetCode": "SigntoolSign",
+                    "parameters": [
+                        {
+                            "parameterName": "OpusName",
+                            "parameterValue": "Microsoft"
+                        },
+                        {
+                            "parameterName": "OpusInfo",
+                            "parameterValue": "http://www.microsoft.com"
+                        },
+                        {
+                            "parameterName": "FileDigest",
+                            "parameterValue": "/fd \"SHA256\""
+                        },
+                        {
+                            "parameterName": "PageHash",
+                            "parameterValue": "/NPH"
+                        },
+                        {
+                            "parameterName": "TimeStamp",
+                            "parameterValue": "/tr \"http://rfc3161.gtm.corp.microsoft.com/TSS/HttpTspServer\" /td sha256"
+                        }
+                    ],
+                    "toolName": "sign",
+                    "toolVersion": "1.0"
+                },
+                {
+                    "keyCode": "CP-230012",
+                    "operationSetCode": "SigntoolVerify",
+                    "parameters": [],
+                    "toolName": "sign",
+                    "toolVersion": "1.0"
+                }
+            ]
+          SessionTimeout: 160
+
+      - task: PowerShell@2
+        displayName: Pack service modules
+        inputs:
+          targetType: inline
+          pwsh: true
+          script: |
+            $ModuleMappingConfigPath = '$(System.DefaultWorkingDirectory)/config/ModulesMapping.jsonc'
+            [HashTable] $ModuleMapping = Get-Content $ModuleMappingConfigPath | ConvertFrom-Json -AsHashTable
+            $ModuleMapping.Keys | ForEach-Object {
+                $ModuleName = $_
+                $ModuleProjectDir = "$(System.DefaultWorkingDirectory)/src/$ModuleName/$ModuleName"
+                & $(System.DefaultWorkingDirectory)/tools/PackModule.ps1 -Module $ModuleName -ArtifactsLocation $(Build.ArtifactStagingDirectory)\
+            }
+
+      - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
+        displayName: ESRP NuGet code sign (Service Modules)
+        condition: and(succeeded(), eq('${{ parameters.EnableSigning }}', true))
+        inputs:
+          ConnectedServiceName: "microsoftgraph ESRP CodeSign DLL and NuGet (AKV)"
+          FolderPath: '$(Build.ArtifactStagingDirectory)\'
+          Pattern: "*.nupkg"
+          signConfigType: inlineSignParams
+          inlineOperation: |
+            [
+                {
+                    "keyCode": "CP-401405",
+                    "operationSetCode": "NuGetSign",
+                    "parameters": [ ],
+                    "toolName": "sign",
+                    "toolVersion": "1.0"
+                },
+                {
+                    "keyCode": "CP-401405",
+                    "operationSetCode": "NuGetVerify",
+                    "parameters": [ ],
+                    "toolName": "sign",
+                    "toolVersion": "1.0"
+                }
+            ]
+          SessionTimeout: 20
+
+      - task: PublishBuildArtifacts@1
+        displayName: Publish service modules build artifacts
+        inputs:
+          PathtoPublish: "$(Build.ArtifactStagingDirectory)/"
+          ArtifactName: "drop"
+          publishLocation: "Container"
+
+      - task: NuGetCommand@2
+        displayName: Publish NuGet to local build feed
+        condition: and(succeeded(), eq('${{ parameters.PublishToFeed }}', true))
+        inputs:
+          command: push
+          packagesToPush: "$(Build.ArtifactStagingDirectory)/**/Microsoft.Graph.*.nupkg"
+          publishVstsFeed: "0985d294-5762-4bc2-a565-161ef349ca3e/edc337b9-e5ea-49dd-a2cb-e8d66668ca57"
+          allowPackageConflicts: true
