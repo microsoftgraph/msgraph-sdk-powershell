@@ -429,7 +429,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         {
             if (error != null)
             {
-                WriteError(error);
+                ThrowTerminatingError(error);
             }
         }
         /// <summary>
@@ -473,14 +473,14 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                     var errorRecord =
                         GetValidationError(Resources.NonJsonResponseWithoutOutputFilePath,
                             ErrorConstants.Codes.InvokeGraphContentTypeException, returnType);
-                    WriteError(errorRecord);
+                    ThrowIfError(errorRecord);
                 }
                 else if (returnType == RestReturnType.OctetStream)
                 {
                     var errorRecord =
                         GetValidationError(Resources.NonJsonResponseWithoutInfer,
                             ErrorConstants.Codes.InvokeGraphContentTypeException, returnType, response.Content.Headers.ContentDisposition);
-                    WriteError(errorRecord);
+                    ThrowIfError(errorRecord);
                 }
             }
             if (ShouldSaveToOutFile)
