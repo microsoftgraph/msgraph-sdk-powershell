@@ -1,4 +1,5 @@
 {
+  "resources": [],
   "operations": {
     "/subscriptions": {
       "originalLocation": "/openApiDocs/beta/ChangeNotifications.yml",
@@ -8,6 +9,5 @@
       "originalLocation": "/openApiDocs/beta/ChangeNotifications.yml",
       "apiVersion": "v1.0-beta"
     }
-  },
-  "resources": []
+  }
 }

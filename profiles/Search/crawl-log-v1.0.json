@@ -1,0 +1,13 @@
+{
+  "resources": [],
+  "operations": {
+    "/search": {
+      "originalLocation": "/openApiDocs/v1.0/Search.yml",
+      "apiVersion": "v1.0"
+    },
+    "/search/microsoft.graph.query": {
+      "originalLocation": "/openApiDocs/v1.0/Search.yml",
+      "apiVersion": "v1.0"
+    }
+  }
+}

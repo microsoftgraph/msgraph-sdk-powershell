@@ -1,33 +1,33 @@
 {
+  "resources": [],
   "operations": {
-    "/Security/secureScoreControlProfiles/{secureScoreControlProfile-id}": {
+    "/security": {
       "originalLocation": "/openApiDocs/v1.0/Security.yml",
       "apiVersion": "v1.0"
     },
-    "/Security/secureScoreControlProfiles": {
+    "/security/alerts": {
       "originalLocation": "/openApiDocs/v1.0/Security.yml",
       "apiVersion": "v1.0"
     },
-    "/Security": {
+    "/security/alerts/{alert-id}": {
       "originalLocation": "/openApiDocs/v1.0/Security.yml",
       "apiVersion": "v1.0"
     },
-    "/Security/alerts": {
+    "/security/secureScoreControlProfiles": {
       "originalLocation": "/openApiDocs/v1.0/Security.yml",
       "apiVersion": "v1.0"
     },
-    "/Security/secureScores/{secureScore-id}": {
+    "/security/secureScoreControlProfiles/{secureScoreControlProfile-id}": {
       "originalLocation": "/openApiDocs/v1.0/Security.yml",
       "apiVersion": "v1.0"
     },
-    "/Security/alerts/{alert-id}": {
+    "/security/secureScores": {
       "originalLocation": "/openApiDocs/v1.0/Security.yml",
       "apiVersion": "v1.0"
     },
-    "/Security/secureScores": {
+    "/security/secureScores/{secureScore-id}": {
       "originalLocation": "/openApiDocs/v1.0/Security.yml",
       "apiVersion": "v1.0"
     }
-  },
-  "resources": []
+  }
 }

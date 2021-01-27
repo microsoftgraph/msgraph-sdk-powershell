@@ -2105,62 +2105,55 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.bookingWorkHours'
-              description: The hours of operation for the business.
             businessType:
               type: string
-              description: The type of business.
               nullable: true
             defaultCurrencyIso:
               type: string
-              description: The code for the currency that the business operates in on Microsoft Bookings.
               nullable: true
             email:
               type: string
-              description: The email address for the business.
               nullable: true
             isPublished:
               type: boolean
-              description: The scheduling page has been made available to external customers. Use the publish and unpublish actions to set this property. Read-only.
               nullable: true
             phone:
               type: string
-              description: 'The telephone number for the business. The phone property, together with address and webSiteUrl, appear in the footer of a business scheduling page.'
               nullable: true
             publicUrl:
               type: string
-              description: 'The URL for the scheduling page, which is set after you publish or unpublish the page. Read-only.'
               nullable: true
             schedulingPolicy:
               $ref: '#/components/schemas/microsoft.graph.bookingSchedulingPolicy'
             webSiteUrl:
               type: string
-              description: 'The URL of the business web site. The webSiteUrl property, together with address, phone, appear in the footer of a business scheduling page.'
+              description: The URL of the business web site.
               nullable: true
             appointments:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
-              description: All the appointments of this business. Read-only. Nullable.
+              description: All appointments in this business.
             calendarView:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
-              description: The set of appointments of this business in a specified date range. Read-only. Nullable.
+              description: A calendar view of appointments in this business.
             customers:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.bookingCustomer'
-              description: All the customers of this business. Read-only. Nullable.
+              description: All customers of this business.
             services:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.bookingService'
-              description: All the services offered by this business. Read-only. Nullable.
+              description: All services offered by this business.
             staffMembers:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.bookingStaffMember'
-              description: All the staff members that provide services in this business. Read-only. Nullable.
+              description: All staff members that provides services in this business.
           additionalProperties:
             type: object
           description: Represents a Microsot Bookings Business.
@@ -2175,48 +2168,41 @@ components:
               nullable: true
             customerEmailAddress:
               type: string
-              description: The SMTP address of the bookingCustomer who is booking the appointment.
               nullable: true
             customerId:
               type: string
-              description: 'The ID of the bookingCustomer for this appointment. If no ID is specified when an appointment is created, then a new bookingCustomer object is created. Once set, you should consider the customerId immutable.'
+              description: The id of the booking customer associated with this appointment.
               nullable: true
             customerLocation:
               $ref: '#/components/schemas/microsoft.graph.location'
             customerName:
               type: string
-              description: The customer's name.
               nullable: true
             customerNotes:
               type: string
-              description: 'Notes from the customer associated with this appointment. You can get the value only when reading this bookingAppointment by its ID.  You can set this property only when initially creating an appointment with a new customer. After that point, the value is computed from the customer represented by customerId.'
+              description: Notes from the customer associated with this appointment.
               nullable: true
             customerPhone:
               type: string
-              description: The customer's phone number.
               nullable: true
             duration:
               pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
               type: string
-              description: 'The length of the appointment, denoted in ISO8601 format.'
               format: duration
             end:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
             invoiceAmount:
               type: number
-              description: The billed amount on the invoice.
               format: double
             invoiceDate:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
             invoiceId:
               type: string
-              description: The ID of the invoice.
               nullable: true
             invoiceStatus:
               $ref: '#/components/schemas/microsoft.graph.bookingInvoiceStatus'
             invoiceUrl:
               type: string
-              description: The URL of the invoice in Microsoft Bookings.
               nullable: true
             isLocationOnline:
               type: boolean
@@ -2225,20 +2211,16 @@ components:
               nullable: true
             optOutOfCustomerEmail:
               type: boolean
-              description: True indicates that the bookingCustomer for this appointment does not wish to receive a confirmation for this appointment.
             postBuffer:
               pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
               type: string
-              description: 'The amount of time to reserve after the appointment ends, for cleaning up, as an example. The value is expressed in ISO8601 format.'
               format: duration
             preBuffer:
               pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
               type: string
-              description: 'The amount of time to reserve before the appointment begins, for preparation, as an example. The value is expressed in ISO8601 format.'
               format: duration
             price:
               type: number
-              description: The regular price for an appointment for the specified bookingService.
               format: double
             priceType:
               $ref: '#/components/schemas/microsoft.graph.bookingPriceType'
@@ -2246,30 +2228,26 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.bookingReminder'
-              description: The collection of customer reminders sent for this appointment. The value of this property is available only when reading this bookingAppointment by its ID.
             selfServiceAppointmentId:
               type: string
-              description: 'An additional tracking ID for the appointment, if the appointment has been created directly by the customer on the scheduling page, as opposed to by a staff member on the behalf of the customer.'
               nullable: true
             serviceId:
               type: string
-              description: The ID of the bookingService associated with this appointment.
+              description: The id of the booking service associated with this appointment.
               nullable: true
             serviceLocation:
               $ref: '#/components/schemas/microsoft.graph.location'
             serviceName:
               type: string
-              description: 'The name of the bookingService associated with this appointment.This property is optional when creating a new appointment. If not specified, it is computed from the service associated with the appointment by the serviceId property.'
+              description: The name of the booking service associated with this appointment.
             serviceNotes:
               type: string
-              description: Notes from a bookingStaffMember. The value of this property is available only when reading this bookingAppointment by its ID.
               nullable: true
             staffMemberIds:
               type: array
               items:
                 type: string
                 nullable: true
-              description: The ID of each bookingStaffMember who is scheduled in this appointment.
             start:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
           additionalProperties:
@@ -2295,13 +2273,11 @@ components:
             defaultDuration:
               pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
               type: string
-              description: 'The default length of the service, represented in numbers of days, hours, minutes, and seconds. For example, P11D23H59M59.999999999999S.'
               format: duration
             defaultLocation:
               $ref: '#/components/schemas/microsoft.graph.location'
             defaultPrice:
               type: number
-              description: The default monetary price for the service.
               format: double
             defaultPriceType:
               $ref: '#/components/schemas/microsoft.graph.bookingPriceType'
@@ -2309,29 +2285,24 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.bookingReminder'
-              description: The default set of reminders for an appointment of this service. The value of this property is available only when reading this bookingService by its ID.
+              description: The default reminders set in an appointment of this service.
             description:
               type: string
-              description: A text description for the service.
               nullable: true
             isHiddenFromCustomers:
               type: boolean
-              description: True means this service is not available to customers for booking.
             isLocationOnline:
               type: boolean
             notes:
               type: string
-              description: Additional information about this service.
               nullable: true
             postBuffer:
               pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
               type: string
-              description: 'The time to buffer after an appointment for this service ends, and before the next customer appointment can be booked.'
               format: duration
             preBuffer:
               pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
               type: string
-              description: The time to buffer before an appointment for this service can start.
               format: duration
             schedulingPolicy:
               $ref: '#/components/schemas/microsoft.graph.bookingSchedulingPolicy'
@@ -2340,7 +2311,6 @@ components:
               items:
                 type: string
                 nullable: true
-              description: Represents those staff members who provide this service.
           additionalProperties:
             type: object
           description: Represents a particular service offered by a booking business.
@@ -2352,24 +2322,20 @@ components:
           properties:
             availabilityIsAffectedByPersonalCalendar:
               type: boolean
-              description: 'True means that if the staff member is a Microsoft 365 user, the Bookings API would verify the staff member''s availability in their personal calendar in Microsoft 365, before making a booking.'
             colorIndex:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Identifies a color to represent the staff member. The color corresponds to the color palette in the Staff details page in the Bookings app.
               format: int32
               nullable: true
             role:
               $ref: '#/components/schemas/microsoft.graph.bookingStaffRole'
             useBusinessHours:
               type: boolean
-              description: True means the staff member's availability is as specified in the businessHours property of the business. False means the availability is determined by the staff member's workingHours property setting.
             workingHours:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.bookingWorkHours'
-              description: 'The range of hours each day of the week that the staff member is available for booking. By default, they are initialized to be the same as the businessHours property of the business.'
           additionalProperties:
             type: object
           description: Represents a staff member who provides services in a business.
@@ -2381,7 +2347,6 @@ components:
           properties:
             symbol:
               type: string
-              description: 'The currency symbol. For example, the currency symbol for the US dollar and for the Australian dollar is $.'
           additionalProperties:
             type: object
     microsoft.graph.bookingNamedEntity:
@@ -2392,7 +2357,7 @@ components:
           properties:
             displayName:
               type: string
-              description: 'A name for the derived entity, which interfaces with customers.'
+              description: Display name of this entity.
           additionalProperties:
             type: object
           description: Booking entities that provide a display name.
@@ -2414,7 +2379,6 @@ components:
           nullable: true
         postOfficeBox:
           type: string
-          description: The post office box number.
           nullable: true
         state:
           type: string
@@ -2448,24 +2412,24 @@ components:
       properties:
         allowStaffSelection:
           type: boolean
-          description: True if to allow customers to choose a specific person for the booking.
+          description: Allow customers to choose a specific person for the booking.
         maximumAdvance:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
-          description: Maximum number of days in advance that a booking can be made. It follows the ISO 8601 format.
+          description: Maximum number of days in advance that a booking can be made.
           format: duration
         minimumLeadTime:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
-          description: The minimum amount of time before which bookings and cancellations must be made. It follows the ISO 8601 format.
+          description: Minimum lead time for bookings and cancellations.
           format: duration
         sendConfirmationsToOwner:
           type: boolean
-          description: True to notify the business via email when a booking is created or changed. Use the email address specified in the email property of the bookingBusiness entity for the business.
+          description: Notify the business via email when a booking is created or changed.
         timeSlotInterval:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
-          description: 'Duration of each time slot, denoted in ISO 8601 format.'
+          description: Duration of each time slot.
           format: duration
       additionalProperties:
         type: object
@@ -2515,10 +2479,10 @@ components:
       properties:
         dateTime:
           type: string
-          description: 'A single point of time in a combined date and time representation ({date}T{time}). For example, ''2019-04-16T09:00:00''.'
+          description: 'A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).'
         timeZone:
           type: string
-          description: 'Represents a time zone, for example, ''Pacific Standard Time''. See below for possible values.'
+          description: 'Represents a time zone, for example, ''Pacific Standard Time''. See below for more possible values.'
           nullable: true
       additionalProperties:
         type: object
@@ -2550,11 +2514,11 @@ components:
       properties:
         message:
           type: string
-          description: The message in the reminder.
+          description: Message to send.
         offset:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
-          description: The amount of time before the start of an appointment that the reminder should be sent. It's denoted in ISO 8601 format.
+          description: How much time before an appointment the reminder should be sent.
           format: duration
         recipients:
           $ref: '#/components/schemas/microsoft.graph.bookingReminderRecipients'
@@ -2569,7 +2533,7 @@ components:
           properties:
             emailAddress:
               type: string
-              description: The email address of the person.
+              description: The e-mail address of this person.
               nullable: true
           additionalProperties:
             type: object
@@ -2617,12 +2581,10 @@ components:
         end:
           pattern: '^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$'
           type: string
-          description: 'The time of the day that work starts. For example, 08:00:00.0000000.'
           format: time
         start:
           pattern: '^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$'
           type: string
-          description: 'The time of the day that work stops. For example, 17:00:00.0000000.'
           format: time
       additionalProperties:
         type: object

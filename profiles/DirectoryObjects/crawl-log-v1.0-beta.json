@@ -1,6 +1,11 @@
 {
+  "resources": [],
   "operations": {
-    "/directoryObjects/{directoryObject-id}/microsoft.graph.getMemberGroups": {
+    "/directoryObjects": {
+      "originalLocation": "/openApiDocs/beta/DirectoryObjects.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/directoryObjects/{directoryObject-id}": {
       "originalLocation": "/openApiDocs/beta/DirectoryObjects.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -8,15 +13,11 @@
       "originalLocation": "/openApiDocs/beta/DirectoryObjects.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/directoryObjects/microsoft.graph.getUserOwnedObjects": {
-      "originalLocation": "/openApiDocs/beta/DirectoryObjects.yml",
-      "apiVersion": "v1.0-beta"
-    },
     "/directoryObjects/{directoryObject-id}/microsoft.graph.checkMemberObjects": {
       "originalLocation": "/openApiDocs/beta/DirectoryObjects.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/directoryObjects/microsoft.graph.getByIds": {
+    "/directoryObjects/{directoryObject-id}/microsoft.graph.getMemberGroups": {
       "originalLocation": "/openApiDocs/beta/DirectoryObjects.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -24,22 +25,21 @@
       "originalLocation": "/openApiDocs/beta/DirectoryObjects.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/directoryObjects": {
+    "/directoryObjects/{directoryObject-id}/microsoft.graph.restore": {
+      "originalLocation": "/openApiDocs/beta/DirectoryObjects.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/directoryObjects/microsoft.graph.getByIds": {
+      "originalLocation": "/openApiDocs/beta/DirectoryObjects.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/directoryObjects/microsoft.graph.getUserOwnedObjects": {
       "originalLocation": "/openApiDocs/beta/DirectoryObjects.yml",
       "apiVersion": "v1.0-beta"
     },
     "/directoryObjects/microsoft.graph.validateProperties": {
       "originalLocation": "/openApiDocs/beta/DirectoryObjects.yml",
       "apiVersion": "v1.0-beta"
-    },
-    "/directoryObjects/{directoryObject-id}/microsoft.graph.restore": {
-      "originalLocation": "/openApiDocs/beta/DirectoryObjects.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/directoryObjects/{directoryObject-id}": {
-      "originalLocation": "/openApiDocs/beta/DirectoryObjects.yml",
-      "apiVersion": "v1.0-beta"
     }
-  },
-  "resources": []
+  }
 }

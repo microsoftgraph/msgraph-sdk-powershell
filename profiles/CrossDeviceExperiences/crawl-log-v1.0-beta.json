@@ -1,10 +1,7 @@
 {
+  "resources": [],
   "operations": {
-    "/users/{user-id}/activities/{userActivity-id}/historyItems/{activityHistoryItem-id}/activity/$ref": {
-      "originalLocation": "/openApiDocs/beta/CrossDeviceExperiences.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/activities/{userActivity-id}/historyItems": {
+    "/users/{user-id}/activities": {
       "originalLocation": "/openApiDocs/beta/CrossDeviceExperiences.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -12,15 +9,7 @@
       "originalLocation": "/openApiDocs/beta/CrossDeviceExperiences.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/users/{user-id}/devices/{device-id}": {
-      "originalLocation": "/openApiDocs/beta/CrossDeviceExperiences.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/activities/{userActivity-id}/historyItems/{activityHistoryItem-id}/activity": {
-      "originalLocation": "/openApiDocs/beta/CrossDeviceExperiences.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/activities": {
+    "/users/{user-id}/activities/{userActivity-id}/historyItems": {
       "originalLocation": "/openApiDocs/beta/CrossDeviceExperiences.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -28,10 +17,21 @@
       "originalLocation": "/openApiDocs/beta/CrossDeviceExperiences.yml",
       "apiVersion": "v1.0-beta"
     },
+    "/users/{user-id}/activities/{userActivity-id}/historyItems/{activityHistoryItem-id}/activity": {
+      "originalLocation": "/openApiDocs/beta/CrossDeviceExperiences.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/activities/{userActivity-id}/historyItems/{activityHistoryItem-id}/activity/$ref": {
+      "originalLocation": "/openApiDocs/beta/CrossDeviceExperiences.yml",
+      "apiVersion": "v1.0-beta"
+    },
     "/users/{user-id}/devices": {
       "originalLocation": "/openApiDocs/beta/CrossDeviceExperiences.yml",
       "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/devices/{device-id}": {
+      "originalLocation": "/openApiDocs/beta/CrossDeviceExperiences.yml",
+      "apiVersion": "v1.0-beta"
     }
-  },
-  "resources": []
+  }
 }
