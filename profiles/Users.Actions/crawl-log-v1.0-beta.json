@@ -1,1656 +1,1656 @@
 {
   "operations": {
-    "/users/{user-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/parentNotebook/microsoft.graph.copyNotebook": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id1}/microsoft.graph.copyToNotebook": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/events/{event-id}/calendar/events/{event-id1}/microsoft.graph.forward": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentNotebook/microsoft.graph.copyNotebook": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/instances/{event-id1}/microsoft.graph.dismissReminder": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection/microsoft.graph.copyToSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/events/{event-id}/instances/{event-id1}/microsoft.graph.forward": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/microsoft.graph.getSchedule": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/pendingAccessReviewInstances/{accessReviewInstance-id}/microsoft.graph.resetDecisions": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/events/{event-id}/microsoft.graph.snoozeReminder": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/events/{event-id}/calendar/events/{event-id1}/microsoft.graph.accept": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/authentication/methods/{authenticationMethod-id}/microsoft.graph.resetPassword": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/parentNotebook/microsoft.graph.copyNotebook": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/sections/{onenoteSection-id}/parentSectionGroup/sections/{onenoteSection-id1}/microsoft.graph.copyToSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/attachments/microsoft.graph.createUploadSession": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/instances/{event-id1}/microsoft.graph.dismissReminder": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.enableLostMode": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/microsoft.graph.copyToNotebook": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/microsoft.graph.wipeManagedAppRegistrationsByDeviceTag": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/microsoft.graph.forward": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/events/{event-id}/attachments/microsoft.graph.createUploadSession": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/microsoft.graph.getMemberGroups": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/microsoft.graph.translateExchangeIds": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/sections/{onenoteSection-id}/microsoft.graph.copyToNotebook": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/events/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.dismissReminder": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/microsoft.graph.dismissReminder": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.cleanWindowsDevice": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/events/{event-id}/microsoft.graph.dismissReminder": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.accept": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/attachments/microsoft.graph.createUploadSession": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/events/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.dismissReminder": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/messages/{message-id}/microsoft.graph.createReplyAll": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/instances/{event-id1}/microsoft.graph.tentativelyAccept": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.snoozeReminder": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.onenotePatchContent": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/calendarView/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.tentativelyAccept": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.retire": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection/microsoft.graph.copyToNotebook": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/instances/{event-id1}/microsoft.graph.snoozeReminder": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/calendar/microsoft.graph.getSchedule": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/events/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.accept": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.triggerConfigurationManagerAction": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/messages/{message-id}/microsoft.graph.unsubscribe": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/events/{event-id}/microsoft.graph.cancel": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/events/{event-id}/instances/{event-id1}/microsoft.graph.dismissReminder": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/events/{event-id}/calendar/calendarView/{event-id1}/microsoft.graph.cancel": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/events/{event-id}/instances/{event-id1}/microsoft.graph.tentativelyAccept": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/pages/{onenotePage-id}/parentSection/parentSectionGroup/parentNotebook/microsoft.graph.copyNotebook": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/microsoft.graph.forward": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/events/{event-id}/instances/{event-id1}/microsoft.graph.forward": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarView/{event-id}/instances/{event-id1}/microsoft.graph.forward": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.onenotePatchContent": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/microsoft.graph.copyToNotebook": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/events/{event-id}/calendar/calendarView/{event-id1}/microsoft.graph.snoozeReminder": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/microsoft.graph.cancel": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/calendarView/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.snoozeReminder": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/microsoft.graph.copyNotebook": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/microsoft.graph.decline": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarView/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.tentativelyAccept": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/messages/{message-id}/microsoft.graph.send": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/instances/{event-id1}/microsoft.graph.dismissReminder": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/pages/{onenotePage-id}/parentNotebook/microsoft.graph.copyNotebook": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/instances/{event-id1}/microsoft.graph.tentativelyAccept": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/calendarView/{event-id}/microsoft.graph.forward": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/calendar/microsoft.graph.getSchedule": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/pages/{onenotePage-id}/microsoft.graph.onenotePatchContent": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.overrideComplianceState": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarView/{event-id}/calendar/calendarView/{event-id1}/microsoft.graph.dismissReminder": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.syncDevice": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/pages/{onenotePage-id}/parentSection/microsoft.graph.copyToNotebook": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/microsoft.graph.replyAll": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/pages/{onenotePage-id}/parentSection/parentNotebook/sections/{onenoteSection-id}/microsoft.graph.copyToSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/messages/{message-id}/microsoft.graph.copy": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.forward": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id1}/microsoft.graph.copyToSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/events/{event-id}/microsoft.graph.decline": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/calendarView/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.cancel": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/calendarView/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.decline": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.logoutSharedAppleDeviceActiveUser": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/notebooks/microsoft.graph.getNotebookFromWebUrl": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/events/{event-id}/microsoft.graph.tentativelyAccept": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/sections/{onenoteSection-id}/parentNotebook/sections/{onenoteSection-id1}/microsoft.graph.copyToSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection/microsoft.graph.copyToSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/sections/{onenoteSection-id}/parentSectionGroup/parentNotebook/microsoft.graph.copyNotebook": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/calendarView/{event-id}/instances/{event-id1}/microsoft.graph.decline": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/calendarView/{event-id}/instances/{event-id1}/microsoft.graph.cancel": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/events/{event-id}/calendar/microsoft.graph.getSchedule": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sections/{onenoteSection-id}/parentNotebook/microsoft.graph.copyNotebook": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/microsoft.graph.forward": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/microsoft.graph.copyToSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/events/{event-id}/microsoft.graph.snoozeReminder": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/events/{event-id}/calendar/events/{event-id1}/microsoft.graph.snoozeReminder": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/events/{event-id}/microsoft.graph.decline": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/instances/{event-id1}/microsoft.graph.decline": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/messages/{message-id}/microsoft.graph.createForward": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/microsoft.graph.unsubscribe": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/events/{event-id}/calendar/microsoft.graph.getSchedule": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/messages/{message-id}/attachments/microsoft.graph.createUploadSession": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/outlook/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}/attachments/microsoft.graph.createUploadSession": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.snoozeReminder": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/events/{event-id}/calendar/calendarView/{event-id1}/microsoft.graph.forward": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.revokeAppleVppLicenses": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/pages/{onenotePage-id}/parentSection/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/microsoft.graph.copyToNotebook": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection/microsoft.graph.copyToNotebook": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/parentNotebook/microsoft.graph.copyNotebook": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.copyToSection": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/microsoft.graph.dismissReminder": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.tentativelyAccept": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/events/{event-id}/instances/{event-id1}/microsoft.graph.snoozeReminder": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id1}/microsoft.graph.copyToNotebook": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.onenotePatchContent": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/microsoft.graph.getMemberObjects": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/sections/{onenoteSection-id}/parentNotebook/microsoft.graph.copyNotebook": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/microsoft.graph.validateProperties": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/pendingAccessReviewInstances/{accessReviewInstance-id}/definition/microsoft.graph.stop": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/microsoft.graph.removeAllDevicesFromManagement": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.createDeviceLogCollectionRequest": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/microsoft.graph.cancel": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarView/{event-id}/calendar/events/{event-id1}/microsoft.graph.cancel": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/messages/{message-id}/microsoft.graph.replyAll": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/microsoft.graph.changePassword": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/microsoft.graph.copyNotebook": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.forward": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/parentSectionGroup/parentNotebook/microsoft.graph.copyNotebook": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/calendar/microsoft.graph.getSchedule": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/microsoft.graph.accept": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/events/{event-id}/instances/{event-id1}/microsoft.graph.accept": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/events/{event-id}/instances/{event-id1}/microsoft.graph.decline": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarView/{event-id}/microsoft.graph.tentativelyAccept": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/events/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.decline": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/calendarView/{event-id}/microsoft.graph.accept": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/instances/{event-id1}/microsoft.graph.forward": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/microsoft.graph.checkMemberGroups": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/microsoft.graph.invalidateAllRefreshTokens": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection/microsoft.graph.copyToSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/microsoft.graph.wipeManagedAppRegistrationByDeviceTag": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/microsoft.graph.createReplyAll": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/events/{event-id}/calendar/events/{event-id1}/microsoft.graph.dismissReminder": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/microsoft.graph.snoozeReminder": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/calendarView/{event-id}/microsoft.graph.snoozeReminder": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.accept": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/microsoft.graph.copyNotebook": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentNotebook/microsoft.graph.copyNotebook": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/microsoft.graph.getSchedule": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/events/{event-id}/calendar/calendarView/{event-id1}/microsoft.graph.dismissReminder": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.updateWindowsDeviceAccount": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/pages/{onenotePage-id}/parentSection/parentSectionGroup/parentNotebook/sections/{onenoteSection-id}/microsoft.graph.copyToNotebook": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/instances/{event-id1}/microsoft.graph.cancel": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.setDeviceName": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarView/{event-id}/calendar/calendarView/{event-id1}/microsoft.graph.accept": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/microsoft.graph.copy": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarView/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.accept": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/parentSectionGroup/sections/{onenoteSection-id1}/microsoft.graph.copyToSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.cancel": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarView/{event-id}/calendar/calendarView/{event-id1}/microsoft.graph.tentativelyAccept": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onlineMeetings/microsoft.graph.createOrGet": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/managedDevices/{managedDevice-id}/logCollectionRequests/{deviceLogCollectionResponse-id}/microsoft.graph.createDownloadUrl": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/microsoft.graph.copyToNotebook": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/microsoft.graph.tentativelyAccept": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/instances/{event-id1}/microsoft.graph.forward": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id1}/microsoft.graph.copyToNotebook": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/microsoft.graph.copyToSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarView/{event-id}/calendar/calendarView/{event-id1}/microsoft.graph.snoozeReminder": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.rotateFileVaultKey": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/microsoft.graph.assignLicense": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/events/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.forward": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/instances/{event-id1}/microsoft.graph.accept": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/events/{event-id}/calendar/calendarView/{event-id1}/microsoft.graph.decline": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/mailFolders/{mailFolder-id}/microsoft.graph.copy": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/notebooks/{notebook-id}/microsoft.graph.copyNotebook": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/mobileAppTroubleshootingEvents/{mobileAppTroubleshootingEvent-id}/appLogCollectionRequests/{appLogCollectionRequest-id}/microsoft.graph.createDownloadUrl": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/events/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.cancel": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/microsoft.graph.decline": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarView/{event-id}/instances/{event-id1}/microsoft.graph.snoozeReminder": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/events/{event-id}/calendar/calendarView/{event-id1}/microsoft.graph.accept": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}/attachments/microsoft.graph.createUploadSession": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarView/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.cancel": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/events/{event-id}/instances/{event-id1}/microsoft.graph.cancel": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.tentativelyAccept": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/events/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.accept": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/events/{event-id}/microsoft.graph.accept": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/calendarView/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.accept": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/microsoft.graph.tentativelyAccept": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/microsoft.graph.copyNotebook": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/messages/{message-id}/microsoft.graph.createReply": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentNotebook/sections/{onenoteSection-id1}/microsoft.graph.copyToNotebook": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.shutDown": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/microsoft.graph.cancel": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/attachments/microsoft.graph.createUploadSession": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/events/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.decline": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/pendingAccessReviewInstances/{accessReviewInstance-id}/microsoft.graph.acceptRecommendations": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/microsoft.graph.tentativelyAccept": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.copyToSection": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentNotebook/sections/{onenoteSection-id1}/microsoft.graph.copyToSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/instances/{event-id1}/microsoft.graph.accept": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/calendarView/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.forward": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/attachments/microsoft.graph.createUploadSession": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/events/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.snoozeReminder": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarView/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.dismissReminder": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/calendarView/{event-id}/microsoft.graph.cancel": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/microsoft.graph.createReply": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/microsoft.graph.copyNotebook": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/microsoft.graph.tentativelyAccept": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/events/{event-id}/microsoft.graph.forward": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.copyToSection": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection/microsoft.graph.copyToSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/parentSectionGroup/sections/{onenoteSection-id1}/microsoft.graph.copyToSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/events/{event-id}/calendar/events/{event-id1}/microsoft.graph.tentativelyAccept": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.decline": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
+    "/users/{user-id}/authentication/methods/{authenticationMethod-id}/microsoft.graph.disableSmsSignIn": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
     },
     "/users/{user-id}/authentication/methods/{authenticationMethod-id}/microsoft.graph.enableSmsSignIn": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.snoozeReminder": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarView/{event-id}/microsoft.graph.cancel": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/events/{event-id}/calendar/events/{event-id1}/microsoft.graph.cancel": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.forward": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/microsoft.graph.accept": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.copyToSection": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.recoverPasscode": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/microsoft.graph.move": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/events/{event-id}/calendar/calendarView/{event-id1}/microsoft.graph.tentativelyAccept": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/microsoft.graph.snoozeReminder": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/microsoft.graph.accept": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/messages/{message-id}/microsoft.graph.forward": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.decline": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/attachments/microsoft.graph.createUploadSession": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/microsoft.graph.send": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.onenotePatchContent": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/microsoft.graph.reprocessLicenseAssignment": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/microsoft.graph.checkMemberObjects": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/parentSectionGroup/parentNotebook/microsoft.graph.copyNotebook": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.locateDevice": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/instances/{event-id1}/microsoft.graph.tentativelyAccept": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.tentativelyAccept": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/instances/{event-id1}/microsoft.graph.tentativelyAccept": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/pages/{onenotePage-id}/parentSection/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/microsoft.graph.copyToSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/pages/{onenotePage-id}/parentSection/parentSectionGroup/sections/{onenoteSection-id}/microsoft.graph.copyToNotebook": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/pages/{onenotePage-id}/parentSection/parentNotebook/sectionGroups/{sectionGroup-id}/parentNotebook/microsoft.graph.copyNotebook": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.wipe": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarView/{event-id}/attachments/microsoft.graph.createUploadSession": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/sections/{onenoteSection-id}/parentSectionGroup/parentNotebook/sections/{onenoteSection-id1}/microsoft.graph.copyToSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarView/{event-id}/instances/{event-id1}/microsoft.graph.cancel": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/events/{event-id}/microsoft.graph.tentativelyAccept": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/calendarView/{event-id}/instances/{event-id1}/microsoft.graph.forward": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarView/{event-id}/instances/{event-id1}/microsoft.graph.accept": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/instances/{event-id1}/microsoft.graph.cancel": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/events/{event-id}/instances/{event-id1}/microsoft.graph.cancel": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/pages/{onenotePage-id}/microsoft.graph.copyToSection": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id1}/microsoft.graph.copyToSection": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/calendarView/{event-id}/instances/{event-id1}/microsoft.graph.tentativelyAccept": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id1}/microsoft.graph.copyToSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/microsoft.graph.forward": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarView/{event-id}/microsoft.graph.forward": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/outlook/tasks/{outlookTask-id}/attachments/microsoft.graph.createUploadSession": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/calendarView/{event-id}/microsoft.graph.dismissReminder": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/pages/{onenotePage-id}/parentSection/pages/{onenotePage-id1}/microsoft.graph.copyToSection": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/sections/{onenoteSection-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id1}/microsoft.graph.copyToSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentNotebook/microsoft.graph.copyNotebook": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarView/{event-id}/calendar/events/{event-id1}/microsoft.graph.accept": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/microsoft.graph.decline": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/events/{event-id}/microsoft.graph.cancel": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/instances/{event-id1}/microsoft.graph.accept": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/calendar/microsoft.graph.getSchedule": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarView/{event-id}/calendar/events/{event-id1}/microsoft.graph.dismissReminder": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/pages/{onenotePage-id1}/microsoft.graph.copyToSection": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.forward": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/events/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.snoozeReminder": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/instances/{event-id1}/microsoft.graph.snoozeReminder": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/messages/{message-id}/microsoft.graph.reply": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarView/{event-id}/microsoft.graph.dismissReminder": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.onenotePatchContent": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/parentNotebook/microsoft.graph.copyNotebook": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/microsoft.graph.forward": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.remoteLock": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.rebootNow": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/microsoft.graph.copyToSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/instances/{event-id1}/microsoft.graph.forward": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/pages/{onenotePage-id}/parentSection/parentSectionGroup/parentNotebook/sections/{onenoteSection-id}/microsoft.graph.copyToSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/mailFolders/{mailFolder-id}/microsoft.graph.move": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/pages/{onenotePage-id1}/microsoft.graph.onenotePatchContent": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/microsoft.graph.getMailTips": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/microsoft.graph.dismissReminder": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/microsoft.graph.sendMail": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/deviceEnrollmentConfigurations/{deviceEnrollmentConfiguration-id}/microsoft.graph.assign": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/pages/{onenotePage-id}/parentSection/microsoft.graph.copyToSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/calendarView/{event-id}/calendar/microsoft.graph.getSchedule": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarView/{event-id}/calendar/calendarView/{event-id1}/microsoft.graph.forward": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/microsoft.graph.accept": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.tentativelyAccept": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/sections/{onenoteSection-id}/parentNotebook/sectionGroups/{sectionGroup-id}/parentNotebook/microsoft.graph.copyNotebook": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/authentication/methods/{authenticationMethod-id}/microsoft.graph.disableSmsSignIn": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/instances/{event-id1}/microsoft.graph.snoozeReminder": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarView/{event-id}/calendar/calendarView/{event-id1}/microsoft.graph.decline": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.dismissReminder": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/pendingAccessReviewInstances/{accessReviewInstance-id}/microsoft.graph.stop": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarView/{event-id}/microsoft.graph.snoozeReminder": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/pages/{onenotePage-id}/parentSection/pages/{onenotePage-id1}/microsoft.graph.onenotePatchContent": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/microsoft.graph.copyToNotebook": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.dismissReminder": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarView/{event-id}/instances/{event-id1}/microsoft.graph.dismissReminder": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.accept": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.accept": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.deleteUserFromSharedAppleDevice": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/sections/{onenoteSection-id}/parentNotebook/sections/{onenoteSection-id1}/microsoft.graph.copyToNotebook": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/instances/{event-id1}/microsoft.graph.accept": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/pages/{onenotePage-id}/parentSection/parentNotebook/microsoft.graph.copyNotebook": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/microsoft.graph.restore": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection/microsoft.graph.copyToSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarView/{event-id}/instances/{event-id1}/microsoft.graph.tentativelyAccept": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/events/{event-id}/instances/{event-id1}/microsoft.graph.snoozeReminder": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarView/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.snoozeReminder": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/events/{event-id}/instances/{event-id1}/microsoft.graph.accept": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/microsoft.graph.wipeAndBlockManagedApps": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/instances/{event-id1}/microsoft.graph.decline": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/messages/{message-id}/microsoft.graph.move": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection/microsoft.graph.copyToNotebook": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/microsoft.graph.revokeSignInSessions": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection/microsoft.graph.copyToNotebook": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/outlook/tasks/{outlookTask-id}/microsoft.graph.complete": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.cancel": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarView/{event-id}/calendar/events/{event-id1}/microsoft.graph.decline": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.decline": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.playLostModeSound": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.decline": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/sections/{onenoteSection-id}/parentSectionGroup/sections/{onenoteSection-id1}/microsoft.graph.copyToNotebook": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/microsoft.graph.move": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/parentNotebook/microsoft.graph.copyNotebook": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id1}/microsoft.graph.copyToSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/events/{event-id}/instances/{event-id1}/microsoft.graph.decline": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.cancel": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.sendCustomNotificationToCompanyPortal": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/instances/{event-id1}/microsoft.graph.dismissReminder": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/events/{event-id}/microsoft.graph.forward": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id1}/microsoft.graph.onenotePatchContent": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarView/{event-id}/calendar/microsoft.graph.getSchedule": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/parentSectionGroup/sections/{onenoteSection-id1}/microsoft.graph.copyToNotebook": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/teamwork/microsoft.graph.sendActivityNotification": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.dismissReminder": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarView/{event-id}/microsoft.graph.accept": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/deviceEnrollmentConfigurations/microsoft.graph.hasPayloadLinks": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/microsoft.graph.copy": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/microsoft.graph.cancel": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/instances/{event-id1}/microsoft.graph.cancel": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sections/{onenoteSection-id}/microsoft.graph.copyToSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarView/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.decline": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/instances/{event-id1}/microsoft.graph.decline": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarView/{event-id}/microsoft.graph.decline": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarView/{event-id}/calendar/events/{event-id1}/microsoft.graph.snoozeReminder": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/microsoft.graph.createForward": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/instances/{event-id1}/microsoft.graph.forward": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarView/{event-id}/calendar/calendarView/{event-id1}/microsoft.graph.cancel": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/managedDevices/microsoft.graph.executeAction": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.cancel": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/events/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.tentativelyAccept": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.windowsDefenderUpdateSignatures": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/microsoft.graph.copyNotebook": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/microsoft.graph.snoozeReminder": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/instances/{event-id1}/microsoft.graph.snoozeReminder": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sections/{onenoteSection-id}/microsoft.graph.copyToNotebook": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/microsoft.graph.dismissReminder": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.windowsDefenderScan": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/events/{event-id}/microsoft.graph.accept": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/microsoft.graph.getByIds": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/events/{event-id}/instances/{event-id1}/microsoft.graph.dismissReminder": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/events/{event-id}/calendar/events/{event-id1}/microsoft.graph.decline": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.snoozeReminder": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarView/{event-id}/calendar/events/{event-id1}/microsoft.graph.forward": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/deviceEnrollmentConfigurations/{deviceEnrollmentConfiguration-id}/microsoft.graph.setPriority": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarView/{event-id}/calendar/events/{event-id1}/microsoft.graph.tentativelyAccept": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/instances/{event-id1}/microsoft.graph.cancel": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}/microsoft.graph.complete": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.disableLostMode": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/calendarView/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.dismissReminder": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/events/{event-id}/instances/{event-id1}/microsoft.graph.tentativelyAccept": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.dismissReminder": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.requestRemoteAssistance": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/pendingAccessReviewInstances/{accessReviewInstance-id}/microsoft.graph.applyDecisions": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/events/{event-id}/attachments/microsoft.graph.createUploadSession": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.resetPasscode": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/pages/{onenotePage-id}/parentSection/parentNotebook/sections/{onenoteSection-id}/microsoft.graph.copyToNotebook": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection/microsoft.graph.copyToNotebook": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/instances/{event-id1}/microsoft.graph.decline": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/outlook/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}/microsoft.graph.complete": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/microsoft.graph.getSchedule": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/microsoft.graph.findMeetingTimes": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/pages/{onenotePage-id}/parentSection/parentSectionGroup/sections/{onenoteSection-id}/microsoft.graph.copyToSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/calendarView/{event-id}/microsoft.graph.decline": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/sections/{onenoteSection-id}/parentSectionGroup/parentNotebook/sections/{onenoteSection-id1}/microsoft.graph.copyToNotebook": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/microsoft.graph.copyToSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/calendarView/{event-id}/microsoft.graph.tentativelyAccept": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/sections/{onenoteSection-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id1}/microsoft.graph.copyToNotebook": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/microsoft.graph.exportPersonalData": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/authentication/methods/{authenticationMethod-id}/microsoft.graph.resetPassword": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
     },
     "/users/{user-id}/calendar/calendarView/{event-id}/attachments/microsoft.graph.createUploadSession": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
     },
-    "/users/{user-id}/calendarView/{event-id}/instances/{event-id1}/microsoft.graph.decline": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
+    "/users/{user-id}/calendar/calendarView/{event-id}/calendar/microsoft.graph.getSchedule": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
     },
-    "/users/{user-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/microsoft.graph.copyToNotebook": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
+    "/users/{user-id}/calendar/calendarView/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.accept": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
     },
-    "/users/{user-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/microsoft.graph.copyToSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
+    "/users/{user-id}/calendar/calendarView/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.cancel": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
     },
-    "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/microsoft.graph.reply": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
+    "/users/{user-id}/calendar/calendarView/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.decline": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
     },
-    "/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.bypassActivationLock": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
+    "/users/{user-id}/calendar/calendarView/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.dismissReminder": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
     },
-    "/users/{user-id}/calendar/events/{event-id}/microsoft.graph.dismissReminder": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
+    "/users/{user-id}/calendar/calendarView/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.forward": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
     },
-    "/users/microsoft.graph.getUserOwnedObjects": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
+    "/users/{user-id}/calendar/calendarView/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.snoozeReminder": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
     },
-    "/users/{user-id}/onenote/sections/{onenoteSection-id}/microsoft.graph.copyToSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/microsoft.graph.snoozeReminder": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/calendarView/{event-id}/instances/{event-id1}/microsoft.graph.dismissReminder": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/events/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.forward": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.copyToSection": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/parentSectionGroup/sections/{onenoteSection-id1}/microsoft.graph.copyToNotebook": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/pendingAccessReviewInstances/{accessReviewInstance-id}/microsoft.graph.sendReminder": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/calendarView/{event-id}/instances/{event-id1}/microsoft.graph.snoozeReminder": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/events/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.cancel": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/microsoft.graph.decline": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/microsoft.graph.unblockManagedApps": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarView/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.forward": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.rotateBitLockerKeys": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
+    "/users/{user-id}/calendar/calendarView/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.tentativelyAccept": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
     },
     "/users/{user-id}/calendar/calendarView/{event-id}/instances/{event-id1}/microsoft.graph.accept": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendar/calendarView/{event-id}/instances/{event-id1}/microsoft.graph.cancel": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendar/calendarView/{event-id}/instances/{event-id1}/microsoft.graph.decline": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendar/calendarView/{event-id}/instances/{event-id1}/microsoft.graph.dismissReminder": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendar/calendarView/{event-id}/instances/{event-id1}/microsoft.graph.forward": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendar/calendarView/{event-id}/instances/{event-id1}/microsoft.graph.snoozeReminder": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendar/calendarView/{event-id}/instances/{event-id1}/microsoft.graph.tentativelyAccept": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendar/calendarView/{event-id}/microsoft.graph.accept": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendar/calendarView/{event-id}/microsoft.graph.cancel": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendar/calendarView/{event-id}/microsoft.graph.decline": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendar/calendarView/{event-id}/microsoft.graph.dismissReminder": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendar/calendarView/{event-id}/microsoft.graph.forward": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendar/calendarView/{event-id}/microsoft.graph.snoozeReminder": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendar/calendarView/{event-id}/microsoft.graph.tentativelyAccept": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendar/events/{event-id}/attachments/microsoft.graph.createUploadSession": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendar/events/{event-id}/calendar/microsoft.graph.getSchedule": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendar/events/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.accept": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendar/events/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.cancel": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendar/events/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.decline": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendar/events/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.dismissReminder": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendar/events/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.forward": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendar/events/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.snoozeReminder": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
     },
     "/users/{user-id}/calendar/events/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.tentativelyAccept": {
-      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendar/events/{event-id}/instances/{event-id1}/microsoft.graph.accept": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendar/events/{event-id}/instances/{event-id1}/microsoft.graph.cancel": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendar/events/{event-id}/instances/{event-id1}/microsoft.graph.decline": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendar/events/{event-id}/instances/{event-id1}/microsoft.graph.dismissReminder": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendar/events/{event-id}/instances/{event-id1}/microsoft.graph.forward": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendar/events/{event-id}/instances/{event-id1}/microsoft.graph.snoozeReminder": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendar/events/{event-id}/instances/{event-id1}/microsoft.graph.tentativelyAccept": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendar/events/{event-id}/microsoft.graph.accept": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendar/events/{event-id}/microsoft.graph.cancel": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendar/events/{event-id}/microsoft.graph.decline": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendar/events/{event-id}/microsoft.graph.dismissReminder": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendar/events/{event-id}/microsoft.graph.forward": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendar/events/{event-id}/microsoft.graph.snoozeReminder": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendar/events/{event-id}/microsoft.graph.tentativelyAccept": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendar/microsoft.graph.getSchedule": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/attachments/microsoft.graph.createUploadSession": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/calendar/microsoft.graph.getSchedule": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.accept": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.cancel": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.decline": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.dismissReminder": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.forward": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.snoozeReminder": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.tentativelyAccept": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/instances/{event-id1}/microsoft.graph.accept": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/instances/{event-id1}/microsoft.graph.cancel": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/instances/{event-id1}/microsoft.graph.decline": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/instances/{event-id1}/microsoft.graph.dismissReminder": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/instances/{event-id1}/microsoft.graph.forward": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/instances/{event-id1}/microsoft.graph.snoozeReminder": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/instances/{event-id1}/microsoft.graph.tentativelyAccept": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/microsoft.graph.accept": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/microsoft.graph.cancel": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/microsoft.graph.decline": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/microsoft.graph.dismissReminder": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/microsoft.graph.forward": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/microsoft.graph.snoozeReminder": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/microsoft.graph.tentativelyAccept": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/attachments/microsoft.graph.createUploadSession": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/calendar/microsoft.graph.getSchedule": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.accept": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.cancel": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.decline": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.dismissReminder": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.forward": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.snoozeReminder": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.tentativelyAccept": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/instances/{event-id1}/microsoft.graph.accept": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/instances/{event-id1}/microsoft.graph.cancel": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/instances/{event-id1}/microsoft.graph.decline": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/instances/{event-id1}/microsoft.graph.dismissReminder": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/instances/{event-id1}/microsoft.graph.forward": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/instances/{event-id1}/microsoft.graph.snoozeReminder": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/instances/{event-id1}/microsoft.graph.tentativelyAccept": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/microsoft.graph.accept": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/microsoft.graph.cancel": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/microsoft.graph.decline": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/microsoft.graph.dismissReminder": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/microsoft.graph.forward": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/microsoft.graph.snoozeReminder": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/microsoft.graph.tentativelyAccept": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/microsoft.graph.getSchedule": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/attachments/microsoft.graph.createUploadSession": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/calendar/microsoft.graph.getSchedule": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.accept": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.cancel": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.decline": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.dismissReminder": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.forward": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.snoozeReminder": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.tentativelyAccept": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/instances/{event-id1}/microsoft.graph.accept": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/instances/{event-id1}/microsoft.graph.cancel": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/instances/{event-id1}/microsoft.graph.decline": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/instances/{event-id1}/microsoft.graph.dismissReminder": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/instances/{event-id1}/microsoft.graph.forward": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/instances/{event-id1}/microsoft.graph.snoozeReminder": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/instances/{event-id1}/microsoft.graph.tentativelyAccept": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/microsoft.graph.accept": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/microsoft.graph.cancel": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/microsoft.graph.decline": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/microsoft.graph.dismissReminder": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/microsoft.graph.forward": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/microsoft.graph.snoozeReminder": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/microsoft.graph.tentativelyAccept": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/attachments/microsoft.graph.createUploadSession": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/calendar/microsoft.graph.getSchedule": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.accept": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.cancel": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.decline": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.dismissReminder": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.forward": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.snoozeReminder": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.tentativelyAccept": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/instances/{event-id1}/microsoft.graph.accept": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/instances/{event-id1}/microsoft.graph.cancel": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/instances/{event-id1}/microsoft.graph.decline": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/instances/{event-id1}/microsoft.graph.dismissReminder": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/instances/{event-id1}/microsoft.graph.forward": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/instances/{event-id1}/microsoft.graph.snoozeReminder": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/instances/{event-id1}/microsoft.graph.tentativelyAccept": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/microsoft.graph.accept": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/microsoft.graph.cancel": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/microsoft.graph.decline": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/microsoft.graph.dismissReminder": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/microsoft.graph.forward": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/microsoft.graph.snoozeReminder": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/microsoft.graph.tentativelyAccept": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/microsoft.graph.getSchedule": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarView/{event-id}/attachments/microsoft.graph.createUploadSession": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarView/{event-id}/calendar/calendarView/{event-id1}/microsoft.graph.accept": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarView/{event-id}/calendar/calendarView/{event-id1}/microsoft.graph.cancel": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarView/{event-id}/calendar/calendarView/{event-id1}/microsoft.graph.decline": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarView/{event-id}/calendar/calendarView/{event-id1}/microsoft.graph.dismissReminder": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarView/{event-id}/calendar/calendarView/{event-id1}/microsoft.graph.forward": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarView/{event-id}/calendar/calendarView/{event-id1}/microsoft.graph.snoozeReminder": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarView/{event-id}/calendar/calendarView/{event-id1}/microsoft.graph.tentativelyAccept": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarView/{event-id}/calendar/events/{event-id1}/microsoft.graph.accept": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarView/{event-id}/calendar/events/{event-id1}/microsoft.graph.cancel": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarView/{event-id}/calendar/events/{event-id1}/microsoft.graph.decline": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarView/{event-id}/calendar/events/{event-id1}/microsoft.graph.dismissReminder": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarView/{event-id}/calendar/events/{event-id1}/microsoft.graph.forward": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarView/{event-id}/calendar/events/{event-id1}/microsoft.graph.snoozeReminder": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarView/{event-id}/calendar/events/{event-id1}/microsoft.graph.tentativelyAccept": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarView/{event-id}/calendar/microsoft.graph.getSchedule": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarView/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.accept": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarView/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.cancel": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarView/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.decline": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarView/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.dismissReminder": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarView/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.forward": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarView/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.snoozeReminder": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarView/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.tentativelyAccept": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarView/{event-id}/instances/{event-id1}/microsoft.graph.accept": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarView/{event-id}/instances/{event-id1}/microsoft.graph.cancel": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarView/{event-id}/instances/{event-id1}/microsoft.graph.decline": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarView/{event-id}/instances/{event-id1}/microsoft.graph.dismissReminder": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarView/{event-id}/instances/{event-id1}/microsoft.graph.forward": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarView/{event-id}/instances/{event-id1}/microsoft.graph.snoozeReminder": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarView/{event-id}/instances/{event-id1}/microsoft.graph.tentativelyAccept": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarView/{event-id}/microsoft.graph.accept": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarView/{event-id}/microsoft.graph.cancel": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarView/{event-id}/microsoft.graph.decline": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarView/{event-id}/microsoft.graph.dismissReminder": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarView/{event-id}/microsoft.graph.forward": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarView/{event-id}/microsoft.graph.snoozeReminder": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/calendarView/{event-id}/microsoft.graph.tentativelyAccept": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/deviceEnrollmentConfigurations/{deviceEnrollmentConfiguration-id}/microsoft.graph.assign": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/deviceEnrollmentConfigurations/{deviceEnrollmentConfiguration-id}/microsoft.graph.setPriority": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/deviceEnrollmentConfigurations/microsoft.graph.hasPayloadLinks": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/events/{event-id}/attachments/microsoft.graph.createUploadSession": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/events/{event-id}/calendar/calendarView/{event-id1}/microsoft.graph.accept": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/events/{event-id}/calendar/calendarView/{event-id1}/microsoft.graph.cancel": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/events/{event-id}/calendar/calendarView/{event-id1}/microsoft.graph.decline": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/events/{event-id}/calendar/calendarView/{event-id1}/microsoft.graph.dismissReminder": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/events/{event-id}/calendar/calendarView/{event-id1}/microsoft.graph.forward": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/events/{event-id}/calendar/calendarView/{event-id1}/microsoft.graph.snoozeReminder": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/events/{event-id}/calendar/calendarView/{event-id1}/microsoft.graph.tentativelyAccept": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/events/{event-id}/calendar/events/{event-id1}/microsoft.graph.accept": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/events/{event-id}/calendar/events/{event-id1}/microsoft.graph.cancel": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/events/{event-id}/calendar/events/{event-id1}/microsoft.graph.decline": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/events/{event-id}/calendar/events/{event-id1}/microsoft.graph.dismissReminder": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/events/{event-id}/calendar/events/{event-id1}/microsoft.graph.forward": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/events/{event-id}/calendar/events/{event-id1}/microsoft.graph.snoozeReminder": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/events/{event-id}/calendar/events/{event-id1}/microsoft.graph.tentativelyAccept": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/events/{event-id}/calendar/microsoft.graph.getSchedule": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/events/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.accept": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/events/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.cancel": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/events/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.decline": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/events/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.dismissReminder": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/events/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.forward": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/events/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.snoozeReminder": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/events/{event-id}/exceptionOccurrences/{event-id1}/microsoft.graph.tentativelyAccept": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/events/{event-id}/instances/{event-id1}/microsoft.graph.accept": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/events/{event-id}/instances/{event-id1}/microsoft.graph.cancel": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/events/{event-id}/instances/{event-id1}/microsoft.graph.decline": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/events/{event-id}/instances/{event-id1}/microsoft.graph.dismissReminder": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/events/{event-id}/instances/{event-id1}/microsoft.graph.forward": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/events/{event-id}/instances/{event-id1}/microsoft.graph.snoozeReminder": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/events/{event-id}/instances/{event-id1}/microsoft.graph.tentativelyAccept": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/events/{event-id}/microsoft.graph.accept": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/events/{event-id}/microsoft.graph.cancel": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/events/{event-id}/microsoft.graph.decline": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/events/{event-id}/microsoft.graph.dismissReminder": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/events/{event-id}/microsoft.graph.forward": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/events/{event-id}/microsoft.graph.snoozeReminder": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/events/{event-id}/microsoft.graph.tentativelyAccept": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/microsoft.graph.copy": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/microsoft.graph.move": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/attachments/microsoft.graph.createUploadSession": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/microsoft.graph.copy": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/microsoft.graph.createForward": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/microsoft.graph.createReply": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/microsoft.graph.createReplyAll": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/microsoft.graph.forward": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/microsoft.graph.move": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/microsoft.graph.reply": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/microsoft.graph.replyAll": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/microsoft.graph.send": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/microsoft.graph.unsubscribe": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/mailFolders/{mailFolder-id}/microsoft.graph.copy": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/mailFolders/{mailFolder-id}/microsoft.graph.move": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/managedDevices/{managedDevice-id}/logCollectionRequests/{deviceLogCollectionResponse-id}/microsoft.graph.createDownloadUrl": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.bypassActivationLock": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.cleanWindowsDevice": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.createDeviceLogCollectionRequest": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.deleteUserFromSharedAppleDevice": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.disableLostMode": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.enableLostMode": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.locateDevice": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.logoutSharedAppleDeviceActiveUser": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.overrideComplianceState": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.playLostModeSound": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.rebootNow": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.recoverPasscode": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.remoteLock": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.requestRemoteAssistance": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.resetPasscode": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.retire": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.revokeAppleVppLicenses": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.rotateBitLockerKeys": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.rotateFileVaultKey": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.sendCustomNotificationToCompanyPortal": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.setDeviceName": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.shutDown": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.syncDevice": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.triggerConfigurationManagerAction": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.updateWindowsDeviceAccount": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.windowsDefenderScan": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.windowsDefenderUpdateSignatures": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.wipe": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/managedDevices/microsoft.graph.executeAction": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/messages/{message-id}/attachments/microsoft.graph.createUploadSession": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/messages/{message-id}/microsoft.graph.copy": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/messages/{message-id}/microsoft.graph.createForward": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/messages/{message-id}/microsoft.graph.createReply": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/messages/{message-id}/microsoft.graph.createReplyAll": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/messages/{message-id}/microsoft.graph.forward": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/messages/{message-id}/microsoft.graph.move": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/messages/{message-id}/microsoft.graph.reply": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/messages/{message-id}/microsoft.graph.replyAll": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/messages/{message-id}/microsoft.graph.send": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/messages/{message-id}/microsoft.graph.unsubscribe": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/microsoft.graph.assignLicense": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/microsoft.graph.changePassword": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/microsoft.graph.checkMemberGroups": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/microsoft.graph.checkMemberObjects": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/microsoft.graph.exportPersonalData": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/microsoft.graph.findMeetingTimes": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/microsoft.graph.getMailTips": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/microsoft.graph.getMemberGroups": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/microsoft.graph.getMemberObjects": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/microsoft.graph.invalidateAllRefreshTokens": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/microsoft.graph.removeAllDevicesFromManagement": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/microsoft.graph.reprocessLicenseAssignment": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/microsoft.graph.restore": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/microsoft.graph.revokeSignInSessions": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/microsoft.graph.sendMail": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/microsoft.graph.translateExchangeIds": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/microsoft.graph.unblockManagedApps": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/microsoft.graph.wipeAndBlockManagedApps": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/microsoft.graph.wipeManagedAppRegistrationByDeviceTag": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/microsoft.graph.wipeManagedAppRegistrationsByDeviceTag": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/mobileAppTroubleshootingEvents/{mobileAppTroubleshootingEvent-id}/appLogCollectionRequests/{appLogCollectionRequest-id}/microsoft.graph.createDownloadUrl": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/notebooks/{notebook-id}/microsoft.graph.copyNotebook": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/parentNotebook/microsoft.graph.copyNotebook": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/microsoft.graph.copyToNotebook": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/microsoft.graph.copyToSectionGroup": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.copyToSection": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.onenotePatchContent": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/microsoft.graph.copyNotebook": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection/microsoft.graph.copyToNotebook": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection/microsoft.graph.copyToSectionGroup": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentNotebook/microsoft.graph.copyNotebook": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/microsoft.graph.copyToNotebook": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/microsoft.graph.copyToSectionGroup": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.copyToSection": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.onenotePatchContent": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/microsoft.graph.copyNotebook": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection/microsoft.graph.copyToNotebook": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection/microsoft.graph.copyToSectionGroup": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/parentNotebook/microsoft.graph.copyNotebook": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/parentSectionGroup/parentNotebook/microsoft.graph.copyNotebook": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/parentSectionGroup/sections/{onenoteSection-id1}/microsoft.graph.copyToNotebook": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/parentSectionGroup/sections/{onenoteSection-id1}/microsoft.graph.copyToSectionGroup": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/notebooks/microsoft.graph.getNotebookFromWebUrl": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/pages/{onenotePage-id}/microsoft.graph.copyToSection": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/pages/{onenotePage-id}/microsoft.graph.onenotePatchContent": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/pages/{onenotePage-id}/parentNotebook/microsoft.graph.copyNotebook": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/parentNotebook/microsoft.graph.copyNotebook": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/microsoft.graph.copyToNotebook": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/microsoft.graph.copyToSectionGroup": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id1}/microsoft.graph.copyToSection": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id1}/microsoft.graph.onenotePatchContent": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentNotebook/microsoft.graph.copyNotebook": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/microsoft.graph.copyToNotebook": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/microsoft.graph.copyToSectionGroup": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/pages/{onenotePage-id1}/microsoft.graph.copyToSection": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/pages/{onenotePage-id1}/microsoft.graph.onenotePatchContent": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/parentNotebook/microsoft.graph.copyNotebook": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/parentSectionGroup/parentNotebook/microsoft.graph.copyNotebook": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/parentSectionGroup/sections/{onenoteSection-id1}/microsoft.graph.copyToNotebook": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/parentSectionGroup/sections/{onenoteSection-id1}/microsoft.graph.copyToSectionGroup": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/pages/{onenotePage-id}/parentSection/microsoft.graph.copyToNotebook": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/pages/{onenotePage-id}/parentSection/microsoft.graph.copyToSectionGroup": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/pages/{onenotePage-id}/parentSection/pages/{onenotePage-id1}/microsoft.graph.copyToSection": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/pages/{onenotePage-id}/parentSection/pages/{onenotePage-id1}/microsoft.graph.onenotePatchContent": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/pages/{onenotePage-id}/parentSection/parentNotebook/microsoft.graph.copyNotebook": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/pages/{onenotePage-id}/parentSection/parentNotebook/sectionGroups/{sectionGroup-id}/parentNotebook/microsoft.graph.copyNotebook": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/pages/{onenotePage-id}/parentSection/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/microsoft.graph.copyToNotebook": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/pages/{onenotePage-id}/parentSection/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/microsoft.graph.copyToSectionGroup": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/pages/{onenotePage-id}/parentSection/parentNotebook/sections/{onenoteSection-id}/microsoft.graph.copyToNotebook": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/pages/{onenotePage-id}/parentSection/parentNotebook/sections/{onenoteSection-id}/microsoft.graph.copyToSectionGroup": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/pages/{onenotePage-id}/parentSection/parentSectionGroup/parentNotebook/microsoft.graph.copyNotebook": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/pages/{onenotePage-id}/parentSection/parentSectionGroup/parentNotebook/sections/{onenoteSection-id}/microsoft.graph.copyToNotebook": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/pages/{onenotePage-id}/parentSection/parentSectionGroup/parentNotebook/sections/{onenoteSection-id}/microsoft.graph.copyToSectionGroup": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/pages/{onenotePage-id}/parentSection/parentSectionGroup/sections/{onenoteSection-id}/microsoft.graph.copyToNotebook": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/pages/{onenotePage-id}/parentSection/parentSectionGroup/sections/{onenoteSection-id}/microsoft.graph.copyToSectionGroup": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/microsoft.graph.copyNotebook": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sections/{onenoteSection-id}/microsoft.graph.copyToNotebook": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sections/{onenoteSection-id}/microsoft.graph.copyToSectionGroup": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.copyToSection": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.onenotePatchContent": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/microsoft.graph.copyNotebook": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection/microsoft.graph.copyToNotebook": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection/microsoft.graph.copyToSectionGroup": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sections/{onenoteSection-id}/parentNotebook/microsoft.graph.copyNotebook": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/microsoft.graph.copyToNotebook": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/microsoft.graph.copyToSectionGroup": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.copyToSection": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.onenotePatchContent": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/microsoft.graph.copyNotebook": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id1}/microsoft.graph.copyToNotebook": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id1}/microsoft.graph.copyToSectionGroup": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection/microsoft.graph.copyToNotebook": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection/microsoft.graph.copyToSectionGroup": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentNotebook/microsoft.graph.copyNotebook": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentNotebook/sections/{onenoteSection-id1}/microsoft.graph.copyToNotebook": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentNotebook/sections/{onenoteSection-id1}/microsoft.graph.copyToSectionGroup": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/sections/{onenoteSection-id}/microsoft.graph.copyToNotebook": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/sections/{onenoteSection-id}/microsoft.graph.copyToSectionGroup": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.copyToSection": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.onenotePatchContent": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/microsoft.graph.copyNotebook": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/parentNotebook/microsoft.graph.copyNotebook": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id1}/microsoft.graph.copyToNotebook": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id1}/microsoft.graph.copyToSectionGroup": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id1}/microsoft.graph.copyToNotebook": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id1}/microsoft.graph.copyToSectionGroup": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection/microsoft.graph.copyToNotebook": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection/microsoft.graph.copyToSectionGroup": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/sections/{onenoteSection-id}/parentNotebook/microsoft.graph.copyNotebook": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/sections/{onenoteSection-id}/parentNotebook/sectionGroups/{sectionGroup-id}/parentNotebook/microsoft.graph.copyNotebook": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/sections/{onenoteSection-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id1}/microsoft.graph.copyToNotebook": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/sections/{onenoteSection-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id1}/microsoft.graph.copyToSectionGroup": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/sections/{onenoteSection-id}/parentNotebook/sections/{onenoteSection-id1}/microsoft.graph.copyToNotebook": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/sections/{onenoteSection-id}/parentNotebook/sections/{onenoteSection-id1}/microsoft.graph.copyToSectionGroup": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/sections/{onenoteSection-id}/parentSectionGroup/parentNotebook/microsoft.graph.copyNotebook": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/sections/{onenoteSection-id}/parentSectionGroup/parentNotebook/sections/{onenoteSection-id1}/microsoft.graph.copyToNotebook": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/sections/{onenoteSection-id}/parentSectionGroup/parentNotebook/sections/{onenoteSection-id1}/microsoft.graph.copyToSectionGroup": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/sections/{onenoteSection-id}/parentSectionGroup/sections/{onenoteSection-id1}/microsoft.graph.copyToNotebook": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onenote/sections/{onenoteSection-id}/parentSectionGroup/sections/{onenoteSection-id1}/microsoft.graph.copyToSectionGroup": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/onlineMeetings/microsoft.graph.createOrGet": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/outlook/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}/attachments/microsoft.graph.createUploadSession": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/outlook/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}/microsoft.graph.complete": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}/attachments/microsoft.graph.createUploadSession": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}/microsoft.graph.complete": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/outlook/tasks/{outlookTask-id}/attachments/microsoft.graph.createUploadSession": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/outlook/tasks/{outlookTask-id}/microsoft.graph.complete": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/pendingAccessReviewInstances/{accessReviewInstance-id}/definition/microsoft.graph.stop": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/pendingAccessReviewInstances/{accessReviewInstance-id}/microsoft.graph.acceptRecommendations": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/pendingAccessReviewInstances/{accessReviewInstance-id}/microsoft.graph.applyDecisions": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/pendingAccessReviewInstances/{accessReviewInstance-id}/microsoft.graph.resetDecisions": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/pendingAccessReviewInstances/{accessReviewInstance-id}/microsoft.graph.sendReminder": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/pendingAccessReviewInstances/{accessReviewInstance-id}/microsoft.graph.stop": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/teamwork/microsoft.graph.sendActivityNotification": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/microsoft.graph.getByIds": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/microsoft.graph.getUserOwnedObjects": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/microsoft.graph.validateProperties": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
     }
   },
   "resources": []

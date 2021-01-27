@@ -1,288 +1,340 @@
 {
   "operations": {
-    "/users/{user-id}/transitiveMemberOf/$ref": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/notifications/{notification-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/ownedObjects/$ref": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
+    "/users": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
     },
     "/users/{user-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}/multiValueExtendedProperties": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/outlook/taskFolders/{outlookTaskFolder-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/outlook/tasks/{outlookTask-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/settings": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/memberOf/$ref": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/outlook/masterCategories": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/outlook/tasks/{outlookTask-id}/singleValueExtendedProperties": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/outlook/tasks": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/ownedObjects": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/outlook/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}/multiValueExtendedProperties": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/outlook/tasks/{outlookTask-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/photos/{profilePhoto-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/outlook/masterCategories/{outlookCategory-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/outlook/taskFolders/{outlookTaskFolder-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/manager": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/notifications": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/outlook/taskFolders/{outlookTaskFolder-id}/tasks": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/outlook/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}/attachments": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/outlook/taskFolders/{outlookTaskFolder-id}/multiValueExtendedProperties": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/directReports": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/outlook/taskFolders": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/outlook": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
     },
     "/users/{user-id}/createdObjects": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/ownedDevices/$ref": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/extensions": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}/attachments": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/extensions/{extension-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/licenseDetails/{licenseDetails-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/outlook/tasks/{outlookTask-id}/attachments/{attachment-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/registeredDevices": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/settings/shiftPreferences": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}/taskFolders/{outlookTaskFolder-id}/singleValueExtendedProperties": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/outlook/tasks/{outlookTask-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}/taskFolders/{outlookTaskFolder-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/outlook/taskFolders/{outlookTaskFolder-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/outlook/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/photos": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}/taskFolders/{outlookTaskFolder-id}/tasks": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}/taskFolders/{outlookTaskFolder-id}/multiValueExtendedProperties": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/settings/regionalAndLanguageSettings": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
     },
     "/users/{user-id}/createdObjects/$ref": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
     },
-    "/users/{user-id}/photo": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
+    "/users/{user-id}/directReports": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
     },
     "/users/{user-id}/directReports/$ref": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
     },
-    "/users/{user-id}/outlook/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}/singleValueExtendedProperties": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
+    "/users/{user-id}/extensions": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
     },
-    "/users/{user-id}/outlook/taskFolders/{outlookTaskFolder-id}/singleValueExtendedProperties": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}/taskFolders/{outlookTaskFolder-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/ownedDevices": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/manager/$ref": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
+    "/users/{user-id}/extensions/{extension-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
     },
     "/users/{user-id}/licenseDetails": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
     },
-    "/users/{user-id}/outlook/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
+    "/users/{user-id}/licenseDetails/{licenseDetails-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
     },
-    "/users/{user-id}/outlook/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}/attachments/{attachment-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
+    "/users/{user-id}/manager": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
     },
-    "/users/{user-id}/outlook/taskGroups": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}/singleValueExtendedProperties": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/outlook/tasks/{outlookTask-id}/multiValueExtendedProperties": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}/attachments/{attachment-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/transitiveMemberOf": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}/taskFolders": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}/taskFolders/{outlookTaskFolder-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/outlook/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/registeredDevices/$ref": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/outlook/tasks/{outlookTask-id}/attachments": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
+    "/users/{user-id}/manager/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
     },
     "/users/{user-id}/memberOf": {
-      "originalLocation": "/openApiDocs/beta/Users.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/memberOf/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/notifications": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/notifications/{notification-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/outlook": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/outlook/masterCategories": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/outlook/masterCategories/{outlookCategory-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/outlook/taskFolders": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/outlook/taskFolders/{outlookTaskFolder-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/outlook/taskFolders/{outlookTaskFolder-id}/multiValueExtendedProperties": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/outlook/taskFolders/{outlookTaskFolder-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/outlook/taskFolders/{outlookTaskFolder-id}/singleValueExtendedProperties": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/outlook/taskFolders/{outlookTaskFolder-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/outlook/taskFolders/{outlookTaskFolder-id}/tasks": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/outlook/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/outlook/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}/attachments": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/outlook/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}/attachments/{attachment-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/outlook/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}/multiValueExtendedProperties": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/outlook/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/outlook/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}/singleValueExtendedProperties": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/outlook/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/outlook/taskGroups": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}/taskFolders": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}/taskFolders/{outlookTaskFolder-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}/taskFolders/{outlookTaskFolder-id}/multiValueExtendedProperties": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}/taskFolders/{outlookTaskFolder-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}/taskFolders/{outlookTaskFolder-id}/singleValueExtendedProperties": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}/taskFolders/{outlookTaskFolder-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}/taskFolders/{outlookTaskFolder-id}/tasks": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}/attachments": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}/attachments/{attachment-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}/multiValueExtendedProperties": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}/singleValueExtendedProperties": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/outlook/tasks": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/outlook/tasks/{outlookTask-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/outlook/tasks/{outlookTask-id}/attachments": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/outlook/tasks/{outlookTask-id}/attachments/{attachment-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/outlook/tasks/{outlookTask-id}/multiValueExtendedProperties": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/outlook/tasks/{outlookTask-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/outlook/tasks/{outlookTask-id}/singleValueExtendedProperties": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/outlook/tasks/{outlookTask-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/ownedDevices": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/ownedDevices/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/ownedObjects": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/ownedObjects/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/photo": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/photo/$value": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/photos": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/photos/{profilePhoto-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/photos/{profilePhoto-id}/$value": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/registeredDevices": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/registeredDevices/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/settings": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/settings/regionalAndLanguageSettings": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/settings/shiftPreferences": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/todo": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/todo/lists": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/todo/lists/{todoTaskList-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/todo/lists/{todoTaskList-id}/extensions": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/todo/lists/{todoTaskList-id}/extensions/{extension-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/todo/lists/{todoTaskList-id}/tasks": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/todo/lists/{todoTaskList-id}/tasks/{todoTask-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/todo/lists/{todoTaskList-id}/tasks/{todoTask-id}/extensions": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/todo/lists/{todoTaskList-id}/tasks/{todoTask-id}/extensions/{extension-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/todo/lists/{todoTaskList-id}/tasks/{todoTask-id}/linkedResources": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/todo/lists/{todoTaskList-id}/tasks/{todoTask-id}/linkedResources/{linkedResource-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/transitiveMemberOf": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/transitiveMemberOf/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
     }
   },
   "resources": []

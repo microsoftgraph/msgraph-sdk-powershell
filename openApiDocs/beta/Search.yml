@@ -423,11 +423,9 @@ components:
               $ref: '#/components/schemas/microsoft.graph.configuration'
             description:
               type: string
-              description: Description of the connection displayed in the Microsoft 365 admin center. Optional.
               nullable: true
             name:
               type: string
-              description: The display name of the connection to be displayed in the Microsoft 365 admin center. Maximum length of 128 characters. Required.
               nullable: true
             state:
               $ref: '#/components/schemas/microsoft.graph.connectionState'
@@ -439,12 +437,10 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.externalItem'
-              description: Read-only. Nullable.
             operations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.connectionOperation'
-              description: Read-only. Nullable.
             schema:
               $ref: '#/components/schemas/microsoft.graph.schema'
           additionalProperties:
@@ -465,38 +461,31 @@ components:
           items:
             type: string
             nullable: true
-          description: 'Contains one or more filters to obtain search results aggregated and filtered to a specific value of a field. Optional.Build this filter based on a prior search that aggregates by the same field. From the response of the prior search, identify the searchBucket that filters results to the specific value of the field, use the string in its aggregationFilterToken property, and build an aggregation filter string in the format ''{field}:/''{aggregationFilterToken}/''''. For example, searching and aggregating drive items by file type returns a searchBucket for the file type docx in the response. You can conveniently use the aggregationFilterToken returned for this searchBucket in a subsequent search query and filter matches down to drive items of the docx file type. Example 1 and example 2 show the actual requests and responses.'
         aggregations:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.aggregationOption'
-          description: Specifies aggregations (also known as refiners) to be returned alongside search results. Optional.
         contentSources:
           type: array
           items:
             type: string
             nullable: true
-          description: 'Contains the connection to be targeted. Respects the following format : /external/connections/connectionid where connectionid is the ConnectionId defined in the Connectors Administration.  Note : contentSource is only applicable when entityType=externalItem. Optional.'
         enableTopResults:
           type: boolean
-          description: 'This triggers hybrid sort for messages : the first 3 messages are the most relevant. This property is only applicable to entityType=message. Optional.'
           nullable: true
         entityTypes:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.entityType'
-          description: 'One or more types of resources expected in the response. Possible values are: list, site, listItem, message, event, drive, driveItem, externalItem. See known limitations for those combinations of two or more entity types that are supported in the same search request. Required.'
         fields:
           type: array
           items:
             type: string
             nullable: true
-          description: 'Contains the fields to be returned for each resource object specified in entityTypes, allowing customization of the fields returned by default otherwise, including additional fields such as custom managed properties from SharePoint and OneDrive, or custom fields in externalItem from content ingested by Graph connectors. Optional.'
         from:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: Specifies the offset for the search results. Offset 0 returns the very first result. Optional.
           format: int32
         query:
           $ref: '#/components/schemas/microsoft.graph.searchQuery'
@@ -504,13 +493,11 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: The size of the page to be retrieved. Optional.
           format: int32
         sortProperties:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.sortProperty'
-          description: Contains the ordered collection of fields and direction to sort results. There can be at most 5 sort properties in the collection. Optional.
         stored_fields:
           type: array
           items:
@@ -553,7 +540,6 @@ components:
           items:
             type: string
             nullable: true
-          description: A collection of application IDs for registered Azure Active Directory apps that are allowed to manage the externalConnection and to index content in the externalConnection.
       additionalProperties:
         type: object
     microsoft.graph.connectionState:
@@ -573,17 +559,14 @@ components:
           properties:
             description:
               type: string
-              description: The description of the external group. Optional.
               nullable: true
             displayName:
               type: string
-              description: The friendly name of the external group. Optional.
               nullable: true
             members:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.externalGroupMember'
-              description: 'A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or other externalGroups as members.'
           additionalProperties:
             type: object
     microsoft.graph.externalItem:
@@ -596,7 +579,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.acl'
-              description: An array of access control entries. Each entry specifies the access granted to a user or group. Required.
             content:
               $ref: '#/components/schemas/microsoft.graph.externalItemContent'
             properties:
@@ -623,12 +605,10 @@ components:
           properties:
             baseType:
               type: string
-              description: Must be set to microsoft.graph.externalItem. Required.
             properties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.property'
-              description: 'The properties defined for the items in the connection. The minimum number of properties is one, the maximum is 128.'
           additionalProperties:
             type: object
     microsoft.graph.aggregationOption:
@@ -639,12 +619,10 @@ components:
           $ref: '#/components/schemas/microsoft.graph.bucketAggregationDefinition'
         field:
           type: string
-          description: Specifies the field in the schema of the specified entity type that aggregation should be computed on. Required.
         size:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: The number of searchBucket resources to be returned. This is not required when the range is provided manually in the search request. Optional.
           format: int32
           nullable: true
       additionalProperties:
@@ -680,11 +658,9 @@ components:
       properties:
         isDescending:
           type: boolean
-          description: 'True if the sort order is descending. Default is false, with the sort order as ascending. Optional.'
           nullable: true
         name:
           type: string
-          description: The name of the property to sort on. Required.
       additionalProperties:
         type: object
     microsoft.graph.searchHitsContainer:
@@ -695,7 +671,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.searchAggregation'
-          description: Contains the collection of aggregations computed based on the provided aggregationOption specified in the request.
         hits:
           type: array
           items:
@@ -743,12 +718,10 @@ components:
           $ref: '#/components/schemas/microsoft.graph.accessType'
         identitySource:
           type: string
-          description: The source of identity. Possible values are azureActiveDirectory or external.
         type:
           $ref: '#/components/schemas/microsoft.graph.aclType'
         value:
           type: string
-          description: 'The unique identifer of the identity. In case of Azure Active Directory identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. In case of external groups value is set to the ID of the externalGroup.'
       additionalProperties:
         type: object
     microsoft.graph.externalItemContent:
@@ -759,7 +732,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.externalItemContentType'
         value:
           type: string
-          description: The content for the externalItem. Required.
           nullable: true
       additionalProperties:
         type: object
@@ -776,14 +748,11 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.innerErrorDetail'
-          description: 'A collection of inner errors, if any. Read-only, nullable.'
         errorCode:
           type: string
-          description: 'The error code associated with the error, if any. Read-only, nullable.'
           nullable: true
         message:
           type: string
-          description: The human-readable error message. Read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -804,34 +773,27 @@ components:
           items:
             type: string
             nullable: true
-          description: 'A set of aliases or a friendly names for the property. Maximum 32 characters. Each string must not contain control characters, whitespace, or any of the following: :, ;, ,, (, ), [, ], {, }, %, $, +, !, *, =, &, ?, @, #, /, ~, '', '', <, >, `'
         isContent:
           type: boolean
           nullable: true
         isQueryable:
           type: boolean
-          description: Specifies if the property is queryable. Queryable properties can be used in Keyword Query Language (KQL) queries. Optional.
           nullable: true
         isRefinable:
           type: boolean
-          description: Specifies if the property is refinable.  Refinable properties can be used to filter search results in the Search API and add a refiner control in the Microsoft Search user experience. Optional.
           nullable: true
         isRetrievable:
           type: boolean
-          description: Specifies if the property is retrievable. Retrievable properties are returned in the result set when items are returned by the search API. Retrievable properties are also available to add to the display template used to render search results. Optional.
           nullable: true
         isSearchable:
           type: boolean
-          description: Specifies if the property is searchable. Only properties of type String or StringCollection can be searchable. Non-searchable properties are not added to the search index. Optional.
           nullable: true
         labels:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.label'
-          description: 'Specifies one or more well-known tags added against a property. Labels help Microsoft Search understand the semantics of the data in the connection. Adding appropriate labels would result in an enhanced search experience (e.g. better relevance). Supported labels: title, url, createdBy, lastModifiedBy, authors, createdDateTime, lastModifiedDateTime, fileName and fileExtension. Optional.'
         name:
           type: string
-          description: 'The name of the property. Maximum 32 characters. Must not contain control characters, whitespace, or any of the following: :, ;, ,, (, ), [, ], {, }, %, $, +, !, *, =, &, ?, @, #, /, ~, '', '', <, >, `'
         type:
           $ref: '#/components/schemas/microsoft.graph.propertyType'
       additionalProperties:
@@ -842,24 +804,20 @@ components:
       properties:
         isDescending:
           type: boolean
-          description: 'True to specify the sort order as descending. The default is false, with the sort order as ascending. Optional.'
           nullable: true
         minimumCount:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: The minimum number of items that should be present in the aggregation to be returned in a bucket. Optional.
           format: int32
           nullable: true
         prefixFilter:
           type: string
-          description: A filter to define a matching criteria. The key should start with the specified prefix to be returned in the response. Optional.
           nullable: true
         ranges:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.bucketAggregationRange'
-          description: Specifies the manual ranges to compute the aggregations. This is only valid for non-string refiners of date or numeric type. Optional.
         sortBy:
           $ref: '#/components/schemas/microsoft.graph.bucketAggregationSortProperty'
       additionalProperties:
@@ -870,7 +828,6 @@ components:
       properties:
         query:
           type: string
-          description: Contains the actual search terms of the request.
       additionalProperties:
         type: object
     microsoft.graph.searchAggregation:
@@ -881,10 +838,8 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.searchBucket'
-          description: Defines the actual buckets of the computed aggregation.
         field:
           type: string
-          description: Defines on which field the aggregation was computed on.
           nullable: true
       additionalProperties:
         type: object
@@ -991,11 +946,9 @@ components:
       properties:
         message:
           type: string
-          description: The human-readable error message. Read-only.
           nullable: true
         source:
           type: string
-          description: The source of the error. Read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -1031,10 +984,8 @@ components:
       properties:
         from:
           type: string
-          description: Defines the lower bound from which to compute the aggregation. This can be a numeric value or a string representation of a date using the YYYY-MM-DDTHH:mm:ss.sssZ format. Required.
         to:
           type: string
-          description: Defines the upper bound up to which to compute the aggregation. This can be a numeric value or a string representation of a date using the YYYY-MM-DDTHH:mm:ss.sssZ format. Required.
       additionalProperties:
         type: object
     microsoft.graph.bucketAggregationSortProperty:
@@ -1050,18 +1001,15 @@ components:
       properties:
         aggregationFilterToken:
           type: string
-          description: 'A token containing the encoded filter to aggregate search matches by the specific key value. To use the filter, pass the token as part of the aggregationFilter property in a searchRequest object, in the format ''{field}:/''{aggregationFilterToken}/''''. See an example.'
           nullable: true
         count:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: The approximate number of search matches that share the same value specified in the key property. Note that this number is not the exact number of matches.
           format: int32
           nullable: true
         key:
           type: string
-          description: The discrete value of the field that an aggregation was computed on.
           nullable: true
       additionalProperties:
         type: object

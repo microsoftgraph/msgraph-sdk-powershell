@@ -1,32 +1,32 @@
 {
   "operations": {
-    "/Security/secureScoreControlProfiles/{secureScoreControlProfile-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Security.yml",
-      "apiVersion": "v1.0"
+    "/security": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Security.yml"
     },
-    "/Security/secureScoreControlProfiles": {
-      "originalLocation": "/openApiDocs/v1.0/Security.yml",
-      "apiVersion": "v1.0"
+    "/security/alerts": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Security.yml"
     },
-    "/Security": {
-      "originalLocation": "/openApiDocs/v1.0/Security.yml",
-      "apiVersion": "v1.0"
+    "/security/alerts/{alert-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Security.yml"
     },
-    "/Security/alerts": {
-      "originalLocation": "/openApiDocs/v1.0/Security.yml",
-      "apiVersion": "v1.0"
+    "/security/secureScoreControlProfiles": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Security.yml"
     },
-    "/Security/secureScores/{secureScore-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Security.yml",
-      "apiVersion": "v1.0"
+    "/security/secureScoreControlProfiles/{secureScoreControlProfile-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Security.yml"
     },
-    "/Security/alerts/{alert-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Security.yml",
-      "apiVersion": "v1.0"
+    "/security/secureScores": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Security.yml"
     },
-    "/Security/secureScores": {
-      "originalLocation": "/openApiDocs/v1.0/Security.yml",
-      "apiVersion": "v1.0"
+    "/security/secureScores/{secureScore-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Security.yml"
     }
   },
   "resources": []

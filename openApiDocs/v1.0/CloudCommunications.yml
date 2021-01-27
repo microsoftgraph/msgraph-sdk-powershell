@@ -3230,7 +3230,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.callRecords.callType'
             version:
               type: integer
-              description: Monotonically increasing version of the call record. Higher version call records with the same id includes additional data compared to the lower version.
+              description: Monotonically increasing version of the call record. Higher version call records with the same ID includes additional data compared to the lower version.
               format: int64
             sessions:
               type: array
@@ -3443,7 +3443,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.identitySet'
         replacesCallId:
           type: string
-          description: Optional. The call which the target identity is currently a part of. This call will be dropped once the participant is added.
+          description: Optional. The call which the target idenity is currently a part of. This call will be dropped once the participant is added.
           nullable: true
       additionalProperties:
         type: object
@@ -3593,7 +3593,7 @@ components:
           properties:
             activity:
               type: string
-              description: 'The supplemental information to a user''s availability. Possible values are Available, Away, BeRightBack,Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive,InAMeeting, Offline, OffWork,OutOfOffice, PresenceUnknown,Presenting, UrgentInterruptionsOnly.'
+              description: 'The supplemental information to a user''s availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive,InAMeeting, Offline, OffWork,OutOfOffice, PresenceUnknown,Presenting, UrgentInterruptionsOnly.'
               nullable: true
             availability:
               type: string
@@ -3627,6 +3627,7 @@ components:
               nullable: true
             externalId:
               type: string
+              description: The external ID. A custom ID. Optional.
               nullable: true
             isEntryExitAnnounced:
               type: boolean
@@ -3664,7 +3665,7 @@ components:
       properties:
         messageId:
           type: string
-          description: The unique identifier of a message in a Microsoft Teams channel.
+          description: The unique identifier for a message in a Microsoft Teams channel.
           nullable: true
         replyChainMessageId:
           type: string
@@ -3799,13 +3800,13 @@ components:
       properties:
         observedParticipantId:
           type: string
-          description: The ID of the participant that is under observation. Read-only.
+          description: The id of the participant that is under observation. Read-only.
           nullable: true
         onBehalfOf:
           $ref: '#/components/schemas/microsoft.graph.identitySet'
         sourceParticipantId:
           type: string
-          description: The ID of the participant that triggered the incoming call. Read-only.
+          description: The id of the participant that triggered the incoming call. Read-only.
           nullable: true
         transferor:
           $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -3864,7 +3865,7 @@ components:
           nullable: true
         region:
           type: string
-          description: 'The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant''s current physical location. Read-only.'
+          description: 'The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant''s current physical location, unlike countryCode. Read-only.'
           nullable: true
       additionalProperties:
         type: object
@@ -3930,7 +3931,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.modality'
         serverMuted:
           type: boolean
-          description: If the media is muted by the server.
+          description: Indicates whether the media is muted by the server.
         sourceId:
           type: string
           description: The source ID.

@@ -1,14 +1,26 @@
 {
-    "authors": "Microsoft",
-    "owners": "Microsoft",
-    "description": "Microsoft Graph PowerShell module",
-    "requireLicenseAcceptance": "true",
-    "copyright": "© Microsoft Corporation. All rights reserved.",
-    "licenseUri": "https://aka.ms/devservicesagreement",
-    "projectUri": "https://github.com/microsoftgraph/msgraph-sdk-powershell",
-    "iconUri": "https://raw.githubusercontent.com/microsoftgraph/msgraph-sdk-powershell/master/documentation/images/graph_color256.png",
-    "tags": ["MicrosoftGraph", "Microsoft", "Office365", "Graph", "PowerShell", "Outlook", "OneDrive", "AzureAD", "SharePoint", "Intune", "AzureAutomationNotSupported"],
-    "releaseNotes": "See https://aka.ms/GraphPowerShell-Release.",
-    "assemblyOriginatorKeyFile": "35MSSharedLib1024.snk",
-    "version": "1.2.0"
+  "authors": "Microsoft",
+  "owners": "Microsoft",
+  "description": "Microsoft Graph PowerShell module",
+  "requireLicenseAcceptance": "true",
+  "copyright": "© Microsoft Corporation. All rights reserved.",
+  "licenseUri": "https://aka.ms/devservicesagreement",
+  "projectUri": "https://github.com/microsoftgraph/msgraph-sdk-powershell",
+  "iconUri": "https://raw.githubusercontent.com/microsoftgraph/msgraph-sdk-powershell/master/documentation/images/graph_color256.png",
+  "tags": [
+    "MicrosoftGraph",
+    "Microsoft",
+    "Office365",
+    "Graph",
+    "PowerShell",
+    "Outlook",
+    "OneDrive",
+    "AzureAD",
+    "SharePoint",
+    "Intune",
+    "AzureAutomationNotSupported"
+  ],
+  "releaseNotes": "See https://aka.ms/GraphPowerShell-Release.",
+  "assemblyOriginatorKeyFile": "35MSSharedLib1024.snk",
+  "version": "1.3.0"
 }
