@@ -46384,19 +46384,18 @@ components:
               description: 'Represent the online meeting service providers that can be used to create online meetings in this calendar. Possible values are: unknown, skypeForBusiness, skypeForConsumer, teamsForBusiness.'
             calendarGroupId:
               type: string
-              description: 'The calendarGroup in which to create the calendar. If the user has never explicitly set a group for the calendar, this property is  null.'
               nullable: true
             canEdit:
               type: boolean
-              description: 'True if the user can write to the calendar, false otherwise. This property is true for the user who created the calendar. This property is also true for a user who has been shared a calendar and granted write access, through an Outlook client or the corresponding calendarPermission resource. Read-only.'
+              description: 'True if the user can write to the calendar, false otherwise. This property is true for the user who created the calendar. This property is also true for a user who has been shared a calendar and granted write access.'
               nullable: true
             canShare:
               type: boolean
-              description: 'True if the user has the permission to share the calendar, false otherwise. Only the user who created the calendar can share it. Read-only.'
+              description: 'True if the user has the permission to share the calendar, false otherwise. Only the user who created the calendar can share it.'
               nullable: true
             canViewPrivateItems:
               type: boolean
-              description: 'True if the user can read calendar items that have been marked private, false otherwise. This property is set through an Outlook client or the corresponding calendarPermission resource. Read-only.'
+              description: 'True if the user can read calendar items that have been marked private, false otherwise.'
               nullable: true
             changeKey:
               type: string
@@ -46408,11 +46407,9 @@ components:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingProviderType'
             hexColor:
               type: string
-              description: 'The calendar color, expressed in a hex color code of three hexidecimal values, each ranging from 00 to FF and representing the red, green, or blue components of the color in the RGB color space. If the user has never explicitly set a color for the calendar, this property is  empty.'
               nullable: true
             isDefaultCalendar:
               type: boolean
-              description: 'True if this is the default calendar where new events are created by default, false otherwise.'
               nullable: true
             isRemovable:
               type: boolean
@@ -46420,11 +46417,9 @@ components:
               nullable: true
             isShared:
               type: boolean
-              description: 'True if the user has shared the calendar with other users, false otherwise. Since only the user who created the calendar can share it, isShared and isSharedWithMe cannot be true for the same user. This property is set when sharing is initiated in an Outlook client, and can be reset when the sharing is cancelled through the client or the corresponding calendarPermission resource. Read-only.'
               nullable: true
             isSharedWithMe:
               type: boolean
-              description: 'True if the user has been shared this calendar, false otherwise. This property is always false for a calendar owner. This property is set when sharing is initiated in an Outlook client, and can be reset when the sharing is cancelled through the client or the corresponding calendarPermission resource. Read-only.'
               nullable: true
             isTallyingResponses:
               type: boolean
@@ -46514,7 +46509,6 @@ components:
               items:
                 type: string
                 nullable: true
-              description: 'Contains occurrenceId property values of cancelled instances in a recurring series, if the event is the series master. Instances in a recurring series that are cancelled are called cancelledOccurences.Returned only on $select in a Get operation which specifies the id of a series master event (that is, the seriesMasterId property value).'
             end:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
             hasAttachments:
@@ -46523,7 +46517,6 @@ components:
               nullable: true
             hideAttendees:
               type: boolean
-              description: 'When set to true, each attendee only sees themselves in the meeting request and meeting Tracking list. Default is false.'
               nullable: true
             importance:
               $ref: '#/components/schemas/microsoft.graph.importance'
@@ -46537,7 +46530,6 @@ components:
               nullable: true
             isDraft:
               type: boolean
-              description: 'Set to true if the user has updated the meeting in Outlook but has not sent the updates to attendees. Set to false if all changes have been sent, or if the event is an appointment without any attendees.'
               nullable: true
             isOnlineMeeting:
               type: boolean
@@ -46631,7 +46623,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.attachment'
-              description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
+              description: The collection of fileAttachment and itemAttachment attachments for the event. Navigation property. Read-only. Nullable.
             calendar:
               $ref: '#/components/schemas/microsoft.graph.calendar'
             exceptionOccurrences:
@@ -46642,12 +46634,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
-              description: The collection of open extensions defined for the event. Nullable.
+              description: The collection of open extensions defined for the event. Read-only. Nullable.
             instances:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.event'
-              description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
+              description: The instances of the event. Navigation property. Read-only. Nullable.
             multiValueExtendedProperties:
               type: array
               items:
@@ -46681,7 +46673,7 @@ components:
               nullable: true
             name:
               type: string
-              description: The display name of the attachment. This does not need to be the actual file name.
+              description: The attachment's file name.
               nullable: true
             size:
               maximum: 2147483647
@@ -46808,11 +46800,11 @@ components:
       properties:
         address:
           type: string
-          description: The email address of an entity instance.
+          description: The email address of the person or entity.
           nullable: true
         name:
           type: string
-          description: The display name of an entity instance.
+          description: The display name of the person or entity.
           nullable: true
       additionalProperties:
         type: object
@@ -46888,10 +46880,10 @@ components:
       properties:
         dateTime:
           type: string
-          description: 'A single point of time in a combined date and time representation ({date}T{time}). For example, ''2019-04-16T09:00:00''.'
+          description: 'A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).'
         timeZone:
           type: string
-          description: 'Represents a time zone, for example, ''Pacific Standard Time''. See below for possible values.'
+          description: 'Represents a time zone, for example, ''Pacific Standard Time''. See below for more possible values.'
           nullable: true
       additionalProperties:
         type: object
@@ -47041,7 +47033,6 @@ components:
           nullable: true
         postOfficeBox:
           type: string
-          description: The post office box number.
           nullable: true
         state:
           type: string
@@ -47170,7 +47161,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.dayOfWeek'
-          description: 'A collection of the days of the week on which the event occurs. Possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. If type is relativeMonthly or relativeYearly, and daysOfWeek specifies more than one day, the event falls on the first day that satisfies the pattern.  Required if type is weekly, relativeMonthly, or relativeYearly.'
+          description: 'A collection of the days of the week on which the event occurs. The possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. If type is relativeMonthly or relativeYearly, and daysOfWeek specifies more than one day, the event falls on the first day that satisfies the pattern.  Required if type is weekly, relativeMonthly, or relativeYearly.'
         firstDayOfWeek:
           $ref: '#/components/schemas/microsoft.graph.dayOfWeek'
         index:

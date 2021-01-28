@@ -1,28 +1,28 @@
 {
   "operations": {
-    "/users/{user-id}/activities/{userActivity-id}/historyItems/{activityHistoryItem-id}/activity/$ref": {
-      "originalLocation": "/openApiDocs/v1.0/CrossDeviceExperiences.yml",
-      "apiVersion": "v1.0"
-    },
-    "/users/{user-id}/activities/{userActivity-id}/historyItems": {
-      "originalLocation": "/openApiDocs/v1.0/CrossDeviceExperiences.yml",
-      "apiVersion": "v1.0"
+    "/users/{user-id}/activities": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/CrossDeviceExperiences.yml"
     },
     "/users/{user-id}/activities/{userActivity-id}": {
-      "originalLocation": "/openApiDocs/v1.0/CrossDeviceExperiences.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/CrossDeviceExperiences.yml"
     },
-    "/users/{user-id}/activities/{userActivity-id}/historyItems/{activityHistoryItem-id}/activity": {
-      "originalLocation": "/openApiDocs/v1.0/CrossDeviceExperiences.yml",
-      "apiVersion": "v1.0"
-    },
-    "/users/{user-id}/activities": {
-      "originalLocation": "/openApiDocs/v1.0/CrossDeviceExperiences.yml",
-      "apiVersion": "v1.0"
+    "/users/{user-id}/activities/{userActivity-id}/historyItems": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/CrossDeviceExperiences.yml"
     },
     "/users/{user-id}/activities/{userActivity-id}/historyItems/{activityHistoryItem-id}": {
-      "originalLocation": "/openApiDocs/v1.0/CrossDeviceExperiences.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/CrossDeviceExperiences.yml"
+    },
+    "/users/{user-id}/activities/{userActivity-id}/historyItems/{activityHistoryItem-id}/activity": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/CrossDeviceExperiences.yml"
+    },
+    "/users/{user-id}/activities/{userActivity-id}/historyItems/{activityHistoryItem-id}/activity/$ref": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/CrossDeviceExperiences.yml"
     }
   },
   "resources": []

@@ -1,576 +1,604 @@
 {
   "operations": {
-    "/devices/microsoft.graph.getByIds": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/organization/{organization-id}/extensions/{extension-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/contacts/microsoft.graph.delta()": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/directoryRoleTemplates/{directoryRoleTemplate-id}/microsoft.graph.getMemberObjects": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/settings": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/directorySettingTemplates/{directorySettingTemplate-id}/microsoft.graph.getMemberObjects": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/directoryRoles/microsoft.graph.validateProperties": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/contracts": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/domains/{domain-id}/microsoft.graph.verify": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/contacts/{orgContact-id}/manager": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/domains/{domain-id}/domainNameReferences": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/devices/{device-id}/commands": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/directory/deletedItems": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/scopedRoleMemberOf": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/devices/{device-id}/registeredUsers": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/organization/{organization-id}/brandings/{organizationalBranding-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/devices/microsoft.graph.getUserOwnedObjects": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/administrativeUnits/{administrativeUnit-id}/members": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/contracts/microsoft.graph.getUserOwnedObjects": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/administrativeUnits/{administrativeUnit-id}/microsoft.graph.getMemberGroups": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/administrativeUnits/microsoft.graph.validateProperties": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/directoryRoles/microsoft.graph.delta()": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/domains/{domain-id}/serviceConfigurationRecords/{domainDnsRecord-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/contracts/{contract-id}/microsoft.graph.restore": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/domains/{domain-id}/serviceConfigurationRecords": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/directoryRoleTemplates": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/directoryRoles/{directoryRole-id}/members/$ref": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/devices/{device-id}/commands/{command-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/devices": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/directoryRoles/{directoryRole-id}/microsoft.graph.restore": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/administrativeUnits/{administrativeUnit-id}/microsoft.graph.checkMemberGroups": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/contacts/{orgContact-id}/microsoft.graph.checkMemberObjects": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/devices/{device-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/directory/featureRolloutPolicies": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/contracts/microsoft.graph.validateProperties": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/contacts/{orgContact-id}/microsoft.graph.checkMemberGroups": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/organization/microsoft.graph.validateProperties": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/devices/microsoft.graph.validateProperties": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/directory/administrativeUnits": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/directoryRoles/{directoryRole-id}/microsoft.graph.getMemberObjects": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/directoryRoles/microsoft.graph.getByIds": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/contacts/microsoft.graph.getByIds": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/directoryRoleTemplates/{directoryRoleTemplate-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/devices/{device-id}/microsoft.graph.checkMemberGroups": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/devices/{device-id}/transitiveMemberOf/$ref": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/directory/featureRolloutPolicies/{featureRolloutPolicy-id}/appliesTo/{directoryObject-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/contacts/{orgContact-id}/memberOf": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/domains/{domain-id}/microsoft.graph.forceDelete": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/directoryRoles/{directoryRole-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/organization/{organization-id}/microsoft.graph.checkMemberGroups": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/directoryRoles/microsoft.graph.getUserOwnedObjects": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/directoryRoles/{directoryRole-id}/microsoft.graph.getMemberGroups": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/directoryRoleTemplates/microsoft.graph.validateProperties": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/contracts/{contract-id}/microsoft.graph.checkMemberGroups": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/contacts/{orgContact-id}/memberOf/$ref": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/directoryRoleTemplates/microsoft.graph.getUserOwnedObjects": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/administrativeUnits/{administrativeUnit-id}/extensions/{extension-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/devices/{device-id}/extensions": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/directory/deletedItems/{directoryObject-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/directoryRoleTemplates/{directoryRoleTemplate-id}/microsoft.graph.getMemberGroups": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/organization/{organization-id}/microsoft.graph.getMemberGroups": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/devices/{device-id}/microsoft.graph.restore": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/administrativeUnits/microsoft.graph.getByIds": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/contacts/{orgContact-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/directoryRoles/{directoryRole-id}/members": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/directoryRoleTemplates/microsoft.graph.getByIds": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/devices/{device-id}/memberOf": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/administrativeUnits/{administrativeUnit-id}/microsoft.graph.checkMemberObjects": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/domains/{domain-id}/domainNameReferences/$ref": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/directoryRoles/{directoryRole-id}/microsoft.graph.checkMemberGroups": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/directoryRoleTemplates/{directoryRoleTemplate-id}/microsoft.graph.checkMemberGroups": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/organization/{organization-id}/microsoft.graph.restore": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/directorySettingTemplates/{directorySettingTemplate-id}/microsoft.graph.checkMemberGroups": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/contacts/microsoft.graph.validateProperties": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/directorySettingTemplates/microsoft.graph.getByIds": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/directorySettingTemplates": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/directorySettingTemplates/{directorySettingTemplate-id}/microsoft.graph.restore": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/organization/microsoft.graph.getUserOwnedObjects": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/contacts/{orgContact-id}/transitiveMemberOf": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/scopedRoleMemberOf/{scopedRoleMembership-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/settings/{directorySetting-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/administrativeUnits/{administrativeUnit-id}/microsoft.graph.getMemberObjects": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/contacts": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/organization/{organization-id}/brandings": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/contracts/microsoft.graph.getByIds": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/domains/{domain-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/organization/{organization-id}/microsoft.graph.setMobileDeviceManagementAuthority": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/contacts/{orgContact-id}/microsoft.graph.restore": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/contracts/{contract-id}/microsoft.graph.checkMemberObjects": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/devices/{device-id}/microsoft.graph.checkMemberObjects": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/contacts/{orgContact-id}/microsoft.graph.getMemberObjects": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/devices/{device-id}/transitiveMemberOf": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/directoryRoles": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/devices/{device-id}/registeredOwners": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/domains/{domain-id}/verificationDnsRecords": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/directory/featureRolloutPolicies/{featureRolloutPolicy-id}/appliesTo": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/administrativeUnits/{administrativeUnit-id}/scopedRoleMembers/{scopedRoleMembership-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/organization/{organization-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/contracts/{contract-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/directoryRoles/{directoryRole-id}/microsoft.graph.checkMemberObjects": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/contacts/{orgContact-id}/transitiveMemberOf/$ref": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/organization": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/devices/{device-id}/microsoft.graph.getMemberGroups": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/organization/{organization-id}/microsoft.graph.getMemberObjects": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/contacts/{orgContact-id}/directReports": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/domains/{domain-id}/verificationDnsRecords/{domainDnsRecord-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/organization/{organization-id}/microsoft.graph.checkMemberObjects": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/domains": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/directoryRoleTemplates/{directoryRoleTemplate-id}/microsoft.graph.restore": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/contacts/{orgContact-id}/directReports/$ref": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/directory/featureRolloutPolicies/{featureRolloutPolicy-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/devices/{device-id}/registeredUsers/$ref": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/devices/{device-id}/registeredOwners/$ref": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/administrativeUnits/{administrativeUnit-id}/scopedRoleMembers": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
     "/administrativeUnits": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/contacts/{orgContact-id}/manager/$ref": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/devices/{device-id}/memberOf/$ref": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/contracts/{contract-id}/microsoft.graph.getMemberGroups": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/administrativeUnits/{administrativeUnit-id}/extensions": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/directory/administrativeUnits/{administrativeUnit-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/subscribedSkus/{subscribedSku-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/directoryRoles/{directoryRole-id}/scopedMembers": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/administrativeUnits/{administrativeUnit-id}/members/$ref": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/administrativeUnits/{administrativeUnit-id}/microsoft.graph.restore": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/organization/{organization-id}/extensions": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/directorySettingTemplates/{directorySettingTemplate-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/contacts/microsoft.graph.getUserOwnedObjects": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/directoryRoles/{directoryRole-id}/scopedMembers/{scopedRoleMembership-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/devices/{device-id}/extensions/{extension-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/directorySettingTemplates/{directorySettingTemplate-id}/microsoft.graph.checkMemberObjects": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/contracts/{contract-id}/microsoft.graph.getMemberObjects": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
     },
     "/administrativeUnits/{administrativeUnit-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
     },
-    "/subscribedSkus": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
+    "/administrativeUnits/{administrativeUnit-id}/extensions": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
     },
-    "/administrativeUnits/microsoft.graph.getUserOwnedObjects": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
+    "/administrativeUnits/{administrativeUnit-id}/extensions/{extension-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
     },
-    "/directory": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
+    "/administrativeUnits/{administrativeUnit-id}/members": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
     },
-    "/organization/microsoft.graph.getByIds": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
+    "/administrativeUnits/{administrativeUnit-id}/members/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
     },
-    "/devices/{device-id}/microsoft.graph.getMemberObjects": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
+    "/administrativeUnits/{administrativeUnit-id}/microsoft.graph.checkMemberGroups": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
     },
-    "/directoryRoleTemplates/{directoryRoleTemplate-id}/microsoft.graph.checkMemberObjects": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
+    "/administrativeUnits/{administrativeUnit-id}/microsoft.graph.checkMemberObjects": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
     },
-    "/directorySettingTemplates/{directorySettingTemplate-id}/microsoft.graph.getMemberGroups": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
+    "/administrativeUnits/{administrativeUnit-id}/microsoft.graph.getMemberGroups": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
     },
-    "/directorySettingTemplates/microsoft.graph.validateProperties": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
+    "/administrativeUnits/{administrativeUnit-id}/microsoft.graph.getMemberObjects": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/administrativeUnits/{administrativeUnit-id}/microsoft.graph.restore": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/administrativeUnits/{administrativeUnit-id}/scopedRoleMembers": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/administrativeUnits/{administrativeUnit-id}/scopedRoleMembers/{scopedRoleMembership-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
     },
     "/administrativeUnits/microsoft.graph.delta()": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
     },
-    "/directorySettingTemplates/microsoft.graph.getUserOwnedObjects": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
+    "/administrativeUnits/microsoft.graph.getByIds": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/administrativeUnits/microsoft.graph.getUserOwnedObjects": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/administrativeUnits/microsoft.graph.validateProperties": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/contacts": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/contacts/{orgContact-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/contacts/{orgContact-id}/directReports": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/contacts/{orgContact-id}/directReports/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/contacts/{orgContact-id}/manager": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/contacts/{orgContact-id}/manager/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/contacts/{orgContact-id}/memberOf": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/contacts/{orgContact-id}/memberOf/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/contacts/{orgContact-id}/microsoft.graph.checkMemberGroups": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/contacts/{orgContact-id}/microsoft.graph.checkMemberObjects": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
     },
     "/contacts/{orgContact-id}/microsoft.graph.getMemberGroups": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/contacts/{orgContact-id}/microsoft.graph.getMemberObjects": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/contacts/{orgContact-id}/microsoft.graph.restore": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/contacts/{orgContact-id}/transitiveMemberOf": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/contacts/{orgContact-id}/transitiveMemberOf/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/contacts/microsoft.graph.delta()": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/contacts/microsoft.graph.getByIds": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/contacts/microsoft.graph.getUserOwnedObjects": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/contacts/microsoft.graph.validateProperties": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/contracts": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/contracts/{contract-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/contracts/{contract-id}/microsoft.graph.checkMemberGroups": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/contracts/{contract-id}/microsoft.graph.checkMemberObjects": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/contracts/{contract-id}/microsoft.graph.getMemberGroups": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/contracts/{contract-id}/microsoft.graph.getMemberObjects": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/contracts/{contract-id}/microsoft.graph.restore": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/contracts/microsoft.graph.getByIds": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/contracts/microsoft.graph.getUserOwnedObjects": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/contracts/microsoft.graph.validateProperties": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/devices": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/devices/{device-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/devices/{device-id}/commands": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/devices/{device-id}/commands/{command-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/devices/{device-id}/extensions": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/devices/{device-id}/extensions/{extension-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/devices/{device-id}/memberOf": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/devices/{device-id}/memberOf/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/devices/{device-id}/microsoft.graph.checkMemberGroups": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/devices/{device-id}/microsoft.graph.checkMemberObjects": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/devices/{device-id}/microsoft.graph.getMemberGroups": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/devices/{device-id}/microsoft.graph.getMemberObjects": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/devices/{device-id}/microsoft.graph.restore": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/devices/{device-id}/registeredOwners": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/devices/{device-id}/registeredOwners/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/devices/{device-id}/registeredUsers": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/devices/{device-id}/registeredUsers/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/devices/{device-id}/transitiveMemberOf": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/devices/{device-id}/transitiveMemberOf/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/devices/microsoft.graph.getByIds": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/devices/microsoft.graph.getUserOwnedObjects": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/devices/microsoft.graph.validateProperties": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/directory": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/directory/administrativeUnits": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/directory/administrativeUnits/{administrativeUnit-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/directory/deletedItems": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/directory/deletedItems/{directoryObject-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/directory/featureRolloutPolicies": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/directory/featureRolloutPolicies/{featureRolloutPolicy-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/directory/featureRolloutPolicies/{featureRolloutPolicy-id}/appliesTo": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/directory/featureRolloutPolicies/{featureRolloutPolicy-id}/appliesTo/{directoryObject-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/directory/sharedEmailDomains": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/directory/sharedEmailDomains/{sharedEmailDomain-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/directoryRoles": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/directoryRoles/{directoryRole-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/directoryRoles/{directoryRole-id}/members": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/directoryRoles/{directoryRole-id}/members/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/directoryRoles/{directoryRole-id}/microsoft.graph.checkMemberGroups": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/directoryRoles/{directoryRole-id}/microsoft.graph.checkMemberObjects": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/directoryRoles/{directoryRole-id}/microsoft.graph.getMemberGroups": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/directoryRoles/{directoryRole-id}/microsoft.graph.getMemberObjects": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/directoryRoles/{directoryRole-id}/microsoft.graph.restore": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/directoryRoles/{directoryRole-id}/scopedMembers": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/directoryRoles/{directoryRole-id}/scopedMembers/{scopedRoleMembership-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/directoryRoles/microsoft.graph.delta()": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/directoryRoles/microsoft.graph.getByIds": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/directoryRoles/microsoft.graph.getUserOwnedObjects": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/directoryRoles/microsoft.graph.validateProperties": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/directoryRoleTemplates": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/directoryRoleTemplates/{directoryRoleTemplate-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/directoryRoleTemplates/{directoryRoleTemplate-id}/microsoft.graph.checkMemberGroups": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/directoryRoleTemplates/{directoryRoleTemplate-id}/microsoft.graph.checkMemberObjects": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/directoryRoleTemplates/{directoryRoleTemplate-id}/microsoft.graph.getMemberGroups": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/directoryRoleTemplates/{directoryRoleTemplate-id}/microsoft.graph.getMemberObjects": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/directoryRoleTemplates/{directoryRoleTemplate-id}/microsoft.graph.restore": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/directoryRoleTemplates/microsoft.graph.getByIds": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/directoryRoleTemplates/microsoft.graph.getUserOwnedObjects": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/directoryRoleTemplates/microsoft.graph.validateProperties": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/directorySettingTemplates": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/directorySettingTemplates/{directorySettingTemplate-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/directorySettingTemplates/{directorySettingTemplate-id}/microsoft.graph.checkMemberGroups": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/directorySettingTemplates/{directorySettingTemplate-id}/microsoft.graph.checkMemberObjects": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/directorySettingTemplates/{directorySettingTemplate-id}/microsoft.graph.getMemberGroups": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/directorySettingTemplates/{directorySettingTemplate-id}/microsoft.graph.getMemberObjects": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/directorySettingTemplates/{directorySettingTemplate-id}/microsoft.graph.restore": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/directorySettingTemplates/microsoft.graph.getByIds": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/directorySettingTemplates/microsoft.graph.getUserOwnedObjects": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/directorySettingTemplates/microsoft.graph.validateProperties": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/domains": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/domains/{domain-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/domains/{domain-id}/domainNameReferences": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/domains/{domain-id}/domainNameReferences/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/domains/{domain-id}/microsoft.graph.forceDelete": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/domains/{domain-id}/microsoft.graph.verify": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/domains/{domain-id}/serviceConfigurationRecords": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/domains/{domain-id}/serviceConfigurationRecords/{domainDnsRecord-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/domains/{domain-id}/sharedEmailDomainInvitations": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/domains/{domain-id}/sharedEmailDomainInvitations/{sharedEmailDomainInvitation-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/domains/{domain-id}/verificationDnsRecords": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/domains/{domain-id}/verificationDnsRecords/{domainDnsRecord-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/organization": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/organization/{organization-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/organization/{organization-id}/branding": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/organization/{organization-id}/extensions": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/organization/{organization-id}/extensions/{extension-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/organization/{organization-id}/microsoft.graph.checkMemberGroups": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/organization/{organization-id}/microsoft.graph.checkMemberObjects": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/organization/{organization-id}/microsoft.graph.getMemberGroups": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/organization/{organization-id}/microsoft.graph.getMemberObjects": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/organization/{organization-id}/microsoft.graph.restore": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/organization/{organization-id}/microsoft.graph.setMobileDeviceManagementAuthority": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/organization/{organization-id}/settings": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/organization/{organization-id}/settings/itemInsights": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/organization/{organization-id}/settings/profileCardProperties": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/organization/{organization-id}/settings/profileCardProperties/{profileCardProperty-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/organization/microsoft.graph.getByIds": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/organization/microsoft.graph.getUserOwnedObjects": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/organization/microsoft.graph.validateProperties": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/settings": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/settings/{directorySetting-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/subscribedSkus": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/subscribedSkus/{subscribedSku-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/users/{user-id}/scopedRoleMemberOf": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/users/{user-id}/scopedRoleMemberOf/{scopedRoleMembership-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
     }
   },
   "resources": []
