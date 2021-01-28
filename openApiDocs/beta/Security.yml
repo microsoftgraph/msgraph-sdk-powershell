@@ -141,6 +141,8 @@ paths:
                 - id desc
                 - activityGroupName
                 - activityGroupName desc
+                - alertDetections
+                - alertDetections desc
                 - assignedTo
                 - assignedTo desc
                 - azureSubscriptionId
@@ -175,10 +177,16 @@ paths:
                 - hostStates desc
                 - incidentIds
                 - incidentIds desc
+                - investigationSecurityStates
+                - investigationSecurityStates desc
+                - lastEventDateTime
+                - lastEventDateTime desc
                 - lastModifiedDateTime
                 - lastModifiedDateTime desc
                 - malwareStates
                 - malwareStates desc
+                - messageSecurityStates
+                - messageSecurityStates desc
                 - networkConnections
                 - networkConnections desc
                 - processes
@@ -201,6 +209,8 @@ paths:
                 - title desc
                 - triggers
                 - triggers desc
+                - uriClickSecurityStates
+                - uriClickSecurityStates desc
                 - userStates
                 - userStates desc
                 - vendorInformation
@@ -220,6 +230,7 @@ paths:
               enum:
                 - id
                 - activityGroupName
+                - alertDetections
                 - assignedTo
                 - azureSubscriptionId
                 - azureTenantId
@@ -237,8 +248,11 @@ paths:
                 - historyStates
                 - hostStates
                 - incidentIds
+                - investigationSecurityStates
+                - lastEventDateTime
                 - lastModifiedDateTime
                 - malwareStates
+                - messageSecurityStates
                 - networkConnections
                 - processes
                 - recommendedActions
@@ -250,6 +264,7 @@ paths:
                 - tags
                 - title
                 - triggers
+                - uriClickSecurityStates
                 - userStates
                 - vendorInformation
                 - vulnerabilityStates
@@ -337,6 +352,7 @@ paths:
               enum:
                 - id
                 - activityGroupName
+                - alertDetections
                 - assignedTo
                 - azureSubscriptionId
                 - azureTenantId
@@ -354,8 +370,11 @@ paths:
                 - historyStates
                 - hostStates
                 - incidentIds
+                - investigationSecurityStates
+                - lastEventDateTime
                 - lastModifiedDateTime
                 - malwareStates
+                - messageSecurityStates
                 - networkConnections
                 - processes
                 - recommendedActions
@@ -367,6 +386,7 @@ paths:
                 - tags
                 - title
                 - triggers
+                - uriClickSecurityStates
                 - userStates
                 - vendorInformation
                 - vulnerabilityStates
@@ -3180,7 +3200,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/microsoft.graph.ResultInfo'
+                  $ref: '#/components/schemas/microsoft.graph.resultInfo'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -3213,7 +3233,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/microsoft.graph.ResultInfo'
+                  $ref: '#/components/schemas/microsoft.graph.resultInfo'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -3586,6 +3606,10 @@ components:
               type: string
               description: Name or alias of the activity group (attacker) this alert is attributed to.
               nullable: true
+            alertDetections:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.alertDetection'
             assignedTo:
               type: string
               description: 'Name of the analyst the alert is assigned to for triage, investigation, or remediation (supports update).'
@@ -3669,6 +3693,15 @@ components:
                 type: string
                 nullable: true
               description: IDs of incidents related to current alert.
+            investigationSecurityStates:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.investigationSecurityState'
+            lastEventDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -3680,6 +3713,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.malwareState'
               description: Threat Intelligence pertaining to malware related to this alert.
+            messageSecurityStates:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.messageSecurityState'
             networkConnections:
               type: array
               items:
@@ -3731,6 +3768,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.alertTrigger'
               description: 'Security-related information about the specific properties that triggered the alert (properties appearing in the alert). Alerts might contain information about multiple users, hosts, files, ip addresses. This field indicates which properties triggered the alert generation.'
+            uriClickSecurityStates:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.uriClickSecurityState'
             userStates:
               type: array
               items:
@@ -4272,7 +4313,7 @@ components:
               format: date-time
               nullable: true
             errorInfo:
-              $ref: '#/components/schemas/microsoft.graph.ResultInfo'
+              $ref: '#/components/schemas/microsoft.graph.resultInfo'
             lastActionDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -4430,10 +4471,8 @@ components:
               type: string
               nullable: true
             networkDestinationAsn:
-              maximum: 2147483647
-              minimum: -2147483648
               type: integer
-              format: int32
+              format: int64
               nullable: true
             networkDestinationCidrBlock:
               type: string
@@ -4469,10 +4508,8 @@ components:
               format: int32
               nullable: true
             networkSourceAsn:
-              maximum: 2147483647
-              minimum: -2147483648
               type: integer
-              format: int32
+              format: int64
               nullable: true
             networkSourceCidrBlock:
               type: string
@@ -4518,22 +4555,25 @@ components:
               nullable: true
           additionalProperties:
             type: object
-    microsoft.graph.ResultInfo:
-      title: ResultInfo
+    microsoft.graph.resultInfo:
+      title: resultInfo
       type: object
       properties:
         code:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: The result code.
           format: int32
         message:
           type: string
+          description: The message.
           nullable: true
         subcode:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: The result sub-code.
           format: int32
       additionalProperties:
         type: object
@@ -4606,6 +4646,21 @@ components:
           type: string
           nullable: true
         vendor:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.alertDetection:
+      title: alertDetection
+      type: object
+      properties:
+        detectionType:
+          type: string
+          nullable: true
+        method:
+          type: string
+          nullable: true
+        name:
           type: string
           nullable: true
       additionalProperties:
@@ -4726,6 +4781,18 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.investigationSecurityState:
+      title: investigationSecurityState
+      type: object
+      properties:
+        name:
+          type: string
+          nullable: true
+        status:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.malwareState:
       title: malwareState
       type: object
@@ -4749,6 +4816,41 @@ components:
         wasRunning:
           type: boolean
           description: Indicates whether the detected file (malware/vulnerability) was running at the time of detection or was detected at rest on the disk.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.messageSecurityState:
+      title: messageSecurityState
+      type: object
+      properties:
+        connectingIP:
+          type: string
+          nullable: true
+        deliveryAction:
+          type: string
+          nullable: true
+        deliveryLocation:
+          type: string
+          nullable: true
+        directionality:
+          type: string
+          nullable: true
+        internetMessageId:
+          type: string
+          nullable: true
+        messageFingerprint:
+          type: string
+          nullable: true
+        messageReceivedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        messageSubject:
+          type: string
+          nullable: true
+        networkMessageId:
+          type: string
           nullable: true
       additionalProperties:
         type: object
@@ -4987,6 +5089,32 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.uriClickSecurityState:
+      title: uriClickSecurityState
+      type: object
+      properties:
+        clickAction:
+          type: string
+          nullable: true
+        clickDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        id:
+          type: string
+          nullable: true
+        sourceId:
+          type: string
+          nullable: true
+        uriDomain:
+          type: string
+          nullable: true
+        verdict:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.userSecurityState:
       title: userSecurityState
       type: object
@@ -5213,10 +5341,8 @@ components:
       type: object
       properties:
         asn:
-          maximum: 2147483647
-          minimum: -2147483648
           type: integer
-          format: int32
+          format: int64
           nullable: true
         city:
           type: string
@@ -5442,9 +5568,9 @@ components:
     microsoft.graph.securityNetworkProtocol:
       title: securityNetworkProtocol
       enum:
+        - unknown
         - ip
         - icmp
-        - unknown
         - igmp
         - ggp
         - ipv4

@@ -85192,9 +85192,9 @@ components:
     microsoft.graph.onenoteUserRole:
       title: onenoteUserRole
       enum:
+        - None
         - Owner
         - Contributor
-        - None
         - Reader
       type: string
     microsoft.graph.sectionLinks:

@@ -4,9 +4,7 @@
 
 using System;
 using System.Globalization;
-using System.Management.Automation;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Text;
 
 using Microsoft.Graph.PowerShell.Authentication.Models;
@@ -32,13 +30,65 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
             var contentType = response.GetContentType();
             if (string.IsNullOrEmpty(contentType))
                 rt = RestReturnType.Detect;
-            else if (ContentHelper.IsJson(contentType))
+            else if (IsJson(contentType))
                 rt = RestReturnType.Json;
-            else if (ContentHelper.IsXml(contentType))
+            else if (IsXml(contentType))
                 rt = RestReturnType.Xml;
-
+            else if (IsImage(contentType))
+                rt = RestReturnType.Image;
+            else if (IsOctetStream(contentType))
+                rt = RestReturnType.OctetStream;
             return rt;
         }
+
+        private static bool IsImage(string contentType)
+        {
+            contentType = GetContentTypeSignature(contentType);
+            return CheckIsImage(contentType);
+        }
+        /// <summary>
+        ///     Check that the current content-type is a valid image
+        /// </summary>
+        /// <param name="contentType"></param>
+        /// <returns></returns>
+        private static bool CheckIsImage(string contentType)
+        {
+            var isImage = false;
+            if (string.IsNullOrEmpty(contentType))
+                return false;
+            switch (contentType.ToLower(CultureInfo.InvariantCulture))
+            {
+                case "image/apng":
+                case "image/avif":
+                case "image/gif":
+                case "image/jpeg":
+                case "image/png":
+                    isImage = true;
+                    break;
+            }
+            return isImage;
+        }
+
+        private static bool IsOctetStream(string contentType)
+        {
+            contentType = GetContentTypeSignature(contentType);
+            return CheckIsOctetStream(contentType);
+        }
+
+        private static bool CheckIsOctetStream(string contentType)
+        {
+            var isOctetStream = false;
+            if (string.IsNullOrEmpty(contentType))
+                return false;
+            switch (contentType.ToLower(CultureInfo.InvariantCulture))
+            {
+                case "application/octet-stream":
+                    isOctetStream = true;
+                    break;
+            }
+            return isOctetStream;
+        }
+
         // used to split contentType arguments
         private static readonly char[] ContentTypeParamSeparator = { ';' };
 

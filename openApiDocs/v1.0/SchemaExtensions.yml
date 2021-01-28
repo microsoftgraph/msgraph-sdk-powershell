@@ -232,7 +232,7 @@ components:
               nullable: true
             owner:
               type: string
-              description: 'The appId of the application that is the owner of the schema extension. This property can be supplied on creation, to set the owner.  If not supplied, then the calling application''s appId will be set as the owner. In either case, the signed-in user must be the owner of the application. Once set, this property is read-only and cannot be changed.'
+              description: 'The appId of the application that is the owner of the schema extension. This property can be supplied on creation, to set the owner.  If not supplied, then the calling application''s appId will be set as the owner. In either case, the signed-in user must be the owner of the application. So, for example, if creating a new schema extension definition using Graph Explorer, you must supply the owner property. Once set, this property is read-only and cannot be changed.'
             properties:
               type: array
               items:
@@ -245,7 +245,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'Set of Microsoft Graph types (that can support extensions) that the schema extension can be applied to. Select from contact, device, event, group, message, organization, post, or user.'
+              description: 'Set of Microsoft Graph types (that can support extensions) that the schema extension can be applied to. Select from administrativeUnit, contact, device, event, group, message, organization, post, or user.'
           additionalProperties:
             type: object
     microsoft.graph.entity:
@@ -263,7 +263,7 @@ components:
       properties:
         name:
           type: string
-          description: The name of the strongly-typed property defined as part of a schema extension.
+          description: The name of the strongly typed property defined as part of a schema extension.
           nullable: true
         type:
           type: string

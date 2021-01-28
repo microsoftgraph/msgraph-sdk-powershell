@@ -1,160 +1,168 @@
 {
   "operations": {
-    "/users/{user-id}/mailFolders/{mailFolder-id}/messageRules/{messageRule-id}": {
-      "originalLocation": "/openApiDocs/beta/Mail.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/mailFolders/{mailFolder-id}/multiValueExtendedProperties": {
-      "originalLocation": "/openApiDocs/beta/Mail.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/messages/{message-id}/mentions/{mention-id}": {
-      "originalLocation": "/openApiDocs/beta/Mail.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/inferenceClassification/overrides/{inferenceClassificationOverride-id}": {
-      "originalLocation": "/openApiDocs/beta/Mail.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/mailFolders/{mailFolder-id}/userConfigurations": {
-      "originalLocation": "/openApiDocs/beta/Mail.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}": {
-      "originalLocation": "/openApiDocs/beta/Mail.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/messages/{message-id}/extensions/{extension-id}": {
-      "originalLocation": "/openApiDocs/beta/Mail.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/attachments": {
-      "originalLocation": "/openApiDocs/beta/Mail.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/messages/{message-id}/attachments/{attachment-id}": {
-      "originalLocation": "/openApiDocs/beta/Mail.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/mailFolders": {
-      "originalLocation": "/openApiDocs/beta/Mail.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/mailFolders/{mailFolder-id}/messageRules": {
-      "originalLocation": "/openApiDocs/beta/Mail.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/mentions/{mention-id}": {
-      "originalLocation": "/openApiDocs/beta/Mail.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/mailFolders/{mailFolder-id}/messages": {
-      "originalLocation": "/openApiDocs/beta/Mail.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}": {
-      "originalLocation": "/openApiDocs/beta/Mail.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/messages/{message-id}": {
-      "originalLocation": "/openApiDocs/beta/Mail.yml",
-      "apiVersion": "v1.0-beta"
-    },
     "/users/{user-id}/inferenceClassification": {
-      "originalLocation": "/openApiDocs/beta/Mail.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/mailFolders/{mailFolder-id}/singleValueExtendedProperties": {
-      "originalLocation": "/openApiDocs/beta/Mail.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/messages/{message-id}/extensions": {
-      "originalLocation": "/openApiDocs/beta/Mail.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/messages": {
-      "originalLocation": "/openApiDocs/beta/Mail.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/extensions": {
-      "originalLocation": "/openApiDocs/beta/Mail.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/multiValueExtendedProperties": {
-      "originalLocation": "/openApiDocs/beta/Mail.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/messages/{message-id}/mentions": {
-      "originalLocation": "/openApiDocs/beta/Mail.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/messages/{message-id}/attachments": {
-      "originalLocation": "/openApiDocs/beta/Mail.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/messages/{message-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}": {
-      "originalLocation": "/openApiDocs/beta/Mail.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/mailFolders/{mailFolder-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}": {
-      "originalLocation": "/openApiDocs/beta/Mail.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}": {
-      "originalLocation": "/openApiDocs/beta/Mail.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Mail.yml"
     },
     "/users/{user-id}/inferenceClassification/overrides": {
-      "originalLocation": "/openApiDocs/beta/Mail.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Mail.yml"
     },
-    "/users/{user-id}/mailFolders/{mailFolder-id}/childFolders": {
-      "originalLocation": "/openApiDocs/beta/Mail.yml",
-      "apiVersion": "v1.0-beta"
+    "/users/{user-id}/inferenceClassification/overrides/{inferenceClassificationOverride-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Mail.yml"
     },
-    "/users/{user-id}/messages/{message-id}/multiValueExtendedProperties": {
-      "originalLocation": "/openApiDocs/beta/Mail.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/extensions/{extension-id}": {
-      "originalLocation": "/openApiDocs/beta/Mail.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/singleValueExtendedProperties": {
-      "originalLocation": "/openApiDocs/beta/Mail.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/messages/{message-id}/singleValueExtendedProperties": {
-      "originalLocation": "/openApiDocs/beta/Mail.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/mailFolders/{mailFolder-id}/userConfigurations/{userConfiguration-id}": {
-      "originalLocation": "/openApiDocs/beta/Mail.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/mentions": {
-      "originalLocation": "/openApiDocs/beta/Mail.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/messages/{message-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}": {
-      "originalLocation": "/openApiDocs/beta/Mail.yml",
-      "apiVersion": "v1.0-beta"
+    "/users/{user-id}/mailFolders": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Mail.yml"
     },
     "/users/{user-id}/mailFolders/{mailFolder-id}": {
-      "originalLocation": "/openApiDocs/beta/Mail.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Mail.yml"
     },
-    "/users/{user-id}/mailFolders/{mailFolder-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}": {
-      "originalLocation": "/openApiDocs/beta/Mail.yml",
-      "apiVersion": "v1.0-beta"
+    "/users/{user-id}/mailFolders/{mailFolder-id}/childFolders": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Mail.yml"
+    },
+    "/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Mail.yml"
+    },
+    "/users/{user-id}/mailFolders/{mailFolder-id}/messageRules": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Mail.yml"
+    },
+    "/users/{user-id}/mailFolders/{mailFolder-id}/messageRules/{messageRule-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Mail.yml"
+    },
+    "/users/{user-id}/mailFolders/{mailFolder-id}/messages": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Mail.yml"
+    },
+    "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Mail.yml"
+    },
+    "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/$value": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Mail.yml"
+    },
+    "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/attachments": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Mail.yml"
     },
     "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/attachments/{attachment-id}": {
-      "originalLocation": "/openApiDocs/beta/Mail.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Mail.yml"
+    },
+    "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/extensions": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Mail.yml"
+    },
+    "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/extensions/{extension-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Mail.yml"
+    },
+    "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/mentions": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Mail.yml"
+    },
+    "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/mentions/{mention-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Mail.yml"
+    },
+    "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/multiValueExtendedProperties": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Mail.yml"
     },
     "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}": {
-      "originalLocation": "/openApiDocs/beta/Mail.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Mail.yml"
+    },
+    "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/singleValueExtendedProperties": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Mail.yml"
+    },
+    "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Mail.yml"
+    },
+    "/users/{user-id}/mailFolders/{mailFolder-id}/multiValueExtendedProperties": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Mail.yml"
+    },
+    "/users/{user-id}/mailFolders/{mailFolder-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Mail.yml"
+    },
+    "/users/{user-id}/mailFolders/{mailFolder-id}/singleValueExtendedProperties": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Mail.yml"
+    },
+    "/users/{user-id}/mailFolders/{mailFolder-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Mail.yml"
+    },
+    "/users/{user-id}/mailFolders/{mailFolder-id}/userConfigurations": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Mail.yml"
+    },
+    "/users/{user-id}/mailFolders/{mailFolder-id}/userConfigurations/{userConfiguration-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Mail.yml"
+    },
+    "/users/{user-id}/messages": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Mail.yml"
+    },
+    "/users/{user-id}/messages/{message-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Mail.yml"
+    },
+    "/users/{user-id}/messages/{message-id}/$value": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Mail.yml"
+    },
+    "/users/{user-id}/messages/{message-id}/attachments": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Mail.yml"
+    },
+    "/users/{user-id}/messages/{message-id}/attachments/{attachment-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Mail.yml"
+    },
+    "/users/{user-id}/messages/{message-id}/extensions": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Mail.yml"
+    },
+    "/users/{user-id}/messages/{message-id}/extensions/{extension-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Mail.yml"
+    },
+    "/users/{user-id}/messages/{message-id}/mentions": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Mail.yml"
+    },
+    "/users/{user-id}/messages/{message-id}/mentions/{mention-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Mail.yml"
+    },
+    "/users/{user-id}/messages/{message-id}/multiValueExtendedProperties": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Mail.yml"
+    },
+    "/users/{user-id}/messages/{message-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Mail.yml"
+    },
+    "/users/{user-id}/messages/{message-id}/singleValueExtendedProperties": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Mail.yml"
+    },
+    "/users/{user-id}/messages/{message-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Mail.yml"
     }
   },
   "resources": []

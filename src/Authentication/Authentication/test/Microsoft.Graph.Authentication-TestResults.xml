@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<test-results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="nunit_schema_2.5.xsd" name="Pester" total="19" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2021-01-23" time="02:32:03">
+  <environment os-version="10.0.19042" machine-name="YOGIDEV" nunit-version="2.5.8.0" user-domain="AFRICA" clr-version="Unknown" user="gendungu" cwd="C:\WorkProjects\msgraph-sdk-powershell" platform="Microsoft Windows 10 Enterprise|C:\WINDOWS|\Device\Harddisk0\Partition3" />
+  <culture-info current-culture="en-US" current-uiculture="en-US" />
+  <test-suite type="TestFixture" name="Pester" executed="True" result="Success" success="True" time="30.1169" asserts="0" description="Pester">
+    <results>
+      <test-suite type="TestFixture" name="C:\WorkProjects\msgraph-sdk-powershell\src\Authentication\Authentication\test\Authentication.Tests.ps1" executed="True" result="Success" success="True" time="30.1169" asserts="0" description="C:\WorkProjects\msgraph-sdk-powershell\src\Authentication\Authentication\test\Authentication.Tests.ps1">
+        <results>
+          <test-suite type="TestFixture" name="Invoke-MgGraphRequest Collection Results" executed="True" result="Success" success="True" time="14.8472" asserts="0" description="Invoke-MgGraphRequest Collection Results">
+            <results>
+              <test-case description="ShouldReturnPsObject" name="Invoke-MgGraphRequest Collection Results.ShouldReturnPsObject" time="1.8152" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="ShouldReturnHashTable" name="Invoke-MgGraphRequest Collection Results.ShouldReturnHashTable" time="1.0579" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="ShouldReturnJsonString" name="Invoke-MgGraphRequest Collection Results.ShouldReturnJsonString" time="1.0412" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="ShouldReturnHttpResponseMessage" name="Invoke-MgGraphRequest Collection Results.ShouldReturnHttpResponseMessage" time="0.9758" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="ShouldReturnPsObjectBeta" name="Invoke-MgGraphRequest Collection Results.ShouldReturnPsObjectBeta" time="1.5979" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="ShouldReturnHashTableBeta" name="Invoke-MgGraphRequest Collection Results.ShouldReturnHashTableBeta" time="1.612" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="ShouldReturnJsonStringBeta" name="Invoke-MgGraphRequest Collection Results.ShouldReturnJsonStringBeta" time="1.5326" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="ShouldReturnHttpResponseMessageBeta" name="Invoke-MgGraphRequest Collection Results.ShouldReturnHttpResponseMessageBeta" time="1.4919" asserts="0" success="True" result="Success" executed="True" />
+            </results>
+          </test-suite>
+          <test-suite type="TestFixture" name="Invoke-MgGraphRequest Single Entity" executed="True" result="Success" success="True" time="21.7948" asserts="0" description="Invoke-MgGraphRequest Single Entity">
+            <results>
+              <test-case description="ShouldReturnPsObject" name="Invoke-MgGraphRequest Single Entity.ShouldReturnPsObject" time="0.875" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="ShouldReturnHashTable" name="Invoke-MgGraphRequest Single Entity.ShouldReturnHashTable" time="0.9217" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="ShouldReturnJsonString" name="Invoke-MgGraphRequest Single Entity.ShouldReturnJsonString" time="0.851" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="ShouldReturnHttpResponseMessage" name="Invoke-MgGraphRequest Single Entity.ShouldReturnHttpResponseMessage" time="0.8567" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="ShouldReturnPsObjectBeta" name="Invoke-MgGraphRequest Single Entity.ShouldReturnPsObjectBeta" time="0.8197" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="ShouldReturnHashTableBeta" name="Invoke-MgGraphRequest Single Entity.ShouldReturnHashTableBeta" time="0.8284" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="ShouldReturnJsonStringBeta" name="Invoke-MgGraphRequest Single Entity.ShouldReturnJsonStringBeta" time="0.841" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="ShouldReturnHttpResponseMessageBeta" name="Invoke-MgGraphRequest Single Entity.ShouldReturnHttpResponseMessageBeta" time="0.8735" asserts="0" success="True" result="Success" executed="True" />
+            </results>
+          </test-suite>
+          <test-suite type="TestFixture" name="Invoke-MgGraphRequest Non-Json Responses" executed="True" result="Success" success="True" time="29.5709" asserts="0" description="Invoke-MgGraphRequest Non-Json Responses">
+            <results>
+              <test-case description="Should Throw when -OutputFilePath is not Specified and Request Returns a File" name="Invoke-MgGraphRequest Non-Json Responses.Should Throw when -OutputFilePath is not Specified and Request Returns a File" time="2.0839" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should Not Throw when -OutputFilePath is Specified" name="Invoke-MgGraphRequest Non-Json Responses.Should Not Throw when -OutputFilePath is Specified" time="2.8988" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should Not Throw when -InferOutputFilePath is Specified" name="Invoke-MgGraphRequest Non-Json Responses.Should Not Throw when -InferOutputFilePath is Specified" time="2.7009" asserts="0" success="True" result="Success" executed="True" />
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>

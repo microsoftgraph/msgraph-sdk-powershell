@@ -104,6 +104,8 @@ paths:
                 - id desc
                 - activityGroupName
                 - activityGroupName desc
+                - alertDetections
+                - alertDetections desc
                 - assignedTo
                 - assignedTo desc
                 - azureSubscriptionId
@@ -138,10 +140,16 @@ paths:
                 - hostStates desc
                 - incidentIds
                 - incidentIds desc
+                - investigationSecurityStates
+                - investigationSecurityStates desc
+                - lastEventDateTime
+                - lastEventDateTime desc
                 - lastModifiedDateTime
                 - lastModifiedDateTime desc
                 - malwareStates
                 - malwareStates desc
+                - messageSecurityStates
+                - messageSecurityStates desc
                 - networkConnections
                 - networkConnections desc
                 - processes
@@ -164,6 +172,8 @@ paths:
                 - title desc
                 - triggers
                 - triggers desc
+                - uriClickSecurityStates
+                - uriClickSecurityStates desc
                 - userStates
                 - userStates desc
                 - vendorInformation
@@ -183,6 +193,7 @@ paths:
               enum:
                 - id
                 - activityGroupName
+                - alertDetections
                 - assignedTo
                 - azureSubscriptionId
                 - azureTenantId
@@ -200,8 +211,11 @@ paths:
                 - historyStates
                 - hostStates
                 - incidentIds
+                - investigationSecurityStates
+                - lastEventDateTime
                 - lastModifiedDateTime
                 - malwareStates
+                - messageSecurityStates
                 - networkConnections
                 - processes
                 - recommendedActions
@@ -213,6 +227,7 @@ paths:
                 - tags
                 - title
                 - triggers
+                - uriClickSecurityStates
                 - userStates
                 - vendorInformation
                 - vulnerabilityStates
@@ -300,6 +315,7 @@ paths:
               enum:
                 - id
                 - activityGroupName
+                - alertDetections
                 - assignedTo
                 - azureSubscriptionId
                 - azureTenantId
@@ -317,8 +333,11 @@ paths:
                 - historyStates
                 - hostStates
                 - incidentIds
+                - investigationSecurityStates
+                - lastEventDateTime
                 - lastModifiedDateTime
                 - malwareStates
+                - messageSecurityStates
                 - networkConnections
                 - processes
                 - recommendedActions
@@ -330,6 +349,7 @@ paths:
                 - tags
                 - title
                 - triggers
+                - uriClickSecurityStates
                 - userStates
                 - vendorInformation
                 - vulnerabilityStates
@@ -939,6 +959,10 @@ components:
               type: string
               description: Name or alias of the activity group (attacker) this alert is attributed to.
               nullable: true
+            alertDetections:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.alertDetection'
             assignedTo:
               type: string
               description: 'Name of the analyst the alert is assigned to for triage, investigation, or remediation (supports update).'
@@ -1011,6 +1035,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.alertHistoryState'
+              description: A collection of alertHistoryStates comprising an audit log of all updates made to an alert.
             hostStates:
               type: array
               items:
@@ -1022,6 +1047,15 @@ components:
                 type: string
                 nullable: true
               description: IDs of incidents related to current alert.
+            investigationSecurityStates:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.investigationSecurityState'
+            lastEventDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -1033,6 +1067,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.malwareState'
               description: Threat Intelligence pertaining to malware related to this alert.
+            messageSecurityStates:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.messageSecurityState'
             networkConnections:
               type: array
               items:
@@ -1084,6 +1122,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.alertTrigger'
               description: 'Security-related information about the specific properties that triggered the alert (properties appearing in the alert). Alerts might contain information about multiple users, hosts, files, ip addresses. This field indicates which properties triggered the alert generation.'
+            uriClickSecurityStates:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.uriClickSecurityState'
             userStates:
               type: array
               items:
@@ -1119,14 +1161,16 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.complianceInformation'
+              description: The collection of compliance information associated with secure score control
             controlCategory:
               type: string
-              description: 'Control action category (Identity, Data, Device, Apps, Infrastructure).'
+              description: 'Control action category (Account, Data, Device, Apps, Infrastructure).'
               nullable: true
             controlStateUpdates:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.secureScoreControlStateUpdate'
+              description: 'Flag to indicate where the tenant has marked a control (ignore, thirdParty, reviewed) (supports update).'
             deprecated:
               type: boolean
               description: Flag to indicate if a control is depreciated.
@@ -1143,7 +1187,7 @@ components:
               nullable: true
             maxScore:
               type: number
-              description: max attainable score for the control.
+              description: Current obtained max score on specified date.
               format: double
               nullable: true
             rank:
@@ -1170,9 +1214,10 @@ components:
               items:
                 type: string
                 nullable: true
-              description: 'List of threats the control mitigates (accountBreach,dataDeletion,dataExfiltration,dataSpillage,'
+              description: 'List of threats the control mitigates (accountBreach,dataDeletion,dataExfiltration,dataSpillage,elevationOfPrivilege,maliciousInsider,passwordCracking,phishingOrWhaling,spoofing).'
             tier:
               type: string
+              description: 'Control tier (Core, Defense in Depth, Advanced.)'
               nullable: true
             title:
               type: string
@@ -1180,6 +1225,7 @@ components:
               nullable: true
             userImpact:
               type: string
+              description: 'User impact of implementing control (low, moderate, high).'
               nullable: true
             vendorInformation:
               $ref: '#/components/schemas/microsoft.graph.securityVendorInformation'
@@ -1253,6 +1299,21 @@ components:
           description: Read-only.
       additionalProperties:
         type: object
+    microsoft.graph.alertDetection:
+      title: alertDetection
+      type: object
+      properties:
+        detectionType:
+          type: string
+          nullable: true
+        method:
+          type: string
+          nullable: true
+        name:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.cloudAppSecurityState:
       title: cloudAppSecurityState
       type: object
@@ -1306,15 +1367,18 @@ components:
       properties:
         appId:
           type: string
+          description: The Application ID of the calling application that submitted an update (PATCH) to the alert. The appId should be extracted from the auth token and not entered manually by the calling application.
           nullable: true
         assignedTo:
           type: string
+          description: 'UPN of user the alert was assigned to (note: alert.assignedTo only stores the last value/UPN).'
           nullable: true
         comments:
           type: array
           items:
             type: string
             nullable: true
+          description: Comment entered by signed-in user.
         feedback:
           $ref: '#/components/schemas/microsoft.graph.alertFeedback'
         status:
@@ -1322,10 +1386,12 @@ components:
         updatedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'Date and time of the alert update. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
           format: date-time
           nullable: true
         user:
           type: string
+          description: UPN of the signed-in user that updated the alert (taken from the bearer token - if in user/delegated auth mode).
           nullable: true
       additionalProperties:
         type: object
@@ -1369,6 +1435,18 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.investigationSecurityState:
+      title: investigationSecurityState
+      type: object
+      properties:
+        name:
+          type: string
+          nullable: true
+        status:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.malwareState:
       title: malwareState
       type: object
@@ -1395,13 +1473,48 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.messageSecurityState:
+      title: messageSecurityState
+      type: object
+      properties:
+        connectingIP:
+          type: string
+          nullable: true
+        deliveryAction:
+          type: string
+          nullable: true
+        deliveryLocation:
+          type: string
+          nullable: true
+        directionality:
+          type: string
+          nullable: true
+        internetMessageId:
+          type: string
+          nullable: true
+        messageFingerprint:
+          type: string
+          nullable: true
+        messageReceivedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        messageSubject:
+          type: string
+          nullable: true
+        networkMessageId:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.networkConnection:
       title: networkConnection
       type: object
       properties:
         applicationName:
           type: string
-          description: 'Name of the application managing the network connection (for example, Facebook or SMTP).'
+          description: 'Name of the application managing the network connection (for example, Facebook, SMTP, etc.).'
           nullable: true
         destinationAddress:
           type: string
@@ -1630,6 +1743,32 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.uriClickSecurityState:
+      title: uriClickSecurityState
+      type: object
+      properties:
+        clickAction:
+          type: string
+          nullable: true
+        clickDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        id:
+          type: string
+          nullable: true
+        sourceId:
+          type: string
+          nullable: true
+        uriDomain:
+          type: string
+          nullable: true
+        verdict:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.userSecurityState:
       title: userSecurityState
       type: object
@@ -1841,9 +1980,9 @@ components:
     microsoft.graph.securityNetworkProtocol:
       title: securityNetworkProtocol
       enum:
+        - unknown
         - ip
         - icmp
-        - unknown
         - igmp
         - ggp
         - ipv4

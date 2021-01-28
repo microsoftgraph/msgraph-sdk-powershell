@@ -33,7 +33,7 @@ $ModuleMapping.Keys | ForEach-Object -Begin { $RequestCount = 0 } -End { Write-H
     $ModuleName = $_
     $ForceRefresh = $false
     # Check whether ForceRefresh is required, Only required for the First Request.
-    if ($RequestCount -eq 0){
+    if ($RequestCount -eq 0) {
         $ForceRefresh = $true
     }
 
@@ -46,6 +46,5 @@ $ModuleMapping.Keys | ForEach-Object -Begin { $RequestCount = 0 } -End { Write-H
     }
     $RequestCount++
 }
-
 
 Write-Host -ForegroundColor Green "-------------Done-------------"

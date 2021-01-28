@@ -459,6 +459,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - iCalUId
                 - iCalUId desc
                 - importance
@@ -539,6 +541,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -700,6 +703,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -1631,6 +1635,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - iCalUId
                 - iCalUId desc
                 - importance
@@ -1711,6 +1717,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -1874,6 +1881,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -2638,6 +2646,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - iCalUId
                 - iCalUId desc
                 - importance
@@ -2718,6 +2728,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -2867,6 +2878,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -3798,6 +3810,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - iCalUId
                 - iCalUId desc
                 - importance
@@ -3878,6 +3892,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -4041,6 +4056,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -5281,6 +5297,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - iCalUId
                 - iCalUId desc
                 - importance
@@ -5361,6 +5379,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -5522,6 +5541,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -6473,6 +6493,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - iCalUId
                 - iCalUId desc
                 - importance
@@ -6553,6 +6575,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -6716,6 +6739,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -6953,6 +6977,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - iCalUId
                 - iCalUId desc
                 - importance
@@ -7033,6 +7059,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -7196,6 +7223,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -8230,6 +8258,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - iCalUId
                 - iCalUId desc
                 - importance
@@ -8310,6 +8340,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -8473,6 +8504,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -9237,6 +9269,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - iCalUId
                 - iCalUId desc
                 - importance
@@ -9317,6 +9351,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -9466,6 +9501,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -10417,6 +10453,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - iCalUId
                 - iCalUId desc
                 - importance
@@ -10497,6 +10535,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -10660,6 +10699,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -10897,6 +10937,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - iCalUId
                 - iCalUId desc
                 - importance
@@ -10977,6 +11019,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -11140,6 +11183,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -12174,6 +12218,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - iCalUId
                 - iCalUId desc
                 - importance
@@ -12254,6 +12300,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -12417,6 +12464,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -13791,6 +13839,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - iCalUId
                 - iCalUId desc
                 - importance
@@ -13871,6 +13921,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -14032,6 +14083,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -14963,6 +15015,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - iCalUId
                 - iCalUId desc
                 - importance
@@ -15043,6 +15097,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -15206,6 +15261,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -15970,6 +16026,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - iCalUId
                 - iCalUId desc
                 - importance
@@ -16050,6 +16108,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -16199,6 +16258,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -17130,6 +17190,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - iCalUId
                 - iCalUId desc
                 - importance
@@ -17210,6 +17272,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -17373,6 +17436,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -19549,6 +19613,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - iCalUId
                 - iCalUId desc
                 - importance
@@ -19629,6 +19695,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -19806,6 +19873,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -20983,6 +21051,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - iCalUId
                 - iCalUId desc
                 - importance
@@ -21063,6 +21133,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -21254,6 +21325,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -22212,6 +22284,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - iCalUId
                 - iCalUId desc
                 - importance
@@ -22292,6 +22366,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -22469,6 +22544,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -23646,6 +23722,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - iCalUId
                 - iCalUId desc
                 - importance
@@ -23726,6 +23804,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -23917,6 +23996,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -26093,6 +26173,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - iCalUId
                 - iCalUId desc
                 - importance
@@ -26173,6 +26255,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -26348,6 +26431,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -27402,6 +27486,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - iCalUId
                 - iCalUId desc
                 - importance
@@ -27482,6 +27568,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -27659,6 +27746,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -28520,6 +28608,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - iCalUId
                 - iCalUId desc
                 - importance
@@ -28600,6 +28690,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -28763,6 +28854,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -29817,6 +29909,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - iCalUId
                 - iCalUId desc
                 - importance
@@ -29897,6 +29991,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -30074,6 +30169,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -31474,6 +31570,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - iCalUId
                 - iCalUId desc
                 - importance
@@ -31554,6 +31652,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -31715,6 +31814,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -32666,6 +32766,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - iCalUId
                 - iCalUId desc
                 - importance
@@ -32746,6 +32848,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -32909,6 +33012,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -33146,6 +33250,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - iCalUId
                 - iCalUId desc
                 - importance
@@ -33226,6 +33332,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -33389,6 +33496,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -34423,6 +34531,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - iCalUId
                 - iCalUId desc
                 - importance
@@ -34503,6 +34613,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -34666,6 +34777,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -35430,6 +35542,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - iCalUId
                 - iCalUId desc
                 - importance
@@ -35510,6 +35624,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -35659,6 +35774,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -36610,6 +36726,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - iCalUId
                 - iCalUId desc
                 - importance
@@ -36690,6 +36808,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -36853,6 +36972,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -37090,6 +37210,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - iCalUId
                 - iCalUId desc
                 - importance
@@ -37170,6 +37292,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -37333,6 +37456,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -38367,6 +38491,8 @@ paths:
                 - end desc
                 - hasAttachments
                 - hasAttachments desc
+                - hideAttendees
+                - hideAttendees desc
                 - iCalUId
                 - iCalUId desc
                 - importance
@@ -38447,6 +38573,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -38610,6 +38737,7 @@ paths:
                 - bodyPreview
                 - end
                 - hasAttachments
+                - hideAttendees
                 - iCalUId
                 - importance
                 - isAllDay
@@ -39338,15 +39466,15 @@ components:
               description: 'Represent the online meeting service providers that can be used to create online meetings in this calendar. Possible values are: unknown, skypeForBusiness, skypeForConsumer, teamsForBusiness.'
             canEdit:
               type: boolean
-              description: 'True if the user can write to the calendar, false otherwise. This property is true for the user who created the calendar. This property is also true for a user who has been shared a calendar and granted write access.'
+              description: 'True if the user can write to the calendar, false otherwise. This property is true for the user who created the calendar. This property is also true for a user who has been shared a calendar and granted write access, through an Outlook client or the corresponding calendarPermission resource. Read-only.'
               nullable: true
             canShare:
               type: boolean
-              description: 'True if the user has the permission to share the calendar, false otherwise. Only the user who created the calendar can share it.'
+              description: 'True if the user has the permission to share the calendar, false otherwise. Only the user who created the calendar can share it. Read-only.'
               nullable: true
             canViewPrivateItems:
               type: boolean
-              description: 'True if the user can read calendar items that have been marked private, false otherwise.'
+              description: 'True if the user can read calendar items that have been marked private, false otherwise. This property is set through an Outlook client or the corresponding calendarPermission resource. Read-only.'
               nullable: true
             changeKey:
               type: string
@@ -39358,9 +39486,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingProviderType'
             hexColor:
               type: string
+              description: 'The calendar color, expressed in a hex color code of three hexidecimal values, each ranging from 00 to FF and representing the red, green, or blue components of the color in the RGB color space. If the user has never explicitly set a color for the calendar, this property is  empty.'
               nullable: true
             isDefaultCalendar:
               type: boolean
+              description: 'True if this is the default calendar where new events are created by default, false otherwise.'
               nullable: true
             isRemovable:
               type: boolean
@@ -39455,6 +39585,10 @@ components:
               type: boolean
               description: Set to true if the event has attachments.
               nullable: true
+            hideAttendees:
+              type: boolean
+              description: 'When set to true, each attendee only sees themselves in the meeting request and meeting Tracking list. Default is false.'
+              nullable: true
             iCalUId:
               type: string
               description: A unique identifier for an event across calendars. This ID is different for each occurrence in a recurring series. Read-only.
@@ -39471,6 +39605,7 @@ components:
               nullable: true
             isDraft:
               type: boolean
+              description: 'Set to true if the user has updated the meeting in Outlook but has not sent the updates to attendees. Set to false if all changes have been sent, or if the event is an appointment without any attendees.'
               nullable: true
             isOnlineMeeting:
               type: boolean
@@ -39558,19 +39693,19 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.attachment'
-              description: The collection of fileAttachment and itemAttachment attachments for the event. Navigation property. Read-only. Nullable.
+              description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
             calendar:
               $ref: '#/components/schemas/microsoft.graph.calendar'
             extensions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
-              description: The collection of open extensions defined for the event. Read-only. Nullable.
+              description: The collection of open extensions defined for the event. Nullable.
             instances:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.event'
-              description: The instances of the event. Navigation property. Read-only. Nullable.
+              description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
             multiValueExtendedProperties:
               type: array
               items:
@@ -39604,7 +39739,7 @@ components:
               nullable: true
             name:
               type: string
-              description: The attachment's file name.
+              description: The display name of the attachment. This does not need to be the actual file name.
               nullable: true
             size:
               maximum: 2147483647
@@ -39713,9 +39848,9 @@ components:
     microsoft.graph.calendarColor:
       title: calendarColor
       enum:
+        - auto
         - lightBlue
         - lightGreen
-        - auto
         - lightOrange
         - lightGray
         - lightYellow
@@ -39731,11 +39866,11 @@ components:
       properties:
         address:
           type: string
-          description: The email address of the person or entity.
+          description: The email address of an entity instance.
           nullable: true
         name:
           type: string
-          description: The display name of the person or entity.
+          description: The display name of an entity instance.
           nullable: true
       additionalProperties:
         type: object
@@ -39811,10 +39946,10 @@ components:
       properties:
         dateTime:
           type: string
-          description: 'A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).'
+          description: 'A single point of time in a combined date and time representation ({date}T{time}). For example, ''2019-04-16T09:00:00''.'
         timeZone:
           type: string
-          description: 'Represents a time zone, for example, ''Pacific Standard Time''. See below for more possible values.'
+          description: 'Represents a time zone, for example, ''Pacific Standard Time''. See below for possible values.'
           nullable: true
       additionalProperties:
         type: object
@@ -39931,9 +40066,9 @@ components:
     microsoft.graph.freeBusyStatus:
       title: freeBusyStatus
       enum:
+        - unknown
         - free
         - tentative
-        - unknown
         - busy
         - oof
         - workingElsewhere
@@ -40093,7 +40228,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.dayOfWeek'
-          description: 'A collection of the days of the week on which the event occurs. The possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. If type is relativeMonthly or relativeYearly, and daysOfWeek specifies more than one day, the event falls on the first day that satisfies the pattern.  Required if type is weekly, relativeMonthly, or relativeYearly.'
+          description: 'A collection of the days of the week on which the event occurs. Possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. If type is relativeMonthly or relativeYearly, and daysOfWeek specifies more than one day, the event falls on the first day that satisfies the pattern.  Required if type is weekly, relativeMonthly, or relativeYearly.'
         firstDayOfWeek:
           $ref: '#/components/schemas/microsoft.graph.dayOfWeek'
         index:
