@@ -1,300 +1,300 @@
 {
   "operations": {
-    "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
-    },
-    "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
-    },
-    "/users/{user-id}/planner/tasks/{plannerTask-id}/assignedToTaskBoardFormat": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
-    },
-    "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/progressTaskBoardFormat": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
-    },
-    "/users/{user-id}/planner/tasks": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
-    },
-    "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
-    },
-    "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
-    },
     "/groups/{group-id}/planner": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
-    },
-    "/planner/plans/{plannerPlan-id}/details": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
     },
     "/groups/{group-id}/planner/plans": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
-    },
-    "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/progressTaskBoardFormat": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
-    },
-    "/planner/plans/{plannerPlan-id}/buckets": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
-    },
-    "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
-    },
-    "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
-    },
-    "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
-    },
-    "/planner/tasks/{plannerTask-id}/bucketTaskBoardFormat": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
-    },
-    "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
-    },
-    "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
-    },
-    "/planner/buckets": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
-    },
-    "/planner/buckets/{plannerBucket-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
-    },
-    "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
-    },
-    "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
-    },
-    "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
-    },
-    "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
-    },
-    "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
-    },
-    "/planner/plans/{plannerPlan-id}/tasks": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
-    },
-    "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
-    },
-    "/users/{user-id}/planner": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
-    },
-    "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/details": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
-    },
-    "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
-    },
-    "/planner/tasks/{plannerTask-id}/assignedToTaskBoardFormat": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
-    },
-    "/planner/buckets/{plannerBucket-id}/tasks": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
-    },
-    "/planner": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
-    },
-    "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
-    },
-    "/planner/tasks": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
-    },
-    "/planner/plans": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
-    },
-    "/users/{user-id}/planner/tasks/{plannerTask-id}/bucketTaskBoardFormat": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
-    },
-    "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
-    },
-    "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
-    },
-    "/planner/tasks/{plannerTask-id}/details": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
-    },
-    "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
-    },
-    "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
-    },
-    "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
-    },
-    "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
-    },
-    "/planner/tasks/{plannerTask-id}/progressTaskBoardFormat": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
-    },
-    "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
-    },
-    "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/details": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
-    },
-    "/users/{user-id}/planner/tasks/{plannerTask-id}/progressTaskBoardFormat": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
-    },
-    "/users/{user-id}/planner/plans": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
-    },
-    "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/details": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
-    },
-    "/planner/tasks/{plannerTask-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
-    },
-    "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
-    },
-    "/users/{user-id}/planner/plans/{plannerPlan-id}/details": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
-    },
-    "/users/{user-id}/planner/tasks/{plannerTask-id}/details": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
-    },
-    "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
-    },
-    "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
-    },
-    "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/progressTaskBoardFormat": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
-    },
-    "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
-    },
-    "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
-    },
-    "/users/{user-id}/planner/tasks/{plannerTask-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
-    },
-    "/users/{user-id}/planner/plans/{plannerPlan-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
-    },
-    "/groups/{group-id}/planner/plans/{plannerPlan-id}/details": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
     },
     "/groups/{group-id}/planner/plans/{plannerPlan-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
     },
-    "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
+    "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
     },
-    "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
+    "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
     },
-    "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
+    "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
     },
-    "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
+    "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
     },
-    "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
+    "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
     },
-    "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
+    "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
     },
-    "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
-    },
-    "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
-    },
-    "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
-    },
-    "/planner/plans/{plannerPlan-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
+    "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
     },
     "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat": {
-      "originalLocation": "/openApiDocs/v1.0/Planner.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
+    },
+    "/groups/{group-id}/planner/plans/{plannerPlan-id}/details": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
+    },
+    "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
+    },
+    "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
+    },
+    "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
+    },
+    "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
+    },
+    "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/details": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
+    },
+    "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/progressTaskBoardFormat": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
+    },
+    "/planner": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
+    },
+    "/planner/buckets": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
+    },
+    "/planner/buckets/{plannerBucket-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
+    },
+    "/planner/buckets/{plannerBucket-id}/tasks": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
+    },
+    "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
+    },
+    "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
+    },
+    "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
+    },
+    "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
+    },
+    "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
+    },
+    "/planner/plans": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
+    },
+    "/planner/plans/{plannerPlan-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
+    },
+    "/planner/plans/{plannerPlan-id}/buckets": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
+    },
+    "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
+    },
+    "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
+    },
+    "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
+    },
+    "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
+    },
+    "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
+    },
+    "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
+    },
+    "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
+    },
+    "/planner/plans/{plannerPlan-id}/details": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
+    },
+    "/planner/plans/{plannerPlan-id}/tasks": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
+    },
+    "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
+    },
+    "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
+    },
+    "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
+    },
+    "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/details": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
+    },
+    "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/progressTaskBoardFormat": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
+    },
+    "/planner/tasks": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
+    },
+    "/planner/tasks/{plannerTask-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
+    },
+    "/planner/tasks/{plannerTask-id}/assignedToTaskBoardFormat": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
+    },
+    "/planner/tasks/{plannerTask-id}/bucketTaskBoardFormat": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
+    },
+    "/planner/tasks/{plannerTask-id}/details": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
+    },
+    "/planner/tasks/{plannerTask-id}/progressTaskBoardFormat": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
+    },
+    "/users/{user-id}/planner": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
+    },
+    "/users/{user-id}/planner/plans": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
+    },
+    "/users/{user-id}/planner/plans/{plannerPlan-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
+    },
+    "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
+    },
+    "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
+    },
+    "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
+    },
+    "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
+    },
+    "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
+    },
+    "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
+    },
+    "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
+    },
+    "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
+    },
+    "/users/{user-id}/planner/plans/{plannerPlan-id}/details": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
+    },
+    "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
+    },
+    "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
+    },
+    "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
+    },
+    "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
+    },
+    "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/details": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
+    },
+    "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/progressTaskBoardFormat": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
+    },
+    "/users/{user-id}/planner/tasks": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
+    },
+    "/users/{user-id}/planner/tasks/{plannerTask-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
+    },
+    "/users/{user-id}/planner/tasks/{plannerTask-id}/assignedToTaskBoardFormat": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
+    },
+    "/users/{user-id}/planner/tasks/{plannerTask-id}/bucketTaskBoardFormat": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
+    },
+    "/users/{user-id}/planner/tasks/{plannerTask-id}/details": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
+    },
+    "/users/{user-id}/planner/tasks/{plannerTask-id}/progressTaskBoardFormat": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Planner.yml"
     }
   },
   "resources": []

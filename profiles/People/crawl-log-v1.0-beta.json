@@ -1,180 +1,180 @@
 {
   "operations": {
-    "/users/{user-id}/profile/account": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/people/{person-id}": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/profile/addresses/{itemAddress-id}": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/profile/skills": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/profile": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/profile/webAccounts/{webAccount-id}": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/profile/anniversaries/{personAnniversary-id}": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/profile/awards/{personAward-id}": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/profile/interests/{personInterest-id}": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/profile/emails": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/profile/websites/{personWebsite-id}": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/profile/notes/{personAnnotation-id}": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/profile/educationalActivities/{educationalActivity-id}": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/people": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/profile/interests": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/profile/positions/{workPosition-id}": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/profile/patents/{itemPatent-id}": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/profile/languages/{languageProficiency-id}": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/profile/projects": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/profile/names/{personName-id}": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/profile/positions": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/profile/addresses": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/profile/awards": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/profile/webAccounts": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/profile/anniversaries": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/profile/patents": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/profile/languages": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/profile/publications": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/profile/projects/{projectParticipation-id}": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/profile/certifications": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/profile/skills/{skillProficiency-id}": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/profile/certifications/{personCertification-id}": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/profile/names": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
-    },
     "/users/{user-id}/analytics": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/profile/websites": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/analytics/activityStatistics/{activityStatistics-id}": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/profile/phones": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
     },
     "/users/{user-id}/analytics/activityStatistics": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
     },
-    "/users/{user-id}/profile/notes": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
+    "/users/{user-id}/analytics/activityStatistics/{activityStatistics-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
     },
-    "/users/{user-id}/profile/phones/{itemPhone-id}": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
+    "/users/{user-id}/people": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
     },
-    "/users/{user-id}/profile/emails/{itemEmail-id}": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
+    "/users/{user-id}/people/{person-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
     },
-    "/users/{user-id}/profile/educationalActivities": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
+    "/users/{user-id}/profile": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
+    },
+    "/users/{user-id}/profile/account": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
     },
     "/users/{user-id}/profile/account/{userAccountInformation-id}": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
+    },
+    "/users/{user-id}/profile/addresses": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
+    },
+    "/users/{user-id}/profile/addresses/{itemAddress-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
+    },
+    "/users/{user-id}/profile/anniversaries": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
+    },
+    "/users/{user-id}/profile/anniversaries/{personAnniversary-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
+    },
+    "/users/{user-id}/profile/awards": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
+    },
+    "/users/{user-id}/profile/awards/{personAward-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
+    },
+    "/users/{user-id}/profile/certifications": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
+    },
+    "/users/{user-id}/profile/certifications/{personCertification-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
+    },
+    "/users/{user-id}/profile/educationalActivities": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
+    },
+    "/users/{user-id}/profile/educationalActivities/{educationalActivity-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
+    },
+    "/users/{user-id}/profile/emails": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
+    },
+    "/users/{user-id}/profile/emails/{itemEmail-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
+    },
+    "/users/{user-id}/profile/interests": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
+    },
+    "/users/{user-id}/profile/interests/{personInterest-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
+    },
+    "/users/{user-id}/profile/languages": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
+    },
+    "/users/{user-id}/profile/languages/{languageProficiency-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
+    },
+    "/users/{user-id}/profile/names": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
+    },
+    "/users/{user-id}/profile/names/{personName-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
+    },
+    "/users/{user-id}/profile/notes": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
+    },
+    "/users/{user-id}/profile/notes/{personAnnotation-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
+    },
+    "/users/{user-id}/profile/patents": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
+    },
+    "/users/{user-id}/profile/patents/{itemPatent-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
+    },
+    "/users/{user-id}/profile/phones": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
+    },
+    "/users/{user-id}/profile/phones/{itemPhone-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
+    },
+    "/users/{user-id}/profile/positions": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
+    },
+    "/users/{user-id}/profile/positions/{workPosition-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
+    },
+    "/users/{user-id}/profile/projects": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
+    },
+    "/users/{user-id}/profile/projects/{projectParticipation-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
+    },
+    "/users/{user-id}/profile/publications": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
     },
     "/users/{user-id}/profile/publications/{itemPublication-id}": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
+    },
+    "/users/{user-id}/profile/skills": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
+    },
+    "/users/{user-id}/profile/skills/{skillProficiency-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
+    },
+    "/users/{user-id}/profile/webAccounts": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
+    },
+    "/users/{user-id}/profile/webAccounts/{webAccount-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
+    },
+    "/users/{user-id}/profile/websites": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
+    },
+    "/users/{user-id}/profile/websites/{personWebsite-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
     }
   },
   "resources": []

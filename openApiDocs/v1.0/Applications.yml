@@ -90,6 +90,8 @@ paths:
                 - requiredResourceAccess desc
                 - signInAudience
                 - signInAudience desc
+                - spa
+                - spa desc
                 - tags
                 - tags desc
                 - tokenEncryptionKeyId
@@ -133,6 +135,7 @@ paths:
                 - publisherDomain
                 - requiredResourceAccess
                 - signInAudience
+                - spa
                 - tags
                 - tokenEncryptionKeyId
                 - web
@@ -266,6 +269,7 @@ paths:
                 - publisherDomain
                 - requiredResourceAccess
                 - signInAudience
+                - spa
                 - tags
                 - tokenEncryptionKeyId
                 - web
@@ -6303,12 +6307,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.addIn'
-              description: 'Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its ''FileHandler'' functionality. This will let services like Microsoft 365 call the application in the context of a document the user is working on.'
+              description: 'Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its ''FileHandler'' functionality. This will let services like Office 365 call the application in the context of a document the user is working on.'
             api:
               $ref: '#/components/schemas/microsoft.graph.apiApplication'
             appId:
               type: string
-              description: The unique identifier for the application that is assigned to an application by Azure AD. Not nullable. Read-only.
+              description: The unique identifier for the application that is assigned by Azure AD. Not nullable. Read-only.
               nullable: true
             applicationTemplateId:
               type: string
@@ -6317,7 +6321,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appRole'
-              description: 'The collection of roles the application declares. With app role assignments, these roles can be assigned to users, groups, or other applications'' service principals. Not nullable.'
+              description: 'The collection of roles assigned to the application. With app role assignments, these roles can be assigned to users, groups, or service principals associated with other applications. Not nullable.'
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -6333,13 +6337,13 @@ components:
               nullable: true
             groupMembershipClaims:
               type: string
-              description: 'Configures the groups claim issued in a user or OAuth 2.0 access token that the application expects. To set this attribute, use one of the following valid string values:NoneSecurityGroup: For security groups and Azure AD rolesAll: This will get all of the security groups, distribution groups, and Azure AD directory roles that the signed-in user is a member of'
+              description: 'Configures the groups claim issued in a user or OAuth 2.0 access token that the application expects. To set this attribute, use one of the following string values:NoneSecurityGroup: For security groups and Azure AD rolesAll: This gets all of the security groups, distribution groups, and Azure AD directory roles that the signed-in user is a member of.'
               nullable: true
             identifierUris:
               type: array
               items:
                 type: string
-              description: 'The URIs that identify the application within its Azure AD tenant, or within a verified custom domain if the application is multi-tenant. For more information see Application Objects and Service Principal Objects. The any operator is required for filter expressions on multi-valued properties. Not nullable.'
+              description: 'The URIs that identify the application within its Azure AD tenant, or within a verified custom domain if the application is multi-tenant. For more information, see Application Objects and Service Principal Objects. The any operator is required for filter expressions on multi-valued properties. Not nullable.'
             info:
               $ref: '#/components/schemas/microsoft.graph.informationalUrl'
             isDeviceOnlyAuthSupported:
@@ -6347,13 +6351,13 @@ components:
               nullable: true
             isFallbackPublicClient:
               type: boolean
-              description: 'Specifies the fallback application type as public client, such as an installed application running on a mobile device. The default value is false which means the fallback application type is confidential client such as web app. There are certain scenarios where Azure AD cannot determine the client application type (e.g. ROPC flow where it is configured without specifying a redirect URI). In those cases Azure AD will interpret the application type based on the value of this property.'
+              description: 'Specifies the fallback application type as public client, such as an installed application running on a mobile device. The default value is false which means the fallback application type is confidential client such as a web app. There are certain scenarios where Azure AD cannot determine the client application type. For example, the ROPC flow where the application is configured without specifying a redirect URI. In those cases Azure AD interprets the application type based on the value of this property.'
               nullable: true
             keyCredentials:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.keyCredential'
-              description: The collection of key credentials associated with the application Not nullable.
+              description: The collection of key credentials associated with the application. Not nullable.
             logo:
               type: string
               description: The main logo for the application. Not nullable.
@@ -6382,11 +6386,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.requiredResourceAccess'
-              description: Specifies resources that this application requires access to and the set of OAuth permission scopes and application roles that it needs under each of those resources. This pre-configuration of required resource access drives the consent experience. Not nullable.
+              description: Specifies the resources that the application needs to access. This property also specifies the set of OAuth permission scopes and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. Not nullable.
             signInAudience:
               type: string
-              description: 'Specifies the Microsoft accounts that are supported for the current application. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization’s Azure AD tenant (single tenant)AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization’s Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization’s Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.For authenticating users with Azure AD B2C user flows, use AzureADandPersonalMicrosoftAccount. This value allows for the widest set of user identities including local accounts and user identities from Microsoft, Facebook, Google, Twitter, or any OpenID Connect provider.'
+              description: 'Specifies the Microsoft accounts that are supported for the current application. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization’s Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization’s Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization’s Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.'
               nullable: true
+            spa:
+              $ref: '#/components/schemas/microsoft.graph.spaApplication'
             tags:
               type: array
               items:
@@ -6424,6 +6430,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.tokenLifetimePolicy'
+              description: The tokenLifetimePolicies assigned to this application.
           additionalProperties:
             type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
@@ -6498,7 +6505,7 @@ components:
           nullable: true
         key:
           type: string
-          description: 'The certificate''s raw data in byte array converted to Base64 string; for example, [System.Convert]::ToBase64String($Cert.GetRawCertData()).'
+          description: Value for the key credential. Should be a base 64 encoded value.
           format: base64url
           nullable: true
         keyId:
@@ -6722,6 +6729,7 @@ components:
               nullable: true
             preferredTokenSigningKeyThumbprint:
               type: string
+              description: Reserved for internal use only. Do not write or otherwise rely on this property. May be removed in future versions.
               nullable: true
             replyUrls:
               type: array
@@ -6741,6 +6749,7 @@ components:
               nullable: true
             signInAudience:
               type: string
+              description: Specifies what Microsoft accounts are supported for the associated application. Read-only.
               nullable: true
             tags:
               type: array
@@ -6777,6 +6786,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.delegatedPermissionClassification'
+              description: The permission classifications for delegated permissions exposed by the app that this service principal represents.
             endpoints:
               type: array
               items:
@@ -6842,11 +6852,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.permissionClassificationType'
             permissionId:
               type: string
-              description: The unique identifier (id) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal. Required on create. Does not support $filter.
+              description: The unique identifier (id) for the delegated permission listed in the publishedPermissionScopes collection of the servicePrincipal. Required on create. Does not support $filter.
               nullable: true
             permissionName:
               type: string
-              description: The claim value (value) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal. Does not support $filter.
+              description: The claim value (value) for the delegated permission listed in the publishedPermissionScopes collection of the servicePrincipal. Does not support $filter.
               nullable: true
           additionalProperties:
             type: object
@@ -7078,6 +7088,17 @@ components:
           description: The unique identifier for the resource that the application requires access to.  This should be equal to the appId declared on the target resource application.
       additionalProperties:
         type: object
+    microsoft.graph.spaApplication:
+      title: spaApplication
+      type: object
+      properties:
+        redirectUris:
+          type: array
+          items:
+            type: string
+          description: 'Specifies the URLs where user tokens are sent for sign-in, or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent.'
+      additionalProperties:
+        type: object
     microsoft.graph.webApplication:
       title: webApplication
       type: object
@@ -7204,11 +7225,11 @@ components:
       properties:
         key:
           type: string
-          description: Key for the key-value pair.
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Value for the key-value pair.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object
