@@ -1205,7 +1205,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 foreach (var innerException in aggregateException.Flatten().InnerExceptions)
                 {
                     var errorRecords = innerException.Data;
-                    if (errorRecords.Count < 1)
+                    if (errorRecords.Count > 1)
                     {
                         foreach (DictionaryEntry dictionaryEntry in errorRecords)
                         {
