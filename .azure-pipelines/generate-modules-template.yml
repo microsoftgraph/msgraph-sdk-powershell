@@ -46,6 +46,7 @@ jobs:
   - task: PowerShell@2
     displayName: 'Generate Profiles'
     continueOnError: false
+    enabled: false
     inputs:
       targetType: 'filePath'
       pwsh: true
