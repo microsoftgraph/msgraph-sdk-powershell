@@ -50,7 +50,7 @@ directive:
       subject: $1
 # Remove cmdlets
   - where:
-      subject: ^UserAuthenticationMethod$
+      subject: ^UserAuthentication$
     remove: true
 ```
 ### Versioning
