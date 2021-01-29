@@ -28,9 +28,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 
             var rt = RestReturnType.Detect;
             var contentType = response.GetContentType();
-            if (string.IsNullOrEmpty(contentType))
-                rt = RestReturnType.Detect;
-            else if (IsJson(contentType))
+            if (string.IsNullOrEmpty(contentType) || IsJson(contentType))
                 rt = RestReturnType.Json;
             else if (IsXml(contentType))
                 rt = RestReturnType.Xml;
