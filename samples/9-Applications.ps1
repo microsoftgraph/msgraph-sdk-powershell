@@ -25,6 +25,49 @@ $app3 = New-MgApplication -displayName "ImplicitWebApp" `
              } `
         }  
 
+# Create an registration for an ASP.NET Web App
+$app = New-MgApplication -displayName "AspNetWebApp" `
+           -Web @{ 
+              RedirectUris = "https://localhost:5001/signin-oidc"; `
+              ImplicitGrantSettings = @{ 
+                  EnableIdTokenIssuance = $true
+               } 
+             }`
+             -RequiredResourceAccess @{ ResourceAppId = "00000003-0000-0000-c000-000000000000"
+                                        ResourceAccess = @(
+                                                @{ 
+                                                    Id = "e1fe6dd8-ba31-4d61-89e7-88639da4683d"
+                                                    Type = "Scope"
+                                                 }
+                                                 )
+                                            } 
+
+## Create a registration for an ASP.NET Web App that call the Graph
+$web = @{
+    RedirectUris = @("https://localhost:5001/signin-oidc", "https://localhost:5001/" )
+    LogoutUrl = "https://localhost:5001/signout-oidc"
+    ImplicitGrantSettings = @{ EnableIdTokenIssuance = $true }
+}
+
+$createAppParams = @{
+    DisplayName = "AspNetWebApp6"
+    Web = $web
+    RequiredResourceAccess = @{
+        ResourceAppId = "00000003-0000-0000-c000-000000000000"
+        ResourceAccess = @(
+            @{
+                Id = "e1fe6dd8-ba31-4d61-89e7-88639da4683d"
+                Type = "Scope"
+            }
+        )
+    }
+}
+# note the use of @ below, instead of the expected $
+$app = New-MgApplication @createAppParams
+
+$secret = Add-MgApplicationPassword -applicationId $app.Id
+
+
 # Create an application for use with Confidential Client flow using a certificate.
 # Get certificate from current user store.
 $CertificateThumbprint = "YOUR_THUMBPRINT"
