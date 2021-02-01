@@ -1,44 +1,44 @@
 {
   "operations": {
-    "/directoryObjects/{directoryObject-id}/microsoft.graph.getMemberGroups": {
-      "originalLocation": "/openApiDocs/beta/DirectoryObjects.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/directoryObjects/{directoryObject-id}/microsoft.graph.checkMemberGroups": {
-      "originalLocation": "/openApiDocs/beta/DirectoryObjects.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/directoryObjects/microsoft.graph.getUserOwnedObjects": {
-      "originalLocation": "/openApiDocs/beta/DirectoryObjects.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/directoryObjects/{directoryObject-id}/microsoft.graph.checkMemberObjects": {
-      "originalLocation": "/openApiDocs/beta/DirectoryObjects.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/directoryObjects/microsoft.graph.getByIds": {
-      "originalLocation": "/openApiDocs/beta/DirectoryObjects.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/directoryObjects/{directoryObject-id}/microsoft.graph.getMemberObjects": {
-      "originalLocation": "/openApiDocs/beta/DirectoryObjects.yml",
-      "apiVersion": "v1.0-beta"
-    },
     "/directoryObjects": {
-      "originalLocation": "/openApiDocs/beta/DirectoryObjects.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/directoryObjects/microsoft.graph.validateProperties": {
-      "originalLocation": "/openApiDocs/beta/DirectoryObjects.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/directoryObjects/{directoryObject-id}/microsoft.graph.restore": {
-      "originalLocation": "/openApiDocs/beta/DirectoryObjects.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DirectoryObjects.yml"
     },
     "/directoryObjects/{directoryObject-id}": {
-      "originalLocation": "/openApiDocs/beta/DirectoryObjects.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DirectoryObjects.yml"
+    },
+    "/directoryObjects/{directoryObject-id}/microsoft.graph.checkMemberGroups": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DirectoryObjects.yml"
+    },
+    "/directoryObjects/{directoryObject-id}/microsoft.graph.checkMemberObjects": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DirectoryObjects.yml"
+    },
+    "/directoryObjects/{directoryObject-id}/microsoft.graph.getMemberGroups": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DirectoryObjects.yml"
+    },
+    "/directoryObjects/{directoryObject-id}/microsoft.graph.getMemberObjects": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DirectoryObjects.yml"
+    },
+    "/directoryObjects/{directoryObject-id}/microsoft.graph.restore": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DirectoryObjects.yml"
+    },
+    "/directoryObjects/microsoft.graph.getByIds": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DirectoryObjects.yml"
+    },
+    "/directoryObjects/microsoft.graph.getUserOwnedObjects": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DirectoryObjects.yml"
+    },
+    "/directoryObjects/microsoft.graph.validateProperties": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DirectoryObjects.yml"
     }
   },
   "resources": []

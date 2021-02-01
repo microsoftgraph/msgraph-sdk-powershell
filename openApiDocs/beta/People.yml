@@ -6155,7 +6155,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.activityStatistics'
-              description: The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
           additionalProperties:
             type: object
     microsoft.graph.activityStatistics:
@@ -6169,21 +6168,17 @@ components:
             duration:
               pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
               type: string
-              description: Total hours spent on the activity. The value is represented in ISO 8601 format for durations.
               format: duration
             endDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
-              description: 'Date when the activity ended, expressed in ISO 8601 format for calendar dates. For example, the property value could be ''2019-07-03'' that follows the YYYY-MM-DD format.'
               format: date
             startDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
-              description: 'Date when the activity started, expressed in ISO 8601 format for calendar dates. For example, the property value could be ''2019-07-04'' that follows the YYYY-MM-DD format.'
               format: date
             timeZoneUsed:
               type: string
-              description: 'The time zone that the user sets in Microsoft Outlook is used for the computation. For example, the property value could be ''Pacific Standard Time.'''
               nullable: true
           additionalProperties:
             type: object
@@ -6213,7 +6208,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.rankedEmailAddress'
-              description: The person's email addresses.
             givenName:
               type: string
               description: The person's given name.
@@ -6224,7 +6218,6 @@ components:
               nullable: true
             mailboxType:
               type: string
-              description: The type of mailbox that is represented by the person's email address.
               nullable: true
             officeLocation:
               type: string
@@ -6236,7 +6229,7 @@ components:
               nullable: true
             personType:
               type: string
-              description: 'The type of person, for example distribution list.'
+              description: The type of person.
               nullable: true
             phones:
               type: array
@@ -6256,14 +6249,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.personDataSource'
-              description: 'The sources the user data comes from, for example Directory or Outlook Contacts.'
             surname:
               type: string
               description: The person's surname.
               nullable: true
             title:
               type: string
-              description: The person's title.
               nullable: true
             userPrincipalName:
               type: string
@@ -6294,92 +6285,74 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.itemAddress'
-              description: Represents details of addresses associated with the user.
             anniversaries:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.personAnniversary'
-              description: Represents the details of meaningful dates associated with a person.
             awards:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.personAward'
-              description: Represents the details of awards or honors associated with a person.
             certifications:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.personCertification'
-              description: Represents the details of certifications associated with a person.
             educationalActivities:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.educationalActivity'
-              description: 'Represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.'
             emails:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.itemEmail'
-              description: Represents detailed information about email addresses associated with the user.
             interests:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.personInterest'
-              description: Provides detailed information about interests the user has associated with themselves in various services.
             languages:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.languageProficiency'
-              description: Represents detailed information about languages that a user has added to their profile.
             names:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.personName'
-              description: Represents the names a user has added to their profile.
             notes:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.personAnnotation'
-              description: Represents notes that a user has added to their profile.
             patents:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.itemPatent'
-              description: Represents patents that a user has added to their profile.
             phones:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.itemPhone'
-              description: Represents detailed information about phone numbers associated with a user in various services.
             positions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workPosition'
-              description: Represents detailed information about work positions associated with a user's profile.
             projects:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.projectParticipation'
-              description: Represents detailed information about projects associated with a user.
             publications:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.itemPublication'
-              description: Represents details of any publications a user has added to their profile.
             skills:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.skillProficiency'
-              description: Represents detailed information about skills associated with a user in various services.
             webAccounts:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.webAccount'
-              description: Represents web accounts the user has indicated they use or has added to their user profile.
             websites:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.personWebsite'
-              description: Represents detailed information about websites associated with a user in various services.
           additionalProperties:
             type: object
     microsoft.graph.userAccountInformation:
@@ -6390,15 +6363,12 @@ components:
           properties:
             ageGroup:
               type: string
-              description: 'Shows the age group of user. Allowed values null, minor, notAdult and adult are generated by the directory and cannot be changed.'
             countryCode:
               type: string
-              description: Contains the two-character country code associated with the users account.
             preferredLanguageTag:
               $ref: '#/components/schemas/microsoft.graph.localeInfo'
             userPrincipalName:
               type: string
-              description: The user principal name (UPN) of the user associated with the account.
           additionalProperties:
             type: object
     microsoft.graph.itemAddress:
@@ -6411,7 +6381,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.physicalAddress'
             displayName:
               type: string
-              description: Friendly name the user has assigned to this address.
               nullable: true
             geoCoordinates:
               $ref: '#/components/schemas/microsoft.graph.geoCoordinates'
@@ -6426,7 +6395,6 @@ components:
             date:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
-              description: Contains the date associated with the anniversary type.
               format: date
               nullable: true
             type:
@@ -6441,28 +6409,22 @@ components:
           properties:
             description:
               type: string
-              description: Descpription of the award or honor.
               nullable: true
             displayName:
               type: string
-              description: Name of the award or honor.
             issuedDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
-              description: The date that the award or honor was granted.
               format: date
               nullable: true
             issuingAuthority:
               type: string
-              description: Authority which granted the award or honor.
               nullable: true
             thumbnailUrl:
               type: string
-              description: URL referencing a thumbnail of the award or honor.
               nullable: true
             webUrl:
               type: string
-              description: URL referencing the award or honor.
               nullable: true
           additionalProperties:
             type: object
@@ -6474,48 +6436,38 @@ components:
           properties:
             certificationId:
               type: string
-              description: The referenceable identifier for the certification.
               nullable: true
             description:
               type: string
-              description: Description of the certification.
               nullable: true
             displayName:
               type: string
-              description: Title of the certification.
             endDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
-              description: The date that the certification expires.
               format: date
               nullable: true
             issuedDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
-              description: The date that the certification was issued.
               format: date
               nullable: true
             issuingAuthority:
               type: string
-              description: Authority which granted the certification.
               nullable: true
             issuingCompany:
               type: string
-              description: Company which granted the certification.
               nullable: true
             startDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
-              description: The date that the certification became valid.
               format: date
               nullable: true
             thumbnailUrl:
               type: string
-              description: URL referencing a thumbnail of the certification.
               nullable: true
             webUrl:
               type: string
-              description: URL referencing the certification.
               nullable: true
           additionalProperties:
             type: object
@@ -6528,13 +6480,11 @@ components:
             completionMonthYear:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
-              description: The month and year the user graduated or completed the activity.
               format: date
               nullable: true
             endMonthYear:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
-              description: The month and year the user completed the educational activity referenced.
               format: date
               nullable: true
             institution:
@@ -6544,7 +6494,6 @@ components:
             startMonthYear:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
-              description: The month and year the user commenced the activity referenced.
               format: date
               nullable: true
           additionalProperties:
@@ -6557,10 +6506,8 @@ components:
           properties:
             address:
               type: string
-              description: The email address itself.
             displayName:
               type: string
-              description: The name or label a user has associated with a particular email address.
               nullable: true
             type:
               $ref: '#/components/schemas/microsoft.graph.emailType'
@@ -6577,23 +6524,18 @@ components:
               items:
                 type: string
                 nullable: true
-              description: 'Contains categories a user has associated with the interest (for example, personal, recipies).'
             collaborationTags:
               type: array
               items:
                 type: string
                 nullable: true
-              description: 'Contains experience scenario tags a user has associated with the interest. Allowed values in the collection are: askMeAbout, ableToMentor, wantsToLearn, wantsToImprove.'
             description:
               type: string
-              description: Contains a description of the interest.
               nullable: true
             displayName:
               type: string
-              description: Contains a friendly name for the interest.
             webUrl:
               type: string
-              description: Contains a link to a web page or resource about the interest.
               nullable: true
           additionalProperties:
             type: object
@@ -6605,7 +6547,6 @@ components:
           properties:
             displayName:
               type: string
-              description: Contains the long-form name for the language.
             proficiency:
               $ref: '#/components/schemas/microsoft.graph.languageProficiencyLevel'
             reading:
@@ -6614,7 +6555,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.languageProficiencyLevel'
             tag:
               type: string
-              description: 'Contains the four-character BCP47 name for the language (en-US, no-NB, en-AU).'
             written:
               $ref: '#/components/schemas/microsoft.graph.languageProficiencyLevel'
           additionalProperties:
@@ -6627,42 +6567,32 @@ components:
           properties:
             displayName:
               type: string
-              description: Provides an ordered rendering of firstName and lastName depending on the locale of the user or their device.
             first:
               type: string
-              description: First name of the user.
             initials:
               type: string
-              description: Initials of the user.
               nullable: true
             languageTag:
               type: string
-              description: 'Contains the name for the language (en-US, no-NB, en-AU) following IETF BCP47 format.'
               nullable: true
             last:
               type: string
-              description: Last name of the user.
             maiden:
               type: string
-              description: Maiden name of the user.
               nullable: true
             middle:
               type: string
-              description: Middle name of the user.
               nullable: true
             nickname:
               type: string
-              description: Nickname of the user.
               nullable: true
             pronunciation:
               $ref: '#/components/schemas/microsoft.graph.yomiPersonName'
             suffix:
               type: string
-              description: 'Designators used after the users name (eg: PhD.)'
               nullable: true
             title:
               type: string
-              description: 'Honorifics used to prefix a users name (eg: Dr, Sir, Madam, Mrs.)'
               nullable: true
           additionalProperties:
             type: object
@@ -6676,7 +6606,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.itemBody'
             displayName:
               type: string
-              description: Contains a friendly name for the note.
               nullable: true
           additionalProperties:
             type: object
@@ -6688,32 +6617,25 @@ components:
           properties:
             description:
               type: string
-              description: Descpription of the patent or filing.
               nullable: true
             displayName:
               type: string
-              description: Title of the patent or filing.
             isPending:
               type: boolean
-              description: Indicates the patent is pending.
               nullable: true
             issuedDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
-              description: The date that the patent was granted.
               format: date
               nullable: true
             issuingAuthority:
               type: string
-              description: Authority which granted the patent.
               nullable: true
             number:
               type: string
-              description: The patent number.
               nullable: true
             webUrl:
               type: string
-              description: URL referencing the patent or filing.
               nullable: true
           additionalProperties:
             type: object
@@ -6725,11 +6647,9 @@ components:
           properties:
             displayName:
               type: string
-              description: Friendly name the user has assigned this phone number.
               nullable: true
             number:
               type: string
-              description: Phone number provided by the user.
             type:
               $ref: '#/components/schemas/microsoft.graph.phoneType'
           additionalProperties:
@@ -6745,17 +6665,14 @@ components:
               items:
                 type: string
                 nullable: true
-              description: Categories that the user has associated with this position.
             colleagues:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.relatedPerson'
-              description: Colleagues that are associated with this position.
             detail:
               $ref: '#/components/schemas/microsoft.graph.positionDetail'
             isCurrent:
               type: boolean
-              description: Denotes whether or not the position is current.
               nullable: true
             manager:
               $ref: '#/components/schemas/microsoft.graph.relatedPerson'
@@ -6772,7 +6689,6 @@ components:
               items:
                 type: string
                 nullable: true
-              description: 'Contains categories a user has associated with the project (for example, digital transformation, oil rig).'
             client:
               $ref: '#/components/schemas/microsoft.graph.companyDetail'
             collaborationTags:
@@ -6780,22 +6696,18 @@ components:
               items:
                 type: string
                 nullable: true
-              description: 'Contains experience scenario tags a user has associated with the interest. Allowed values in the collection are: askMeAbout, ableToMentor, wantsToLearn, wantsToImprove.'
             colleagues:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.relatedPerson'
-              description: Lists people that also worked on the project.
             detail:
               $ref: '#/components/schemas/microsoft.graph.positionDetail'
             displayName:
               type: string
-              description: Contains a friendly name for the project.
             sponsors:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.relatedPerson'
-              description: The Person or people who sponsored the project.
           additionalProperties:
             type: object
     microsoft.graph.itemPublication:
@@ -6806,28 +6718,22 @@ components:
           properties:
             description:
               type: string
-              description: Description of the publication.
               nullable: true
             displayName:
               type: string
-              description: Title of the publication.
             publishedDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
-              description: The date that the publication was published.
               format: date
               nullable: true
             publisher:
               type: string
-              description: Publication or publisher for the publication.
               nullable: true
             thumbnailUrl:
               type: string
-              description: URL referencing a thumbnail of the publication.
               nullable: true
             webUrl:
               type: string
-              description: URL referencing the publication.
               nullable: true
           additionalProperties:
             type: object
@@ -6842,21 +6748,17 @@ components:
               items:
                 type: string
                 nullable: true
-              description: 'Contains categories a user has associated with the skill (for example, personal, professional, hobby).'
             collaborationTags:
               type: array
               items:
                 type: string
                 nullable: true
-              description: 'Contains experience scenario tags a user has associated with the interest. Allowed values in the collection are: askMeAbout, ableToMentor, wantsToLearn, wantsToImprove.'
             displayName:
               type: string
-              description: Contains a friendly name for the skill.
             proficiency:
               $ref: '#/components/schemas/microsoft.graph.skillProficiencyLevel'
             webUrl:
               type: string
-              description: Contains a link to an information source about the skill.
               nullable: true
           additionalProperties:
             type: object
@@ -6868,20 +6770,16 @@ components:
           properties:
             description:
               type: string
-              description: Contains the description the user has provided for the account on the service being referenced.
               nullable: true
             service:
               $ref: '#/components/schemas/microsoft.graph.serviceInformation'
             statusMessage:
               type: string
-              description: Contains a status message from the cloud service if provided or synchronized.
               nullable: true
             userId:
               type: string
-              description: The user name  displayed for the webaccount.
             webUrl:
               type: string
-              description: Contains a link to the user's profile on the cloud service if one exists.
               nullable: true
           additionalProperties:
             type: object
@@ -6896,17 +6794,13 @@ components:
               items:
                 type: string
                 nullable: true
-              description: 'Contains categories a user has associated with the website (for example, personal, recipes).'
             description:
               type: string
-              description: Contains a description of the website.
               nullable: true
             displayName:
               type: string
-              description: Contains a friendly name for the website.
             webUrl:
               type: string
-              description: Contains a link to the website itself.
           additionalProperties:
             type: object
     microsoft.graph.entity:
@@ -6924,13 +6818,10 @@ components:
       properties:
         hasGraphMailbox:
           type: boolean
-          description: Specifies if the user's primary mailbox is hosted in the cloud and is enabled for Microsoft Graph.
         hasLicense:
           type: boolean
-          description: Specifies if the user has a MyAnalytics license assigned.
         hasOptedOut:
           type: boolean
-          description: Specifies if the user opted out of MyAnalytics.
       additionalProperties:
         type: object
     microsoft.graph.analyticsActivityType:
@@ -6948,11 +6839,9 @@ components:
       properties:
         address:
           type: string
-          description: The email address.
           nullable: true
         rank:
           type: number
-          description: 'The rank of the email address. A rank is used as a sort key, in relation to the other returned results. A higher rank value corresponds to a more relevant result. Relevance is determined by communication, collaboration, and business relationship signals.'
           format: double
           nullable: true
       additionalProperties:
@@ -7005,7 +6894,6 @@ components:
       properties:
         type:
           type: string
-          description: The type of data source.
           nullable: true
       additionalProperties:
         type: object
@@ -7038,7 +6926,6 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Provides the dateTimeOffset for when the entity was created.
               format: date-time
             inference:
               $ref: '#/components/schemas/microsoft.graph.inferenceData'
@@ -7047,7 +6934,6 @@ components:
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Provides the dateTimeOffset for when the entity was created.
               format: date-time
             source:
               $ref: '#/components/schemas/microsoft.graph.personDataSources'
@@ -7085,7 +6971,6 @@ components:
           nullable: true
         postOfficeBox:
           type: string
-          description: The post office box number.
           nullable: true
         state:
           type: string
@@ -7110,12 +6995,12 @@ components:
           nullable: true
         latitude:
           type: number
-          description: 'Optional. The latitude, in decimal, for the item. Writable on OneDrive Personal.'
+          description: 'Optional. The latitude, in decimal, for the item. Read-only.'
           format: double
           nullable: true
         longitude:
           type: number
-          description: 'Optional. The longitude, in decimal, for the item. Writable on OneDrive Personal.'
+          description: 'Optional. The longitude, in decimal, for the item. Read-only.'
           format: double
           nullable: true
       additionalProperties:
@@ -7133,16 +7018,13 @@ components:
       properties:
         description:
           type: string
-          description: Short description of the institution the user studied at.
           nullable: true
         displayName:
           type: string
-          description: Name of the institution the user studied at.
         location:
           $ref: '#/components/schemas/microsoft.graph.physicalAddress'
         webUrl:
           type: string
-          description: Link to the institution or department homepage.
           nullable: true
       additionalProperties:
         type: object
@@ -7152,44 +7034,35 @@ components:
       properties:
         abbreviation:
           type: string
-          description: 'Shortened name of the degree or program (example: PhD, MBA)'
           nullable: true
         activities:
           type: array
           items:
             type: string
             nullable: true
-          description: Extracurricular activities undertaken alongside the program.
         awards:
           type: array
           items:
             type: string
             nullable: true
-          description: Any awards or honors associated with the program.
         description:
           type: string
-          description: Short description of the program provided by the user.
           nullable: true
         displayName:
           type: string
-          description: Long-form name of the program that the user has provided.
         fieldsOfStudy:
           type: array
           items:
             type: string
             nullable: true
-          description: Majors and minors associated with the program. (if applicable)
         grade:
           type: string
-          description: 'The final grade, class, GPA or score.'
           nullable: true
         notes:
           type: string
-          description: Additional notes the user has provided.
           nullable: true
         webUrl:
           type: string
-          description: Link to the degree or program page.
           nullable: true
       additionalProperties:
         type: object
@@ -7219,23 +7092,18 @@ components:
       properties:
         displayName:
           type: string
-          description: Composite of first and last name pronunciation guides.
           nullable: true
         first:
           type: string
-          description: Pronunciation guide for the first name of the user.
           nullable: true
         last:
           type: string
-          description: Pronunciation guide for the last name of the user.
           nullable: true
         maiden:
           type: string
-          description: Pronunciation guide for the maiden name of the user.
           nullable: true
         middle:
           type: string
-          description: Pronunciation guide for the middle name of the user.
           nullable: true
       additionalProperties:
         type: object
@@ -7271,13 +7139,11 @@ components:
       properties:
         displayName:
           type: string
-          description: Name of the person.
           nullable: true
         relationship:
           $ref: '#/components/schemas/microsoft.graph.personRelationship'
         userPrincipalName:
           type: string
-          description: Email address or reference to person within organization.
           nullable: true
       additionalProperties:
         type: object
@@ -7289,30 +7155,24 @@ components:
           $ref: '#/components/schemas/microsoft.graph.companyDetail'
         description:
           type: string
-          description: Description of the position in question.
           nullable: true
         endMonthYear:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
           type: string
-          description: When the position ended.
           format: date
           nullable: true
         jobTitle:
           type: string
-          description: The title held when in that position.
         role:
           type: string
-          description: The role the position entailed.
           nullable: true
         startMonthYear:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
           type: string
-          description: The start month and year of the position.
           format: date
           nullable: true
         summary:
           type: string
-          description: Short summary of the position.
           nullable: true
       additionalProperties:
         type: object
@@ -7324,22 +7184,17 @@ components:
           $ref: '#/components/schemas/microsoft.graph.physicalAddress'
         department:
           type: string
-          description: Department Name within a company.
           nullable: true
         displayName:
           type: string
-          description: Company name.
         officeLocation:
           type: string
-          description: Office Location of the person referred to.
           nullable: true
         pronunciation:
           type: string
-          description: Pronunciation guide for the company name.
           nullable: true
         webUrl:
           type: string
-          description: Link to the company home page.
           nullable: true
       additionalProperties:
         type: object
@@ -7359,10 +7214,8 @@ components:
       properties:
         name:
           type: string
-          description: 'The name of the cloud service (for example, Twitter, Instagram).'
         webUrl:
           type: string
-          description: Contains the URL for the service being referenced.
       additionalProperties:
         type: object
     odata.error:
@@ -7467,12 +7320,10 @@ components:
       properties:
         confidenceScore:
           type: number
-          description: Confidence score reflecting the accuracy of the data inferred about the user.
           format: double
           nullable: true
         userHasVerifiedAccuracy:
           type: boolean
-          description: Records if the user has confirmed this inference as being True or False.
           nullable: true
       additionalProperties:
         type: object

@@ -11,6 +11,8 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.2.0" />
+    <!-- As described in this post https://devblogs.microsoft.com/powershell/depending-on-the-right-powershell-nuget-package-in-your-net-project, reference the SDK for dotnetcore-->
+    <PackageReference Include="Microsoft.PowerShell.SDK" Version="6.2.7" PrivateAssets="all" Condition="'$(TargetFramework)' == 'netcoreapp2.1'" />
     <PackageReference Include="xunit" Version="2.4.0" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.0" />
     <PackageReference Include="coverlet.collector" Version="1.0.1" />

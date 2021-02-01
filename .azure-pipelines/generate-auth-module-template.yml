@@ -41,7 +41,7 @@ jobs:
       pwsh: true
       script: |
         Write-Host $(BUILDNUMBER)
-        pwsh $(System.DefaultWorkingDirectory)/tools/GenerateAuthenticationModule.ps1 -ArtifactsLocation $(Build.ArtifactStagingDirectory) -Build -ModulePreviewNumber $(BUILDNUMBER)
+        pwsh $(System.DefaultWorkingDirectory)/tools/GenerateAuthenticationModule.ps1 -ArtifactsLocation $(Build.ArtifactStagingDirectory) -Build -ModulePreviewNumber $(BUILDNUMBER) -Test
 
   - task: DotNetCoreCLI@2
     displayName: 'Run: Enabled Tests'
@@ -190,6 +190,16 @@ jobs:
       packagesToPush: '$(Build.ArtifactStagingDirectory)\$(AUTH_MODULE_NAME)\Microsoft.Graph.$(AUTH_MODULE_NAME)*.nupkg'
       publishVstsFeed: '0985d294-5762-4bc2-a565-161ef349ca3e/edc337b9-e5ea-49dd-a2cb-e8d66668ca57'
       allowPackageConflicts: true
+    
+  - task: PublishTestResults@2
+    inputs:
+      testResultsFormat: 'NUnit'
+      testResultsFiles: '**/*-TestResults.xml'
+
+  - task: PublishCodeCoverageResults@1
+    inputs:
+      #codeCoverageTool: 'JaCoCo' # Options: cobertura, jaCoCo
+      summaryFileLocation: "**/coverage.xml"
 
   - task: PublishBuildArtifacts@1
     displayName: Publish Artifact Microsoft.Graph.Authentication.nupkg'

@@ -1,692 +1,748 @@
 {
   "operations": {
-    "/applications/{application-id}/synchronization/microsoft.graph.acquireAccessToken": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/synchronization/templates/{synchronizationTemplate-id}/schema/directories": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/synchronization/microsoft.graph.Ping()": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agents/{onPremisesAgent-id}": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/onPremisesPublishingProfiles": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/tokenIssuancePolicies/$ref": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/microsoft.graph.getMemberGroups": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/connectorGroup": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/microsoft.graph.createPasswordSingleSignOnCredentials": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/ownedObjects/$ref": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/endpoints/{endpoint-id}": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/schema/directories": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agentGroups/{onPremisesAgentGroup-id}/publishedResources": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals/microsoft.graph.getByIds": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/microsoft.graph.removePassword": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agentGroups/{onPremisesAgentGroup-id}/publishedResources/{publishedResource-id}": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/memberOf/$ref": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/tokenLifetimePolicies/$ref": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/claimsMappingPolicies/$ref": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agentGroups/{onPremisesAgentGroup-id}/agents/{onPremisesAgent-id}/agentGroups": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals/{servicePrincipal-id}": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/schema/microsoft.graph.parseExpression": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/schema/directories/{directoryDefinition-id}/microsoft.graph.discover": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/memberOf": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/appRoleAssignments/{appRoleAssignment-id}": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/owners/$ref": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/groups/{group-id}/appRoleAssignments/{appRoleAssignment-id}": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/synchronization/jobs": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/appRoleAssignments": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/owners": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/synchronization/jobs": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/microsoft.graph.restore": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/claimsMappingPolicies": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/connectors/{connector-id}": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/schema/microsoft.graph.filterOperators()": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/microsoft.graph.validateCredentials": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agents/{onPremisesAgent-id}/agentGroups/{onPremisesAgentGroup-id}": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agents": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agentGroups/{onPremisesAgentGroup-id}/agents": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/tokenLifetimePolicies": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/microsoft.graph.validateCredentials": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/connectorGroups/{connectorGroup-id}": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/synchronization/templates/{synchronizationTemplate-id}/schema/directories": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agentGroups": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/ownedObjects": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/synchronization": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/synchronization/templates": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/microsoft.graph.restore": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/synchronization/templates": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/schema/microsoft.graph.functions()": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/microsoft.graph.getMemberGroups": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agentGroups/{onPremisesAgentGroup-id}/publishedResources/{publishedResource-id}/agentGroups": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/schema/directories": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/schema/microsoft.graph.functions()": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/createdOnBehalfOf": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/microsoft.graph.pause": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agents/{onPremisesAgent-id}/agentGroups/{onPremisesAgentGroup-id}/publishedResources/{publishedResource-id}": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/licenseDetails/{licenseDetails-id}": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/extensionProperties": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/microsoft.graph.updatePasswordSingleSignOnCredentials": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/homeRealmDiscoveryPolicies/$ref": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/owners": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/synchronization/templates/{synchronizationTemplate-id}/schema": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/microsoft.graph.getPasswordSingleSignOnCredentials": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/microsoft.graph.checkMemberObjects": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/oauth2PermissionGrants": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agents/{onPremisesAgent-id}/agentGroups/{onPremisesAgentGroup-id}/publishedResources/{publishedResource-id}/agentGroups": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/microsoft.graph.checkMemberGroups": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/logo": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals/microsoft.graph.getUserOwnedObjects": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/microsoft.graph.removeKey": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/microsoft.graph.delta()": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/appRoleAssignedTo": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/microsoft.graph.deletePasswordSingleSignOnCredentials": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/microsoft.graph.validateCredentials": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/publishedResources/{publishedResource-id}/agentGroups/{onPremisesAgentGroup-id}/agents/{onPremisesAgent-id}/agentGroups": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
+    "/applications": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
     },
     "/applications/{application-id}": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
     },
-    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/publishedResources/{publishedResource-id}/agentGroups/{onPremisesAgentGroup-id}/agents/{onPremisesAgent-id}/agentGroups/{onPremisesAgentGroup-id1}": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/tokenIssuancePolicies": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/microsoft.graph.start": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/synchronization/microsoft.graph.Ping()": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agents/{onPremisesAgent-id}/agentGroups/{onPremisesAgentGroup-id}/agents/{onPremisesAgent-id1}": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/schema": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/tokenIssuancePolicies": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/extensionProperties/{extensionProperty-id}": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/tokenLifetimePolicies": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/createdOnBehalfOf/$ref": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applicationTemplates/{applicationTemplate-id}/microsoft.graph.instantiate": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/createdObjects/$ref": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/publishedResources/{publishedResource-id}/agentGroups": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/licenseDetails": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/schema/microsoft.graph.parseExpression": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/synchronization/templates/{synchronizationTemplate-id}": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/synchronization/templates/{synchronizationTemplate-id}/schema/microsoft.graph.filterOperators()": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/microsoft.graph.restart": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/synchronization/templates/{synchronizationTemplate-id}/schema/microsoft.graph.filterOperators()": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/schema/directories/{directoryDefinition-id}/microsoft.graph.discover": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/homeRealmDiscoveryPolicies": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/microsoft.graph.validateProperties": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/publishedResources/{publishedResource-id}/agentGroups/{onPremisesAgentGroup-id}/publishedResources/{publishedResource-id1}": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/microsoft.graph.getUserOwnedObjects": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/microsoft.graph.stop": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/schema/directories/{directoryDefinition-id}": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applicationTemplates": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/tokenIssuancePolicies/$ref": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/synchronization/templates/{synchronizationTemplate-id}/schema/microsoft.graph.functions()": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/synchronization/templates/{synchronizationTemplate-id}/schema/microsoft.graph.functions()": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/connectors": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applicationTemplates/{applicationTemplate-id}": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/tokenLifetimePolicies/$ref": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/endpoints": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/oauth2PermissionGrants/$ref": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/synchronization/templates/{synchronizationTemplate-id}/schema/directories/{directoryDefinition-id}/microsoft.graph.discover": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/microsoft.graph.stop": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/appRoleAssignedTo/{appRoleAssignment-id}": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agentGroups/{onPremisesAgentGroup-id}/agents/{onPremisesAgent-id}/agentGroups/{onPremisesAgentGroup-id1}": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/microsoft.graph.addKey": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/publishedResources/{publishedResource-id}/agentGroups/{onPremisesAgentGroup-id}/agents/{onPremisesAgent-id}": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/appRoleAssignments/{appRoleAssignment-id}": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/microsoft.graph.pause": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/synchronization/templates/{synchronizationTemplate-id}/schema/directories/{directoryDefinition-id}": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/homeRealmDiscoveryPolicies": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agentGroups/{onPremisesAgentGroup-id}/agents/{onPremisesAgent-id}": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals/microsoft.graph.validateProperties": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/appRoleAssignments": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/owners/$ref": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/groups/{group-id}/appRoleAssignments": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agents/{onPremisesAgent-id}/agentGroups/{onPremisesAgentGroup-id}/publishedResources/{publishedResource-id}/agentGroups/{onPremisesAgentGroup-id1}": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/synchronization/templates/{synchronizationTemplate-id}/schema/microsoft.graph.parseExpression": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
+    "/applications/{application-id}/connectorGroup": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
     },
     "/applications/{application-id}/connectorGroup/$ref": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
     },
-    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/publishedResources/{publishedResource-id}/agentGroups/{onPremisesAgentGroup-id}/agents": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
+    "/applications/{application-id}/createdOnBehalfOf": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
     },
-    "/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/microsoft.graph.provisionOnDemand": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
+    "/applications/{application-id}/createdOnBehalfOf/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
     },
-    "/applications/{application-id}/synchronization": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
+    "/applications/{application-id}/extensionProperties": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
     },
-    "/applications/{application-id}/microsoft.graph.checkMemberGroups": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
+    "/applications/{application-id}/extensionProperties/{extensionProperty-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
     },
-    "/servicePrincipals/{servicePrincipal-id}/createdObjects": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agentGroups/{onPremisesAgentGroup-id}": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/publishedResources": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/publishedResources/{publishedResource-id}": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/synchronization/jobs/microsoft.graph.validateCredentials": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/schema/directories/{directoryDefinition-id}": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agents/{onPremisesAgent-id}/agentGroups/{onPremisesAgentGroup-id}/agents": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/microsoft.graph.getMemberObjects": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/transitiveMemberOf/$ref": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/synchronization/microsoft.graph.acquireAccessToken": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/synchronization/templates/{synchronizationTemplate-id}": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/schema": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/transitiveMemberOf": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/microsoft.graph.getByIds": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/microsoft.graph.getMemberObjects": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agents/{onPremisesAgent-id}/agentGroups/{onPremisesAgentGroup-id}/publishedResources": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals/microsoft.graph.delta()": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/microsoft.graph.provisionOnDemand": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/publishedResources/{publishedResource-id}/agentGroups/{onPremisesAgentGroup-id}/publishedResources": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/schema/microsoft.graph.filterOperators()": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/synchronization/templates/{synchronizationTemplate-id}/schema/directories/{directoryDefinition-id}/microsoft.graph.discover": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agents/{onPremisesAgent-id}/agentGroups": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
+    "/applications/{application-id}/homeRealmDiscoveryPolicies": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
     },
     "/applications/{application-id}/homeRealmDiscoveryPolicies/$ref": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
     },
-    "/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/microsoft.graph.start": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
+    "/applications/{application-id}/logo": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
     },
-    "/applications/{application-id}/microsoft.graph.checkMemberObjects": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/connectorGroups": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/synchronization/templates/{synchronizationTemplate-id}/schema/microsoft.graph.parseExpression": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/servicePrincipals/{servicePrincipal-id}/synchronization/templates/{synchronizationTemplate-id}/schema": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
+    "/applications/{application-id}/microsoft.graph.addKey": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
     },
     "/applications/{application-id}/microsoft.graph.addPassword": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
     },
-    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/publishedResources/{publishedResource-id}/agentGroups/{onPremisesAgentGroup-id}": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
+    "/applications/{application-id}/microsoft.graph.checkMemberGroups": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/applications/{application-id}/microsoft.graph.checkMemberObjects": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/applications/{application-id}/microsoft.graph.getMemberGroups": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/applications/{application-id}/microsoft.graph.getMemberObjects": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/applications/{application-id}/microsoft.graph.removeKey": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/applications/{application-id}/microsoft.graph.removePassword": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/applications/{application-id}/microsoft.graph.restore": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/applications/{application-id}/owners": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/applications/{application-id}/owners/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/applications/{application-id}/synchronization": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/applications/{application-id}/synchronization/jobs": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/microsoft.graph.pause": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/microsoft.graph.provisionOnDemand": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/microsoft.graph.restart": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/microsoft.graph.start": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/microsoft.graph.stop": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/microsoft.graph.validateCredentials": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/schema": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/schema/directories": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/schema/directories/{directoryDefinition-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/schema/directories/{directoryDefinition-id}/microsoft.graph.discover": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/schema/microsoft.graph.filterOperators()": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/schema/microsoft.graph.functions()": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/schema/microsoft.graph.parseExpression": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/applications/{application-id}/synchronization/jobs/microsoft.graph.validateCredentials": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/applications/{application-id}/synchronization/microsoft.graph.acquireAccessToken": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/applications/{application-id}/synchronization/microsoft.graph.Ping()": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/applications/{application-id}/synchronization/templates": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/applications/{application-id}/synchronization/templates/{synchronizationTemplate-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/applications/{application-id}/synchronization/templates/{synchronizationTemplate-id}/schema": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/applications/{application-id}/synchronization/templates/{synchronizationTemplate-id}/schema/directories": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
     },
     "/applications/{application-id}/synchronization/templates/{synchronizationTemplate-id}/schema/directories/{directoryDefinition-id}": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
     },
-    "/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/microsoft.graph.restart": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
+    "/applications/{application-id}/synchronization/templates/{synchronizationTemplate-id}/schema/directories/{directoryDefinition-id}/microsoft.graph.discover": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/applications/{application-id}/synchronization/templates/{synchronizationTemplate-id}/schema/microsoft.graph.filterOperators()": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/applications/{application-id}/synchronization/templates/{synchronizationTemplate-id}/schema/microsoft.graph.functions()": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/applications/{application-id}/synchronization/templates/{synchronizationTemplate-id}/schema/microsoft.graph.parseExpression": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/applications/{application-id}/tokenIssuancePolicies": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/applications/{application-id}/tokenIssuancePolicies/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/applications/{application-id}/tokenLifetimePolicies": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/applications/{application-id}/tokenLifetimePolicies/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/applications/microsoft.graph.delta()": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/applications/microsoft.graph.getByIds": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/applications/microsoft.graph.getUserOwnedObjects": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/applications/microsoft.graph.validateProperties": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/applicationTemplates": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/applicationTemplates/{applicationTemplate-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/applicationTemplates/{applicationTemplate-id}/microsoft.graph.instantiate": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/groups/{group-id}/appRoleAssignments": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/groups/{group-id}/appRoleAssignments/{appRoleAssignment-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/onPremisesPublishingProfiles": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agentGroups": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agentGroups/{onPremisesAgentGroup-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agentGroups/{onPremisesAgentGroup-id}/agents": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agentGroups/{onPremisesAgentGroup-id}/agents/{onPremisesAgent-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agentGroups/{onPremisesAgentGroup-id}/agents/{onPremisesAgent-id}/agentGroups": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agentGroups/{onPremisesAgentGroup-id}/agents/{onPremisesAgent-id}/agentGroups/{onPremisesAgentGroup-id1}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agentGroups/{onPremisesAgentGroup-id}/publishedResources": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agentGroups/{onPremisesAgentGroup-id}/publishedResources/{publishedResource-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agentGroups/{onPremisesAgentGroup-id}/publishedResources/{publishedResource-id}/agentGroups": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
     },
     "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agentGroups/{onPremisesAgentGroup-id}/publishedResources/{publishedResource-id}/agentGroups/{onPremisesAgentGroup-id1}": {
-      "originalLocation": "/openApiDocs/beta/Applications.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agents": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agents/{onPremisesAgent-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agents/{onPremisesAgent-id}/agentGroups": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agents/{onPremisesAgent-id}/agentGroups/{onPremisesAgentGroup-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agents/{onPremisesAgent-id}/agentGroups/{onPremisesAgentGroup-id}/agents": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agents/{onPremisesAgent-id}/agentGroups/{onPremisesAgentGroup-id}/agents/{onPremisesAgent-id1}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agents/{onPremisesAgent-id}/agentGroups/{onPremisesAgentGroup-id}/publishedResources": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agents/{onPremisesAgent-id}/agentGroups/{onPremisesAgentGroup-id}/publishedResources/{publishedResource-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agents/{onPremisesAgent-id}/agentGroups/{onPremisesAgentGroup-id}/publishedResources/{publishedResource-id}/agentGroups": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agents/{onPremisesAgent-id}/agentGroups/{onPremisesAgentGroup-id}/publishedResources/{publishedResource-id}/agentGroups/{onPremisesAgentGroup-id1}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/connectorGroups": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/connectorGroups/{connectorGroup-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/connectorGroups/{connectorGroup-id}/applications": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/connectorGroups/{connectorGroup-id}/applications/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/connectorGroups/{connectorGroup-id}/members": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/connectorGroups/{connectorGroup-id}/members/{connector-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/connectorGroups/{connectorGroup-id}/members/{connector-id}/memberOf": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/connectorGroups/{connectorGroup-id}/members/{connector-id}/memberOf/{connectorGroup-id1}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/connectors": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/connectors/{connector-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/connectors/{connector-id}/memberOf": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/connectors/{connector-id}/memberOf/{connectorGroup-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/connectors/{connector-id}/memberOf/{connectorGroup-id}/applications": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/connectors/{connector-id}/memberOf/{connectorGroup-id}/applications/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/connectors/{connector-id}/memberOf/{connectorGroup-id}/members": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/connectors/{connector-id}/memberOf/{connectorGroup-id}/members/{connector-id1}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/publishedResources": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/publishedResources/{publishedResource-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/publishedResources/{publishedResource-id}/agentGroups": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/publishedResources/{publishedResource-id}/agentGroups/{onPremisesAgentGroup-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/publishedResources/{publishedResource-id}/agentGroups/{onPremisesAgentGroup-id}/agents": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/publishedResources/{publishedResource-id}/agentGroups/{onPremisesAgentGroup-id}/agents/{onPremisesAgent-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/publishedResources/{publishedResource-id}/agentGroups/{onPremisesAgentGroup-id}/agents/{onPremisesAgent-id}/agentGroups": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/publishedResources/{publishedResource-id}/agentGroups/{onPremisesAgentGroup-id}/agents/{onPremisesAgent-id}/agentGroups/{onPremisesAgentGroup-id1}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/publishedResources/{publishedResource-id}/agentGroups/{onPremisesAgentGroup-id}/publishedResources": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/publishedResources/{publishedResource-id}/agentGroups/{onPremisesAgentGroup-id}/publishedResources/{publishedResource-id1}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/appRoleAssignedTo": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/appRoleAssignedTo/{appRoleAssignment-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/appRoleAssignments": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/appRoleAssignments/{appRoleAssignment-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/claimsMappingPolicies": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/claimsMappingPolicies/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/createdObjects": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/createdObjects/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/delegatedPermissionClassifications": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/delegatedPermissionClassifications/{delegatedPermissionClassification-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/endpoints": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/endpoints/{endpoint-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/homeRealmDiscoveryPolicies": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/homeRealmDiscoveryPolicies/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/licenseDetails": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/licenseDetails/{licenseDetails-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/memberOf": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/memberOf/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/microsoft.graph.checkMemberGroups": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/microsoft.graph.checkMemberObjects": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/microsoft.graph.createPasswordSingleSignOnCredentials": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/microsoft.graph.deletePasswordSingleSignOnCredentials": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/microsoft.graph.getMemberGroups": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/microsoft.graph.getMemberObjects": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/microsoft.graph.getPasswordSingleSignOnCredentials": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/microsoft.graph.restore": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/microsoft.graph.updatePasswordSingleSignOnCredentials": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/oauth2PermissionGrants": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/oauth2PermissionGrants/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/ownedObjects": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/ownedObjects/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/owners": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/owners/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/synchronization": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/synchronization/jobs": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/microsoft.graph.pause": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/microsoft.graph.provisionOnDemand": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/microsoft.graph.restart": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/microsoft.graph.start": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/microsoft.graph.stop": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/microsoft.graph.validateCredentials": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/schema": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/schema/directories": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/schema/directories/{directoryDefinition-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/schema/directories/{directoryDefinition-id}/microsoft.graph.discover": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/schema/microsoft.graph.filterOperators()": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/schema/microsoft.graph.functions()": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/schema/microsoft.graph.parseExpression": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/microsoft.graph.validateCredentials": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/synchronization/microsoft.graph.acquireAccessToken": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/synchronization/microsoft.graph.Ping()": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/synchronization/templates": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/synchronization/templates/{synchronizationTemplate-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/synchronization/templates/{synchronizationTemplate-id}/schema": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/synchronization/templates/{synchronizationTemplate-id}/schema/directories": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/synchronization/templates/{synchronizationTemplate-id}/schema/directories/{directoryDefinition-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/synchronization/templates/{synchronizationTemplate-id}/schema/directories/{directoryDefinition-id}/microsoft.graph.discover": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/synchronization/templates/{synchronizationTemplate-id}/schema/microsoft.graph.filterOperators()": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/synchronization/templates/{synchronizationTemplate-id}/schema/microsoft.graph.functions()": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/synchronization/templates/{synchronizationTemplate-id}/schema/microsoft.graph.parseExpression": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/tokenIssuancePolicies": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/tokenIssuancePolicies/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/tokenLifetimePolicies": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/tokenLifetimePolicies/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/transitiveMemberOf": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/transitiveMemberOf/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/microsoft.graph.delta()": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/microsoft.graph.getByIds": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/microsoft.graph.getUserOwnedObjects": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/microsoft.graph.validateProperties": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/users/{user-id}/appRoleAssignments": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/users/{user-id}/appRoleAssignments/{appRoleAssignment-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
     }
   },
   "resources": []
