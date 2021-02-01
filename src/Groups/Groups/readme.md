@@ -124,7 +124,15 @@ directive:
       subject: ^(GroupOnenoteNotebookSectionGroupSectionPage)$
     set:
       subject: $1Content
-
+# Alias then rename cmdlets to avoid breaking change.
+  - where:
+      subject: ^(Group)(CreatedOnBehalf)$
+    set:
+      alias: ${verb}-Mg${subject}
+  - where:
+      subject: ^(Group)(CreatedOnBehalf)$
+    set:
+      subject: $1$2Of
 ```
 ### Versioning
 
