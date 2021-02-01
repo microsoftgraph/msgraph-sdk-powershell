@@ -1,392 +1,392 @@
 {
   "operations": {
-    "/reports/microsoft.graph.getSharePointSiteUsageStorage(period='{period}')": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getEmailActivityUserDetail(date={date})": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getOneDriveUsageAccountDetail(date={date})": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getYammerGroupsActivityDetail(period='{period}')": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getOffice365GroupsActivityStorage(period='{period}')": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getSharePointSiteUsagePages(period='{period}')": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.managedDeviceEnrollmentTopFailures(period='{period}')": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getSharePointSiteUsageFileCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getOneDriveActivityUserDetail(period='{period}')": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getOneDriveUsageStorage(period='{period}')": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getSharePointActivityUserDetail(date={date})": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getOffice365ActiveUserCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getSkypeForBusinessDeviceUsageUserDetail(date={date})": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getOffice365ActivationCounts()": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getEmailActivityCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getEmailAppUsageUserDetail(date={date})": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getEmailActivityUserDetail(period='{period}')": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getOneDriveUsageAccountCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getSkypeForBusinessDeviceUsageUserDetail(period='{period}')": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getOffice365GroupsActivityCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getSkypeForBusinessParticipantActivityUserCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getSharePointActivityFileCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getOneDriveUsageAccountDetail(period='{period}')": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getMailboxUsageDetail(period='{period}')": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getYammerDeviceUsageUserDetail(period='{period}')": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getOneDriveActivityUserDetail(date={date})": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getOneDriveActivityUserCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
     "/auditLogs": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getYammerDeviceUsageDistributionUserCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getOffice365ActivationsUserCounts()": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getOffice365ActiveUserDetail(date={date})": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getTeamsDeviceUsageUserDetail(period='{period}')": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getOffice365ActivationsUserDetail()": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getSharePointSiteUsageDetail(period='{period}')": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/auditLogs/restrictedSignIns/{restrictedSignIn-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.managedDeviceEnrollmentFailureDetails(skip={skip},top={top},filter='{filter}',skipToken='{skipToken}')": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/auditLogs/signIns/{signIn-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getSkypeForBusinessOrganizerActivityUserCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getTeamsDeviceUsageUserDetail(date={date})": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getSkypeForBusinessOrganizerActivityMinuteCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getOffice365GroupsActivityDetail(date={date})": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getMailboxUsageQuotaStatusMailboxCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getEmailAppUsageVersionsUserCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getYammerDeviceUsageUserDetail(date={date})": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getSkypeForBusinessActivityUserCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.managedDeviceEnrollmentTopFailures()": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getSharePointActivityUserCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getSkypeForBusinessDeviceUsageDistributionUserCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getSkypeForBusinessActivityUserDetail(date={date})": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getTeamsUserActivityUserDetail(date={date})": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getEmailAppUsageUserDetail(period='{period}')": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getEmailAppUsageUserCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getOffice365GroupsActivityDetail(period='{period}')": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getMailboxUsageMailboxCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getTeamsUserActivityUserDetail(period='{period}')": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getOffice365ServicesUserCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getSkypeForBusinessParticipantActivityMinuteCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getEmailAppUsageAppsUserCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getOneDriveActivityFileCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getOffice365GroupsActivityFileCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getSkypeForBusinessActivityUserDetail(period='{period}')": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getSkypeForBusinessPeerToPeerActivityUserCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getSharePointActivityPages(period='{period}')": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getEmailActivityUserCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getYammerActivityUserDetail(date={date})": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/auditLogs/restrictedSignIns": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getTeamsUserActivityCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getSharePointSiteUsageSiteCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getYammerDeviceUsageUserCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getYammerGroupsActivityCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getSkypeForBusinessActivityCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getSharePointSiteUsageDetail(date={date})": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getSkypeForBusinessOrganizerActivityCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
     },
     "/auditLogs/directoryAudits": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.managedDeviceEnrollmentFailureDetails()": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getSharePointActivityUserDetail(period='{period}')": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
     },
     "/auditLogs/directoryAudits/{directoryAudit-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
     },
-    "/reports/microsoft.graph.getTeamsUserActivityUserCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
+    "/auditLogs/restrictedSignIns": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
     },
-    "/reports/microsoft.graph.getYammerActivityUserDetail(period='{period}')": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getSkypeForBusinessPeerToPeerActivityMinuteCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getYammerGroupsActivityGroupCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getYammerActivityCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getOneDriveUsageFileCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getMailboxUsageStorage(period='{period}')": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getSkypeForBusinessParticipantActivityCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
+    "/auditLogs/restrictedSignIns/{restrictedSignIn-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
     },
     "/auditLogs/signIns": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
     },
-    "/reports/microsoft.graph.getYammerActivityUserCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
+    "/auditLogs/signIns/{signIn-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
     },
-    "/reports/microsoft.graph.getOffice365ActiveUserDetail(period='{period}')": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getYammerGroupsActivityDetail(date={date})": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getOffice365GroupsActivityGroupCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.deviceConfigurationUserActivity()": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getSkypeForBusinessDeviceUsageUserCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
-    },
-    "/reports/microsoft.graph.getSkypeForBusinessPeerToPeerActivityCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
+    "/reports": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
     },
     "/reports/microsoft.graph.deviceConfigurationDeviceActivity()": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.deviceConfigurationUserActivity()": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getEmailActivityCounts(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getEmailActivityUserCounts(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getEmailActivityUserDetail(date={date})": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getEmailActivityUserDetail(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getEmailAppUsageAppsUserCounts(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getEmailAppUsageUserCounts(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getEmailAppUsageUserDetail(date={date})": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getEmailAppUsageUserDetail(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getEmailAppUsageVersionsUserCounts(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getMailboxUsageDetail(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getMailboxUsageMailboxCounts(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getMailboxUsageQuotaStatusMailboxCounts(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getMailboxUsageStorage(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getOffice365ActivationCounts()": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getOffice365ActivationsUserCounts()": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getOffice365ActivationsUserDetail()": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getOffice365ActiveUserCounts(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getOffice365ActiveUserDetail(date={date})": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getOffice365ActiveUserDetail(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getOffice365GroupsActivityCounts(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getOffice365GroupsActivityDetail(date={date})": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getOffice365GroupsActivityDetail(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getOffice365GroupsActivityFileCounts(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getOffice365GroupsActivityGroupCounts(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getOffice365GroupsActivityStorage(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getOffice365ServicesUserCounts(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getOneDriveActivityFileCounts(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getOneDriveActivityUserCounts(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getOneDriveActivityUserDetail(date={date})": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getOneDriveActivityUserDetail(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getOneDriveUsageAccountCounts(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getOneDriveUsageAccountDetail(date={date})": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getOneDriveUsageAccountDetail(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getOneDriveUsageFileCounts(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getOneDriveUsageStorage(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getSharePointActivityFileCounts(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getSharePointActivityPages(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getSharePointActivityUserCounts(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getSharePointActivityUserDetail(date={date})": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getSharePointActivityUserDetail(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getSharePointSiteUsageDetail(date={date})": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getSharePointSiteUsageDetail(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getSharePointSiteUsageFileCounts(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getSharePointSiteUsagePages(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getSharePointSiteUsageSiteCounts(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getSharePointSiteUsageStorage(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getSkypeForBusinessActivityCounts(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getSkypeForBusinessActivityUserCounts(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getSkypeForBusinessActivityUserDetail(date={date})": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getSkypeForBusinessActivityUserDetail(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getSkypeForBusinessDeviceUsageDistributionUserCounts(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getSkypeForBusinessDeviceUsageUserCounts(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getSkypeForBusinessDeviceUsageUserDetail(date={date})": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getSkypeForBusinessDeviceUsageUserDetail(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getSkypeForBusinessOrganizerActivityCounts(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getSkypeForBusinessOrganizerActivityMinuteCounts(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getSkypeForBusinessOrganizerActivityUserCounts(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getSkypeForBusinessParticipantActivityCounts(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getSkypeForBusinessParticipantActivityMinuteCounts(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getSkypeForBusinessParticipantActivityUserCounts(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getSkypeForBusinessPeerToPeerActivityCounts(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getSkypeForBusinessPeerToPeerActivityMinuteCounts(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getSkypeForBusinessPeerToPeerActivityUserCounts(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
     },
     "/reports/microsoft.graph.getTeamsDeviceUsageDistributionUserCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
     },
     "/reports/microsoft.graph.getTeamsDeviceUsageUserCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getTeamsDeviceUsageUserDetail(date={date})": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getTeamsDeviceUsageUserDetail(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getTeamsUserActivityCounts(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getTeamsUserActivityUserCounts(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getTeamsUserActivityUserDetail(date={date})": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getTeamsUserActivityUserDetail(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getYammerActivityCounts(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getYammerActivityUserCounts(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getYammerActivityUserDetail(date={date})": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getYammerActivityUserDetail(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getYammerDeviceUsageDistributionUserCounts(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getYammerDeviceUsageUserCounts(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getYammerDeviceUsageUserDetail(date={date})": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getYammerDeviceUsageUserDetail(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getYammerGroupsActivityCounts(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getYammerGroupsActivityDetail(date={date})": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getYammerGroupsActivityDetail(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getYammerGroupsActivityGroupCounts(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.managedDeviceEnrollmentFailureDetails()": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.managedDeviceEnrollmentFailureDetails(skip={skip},top={top},filter='{filter}',skipToken='{skipToken}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.managedDeviceEnrollmentTopFailures()": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.managedDeviceEnrollmentTopFailures(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
     }
   },
   "resources": []

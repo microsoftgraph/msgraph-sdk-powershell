@@ -423,6 +423,23 @@ directive:
       variant: ^List$|^List2$
     set:
       subject: GroupTransitiveMemberOfByRef
+# Alias then rename cmdlets to avoid breaking change.
+  - where:
+      subject: ^(User|ServicePrincipal|Contact|Device)(Member|TransitiveMember)ByRef$
+    set:
+      alias: ${verb}-Mg${subject}
+  - where:
+      subject: ^(User|ServicePrincipal|Contact|Device)(Member|TransitiveMember)ByRef$
+    set:
+      subject: $1$2OfByRef
+  - where:
+      subject: ^(Application|Group)(CreatedOnBehalf)ByRef$
+    set:
+      alias: ${verb}-Mg${subject}
+  - where:
+      subject: ^(Application|Group)(CreatedOnBehalf)ByRef$
+    set:
+      subject: $1$2OfByRef
 # Modify generated .json.cs model classes.
   - from: source-file-csharp
     where: $

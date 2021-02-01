@@ -2954,7 +2954,7 @@ components:
               format: date-time
             activityDisplayName:
               type: string
-              description: 'Indicates the activity name or the operation name (examples: ''Create User'' and ''Add member to group''). For full list, see Azure AD activity list.'
+              description: 'Indicates the activity name or the operation name (E.g. ''Create User'', ''Add member to group''). For a list of activities logged, refer to Azure Ad activity list.'
             additionalDetails:
               type: array
               items:
@@ -2980,7 +2980,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.operationResult'
             resultReason:
               type: string
-              description: Describes cause of 'failure' or 'timeout' results.
+              description: Indicates the reason for failure if the result is 'Failure' or 'timeout'.
               nullable: true
             targetResources:
               type: array
@@ -3010,50 +3010,51 @@ components:
           properties:
             appDisplayName:
               type: string
-              description: App name displayed in the Azure Portal.
+              description: The application name displayed in the Azure Portal.
               nullable: true
             appId:
               type: string
-              description: Unique GUID representing the app ID in the Azure Active Directory.
+              description: The application identifier in Azure Active Directory.
               nullable: true
             appliedConditionalAccessPolicies:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appliedConditionalAccessPolicy'
+              description: A list of conditional access policies that are triggered by the corresponding sign-in activity.
             clientAppUsed:
               type: string
-              description: 'Identifies the legacy client used for sign-in activity.  Includes Browser, Exchange Active Sync, modern clients, IMAP, MAPI, SMTP, and POP.'
+              description: 'The legacy client used for sign-in activity. For example, Browser, Exchange Active Sync,Modern clients, IMAP, MAPI, SMTP, or POP.'
               nullable: true
             conditionalAccessStatus:
               $ref: '#/components/schemas/microsoft.graph.conditionalAccessStatus'
             correlationId:
               type: string
-              description: The request ID sent from the client when the sign-in is initiated; used to troubleshoot sign-in activity.
+              description: The identifier that's sent from the client when sign-in is initiated. This is used for troubleshooting the corresponding sign-in activity when calling for support.
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Date and time (UTC) the sign-in was initiated. Example: midnight on Jan 1, 2014 is reported as ''2014-01-01T00:00:00Z''.'
+              description: 'The date and time the sign-in was initiated. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''.'
               format: date-time
             deviceDetail:
               $ref: '#/components/schemas/microsoft.graph.deviceDetail'
             ipAddress:
               type: string
-              description: IP address of the client used to sign in.
+              description: The IP address of the client from where the sign-in occurred.
               nullable: true
             isInteractive:
               type: boolean
-              description: Indicates if a sign-in is interactive or not.
+              description: Indicates whether a sign-in is interactive or not.
               nullable: true
             location:
               $ref: '#/components/schemas/microsoft.graph.signInLocation'
             resourceDisplayName:
               type: string
-              description: Name of the resource the user signed into.
+              description: The name of the resource that the user signed in to.
               nullable: true
             resourceId:
               type: string
-              description: ID of the resource that the user signed into.
+              description: The identifier of the resource that the user signed in to.
               nullable: true
             riskDetail:
               $ref: '#/components/schemas/microsoft.graph.riskDetail'
@@ -3061,7 +3062,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.riskEventType'
-              description: 'Risk event types associated with the sign-in. The possible values are: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, and unknownFutureValue.'
+              description: 'The list of risk event types associated with the sign-in. Possible values: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, or unknownFutureValue.'
             riskEventTypes_v2:
               type: array
               items:
@@ -3078,14 +3079,14 @@ components:
               $ref: '#/components/schemas/microsoft.graph.signInStatus'
             userDisplayName:
               type: string
-              description: Display name of the user that initiated the sign-in.
+              description: The display name of the user.
               nullable: true
             userId:
               type: string
-              description: ID of the user that initiated the sign-in.
+              description: The identifier of the user.
             userPrincipalName:
               type: string
-              description: User principal name of the user that initiated the sign-in.
+              description: The UPN of the user.
               nullable: true
           additionalProperties:
             type: object
@@ -3103,7 +3104,7 @@ components:
       properties:
         content:
           type: string
-          description: Not yet documented
+          description: Report content; details vary by report type.
           format: base64url
           nullable: true
       additionalProperties:
@@ -3124,11 +3125,11 @@ components:
       properties:
         key:
           type: string
-          description: Key for the key-value pair.
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Value for the key-value pair.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object
@@ -3221,31 +3222,31 @@ components:
       properties:
         browser:
           type: string
-          description: Indicates the browser information of the used for signing in.
+          description: Indicates the browser information of the used for signing-in.
           nullable: true
         deviceId:
           type: string
-          description: Refers to the UniqueID of the device used for signing in.
+          description: Refers to the UniqueID of the device used for signing-in.
           nullable: true
         displayName:
           type: string
-          description: Refers to the name of the device used for signing in.
+          description: Refers to the name of the device used for signing-in.
           nullable: true
         isCompliant:
           type: boolean
-          description: Indicates whether the device is compliant.
+          description: Indicates whether the device is compliant or not.
           nullable: true
         isManaged:
           type: boolean
-          description: Indicates whether the device is managed.
+          description: Indicates if the device is managed or not.
           nullable: true
         operatingSystem:
           type: string
-          description: Indicates the operating system name and version used for signing in.
+          description: Indicates the OS name and version used for signing-in.
           nullable: true
         trustType:
           type: string
-          description: 'Provides information about whether the signed-in device is Workplace Joined, AzureAD Joined, Domain Joined.'
+          description: 'Indicates information on whether the signed-in device is Workplace Joined, AzureAD Joined, Domain Joined.'
           nullable: true
       additionalProperties:
         type: object
@@ -3412,15 +3413,15 @@ components:
       properties:
         displayName:
           type: string
-          description: Indicates the property name of the target attribute that was changed.
+          description: Name of property that was modified.
           nullable: true
         newValue:
           type: string
-          description: Indicates the updated value for the propery.
+          description: New property value.
           nullable: true
         oldValue:
           type: string
-          description: Indicates the previous value (before the update) for the property.
+          description: Old property value.
           nullable: true
       additionalProperties:
         type: object
@@ -3445,12 +3446,12 @@ components:
           nullable: true
         latitude:
           type: number
-          description: 'Optional. The latitude, in decimal, for the item. Read-only.'
+          description: 'Optional. The latitude, in decimal, for the item. Writable on OneDrive Personal.'
           format: double
           nullable: true
         longitude:
           type: number
-          description: 'Optional. The longitude, in decimal, for the item. Read-only.'
+          description: 'Optional. The longitude, in decimal, for the item. Writable on OneDrive Personal.'
           format: double
           nullable: true
       additionalProperties:

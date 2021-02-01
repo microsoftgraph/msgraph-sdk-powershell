@@ -10985,11 +10985,11 @@ components:
           properties:
             customBrowserDisplayName:
               type: string
-              description: 'Friendly name of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.'
+              description: Friendly name of the preferred custom browser to open weblink on Android.
               nullable: true
             customBrowserPackageId:
               type: string
-              description: 'Unique identifier of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.'
+              description: Unique identifier of a custom browser to open weblink on Android.
               nullable: true
             deployedAppCount:
               maximum: 2147483647
@@ -11135,7 +11135,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.managedAppDataEncryptionType'
             customBrowserProtocol:
               type: string
-              description: 'A custom browser protocol to open weblink on iOS. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.'
+              description: A custom browser protocol to open weblink on iOS.
               nullable: true
             deployedAppCount:
               maximum: 2147483647
@@ -11917,7 +11917,7 @@ components:
             lastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The last time when an application sync was done with the Apple volume purchase program service using the Apple Volume Purchase Program Token.
+              description: The last time when an application sync was done with the Apple volume purchase program service using the the Apple Volume Purchase Program Token.
               format: date-time
             lastSyncStatus:
               $ref: '#/components/schemas/microsoft.graph.vppTokenSyncStatus'
@@ -12023,24 +12023,24 @@ components:
           properties:
             activationLockBypassCode:
               type: string
-              description: Code that allows the Activation Lock on a device to be bypassed.
+              description: Code that allows the Activation Lock on a device to be bypassed. This property is read-only.
               nullable: true
             androidSecurityPatchLevel:
               type: string
-              description: Android security patch level
+              description: Android security patch level. This property is read-only.
               nullable: true
             azureADDeviceId:
               type: string
-              description: The unique identifier for the Azure Active Directory device. Read only.
+              description: The unique identifier for the Azure Active Directory device. Read only. This property is read-only.
               nullable: true
             azureADRegistered:
               type: boolean
-              description: Whether the device is Azure Active Directory registered.
+              description: Whether the device is Azure Active Directory registered. This property is read-only.
               nullable: true
             complianceGracePeriodExpirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The DateTime when device compliance grace period expires
+              description: The DateTime when device compliance grace period expires. This property is read-only.
               format: date-time
             complianceState:
               $ref: '#/components/schemas/microsoft.graph.complianceState'
@@ -12050,10 +12050,10 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceActionResult'
-              description: List of ComplexType deviceActionResult objects.
+              description: List of ComplexType deviceActionResult objects. This property is read-only.
             deviceCategoryDisplayName:
               type: string
-              description: Device category display name
+              description: Device category display name. This property is read-only.
               nullable: true
             deviceEnrollmentType:
               $ref: '#/components/schemas/microsoft.graph.deviceEnrollmentType'
@@ -12061,30 +12061,30 @@ components:
               $ref: '#/components/schemas/microsoft.graph.deviceHealthAttestationState'
             deviceName:
               type: string
-              description: Name of the device
+              description: Name of the device. This property is read-only.
               nullable: true
             deviceRegistrationState:
               $ref: '#/components/schemas/microsoft.graph.deviceRegistrationState'
             easActivated:
               type: boolean
-              description: Whether the device is Exchange ActiveSync activated.
+              description: Whether the device is Exchange ActiveSync activated. This property is read-only.
             easActivationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Exchange ActivationSync activation time of the device.
+              description: Exchange ActivationSync activation time of the device. This property is read-only.
               format: date-time
             easDeviceId:
               type: string
-              description: Exchange ActiveSync Id of the device.
+              description: Exchange ActiveSync Id of the device. This property is read-only.
               nullable: true
             emailAddress:
               type: string
-              description: Email(s) for the user associated with the device
+              description: Email(s) for the user associated with the device. This property is read-only.
               nullable: true
             enrolledDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Enrollment time of the device.
+              description: Enrollment time of the device. This property is read-only.
               format: date-time
             exchangeAccessState:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementExchangeAccessState'
@@ -12093,30 +12093,30 @@ components:
             exchangeLastSuccessfulSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Last time the device contacted Exchange.
+              description: Last time the device contacted Exchange. This property is read-only.
               format: date-time
             freeStorageSpaceInBytes:
               type: integer
-              description: Free Storage in Bytes
+              description: Free Storage in Bytes. This property is read-only.
               format: int64
             imei:
               type: string
-              description: IMEI
+              description: IMEI. This property is read-only.
               nullable: true
             isEncrypted:
               type: boolean
-              description: Device encryption status
+              description: Device encryption status. This property is read-only.
             isSupervised:
               type: boolean
-              description: Device supervised status
+              description: Device supervised status. This property is read-only.
             jailBroken:
               type: string
-              description: whether the device is jail broken or rooted.
+              description: whether the device is jail broken or rooted. This property is read-only.
               nullable: true
             lastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The date and time that the device last completed a successful sync with Intune.
+              description: The date and time that the device last completed a successful sync with Intune. This property is read-only.
               format: date-time
             managedDeviceName:
               type: string
@@ -12128,65 +12128,65 @@ components:
               $ref: '#/components/schemas/microsoft.graph.managementAgentType'
             manufacturer:
               type: string
-              description: Manufacturer of the device
+              description: Manufacturer of the device. This property is read-only.
               nullable: true
             meid:
               type: string
-              description: MEID
+              description: MEID. This property is read-only.
               nullable: true
             model:
               type: string
-              description: Model of the device
+              description: Model of the device. This property is read-only.
               nullable: true
             operatingSystem:
               type: string
-              description: 'Operating system of the device. Windows, iOS, etc.'
+              description: 'Operating system of the device. Windows, iOS, etc. This property is read-only.'
               nullable: true
             osVersion:
               type: string
-              description: Operating system version of the device.
+              description: Operating system version of the device. This property is read-only.
               nullable: true
             partnerReportedThreatState:
               $ref: '#/components/schemas/microsoft.graph.managedDevicePartnerReportedHealthState'
             phoneNumber:
               type: string
-              description: Phone number of the device
+              description: Phone number of the device. This property is read-only.
               nullable: true
             remoteAssistanceSessionErrorDetails:
               type: string
-              description: An error string that identifies issues when creating Remote Assistance session objects.
+              description: An error string that identifies issues when creating Remote Assistance session objects. This property is read-only.
               nullable: true
             remoteAssistanceSessionUrl:
               type: string
-              description: Url that allows a Remote Assistance session to be established with the device.
+              description: Url that allows a Remote Assistance session to be established with the device. This property is read-only.
               nullable: true
             serialNumber:
               type: string
-              description: SerialNumber
+              description: SerialNumber. This property is read-only.
               nullable: true
             subscriberCarrier:
               type: string
-              description: Subscriber Carrier
+              description: Subscriber Carrier. This property is read-only.
               nullable: true
             totalStorageSpaceInBytes:
               type: integer
-              description: Total Storage in Bytes
+              description: Total Storage in Bytes. This property is read-only.
               format: int64
             userDisplayName:
               type: string
-              description: User display name
+              description: User display name. This property is read-only.
               nullable: true
             userId:
               type: string
-              description: Unique Identifier for the user associated with the device
+              description: Unique Identifier for the user associated with the device. This property is read-only.
               nullable: true
             userPrincipalName:
               type: string
-              description: Device user principal name
+              description: Device user principal name. This property is read-only.
               nullable: true
             wiFiMacAddress:
               type: string
-              description: Wi-Fi MAC
+              description: Wi-Fi MAC. This property is read-only.
               nullable: true
             deviceCompliancePolicyStates:
               type: array
@@ -13195,7 +13195,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.ipRange'
-          description: Collection of Internet protocol address ranges
+          description: Collection of ip ranges
       additionalProperties:
         type: object
       description: Windows Information Protection IP Range Collection
