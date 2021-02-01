@@ -4,9 +4,7 @@
 
 using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Net.Http;
-using Microsoft.Graph.PowerShell.Authentication.Cmdlets;
 
 namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 {

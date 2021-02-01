@@ -1,452 +1,452 @@
 {
   "operations": {
-    "/dataPolicyOperations/{dataPolicyOperation-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/authentication/emailMethods": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/policies/directoryRoleAccessReviewPolicy": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/policies/authorizationPolicy": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/informationProtection/sensitivityLabels/{sensitivityLabel-id}/sublabels": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/informationProtection/policy/labels/microsoft.graph.evaluateRemoval": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/oauth2PermissionGrants": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/trustFramework/keySets/{trustFrameworkKeySet-id}/microsoft.graph.getActiveKey()": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/policies/conditionalAccessPolicies": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/authentication/methods/{authenticationMethod-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/informationProtection/dataLossPreventionPolicies": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/invitations/{invitation-id}/invitedUser/$ref": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/informationProtection/policy": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/riskDetections/{riskDetection-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/informationProtection/threatAssessmentRequests/{threatAssessmentRequest-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/riskDetections": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/trustFramework/keySets/{trustFrameworkKeySet-id}/microsoft.graph.uploadPkcs12": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/invitations/{invitation-id}/invitedUser": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/informationProtection/sensitivityLabels": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/informationProtection/policy/labels/microsoft.graph.extractLabel": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/authentication/microsoftAuthenticatorMethods/{microsoftAuthenticatorAuthenticationMethod-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/informationProtection/sensitivityLabels/microsoft.graph.evaluate": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/informationProtection/sensitivityPolicySettings": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/trustFramework/keySets": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/policies/permissionGrantPolicies/{permissionGrantPolicy-id}/includes/{permissionGrantConditionSet-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/informationProtection/threatAssessmentRequests/{threatAssessmentRequest-id}/results/{threatAssessmentResult-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/informationProtection/sensitivityLabels/{sensitivityLabel-id}/sublabels/microsoft.graph.evaluate": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/policies/homeRealmDiscoveryPolicies/{homeRealmDiscoveryPolicy-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/policies/homeRealmDiscoveryPolicies": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/policies/permissionGrantPolicies": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/policies/activityBasedTimeoutPolicies/{activityBasedTimeoutPolicy-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/trustFramework/keySets/{trustFrameworkKeySet-id}/microsoft.graph.generateKey": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/informationProtection/dataLossPreventionPolicies/microsoft.graph.evaluate": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/informationProtection/policy/labels": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/authentication/operations": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/authentication/passwordMethods/{passwordAuthenticationMethod-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/policies/permissionGrantPolicies/{permissionGrantPolicy-id}/excludes/{permissionGrantConditionSet-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/policies/tokenIssuancePolicies": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/authentication/passwordlessMicrosoftAuthenticatorMethods": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/invitations": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/oauth2PermissionGrants/{oAuth2PermissionGrant-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/trustFramework": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/identity/userFlows": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/policies/tokenLifetimePolicies/{tokenLifetimePolicy-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/informationProtection/dataLossPreventionPolicies/{dataLossPreventionPolicy-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/authentication/securityQuestionMethods": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/authentication/fido2Methods": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/authentication/oathMethods": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/identityProviders": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/identity/conditionalAccess/policies/{conditionalAccessPolicy-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/authentication/temporaryAccessPassMethods": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/authentication/phoneMethods/{phoneAuthenticationMethod-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/authentication/securityQuestionMethods/{securityQuestionAuthenticationMethod-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/authentication/temporaryAccessPassMethods/{temporaryAccessPassAuthenticationMethod-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/policies/authorizationPolicy/{authorizationPolicy-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/organization/{organization-id}/certificateBasedAuthConfiguration": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/trustFramework/keySets/{trustFrameworkKeySet-id}/microsoft.graph.uploadCertificate": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/invitations/{invitation-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/riskyUsers/{riskyUser-id}/history": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/authentication/operations/{longRunningOperation-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/identityProviders/{identityProvider-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/authentication/fido2Methods/{fido2AuthenticationMethod-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
     "/dataPolicyOperations": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
     },
-    "/informationProtection/sensitivityLabels/{sensitivityLabel-id}/sublabels/{sensitivityLabel-id1}": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/riskyUsers": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/policies/identitySecurityDefaultsEnforcementPolicy": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/trustFramework/keySets/{trustFrameworkKeySet-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/organization/{organization-id}/certificateBasedAuthConfiguration/$ref": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/policies": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/authentication/phoneMethods": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/identity/conditionalAccess/namedLocations": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/identity/userFlows/{identityUserFlow-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/trustFramework/policies": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/policies/activityBasedTimeoutPolicies": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/authentication/oathMethods/{softwareOathAuthenticationMethod-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/authentication/emailMethods/{emailAuthenticationMethod-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/identityProviders/microsoft.graph.availableProviderTypes()": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/policies/claimsMappingPolicies": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/informationProtection/microsoft.graph.evaluateLabelsAndPolicies": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/authentication/microsoftAuthenticatorMethods": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/identity/conditionalAccess/namedLocations/{namedLocation-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/informationProtection/policy/labels/{informationProtectionLabel-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/informationProtection/threatAssessmentRequests": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/informationProtection/policy/labels/microsoft.graph.evaluateClassificationResults": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/trustFramework/keySets/{trustFrameworkKeySet-id}/microsoft.graph.uploadSecret": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/informationProtection/threatAssessmentRequests/{threatAssessmentRequest-id}/results": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/policies/permissionGrantPolicies/{permissionGrantPolicy-id}/includes": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/policies/permissionGrantPolicies/{permissionGrantPolicy-id}/excludes": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/policies/deviceRegistrationPolicy": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/informationProtection/sensitivityLabels/{sensitivityLabel-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/identity/conditionalAccess/policies": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/policies/permissionGrantPolicies/{permissionGrantPolicy-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/informationProtection": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/authentication": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
+    "/dataPolicyOperations/{dataPolicyOperation-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
     },
     "/identity/conditionalAccess": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
     },
-    "/riskyUsers/microsoft.graph.confirmCompromised": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
+    "/identity/conditionalAccess/authenticationContextClassReferences": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
     },
-    "/riskyUsers/{riskyUser-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
+    "/identity/conditionalAccess/authenticationContextClassReferences/{authenticationContextClassReference-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
     },
-    "/trustFramework/policies/{trustFrameworkPolicy-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
+    "/identity/conditionalAccess/namedLocations": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
     },
-    "/riskyUsers/microsoft.graph.dismiss": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
+    "/identity/conditionalAccess/namedLocations/{namedLocation-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
     },
-    "/policies/conditionalAccessPolicies/{conditionalAccessPolicy-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
+    "/identity/conditionalAccess/policies": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
     },
-    "/policies/tokenIssuancePolicies/{tokenIssuancePolicy-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
+    "/identity/conditionalAccess/policies/{conditionalAccessPolicy-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
     },
-    "/policies/claimsMappingPolicies/{claimsMappingPolicy-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
+    "/identity/userFlows": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
     },
-    "/users/{user-id}/authentication/methods": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
+    "/identity/userFlows/{identityUserFlow-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
     },
-    "/informationProtection/policy/labels/microsoft.graph.evaluateApplication": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
+    "/identityProviders": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
     },
-    "/riskyUsers/{riskyUser-id}/history/{riskyUserHistoryItem-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
+    "/identityProviders/{identityProvider-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
     },
-    "/policies/adminConsentRequestPolicy": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/authentication/passwordlessMicrosoftAuthenticatorMethods/{passwordlessMicrosoftAuthenticatorAuthenticationMethod-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/oauth2PermissionGrants/microsoft.graph.delta()": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
+    "/identityProviders/microsoft.graph.availableProviderTypes()": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
     },
     "/informationProtection": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
     },
-    "/users/{user-id}/authentication/passwordMethods": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
+    "/informationProtection/bitlocker": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
     },
-    "/policies/tokenLifetimePolicies": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
+    "/informationProtection/dataLossPreventionPolicies": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/informationProtection/dataLossPreventionPolicies/{dataLossPreventionPolicy-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/informationProtection/dataLossPreventionPolicies/microsoft.graph.evaluate": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/informationProtection/microsoft.graph.evaluateLabelsAndPolicies": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/informationProtection/policy": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/informationProtection/policy/labels": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/informationProtection/policy/labels/{informationProtectionLabel-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/informationProtection/policy/labels/microsoft.graph.evaluateApplication": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/informationProtection/policy/labels/microsoft.graph.evaluateClassificationResults": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/informationProtection/policy/labels/microsoft.graph.evaluateRemoval": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/informationProtection/policy/labels/microsoft.graph.extractLabel": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/informationProtection/sensitivityLabels": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/informationProtection/sensitivityLabels/{sensitivityLabel-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/informationProtection/sensitivityLabels/{sensitivityLabel-id}/sublabels": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/informationProtection/sensitivityLabels/{sensitivityLabel-id}/sublabels/{sensitivityLabel-id1}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/informationProtection/sensitivityLabels/{sensitivityLabel-id}/sublabels/microsoft.graph.evaluate": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/informationProtection/sensitivityLabels/microsoft.graph.evaluate": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/informationProtection/sensitivityPolicySettings": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/informationProtection/threatAssessmentRequests": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/informationProtection/threatAssessmentRequests/{threatAssessmentRequest-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/informationProtection/threatAssessmentRequests/{threatAssessmentRequest-id}/results": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/informationProtection/threatAssessmentRequests/{threatAssessmentRequest-id}/results/{threatAssessmentResult-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/invitations": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/invitations/{invitation-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/invitations/{invitation-id}/invitedUser": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/invitations/{invitation-id}/invitedUser/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/oauth2PermissionGrants": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/oauth2PermissionGrants/{oAuth2PermissionGrant-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/oauth2PermissionGrants/microsoft.graph.delta()": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/organization/{organization-id}/certificateBasedAuthConfiguration": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/organization/{organization-id}/certificateBasedAuthConfiguration/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/policies": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/policies/activityBasedTimeoutPolicies": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/policies/activityBasedTimeoutPolicies/{activityBasedTimeoutPolicy-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/policies/adminConsentRequestPolicy": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
     },
     "/policies/authenticationFlowsPolicy": {
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/policies/authorizationPolicy": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/policies/authorizationPolicy/{authorizationPolicy-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/policies/b2cAuthenticationMethodsPolicy": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/policies/claimsMappingPolicies": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/policies/claimsMappingPolicies/{claimsMappingPolicy-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/policies/conditionalAccessPolicies": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/policies/conditionalAccessPolicies/{conditionalAccessPolicy-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/policies/deviceRegistrationPolicy": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/policies/directoryRoleAccessReviewPolicy": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/policies/homeRealmDiscoveryPolicies": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/policies/homeRealmDiscoveryPolicies/{homeRealmDiscoveryPolicy-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/policies/identitySecurityDefaultsEnforcementPolicy": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/policies/permissionGrantPolicies": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/policies/permissionGrantPolicies/{permissionGrantPolicy-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/policies/permissionGrantPolicies/{permissionGrantPolicy-id}/excludes": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/policies/permissionGrantPolicies/{permissionGrantPolicy-id}/excludes/{permissionGrantConditionSet-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/policies/permissionGrantPolicies/{permissionGrantPolicy-id}/includes": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/policies/permissionGrantPolicies/{permissionGrantPolicy-id}/includes/{permissionGrantConditionSet-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/policies/privateLinkResourcePolicies": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/policies/privateLinkResourcePolicies/{privateLinkResourcePolicy-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/policies/tokenIssuancePolicies": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/policies/tokenIssuancePolicies/{tokenIssuancePolicy-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/policies/tokenLifetimePolicies": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/policies/tokenLifetimePolicies/{tokenLifetimePolicy-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/riskDetections": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/riskDetections/{riskDetection-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/riskyUsers": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/riskyUsers/{riskyUser-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/riskyUsers/{riskyUser-id}/history": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/riskyUsers/{riskyUser-id}/history/{riskyUserHistoryItem-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/riskyUsers/microsoft.graph.confirmCompromised": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/riskyUsers/microsoft.graph.dismiss": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/trustFramework": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/trustFramework/keySets": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/trustFramework/keySets/{trustFrameworkKeySet-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/trustFramework/keySets/{trustFrameworkKeySet-id}/microsoft.graph.generateKey": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/trustFramework/keySets/{trustFrameworkKeySet-id}/microsoft.graph.getActiveKey()": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/trustFramework/keySets/{trustFrameworkKeySet-id}/microsoft.graph.uploadCertificate": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/trustFramework/keySets/{trustFrameworkKeySet-id}/microsoft.graph.uploadPkcs12": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/trustFramework/keySets/{trustFrameworkKeySet-id}/microsoft.graph.uploadSecret": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/trustFramework/policies": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/trustFramework/policies/{trustFrameworkPolicy-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/trustFramework/policies/{trustFrameworkPolicy-id}/$value": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/users/{user-id}/authentication": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/users/{user-id}/authentication/emailMethods": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/users/{user-id}/authentication/emailMethods/{emailAuthenticationMethod-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/users/{user-id}/authentication/fido2Methods": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/users/{user-id}/authentication/fido2Methods/{fido2AuthenticationMethod-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/users/{user-id}/authentication/methods": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/users/{user-id}/authentication/methods/{authenticationMethod-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/users/{user-id}/authentication/operations": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/users/{user-id}/authentication/operations/{longRunningOperation-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/users/{user-id}/authentication/passwordlessMicrosoftAuthenticatorMethods": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/users/{user-id}/authentication/passwordlessMicrosoftAuthenticatorMethods/{passwordlessMicrosoftAuthenticatorAuthenticationMethod-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/users/{user-id}/authentication/passwordlessMicrosoftAuthenticatorMethods/{passwordlessMicrosoftAuthenticatorAuthenticationMethod-id}/device": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/users/{user-id}/authentication/passwordMethods": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/users/{user-id}/authentication/passwordMethods/{passwordAuthenticationMethod-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/users/{user-id}/authentication/phoneMethods": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/users/{user-id}/authentication/phoneMethods/{phoneAuthenticationMethod-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/users/{user-id}/informationProtection": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
     }
   },
   "resources": []

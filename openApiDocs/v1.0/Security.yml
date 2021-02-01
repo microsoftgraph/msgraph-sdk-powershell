@@ -1035,6 +1035,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.alertHistoryState'
+              description: A collection of alertHistoryStates comprising an audit log of all updates made to an alert.
             hostStates:
               type: array
               items:
@@ -1160,14 +1161,16 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.complianceInformation'
+              description: The collection of compliance information associated with secure score control
             controlCategory:
               type: string
-              description: 'Control action category (Identity, Data, Device, Apps, Infrastructure).'
+              description: 'Control action category (Account, Data, Device, Apps, Infrastructure).'
               nullable: true
             controlStateUpdates:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.secureScoreControlStateUpdate'
+              description: 'Flag to indicate where the tenant has marked a control (ignore, thirdParty, reviewed) (supports update).'
             deprecated:
               type: boolean
               description: Flag to indicate if a control is depreciated.
@@ -1184,7 +1187,7 @@ components:
               nullable: true
             maxScore:
               type: number
-              description: max attainable score for the control.
+              description: Current obtained max score on specified date.
               format: double
               nullable: true
             rank:
@@ -1211,9 +1214,10 @@ components:
               items:
                 type: string
                 nullable: true
-              description: 'List of threats the control mitigates (accountBreach,dataDeletion,dataExfiltration,dataSpillage,'
+              description: 'List of threats the control mitigates (accountBreach,dataDeletion,dataExfiltration,dataSpillage,elevationOfPrivilege,maliciousInsider,passwordCracking,phishingOrWhaling,spoofing).'
             tier:
               type: string
+              description: 'Control tier (Core, Defense in Depth, Advanced.)'
               nullable: true
             title:
               type: string
@@ -1221,6 +1225,7 @@ components:
               nullable: true
             userImpact:
               type: string
+              description: 'User impact of implementing control (low, moderate, high).'
               nullable: true
             vendorInformation:
               $ref: '#/components/schemas/microsoft.graph.securityVendorInformation'
@@ -1362,15 +1367,18 @@ components:
       properties:
         appId:
           type: string
+          description: The Application ID of the calling application that submitted an update (PATCH) to the alert. The appId should be extracted from the auth token and not entered manually by the calling application.
           nullable: true
         assignedTo:
           type: string
+          description: 'UPN of user the alert was assigned to (note: alert.assignedTo only stores the last value/UPN).'
           nullable: true
         comments:
           type: array
           items:
             type: string
             nullable: true
+          description: Comment entered by signed-in user.
         feedback:
           $ref: '#/components/schemas/microsoft.graph.alertFeedback'
         status:
@@ -1378,10 +1386,12 @@ components:
         updatedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'Date and time of the alert update. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
           format: date-time
           nullable: true
         user:
           type: string
+          description: UPN of the signed-in user that updated the alert (taken from the bearer token - if in user/delegated auth mode).
           nullable: true
       additionalProperties:
         type: object
@@ -1504,7 +1514,7 @@ components:
       properties:
         applicationName:
           type: string
-          description: 'Name of the application managing the network connection (for example, Facebook or SMTP).'
+          description: 'Name of the application managing the network connection (for example, Facebook, SMTP, etc.).'
           nullable: true
         destinationAddress:
           type: string

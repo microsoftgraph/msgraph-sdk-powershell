@@ -115,22 +115,27 @@ components:
           items:
             type: string
             nullable: true
+          description: 'Contains the connection to be targeted. Respects the following format : /external/connections/connectionid where connectionid is the ConnectionId defined in the Connectors Administration.  Note : contentSource is only applicable when entityType=externalItem. Optional.'
         enableTopResults:
           type: boolean
+          description: 'This triggers hybrid sort for messages : the first 3 messages are the most relevant. This property is only applicable to entityType=message. Optional.'
           nullable: true
         entityTypes:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.entityType'
+          description: 'One or more types of resources expected in the response. Possible values are: list, site, listItem, message, event, drive, driveItem, externalItem. See known limitations for those combinations of two or more entity types that are supported in the same search request. Required.'
         fields:
           type: array
           items:
             type: string
             nullable: true
+          description: 'Contains the fields to be returned for each resource object specified in entityTypes, allowing customization of the fields returned by default otherwise, including additional fields such as custom managed properties from SharePoint and OneDrive, or custom fields in externalItem from content ingested by Graph connectors. Optional.'
         from:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: Specifies the offset for the search results. Offset 0 returns the very first result. Optional.
           format: int32
         query:
           $ref: '#/components/schemas/microsoft.graph.searchQuery'
@@ -138,6 +143,7 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: The size of the page to be retrieved. Optional.
           format: int32
       additionalProperties:
         type: object
