@@ -325,7 +325,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                         // See https://docs.microsoft.com/en-us/dotnet/api/system.security.cryptography.x509certificates.x509certificate2.thumbprint?view=net-5.0#remarks.
                         if (!string.IsNullOrEmpty(CertificateThumbprint) && CertificateThumbprint.Length != 40)
                         {
-                            this.ThrowError(string.Format(ErrorConstants.Message.InvalidCertificateThumbprint,nameof(CertificateThumbprint)), ErrorCategory.InvalidArgument);
+                            this.ThrowError(string.Format(ErrorConstants.Message.InvalidCertificateThumbprint, nameof(CertificateThumbprint)), ErrorCategory.InvalidArgument);
                         }
 
                         // Tenant Id
