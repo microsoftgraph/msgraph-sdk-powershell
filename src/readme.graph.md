@@ -493,28 +493,10 @@ directive:
       {
         return $;
       } else {
-        // Add new modifier to 'values' properties of classes that derive from an IAssociativeArray. See example https://regex101.com/r/hnX7xO/2.
-        let valuesPropertiesRegex = /(SerializedName\s*=\s*@"values".*\s*.*)(\s*)(.*Values\s*{\s*get;\s*set;\s*})/gmi
-        if($.match(valuesPropertiesRegex)) {
-          $ = $.replace(valuesPropertiesRegex, '$1$2 new $3');
-        }
-
-        // Add new modifier to 'additionalProperties' properties of classes that derive from an IAssociativeArray. See example https://regex101.com/r/hnX7xO/2.
+        // Add new modifier to 'additionalProperties' properties of classes that implement IAssociativeArray. See example https://regex101.com/r/hnX7xO/2.
         let additionalPropertiesRegex = /(SerializedName\s*=\s*@"additionalProperties".*\s*.*)(\s*)(.*AdditionalProperties\s*{\s*get;\s*set;\s*})/gmi
         if($.match(additionalPropertiesRegex)) {
           $ = $.replace(additionalPropertiesRegex, '$1$2 new $3');
-        }
-
-        // Add new modifier to 'keys' properties of classes that derive from an IAssociativeArray. See example https://regex101.com/r/hnX7xO/2.
-        let keysRegex = /(SerializedName\s*=\s*@"keys".*\s*.*)(\s*)(.*Keys\s*{\s*get;\s*set;\s*})/gmi
-        if($.match(keysRegex)) {
-          $ = $.replace(keysRegex, '$1$2 new $3');
-        }
-
-        // Add new modifier to 'count' properties of classes that derive from an IAssociativeArray. See example https://regex101.com/r/hnX7xO/2.
-        let countRegex = /(SerializedName\s*=\s*@"count".*\s*.*)(\s*)(.*Count\s*{\s*get;\s*set;\s*})/gmi
-        if($.match(countRegex)) {
-          $ = $.replace(countRegex, '$1$2 new $3');
         }
 
         let regexPattern = /^\s*public\s*partial\s*class\s*MicrosoftGraph(?<EntityName>.*):$/gm;
