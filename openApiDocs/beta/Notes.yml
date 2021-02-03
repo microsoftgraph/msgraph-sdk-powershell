@@ -85139,12 +85139,10 @@ components:
           properties:
             content:
               type: string
-              description: The content stream
               format: base64url
               nullable: true
             contentUrl:
               type: string
-              description: The URL for downloading the content
               nullable: true
           additionalProperties:
             type: object
@@ -85167,14 +85165,12 @@ components:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             displayName:
               type: string
-              description: The name of the notebook.
               nullable: true
             lastModifiedBy:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the notebook was last modified. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Read-only.'
               format: date-time
               nullable: true
           additionalProperties:
@@ -85216,7 +85212,6 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the page was created. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Read-only.'
               format: date-time
               nullable: true
           additionalProperties:
@@ -85275,7 +85270,6 @@ components:
           properties:
             self:
               type: string
-              description: The endpoint where you can get details about the page. Read-only.
               nullable: true
           additionalProperties:
             type: object

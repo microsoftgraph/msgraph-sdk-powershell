@@ -142,6 +142,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - container
+                - container desc
                 - contexts
                 - contexts desc
                 - createdBy
@@ -164,6 +166,7 @@ paths:
             items:
               enum:
                 - id
+                - container
                 - contexts
                 - createdBy
                 - createdDateTime
@@ -273,6 +276,7 @@ paths:
             items:
               enum:
                 - id
+                - container
                 - contexts
                 - createdBy
                 - createdDateTime
@@ -740,6 +744,8 @@ paths:
                 - createdBy desc
                 - createdDateTime
                 - createdDateTime desc
+                - creationSource
+                - creationSource desc
                 - dueDateTime
                 - dueDateTime desc
                 - hasDescription
@@ -783,6 +789,7 @@ paths:
                 - conversationThreadId
                 - createdBy
                 - createdDateTime
+                - creationSource
                 - dueDateTime
                 - hasDescription
                 - orderHint
@@ -938,6 +945,7 @@ paths:
                 - conversationThreadId
                 - createdBy
                 - createdDateTime
+                - creationSource
                 - dueDateTime
                 - hasDescription
                 - orderHint
@@ -1934,6 +1942,8 @@ paths:
                 - createdBy desc
                 - createdDateTime
                 - createdDateTime desc
+                - creationSource
+                - creationSource desc
                 - dueDateTime
                 - dueDateTime desc
                 - hasDescription
@@ -1977,6 +1987,7 @@ paths:
                 - conversationThreadId
                 - createdBy
                 - createdDateTime
+                - creationSource
                 - dueDateTime
                 - hasDescription
                 - orderHint
@@ -2118,6 +2129,7 @@ paths:
                 - conversationThreadId
                 - createdBy
                 - createdDateTime
+                - creationSource
                 - dueDateTime
                 - hasDescription
                 - orderHint
@@ -3168,6 +3180,8 @@ paths:
                 - createdBy desc
                 - createdDateTime
                 - createdDateTime desc
+                - creationSource
+                - creationSource desc
                 - dueDateTime
                 - dueDateTime desc
                 - hasDescription
@@ -3211,6 +3225,7 @@ paths:
                 - conversationThreadId
                 - createdBy
                 - createdDateTime
+                - creationSource
                 - dueDateTime
                 - hasDescription
                 - orderHint
@@ -3338,6 +3353,7 @@ paths:
                 - conversationThreadId
                 - createdBy
                 - createdDateTime
+                - creationSource
                 - dueDateTime
                 - hasDescription
                 - orderHint
@@ -3972,6 +3988,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - container
+                - container desc
                 - contexts
                 - contexts desc
                 - createdBy
@@ -3994,6 +4012,7 @@ paths:
             items:
               enum:
                 - id
+                - container
                 - contexts
                 - createdBy
                 - createdDateTime
@@ -4088,6 +4107,7 @@ paths:
             items:
               enum:
                 - id
+                - container
                 - contexts
                 - createdBy
                 - createdDateTime
@@ -4495,6 +4515,8 @@ paths:
                 - createdBy desc
                 - createdDateTime
                 - createdDateTime desc
+                - creationSource
+                - creationSource desc
                 - dueDateTime
                 - dueDateTime desc
                 - hasDescription
@@ -4538,6 +4560,7 @@ paths:
                 - conversationThreadId
                 - createdBy
                 - createdDateTime
+                - creationSource
                 - dueDateTime
                 - hasDescription
                 - orderHint
@@ -4679,6 +4702,7 @@ paths:
                 - conversationThreadId
                 - createdBy
                 - createdDateTime
+                - creationSource
                 - dueDateTime
                 - hasDescription
                 - orderHint
@@ -5545,6 +5569,8 @@ paths:
                 - createdBy desc
                 - createdDateTime
                 - createdDateTime desc
+                - creationSource
+                - creationSource desc
                 - dueDateTime
                 - dueDateTime desc
                 - hasDescription
@@ -5588,6 +5614,7 @@ paths:
                 - conversationThreadId
                 - createdBy
                 - createdDateTime
+                - creationSource
                 - dueDateTime
                 - hasDescription
                 - orderHint
@@ -5715,6 +5742,7 @@ paths:
                 - conversationThreadId
                 - createdBy
                 - createdDateTime
+                - creationSource
                 - dueDateTime
                 - hasDescription
                 - orderHint
@@ -6371,6 +6399,8 @@ paths:
                 - createdBy desc
                 - createdDateTime
                 - createdDateTime desc
+                - creationSource
+                - creationSource desc
                 - dueDateTime
                 - dueDateTime desc
                 - hasDescription
@@ -6414,6 +6444,7 @@ paths:
                 - conversationThreadId
                 - createdBy
                 - createdDateTime
+                - creationSource
                 - dueDateTime
                 - hasDescription
                 - orderHint
@@ -6526,6 +6557,7 @@ paths:
                 - conversationThreadId
                 - createdBy
                 - createdDateTime
+                - creationSource
                 - dueDateTime
                 - hasDescription
                 - orderHint
@@ -7424,6 +7456,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - container
+                - container desc
                 - contexts
                 - contexts desc
                 - createdBy
@@ -7446,6 +7480,7 @@ paths:
             items:
               enum:
                 - id
+                - container
                 - contexts
                 - createdBy
                 - createdDateTime
@@ -7524,6 +7559,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - container
+                - container desc
                 - contexts
                 - contexts desc
                 - createdBy
@@ -7623,6 +7660,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - container
+                - container desc
                 - contexts
                 - contexts desc
                 - createdBy
@@ -7645,6 +7684,7 @@ paths:
             items:
               enum:
                 - id
+                - container
                 - contexts
                 - createdBy
                 - createdDateTime
@@ -7754,6 +7794,7 @@ paths:
             items:
               enum:
                 - id
+                - container
                 - contexts
                 - createdBy
                 - createdDateTime
@@ -8221,6 +8262,8 @@ paths:
                 - createdBy desc
                 - createdDateTime
                 - createdDateTime desc
+                - creationSource
+                - creationSource desc
                 - dueDateTime
                 - dueDateTime desc
                 - hasDescription
@@ -8264,6 +8307,7 @@ paths:
                 - conversationThreadId
                 - createdBy
                 - createdDateTime
+                - creationSource
                 - dueDateTime
                 - hasDescription
                 - orderHint
@@ -8419,6 +8463,7 @@ paths:
                 - conversationThreadId
                 - createdBy
                 - createdDateTime
+                - creationSource
                 - dueDateTime
                 - hasDescription
                 - orderHint
@@ -9415,6 +9460,8 @@ paths:
                 - createdBy desc
                 - createdDateTime
                 - createdDateTime desc
+                - creationSource
+                - creationSource desc
                 - dueDateTime
                 - dueDateTime desc
                 - hasDescription
@@ -9458,6 +9505,7 @@ paths:
                 - conversationThreadId
                 - createdBy
                 - createdDateTime
+                - creationSource
                 - dueDateTime
                 - hasDescription
                 - orderHint
@@ -9599,6 +9647,7 @@ paths:
                 - conversationThreadId
                 - createdBy
                 - createdDateTime
+                - creationSource
                 - dueDateTime
                 - hasDescription
                 - orderHint
@@ -10342,6 +10391,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - container
+                - container desc
                 - contexts
                 - contexts desc
                 - createdBy
@@ -10364,6 +10415,7 @@ paths:
             items:
               enum:
                 - id
+                - container
                 - contexts
                 - createdBy
                 - createdDateTime
@@ -10442,6 +10494,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - container
+                - container desc
                 - contexts
                 - contexts desc
                 - createdBy
@@ -10563,6 +10617,8 @@ paths:
                 - createdBy desc
                 - createdDateTime
                 - createdDateTime desc
+                - creationSource
+                - creationSource desc
                 - dueDateTime
                 - dueDateTime desc
                 - hasDescription
@@ -10606,6 +10662,7 @@ paths:
                 - conversationThreadId
                 - createdBy
                 - createdDateTime
+                - creationSource
                 - dueDateTime
                 - hasDescription
                 - orderHint
@@ -10733,6 +10790,7 @@ paths:
                 - conversationThreadId
                 - createdBy
                 - createdDateTime
+                - creationSource
                 - dueDateTime
                 - hasDescription
                 - orderHint
@@ -11364,6 +11422,8 @@ components:
         - title: plannerPlan
           type: object
           properties:
+            container:
+              $ref: '#/components/schemas/microsoft.graph.plannerPlanContainer'
             contexts:
               $ref: '#/components/schemas/microsoft.graph.plannerPlanContextCollection'
             createdBy:
@@ -11376,7 +11436,6 @@ components:
               nullable: true
             owner:
               type: string
-              description: 'ID of the Group that owns the plan. A valid group must exist before this field can be set. After it is set, this property can’t be updated.'
               nullable: true
             title:
               type: string
@@ -11385,14 +11444,14 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerBucket'
-              description: Read-only. Nullable. Collection of buckets in the plan.
+              description: Collection of buckets in the plan. Read-only. Nullable.
             details:
               $ref: '#/components/schemas/microsoft.graph.plannerPlanDetails'
             tasks:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
-              description: Read-only. Nullable. Collection of tasks in the plan.
+              description: Collection of tasks in the plan. Read-only. Nullable.
           additionalProperties:
             type: object
     microsoft.graph.plannerBucket:
@@ -11471,6 +11530,8 @@ components:
               description: 'Read-only. Date and time at which the task is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
               format: date-time
               nullable: true
+            creationSource:
+              $ref: '#/components/schemas/microsoft.graph.plannerTaskCreation'
             dueDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -11502,6 +11563,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: 'Priority of the task. Valid range of values is between 0 and 10 (inclusive), with increasing value being lower priority (0 has the highest priority and 10 has the lowest priority).  Currently, Planner interprets values 0 and 1 as ''urgent'', 2 and 3 and 4 as ''important'', 5, 6, and 7 as ''medium'', and 8, 9, and 10 as ''low''.  Currently, Planner sets the value 1 for ''urgent'', 3 for ''important'', 5 for ''medium'', and 9 for ''low''.'
               format: int32
               nullable: true
             referenceCount:
@@ -11641,20 +11703,21 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlan'
+              description: Read-only. Nullable. Returns the plannerPlans that the user marked as favorites.
             plans:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlan'
-              description: Read-only. Nullable. Returns the plannerTasks assigned to the user.
             recentPlans:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlan'
+              description: Read-only. Nullable. Returns the plannerPlans that have been recently viewed by the user in apps that support recent plans.
             tasks:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
-              description: Read-only. Nullable. Returns the plannerPlans shared with the user.
+              description: Read-only. Nullable. Returns the plannerTasks assigned to the user.
           additionalProperties:
             type: object
     microsoft.graph.plannerDelta:
@@ -11671,6 +11734,20 @@ components:
         id:
           type: string
           description: Read-only.
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerPlanContainer:
+      title: plannerPlanContainer
+      type: object
+      properties:
+        containerId:
+          type: string
+          description: The identifier of the resource that contains the plan.
+        type:
+          $ref: '#/components/schemas/microsoft.graph.plannerContainerType'
+        url:
+          type: string
+          description: The full canonical URL of the container.
       additionalProperties:
         type: object
     microsoft.graph.plannerPlanContextCollection:
@@ -11698,6 +11775,14 @@ components:
     microsoft.graph.plannerAssignments:
       title: plannerAssignments
       type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerTaskCreation:
+      title: plannerTaskCreation
+      type: object
+      properties:
+        teamsPublicationInfo:
+          $ref: '#/components/schemas/microsoft.graph.plannerTeamsPublicationInfo'
       additionalProperties:
         type: object
     microsoft.graph.plannerPreviewType:
@@ -11783,6 +11868,12 @@ components:
           $ref: '#/components/schemas/odata.error.main'
       additionalProperties:
         type: object
+    microsoft.graph.plannerContainerType:
+      title: plannerContainerType
+      enum:
+        - group
+        - unknownFutureValue
+      type: string
     microsoft.graph.identity:
       title: identity
       type: object
@@ -11794,6 +11885,34 @@ components:
         id:
           type: string
           description: Unique identifier for the identity.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerTeamsPublicationInfo:
+      title: plannerTeamsPublicationInfo
+      type: object
+      properties:
+        lastModifiedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The date and time when this task was last modified by the publication process. Read-only.
+          format: date-time
+          nullable: true
+        publicationId:
+          type: string
+          description: The identifier of the publication. Read-only.
+          nullable: true
+        publishedToPlanId:
+          type: string
+          description: The identifier of the plannerPlan this task was originally placed in. Read-only.
+          nullable: true
+        publishingTeamId:
+          type: string
+          description: The identifier of the team that initiated the publication process. Read-only.
+          nullable: true
+        publishingTeamName:
+          type: string
+          description: 'The display name of the team that initiated the publication process. This display name is for reference only, and might not represent the most up-to-date name of the team. Read-only.'
           nullable: true
       additionalProperties:
         type: object

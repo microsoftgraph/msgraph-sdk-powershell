@@ -1,4 +1,5 @@
 {
+  "resources": [],
   "operations": {
     "/groupLifecyclePolicies": {
       "apiVersion": "v1.0-beta",
@@ -32,7 +33,7 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Groups.yml"
     },
-    "/groups/{group-id}/acceptedSenders/{directoryObject-id}": {
+    "/groups/{group-id}/acceptedSenders/$ref": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Groups.yml"
     },
@@ -1276,7 +1277,7 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Groups.yml"
     },
-    "/groups/{group-id}/rejectedSenders/{directoryObject-id}": {
+    "/groups/{group-id}/rejectedSenders/$ref": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Groups.yml"
     },
@@ -1416,6 +1417,5 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Groups.yml"
     }
-  },
-  "resources": []
+  }
 }

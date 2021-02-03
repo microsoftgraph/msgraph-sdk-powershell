@@ -1,4 +1,5 @@
 {
+  "resources": [],
   "operations": {
     "/applications": {
       "apiVersion": "v1.0",
@@ -300,6 +301,5 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     }
-  },
-  "resources": []
+  }
 }

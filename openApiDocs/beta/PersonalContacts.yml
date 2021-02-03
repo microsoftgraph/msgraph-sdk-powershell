@@ -4124,6 +4124,7 @@ components:
               nullable: true
             wellKnownName:
               type: string
+              description: The name of the folder if the folder is a recognized folder. Currently contacts is the only recognized contacts folder.
               nullable: true
             childFolders:
               type: array
@@ -4194,6 +4195,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.followupFlag'
             gender:
               type: string
+              description: The contact's gender.
               nullable: true
             generation:
               type: string
@@ -4208,41 +4210,32 @@ components:
               items:
                 type: string
                 nullable: true
-              description: The contact's instant messaging (IM) addresses.
             initials:
               type: string
-              description: The contact's initials.
               nullable: true
             isFavorite:
               type: boolean
               nullable: true
             jobTitle:
               type: string
-              description: The contact’s job title.
               nullable: true
             manager:
               type: string
-              description: The name of the contact's manager.
               nullable: true
             middleName:
               type: string
-              description: The contact's middle name.
               nullable: true
             nickName:
               type: string
-              description: The contact's nickname.
               nullable: true
             officeLocation:
               type: string
-              description: The location of the contact's office.
               nullable: true
             parentFolderId:
               type: string
-              description: The ID of the contact's parent folder.
               nullable: true
             personalNotes:
               type: string
-              description: The user's notes about the contact.
               nullable: true
             phones:
               type: array
@@ -4254,19 +4247,15 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.physicalAddress'
             profession:
               type: string
-              description: The contact's profession.
               nullable: true
             spouseName:
               type: string
-              description: The name of the contact's spouse/partner.
               nullable: true
             surname:
               type: string
-              description: The contact's surname.
               nullable: true
             title:
               type: string
-              description: The contact's title.
               nullable: true
             websites:
               type: array
@@ -4279,21 +4268,18 @@ components:
               nullable: true
             yomiCompanyName:
               type: string
-              description: The phonetic Japanese company name of the contact.
               nullable: true
             yomiGivenName:
               type: string
-              description: The phonetic Japanese given name (first name) of the contact.
               nullable: true
             yomiSurname:
               type: string
-              description: The phonetic Japanese surname (last name)  of the contact.
               nullable: true
             extensions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
-              description: The collection of open extensions defined for the contact. Read-only. Nullable.
+              description: The collection of open extensions defined for the contact. Nullable.
             multiValueExtendedProperties:
               type: array
               items:
@@ -4383,10 +4369,8 @@ components:
               items:
                 type: string
                 nullable: true
-              description: The categories associated with the item
             changeKey:
               type: string
-              description: 'Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.'
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -4410,6 +4394,7 @@ components:
           properties:
             otherLabel:
               type: string
+              description: 'To specify a custom type of email address, set type to other, and assign otherLabel to a custom string. For example, you may use a specific email address for your volunteer activities. Set type to other, and set otherLabel to a custom string such as Volunteer work.'
               nullable: true
             type:
               $ref: '#/components/schemas/microsoft.graph.emailType'
@@ -4459,6 +4444,7 @@ components:
           nullable: true
         postOfficeBox:
           type: string
+          description: The post office box number.
           nullable: true
         state:
           type: string
@@ -4503,11 +4489,11 @@ components:
       properties:
         address:
           type: string
-          description: The email address of the person or entity.
+          description: The email address of an entity instance.
           nullable: true
         name:
           type: string
-          description: The display name of the person or entity.
+          description: The display name of an entity instance.
           nullable: true
       additionalProperties:
         type: object
@@ -4526,10 +4512,10 @@ components:
       properties:
         dateTime:
           type: string
-          description: 'A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).'
+          description: 'A single point of time in a combined date and time representation ({date}T{time}). For example, ''2019-04-16T09:00:00''.'
         timeZone:
           type: string
-          description: 'Represents a time zone, for example, ''Pacific Standard Time''. See below for more possible values.'
+          description: 'Represents a time zone, for example, ''Pacific Standard Time''. See below for possible values.'
           nullable: true
       additionalProperties:
         type: object
