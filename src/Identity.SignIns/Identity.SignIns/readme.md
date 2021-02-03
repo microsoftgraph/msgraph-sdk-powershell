@@ -48,6 +48,10 @@ directive:
       subject: ^(DataPolicyOperation)(\1)+
     set:
       subject: $1
+# Remove cmdlets
+  - where:
+      subject: ^UserAuthentication$
+    remove: true
 ```
 ### Versioning
 
