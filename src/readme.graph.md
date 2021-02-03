@@ -471,6 +471,20 @@ directive:
 
         return $;
       }
+# Modify generated .dictionary.cs model classes.
+  - from: source-file-csharp
+    where: $
+    transform: >
+      if (!$documentPath.match(/generated%5Capi%5CModels%5C\w*\d*.dictionary.cs/gm))
+      {
+        return $;
+      } else {
+        // Remove Count, Keys, and Values properties from implementations of an IAssociativeArray in models.
+        let propertiesToRemoveRegex = /^.*Microsoft\.Graph\.PowerShell\.Runtime\.IAssociativeArray<global::System\.Object>\.(Count|Keys|Values).*$/gm
+        $ = $.replace(propertiesToRemoveRegex, '');
+
+        return $;
+      }
 # Modify generated .cs model classes.
   - from: source-file-csharp
     where: $
@@ -637,7 +651,7 @@ directive:
         return $;
       }
 
-# Modify generated runtime IJsonSerializable class.
+# Modify generated runtime IJsonSerializable interface.
   - from: source-file-csharp
     where: $
     transform: >
@@ -648,6 +662,29 @@ directive:
         // Changes excludes hashset to a case-insensitive hashset.
         let fromJsonRegex = /(\s*FromJson<\w*>\s*\(JsonObject\s*json\s*,\s*System\.Collections\.Generic\.IDictionary.*)(\s*)({)/gm
         $ = $.replace(fromJsonRegex, '$1$2$3\n$2 if (excludes != null){ excludes = new System.Collections.Generic.HashSet<string>(excludes, global::System.StringComparer.OrdinalIgnoreCase);}');
+        return $;
+      }
+
+# Modify generated runtime IAssociativeArray interface.
+  - from: source-file-csharp
+    where: $
+    transform: >
+      if (!$documentPath.match(/generated%5Cruntime%5CIAssociativeArray.cs/gm))
+      {
+        return $;
+      } else {
+        // Remove Count from IAssociativeArray interface.
+        let countRegex = /int\s*Count\s*{\s*get;\s*}/gm
+        $ = $.replace(countRegex, '');
+
+        // Remove Keys from IAssociativeArray interface.
+        let keysRegex = /System\.Collections\.Generic\.IEnumerable<string>\s*Keys\s*{\s*get;\s*}/gm
+        $ = $.replace(keysRegex, '');
+
+        // Remove Values from IAssociativeArray interface.
+        let valuesRegex = /System\.Collections\.Generic\.IEnumerable<T>\s*Values\s*{\s*get;\s*}/gm
+        $ = $.replace(valuesRegex, '');
+
         return $;
       }
 
