@@ -12357,7 +12357,7 @@ components:
           nullable: true
         capabilityStatus:
           type: string
-          description: 'For example, ''Enabled''.'
+          description: 'Condition of the capability assignment. The possible values are Enabled, Warning, Suspended, Deleted, LockedOut.'
           nullable: true
         service:
           type: string

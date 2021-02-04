@@ -513,11 +513,13 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.searchHitsContainer'
+          description: A collection of search results.
         searchTerms:
           type: array
           items:
             type: string
             nullable: true
+          description: Contains the search terms sent in the initial search query.
       additionalProperties:
         type: object
     microsoft.graph.entity:
@@ -642,11 +644,12 @@ components:
       title: searchQuery
       type: object
       properties:
-        query_string:
-          $ref: '#/components/schemas/microsoft.graph.searchQueryString'
         queryString:
           type: string
+          description: The search query containing the search terms. Required.
           nullable: true
+        query_string:
+          $ref: '#/components/schemas/microsoft.graph.searchQueryString'
       additionalProperties:
         type: object
     microsoft.graph.sortProperty:
@@ -672,13 +675,16 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.searchHit'
+          description: A collection of the search results.
         moreResultsAvailable:
           type: boolean
+          description: 'Provides information if more results are available. Based on this information, you can adjust the from and size properties of the searchRequest accordingly.'
           nullable: true
         total:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: 'The total number of results. Note this is not the number of results on the page, but the total number of results satisfying the query.'
           format: int32
           nullable: true
       additionalProperties:
@@ -841,6 +847,25 @@ components:
       title: searchHit
       type: object
       properties:
+        contentSource:
+          type: string
+          description: The name of the content source which the externalItem is part of .
+          nullable: true
+        hitId:
+          type: string
+          description: The internal identifier for the item.
+          nullable: true
+        rank:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The rank or the order of the result.
+          format: int32
+          nullable: true
+        summary:
+          type: string
+          description: 'A summary of the result, if a summary is available.'
+          nullable: true
         _id:
           type: string
           nullable: true
@@ -853,24 +878,9 @@ components:
         _summary:
           type: string
           nullable: true
-        contentSource:
-          type: string
-          nullable: true
-        hitId:
-          type: string
-          nullable: true
-        rank:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          format: int32
-          nullable: true
-        summary:
-          type: string
-          nullable: true
-        _source:
-          $ref: '#/components/schemas/microsoft.graph.entity'
         resource:
+          $ref: '#/components/schemas/microsoft.graph.entity'
+        _source:
           $ref: '#/components/schemas/microsoft.graph.entity'
       additionalProperties:
         type: object

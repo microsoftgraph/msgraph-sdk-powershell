@@ -47,17 +47,35 @@ stages:
             Write-Host $(BUILDNUMBER)
             printenv
 
+- stage: GetSecrets
+  displayName: 'Get Secrets From Azure KeyVault'
+  jobs:
+  - job: GetSecrets
+    steps:
+    - task: AzureKeyVault@1
+      inputs:
+        azureSubscription: 'Microsoft Graph Build Agents'
+        KeyVaultName: 'msgraph-build-vault'
+        SecretsFilter: '*'
+        RunAsPreJob: true
+    
+    - task: PowerShell@2
+      displayName: 'Install Test Certificate'
+      inputs:
+        targetType: 'inline'
+        script: |
+          $kvSecretBytes = [System.Convert]::FromBase64String('$(MsGraphPSSDKCertificate)')
+          $certCollection = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2Collection
+          $certCollection.Import($kvSecretBytes,$null,[System.Security.Cryptography.X509Certificates.X509KeyStorageFlags]::Exportable)
+          $store = New-Object System.Security.Cryptography.X509Certificates.X509Store("My", "CurrentUser")
+          $store.Open([System.Security.Cryptography.X509Certificates.OpenFlags]::ReadWrite)
+          $store.AddRange($certCollection)
+          $store.Close()
+
 - stage: SecurityPreChecks
   displayName: 'Security Pre Checks'
   jobs:
   - template: ./security-prechecks-template.yml
-
-- stage: DownloadOpenApiDocs
-  displayName: 'Download Open Api Docs from DevX API'
-  jobs:
-  - template: ./download-openapidocs-template.yml
-    parameters:
-      BUILDNUMBER: $(BUILDNUMBER)
 
 - stage: GenerateAuthModule
   displayName: 'Generate Authentication Module (Microsoft.Graph.Authentication)'

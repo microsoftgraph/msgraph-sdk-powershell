@@ -210,6 +210,15 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         public string UserAgent { get; set; }
 
         /// <summary>
+        ///     OutputType to return to the caller, Defaults to HashTable
+        /// </summary>
+        [Parameter(Mandatory = false,
+            Position = 19,
+            ParameterSetName = Constants.UserParameterSet,
+            HelpMessage = "Output Type to return to the caller")]
+        public OutputType OutputType { get; set; } = OutputType.HashTable;
+
+        /// <summary>
         ///     Wait for .NET debugger to attach
         /// </summary>
         [Parameter(Mandatory = false,
@@ -228,6 +237,11 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 
         internal bool ShouldCheckHttpStatus => !SkipHttpErrorCheck;
 
+        /// <summary>
+        ///     Only Set Default Content Type (application/json) for POST, PUT and PATCH requests, where its not specified via `-ContentType`.
+        /// </summary>
+        private bool ShouldSetDefaultContentType => Method == GraphRequestMethod.POST || Method == GraphRequestMethod.PUT || Method == GraphRequestMethod.PATCH;
+
         private static async Task<ErrorRecord> GenerateHttpErrorRecordAsync(
             HttpMessageFormatter httpResponseMessageFormatter,
             HttpRequestMessage httpRequestMessage)
@@ -241,7 +255,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                     Resources.ResponseStatusCodeFailure.FormatCurrentCulture(currentResponse.StatusCode,
                         currentResponse.ReasonPhrase);
                 var httpException = new HttpResponseException(errorMessage, currentResponse);
-                var errorRecord = new ErrorRecord(httpException, Errors.InvokeGraphHttpResponseException,
+                var errorRecord = new ErrorRecord(httpException, ErrorConstants.Codes.InvokeGraphHttpResponseException,
                     ErrorCategory.InvalidOperation, httpRequestMessage);
                 var detailMsg = await httpResponseMessageFormatter.ReadAsStringAsync();
                 if (!string.IsNullOrEmpty(detailMsg))
@@ -411,60 +425,67 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             return uri;
         }
 
+        private void ThrowIfError(ErrorRecord error)
+        {
+            if (error != null)
+            {
+                ThrowTerminatingError(error);
+            }
+        }
         /// <summary>
         ///     Process Http Response
         /// </summary>
         /// <param name="response"></param>
-        internal void ProcessResponse(HttpResponseMessage response)
+        internal async Task ProcessResponseAsync(HttpResponseMessage response)
         {
             if (response == null) throw new ArgumentNullException(nameof(response));
-
-            var baseResponseStream = response.GetResponseStream();
-
             if (ShouldWriteToPipeline)
             {
-                using (var responseStream = new BufferingStreamReader(baseResponseStream))
+                var returnType = response.CheckReturnType();
+                if (returnType == RestReturnType.Json)
                 {
-                    // determine the response type
-                    var returnType = response.CheckReturnType();
-                    // Try to get the response encoding from the ContentType header.
-                    Encoding encoding = null;
-                    var charSet = response.Content.Headers.ContentType?.CharSet;
-                    if (!string.IsNullOrEmpty(charSet))
+                    var responseString = await response.Content.ReadAsStringAsync();
+                    ErrorRecord error;
+                    switch (OutputType)
                     {
-                        charSet.TryGetEncoding(out encoding);
+                        case OutputType.HashTable:
+                            var hashTable = responseString.ConvertFromJson(true, null, out error);
+                            ThrowIfError(error);
+                            WriteObject(hashTable);
+                            break;
+                        case OutputType.PSObject:
+                            var psObject = responseString.ConvertFromJson(false, null, out error);
+                            ThrowIfError(error);
+                            WriteObject(psObject, true);
+                            break;
+                        case OutputType.HttpResponseMessage:
+                            WriteObject(response);
+                            break;
+                        case OutputType.Json:
+                            WriteObject(responseString);
+                            break;
+                        default:
+                            throw new ArgumentOutOfRangeException();
                     }
-
-                    if (string.IsNullOrEmpty(charSet) && returnType == RestReturnType.Json)
-                    {
-                        encoding = Encoding.UTF8;
-                    }
-
-                    Exception ex = null;
-
-                    var str = responseStream.DecodeStream(ref encoding);
-
-                    string encodingVerboseName;
-                    try
-                    {
-                        encodingVerboseName = string.IsNullOrEmpty(encoding.HeaderName)
-                            ? encoding.EncodingName
-                            : encoding.HeaderName;
-                    }
-                    catch (NotSupportedException)
-                    {
-                        encodingVerboseName = encoding.EncodingName;
-                    }
-
-                    // NOTE: Tests use this verbose output to verify the encoding.
-                    WriteVerbose(Resources.ContentEncodingVerboseMessage.FormatCurrentCulture(encodingVerboseName));
-                    WriteObject(str.TryConvertToJson(out var obj, ref ex) ? obj : str);
+                }
+                else if (returnType == RestReturnType.Image)
+                {
+                    var errorRecord =
+                        GetValidationError(Resources.NonJsonResponseWithoutOutputFilePath,
+                            ErrorConstants.Codes.InvokeGraphContentTypeException, returnType);
+                    ThrowIfError(errorRecord);
+                }
+                else if (returnType == RestReturnType.OctetStream)
+                {
+                    var errorRecord =
+                        GetValidationError(Resources.NonJsonResponseWithoutInfer,
+                            ErrorConstants.Codes.InvokeGraphContentTypeException, returnType, response.Content.Headers.ContentDisposition);
+                    ThrowIfError(errorRecord);
                 }
             }
-
             if (ShouldSaveToOutFile)
             {
-                baseResponseStream.SaveStreamToFile(QualifiedOutFile, this, _cancellationTokenSource.Token);
+                response.GetResponseStream().SaveStreamToFile(QualifiedOutFile, this, _cancellationTokenSource.Token);
             }
 
             if (InferOutputFileName.IsPresent)
@@ -473,16 +494,28 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 {
                     if (!string.IsNullOrWhiteSpace(response.Content.Headers.ContentDisposition.FileName))
                     {
-                        var fileName = response.Content.Headers.ContentDisposition.FileNameStar;
-                        var fullFileName = QualifyFilePath(fileName);
-                        WriteVerbose(
-                            Resources.InferredFileNameVerboseMessage.FormatCurrentCulture(fileName, fullFileName));
-                        baseResponseStream.SaveStreamToFile(fullFileName, this, _cancellationTokenSource.Token);
+                        var fileName = response.Content.Headers.ContentDisposition.FileNameStar ?? response.Content.Headers.ContentDisposition.FileName;
+                        if (!string.IsNullOrWhiteSpace(fileName))
+                        {
+                            var sanitizedFileName = SanitizeFileName(fileName);
+                            var fullFileName = QualifyFilePath(sanitizedFileName);
+                            WriteVerbose(
+                                Resources.InferredFileNameVerboseMessage.FormatCurrentCulture(fileName, fullFileName));
+                            response.GetResponseStream().SaveStreamToFile(fullFileName, this, _cancellationTokenSource.Token);
+                        }
+                        else
+                        {
+                            var errorRecord = GetValidationError(Resources.InferredFileNameIncorrect,
+                                ErrorConstants.Codes.InvokeGraphRequestCouldNotInferFileName, fileName);
+                            WriteError(errorRecord);
+                        }
                     }
                 }
                 else
                 {
-                    WriteVerbose(Resources.InferredFileNameErrorMessage);
+                    var errorRecord = GetValidationError(Resources.InferredFileNameErrorMessage,
+                        ErrorConstants.Codes.InvokeGraphRequestCouldNotInferFileName);
+                    WriteError(errorRecord);
                 }
             }
 
@@ -499,6 +532,17 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             }
         }
 
+        /// <summary>
+        ///     When Inferring file names from Content disposition, ensure that
+        ///     only valid path characters are in the file name
+        /// </summary>
+        /// <param name="fileName"></param>
+        /// <returns></returns>
+        private static string SanitizeFileName(string fileName)
+        {
+            var illegalCharacters = Path.GetInvalidFileNameChars().Concat(Path.GetInvalidPathChars()).ToArray();
+            return string.Concat(fileName.Split(illegalCharacters));
+        }
 
         /// <summary>
         ///     Gets a Custom AuthProvider or configured default provided depending on Auth Scheme specified.
@@ -606,10 +650,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 
             Encoding encoding = null;
             // When contentType is set, coerce to correct encoding. 
-            if (ContentType != null)
+            if (!string.IsNullOrWhiteSpace(ContentType))
             {
                 // If Content-Type contains the encoding format (as CharSet), use this encoding format
-                // to encode the Body of the WebRequest sent to the server. Default Encoding format
+                // to encode the Body of the GraphRequest sent to the server. Default Encoding format
                 // would be used if Charset is not supplied in the Content-Type property.
                 try
                 {
@@ -624,7 +668,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                     if (!SkipHeaderValidation)
                     {
                         var outerEx = new ValidationMetadataException(Resources.ContentTypeExceptionErrorMessage, ex);
-                        var er = new ErrorRecord(outerEx, Errors.InvokeGraphContentTypeException,
+                        var er = new ErrorRecord(outerEx, ErrorConstants.Codes.InvokeGraphContentTypeException,
                             ErrorCategory.InvalidArgument, ContentType);
                         ThrowTerminatingError(er);
                     }
@@ -634,7 +678,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                     if (!SkipHeaderValidation)
                     {
                         var outerEx = new ValidationMetadataException(Resources.ContentTypeExceptionErrorMessage, ex);
-                        var er = new ErrorRecord(outerEx, Errors.InvokeGraphContentTypeException,
+                        var er = new ErrorRecord(outerEx, ErrorConstants.Codes.InvokeGraphContentTypeException,
                             ErrorCategory.InvalidArgument, ContentType);
                         ThrowTerminatingError(er);
                     }
@@ -661,7 +705,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             {
                 GraphRequestSession.ContentHeaders[HttpKnownHeaderNames.ContentType] = ContentType;
             }
-            else if (Method == GraphRequestMethod.POST)
+            else if (ShouldSetDefaultContentType)
             {
                 GraphRequestSession.ContentHeaders.TryGetValue(HttpKnownHeaderNames.ContentType, out var contentType);
                 if (string.IsNullOrWhiteSpace(contentType))
@@ -743,7 +787,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                     {
                         var outerEx =
                             new ValidationMetadataException(Resources.ContentTypeExceptionErrorMessage, ex);
-                        var er = new ErrorRecord(outerEx, Errors.InvokeGraphContentTypeException,
+                        var er = new ErrorRecord(outerEx, ErrorConstants.Codes.InvokeGraphContentTypeException,
                             ErrorCategory.InvalidArgument, ContentType);
                         ThrowTerminatingError(er);
                     }
@@ -859,14 +903,13 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         /// <summary>
         ///     Validate the Request Uri must have the same Host as GraphHttpClient BaseAddress.
         /// </summary>
-        /// <param name="httpClient"></param>
-        private void ValidateRequestUri(HttpClient httpClient)
+        private void ValidateRequestUri()
         {
             if (Uri == null)
             {
                 var error = GetValidationError(
                     Resources.InvokeGraphRequestMissingUriErrorMessage,
-                    Errors.InvokeGraphRequestInvalidHost,
+                    ErrorConstants.Codes.InvokeGraphRequestInvalidHost,
                     nameof(Uri));
                 ThrowTerminatingError(error);
             }
@@ -875,7 +918,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             {
                 var error = GetValidationError(
                     Resources.InvokeGraphRequestInvalidUriErrorMessage,
-                    Errors.InvokeGraphRequestInvalidHost,
+                    ErrorConstants.Codes.InvokeGraphRequestInvalidHost,
                     nameof(Uri));
                 ThrowTerminatingError(error);
             }
@@ -890,7 +933,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             {
                 var error = GetValidationError(
                     Resources.GraphRequestSessionConflict,
-                    Errors.InvokeGraphRequestSessionConflictException);
+                    ErrorConstants.Codes.InvokeGraphRequestSessionConflictException);
                 ThrowTerminatingError(error);
             }
 
@@ -900,7 +943,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             {
                 var error = GetValidationError(
                     Resources.BodyMissingWhenMethodIsSpecified,
-                    Errors.InvokeGraphRequestBodyMissingWhenMethodIsSpecified,
+                    ErrorConstants.Codes.InvokeGraphRequestBodyMissingWhenMethodIsSpecified,
                     nameof(Body), Method);
                 ThrowTerminatingError(error);
             }
@@ -909,7 +952,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             {
                 var error = GetValidationError(
                     Resources.PassThruWithOutputFilePathMissing,
-                    Errors.InvokeGraphRequestOutFileMissingException,
+                    ErrorConstants.Codes.InvokeGraphRequestOutFileMissingException,
                     nameof(PassThru), nameof(OutputFilePath));
                 ThrowTerminatingError(error);
             }
@@ -918,7 +961,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             {
                 var error = GetValidationError(
                     Resources.AuthenticationTokenConflict,
-                    Errors.InvokeGraphRequestAuthenticationTokenConflictException,
+                    ErrorConstants.Codes.InvokeGraphRequestAuthenticationTokenConflictException,
                     Authentication, nameof(Token));
                 ThrowTerminatingError(error);
             }
@@ -927,7 +970,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             {
                 var error = GetValidationError(
                     Resources.NotConnectedToGraphException,
-                    Errors.InvokeGraphRequestAuthenticationTokenConflictException,
+                    ErrorConstants.Codes.InvokeGraphRequestAuthenticationTokenConflictException,
                     Authentication, nameof(Token));
                 ThrowTerminatingError(error);
             }
@@ -937,7 +980,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             {
                 var error = GetValidationError(
                     Resources.AuthenticationCredentialNotSupplied,
-                    Errors.InvokeGraphRequestAuthenticationTokenConflictException,
+                    ErrorConstants.Codes.InvokeGraphRequestAuthenticationTokenConflictException,
                     Authentication, nameof(Token));
                 ThrowTerminatingError(error);
             }
@@ -947,7 +990,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             {
                 var error = GetValidationError(
                     Resources.BodyConflict,
-                    Errors.InvokeGraphRequestBodyConflictException,
+                    ErrorConstants.Codes.InvokeGraphRequestBodyConflictException,
                     nameof(Body), nameof(InputFilePath));
                 ThrowTerminatingError(error);
             }
@@ -956,7 +999,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             {
                 var error = GetValidationError(
                     Resources.InferFileNameOutFilePathConflict,
-                    Errors.InvokeGraphRequestBodyConflictException,
+                    ErrorConstants.Codes.InvokeGraphRequestBodyConflictException,
                     nameof(InferOutputFileName), nameof(OutputFilePath));
                 ThrowTerminatingError(error);
             }
@@ -974,7 +1017,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                     {
                         errorRecord = GetValidationError(
                             Resources.NotFileSystemPath,
-                            Errors.InvokeGraphRequestFileNotFilesystemPathException,
+                            ErrorConstants.Codes.InvokeGraphRequestFileNotFilesystemPathException,
                             InputFilePath);
                     }
                     else
@@ -983,13 +1026,13 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                         {
                             errorRecord = GetValidationError(
                                 Resources.MultiplePathsResolved,
-                                Errors.InvokeGraphRequestInputFileMultiplePathsResolvedException, InputFilePath);
+                                ErrorConstants.Codes.InvokeGraphRequestInputFileMultiplePathsResolvedException, InputFilePath);
                         }
                         else if (providerPaths.Count == 0)
                         {
                             errorRecord = GetValidationError(
                                 Resources.NoPathResolved,
-                                Errors.InvokeGraphRequestInputFileNoPathResolvedException, InputFilePath);
+                                ErrorConstants.Codes.InvokeGraphRequestInputFileNoPathResolvedException, InputFilePath);
                         }
                         else
                         {
@@ -997,7 +1040,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                             {
                                 errorRecord = GetValidationError(
                                     Resources.DirectoryPathSpecified,
-                                    Errors.InvokeGraphRequestInputFileNotFilePathException, InputFilePath);
+                                    ErrorConstants.Codes.InvokeGraphRequestInputFileNotFilePathException, InputFilePath);
                             }
 
                             _originalFilePath = InputFilePath;
@@ -1092,41 +1135,39 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                     PrepareSession();
                     using (var client = GetHttpClient())
                     {
-                        ValidateRequestUri(client);
+                        ValidateRequestUri();
                         using (var httpRequestMessage = GetRequest(client, Uri))
                         {
-                            using (var httpRequestMessageFormatter = new HttpMessageFormatter(httpRequestMessage))
+                            var httpRequestMessageFormatter = new HttpMessageFormatter(httpRequestMessage);
+
+                            FillRequestStream(httpRequestMessage);
+                            try
                             {
-                                FillRequestStream(httpRequestMessage);
-                                try
+                                await ReportRequestStatusAsync(httpRequestMessageFormatter);
+                                var httpResponseMessage = await GetResponseAsync(client, httpRequestMessage);
+                                var httpResponseMessageFormatter = new HttpMessageFormatter(httpResponseMessage);
+                                await ReportResponseStatusASync(httpResponseMessageFormatter);
+                                var isSuccess = httpResponseMessage.IsSuccessStatusCode;
+                                if (ShouldCheckHttpStatus && !isSuccess)
                                 {
-                                    await ReportRequestStatusAsync(httpRequestMessageFormatter);
-                                    var httpResponseMessage = await GetResponseAsync(client, httpRequestMessage);
-                                    using (var httpResponseMessageFormatter = new HttpMessageFormatter(httpResponseMessage))
-                                    {
-                                        await ReportResponseStatusASync(httpResponseMessageFormatter);
-                                        var isSuccess = httpResponseMessage.IsSuccessStatusCode;
-                                        if (ShouldCheckHttpStatus && !isSuccess)
-                                        {
-                                            var httpErrorRecord = await GenerateHttpErrorRecordAsync(httpResponseMessageFormatter, httpRequestMessage);
-                                            ThrowTerminatingError(httpErrorRecord);
-                                        }
-
-                                        ProcessResponse(httpResponseMessage);
-                                    }
+                                    var httpErrorRecord = await GenerateHttpErrorRecordAsync(httpResponseMessageFormatter, httpRequestMessage);
+                                    ThrowTerminatingError(httpErrorRecord);
                                 }
-                                catch (HttpRequestException ex)
+
+                                await ProcessResponseAsync(httpResponseMessage);
+
+                            }
+                            catch (HttpRequestException ex)
+                            {
+                                var er = new ErrorRecord(ex, ErrorConstants.Codes.InvokeGraphHttpResponseException,
+                                    ErrorCategory.InvalidOperation,
+                                    httpRequestMessage);
+                                if (ex.InnerException != null)
                                 {
-                                    var er = new ErrorRecord(ex, Errors.InvokeGraphHttpResponseException,
-                                        ErrorCategory.InvalidOperation,
-                                        httpRequestMessage);
-                                    if (ex.InnerException != null)
-                                    {
-                                        er.ErrorDetails = new ErrorDetails(ex.InnerException.Message);
-                                    }
-
-                                    ThrowTerminatingError(er);
+                                    er.ErrorDetails = new ErrorDetails(ex.InnerException.Message);
                                 }
+
+                                ThrowTerminatingError(er);
                             }
                         }
                     }
@@ -1164,7 +1205,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 foreach (var innerException in aggregateException.Flatten().InnerExceptions)
                 {
                     var errorRecords = innerException.Data;
-                    if (errorRecords.Count < 1)
+                    if (errorRecords.Count > 1)
                     {
                         foreach (DictionaryEntry dictionaryEntry in errorRecords)
                         {

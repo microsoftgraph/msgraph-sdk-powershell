@@ -354,3 +354,6 @@ MigrationBackup/
 
 # Visual Studio Code
 .vscode/
+
+#Custom Environment Files
+localenv.json

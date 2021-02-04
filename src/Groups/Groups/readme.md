@@ -124,11 +124,19 @@ directive:
       subject: ^(GroupOnenoteNotebookSectionGroupSectionPage)$
     set:
       subject: $1Content
-
+# Alias then rename cmdlets to avoid breaking change.
+  - where:
+      subject: ^(Group)(CreatedOnBehalf)$
+    set:
+      alias: ${verb}-Mg${subject}
+  - where:
+      subject: ^(Group)(CreatedOnBehalf)$
+    set:
+      subject: $1$2Of
 ```
 ### Versioning
 
 ``` yaml
-module-version: 1.2.0
+module-version: 1.3.1
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

@@ -23960,7 +23960,7 @@ components:
               nullable: true
             legalAgeGroupClassification:
               type: string
-              description: 'Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, minorWithOutParentalConsent, minorWithParentalConsent, minorNoParentalConsentRequired, notAdult and adult. Refer to the legal age group property definitions for further information.)'
+              description: 'Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, minorWithOutParentalConsent, minorWithParentalConsent, minorNoParentalConsentRequired, notAdult and adult. Refer to the legal age group property definitions for further information.'
               nullable: true
             licenseAssignmentStates:
               type: array
@@ -25076,7 +25076,7 @@ components:
           nullable: true
         capabilityStatus:
           type: string
-          description: 'For example, ''Enabled''.'
+          description: 'Condition of the capability assignment. The possible values are Enabled, Warning, Suspended, Deleted, LockedOut.'
           nullable: true
         service:
           type: string
@@ -26144,6 +26144,8 @@ components:
               type: integer
               format: int32
               nullable: true
+            membershipRuleProcessingStatus:
+              $ref: '#/components/schemas/microsoft.graph.membershipRuleProcessingStatus'
             isArchived:
               type: boolean
               nullable: true
@@ -26410,7 +26412,7 @@ components:
             receivedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The date and time the message was received.
+              description: 'The date and time the message was received.  The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''.'
               format: date-time
               nullable: true
             replyTo:
@@ -26423,7 +26425,7 @@ components:
             sentDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The date and time the message was sent.
+              description: 'The date and time the message was sent.  The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''.'
               format: date-time
               nullable: true
             subject:
@@ -27821,9 +27823,11 @@ components:
           properties:
             activity:
               type: string
+              description: 'The supplemental information to a user''s availability. Possible values are Available, Away, BeRightBack,Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive,InAMeeting, Offline, OffWork,OutOfOffice, PresenceUnknown,Presenting, UrgentInterruptionsOnly.'
               nullable: true
             availability:
               type: string
+              description: 'The base presence information for a user. Possible values are Available, AvailableIdle,  Away, BeRightBack, Busy, BusyIdle, DoNotDisturb, Offline, PresenceUnknown'
               nullable: true
           additionalProperties:
             type: object
@@ -27896,6 +27900,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessage'
+              description: A collection of all the messages in the chat. Nullable.
             tabs:
               type: array
               items:
@@ -28229,9 +28234,9 @@ components:
     microsoft.graph.onenoteUserRole:
       title: onenoteUserRole
       enum:
+        - None
         - Owner
         - Contributor
-        - None
         - Reader
       type: string
     microsoft.graph.operation:
@@ -28624,9 +28629,9 @@ components:
     microsoft.graph.calendarColor:
       title: calendarColor
       enum:
+        - auto
         - lightBlue
         - lightGreen
-        - auto
         - lightOrange
         - lightGray
         - lightYellow
@@ -28881,9 +28886,9 @@ components:
     microsoft.graph.freeBusyStatus:
       title: freeBusyStatus
       enum:
+        - unknown
         - free
         - tentative
-        - unknown
         - busy
         - oof
         - workingElsewhere
@@ -29056,6 +29061,22 @@ components:
         - secret
         - public
       type: string
+    microsoft.graph.membershipRuleProcessingStatus:
+      title: membershipRuleProcessingStatus
+      type: object
+      properties:
+        errorMessage:
+          type: string
+          nullable: true
+        lastMembershipUpdated:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        status:
+          $ref: '#/components/schemas/microsoft.graph.MembershipRuleProcessingStatusDetails'
+      additionalProperties:
+        type: object
     microsoft.graph.endpoint:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.directoryObject'
@@ -32276,6 +32297,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.conversationMember'
+              description: A collection of membership records associated with the channel.
             messages:
               type: array
               items:
@@ -33006,6 +33028,15 @@ components:
         - blog
         - profile
       type: string
+    microsoft.graph.MembershipRuleProcessingStatusDetails:
+      title: MembershipRuleProcessingStatusDetails
+      enum:
+        - NotStarted
+        - Running
+        - Failed
+        - Succeeded
+        - UnsupportedFutureValue
+      type: string
     microsoft.graph.settingValue:
       title: settingValue
       type: object
@@ -33273,9 +33304,9 @@ components:
     microsoft.graph.categoryColor:
       title: categoryColor
       enum:
+        - none
         - preset0
         - preset1
-        - none
         - preset2
         - preset3
         - preset4
@@ -33827,8 +33858,8 @@ components:
     microsoft.graph.resultantAppState:
       title: resultantAppState
       enum:
-        - installed
         - notApplicable
+        - installed
         - failed
         - notInstalled
         - uninstallFailed

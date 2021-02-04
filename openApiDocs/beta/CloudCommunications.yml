@@ -4210,7 +4210,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.modality'
             resultInfo:
-              $ref: '#/components/schemas/microsoft.graph.ResultInfo'
+              $ref: '#/components/schemas/microsoft.graph.resultInfo'
             ringingTimeoutInSeconds:
               maximum: 2147483647
               minimum: -2147483648
@@ -4420,7 +4420,7 @@ components:
               description: Unique Client Context string. Max limit is 256 chars.
               nullable: true
             resultInfo:
-              $ref: '#/components/schemas/microsoft.graph.ResultInfo'
+              $ref: '#/components/schemas/microsoft.graph.resultInfo'
             status:
               $ref: '#/components/schemas/microsoft.graph.operationStatus'
           additionalProperties:
@@ -4533,9 +4533,11 @@ components:
           properties:
             activity:
               type: string
+              description: 'The supplemental information to a user''s availability. Possible values are Available, Away, BeRightBack,Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive,InAMeeting, Offline, OffWork,OutOfOffice, PresenceUnknown,Presenting, UrgentInterruptionsOnly.'
               nullable: true
             availability:
               type: string
+              description: 'The base presence information for a user. Possible values are Available, AvailableIdle,  Away, BeRightBack, Busy, BusyIdle, DoNotDisturb, Offline, PresenceUnknown'
               nullable: true
           additionalProperties:
             type: object
@@ -4849,22 +4851,25 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.ResultInfo:
-      title: ResultInfo
+    microsoft.graph.resultInfo:
+      title: resultInfo
       type: object
       properties:
         code:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: The result code.
           format: int32
         message:
           type: string
+          description: The message.
           nullable: true
         subcode:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: The result sub-code.
           format: int32
       additionalProperties:
         type: object
