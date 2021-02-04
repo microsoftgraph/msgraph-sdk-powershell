@@ -86,6 +86,8 @@ directive:
     - microsoft.graph.governanceRoleDefinition
     - microsoft.graph.workbookOperationError
     - microsoft.graph.parentLabelDetails
+    - microsoft.graph.ediscovery.tag
+    - microsoft.graph.ediscovery.sourceCollection
 
   # Set parameter alias
   - where:
