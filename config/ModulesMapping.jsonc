@@ -34,9 +34,9 @@
     // "Devices.CorporateManagement": "^deviceManagement\\.", - Max Limit
     // "WorkBooks": "^workbooks\\.",// Max limit.
     
-    "DeviceManagement": "^deviceManagement.(.*deviceCompliancePolicy.*|.*deviceConfiguration.*|androidForWorkAppConfigurationSchema|groupPolicyConfiguration)$",
-    "DeviceManagement.Administration": "^deviceManagement.(auditEvent|roleDefinition|deviceAndAppManagementRoleAssignment|roleScopeTag|intuneBrandingProfile|termsAndConditions|mobileThreatDefenseConnector|ndesConnector|deviceManagementExchangeConnector|remoteAssistancePartner|telecomExpenseManagementPartner)$|^roleManagement\\.",
-    "DeviceManagement.Enrolment": "^deviceManagement.(.*Enrollment.*|.*Autopilot.*|.*dep.*|importedDeviceIdentity)$|^roleManagement.(rbac.*)$",
-    "DeviceManagement.Actions": "^deviceManagement.Actions$",
-    "DeviceManagement.Functions": "^deviceManagement.Functions$",
+    // "DeviceManagement": "^deviceManagement.(.*deviceCompliancePolicy.*|.*deviceConfiguration.*|androidForWorkAppConfigurationSchema|groupPolicyConfiguration)$",
+    // "DeviceManagement.Administration": "^deviceManagement.(auditEvent|roleDefinition|deviceAndAppManagementRoleAssignment|roleScopeTag|intuneBrandingProfile|termsAndConditions|mobileThreatDefenseConnector|ndesConnector|deviceManagementExchangeConnector|remoteAssistancePartner|telecomExpenseManagementPartner)$|^roleManagement\\.",
+    // "DeviceManagement.Enrolment": "^deviceManagement.(.*Enrollment.*|.*Autopilot.*|.*dep.*|importedDeviceIdentity)$|^roleManagement.(rbac.*)$",
+    // "DeviceManagement.Actions": "^deviceManagement.Actions$",
+    // "DeviceManagement.Functions": "^deviceManagement.Functions$",
 }
