@@ -19,7 +19,7 @@ try {
     }
     $GetNationalCloudPS1 = Join-Path $PSScriptRoot ".\GetNationalCloud.ps1" -Resolve
 
-    $openApiFiles = @{}
+    $openApiFiles = [ordered]@{}
     foreach ($api in (Get-ChildItem -Path $OpenApiDocsDirectory)) {
         $openApiDocs = Get-ChildItem -File -Filter "*.yml" -Path $api.FullName
         Write-Host "Parsing $($api.Name) openAPI docs..." -ForegroundColor Yellow
@@ -51,7 +51,7 @@ try {
                 }
                 # Get crawl data.
                 Write-Host "Crawling '$moduleName' paths for resources and operations ..." -ForegroundColor Green
-                $crawlResult = @{resources= @(); operations = [ordered]@{}}
+                $crawlResult = [ordered]@{resources= @(); operations = [ordered]@{}}
                 foreach ($path in ($allPaths | Sort-Object -Property endpoint)) {
                     $crawlResult.operations[$path.endpoint] = (@{apiVersion = $path.apiVersion; originalLocation = $path.originalLocation})
                 }
@@ -60,7 +60,7 @@ try {
                 Write-Host "Telemetry written at $telemetryDir" -ForegroundColor Blue
 
                 # Get profile.
-                $profile =  @{resources = @{}; operations = [ordered]@{}}
+                $profile =  [ordered]@{resources = [ordered]@{}; operations = [ordered]@{}}
                 foreach ($operation in $crawlResult.operations.keys) {
                     $profile.operations[$operation] = $crawlResult.operations[$operation].apiVersion
                 }
@@ -90,7 +90,7 @@ $profilesInYaml
         }
         $definitionsRelativePathsAsYaml = ($definitionsRelativePaths | ConvertTo-Yaml)
 
-        $inputFiles = @{}
+        $inputFiles = [ordered]@{}
         $inputFiles["input-file"] = $openApiFiles[$moduleItem.Name]
 
         $moduleReadMeContent = @"
