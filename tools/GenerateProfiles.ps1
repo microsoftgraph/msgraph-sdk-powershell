@@ -47,7 +47,7 @@ try {
 
                 # Get paths.
                 foreach ($path in $openApiContent.paths.keys) {
-                    $allPaths += @{endpoint= $path; apiVersion = $apiVersion; originalLocation = $openApiRelativePath}
+                    $allPaths += [ordered]@{endpoint= $path; apiVersion = $apiVersion; originalLocation = $openApiRelativePath}
                 }
                 # Get crawl data.
                 Write-Host "Crawling '$moduleName' paths for resources and operations ..." -ForegroundColor Green
@@ -64,7 +64,7 @@ try {
                 foreach ($operation in $crawlResult.operations.keys) {
                     $profile.operations[$operation] = $crawlResult.operations[$operation].apiVersion
                 }
-                $profilesNode = @{profiles = [ordered]@{ $profileName = $profile}}
+                $profilesNode = [ordered]@{profiles = [ordered]@{ $profileName = $profile}}
                 $profilesInYaml = $profilesNode | ConvertTo-Yaml
                 $profileReadMeContent = @"
 # Microsoft Graph $profileName Profile
