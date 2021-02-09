@@ -88,7 +88,7 @@ $profilesInYaml
         foreach ($moduleDefinition in (Get-ChildItem -Filter *.md -Path "$($moduleItem.FullName)/definitions")) {
             $definitionsRelativePaths.require += '$(this-folder)/definitions/'+ $moduleDefinition.Name
         }
-        $definitionsRelativePathsAsYaml = ($definitionsRelativePaths | ConvertTo-Yaml)
+        $definitionsRelativePathsAsYaml = ($definitionsRelativePaths | Sort-Object -Property require | ConvertTo-Yaml)
 
         $inputFiles = [ordered]@{}
         $inputFiles["input-file"] = $openApiFiles[$moduleItem.Name]
