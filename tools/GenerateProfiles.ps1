@@ -47,7 +47,7 @@ try {
 
                 # Get paths.
                 foreach ($path in $openApiContent.paths.keys) {
-                    $allPaths += [ordered]@{endpoint= $path; apiVersion = $apiVersion; originalLocation = $openApiRelativePath}
+                    $allPaths += @{endpoint= $path; apiVersion = $apiVersion; originalLocation = $openApiRelativePath}
                 }
                 # Get crawl data.
                 Write-Host "Crawling '$moduleName' paths for resources and operations ..." -ForegroundColor Green

@@ -12,7 +12,7 @@
 RootModule = './Microsoft.Graph.DeviceManagement.psm1'
 
 # Version number of this module.
-ModuleVersion = '1.3.0'
+ModuleVersion = '1.3.2'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core', 'Desktop'
