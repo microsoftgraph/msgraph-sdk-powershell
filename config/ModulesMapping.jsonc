@@ -1,5 +1,5 @@
 {
-    "Applications":"^applicationTemplates\\.|^applications\\.|^servicePrincipals\\.|^onPremisesPublishingProfiles\\.|^users.appRoleAssignment$|^groups.appRoleAssignment$",
+    "Applications": "^applicationTemplates\\.|^applications\\.|^servicePrincipals\\.|^onPremisesPublishingProfiles\\.|^users.appRoleAssignment$|^groups.appRoleAssignment$",
     "Bookings": "^bookingBusinesses\\.|^bookingCurrencies\\.",
     "Calendar": "^places\\.|^users.calendar$|^users.calendarGroup$|^users.event$|^groups.calendar$|^groups.event$",
     "ChangeNotifications": "^subscriptions\\.",
@@ -8,6 +8,11 @@
     "CrossDeviceExperiences": "^users.userActivity$|^users.device$",
     "Devices.CloudPrint": "^print\\.",
     "Devices.CorporateManagement": "^deviceAppManagement\\.|^officeConfiguration\\.|^users.mobileAppIntentAndState$|^users.mobileAppTroubleshootingEvent$|^users.windowsInformationProtectionDeviceRegistration$|^users.managedAppRegistration$|^users.managedDevice$|^users.deviceManagementTroubleshootingEvent$|^users.deviceEnrollmentConfiguration$",
+    "DeviceManagement": "^deviceManagement.(deviceCompliancePolicy.*|deviceConfiguration.*|managedDevice.*|managementCondition.*|microsoftTunnel.*|userExperienceAnalytics.*|windowsInformationProtection.*|deviceManagement|deviceManagement(DerivedCredentialSettings|Intent|ResourceAccessProfileBase|Script|SettingCategory|SettingDefinition|Template|TroubleshootingEvent)|androidForWork(AppConfigurationSchema|Settings)|androidManagedStore(AccountEnterpriseSettings|AppConfigurationSchema)|deviceAndAppManagementAssignmentFilter|deviceCategory|advancedThreatProtectionOnboardingStateSummary|dataSharingConsent|detectedApp|deviceHealthScript|deviceShellScript|embeddedSIMActivationCodePool|groupPolicyConfiguration|macOSSoftwareUpdateAccountSummary|mobileAppTroubleshootingEvent|notificationMessageTemplate|remoteActionAudit|softwareUpdateStatusSummary|windowsMalwareInformation)$",
+    "DeviceManagement.Administration": "^deviceManagement.(.*Partner.*|.*Certificate.*|.*role.*|deviceManagement(DomainJoinConnector|ExchangeConnector|ExchangeOnPremisesPolicy)|groupPolicy(Category|Definition|DefinitionFile|MigrationReport|ObjectFile|UploadedDefinitionFile)|auditEvent|cartToClassAssociation|comanagementEligibleDevice|deviceAndAppManagementRoleAssignment|intuneBrandingProfile|iosUpdateDeviceStatus|mobileThreatDefenseConnector|ndesConnector|resourceOperation|restrictedAppsViolation|termsAndConditions)",
+    "DeviceManagement.Enrolment": "^deviceManagement.(.*Enrollment.*|.*Autopilot.*|.*depOnboarding.*|importedDeviceIdentity|onPremisesConditionalAccessSettings|windowsFeatureUpdateProfile)$|^roleManagement\\.",
+    "DeviceManagement.Actions": "^deviceManagement.Actions$",
+    "DeviceManagement.Functions": "^deviceManagement.Functions$",
     "DirectoryObjects": "^directoryObjects\\.",
     "Education": "^education\\.",
     "Files": "^drives\\.|^shares\\.|^users.drive$|^groups.drive$",
@@ -19,9 +24,9 @@
     "Mail": "^users.inferenceClassification$|^users.mailFolder$|^users.message$",
     "Notes": "^users.onenote$|^groups.onenote$|^sites.onenote$",
     "People": "^users.person$|^users.profile$|^users.officeGraphInsights$|^users.userAnalytics$",
-    "PersonalContacts":"^users.contactFolder$|^users.contact$",
+    "PersonalContacts": "^users.contactFolder$|^users.contact$",
     "Planner": "^planner\\.|^users.plannerUser$|^groups.plannerGroup$",
-    "Reports": "^reports\\.|^auditLogs\\.",
+    "Reports": "^reports\\.|^auditLogs\\.|^deviceManagement.deviceManagementReports$",
     "SchemaExtensions": "^schemaExtensions\\.",
     "Search": "^search\\.|^external\\.",
     "Security": "^security\\.",
@@ -29,8 +34,7 @@
     "Teams": "^teams\\.|^chats\\.|^users.chat$|^appCatalogs.teamsApp$|^users.userTeamwork$|^teamwork\\.|^users.team$|^groups.team$",
     "Users": "^users.user$|^users.directoryObject$|^users.licenseDetails$|^users.notification$|^users.outlookUser$|^users.profilePhoto$|^users.userSettings$|^users.extension$|^users.oAuth2PermissionGrant$|^users.todo$",
     "Users.Actions": "^users.Actions$",
-    "Users.Functions": "^users.Functions$"
+    "Users.Functions": "^users.Functions$",
 
-    // "Devices.CorporateManagement": "^deviceManagement\\.", - Max Limit
     // "WorkBooks": "^workbooks\\.",// Max limit.
 }
