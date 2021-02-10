@@ -1,0 +1,928 @@
+openapi: 3.0.1
+info:
+  title: DeviceManagement.Actions
+  version: v1.0
+servers:
+  - url: https://graph.microsoft.com/v1.0/
+    description: Core
+paths:
+  '/deviceManagement/deviceCompliancePolicies/{deviceCompliancePolicy-id}/microsoft.graph.assign':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action assign
+      operationId: deviceManagement.deviceCompliancePolicies_assign
+      parameters:
+        - name: deviceCompliancePolicy-id
+          in: path
+          description: 'key: id of deviceCompliancePolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceCompliancePolicy
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                assignments:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicyAssignment'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicyAssignment'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/deviceCompliancePolicies/{deviceCompliancePolicy-id}/microsoft.graph.scheduleActionsForRules':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action scheduleActionsForRules
+      operationId: deviceManagement.deviceCompliancePolicies_scheduleActionsForRules
+      parameters:
+        - name: deviceCompliancePolicy-id
+          in: path
+          description: 'key: id of deviceCompliancePolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceCompliancePolicy
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                deviceComplianceScheduledActionForRules:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.deviceComplianceScheduledActionForRule'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/deviceConfigurations/{deviceConfiguration-id}/microsoft.graph.assign':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action assign
+      operationId: deviceManagement.deviceConfigurations_assign
+      parameters:
+        - name: deviceConfiguration-id
+          in: path
+          description: 'key: id of deviceConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceConfiguration
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                assignments:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.deviceConfigurationAssignment'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.deviceConfigurationAssignment'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/deviceEnrollmentConfigurations/{deviceEnrollmentConfiguration-id}/microsoft.graph.assign':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action assign
+      operationId: deviceManagement.deviceEnrollmentConfigurations_assign
+      parameters:
+        - name: deviceEnrollmentConfiguration-id
+          in: path
+          description: 'key: id of deviceEnrollmentConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceEnrollmentConfiguration
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                enrollmentConfigurationAssignments:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.enrollmentConfigurationAssignment'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/deviceEnrollmentConfigurations/{deviceEnrollmentConfiguration-id}/microsoft.graph.setPriority':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action setPriority
+      operationId: deviceManagement.deviceEnrollmentConfigurations_setPriority
+      parameters:
+        - name: deviceEnrollmentConfiguration-id
+          in: path
+          description: 'key: id of deviceEnrollmentConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceEnrollmentConfiguration
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                priority:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/exchangeConnectors/{deviceManagementExchangeConnector-id}/microsoft.graph.sync':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action sync
+      operationId: deviceManagement.exchangeConnectors_sync
+      parameters:
+        - name: deviceManagementExchangeConnector-id
+          in: path
+          description: 'key: id of deviceManagementExchangeConnector'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementExchangeConnector
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                syncType:
+                  $ref: '#/components/schemas/microsoft.graph.deviceManagementExchangeConnectorSyncType'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.bypassActivationLock':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action bypassActivationLock
+      operationId: deviceManagement.managedDevices_bypassActivationLock
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: 'key: id of managedDevice'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.cleanWindowsDevice':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action cleanWindowsDevice
+      operationId: deviceManagement.managedDevices_cleanWindowsDevice
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: 'key: id of managedDevice'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                keepUserData:
+                  type: boolean
+                  default: false
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.deleteUserFromSharedAppleDevice':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action deleteUserFromSharedAppleDevice
+      operationId: deviceManagement.managedDevices_deleteUserFromSharedAppleDevice
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: 'key: id of managedDevice'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userPrincipalName:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.disableLostMode':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action disableLostMode
+      operationId: deviceManagement.managedDevices_disableLostMode
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: 'key: id of managedDevice'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.locateDevice':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action locateDevice
+      operationId: deviceManagement.managedDevices_locateDevice
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: 'key: id of managedDevice'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.logoutSharedAppleDeviceActiveUser':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action logoutSharedAppleDeviceActiveUser
+      operationId: deviceManagement.managedDevices_logoutSharedAppleDeviceActiveUser
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: 'key: id of managedDevice'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.rebootNow':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action rebootNow
+      operationId: deviceManagement.managedDevices_rebootNow
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: 'key: id of managedDevice'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.recoverPasscode':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action recoverPasscode
+      operationId: deviceManagement.managedDevices_recoverPasscode
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: 'key: id of managedDevice'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.remoteLock':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action remoteLock
+      operationId: deviceManagement.managedDevices_remoteLock
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: 'key: id of managedDevice'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.requestRemoteAssistance':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action requestRemoteAssistance
+      operationId: deviceManagement.managedDevices_requestRemoteAssistance
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: 'key: id of managedDevice'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.resetPasscode':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action resetPasscode
+      operationId: deviceManagement.managedDevices_resetPasscode
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: 'key: id of managedDevice'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.retire':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action retire
+      operationId: deviceManagement.managedDevices_retire
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: 'key: id of managedDevice'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.shutDown':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action shutDown
+      operationId: deviceManagement.managedDevices_shutDown
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: 'key: id of managedDevice'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.syncDevice':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action syncDevice
+      operationId: deviceManagement.managedDevices_syncDevice
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: 'key: id of managedDevice'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.updateWindowsDeviceAccount':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action updateWindowsDeviceAccount
+      operationId: deviceManagement.managedDevices_updateWindowsDeviceAccount
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: 'key: id of managedDevice'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                updateWindowsDeviceAccountActionParameter:
+                  $ref: '#/components/schemas/microsoft.graph.updateWindowsDeviceAccountActionParameter'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.windowsDefenderScan':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action windowsDefenderScan
+      operationId: deviceManagement.managedDevices_windowsDefenderScan
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: 'key: id of managedDevice'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                quickScan:
+                  type: boolean
+                  default: false
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.windowsDefenderUpdateSignatures':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action windowsDefenderUpdateSignatures
+      operationId: deviceManagement.managedDevices_windowsDefenderUpdateSignatures
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: 'key: id of managedDevice'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.wipe':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action wipe
+      operationId: deviceManagement.managedDevices_wipe
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: 'key: id of managedDevice'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                keepEnrollmentData:
+                  type: boolean
+                  default: false
+                  nullable: true
+                keepUserData:
+                  type: boolean
+                  default: false
+                  nullable: true
+                macOsUnlockCode:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/notificationMessageTemplates/{notificationMessageTemplate-id}/microsoft.graph.sendTestMessage':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action sendTestMessage
+      operationId: deviceManagement.notificationMessageTemplates_sendTestMessage
+      parameters:
+        - name: notificationMessageTemplate-id
+          in: path
+          description: 'key: id of notificationMessageTemplate'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: notificationMessageTemplate
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/remoteAssistancePartners/{remoteAssistancePartner-id}/microsoft.graph.beginOnboarding':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action beginOnboarding
+      operationId: deviceManagement.remoteAssistancePartners_beginOnboarding
+      parameters:
+        - name: remoteAssistancePartner-id
+          in: path
+          description: 'key: id of remoteAssistancePartner'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: remoteAssistancePartner
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/remoteAssistancePartners/{remoteAssistancePartner-id}/microsoft.graph.disconnect':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action disconnect
+      operationId: deviceManagement.remoteAssistancePartners_disconnect
+      parameters:
+        - name: remoteAssistancePartner-id
+          in: path
+          description: 'key: id of remoteAssistancePartner'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: remoteAssistancePartner
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+components:
+  schemas:
+    microsoft.graph.deviceCompliancePolicyAssignment:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: deviceCompliancePolicyAssignment
+          type: object
+          properties:
+            target:
+              $ref: '#/components/schemas/microsoft.graph.deviceAndAppManagementAssignmentTarget'
+          additionalProperties:
+            type: object
+          description: Device compliance policy assignment.
+    microsoft.graph.deviceComplianceScheduledActionForRule:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: deviceComplianceScheduledActionForRule
+          type: object
+          properties:
+            ruleName:
+              type: string
+              description: Name of the rule which this scheduled action applies to.
+              nullable: true
+            scheduledActionConfigurations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.deviceComplianceActionItem'
+              description: The list of scheduled action configurations for this compliance policy.
+          additionalProperties:
+            type: object
+          description: Scheduled Action for Rule
+    microsoft.graph.deviceConfigurationAssignment:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: deviceConfigurationAssignment
+          type: object
+          properties:
+            target:
+              $ref: '#/components/schemas/microsoft.graph.deviceAndAppManagementAssignmentTarget'
+          additionalProperties:
+            type: object
+          description: The device configuration assignment entity assigns an AAD group to a specific device configuration.
+    microsoft.graph.enrollmentConfigurationAssignment:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: enrollmentConfigurationAssignment
+          type: object
+          properties:
+            target:
+              $ref: '#/components/schemas/microsoft.graph.deviceAndAppManagementAssignmentTarget'
+          additionalProperties:
+            type: object
+          description: Enrollment Configuration Assignment
+    microsoft.graph.deviceManagementExchangeConnectorSyncType:
+      title: deviceManagementExchangeConnectorSyncType
+      enum:
+        - fullSync
+        - deltaSync
+      type: string
+    microsoft.graph.updateWindowsDeviceAccountActionParameter:
+      title: updateWindowsDeviceAccountActionParameter
+      type: object
+      properties:
+        calendarSyncEnabled:
+          type: boolean
+          description: Not yet documented
+          nullable: true
+        deviceAccount:
+          $ref: '#/components/schemas/microsoft.graph.windowsDeviceAccount'
+        deviceAccountEmail:
+          type: string
+          description: Not yet documented
+          nullable: true
+        exchangeServer:
+          type: string
+          description: Not yet documented
+          nullable: true
+        passwordRotationEnabled:
+          type: boolean
+          description: Not yet documented
+          nullable: true
+        sessionInitiationProtocalAddress:
+          type: string
+          description: Not yet documented
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.entity:
+      title: entity
+      type: object
+      properties:
+        id:
+          type: string
+          description: Read-only.
+      additionalProperties:
+        type: object
+    microsoft.graph.deviceAndAppManagementAssignmentTarget:
+      title: deviceAndAppManagementAssignmentTarget
+      type: object
+      additionalProperties:
+        type: object
+      description: Base type for assignment targets.
+    microsoft.graph.deviceComplianceActionItem:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: deviceComplianceActionItem
+          type: object
+          properties:
+            actionType:
+              $ref: '#/components/schemas/microsoft.graph.deviceComplianceActionType'
+            gracePeriodHours:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Number of hours to wait till the action will be enforced. Valid values 0 to 8760
+              format: int32
+            notificationMessageCCList:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: A list of group IDs to speicify who to CC this notification message to.
+            notificationTemplateId:
+              type: string
+              description: What notification Message template to use
+              nullable: true
+          additionalProperties:
+            type: object
+          description: Scheduled Action Configuration
+    microsoft.graph.windowsDeviceAccount:
+      title: windowsDeviceAccount
+      type: object
+      properties:
+        password:
+          type: string
+          description: Not yet documented
+          nullable: true
+      additionalProperties:
+        type: object
+    odata.error:
+      required:
+        - error
+      type: object
+      properties:
+        error:
+          $ref: '#/components/schemas/odata.error.main'
+      additionalProperties:
+        type: object
+    microsoft.graph.deviceComplianceActionType:
+      title: deviceComplianceActionType
+      enum:
+        - noAction
+        - notification
+        - block
+        - retire
+        - wipe
+        - removeResourceAccessProfiles
+        - pushNotification
+      type: string
+    odata.error.main:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/odata.error.detail'
+        innererror:
+          type: object
+          additionalProperties:
+            type: object
+          description: The structure of this object is service-specific
+      additionalProperties:
+        type: object
+    odata.error.detail:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+      additionalProperties:
+        type: object
+  responses:
+    error:
+      description: error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/odata.error'
+  securitySchemes:
+    azureaadv2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/v2.0/authorize
+          tokenUrl: https://login.microsoftonline.com/common/oauth2/v2.0/token
+          scopes: { }
+security:
+  - azureaadv2: [ ]

@@ -1,0 +1,4339 @@
+openapi: 3.0.1
+info:
+  title: DeviceManagement.Administration
+  version: v1.0
+servers:
+  - url: https://graph.microsoft.com/v1.0/
+    description: Core
+paths:
+  /deviceManagement/applePushNotificationCertificate:
+    get:
+      tags:
+        - deviceManagement.applePushNotificationCertificate
+      summary: Get applePushNotificationCertificate from deviceManagement
+      operationId: deviceManagement_GetApplePushNotificationCertificate
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - appleIdentifier
+                - certificate
+                - expirationDateTime
+                - lastModifiedDateTime
+                - topicIdentifier
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.applePushNotificationCertificate'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - deviceManagement.applePushNotificationCertificate
+      summary: Update the navigation property applePushNotificationCertificate in deviceManagement
+      operationId: deviceManagement_UpdateApplePushNotificationCertificate
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.applePushNotificationCertificate'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceManagement.applePushNotificationCertificate
+      summary: Delete navigation property applePushNotificationCertificate for deviceManagement
+      operationId: deviceManagement_DeleteApplePushNotificationCertificate
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /deviceManagement/complianceManagementPartners:
+    get:
+      tags:
+        - deviceManagement.complianceManagementPartner
+      summary: Get complianceManagementPartners from deviceManagement
+      operationId: deviceManagement_ListComplianceManagementPartners
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - androidEnrollmentAssignments
+                - androidEnrollmentAssignments desc
+                - androidOnboarded
+                - androidOnboarded desc
+                - displayName
+                - displayName desc
+                - iosEnrollmentAssignments
+                - iosEnrollmentAssignments desc
+                - iosOnboarded
+                - iosOnboarded desc
+                - lastHeartbeatDateTime
+                - lastHeartbeatDateTime desc
+                - macOsEnrollmentAssignments
+                - macOsEnrollmentAssignments desc
+                - macOsOnboarded
+                - macOsOnboarded desc
+                - partnerState
+                - partnerState desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - androidEnrollmentAssignments
+                - androidOnboarded
+                - displayName
+                - iosEnrollmentAssignments
+                - iosOnboarded
+                - lastHeartbeatDateTime
+                - macOsEnrollmentAssignments
+                - macOsOnboarded
+                - partnerState
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of complianceManagementPartner
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.complianceManagementPartner'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - deviceManagement.complianceManagementPartner
+      summary: Create new navigation property to complianceManagementPartners for deviceManagement
+      operationId: deviceManagement_CreateComplianceManagementPartners
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.complianceManagementPartner'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.complianceManagementPartner'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/deviceManagement/complianceManagementPartners/{complianceManagementPartner-id}':
+    get:
+      tags:
+        - deviceManagement.complianceManagementPartner
+      summary: Get complianceManagementPartners from deviceManagement
+      operationId: deviceManagement_GetComplianceManagementPartners
+      parameters:
+        - name: complianceManagementPartner-id
+          in: path
+          description: 'key: id of complianceManagementPartner'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: complianceManagementPartner
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - androidEnrollmentAssignments
+                - androidOnboarded
+                - displayName
+                - iosEnrollmentAssignments
+                - iosOnboarded
+                - lastHeartbeatDateTime
+                - macOsEnrollmentAssignments
+                - macOsOnboarded
+                - partnerState
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.complianceManagementPartner'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - deviceManagement.complianceManagementPartner
+      summary: Update the navigation property complianceManagementPartners in deviceManagement
+      operationId: deviceManagement_UpdateComplianceManagementPartners
+      parameters:
+        - name: complianceManagementPartner-id
+          in: path
+          description: 'key: id of complianceManagementPartner'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: complianceManagementPartner
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.complianceManagementPartner'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceManagement.complianceManagementPartner
+      summary: Delete navigation property complianceManagementPartners for deviceManagement
+      operationId: deviceManagement_DeleteComplianceManagementPartners
+      parameters:
+        - name: complianceManagementPartner-id
+          in: path
+          description: 'key: id of complianceManagementPartner'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: complianceManagementPartner
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /deviceManagement/deviceManagementPartners:
+    get:
+      tags:
+        - deviceManagement.deviceManagementPartner
+      summary: Get deviceManagementPartners from deviceManagement
+      operationId: deviceManagement_ListDeviceManagementPartners
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - displayName
+                - displayName desc
+                - isConfigured
+                - isConfigured desc
+                - lastHeartbeatDateTime
+                - lastHeartbeatDateTime desc
+                - partnerAppType
+                - partnerAppType desc
+                - partnerState
+                - partnerState desc
+                - singleTenantAppId
+                - singleTenantAppId desc
+                - whenPartnerDevicesWillBeMarkedAsNonCompliantDateTime
+                - whenPartnerDevicesWillBeMarkedAsNonCompliantDateTime desc
+                - whenPartnerDevicesWillBeRemovedDateTime
+                - whenPartnerDevicesWillBeRemovedDateTime desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - isConfigured
+                - lastHeartbeatDateTime
+                - partnerAppType
+                - partnerState
+                - singleTenantAppId
+                - whenPartnerDevicesWillBeMarkedAsNonCompliantDateTime
+                - whenPartnerDevicesWillBeRemovedDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of deviceManagementPartner
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.deviceManagementPartner'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - deviceManagement.deviceManagementPartner
+      summary: Create new navigation property to deviceManagementPartners for deviceManagement
+      operationId: deviceManagement_CreateDeviceManagementPartners
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.deviceManagementPartner'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceManagementPartner'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/deviceManagement/deviceManagementPartners/{deviceManagementPartner-id}':
+    get:
+      tags:
+        - deviceManagement.deviceManagementPartner
+      summary: Get deviceManagementPartners from deviceManagement
+      operationId: deviceManagement_GetDeviceManagementPartners
+      parameters:
+        - name: deviceManagementPartner-id
+          in: path
+          description: 'key: id of deviceManagementPartner'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementPartner
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - isConfigured
+                - lastHeartbeatDateTime
+                - partnerAppType
+                - partnerState
+                - singleTenantAppId
+                - whenPartnerDevicesWillBeMarkedAsNonCompliantDateTime
+                - whenPartnerDevicesWillBeRemovedDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceManagementPartner'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - deviceManagement.deviceManagementPartner
+      summary: Update the navigation property deviceManagementPartners in deviceManagement
+      operationId: deviceManagement_UpdateDeviceManagementPartners
+      parameters:
+        - name: deviceManagementPartner-id
+          in: path
+          description: 'key: id of deviceManagementPartner'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementPartner
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.deviceManagementPartner'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceManagement.deviceManagementPartner
+      summary: Delete navigation property deviceManagementPartners for deviceManagement
+      operationId: deviceManagement_DeleteDeviceManagementPartners
+      parameters:
+        - name: deviceManagementPartner-id
+          in: path
+          description: 'key: id of deviceManagementPartner'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementPartner
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /deviceManagement/exchangeConnectors:
+    get:
+      tags:
+        - deviceManagement.deviceManagementExchangeConnector
+      summary: Get exchangeConnectors from deviceManagement
+      operationId: deviceManagement_ListExchangeConnectors
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - connectorServerName
+                - connectorServerName desc
+                - exchangeAlias
+                - exchangeAlias desc
+                - exchangeConnectorType
+                - exchangeConnectorType desc
+                - exchangeOrganization
+                - exchangeOrganization desc
+                - lastSyncDateTime
+                - lastSyncDateTime desc
+                - primarySmtpAddress
+                - primarySmtpAddress desc
+                - serverName
+                - serverName desc
+                - status
+                - status desc
+                - version
+                - version desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - connectorServerName
+                - exchangeAlias
+                - exchangeConnectorType
+                - exchangeOrganization
+                - lastSyncDateTime
+                - primarySmtpAddress
+                - serverName
+                - status
+                - version
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of deviceManagementExchangeConnector
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.deviceManagementExchangeConnector'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - deviceManagement.deviceManagementExchangeConnector
+      summary: Create new navigation property to exchangeConnectors for deviceManagement
+      operationId: deviceManagement_CreateExchangeConnectors
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.deviceManagementExchangeConnector'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceManagementExchangeConnector'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/deviceManagement/exchangeConnectors/{deviceManagementExchangeConnector-id}':
+    get:
+      tags:
+        - deviceManagement.deviceManagementExchangeConnector
+      summary: Get exchangeConnectors from deviceManagement
+      operationId: deviceManagement_GetExchangeConnectors
+      parameters:
+        - name: deviceManagementExchangeConnector-id
+          in: path
+          description: 'key: id of deviceManagementExchangeConnector'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementExchangeConnector
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - connectorServerName
+                - exchangeAlias
+                - exchangeConnectorType
+                - exchangeOrganization
+                - lastSyncDateTime
+                - primarySmtpAddress
+                - serverName
+                - status
+                - version
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceManagementExchangeConnector'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - deviceManagement.deviceManagementExchangeConnector
+      summary: Update the navigation property exchangeConnectors in deviceManagement
+      operationId: deviceManagement_UpdateExchangeConnectors
+      parameters:
+        - name: deviceManagementExchangeConnector-id
+          in: path
+          description: 'key: id of deviceManagementExchangeConnector'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementExchangeConnector
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.deviceManagementExchangeConnector'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceManagement.deviceManagementExchangeConnector
+      summary: Delete navigation property exchangeConnectors for deviceManagement
+      operationId: deviceManagement_DeleteExchangeConnectors
+      parameters:
+        - name: deviceManagementExchangeConnector-id
+          in: path
+          description: 'key: id of deviceManagementExchangeConnector'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementExchangeConnector
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /deviceManagement/iosUpdateStatuses:
+    get:
+      tags:
+        - deviceManagement.iosUpdateDeviceStatus
+      summary: Get iosUpdateStatuses from deviceManagement
+      operationId: deviceManagement_ListIosUpdateStatuses
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - complianceGracePeriodExpirationDateTime
+                - complianceGracePeriodExpirationDateTime desc
+                - deviceDisplayName
+                - deviceDisplayName desc
+                - deviceId
+                - deviceId desc
+                - deviceModel
+                - deviceModel desc
+                - installStatus
+                - installStatus desc
+                - lastReportedDateTime
+                - lastReportedDateTime desc
+                - osVersion
+                - osVersion desc
+                - status
+                - status desc
+                - userId
+                - userId desc
+                - userName
+                - userName desc
+                - userPrincipalName
+                - userPrincipalName desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - complianceGracePeriodExpirationDateTime
+                - deviceDisplayName
+                - deviceId
+                - deviceModel
+                - installStatus
+                - lastReportedDateTime
+                - osVersion
+                - status
+                - userId
+                - userName
+                - userPrincipalName
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of iosUpdateDeviceStatus
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.iosUpdateDeviceStatus'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - deviceManagement.iosUpdateDeviceStatus
+      summary: Create new navigation property to iosUpdateStatuses for deviceManagement
+      operationId: deviceManagement_CreateIosUpdateStatuses
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.iosUpdateDeviceStatus'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.iosUpdateDeviceStatus'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/deviceManagement/iosUpdateStatuses/{iosUpdateDeviceStatus-id}':
+    get:
+      tags:
+        - deviceManagement.iosUpdateDeviceStatus
+      summary: Get iosUpdateStatuses from deviceManagement
+      operationId: deviceManagement_GetIosUpdateStatuses
+      parameters:
+        - name: iosUpdateDeviceStatus-id
+          in: path
+          description: 'key: id of iosUpdateDeviceStatus'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: iosUpdateDeviceStatus
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - complianceGracePeriodExpirationDateTime
+                - deviceDisplayName
+                - deviceId
+                - deviceModel
+                - installStatus
+                - lastReportedDateTime
+                - osVersion
+                - status
+                - userId
+                - userName
+                - userPrincipalName
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.iosUpdateDeviceStatus'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - deviceManagement.iosUpdateDeviceStatus
+      summary: Update the navigation property iosUpdateStatuses in deviceManagement
+      operationId: deviceManagement_UpdateIosUpdateStatuses
+      parameters:
+        - name: iosUpdateDeviceStatus-id
+          in: path
+          description: 'key: id of iosUpdateDeviceStatus'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: iosUpdateDeviceStatus
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.iosUpdateDeviceStatus'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceManagement.iosUpdateDeviceStatus
+      summary: Delete navigation property iosUpdateStatuses for deviceManagement
+      operationId: deviceManagement_DeleteIosUpdateStatuses
+      parameters:
+        - name: iosUpdateDeviceStatus-id
+          in: path
+          description: 'key: id of iosUpdateDeviceStatus'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: iosUpdateDeviceStatus
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /deviceManagement/mobileThreatDefenseConnectors:
+    get:
+      tags:
+        - deviceManagement.mobileThreatDefenseConnector
+      summary: Get mobileThreatDefenseConnectors from deviceManagement
+      operationId: deviceManagement_ListMobileThreatDefenseConnectors
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - androidDeviceBlockedOnMissingPartnerData
+                - androidDeviceBlockedOnMissingPartnerData desc
+                - androidEnabled
+                - androidEnabled desc
+                - iosDeviceBlockedOnMissingPartnerData
+                - iosDeviceBlockedOnMissingPartnerData desc
+                - iosEnabled
+                - iosEnabled desc
+                - lastHeartbeatDateTime
+                - lastHeartbeatDateTime desc
+                - partnerState
+                - partnerState desc
+                - partnerUnresponsivenessThresholdInDays
+                - partnerUnresponsivenessThresholdInDays desc
+                - partnerUnsupportedOsVersionBlocked
+                - partnerUnsupportedOsVersionBlocked desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - androidDeviceBlockedOnMissingPartnerData
+                - androidEnabled
+                - iosDeviceBlockedOnMissingPartnerData
+                - iosEnabled
+                - lastHeartbeatDateTime
+                - partnerState
+                - partnerUnresponsivenessThresholdInDays
+                - partnerUnsupportedOsVersionBlocked
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of mobileThreatDefenseConnector
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.mobileThreatDefenseConnector'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - deviceManagement.mobileThreatDefenseConnector
+      summary: Create new navigation property to mobileThreatDefenseConnectors for deviceManagement
+      operationId: deviceManagement_CreateMobileThreatDefenseConnectors
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.mobileThreatDefenseConnector'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.mobileThreatDefenseConnector'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/deviceManagement/mobileThreatDefenseConnectors/{mobileThreatDefenseConnector-id}':
+    get:
+      tags:
+        - deviceManagement.mobileThreatDefenseConnector
+      summary: Get mobileThreatDefenseConnectors from deviceManagement
+      operationId: deviceManagement_GetMobileThreatDefenseConnectors
+      parameters:
+        - name: mobileThreatDefenseConnector-id
+          in: path
+          description: 'key: id of mobileThreatDefenseConnector'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: mobileThreatDefenseConnector
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - androidDeviceBlockedOnMissingPartnerData
+                - androidEnabled
+                - iosDeviceBlockedOnMissingPartnerData
+                - iosEnabled
+                - lastHeartbeatDateTime
+                - partnerState
+                - partnerUnresponsivenessThresholdInDays
+                - partnerUnsupportedOsVersionBlocked
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.mobileThreatDefenseConnector'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - deviceManagement.mobileThreatDefenseConnector
+      summary: Update the navigation property mobileThreatDefenseConnectors in deviceManagement
+      operationId: deviceManagement_UpdateMobileThreatDefenseConnectors
+      parameters:
+        - name: mobileThreatDefenseConnector-id
+          in: path
+          description: 'key: id of mobileThreatDefenseConnector'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: mobileThreatDefenseConnector
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.mobileThreatDefenseConnector'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceManagement.mobileThreatDefenseConnector
+      summary: Delete navigation property mobileThreatDefenseConnectors for deviceManagement
+      operationId: deviceManagement_DeleteMobileThreatDefenseConnectors
+      parameters:
+        - name: mobileThreatDefenseConnector-id
+          in: path
+          description: 'key: id of mobileThreatDefenseConnector'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: mobileThreatDefenseConnector
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /deviceManagement/remoteAssistancePartners:
+    get:
+      tags:
+        - deviceManagement.remoteAssistancePartner
+      summary: Get remoteAssistancePartners from deviceManagement
+      operationId: deviceManagement_ListRemoteAssistancePartners
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - displayName
+                - displayName desc
+                - lastConnectionDateTime
+                - lastConnectionDateTime desc
+                - onboardingStatus
+                - onboardingStatus desc
+                - onboardingUrl
+                - onboardingUrl desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - lastConnectionDateTime
+                - onboardingStatus
+                - onboardingUrl
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of remoteAssistancePartner
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.remoteAssistancePartner'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - deviceManagement.remoteAssistancePartner
+      summary: Create new navigation property to remoteAssistancePartners for deviceManagement
+      operationId: deviceManagement_CreateRemoteAssistancePartners
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.remoteAssistancePartner'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.remoteAssistancePartner'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/deviceManagement/remoteAssistancePartners/{remoteAssistancePartner-id}':
+    get:
+      tags:
+        - deviceManagement.remoteAssistancePartner
+      summary: Get remoteAssistancePartners from deviceManagement
+      operationId: deviceManagement_GetRemoteAssistancePartners
+      parameters:
+        - name: remoteAssistancePartner-id
+          in: path
+          description: 'key: id of remoteAssistancePartner'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: remoteAssistancePartner
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - lastConnectionDateTime
+                - onboardingStatus
+                - onboardingUrl
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.remoteAssistancePartner'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - deviceManagement.remoteAssistancePartner
+      summary: Update the navigation property remoteAssistancePartners in deviceManagement
+      operationId: deviceManagement_UpdateRemoteAssistancePartners
+      parameters:
+        - name: remoteAssistancePartner-id
+          in: path
+          description: 'key: id of remoteAssistancePartner'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: remoteAssistancePartner
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.remoteAssistancePartner'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceManagement.remoteAssistancePartner
+      summary: Delete navigation property remoteAssistancePartners for deviceManagement
+      operationId: deviceManagement_DeleteRemoteAssistancePartners
+      parameters:
+        - name: remoteAssistancePartner-id
+          in: path
+          description: 'key: id of remoteAssistancePartner'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: remoteAssistancePartner
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /deviceManagement/resourceOperations:
+    get:
+      tags:
+        - deviceManagement.resourceOperation
+      summary: Get resourceOperations from deviceManagement
+      operationId: deviceManagement_ListResourceOperations
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - actionName
+                - actionName desc
+                - description
+                - description desc
+                - resourceName
+                - resourceName desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - actionName
+                - description
+                - resourceName
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of resourceOperation
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.resourceOperation'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - deviceManagement.resourceOperation
+      summary: Create new navigation property to resourceOperations for deviceManagement
+      operationId: deviceManagement_CreateResourceOperations
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.resourceOperation'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.resourceOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/deviceManagement/resourceOperations/{resourceOperation-id}':
+    get:
+      tags:
+        - deviceManagement.resourceOperation
+      summary: Get resourceOperations from deviceManagement
+      operationId: deviceManagement_GetResourceOperations
+      parameters:
+        - name: resourceOperation-id
+          in: path
+          description: 'key: id of resourceOperation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: resourceOperation
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - actionName
+                - description
+                - resourceName
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.resourceOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - deviceManagement.resourceOperation
+      summary: Update the navigation property resourceOperations in deviceManagement
+      operationId: deviceManagement_UpdateResourceOperations
+      parameters:
+        - name: resourceOperation-id
+          in: path
+          description: 'key: id of resourceOperation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: resourceOperation
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.resourceOperation'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceManagement.resourceOperation
+      summary: Delete navigation property resourceOperations for deviceManagement
+      operationId: deviceManagement_DeleteResourceOperations
+      parameters:
+        - name: resourceOperation-id
+          in: path
+          description: 'key: id of resourceOperation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: resourceOperation
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /deviceManagement/roleAssignments:
+    get:
+      tags:
+        - deviceManagement.deviceAndAppManagementRoleAssignment
+      summary: Get roleAssignments from deviceManagement
+      operationId: deviceManagement_ListRoleAssignments
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+                - resourceScopes
+                - resourceScopes desc
+                - members
+                - members desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - description
+                - displayName
+                - resourceScopes
+                - members
+                - roleDefinition
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - roleDefinition
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of deviceAndAppManagementRoleAssignment
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.deviceAndAppManagementRoleAssignment'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - deviceManagement.deviceAndAppManagementRoleAssignment
+      summary: Create new navigation property to roleAssignments for deviceManagement
+      operationId: deviceManagement_CreateRoleAssignments
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.deviceAndAppManagementRoleAssignment'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceAndAppManagementRoleAssignment'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/deviceManagement/roleAssignments/{deviceAndAppManagementRoleAssignment-id}':
+    get:
+      tags:
+        - deviceManagement.deviceAndAppManagementRoleAssignment
+      summary: Get roleAssignments from deviceManagement
+      operationId: deviceManagement_GetRoleAssignments
+      parameters:
+        - name: deviceAndAppManagementRoleAssignment-id
+          in: path
+          description: 'key: id of deviceAndAppManagementRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceAndAppManagementRoleAssignment
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - description
+                - displayName
+                - resourceScopes
+                - members
+                - roleDefinition
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - roleDefinition
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceAndAppManagementRoleAssignment'
+          links:
+            roleDefinition:
+              operationId: deviceManagement.RoleAssignments.GetRoleDefinition
+              parameters:
+                deviceAndAppManagementRoleAssignment-id: $request.path.deviceAndAppManagementRoleAssignment-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - deviceManagement.deviceAndAppManagementRoleAssignment
+      summary: Update the navigation property roleAssignments in deviceManagement
+      operationId: deviceManagement_UpdateRoleAssignments
+      parameters:
+        - name: deviceAndAppManagementRoleAssignment-id
+          in: path
+          description: 'key: id of deviceAndAppManagementRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceAndAppManagementRoleAssignment
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.deviceAndAppManagementRoleAssignment'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceManagement.deviceAndAppManagementRoleAssignment
+      summary: Delete navigation property roleAssignments for deviceManagement
+      operationId: deviceManagement_DeleteRoleAssignments
+      parameters:
+        - name: deviceAndAppManagementRoleAssignment-id
+          in: path
+          description: 'key: id of deviceAndAppManagementRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceAndAppManagementRoleAssignment
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /deviceManagement/roleDefinitions:
+    get:
+      tags:
+        - deviceManagement.roleDefinition
+      summary: Get roleDefinitions from deviceManagement
+      operationId: deviceManagement_ListRoleDefinitions
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+                - isBuiltIn
+                - isBuiltIn desc
+                - rolePermissions
+                - rolePermissions desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - description
+                - displayName
+                - isBuiltIn
+                - rolePermissions
+                - roleAssignments
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - roleAssignments
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of roleDefinition
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.roleDefinition'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - deviceManagement.roleDefinition
+      summary: Create new navigation property to roleDefinitions for deviceManagement
+      operationId: deviceManagement_CreateRoleDefinitions
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.roleDefinition'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.roleDefinition'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/deviceManagement/roleDefinitions/{roleDefinition-id}':
+    get:
+      tags:
+        - deviceManagement.roleDefinition
+      summary: Get roleDefinitions from deviceManagement
+      operationId: deviceManagement_GetRoleDefinitions
+      parameters:
+        - name: roleDefinition-id
+          in: path
+          description: 'key: id of roleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: roleDefinition
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - description
+                - displayName
+                - isBuiltIn
+                - rolePermissions
+                - roleAssignments
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - roleAssignments
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.roleDefinition'
+          links:
+            roleAssignments:
+              operationId: deviceManagement.RoleDefinitions.ListRoleAssignments
+              parameters:
+                roleDefinition-id: $request.path.roleDefinition-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - deviceManagement.roleDefinition
+      summary: Update the navigation property roleDefinitions in deviceManagement
+      operationId: deviceManagement_UpdateRoleDefinitions
+      parameters:
+        - name: roleDefinition-id
+          in: path
+          description: 'key: id of roleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: roleDefinition
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.roleDefinition'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceManagement.roleDefinition
+      summary: Delete navigation property roleDefinitions for deviceManagement
+      operationId: deviceManagement_DeleteRoleDefinitions
+      parameters:
+        - name: roleDefinition-id
+          in: path
+          description: 'key: id of roleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: roleDefinition
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/deviceManagement/roleDefinitions/{roleDefinition-id}/roleAssignments':
+    get:
+      tags:
+        - deviceManagement.roleDefinition
+      summary: Get roleAssignments from deviceManagement
+      operationId: deviceManagement.roleDefinitions_ListRoleAssignments
+      parameters:
+        - name: roleDefinition-id
+          in: path
+          description: 'key: id of roleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: roleDefinition
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+                - resourceScopes
+                - resourceScopes desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - description
+                - displayName
+                - resourceScopes
+                - roleDefinition
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - roleDefinition
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of roleAssignment
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.roleAssignment'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - deviceManagement.roleDefinition
+      summary: Create new navigation property to roleAssignments for deviceManagement
+      operationId: deviceManagement.roleDefinitions_CreateRoleAssignments
+      parameters:
+        - name: roleDefinition-id
+          in: path
+          description: 'key: id of roleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: roleDefinition
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.roleAssignment'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.roleAssignment'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/deviceManagement/roleDefinitions/{roleDefinition-id}/roleAssignments/{roleAssignment-id}':
+    get:
+      tags:
+        - deviceManagement.roleDefinition
+      summary: Get roleAssignments from deviceManagement
+      operationId: deviceManagement.roleDefinitions_GetRoleAssignments
+      parameters:
+        - name: roleDefinition-id
+          in: path
+          description: 'key: id of roleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: roleDefinition
+        - name: roleAssignment-id
+          in: path
+          description: 'key: id of roleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: roleAssignment
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - description
+                - displayName
+                - resourceScopes
+                - roleDefinition
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - roleDefinition
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.roleAssignment'
+          links:
+            roleDefinition:
+              operationId: deviceManagement.roleDefinitions.RoleAssignments.GetRoleDefinition
+              parameters:
+                roleDefinition-id: $request.path.roleDefinition-id
+                roleAssignment-id: $request.path.roleAssignment-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - deviceManagement.roleDefinition
+      summary: Update the navigation property roleAssignments in deviceManagement
+      operationId: deviceManagement.roleDefinitions_UpdateRoleAssignments
+      parameters:
+        - name: roleDefinition-id
+          in: path
+          description: 'key: id of roleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: roleDefinition
+        - name: roleAssignment-id
+          in: path
+          description: 'key: id of roleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: roleAssignment
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.roleAssignment'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceManagement.roleDefinition
+      summary: Delete navigation property roleAssignments for deviceManagement
+      operationId: deviceManagement.roleDefinitions_DeleteRoleAssignments
+      parameters:
+        - name: roleDefinition-id
+          in: path
+          description: 'key: id of roleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: roleDefinition
+        - name: roleAssignment-id
+          in: path
+          description: 'key: id of roleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: roleAssignment
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/deviceManagement/roleDefinitions/{roleDefinition-id}/roleAssignments/{roleAssignment-id}/roleDefinition':
+    get:
+      tags:
+        - deviceManagement.roleDefinition
+      summary: Get roleDefinition from deviceManagement
+      operationId: deviceManagement.roleDefinitions.roleAssignments_GetRoleDefinition
+      parameters:
+        - name: roleDefinition-id
+          in: path
+          description: 'key: id of roleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: roleDefinition
+        - name: roleAssignment-id
+          in: path
+          description: 'key: id of roleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: roleAssignment
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - description
+                - displayName
+                - isBuiltIn
+                - rolePermissions
+                - roleAssignments
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - roleAssignments
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.roleDefinition'
+          links:
+            roleAssignments:
+              operationId: deviceManagement.roleDefinitions.roleAssignments.RoleDefinition.ListRoleAssignments
+              parameters:
+                roleDefinition-id: $request.path.roleDefinition-id
+                roleAssignment-id: $request.path.roleAssignment-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/deviceManagement/roleDefinitions/{roleDefinition-id}/roleAssignments/{roleAssignment-id}/roleDefinition/$ref':
+    get:
+      tags:
+        - deviceManagement.roleDefinition
+      summary: Get ref of roleDefinition from deviceManagement
+      operationId: deviceManagement.roleDefinitions.roleAssignments_GetRefRoleDefinition
+      parameters:
+        - name: roleDefinition-id
+          in: path
+          description: 'key: id of roleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: roleDefinition
+        - name: roleAssignment-id
+          in: path
+          description: 'key: id of roleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: roleAssignment
+      responses:
+        '200':
+          description: Retrieved navigation property link
+          content:
+            application/json:
+              schema:
+                type: string
+          links:
+            roleAssignments:
+              operationId: deviceManagement.roleDefinitions.roleAssignments.RoleDefinition.ListRoleAssignments
+              parameters:
+                roleDefinition-id: $request.path.roleDefinition-id
+                roleAssignment-id: $request.path.roleAssignment-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - deviceManagement.roleDefinition
+      summary: Update the ref of navigation property roleDefinition in deviceManagement
+      operationId: deviceManagement.roleDefinitions.roleAssignments_SetRefRoleDefinition
+      parameters:
+        - name: roleDefinition-id
+          in: path
+          description: 'key: id of roleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: roleDefinition
+        - name: roleAssignment-id
+          in: path
+          description: 'key: id of roleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: roleAssignment
+      requestBody:
+        description: New navigation property ref values
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceManagement.roleDefinition
+      summary: Delete ref of navigation property roleDefinition for deviceManagement
+      operationId: deviceManagement.roleDefinitions.roleAssignments_DeleteRefRoleDefinition
+      parameters:
+        - name: roleDefinition-id
+          in: path
+          description: 'key: id of roleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: roleDefinition
+        - name: roleAssignment-id
+          in: path
+          description: 'key: id of roleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: roleAssignment
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /deviceManagement/telecomExpenseManagementPartners:
+    get:
+      tags:
+        - deviceManagement.telecomExpenseManagementPartner
+      summary: Get telecomExpenseManagementPartners from deviceManagement
+      operationId: deviceManagement_ListTelecomExpenseManagementPartners
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - appAuthorized
+                - appAuthorized desc
+                - displayName
+                - displayName desc
+                - enabled
+                - enabled desc
+                - lastConnectionDateTime
+                - lastConnectionDateTime desc
+                - url
+                - url desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - appAuthorized
+                - displayName
+                - enabled
+                - lastConnectionDateTime
+                - url
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of telecomExpenseManagementPartner
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.telecomExpenseManagementPartner'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - deviceManagement.telecomExpenseManagementPartner
+      summary: Create new navigation property to telecomExpenseManagementPartners for deviceManagement
+      operationId: deviceManagement_CreateTelecomExpenseManagementPartners
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.telecomExpenseManagementPartner'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.telecomExpenseManagementPartner'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/deviceManagement/telecomExpenseManagementPartners/{telecomExpenseManagementPartner-id}':
+    get:
+      tags:
+        - deviceManagement.telecomExpenseManagementPartner
+      summary: Get telecomExpenseManagementPartners from deviceManagement
+      operationId: deviceManagement_GetTelecomExpenseManagementPartners
+      parameters:
+        - name: telecomExpenseManagementPartner-id
+          in: path
+          description: 'key: id of telecomExpenseManagementPartner'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: telecomExpenseManagementPartner
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - appAuthorized
+                - displayName
+                - enabled
+                - lastConnectionDateTime
+                - url
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.telecomExpenseManagementPartner'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - deviceManagement.telecomExpenseManagementPartner
+      summary: Update the navigation property telecomExpenseManagementPartners in deviceManagement
+      operationId: deviceManagement_UpdateTelecomExpenseManagementPartners
+      parameters:
+        - name: telecomExpenseManagementPartner-id
+          in: path
+          description: 'key: id of telecomExpenseManagementPartner'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: telecomExpenseManagementPartner
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.telecomExpenseManagementPartner'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceManagement.telecomExpenseManagementPartner
+      summary: Delete navigation property telecomExpenseManagementPartners for deviceManagement
+      operationId: deviceManagement_DeleteTelecomExpenseManagementPartners
+      parameters:
+        - name: telecomExpenseManagementPartner-id
+          in: path
+          description: 'key: id of telecomExpenseManagementPartner'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: telecomExpenseManagementPartner
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /deviceManagement/termsAndConditions:
+    get:
+      tags:
+        - deviceManagement.termsAndConditions
+      summary: Get termsAndConditions from deviceManagement
+      operationId: deviceManagement_ListTermsAndConditions
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - acceptanceStatement
+                - acceptanceStatement desc
+                - bodyText
+                - bodyText desc
+                - createdDateTime
+                - createdDateTime desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+                - lastModifiedDateTime
+                - lastModifiedDateTime desc
+                - title
+                - title desc
+                - version
+                - version desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - acceptanceStatement
+                - bodyText
+                - createdDateTime
+                - description
+                - displayName
+                - lastModifiedDateTime
+                - title
+                - version
+                - acceptanceStatuses
+                - assignments
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - acceptanceStatuses
+                - assignments
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of termsAndConditions
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.termsAndConditions'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - deviceManagement.termsAndConditions
+      summary: Create new navigation property to termsAndConditions for deviceManagement
+      operationId: deviceManagement_CreateTermsAndConditions
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.termsAndConditions'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.termsAndConditions'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/deviceManagement/termsAndConditions/{termsAndConditions-id}':
+    get:
+      tags:
+        - deviceManagement.termsAndConditions
+      summary: Get termsAndConditions from deviceManagement
+      operationId: deviceManagement_GetTermsAndConditions
+      parameters:
+        - name: termsAndConditions-id
+          in: path
+          description: 'key: id of termsAndConditions'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: termsAndConditions
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - acceptanceStatement
+                - bodyText
+                - createdDateTime
+                - description
+                - displayName
+                - lastModifiedDateTime
+                - title
+                - version
+                - acceptanceStatuses
+                - assignments
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - acceptanceStatuses
+                - assignments
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.termsAndConditions'
+          links:
+            acceptanceStatuses:
+              operationId: deviceManagement.TermsAndConditions.ListAcceptanceStatuses
+              parameters:
+                termsAndConditions-id: $request.path.termsAndConditions-id
+            assignments:
+              operationId: deviceManagement.TermsAndConditions.ListAssignments
+              parameters:
+                termsAndConditions-id: $request.path.termsAndConditions-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - deviceManagement.termsAndConditions
+      summary: Update the navigation property termsAndConditions in deviceManagement
+      operationId: deviceManagement_UpdateTermsAndConditions
+      parameters:
+        - name: termsAndConditions-id
+          in: path
+          description: 'key: id of termsAndConditions'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: termsAndConditions
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.termsAndConditions'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceManagement.termsAndConditions
+      summary: Delete navigation property termsAndConditions for deviceManagement
+      operationId: deviceManagement_DeleteTermsAndConditions
+      parameters:
+        - name: termsAndConditions-id
+          in: path
+          description: 'key: id of termsAndConditions'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: termsAndConditions
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/deviceManagement/termsAndConditions/{termsAndConditions-id}/acceptanceStatuses':
+    get:
+      tags:
+        - deviceManagement.termsAndConditions
+      summary: Get acceptanceStatuses from deviceManagement
+      operationId: deviceManagement.termsAndConditions_ListAcceptanceStatuses
+      parameters:
+        - name: termsAndConditions-id
+          in: path
+          description: 'key: id of termsAndConditions'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: termsAndConditions
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - acceptedDateTime
+                - acceptedDateTime desc
+                - acceptedVersion
+                - acceptedVersion desc
+                - userDisplayName
+                - userDisplayName desc
+                - userPrincipalName
+                - userPrincipalName desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - acceptedDateTime
+                - acceptedVersion
+                - userDisplayName
+                - userPrincipalName
+                - termsAndConditions
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - termsAndConditions
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of termsAndConditionsAcceptanceStatus
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.termsAndConditionsAcceptanceStatus'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - deviceManagement.termsAndConditions
+      summary: Create new navigation property to acceptanceStatuses for deviceManagement
+      operationId: deviceManagement.termsAndConditions_CreateAcceptanceStatuses
+      parameters:
+        - name: termsAndConditions-id
+          in: path
+          description: 'key: id of termsAndConditions'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: termsAndConditions
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.termsAndConditionsAcceptanceStatus'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.termsAndConditionsAcceptanceStatus'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/deviceManagement/termsAndConditions/{termsAndConditions-id}/acceptanceStatuses/{termsAndConditionsAcceptanceStatus-id}':
+    get:
+      tags:
+        - deviceManagement.termsAndConditions
+      summary: Get acceptanceStatuses from deviceManagement
+      operationId: deviceManagement.termsAndConditions_GetAcceptanceStatuses
+      parameters:
+        - name: termsAndConditions-id
+          in: path
+          description: 'key: id of termsAndConditions'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: termsAndConditions
+        - name: termsAndConditionsAcceptanceStatus-id
+          in: path
+          description: 'key: id of termsAndConditionsAcceptanceStatus'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: termsAndConditionsAcceptanceStatus
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - acceptedDateTime
+                - acceptedVersion
+                - userDisplayName
+                - userPrincipalName
+                - termsAndConditions
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - termsAndConditions
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.termsAndConditionsAcceptanceStatus'
+          links:
+            termsAndConditions:
+              operationId: deviceManagement.termsAndConditions.AcceptanceStatuses.GetTermsAndConditions
+              parameters:
+                termsAndConditions-id: $request.path.termsAndConditions-id
+                termsAndConditionsAcceptanceStatus-id: $request.path.termsAndConditionsAcceptanceStatus-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - deviceManagement.termsAndConditions
+      summary: Update the navigation property acceptanceStatuses in deviceManagement
+      operationId: deviceManagement.termsAndConditions_UpdateAcceptanceStatuses
+      parameters:
+        - name: termsAndConditions-id
+          in: path
+          description: 'key: id of termsAndConditions'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: termsAndConditions
+        - name: termsAndConditionsAcceptanceStatus-id
+          in: path
+          description: 'key: id of termsAndConditionsAcceptanceStatus'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: termsAndConditionsAcceptanceStatus
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.termsAndConditionsAcceptanceStatus'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceManagement.termsAndConditions
+      summary: Delete navigation property acceptanceStatuses for deviceManagement
+      operationId: deviceManagement.termsAndConditions_DeleteAcceptanceStatuses
+      parameters:
+        - name: termsAndConditions-id
+          in: path
+          description: 'key: id of termsAndConditions'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: termsAndConditions
+        - name: termsAndConditionsAcceptanceStatus-id
+          in: path
+          description: 'key: id of termsAndConditionsAcceptanceStatus'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: termsAndConditionsAcceptanceStatus
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/deviceManagement/termsAndConditions/{termsAndConditions-id}/acceptanceStatuses/{termsAndConditionsAcceptanceStatus-id}/termsAndConditions':
+    get:
+      tags:
+        - deviceManagement.termsAndConditions
+      summary: Get termsAndConditions from deviceManagement
+      operationId: deviceManagement.termsAndConditions.acceptanceStatuses_GetTermsAndConditions
+      parameters:
+        - name: termsAndConditions-id
+          in: path
+          description: 'key: id of termsAndConditions'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: termsAndConditions
+        - name: termsAndConditionsAcceptanceStatus-id
+          in: path
+          description: 'key: id of termsAndConditionsAcceptanceStatus'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: termsAndConditionsAcceptanceStatus
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - acceptanceStatement
+                - bodyText
+                - createdDateTime
+                - description
+                - displayName
+                - lastModifiedDateTime
+                - title
+                - version
+                - acceptanceStatuses
+                - assignments
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - acceptanceStatuses
+                - assignments
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.termsAndConditions'
+          links:
+            acceptanceStatuses:
+              operationId: deviceManagement.termsAndConditions.acceptanceStatuses.TermsAndConditions.ListAcceptanceStatuses
+              parameters:
+                termsAndConditions-id: $request.path.termsAndConditions-id
+                termsAndConditionsAcceptanceStatus-id: $request.path.termsAndConditionsAcceptanceStatus-id
+            assignments:
+              operationId: deviceManagement.termsAndConditions.acceptanceStatuses.TermsAndConditions.ListAssignments
+              parameters:
+                termsAndConditions-id: $request.path.termsAndConditions-id
+                termsAndConditionsAcceptanceStatus-id: $request.path.termsAndConditionsAcceptanceStatus-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/deviceManagement/termsAndConditions/{termsAndConditions-id}/acceptanceStatuses/{termsAndConditionsAcceptanceStatus-id}/termsAndConditions/$ref':
+    get:
+      tags:
+        - deviceManagement.termsAndConditions
+      summary: Get ref of termsAndConditions from deviceManagement
+      operationId: deviceManagement.termsAndConditions.acceptanceStatuses_GetRefTermsAndConditions
+      parameters:
+        - name: termsAndConditions-id
+          in: path
+          description: 'key: id of termsAndConditions'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: termsAndConditions
+        - name: termsAndConditionsAcceptanceStatus-id
+          in: path
+          description: 'key: id of termsAndConditionsAcceptanceStatus'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: termsAndConditionsAcceptanceStatus
+      responses:
+        '200':
+          description: Retrieved navigation property link
+          content:
+            application/json:
+              schema:
+                type: string
+          links:
+            acceptanceStatuses:
+              operationId: deviceManagement.termsAndConditions.acceptanceStatuses.TermsAndConditions.ListAcceptanceStatuses
+              parameters:
+                termsAndConditions-id: $request.path.termsAndConditions-id
+                termsAndConditionsAcceptanceStatus-id: $request.path.termsAndConditionsAcceptanceStatus-id
+            assignments:
+              operationId: deviceManagement.termsAndConditions.acceptanceStatuses.TermsAndConditions.ListAssignments
+              parameters:
+                termsAndConditions-id: $request.path.termsAndConditions-id
+                termsAndConditionsAcceptanceStatus-id: $request.path.termsAndConditionsAcceptanceStatus-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - deviceManagement.termsAndConditions
+      summary: Update the ref of navigation property termsAndConditions in deviceManagement
+      operationId: deviceManagement.termsAndConditions.acceptanceStatuses_SetRefTermsAndConditions
+      parameters:
+        - name: termsAndConditions-id
+          in: path
+          description: 'key: id of termsAndConditions'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: termsAndConditions
+        - name: termsAndConditionsAcceptanceStatus-id
+          in: path
+          description: 'key: id of termsAndConditionsAcceptanceStatus'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: termsAndConditionsAcceptanceStatus
+      requestBody:
+        description: New navigation property ref values
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceManagement.termsAndConditions
+      summary: Delete ref of navigation property termsAndConditions for deviceManagement
+      operationId: deviceManagement.termsAndConditions.acceptanceStatuses_DeleteRefTermsAndConditions
+      parameters:
+        - name: termsAndConditions-id
+          in: path
+          description: 'key: id of termsAndConditions'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: termsAndConditions
+        - name: termsAndConditionsAcceptanceStatus-id
+          in: path
+          description: 'key: id of termsAndConditionsAcceptanceStatus'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: termsAndConditionsAcceptanceStatus
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/deviceManagement/termsAndConditions/{termsAndConditions-id}/assignments':
+    get:
+      tags:
+        - deviceManagement.termsAndConditions
+      summary: Get assignments from deviceManagement
+      operationId: deviceManagement.termsAndConditions_ListAssignments
+      parameters:
+        - name: termsAndConditions-id
+          in: path
+          description: 'key: id of termsAndConditions'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: termsAndConditions
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - target
+                - target desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - target
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of termsAndConditionsAssignment
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.termsAndConditionsAssignment'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - deviceManagement.termsAndConditions
+      summary: Create new navigation property to assignments for deviceManagement
+      operationId: deviceManagement.termsAndConditions_CreateAssignments
+      parameters:
+        - name: termsAndConditions-id
+          in: path
+          description: 'key: id of termsAndConditions'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: termsAndConditions
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.termsAndConditionsAssignment'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.termsAndConditionsAssignment'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/deviceManagement/termsAndConditions/{termsAndConditions-id}/assignments/{termsAndConditionsAssignment-id}':
+    get:
+      tags:
+        - deviceManagement.termsAndConditions
+      summary: Get assignments from deviceManagement
+      operationId: deviceManagement.termsAndConditions_GetAssignments
+      parameters:
+        - name: termsAndConditions-id
+          in: path
+          description: 'key: id of termsAndConditions'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: termsAndConditions
+        - name: termsAndConditionsAssignment-id
+          in: path
+          description: 'key: id of termsAndConditionsAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: termsAndConditionsAssignment
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - target
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.termsAndConditionsAssignment'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - deviceManagement.termsAndConditions
+      summary: Update the navigation property assignments in deviceManagement
+      operationId: deviceManagement.termsAndConditions_UpdateAssignments
+      parameters:
+        - name: termsAndConditions-id
+          in: path
+          description: 'key: id of termsAndConditions'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: termsAndConditions
+        - name: termsAndConditionsAssignment-id
+          in: path
+          description: 'key: id of termsAndConditionsAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: termsAndConditionsAssignment
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.termsAndConditionsAssignment'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceManagement.termsAndConditions
+      summary: Delete navigation property assignments for deviceManagement
+      operationId: deviceManagement.termsAndConditions_DeleteAssignments
+      parameters:
+        - name: termsAndConditions-id
+          in: path
+          description: 'key: id of termsAndConditions'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: termsAndConditions
+        - name: termsAndConditionsAssignment-id
+          in: path
+          description: 'key: id of termsAndConditionsAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: termsAndConditionsAssignment
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+components:
+  schemas:
+    microsoft.graph.applePushNotificationCertificate:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: applePushNotificationCertificate
+          type: object
+          properties:
+            appleIdentifier:
+              type: string
+              description: Apple Id of the account used to create the MDM push certificate.
+              nullable: true
+            certificate:
+              type: string
+              description: Not yet documented
+              nullable: true
+            expirationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The expiration date and time for Apple push notification certificate.
+              format: date-time
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Last modified date and time for Apple push notification certificate.
+              format: date-time
+            topicIdentifier:
+              type: string
+              description: Topic Id.
+              nullable: true
+          additionalProperties:
+            type: object
+          description: Apple push notification certificate.
+    microsoft.graph.complianceManagementPartner:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: complianceManagementPartner
+          type: object
+          properties:
+            androidEnrollmentAssignments:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.complianceManagementPartnerAssignment'
+              description: User groups which enroll Android devices through partner.
+            androidOnboarded:
+              type: boolean
+              description: Partner onboarded for Android devices.
+            displayName:
+              type: string
+              description: Partner display name
+              nullable: true
+            iosEnrollmentAssignments:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.complianceManagementPartnerAssignment'
+              description: User groups which enroll ios devices through partner.
+            iosOnboarded:
+              type: boolean
+              description: Partner onboarded for ios devices.
+            lastHeartbeatDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Timestamp of last heartbeat after admin onboarded to the compliance management partner
+              format: date-time
+            macOsEnrollmentAssignments:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.complianceManagementPartnerAssignment'
+              description: User groups which enroll Mac devices through partner.
+            macOsOnboarded:
+              type: boolean
+              description: Partner onboarded for Mac devices.
+            partnerState:
+              $ref: '#/components/schemas/microsoft.graph.deviceManagementPartnerTenantState'
+          additionalProperties:
+            type: object
+          description: Compliance management partner for all platforms
+    microsoft.graph.deviceManagementPartner:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: deviceManagementPartner
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: Partner display name
+              nullable: true
+            isConfigured:
+              type: boolean
+              description: Whether device management partner is configured or not
+            lastHeartbeatDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Timestamp of last heartbeat after admin enabled option Connect to Device management Partner
+              format: date-time
+            partnerAppType:
+              $ref: '#/components/schemas/microsoft.graph.deviceManagementPartnerAppType'
+            partnerState:
+              $ref: '#/components/schemas/microsoft.graph.deviceManagementPartnerTenantState'
+            singleTenantAppId:
+              type: string
+              description: Partner Single tenant App id
+              nullable: true
+            whenPartnerDevicesWillBeMarkedAsNonCompliantDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: DateTime in UTC when PartnerDevices will be marked as NonCompliant
+              format: date-time
+              nullable: true
+            whenPartnerDevicesWillBeRemovedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: DateTime in UTC when PartnerDevices will be removed
+              format: date-time
+              nullable: true
+          additionalProperties:
+            type: object
+          description: Entity which represents a connection to device management partner.
+    microsoft.graph.deviceManagementExchangeConnector:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: deviceManagementExchangeConnector
+          type: object
+          properties:
+            connectorServerName:
+              type: string
+              description: The name of the server hosting the Exchange Connector.
+              nullable: true
+            exchangeAlias:
+              type: string
+              description: An alias assigned to the Exchange server
+              nullable: true
+            exchangeConnectorType:
+              $ref: '#/components/schemas/microsoft.graph.deviceManagementExchangeConnectorType'
+            exchangeOrganization:
+              type: string
+              description: Exchange Organization to the Exchange server
+              nullable: true
+            lastSyncDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Last sync time for the Exchange Connector
+              format: date-time
+            primarySmtpAddress:
+              type: string
+              description: Email address used to configure the Service To Service Exchange Connector.
+              nullable: true
+            serverName:
+              type: string
+              description: The name of the Exchange server.
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.deviceManagementExchangeConnectorStatus'
+            version:
+              type: string
+              description: The version of the ExchangeConnectorAgent
+              nullable: true
+          additionalProperties:
+            type: object
+          description: Entity which represents a connection to an Exchange environment.
+    microsoft.graph.iosUpdateDeviceStatus:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: iosUpdateDeviceStatus
+          type: object
+          properties:
+            complianceGracePeriodExpirationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The DateTime when device compliance grace period expires
+              format: date-time
+            deviceDisplayName:
+              type: string
+              description: Device name of the DevicePolicyStatus.
+              nullable: true
+            deviceId:
+              type: string
+              description: The device id that is being reported.
+              nullable: true
+            deviceModel:
+              type: string
+              description: The device model that is being reported
+              nullable: true
+            installStatus:
+              $ref: '#/components/schemas/microsoft.graph.iosUpdatesInstallStatus'
+            lastReportedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Last modified date time of the policy report.
+              format: date-time
+            osVersion:
+              type: string
+              description: The device version that is being reported.
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.complianceStatus'
+            userId:
+              type: string
+              description: The User id that is being reported.
+              nullable: true
+            userName:
+              type: string
+              description: The User Name that is being reported
+              nullable: true
+            userPrincipalName:
+              type: string
+              description: UserPrincipalName.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.mobileThreatDefenseConnector:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: mobileThreatDefenseConnector
+          type: object
+          properties:
+            androidDeviceBlockedOnMissingPartnerData:
+              type: boolean
+              description: 'For Android, set whether Intune must receive data from the data sync partner prior to marking a device compliant'
+            androidEnabled:
+              type: boolean
+              description: 'For Android, set whether data from the data sync partner should be used during compliance evaluations'
+            iosDeviceBlockedOnMissingPartnerData:
+              type: boolean
+              description: 'For IOS, set whether Intune must receive data from the data sync partner prior to marking a device compliant'
+            iosEnabled:
+              type: boolean
+              description: 'For IOS, get or set whether data from the data sync partner should be used during compliance evaluations'
+            lastHeartbeatDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: DateTime of last Heartbeat recieved from the Data Sync Partner
+              format: date-time
+            partnerState:
+              $ref: '#/components/schemas/microsoft.graph.mobileThreatPartnerTenantState'
+            partnerUnresponsivenessThresholdInDays:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Get or Set days the per tenant tolerance to unresponsiveness for this partner integration
+              format: int32
+            partnerUnsupportedOsVersionBlocked:
+              type: boolean
+              description: Get or set whether to block devices on the enabled platforms that do not meet the minimum version requirements of the Data Sync Partner
+          additionalProperties:
+            type: object
+          description: Entity which represents a connection to Mobile threat defense partner.
+    microsoft.graph.remoteAssistancePartner:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: remoteAssistancePartner
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: Display name of the partner.
+              nullable: true
+            lastConnectionDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Timestamp of the last request sent to Intune by the TEM partner.
+              format: date-time
+            onboardingStatus:
+              $ref: '#/components/schemas/microsoft.graph.remoteAssistanceOnboardingStatus'
+            onboardingUrl:
+              type: string
+              description: 'URL of the partner''s onboarding portal, where an administrator can configure their Remote Assistance service.'
+              nullable: true
+          additionalProperties:
+            type: object
+          description: RemoteAssistPartner resources represent the metadata and status of a given Remote Assistance partner service.
+    microsoft.graph.resourceOperation:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: resourceOperation
+          type: object
+          properties:
+            actionName:
+              type: string
+              description: Type of action this operation is going to perform. The actionName should be concise and limited to as few words as possible.
+              nullable: true
+            description:
+              type: string
+              description: Description of the resource operation. The description is used in mouse-over text for the operation when shown in the Azure Portal.
+              nullable: true
+            resourceName:
+              type: string
+              description: Name of the Resource this operation is performed on.
+              nullable: true
+          additionalProperties:
+            type: object
+          description: 'Describes the resourceOperation resource (entity) of the Microsoft Graph API (REST), which supports Intune workflows related to role-based access control (RBAC).'
+    microsoft.graph.deviceAndAppManagementRoleAssignment:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.roleAssignment'
+        - title: deviceAndAppManagementRoleAssignment
+          type: object
+          properties:
+            members:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: The list of ids of role member security groups. These are IDs from Azure Active Directory.
+          additionalProperties:
+            type: object
+          description: The Role Assignment resource. Role assignments tie together a role definition with members and scopes. There can be one or more role assignments per role. This applies to custom and built-in roles.
+    microsoft.graph.roleDefinition:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: roleDefinition
+          type: object
+          properties:
+            description:
+              type: string
+              description: Description of the Role definition.
+              nullable: true
+            displayName:
+              type: string
+              description: Display Name of the Role definition.
+              nullable: true
+            isBuiltIn:
+              type: boolean
+              description: 'Type of Role. Set to True if it is built-in, or set to False if it is a custom role definition.'
+            rolePermissions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.rolePermission'
+              description: List of Role Permissions this role is allowed to perform. These must match the actionName that is defined as part of the rolePermission.
+            roleAssignments:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.roleAssignment'
+              description: List of Role assignments for this role definition.
+          additionalProperties:
+            type: object
+          description: 'The Role Definition resource. The role definition is the foundation of role based access in Intune. The role combines an Intune resource such as a Mobile App and associated role permissions such as Create or Read for the resource. There are two types of roles, built-in and custom. Built-in roles cannot be modified. Both built-in roles and custom roles must have assignments to be enforced. Create custom roles if you want to define a role that allows any of the available resources and role permissions to be combined into a single role.'
+    microsoft.graph.roleAssignment:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: roleAssignment
+          type: object
+          properties:
+            description:
+              type: string
+              description: Description of the Role Assignment.
+              nullable: true
+            displayName:
+              type: string
+              description: The display or friendly name of the role Assignment.
+              nullable: true
+            resourceScopes:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: List of ids of role scope member security groups.  These are IDs from Azure Active Directory.
+            roleDefinition:
+              $ref: '#/components/schemas/microsoft.graph.roleDefinition'
+          additionalProperties:
+            type: object
+          description: The Role Assignment resource. Role assignments tie together a role definition with members and scopes. There can be one or more role assignments per role. This applies to custom and built-in roles.
+    microsoft.graph.telecomExpenseManagementPartner:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: telecomExpenseManagementPartner
+          type: object
+          properties:
+            appAuthorized:
+              type: boolean
+              description: Whether the partner's AAD app has been authorized to access Intune.
+            displayName:
+              type: string
+              description: Display name of the TEM partner.
+              nullable: true
+            enabled:
+              type: boolean
+              description: Whether Intune's connection to the TEM service is currently enabled or disabled.
+            lastConnectionDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Timestamp of the last request sent to Intune by the TEM partner.
+              format: date-time
+            url:
+              type: string
+              description: 'URL of the TEM partner''s administrative control panel, where an administrator can configure their TEM service.'
+              nullable: true
+          additionalProperties:
+            type: object
+          description: 'telecomExpenseManagementPartner resources represent the metadata and status of a given TEM service. Once your organization has onboarded with a partner, the partner can be enabled or disabled to switch TEM functionality on or off.'
+    microsoft.graph.termsAndConditions:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: termsAndConditions
+          type: object
+          properties:
+            acceptanceStatement:
+              type: string
+              description: 'Administrator-supplied explanation of the terms and conditions, typically describing what it means to accept the terms and conditions set out in the T&C policy. This is shown to the user on prompts to accept the T&C policy.'
+              nullable: true
+            bodyText:
+              type: string
+              description: 'Administrator-supplied body text of the terms and conditions, typically the terms themselves. This is shown to the user on prompts to accept the T&C policy.'
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: DateTime the object was created.
+              format: date-time
+            description:
+              type: string
+              description: Administrator-supplied description of the T&C policy.
+              nullable: true
+            displayName:
+              type: string
+              description: Administrator-supplied name for the T&C policy.
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: DateTime the object was last modified.
+              format: date-time
+            title:
+              type: string
+              description: Administrator-supplied title of the terms and conditions. This is shown to the user on prompts to accept the T&C policy.
+              nullable: true
+            version:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Integer indicating the current version of the terms. Incremented when an administrator makes a change to the terms and wishes to require users to re-accept the modified T&C policy.
+              format: int32
+            acceptanceStatuses:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.termsAndConditionsAcceptanceStatus'
+              description: The list of acceptance statuses for this T&C policy.
+            assignments:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.termsAndConditionsAssignment'
+              description: The list of assignments for this T&C policy.
+          additionalProperties:
+            type: object
+          description: A termsAndConditions entity represents the metadata and contents of a given Terms and Conditions (T&C) policy. T&C policies’ contents are presented to users upon their first attempt to enroll into Intune and subsequently upon edits where an administrator has required re-acceptance. They enable administrators to communicate the provisions to which a user must agree in order to have devices enrolled into Intune.
+    microsoft.graph.termsAndConditionsAcceptanceStatus:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: termsAndConditionsAcceptanceStatus
+          type: object
+          properties:
+            acceptedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: DateTime when the terms were last accepted by the user.
+              format: date-time
+            acceptedVersion:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Most recent version number of the T&C accepted by the user.
+              format: int32
+            userDisplayName:
+              type: string
+              description: Display name of the user whose acceptance the entity represents.
+              nullable: true
+            userPrincipalName:
+              type: string
+              description: The userPrincipalName of the User that accepted the term.
+              nullable: true
+            termsAndConditions:
+              $ref: '#/components/schemas/microsoft.graph.termsAndConditions'
+          additionalProperties:
+            type: object
+          description: A termsAndConditionsAcceptanceStatus entity represents the acceptance status of a given Terms and Conditions (T&C) policy by a given user. Users must accept the most up-to-date version of the terms in order to retain access to the Company Portal.
+    microsoft.graph.termsAndConditionsAssignment:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: termsAndConditionsAssignment
+          type: object
+          properties:
+            target:
+              $ref: '#/components/schemas/microsoft.graph.deviceAndAppManagementAssignmentTarget'
+          additionalProperties:
+            type: object
+          description: A termsAndConditionsAssignment entity represents the assignment of a given Terms and Conditions (T&C) policy to a given group. Users in the group will be required to accept the terms in order to have devices enrolled into Intune.
+    microsoft.graph.entity:
+      title: entity
+      type: object
+      properties:
+        id:
+          type: string
+          description: Read-only.
+      additionalProperties:
+        type: object
+    microsoft.graph.complianceManagementPartnerAssignment:
+      title: complianceManagementPartnerAssignment
+      type: object
+      properties:
+        target:
+          $ref: '#/components/schemas/microsoft.graph.deviceAndAppManagementAssignmentTarget'
+      additionalProperties:
+        type: object
+      description: User group targeting for Compliance Management Partner
+    microsoft.graph.deviceManagementPartnerTenantState:
+      title: deviceManagementPartnerTenantState
+      enum:
+        - unknown
+        - unavailable
+        - enabled
+        - terminated
+        - rejected
+        - unresponsive
+      type: string
+    microsoft.graph.deviceManagementPartnerAppType:
+      title: deviceManagementPartnerAppType
+      enum:
+        - unknown
+        - singleTenantApp
+        - multiTenantApp
+      type: string
+    microsoft.graph.deviceManagementExchangeConnectorType:
+      title: deviceManagementExchangeConnectorType
+      enum:
+        - onPremises
+        - hosted
+        - serviceToService
+        - dedicated
+      type: string
+    microsoft.graph.deviceManagementExchangeConnectorStatus:
+      title: deviceManagementExchangeConnectorStatus
+      enum:
+        - none
+        - connectionPending
+        - connected
+        - disconnected
+      type: string
+    microsoft.graph.iosUpdatesInstallStatus:
+      title: iosUpdatesInstallStatus
+      enum:
+        - deviceOsHigherThanDesiredOsVersion
+        - sharedDeviceUserLoggedInError
+        - notSupportedOperation
+        - installFailed
+        - installPhoneCallInProgress
+        - installInsufficientPower
+        - installInsufficientSpace
+        - installing
+        - downloadInsufficientNetwork
+        - downloadInsufficientPower
+        - downloadInsufficientSpace
+        - downloadRequiresComputer
+        - downloadFailed
+        - downloading
+        - success
+        - available
+        - idle
+        - unknown
+      type: string
+    microsoft.graph.complianceStatus:
+      title: complianceStatus
+      enum:
+        - unknown
+        - notApplicable
+        - compliant
+        - remediated
+        - nonCompliant
+        - error
+        - conflict
+        - notAssigned
+      type: string
+    microsoft.graph.mobileThreatPartnerTenantState:
+      title: mobileThreatPartnerTenantState
+      enum:
+        - unavailable
+        - available
+        - enabled
+        - unresponsive
+      type: string
+    microsoft.graph.remoteAssistanceOnboardingStatus:
+      title: remoteAssistanceOnboardingStatus
+      enum:
+        - notOnboarded
+        - onboarding
+        - onboarded
+      type: string
+    microsoft.graph.rolePermission:
+      title: rolePermission
+      type: object
+      properties:
+        resourceActions:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.resourceAction'
+          description: Resource Actions each containing a set of allowed and not allowed permissions.
+      additionalProperties:
+        type: object
+      description: Contains the set of ResourceActions determining the allowed and not allowed permissions for each role.
+    microsoft.graph.deviceAndAppManagementAssignmentTarget:
+      title: deviceAndAppManagementAssignmentTarget
+      type: object
+      additionalProperties:
+        type: object
+      description: Base type for assignment targets.
+    odata.error:
+      required:
+        - error
+      type: object
+      properties:
+        error:
+          $ref: '#/components/schemas/odata.error.main'
+      additionalProperties:
+        type: object
+    microsoft.graph.resourceAction:
+      title: resourceAction
+      type: object
+      properties:
+        allowedResourceActions:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: Allowed Actions
+        notAllowedResourceActions:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: Not Allowed Actions.
+      additionalProperties:
+        type: object
+      description: Set of allowed and not allowed actions for a resource.
+    odata.error.main:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/odata.error.detail'
+        innererror:
+          type: object
+          additionalProperties:
+            type: object
+          description: The structure of this object is service-specific
+      additionalProperties:
+        type: object
+    odata.error.detail:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+      additionalProperties:
+        type: object
+  responses:
+    error:
+      description: error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/odata.error'
+  parameters:
+    top:
+      name: $top
+      in: query
+      description: Show only the first n items
+      schema:
+        minimum: 0
+        type: integer
+      example: 50
+    skip:
+      name: $skip
+      in: query
+      description: Skip the first n items
+      schema:
+        minimum: 0
+        type: integer
+    search:
+      name: $search
+      in: query
+      description: Search items by search phrases
+      schema:
+        type: string
+    filter:
+      name: $filter
+      in: query
+      description: Filter items by property values
+      schema:
+        type: string
+    count:
+      name: $count
+      in: query
+      description: Include count of items
+      schema:
+        type: boolean
+  securitySchemes:
+    azureaadv2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/v2.0/authorize
+          tokenUrl: https://login.microsoftonline.com/common/oauth2/v2.0/token
+          scopes: { }
+security:
+  - azureaadv2: [ ]
