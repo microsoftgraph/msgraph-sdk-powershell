@@ -20,10 +20,14 @@ enum VersionState {
     EqualToFeed
     NotOnFeed
 }
+$Error.Clear()
 $ErrorActionPreference = 'Continue'
 if ($PSEdition -ne 'Core') {
     Write-Error 'This script requires PowerShell Core to execute. [Note] Generated cmdlets will work in both PowerShell Core or Windows PowerShell.'
 }
+# Module import.
+Import-Module PowerShellGet
+
 # Install Powershell-yaml
 if (!(Get-Module -Name powershell-yaml -ListAvailable)) {
     Install-Module powershell-yaml -Force   
@@ -129,7 +133,8 @@ $ModulesToGenerate | ForEach-Object -ThrottleLimit $ModulesToGenerate.Count -Par
             # Generate PowerShell modules.
             & autorest --module-version:$ModuleVersion --service-name:$ModuleName $ModuleLevelReadMePath --version:"3.0.6306" --verbose
             if ($LASTEXITCODE) {
-                Write-Error "Failed to generate '$ModuleName' module."
+                Write-Error "AutoREST failed to generate '$ModuleName' module."
+                throw $_
             }
             Write-Host -ForegroundColor Green "AutoRest generated '$FullyQualifiedModuleName' successfully."
 
@@ -207,10 +212,16 @@ $ModulesToGenerate | ForEach-Object -ThrottleLimit $ModulesToGenerate.Count -Par
             }
         }
         catch {
-            throw $_
+            Write-Error "An error occured while generating '$ModuleName' module."
         }
         Write-Host -ForeGroundColor Green "Generating $ModuleName Completed"
     }
+}
+
+if ($Error.Count -ge 1) {
+    # Write generation errors to pipeline.
+    $Error
+    Write-Error "The SDK failed to build due to $($Error.Count) errors listed above." -ErrorAction "Stop"
 }
 
 if ($Publish) {
