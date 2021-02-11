@@ -1,0 +1,25 @@
+{
+  "resources": [],
+  "operations": {
+    "/deviceManagement/conditionalAccessSettings": {
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Enrolment.yml",
+      "apiVersion": "v1.0"
+    },
+    "/deviceManagement/deviceEnrollmentConfigurations": {
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Enrolment.yml",
+      "apiVersion": "v1.0"
+    },
+    "/deviceManagement/deviceEnrollmentConfigurations/{deviceEnrollmentConfiguration-id}": {
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Enrolment.yml",
+      "apiVersion": "v1.0"
+    },
+    "/deviceManagement/deviceEnrollmentConfigurations/{deviceEnrollmentConfiguration-id}/assignments": {
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Enrolment.yml",
+      "apiVersion": "v1.0"
+    },
+    "/deviceManagement/deviceEnrollmentConfigurations/{deviceEnrollmentConfiguration-id}/assignments/{enrollmentConfigurationAssignment-id}": {
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Enrolment.yml",
+      "apiVersion": "v1.0"
+    }
+  }
+}

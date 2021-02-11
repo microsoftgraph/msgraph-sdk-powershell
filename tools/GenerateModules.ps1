@@ -34,8 +34,9 @@ if (!(Get-Module -Name powershell-yaml -ListAvailable)) {
 }
 
 $ModulePrefix = "Microsoft.Graph"
-$ModulesOutputDir = Join-Path $PSScriptRoot "..\src\"
-$ArtifactsLocation = Join-Path $PSScriptRoot "..\artifacts"
+$ScriptRoot = $PSScriptRoot
+$ModulesOutputDir = Join-Path $ScriptRoot "..\src\"
+$ArtifactsLocation = Join-Path $ScriptRoot "..\artifacts"
 $RequiredGraphModules = @()
 # PS Scripts
 $ManageGeneratedModulePS1 = Join-Path $PSScriptRoot ".\ManageGeneratedModule.ps1" -Resolve
@@ -100,7 +101,7 @@ $ModulesToGenerate | ForEach-Object -ThrottleLimit $ModulesToGenerate.Count -Par
     # Copy AutoRest readme.md config is none exists.
     if (-not (Test-Path "$ModuleProjectDir\readme.md")) {
         New-Item -Path $ModuleProjectDir -Type Directory -Force
-        Copy-Item (Join-Path $PSScriptRoot "\Templates\readme.md") -Destination $ModuleProjectDir
+        Copy-Item (Join-Path $Using:ScriptRoot "\Templates\readme.md") -Destination $ModuleProjectDir
     }
 
     $ModuleLevelReadMePath = Join-Path $ModuleProjectDir "\readme.md" -Resolve
