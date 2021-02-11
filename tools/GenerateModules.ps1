@@ -134,7 +134,7 @@ $ModulesToGenerate | ForEach-Object -ThrottleLimit $ModulesToGenerate.Count -Par
             & autorest --module-version:$ModuleVersion --service-name:$ModuleName $ModuleLevelReadMePath --version:"3.0.6306" --verbose
             if ($LASTEXITCODE) {
                 Write-Error "AutoREST failed to generate '$ModuleName' module."
-                throw $_
+                break;
             }
             Write-Host -ForegroundColor Green "AutoRest generated '$FullyQualifiedModuleName' successfully."
 
@@ -196,10 +196,6 @@ $ModulesToGenerate | ForEach-Object -ThrottleLimit $ModulesToGenerate.Count -Par
                     }
                     $updatedLine
                 } | Set-Content $InternalModulePsm1
-                
-                if ($LASTEXITCODE) {
-                    Write-Error "Failed to build '$ModuleName' module."
-                }
             }
 
             if ($Using:Test) {
@@ -210,11 +206,12 @@ $ModulesToGenerate | ForEach-Object -ThrottleLimit $ModulesToGenerate.Count -Par
                 # Pack generated module.
                 . $Using:PackModulePS1 -Module $ModuleName -ArtifactsLocation $Using:ArtifactsLocation
             }
+
+            Write-Host -ForeGroundColor Green "Generating $ModuleName Completed"
         }
         catch {
-            Write-Error "An error occured while generating '$ModuleName' module."
+            Write-Error $_
         }
-        Write-Host -ForeGroundColor Green "Generating $ModuleName Completed"
     }
 }
 
