@@ -33,6 +33,8 @@ if (!(Get-Module -Name powershell-yaml -ListAvailable)) {
     Install-Module powershell-yaml -Force   
 }
 
+# Set NODE max memory to 8 Gb.
+$ENV:NODE_OPTIONS='--max-old-space-size=8192'
 $ModulePrefix = "Microsoft.Graph"
 $ScriptRoot = $PSScriptRoot
 $ModulesOutputDir = Join-Path $ScriptRoot "..\src\"
