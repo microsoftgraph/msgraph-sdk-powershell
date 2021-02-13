@@ -48,14 +48,6 @@ steps:
       customCommand: "install -g autorest@latest"
 
   - task: PowerShell@2
-    displayName: 'Set NODE max memory'
-    inputs:
-      targetType: inline
-      pwsh: true
-      script: |
-        $ENV:NODE_OPTIONS='--max-old-space-size=8192'
-
-  - task: PowerShell@2
     displayName: Install PowerShell dependencies
     inputs:
       targetType: inline
