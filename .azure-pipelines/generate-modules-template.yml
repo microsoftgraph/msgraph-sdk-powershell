@@ -143,7 +143,7 @@ jobs:
       pwsh: true
       script: |
          Write-Host $(BUILDNUMBER)
-         pwsh $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -ArtifactsLocation $(Build.ArtifactStagingDirectory)\ -Build -Test -EnableSigning -ModulePreviewNumber $(BUILDNUMBER) -UpdateAutoRest -RepositoryName "LocalNugetFeed"
+         pwsh $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -ArtifactsLocation $(Build.ArtifactStagingDirectory)\ -Build -Test -EnableSigning -ModulePreviewNumber $(BUILDNUMBER) -UpdateAutoRest -RepositoryName "LocalNugetFeed" -ExcludeExamples
   
   - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
     displayName: 'ESRP DLL Strong Name (Graph Resource Modules)'
@@ -231,7 +231,7 @@ jobs:
         $ModuleMapping.Keys | ForEach-Object {
             $ModuleName = $_
             $ModuleProjectDir = "$(System.DefaultWorkingDirectory)/src/$ModuleName/$ModuleName"
-            & $(System.DefaultWorkingDirectory)/tools/PackModule.ps1 -Module $ModuleName -ArtifactsLocation $(Build.ArtifactStagingDirectory)\
+            & $(System.DefaultWorkingDirectory)/tools/PackModule.ps1 -Module $ModuleName -ArtifactsLocation $(Build.ArtifactStagingDirectory)\ -ModulePrefix $(MODULE_PREFIX) -ExcludeMarkdownDocsFromNugetPackage
         }
 
   - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
