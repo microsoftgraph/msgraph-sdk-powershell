@@ -11,6 +11,7 @@ jobs:
   steps:
   - task: CredScan@2
     displayName: 'Run CredScan'
+    continueOnError: true
     inputs:
       debugMode: false
       batchSize: 20
@@ -19,6 +20,7 @@ jobs:
 
   - task: PoliCheck@1
     displayName: 'Run PoliCheck'
+    continueOnError: true
     condition: and(succeeded(), eq(eq(variables['Build.SourceBranch'], 'refs/heads/master'), false))
     inputs:
       targetType: F
