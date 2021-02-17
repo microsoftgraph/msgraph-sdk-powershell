@@ -38,7 +38,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
         internal static class Message
         {
             internal const string InvalidJWT = "Invalid JWT access token.";
-            internal const string MissingAuthContext = "Authentication needed, call Connect-Graph.";
+            internal const string MissingAuthContext = "Authentication needed, call Connect-MgGraph.";
             internal const string NullOrEmptyParameter = "Parameter '{0}' cannot be null or empty.";
             internal const string MacKeyChainFailed = "{0} failed with result code {1}.";
             internal const string DeviceCodeTimeout = "Device code terminal timed-out after {0} seconds. Please try again.";
