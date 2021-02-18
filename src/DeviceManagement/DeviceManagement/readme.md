@@ -64,7 +64,6 @@ directive:
     set:
       subject: $1ForWorkSetting
 ```
-
 ### Versioning
 
 ``` yaml

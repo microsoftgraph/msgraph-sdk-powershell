@@ -57,7 +57,6 @@ directive:
       verb: Invoke
       subject: $1WindowsPrivacyAccessControl
 ```
-
 ### Versioning
 
 ``` yaml
