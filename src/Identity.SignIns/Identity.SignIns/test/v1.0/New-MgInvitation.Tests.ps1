@@ -40,7 +40,7 @@ Describe 'New-MgInvitation' {
 
         It 'ShouldThrowInvalidEmailError' {
             $Mock.PushScenario('ShouldThrowInvalidEmailError')
-            $MyUser = [Microsoft.Graph.PowerShell.Models.MicrosoftGraphUser1]@{
+            $MyUser = [Microsoft.Graph.PowerShell.Models.MicrosoftGraphUser]@{
                 Id = $env.Users[0].UserId
                 DisplayName = $env.Users[0].DisplayName
                 Mail = $env.Users[0].Mail
@@ -68,7 +68,7 @@ Describe 'New-MgInvitation' {
 
         It 'ShouldThrowInvalidEmailError' {
             $Mock.PushScenario('ShouldThrowInvalidEmailError')
-            $MyUser = [Microsoft.Graph.PowerShell.Models.MicrosoftGraphUser1]@{
+            $MyUser = [Microsoft.Graph.PowerShell.Models.MicrosoftGraphUser]@{
                 Id = $env.Users[0].UserId
                 DisplayName = $env.Users[0].DisplayName
                 Mail = $env.Users[0].Mail
