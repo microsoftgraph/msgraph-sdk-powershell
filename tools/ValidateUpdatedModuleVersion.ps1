@@ -13,6 +13,11 @@ enum VersionState {
     EqualToFeed
     NotOnFeed
 }
+
+# Module import.
+Import-Module PackageManagement
+Import-Module PowerShellGet
+
 $AllowPreRelease = $true
 if($ModulePreviewNumber -eq -1) {
     $AllowPreRelease = $false

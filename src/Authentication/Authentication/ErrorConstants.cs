@@ -49,6 +49,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
             internal const string InvalidEnvironment = "Unable to find environment with name '{0}'. Use Get-MgEnvironment to list available environments.";
             internal const string CannotAccessFile = "Could not {0} file at '{1}'. Please ensure you have access to this file and try again in a few minutes..";
             internal const string CannotModifyBuiltInEnvironment = "Cannot {0} built-in environment {1}.";
+            internal const string InvalidCertificateThumbprint = "'{0}' must have a length of 40. Ensure you have the right certificate thumbprint then try again.";
         }
     }
 }
