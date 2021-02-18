@@ -2023,6 +2023,267 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /applicationTemplates:
+    get:
+      tags:
+        - applicationTemplates.applicationTemplate
+      summary: Get entities from applicationTemplates
+      operationId: applicationTemplates.applicationTemplate_ListApplicationTemplate
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - categories
+                - categories desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+                - homePageUrl
+                - homePageUrl desc
+                - logoUrl
+                - logoUrl desc
+                - publisher
+                - publisher desc
+                - supportedProvisioningTypes
+                - supportedProvisioningTypes desc
+                - supportedSingleSignOnModes
+                - supportedSingleSignOnModes desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - categories
+                - description
+                - displayName
+                - homePageUrl
+                - logoUrl
+                - publisher
+                - supportedProvisioningTypes
+                - supportedSingleSignOnModes
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved entities
+          content:
+            application/json:
+              schema:
+                title: Collection of applicationTemplate
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.applicationTemplate'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - applicationTemplates.applicationTemplate
+      summary: Add new entity to applicationTemplates
+      operationId: applicationTemplates.applicationTemplate_CreateApplicationTemplate
+      requestBody:
+        description: New entity
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.applicationTemplate'
+        required: true
+      responses:
+        '201':
+          description: Created entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.applicationTemplate'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/applicationTemplates/{applicationTemplate-id}':
+    get:
+      tags:
+        - applicationTemplates.applicationTemplate
+      summary: Get entity from applicationTemplates by key
+      operationId: applicationTemplates.applicationTemplate_GetApplicationTemplate
+      parameters:
+        - name: applicationTemplate-id
+          in: path
+          description: 'key: id of applicationTemplate'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: applicationTemplate
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - categories
+                - description
+                - displayName
+                - homePageUrl
+                - logoUrl
+                - publisher
+                - supportedProvisioningTypes
+                - supportedSingleSignOnModes
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.applicationTemplate'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - applicationTemplates.applicationTemplate
+      summary: Update entity in applicationTemplates
+      operationId: applicationTemplates.applicationTemplate_UpdateApplicationTemplate
+      parameters:
+        - name: applicationTemplate-id
+          in: path
+          description: 'key: id of applicationTemplate'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: applicationTemplate
+      requestBody:
+        description: New property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.applicationTemplate'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - applicationTemplates.applicationTemplate
+      summary: Delete entity from applicationTemplates
+      operationId: applicationTemplates.applicationTemplate_DeleteApplicationTemplate
+      parameters:
+        - name: applicationTemplate-id
+          in: path
+          description: 'key: id of applicationTemplate'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: applicationTemplate
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/applicationTemplates/{applicationTemplate-id}/microsoft.graph.instantiate':
+    post:
+      tags:
+        - applicationTemplates.Actions
+      summary: Invoke action instantiate
+      operationId: applicationTemplates_instantiate
+      parameters:
+        - name: applicationTemplate-id
+          in: path
+          description: 'key: id of applicationTemplate'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: applicationTemplate
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                displayName:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.applicationServicePrincipal'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/groups/{group-id}/appRoleAssignments':
     get:
       tags:
@@ -6421,7 +6682,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: Directory objects that are owners of the application. The owners are a set of non-admin users who are allowed to modify this object. Requires version 2013-11-08 or newer. Read-only. Nullable.
+              description: Directory objects that are owners of the application. Read-only. Nullable.
             tokenIssuancePolicies:
               type: array
               items:
@@ -6587,6 +6848,62 @@ components:
           additionalProperties:
             type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
+    microsoft.graph.applicationTemplate:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: applicationTemplate
+          type: object
+          properties:
+            categories:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: 'The list of categories for the application. Supported values can be: Collaboration, Business Management, Consumer,Content management, CRM, Data services, Developer services, E-commerce, Education, ERP, Finance, Health, Human resources, IT infrastructure, Mail, Management, Marketing, Media, Productivity, Project management, Telecommunications, Tools, Travel, and Web design & hosting.'
+            description:
+              type: string
+              description: A description of the application.
+              nullable: true
+            displayName:
+              type: string
+              description: The name of the application.
+              nullable: true
+            homePageUrl:
+              type: string
+              description: The home page URL of the application.
+              nullable: true
+            logoUrl:
+              type: string
+              description: The URL to get the logo for this application.
+              nullable: true
+            publisher:
+              type: string
+              description: The name of the publisher for this application.
+              nullable: true
+            supportedProvisioningTypes:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: The list of provisioning modes supported by this application. The only valid value is sync.
+            supportedSingleSignOnModes:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: 'The list of single sign-on modes supported by this application. The supported values are password, saml, external, and oidc.'
+          additionalProperties:
+            type: object
+    microsoft.graph.applicationServicePrincipal:
+      title: applicationServicePrincipal
+      type: object
+      properties:
+        application:
+          $ref: '#/components/schemas/microsoft.graph.application'
+        servicePrincipal:
+          $ref: '#/components/schemas/microsoft.graph.servicePrincipal'
+      additionalProperties:
+        type: object
     microsoft.graph.appRoleAssignment:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.directoryObject'
@@ -6725,7 +7042,7 @@ components:
               description: The collection of password credentials associated with the service principal. Not nullable.
             preferredSingleSignOnMode:
               type: string
-              description: 'Specifies the single sign-on mode configured for this application. Azure AD uses the preferred single sign-on mode to launch the application from Microsoft 365 or the Azure AD My Apps. The supported values are password, saml, external, and oidc.'
+              description: 'Specifies the single sign-on mode configured for this application. Azure AD uses the preferred single sign-on mode to launch the application from Microsoft 365 or the Azure AD My Apps. The supported values are password, saml, notSupported, and oidc.'
               nullable: true
             preferredTokenSigningKeyThumbprint:
               type: string
@@ -6766,12 +7083,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
-              description: 'Principals (users, groups, and service principals) that are assigned to this service principal. Read-only.'
+              description: 'App role assignments for this app or service, granted to users, groups, and other service principals.'
             appRoleAssignments:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
-              description: Applications that this service principal is assigned to. Read-only. Nullable.
+              description: 'App role assignment for another app or service, granted to this service principal.'
             claimsMappingPolicies:
               type: array
               items:
@@ -7225,11 +7542,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
           nullable: true
       additionalProperties:
         type: object

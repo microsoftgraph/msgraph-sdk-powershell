@@ -48124,6 +48124,12 @@ components:
         - title: deviceManagementConfigurationCategory
           type: object
           properties:
+            childCategoryIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: List of child ids of the category.
             description:
               type: string
               description: Description of the item
@@ -48140,8 +48146,18 @@ components:
               type: string
               description: Name of the item
               nullable: true
+            parentCategoryId:
+              type: string
+              description: Parent id of the category.
+              nullable: true
             platforms:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationPlatforms'
+            rootCategoryId:
+              type: string
+              description: Root id of the category.
+              nullable: true
+            settingUsage:
+              $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationSettingUsage'
             technologies:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationTechnologies'
           additionalProperties:
@@ -52260,7 +52276,7 @@ components:
               nullable: true
             visibility:
               type: string
-              description: 'Specifies the visibility of a Microsoft 365 group. Possible values are: Private, Public, or Hiddenmembership; blank values are treated as public.  See group visibility options to learn more.Visibility can be set only when a group is created; it is not editable.Visibility is supported only for unified groups; it is not supported for security groups. Returned by default.'
+              description: 'Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or Hiddenmembership. Hiddenmembership can be set only for Microsoft 365 groups, when the groups are created. It can''t be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. See group visibility options to learn more. Returned by default.'
               nullable: true
             accessType:
               $ref: '#/components/schemas/microsoft.graph.groupAccessType'
@@ -53257,6 +53273,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlan'
+              description: Read-only. Nullable. Returns the plannerPlans contained by the plannerRosters the user is a member.
             tasks:
               type: array
               items:
@@ -53520,6 +53537,7 @@ components:
               nullable: true
             deviceCategory:
               type: string
+              description: User-defined property set by Intune to automatically add devices to groups and simplify managing devices.
               nullable: true
             deviceId:
               type: string
@@ -53531,6 +53549,7 @@ components:
               nullable: true
             deviceOwnership:
               type: string
+              description: 'Ownership of the device. This property is set by Intune. Possible values are: unknown, company, personal.'
               nullable: true
             deviceVersion:
               maximum: 2147483647
@@ -53545,12 +53564,15 @@ components:
               nullable: true
             domainName:
               type: string
+              description: The on-premises domain name of Hybrid Azure AD joined devices. This property is set by Intune.
               nullable: true
             enrollmentProfileName:
               type: string
+              description: 'Enrollment profile applied to the device. For example, Apple Device Enrollment Profile, Device enrollment - Corporate device identifiers, or Windows Autopilot profile name. This property is set by Intune.'
               nullable: true
             enrollmentType:
               type: string
+              description: 'Enrollment type of the device. This property is set by Intune. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement.'
               nullable: true
             extensionAttributes:
               $ref: '#/components/schemas/microsoft.graph.onPremisesExtensionAttributes'
@@ -53569,9 +53591,11 @@ components:
               nullable: true
             isRooted:
               type: boolean
+              description: true if device is rooted; false if device is jail-broken. This can only be updated by Intune.
               nullable: true
             managementType:
               type: string
+              description: 'Management channel of the device.  This property is set by Intune. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.'
               nullable: true
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -53603,6 +53627,7 @@ components:
             registrationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Date and time of when the device was registered. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Read-only.'
               format: date-time
               nullable: true
             systemLabels:
@@ -53807,6 +53832,10 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+            microsoftAuthenticatorMethods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.microsoftAuthenticatorAuthenticationMethod'
             operations:
               type: array
               items:
@@ -53823,6 +53852,10 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.phoneAuthenticationMethod'
+            windowsHelloForBusinessMethods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.windowsHelloForBusinessAuthenticationMethod'
           additionalProperties:
             type: object
     microsoft.graph.chat:
@@ -55440,6 +55473,12 @@ components:
         - windows10X
         - windows10
       type: string
+    microsoft.graph.deviceManagementConfigurationSettingUsage:
+      title: deviceManagementConfigurationSettingUsage
+      enum:
+        - none
+        - configuration
+      type: string
     microsoft.graph.deviceManagementConfigurationTechnologies:
       title: deviceManagementConfigurationTechnologies
       enum:
@@ -55522,12 +55561,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.deviceManagementConfigurationSettingUsage:
-      title: deviceManagementConfigurationSettingUsage
-      enum:
-        - none
-        - configuration
-      type: string
     microsoft.graph.deviceManagementConfigurationControlType:
       title: deviceManagementConfigurationControlType
       enum:
@@ -58574,18 +58607,11 @@ components:
         - title: userConsentRequest
           type: object
           properties:
-            createdBy:
-              $ref: '#/components/schemas/microsoft.graph.identitySet'
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              format: date-time
-              nullable: true
             reason:
               type: string
               nullable: true
-            status:
-              type: string
+            approval:
+              $ref: '#/components/schemas/microsoft.graph.approval'
           additionalProperties:
             type: object
     microsoft.graph.approvalStep:
@@ -60155,6 +60181,34 @@ components:
           type: object
           additionalProperties:
             type: object
+    microsoft.graph.microsoftAuthenticatorAuthenticationMethod:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+        - title: microsoftAuthenticatorAuthenticationMethod
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time that this app was registered. This property is null if the device is not registered for passwordless Phone Sign-In.
+              format: date-time
+              nullable: true
+            deviceTag:
+              type: string
+              description: Tags containing app metadata.
+              nullable: true
+            displayName:
+              type: string
+              description: The name of the device on which this app is registered.
+              nullable: true
+            phoneAppVersion:
+              type: string
+              description: Numerical version of this instance of the Authenticator app.
+              nullable: true
+            device:
+              $ref: '#/components/schemas/microsoft.graph.device'
+          additionalProperties:
+            type: object
     microsoft.graph.longRunningOperation:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -60243,6 +60297,28 @@ components:
               $ref: '#/components/schemas/microsoft.graph.authenticationPhoneType'
             smsSignInState:
               $ref: '#/components/schemas/microsoft.graph.authenticationMethodSignInState'
+          additionalProperties:
+            type: object
+    microsoft.graph.windowsHelloForBusinessAuthenticationMethod:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+        - title: windowsHelloForBusinessAuthenticationMethod
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time that this Windows Hello for Business key was registered.
+              format: date-time
+              nullable: true
+            displayName:
+              type: string
+              description: The name of the device on which Windows Hello for Business is registered
+              nullable: true
+            keyStrength:
+              $ref: '#/components/schemas/microsoft.graph.authenticationMethodKeyStrength'
+            device:
+              $ref: '#/components/schemas/microsoft.graph.device'
           additionalProperties:
             type: object
     microsoft.graph.chatType:
@@ -63068,8 +63144,26 @@ components:
         - title: request
           type: object
           properties:
-            approval:
-              $ref: '#/components/schemas/microsoft.graph.approval'
+            approvalId:
+              type: string
+              nullable: true
+            completedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            customData:
+              type: string
+              nullable: true
+            status:
+              type: string
           additionalProperties:
             type: object
     microsoft.graph.userIdentity:
@@ -63949,6 +64043,13 @@ components:
         - ready
         - notConfigured
         - unknownFutureValue
+      type: string
+    microsoft.graph.authenticationMethodKeyStrength:
+      title: authenticationMethodKeyStrength
+      enum:
+        - normal
+        - weak
+        - unknown
       type: string
     microsoft.graph.teamsApp:
       allOf:

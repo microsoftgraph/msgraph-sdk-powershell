@@ -1,25 +1,25 @@
 {
+  "resources": [],
   "operations": {
     "/external": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Search.yml"
+      "originalLocation": "/openApiDocs/beta/Search.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/external/connections": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Search.yml"
+      "originalLocation": "/openApiDocs/beta/Search.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/external/connections/{externalConnection-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Search.yml"
+      "originalLocation": "/openApiDocs/beta/Search.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/search": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Search.yml"
+      "originalLocation": "/openApiDocs/beta/Search.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/search/microsoft.graph.query": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Search.yml"
+      "originalLocation": "/openApiDocs/beta/Search.yml",
+      "apiVersion": "v1.0-beta"
     }
-  },
-  "resources": []
+  }
 }

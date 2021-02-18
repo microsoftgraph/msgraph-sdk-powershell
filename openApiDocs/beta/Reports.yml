@@ -2393,8 +2393,12 @@ paths:
                 - authenticationMethods
                 - credentialUserRegistrationDetails
                 - userCredentialUsageDetails
+                - dailyPrintUsageByPrinter
+                - dailyPrintUsageByUser
                 - dailyPrintUsageSummariesByPrinter
                 - dailyPrintUsageSummariesByUser
+                - monthlyPrintUsageByPrinter
+                - monthlyPrintUsageByUser
                 - monthlyPrintUsageSummariesByPrinter
                 - monthlyPrintUsageSummariesByUser
               type: string
@@ -2413,8 +2417,12 @@ paths:
                 - authenticationMethods
                 - credentialUserRegistrationDetails
                 - userCredentialUsageDetails
+                - dailyPrintUsageByPrinter
+                - dailyPrintUsageByUser
                 - dailyPrintUsageSummariesByPrinter
                 - dailyPrintUsageSummariesByUser
+                - monthlyPrintUsageByPrinter
+                - monthlyPrintUsageByUser
                 - monthlyPrintUsageSummariesByPrinter
                 - monthlyPrintUsageSummariesByUser
               type: string
@@ -2434,10 +2442,18 @@ paths:
               operationId: reports.ListCredentialUserRegistrationDetails
             userCredentialUsageDetails:
               operationId: reports.ListUserCredentialUsageDetails
+            dailyPrintUsageByPrinter:
+              operationId: reports.ListDailyPrintUsageByPrinter
+            dailyPrintUsageByUser:
+              operationId: reports.ListDailyPrintUsageByUser
             dailyPrintUsageSummariesByPrinter:
               operationId: reports.ListDailyPrintUsageSummariesByPrinter
             dailyPrintUsageSummariesByUser:
               operationId: reports.ListDailyPrintUsageSummariesByUser
+            monthlyPrintUsageByPrinter:
+              operationId: reports.ListMonthlyPrintUsageByPrinter
+            monthlyPrintUsageByUser:
+              operationId: reports.ListMonthlyPrintUsageByUser
             monthlyPrintUsageSummariesByPrinter:
               operationId: reports.ListMonthlyPrintUsageSummariesByPrinter
             monthlyPrintUsageSummariesByUser:
@@ -2776,11 +2792,13 @@ paths:
       parameters:
         - name: includedUserTypes
           in: path
+          description: 'Usage: includedUserTypes={includedUserTypes}'
           required: true
           schema:
             $ref: '#/components/schemas/microsoft.graph.includedUserTypes'
         - name: includedUserRoles
           in: path
+          description: 'Usage: includedUserRoles={includedUserRoles}'
           required: true
           schema:
             $ref: '#/components/schemas/microsoft.graph.includedUserRoles'
@@ -2819,11 +2837,13 @@ paths:
       parameters:
         - name: includedUserTypes
           in: path
+          description: 'Usage: includedUserTypes={includedUserTypes}'
           required: true
           schema:
             $ref: '#/components/schemas/microsoft.graph.includedUserTypes'
         - name: includedUserRoles
           in: path
+          description: 'Usage: includedUserRoles={includedUserRoles}'
           required: true
           schema:
             $ref: '#/components/schemas/microsoft.graph.includedUserRoles'
@@ -3057,10 +3077,434 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /reports/dailyPrintUsageByPrinter:
+    get:
+      tags:
+        - reports.printUsageByPrinter
+      summary: Get dailyPrintUsageByPrinter from reports
+      operationId: reports_ListDailyPrintUsageByPrinter
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - completedBlackAndWhiteJobCount
+                - completedBlackAndWhiteJobCount desc
+                - completedColorJobCount
+                - completedColorJobCount desc
+                - incompleteJobCount
+                - incompleteJobCount desc
+                - usageDate
+                - usageDate desc
+                - printerId
+                - printerId desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - completedBlackAndWhiteJobCount
+                - completedColorJobCount
+                - incompleteJobCount
+                - usageDate
+                - printerId
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of printUsageByPrinter
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - reports.printUsageByPrinter
+      summary: Create new navigation property to dailyPrintUsageByPrinter for reports
+      operationId: reports_CreateDailyPrintUsageByPrinter
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/reports/dailyPrintUsageByPrinter/{printUsageByPrinter-id}':
+    get:
+      tags:
+        - reports.printUsageByPrinter
+      summary: Get dailyPrintUsageByPrinter from reports
+      operationId: reports_GetDailyPrintUsageByPrinter
+      parameters:
+        - name: printUsageByPrinter-id
+          in: path
+          description: 'key: id of printUsageByPrinter'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: printUsageByPrinter
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - completedBlackAndWhiteJobCount
+                - completedColorJobCount
+                - incompleteJobCount
+                - usageDate
+                - printerId
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - reports.printUsageByPrinter
+      summary: Update the navigation property dailyPrintUsageByPrinter in reports
+      operationId: reports_UpdateDailyPrintUsageByPrinter
+      parameters:
+        - name: printUsageByPrinter-id
+          in: path
+          description: 'key: id of printUsageByPrinter'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: printUsageByPrinter
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - reports.printUsageByPrinter
+      summary: Delete navigation property dailyPrintUsageByPrinter for reports
+      operationId: reports_DeleteDailyPrintUsageByPrinter
+      parameters:
+        - name: printUsageByPrinter-id
+          in: path
+          description: 'key: id of printUsageByPrinter'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: printUsageByPrinter
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /reports/dailyPrintUsageByUser:
+    get:
+      tags:
+        - reports.printUsageByUser
+      summary: Get dailyPrintUsageByUser from reports
+      operationId: reports_ListDailyPrintUsageByUser
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - completedBlackAndWhiteJobCount
+                - completedBlackAndWhiteJobCount desc
+                - completedColorJobCount
+                - completedColorJobCount desc
+                - incompleteJobCount
+                - incompleteJobCount desc
+                - usageDate
+                - usageDate desc
+                - userPrincipalName
+                - userPrincipalName desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - completedBlackAndWhiteJobCount
+                - completedColorJobCount
+                - incompleteJobCount
+                - usageDate
+                - userPrincipalName
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of printUsageByUser
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - reports.printUsageByUser
+      summary: Create new navigation property to dailyPrintUsageByUser for reports
+      operationId: reports_CreateDailyPrintUsageByUser
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/reports/dailyPrintUsageByUser/{printUsageByUser-id}':
+    get:
+      tags:
+        - reports.printUsageByUser
+      summary: Get dailyPrintUsageByUser from reports
+      operationId: reports_GetDailyPrintUsageByUser
+      parameters:
+        - name: printUsageByUser-id
+          in: path
+          description: 'key: id of printUsageByUser'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: printUsageByUser
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - completedBlackAndWhiteJobCount
+                - completedColorJobCount
+                - incompleteJobCount
+                - usageDate
+                - userPrincipalName
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - reports.printUsageByUser
+      summary: Update the navigation property dailyPrintUsageByUser in reports
+      operationId: reports_UpdateDailyPrintUsageByUser
+      parameters:
+        - name: printUsageByUser-id
+          in: path
+          description: 'key: id of printUsageByUser'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: printUsageByUser
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - reports.printUsageByUser
+      summary: Delete navigation property dailyPrintUsageByUser for reports
+      operationId: reports_DeleteDailyPrintUsageByUser
+      parameters:
+        - name: printUsageByUser-id
+          in: path
+          description: 'key: id of printUsageByUser'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: printUsageByUser
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   /reports/dailyPrintUsageSummariesByPrinter:
     get:
       tags:
-        - reports.PrintUsageSummaryByPrinter
+        - reports.printUsageByPrinter
       summary: Get dailyPrintUsageSummariesByPrinter from reports
       operationId: reports_ListDailyPrintUsageSummariesByPrinter
       parameters:
@@ -3087,10 +3531,10 @@ paths:
                 - completedColorJobCount desc
                 - incompleteJobCount
                 - incompleteJobCount desc
-                - printerId
-                - printerId desc
                 - usageDate
                 - usageDate desc
+                - printerId
+                - printerId desc
               type: string
         - name: $select
           in: query
@@ -3106,8 +3550,8 @@ paths:
                 - completedBlackAndWhiteJobCount
                 - completedColorJobCount
                 - incompleteJobCount
-                - printerId
                 - usageDate
+                - printerId
               type: string
         - name: $expand
           in: query
@@ -3127,13 +3571,13 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of PrintUsageSummaryByPrinter
+                title: Collection of printUsageByPrinter
                 type: object
                 properties:
                   value:
                     type: array
                     items:
-                      $ref: '#/components/schemas/microsoft.graph.PrintUsageSummaryByPrinter'
+                      $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
                   '@odata.nextLink':
                     type: string
                 additionalProperties:
@@ -3146,7 +3590,7 @@ paths:
       x-ms-docs-operation-type: operation
     post:
       tags:
-        - reports.PrintUsageSummaryByPrinter
+        - reports.printUsageByPrinter
       summary: Create new navigation property to dailyPrintUsageSummariesByPrinter for reports
       operationId: reports_CreateDailyPrintUsageSummariesByPrinter
       requestBody:
@@ -3154,7 +3598,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/microsoft.graph.PrintUsageSummaryByPrinter'
+              $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
         required: true
       responses:
         '201':
@@ -3162,24 +3606,24 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.PrintUsageSummaryByPrinter'
+                $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/reports/dailyPrintUsageSummariesByPrinter/{PrintUsageSummaryByPrinter-id}':
+  '/reports/dailyPrintUsageSummariesByPrinter/{printUsageByPrinter-id}':
     get:
       tags:
-        - reports.PrintUsageSummaryByPrinter
+        - reports.printUsageByPrinter
       summary: Get dailyPrintUsageSummariesByPrinter from reports
       operationId: reports_GetDailyPrintUsageSummariesByPrinter
       parameters:
-        - name: PrintUsageSummaryByPrinter-id
+        - name: printUsageByPrinter-id
           in: path
-          description: 'key: id of PrintUsageSummaryByPrinter'
+          description: 'key: id of printUsageByPrinter'
           required: true
           schema:
             type: string
-          x-ms-docs-key-type: PrintUsageSummaryByPrinter
+          x-ms-docs-key-type: printUsageByPrinter
         - name: $select
           in: query
           description: Select properties to be returned
@@ -3194,8 +3638,8 @@ paths:
                 - completedBlackAndWhiteJobCount
                 - completedColorJobCount
                 - incompleteJobCount
-                - printerId
                 - usageDate
+                - printerId
               type: string
         - name: $expand
           in: query
@@ -3215,29 +3659,29 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.PrintUsageSummaryByPrinter'
+                $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
-        - reports.PrintUsageSummaryByPrinter
+        - reports.printUsageByPrinter
       summary: Update the navigation property dailyPrintUsageSummariesByPrinter in reports
       operationId: reports_UpdateDailyPrintUsageSummariesByPrinter
       parameters:
-        - name: PrintUsageSummaryByPrinter-id
+        - name: printUsageByPrinter-id
           in: path
-          description: 'key: id of PrintUsageSummaryByPrinter'
+          description: 'key: id of printUsageByPrinter'
           required: true
           schema:
             type: string
-          x-ms-docs-key-type: PrintUsageSummaryByPrinter
+          x-ms-docs-key-type: printUsageByPrinter
       requestBody:
         description: New navigation property values
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/microsoft.graph.PrintUsageSummaryByPrinter'
+              $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
         required: true
       responses:
         '204':
@@ -3247,17 +3691,17 @@ paths:
       x-ms-docs-operation-type: operation
     delete:
       tags:
-        - reports.PrintUsageSummaryByPrinter
+        - reports.printUsageByPrinter
       summary: Delete navigation property dailyPrintUsageSummariesByPrinter for reports
       operationId: reports_DeleteDailyPrintUsageSummariesByPrinter
       parameters:
-        - name: PrintUsageSummaryByPrinter-id
+        - name: printUsageByPrinter-id
           in: path
-          description: 'key: id of PrintUsageSummaryByPrinter'
+          description: 'key: id of printUsageByPrinter'
           required: true
           schema:
             type: string
-          x-ms-docs-key-type: PrintUsageSummaryByPrinter
+          x-ms-docs-key-type: printUsageByPrinter
         - name: If-Match
           in: header
           description: ETag
@@ -3272,7 +3716,7 @@ paths:
   /reports/dailyPrintUsageSummariesByUser:
     get:
       tags:
-        - reports.PrintUsageSummaryByUser
+        - reports.printUsageByUser
       summary: Get dailyPrintUsageSummariesByUser from reports
       operationId: reports_ListDailyPrintUsageSummariesByUser
       parameters:
@@ -3339,13 +3783,13 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of PrintUsageSummaryByUser
+                title: Collection of printUsageByUser
                 type: object
                 properties:
                   value:
                     type: array
                     items:
-                      $ref: '#/components/schemas/microsoft.graph.PrintUsageSummaryByUser'
+                      $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
                   '@odata.nextLink':
                     type: string
                 additionalProperties:
@@ -3358,7 +3802,7 @@ paths:
       x-ms-docs-operation-type: operation
     post:
       tags:
-        - reports.PrintUsageSummaryByUser
+        - reports.printUsageByUser
       summary: Create new navigation property to dailyPrintUsageSummariesByUser for reports
       operationId: reports_CreateDailyPrintUsageSummariesByUser
       requestBody:
@@ -3366,7 +3810,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/microsoft.graph.PrintUsageSummaryByUser'
+              $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
         required: true
       responses:
         '201':
@@ -3374,24 +3818,24 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.PrintUsageSummaryByUser'
+                $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/reports/dailyPrintUsageSummariesByUser/{PrintUsageSummaryByUser-id}':
+  '/reports/dailyPrintUsageSummariesByUser/{printUsageByUser-id}':
     get:
       tags:
-        - reports.PrintUsageSummaryByUser
+        - reports.printUsageByUser
       summary: Get dailyPrintUsageSummariesByUser from reports
       operationId: reports_GetDailyPrintUsageSummariesByUser
       parameters:
-        - name: PrintUsageSummaryByUser-id
+        - name: printUsageByUser-id
           in: path
-          description: 'key: id of PrintUsageSummaryByUser'
+          description: 'key: id of printUsageByUser'
           required: true
           schema:
             type: string
-          x-ms-docs-key-type: PrintUsageSummaryByUser
+          x-ms-docs-key-type: printUsageByUser
         - name: $select
           in: query
           description: Select properties to be returned
@@ -3427,29 +3871,29 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.PrintUsageSummaryByUser'
+                $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
-        - reports.PrintUsageSummaryByUser
+        - reports.printUsageByUser
       summary: Update the navigation property dailyPrintUsageSummariesByUser in reports
       operationId: reports_UpdateDailyPrintUsageSummariesByUser
       parameters:
-        - name: PrintUsageSummaryByUser-id
+        - name: printUsageByUser-id
           in: path
-          description: 'key: id of PrintUsageSummaryByUser'
+          description: 'key: id of printUsageByUser'
           required: true
           schema:
             type: string
-          x-ms-docs-key-type: PrintUsageSummaryByUser
+          x-ms-docs-key-type: printUsageByUser
       requestBody:
         description: New navigation property values
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/microsoft.graph.PrintUsageSummaryByUser'
+              $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
         required: true
       responses:
         '204':
@@ -3459,17 +3903,17 @@ paths:
       x-ms-docs-operation-type: operation
     delete:
       tags:
-        - reports.PrintUsageSummaryByUser
+        - reports.printUsageByUser
       summary: Delete navigation property dailyPrintUsageSummariesByUser for reports
       operationId: reports_DeleteDailyPrintUsageSummariesByUser
       parameters:
-        - name: PrintUsageSummaryByUser-id
+        - name: printUsageByUser-id
           in: path
-          description: 'key: id of PrintUsageSummaryByUser'
+          description: 'key: id of printUsageByUser'
           required: true
           schema:
             type: string
-          x-ms-docs-key-type: PrintUsageSummaryByUser
+          x-ms-docs-key-type: printUsageByUser
         - name: If-Match
           in: header
           description: ETag
@@ -3522,6 +3966,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -3546,6 +3991,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -3570,6 +4016,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -3612,6 +4059,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -3654,6 +4102,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -3678,6 +4127,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -3702,6 +4152,7 @@ paths:
       parameters:
         - name: date
           in: path
+          description: 'Usage: date={date}'
           required: true
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
@@ -3728,6 +4179,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -3752,6 +4204,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -3776,6 +4229,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -3800,6 +4254,7 @@ paths:
       parameters:
         - name: date
           in: path
+          description: 'Usage: date={date}'
           required: true
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
@@ -3826,6 +4281,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -3850,6 +4306,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -3865,6 +4322,50 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getGroupArchivedPrintJobs(groupId=''{groupId}'',startDateTime={startDateTime},endDateTime={endDateTime})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getGroupArchivedPrintJobs
+      operationId: reports_getGroupArchivedPrintJobs
+      parameters:
+        - name: groupId
+          in: path
+          description: 'Usage: groupId={groupId}'
+          required: true
+          schema:
+            type: string
+            nullable: true
+        - name: startDateTime
+          in: path
+          description: 'Usage: startDateTime={startDateTime}'
+          required: true
+          schema:
+            pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+            type: string
+            format: date-time
+            nullable: true
+        - name: endDateTime
+          in: path
+          description: 'Usage: endDateTime={endDateTime}'
+          required: true
+          schema:
+            pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+            type: string
+            format: date-time
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.archivedPrintJob'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/reports/microsoft.graph.getM365AppPlatformUserCounts(period=''{period}'')':
     get:
       tags:
@@ -3874,6 +4375,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -3896,6 +4398,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -3918,6 +4421,7 @@ paths:
       parameters:
         - name: date
           in: path
+          description: 'Usage: date={date}'
           required: true
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
@@ -3942,6 +4446,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -3964,6 +4469,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -3988,6 +4494,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -4012,6 +4519,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -4036,6 +4544,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -4114,6 +4623,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -4138,6 +4648,7 @@ paths:
       parameters:
         - name: date
           in: path
+          description: 'Usage: date={date}'
           required: true
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
@@ -4164,6 +4675,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -4188,6 +4700,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -4212,6 +4725,7 @@ paths:
       parameters:
         - name: date
           in: path
+          description: 'Usage: date={date}'
           required: true
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
@@ -4238,6 +4752,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -4262,6 +4777,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -4286,6 +4802,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -4310,6 +4827,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -4334,6 +4852,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -4358,6 +4877,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -4382,6 +4902,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -4406,6 +4927,7 @@ paths:
       parameters:
         - name: date
           in: path
+          description: 'Usage: date={date}'
           required: true
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
@@ -4432,6 +4954,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -4456,6 +4979,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -4480,6 +5004,7 @@ paths:
       parameters:
         - name: date
           in: path
+          description: 'Usage: date={date}'
           required: true
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
@@ -4506,6 +5031,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -4530,6 +5056,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -4554,6 +5081,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -4569,6 +5097,50 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getPrinterArchivedPrintJobs(printerId=''{printerId}'',startDateTime={startDateTime},endDateTime={endDateTime})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getPrinterArchivedPrintJobs
+      operationId: reports_getPrinterArchivedPrintJobs
+      parameters:
+        - name: printerId
+          in: path
+          description: 'Usage: printerId={printerId}'
+          required: true
+          schema:
+            type: string
+            nullable: true
+        - name: startDateTime
+          in: path
+          description: 'Usage: startDateTime={startDateTime}'
+          required: true
+          schema:
+            pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+            type: string
+            format: date-time
+            nullable: true
+        - name: endDateTime
+          in: path
+          description: 'Usage: endDateTime={endDateTime}'
+          required: true
+          schema:
+            pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+            type: string
+            format: date-time
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.archivedPrintJob'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/reports/microsoft.graph.getRelyingPartyDetailedSummary(period=''{period}'')':
     get:
       tags:
@@ -4578,6 +5150,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -4602,6 +5175,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -4626,6 +5200,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -4650,6 +5225,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -4674,6 +5250,7 @@ paths:
       parameters:
         - name: date
           in: path
+          description: 'Usage: date={date}'
           required: true
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
@@ -4700,6 +5277,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -4724,6 +5302,7 @@ paths:
       parameters:
         - name: date
           in: path
+          description: 'Usage: date={date}'
           required: true
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
@@ -4750,6 +5329,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -4774,6 +5354,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -4798,6 +5379,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -4822,6 +5404,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -4846,6 +5429,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -4870,6 +5454,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -4894,6 +5479,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -4918,6 +5504,7 @@ paths:
       parameters:
         - name: date
           in: path
+          description: 'Usage: date={date}'
           required: true
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
@@ -4944,6 +5531,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -4968,6 +5556,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -4992,6 +5581,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -5016,6 +5606,7 @@ paths:
       parameters:
         - name: date
           in: path
+          description: 'Usage: date={date}'
           required: true
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
@@ -5042,6 +5633,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -5066,6 +5658,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -5090,6 +5683,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -5114,6 +5708,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -5138,6 +5733,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -5162,6 +5758,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -5186,6 +5783,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -5210,6 +5808,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -5234,6 +5833,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -5258,6 +5858,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -5282,6 +5883,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -5306,6 +5908,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -5330,6 +5933,7 @@ paths:
       parameters:
         - name: date
           in: path
+          description: 'Usage: date={date}'
           required: true
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
@@ -5356,6 +5960,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -5380,6 +5985,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -5404,6 +6010,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -5428,6 +6035,7 @@ paths:
       parameters:
         - name: date
           in: path
+          description: 'Usage: date={date}'
           required: true
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
@@ -5454,6 +6062,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -5478,6 +6087,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             maximum: 2147483647
@@ -5494,6 +6104,50 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getUserArchivedPrintJobs(userId=''{userId}'',startDateTime={startDateTime},endDateTime={endDateTime})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getUserArchivedPrintJobs
+      operationId: reports_getUserArchivedPrintJobs
+      parameters:
+        - name: userId
+          in: path
+          description: 'Usage: userId={userId}'
+          required: true
+          schema:
+            type: string
+            nullable: true
+        - name: startDateTime
+          in: path
+          description: 'Usage: startDateTime={startDateTime}'
+          required: true
+          schema:
+            pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+            type: string
+            format: date-time
+            nullable: true
+        - name: endDateTime
+          in: path
+          description: 'Usage: endDateTime={endDateTime}'
+          required: true
+          schema:
+            pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+            type: string
+            format: date-time
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.archivedPrintJob'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/reports/microsoft.graph.getYammerActivityCounts(period=''{period}'')':
     get:
       tags:
@@ -5503,6 +6157,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -5527,6 +6182,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -5551,6 +6207,7 @@ paths:
       parameters:
         - name: date
           in: path
+          description: 'Usage: date={date}'
           required: true
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
@@ -5577,6 +6234,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -5601,6 +6259,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -5625,6 +6284,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -5649,6 +6309,7 @@ paths:
       parameters:
         - name: date
           in: path
+          description: 'Usage: date={date}'
           required: true
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
@@ -5675,6 +6336,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -5699,6 +6361,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -5723,6 +6386,7 @@ paths:
       parameters:
         - name: date
           in: path
+          description: 'Usage: date={date}'
           required: true
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
@@ -5749,6 +6413,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -5773,6 +6438,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -5797,6 +6463,7 @@ paths:
       parameters:
         - name: skip
           in: path
+          description: 'Usage: skip={skip}'
           required: true
           schema:
             maximum: 2147483647
@@ -5806,6 +6473,7 @@ paths:
             nullable: true
         - name: top
           in: path
+          description: 'Usage: top={top}'
           required: true
           schema:
             maximum: 2147483647
@@ -5815,12 +6483,14 @@ paths:
             nullable: true
         - name: filter
           in: path
+          description: 'Usage: filter={filter}'
           required: true
           schema:
             type: string
             nullable: true
         - name: skipToken
           in: path
+          description: 'Usage: skipToken={skipToken}'
           required: true
           schema:
             type: string
@@ -5844,6 +6514,7 @@ paths:
       parameters:
         - name: skip
           in: path
+          description: 'Usage: skip={skip}'
           required: true
           schema:
             maximum: 2147483647
@@ -5853,6 +6524,7 @@ paths:
             nullable: true
         - name: top
           in: path
+          description: 'Usage: top={top}'
           required: true
           schema:
             maximum: 2147483647
@@ -5862,12 +6534,14 @@ paths:
             nullable: true
         - name: filter
           in: path
+          description: 'Usage: filter={filter}'
           required: true
           schema:
             type: string
             nullable: true
         - name: skipToken
           in: path
+          description: 'Usage: skipToken={skipToken}'
           required: true
           schema:
             type: string
@@ -5907,6 +6581,7 @@ paths:
       parameters:
         - name: skip
           in: path
+          description: 'Usage: skip={skip}'
           required: true
           schema:
             maximum: 2147483647
@@ -5916,6 +6591,7 @@ paths:
             nullable: true
         - name: top
           in: path
+          description: 'Usage: top={top}'
           required: true
           schema:
             maximum: 2147483647
@@ -5925,12 +6601,14 @@ paths:
             nullable: true
         - name: filter
           in: path
+          description: 'Usage: filter={filter}'
           required: true
           schema:
             type: string
             nullable: true
         - name: skipToken
           in: path
+          description: 'Usage: skipToken={skipToken}'
           required: true
           schema:
             type: string
@@ -5986,6 +6664,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -6000,10 +6679,434 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  /reports/monthlyPrintUsageByPrinter:
+    get:
+      tags:
+        - reports.printUsageByPrinter
+      summary: Get monthlyPrintUsageByPrinter from reports
+      operationId: reports_ListMonthlyPrintUsageByPrinter
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - completedBlackAndWhiteJobCount
+                - completedBlackAndWhiteJobCount desc
+                - completedColorJobCount
+                - completedColorJobCount desc
+                - incompleteJobCount
+                - incompleteJobCount desc
+                - usageDate
+                - usageDate desc
+                - printerId
+                - printerId desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - completedBlackAndWhiteJobCount
+                - completedColorJobCount
+                - incompleteJobCount
+                - usageDate
+                - printerId
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of printUsageByPrinter
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - reports.printUsageByPrinter
+      summary: Create new navigation property to monthlyPrintUsageByPrinter for reports
+      operationId: reports_CreateMonthlyPrintUsageByPrinter
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/reports/monthlyPrintUsageByPrinter/{printUsageByPrinter-id}':
+    get:
+      tags:
+        - reports.printUsageByPrinter
+      summary: Get monthlyPrintUsageByPrinter from reports
+      operationId: reports_GetMonthlyPrintUsageByPrinter
+      parameters:
+        - name: printUsageByPrinter-id
+          in: path
+          description: 'key: id of printUsageByPrinter'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: printUsageByPrinter
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - completedBlackAndWhiteJobCount
+                - completedColorJobCount
+                - incompleteJobCount
+                - usageDate
+                - printerId
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - reports.printUsageByPrinter
+      summary: Update the navigation property monthlyPrintUsageByPrinter in reports
+      operationId: reports_UpdateMonthlyPrintUsageByPrinter
+      parameters:
+        - name: printUsageByPrinter-id
+          in: path
+          description: 'key: id of printUsageByPrinter'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: printUsageByPrinter
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - reports.printUsageByPrinter
+      summary: Delete navigation property monthlyPrintUsageByPrinter for reports
+      operationId: reports_DeleteMonthlyPrintUsageByPrinter
+      parameters:
+        - name: printUsageByPrinter-id
+          in: path
+          description: 'key: id of printUsageByPrinter'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: printUsageByPrinter
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /reports/monthlyPrintUsageByUser:
+    get:
+      tags:
+        - reports.printUsageByUser
+      summary: Get monthlyPrintUsageByUser from reports
+      operationId: reports_ListMonthlyPrintUsageByUser
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - completedBlackAndWhiteJobCount
+                - completedBlackAndWhiteJobCount desc
+                - completedColorJobCount
+                - completedColorJobCount desc
+                - incompleteJobCount
+                - incompleteJobCount desc
+                - usageDate
+                - usageDate desc
+                - userPrincipalName
+                - userPrincipalName desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - completedBlackAndWhiteJobCount
+                - completedColorJobCount
+                - incompleteJobCount
+                - usageDate
+                - userPrincipalName
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of printUsageByUser
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - reports.printUsageByUser
+      summary: Create new navigation property to monthlyPrintUsageByUser for reports
+      operationId: reports_CreateMonthlyPrintUsageByUser
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/reports/monthlyPrintUsageByUser/{printUsageByUser-id}':
+    get:
+      tags:
+        - reports.printUsageByUser
+      summary: Get monthlyPrintUsageByUser from reports
+      operationId: reports_GetMonthlyPrintUsageByUser
+      parameters:
+        - name: printUsageByUser-id
+          in: path
+          description: 'key: id of printUsageByUser'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: printUsageByUser
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - completedBlackAndWhiteJobCount
+                - completedColorJobCount
+                - incompleteJobCount
+                - usageDate
+                - userPrincipalName
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - reports.printUsageByUser
+      summary: Update the navigation property monthlyPrintUsageByUser in reports
+      operationId: reports_UpdateMonthlyPrintUsageByUser
+      parameters:
+        - name: printUsageByUser-id
+          in: path
+          description: 'key: id of printUsageByUser'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: printUsageByUser
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - reports.printUsageByUser
+      summary: Delete navigation property monthlyPrintUsageByUser for reports
+      operationId: reports_DeleteMonthlyPrintUsageByUser
+      parameters:
+        - name: printUsageByUser-id
+          in: path
+          description: 'key: id of printUsageByUser'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: printUsageByUser
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   /reports/monthlyPrintUsageSummariesByPrinter:
     get:
       tags:
-        - reports.PrintUsageSummaryByPrinter
+        - reports.printUsageByPrinter
       summary: Get monthlyPrintUsageSummariesByPrinter from reports
       operationId: reports_ListMonthlyPrintUsageSummariesByPrinter
       parameters:
@@ -6030,10 +7133,10 @@ paths:
                 - completedColorJobCount desc
                 - incompleteJobCount
                 - incompleteJobCount desc
-                - printerId
-                - printerId desc
                 - usageDate
                 - usageDate desc
+                - printerId
+                - printerId desc
               type: string
         - name: $select
           in: query
@@ -6049,8 +7152,8 @@ paths:
                 - completedBlackAndWhiteJobCount
                 - completedColorJobCount
                 - incompleteJobCount
-                - printerId
                 - usageDate
+                - printerId
               type: string
         - name: $expand
           in: query
@@ -6070,13 +7173,13 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of PrintUsageSummaryByPrinter
+                title: Collection of printUsageByPrinter
                 type: object
                 properties:
                   value:
                     type: array
                     items:
-                      $ref: '#/components/schemas/microsoft.graph.PrintUsageSummaryByPrinter'
+                      $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
                   '@odata.nextLink':
                     type: string
                 additionalProperties:
@@ -6089,7 +7192,7 @@ paths:
       x-ms-docs-operation-type: operation
     post:
       tags:
-        - reports.PrintUsageSummaryByPrinter
+        - reports.printUsageByPrinter
       summary: Create new navigation property to monthlyPrintUsageSummariesByPrinter for reports
       operationId: reports_CreateMonthlyPrintUsageSummariesByPrinter
       requestBody:
@@ -6097,7 +7200,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/microsoft.graph.PrintUsageSummaryByPrinter'
+              $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
         required: true
       responses:
         '201':
@@ -6105,24 +7208,24 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.PrintUsageSummaryByPrinter'
+                $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/reports/monthlyPrintUsageSummariesByPrinter/{PrintUsageSummaryByPrinter-id}':
+  '/reports/monthlyPrintUsageSummariesByPrinter/{printUsageByPrinter-id}':
     get:
       tags:
-        - reports.PrintUsageSummaryByPrinter
+        - reports.printUsageByPrinter
       summary: Get monthlyPrintUsageSummariesByPrinter from reports
       operationId: reports_GetMonthlyPrintUsageSummariesByPrinter
       parameters:
-        - name: PrintUsageSummaryByPrinter-id
+        - name: printUsageByPrinter-id
           in: path
-          description: 'key: id of PrintUsageSummaryByPrinter'
+          description: 'key: id of printUsageByPrinter'
           required: true
           schema:
             type: string
-          x-ms-docs-key-type: PrintUsageSummaryByPrinter
+          x-ms-docs-key-type: printUsageByPrinter
         - name: $select
           in: query
           description: Select properties to be returned
@@ -6137,8 +7240,8 @@ paths:
                 - completedBlackAndWhiteJobCount
                 - completedColorJobCount
                 - incompleteJobCount
-                - printerId
                 - usageDate
+                - printerId
               type: string
         - name: $expand
           in: query
@@ -6158,29 +7261,29 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.PrintUsageSummaryByPrinter'
+                $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
-        - reports.PrintUsageSummaryByPrinter
+        - reports.printUsageByPrinter
       summary: Update the navigation property monthlyPrintUsageSummariesByPrinter in reports
       operationId: reports_UpdateMonthlyPrintUsageSummariesByPrinter
       parameters:
-        - name: PrintUsageSummaryByPrinter-id
+        - name: printUsageByPrinter-id
           in: path
-          description: 'key: id of PrintUsageSummaryByPrinter'
+          description: 'key: id of printUsageByPrinter'
           required: true
           schema:
             type: string
-          x-ms-docs-key-type: PrintUsageSummaryByPrinter
+          x-ms-docs-key-type: printUsageByPrinter
       requestBody:
         description: New navigation property values
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/microsoft.graph.PrintUsageSummaryByPrinter'
+              $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
         required: true
       responses:
         '204':
@@ -6190,17 +7293,17 @@ paths:
       x-ms-docs-operation-type: operation
     delete:
       tags:
-        - reports.PrintUsageSummaryByPrinter
+        - reports.printUsageByPrinter
       summary: Delete navigation property monthlyPrintUsageSummariesByPrinter for reports
       operationId: reports_DeleteMonthlyPrintUsageSummariesByPrinter
       parameters:
-        - name: PrintUsageSummaryByPrinter-id
+        - name: printUsageByPrinter-id
           in: path
-          description: 'key: id of PrintUsageSummaryByPrinter'
+          description: 'key: id of printUsageByPrinter'
           required: true
           schema:
             type: string
-          x-ms-docs-key-type: PrintUsageSummaryByPrinter
+          x-ms-docs-key-type: printUsageByPrinter
         - name: If-Match
           in: header
           description: ETag
@@ -6215,7 +7318,7 @@ paths:
   /reports/monthlyPrintUsageSummariesByUser:
     get:
       tags:
-        - reports.PrintUsageSummaryByUser
+        - reports.printUsageByUser
       summary: Get monthlyPrintUsageSummariesByUser from reports
       operationId: reports_ListMonthlyPrintUsageSummariesByUser
       parameters:
@@ -6282,13 +7385,13 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of PrintUsageSummaryByUser
+                title: Collection of printUsageByUser
                 type: object
                 properties:
                   value:
                     type: array
                     items:
-                      $ref: '#/components/schemas/microsoft.graph.PrintUsageSummaryByUser'
+                      $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
                   '@odata.nextLink':
                     type: string
                 additionalProperties:
@@ -6301,7 +7404,7 @@ paths:
       x-ms-docs-operation-type: operation
     post:
       tags:
-        - reports.PrintUsageSummaryByUser
+        - reports.printUsageByUser
       summary: Create new navigation property to monthlyPrintUsageSummariesByUser for reports
       operationId: reports_CreateMonthlyPrintUsageSummariesByUser
       requestBody:
@@ -6309,7 +7412,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/microsoft.graph.PrintUsageSummaryByUser'
+              $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
         required: true
       responses:
         '201':
@@ -6317,24 +7420,24 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.PrintUsageSummaryByUser'
+                $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/reports/monthlyPrintUsageSummariesByUser/{PrintUsageSummaryByUser-id}':
+  '/reports/monthlyPrintUsageSummariesByUser/{printUsageByUser-id}':
     get:
       tags:
-        - reports.PrintUsageSummaryByUser
+        - reports.printUsageByUser
       summary: Get monthlyPrintUsageSummariesByUser from reports
       operationId: reports_GetMonthlyPrintUsageSummariesByUser
       parameters:
-        - name: PrintUsageSummaryByUser-id
+        - name: printUsageByUser-id
           in: path
-          description: 'key: id of PrintUsageSummaryByUser'
+          description: 'key: id of printUsageByUser'
           required: true
           schema:
             type: string
-          x-ms-docs-key-type: PrintUsageSummaryByUser
+          x-ms-docs-key-type: printUsageByUser
         - name: $select
           in: query
           description: Select properties to be returned
@@ -6370,29 +7473,29 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.PrintUsageSummaryByUser'
+                $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
-        - reports.PrintUsageSummaryByUser
+        - reports.printUsageByUser
       summary: Update the navigation property monthlyPrintUsageSummariesByUser in reports
       operationId: reports_UpdateMonthlyPrintUsageSummariesByUser
       parameters:
-        - name: PrintUsageSummaryByUser-id
+        - name: printUsageByUser-id
           in: path
-          description: 'key: id of PrintUsageSummaryByUser'
+          description: 'key: id of printUsageByUser'
           required: true
           schema:
             type: string
-          x-ms-docs-key-type: PrintUsageSummaryByUser
+          x-ms-docs-key-type: printUsageByUser
       requestBody:
         description: New navigation property values
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/microsoft.graph.PrintUsageSummaryByUser'
+              $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
         required: true
       responses:
         '204':
@@ -6402,17 +7505,17 @@ paths:
       x-ms-docs-operation-type: operation
     delete:
       tags:
-        - reports.PrintUsageSummaryByUser
+        - reports.printUsageByUser
       summary: Delete navigation property monthlyPrintUsageSummariesByUser for reports
       operationId: reports_DeleteMonthlyPrintUsageSummariesByUser
       parameters:
-        - name: PrintUsageSummaryByUser-id
+        - name: printUsageByUser-id
           in: path
-          description: 'key: id of PrintUsageSummaryByUser'
+          description: 'key: id of printUsageByUser'
           required: true
           schema:
             type: string
-          x-ms-docs-key-type: PrintUsageSummaryByUser
+          x-ms-docs-key-type: printUsageByUser
         - name: If-Match
           in: header
           description: ETag
@@ -7166,22 +8269,38 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.userCredentialUsageDetails'
+            dailyPrintUsageByPrinter:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
+            dailyPrintUsageByUser:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
             dailyPrintUsageSummariesByPrinter:
               type: array
               items:
-                $ref: '#/components/schemas/microsoft.graph.PrintUsageSummaryByPrinter'
+                $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
             dailyPrintUsageSummariesByUser:
               type: array
               items:
-                $ref: '#/components/schemas/microsoft.graph.PrintUsageSummaryByUser'
+                $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
+            monthlyPrintUsageByPrinter:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
+            monthlyPrintUsageByUser:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
             monthlyPrintUsageSummariesByPrinter:
               type: array
               items:
-                $ref: '#/components/schemas/microsoft.graph.PrintUsageSummaryByPrinter'
+                $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
             monthlyPrintUsageSummariesByUser:
               type: array
               items:
-                $ref: '#/components/schemas/microsoft.graph.PrintUsageSummaryByUser'
+                $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
           additionalProperties:
             type: object
           description: The resource that represents an instance of History Reports.
@@ -7305,49 +8424,23 @@ components:
               description: Provides the user principal name of the corresponding user.
           additionalProperties:
             type: object
-    microsoft.graph.PrintUsageSummaryByPrinter:
+    microsoft.graph.printUsageByPrinter:
       allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: PrintUsageSummaryByPrinter
+        - $ref: '#/components/schemas/microsoft.graph.printUsage'
+        - title: printUsageByPrinter
           type: object
           properties:
-            completedBlackAndWhiteJobCount:
-              type: integer
-              format: int64
-            completedColorJobCount:
-              type: integer
-              format: int64
-            incompleteJobCount:
-              type: integer
-              format: int64
             printerId:
               type: string
               nullable: true
-            usageDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
           additionalProperties:
             type: object
-    microsoft.graph.PrintUsageSummaryByUser:
+    microsoft.graph.printUsageByUser:
       allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: PrintUsageSummaryByUser
+        - $ref: '#/components/schemas/microsoft.graph.printUsage'
+        - title: printUsageByUser
           type: object
           properties:
-            completedBlackAndWhiteJobCount:
-              type: integer
-              format: int64
-            completedColorJobCount:
-              type: integer
-              format: int64
-            incompleteJobCount:
-              type: integer
-              format: int64
-            usageDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
             userPrincipalName:
               type: string
               nullable: true
@@ -7810,6 +8903,79 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.archivedPrintJob:
+      title: archivedPrintJob
+      type: object
+      properties:
+        acquiredByPrinter:
+          type: boolean
+          description: True if the job was acquired by a printer; false otherwise. Read-only.
+        acquiredDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The dateTimeOffset when the job was acquired by the printer, if any. Read-only.'
+          format: date-time
+          nullable: true
+        blackAndWhitePageCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The number of black and white pages that were printed. Read-only.
+          format: int32
+        colorPageCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The number of color pages that were printed. Read-only.
+          format: int32
+        completionDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The dateTimeOffset when the job was completed, canceled or aborted. Read-only.'
+          format: date-time
+          nullable: true
+        copiesPrinted:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The number of copies that were printed. Read-only.
+          format: int32
+        createdBy:
+          $ref: '#/components/schemas/microsoft.graph.userIdentity'
+        createdDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The dateTimeOffset when the job was created. Read-only.
+          format: date-time
+        duplexPageCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The number of duplex (double-sided) pages that were printed. Read-only.
+          format: int32
+        id:
+          type: string
+          description: The archived print job's GUID. Read-only.
+        pageCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The total number of pages that were printed. Read-only.
+          format: int32
+        printerId:
+          type: string
+          description: The printer ID that the job was queued for. Read-only.
+          nullable: true
+        processingState:
+          $ref: '#/components/schemas/microsoft.graph.printJobProcessingState'
+        simplexPageCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The number of simplex (single-sided) pages that were printed. Read-only.
+          format: int32
+      additionalProperties:
+        type: object
     microsoft.graph.mailboxUsageDetail:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -9015,9 +10181,23 @@ components:
               type: integer
               format: int64
               nullable: true
+            anonymousLinkCount:
+              type: integer
+              format: int64
+              nullable: true
+            companyLinkCount:
+              type: integer
+              format: int64
+              nullable: true
+            externalSharing:
+              type: boolean
+              nullable: true
             fileCount:
               type: integer
               format: int64
+              nullable: true
+            geolocation:
+              type: string
               nullable: true
             isDeleted:
               type: boolean
@@ -9048,10 +10228,21 @@ components:
             rootWebTemplate:
               type: string
               nullable: true
+            secureLinkForGuestCount:
+              type: integer
+              format: int64
+              nullable: true
+            secureLinkForMemberCount:
+              type: integer
+              format: int64
+              nullable: true
             siteId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
               format: uuid
+              nullable: true
+            siteSensitivityLabelId:
+              type: string
               nullable: true
             siteUrl:
               type: string
@@ -9063,6 +10254,9 @@ components:
             storageUsedInBytes:
               type: integer
               format: int64
+              nullable: true
+            unmanagedDevicePolicy:
+              type: string
               nullable: true
             visitedPageCount:
               type: integer
@@ -11025,6 +12219,27 @@ components:
         - appPassword
         - unknownFutureValue
       type: string
+    microsoft.graph.printUsage:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: printUsage
+          type: object
+          properties:
+            completedBlackAndWhiteJobCount:
+              type: integer
+              format: int64
+            completedColorJobCount:
+              type: integer
+              format: int64
+            incompleteJobCount:
+              type: integer
+              format: int64
+            usageDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+          additionalProperties:
+            type: object
     microsoft.graph.licenseInfoDetail:
       title: licenseInfoDetail
       type: object
@@ -11118,6 +12333,34 @@ components:
           $ref: '#/components/schemas/microsoft.graph.registrationStatusType'
       additionalProperties:
         type: object
+    microsoft.graph.userIdentity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.identity'
+        - title: userIdentity
+          type: object
+          properties:
+            ipAddress:
+              type: string
+              description: Indicates the client IP address used by user performing the activity (audit log only).
+              nullable: true
+            userPrincipalName:
+              type: string
+              description: The userPrincipalName attribute of the user.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.printJobProcessingState:
+      title: printJobProcessingState
+      enum:
+        - unknown
+        - pending
+        - processing
+        - paused
+        - stopped
+        - completed
+        - canceled
+        - aborted
+      type: string
     microsoft.graph.userActivationCounts:
       title: userActivationCounts
       type: object
@@ -11215,22 +12458,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.userIdentity:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.identity'
-        - title: userIdentity
-          type: object
-          properties:
-            ipAddress:
-              type: string
-              description: Indicates the client IP address used by user performing the activity (audit log only).
-              nullable: true
-            userPrincipalName:
-              type: string
-              description: The userPrincipalName attribute of the user.
-              nullable: true
-          additionalProperties:
-            type: object
     microsoft.graph.groupType:
       title: groupType
       enum:

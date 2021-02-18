@@ -2482,6 +2482,40 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/deviceAppManagement/managedAppPolicies/{managedAppPolicy-id}/microsoft.graph.managedAppProtection/microsoft.graph.targetApps':
+    post:
+      tags:
+        - deviceAppManagement.Actions
+      summary: Invoke action targetApps
+      operationId: deviceAppManagement.managedAppPolicies.microsoft.graph.managedAppProtection_targetApps
+      parameters:
+        - name: managedAppPolicy-id
+          in: path
+          description: 'key: id of managedAppPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedAppPolicy
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                apps:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.managedMobileApp'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceAppManagement/managedAppPolicies/{managedAppPolicy-id}/microsoft.graph.targetApps':
     post:
       tags:
@@ -2507,6 +2541,74 @@ paths:
                   type: array
                   items:
                     $ref: '#/components/schemas/microsoft.graph.managedMobileApp'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceAppManagement/managedAppPolicies/{managedAppPolicy-id}/microsoft.graph.targetedManagedAppProtection/microsoft.graph.assign':
+    post:
+      tags:
+        - deviceAppManagement.Actions
+      summary: Invoke action assign
+      operationId: deviceAppManagement.managedAppPolicies.microsoft.graph.targetedManagedAppProtection_assign
+      parameters:
+        - name: managedAppPolicy-id
+          in: path
+          description: 'key: id of managedAppPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedAppPolicy
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                assignments:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.targetedManagedAppPolicyAssignment'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceAppManagement/managedAppPolicies/{managedAppPolicy-id}/microsoft.graph.windowsInformationProtection/microsoft.graph.assign':
+    post:
+      tags:
+        - deviceAppManagement.Actions
+      summary: Invoke action assign
+      operationId: deviceAppManagement.managedAppPolicies.microsoft.graph.windowsInformationProtection_assign
+      parameters:
+        - name: managedAppPolicy-id
+          in: path
+          description: 'key: id of managedAppPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedAppPolicy
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                assignments:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.targetedManagedAppPolicyAssignment'
               additionalProperties:
                 type: object
         required: true
@@ -3029,6 +3131,47 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/deviceAppManagement/managedAppRegistrations/{managedAppRegistration-id}/appliedPolicies/{managedAppPolicy-id}/microsoft.graph.managedAppProtection/microsoft.graph.targetApps':
+    post:
+      tags:
+        - deviceAppManagement.Actions
+      summary: Invoke action targetApps
+      operationId: deviceAppManagement.managedAppRegistrations.appliedPolicies.microsoft.graph.managedAppProtection_targetApps
+      parameters:
+        - name: managedAppRegistration-id
+          in: path
+          description: 'key: id of managedAppRegistration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedAppRegistration
+        - name: managedAppPolicy-id
+          in: path
+          description: 'key: id of managedAppPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedAppPolicy
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                apps:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.managedMobileApp'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceAppManagement/managedAppRegistrations/{managedAppRegistration-id}/appliedPolicies/{managedAppPolicy-id}/microsoft.graph.targetApps':
     post:
       tags:
@@ -3061,6 +3204,88 @@ paths:
                   type: array
                   items:
                     $ref: '#/components/schemas/microsoft.graph.managedMobileApp'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceAppManagement/managedAppRegistrations/{managedAppRegistration-id}/appliedPolicies/{managedAppPolicy-id}/microsoft.graph.targetedManagedAppProtection/microsoft.graph.assign':
+    post:
+      tags:
+        - deviceAppManagement.Actions
+      summary: Invoke action assign
+      operationId: deviceAppManagement.managedAppRegistrations.appliedPolicies.microsoft.graph.targetedManagedAppProtection_assign
+      parameters:
+        - name: managedAppRegistration-id
+          in: path
+          description: 'key: id of managedAppRegistration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedAppRegistration
+        - name: managedAppPolicy-id
+          in: path
+          description: 'key: id of managedAppPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedAppPolicy
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                assignments:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.targetedManagedAppPolicyAssignment'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceAppManagement/managedAppRegistrations/{managedAppRegistration-id}/appliedPolicies/{managedAppPolicy-id}/microsoft.graph.windowsInformationProtection/microsoft.graph.assign':
+    post:
+      tags:
+        - deviceAppManagement.Actions
+      summary: Invoke action assign
+      operationId: deviceAppManagement.managedAppRegistrations.appliedPolicies.microsoft.graph.windowsInformationProtection_assign
+      parameters:
+        - name: managedAppRegistration-id
+          in: path
+          description: 'key: id of managedAppRegistration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedAppRegistration
+        - name: managedAppPolicy-id
+          in: path
+          description: 'key: id of managedAppPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedAppPolicy
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                assignments:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.targetedManagedAppPolicyAssignment'
               additionalProperties:
                 type: object
         required: true
@@ -3318,6 +3543,47 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/deviceAppManagement/managedAppRegistrations/{managedAppRegistration-id}/intendedPolicies/{managedAppPolicy-id}/microsoft.graph.managedAppProtection/microsoft.graph.targetApps':
+    post:
+      tags:
+        - deviceAppManagement.Actions
+      summary: Invoke action targetApps
+      operationId: deviceAppManagement.managedAppRegistrations.intendedPolicies.microsoft.graph.managedAppProtection_targetApps
+      parameters:
+        - name: managedAppRegistration-id
+          in: path
+          description: 'key: id of managedAppRegistration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedAppRegistration
+        - name: managedAppPolicy-id
+          in: path
+          description: 'key: id of managedAppPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedAppPolicy
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                apps:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.managedMobileApp'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceAppManagement/managedAppRegistrations/{managedAppRegistration-id}/intendedPolicies/{managedAppPolicy-id}/microsoft.graph.targetApps':
     post:
       tags:
@@ -3350,6 +3616,88 @@ paths:
                   type: array
                   items:
                     $ref: '#/components/schemas/microsoft.graph.managedMobileApp'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceAppManagement/managedAppRegistrations/{managedAppRegistration-id}/intendedPolicies/{managedAppPolicy-id}/microsoft.graph.targetedManagedAppProtection/microsoft.graph.assign':
+    post:
+      tags:
+        - deviceAppManagement.Actions
+      summary: Invoke action assign
+      operationId: deviceAppManagement.managedAppRegistrations.intendedPolicies.microsoft.graph.targetedManagedAppProtection_assign
+      parameters:
+        - name: managedAppRegistration-id
+          in: path
+          description: 'key: id of managedAppRegistration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedAppRegistration
+        - name: managedAppPolicy-id
+          in: path
+          description: 'key: id of managedAppPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedAppPolicy
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                assignments:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.targetedManagedAppPolicyAssignment'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceAppManagement/managedAppRegistrations/{managedAppRegistration-id}/intendedPolicies/{managedAppPolicy-id}/microsoft.graph.windowsInformationProtection/microsoft.graph.assign':
+    post:
+      tags:
+        - deviceAppManagement.Actions
+      summary: Invoke action assign
+      operationId: deviceAppManagement.managedAppRegistrations.intendedPolicies.microsoft.graph.windowsInformationProtection_assign
+      parameters:
+        - name: managedAppRegistration-id
+          in: path
+          description: 'key: id of managedAppRegistration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedAppRegistration
+        - name: managedAppPolicy-id
+          in: path
+          description: 'key: id of managedAppPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedAppPolicy
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                assignments:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.targetedManagedAppPolicyAssignment'
               additionalProperties:
                 type: object
         required: true
@@ -11190,6 +11538,17 @@ components:
           additionalProperties:
             type: object
           description: The ManagedAppPolicy resource represents a base type for platform specific policies.
+    microsoft.graph.targetedManagedAppPolicyAssignment:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: targetedManagedAppPolicyAssignment
+          type: object
+          properties:
+            target:
+              $ref: '#/components/schemas/microsoft.graph.deviceAndAppManagementAssignmentTarget'
+          additionalProperties:
+            type: object
+          description: The type for deployment of groups or apps.
     microsoft.graph.managedAppRegistration:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -11876,17 +12235,6 @@ components:
           additionalProperties:
             type: object
           description: Configuration used to deliver a set of custom settings as-is to all users in the targeted security group
-    microsoft.graph.targetedManagedAppPolicyAssignment:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: targetedManagedAppPolicyAssignment
-          type: object
-          properties:
-            target:
-              $ref: '#/components/schemas/microsoft.graph.deviceAndAppManagementAssignmentTarget'
-          additionalProperties:
-            type: object
-          description: The type for deployment of groups or apps.
     microsoft.graph.vppToken:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -12460,6 +12808,12 @@ components:
       additionalProperties:
         type: object
       description: Key value pair for storing custom settings
+    microsoft.graph.deviceAndAppManagementAssignmentTarget:
+      title: deviceAndAppManagementAssignmentTarget
+      type: object
+      additionalProperties:
+        type: object
+      description: Base type for assignment targets.
     microsoft.graph.managedAppFlaggedReason:
       title: managedAppFlaggedReason
       enum:
@@ -12490,12 +12844,6 @@ components:
         - uninstall
         - availableWithoutEnrollment
       type: string
-    microsoft.graph.deviceAndAppManagementAssignmentTarget:
-      title: deviceAndAppManagementAssignmentTarget
-      type: object
-      additionalProperties:
-        type: object
-      description: Base type for assignment targets.
     microsoft.graph.installState:
       title: installState
       enum:
