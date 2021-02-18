@@ -1,45 +1,45 @@
 {
+  "resources": [],
   "operations": {
     "/directoryObjects": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/DirectoryObjects.yml"
+      "originalLocation": "/openApiDocs/v1.0/DirectoryObjects.yml",
+      "apiVersion": "v1.0"
     },
     "/directoryObjects/{directoryObject-id}": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/DirectoryObjects.yml"
+      "originalLocation": "/openApiDocs/v1.0/DirectoryObjects.yml",
+      "apiVersion": "v1.0"
     },
     "/directoryObjects/{directoryObject-id}/microsoft.graph.checkMemberGroups": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/DirectoryObjects.yml"
+      "originalLocation": "/openApiDocs/v1.0/DirectoryObjects.yml",
+      "apiVersion": "v1.0"
     },
     "/directoryObjects/{directoryObject-id}/microsoft.graph.checkMemberObjects": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/DirectoryObjects.yml"
+      "originalLocation": "/openApiDocs/v1.0/DirectoryObjects.yml",
+      "apiVersion": "v1.0"
     },
     "/directoryObjects/{directoryObject-id}/microsoft.graph.getMemberGroups": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/DirectoryObjects.yml"
+      "originalLocation": "/openApiDocs/v1.0/DirectoryObjects.yml",
+      "apiVersion": "v1.0"
     },
     "/directoryObjects/{directoryObject-id}/microsoft.graph.getMemberObjects": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/DirectoryObjects.yml"
+      "originalLocation": "/openApiDocs/v1.0/DirectoryObjects.yml",
+      "apiVersion": "v1.0"
     },
     "/directoryObjects/{directoryObject-id}/microsoft.graph.restore": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/DirectoryObjects.yml"
+      "originalLocation": "/openApiDocs/v1.0/DirectoryObjects.yml",
+      "apiVersion": "v1.0"
     },
     "/directoryObjects/microsoft.graph.getAvailableExtensionProperties": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/DirectoryObjects.yml"
+      "originalLocation": "/openApiDocs/v1.0/DirectoryObjects.yml",
+      "apiVersion": "v1.0"
     },
     "/directoryObjects/microsoft.graph.getByIds": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/DirectoryObjects.yml"
+      "originalLocation": "/openApiDocs/v1.0/DirectoryObjects.yml",
+      "apiVersion": "v1.0"
     },
     "/directoryObjects/microsoft.graph.validateProperties": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/DirectoryObjects.yml"
+      "originalLocation": "/openApiDocs/v1.0/DirectoryObjects.yml",
+      "apiVersion": "v1.0"
     }
-  },
-  "resources": []
+  }
 }

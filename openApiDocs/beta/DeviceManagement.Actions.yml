@@ -2883,6 +2883,60 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/deviceConfigurations/{deviceConfiguration-id}/groupAssignments/{deviceConfigurationGroupAssignment-id}/deviceConfiguration/microsoft.graph.windowsUpdateForBusinessConfiguration/microsoft.graph.extendFeatureUpdatesPause':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action extendFeatureUpdatesPause
+      operationId: deviceManagement.deviceConfigurations.groupAssignments.deviceConfiguration.microsoft.graph.windowsUpdateForBusinessConfiguration_extendFeatureUpdatesPause
+      parameters:
+        - name: deviceConfiguration-id
+          in: path
+          description: 'key: id of deviceConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceConfiguration
+        - name: deviceConfigurationGroupAssignment-id
+          in: path
+          description: 'key: id of deviceConfigurationGroupAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceConfigurationGroupAssignment
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/deviceConfigurations/{deviceConfiguration-id}/groupAssignments/{deviceConfigurationGroupAssignment-id}/deviceConfiguration/microsoft.graph.windowsUpdateForBusinessConfiguration/microsoft.graph.extendQualityUpdatesPause':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action extendQualityUpdatesPause
+      operationId: deviceManagement.deviceConfigurations.groupAssignments.deviceConfiguration.microsoft.graph.windowsUpdateForBusinessConfiguration_extendQualityUpdatesPause
+      parameters:
+        - name: deviceConfiguration-id
+          in: path
+          description: 'key: id of deviceConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceConfiguration
+        - name: deviceConfigurationGroupAssignment-id
+          in: path
+          description: 'key: id of deviceConfigurationGroupAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceConfigurationGroupAssignment
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/deviceConfigurations/{deviceConfiguration-id}/microsoft.graph.assign':
     post:
       tags:
@@ -2989,6 +3043,46 @@ paths:
               additionalProperties:
                 type: object
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/deviceConfigurations/{deviceConfiguration-id}/microsoft.graph.windowsUpdateForBusinessConfiguration/microsoft.graph.extendFeatureUpdatesPause':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action extendFeatureUpdatesPause
+      operationId: deviceManagement.deviceConfigurations.microsoft.graph.windowsUpdateForBusinessConfiguration_extendFeatureUpdatesPause
+      parameters:
+        - name: deviceConfiguration-id
+          in: path
+          description: 'key: id of deviceConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceConfiguration
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/deviceConfigurations/{deviceConfiguration-id}/microsoft.graph.windowsUpdateForBusinessConfiguration/microsoft.graph.extendQualityUpdatesPause':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action extendQualityUpdatesPause
+      operationId: deviceManagement.deviceConfigurations.microsoft.graph.windowsUpdateForBusinessConfiguration_extendQualityUpdatesPause
+      parameters:
+        - name: deviceConfiguration-id
+          in: path
+          description: 'key: id of deviceConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceConfiguration
       responses:
         '204':
           description: Success

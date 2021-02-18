@@ -4124,6 +4124,7 @@ components:
               nullable: true
             wellKnownName:
               type: string
+              description: The name of the folder if the folder is a recognized folder. Currently contacts is the only recognized contacts folder.
               nullable: true
             childFolders:
               type: array
@@ -4194,6 +4195,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.followupFlag'
             gender:
               type: string
+              description: The contact's gender.
               nullable: true
             generation:
               type: string
@@ -4293,7 +4295,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
-              description: The collection of open extensions defined for the contact. Read-only. Nullable.
+              description: The collection of open extensions defined for the contact. Nullable.
             multiValueExtendedProperties:
               type: array
               items:
@@ -4410,6 +4412,7 @@ components:
           properties:
             otherLabel:
               type: string
+              description: 'To specify a custom type of email address, set type to other, and assign otherLabel to a custom string. For example, you may use a specific email address for your volunteer activities. Set type to other, and set otherLabel to a custom string such as Volunteer work.'
               nullable: true
             type:
               $ref: '#/components/schemas/microsoft.graph.emailType'
@@ -4459,6 +4462,7 @@ components:
           nullable: true
         postOfficeBox:
           type: string
+          description: The post office box number.
           nullable: true
         state:
           type: string
@@ -4503,11 +4507,11 @@ components:
       properties:
         address:
           type: string
-          description: The email address of the person or entity.
+          description: The email address of an entity instance.
           nullable: true
         name:
           type: string
-          description: The display name of the person or entity.
+          description: The display name of an entity instance.
           nullable: true
       additionalProperties:
         type: object
@@ -4526,10 +4530,10 @@ components:
       properties:
         dateTime:
           type: string
-          description: 'A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).'
+          description: 'A single point of time in a combined date and time representation ({date}T{time}). For example, ''2019-04-16T09:00:00''.'
         timeZone:
           type: string
-          description: 'Represents a time zone, for example, ''Pacific Standard Time''. See below for more possible values.'
+          description: 'Represents a time zone, for example, ''Pacific Standard Time''. See below for possible values.'
           nullable: true
       additionalProperties:
         type: object
