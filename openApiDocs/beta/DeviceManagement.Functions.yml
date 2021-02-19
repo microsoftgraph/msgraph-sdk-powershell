@@ -32,6 +32,7 @@ paths:
       parameters:
         - name: category
           in: path
+          description: 'Usage: category={category}'
           required: true
           schema:
             type: string
@@ -128,6 +129,7 @@ paths:
       parameters:
         - name: policyId
           in: path
+          description: 'Usage: policyId={policyId}'
           required: true
           schema:
             type: string
@@ -208,6 +210,7 @@ paths:
       parameters:
         - name: expiringBeforeDateTime
           in: path
+          description: 'Usage: expiringBeforeDateTime={expiringBeforeDateTime}'
           required: true
           schema:
             type: string
@@ -877,6 +880,7 @@ paths:
           x-ms-docs-key-type: deviceManagementIntent
         - name: templateId
           in: path
+          description: 'Usage: templateId={templateId}'
           required: true
           schema:
             type: string
@@ -960,6 +964,7 @@ paths:
           x-ms-docs-key-type: managementCondition
         - name: platform
           in: path
+          description: 'Usage: platform={platform}'
           required: true
           schema:
             $ref: '#/components/schemas/microsoft.graph.devicePlatformType'
@@ -984,6 +989,7 @@ paths:
       parameters:
         - name: platform
           in: path
+          description: 'Usage: platform={platform}'
           required: true
           schema:
             $ref: '#/components/schemas/microsoft.graph.devicePlatformType'
@@ -1015,6 +1021,7 @@ paths:
           x-ms-docs-key-type: managementConditionStatement
         - name: platform
           in: path
+          description: 'Usage: platform={platform}'
           required: true
           schema:
             $ref: '#/components/schemas/microsoft.graph.devicePlatformType'
@@ -1063,6 +1070,7 @@ paths:
       parameters:
         - name: platform
           in: path
+          description: 'Usage: platform={platform}'
           required: true
           schema:
             $ref: '#/components/schemas/microsoft.graph.devicePlatformType'
@@ -1154,6 +1162,7 @@ paths:
       parameters:
         - name: scope
           in: path
+          description: 'Usage: scope={scope}'
           required: true
           schema:
             type: string
@@ -1179,7 +1188,7 @@ paths:
       parameters:
         - name: ids
           in: query
-          description: The URL-encoded JSON object
+          description: 'Usage: ids={ids}'
           required: true
           schema:
             type: string
@@ -1204,6 +1213,7 @@ paths:
       parameters:
         - name: resource
           in: path
+          description: 'Usage: resource={resource}'
           required: true
           schema:
             type: string
@@ -1229,6 +1239,7 @@ paths:
       parameters:
         - name: enrollmentType
           in: path
+          description: 'Usage: enrollmentType={enrollmentType}'
           required: true
           schema:
             type: string
@@ -1252,6 +1263,7 @@ paths:
       parameters:
         - name: resource
           in: path
+          description: 'Usage: resource={resource}'
           required: true
           schema:
             type: string
@@ -1276,6 +1288,7 @@ paths:
       parameters:
         - name: domainName
           in: path
+          description: 'Usage: domainName={domainName}'
           required: true
           schema:
             type: string
@@ -1307,6 +1320,7 @@ paths:
           x-ms-docs-key-type: resourceOperation
         - name: userid
           in: path
+          description: 'Usage: userid={userid}'
           required: true
           schema:
             type: string
@@ -1382,6 +1396,7 @@ paths:
           x-ms-docs-key-type: deviceManagementTemplate
         - name: templateId
           in: path
+          description: 'Usage: templateId={templateId}'
           required: true
           schema:
             type: string
@@ -1421,6 +1436,7 @@ paths:
           x-ms-docs-key-type: deviceManagementTemplate
         - name: templateId
           in: path
+          description: 'Usage: templateId={templateId}'
           required: true
           schema:
             type: string
@@ -1446,6 +1462,7 @@ paths:
       parameters:
         - name: summarizeBy
           in: path
+          description: 'Usage: summarizeBy={summarizeBy}'
           required: true
           schema:
             $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsSummarizedBy'
@@ -1470,6 +1487,7 @@ paths:
       parameters:
         - name: summarizeBy
           in: path
+          description: 'Usage: summarizeBy={summarizeBy}'
           required: true
           schema:
             $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsSummarizedBy'
@@ -1492,6 +1510,7 @@ paths:
       parameters:
         - name: summarizeBy
           in: path
+          description: 'Usage: summarizeBy={summarizeBy}'
           required: true
           schema:
             $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsSummarizedBy'

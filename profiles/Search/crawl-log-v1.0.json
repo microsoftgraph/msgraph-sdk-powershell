@@ -1,13 +1,13 @@
 {
+  "resources": [],
   "operations": {
     "/search": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Search.yml"
+      "originalLocation": "/openApiDocs/v1.0/Search.yml",
+      "apiVersion": "v1.0"
     },
     "/search/microsoft.graph.query": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Search.yml"
+      "originalLocation": "/openApiDocs/v1.0/Search.yml",
+      "apiVersion": "v1.0"
     }
-  },
-  "resources": []
+  }
 }

@@ -32,6 +32,7 @@ paths:
       parameters:
         - name: scope
           in: path
+          description: 'Usage: scope={scope}'
           required: true
           schema:
             type: string
@@ -57,6 +58,7 @@ paths:
       parameters:
         - name: domainName
           in: path
+          description: 'Usage: domainName={domainName}'
           required: true
           schema:
             type: string

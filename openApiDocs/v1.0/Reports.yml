@@ -986,6 +986,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1008,6 +1009,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1030,6 +1032,7 @@ paths:
       parameters:
         - name: date
           in: path
+          description: 'Usage: date={date}'
           required: true
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
@@ -1054,6 +1057,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1076,6 +1080,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1098,6 +1103,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1120,6 +1126,7 @@ paths:
       parameters:
         - name: date
           in: path
+          description: 'Usage: date={date}'
           required: true
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
@@ -1144,6 +1151,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1166,6 +1174,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1188,6 +1197,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1210,6 +1220,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1232,6 +1243,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1254,6 +1266,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1324,6 +1337,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1346,6 +1360,7 @@ paths:
       parameters:
         - name: date
           in: path
+          description: 'Usage: date={date}'
           required: true
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
@@ -1370,6 +1385,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1392,6 +1408,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1414,6 +1431,7 @@ paths:
       parameters:
         - name: date
           in: path
+          description: 'Usage: date={date}'
           required: true
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
@@ -1438,6 +1456,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1460,6 +1479,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1482,6 +1502,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1504,6 +1525,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1526,6 +1548,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1548,6 +1571,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1570,6 +1594,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1592,6 +1617,7 @@ paths:
       parameters:
         - name: date
           in: path
+          description: 'Usage: date={date}'
           required: true
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
@@ -1616,6 +1642,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1638,6 +1665,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1660,6 +1688,7 @@ paths:
       parameters:
         - name: date
           in: path
+          description: 'Usage: date={date}'
           required: true
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
@@ -1684,6 +1713,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1706,6 +1736,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1728,6 +1759,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1750,6 +1782,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1772,6 +1805,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1794,6 +1828,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1816,6 +1851,7 @@ paths:
       parameters:
         - name: date
           in: path
+          description: 'Usage: date={date}'
           required: true
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
@@ -1840,6 +1876,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1862,6 +1899,7 @@ paths:
       parameters:
         - name: date
           in: path
+          description: 'Usage: date={date}'
           required: true
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
@@ -1886,6 +1924,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1908,6 +1947,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1930,6 +1970,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1952,6 +1993,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1974,6 +2016,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1996,6 +2039,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -2018,6 +2062,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -2040,6 +2085,7 @@ paths:
       parameters:
         - name: date
           in: path
+          description: 'Usage: date={date}'
           required: true
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
@@ -2064,6 +2110,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -2086,6 +2133,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -2108,6 +2156,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -2130,6 +2179,7 @@ paths:
       parameters:
         - name: date
           in: path
+          description: 'Usage: date={date}'
           required: true
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
@@ -2154,6 +2204,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -2176,6 +2227,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -2198,6 +2250,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -2220,6 +2273,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -2242,6 +2296,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -2264,6 +2319,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -2286,6 +2342,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -2308,6 +2365,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -2330,6 +2388,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -2352,6 +2411,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -2374,6 +2434,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -2396,6 +2457,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -2418,6 +2480,7 @@ paths:
       parameters:
         - name: date
           in: path
+          description: 'Usage: date={date}'
           required: true
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
@@ -2442,6 +2505,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -2464,6 +2528,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -2486,6 +2551,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -2508,6 +2574,7 @@ paths:
       parameters:
         - name: date
           in: path
+          description: 'Usage: date={date}'
           required: true
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
@@ -2532,6 +2599,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -2554,6 +2622,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -2576,6 +2645,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -2598,6 +2668,7 @@ paths:
       parameters:
         - name: date
           in: path
+          description: 'Usage: date={date}'
           required: true
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
@@ -2622,6 +2693,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -2644,6 +2716,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -2666,6 +2739,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -2688,6 +2762,7 @@ paths:
       parameters:
         - name: date
           in: path
+          description: 'Usage: date={date}'
           required: true
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
@@ -2712,6 +2787,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -2734,6 +2810,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -2756,6 +2833,7 @@ paths:
       parameters:
         - name: date
           in: path
+          description: 'Usage: date={date}'
           required: true
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
@@ -2780,6 +2858,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -2802,6 +2881,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -2840,6 +2920,7 @@ paths:
       parameters:
         - name: skip
           in: path
+          description: 'Usage: skip={skip}'
           required: true
           schema:
             maximum: 2147483647
@@ -2849,6 +2930,7 @@ paths:
             nullable: true
         - name: top
           in: path
+          description: 'Usage: top={top}'
           required: true
           schema:
             maximum: 2147483647
@@ -2858,12 +2940,14 @@ paths:
             nullable: true
         - name: filter
           in: path
+          description: 'Usage: filter={filter}'
           required: true
           schema:
             type: string
             nullable: true
         - name: skipToken
           in: path
+          description: 'Usage: skipToken={skipToken}'
           required: true
           schema:
             type: string
@@ -2903,6 +2987,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string

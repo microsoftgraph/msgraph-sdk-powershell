@@ -872,6 +872,8 @@ paths:
                 - enrollmentType desc
                 - extensionAttributes
                 - extensionAttributes desc
+                - hostnames
+                - hostnames desc
                 - isCompliant
                 - isCompliant desc
                 - isManaged
@@ -937,6 +939,7 @@ paths:
                 - enrollmentProfileName
                 - enrollmentType
                 - extensionAttributes
+                - hostnames
                 - isCompliant
                 - isManaged
                 - isRooted
@@ -956,6 +959,7 @@ paths:
                 - name
                 - platform
                 - status
+                - usageRights
                 - memberOf
                 - registeredOwners
                 - registeredUsers
@@ -974,6 +978,7 @@ paths:
             items:
               enum:
                 - '*'
+                - usageRights
                 - memberOf
                 - registeredOwners
                 - registeredUsers
@@ -1081,6 +1086,7 @@ paths:
                 - enrollmentProfileName
                 - enrollmentType
                 - extensionAttributes
+                - hostnames
                 - isCompliant
                 - isManaged
                 - isRooted
@@ -1100,6 +1106,7 @@ paths:
                 - name
                 - platform
                 - status
+                - usageRights
                 - memberOf
                 - registeredOwners
                 - registeredUsers
@@ -1118,6 +1125,7 @@ paths:
             items:
               enum:
                 - '*'
+                - usageRights
                 - memberOf
                 - registeredOwners
                 - registeredUsers
@@ -1133,6 +1141,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.device'
           links:
+            usageRights:
+              operationId: users.Devices.ListUsageRights
+              parameters:
+                user-id: $request.path.user-id
+                device-id: $request.path.device-id
             memberOf:
               operationId: users.Devices.ListMemberOf
               parameters:
@@ -1354,7 +1367,7 @@ components:
           properties:
             accountEnabled:
               type: boolean
-              description: 'true if the account is enabled; otherwise, false. Required.'
+              description: 'true if the account is enabled; otherwise, false. default is true.'
               nullable: true
             alternativeSecurityIds:
               type: array
@@ -1375,6 +1388,7 @@ components:
               nullable: true
             deviceCategory:
               type: string
+              description: User-defined property set by Intune to automatically add devices to groups and simplify managing devices.
               nullable: true
             deviceId:
               type: string
@@ -1386,6 +1400,7 @@ components:
               nullable: true
             deviceOwnership:
               type: string
+              description: 'Ownership of the device. This property is set by Intune. Possible values are: unknown, company, personal.'
               nullable: true
             deviceVersion:
               maximum: 2147483647
@@ -1400,15 +1415,23 @@ components:
               nullable: true
             domainName:
               type: string
+              description: The on-premises domain name of Hybrid Azure AD joined devices. This property is set by Intune.
               nullable: true
             enrollmentProfileName:
               type: string
+              description: 'Enrollment profile applied to the device. For example, Apple Device Enrollment Profile, Device enrollment - Corporate device identifiers, or Windows Autopilot profile name. This property is set by Intune.'
               nullable: true
             enrollmentType:
               type: string
+              description: 'Enrollment type of the device. This property is set by Intune. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement.'
               nullable: true
             extensionAttributes:
               $ref: '#/components/schemas/microsoft.graph.onPremisesExtensionAttributes'
+            hostnames:
+              type: array
+              items:
+                type: string
+                nullable: true
             isCompliant:
               type: boolean
               description: 'true if the device complies with Mobile Device Management (MDM) policies; otherwise, false. Read-only. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices.'
@@ -1419,9 +1442,11 @@ components:
               nullable: true
             isRooted:
               type: boolean
+              description: true if device is rooted; false if device is jail-broken. This can only be updated by Intune.
               nullable: true
             managementType:
               type: string
+              description: 'Management channel of the device.  This property is set by Intune. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.'
               nullable: true
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -1439,7 +1464,7 @@ components:
               nullable: true
             operatingSystemVersion:
               type: string
-              description: The version of the operating system on the device. Required.
+              description: Operating system version of the device. Required.
               nullable: true
             physicalIds:
               type: array
@@ -1453,6 +1478,7 @@ components:
             registrationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Date and time of when the device was registered. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Read-only.'
               format: date-time
               nullable: true
             systemLabels:
@@ -1484,6 +1510,10 @@ components:
             status:
               type: string
               nullable: true
+            usageRights:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.usageRight'
             memberOf:
               type: array
               items:
@@ -1512,6 +1542,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.command'
+              description: Set of commands sent to this device
           additionalProperties:
             type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
@@ -1661,6 +1692,22 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.usageRight:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: usageRight
+          type: object
+          properties:
+            catalogId:
+              type: string
+              description: Product id corresponding to the usage right.
+            serviceIdentifier:
+              type: string
+              description: Identifier of the service corresponding to the usage right.
+            state:
+              $ref: '#/components/schemas/microsoft.graph.usageRightState'
+          additionalProperties:
+            type: object
     microsoft.graph.extension:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -1731,6 +1778,15 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.usageRightState:
+      title: usageRightState
+      enum:
+        - active
+        - inactive
+        - warning
+        - suspended
+        - unknownFutureValue
+      type: string
     microsoft.graph.payloadRequest:
       title: payloadRequest
       type: object
