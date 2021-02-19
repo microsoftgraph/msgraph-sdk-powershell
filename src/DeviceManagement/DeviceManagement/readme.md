@@ -41,6 +41,16 @@ directive:
 # Remove invalid paths.
   - remove-path-by-operation: ^deviceManagement.(deviceManagementScripts.userRunStates.deviceRunStates_SetRefManagedDevice|groupPolicyConfigurations.definitionValues.presentationValues_SetRefDefinitionValue|groupPolicyConfigurations.definitionValues.presentationValues_SetRefPresentation|deviceShellScripts.userRunStates.deviceRunStates_SetRefManagedDevice)$
 
+# Remove cmdlets.
+  - where:
+      verb: New
+      subject: subject: ^DeviceManagement(Managed|Comanaged)DeviceLogCollectionRequest$
+    remove: true
+  - where:
+      verb: Update
+      subject: subject: ^DeviceManagementComanagedDevice$
+    remove: true
+
 # Rename cmdlets.
   - where:
       subject: ^(DeviceManagementUserExperienceAnalyticAppHealthApplicationPerformance)$

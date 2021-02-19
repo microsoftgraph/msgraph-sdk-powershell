@@ -41,6 +41,16 @@ directive:
 # Remove invalid paths that exceed Windows file name limit.
   - remove-path-by-operation: ^deviceManagement.(deviceShellScripts.userRunStates.deviceRunStates.managedDevice_.*|windowsAutopilotDeploymentProfiles.(assignedDevices_updateDeviceProperties|assignedDevices.deploymentProfile_assign|assignedDevices.intendedDeploymentProfile_assign|assignedDevices_assignResourceAccountToDevice|assignedDevices_unassignResourceAccountFromDevice)|deviceComplianceScripts.deviceRunStates.managedDevice_.*|deviceCustomAttributeShellScripts.(deviceRunStates.managedDevice_.*|userRunStates.deviceRunStates.managedDevice_.*)|deviceManagementScripts.deviceRunStates.managedDevice(_updateWindowsDeviceAccount|_logoutSharedAppleDeviceActiveUser|_deleteUserFromSharedAppleDevice|_createDeviceLogCollectionRequest|_sendCustomNotificationToCompanyPortal|_triggerConfigurationManagerAction|_windowsDefenderUpdateSignatures)|deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_.*|deviceConfigurations.groupAssignments.deviceConfiguration(_assignedAccessMultiModeProfiles|_windowsPrivacyAccessControls)|deviceHealthScripts.deviceRunStates.managedDevice(_sendCustomNotificationToCompanyPortal|_createDeviceLogCollectionRequest)|deviceShellScripts.deviceRunStates.managedDevice_sendCustomNotificationToCompanyPortal)$
 
+# Remove cmdlets.
+  - where:
+      verb: New
+      subject: ^DeviceManagementComanagedDeviceLogCollectionRequest$
+    remove: true
+  - where:
+      verb: Update
+      subject: ^DeviceManagementComanagedDevice.*
+    remove: true
+
 # Rename cmdlets.
   - where:
       verb: Get
@@ -56,6 +66,22 @@ directive:
     set:
       verb: Invoke
       subject: $1WindowsPrivacyAccessControl
+  - where:
+      verb: Update
+      subject: ^(DeviceManagementGroupPolicyConfiguration)(DefinitionValue)$
+    set:
+      subject: $1Multiple$2
+  - where:
+      verb: Update
+      subject: ^(DeviceManagementIntent)(Setting)$
+    set:
+      subject: $1Multiple$2
+  - where:
+      verb: Update
+      subject: ^(DeviceManagementManagedDevice)$
+    set:
+      verb: New
+      subject: $1WindowsDefenderUpdateSignature
 ```
 ### Versioning
 
