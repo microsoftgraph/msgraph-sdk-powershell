@@ -44,11 +44,11 @@ directive:
 # Remove cmdlets.
   - where:
       verb: New
-      subject: subject: ^DeviceManagement(Managed|Comanaged)DeviceLogCollectionRequest$
+      subject: ^DeviceManagement(Managed|Comanaged)DeviceLogCollectionRequest$
     remove: true
   - where:
       verb: Update
-      subject: subject: ^DeviceManagementComanagedDevice$
+      subject: ^DeviceManagementComanagedDevice$
     remove: true
 
 # Rename cmdlets.
