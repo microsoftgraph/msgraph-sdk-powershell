@@ -2,8 +2,14 @@
 # Licensed under the MIT License.
 Param(
     [Parameter(Mandatory = $true)] [ValidateNotNullOrEmpty()][string] $Module,
-    [Parameter(Mandatory = $true)] [ValidateNotNullOrEmpty()][string] $ArtifactsLocation
+    [Parameter(Mandatory = $true)] [ValidateNotNullOrEmpty()][string] $ArtifactsLocation,
+    [string] $ModulePrefix="Microsoft.Graph",
+    [switch] $ExcludeMarkdownDocsFromNugetPackage
 )
+$NuspecHelperPS1 = Join-Path $PSScriptRoot "./NuspecHelper.ps1"
+# Import scripts
+. $NuspecHelperPS1
+
 $LASTEXITCODE = $null
 $ErrorActionPreference = "Stop"
 if($PSEdition -ne "Core") {
@@ -11,9 +17,15 @@ if($PSEdition -ne "Core") {
 }
 
 $ModuleProjLocation = Join-Path $PSScriptRoot "../src/$Module/$Module"
+$ModuleNuspec = Join-Path $ModuleProjLocation "$ModulePrefix.$Module.nuspec"
 $PackModulePS1 = Join-Path $ModuleProjLocation "/pack-module.ps1"
 
 if (Test-Path $PackModulePS1) {
+    #Remove MarkDown Docs From Nuget Package
+    if ($ExcludeMarkdownDocsFromNugetPackage) {
+        Write-Information "Removing MarkDownDocs from Nuget Package..."
+        Remove-MarkdownDocsElement -NuSpecFilePath $ModuleNuspec
+    }
     # Pack module
     & $PackModulePS1
     if($LASTEXITCODE) {
