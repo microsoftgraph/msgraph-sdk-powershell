@@ -13,6 +13,16 @@ paths:
       summary: Get entities from directoryObjects
       operationId: directoryObjects.directoryObject_ListDirectoryObject
       parameters:
+        - name: ConsistencyLevel
+          in: header
+          description: Indicates the requested consistency level.
+          schema:
+            type: string
+          example: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -117,6 +127,16 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: directoryObject
+        - name: ConsistencyLevel
+          in: header
+          description: Indicates the requested consistency level.
+          schema:
+            type: string
+          example: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
         - name: $select
           in: query
           description: Select properties to be returned
