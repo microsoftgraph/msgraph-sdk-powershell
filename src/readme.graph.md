@@ -501,20 +501,6 @@ directive:
           $ = $.replace(additionalPropertiesRegex, '$1$2 new $3');
         }
 
-        let regexPattern = /^\s*public\s*partial\s*class\s*MicrosoftGraph(?<EntityName>.*):$/gm;
-        let regexArray;
-        while ((regexArray = regexPattern.exec($)) !== null) {
-          if (regexArray['groups'] != null)
-          {
-            let EntityName = regexArray['groups'].EntityName.trim();
-            let newEntityId = EntityName + 'Id';
-            let newEntityIdPropRegex = new RegExp("^\\s*public\\s*string\\s*"+newEntityId+"\\.*","gm");
-            let existingIdPropRegex = /(^\s*)(public\s*string\s*Id\s.*)/gm;
-            if ((!$.match(newEntityIdPropRegex)) && $.match(existingIdPropRegex) && (newEntityId != "EntityId") && (newEntityId != "BaseItemId")) {
-              $ = $.replace(existingIdPropRegex, '$1$2\n\n$1partial void AfterToJson(ref Microsoft.Graph.PowerShell.Runtime.Json.JsonObject container, Microsoft.Graph.PowerShell.Runtime.SerializationMode serializationMode)\n$1{\n$1\tif (serializationMode == Microsoft.Graph.PowerShell.Runtime.SerializationMode.IncludeAll) {\n$1\t\tAddIf(null != this.Id ? (Microsoft.Graph.PowerShell.Runtime.Json.JsonNode)new Microsoft.Graph.PowerShell.Runtime.Json.JsonString(this.Id) : null, "'+ EntityName.toLowerCase() +'-id", container.Add);\n$1\t}\n$1}');
-            }
-          }
-        }
         return $;
       }
 # Modify generated .cs cmdlets.
