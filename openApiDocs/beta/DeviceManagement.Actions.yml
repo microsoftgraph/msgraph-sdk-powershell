@@ -16520,7 +16520,7 @@ components:
               nullable: true
             orderIdentifier:
               type: string
-              description: Order Id of the Windows autopilot device. - Deprecate
+              description: Order Id of the Windows autopilot device.
               nullable: true
             productKey:
               type: string
