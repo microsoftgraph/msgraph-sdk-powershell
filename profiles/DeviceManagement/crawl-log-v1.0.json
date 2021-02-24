@@ -2,252 +2,252 @@
   "resources": [],
   "operations": {
     "/deviceManagement": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml"
     },
     "/deviceManagement/detectedApps": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml"
     },
     "/deviceManagement/detectedApps/{detectedApp-id}": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml"
     },
     "/deviceManagement/detectedApps/{detectedApp-id}/managedDevices": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml"
     },
     "/deviceManagement/detectedApps/{detectedApp-id}/managedDevices/$ref": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml"
     },
     "/deviceManagement/deviceCategories": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml"
     },
     "/deviceManagement/deviceCategories/{deviceCategory-id}": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml"
     },
     "/deviceManagement/deviceCompliancePolicies": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml"
     },
     "/deviceManagement/deviceCompliancePolicies/{deviceCompliancePolicy-id}": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml"
     },
     "/deviceManagement/deviceCompliancePolicies/{deviceCompliancePolicy-id}/assignments": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml"
     },
     "/deviceManagement/deviceCompliancePolicies/{deviceCompliancePolicy-id}/assignments/{deviceCompliancePolicyAssignment-id}": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml"
     },
     "/deviceManagement/deviceCompliancePolicies/{deviceCompliancePolicy-id}/deviceSettingStateSummaries": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml"
     },
     "/deviceManagement/deviceCompliancePolicies/{deviceCompliancePolicy-id}/deviceSettingStateSummaries/{settingStateDeviceSummary-id}": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml"
     },
     "/deviceManagement/deviceCompliancePolicies/{deviceCompliancePolicy-id}/deviceStatuses": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml"
     },
     "/deviceManagement/deviceCompliancePolicies/{deviceCompliancePolicy-id}/deviceStatuses/{deviceComplianceDeviceStatus-id}": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml"
     },
     "/deviceManagement/deviceCompliancePolicies/{deviceCompliancePolicy-id}/deviceStatusOverview": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml"
     },
     "/deviceManagement/deviceCompliancePolicies/{deviceCompliancePolicy-id}/scheduledActionsForRule": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml"
     },
     "/deviceManagement/deviceCompliancePolicies/{deviceCompliancePolicy-id}/scheduledActionsForRule/{deviceComplianceScheduledActionForRule-id}": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml"
     },
     "/deviceManagement/deviceCompliancePolicies/{deviceCompliancePolicy-id}/scheduledActionsForRule/{deviceComplianceScheduledActionForRule-id}/scheduledActionConfigurations": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml"
     },
     "/deviceManagement/deviceCompliancePolicies/{deviceCompliancePolicy-id}/scheduledActionsForRule/{deviceComplianceScheduledActionForRule-id}/scheduledActionConfigurations/{deviceComplianceActionItem-id}": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml"
     },
     "/deviceManagement/deviceCompliancePolicies/{deviceCompliancePolicy-id}/userStatuses": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml"
     },
     "/deviceManagement/deviceCompliancePolicies/{deviceCompliancePolicy-id}/userStatuses/{deviceComplianceUserStatus-id}": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml"
     },
     "/deviceManagement/deviceCompliancePolicies/{deviceCompliancePolicy-id}/userStatusOverview": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml"
     },
     "/deviceManagement/deviceCompliancePolicyDeviceStateSummary": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml"
     },
     "/deviceManagement/deviceCompliancePolicySettingStateSummaries": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml"
     },
     "/deviceManagement/deviceCompliancePolicySettingStateSummaries/{deviceCompliancePolicySettingStateSummary-id}": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml"
     },
     "/deviceManagement/deviceCompliancePolicySettingStateSummaries/{deviceCompliancePolicySettingStateSummary-id}/deviceComplianceSettingStates": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml"
     },
     "/deviceManagement/deviceCompliancePolicySettingStateSummaries/{deviceCompliancePolicySettingStateSummary-id}/deviceComplianceSettingStates/{deviceComplianceSettingState-id}": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml"
     },
     "/deviceManagement/deviceConfigurationDeviceStateSummaries": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml"
     },
     "/deviceManagement/deviceConfigurations": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml"
     },
     "/deviceManagement/deviceConfigurations/{deviceConfiguration-id}": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml"
     },
     "/deviceManagement/deviceConfigurations/{deviceConfiguration-id}/assignments": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml"
     },
     "/deviceManagement/deviceConfigurations/{deviceConfiguration-id}/assignments/{deviceConfigurationAssignment-id}": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml"
     },
     "/deviceManagement/deviceConfigurations/{deviceConfiguration-id}/deviceSettingStateSummaries": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml"
     },
     "/deviceManagement/deviceConfigurations/{deviceConfiguration-id}/deviceSettingStateSummaries/{settingStateDeviceSummary-id}": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml"
     },
     "/deviceManagement/deviceConfigurations/{deviceConfiguration-id}/deviceStatuses": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml"
     },
     "/deviceManagement/deviceConfigurations/{deviceConfiguration-id}/deviceStatuses/{deviceConfigurationDeviceStatus-id}": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml"
     },
     "/deviceManagement/deviceConfigurations/{deviceConfiguration-id}/deviceStatusOverview": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml"
     },
     "/deviceManagement/deviceConfigurations/{deviceConfiguration-id}/userStatuses": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml"
     },
     "/deviceManagement/deviceConfigurations/{deviceConfiguration-id}/userStatuses/{deviceConfigurationUserStatus-id}": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml"
     },
     "/deviceManagement/deviceConfigurations/{deviceConfiguration-id}/userStatusOverview": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml"
     },
     "/deviceManagement/managedDeviceOverview": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml"
     },
     "/deviceManagement/managedDeviceOverview/$ref": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml"
     },
     "/deviceManagement/managedDevices": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml"
     },
     "/deviceManagement/managedDevices/{managedDevice-id}": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml"
     },
     "/deviceManagement/managedDevices/{managedDevice-id}/deviceCategory": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml"
     },
     "/deviceManagement/managedDevices/{managedDevice-id}/deviceCompliancePolicyStates": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml"
     },
     "/deviceManagement/managedDevices/{managedDevice-id}/deviceCompliancePolicyStates/{deviceCompliancePolicyState-id}": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml"
     },
     "/deviceManagement/managedDevices/{managedDevice-id}/deviceConfigurationStates": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml"
     },
     "/deviceManagement/managedDevices/{managedDevice-id}/deviceConfigurationStates/{deviceConfigurationState-id}": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml"
     },
     "/deviceManagement/notificationMessageTemplates": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml"
     },
     "/deviceManagement/notificationMessageTemplates/{notificationMessageTemplate-id}": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml"
     },
     "/deviceManagement/notificationMessageTemplates/{notificationMessageTemplate-id}/localizedNotificationMessages": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml"
     },
     "/deviceManagement/notificationMessageTemplates/{notificationMessageTemplate-id}/localizedNotificationMessages/{localizedNotificationMessage-id}": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml"
     },
     "/deviceManagement/softwareUpdateStatusSummary": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml"
     },
     "/deviceManagement/softwareUpdateStatusSummary/$ref": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml"
     },
     "/deviceManagement/troubleshootingEvents": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml"
     },
     "/deviceManagement/troubleshootingEvents/{deviceManagementTroubleshootingEvent-id}": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml"
     },
     "/deviceManagement/windowsInformationProtectionAppLearningSummaries": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml"
     },
     "/deviceManagement/windowsInformationProtectionAppLearningSummaries/{windowsInformationProtectionAppLearningSummary-id}": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml"
     },
     "/deviceManagement/windowsInformationProtectionNetworkLearningSummaries": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml"
     },
     "/deviceManagement/windowsInformationProtectionNetworkLearningSummaries/{windowsInformationProtectionNetworkLearningSummary-id}": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.yml"
     }
   }
 }

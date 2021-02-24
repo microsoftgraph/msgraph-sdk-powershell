@@ -21361,7 +21361,7 @@ components:
           items:
             type: string
             nullable: true
-          description: 'When uploading files to document libraries, this is a collection of byte ranges that the server is missing for the file. These ranges are zero-indexed and of the format, ''{start}-{end}'' (e.g. ''0-26'' to indicate the first 27 bytes of the file). When uploading files as Outlook attachments, instead of a collection of ranges, this property always indicates a single value ''{start}'', the location in the file where the next upload should begin.'
+          description: 'A collection of byte ranges that the server is missing for the file. These ranges are zero indexed and of the format ''start-end'' (e.g. ''0-26'' to indicate the first 27 bytes of the file). When uploading files as Outlook attachments, instead of a collection of ranges, this property always indicates a single value ''{start}'', the location in the file where the next upload should begin.'
         uploadUrl:
           type: string
           description: The URL endpoint that accepts PUT requests for byte ranges of the file.
@@ -21374,10 +21374,10 @@ components:
       properties:
         dateTime:
           type: string
-          description: 'A single point of time in a combined date and time representation ({date}T{time}). For example, ''2019-04-16T09:00:00''.'
+          description: 'A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).'
         timeZone:
           type: string
-          description: 'Represents a time zone, for example, ''Pacific Standard Time''. See below for possible values.'
+          description: 'Represents a time zone, for example, ''Pacific Standard Time''. See below for more possible values.'
           nullable: true
       additionalProperties:
         type: object
@@ -21544,15 +21544,15 @@ components:
               nullable: true
             canEdit:
               type: boolean
-              description: 'True if the user can write to the calendar, false otherwise. This property is true for the user who created the calendar. This property is also true for a user who has been shared a calendar and granted write access, through an Outlook client or the corresponding calendarPermission resource. Read-only.'
+              description: 'True if the user can write to the calendar, false otherwise. This property is true for the user who created the calendar. This property is also true for a user who has been shared a calendar and granted write access.'
               nullable: true
             canShare:
               type: boolean
-              description: 'True if the user has the permission to share the calendar, false otherwise. Only the user who created the calendar can share it. Read-only.'
+              description: 'True if the user has the permission to share the calendar, false otherwise. Only the user who created the calendar can share it.'
               nullable: true
             canViewPrivateItems:
               type: boolean
-              description: 'True if the user can read calendar items that have been marked private, false otherwise. This property is set through an Outlook client or the corresponding calendarPermission resource. Read-only.'
+              description: 'True if the user can read calendar items that have been marked private, false otherwise.'
               nullable: true
             changeKey:
               type: string
@@ -21564,7 +21564,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingProviderType'
             hexColor:
               type: string
-              description: 'The calendar color, expressed in a hex color code of three hexidecimal values, each ranging from 00 to FF and representing the red, green, or blue components of the color in the RGB color space. If the user has never explicitly set a color for the calendar, this property is  empty.'
+              description: 'The calendar color, expressed in a hex color code of three hexidecimal values, each ranging from 00 to FF and representing the red, green, or blue components of the color in the RGB color space. If the user has never explicitly set a color for the calendar, this property is empty. Read-only.'
               nullable: true
             isDefaultCalendar:
               type: boolean
@@ -21634,7 +21634,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.itemBody'
             bodyPreview:
               type: string
-              description: 'The first 255 characters of the message body. It is in text format. If the message contains instances of mention, this property would contain a concatenation of these mentions as well.'
+              description: The first 255 characters of the message body. It is in text format.
               nullable: true
             ccRecipients:
               type: array
@@ -21949,30 +21949,30 @@ components:
               $ref: '#/components/schemas/microsoft.graph.signInActivity'
             accountEnabled:
               type: boolean
-              description: 'true if the account is enabled; otherwise, false. This property is required when a user is created. Returned only on $select. Supports $filter.'
+              description: 'true if the account is enabled; otherwise, false. This property is required when a user is created. Supports $filter.'
               nullable: true
             ageGroup:
               type: string
-              description: 'Sets the age group of the user. Allowed values: null, minor, notAdult and adult. Refer to the legal age group property definitions for further information. Returned only on $select.'
+              description: 'Sets the age group of the user. Allowed values: null, minor, notAdult and adult. Refer to the legal age group property definitions for further information.'
               nullable: true
             assignedLicenses:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLicense'
-              description: The licenses that are assigned to the user. Returned only on $select. Not nullable.
+              description: The licenses that are assigned to the user. Not nullable.
             assignedPlans:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedPlan'
-              description: The plans that are assigned to the user. Returned only on $select. Read-only. Not nullable.
+              description: The plans that are assigned to the user. Read-only. Not nullable.
             businessPhones:
               type: array
               items:
                 type: string
-              description: The telephone numbers for the user. Only one number can be set for this property. Returned by default. Read-only for users synced from on-premises directory.
+              description: 'The telephone numbers for the user. NOTE: Although this is a string collection, only one number can be set for this property. Read-only for users synced from on-premises directory. Returned by default.'
             city:
               type: string
-              description: The city in which the user is located. Returned only on $select. Supports $filter.
+              description: The city in which the user is located. Supports $filter.
               nullable: true
             companyName:
               type: string
@@ -21980,25 +21980,25 @@ components:
               nullable: true
             consentProvidedForMinor:
               type: string
-              description: 'Sets whether consent has been obtained for minors. Allowed values: null, granted, denied and notRequired. Refer to the legal age group property definitions for further information. Returned only on $select.'
+              description: 'Sets whether consent has been obtained for minors. Allowed values: null, granted, denied and notRequired. Refer to the legal age group property definitions for further information.'
               nullable: true
             country:
               type: string
-              description: 'The country/region in which the user is located; for example, ''US'' or ''UK''. Returned only on $select. Supports $filter.'
+              description: 'The country/region in which the user is located; for example, ''US'' or ''UK''. Supports $filter.'
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The date and time the user was created. The value cannot be modified and is automatically populated when the entity is created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. Property is nullable. A null value indicates that an accurate creation time couldn't be determined for the user. Returned only on $select. Read-only. Supports $filter.
+              description: The created date of the user object.
               format: date-time
               nullable: true
             creationType:
               type: string
-              description: 'Indicates whether the user account was created as a regular school or work account (null), an external account (Invitation), a local account for an Azure Active Directory B2C tenant (LocalAccount) or self-service sign-up using email verification (EmailVerified). Returned only on $select. Read-only.'
+              description: 'Indicates whether the user account was created as a regular school or work account (null), an external account (Invitation), a local account for an Azure Active Directory B2C tenant (LocalAccount) or self-service sign-up using email verification (EmailVerified). Read-only.'
               nullable: true
             department:
               type: string
-              description: The name for the department in which the user works. Returned only on $select. Supports $filter.
+              description: The name for the department in which the user works. Supports $filter.
               nullable: true
             deviceKeys:
               type: array
@@ -22006,7 +22006,7 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.deviceKey'
             displayName:
               type: string
-              description: 'The name displayed in the address book for the user. This value is usually the combination of the user''s first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates. Returned by default. Supports $filter and $orderby.'
+              description: 'The name displayed in the address book for the user. This is usually the combination of the user''s first name, middle initial and last name. This property is required when a user is created and it cannot be cleared during updates. Returned by default. Supports $filter and $orderby.'
               nullable: true
             employeeHireDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -22034,7 +22034,7 @@ components:
               nullable: true
             faxNumber:
               type: string
-              description: The fax number of the user. Returned only on $select.
+              description: The fax number of the user.
               nullable: true
             givenName:
               type: string
@@ -22044,7 +22044,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.objectIdentity'
-              description: 'Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft, and tied to a user account. May contain multiple items with the same signInType value. Returned only on $select. Supports $filter.'
+              description: 'Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft, and tied to a user account. May contain multiple items with the same signInType value. Supports $filter.'
             imAddresses:
               type: array
               items:
@@ -22067,29 +22067,29 @@ components:
             lastPasswordChangeDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The time when this Azure AD user last changed their password. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'' Returned only on $select.'
+              description: 'The time when this Azure AD user last changed their password. The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
               format: date-time
               nullable: true
             legalAgeGroupClassification:
               type: string
-              description: 'Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, minorWithOutParentalConsent, minorWithParentalConsent, minorNoParentalConsentRequired, notAdult and adult. Refer to the legal age group property definitions for further information. Returned only on $select.'
+              description: 'Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, minorWithOutParentalConsent, minorWithParentalConsent, minorNoParentalConsentRequired, notAdult and adult. Refer to the legal age group property definitions for further information.'
               nullable: true
             licenseAssignmentStates:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.licenseAssignmentState'
-              description: State of license assignments for this user. Returned only on $select. Read-only.
+              description: State of license assignments for this user. Read-only.
             mail:
               type: string
               description: 'The SMTP address for the user, for example, ''jeff@contoso.onmicrosoft.com''. Returned by default. Supports $filter and endsWith.'
               nullable: true
             mailNickname:
               type: string
-              description: The mail alias for the user. This property must be specified when a user is created. Returned only on $select. Supports $filter.
+              description: The mail alias for the user. This property must be specified when a user is created. Supports $filter.
               nullable: true
             mobilePhone:
               type: string
-              description: The primary cellular telephone number for the user. Returned by default. Read-only for users synced from on-premises directory.
+              description: The primary cellular telephone number for the user. Read-only for users synced from on-premises directory. Returned by default.
               nullable: true
             officeLocation:
               type: string
@@ -22097,59 +22097,59 @@ components:
               nullable: true
             onPremisesDistinguishedName:
               type: string
-              description: Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Returned only on $select. Read-only.
+              description: Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only.
               nullable: true
             onPremisesDomainName:
               type: string
-              description: 'Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Returned only on $select. Read-only.'
+              description: 'Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only.'
               nullable: true
             onPremisesExtensionAttributes:
               $ref: '#/components/schemas/microsoft.graph.onPremisesExtensionAttributes'
             onPremisesImmutableId:
               type: string
-              description: 'This property is used to associate an on-premises Active Directory user account to their Azure AD user object. This property must be specified when creating a new user account in the Graph if you are using a federated domain for the user''s userPrincipalName (UPN) property. Important: The $ and _ characters cannot be used when specifying this property. Returned only on $select. Supports $filter.'
+              description: 'This property is used to associate an on-premises Active Directory user account to their Azure AD user object. This property must be specified when creating a new user account in the Graph if you are using a federated domain for the user''s userPrincipalName (UPN) property. Important: The $ and _ characters cannot be used when specifying this property. Supports $filter.'
               nullable: true
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Indicates the last time at which the object was synced with the on-premises directory; for example: ''2013-02-16T03:04:54Z''. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Returned only on $select. Read-only.'
+              description: 'Indicates the last time at which the object was synced with the on-premises directory; for example: ''2013-02-16T03:04:54Z''. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Read-only.'
               format: date-time
               nullable: true
             onPremisesProvisioningErrors:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onPremisesProvisioningError'
-              description: Errors when using Microsoft synchronization product during provisioning. Returned only on $select.
+              description: Errors when using Microsoft synchronization product during provisioning.
             onPremisesSamAccountName:
               type: string
-              description: Contains the on-premises sAMAccountName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Returned only on $select. Read-only.
+              description: Contains the on-premises samAccountName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only.
               nullable: true
             onPremisesSecurityIdentifier:
               type: string
-              description: Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Returned only on $select. Read-only.
+              description: Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only.
               nullable: true
             onPremisesSyncEnabled:
               type: boolean
-              description: true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Returned only on $select. Read-only.
+              description: true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only
               nullable: true
             onPremisesUserPrincipalName:
               type: string
-              description: Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Returned only on $select. Read-only.
+              description: Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only.
               nullable: true
             otherMails:
               type: array
               items:
                 type: string
-              description: 'A list of additional email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com''].Returned only on $select.  Supports$filter.'
+              description: 'A list of additional email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com'']. Supports $filter.'
             passwordPolicies:
               type: string
-              description: 'Specifies password policies for the user. This value is an enumeration with one possible value being ''DisableStrongPassword'', which allows weaker passwords than the default policy to be specified. ''DisablePasswordExpiration'' can also be specified. The two may be specified together; for example: ''DisablePasswordExpiration, DisableStrongPassword''.Returned only on $select.'
+              description: 'Specifies password policies for the user. This value is an enumeration with one possible value being ''DisableStrongPassword'', which allows weaker passwords than the default policy to be specified. ''DisablePasswordExpiration'' can also be specified. The two may be specified together; for example: ''DisablePasswordExpiration, DisableStrongPassword''.'
               nullable: true
             passwordProfile:
               $ref: '#/components/schemas/microsoft.graph.passwordProfile'
             postalCode:
               type: string
-              description: 'The postal code for the user''s postal address. The postal code is specific to the user''s country/region. In the United States of America, this attribute contains the ZIP code. Returned only on $select.'
+              description: 'The postal code for the user''s postal address. The postal code is specific to the user''s country/region. In the United States of America, this attribute contains the ZIP code.'
               nullable: true
             preferredDataLocation:
               type: string
@@ -22163,35 +22163,35 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.provisionedPlan'
-              description: The plans that are provisioned for the user. Returned only on $select. Read-only. Not nullable.
+              description: The plans that are provisioned for the user. Read-only. Not nullable.
             proxyAddresses:
               type: array
               items:
                 type: string
-              description: 'For example: [''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com''] The any operator is required for filter expressions on multi-valued properties. Returned only on $select. Read-only, Not nullable. Supports $filter.'
+              description: 'For example: [''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com''] The any operator is required for filter expressions on multi-valued properties. Read-only, Not nullable. Supports $filter.'
             refreshTokensValidFromDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Returned only on $select. Read-only. Use invalidateAllRefreshTokens to reset.'
+              description: 'Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Returned only on $select. Read-only.'
               format: date-time
               nullable: true
             showInAddressList:
               type: boolean
-              description: 'true if the Outlook global address list should contain this user, otherwise false. If not set, this will be treated as true. For users invited through the invitation manager, this property will be set to false. Returned only on $select.'
+              description: 'true if the Outlook global address list should contain this user, otherwise false. If not set, this will be treated as true. For users invited through the invitation manager, this property will be set to false.'
               nullable: true
             signInSessionsValidFromDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Returned only on $select. Read-only. Use revokeSignInSessions to reset.'
+              description: 'Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use revokeSignInSessions to reset.'
               format: date-time
               nullable: true
             state:
               type: string
-              description: The state or province in the user's address. Returned only on $select. Supports $filter.
+              description: The state or province in the user's address. Supports $filter.
               nullable: true
             streetAddress:
               type: string
-              description: The street address of the user's place of business. Returned only on $select.
+              description: The street address of the user's place of business.
               nullable: true
             surname:
               type: string
@@ -22199,7 +22199,7 @@ components:
               nullable: true
             usageLocation:
               type: string
-              description: 'A two letter country code (ISO standard 3166). Required for users that will be assigned licenses due to legal requirement to check for availability of services in countries.  Examples include: ''US'', ''JP'', and ''GB''. Not nullable. Returned only on $select. Supports $filter.'
+              description: 'A two letter country code (ISO standard 3166). Required for users that will be assigned licenses due to legal requirement to check for availability of services in countries.  Examples include: ''US'', ''JP'', and ''GB''. Not nullable. Supports $filter.'
               nullable: true
             userPrincipalName:
               type: string
@@ -22207,7 +22207,7 @@ components:
               nullable: true
             userType:
               type: string
-              description: 'A string value that can be used to classify user types in your directory, such as ''Member'' and ''Guest''. Returned only on $select. Supports $filter.'
+              description: 'A string value that can be used to classify user types in your directory, such as ''Member'' and ''Guest''. Supports $filter.'
               nullable: true
             mailboxSettings:
               $ref: '#/components/schemas/microsoft.graph.mailboxSettings'
@@ -22219,12 +22219,12 @@ components:
               format: int32
             aboutMe:
               type: string
-              description: A freeform text entry field for the user to describe themselves. Returned only on $select.
+              description: A freeform text entry field for the user to describe themselves.
               nullable: true
             birthday:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'' Returned only on $select.'
+              description: 'The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
               format: date-time
             hireDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -22236,39 +22236,39 @@ components:
               items:
                 type: string
                 nullable: true
-              description: A list for the user to describe their interests. Returned only on $select.
+              description: A list for the user to describe their interests.
             mySite:
               type: string
-              description: The URL for the user's personal site. Returned only on $select.
+              description: The URL for the user's personal site.
               nullable: true
             pastProjects:
               type: array
               items:
                 type: string
                 nullable: true
-              description: A list for the user to enumerate their past projects. Returned only on $select.
+              description: A list for the user to enumerate their past projects.
             preferredName:
               type: string
-              description: The preferred name for the user. Returned only on $select.
+              description: The preferred name for the user.
               nullable: true
             responsibilities:
               type: array
               items:
                 type: string
                 nullable: true
-              description: A list for the user to enumerate their responsibilities. Returned only on $select.
+              description: A list for the user to enumerate their responsibilities.
             schools:
               type: array
               items:
                 type: string
                 nullable: true
-              description: A list for the user to enumerate the schools they have attended. Returned only on $select.
+              description: A list for the user to enumerate the schools they have attended.
             skills:
               type: array
               items:
                 type: string
                 nullable: true
-              description: A list for the user to enumerate their skills. Returned only on $select.
+              description: A list for the user to enumerate their skills.
             analytics:
               $ref: '#/components/schemas/microsoft.graph.userAnalytics'
             usageRights:
@@ -22281,6 +22281,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
+              description: Represents the app roles a user has been granted for an application.
             createdObjects:
               type: array
               items:
@@ -22302,7 +22303,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'The groups, directory roles and administrative units that the user is a member of. Read-only. Nullable.'
+              description: The groups and directory roles that the user is a member of. Read-only. Nullable.
             ownedDevices:
               type: array
               items:
@@ -22358,7 +22359,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.event'
-              description: The user's events. Default is to show events under the Default Calendar. Read-only. Nullable.
+              description: The user's events. Default is to show Events under the Default Calendar. Read-only. Nullable.
             inferenceClassification:
               $ref: '#/components/schemas/microsoft.graph.inferenceClassification'
             joinedGroups:
@@ -22382,7 +22383,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.person'
-              description: 'Read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user''s communication, collaboration and business relationships. A person is an aggregation of information from across mail, contacts and social networks.'
+              description: People that are relevant to the user. Read-only. Nullable.
             photo:
               $ref: '#/components/schemas/microsoft.graph.profilePhoto'
             photos:
@@ -22405,7 +22406,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
-              description: The collection of open extensions defined for the user. Nullable.
+              description: The collection of open extensions defined for the user. Read-only. Nullable.
             appConsentRequestsForApproval:
               type: array
               items:
@@ -22553,7 +22554,7 @@ components:
       properties:
         emptySuggestionsReason:
           type: string
-          description: 'A reason for not returning any meeting suggestions. Possible values are: attendeesUnavailable, attendeesUnavailableOrUnknown, locationsUnavailable, organizerUnavailable, or unknown. This property is an empty string if the meetingTimeSuggestions property does include any meeting suggestions.'
+          description: 'A reason for not returning any meeting suggestions. The possible values are: attendeesUnavailable, attendeesUnavailableOrUnknown, locationsUnavailable, organizerUnavailable, or unknown. This property is an empty string if the meetingTimeSuggestions property does include any meeting suggestions.'
           nullable: true
         meetingTimeSuggestions:
           type: array
@@ -22723,7 +22724,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.onenotePatchInsertPosition'
         target:
           type: string
-          description: 'The element to update. Must be the #<data-id> or the generated {id} of the element, or the body or title keyword.'
+          description: 'The element to update. Must be the #<data-id> or the generated <id> of the element, or the body or title keyword.'
       additionalProperties:
         type: object
     microsoft.graph.CopyNotebookModel:
@@ -22783,7 +22784,7 @@ components:
       properties:
         messageId:
           type: string
-          description: The unique identifier for a message in a Microsoft Teams channel.
+          description: The unique identifier of a message in a Microsoft Teams channel.
           nullable: true
         replyChainMessageId:
           type: string
@@ -23095,11 +23096,11 @@ components:
       properties:
         address:
           type: string
-          description: The email address of an entity instance.
+          description: The email address of the person or entity.
           nullable: true
         name:
           type: string
-          description: The display name of an entity instance.
+          description: The display name of the person or entity.
           nullable: true
       additionalProperties:
         type: object
@@ -23397,7 +23398,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.attachment'
-              description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
+              description: The collection of fileAttachment and itemAttachment attachments for the event. Navigation property. Read-only. Nullable.
             calendar:
               $ref: '#/components/schemas/microsoft.graph.calendar'
             exceptionOccurrences:
@@ -23408,12 +23409,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
-              description: The collection of open extensions defined for the event. Nullable.
+              description: The collection of open extensions defined for the event. Read-only. Nullable.
             instances:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.event'
-              description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
+              description: The instances of the event. Navigation property. Read-only. Nullable.
             multiValueExtendedProperties:
               type: array
               items:
@@ -23528,7 +23529,7 @@ components:
               nullable: true
             name:
               type: string
-              description: The display name of the attachment. This does not need to be the actual file name.
+              description: The attachment's file name.
               nullable: true
             size:
               maximum: 2147483647
@@ -23828,7 +23829,7 @@ components:
       properties:
         forceChangePasswordNextSignIn:
           type: boolean
-          description: 'If true, at next sign-in, the user must change their password. After a password change, this property will be automatically reset to false. If not set, default is false.'
+          description: true if the user must change her password on the next login; otherwise false.
           nullable: true
         forceChangePasswordNextSignInWithMfa:
           type: boolean
@@ -23864,7 +23865,7 @@ components:
       properties:
         archiveFolder:
           type: string
-          description: Folder ID of an archive folder for the user. Read only.
+          description: Folder ID of an archive folder for the user.
           nullable: true
         automaticRepliesSetting:
           $ref: '#/components/schemas/microsoft.graph.automaticRepliesSetting'
@@ -24245,7 +24246,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
-              description: The collection of open extensions defined for the contact. Nullable.
+              description: The collection of open extensions defined for the contact. Read-only. Nullable.
             multiValueExtendedProperties:
               type: array
               items:
@@ -24283,7 +24284,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLabel'
-              description: 'The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select.'
+              description: 'The list of sensitivity label pairs (label ID, label name) associated with an Microsoft 365 group. Returned only on $select. Read-only.'
             assignedLicenses:
               type: array
               items:
@@ -24324,7 +24325,7 @@ components:
               description: 'Specifies the group type and its membership.  If the collection contains Unified, the group is a Microsoft 365 group; otherwise, it''s either a security group or distribution group. For details, see groups overview.If the collection includes DynamicMembership, the group has dynamic membership; otherwise, membership is static.  Returned by default. Supports $filter.'
             hasMembersWithLicenseErrors:
               type: boolean
-              description: 'Indicates whether there are members in this group that have license errors from its group-based license assignment. This property is never returned on a GET operation. You can use it as a $filter argument to get groups that have members with license errors (that is, filter for this property being true).'
+              description: 'Indicates whether there are members in this group that have license errors from its group-based license assignment. This property is never returned on a GET operation. You can use it as a $filter argument to get groups that have members with license errors (that is, filter for this property being true). See an example.'
               nullable: true
             infoCatalogs:
               type: array
@@ -24397,13 +24398,13 @@ components:
               nullable: true
             preferredLanguage:
               type: string
-              description: The preferred language for a Microsoft 365 group. Should follow ISO 639-1 Code; for example 'en-US'. Returned by default.
+              description: The preferred language for an Microsoft 365 group. Should follow ISO 639-1 Code; for example 'en-US'. Returned by default.
               nullable: true
             proxyAddresses:
               type: array
               items:
                 type: string
-              description: 'Email addresses for the group that direct to the same group mailbox. For example: [''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com'']. The any operator is required for filter expressions on multi-valued properties. Returned by default. Read-only. Not nullable. Supports $filter.'
+              description: 'Email addresses for the group that direct to the same group mailbox. For example: [''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com'']. The any operator is required to filter expressions on multi-valued properties. Returned by default. Read-only. Not nullable. Supports $filter.'
             renewedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -24430,7 +24431,7 @@ components:
               nullable: true
             theme:
               type: string
-              description: 'Specifies a Microsoft 365 group''s color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.'
+              description: 'Specifies an Microsoft 365 group''s color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.'
               nullable: true
             visibility:
               type: string
@@ -24448,11 +24449,11 @@ components:
               nullable: true
             hideFromAddressLists:
               type: boolean
-              description: 'True if the group is not displayed in certain parts of the Outlook user interface: in the Address Book, in address lists for selecting message recipients, and in the Browse Groups dialog for searching groups; false otherwise. Default value is false. Returned only on $select.'
+              description: 'True if the group is not displayed in certain parts of the Outlook UI: the Address Book, address lists for selecting message recipients, and the Browse Groups dialog for searching groups; otherwise, false. Default value is false. Returned only on $select.'
               nullable: true
             hideFromOutlookClients:
               type: boolean
-              description: 'True if the group is not displayed in Outlook clients, such as Outlook for Windows and Outlook on the web, false otherwise. Default value is false. Returned only on $select.'
+              description: 'True if the group is not displayed in Outlook clients, such as Outlook for Windows and Outlook on the web; otherwise, false. Default value is false. Returned only on $select.'
               nullable: true
             isFavorite:
               type: boolean
@@ -24472,7 +24473,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Count of conversations that have received new posts since the signed-in user last visited the group. This property is the same as unseenConversationsCount.Returned only on $select.
+              description: Count of conversations that have received new posts since the signed-in user last visited the group. Returned only on $select.
               format: int32
               nullable: true
             unseenMessagesCount:
@@ -24491,6 +24492,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
+              description: Represents the app roles a group has been granted for an application.
             createdOnBehalfOf:
               $ref: '#/components/schemas/microsoft.graph.directoryObject'
             endpoints:
@@ -24502,12 +24504,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Groups and administrative units that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable.'
+              description: 'Groups that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable.'
             members:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Users, contacts, and groups that are members of this group. HTTP Methods: GET (supported for all groups), POST (supported for security groups and mail-enabled security groups), DELETE (supported only for security groups) Read-only. Nullable.'
+              description: 'Users and groups that are members of this group. HTTP Methods: GET (supported for all groups), POST (supported for Microsoft 365 groups, security groups and mail-enabled security groups), DELETE (supported for Microsoft 365 groups and security groups). Nullable.'
             membersWithLicenseErrors:
               type: array
               items:
@@ -24517,7 +24519,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'The owners of the group. The owners are a set of non-admin users who are allowed to modify this object. HTTP Methods: GET (supported for all groups), POST (supported for security groups and mail-enabled security groups), DELETE (supported only for security groups) Read-only. Nullable.'
+              description: 'The owners of the group. The owners are a set of non-admin users who are allowed to modify this object. Limited to 100 owners. HTTP Methods: GET (supported for all groups), POST (supported for Microsoft 365 groups, security groups and mail-enabled security groups), DELETE (supported for Microsoft 365 groups and security groups). Nullable.'
             permissionGrants:
               type: array
               items:
@@ -24526,7 +24528,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directorySetting'
-              description: 'Settings that can govern this group''s behavior, like whether members can invite guest users to the group. Nullable.'
+              description: Read-only. Nullable.
             transitiveMemberOf:
               type: array
               items:
@@ -24556,7 +24558,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.event'
-              description: The group's events.
+              description: The group's calendar events.
             photo:
               $ref: '#/components/schemas/microsoft.graph.profilePhoto'
             photos:
@@ -24679,7 +24681,7 @@ components:
               nullable: true
             personType:
               type: string
-              description: 'The type of person, for example distribution list.'
+              description: The type of person.
               nullable: true
             phones:
               type: array
@@ -25004,26 +25006,26 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Created date time in UTC of the device enrollment configuration
+              description: Not yet documented
               format: date-time
             description:
               type: string
-              description: The description of the device enrollment configuration
+              description: Not yet documented
               nullable: true
             displayName:
               type: string
-              description: The display name of the device enrollment configuration
+              description: Not yet documented
               nullable: true
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Last modified date time in UTC of the device enrollment configuration
+              description: Not yet documented
               format: date-time
             priority:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Priority is used when a user exists in multiple groups that are assigned enrollment configuration. Users are subject only to the configuration with the lowest priority value.
+              description: Not yet documented
               format: int32
             roleScopeTagIds:
               type: array
@@ -25035,13 +25037,13 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: The version of the device enrollment configuration
+              description: Not yet documented
               format: int32
             assignments:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.enrollmentConfigurationAssignment'
-              description: The list of group assignments for the device configuration profile
+              description: The list of group assignments for the device configuration profile.
           additionalProperties:
             type: object
           description: The Base Class of Device Enrollment Configuration
@@ -25057,11 +25059,11 @@ components:
               nullable: true
             activationLockBypassCode:
               type: string
-              description: Code that allows the Activation Lock on a device to be bypassed. This property is read-only.
+              description: Code that allows the Activation Lock on a device to be bypassed.
               nullable: true
             androidSecurityPatchLevel:
               type: string
-              description: Android security patch level. This property is read-only.
+              description: Android security patch level
               nullable: true
             autopilotEnrolled:
               type: boolean
@@ -25072,18 +25074,18 @@ components:
               nullable: true
             azureADDeviceId:
               type: string
-              description: The unique identifier for the Azure Active Directory device. Read only. This property is read-only.
+              description: The unique identifier for the Azure Active Directory device. Read only.
               nullable: true
             azureADRegistered:
               type: boolean
-              description: Whether the device is Azure Active Directory registered. This property is read-only.
+              description: Whether the device is Azure Active Directory registered.
               nullable: true
             chassisType:
               $ref: '#/components/schemas/microsoft.graph.chassisType'
             complianceGracePeriodExpirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The DateTime when device compliance grace period expires. This property is read-only.
+              description: The DateTime when device compliance grace period expires
               format: date-time
             complianceState:
               $ref: '#/components/schemas/microsoft.graph.complianceState'
@@ -25097,10 +25099,10 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceActionResult'
-              description: List of ComplexType deviceActionResult objects. This property is read-only.
+              description: List of ComplexType deviceActionResult objects.
             deviceCategoryDisplayName:
               type: string
-              description: Device category display name. This property is read-only.
+              description: Device category display name
               nullable: true
             deviceEnrollmentType:
               $ref: '#/components/schemas/microsoft.graph.deviceEnrollmentType'
@@ -25108,7 +25110,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.deviceHealthAttestationState'
             deviceName:
               type: string
-              description: Name of the device. This property is read-only.
+              description: Name of the device
               nullable: true
             deviceRegistrationState:
               $ref: '#/components/schemas/microsoft.graph.deviceRegistrationState'
@@ -25116,24 +25118,24 @@ components:
               $ref: '#/components/schemas/microsoft.graph.deviceType'
             easActivated:
               type: boolean
-              description: Whether the device is Exchange ActiveSync activated. This property is read-only.
+              description: Whether the device is Exchange ActiveSync activated.
             easActivationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Exchange ActivationSync activation time of the device. This property is read-only.
+              description: Exchange ActivationSync activation time of the device.
               format: date-time
             easDeviceId:
               type: string
-              description: Exchange ActiveSync Id of the device. This property is read-only.
+              description: Exchange ActiveSync Id of the device.
               nullable: true
             emailAddress:
               type: string
-              description: Email(s) for the user associated with the device. This property is read-only.
+              description: Email(s) for the user associated with the device
               nullable: true
             enrolledDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Enrollment time of the device. This property is read-only.
+              description: Enrollment time of the device.
               format: date-time
             ethernetMacAddress:
               type: string
@@ -25146,11 +25148,11 @@ components:
             exchangeLastSuccessfulSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Last time the device contacted Exchange. This property is read-only.
+              description: Last time the device contacted Exchange.
               format: date-time
             freeStorageSpaceInBytes:
               type: integer
-              description: Free Storage in Bytes. This property is read-only.
+              description: Free Storage in Bytes
               format: int64
             hardwareInformation:
               $ref: '#/components/schemas/microsoft.graph.hardwareInformation'
@@ -25160,24 +25162,24 @@ components:
               nullable: true
             imei:
               type: string
-              description: IMEI. This property is read-only.
+              description: IMEI
               nullable: true
             isEncrypted:
               type: boolean
-              description: Device encryption status. This property is read-only.
+              description: Device encryption status
             isSupervised:
               type: boolean
-              description: Device supervised status. This property is read-only.
+              description: Device supervised status
             jailBroken:
               type: string
-              description: whether the device is jail broken or rooted. This property is read-only.
+              description: whether the device is jail broken or rooted.
               nullable: true
             joinType:
               $ref: '#/components/schemas/microsoft.graph.joinType'
             lastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The date and time that the device last completed a successful sync with Intune. This property is read-only.
+              description: The date and time that the device last completed a successful sync with Intune.
               format: date-time
             lostModeState:
               $ref: '#/components/schemas/microsoft.graph.lostModeState'
@@ -25200,15 +25202,15 @@ components:
               $ref: '#/components/schemas/microsoft.graph.managementState'
             manufacturer:
               type: string
-              description: Manufacturer of the device. This property is read-only.
+              description: Manufacturer of the device
               nullable: true
             meid:
               type: string
-              description: MEID. This property is read-only.
+              description: MEID
               nullable: true
             model:
               type: string
-              description: Model of the device. This property is read-only.
+              description: Model of the device
               nullable: true
             notes:
               type: string
@@ -25216,11 +25218,11 @@ components:
               nullable: true
             operatingSystem:
               type: string
-              description: 'Operating system of the device. Windows, iOS, etc. This property is read-only.'
+              description: 'Operating system of the device. Windows, iOS, etc.'
               nullable: true
             osVersion:
               type: string
-              description: Operating system version of the device. This property is read-only.
+              description: Operating system version of the device.
               nullable: true
             ownerType:
               $ref: '#/components/schemas/microsoft.graph.ownerType'
@@ -25228,7 +25230,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.managedDevicePartnerReportedHealthState'
             phoneNumber:
               type: string
-              description: Phone number of the device. This property is read-only.
+              description: Phone number of the device
               nullable: true
             physicalMemoryInBytes:
               type: integer
@@ -25243,11 +25245,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.managedDeviceArchitecture'
             remoteAssistanceSessionErrorDetails:
               type: string
-              description: An error string that identifies issues when creating Remote Assistance session objects. This property is read-only.
+              description: An error string that identifies issues when creating Remote Assistance session objects.
               nullable: true
             remoteAssistanceSessionUrl:
               type: string
-              description: Url that allows a Remote Assistance session to be established with the device. This property is read-only.
+              description: Url that allows a Remote Assistance session to be established with the device.
               nullable: true
             requireUserEnrollmentApproval:
               type: boolean
@@ -25266,7 +25268,7 @@ components:
               description: List of Scope Tag IDs for this Device instance.
             serialNumber:
               type: string
-              description: SerialNumber. This property is read-only.
+              description: SerialNumber
               nullable: true
             skuFamily:
               type: string
@@ -25284,11 +25286,11 @@ components:
               nullable: true
             subscriberCarrier:
               type: string
-              description: Subscriber Carrier. This property is read-only.
+              description: Subscriber Carrier
               nullable: true
             totalStorageSpaceInBytes:
               type: integer
-              description: Total Storage in Bytes. This property is read-only.
+              description: Total Storage in Bytes
               format: int64
             udid:
               type: string
@@ -25296,15 +25298,15 @@ components:
               nullable: true
             userDisplayName:
               type: string
-              description: User display name. This property is read-only.
+              description: User display name
               nullable: true
             userId:
               type: string
-              description: Unique Identifier for the user associated with the device. This property is read-only.
+              description: Unique Identifier for the user associated with the device
               nullable: true
             userPrincipalName:
               type: string
-              description: Device user principal name. This property is read-only.
+              description: Device user principal name
               nullable: true
             usersLoggedOn:
               type: array
@@ -25313,7 +25315,7 @@ components:
               description: Indicates the last logged on users of a device. This property is read-only.
             wiFiMacAddress:
               type: string
-              description: Wi-Fi MAC. This property is read-only.
+              description: Wi-Fi MAC
               nullable: true
             windowsActiveMalwareCount:
               maximum: 2147483647
@@ -25449,7 +25451,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
-              description: Zero or more policys already applied on the registered app when it last synchronized with managment service.
+              description: Zero or more policys already applied on the registered app when it last synchronized with management service.
             intendedPolicies:
               type: array
               items:
@@ -25651,7 +25653,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
-              description: Read-only. Nullable. Returns the plannerTasks assigned to the user.
+              description: Read-only. Nullable. Returns the plannerPlans shared with the user.
           additionalProperties:
             type: object
     microsoft.graph.itemInsights:
@@ -25889,7 +25891,7 @@ components:
           properties:
             accountEnabled:
               type: boolean
-              description: 'true if the account is enabled; otherwise, false. default is true.'
+              description: 'true if the account is enabled; otherwise, false. Required.'
               nullable: true
             alternativeSecurityIds:
               type: array
@@ -25986,7 +25988,7 @@ components:
               nullable: true
             operatingSystemVersion:
               type: string
-              description: Operating system version of the device. Required.
+              description: The version of the operating system on the device. Required.
               nullable: true
             physicalIds:
               type: array
@@ -26076,7 +26078,7 @@ components:
           properties:
             activity:
               type: string
-              description: 'The supplemental information to a user''s availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive,InAMeeting, Offline, OffWork,OutOfOffice, PresenceUnknown,Presenting, UrgentInterruptionsOnly.'
+              description: 'The supplemental information to a user''s availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive, InAMeeting, Offline, OffWork, OutOfOffice, PresenceUnknown, Presenting, UrgentInterruptionsOnly.'
               nullable: true
             availability:
               type: string
@@ -26724,7 +26726,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.recipient'
-          description: The email address to which a message should be redirected.
+          description: The email addresses to which a message should be redirected.
         stopProcessingRules:
           type: boolean
           description: Indicates whether subsequent rules should be evaluated.
@@ -27242,7 +27244,7 @@ components:
           nullable: true
         provisioningStatus:
           type: string
-          description: 'The provisioning status of the service plan. Possible values:''Success'' - Service is fully provisioned.''Disabled'' - Service has been disabled.''PendingInput'' - Service is not yet provisioned; awaiting service confirmation.''PendingActivation'' - Service is provisioned but requires explicit activation by administrator (for example, Intune_O365 service plan).''PendingProvisioning'' - Microsoft has added a new service to the product SKU and it has not been activated in the tenant, yet.'
+          description: 'The provisioning status of the service plan. Possible values:''Success'' - Service is fully provisioned.''Disabled'' - Service has been disabled.''PendingInput'' - Service is not yet provisioned; awaiting service confirmation.''PendingActivation'' - Service is provisioned but requires explicit activation by administrator (for example, Intune_O365 service plan)''PendingProvisioning'' - Microsoft has added a new service to the product SKU and it has not been activated in the tenant, yet.'
           nullable: true
         servicePlanId:
           pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
@@ -28196,7 +28198,7 @@ components:
               description: 'The type of permission, e.g. read. See below for the full list of roles. Read-only.'
             shareId:
               type: string
-              description: 'A unique token that can be used to access this shared item via the [shares API][]. Read-only.'
+              description: A unique token that can be used to access this shared item via the **shares** API. Read-only.
               nullable: true
           additionalProperties:
             type: object
@@ -29501,14 +29503,14 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerBucket'
-              description: Collection of buckets in the plan. Read-only. Nullable.
+              description: Read-only. Nullable. Collection of buckets in the plan.
             details:
               $ref: '#/components/schemas/microsoft.graph.plannerPlanDetails'
             tasks:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
-              description: Collection of tasks in the plan. Read-only. Nullable.
+              description: Read-only. Nullable. Collection of tasks in the plan.
           additionalProperties:
             type: object
     microsoft.graph.plannerTask:
@@ -29635,17 +29637,17 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.sharedInsight'
-              description: Access this property from the derived type itemInsights.
+              description: 'Calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.'
             trending:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.trending'
-              description: Access this property from the derived type itemInsights.
+              description: 'Calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user''s closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.'
             used:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.usedInsight'
-              description: Access this property from the derived type itemInsights.
+              description: 'Calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.'
           additionalProperties:
             type: object
     microsoft.graph.regionalAndLanguageSettings:
@@ -30820,13 +30822,13 @@ components:
             lastEditedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Read only. Timestamp when edits to the chat message were made. Triggers an 'Edited' flag in the Teams UI. If no edits are made the value is null.
+              description: Read only. Timestamp when edits to the chat message were made. Triggers an 'Edited' flag in the Microsoft Teams UI. If no edits are made the value is null.
               format: date-time
               nullable: true
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Read only. Timestamp when the chat message is created (initial setting) or modified, including when a reaction is added or removed.'
+              description: 'Read only. Timestamp when the chat message is created (initial setting) or edited, including when a reaction is added or removed.'
               format: date-time
               nullable: true
             locale:
@@ -30848,7 +30850,7 @@ components:
               description: 'Reactions for this chat message (for example, Like).'
             replyToId:
               type: string
-              description: 'Read-only. ID of the parent chat message or root chat message of the thread. (Only applies to chat messages in channels, not chats.)'
+              description: Read-only. Id of the parent chat message or root chat message of the thread. (Only applies to chat messages in channels not chats)
               nullable: true
             subject:
               type: string
@@ -30959,7 +30961,7 @@ components:
           nullable: true
         allowCreateUpdateChannels:
           type: boolean
-          description: 'If set to true, members can add and update any channels.'
+          description: 'If set to true, members can add and update channels.'
           nullable: true
         allowCreateUpdateRemoveConnectors:
           type: boolean
@@ -31349,7 +31351,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.dayOfWeek'
-          description: 'A collection of the days of the week on which the event occurs. Possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. If type is relativeMonthly or relativeYearly, and daysOfWeek specifies more than one day, the event falls on the first day that satisfies the pattern.  Required if type is weekly, relativeMonthly, or relativeYearly.'
+          description: 'A collection of the days of the week on which the event occurs. The possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. If type is relativeMonthly or relativeYearly, and daysOfWeek specifies more than one day, the event falls on the first day that satisfies the pattern.  Required if type is weekly, relativeMonthly, or relativeYearly.'
         firstDayOfWeek:
           $ref: '#/components/schemas/microsoft.graph.dayOfWeek'
         index:
@@ -31761,7 +31763,7 @@ components:
       properties:
         name:
           type: string
-          description: Name of the setting (as defined by the directorySettingTemplate).
+          description: Name of the setting (as defined by the groupSettingTemplate).
           nullable: true
         value:
           type: string
@@ -31808,7 +31810,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.attachment'
-              description: 'The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post. Read-only. Nullable.'
+              description: Read-only. Nullable.
             extensions:
               type: array
               items:
@@ -31904,7 +31906,7 @@ components:
       properties:
         upgradeAvailable:
           type: boolean
-          description: Indicates if there are higher storage quota plans available. Read-only.
+          description: Indicates whether there are higher storage quota plans available. Read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -32172,12 +32174,12 @@ components:
           nullable: true
         latitude:
           type: number
-          description: 'Optional. The latitude, in decimal, for the item. Writable on OneDrive Personal.'
+          description: 'Optional. The latitude, in decimal, for the item. Read-only.'
           format: double
           nullable: true
         longitude:
           type: number
-          description: 'Optional. The longitude, in decimal, for the item. Writable on OneDrive Personal.'
+          description: 'Optional. The longitude, in decimal, for the item. Read-only.'
           format: double
           nullable: true
       additionalProperties:
@@ -32249,7 +32251,7 @@ components:
         takenDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: The date and time the photo was taken in UTC time. Read-only.
+          description: Represents the date and time the photo was taken. Read-only.
           format: date-time
           nullable: true
       additionalProperties:
@@ -32460,7 +32462,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookOperation'
-              description: 'The status of Workbook operations. Getting an operation collection is not supported, but you can get the status of a long-running operation if the Location header is returned in the response. Read-only. Nullable.'
+              description: 'The status of workbook operations. Getting an operation collection is not supported, but you can get the status of a long-running operation if the Location header is returned in the response. Read-only.'
             tables:
               type: array
               items:
@@ -32485,14 +32487,14 @@ components:
               nullable: true
             changeType:
               type: string
-              description: 'Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Required. Note: Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.'
+              description: 'Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list.Note: Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.'
             clientState:
               type: string
-              description: Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 255 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification. Optional.
+              description: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
               nullable: true
             creatorId:
               type: string
-              description: 'Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the ID of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the ID of the service principal corresponding to the app. Read-only.'
+              description: 'Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the id of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the id of the service principal corresponding to the app. Read-only.'
               nullable: true
             encryptionCertificate:
               type: string
@@ -32500,12 +32502,12 @@ components:
               nullable: true
             encryptionCertificateId:
               type: string
-              description: A custom app-provided identifier to help identify the certificate needed to decrypt resource data. Optional. Required when includeResourceData is true.
+              description: A custom app-provided identifier to help identify the certificate needed to decrypt resource data. Optional.
               nullable: true
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Specifies the date and time when the webhook subscription expires. The time is in UTC, and can be an amount of time from subscription creation that varies for the resource subscribed to.  See the table below for maximum supported subscription length of time. Required.'
+              description: 'Required. Specifies the date and time when the webhook subscription expires. The time is in UTC, and can be an amount of time from subscription creation that varies for the resource subscribed to.  See the table below for maximum supported subscription length of time.'
               format: date-time
             includeResourceData:
               type: boolean
@@ -32527,10 +32529,10 @@ components:
               nullable: true
             notificationUrl:
               type: string
-              description: The URL of the endpoint that receives the change notifications. This URL must make use of the HTTPS protocol. Required.
+              description: Required. The URL of the endpoint that will receive the change notifications. This URL must make use of the HTTPS protocol.
             resource:
               type: string
-              description: Specifies the resource that will be monitored for changes. Do not include the base URL (https://graph.microsoft.com/beta/). See the possible resource path values for each supported resource. Required.
+              description: Required. Specifies the resource that will be monitored for changes. Do not include the base URL (https://graph.microsoft.com/v1.0/). See the possible resource path values for each supported resource.
           additionalProperties:
             type: object
     microsoft.graph.thumbnailSet:
@@ -32557,6 +32559,7 @@ components:
           properties:
             content:
               type: string
+              description: The content stream for this version of the item.
               format: base64url
               nullable: true
             size:
@@ -34228,7 +34231,7 @@ components:
               nullable: true
             teamsAppId:
               type: string
-              description: The id from the Teams App manifest.
+              description: The ID from the Teams app manifest.
               nullable: true
             version:
               type: string
@@ -34248,7 +34251,7 @@ components:
           nullable: true
         contentType:
           type: string
-          description: 'The media type of the content attachment. It can have the following values: reference: Attachment is a link to another file. Populate the contentURL with the link to the object.Any contentTypes supported by the Bot Framework''s Attachment objectapplication/vnd.microsoft.card.codesnippet: A code snippet. application/vnd.microsoft.card.announcement: An announcement header.'
+          description: 'The media type of the content attachment. It can have the following values: reference: Attachment is a link to another file. Populate the contentURL with the link to the object.file: Raw file attachment. Populate the contenturl field with the base64 encoding of the file in data: format.image/: Image type with the type of the image specified ex: image/png, image/jpeg, image/gif. Populate the contentUrl field with the base64 encoding of the file in data: format.video/: Video type with the format specified. Ex: video/mp4. Populate the contentUrl field with the base64 encoding of the file in data: format.audio/: Audio type with the format specified. Ex: audio/wmw. Populate the contentUrl field with the base64 encoding of the file in data: format.application/card type: Rich card attachment type with the card type specifying the exact card format to use. Set content with the json format of the card. Supported values for card type include:application/vnd.microsoft.card.adaptive: A rich card that can contain any combination of text, speech, images,,buttons, and input fields. Set the content property to,an AdaptiveCard object.application/vnd.microsoft.card.animation: A rich card that plays animation. Set the content property,to an AnimationCardobject.application/vnd.microsoft.card.audio: A rich card that plays audio files. Set the content property,to an AudioCard object.application/vnd.microsoft.card.video: A rich card that plays videos. Set the content property,to a VideoCard object.application/vnd.microsoft.card.hero: A Hero card. Set the content property to a HeroCard object.application/vnd.microsoft.card.thumbnail: A Thumbnail card. Set the content property to a ThumbnailCard object.application/vnd.microsoft.com.card.receipt: A Receipt card. Set the content property to a ReceiptCard object.application/vnd.microsoft.com.card.signin: A user Sign In card. Set the content property to a SignInCard object.'
           nullable: true
         contentUrl:
           type: string
@@ -34419,11 +34422,11 @@ components:
               nullable: true
             recipientUserId:
               type: string
-              description: User id of the recipient of the offer shift request.
+              description: User ID of the recipient of the offer shift request.
               nullable: true
             senderShiftId:
               type: string
-              description: User id of the sender of the offer shift request.
+              description: User ID of the sender of the offer shift request.
               nullable: true
           additionalProperties:
             type: object
@@ -34511,7 +34514,7 @@ components:
           properties:
             recipientShiftId:
               type: string
-              description: Shift ID for the recipient user with whom the request is to swap.
+              description: ShiftId for the recipient user with whom the request is to swap.
               nullable: true
           additionalProperties:
             type: object
@@ -34973,7 +34976,7 @@ components:
       properties:
         crc32Hash:
           type: string
-          description: The CRC32 value of the file (if available). Read-only.
+          description: The CRC32 value of the file in little endian (if available). Read-only.
           nullable: true
         quickXorHash:
           type: string
@@ -35038,7 +35041,7 @@ components:
           properties:
             content:
               type: string
-              description: The content of the comment.
+              description: The content of comment.
               nullable: true
             contentType:
               type: string
@@ -35076,7 +35079,7 @@ components:
               description: Indicates whether the name is scoped to the workbook or to a specific worksheet. Read-only.
             type:
               type: string
-              description: 'Indicates what type of reference is associated with the name. Possible values are: String, Integer, Double, Boolean, Range. Read-only.'
+              description: 'Indicates what type of reference is associated with the name. The possible values are: String, Integer, Double, Boolean, Range. Read-only.'
               nullable: true
             value:
               $ref: '#/components/schemas/microsoft.graph.Json'
@@ -35140,7 +35143,7 @@ components:
               description: Indicates whether the total row is visible or not. This value can be set to show or remove the total row.
             style:
               type: string
-              description: 'Constant value that represents the Table style. Possible values are: TableStyleLight1 thru TableStyleLight21, TableStyleMedium1 thru TableStyleMedium28, TableStyleStyleDark1 thru TableStyleStyleDark11. A custom user-defined style present in the workbook can also be specified.'
+              description: 'Constant value that represents the Table style. The possible values are: TableStyleLight1 thru TableStyleLight21, TableStyleMedium1 thru TableStyleMedium28, TableStyleStyleDark1 thru TableStyleStyleDark11. A custom user-defined style present in the workbook can also be specified.'
               nullable: true
             columns:
               type: array
@@ -36016,11 +36019,11 @@ components:
           properties:
             content:
               type: string
-              description: The content of replied comment.
+              description: The content of a comment reply.
               nullable: true
             contentType:
               type: string
-              description: Indicates the type for the replied comment.
+              description: Indicates the type for the comment reply.
           additionalProperties:
             type: object
     microsoft.graph.workbookOperationError:
@@ -36101,7 +36104,7 @@ components:
               description: Represents whether the casing impacted the last sort of the table. Read-only.
             method:
               type: string
-              description: 'Represents Chinese character ordering method last used to sort the table. Possible values are: PinYin, StrokeCount. Read-only.'
+              description: 'Represents Chinese character ordering method last used to sort the table. The possible values are: PinYin, StrokeCount. Read-only.'
           additionalProperties:
             type: object
     microsoft.graph.workbookChart:
@@ -36301,7 +36304,7 @@ components:
           nullable: true
         dataOption:
           type: string
-          description: 'Represents additional sorting options for this field. Possible values are: Normal, TextAsNumber.'
+          description: 'Represents additional sorting options for this field. The possible values are: Normal, TextAsNumber.'
         icon:
           $ref: '#/components/schemas/microsoft.graph.workbookIcon'
         key:
@@ -36312,7 +36315,7 @@ components:
           format: int32
         sortOn:
           type: string
-          description: 'Represents the type of sorting of this condition. Possible values are: Value, CellColor, FontColor, Icon.'
+          description: 'Represents the type of sorting of this condition. The possible values are: Value, CellColor, FontColor, Icon.'
       additionalProperties:
         type: object
     microsoft.graph.workbookChartAxes:
@@ -36537,7 +36540,7 @@ components:
           format: int32
         set:
           type: string
-          description: 'Represents the set that the icon is part of. Possible values are: Invalid, ThreeArrows, ThreeArrowsGray, ThreeFlags, ThreeTrafficLights1, ThreeTrafficLights2, ThreeSigns, ThreeSymbols, ThreeSymbols2, FourArrows, FourArrowsGray, FourRedToBlack, FourRating, FourTrafficLights, FiveArrows, FiveArrowsGray, FiveRating, FiveQuarters, ThreeStars, ThreeTriangles, FiveBoxes.'
+          description: 'Represents the set that the icon is part of. The possible values are: Invalid, ThreeArrows, ThreeArrowsGray, ThreeFlags, ThreeTrafficLights1, ThreeTrafficLights2, ThreeSigns, ThreeSymbols, ThreeSymbols2, FourArrows, FourArrowsGray, FourRedToBlack, FourRating, FourTrafficLights, FiveArrows, FiveArrowsGray, FiveRating, FiveQuarters, ThreeStars, ThreeTriangles, FiveBoxes.'
       additionalProperties:
         type: object
     microsoft.graph.workbookChartAxis:
