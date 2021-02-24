@@ -1367,7 +1367,7 @@ components:
           properties:
             accountEnabled:
               type: boolean
-              description: 'true if the account is enabled; otherwise, false. default is true.'
+              description: 'true if the account is enabled; otherwise, false. Required.'
               nullable: true
             alternativeSecurityIds:
               type: array
@@ -1464,7 +1464,7 @@ components:
               nullable: true
             operatingSystemVersion:
               type: string
-              description: Operating system version of the device. Required.
+              description: The version of the operating system on the device. Required.
               nullable: true
             physicalIds:
               type: array
