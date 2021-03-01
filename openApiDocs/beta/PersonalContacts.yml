@@ -4124,6 +4124,7 @@ components:
               nullable: true
             wellKnownName:
               type: string
+              description: The name of the folder if the folder is a recognized folder. Currently contacts is the only recognized contacts folder.
               nullable: true
             childFolders:
               type: array
@@ -4194,6 +4195,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.followupFlag'
             gender:
               type: string
+              description: The contact's gender.
               nullable: true
             generation:
               type: string
@@ -4410,6 +4412,7 @@ components:
           properties:
             otherLabel:
               type: string
+              description: 'To specify a custom type of email address, set type to other, and assign otherLabel to a custom string. For example, you may use a specific email address for your volunteer activities. Set type to other, and set otherLabel to a custom string such as Volunteer work.'
               nullable: true
             type:
               $ref: '#/components/schemas/microsoft.graph.emailType'
@@ -4459,6 +4462,7 @@ components:
           nullable: true
         postOfficeBox:
           type: string
+          description: The post office box number.
           nullable: true
         state:
           type: string

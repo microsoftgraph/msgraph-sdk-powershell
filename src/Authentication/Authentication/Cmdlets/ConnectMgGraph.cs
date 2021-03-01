@@ -53,33 +53,42 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             HelpMessage = "The thumbprint of your certificate. The Certificate will be retrieved from the current user's certificate store.")]
         public string CertificateThumbprint { get; set; }
 
+        [Parameter(Mandatory = false,
+            ParameterSetName = Constants.AppParameterSet,
+            HelpMessage = "An X.509 certificate supplied during invocation.")]
+        public X509Certificate2 Certificate { get; set; }
+
         [Parameter(ParameterSetName = Constants.AccessTokenParameterSet,
             Position = 1,
             HelpMessage = "Specifies a bearer token for Microsoft Graph service. Access tokens do timeout and you'll have to handle their refresh.")]
         public string AccessToken { get; set; }
 
-        [Parameter(Position = 4,
+        [Parameter(ParameterSetName = Constants.AppParameterSet)]
+        [Parameter(ParameterSetName = Constants.UserParameterSet,
+            Position = 4,
             HelpMessage = "The id of the tenant to connect to.")]
         public string TenantId { get; set; }
 
-        [Parameter(Position = 5,
+        [Parameter(ParameterSetName = Constants.AppParameterSet)]
+        [Parameter(ParameterSetName = Constants.UserParameterSet,
+            Position = 5,
             HelpMessage = "Forces the command to get a new access token silently.")]
         public SwitchParameter ForceRefresh { get; set; }
 
-        [Parameter(Mandatory = false,
+        [Parameter(ParameterSetName = Constants.AppParameterSet)]
+        [Parameter(ParameterSetName = Constants.UserParameterSet,
+            Mandatory = false,
             HelpMessage = "Determines the scope of authentication context. This accepts `Process` for the current process, or `CurrentUser` for all sessions started by user.")]
         public ContextScope ContextScope { get; set; }
 
-        [Parameter(Mandatory = false,
+        [Parameter(ParameterSetName = Constants.AppParameterSet)]
+        [Parameter(ParameterSetName = Constants.AccessTokenParameterSet)]
+        [Parameter(ParameterSetName = Constants.UserParameterSet,
+            Mandatory = false,
             HelpMessage = "The name of the national cloud environment to connect to. By default global cloud is used.")]
         [ValidateNotNullOrEmpty]
         [Alias("EnvironmentName", "NationalCloud")]
         public string Environment { get; set; }
-
-        [Parameter(Mandatory = false,
-            ParameterSetName = Constants.AppParameterSet, 
-            HelpMessage = "An x509 Certificate supplied during invocation")]
-        public X509Certificate2 Certificate { get; set; }
 
         private readonly CancellationTokenSource _cancellationTokenSource = new CancellationTokenSource();
 
@@ -310,6 +319,13 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                         if (string.IsNullOrEmpty(CertificateThumbprint) && string.IsNullOrEmpty(CertificateName) && this.Certificate == null)
                         {
                             this.ThrowParameterError($"{nameof(CertificateThumbprint)} or {nameof(CertificateName)} or {nameof(Certificate)}");
+                        }
+
+                        // A thumbprint will always have 40 characters since thumbprints are dynamically calculated as a SHA-1 hash of a certificate's binary data. A SHA-1 hash has a length of 40 hexadecimal numbers (160-bit = 20-byte).
+                        // See https://docs.microsoft.com/en-us/dotnet/api/system.security.cryptography.x509certificates.x509certificate2.thumbprint?view=net-5.0#remarks.
+                        if (!string.IsNullOrEmpty(CertificateThumbprint) && CertificateThumbprint.Length != 40)
+                        {
+                            this.ThrowError(string.Format(ErrorConstants.Message.InvalidCertificateThumbprint, nameof(CertificateThumbprint)), ErrorCategory.InvalidArgument);
                         }
 
                         // Tenant Id

@@ -1,4 +1,5 @@
 {
+  "resources": [],
   "operations": {
     "/print": {
       "apiVersion": "v1.0-beta",
@@ -132,54 +133,6 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Devices.CloudPrint.yml"
     },
-    "/print/reports/{reportRoot-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Devices.CloudPrint.yml"
-    },
-    "/print/reports/microsoft.graph.getGroupArchivedPrintJobs(groupId='{groupId}',periodStart={periodStart},periodEnd={periodEnd})": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Devices.CloudPrint.yml"
-    },
-    "/print/reports/microsoft.graph.getGroupPrintUsageSummary(groupId='{groupId}',periodStart={periodStart},periodEnd={periodEnd})": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Devices.CloudPrint.yml"
-    },
-    "/print/reports/microsoft.graph.getOverallPrintUsageSummary(periodStart={periodStart},periodEnd={periodEnd},topListsSize={topListsSize})": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Devices.CloudPrint.yml"
-    },
-    "/print/reports/microsoft.graph.getPrinterArchivedPrintJobs(printerId='{printerId}',periodStart={periodStart},periodEnd={periodEnd})": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Devices.CloudPrint.yml"
-    },
-    "/print/reports/microsoft.graph.getPrinterUsageSummary(printerId='{printerId}',periodStart={periodStart},periodEnd={periodEnd})": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Devices.CloudPrint.yml"
-    },
-    "/print/reports/microsoft.graph.getPrintUsageSummariesByGroup(periodStart={periodStart},periodEnd={periodEnd})": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Devices.CloudPrint.yml"
-    },
-    "/print/reports/microsoft.graph.getPrintUsageSummariesByPrinter(periodStart={periodStart},periodEnd={periodEnd})": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Devices.CloudPrint.yml"
-    },
-    "/print/reports/microsoft.graph.getPrintUsageSummariesByTimeSpan(periodStart={periodStart},periodEnd={periodEnd},timeSpanInMinutes={timeSpanInMinutes})": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Devices.CloudPrint.yml"
-    },
-    "/print/reports/microsoft.graph.getPrintUsageSummariesByUser(periodStart={periodStart},periodEnd={periodEnd})": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Devices.CloudPrint.yml"
-    },
-    "/print/reports/microsoft.graph.getUserArchivedPrintJobs(userId='{userId}',periodStart={periodStart},periodEnd={periodEnd})": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Devices.CloudPrint.yml"
-    },
-    "/print/reports/microsoft.graph.getUserPrintUsageSummary(userId='{userId}',periodStart={periodStart},periodEnd={periodEnd})": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Devices.CloudPrint.yml"
-    },
     "/print/services": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Devices.CloudPrint.yml"
@@ -272,6 +225,5 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Devices.CloudPrint.yml"
     }
-  },
-  "resources": []
+  }
 }

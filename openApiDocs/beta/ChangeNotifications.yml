@@ -44,14 +44,14 @@ paths:
                 - encryptionCertificateId desc
                 - expirationDateTime
                 - expirationDateTime desc
-                - includeProperties
-                - includeProperties desc
                 - includeResourceData
                 - includeResourceData desc
                 - latestSupportedTlsVersion
                 - latestSupportedTlsVersion desc
                 - lifecycleNotificationUrl
                 - lifecycleNotificationUrl desc
+                - notificationContentType
+                - notificationContentType desc
                 - notificationQueryOptions
                 - notificationQueryOptions desc
                 - notificationUrl
@@ -77,10 +77,10 @@ paths:
                 - encryptionCertificate
                 - encryptionCertificateId
                 - expirationDateTime
-                - includeProperties
                 - includeResourceData
                 - latestSupportedTlsVersion
                 - lifecycleNotificationUrl
+                - notificationContentType
                 - notificationQueryOptions
                 - notificationUrl
                 - resource
@@ -174,10 +174,10 @@ paths:
                 - encryptionCertificate
                 - encryptionCertificateId
                 - expirationDateTime
-                - includeProperties
                 - includeResourceData
                 - latestSupportedTlsVersion
                 - lifecycleNotificationUrl
+                - notificationContentType
                 - notificationQueryOptions
                 - notificationUrl
                 - resource
@@ -290,9 +290,6 @@ components:
               type: string
               description: 'Required. Specifies the date and time when the webhook subscription expires. The time is in UTC, and can be an amount of time from subscription creation that varies for the resource subscribed to.  See the table below for maximum supported subscription length of time.'
               format: date-time
-            includeProperties:
-              type: boolean
-              nullable: true
             includeResourceData:
               type: boolean
               description: 'When set to true, change notifications include resource data (such as content of a chat message). Optional.'
@@ -304,6 +301,9 @@ components:
             lifecycleNotificationUrl:
               type: string
               description: 'The URL of the endpoint that receives lifecycle notifications, including subscriptionRemoved and missed notifications. This URL must make use of the HTTPS protocol. Optional. Read more about how Outlook resources use lifecycle notifications.'
+              nullable: true
+            notificationContentType:
+              type: string
               nullable: true
             notificationQueryOptions:
               type: string

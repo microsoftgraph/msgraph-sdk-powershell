@@ -1,4 +1,5 @@
 {
+  "resources": [],
   "operations": {
     "/users/{user-id}/authentication/methods/{authenticationMethod-id}/microsoft.graph.disableSmsSignIn": {
       "apiVersion": "v1.0-beta",
@@ -896,6 +897,10 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
     },
+    "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/microsoft.graph.calendarSharingMessage/microsoft.graph.accept": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
     "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/microsoft.graph.copy": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
@@ -909,6 +914,18 @@
       "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
     },
     "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/microsoft.graph.createReplyAll": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/microsoft.graph.eventMessageRequest/microsoft.graph.accept": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/microsoft.graph.eventMessageRequest/microsoft.graph.decline": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/microsoft.graph.eventMessageRequest/microsoft.graph.tentativelyAccept": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
     },
@@ -1068,6 +1085,10 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
     },
+    "/users/{user-id}/messages/{message-id}/microsoft.graph.calendarSharingMessage/microsoft.graph.accept": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
     "/users/{user-id}/messages/{message-id}/microsoft.graph.copy": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
@@ -1081,6 +1102,18 @@
       "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
     },
     "/users/{user-id}/messages/{message-id}/microsoft.graph.createReplyAll": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/messages/{message-id}/microsoft.graph.eventMessageRequest/microsoft.graph.accept": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/messages/{message-id}/microsoft.graph.eventMessageRequest/microsoft.graph.decline": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/messages/{message-id}/microsoft.graph.eventMessageRequest/microsoft.graph.tentativelyAccept": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
     },
@@ -1105,6 +1138,10 @@
       "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
     },
     "/users/{user-id}/messages/{message-id}/microsoft.graph.unsubscribe": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/microsoft.graph.activateServicePlan": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
     },
@@ -1652,6 +1689,5 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
     }
-  },
-  "resources": []
+  }
 }

@@ -86,6 +86,8 @@ directive:
     - microsoft.graph.governanceRoleDefinition
     - microsoft.graph.workbookOperationError
     - microsoft.graph.parentLabelDetails
+    - microsoft.graph.ediscovery.tag
+    - microsoft.graph.ediscovery.sourceCollection
 
   # Set parameter alias
   - where:
@@ -471,6 +473,20 @@ directive:
 
         return $;
       }
+# Modify generated .dictionary.cs model classes.
+  - from: source-file-csharp
+    where: $
+    transform: >
+      if (!$documentPath.match(/generated%5Capi%5CModels%5C\w*\d*.dictionary.cs/gm))
+      {
+        return $;
+      } else {
+        // Remove Count, Keys, and Values properties from implementations of an IAssociativeArray in models.
+        let propertiesToRemoveRegex = /^.*Microsoft\.Graph\.PowerShell\.Runtime\.IAssociativeArray<global::System\.Object>\.(Count|Keys|Values).*$/gm
+        $ = $.replace(propertiesToRemoveRegex, '');
+
+        return $;
+      }
 # Modify generated .cs model classes.
   - from: source-file-csharp
     where: $
@@ -479,44 +495,12 @@ directive:
       {
         return $;
       } else {
-        // Add new modifier to 'values' properties of classes that derive from an IAssociativeArray. See example https://regex101.com/r/hnX7xO/2.
-        let valuesPropertiesRegex = /(SerializedName\s*=\s*@"values".*\s*.*)(\s*)(.*Values\s*{\s*get;\s*set;\s*})/gmi
-        if($.match(valuesPropertiesRegex)) {
-          $ = $.replace(valuesPropertiesRegex, '$1$2 new $3');
-        }
-
-        // Add new modifier to 'additionalProperties' properties of classes that derive from an IAssociativeArray. See example https://regex101.com/r/hnX7xO/2.
+        // Add new modifier to 'additionalProperties' properties of classes that implement IAssociativeArray. See example https://regex101.com/r/hnX7xO/2.
         let additionalPropertiesRegex = /(SerializedName\s*=\s*@"additionalProperties".*\s*.*)(\s*)(.*AdditionalProperties\s*{\s*get;\s*set;\s*})/gmi
         if($.match(additionalPropertiesRegex)) {
           $ = $.replace(additionalPropertiesRegex, '$1$2 new $3');
         }
 
-        // Add new modifier to 'keys' properties of classes that derive from an IAssociativeArray. See example https://regex101.com/r/hnX7xO/2.
-        let keysRegex = /(SerializedName\s*=\s*@"keys".*\s*.*)(\s*)(.*Keys\s*{\s*get;\s*set;\s*})/gmi
-        if($.match(keysRegex)) {
-          $ = $.replace(keysRegex, '$1$2 new $3');
-        }
-
-        // Add new modifier to 'count' properties of classes that derive from an IAssociativeArray. See example https://regex101.com/r/hnX7xO/2.
-        let countRegex = /(SerializedName\s*=\s*@"count".*\s*.*)(\s*)(.*Count\s*{\s*get;\s*set;\s*})/gmi
-        if($.match(countRegex)) {
-          $ = $.replace(countRegex, '$1$2 new $3');
-        }
-
-        let regexPattern = /^\s*public\s*partial\s*class\s*MicrosoftGraph(?<EntityName>.*):$/gm;
-        let regexArray;
-        while ((regexArray = regexPattern.exec($)) !== null) {
-          if (regexArray['groups'] != null)
-          {
-            let EntityName = regexArray['groups'].EntityName.trim();
-            let newEntityId = EntityName + 'Id';
-            let newEntityIdPropRegex = new RegExp("^\\s*public\\s*string\\s*"+newEntityId+"\\.*","gm");
-            let existingIdPropRegex = /(^\s*)(public\s*string\s*Id\s.*)/gm;
-            if ((!$.match(newEntityIdPropRegex)) && $.match(existingIdPropRegex) && (newEntityId != "EntityId") && (newEntityId != "BaseItemId")) {
-              $ = $.replace(existingIdPropRegex, '$1$2\n\n$1partial void AfterToJson(ref Microsoft.Graph.PowerShell.Runtime.Json.JsonObject container, Microsoft.Graph.PowerShell.Runtime.SerializationMode serializationMode)\n$1{\n$1\tif (serializationMode == Microsoft.Graph.PowerShell.Runtime.SerializationMode.IncludeAll) {\n$1\t\tAddIf(null != this.Id ? (Microsoft.Graph.PowerShell.Runtime.Json.JsonNode)new Microsoft.Graph.PowerShell.Runtime.Json.JsonString(this.Id) : null, "'+ EntityName.toLowerCase() +'-id", container.Add);\n$1\t}\n$1}');
-            }
-          }
-        }
         return $;
       }
 # Modify generated .cs cmdlets.
@@ -637,7 +621,7 @@ directive:
         return $;
       }
 
-# Modify generated runtime IJsonSerializable class.
+# Modify generated runtime IJsonSerializable interface.
   - from: source-file-csharp
     where: $
     transform: >
@@ -648,6 +632,29 @@ directive:
         // Changes excludes hashset to a case-insensitive hashset.
         let fromJsonRegex = /(\s*FromJson<\w*>\s*\(JsonObject\s*json\s*,\s*System\.Collections\.Generic\.IDictionary.*)(\s*)({)/gm
         $ = $.replace(fromJsonRegex, '$1$2$3\n$2 if (excludes != null){ excludes = new System.Collections.Generic.HashSet<string>(excludes, global::System.StringComparer.OrdinalIgnoreCase);}');
+        return $;
+      }
+
+# Modify generated runtime IAssociativeArray interface.
+  - from: source-file-csharp
+    where: $
+    transform: >
+      if (!$documentPath.match(/generated%5Cruntime%5CIAssociativeArray.cs/gm))
+      {
+        return $;
+      } else {
+        // Remove Count from IAssociativeArray interface.
+        let countRegex = /int\s*Count\s*{\s*get;\s*}/gm
+        $ = $.replace(countRegex, '');
+
+        // Remove Keys from IAssociativeArray interface.
+        let keysRegex = /System\.Collections\.Generic\.IEnumerable<string>\s*Keys\s*{\s*get;\s*}/gm
+        $ = $.replace(keysRegex, '');
+
+        // Remove Values from IAssociativeArray interface.
+        let valuesRegex = /System\.Collections\.Generic\.IEnumerable<T>\s*Values\s*{\s*get;\s*}/gm
+        $ = $.replace(valuesRegex, '');
+
         return $;
       }
 

@@ -50,7 +50,7 @@ steps:
       displayName: 'Install AutoRest'
       inputs:
         command: 'custom'
-        customCommand: 'install -g autorest@beta'
+        customCommand: 'install -g autorest@latest'
 
     - task: PowerShell@2
       displayName: 'Register PS Repository'

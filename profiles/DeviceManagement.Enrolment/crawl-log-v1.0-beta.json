@@ -1,0 +1,853 @@
+{
+  "resources": [],
+  "operations": {
+    "/deviceManagement/androidDeviceOwnerEnrollmentProfiles": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/deviceManagement/androidDeviceOwnerEnrollmentProfiles/{androidDeviceOwnerEnrollmentProfile-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/deviceManagement/androidForWorkEnrollmentProfiles": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/deviceManagement/androidForWorkEnrollmentProfiles/{androidForWorkEnrollmentProfile-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/deviceManagement/appleUserInitiatedEnrollmentProfiles": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/deviceManagement/appleUserInitiatedEnrollmentProfiles/{appleUserInitiatedEnrollmentProfile-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/deviceManagement/appleUserInitiatedEnrollmentProfiles/{appleUserInitiatedEnrollmentProfile-id}/assignments": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/deviceManagement/appleUserInitiatedEnrollmentProfiles/{appleUserInitiatedEnrollmentProfile-id}/assignments/{appleEnrollmentProfileAssignment-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/deviceManagement/autopilotEvents": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/deviceManagement/autopilotEvents/{deviceManagementAutopilotEvent-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/deviceManagement/autopilotEvents/{deviceManagementAutopilotEvent-id}/policyStatusDetails": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/deviceManagement/autopilotEvents/{deviceManagementAutopilotEvent-id}/policyStatusDetails/{deviceManagementAutopilotPolicyStatusDetail-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/deviceManagement/conditionalAccessSettings": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/deviceManagement/depOnboardingSettings": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/deviceManagement/depOnboardingSettings/{depOnboardingSetting-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/deviceManagement/depOnboardingSettings/{depOnboardingSetting-id}/defaultIosEnrollmentProfile": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/deviceManagement/depOnboardingSettings/{depOnboardingSetting-id}/defaultIosEnrollmentProfile/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/deviceManagement/depOnboardingSettings/{depOnboardingSetting-id}/defaultMacOsEnrollmentProfile": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/deviceManagement/depOnboardingSettings/{depOnboardingSetting-id}/defaultMacOsEnrollmentProfile/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/deviceManagement/depOnboardingSettings/{depOnboardingSetting-id}/enrollmentProfiles": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/deviceManagement/depOnboardingSettings/{depOnboardingSetting-id}/enrollmentProfiles/{enrollmentProfile-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/deviceManagement/depOnboardingSettings/{depOnboardingSetting-id}/importedAppleDeviceIdentities": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/deviceManagement/depOnboardingSettings/{depOnboardingSetting-id}/importedAppleDeviceIdentities/{importedAppleDeviceIdentity-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/deviceManagement/deviceEnrollmentConfigurations": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/deviceManagement/deviceEnrollmentConfigurations/{deviceEnrollmentConfiguration-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/deviceManagement/deviceEnrollmentConfigurations/{deviceEnrollmentConfiguration-id}/assignments": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/deviceManagement/deviceEnrollmentConfigurations/{deviceEnrollmentConfiguration-id}/assignments/{enrollmentConfigurationAssignment-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/deviceManagement/importedDeviceIdentities": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/deviceManagement/importedDeviceIdentities/{importedDeviceIdentity-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/deviceManagement/importedWindowsAutopilotDeviceIdentities": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/deviceManagement/importedWindowsAutopilotDeviceIdentities/{importedWindowsAutopilotDeviceIdentity-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/deviceManagement/windowsAutopilotDeploymentProfiles": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/deviceManagement/windowsAutopilotDeploymentProfiles/{windowsAutopilotDeploymentProfile-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/deviceManagement/windowsAutopilotDeploymentProfiles/{windowsAutopilotDeploymentProfile-id}/assignedDevices": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/deviceManagement/windowsAutopilotDeploymentProfiles/{windowsAutopilotDeploymentProfile-id}/assignedDevices/{windowsAutopilotDeviceIdentity-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/deviceManagement/windowsAutopilotDeploymentProfiles/{windowsAutopilotDeploymentProfile-id}/assignedDevices/{windowsAutopilotDeviceIdentity-id}/deploymentProfile": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/deviceManagement/windowsAutopilotDeploymentProfiles/{windowsAutopilotDeploymentProfile-id}/assignedDevices/{windowsAutopilotDeviceIdentity-id}/deploymentProfile/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/deviceManagement/windowsAutopilotDeploymentProfiles/{windowsAutopilotDeploymentProfile-id}/assignedDevices/{windowsAutopilotDeviceIdentity-id}/intendedDeploymentProfile": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/deviceManagement/windowsAutopilotDeploymentProfiles/{windowsAutopilotDeploymentProfile-id}/assignedDevices/{windowsAutopilotDeviceIdentity-id}/intendedDeploymentProfile/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/deviceManagement/windowsAutopilotDeploymentProfiles/{windowsAutopilotDeploymentProfile-id}/assignments": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/deviceManagement/windowsAutopilotDeploymentProfiles/{windowsAutopilotDeploymentProfile-id}/assignments/{windowsAutopilotDeploymentProfileAssignment-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/deviceManagement/windowsAutopilotDeviceIdentities": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/deviceManagement/windowsAutopilotDeviceIdentities/{windowsAutopilotDeviceIdentity-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/deviceManagement/windowsAutopilotDeviceIdentities/{windowsAutopilotDeviceIdentity-id}/deploymentProfile": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/deviceManagement/windowsAutopilotDeviceIdentities/{windowsAutopilotDeviceIdentity-id}/deploymentProfile/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/deviceManagement/windowsAutopilotDeviceIdentities/{windowsAutopilotDeviceIdentity-id}/intendedDeploymentProfile": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/deviceManagement/windowsAutopilotDeviceIdentities/{windowsAutopilotDeviceIdentity-id}/intendedDeploymentProfile/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/deviceManagement/windowsAutopilotSettings": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/deviceManagement/windowsFeatureUpdateProfiles": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/deviceManagement/windowsFeatureUpdateProfiles/{windowsFeatureUpdateProfile-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/deviceManagement/windowsFeatureUpdateProfiles/{windowsFeatureUpdateProfile-id}/assignments": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/deviceManagement/windowsFeatureUpdateProfiles/{windowsFeatureUpdateProfile-id}/assignments/{windowsFeatureUpdateProfileAssignment-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/deviceManagement/windowsFeatureUpdateProfiles/{windowsFeatureUpdateProfile-id}/deviceUpdateStates": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/deviceManagement/windowsFeatureUpdateProfiles/{windowsFeatureUpdateProfile-id}/deviceUpdateStates/{windowsUpdateState-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/deviceManagement": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/deviceManagement/resourceNamespaces": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/deviceManagement/resourceNamespaces/{unifiedRbacResourceNamespace-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/deviceManagement/resourceNamespaces/{unifiedRbacResourceNamespace-id}/microsoft.graph.importResourceActions": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/deviceManagement/resourceNamespaces/{unifiedRbacResourceNamespace-id}/resourceActions": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/deviceManagement/resourceNamespaces/{unifiedRbacResourceNamespace-id}/resourceActions/{unifiedRbacResourceAction-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/deviceManagement/resourceNamespaces/{unifiedRbacResourceNamespace-id}/resourceActions/{unifiedRbacResourceAction-id}/resourceScope": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/deviceManagement/roleAssignments": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/deviceManagement/roleAssignments/{unifiedRoleAssignmentMultiple-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/deviceManagement/roleAssignments/{unifiedRoleAssignmentMultiple-id}/appScopes": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/deviceManagement/roleAssignments/{unifiedRoleAssignmentMultiple-id}/appScopes/{appScope-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/deviceManagement/roleAssignments/{unifiedRoleAssignmentMultiple-id}/directoryScopes": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/deviceManagement/roleAssignments/{unifiedRoleAssignmentMultiple-id}/directoryScopes/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/deviceManagement/roleAssignments/{unifiedRoleAssignmentMultiple-id}/principals": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/deviceManagement/roleAssignments/{unifiedRoleAssignmentMultiple-id}/principals/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/deviceManagement/roleAssignments/{unifiedRoleAssignmentMultiple-id}/roleDefinition": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/deviceManagement/roleAssignments/{unifiedRoleAssignmentMultiple-id}/roleDefinition/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/deviceManagement/roleDefinitions": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/deviceManagement/roleDefinitions/{unifiedRoleDefinition-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/deviceManagement/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/deviceManagement/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/{unifiedRoleDefinition-id1}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/microsoft.graph.roleScheduleInstances(directoryScopeId='{directoryScopeId}',appScopeId='{appScopeId}',principalId='{principalId}',roleDefinitionId='{roleDefinitionId}')": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/microsoft.graph.roleSchedules(directoryScopeId='{directoryScopeId}',appScopeId='{appScopeId}',principalId='{principalId}',roleDefinitionId='{roleDefinitionId}')": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/resourceNamespaces": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/resourceNamespaces/{unifiedRbacResourceNamespace-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/resourceNamespaces/{unifiedRbacResourceNamespace-id}/microsoft.graph.importResourceActions": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/resourceNamespaces/{unifiedRbacResourceNamespace-id}/resourceActions": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/resourceNamespaces/{unifiedRbacResourceNamespace-id}/resourceActions/{unifiedRbacResourceAction-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/resourceNamespaces/{unifiedRbacResourceNamespace-id}/resourceActions/{unifiedRbacResourceAction-id}/resourceScope": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/roleAssignmentRequests": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/roleAssignmentRequests/{unifiedRoleAssignmentRequest-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/roleAssignmentRequests/{unifiedRoleAssignmentRequest-id}/activatedUsing": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/roleAssignmentRequests/{unifiedRoleAssignmentRequest-id}/activatedUsing/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/roleAssignmentRequests/{unifiedRoleAssignmentRequest-id}/appScope": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/roleAssignmentRequests/{unifiedRoleAssignmentRequest-id}/appScope/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/roleAssignmentRequests/{unifiedRoleAssignmentRequest-id}/directoryScope": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/roleAssignmentRequests/{unifiedRoleAssignmentRequest-id}/directoryScope/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/roleAssignmentRequests/{unifiedRoleAssignmentRequest-id}/microsoft.graph.cancel": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/roleAssignmentRequests/{unifiedRoleAssignmentRequest-id}/principal": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/roleAssignmentRequests/{unifiedRoleAssignmentRequest-id}/principal/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/roleAssignmentRequests/{unifiedRoleAssignmentRequest-id}/roleDefinition": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/roleAssignmentRequests/{unifiedRoleAssignmentRequest-id}/roleDefinition/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/roleAssignmentRequests/{unifiedRoleAssignmentRequest-id}/targetSchedule": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/roleAssignmentRequests/{unifiedRoleAssignmentRequest-id}/targetSchedule/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/roleAssignmentRequests/microsoft.graph.filterByCurrentUser(on={on})": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/roleAssignments": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/roleAssignments/{unifiedRoleAssignment-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/roleAssignments/{unifiedRoleAssignment-id}/appScope": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/roleAssignments/{unifiedRoleAssignment-id}/directoryScope": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/roleAssignments/{unifiedRoleAssignment-id}/directoryScope/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/roleAssignments/{unifiedRoleAssignment-id}/principal": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/roleAssignments/{unifiedRoleAssignment-id}/principal/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/roleAssignments/{unifiedRoleAssignment-id}/roleDefinition": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/roleAssignments/{unifiedRoleAssignment-id}/roleDefinition/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/roleAssignmentScheduleInstances": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/roleAssignmentScheduleInstances/{unifiedRoleAssignmentScheduleInstance-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/roleAssignmentScheduleInstances/{unifiedRoleAssignmentScheduleInstance-id}/activatedUsing": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/roleAssignmentScheduleInstances/{unifiedRoleAssignmentScheduleInstance-id}/activatedUsing/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/roleAssignmentScheduleInstances/microsoft.graph.filterByCurrentUser(on={on})": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/roleAssignmentSchedules": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/roleAssignmentSchedules/{unifiedRoleAssignmentSchedule-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/roleAssignmentSchedules/{unifiedRoleAssignmentSchedule-id}/activatedUsing": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/roleAssignmentSchedules/{unifiedRoleAssignmentSchedule-id}/activatedUsing/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/roleAssignmentSchedules/microsoft.graph.filterByCurrentUser(on={on})": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/roleDefinitions": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/roleDefinitions/{unifiedRoleDefinition-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/{unifiedRoleDefinition-id1}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/roleEligibilityRequests": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/roleEligibilityRequests/{unifiedRoleEligibilityRequest-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/roleEligibilityRequests/{unifiedRoleEligibilityRequest-id}/appScope": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/roleEligibilityRequests/{unifiedRoleEligibilityRequest-id}/appScope/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/roleEligibilityRequests/{unifiedRoleEligibilityRequest-id}/directoryScope": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/roleEligibilityRequests/{unifiedRoleEligibilityRequest-id}/directoryScope/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/roleEligibilityRequests/{unifiedRoleEligibilityRequest-id}/microsoft.graph.cancel": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/roleEligibilityRequests/{unifiedRoleEligibilityRequest-id}/principal": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/roleEligibilityRequests/{unifiedRoleEligibilityRequest-id}/principal/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/roleEligibilityRequests/{unifiedRoleEligibilityRequest-id}/roleDefinition": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/roleEligibilityRequests/{unifiedRoleEligibilityRequest-id}/roleDefinition/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/roleEligibilityRequests/{unifiedRoleEligibilityRequest-id}/targetSchedule": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/roleEligibilityRequests/{unifiedRoleEligibilityRequest-id}/targetSchedule/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/roleEligibilityRequests/microsoft.graph.filterByCurrentUser(on={on})": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/roleEligibilityScheduleInstances": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/roleEligibilityScheduleInstances/{unifiedRoleEligibilityScheduleInstance-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/roleEligibilityScheduleInstances/microsoft.graph.filterByCurrentUser(on={on})": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/roleEligibilitySchedules": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/roleEligibilitySchedules/{unifiedRoleEligibilitySchedule-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/roleEligibilitySchedules/microsoft.graph.filterByCurrentUser(on={on})": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/microsoft.graph.roleScheduleInstances(directoryScopeId='{directoryScopeId}',appScopeId='{appScopeId}',principalId='{principalId}',roleDefinitionId='{roleDefinitionId}')": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/microsoft.graph.roleSchedules(directoryScopeId='{directoryScopeId}',appScopeId='{appScopeId}',principalId='{principalId}',roleDefinitionId='{roleDefinitionId}')": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/resourceNamespaces": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/resourceNamespaces/{unifiedRbacResourceNamespace-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/resourceNamespaces/{unifiedRbacResourceNamespace-id}/microsoft.graph.importResourceActions": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/resourceNamespaces/{unifiedRbacResourceNamespace-id}/resourceActions": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/resourceNamespaces/{unifiedRbacResourceNamespace-id}/resourceActions/{unifiedRbacResourceAction-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/resourceNamespaces/{unifiedRbacResourceNamespace-id}/resourceActions/{unifiedRbacResourceAction-id}/resourceScope": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/roleAssignmentRequests": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/roleAssignmentRequests/{unifiedRoleAssignmentRequest-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/roleAssignmentRequests/{unifiedRoleAssignmentRequest-id}/activatedUsing": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/roleAssignmentRequests/{unifiedRoleAssignmentRequest-id}/activatedUsing/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/roleAssignmentRequests/{unifiedRoleAssignmentRequest-id}/appScope": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/roleAssignmentRequests/{unifiedRoleAssignmentRequest-id}/appScope/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/roleAssignmentRequests/{unifiedRoleAssignmentRequest-id}/directoryScope": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/roleAssignmentRequests/{unifiedRoleAssignmentRequest-id}/directoryScope/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/roleAssignmentRequests/{unifiedRoleAssignmentRequest-id}/microsoft.graph.cancel": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/roleAssignmentRequests/{unifiedRoleAssignmentRequest-id}/principal": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/roleAssignmentRequests/{unifiedRoleAssignmentRequest-id}/principal/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/roleAssignmentRequests/{unifiedRoleAssignmentRequest-id}/roleDefinition": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/roleAssignmentRequests/{unifiedRoleAssignmentRequest-id}/roleDefinition/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/roleAssignmentRequests/{unifiedRoleAssignmentRequest-id}/targetSchedule": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/roleAssignmentRequests/{unifiedRoleAssignmentRequest-id}/targetSchedule/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/roleAssignmentRequests/microsoft.graph.filterByCurrentUser(on={on})": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/roleAssignments": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/roleAssignments/{unifiedRoleAssignment-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/roleAssignments/{unifiedRoleAssignment-id}/appScope": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/roleAssignments/{unifiedRoleAssignment-id}/directoryScope": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/roleAssignments/{unifiedRoleAssignment-id}/directoryScope/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/roleAssignments/{unifiedRoleAssignment-id}/principal": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/roleAssignments/{unifiedRoleAssignment-id}/principal/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/roleAssignments/{unifiedRoleAssignment-id}/roleDefinition": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/roleAssignments/{unifiedRoleAssignment-id}/roleDefinition/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/roleAssignmentScheduleInstances": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/roleAssignmentScheduleInstances/{unifiedRoleAssignmentScheduleInstance-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/roleAssignmentScheduleInstances/{unifiedRoleAssignmentScheduleInstance-id}/activatedUsing": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/roleAssignmentScheduleInstances/{unifiedRoleAssignmentScheduleInstance-id}/activatedUsing/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/roleAssignmentScheduleInstances/microsoft.graph.filterByCurrentUser(on={on})": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/roleAssignmentSchedules": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/roleAssignmentSchedules/{unifiedRoleAssignmentSchedule-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/roleAssignmentSchedules/{unifiedRoleAssignmentSchedule-id}/activatedUsing": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/roleAssignmentSchedules/{unifiedRoleAssignmentSchedule-id}/activatedUsing/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/roleAssignmentSchedules/microsoft.graph.filterByCurrentUser(on={on})": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/roleDefinitions": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/roleDefinitions/{unifiedRoleDefinition-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/{unifiedRoleDefinition-id1}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/roleEligibilityRequests": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/roleEligibilityRequests/{unifiedRoleEligibilityRequest-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/roleEligibilityRequests/{unifiedRoleEligibilityRequest-id}/appScope": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/roleEligibilityRequests/{unifiedRoleEligibilityRequest-id}/appScope/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/roleEligibilityRequests/{unifiedRoleEligibilityRequest-id}/directoryScope": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/roleEligibilityRequests/{unifiedRoleEligibilityRequest-id}/directoryScope/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/roleEligibilityRequests/{unifiedRoleEligibilityRequest-id}/microsoft.graph.cancel": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/roleEligibilityRequests/{unifiedRoleEligibilityRequest-id}/principal": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/roleEligibilityRequests/{unifiedRoleEligibilityRequest-id}/principal/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/roleEligibilityRequests/{unifiedRoleEligibilityRequest-id}/roleDefinition": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/roleEligibilityRequests/{unifiedRoleEligibilityRequest-id}/roleDefinition/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/roleEligibilityRequests/{unifiedRoleEligibilityRequest-id}/targetSchedule": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/roleEligibilityRequests/{unifiedRoleEligibilityRequest-id}/targetSchedule/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/roleEligibilityRequests/microsoft.graph.filterByCurrentUser(on={on})": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/roleEligibilityScheduleInstances": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/roleEligibilityScheduleInstances/{unifiedRoleEligibilityScheduleInstance-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/roleEligibilityScheduleInstances/microsoft.graph.filterByCurrentUser(on={on})": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/roleEligibilitySchedules": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/roleEligibilitySchedules/{unifiedRoleEligibilitySchedule-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/roleEligibilitySchedules/microsoft.graph.filterByCurrentUser(on={on})": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    }
+  }
+}
