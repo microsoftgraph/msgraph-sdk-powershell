@@ -37,7 +37,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
             authContext = authContext ?? GraphSession.Instance.AuthContext;
             if (authContext is null)
             {
-                throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
+                throw new AuthenticationException(Core.ErrorConstants.Message.MissingAuthContext);
             }
 
             IAuthenticationProvider authProvider = AuthenticationHelpers.GetAuthProvider(authContext);

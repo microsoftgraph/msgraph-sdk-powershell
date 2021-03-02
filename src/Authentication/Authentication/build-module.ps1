@@ -1,23 +1,45 @@
-﻿param([switch]$Isolated, [switch]$Pack, [switch]$Release)
-$ErrorActionPreference = 'Stop'
+﻿param(
+  [switch]$Isolated,
+  [switch]$Pack,
+  [switch]$Release
+)
 
-if($PSEdition -ne 'Core') {
+$ErrorActionPreference = 'Stop'
+$ModuleName = "Authentication"
+$ModulePrefix = "Microsoft.Graph"
+$netStandard = "netstandard2.0"
+$copyExtensions = @('.dll', '.pdb')
+
+# Source code locations
+$coreSrc = Join-Path $PSScriptRoot "../$ModuleName.Core"
+$cmdletsSrc = Join-Path $PSScriptRoot "../$ModuleName"
+
+# Generated output locations
+$outDir = "$PSScriptRoot/artifacts"
+$outDeps = "$outDir/Dependencies"
+
+$Configuration = 'Debug'
+if ($Release) {
+  $Configuration = 'Release'
+}
+
+if ($PSEdition -ne 'Core') {
   Write-Error 'This script requires PowerShell Core to execute. [Note] Generated cmdlets will work in both PowerShell Core or Windows PowerShell.'
 }
 
-if(-not $Isolated) {
+if (-not $Isolated) {
   Write-Host -ForegroundColor Green 'Creating isolated process...'
   $pwsh = [System.Diagnostics.Process]::GetCurrentProcess().Path
   & "$pwsh" -NonInteractive -NoLogo -NoProfile -File $MyInvocation.MyCommand.Path @PSBoundParameters -Isolated
 
-  if($LastExitCode -ne 0) {
+  if ($LastExitCode -ne 0) {
     # Build failed. Don't attempt to run the module.
     return
   }
 
-  if($Pack) {
+  if ($Pack) {
     . (Join-Path $PSScriptRoot 'pack-module.ps1')
-    if($LastExitCode -ne 0) {
+    if ($LastExitCode -ne 0) {
       # Packing failed. Don't attempt to run the module.
       return
     }
@@ -26,26 +48,54 @@ if(-not $Isolated) {
   return
 }
 
+# Clean build folders.
 Write-Host -ForegroundColor Green 'Cleaning build folders...'
-$binFolder = Join-Path $PSScriptRoot 'bin'
-$objFolder = Join-Path $PSScriptRoot 'obj'
-$null = Remove-Item -Recurse -ErrorAction SilentlyContinue -Path $binFolder, $objFolder
+$null = Remove-Item -Path "$coreSrc/bin", "$coreSrc/obj" -Recurse -ErrorAction Ignore
+$null = Remove-Item -Path "$cmdletsSrc/bin", "$cmdletsSrc/obj" -Recurse -ErrorAction Ignore
 
-if((Test-Path $binFolder) -or (Test-Path $objFolder)) {
+if ((Test-Path "$cmdletsSrc/bin") -or (Test-Path "$cmdletsSrc/obj")) {
   Write-Host -ForegroundColor Cyan 'Did you forget to exit your isolated module session before rebuilding?'
   Write-Error 'Unable to clean ''bin'' or ''obj'' folder. A process may have an open handle.'
 }
 
 Write-Host -ForegroundColor Green 'Compiling module...'
-$buildConfig = 'Debug'
-if($Release) {
-  $buildConfig = 'Release'
-}
-dotnet publish $PSScriptRoot --verbosity quiet --configuration $buildConfig /nologo
+# Build Authentication.Core
+Push-Location $coreSrc
+dotnet publish -c $Configuration --verbosity quiet /nologo
+Pop-Location
 
-if($LastExitCode -ne 0) {
+# Build Authentication
+Push-Location $cmdletsSrc
+dotnet publish -c $Configuration --verbosity quiet /nologo
+Pop-Location
+
+if ($LastExitCode -ne 0) {
   Write-Error 'Compilation failed.'
 }
 
-$null = Remove-Item -Recurse -ErrorAction SilentlyContinue -Path (Join-Path $binFolder 'Debug'), (Join-Path $binFolder 'Release')
+# Ensure out directory exists and is clean
+Remove-Item -Path $outDir -Recurse -ErrorAction Ignore
+New-Item -Path $outDir -ItemType Directory
+New-Item -Path $outDeps -ItemType Directory
+
+# Copy manifest.
+Copy-Item -Path "$cmdletsSrc/$ModulePrefix.$ModuleName.format.ps1xml" -Destination $outDir
+Copy-Item -Path "$cmdletsSrc/$ModulePrefix.$ModuleName.psm1" -Destination $outDir
+Copy-Item -Path "$cmdletsSrc/$ModulePrefix.$ModuleName.psd1" -Destination $outDir
+
+# Core assemblies to include with cmdlets (Let PowerShell load them).
+$CoreAssemblies = @('Microsoft.Graph.Authentication.Core', 'Microsoft.Graph.Core')
+
+# Copy each core asset and remember it.
+$Deps = [System.Collections.Generic.HashSet[string]]::new()
+Get-ChildItem -Path "$coreSrc/bin/$Configuration/$netStandard/publish/" |
+    Where-Object { $_.Extension -in $copyExtensions } |
+    Where-Object { -not $CoreAssemblies.Contains($_.BaseName) } |
+    ForEach-Object { [void]$Deps.Add($_.Name); Copy-Item -Path $_.FullName -Destination $outDeps }
+
+# Now copy each Cmdlets asset, not taking any found in Engine.
+Get-ChildItem -Path "$cmdletsSrc/bin/$Configuration/$netStandard/publish/" |
+    Where-Object { -not $Deps.Contains($_.Name) -and $_.Extension -in $copyExtensions } |
+    ForEach-Object { Copy-Item -Path $_.FullName -Destination $outDir }
+
 Write-Host -ForegroundColor Green '-------------Done-------------'

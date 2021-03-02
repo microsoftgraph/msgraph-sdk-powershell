@@ -5,14 +5,10 @@
 namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 {
     using Microsoft.Graph.Auth;
-    using Microsoft.IdentityModel.Tokens;
+    using Microsoft.Graph.PowerShell.Authentication.Core;
     using Newtonsoft.Json;
-    using Newtonsoft.Json.Linq;
     using System;
-    using System.Collections.Generic;
     using System.IdentityModel.Tokens.Jwt;
-    using System.Security.Claims;
-    using System.Text;
 
     /// <summary>
     /// A JwtHelpers class.

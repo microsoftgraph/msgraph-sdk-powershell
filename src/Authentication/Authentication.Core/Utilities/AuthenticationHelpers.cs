@@ -4,7 +4,7 @@
 namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 {
     using Microsoft.Graph.Auth;
-    using Microsoft.Graph.PowerShell.Authentication.Models;
+    using Microsoft.Graph.PowerShell.Authentication.Core;
     using Microsoft.Graph.PowerShell.Authentication.TokenCache;
     using Microsoft.Identity.Client;
 
@@ -18,11 +18,11 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 
     using AuthenticationException = System.Security.Authentication.AuthenticationException;
 
-    internal static class AuthenticationHelpers
+    public static class AuthenticationHelpers
     {
         static ReaderWriterLockSlim _cacheLock = new ReaderWriterLockSlim(LockRecursionPolicy.SupportsRecursion);
 
-        internal static IAuthenticationProvider GetAuthProvider(IAuthContext authContext)
+        public static IAuthenticationProvider GetAuthProvider(IAuthContext authContext)
         {
             if (authContext is null)
             {
@@ -107,8 +107,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 
         private static string GetAuthorityUrl(IAuthContext authContext)
         {
-            string audience = authContext.TenantId ?? GraphEnvironmentConstants.CommonAdTenant;
-            string defaultInstance = GraphEnvironment.BuiltInEnvironments[GraphEnvironmentConstants.EnvironmentName.Global].AzureADEndpoint;
+            string audience = authContext.TenantId ?? Constants.DefaulAdTenant;
+            string defaultInstance = Constants.DefaultAzureADEndpoint;
             string authorityUrl = $"{defaultInstance}/{audience}";
 
             if (GraphSession.Instance.Environment != null)
