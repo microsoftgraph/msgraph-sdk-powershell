@@ -45,7 +45,7 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/People.yml"
     },
-    "/users/{user-id}/profile/anniversaries/{personAnniversary-id}": {
+    "/users/{user-id}/profile/anniversaries/{personAnnualEvent-id}": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/People.yml"
     },
