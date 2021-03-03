@@ -205,6 +205,10 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
     },
+    "/policies/authenticationMethodsPolicy": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
     "/policies/authorizationPolicy": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
@@ -486,6 +490,14 @@
       "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
     },
     "/users/{user-id}/authentication/phoneMethods/{phoneAuthenticationMethod-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/users/{user-id}/authentication/temporaryAccessPassMethods": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/users/{user-id}/authentication/temporaryAccessPassMethods/{temporaryAccessPassAuthenticationMethod-id}": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
     },
