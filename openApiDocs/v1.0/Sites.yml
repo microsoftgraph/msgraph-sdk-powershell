@@ -100,6 +100,7 @@ paths:
                 - drives
                 - items
                 - lists
+                - permissions
                 - sites
                 - onenote
               type: string
@@ -123,6 +124,7 @@ paths:
                 - drives
                 - items
                 - lists
+                - permissions
                 - sites
                 - onenote
               type: string
@@ -234,6 +236,7 @@ paths:
                 - drives
                 - items
                 - lists
+                - permissions
                 - sites
                 - onenote
               type: string
@@ -257,6 +260,7 @@ paths:
                 - drives
                 - items
                 - lists
+                - permissions
                 - sites
                 - onenote
               type: string
@@ -310,6 +314,11 @@ paths:
                 site-id: $request.path.site-id
             lists:
               operationId: groups.Sites.ListLists
+              parameters:
+                group-id: $request.path.group-id
+                site-id: $request.path.site-id
+            permissions:
+              operationId: groups.Sites.ListPermissions
               parameters:
                 group-id: $request.path.group-id
                 site-id: $request.path.site-id
@@ -477,6 +486,7 @@ paths:
                 - drives
                 - items
                 - lists
+                - permissions
                 - sites
                 - onenote
               type: string
@@ -500,6 +510,7 @@ paths:
                 - drives
                 - items
                 - lists
+                - permissions
                 - sites
                 - onenote
               type: string
@@ -596,6 +607,7 @@ paths:
                 - drives
                 - items
                 - lists
+                - permissions
                 - sites
                 - onenote
               type: string
@@ -619,6 +631,7 @@ paths:
                 - drives
                 - items
                 - lists
+                - permissions
                 - sites
                 - onenote
               type: string
@@ -664,6 +677,10 @@ paths:
                 site-id: $request.path.site-id
             lists:
               operationId: sites.ListLists
+              parameters:
+                site-id: $request.path.site-id
+            permissions:
+              operationId: sites.ListPermissions
               parameters:
                 site-id: $request.path.site-id
             sites:
@@ -4851,18 +4868,21 @@ paths:
           x-ms-docs-key-type: listItem
         - name: startDateTime
           in: path
+          description: 'Usage: startDateTime={startDateTime}'
           required: true
           schema:
             type: string
             nullable: true
         - name: endDateTime
           in: path
+          description: 'Usage: endDateTime={endDateTime}'
           required: true
           schema:
             type: string
             nullable: true
         - name: interval
           in: path
+          description: 'Usage: interval={interval}'
           required: true
           schema:
             type: string
@@ -5756,18 +5776,21 @@ paths:
           x-ms-docs-key-type: site
         - name: startDateTime
           in: path
+          description: 'Usage: startDateTime={startDateTime}'
           required: true
           schema:
             type: string
             nullable: true
         - name: endDateTime
           in: path
+          description: 'Usage: endDateTime={endDateTime}'
           required: true
           schema:
             type: string
             nullable: true
         - name: interval
           in: path
+          description: 'Usage: interval={interval}'
           required: true
           schema:
             type: string
@@ -5800,6 +5823,7 @@ paths:
           x-ms-docs-key-type: site
         - name: path
           in: path
+          description: 'Usage: path={path}'
           required: true
           schema:
             type: string
@@ -7384,6 +7408,7 @@ paths:
           x-ms-docs-key-type: site
         - name: includePersonalNotebooks
           in: path
+          description: 'Usage: includePersonalNotebooks={includePersonalNotebooks}'
           required: true
           schema:
             type: boolean
@@ -12538,6 +12563,58 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/sites/{site-id}/permissions/{permission-id}/microsoft.graph.grant':
+    post:
+      tags:
+        - sites.Actions
+      summary: Invoke action grant
+      operationId: sites.permissions_grant
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: permission-id
+          in: path
+          description: 'key: id of permission'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: permission
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                roles:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                recipients:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.driveRecipient'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.permission'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/sites/{site-id}/sites':
     get:
       tags:
@@ -12632,6 +12709,7 @@ paths:
                 - drives
                 - items
                 - lists
+                - permissions
                 - sites
                 - onenote
               type: string
@@ -12655,6 +12733,7 @@ paths:
                 - drives
                 - items
                 - lists
+                - permissions
                 - sites
                 - onenote
               type: string
@@ -12766,6 +12845,7 @@ paths:
                 - drives
                 - items
                 - lists
+                - permissions
                 - sites
                 - onenote
               type: string
@@ -12789,6 +12869,7 @@ paths:
                 - drives
                 - items
                 - lists
+                - permissions
                 - sites
                 - onenote
               type: string
@@ -12842,6 +12923,11 @@ paths:
                 site-id1: $request.path.site-id1
             lists:
               operationId: sites.Sites.ListLists
+              parameters:
+                site-id: $request.path.site-id
+                site-id1: $request.path.site-id1
+            permissions:
+              operationId: sites.Sites.ListPermissions
               parameters:
                 site-id: $request.path.site-id
                 site-id1: $request.path.site-id1
@@ -13080,6 +13166,7 @@ paths:
                 - drives
                 - items
                 - lists
+                - permissions
                 - sites
                 - onenote
               type: string
@@ -13103,6 +13190,7 @@ paths:
                 - drives
                 - items
                 - lists
+                - permissions
                 - sites
                 - onenote
               type: string
@@ -13295,6 +13383,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.list'
               description: The collection of lists under this site.
+            permissions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.permission'
+              description: The permissions associated with the site. Nullable.
             sites:
               type: array
               items:
@@ -13871,6 +13964,65 @@ components:
           $ref: '#/components/schemas/microsoft.graph.onenoteSourceService'
       additionalProperties:
         type: object
+    microsoft.graph.driveRecipient:
+      title: driveRecipient
+      type: object
+      properties:
+        alias:
+          type: string
+          description: 'The alias of the domain object, for cases where an email address is unavailable (e.g. security groups).'
+          nullable: true
+        email:
+          type: string
+          description: 'The email address for the recipient, if the recipient has an associated email address.'
+          nullable: true
+        objectId:
+          type: string
+          description: The unique identifier for the recipient in the directory.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.permission:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: permission
+          type: object
+          properties:
+            expirationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there is no expiration set for this permission. Optional.
+              format: date-time
+              nullable: true
+            grantedTo:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            grantedToIdentities:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.identitySet'
+              description: 'For link type permissions, the details of the users to whom permission was granted. Read-only.'
+            hasPassword:
+              type: boolean
+              description: 'This indicates whether password is set for this permission, it''s only showing in response. Optional and Read-only and for OneDrive Personal only.'
+              nullable: true
+            inheritedFrom:
+              $ref: '#/components/schemas/microsoft.graph.itemReference'
+            invitation:
+              $ref: '#/components/schemas/microsoft.graph.sharingInvitation'
+            link:
+              $ref: '#/components/schemas/microsoft.graph.sharingLink'
+            roles:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: 'The type of permission, e.g. read. See below for the full list of roles. Read-only.'
+            shareId:
+              type: string
+              description: 'A unique token that can be used to access this shared item via the [shares API][]. Read-only.'
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.baseItem:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -14845,47 +14997,6 @@ components:
               description: Represents a collection of worksheets associated with the workbook. Read-only.
           additionalProperties:
             type: object
-    microsoft.graph.permission:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: permission
-          type: object
-          properties:
-            expirationDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there is no expiration set for this permission. Optional.
-              format: date-time
-              nullable: true
-            grantedTo:
-              $ref: '#/components/schemas/microsoft.graph.identitySet'
-            grantedToIdentities:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.identitySet'
-              description: 'For link type permissions, the details of the users to whom permission was granted. Read-only.'
-            hasPassword:
-              type: boolean
-              description: 'This indicates whether password is set for this permission, it''s only showing in response. Optional and Read-only and for OneDrive Personal only.'
-              nullable: true
-            inheritedFrom:
-              $ref: '#/components/schemas/microsoft.graph.itemReference'
-            invitation:
-              $ref: '#/components/schemas/microsoft.graph.sharingInvitation'
-            link:
-              $ref: '#/components/schemas/microsoft.graph.sharingLink'
-            roles:
-              type: array
-              items:
-                type: string
-                nullable: true
-              description: 'The type of permission, e.g. read. See below for the full list of roles. Read-only.'
-            shareId:
-              type: string
-              description: 'A unique token that can be used to access this shared item via the [shares API][]. Read-only.'
-              nullable: true
-          additionalProperties:
-            type: object
     microsoft.graph.thumbnailSet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -15088,6 +15199,53 @@ components:
         - OneDriveForBusiness
         - OnPremOneDriveForBusiness
       type: string
+    microsoft.graph.sharingInvitation:
+      title: sharingInvitation
+      type: object
+      properties:
+        email:
+          type: string
+          description: The email address provided for the recipient of the sharing invitation. Read-only.
+          nullable: true
+        invitedBy:
+          $ref: '#/components/schemas/microsoft.graph.identitySet'
+        redeemedBy:
+          type: string
+          nullable: true
+        signInRequired:
+          type: boolean
+          description: If true the recipient of the invitation needs to sign in in order to access the shared item. Read-only.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.sharingLink:
+      title: sharingLink
+      type: object
+      properties:
+        application:
+          $ref: '#/components/schemas/microsoft.graph.identity'
+        preventsDownload:
+          type: boolean
+          description: 'If true then the user can only use this link to view the item on the web, and cannot use it to download the contents of the item. Only for OneDrive for Business and SharePoint.'
+          nullable: true
+        scope:
+          type: string
+          description: 'The scope of the link represented by this permission. Value anonymous indicates the link is usable by anyone, organization indicates the link is only usable for users signed into the same tenant.'
+          nullable: true
+        type:
+          type: string
+          description: The type of the link created.
+          nullable: true
+        webHtml:
+          type: string
+          description: 'For embed links, this property contains the HTML code for an <iframe> element that will embed the item in a webpage.'
+          nullable: true
+        webUrl:
+          type: string
+          description: A URL that opens the item in the browser on the OneDrive website.
+          nullable: true
+      additionalProperties:
+        type: object
     odata.error:
       required:
         - error
@@ -15216,7 +15374,7 @@ components:
             lastPasswordChangeDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The time when this Azure AD user last changed their password. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'' Returned only on $select.'
+              description: 'The time when this Azure AD user last changed their password. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is ''2014-01-01T00:00:00Z'' Returned only on $select. Read-only.'
               format: date-time
               nullable: true
             legalAgeGroupClassification:
@@ -15261,7 +15419,7 @@ components:
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Indicates the last time at which the object was synced with the on-premises directory; for example: ''2013-02-16T03:04:54Z''. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Returned only on $select. Read-only.'
+              description: 'Indicates the last time at which the object was synced with the on-premises directory; for example: ''2013-02-16T03:04:54Z''. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is ''2014-01-01T00:00:00Z''. Returned only on $select. Read-only.'
               format: date-time
               nullable: true
             onPremisesProvisioningErrors:
@@ -15363,12 +15521,12 @@ components:
             birthday:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'' Returned only on $select.'
+              description: 'The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is ''2014-01-01T00:00:00Z'' Returned only on $select.'
               format: date-time
             hireDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.'
+              description: 'The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is ''2014-01-01T00:00:00Z''. Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.'
               format: date-time
             interests:
               type: array
@@ -15412,6 +15570,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
+              description: Represents the app roles a user has been granted for an application.
             createdObjects:
               type: array
               items:
@@ -15536,6 +15695,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
               description: The collection of open extensions defined for the user. Nullable.
+            agreementAcceptances:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.agreementAcceptance'
+              description: The user's terms of use acceptance statuses. Read-only. Nullable.
             managedDevices:
               type: array
               items:
@@ -15570,6 +15734,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
             presence:
               $ref: '#/components/schemas/microsoft.graph.presence'
+            authentication:
+              $ref: '#/components/schemas/microsoft.graph.authentication'
             joinedTeams:
               type: array
               items:
@@ -16049,53 +16215,6 @@ components:
               description: Collection of tables that are part of the worksheet. Read-only.
           additionalProperties:
             type: object
-    microsoft.graph.sharingInvitation:
-      title: sharingInvitation
-      type: object
-      properties:
-        email:
-          type: string
-          description: The email address provided for the recipient of the sharing invitation. Read-only.
-          nullable: true
-        invitedBy:
-          $ref: '#/components/schemas/microsoft.graph.identitySet'
-        redeemedBy:
-          type: string
-          nullable: true
-        signInRequired:
-          type: boolean
-          description: If true the recipient of the invitation needs to sign in in order to access the shared item. Read-only.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.sharingLink:
-      title: sharingLink
-      type: object
-      properties:
-        application:
-          $ref: '#/components/schemas/microsoft.graph.identity'
-        preventsDownload:
-          type: boolean
-          description: 'If true then the user can only use this link to view the item on the web, and cannot use it to download the contents of the item. Only for OneDrive for Business and SharePoint.'
-          nullable: true
-        scope:
-          type: string
-          description: 'The scope of the link represented by this permission. Value anonymous indicates the link is usable by anyone, organization indicates the link is only usable for users signed into the same tenant.'
-          nullable: true
-        type:
-          type: string
-          description: The type of the link created.
-          nullable: true
-        webHtml:
-          type: string
-          description: 'For embed links, this property contains the HTML code for an <iframe> element that will embed the item in a webpage.'
-          nullable: true
-        webUrl:
-          type: string
-          description: A URL that opens the item in the browser on the OneDrive website.
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.thumbnail:
       title: thumbnail
       type: object
@@ -17358,6 +17477,68 @@ components:
           type: object
           additionalProperties:
             type: object
+    microsoft.graph.agreementAcceptance:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: agreementAcceptance
+          type: object
+          properties:
+            agreementFileId:
+              type: string
+              description: ID of the agreement file accepted by the user.
+              nullable: true
+            agreementId:
+              type: string
+              description: ID of the agreement.
+              nullable: true
+            deviceDisplayName:
+              type: string
+              description: The display name of the device used for accepting the agreement.
+              nullable: true
+            deviceId:
+              type: string
+              description: The unique identifier of the device used for accepting the agreement.
+              nullable: true
+            deviceOSType:
+              type: string
+              description: The operating system used for accepting the agreement.
+              nullable: true
+            deviceOSVersion:
+              type: string
+              description: The operating system version of the device used for accepting the agreement.
+              nullable: true
+            expirationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The expiration date time of the acceptance. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              format: date-time
+              nullable: true
+            recordedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              format: date-time
+              nullable: true
+            state:
+              $ref: '#/components/schemas/microsoft.graph.agreementAcceptanceState'
+            userDisplayName:
+              type: string
+              description: Display name of the user when the acceptance was recorded.
+              nullable: true
+            userEmail:
+              type: string
+              description: Email of the user when the acceptance was recorded.
+              nullable: true
+            userId:
+              type: string
+              description: ID of the user who accepted the agreement.
+              nullable: true
+            userPrincipalName:
+              type: string
+              description: UPN of the user when the acceptance was recorded.
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.managedDevice:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -17828,6 +18009,30 @@ components:
               type: string
               description: 'The base presence information for a user. Possible values are Available, AvailableIdle,  Away, BeRightBack, Busy, BusyIdle, DoNotDisturb, Offline, PresenceUnknown'
               nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.authentication:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: authentication
+          type: object
+          properties:
+            fido2Methods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.fido2AuthenticationMethod'
+            methods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+            microsoftAuthenticatorMethods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.microsoftAuthenticatorAuthenticationMethod'
+            windowsHelloForBusinessMethods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.windowsHelloForBusinessAuthenticationMethod'
           additionalProperties:
             type: object
     microsoft.graph.team:
@@ -18780,6 +18985,13 @@ components:
           $ref: '#/components/schemas/microsoft.graph.websiteType'
       additionalProperties:
         type: object
+    microsoft.graph.agreementAcceptanceState:
+      title: agreementAcceptanceState
+      enum:
+        - accepted
+        - declined
+        - unknownFutureValue
+      type: string
     microsoft.graph.complianceState:
       title: complianceState
       enum:
@@ -19584,6 +19796,96 @@ components:
           $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
       additionalProperties:
         type: object
+    microsoft.graph.fido2AuthenticationMethod:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+        - title: fido2AuthenticationMethod
+          type: object
+          properties:
+            aaGuid:
+              type: string
+              description: 'Authenticator Attestation GUID, an identifier that indicates the type (e.g. make and model) of the authenticator.'
+              nullable: true
+            attestationCertificates:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: The attestation certificate(s) attached to this security key.
+            attestationLevel:
+              $ref: '#/components/schemas/microsoft.graph.attestationLevel'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            displayName:
+              type: string
+              description: The display name of the key as given by the user.
+              nullable: true
+            model:
+              type: string
+              description: The manufacturer-assigned model of the FIDO2 security key.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.authenticationMethod:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: authenticationMethod
+          type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.microsoftAuthenticatorAuthenticationMethod:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+        - title: microsoftAuthenticatorAuthenticationMethod
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time that this app was registered. This property is null if the device is not registered for passwordless Phone Sign-In.
+              format: date-time
+              nullable: true
+            deviceTag:
+              type: string
+              description: Tags containing app metadata.
+              nullable: true
+            displayName:
+              type: string
+              description: The name of the device on which this app is registered.
+              nullable: true
+            phoneAppVersion:
+              type: string
+              description: Numerical version of this instance of the Authenticator app.
+              nullable: true
+            device:
+              $ref: '#/components/schemas/microsoft.graph.device'
+          additionalProperties:
+            type: object
+    microsoft.graph.windowsHelloForBusinessAuthenticationMethod:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+        - title: windowsHelloForBusinessAuthenticationMethod
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time that this Windows Hello for Business key was registered.
+              format: date-time
+              nullable: true
+            displayName:
+              type: string
+              description: The name of the device on which Windows Hello for Business is registered
+              nullable: true
+            keyStrength:
+              $ref: '#/components/schemas/microsoft.graph.authenticationMethodKeyStrength'
+            device:
+              $ref: '#/components/schemas/microsoft.graph.device'
+          additionalProperties:
+            type: object
     microsoft.graph.teamFunSettings:
       title: teamFunSettings
       type: object
@@ -19962,7 +20264,7 @@ components:
               nullable: true
             visibility:
               type: string
-              description: 'Specifies the visibility of a Microsoft 365 group. Possible values are: Private, Public, or Hiddenmembership; blank values are treated as public.  See group visibility options to learn more.Visibility can be set only when a group is created; it is not editable.Visibility is supported only for unified groups; it is not supported for security groups. Returned by default.'
+              description: 'Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or Hiddenmembership. Hiddenmembership can be set only for Microsoft 365 groups, when the groups are created. It can''t be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. See group visibility options to learn more. Returned by default.'
               nullable: true
             allowExternalSenders:
               type: boolean
@@ -19998,6 +20300,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
+              description: Represents the app roles a group has been granted for an application.
             createdOnBehalfOf:
               $ref: '#/components/schemas/microsoft.graph.directoryObject'
             memberOf:
@@ -20135,6 +20438,12 @@ components:
                 type: string
                 nullable: true
               description: The roles for that user.
+            visibleHistoryStartDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The timestamp denoting how far back a conversation's history is shared with the conversation member. This property is settable only for members of a chat.
+              format: date-time
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.teamsAsyncOperation:
@@ -21317,6 +21626,141 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.attestationLevel:
+      title: attestationLevel
+      enum:
+        - attested
+        - notAttested
+        - unknownFutureValue
+      type: string
+    microsoft.graph.device:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        - title: device
+          type: object
+          properties:
+            accountEnabled:
+              type: boolean
+              description: 'true if the account is enabled; otherwise, false. default is true.'
+              nullable: true
+            alternativeSecurityIds:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.alternativeSecurityId'
+              description: For internal use only. Not nullable.
+            approximateLastSignInDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Read-only.'
+              format: date-time
+              nullable: true
+            complianceExpirationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The timestamp when the device is no longer deemed compliant. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Read-only.'
+              format: date-time
+              nullable: true
+            deviceId:
+              type: string
+              description: Unique identifier set by Azure Device Registration Service at the time of registration.
+              nullable: true
+            deviceMetadata:
+              type: string
+              description: For internal use only. Set to null.
+              nullable: true
+            deviceVersion:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: For internal use only.
+              format: int32
+              nullable: true
+            displayName:
+              type: string
+              description: The display name for the device. Required.
+              nullable: true
+            isCompliant:
+              type: boolean
+              description: 'true if the device complies with Mobile Device Management (MDM) policies; otherwise, false. Read-only. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices.'
+              nullable: true
+            isManaged:
+              type: boolean
+              description: 'true if the device is managed by a Mobile Device Management (MDM) app; otherwise, false. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices.'
+              nullable: true
+            mdmAppId:
+              type: string
+              description: Application identifier used to register device into MDM. Read-only. Supports $filter.
+              nullable: true
+            onPremisesLastSyncDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The last time at which the object was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'' Read-only.'
+              format: date-time
+              nullable: true
+            onPremisesSyncEnabled:
+              type: boolean
+              description: true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only.
+              nullable: true
+            operatingSystem:
+              type: string
+              description: The type of operating system on the device. Required.
+              nullable: true
+            operatingSystemVersion:
+              type: string
+              description: Operating system version of the device. Required.
+              nullable: true
+            physicalIds:
+              type: array
+              items:
+                type: string
+              description: For internal use only. Not nullable.
+            profileType:
+              type: string
+              description: The profile type of the device. Possible values:RegisteredDevice (default)SecureVMPrinterSharedIoT
+              nullable: true
+            systemLabels:
+              type: array
+              items:
+                type: string
+              description: List of labels applied to the device by the system.
+            trustType:
+              type: string
+              description: 'Type of trust for the joined device. Read-only. Possible values: Workplace - indicates bring your own personal devicesAzureAd - Cloud only joined devicesServerAd - on-premises domain joined devices joined to Azure AD. For more details, see Introduction to device management in Azure Active Directory'
+              nullable: true
+            memberOf:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: 'Groups that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable.'
+            registeredOwners:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable.'
+            registeredUsers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: 'Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable.'
+            transitiveMemberOf:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+            extensions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.extension'
+              description: The collection of open extensions defined for the device. Read-only. Nullable.
+          additionalProperties:
+            type: object
+          description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
+    microsoft.graph.authenticationMethodKeyStrength:
+      title: authenticationMethodKeyStrength
+      enum:
+        - normal
+        - weak
+        - unknown
+      type: string
     microsoft.graph.giphyRatingType:
       title: giphyRatingType
       enum:
@@ -21814,9 +22258,24 @@ components:
         - title: teamsAppDefinition
           type: object
           properties:
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            description:
+              type: string
+              nullable: true
             displayName:
               type: string
               description: The name of the app provided by the app developer.
+              nullable: true
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            publishingState:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppPublishingState'
+            shortDescription:
+              type: string
               nullable: true
             teamsAppId:
               type: string
@@ -21826,6 +22285,8 @@ components:
               type: string
               description: The version number of the application.
               nullable: true
+            bot:
+              $ref: '#/components/schemas/microsoft.graph.teamworkBot'
           additionalProperties:
             type: object
     microsoft.graph.operationError:
@@ -21867,6 +22328,39 @@ components:
         - $ref: '#/components/schemas/microsoft.graph.entity'
         - title: chat
           type: object
+          properties:
+            chatType:
+              $ref: '#/components/schemas/microsoft.graph.chatType'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date and time at which the chat was created. Read-only.
+              format: date-time
+              nullable: true
+            lastUpdatedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date and time at which the chat was renamed or list of members were last changed. Read-only.
+              format: date-time
+              nullable: true
+            topic:
+              type: string
+              description: (Optional) Subject or topic for the chat. Only available for group chats.
+              nullable: true
+            installedApps:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.teamsAppInstallation'
+              description: A collection of all the apps in the chat. Nullable.
+            members:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.conversationMember'
+              description: A collection of all the members in the chat. Nullable.
+            tabs:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.teamsTab'
           additionalProperties:
             type: object
     microsoft.graph.wellknownListName:
@@ -22270,6 +22764,28 @@ components:
         - presenter
         - unknownFutureValue
       type: string
+    microsoft.graph.alternativeSecurityId:
+      title: alternativeSecurityId
+      type: object
+      properties:
+        identityProvider:
+          type: string
+          description: For internal use only
+          nullable: true
+        key:
+          type: string
+          description: For internal use only
+          format: base64url
+          nullable: true
+        type:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: For internal use only
+          format: int32
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.scheduleChangeRequest:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.changeTrackedEntity'
@@ -22582,6 +23098,29 @@ components:
         - store
         - organization
         - sideloaded
+        - unknownFutureValue
+      type: string
+    microsoft.graph.teamsAppPublishingState:
+      title: teamsAppPublishingState
+      enum:
+        - submitted
+        - rejected
+        - published
+        - unknownFutureValue
+      type: string
+    microsoft.graph.teamworkBot:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamworkBot
+          type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.chatType:
+      title: chatType
+      enum:
+        - oneOnOne
+        - group
+        - meeting
         - unknownFutureValue
       type: string
     microsoft.graph.taskStatus:

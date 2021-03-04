@@ -45,7 +45,7 @@ directive:
   - where:
       verb: Clear
       subject: ^UserManagedAppRegistration$
-      variant: ^Wipe1$|^WipeExpanded1$|^WipeViaIdentity1$|^WipeViaIdentityExpanded1$
+      variant: ^Wipe(1|2)$|^WipeExpanded(1|2)$|^WipeViaIdentity(1|2)$|^WipeViaIdentityExpanded(1|2)$
     remove: true
   - where:
       verb: Get
@@ -124,6 +124,6 @@ directive:
 ### Versioning
 
 ``` yaml
-module-version: 1.3.1
+module-version: 1.4.0
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

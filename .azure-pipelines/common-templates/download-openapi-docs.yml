@@ -92,7 +92,7 @@ jobs:
             # Calculate meta-module version
             $MetaModule = Find-Module "Microsoft.Graph" -Repository PSGallery
             $MetaModuleVersion = [System.Version]($MetaModule.Version)
-            $NewMetaModuleVersion = "$($MetaModuleVersion.Major).$($MetaModuleVersion.Minor + 1).$($MetaModuleVersion.Build)"
+            $NewMetaModuleVersion = "$($MetaModuleVersion.Major).$($MetaModuleVersion.Minor).$($MetaModuleVersion.Build + 1)"
             # Bump meta-module minor version
             Write-Host "Bumping Microsoft.Graph to $NewMetaModuleVersion."
             & "$(System.DefaultWorkingDirectory)\tools\SetMetaModuleVersion.ps1" -VersionNumber $NewMetaModuleVersion
@@ -102,7 +102,7 @@ jobs:
               try {
                 $Module = Find-Module "Microsoft.Graph.$_" -Repository PSGallery -ErrorAction Stop
                 $ModuleVersion = [System.Version]($Module.Version)
-                $NewModuleVersion = "$($ModuleVersion.Major).$($ModuleVersion.Minor + 1).$($ModuleVersion.Build)"
+                $NewModuleVersion = "$($ModuleVersion.Major).$($ModuleVersion.Minor).$($ModuleVersion.Build + 1)"
                 Write-Host "Bumping $_ to $NewModuleVersion."
                 . "$(System.DefaultWorkingDirectory)\tools\SetServiceModuleVersion.ps1" -VersionNumber $NewModuleVersion -Modules $_
               } catch {

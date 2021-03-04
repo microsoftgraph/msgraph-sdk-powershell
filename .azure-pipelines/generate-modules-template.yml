@@ -231,7 +231,7 @@ jobs:
         $ModuleMapping.Keys | ForEach-Object {
             $ModuleName = $_
             $ModuleProjectDir = "$(System.DefaultWorkingDirectory)/src/$ModuleName/$ModuleName"
-            & $(System.DefaultWorkingDirectory)/tools/PackModule.ps1 -Module $ModuleName -ArtifactsLocation $(Build.ArtifactStagingDirectory)\
+            & $(System.DefaultWorkingDirectory)/tools/PackModule.ps1 -Module $ModuleName -ArtifactsLocation $(Build.ArtifactStagingDirectory)\ -ExcludeMarkdownDocsFromNugetPackage
         }
 
   - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1

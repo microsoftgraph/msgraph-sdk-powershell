@@ -31,9 +31,22 @@ require:
 title: $(service-name)
 subject-prefix: ''
 ```
+
+### Directives
+
+> see https://github.com/Azure/autorest/blob/master/docs/powershell/directives.md
+
+``` yaml
+directive:
+# Remove undocumented cmdlets
+  - where:
+      subject: (^ComplianceEdiscoveryCaseNoncustodialDataSource$)
+      variant: ^Get1$|^GetViaIdentity1$|^Update1$|^UpdateExpanded1$|^UpdateViaIdentity1$|^UpdateViaIdentityExpanded1$|^Delete1$|^DeleteViaIdentity1$
+    remove: true
+```
 ### Versioning
 
 ``` yaml
-module-version: 1.3.1
+module-version: 1.4.0
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

@@ -20,18 +20,25 @@ enum VersionState {
     EqualToFeed
     NotOnFeed
 }
+$Error.Clear()
 $ErrorActionPreference = 'Continue'
 if ($PSEdition -ne 'Core') {
     Write-Error 'This script requires PowerShell Core to execute. [Note] Generated cmdlets will work in both PowerShell Core or Windows PowerShell.'
 }
+# Module import.
+Import-Module PowerShellGet
+
 # Install Powershell-yaml
 if (!(Get-Module -Name powershell-yaml -ListAvailable)) {
     Install-Module powershell-yaml -Force   
 }
 
+# Set NODE max memory to 8 Gb.
+$ENV:NODE_OPTIONS='--max-old-space-size=8192'
 $ModulePrefix = "Microsoft.Graph"
-$ModulesOutputDir = Join-Path $PSScriptRoot "..\src\"
-$ArtifactsLocation = Join-Path $PSScriptRoot "..\artifacts"
+$ScriptRoot = $PSScriptRoot
+$ModulesOutputDir = Join-Path $ScriptRoot "..\src\"
+$ArtifactsLocation = Join-Path $ScriptRoot "..\artifacts"
 $RequiredGraphModules = @()
 # PS Scripts
 $ManageGeneratedModulePS1 = Join-Path $PSScriptRoot ".\ManageGeneratedModule.ps1" -Resolve
@@ -96,7 +103,7 @@ $ModulesToGenerate | ForEach-Object -ThrottleLimit $ModulesToGenerate.Count -Par
     # Copy AutoRest readme.md config is none exists.
     if (-not (Test-Path "$ModuleProjectDir\readme.md")) {
         New-Item -Path $ModuleProjectDir -Type Directory -Force
-        Copy-Item (Join-Path $PSScriptRoot "\Templates\readme.md") -Destination $ModuleProjectDir
+        Copy-Item (Join-Path $Using:ScriptRoot "\Templates\readme.md") -Destination $ModuleProjectDir
     }
 
     $ModuleLevelReadMePath = Join-Path $ModuleProjectDir "\readme.md" -Resolve
@@ -129,7 +136,8 @@ $ModulesToGenerate | ForEach-Object -ThrottleLimit $ModulesToGenerate.Count -Par
             # Generate PowerShell modules.
             & autorest --module-version:$ModuleVersion --service-name:$ModuleName $ModuleLevelReadMePath --version:"3.0.6306" --verbose
             if ($LASTEXITCODE) {
-                Write-Error "Failed to generate '$ModuleName' module."
+                Write-Error "AutoREST failed to generate '$ModuleName' module."
+                break;
             }
             Write-Host -ForegroundColor Green "AutoRest generated '$FullyQualifiedModuleName' successfully."
 
@@ -191,10 +199,6 @@ $ModulesToGenerate | ForEach-Object -ThrottleLimit $ModulesToGenerate.Count -Par
                     }
                     $updatedLine
                 } | Set-Content $InternalModulePsm1
-                
-                if ($LASTEXITCODE) {
-                    Write-Error "Failed to build '$ModuleName' module."
-                }
             }
 
             if ($Using:Test) {
@@ -205,12 +209,19 @@ $ModulesToGenerate | ForEach-Object -ThrottleLimit $ModulesToGenerate.Count -Par
                 # Pack generated module.
                 . $Using:PackModulePS1 -Module $ModuleName -ArtifactsLocation $Using:ArtifactsLocation
             }
+
+            Write-Host -ForeGroundColor Green "Generating $ModuleName Completed"
         }
         catch {
-            throw $_
+            Write-Error $_
         }
-        Write-Host -ForeGroundColor Green "Generating $ModuleName Completed"
     }
+}
+
+if ($Error.Count -ge 1) {
+    # Write generation errors to pipeline.
+    $Error
+    Write-Error "The SDK failed to build due to $($Error.Count) errors listed above." -ErrorAction "Stop"
 }
 
 if ($Publish) {

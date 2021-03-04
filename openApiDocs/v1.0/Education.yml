@@ -108,6 +108,8 @@ paths:
                 - id desc
                 - classCode
                 - classCode desc
+                - course
+                - course desc
                 - createdBy
                 - createdBy desc
                 - description
@@ -120,6 +122,10 @@ paths:
                 - externalName desc
                 - externalSource
                 - externalSource desc
+                - externalSourceDetail
+                - externalSourceDetail desc
+                - grade
+                - grade desc
                 - mailNickname
                 - mailNickname desc
                 - term
@@ -137,12 +143,15 @@ paths:
               enum:
                 - id
                 - classCode
+                - course
                 - createdBy
                 - description
                 - displayName
                 - externalId
                 - externalName
                 - externalSource
+                - externalSourceDetail
+                - grade
                 - mailNickname
                 - term
                 - group
@@ -237,12 +246,15 @@ paths:
               enum:
                 - id
                 - classCode
+                - course
                 - createdBy
                 - description
                 - displayName
                 - externalId
                 - externalName
                 - externalSource
+                - externalSourceDetail
+                - grade
                 - mailNickname
                 - term
                 - group
@@ -824,6 +836,8 @@ paths:
                 - displayName desc
                 - externalSource
                 - externalSource desc
+                - externalSourceDetail
+                - externalSourceDetail desc
                 - givenName
                 - givenName desc
                 - mail
@@ -838,6 +852,8 @@ paths:
                 - mobilePhone desc
                 - officeLocation
                 - officeLocation desc
+                - onPremisesInfo
+                - onPremisesInfo desc
                 - passwordPolicies
                 - passwordPolicies desc
                 - passwordProfile
@@ -886,6 +902,7 @@ paths:
                 - department
                 - displayName
                 - externalSource
+                - externalSourceDetail
                 - givenName
                 - mail
                 - mailingAddress
@@ -893,6 +910,7 @@ paths:
                 - middleName
                 - mobilePhone
                 - officeLocation
+                - onPremisesInfo
                 - passwordPolicies
                 - passwordProfile
                 - preferredLanguage
@@ -909,6 +927,7 @@ paths:
                 - userType
                 - classes
                 - schools
+                - taughtClasses
                 - user
               type: string
         - name: $expand
@@ -924,6 +943,7 @@ paths:
                 - '*'
                 - classes
                 - schools
+                - taughtClasses
                 - user
               type: string
       responses:
@@ -996,6 +1016,8 @@ paths:
                 - displayName desc
                 - externalSource
                 - externalSource desc
+                - externalSourceDetail
+                - externalSourceDetail desc
                 - givenName
                 - givenName desc
                 - mail
@@ -1010,6 +1032,8 @@ paths:
                 - mobilePhone desc
                 - officeLocation
                 - officeLocation desc
+                - onPremisesInfo
+                - onPremisesInfo desc
                 - passwordPolicies
                 - passwordPolicies desc
                 - passwordProfile
@@ -1096,6 +1120,32 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/education/classes/{educationClass-id}/members/microsoft.graph.delta()':
+    get:
+      tags:
+        - education.Functions
+      summary: Invoke function delta
+      operationId: education.classes.members_delta
+      parameters:
+        - name: educationClass-id
+          in: path
+          description: 'key: id of educationClass'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: educationClass
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.educationUser'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/education/classes/{educationClass-id}/schools':
     get:
       tags:
@@ -1133,6 +1183,8 @@ paths:
                 - displayName desc
                 - externalSource
                 - externalSource desc
+                - externalSourceDetail
+                - externalSourceDetail desc
                 - address
                 - address desc
                 - createdBy
@@ -1170,6 +1222,7 @@ paths:
                 - description
                 - displayName
                 - externalSource
+                - externalSourceDetail
                 - address
                 - createdBy
                 - externalId
@@ -1181,6 +1234,7 @@ paths:
                 - principalEmail
                 - principalName
                 - schoolNumber
+                - administrativeUnit
                 - classes
                 - users
               type: string
@@ -1195,6 +1249,7 @@ paths:
             items:
               enum:
                 - '*'
+                - administrativeUnit
                 - classes
                 - users
               type: string
@@ -1258,6 +1313,8 @@ paths:
                 - displayName desc
                 - externalSource
                 - externalSource desc
+                - externalSourceDetail
+                - externalSourceDetail desc
                 - address
                 - address desc
                 - createdBy
@@ -1338,6 +1395,32 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/education/classes/{educationClass-id}/schools/microsoft.graph.delta()':
+    get:
+      tags:
+        - education.Functions
+      summary: Invoke function delta
+      operationId: education.classes.schools_delta
+      parameters:
+        - name: educationClass-id
+          in: path
+          description: 'key: id of educationClass'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: educationClass
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.educationSchool'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/education/classes/{educationClass-id}/teachers':
     get:
       tags:
@@ -1385,6 +1468,8 @@ paths:
                 - displayName desc
                 - externalSource
                 - externalSource desc
+                - externalSourceDetail
+                - externalSourceDetail desc
                 - givenName
                 - givenName desc
                 - mail
@@ -1399,6 +1484,8 @@ paths:
                 - mobilePhone desc
                 - officeLocation
                 - officeLocation desc
+                - onPremisesInfo
+                - onPremisesInfo desc
                 - passwordPolicies
                 - passwordPolicies desc
                 - passwordProfile
@@ -1447,6 +1534,7 @@ paths:
                 - department
                 - displayName
                 - externalSource
+                - externalSourceDetail
                 - givenName
                 - mail
                 - mailingAddress
@@ -1454,6 +1542,7 @@ paths:
                 - middleName
                 - mobilePhone
                 - officeLocation
+                - onPremisesInfo
                 - passwordPolicies
                 - passwordProfile
                 - preferredLanguage
@@ -1470,6 +1559,7 @@ paths:
                 - userType
                 - classes
                 - schools
+                - taughtClasses
                 - user
               type: string
         - name: $expand
@@ -1485,6 +1575,7 @@ paths:
                 - '*'
                 - classes
                 - schools
+                - taughtClasses
                 - user
               type: string
       responses:
@@ -1557,6 +1648,8 @@ paths:
                 - displayName desc
                 - externalSource
                 - externalSource desc
+                - externalSourceDetail
+                - externalSourceDetail desc
                 - givenName
                 - givenName desc
                 - mail
@@ -1571,6 +1664,8 @@ paths:
                 - mobilePhone desc
                 - officeLocation
                 - officeLocation desc
+                - onPremisesInfo
+                - onPremisesInfo desc
                 - passwordPolicies
                 - passwordPolicies desc
                 - passwordProfile
@@ -1657,6 +1752,50 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/education/classes/{educationClass-id}/teachers/microsoft.graph.delta()':
+    get:
+      tags:
+        - education.Functions
+      summary: Invoke function delta
+      operationId: education.classes.teachers_delta
+      parameters:
+        - name: educationClass-id
+          in: path
+          description: 'key: id of educationClass'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: educationClass
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.educationUser'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  /education/classes/microsoft.graph.delta():
+    get:
+      tags:
+        - education.Functions
+      summary: Invoke function delta
+      operationId: education.classes_delta
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.educationClass'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   /education/me:
     get:
       tags:
@@ -1683,6 +1822,7 @@ paths:
                 - department
                 - displayName
                 - externalSource
+                - externalSourceDetail
                 - givenName
                 - mail
                 - mailingAddress
@@ -1690,6 +1830,7 @@ paths:
                 - middleName
                 - mobilePhone
                 - officeLocation
+                - onPremisesInfo
                 - passwordPolicies
                 - passwordProfile
                 - preferredLanguage
@@ -1706,6 +1847,7 @@ paths:
                 - userType
                 - classes
                 - schools
+                - taughtClasses
                 - user
               type: string
         - name: $expand
@@ -1721,6 +1863,7 @@ paths:
                 - '*'
                 - classes
                 - schools
+                - taughtClasses
                 - user
               type: string
       responses:
@@ -1735,6 +1878,8 @@ paths:
               operationId: education.Me.ListClasses
             schools:
               operationId: education.Me.ListSchools
+            taughtClasses:
+              operationId: education.Me.ListTaughtClasses
             user:
               operationId: education.Me.GetUser
         default:
@@ -1801,6 +1946,8 @@ paths:
                 - id desc
                 - classCode
                 - classCode desc
+                - course
+                - course desc
                 - createdBy
                 - createdBy desc
                 - description
@@ -1813,6 +1960,10 @@ paths:
                 - externalName desc
                 - externalSource
                 - externalSource desc
+                - externalSourceDetail
+                - externalSourceDetail desc
+                - grade
+                - grade desc
                 - mailNickname
                 - mailNickname desc
                 - term
@@ -1830,12 +1981,15 @@ paths:
               enum:
                 - id
                 - classCode
+                - course
                 - createdBy
                 - description
                 - displayName
                 - externalId
                 - externalName
                 - externalSource
+                - externalSourceDetail
+                - grade
                 - mailNickname
                 - term
                 - group
@@ -1908,6 +2062,8 @@ paths:
                 - id desc
                 - classCode
                 - classCode desc
+                - course
+                - course desc
                 - createdBy
                 - createdBy desc
                 - description
@@ -1920,6 +2076,10 @@ paths:
                 - externalName desc
                 - externalSource
                 - externalSource desc
+                - externalSourceDetail
+                - externalSourceDetail desc
+                - grade
+                - grade desc
                 - mailNickname
                 - mailNickname desc
                 - term
@@ -1974,6 +2134,24 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /education/me/classes/microsoft.graph.delta():
+    get:
+      tags:
+        - education.Functions
+      summary: Invoke function delta
+      operationId: education.me.classes_delta
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.educationClass'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   /education/me/schools:
     get:
       tags:
@@ -2004,6 +2182,8 @@ paths:
                 - displayName desc
                 - externalSource
                 - externalSource desc
+                - externalSourceDetail
+                - externalSourceDetail desc
                 - address
                 - address desc
                 - createdBy
@@ -2041,6 +2221,7 @@ paths:
                 - description
                 - displayName
                 - externalSource
+                - externalSourceDetail
                 - address
                 - createdBy
                 - externalId
@@ -2052,6 +2233,7 @@ paths:
                 - principalEmail
                 - principalName
                 - schoolNumber
+                - administrativeUnit
                 - classes
                 - users
               type: string
@@ -2066,6 +2248,7 @@ paths:
             items:
               enum:
                 - '*'
+                - administrativeUnit
                 - classes
                 - users
               type: string
@@ -2122,6 +2305,8 @@ paths:
                 - displayName desc
                 - externalSource
                 - externalSource desc
+                - externalSourceDetail
+                - externalSourceDetail desc
                 - address
                 - address desc
                 - createdBy
@@ -2194,6 +2379,256 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /education/me/schools/microsoft.graph.delta():
+    get:
+      tags:
+        - education.Functions
+      summary: Invoke function delta
+      operationId: education.me.schools_delta
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.educationSchool'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  /education/me/taughtClasses:
+    get:
+      tags:
+        - education.educationUser
+      summary: Get taughtClasses from education
+      operationId: education.me_ListTaughtClasses
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - classCode
+                - classCode desc
+                - course
+                - course desc
+                - createdBy
+                - createdBy desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+                - externalId
+                - externalId desc
+                - externalName
+                - externalName desc
+                - externalSource
+                - externalSource desc
+                - externalSourceDetail
+                - externalSourceDetail desc
+                - grade
+                - grade desc
+                - mailNickname
+                - mailNickname desc
+                - term
+                - term desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - classCode
+                - course
+                - createdBy
+                - description
+                - displayName
+                - externalId
+                - externalName
+                - externalSource
+                - externalSourceDetail
+                - grade
+                - mailNickname
+                - term
+                - group
+                - members
+                - schools
+                - teachers
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - group
+                - members
+                - schools
+                - teachers
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of educationClass
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.educationClass'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  /education/me/taughtClasses/$ref:
+    get:
+      tags:
+        - education.educationUser
+      summary: Get ref of taughtClasses from education
+      operationId: education.me_ListRefTaughtClasses
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - classCode
+                - classCode desc
+                - course
+                - course desc
+                - createdBy
+                - createdBy desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+                - externalId
+                - externalId desc
+                - externalName
+                - externalName desc
+                - externalSource
+                - externalSource desc
+                - externalSourceDetail
+                - externalSourceDetail desc
+                - grade
+                - grade desc
+                - mailNickname
+                - mailNickname desc
+                - term
+                - term desc
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property links
+          content:
+            application/json:
+              schema:
+                title: Collection of links of educationClass
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - education.educationUser
+      summary: Create new navigation property ref to taughtClasses for education
+      operationId: education.me_CreateRefTaughtClasses
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '201':
+          description: Created navigation property link.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /education/me/taughtClasses/microsoft.graph.delta():
+    get:
+      tags:
+        - education.Functions
+      summary: Invoke function delta
+      operationId: education.me.taughtClasses_delta
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.educationClass'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   /education/me/user:
     get:
       tags:
@@ -2312,6 +2747,7 @@ paths:
                 - drives
                 - followedSites
                 - extensions
+                - agreementAcceptances
                 - managedDevices
                 - managedAppRegistrations
                 - deviceManagementTroubleshootingEvents
@@ -2322,6 +2758,7 @@ paths:
                 - activities
                 - onlineMeetings
                 - presence
+                - authentication
                 - joinedTeams
                 - teamwork
                 - todo
@@ -2367,6 +2804,7 @@ paths:
                 - drives
                 - followedSites
                 - extensions
+                - agreementAcceptances
                 - managedDevices
                 - managedAppRegistrations
                 - deviceManagementTroubleshootingEvents
@@ -2377,6 +2815,7 @@ paths:
                 - activities
                 - onlineMeetings
                 - presence
+                - authentication
                 - joinedTeams
                 - teamwork
                 - todo
@@ -2449,6 +2888,8 @@ paths:
               operationId: education.me.User.ListFollowedSites
             extensions:
               operationId: education.me.User.ListExtensions
+            agreementAcceptances:
+              operationId: education.me.User.ListAgreementAcceptances
             managedDevices:
               operationId: education.me.User.ListManagedDevices
             managedAppRegistrations:
@@ -2469,6 +2910,8 @@ paths:
               operationId: education.me.User.ListOnlineMeetings
             presence:
               operationId: education.me.User.GetPresence
+            authentication:
+              operationId: education.me.User.GetAuthentication
             joinedTeams:
               operationId: education.me.User.ListJoinedTeams
             teamwork:
@@ -2552,6 +2995,8 @@ paths:
               operationId: education.me.User.ListFollowedSites
             extensions:
               operationId: education.me.User.ListExtensions
+            agreementAcceptances:
+              operationId: education.me.User.ListAgreementAcceptances
             managedDevices:
               operationId: education.me.User.ListManagedDevices
             managedAppRegistrations:
@@ -2572,6 +3017,8 @@ paths:
               operationId: education.me.User.ListOnlineMeetings
             presence:
               operationId: education.me.User.GetPresence
+            authentication:
+              operationId: education.me.User.GetAuthentication
             joinedTeams:
               operationId: education.me.User.ListJoinedTeams
             teamwork:
@@ -2648,6 +3095,8 @@ paths:
                 - displayName desc
                 - externalSource
                 - externalSource desc
+                - externalSourceDetail
+                - externalSourceDetail desc
                 - address
                 - address desc
                 - createdBy
@@ -2685,6 +3134,7 @@ paths:
                 - description
                 - displayName
                 - externalSource
+                - externalSourceDetail
                 - address
                 - createdBy
                 - externalId
@@ -2696,6 +3146,7 @@ paths:
                 - principalEmail
                 - principalName
                 - schoolNumber
+                - administrativeUnit
                 - classes
                 - users
               type: string
@@ -2710,6 +3161,7 @@ paths:
             items:
               enum:
                 - '*'
+                - administrativeUnit
                 - classes
                 - users
               type: string
@@ -2786,6 +3238,7 @@ paths:
                 - description
                 - displayName
                 - externalSource
+                - externalSourceDetail
                 - address
                 - createdBy
                 - externalId
@@ -2797,6 +3250,7 @@ paths:
                 - principalEmail
                 - principalName
                 - schoolNumber
+                - administrativeUnit
                 - classes
                 - users
               type: string
@@ -2811,6 +3265,7 @@ paths:
             items:
               enum:
                 - '*'
+                - administrativeUnit
                 - classes
                 - users
               type: string
@@ -2822,6 +3277,10 @@ paths:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.educationSchool'
           links:
+            administrativeUnit:
+              operationId: education.Schools.GetAdministrativeUnit
+              parameters:
+                educationSchool-id: $request.path.educationSchool-id
             classes:
               operationId: education.Schools.ListClasses
               parameters:
@@ -2883,6 +3342,166 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/education/schools/{educationSchool-id}/administrativeUnit':
+    get:
+      tags:
+        - education.educationSchool
+      summary: Get administrativeUnit from education
+      operationId: education.schools_GetAdministrativeUnit
+      parameters:
+        - name: educationSchool-id
+          in: path
+          description: 'key: id of educationSchool'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: educationSchool
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+                - description
+                - displayName
+                - visibility
+                - members
+                - scopedRoleMembers
+                - extensions
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - members
+                - scopedRoleMembers
+                - extensions
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.administrativeUnit'
+          links:
+            members:
+              operationId: education.schools.AdministrativeUnit.ListMembers
+              parameters:
+                educationSchool-id: $request.path.educationSchool-id
+            scopedRoleMembers:
+              operationId: education.schools.AdministrativeUnit.ListScopedRoleMembers
+              parameters:
+                educationSchool-id: $request.path.educationSchool-id
+            extensions:
+              operationId: education.schools.AdministrativeUnit.ListExtensions
+              parameters:
+                educationSchool-id: $request.path.educationSchool-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/education/schools/{educationSchool-id}/administrativeUnit/$ref':
+    get:
+      tags:
+        - education.educationSchool
+      summary: Get ref of administrativeUnit from education
+      operationId: education.schools_GetRefAdministrativeUnit
+      parameters:
+        - name: educationSchool-id
+          in: path
+          description: 'key: id of educationSchool'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: educationSchool
+      responses:
+        '200':
+          description: Retrieved navigation property link
+          content:
+            application/json:
+              schema:
+                type: string
+          links:
+            members:
+              operationId: education.schools.AdministrativeUnit.ListMembers
+              parameters:
+                educationSchool-id: $request.path.educationSchool-id
+            scopedRoleMembers:
+              operationId: education.schools.AdministrativeUnit.ListScopedRoleMembers
+              parameters:
+                educationSchool-id: $request.path.educationSchool-id
+            extensions:
+              operationId: education.schools.AdministrativeUnit.ListExtensions
+              parameters:
+                educationSchool-id: $request.path.educationSchool-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - education.educationSchool
+      summary: Update the ref of navigation property administrativeUnit in education
+      operationId: education.schools_SetRefAdministrativeUnit
+      parameters:
+        - name: educationSchool-id
+          in: path
+          description: 'key: id of educationSchool'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: educationSchool
+      requestBody:
+        description: New navigation property ref values
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - education.educationSchool
+      summary: Delete ref of navigation property administrativeUnit for education
+      operationId: education.schools_DeleteRefAdministrativeUnit
+      parameters:
+        - name: educationSchool-id
+          in: path
+          description: 'key: id of educationSchool'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: educationSchool
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/education/schools/{educationSchool-id}/classes':
     get:
       tags:
@@ -2916,6 +3535,8 @@ paths:
                 - id desc
                 - classCode
                 - classCode desc
+                - course
+                - course desc
                 - createdBy
                 - createdBy desc
                 - description
@@ -2928,6 +3549,10 @@ paths:
                 - externalName desc
                 - externalSource
                 - externalSource desc
+                - externalSourceDetail
+                - externalSourceDetail desc
+                - grade
+                - grade desc
                 - mailNickname
                 - mailNickname desc
                 - term
@@ -2945,12 +3570,15 @@ paths:
               enum:
                 - id
                 - classCode
+                - course
                 - createdBy
                 - description
                 - displayName
                 - externalId
                 - externalName
                 - externalSource
+                - externalSourceDetail
+                - grade
                 - mailNickname
                 - term
                 - group
@@ -3030,6 +3658,8 @@ paths:
                 - id desc
                 - classCode
                 - classCode desc
+                - course
+                - course desc
                 - createdBy
                 - createdBy desc
                 - description
@@ -3042,6 +3672,10 @@ paths:
                 - externalName desc
                 - externalSource
                 - externalSource desc
+                - externalSourceDetail
+                - externalSourceDetail desc
+                - grade
+                - grade desc
                 - mailNickname
                 - mailNickname desc
                 - term
@@ -3104,6 +3738,32 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/education/schools/{educationSchool-id}/classes/microsoft.graph.delta()':
+    get:
+      tags:
+        - education.Functions
+      summary: Invoke function delta
+      operationId: education.schools.classes_delta
+      parameters:
+        - name: educationSchool-id
+          in: path
+          description: 'key: id of educationSchool'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: educationSchool
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.educationClass'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/education/schools/{educationSchool-id}/users':
     get:
       tags:
@@ -3151,6 +3811,8 @@ paths:
                 - displayName desc
                 - externalSource
                 - externalSource desc
+                - externalSourceDetail
+                - externalSourceDetail desc
                 - givenName
                 - givenName desc
                 - mail
@@ -3165,6 +3827,8 @@ paths:
                 - mobilePhone desc
                 - officeLocation
                 - officeLocation desc
+                - onPremisesInfo
+                - onPremisesInfo desc
                 - passwordPolicies
                 - passwordPolicies desc
                 - passwordProfile
@@ -3213,6 +3877,7 @@ paths:
                 - department
                 - displayName
                 - externalSource
+                - externalSourceDetail
                 - givenName
                 - mail
                 - mailingAddress
@@ -3220,6 +3885,7 @@ paths:
                 - middleName
                 - mobilePhone
                 - officeLocation
+                - onPremisesInfo
                 - passwordPolicies
                 - passwordProfile
                 - preferredLanguage
@@ -3236,6 +3902,7 @@ paths:
                 - userType
                 - classes
                 - schools
+                - taughtClasses
                 - user
               type: string
         - name: $expand
@@ -3251,6 +3918,7 @@ paths:
                 - '*'
                 - classes
                 - schools
+                - taughtClasses
                 - user
               type: string
       responses:
@@ -3323,6 +3991,8 @@ paths:
                 - displayName desc
                 - externalSource
                 - externalSource desc
+                - externalSourceDetail
+                - externalSourceDetail desc
                 - givenName
                 - givenName desc
                 - mail
@@ -3337,6 +4007,8 @@ paths:
                 - mobilePhone desc
                 - officeLocation
                 - officeLocation desc
+                - onPremisesInfo
+                - onPremisesInfo desc
                 - passwordPolicies
                 - passwordPolicies desc
                 - passwordProfile
@@ -3423,6 +4095,50 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/education/schools/{educationSchool-id}/users/microsoft.graph.delta()':
+    get:
+      tags:
+        - education.Functions
+      summary: Invoke function delta
+      operationId: education.schools.users_delta
+      parameters:
+        - name: educationSchool-id
+          in: path
+          description: 'key: id of educationSchool'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: educationSchool
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.educationUser'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  /education/schools/microsoft.graph.delta():
+    get:
+      tags:
+        - education.Functions
+      summary: Invoke function delta
+      operationId: education.schools_delta
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.educationSchool'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   /education/users:
     get:
       tags:
@@ -3463,6 +4179,8 @@ paths:
                 - displayName desc
                 - externalSource
                 - externalSource desc
+                - externalSourceDetail
+                - externalSourceDetail desc
                 - givenName
                 - givenName desc
                 - mail
@@ -3477,6 +4195,8 @@ paths:
                 - mobilePhone desc
                 - officeLocation
                 - officeLocation desc
+                - onPremisesInfo
+                - onPremisesInfo desc
                 - passwordPolicies
                 - passwordPolicies desc
                 - passwordProfile
@@ -3525,6 +4245,7 @@ paths:
                 - department
                 - displayName
                 - externalSource
+                - externalSourceDetail
                 - givenName
                 - mail
                 - mailingAddress
@@ -3532,6 +4253,7 @@ paths:
                 - middleName
                 - mobilePhone
                 - officeLocation
+                - onPremisesInfo
                 - passwordPolicies
                 - passwordProfile
                 - preferredLanguage
@@ -3548,6 +4270,7 @@ paths:
                 - userType
                 - classes
                 - schools
+                - taughtClasses
                 - user
               type: string
         - name: $expand
@@ -3563,6 +4286,7 @@ paths:
                 - '*'
                 - classes
                 - schools
+                - taughtClasses
                 - user
               type: string
       responses:
@@ -3643,6 +4367,7 @@ paths:
                 - department
                 - displayName
                 - externalSource
+                - externalSourceDetail
                 - givenName
                 - mail
                 - mailingAddress
@@ -3650,6 +4375,7 @@ paths:
                 - middleName
                 - mobilePhone
                 - officeLocation
+                - onPremisesInfo
                 - passwordPolicies
                 - passwordProfile
                 - preferredLanguage
@@ -3666,6 +4392,7 @@ paths:
                 - userType
                 - classes
                 - schools
+                - taughtClasses
                 - user
               type: string
         - name: $expand
@@ -3681,6 +4408,7 @@ paths:
                 - '*'
                 - classes
                 - schools
+                - taughtClasses
                 - user
               type: string
       responses:
@@ -3697,6 +4425,10 @@ paths:
                 educationUser-id: $request.path.educationUser-id
             schools:
               operationId: education.Users.ListSchools
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+            taughtClasses:
+              operationId: education.Users.ListTaughtClasses
               parameters:
                 educationUser-id: $request.path.educationUser-id
             user:
@@ -3789,6 +4521,8 @@ paths:
                 - id desc
                 - classCode
                 - classCode desc
+                - course
+                - course desc
                 - createdBy
                 - createdBy desc
                 - description
@@ -3801,6 +4535,10 @@ paths:
                 - externalName desc
                 - externalSource
                 - externalSource desc
+                - externalSourceDetail
+                - externalSourceDetail desc
+                - grade
+                - grade desc
                 - mailNickname
                 - mailNickname desc
                 - term
@@ -3818,12 +4556,15 @@ paths:
               enum:
                 - id
                 - classCode
+                - course
                 - createdBy
                 - description
                 - displayName
                 - externalId
                 - externalName
                 - externalSource
+                - externalSourceDetail
+                - grade
                 - mailNickname
                 - term
                 - group
@@ -3903,6 +4644,8 @@ paths:
                 - id desc
                 - classCode
                 - classCode desc
+                - course
+                - course desc
                 - createdBy
                 - createdBy desc
                 - description
@@ -3915,6 +4658,10 @@ paths:
                 - externalName desc
                 - externalSource
                 - externalSource desc
+                - externalSourceDetail
+                - externalSourceDetail desc
+                - grade
+                - grade desc
                 - mailNickname
                 - mailNickname desc
                 - term
@@ -3977,6 +4724,32 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/education/users/{educationUser-id}/classes/microsoft.graph.delta()':
+    get:
+      tags:
+        - education.Functions
+      summary: Invoke function delta
+      operationId: education.users.classes_delta
+      parameters:
+        - name: educationUser-id
+          in: path
+          description: 'key: id of educationUser'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: educationUser
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.educationClass'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/education/users/{educationUser-id}/schools':
     get:
       tags:
@@ -4014,6 +4787,8 @@ paths:
                 - displayName desc
                 - externalSource
                 - externalSource desc
+                - externalSourceDetail
+                - externalSourceDetail desc
                 - address
                 - address desc
                 - createdBy
@@ -4051,6 +4826,7 @@ paths:
                 - description
                 - displayName
                 - externalSource
+                - externalSourceDetail
                 - address
                 - createdBy
                 - externalId
@@ -4062,6 +4838,7 @@ paths:
                 - principalEmail
                 - principalName
                 - schoolNumber
+                - administrativeUnit
                 - classes
                 - users
               type: string
@@ -4076,6 +4853,7 @@ paths:
             items:
               enum:
                 - '*'
+                - administrativeUnit
                 - classes
                 - users
               type: string
@@ -4139,6 +4917,8 @@ paths:
                 - displayName desc
                 - externalSource
                 - externalSource desc
+                - externalSourceDetail
+                - externalSourceDetail desc
                 - address
                 - address desc
                 - createdBy
@@ -4219,6 +4999,294 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/education/users/{educationUser-id}/schools/microsoft.graph.delta()':
+    get:
+      tags:
+        - education.Functions
+      summary: Invoke function delta
+      operationId: education.users.schools_delta
+      parameters:
+        - name: educationUser-id
+          in: path
+          description: 'key: id of educationUser'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: educationUser
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.educationSchool'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/education/users/{educationUser-id}/taughtClasses':
+    get:
+      tags:
+        - education.educationUser
+      summary: Get taughtClasses from education
+      operationId: education.users_ListTaughtClasses
+      parameters:
+        - name: educationUser-id
+          in: path
+          description: 'key: id of educationUser'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: educationUser
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - classCode
+                - classCode desc
+                - course
+                - course desc
+                - createdBy
+                - createdBy desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+                - externalId
+                - externalId desc
+                - externalName
+                - externalName desc
+                - externalSource
+                - externalSource desc
+                - externalSourceDetail
+                - externalSourceDetail desc
+                - grade
+                - grade desc
+                - mailNickname
+                - mailNickname desc
+                - term
+                - term desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - classCode
+                - course
+                - createdBy
+                - description
+                - displayName
+                - externalId
+                - externalName
+                - externalSource
+                - externalSourceDetail
+                - grade
+                - mailNickname
+                - term
+                - group
+                - members
+                - schools
+                - teachers
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - group
+                - members
+                - schools
+                - teachers
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of educationClass
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.educationClass'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/education/users/{educationUser-id}/taughtClasses/$ref':
+    get:
+      tags:
+        - education.educationUser
+      summary: Get ref of taughtClasses from education
+      operationId: education.users_ListRefTaughtClasses
+      parameters:
+        - name: educationUser-id
+          in: path
+          description: 'key: id of educationUser'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: educationUser
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - classCode
+                - classCode desc
+                - course
+                - course desc
+                - createdBy
+                - createdBy desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+                - externalId
+                - externalId desc
+                - externalName
+                - externalName desc
+                - externalSource
+                - externalSource desc
+                - externalSourceDetail
+                - externalSourceDetail desc
+                - grade
+                - grade desc
+                - mailNickname
+                - mailNickname desc
+                - term
+                - term desc
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property links
+          content:
+            application/json:
+              schema:
+                title: Collection of links of educationClass
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - education.educationUser
+      summary: Create new navigation property ref to taughtClasses for education
+      operationId: education.users_CreateRefTaughtClasses
+      parameters:
+        - name: educationUser-id
+          in: path
+          description: 'key: id of educationUser'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: educationUser
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '201':
+          description: Created navigation property link.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/education/users/{educationUser-id}/taughtClasses/microsoft.graph.delta()':
+    get:
+      tags:
+        - education.Functions
+      summary: Invoke function delta
+      operationId: education.users.taughtClasses_delta
+      parameters:
+        - name: educationUser-id
+          in: path
+          description: 'key: id of educationUser'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: educationUser
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.educationClass'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/education/users/{educationUser-id}/user':
     get:
       tags:
@@ -4344,6 +5412,7 @@ paths:
                 - drives
                 - followedSites
                 - extensions
+                - agreementAcceptances
                 - managedDevices
                 - managedAppRegistrations
                 - deviceManagementTroubleshootingEvents
@@ -4354,6 +5423,7 @@ paths:
                 - activities
                 - onlineMeetings
                 - presence
+                - authentication
                 - joinedTeams
                 - teamwork
                 - todo
@@ -4399,6 +5469,7 @@ paths:
                 - drives
                 - followedSites
                 - extensions
+                - agreementAcceptances
                 - managedDevices
                 - managedAppRegistrations
                 - deviceManagementTroubleshootingEvents
@@ -4409,6 +5480,7 @@ paths:
                 - activities
                 - onlineMeetings
                 - presence
+                - authentication
                 - joinedTeams
                 - teamwork
                 - todo
@@ -4541,6 +5613,10 @@ paths:
               operationId: education.users.User.ListExtensions
               parameters:
                 educationUser-id: $request.path.educationUser-id
+            agreementAcceptances:
+              operationId: education.users.User.ListAgreementAcceptances
+              parameters:
+                educationUser-id: $request.path.educationUser-id
             managedDevices:
               operationId: education.users.User.ListManagedDevices
               parameters:
@@ -4579,6 +5655,10 @@ paths:
                 educationUser-id: $request.path.educationUser-id
             presence:
               operationId: education.users.User.GetPresence
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+            authentication:
+              operationId: education.users.User.GetAuthentication
               parameters:
                 educationUser-id: $request.path.educationUser-id
             joinedTeams:
@@ -4738,6 +5818,10 @@ paths:
               operationId: education.users.User.ListExtensions
               parameters:
                 educationUser-id: $request.path.educationUser-id
+            agreementAcceptances:
+              operationId: education.users.User.ListAgreementAcceptances
+              parameters:
+                educationUser-id: $request.path.educationUser-id
             managedDevices:
               operationId: education.users.User.ListManagedDevices
               parameters:
@@ -4776,6 +5860,10 @@ paths:
                 educationUser-id: $request.path.educationUser-id
             presence:
               operationId: education.users.User.GetPresence
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+            authentication:
+              operationId: education.users.User.GetAuthentication
               parameters:
                 educationUser-id: $request.path.educationUser-id
             joinedTeams:
@@ -4845,6 +5933,24 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /education/users/microsoft.graph.delta():
+    get:
+      tags:
+        - education.Functions
+      summary: Invoke function delta
+      operationId: education.users_delta
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.educationUser'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
 components:
   schemas:
     microsoft.graph.educationRoot:
@@ -4882,6 +5988,8 @@ components:
               type: string
               description: Class code used by the school to identify the class.
               nullable: true
+            course:
+              $ref: '#/components/schemas/microsoft.graph.educationCourse'
             createdBy:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             description:
@@ -4901,6 +6009,14 @@ components:
               nullable: true
             externalSource:
               $ref: '#/components/schemas/microsoft.graph.educationExternalSource'
+            externalSourceDetail:
+              type: string
+              description: The name of the external source this resources was generated from.
+              nullable: true
+            grade:
+              type: string
+              description: Grade level of the class.
+              nullable: true
             mailNickname:
               type: string
               description: 'Mail name for sending email to all members, if this is enabled.'
@@ -5060,7 +6176,7 @@ components:
               nullable: true
             visibility:
               type: string
-              description: 'Specifies the visibility of a Microsoft 365 group. Possible values are: Private, Public, or Hiddenmembership; blank values are treated as public.  See group visibility options to learn more.Visibility can be set only when a group is created; it is not editable.Visibility is supported only for unified groups; it is not supported for security groups. Returned by default.'
+              description: 'Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or Hiddenmembership. Hiddenmembership can be set only for Microsoft 365 groups, when the groups are created. It can''t be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. See group visibility options to learn more. Returned by default.'
               nullable: true
             allowExternalSenders:
               type: boolean
@@ -5096,6 +6212,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
+              description: Represents the app roles a group has been granted for an application.
             createdOnBehalfOf:
               $ref: '#/components/schemas/microsoft.graph.directoryObject'
             memberOf:
@@ -5242,6 +6359,10 @@ components:
               nullable: true
             externalSource:
               $ref: '#/components/schemas/microsoft.graph.educationExternalSource'
+            externalSourceDetail:
+              type: string
+              description: The name of the external source this resources was generated from.
+              nullable: true
             givenName:
               type: string
               description: The given name (first name) of the user. Supports /$filter.
@@ -5267,6 +6388,8 @@ components:
             officeLocation:
               type: string
               nullable: true
+            onPremisesInfo:
+              $ref: '#/components/schemas/microsoft.graph.educationOnPremisesInfo'
             passwordPolicies:
               type: string
               description: 'Specifies password policies for the user. See standard [user] resource for additional details.'
@@ -5324,6 +6447,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.educationSchool'
               description: Schools to which the user belongs. Nullable.
+            taughtClasses:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.educationClass'
+              description: Classes for which the user is a teacher.
             user:
               $ref: '#/components/schemas/microsoft.graph.user'
           additionalProperties:
@@ -5373,6 +6501,8 @@ components:
               type: string
               description: School Number.
               nullable: true
+            administrativeUnit:
+              $ref: '#/components/schemas/microsoft.graph.administrativeUnit'
             classes:
               type: array
               items:
@@ -5504,7 +6634,7 @@ components:
             lastPasswordChangeDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The time when this Azure AD user last changed their password. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'' Returned only on $select.'
+              description: 'The time when this Azure AD user last changed their password. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is ''2014-01-01T00:00:00Z'' Returned only on $select. Read-only.'
               format: date-time
               nullable: true
             legalAgeGroupClassification:
@@ -5549,7 +6679,7 @@ components:
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Indicates the last time at which the object was synced with the on-premises directory; for example: ''2013-02-16T03:04:54Z''. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Returned only on $select. Read-only.'
+              description: 'Indicates the last time at which the object was synced with the on-premises directory; for example: ''2013-02-16T03:04:54Z''. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is ''2014-01-01T00:00:00Z''. Returned only on $select. Read-only.'
               format: date-time
               nullable: true
             onPremisesProvisioningErrors:
@@ -5651,12 +6781,12 @@ components:
             birthday:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'' Returned only on $select.'
+              description: 'The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is ''2014-01-01T00:00:00Z'' Returned only on $select.'
               format: date-time
             hireDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.'
+              description: 'The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is ''2014-01-01T00:00:00Z''. Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.'
               format: date-time
             interests:
               type: array
@@ -5700,6 +6830,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
+              description: Represents the app roles a user has been granted for an application.
             createdObjects:
               type: array
               items:
@@ -5824,6 +6955,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
               description: The collection of open extensions defined for the user. Nullable.
+            agreementAcceptances:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.agreementAcceptance'
+              description: The user's terms of use acceptance statuses. Read-only. Nullable.
             managedDevices:
               type: array
               items:
@@ -5858,6 +6994,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
             presence:
               $ref: '#/components/schemas/microsoft.graph.presence'
+            authentication:
+              $ref: '#/components/schemas/microsoft.graph.authentication'
             joinedTeams:
               type: array
               items:
@@ -5870,6 +7008,42 @@ components:
           additionalProperties:
             type: object
           description: Represents an Azure Active Directory user object.
+    microsoft.graph.administrativeUnit:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        - title: administrativeUnit
+          type: object
+          properties:
+            description:
+              type: string
+              description: An optional description for the administrative unit.
+              nullable: true
+            displayName:
+              type: string
+              description: Display name for the administrative unit.
+              nullable: true
+            visibility:
+              type: string
+              description: 'Controls whether the adminstrative unit and its members are hidden or public. Can be set to HiddenMembership or Public. If not set, default behavior is Public. When set to HiddenMembership, only members of the administrative unit can list other members of the adminstrative unit.'
+              nullable: true
+            members:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: 'Users and groups that are members of this Adminsitrative Unit. HTTP Methods: GET (list members), POST (add members), DELETE (remove members).'
+            scopedRoleMembers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.scopedRoleMembership'
+              description: 'Scoped-role members of this Administrative Unit.  HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).'
+            extensions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.extension'
+              description: The collection of open extensions defined for this Administrative Unit. Nullable.
+          additionalProperties:
+            type: object
+          description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
     microsoft.graph.entity:
       title: entity
       type: object
@@ -5877,6 +7051,32 @@ components:
         id:
           type: string
           description: Read-only.
+      additionalProperties:
+        type: object
+    microsoft.graph.educationCourse:
+      title: educationCourse
+      type: object
+      properties:
+        courseNumber:
+          type: string
+          description: Unique identifier for the course.
+          nullable: true
+        description:
+          type: string
+          description: Description of the course.
+          nullable: true
+        displayName:
+          type: string
+          description: Name of the course.
+          nullable: true
+        externalId:
+          type: string
+          description: ID of the course from the syncing system.
+          nullable: true
+        subject:
+          type: string
+          description: Subject of the course.
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.identitySet:
@@ -6517,6 +7717,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.list'
               description: The collection of lists under this site.
+            permissions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.permission'
+              description: The permissions associated with the site. Nullable.
             sites:
               type: array
               items:
@@ -6731,6 +7936,16 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.educationOnPremisesInfo:
+      title: educationOnPremisesInfo
+      type: object
+      properties:
+        immutableId:
+          type: string
+          description: Unique identifier for the user object in Active Directory.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.passwordProfile:
       title: passwordProfile
       type: object
@@ -6834,6 +8049,9 @@ components:
               description: Organization display name.
             externalSource:
               $ref: '#/components/schemas/microsoft.graph.educationExternalSource'
+            externalSourceDetail:
+              type: string
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.employeeOrgData:
@@ -7588,6 +8806,68 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.agreementAcceptance:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: agreementAcceptance
+          type: object
+          properties:
+            agreementFileId:
+              type: string
+              description: ID of the agreement file accepted by the user.
+              nullable: true
+            agreementId:
+              type: string
+              description: ID of the agreement.
+              nullable: true
+            deviceDisplayName:
+              type: string
+              description: The display name of the device used for accepting the agreement.
+              nullable: true
+            deviceId:
+              type: string
+              description: The unique identifier of the device used for accepting the agreement.
+              nullable: true
+            deviceOSType:
+              type: string
+              description: The operating system used for accepting the agreement.
+              nullable: true
+            deviceOSVersion:
+              type: string
+              description: The operating system version of the device used for accepting the agreement.
+              nullable: true
+            expirationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The expiration date time of the acceptance. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              format: date-time
+              nullable: true
+            recordedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              format: date-time
+              nullable: true
+            state:
+              $ref: '#/components/schemas/microsoft.graph.agreementAcceptanceState'
+            userDisplayName:
+              type: string
+              description: Display name of the user when the acceptance was recorded.
+              nullable: true
+            userEmail:
+              type: string
+              description: Email of the user when the acceptance was recorded.
+              nullable: true
+            userId:
+              type: string
+              description: ID of the user who accepted the agreement.
+              nullable: true
+            userPrincipalName:
+              type: string
+              description: UPN of the user when the acceptance was recorded.
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.managedDevice:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -8058,6 +9338,30 @@ components:
               type: string
               description: 'The base presence information for a user. Possible values are Available, AvailableIdle,  Away, BeRightBack, Busy, BusyIdle, DoNotDisturb, Offline, PresenceUnknown'
               nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.authentication:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: authentication
+          type: object
+          properties:
+            fido2Methods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.fido2AuthenticationMethod'
+            methods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+            microsoftAuthenticatorMethods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.microsoftAuthenticatorAuthenticationMethod'
+            windowsHelloForBusinessMethods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.windowsHelloForBusinessAuthenticationMethod'
           additionalProperties:
             type: object
     microsoft.graph.userTeamwork:
@@ -8915,6 +10219,47 @@ components:
               description: The collection of columns that are required by this content type
           additionalProperties:
             type: object
+    microsoft.graph.permission:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: permission
+          type: object
+          properties:
+            expirationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there is no expiration set for this permission. Optional.
+              format: date-time
+              nullable: true
+            grantedTo:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            grantedToIdentities:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.identitySet'
+              description: 'For link type permissions, the details of the users to whom permission was granted. Read-only.'
+            hasPassword:
+              type: boolean
+              description: 'This indicates whether password is set for this permission, it''s only showing in response. Optional and Read-only and for OneDrive Personal only.'
+              nullable: true
+            inheritedFrom:
+              $ref: '#/components/schemas/microsoft.graph.itemReference'
+            invitation:
+              $ref: '#/components/schemas/microsoft.graph.sharingInvitation'
+            link:
+              $ref: '#/components/schemas/microsoft.graph.sharingLink'
+            roles:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: 'The type of permission, e.g. read. See below for the full list of roles. Read-only.'
+            shareId:
+              type: string
+              description: 'A unique token that can be used to access this shared item via the [shares API][]. Read-only.'
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.plannerPlan:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -9411,6 +10756,12 @@ components:
                 type: string
                 nullable: true
               description: The roles for that user.
+            visibleHistoryStartDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The timestamp denoting how far back a conversation's history is shared with the conversation member. This property is settable only for members of a chat.
+              format: date-time
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.teamsAsyncOperation:
@@ -9723,6 +11074,13 @@ components:
           $ref: '#/components/schemas/microsoft.graph.websiteType'
       additionalProperties:
         type: object
+    microsoft.graph.agreementAcceptanceState:
+      title: agreementAcceptanceState
+      enum:
+        - accepted
+        - declined
+        - unknownFutureValue
+      type: string
     microsoft.graph.complianceState:
       title: complianceState
       enum:
@@ -10497,6 +11855,96 @@ components:
           $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
       additionalProperties:
         type: object
+    microsoft.graph.fido2AuthenticationMethod:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+        - title: fido2AuthenticationMethod
+          type: object
+          properties:
+            aaGuid:
+              type: string
+              description: 'Authenticator Attestation GUID, an identifier that indicates the type (e.g. make and model) of the authenticator.'
+              nullable: true
+            attestationCertificates:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: The attestation certificate(s) attached to this security key.
+            attestationLevel:
+              $ref: '#/components/schemas/microsoft.graph.attestationLevel'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            displayName:
+              type: string
+              description: The display name of the key as given by the user.
+              nullable: true
+            model:
+              type: string
+              description: The manufacturer-assigned model of the FIDO2 security key.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.authenticationMethod:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: authenticationMethod
+          type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.microsoftAuthenticatorAuthenticationMethod:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+        - title: microsoftAuthenticatorAuthenticationMethod
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time that this app was registered. This property is null if the device is not registered for passwordless Phone Sign-In.
+              format: date-time
+              nullable: true
+            deviceTag:
+              type: string
+              description: Tags containing app metadata.
+              nullable: true
+            displayName:
+              type: string
+              description: The name of the device on which this app is registered.
+              nullable: true
+            phoneAppVersion:
+              type: string
+              description: Numerical version of this instance of the Authenticator app.
+              nullable: true
+            device:
+              $ref: '#/components/schemas/microsoft.graph.device'
+          additionalProperties:
+            type: object
+    microsoft.graph.windowsHelloForBusinessAuthenticationMethod:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+        - title: windowsHelloForBusinessAuthenticationMethod
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time that this Windows Hello for Business key was registered.
+              format: date-time
+              nullable: true
+            displayName:
+              type: string
+              description: The name of the device on which Windows Hello for Business is registered
+              nullable: true
+            keyStrength:
+              $ref: '#/components/schemas/microsoft.graph.authenticationMethodKeyStrength'
+            device:
+              $ref: '#/components/schemas/microsoft.graph.device'
+          additionalProperties:
+            type: object
     microsoft.graph.userScopeTeamsAppInstallation:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.teamsAppInstallation'
@@ -11279,47 +12727,6 @@ components:
               description: The list of previous versions of the list item.
           additionalProperties:
             type: object
-    microsoft.graph.permission:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: permission
-          type: object
-          properties:
-            expirationDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there is no expiration set for this permission. Optional.
-              format: date-time
-              nullable: true
-            grantedTo:
-              $ref: '#/components/schemas/microsoft.graph.identitySet'
-            grantedToIdentities:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.identitySet'
-              description: 'For link type permissions, the details of the users to whom permission was granted. Read-only.'
-            hasPassword:
-              type: boolean
-              description: 'This indicates whether password is set for this permission, it''s only showing in response. Optional and Read-only and for OneDrive Personal only.'
-              nullable: true
-            inheritedFrom:
-              $ref: '#/components/schemas/microsoft.graph.itemReference'
-            invitation:
-              $ref: '#/components/schemas/microsoft.graph.sharingInvitation'
-            link:
-              $ref: '#/components/schemas/microsoft.graph.sharingLink'
-            roles:
-              type: array
-              items:
-                type: string
-                nullable: true
-              description: 'The type of permission, e.g. read. See below for the full list of roles. Read-only.'
-            shareId:
-              type: string
-              description: 'A unique token that can be used to access this shared item via the [shares API][]. Read-only.'
-              nullable: true
-          additionalProperties:
-            type: object
     microsoft.graph.subscription:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -11722,6 +13129,53 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.sharingInvitation:
+      title: sharingInvitation
+      type: object
+      properties:
+        email:
+          type: string
+          description: The email address provided for the recipient of the sharing invitation. Read-only.
+          nullable: true
+        invitedBy:
+          $ref: '#/components/schemas/microsoft.graph.identitySet'
+        redeemedBy:
+          type: string
+          nullable: true
+        signInRequired:
+          type: boolean
+          description: If true the recipient of the invitation needs to sign in in order to access the shared item. Read-only.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.sharingLink:
+      title: sharingLink
+      type: object
+      properties:
+        application:
+          $ref: '#/components/schemas/microsoft.graph.identity'
+        preventsDownload:
+          type: boolean
+          description: 'If true then the user can only use this link to view the item on the web, and cannot use it to download the contents of the item. Only for OneDrive for Business and SharePoint.'
+          nullable: true
+        scope:
+          type: string
+          description: 'The scope of the link represented by this permission. Value anonymous indicates the link is usable by anyone, organization indicates the link is only usable for users signed into the same tenant.'
+          nullable: true
+        type:
+          type: string
+          description: The type of the link created.
+          nullable: true
+        webHtml:
+          type: string
+          description: 'For embed links, this property contains the HTML code for an <iframe> element that will embed the item in a webpage.'
+          nullable: true
+        webUrl:
+          type: string
+          description: A URL that opens the item in the browser on the OneDrive website.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.plannerBucket:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -12204,9 +13658,24 @@ components:
         - title: teamsAppDefinition
           type: object
           properties:
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            description:
+              type: string
+              nullable: true
             displayName:
               type: string
               description: The name of the app provided by the app developer.
+              nullable: true
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            publishingState:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppPublishingState'
+            shortDescription:
+              type: string
               nullable: true
             teamsAppId:
               type: string
@@ -12216,6 +13685,8 @@ components:
               type: string
               description: The version number of the application.
               nullable: true
+            bot:
+              $ref: '#/components/schemas/microsoft.graph.teamworkBot'
           additionalProperties:
             type: object
     microsoft.graph.operationError:
@@ -12939,11 +14410,179 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.attestationLevel:
+      title: attestationLevel
+      enum:
+        - attested
+        - notAttested
+        - unknownFutureValue
+      type: string
+    microsoft.graph.device:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        - title: device
+          type: object
+          properties:
+            accountEnabled:
+              type: boolean
+              description: 'true if the account is enabled; otherwise, false. default is true.'
+              nullable: true
+            alternativeSecurityIds:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.alternativeSecurityId'
+              description: For internal use only. Not nullable.
+            approximateLastSignInDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Read-only.'
+              format: date-time
+              nullable: true
+            complianceExpirationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The timestamp when the device is no longer deemed compliant. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Read-only.'
+              format: date-time
+              nullable: true
+            deviceId:
+              type: string
+              description: Unique identifier set by Azure Device Registration Service at the time of registration.
+              nullable: true
+            deviceMetadata:
+              type: string
+              description: For internal use only. Set to null.
+              nullable: true
+            deviceVersion:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: For internal use only.
+              format: int32
+              nullable: true
+            displayName:
+              type: string
+              description: The display name for the device. Required.
+              nullable: true
+            isCompliant:
+              type: boolean
+              description: 'true if the device complies with Mobile Device Management (MDM) policies; otherwise, false. Read-only. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices.'
+              nullable: true
+            isManaged:
+              type: boolean
+              description: 'true if the device is managed by a Mobile Device Management (MDM) app; otherwise, false. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices.'
+              nullable: true
+            mdmAppId:
+              type: string
+              description: Application identifier used to register device into MDM. Read-only. Supports $filter.
+              nullable: true
+            onPremisesLastSyncDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The last time at which the object was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'' Read-only.'
+              format: date-time
+              nullable: true
+            onPremisesSyncEnabled:
+              type: boolean
+              description: true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only.
+              nullable: true
+            operatingSystem:
+              type: string
+              description: The type of operating system on the device. Required.
+              nullable: true
+            operatingSystemVersion:
+              type: string
+              description: Operating system version of the device. Required.
+              nullable: true
+            physicalIds:
+              type: array
+              items:
+                type: string
+              description: For internal use only. Not nullable.
+            profileType:
+              type: string
+              description: The profile type of the device. Possible values:RegisteredDevice (default)SecureVMPrinterSharedIoT
+              nullable: true
+            systemLabels:
+              type: array
+              items:
+                type: string
+              description: List of labels applied to the device by the system.
+            trustType:
+              type: string
+              description: 'Type of trust for the joined device. Read-only. Possible values: Workplace - indicates bring your own personal devicesAzureAd - Cloud only joined devicesServerAd - on-premises domain joined devices joined to Azure AD. For more details, see Introduction to device management in Azure Active Directory'
+              nullable: true
+            memberOf:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: 'Groups that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable.'
+            registeredOwners:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable.'
+            registeredUsers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: 'Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable.'
+            transitiveMemberOf:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+            extensions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.extension'
+              description: The collection of open extensions defined for the device. Read-only. Nullable.
+          additionalProperties:
+            type: object
+          description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
+    microsoft.graph.authenticationMethodKeyStrength:
+      title: authenticationMethodKeyStrength
+      enum:
+        - normal
+        - weak
+        - unknown
+      type: string
     microsoft.graph.chat:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
         - title: chat
           type: object
+          properties:
+            chatType:
+              $ref: '#/components/schemas/microsoft.graph.chatType'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date and time at which the chat was created. Read-only.
+              format: date-time
+              nullable: true
+            lastUpdatedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date and time at which the chat was renamed or list of members were last changed. Read-only.
+              format: date-time
+              nullable: true
+            topic:
+              type: string
+              description: (Optional) Subject or topic for the chat. Only available for group chats.
+              nullable: true
+            installedApps:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.teamsAppInstallation'
+              description: A collection of all the apps in the chat. Nullable.
+            members:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.conversationMember'
+              description: A collection of all the members in the chat. Nullable.
+            tabs:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.teamsTab'
           additionalProperties:
             type: object
     microsoft.graph.wellknownListName:
@@ -13320,53 +14959,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.fieldValueSet'
           additionalProperties:
             type: object
-    microsoft.graph.sharingInvitation:
-      title: sharingInvitation
-      type: object
-      properties:
-        email:
-          type: string
-          description: The email address provided for the recipient of the sharing invitation. Read-only.
-          nullable: true
-        invitedBy:
-          $ref: '#/components/schemas/microsoft.graph.identitySet'
-        redeemedBy:
-          type: string
-          nullable: true
-        signInRequired:
-          type: boolean
-          description: If true the recipient of the invitation needs to sign in in order to access the shared item. Read-only.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.sharingLink:
-      title: sharingLink
-      type: object
-      properties:
-        application:
-          $ref: '#/components/schemas/microsoft.graph.identity'
-        preventsDownload:
-          type: boolean
-          description: 'If true then the user can only use this link to view the item on the web, and cannot use it to download the contents of the item. Only for OneDrive for Business and SharePoint.'
-          nullable: true
-        scope:
-          type: string
-          description: 'The scope of the link represented by this permission. Value anonymous indicates the link is usable by anyone, organization indicates the link is only usable for users signed into the same tenant.'
-          nullable: true
-        type:
-          type: string
-          description: The type of the link created.
-          nullable: true
-        webHtml:
-          type: string
-          description: 'For embed links, this property contains the HTML code for an <iframe> element that will embed the item in a webpage.'
-          nullable: true
-        webUrl:
-          type: string
-          description: A URL that opens the item in the browser on the OneDrive website.
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.thumbnail:
       title: thumbnail
       type: object
@@ -13762,6 +15354,21 @@ components:
         - sideloaded
         - unknownFutureValue
       type: string
+    microsoft.graph.teamsAppPublishingState:
+      title: teamsAppPublishingState
+      enum:
+        - submitted
+        - rejected
+        - published
+        - unknownFutureValue
+      type: string
+    microsoft.graph.teamworkBot:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamworkBot
+          type: object
+          additionalProperties:
+            type: object
     microsoft.graph.messageActionFlag:
       title: messageActionFlag
       enum:
@@ -13867,6 +15474,36 @@ components:
       enum:
         - attendee
         - presenter
+        - unknownFutureValue
+      type: string
+    microsoft.graph.alternativeSecurityId:
+      title: alternativeSecurityId
+      type: object
+      properties:
+        identityProvider:
+          type: string
+          description: For internal use only
+          nullable: true
+        key:
+          type: string
+          description: For internal use only
+          format: base64url
+          nullable: true
+        type:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: For internal use only
+          format: int32
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.chatType:
+      title: chatType
+      enum:
+        - oneOnOne
+        - group
+        - meeting
         - unknownFutureValue
       type: string
     microsoft.graph.taskStatus:

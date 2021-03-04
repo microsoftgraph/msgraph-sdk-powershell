@@ -42,7 +42,7 @@ directive:
 # Remove cmdlets
   - where:
       subject: AgreementFile
-      variant: Get1|GetViaIdentity1|Delete1|DeleteViaIdentity1|Update1|UpdateExpanded1|UpdateViaIdentity1|UpdateViaIdentityExpanded1
+      variant: Get(2|3)|GetViaIdentity(2|3)|Delete(1|3)|DeleteViaIdentity(1|3)|Update(1|3)|UpdateExpanded(1|3)|UpdateViaIdentity(1|3)|UpdateViaIdentityExpanded(1|3)
     remove: true
 # Rename cmdlets with duplicates in their name.
   - where:
@@ -79,6 +79,6 @@ directive:
 ### Versioning
 
 ``` yaml
-module-version: 1.3.1
+module-version: 1.4.0
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

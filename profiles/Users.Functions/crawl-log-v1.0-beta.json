@@ -1,6 +1,11 @@
 {
+  "resources": [],
   "operations": {
     "/users/{user-id}/activities/microsoft.graph.recent()": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Functions.yml"
+    },
+    "/users/{user-id}/approvals/microsoft.graph.filterByCurrentUser(on={on})": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Users.Functions.yml"
     },
@@ -328,6 +333,5 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Users.Functions.yml"
     }
-  },
-  "resources": []
+  }
 }

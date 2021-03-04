@@ -142,6 +142,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - container
+                - container desc
                 - contexts
                 - contexts desc
                 - createdBy
@@ -164,6 +166,7 @@ paths:
             items:
               enum:
                 - id
+                - container
                 - contexts
                 - createdBy
                 - createdDateTime
@@ -273,6 +276,7 @@ paths:
             items:
               enum:
                 - id
+                - container
                 - contexts
                 - createdBy
                 - createdDateTime
@@ -740,6 +744,8 @@ paths:
                 - createdBy desc
                 - createdDateTime
                 - createdDateTime desc
+                - creationSource
+                - creationSource desc
                 - dueDateTime
                 - dueDateTime desc
                 - hasDescription
@@ -783,6 +789,7 @@ paths:
                 - conversationThreadId
                 - createdBy
                 - createdDateTime
+                - creationSource
                 - dueDateTime
                 - hasDescription
                 - orderHint
@@ -938,6 +945,7 @@ paths:
                 - conversationThreadId
                 - createdBy
                 - createdDateTime
+                - creationSource
                 - dueDateTime
                 - hasDescription
                 - orderHint
@@ -1934,6 +1942,8 @@ paths:
                 - createdBy desc
                 - createdDateTime
                 - createdDateTime desc
+                - creationSource
+                - creationSource desc
                 - dueDateTime
                 - dueDateTime desc
                 - hasDescription
@@ -1977,6 +1987,7 @@ paths:
                 - conversationThreadId
                 - createdBy
                 - createdDateTime
+                - creationSource
                 - dueDateTime
                 - hasDescription
                 - orderHint
@@ -2118,6 +2129,7 @@ paths:
                 - conversationThreadId
                 - createdBy
                 - createdDateTime
+                - creationSource
                 - dueDateTime
                 - hasDescription
                 - orderHint
@@ -2850,6 +2862,7 @@ paths:
                 - id
                 - buckets
                 - plans
+                - rosters
                 - tasks
               type: string
         - name: $expand
@@ -2865,6 +2878,7 @@ paths:
                 - '*'
                 - buckets
                 - plans
+                - rosters
                 - tasks
               type: string
       responses:
@@ -2879,6 +2893,8 @@ paths:
               operationId: planner.ListBuckets
             plans:
               operationId: planner.ListPlans
+            rosters:
+              operationId: planner.ListRosters
             tasks:
               operationId: planner.ListTasks
         default:
@@ -3168,6 +3184,8 @@ paths:
                 - createdBy desc
                 - createdDateTime
                 - createdDateTime desc
+                - creationSource
+                - creationSource desc
                 - dueDateTime
                 - dueDateTime desc
                 - hasDescription
@@ -3211,6 +3229,7 @@ paths:
                 - conversationThreadId
                 - createdBy
                 - createdDateTime
+                - creationSource
                 - dueDateTime
                 - hasDescription
                 - orderHint
@@ -3338,6 +3357,7 @@ paths:
                 - conversationThreadId
                 - createdBy
                 - createdDateTime
+                - creationSource
                 - dueDateTime
                 - hasDescription
                 - orderHint
@@ -3972,6 +3992,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - container
+                - container desc
                 - contexts
                 - contexts desc
                 - createdBy
@@ -3994,6 +4016,7 @@ paths:
             items:
               enum:
                 - id
+                - container
                 - contexts
                 - createdBy
                 - createdDateTime
@@ -4088,6 +4111,7 @@ paths:
             items:
               enum:
                 - id
+                - container
                 - contexts
                 - createdBy
                 - createdDateTime
@@ -4495,6 +4519,8 @@ paths:
                 - createdBy desc
                 - createdDateTime
                 - createdDateTime desc
+                - creationSource
+                - creationSource desc
                 - dueDateTime
                 - dueDateTime desc
                 - hasDescription
@@ -4538,6 +4564,7 @@ paths:
                 - conversationThreadId
                 - createdBy
                 - createdDateTime
+                - creationSource
                 - dueDateTime
                 - hasDescription
                 - orderHint
@@ -4679,6 +4706,7 @@ paths:
                 - conversationThreadId
                 - createdBy
                 - createdDateTime
+                - creationSource
                 - dueDateTime
                 - hasDescription
                 - orderHint
@@ -5545,6 +5573,8 @@ paths:
                 - createdBy desc
                 - createdDateTime
                 - createdDateTime desc
+                - creationSource
+                - creationSource desc
                 - dueDateTime
                 - dueDateTime desc
                 - hasDescription
@@ -5588,6 +5618,7 @@ paths:
                 - conversationThreadId
                 - createdBy
                 - createdDateTime
+                - creationSource
                 - dueDateTime
                 - hasDescription
                 - orderHint
@@ -5715,6 +5746,7 @@ paths:
                 - conversationThreadId
                 - createdBy
                 - createdDateTime
+                - creationSource
                 - dueDateTime
                 - hasDescription
                 - orderHint
@@ -6325,6 +6357,659 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /planner/rosters:
+    get:
+      tags:
+        - planner.plannerRoster
+      summary: Get rosters from planner
+      operationId: planner_ListRosters
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - members
+                - plans
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - members
+                - plans
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of plannerRoster
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.plannerRoster'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - planner.plannerRoster
+      summary: Create new navigation property to rosters for planner
+      operationId: planner_CreateRosters
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.plannerRoster'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerRoster'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/planner/rosters/{plannerRoster-id}':
+    get:
+      tags:
+        - planner.plannerRoster
+      summary: Get rosters from planner
+      operationId: planner_GetRosters
+      parameters:
+        - name: plannerRoster-id
+          in: path
+          description: 'key: id of plannerRoster'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerRoster
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - members
+                - plans
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - members
+                - plans
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerRoster'
+          links:
+            members:
+              operationId: planner.Rosters.ListMembers
+              parameters:
+                plannerRoster-id: $request.path.plannerRoster-id
+            plans:
+              operationId: planner.Rosters.ListPlans
+              parameters:
+                plannerRoster-id: $request.path.plannerRoster-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - planner.plannerRoster
+      summary: Update the navigation property rosters in planner
+      operationId: planner_UpdateRosters
+      parameters:
+        - name: plannerRoster-id
+          in: path
+          description: 'key: id of plannerRoster'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerRoster
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.plannerRoster'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - planner.plannerRoster
+      summary: Delete navigation property rosters for planner
+      operationId: planner_DeleteRosters
+      parameters:
+        - name: plannerRoster-id
+          in: path
+          description: 'key: id of plannerRoster'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerRoster
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/planner/rosters/{plannerRoster-id}/members':
+    get:
+      tags:
+        - planner.plannerRoster
+      summary: Get members from planner
+      operationId: planner.rosters_ListMembers
+      parameters:
+        - name: plannerRoster-id
+          in: path
+          description: 'key: id of plannerRoster'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerRoster
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - roles
+                - roles desc
+                - tenantId
+                - tenantId desc
+                - userId
+                - userId desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - roles
+                - tenantId
+                - userId
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of plannerRosterMember
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.plannerRosterMember'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - planner.plannerRoster
+      summary: Create new navigation property to members for planner
+      operationId: planner.rosters_CreateMembers
+      parameters:
+        - name: plannerRoster-id
+          in: path
+          description: 'key: id of plannerRoster'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerRoster
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.plannerRosterMember'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerRosterMember'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/planner/rosters/{plannerRoster-id}/members/{plannerRosterMember-id}':
+    get:
+      tags:
+        - planner.plannerRoster
+      summary: Get members from planner
+      operationId: planner.rosters_GetMembers
+      parameters:
+        - name: plannerRoster-id
+          in: path
+          description: 'key: id of plannerRoster'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerRoster
+        - name: plannerRosterMember-id
+          in: path
+          description: 'key: id of plannerRosterMember'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerRosterMember
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - roles
+                - tenantId
+                - userId
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerRosterMember'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - planner.plannerRoster
+      summary: Update the navigation property members in planner
+      operationId: planner.rosters_UpdateMembers
+      parameters:
+        - name: plannerRoster-id
+          in: path
+          description: 'key: id of plannerRoster'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerRoster
+        - name: plannerRosterMember-id
+          in: path
+          description: 'key: id of plannerRosterMember'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerRosterMember
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.plannerRosterMember'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - planner.plannerRoster
+      summary: Delete navigation property members for planner
+      operationId: planner.rosters_DeleteMembers
+      parameters:
+        - name: plannerRoster-id
+          in: path
+          description: 'key: id of plannerRoster'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerRoster
+        - name: plannerRosterMember-id
+          in: path
+          description: 'key: id of plannerRosterMember'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerRosterMember
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/planner/rosters/{plannerRoster-id}/plans':
+    get:
+      tags:
+        - planner.plannerRoster
+      summary: Get plans from planner
+      operationId: planner.rosters_ListPlans
+      parameters:
+        - name: plannerRoster-id
+          in: path
+          description: 'key: id of plannerRoster'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerRoster
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - container
+                - container desc
+                - contexts
+                - contexts desc
+                - createdBy
+                - createdBy desc
+                - createdDateTime
+                - createdDateTime desc
+                - owner
+                - owner desc
+                - title
+                - title desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - container
+                - contexts
+                - createdBy
+                - createdDateTime
+                - owner
+                - title
+                - buckets
+                - details
+                - tasks
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - buckets
+                - details
+                - tasks
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of plannerPlan
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.plannerPlan'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/planner/rosters/{plannerRoster-id}/plans/$ref':
+    get:
+      tags:
+        - planner.plannerRoster
+      summary: Get ref of plans from planner
+      operationId: planner.rosters_ListRefPlans
+      parameters:
+        - name: plannerRoster-id
+          in: path
+          description: 'key: id of plannerRoster'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerRoster
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - container
+                - container desc
+                - contexts
+                - contexts desc
+                - createdBy
+                - createdBy desc
+                - createdDateTime
+                - createdDateTime desc
+                - owner
+                - owner desc
+                - title
+                - title desc
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property links
+          content:
+            application/json:
+              schema:
+                title: Collection of links of plannerPlan
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - planner.plannerRoster
+      summary: Create new navigation property ref to plans for planner
+      operationId: planner.rosters_CreateRefPlans
+      parameters:
+        - name: plannerRoster-id
+          in: path
+          description: 'key: id of plannerRoster'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerRoster
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '201':
+          description: Created navigation property link.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   /planner/tasks:
     get:
       tags:
@@ -6371,6 +7056,8 @@ paths:
                 - createdBy desc
                 - createdDateTime
                 - createdDateTime desc
+                - creationSource
+                - creationSource desc
                 - dueDateTime
                 - dueDateTime desc
                 - hasDescription
@@ -6414,6 +7101,7 @@ paths:
                 - conversationThreadId
                 - createdBy
                 - createdDateTime
+                - creationSource
                 - dueDateTime
                 - hasDescription
                 - orderHint
@@ -6526,6 +7214,7 @@ paths:
                 - conversationThreadId
                 - createdBy
                 - createdDateTime
+                - creationSource
                 - dueDateTime
                 - hasDescription
                 - orderHint
@@ -7065,6 +7754,7 @@ paths:
                 - favoritePlans
                 - plans
                 - recentPlans
+                - rosterPlans
                 - tasks
               type: string
         - name: $expand
@@ -7082,6 +7772,7 @@ paths:
                 - favoritePlans
                 - plans
                 - recentPlans
+                - rosterPlans
                 - tasks
               type: string
       responses:
@@ -7106,6 +7797,10 @@ paths:
                 user-id: $request.path.user-id
             recentPlans:
               operationId: users.Planner.ListRecentPlans
+              parameters:
+                user-id: $request.path.user-id
+            rosterPlans:
+              operationId: users.Planner.ListRosterPlans
               parameters:
                 user-id: $request.path.user-id
             tasks:
@@ -7424,6 +8119,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - container
+                - container desc
                 - contexts
                 - contexts desc
                 - createdBy
@@ -7446,6 +8143,7 @@ paths:
             items:
               enum:
                 - id
+                - container
                 - contexts
                 - createdBy
                 - createdDateTime
@@ -7524,6 +8222,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - container
+                - container desc
                 - contexts
                 - contexts desc
                 - createdBy
@@ -7623,6 +8323,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - container
+                - container desc
                 - contexts
                 - contexts desc
                 - createdBy
@@ -7645,6 +8347,7 @@ paths:
             items:
               enum:
                 - id
+                - container
                 - contexts
                 - createdBy
                 - createdDateTime
@@ -7754,6 +8457,7 @@ paths:
             items:
               enum:
                 - id
+                - container
                 - contexts
                 - createdBy
                 - createdDateTime
@@ -8221,6 +8925,8 @@ paths:
                 - createdBy desc
                 - createdDateTime
                 - createdDateTime desc
+                - creationSource
+                - creationSource desc
                 - dueDateTime
                 - dueDateTime desc
                 - hasDescription
@@ -8264,6 +8970,7 @@ paths:
                 - conversationThreadId
                 - createdBy
                 - createdDateTime
+                - creationSource
                 - dueDateTime
                 - hasDescription
                 - orderHint
@@ -8419,6 +9126,7 @@ paths:
                 - conversationThreadId
                 - createdBy
                 - createdDateTime
+                - creationSource
                 - dueDateTime
                 - hasDescription
                 - orderHint
@@ -9415,6 +10123,8 @@ paths:
                 - createdBy desc
                 - createdDateTime
                 - createdDateTime desc
+                - creationSource
+                - creationSource desc
                 - dueDateTime
                 - dueDateTime desc
                 - hasDescription
@@ -9458,6 +10168,7 @@ paths:
                 - conversationThreadId
                 - createdBy
                 - createdDateTime
+                - creationSource
                 - dueDateTime
                 - hasDescription
                 - orderHint
@@ -9599,6 +10310,7 @@ paths:
                 - conversationThreadId
                 - createdBy
                 - createdDateTime
+                - creationSource
                 - dueDateTime
                 - hasDescription
                 - orderHint
@@ -10342,6 +11054,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - container
+                - container desc
                 - contexts
                 - contexts desc
                 - createdBy
@@ -10364,6 +11078,7 @@ paths:
             items:
               enum:
                 - id
+                - container
                 - contexts
                 - createdBy
                 - createdDateTime
@@ -10442,6 +11157,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - container
+                - container desc
                 - contexts
                 - contexts desc
                 - createdBy
@@ -10481,6 +11198,210 @@ paths:
         - users.plannerUser
       summary: Create new navigation property ref to recentPlans for users
       operationId: users.planner_CreateRefRecentPlans
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '201':
+          description: Created navigation property link.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/planner/rosterPlans':
+    get:
+      tags:
+        - users.plannerUser
+      summary: Get rosterPlans from users
+      operationId: users.planner_ListRosterPlans
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - container
+                - container desc
+                - contexts
+                - contexts desc
+                - createdBy
+                - createdBy desc
+                - createdDateTime
+                - createdDateTime desc
+                - owner
+                - owner desc
+                - title
+                - title desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - container
+                - contexts
+                - createdBy
+                - createdDateTime
+                - owner
+                - title
+                - buckets
+                - details
+                - tasks
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - buckets
+                - details
+                - tasks
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of plannerPlan
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.plannerPlan'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/planner/rosterPlans/$ref':
+    get:
+      tags:
+        - users.plannerUser
+      summary: Get ref of rosterPlans from users
+      operationId: users.planner_ListRefRosterPlans
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - container
+                - container desc
+                - contexts
+                - contexts desc
+                - createdBy
+                - createdBy desc
+                - createdDateTime
+                - createdDateTime desc
+                - owner
+                - owner desc
+                - title
+                - title desc
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property links
+          content:
+            application/json:
+              schema:
+                title: Collection of links of plannerPlan
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - users.plannerUser
+      summary: Create new navigation property ref to rosterPlans for users
+      operationId: users.planner_CreateRefRosterPlans
       parameters:
         - name: user-id
           in: path
@@ -10563,6 +11484,8 @@ paths:
                 - createdBy desc
                 - createdDateTime
                 - createdDateTime desc
+                - creationSource
+                - creationSource desc
                 - dueDateTime
                 - dueDateTime desc
                 - hasDescription
@@ -10606,6 +11529,7 @@ paths:
                 - conversationThreadId
                 - createdBy
                 - createdDateTime
+                - creationSource
                 - dueDateTime
                 - hasDescription
                 - orderHint
@@ -10733,6 +11657,7 @@ paths:
                 - conversationThreadId
                 - createdBy
                 - createdDateTime
+                - creationSource
                 - dueDateTime
                 - hasDescription
                 - orderHint
@@ -11364,6 +12289,8 @@ components:
         - title: plannerPlan
           type: object
           properties:
+            container:
+              $ref: '#/components/schemas/microsoft.graph.plannerPlanContainer'
             contexts:
               $ref: '#/components/schemas/microsoft.graph.plannerPlanContextCollection'
             createdBy:
@@ -11385,14 +12312,14 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerBucket'
-              description: Read-only. Nullable. Collection of buckets in the plan.
+              description: Collection of buckets in the plan. Read-only. Nullable.
             details:
               $ref: '#/components/schemas/microsoft.graph.plannerPlanDetails'
             tasks:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
-              description: Read-only. Nullable. Collection of tasks in the plan.
+              description: Collection of tasks in the plan. Read-only. Nullable.
           additionalProperties:
             type: object
     microsoft.graph.plannerBucket:
@@ -11471,6 +12398,8 @@ components:
               description: 'Read-only. Date and time at which the task is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
               format: date-time
               nullable: true
+            creationSource:
+              $ref: '#/components/schemas/microsoft.graph.plannerTaskCreation'
             dueDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -11502,6 +12431,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: 'Priority of the task. Valid range of values is between 0 and 10 (inclusive), with increasing value being lower priority (0 has the highest priority and 10 has the lowest priority).  Currently, Planner interprets values 0 and 1 as ''urgent'', 2 and 3 and 4 as ''important'', 5, 6, and 7 as ''medium'', and 8, 9, and 10 as ''low''.  Currently, Planner sets the value 1 for ''urgent'', 3 for ''important'', 5 for ''medium'', and 9 for ''low''.'
               format: int32
               nullable: true
             referenceCount:
@@ -11616,11 +12546,56 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlan'
               description: Read-only. Nullable. Returns a collection of the specified plans
+            rosters:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.plannerRoster'
+              description: Read-only. Nullable. Returns a collection of the specified rosters
             tasks:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
               description: Read-only. Nullable. Returns a collection of the specified tasks
+          additionalProperties:
+            type: object
+    microsoft.graph.plannerRoster:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: plannerRoster
+          type: object
+          properties:
+            members:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.plannerRosterMember'
+              description: Retrieves the members of the plannerRoster.
+            plans:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.plannerPlan'
+              description: Retrieves the plans contained by the plannerRoster.
+          additionalProperties:
+            type: object
+    microsoft.graph.plannerRosterMember:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: plannerRosterMember
+          type: object
+          properties:
+            roles:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: 'Additional roles associated with the PlannerRosterMember, which determines permissions of the member in the plannerRoster. Currently there are no available roles to assign, and every member has full control over the contents of the plannerRoster.'
+            tenantId:
+              type: string
+              description: Identifier of the tenant the user belongs to. Currently only the users from the same tenant can be added to a plannerRoster.
+              nullable: true
+            userId:
+              type: string
+              description: Identifier of the user.
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.plannerUser:
@@ -11641,6 +12616,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlan'
+              description: Read-only. Nullable. Returns the plannerPlans that the user marked as favorites.
             plans:
               type: array
               items:
@@ -11650,11 +12626,17 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlan'
+              description: Read-only. Nullable. Returns the plannerPlans that have been recently viewed by the user in apps that support recent plans.
+            rosterPlans:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.plannerPlan'
+              description: Read-only. Nullable. Returns the plannerPlans contained by the plannerRosters the user is a member.
             tasks:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
-              description: Read-only. Nullable. Returns the plannerPlans shared with the user.
+              description: Read-only. Nullable. Returns the plannerTasks assigned to the user.
           additionalProperties:
             type: object
     microsoft.graph.plannerDelta:
@@ -11671,6 +12653,20 @@ components:
         id:
           type: string
           description: Read-only.
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerPlanContainer:
+      title: plannerPlanContainer
+      type: object
+      properties:
+        containerId:
+          type: string
+          description: The identifier of the resource that contains the plan.
+        type:
+          $ref: '#/components/schemas/microsoft.graph.plannerContainerType'
+        url:
+          type: string
+          description: The full canonical URL of the container.
       additionalProperties:
         type: object
     microsoft.graph.plannerPlanContextCollection:
@@ -11698,6 +12694,14 @@ components:
     microsoft.graph.plannerAssignments:
       title: plannerAssignments
       type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerTaskCreation:
+      title: plannerTaskCreation
+      type: object
+      properties:
+        teamsPublicationInfo:
+          $ref: '#/components/schemas/microsoft.graph.plannerTeamsPublicationInfo'
       additionalProperties:
         type: object
     microsoft.graph.plannerPreviewType:
@@ -11732,9 +12736,73 @@ components:
           type: string
           description: The label associated with Category 1
           nullable: true
+        category10:
+          type: string
+          description: The label associated with Category 10
+          nullable: true
+        category11:
+          type: string
+          description: The label associated with Category 11
+          nullable: true
+        category12:
+          type: string
+          description: The label associated with Category 12
+          nullable: true
+        category13:
+          type: string
+          description: The label associated with Category 13
+          nullable: true
+        category14:
+          type: string
+          description: The label associated with Category 14
+          nullable: true
+        category15:
+          type: string
+          description: The label associated with Category 15
+          nullable: true
+        category16:
+          type: string
+          description: The label associated with Category 16
+          nullable: true
+        category17:
+          type: string
+          description: The label associated with Category 17
+          nullable: true
+        category18:
+          type: string
+          description: The label associated with Category 18
+          nullable: true
+        category19:
+          type: string
+          description: The label associated with Category 19
+          nullable: true
         category2:
           type: string
           description: The label associated with Category 2
+          nullable: true
+        category20:
+          type: string
+          description: The label associated with Category 20
+          nullable: true
+        category21:
+          type: string
+          description: The label associated with Category 21
+          nullable: true
+        category22:
+          type: string
+          description: The label associated with Category 22
+          nullable: true
+        category23:
+          type: string
+          description: The label associated with Category 23
+          nullable: true
+        category24:
+          type: string
+          description: The label associated with Category 24
+          nullable: true
+        category25:
+          type: string
+          description: The label associated with Category 25
           nullable: true
         category3:
           type: string
@@ -11751,6 +12819,18 @@ components:
         category6:
           type: string
           description: The label associated with Category 6
+          nullable: true
+        category7:
+          type: string
+          description: The label associated with Category 7
+          nullable: true
+        category8:
+          type: string
+          description: The label associated with Category 8
+          nullable: true
+        category9:
+          type: string
+          description: The label associated with Category 9
           nullable: true
       additionalProperties:
         type: object
@@ -11783,6 +12863,13 @@ components:
           $ref: '#/components/schemas/odata.error.main'
       additionalProperties:
         type: object
+    microsoft.graph.plannerContainerType:
+      title: plannerContainerType
+      enum:
+        - group
+        - unknownFutureValue
+        - roster
+      type: string
     microsoft.graph.identity:
       title: identity
       type: object
@@ -11794,6 +12881,34 @@ components:
         id:
           type: string
           description: Unique identifier for the identity.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerTeamsPublicationInfo:
+      title: plannerTeamsPublicationInfo
+      type: object
+      properties:
+        lastModifiedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The date and time when this task was last modified by the publication process. Read-only.
+          format: date-time
+          nullable: true
+        publicationId:
+          type: string
+          description: The identifier of the publication. Read-only.
+          nullable: true
+        publishedToPlanId:
+          type: string
+          description: The identifier of the plannerPlan this task was originally placed in. Read-only.
+          nullable: true
+        publishingTeamId:
+          type: string
+          description: The identifier of the team that initiated the publication process. Read-only.
+          nullable: true
+        publishingTeamName:
+          type: string
+          description: 'The display name of the team that initiated the publication process. This display name is for reference only, and might not represent the most up-to-date name of the team. Read-only.'
           nullable: true
       additionalProperties:
         type: object

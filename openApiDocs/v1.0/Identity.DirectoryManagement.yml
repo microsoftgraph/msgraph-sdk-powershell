@@ -7000,6 +7000,7 @@ paths:
                 - tenantType
                 - verifiedDomains
                 - mobileDeviceManagementAuthority
+                - branding
                 - certificateBasedAuthConfiguration
                 - extensions
               type: string
@@ -7014,6 +7015,7 @@ paths:
             items:
               enum:
                 - '*'
+                - branding
                 - certificateBasedAuthConfiguration
                 - extensions
               type: string
@@ -7110,6 +7112,7 @@ paths:
                 - tenantType
                 - verifiedDomains
                 - mobileDeviceManagementAuthority
+                - branding
                 - certificateBasedAuthConfiguration
                 - extensions
               type: string
@@ -7124,6 +7127,7 @@ paths:
             items:
               enum:
                 - '*'
+                - branding
                 - certificateBasedAuthConfiguration
                 - extensions
               type: string
@@ -7135,6 +7139,10 @@ paths:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.organization'
           links:
+            branding:
+              operationId: organization.GetBranding
+              parameters:
+                organization-id: $request.path.organization-id
             certificateBasedAuthConfiguration:
               operationId: organization.ListCertificateBasedAuthConfiguration
               parameters:
@@ -7177,6 +7185,117 @@ paths:
         - organization.organization
       summary: Delete entity from organization
       operationId: organization.organization_DeleteOrganization
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: id of organization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/organization/{organization-id}/branding':
+    get:
+      tags:
+        - organization.organizationalBranding
+      summary: Get branding from organization
+      operationId: organization_GetBranding
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: id of organization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - backgroundColor
+                - backgroundImage
+                - bannerLogo
+                - signInPageText
+                - squareLogo
+                - usernameHintText
+                - localizations
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - localizations
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.organizationalBranding'
+          links:
+            localizations:
+              operationId: organization.Branding.ListLocalizations
+              parameters:
+                organization-id: $request.path.organization-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - organization.organizationalBranding
+      summary: Update the navigation property branding in organization
+      operationId: organization_UpdateBranding
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: id of organization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.organizationalBranding'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - organization.organizationalBranding
+      summary: Delete navigation property branding for organization
+      operationId: organization_DeleteBranding
       parameters:
         - name: organization-id
           in: path
@@ -8801,6 +8920,8 @@ components:
               description: The collection of domains associated with this tenant. Not nullable.
             mobileDeviceManagementAuthority:
               $ref: '#/components/schemas/microsoft.graph.mdmAuthority'
+            branding:
+              $ref: '#/components/schemas/microsoft.graph.organizationalBranding'
             certificateBasedAuthConfiguration:
               type: array
               items:
@@ -8814,6 +8935,18 @@ components:
           additionalProperties:
             type: object
           description: The organization resource represents an instance of global settings and resources which operate and are provisioned at the tenant-level.
+    microsoft.graph.organizationalBranding:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.organizationalBrandingProperties'
+        - title: organizationalBranding
+          type: object
+          properties:
+            localizations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.organizationalBrandingLocalization'
+          additionalProperties:
+            type: object
     microsoft.graph.subscribedSku:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -9094,6 +9227,48 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.certificateAuthority'
               description: Collection of certificate authorities which creates a trusted certificate chain.
+          additionalProperties:
+            type: object
+    microsoft.graph.organizationalBrandingProperties:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: organizationalBrandingProperties
+          type: object
+          properties:
+            backgroundColor:
+              type: string
+              description: 'Color that will appear in place of the background image in low-bandwidth connections. The primary color of your banner logo or your organization color is recommended to be used here. Specify this in hexadecimal (for example, white is #FFFFFF).'
+              nullable: true
+            backgroundImage:
+              type: string
+              description: Image that appears as the background of the sign in page. .png or .jpg not larger than 1920x1080 and smaller than 300kb. A smaller image will reduce bandwidth requirements and make page loads more performant.
+              format: base64url
+              nullable: true
+            bannerLogo:
+              type: string
+              description: A banner version of your company logo which appears appears on the sign-in page. .png or .jpg no larger than 36x245px. We recommend using a transparent image with no padding around the logo.
+              format: base64url
+              nullable: true
+            signInPageText:
+              type: string
+              description: 'Text that appears at the bottom of the sign-in box. You can use this to communicate additional information, such as the phone number to your help desk or a legal statement. This text must be Unicode and not exceed 1024 characters.'
+              nullable: true
+            squareLogo:
+              type: string
+              description: Square version of your company logo. This appears in Windows 10 out-of-box (OOBE) experiences and when Windows Autopilot is enabled for deployment. .png or .jpg no larger than 240x240px and no more than 10kb in size. We recommend using a transparent image with no padding around the logo.
+              format: base64url
+              nullable: true
+            usernameHintText:
+              type: string
+              description: 'String that shows as the hint in the username textbox on the sign in screen. This text must be Unicode, without links or code, and can''t exceed 64 characters.'
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.organizationalBrandingLocalization:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.organizationalBrandingProperties'
+        - title: organizationalBrandingLocalization
+          type: object
           additionalProperties:
             type: object
     microsoft.graph.licenseUnitsDetail:

@@ -1,0 +1,2568 @@
+openapi: 3.0.1
+info:
+  title: DeviceManagement.Functions
+  version: v1.0-beta
+servers:
+  - url: https://graph.microsoft.com/beta/
+    description: Core
+paths:
+  /deviceManagement/applePushNotificationCertificate/microsoft.graph.downloadApplePushNotificationCertificateSigningRequest():
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function downloadApplePushNotificationCertificateSigningRequest
+      operationId: deviceManagement.applePushNotificationCertificate_downloadApplePushNotificationCertificateSigningRequest
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/deviceManagement/auditEvents/microsoft.graph.getAuditActivityTypes(category=''{category}'')':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getAuditActivityTypes
+      operationId: deviceManagement.auditEvents_getAuditActivityTypes
+      parameters:
+        - name: category
+          in: path
+          description: 'Usage: category={category}'
+          required: true
+          schema:
+            type: string
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+                  nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  /deviceManagement/auditEvents/microsoft.graph.getAuditCategories():
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getAuditCategories
+      operationId: deviceManagement.auditEvents_getAuditCategories
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+                  nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/deviceManagement/comanagedDevices/{managedDevice-id}/microsoft.graph.getFileVaultKey()':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getFileVaultKey
+      operationId: deviceManagement.comanagedDevices_getFileVaultKey
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: 'key: id of managedDevice'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/deviceManagement/comanagedDevices/{managedDevice-id}/microsoft.graph.getNonCompliantSettings()':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getNonCompliantSettings
+      operationId: deviceManagement.comanagedDevices_getNonCompliantSettings
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: 'key: id of managedDevice'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicySettingState'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/deviceManagement/configManagerCollections/microsoft.graph.getPolicySummary(policyId=''{policyId}'')':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getPolicySummary
+      operationId: deviceManagement.configManagerCollections_getPolicySummary
+      parameters:
+        - name: policyId
+          in: path
+          description: 'Usage: policyId={policyId}'
+          required: true
+          schema:
+            type: string
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.configManagerPolicySummary'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/deviceManagement/depOnboardingSettings/{depOnboardingSetting-id}/enrollmentProfiles/{enrollmentProfile-id}/microsoft.graph.exportMobileConfig()':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function exportMobileConfig
+      operationId: deviceManagement.depOnboardingSettings.enrollmentProfiles_exportMobileConfig
+      parameters:
+        - name: depOnboardingSetting-id
+          in: path
+          description: 'key: id of depOnboardingSetting'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: depOnboardingSetting
+        - name: enrollmentProfile-id
+          in: path
+          description: 'key: id of enrollmentProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: enrollmentProfile
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/deviceManagement/depOnboardingSettings/{depOnboardingSetting-id}/microsoft.graph.getEncryptionPublicKey()':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getEncryptionPublicKey
+      operationId: deviceManagement.depOnboardingSettings_getEncryptionPublicKey
+      parameters:
+        - name: depOnboardingSetting-id
+          in: path
+          description: 'key: id of depOnboardingSetting'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: depOnboardingSetting
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/deviceManagement/depOnboardingSettings/microsoft.graph.getExpiringVppTokenCount(expiringBeforeDateTime=''{expiringBeforeDateTime}'')':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getExpiringVppTokenCount
+      operationId: deviceManagement.depOnboardingSettings_getExpiringVppTokenCount
+      parameters:
+        - name: expiringBeforeDateTime
+          in: path
+          description: 'Usage: expiringBeforeDateTime={expiringBeforeDateTime}'
+          required: true
+          schema:
+            type: string
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                maximum: 2147483647
+                minimum: -2147483648
+                type: integer
+                format: int32
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/deviceManagement/deviceComplianceScripts/{deviceComplianceScript-id}/deviceRunStates/{deviceComplianceScriptDeviceState-id}/managedDevice/microsoft.graph.getFileVaultKey()':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getFileVaultKey
+      operationId: deviceManagement.deviceComplianceScripts.deviceRunStates.managedDevice_getFileVaultKey
+      parameters:
+        - name: deviceComplianceScript-id
+          in: path
+          description: 'key: id of deviceComplianceScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceComplianceScript
+        - name: deviceComplianceScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceComplianceScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceComplianceScriptDeviceState
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/deviceManagement/deviceComplianceScripts/{deviceComplianceScript-id}/deviceRunStates/{deviceComplianceScriptDeviceState-id}/managedDevice/microsoft.graph.getNonCompliantSettings()':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getNonCompliantSettings
+      operationId: deviceManagement.deviceComplianceScripts.deviceRunStates.managedDevice_getNonCompliantSettings
+      parameters:
+        - name: deviceComplianceScript-id
+          in: path
+          description: 'key: id of deviceComplianceScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceComplianceScript
+        - name: deviceComplianceScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceComplianceScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceComplianceScriptDeviceState
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicySettingState'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  /deviceManagement/deviceConfigurations/microsoft.graph.getIosAvailableUpdateVersions():
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getIosAvailableUpdateVersions
+      operationId: deviceManagement.deviceConfigurations_getIosAvailableUpdateVersions
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.iosAvailableUpdateVersion'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/deviceManagement/deviceCustomAttributeShellScripts/{deviceCustomAttributeShellScript-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.getFileVaultKey()':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getFileVaultKey
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceRunStates.managedDevice_getFileVaultKey
+      parameters:
+        - name: deviceCustomAttributeShellScript-id
+          in: path
+          description: 'key: id of deviceCustomAttributeShellScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceCustomAttributeShellScript
+        - name: deviceManagementScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceManagementScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptDeviceState
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/deviceManagement/deviceCustomAttributeShellScripts/{deviceCustomAttributeShellScript-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.getNonCompliantSettings()':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getNonCompliantSettings
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceRunStates.managedDevice_getNonCompliantSettings
+      parameters:
+        - name: deviceCustomAttributeShellScript-id
+          in: path
+          description: 'key: id of deviceCustomAttributeShellScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceCustomAttributeShellScript
+        - name: deviceManagementScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceManagementScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptDeviceState
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicySettingState'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/deviceManagement/deviceCustomAttributeShellScripts/{deviceCustomAttributeShellScript-id}/userRunStates/{deviceManagementScriptUserState-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.getFileVaultKey()':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getFileVaultKey
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.userRunStates.deviceRunStates.managedDevice_getFileVaultKey
+      parameters:
+        - name: deviceCustomAttributeShellScript-id
+          in: path
+          description: 'key: id of deviceCustomAttributeShellScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceCustomAttributeShellScript
+        - name: deviceManagementScriptUserState-id
+          in: path
+          description: 'key: id of deviceManagementScriptUserState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptUserState
+        - name: deviceManagementScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceManagementScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptDeviceState
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/deviceManagement/deviceCustomAttributeShellScripts/{deviceCustomAttributeShellScript-id}/userRunStates/{deviceManagementScriptUserState-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.getNonCompliantSettings()':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getNonCompliantSettings
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.userRunStates.deviceRunStates.managedDevice_getNonCompliantSettings
+      parameters:
+        - name: deviceCustomAttributeShellScript-id
+          in: path
+          description: 'key: id of deviceCustomAttributeShellScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceCustomAttributeShellScript
+        - name: deviceManagementScriptUserState-id
+          in: path
+          description: 'key: id of deviceManagementScriptUserState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptUserState
+        - name: deviceManagementScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceManagementScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptDeviceState
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicySettingState'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/deviceManagement/deviceHealthScripts/{deviceHealthScript-id}/deviceRunStates/{deviceHealthScriptDeviceState-id}/managedDevice/microsoft.graph.getFileVaultKey()':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getFileVaultKey
+      operationId: deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_getFileVaultKey
+      parameters:
+        - name: deviceHealthScript-id
+          in: path
+          description: 'key: id of deviceHealthScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceHealthScript
+        - name: deviceHealthScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceHealthScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceHealthScriptDeviceState
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/deviceManagement/deviceHealthScripts/{deviceHealthScript-id}/deviceRunStates/{deviceHealthScriptDeviceState-id}/managedDevice/microsoft.graph.getNonCompliantSettings()':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getNonCompliantSettings
+      operationId: deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_getNonCompliantSettings
+      parameters:
+        - name: deviceHealthScript-id
+          in: path
+          description: 'key: id of deviceHealthScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceHealthScript
+        - name: deviceHealthScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceHealthScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceHealthScriptDeviceState
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicySettingState'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/deviceManagement/deviceHealthScripts/{deviceHealthScript-id}/microsoft.graph.getRemediationHistory()':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getRemediationHistory
+      operationId: deviceManagement.deviceHealthScripts_getRemediationHistory
+      parameters:
+        - name: deviceHealthScript-id
+          in: path
+          description: 'key: id of deviceHealthScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceHealthScript
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceHealthScriptRemediationHistory'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  /deviceManagement/deviceHealthScripts/microsoft.graph.areGlobalScriptsAvailable():
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function areGlobalScriptsAvailable
+      operationId: deviceManagement.deviceHealthScripts_areGlobalScriptsAvailable
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.globalDeviceHealthScriptState'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  /deviceManagement/deviceHealthScripts/microsoft.graph.getRemediationSummary():
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getRemediationSummary
+      operationId: deviceManagement.deviceHealthScripts_getRemediationSummary
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceHealthScriptRemediationSummary'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/deviceManagement/deviceManagementScripts/{deviceManagementScript-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.getFileVaultKey()':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getFileVaultKey
+      operationId: deviceManagement.deviceManagementScripts.deviceRunStates.managedDevice_getFileVaultKey
+      parameters:
+        - name: deviceManagementScript-id
+          in: path
+          description: 'key: id of deviceManagementScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScript
+        - name: deviceManagementScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceManagementScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptDeviceState
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/deviceManagement/deviceManagementScripts/{deviceManagementScript-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.getNonCompliantSettings()':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getNonCompliantSettings
+      operationId: deviceManagement.deviceManagementScripts.deviceRunStates.managedDevice_getNonCompliantSettings
+      parameters:
+        - name: deviceManagementScript-id
+          in: path
+          description: 'key: id of deviceManagementScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScript
+        - name: deviceManagementScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceManagementScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptDeviceState
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicySettingState'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/deviceManagement/deviceManagementScripts/{deviceManagementScript-id}/userRunStates/{deviceManagementScriptUserState-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.getFileVaultKey()':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getFileVaultKey
+      operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_getFileVaultKey
+      parameters:
+        - name: deviceManagementScript-id
+          in: path
+          description: 'key: id of deviceManagementScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScript
+        - name: deviceManagementScriptUserState-id
+          in: path
+          description: 'key: id of deviceManagementScriptUserState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptUserState
+        - name: deviceManagementScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceManagementScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptDeviceState
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/deviceManagement/deviceManagementScripts/{deviceManagementScript-id}/userRunStates/{deviceManagementScriptUserState-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.getNonCompliantSettings()':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getNonCompliantSettings
+      operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_getNonCompliantSettings
+      parameters:
+        - name: deviceManagementScript-id
+          in: path
+          description: 'key: id of deviceManagementScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScript
+        - name: deviceManagementScriptUserState-id
+          in: path
+          description: 'key: id of deviceManagementScriptUserState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptUserState
+        - name: deviceManagementScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceManagementScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptDeviceState
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicySettingState'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/deviceManagement/deviceShellScripts/{deviceShellScript-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.getFileVaultKey()':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getFileVaultKey
+      operationId: deviceManagement.deviceShellScripts.deviceRunStates.managedDevice_getFileVaultKey
+      parameters:
+        - name: deviceShellScript-id
+          in: path
+          description: 'key: id of deviceShellScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceShellScript
+        - name: deviceManagementScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceManagementScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptDeviceState
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/deviceManagement/deviceShellScripts/{deviceShellScript-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.getNonCompliantSettings()':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getNonCompliantSettings
+      operationId: deviceManagement.deviceShellScripts.deviceRunStates.managedDevice_getNonCompliantSettings
+      parameters:
+        - name: deviceShellScript-id
+          in: path
+          description: 'key: id of deviceShellScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceShellScript
+        - name: deviceManagementScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceManagementScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptDeviceState
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicySettingState'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/deviceManagement/deviceShellScripts/{deviceShellScript-id}/userRunStates/{deviceManagementScriptUserState-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.getFileVaultKey()':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getFileVaultKey
+      operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates.managedDevice_getFileVaultKey
+      parameters:
+        - name: deviceShellScript-id
+          in: path
+          description: 'key: id of deviceShellScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceShellScript
+        - name: deviceManagementScriptUserState-id
+          in: path
+          description: 'key: id of deviceManagementScriptUserState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptUserState
+        - name: deviceManagementScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceManagementScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptDeviceState
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/deviceManagement/deviceShellScripts/{deviceShellScript-id}/userRunStates/{deviceManagementScriptUserState-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.getNonCompliantSettings()':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getNonCompliantSettings
+      operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates.managedDevice_getNonCompliantSettings
+      parameters:
+        - name: deviceShellScript-id
+          in: path
+          description: 'key: id of deviceShellScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceShellScript
+        - name: deviceManagementScriptUserState-id
+          in: path
+          description: 'key: id of deviceManagementScriptUserState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptUserState
+        - name: deviceManagementScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceManagementScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptDeviceState
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicySettingState'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/deviceManagement/intents/{deviceManagementIntent-id}/microsoft.graph.compare(templateId=''{templateId}'')':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function compare
+      operationId: deviceManagement.intents_compare
+      parameters:
+        - name: deviceManagementIntent-id
+          in: path
+          description: 'key: id of deviceManagementIntent'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementIntent
+        - name: templateId
+          in: path
+          description: 'Usage: templateId={templateId}'
+          required: true
+          schema:
+            type: string
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.deviceManagementSettingComparison'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.getFileVaultKey()':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getFileVaultKey
+      operationId: deviceManagement.managedDevices_getFileVaultKey
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: 'key: id of managedDevice'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.getNonCompliantSettings()':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getNonCompliantSettings
+      operationId: deviceManagement.managedDevices_getNonCompliantSettings
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: 'key: id of managedDevice'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicySettingState'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/deviceManagement/managementConditions/{managementCondition-id}/managementConditionStatements/microsoft.graph.getManagementConditionStatementsForPlatform(platform={platform})':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getManagementConditionStatementsForPlatform
+      operationId: deviceManagement.managementConditions.managementConditionStatements_getManagementConditionStatementsForPlatform
+      parameters:
+        - name: managementCondition-id
+          in: path
+          description: 'key: id of managementCondition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managementCondition
+        - name: platform
+          in: path
+          description: 'Usage: platform={platform}'
+          required: true
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.devicePlatformType'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.managementConditionStatement'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/deviceManagement/managementConditions/microsoft.graph.getManagementConditionsForPlatform(platform={platform})':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getManagementConditionsForPlatform
+      operationId: deviceManagement.managementConditions_getManagementConditionsForPlatform
+      parameters:
+        - name: platform
+          in: path
+          description: 'Usage: platform={platform}'
+          required: true
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.devicePlatformType'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.managementCondition'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/deviceManagement/managementConditionStatements/{managementConditionStatement-id}/managementConditions/microsoft.graph.getManagementConditionsForPlatform(platform={platform})':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getManagementConditionsForPlatform
+      operationId: deviceManagement.managementConditionStatements.managementConditions_getManagementConditionsForPlatform
+      parameters:
+        - name: managementConditionStatement-id
+          in: path
+          description: 'key: id of managementConditionStatement'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managementConditionStatement
+        - name: platform
+          in: path
+          description: 'Usage: platform={platform}'
+          required: true
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.devicePlatformType'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.managementCondition'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/deviceManagement/managementConditionStatements/{managementConditionStatement-id}/microsoft.graph.getManagementConditionStatementExpressionString()':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getManagementConditionStatementExpressionString
+      operationId: deviceManagement.managementConditionStatements_getManagementConditionStatementExpressionString
+      parameters:
+        - name: managementConditionStatement-id
+          in: path
+          description: 'key: id of managementConditionStatement'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managementConditionStatement
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managementConditionExpressionString'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/deviceManagement/managementConditionStatements/microsoft.graph.getManagementConditionStatementsForPlatform(platform={platform})':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getManagementConditionStatementsForPlatform
+      operationId: deviceManagement.managementConditionStatements_getManagementConditionStatementsForPlatform
+      parameters:
+        - name: platform
+          in: path
+          description: 'Usage: platform={platform}'
+          required: true
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.devicePlatformType'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.managementConditionStatement'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  /deviceManagement/microsoft.graph.getAssignedRoleDetails():
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getAssignedRoleDetails
+      operationId: deviceManagement_getAssignedRoleDetails
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceAndAppManagementAssignedRoleDetails'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  /deviceManagement/microsoft.graph.getComanagedDevicesSummary():
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getComanagedDevicesSummary
+      operationId: deviceManagement_getComanagedDevicesSummary
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.comanagedDevicesSummary'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  /deviceManagement/microsoft.graph.getComanagementEligibleDevicesSummary():
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getComanagementEligibleDevicesSummary
+      operationId: deviceManagement_getComanagementEligibleDevicesSummary
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.comanagementEligibleDevicesSummary'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  /deviceManagement/microsoft.graph.getEffectivePermissions():
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getEffectivePermissions
+      operationId: deviceManagement_getEffectivePermissions-1f5f
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+                  nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/deviceManagement/microsoft.graph.getEffectivePermissions(scope=''{scope}'')':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getEffectivePermissions
+      operationId: deviceManagement_getEffectivePermissions-49b0
+      parameters:
+        - name: scope
+          in: path
+          description: 'Usage: scope={scope}'
+          required: true
+          schema:
+            type: string
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.rolePermission'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  /deviceManagement/microsoft.graph.getRoleScopeTagsByIds(ids=@ids):
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getRoleScopeTagsByIds
+      operationId: deviceManagement_getRoleScopeTagsByIds
+      parameters:
+        - name: ids
+          in: query
+          description: 'Usage: ids={ids}'
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.roleScopeTag'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/deviceManagement/microsoft.graph.getRoleScopeTagsByResource(resource=''{resource}'')':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getRoleScopeTagsByResource
+      operationId: deviceManagement_getRoleScopeTagsByResource
+      parameters:
+        - name: resource
+          in: path
+          description: 'Usage: resource={resource}'
+          required: true
+          schema:
+            type: string
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.roleScopeTag'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/deviceManagement/microsoft.graph.getSuggestedEnrollmentLimit(enrollmentType=''{enrollmentType}'')':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getSuggestedEnrollmentLimit
+      operationId: deviceManagement_getSuggestedEnrollmentLimit
+      parameters:
+        - name: enrollmentType
+          in: path
+          description: 'Usage: enrollmentType={enrollmentType}'
+          required: true
+          schema:
+            type: string
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.suggestedEnrollmentLimit'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/deviceManagement/microsoft.graph.scopedForResource(resource=''{resource}'')':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function scopedForResource
+      operationId: deviceManagement_scopedForResource
+      parameters:
+        - name: resource
+          in: path
+          description: 'Usage: resource={resource}'
+          required: true
+          schema:
+            type: string
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: boolean
+                default: false
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/deviceManagement/microsoft.graph.verifyWindowsEnrollmentAutoDiscovery(domainName=''{domainName}'')':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function verifyWindowsEnrollmentAutoDiscovery
+      operationId: deviceManagement_verifyWindowsEnrollmentAutoDiscovery
+      parameters:
+        - name: domainName
+          in: path
+          description: 'Usage: domainName={domainName}'
+          required: true
+          schema:
+            type: string
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: boolean
+                default: false
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/deviceManagement/resourceOperations/{resourceOperation-id}/microsoft.graph.getScopesForUser(userid=''{userid}'')':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getScopesForUser
+      operationId: deviceManagement.resourceOperations_getScopesForUser
+      parameters:
+        - name: resourceOperation-id
+          in: path
+          description: 'key: id of resourceOperation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: resourceOperation
+        - name: userid
+          in: path
+          description: 'Usage: userid={userid}'
+          required: true
+          schema:
+            type: string
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+                  nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/deviceManagement/roleAssignments/{deviceAndAppManagementRoleAssignment-id}/roleScopeTags/microsoft.graph.hasCustomRoleScopeTag()':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function hasCustomRoleScopeTag
+      operationId: deviceManagement.roleAssignments.roleScopeTags_hasCustomRoleScopeTag
+      parameters:
+        - name: deviceAndAppManagementRoleAssignment-id
+          in: path
+          description: 'key: id of deviceAndAppManagementRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceAndAppManagementRoleAssignment
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: boolean
+                default: false
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  /deviceManagement/roleScopeTags/microsoft.graph.hasCustomRoleScopeTag():
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function hasCustomRoleScopeTag
+      operationId: deviceManagement.roleScopeTags_hasCustomRoleScopeTag
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: boolean
+                default: false
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/deviceManagement/templates/{deviceManagementTemplate-id}/microsoft.graph.compare(templateId=''{templateId}'')':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function compare
+      operationId: deviceManagement.templates_compare
+      parameters:
+        - name: deviceManagementTemplate-id
+          in: path
+          description: 'key: id of deviceManagementTemplate'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementTemplate
+        - name: templateId
+          in: path
+          description: 'Usage: templateId={templateId}'
+          required: true
+          schema:
+            type: string
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.deviceManagementSettingComparison'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/deviceManagement/templates/{deviceManagementTemplate-id}/migratableTo/{deviceManagementTemplate-id1}/microsoft.graph.compare(templateId=''{templateId}'')':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function compare
+      operationId: deviceManagement.templates.migratableTo_compare
+      parameters:
+        - name: deviceManagementTemplate-id
+          in: path
+          description: 'key: id of deviceManagementTemplate'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementTemplate
+        - name: deviceManagementTemplate-id1
+          in: path
+          description: 'key: id of deviceManagementTemplate'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementTemplate
+        - name: templateId
+          in: path
+          description: 'Usage: templateId={templateId}'
+          required: true
+          schema:
+            type: string
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.deviceManagementSettingComparison'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/deviceManagement/userExperienceAnalyticsDevicePerformance/microsoft.graph.summarizeDevicePerformanceDevices(summarizeBy={summarizeBy})':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function summarizeDevicePerformanceDevices
+      operationId: deviceManagement.userExperienceAnalyticsDevicePerformance_summarizeDevicePerformanceDevices
+      parameters:
+        - name: summarizeBy
+          in: path
+          description: 'Usage: summarizeBy={summarizeBy}'
+          required: true
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsSummarizedBy'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsDevicePerformance'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/deviceManagement/userExperienceAnalyticsRegressionSummary/microsoft.graph.summarizeDeviceRegressionPerformance(summarizeBy={summarizeBy})':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function summarizeDeviceRegressionPerformance
+      operationId: deviceManagement.userExperienceAnalyticsRegressionSummary_summarizeDeviceRegressionPerformance
+      parameters:
+        - name: summarizeBy
+          in: path
+          description: 'Usage: summarizeBy={summarizeBy}'
+          required: true
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsSummarizedBy'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsRegressionSummary'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/deviceManagement/userExperienceAnalyticsRemoteConnection/microsoft.graph.summarizeDeviceRemoteConnection(summarizeBy={summarizeBy})':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function summarizeDeviceRemoteConnection
+      operationId: deviceManagement.userExperienceAnalyticsRemoteConnection_summarizeDeviceRemoteConnection
+      parameters:
+        - name: summarizeBy
+          in: path
+          description: 'Usage: summarizeBy={summarizeBy}'
+          required: true
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsSummarizedBy'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsRemoteConnection'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/deviceManagement/userExperienceAnalyticsResourcePerformance/microsoft.graph.summarizeDeviceResourcePerformance(summarizeBy={summarizeBy})':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function summarizeDeviceResourcePerformance
+      operationId: deviceManagement.userExperienceAnalyticsResourcePerformance_summarizeDeviceResourcePerformance
+      parameters:
+        - name: summarizeBy
+          in: path
+          description: 'Usage: summarizeBy={summarizeBy}'
+          required: true
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsSummarizedBy'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsResourcePerformance'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  /deviceManagement/virtualEndpoint/deviceImages/microsoft.graph.getSourceImages():
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getSourceImages
+      operationId: deviceManagement.virtualEndpoint.deviceImages_getSourceImages
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.cloudPcSourceDeviceImage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  /deviceManagement/virtualEndpoint/microsoft.graph.getEffectivePermissions():
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getEffectivePermissions
+      operationId: deviceManagement.virtualEndpoint_getEffectivePermissions
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+                  nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+components:
+  schemas:
+    microsoft.graph.deviceCompliancePolicySettingState:
+      title: deviceCompliancePolicySettingState
+      type: object
+      properties:
+        currentValue:
+          type: string
+          description: Current value of setting on device
+          nullable: true
+        errorCode:
+          type: integer
+          description: Error code for the setting
+          format: int64
+        errorDescription:
+          type: string
+          description: Error description
+          nullable: true
+        instanceDisplayName:
+          type: string
+          description: Name of setting instance that is being reported.
+          nullable: true
+        setting:
+          type: string
+          description: The setting that is being reported
+          nullable: true
+        settingInstanceId:
+          type: string
+          description: SettingInstanceId
+          nullable: true
+        settingName:
+          type: string
+          description: Localized/user friendly setting name that is being reported
+          nullable: true
+        sources:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.settingSource'
+          description: Contributing policies
+        state:
+          $ref: '#/components/schemas/microsoft.graph.complianceStatus'
+        userEmail:
+          type: string
+          description: UserEmail
+          nullable: true
+        userId:
+          type: string
+          description: UserId
+          nullable: true
+        userName:
+          type: string
+          description: UserName
+          nullable: true
+        userPrincipalName:
+          type: string
+          description: UserPrincipalName.
+          nullable: true
+      additionalProperties:
+        type: object
+      description: Device Compilance Policy Setting State for a given device.
+    microsoft.graph.configManagerPolicySummary:
+      title: configManagerPolicySummary
+      type: object
+      properties:
+        compliantDeviceCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The number of devices evaluated to be compliant by the policy.
+          format: int32
+        enforcedDeviceCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The number of devices that have have been remediated by the policy.
+          format: int32
+        failedDeviceCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The number of devices that failed to be evaluated by the policy.
+          format: int32
+        nonCompliantDeviceCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The number of devices evaluated to be noncompliant by the policy.
+          format: int32
+        pendingDeviceCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The number of devices that have acknowledged the policy but are pending evaluation.
+          format: int32
+        targetedDeviceCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The number of devices targeted by the policy.
+          format: int32
+      additionalProperties:
+        type: object
+      description: A ConfigManager policy summary.
+    microsoft.graph.iosAvailableUpdateVersion:
+      title: iosAvailableUpdateVersion
+      type: object
+      properties:
+        expirationDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The expiration date of the update.
+          format: date-time
+        postingDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The posting date of the update.
+          format: date-time
+        productVersion:
+          type: string
+          description: The version of the update.
+        supportedDevices:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: List of supported devices for the update.
+      additionalProperties:
+        type: object
+      description: iOS available update version details
+    microsoft.graph.deviceHealthScriptRemediationHistory:
+      title: deviceHealthScriptRemediationHistory
+      type: object
+      properties:
+        historyData:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.deviceHealthScriptRemediationHistoryData'
+          description: The number of devices remediated by the device health script on the given date.
+        lastModifiedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The date on which the results history is calculated for the healthscript.
+          format: date-time
+          nullable: true
+      additionalProperties:
+        type: object
+      description: The number of devices remediated by a device health script on a given date with the last modified time.
+    microsoft.graph.globalDeviceHealthScriptState:
+      title: globalDeviceHealthScriptState
+      enum:
+        - notConfigured
+        - pending
+        - enabled
+      type: string
+    microsoft.graph.deviceHealthScriptRemediationSummary:
+      title: deviceHealthScriptRemediationSummary
+      type: object
+      properties:
+        remediatedDeviceCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The number of devices remediated by device health scripts.
+          format: int32
+          nullable: true
+        scriptCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The number of device health scripts deployed.
+          format: int32
+          nullable: true
+      additionalProperties:
+        type: object
+      description: The number of device health scripts deployed and the number of devices the scripts remediated.
+    microsoft.graph.deviceManagementSettingComparison:
+      title: deviceManagementSettingComparison
+      type: object
+      properties:
+        comparisonResult:
+          $ref: '#/components/schemas/microsoft.graph.deviceManagementComparisonResult'
+        currentValueJson:
+          type: string
+          description: JSON representation of current intent (or) template setting's value
+          nullable: true
+        definitionId:
+          type: string
+          description: The ID of the setting definition for this instance
+          nullable: true
+        displayName:
+          type: string
+          description: The setting's display name
+          nullable: true
+        id:
+          type: string
+          description: The setting ID
+          nullable: true
+        newValueJson:
+          type: string
+          description: JSON representation of new template setting's value
+          nullable: true
+      additionalProperties:
+        type: object
+      description: Entity representing setting comparison result
+    microsoft.graph.devicePlatformType:
+      title: devicePlatformType
+      enum:
+        - android
+        - androidForWork
+        - iOS
+        - macOS
+        - windowsPhone81
+        - windows81AndLater
+        - windows10AndLater
+        - androidWorkProfile
+        - unknown
+      type: string
+    microsoft.graph.managementConditionStatement:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: managementConditionStatement
+          type: object
+          properties:
+            applicablePlatforms:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.devicePlatformType'
+              description: The applicable platforms for this management condition statement.
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The time the management condition statement was created. Generated service side.
+              format: date-time
+              nullable: true
+            description:
+              type: string
+              description: The admin defined description of the management condition statement.
+              nullable: true
+            displayName:
+              type: string
+              description: The admin defined name of the management condition statement.
+            eTag:
+              type: string
+              description: ETag of the management condition statement. Updated service side.
+              nullable: true
+            expression:
+              $ref: '#/components/schemas/microsoft.graph.managementConditionExpression'
+            modifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The time the management condition statement was last modified. Updated service side.
+              format: date-time
+              nullable: true
+            managementConditions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managementCondition'
+              description: The management conditions associated to the management condition statement.
+          additionalProperties:
+            type: object
+          description: A management condition statement is a group of management conditions that enable/disable device/application configurations when all contained management conditions are met.
+    microsoft.graph.managementCondition:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: managementCondition
+          type: object
+          properties:
+            applicablePlatforms:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.devicePlatformType'
+              description: The applicable platforms for this management condition.
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The time the management condition was created. Generated service side.
+              format: date-time
+              nullable: true
+            description:
+              type: string
+              description: The admin defined description of the management condition.
+              nullable: true
+            displayName:
+              type: string
+              description: The admin defined name of the management condition.
+            eTag:
+              type: string
+              description: ETag of the management condition. Updated service side.
+              nullable: true
+            modifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The time the management condition was last modified. Updated service side.
+              format: date-time
+              nullable: true
+            uniqueName:
+              type: string
+              description: Unique name for the management condition. Used in management condition expressions.
+            managementConditionStatements:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managementConditionStatement'
+              description: The management condition statements associated to the management condition.
+          additionalProperties:
+            type: object
+          description: 'Management conditions are events that can be triggered dynamically such as geo-fences, time-fences, and network-fences.'
+    microsoft.graph.managementConditionExpressionString:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.managementConditionExpression'
+        - title: managementConditionExpressionString
+          type: object
+          properties:
+            value:
+              type: string
+              description: The management condition statement expression string value.
+          additionalProperties:
+            type: object
+          description: A management condition expression string is a string representation of a management condition expression.
+    microsoft.graph.deviceAndAppManagementAssignedRoleDetails:
+      title: deviceAndAppManagementAssignedRoleDetails
+      type: object
+      properties:
+        roleAssignmentIds:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: Role Assignment IDs for the specifc Role Assignments assigned to a user.
+        roleDefinitionIds:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: Role Definition IDs for the specifc Role Definitions assigned to a user.
+      additionalProperties:
+        type: object
+      description: The set of Role Definitions and Role Assignments assigned to a user.
+    microsoft.graph.comanagedDevicesSummary:
+      title: comanagedDevicesSummary
+      type: object
+      properties:
+        compliancePolicyCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Number of devices with CompliancePolicy swung-over. This property is read-only.
+          format: int32
+        configurationSettingsCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Number of devices with ConfigurationSettings swung-over. This property is read-only.
+          format: int32
+        endpointProtectionCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Number of devices with EndpointProtection swung-over. This property is read-only.
+          format: int32
+        inventoryCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Number of devices with Inventory swung-over. This property is read-only.
+          format: int32
+        modernAppsCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Number of devices with ModernApps swung-over. This property is read-only.
+          format: int32
+        officeAppsCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Number of devices with OfficeApps swung-over. This property is read-only.
+          format: int32
+        resourceAccessCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Number of devices with ResourceAccess swung-over. This property is read-only.
+          format: int32
+        totalComanagedCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Number of Co-Managed Devices. This property is read-only.
+          format: int32
+        windowsUpdateForBusinessCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Number of devices with WindowsUpdateForBusiness swung-over. This property is read-only.
+          format: int32
+      additionalProperties:
+        type: object
+      description: Summary data for co managed devices
+    microsoft.graph.comanagementEligibleDevicesSummary:
+      title: comanagementEligibleDevicesSummary
+      type: object
+      properties:
+        comanagedCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Count of devices already Co-Managed
+          format: int32
+        eligibleButNotAzureAdJoinedCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Count of devices eligible for Co-Management but not yet joined to Azure Active Directory
+          format: int32
+        eligibleCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Count of devices fully eligible for Co-Management
+          format: int32
+        ineligibleCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Count of devices ineligible for Co-Management
+          format: int32
+        needsOsUpdateCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Count of devices that will be eligible for Co-Management after an OS update
+          format: int32
+      additionalProperties:
+        type: object
+    microsoft.graph.rolePermission:
+      title: rolePermission
+      type: object
+      properties:
+        actions:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: Allowed Actions - Deprecated
+        resourceActions:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.resourceAction'
+          description: Resource Actions each containing a set of allowed and not allowed permissions.
+      additionalProperties:
+        type: object
+      description: Contains the set of ResourceActions determining the allowed and not allowed permissions for each role.
+    microsoft.graph.roleScopeTag:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: roleScopeTag
+          type: object
+          properties:
+            description:
+              type: string
+              description: Description of the Role Scope Tag.
+              nullable: true
+            displayName:
+              type: string
+              description: The display or friendly name of the Role Scope Tag.
+              nullable: true
+            isBuiltIn:
+              type: boolean
+              description: Description of the Role Scope Tag.
+            assignments:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.roleScopeTagAutoAssignment'
+              description: The list of assignments for this Role Scope Tag.
+          additionalProperties:
+            type: object
+          description: Role Scope Tag
+    microsoft.graph.suggestedEnrollmentLimit:
+      title: suggestedEnrollmentLimit
+      type: object
+      properties:
+        suggestedDailyLimit:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The suggested enrollment limit within a day
+          format: int32
+      additionalProperties:
+        type: object
+      description: The suggestedEnrollmentLimit resource represents the suggested enrollment limit when given an enrollment type.
+    microsoft.graph.userExperienceAnalyticsSummarizedBy:
+      title: userExperienceAnalyticsSummarizedBy
+      enum:
+        - none
+        - model
+        - allRegressions
+        - modelRegression
+        - manufacturerRegression
+        - operatingSystemVersionRegression
+      type: string
+    microsoft.graph.userExperienceAnalyticsDevicePerformance:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: userExperienceAnalyticsDevicePerformance
+          type: object
+          properties:
+            averageBlueScreens:
+              type: number
+              description: Average (mean) number of Blue Screens per device in the last 14 days. Valid values 0 to 9999999
+              format: double
+            averageRestarts:
+              type: number
+              description: Average (mean) number of Restarts per device in the last 14 days. Valid values 0 to 9999999
+              format: double
+            blueScreenCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Number of Blue Screens in the last 14 days. Valid values 0 to 9999999
+              format: int32
+            bootScore:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: The user experience analytics device boot score.
+              format: int32
+            coreBootTimeInMs:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: The user experience analytics device core boot time in milliseconds.
+              format: int32
+            coreLoginTimeInMs:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: The user experience analytics device core login time in milliseconds.
+              format: int32
+            deviceCount:
+              type: integer
+              description: User experience analytics summarized device count.
+              format: int64
+            deviceName:
+              type: string
+              description: The user experience analytics device name.
+              nullable: true
+            diskType:
+              $ref: '#/components/schemas/microsoft.graph.diskType'
+            groupPolicyBootTimeInMs:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: The user experience analytics device group policy boot time in milliseconds.
+              format: int32
+            groupPolicyLoginTimeInMs:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: The user experience analytics device group policy login time in milliseconds.
+              format: int32
+            healthStatus:
+              $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsHealthState'
+            loginScore:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: The user experience analytics device login score.
+              format: int32
+            manufacturer:
+              type: string
+              description: The user experience analytics device manufacturer.
+              nullable: true
+            model:
+              type: string
+              description: The user experience analytics device model.
+              nullable: true
+            operatingSystemVersion:
+              type: string
+              description: The user experience analytics device Operating System version.
+              nullable: true
+            responsiveDesktopTimeInMs:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: The user experience analytics responsive desktop time in milliseconds.
+              format: int32
+            restartCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Number of Restarts in the last 14 days. Valid values 0 to 9999999
+              format: int32
+          additionalProperties:
+            type: object
+          description: The user experience analytics device performance entity contains device boot performance details.
+    microsoft.graph.userExperienceAnalyticsRegressionSummary:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: userExperienceAnalyticsRegressionSummary
+          type: object
+          properties:
+            manufacturerRegression:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsMetric'
+              description: The metric values for the user experience analytics Manufacturer regression.
+            modelRegression:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsMetric'
+              description: The metric values for the user experience analytics model regression.
+            operatingSystemRegression:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsMetric'
+              description: The metric values for the user experience analytics operating system regression.
+          additionalProperties:
+            type: object
+          description: The user experience analytics Regression Summary.
+    microsoft.graph.userExperienceAnalyticsRemoteConnection:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: userExperienceAnalyticsRemoteConnection
+          type: object
+          properties:
+            cloudPcFailurePercentage:
+              type: number
+              description: The sign in failure percentage of Cloud PC Device. Valid values 0 to 100
+              format: double
+            cloudPcRoundTripTime:
+              type: number
+              description: The round tip time of Cloud PC Device. Valid values 0 to 1.79769313486232E+308
+              format: double
+            cloudPcSignInTime:
+              type: number
+              description: The sign in time of Cloud PC Device. Valid values 0 to 1.79769313486232E+308
+              format: double
+            coreBootTime:
+              type: number
+              description: The core boot time of Cloud PC Device. Valid values 0 to 1.79769313486232E+308
+              format: double
+            coreSignInTime:
+              type: number
+              description: The core sign in time of Cloud PC Device. Valid values 0 to 1.79769313486232E+308
+              format: double
+            deviceCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: The count of remote connection. Valid values 0 to 2147483647
+              format: int32
+            deviceId:
+              type: string
+              description: The id of the device.
+              nullable: true
+            deviceName:
+              type: string
+              description: The name of the device.
+              nullable: true
+            model:
+              type: string
+              description: The user experience analytics device model.
+              nullable: true
+            remoteSignInTime:
+              type: number
+              description: The remote sign in time of Cloud PC Device. Valid values 0 to 1.79769313486232E+308
+              format: double
+            virtualNetwork:
+              type: string
+              description: The user experience analytics virtual network.
+              nullable: true
+          additionalProperties:
+            type: object
+          description: The user experience analyte remote connection entity.
+    microsoft.graph.userExperienceAnalyticsResourcePerformance:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: userExperienceAnalyticsResourcePerformance
+          type: object
+          properties:
+            cpuSpikeTimePercentage:
+              type: number
+              description: CPU spike time in percentage. Valid values 0 to 100
+              format: double
+            cpuSpikeTimePercentageThreshold:
+              type: number
+              description: Threshold of cpuSpikeTimeScore. Valid values 0 to 100
+              format: double
+            cpuSpikeTimeScore:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: The user experience analytics device CPU spike time score. Valid values 0 to 100
+              format: int32
+            deviceCount:
+              type: integer
+              description: User experience analytics summarized device count.
+              format: int64
+            deviceId:
+              type: string
+              description: The id of the device.
+              nullable: true
+            deviceName:
+              type: string
+              description: The name of the device.
+              nullable: true
+            deviceResourcePerformanceScore:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Resource performance score of a specific device. Valid values 0 to 100
+              format: int32
+            manufacturer:
+              type: string
+              description: The user experience analytics device manufacturer.
+              nullable: true
+            model:
+              type: string
+              description: The user experience analytics device model.
+              nullable: true
+            ramSpikeTimePercentage:
+              type: number
+              description: RAM spike time in percentage. Valid values 0 to 100
+              format: double
+            ramSpikeTimePercentageThreshold:
+              type: number
+              description: Threshold of ramSpikeTimeScore. Valid values 0 to 100
+              format: double
+            ramSpikeTimeScore:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: The user experience analytics device RAM spike time score. Valid values 0 to 100
+              format: int32
+          additionalProperties:
+            type: object
+          description: The user experience analytics resource performance entity.
+    microsoft.graph.cloudPcSourceDeviceImage:
+      title: cloudPcSourceDeviceImage
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: The display name for the source image.
+          nullable: true
+        id:
+          type: string
+          description: The ID of the source image.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.settingSource:
+      title: settingSource
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: Not yet documented
+          nullable: true
+        id:
+          type: string
+          description: Not yet documented
+          nullable: true
+        sourceType:
+          $ref: '#/components/schemas/microsoft.graph.settingSourceType'
+      additionalProperties:
+        type: object
+    microsoft.graph.complianceStatus:
+      title: complianceStatus
+      enum:
+        - unknown
+        - notApplicable
+        - compliant
+        - remediated
+        - nonCompliant
+        - error
+        - conflict
+        - notAssigned
+      type: string
+    microsoft.graph.deviceHealthScriptRemediationHistoryData:
+      title: deviceHealthScriptRemediationHistoryData
+      type: object
+      properties:
+        date:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+          type: string
+          description: The date on which devices were remediated by the device health script.
+          format: date
+        noIssueDeviceCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The number of devices that were found to have no issue by the device health script.
+          format: int32
+        remediatedDeviceCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The number of devices remediated by the device health script.
+          format: int32
+      additionalProperties:
+        type: object
+      description: The number of devices remediated by a device health script on a given date.
+    microsoft.graph.deviceManagementComparisonResult:
+      title: deviceManagementComparisonResult
+      enum:
+        - unknown
+        - equal
+        - notEqual
+        - added
+        - removed
+      type: string
+    microsoft.graph.entity:
+      title: entity
+      type: object
+      properties:
+        id:
+          type: string
+          description: Read-only.
+      additionalProperties:
+        type: object
+    microsoft.graph.managementConditionExpression:
+      title: managementConditionExpression
+      type: object
+      additionalProperties:
+        type: object
+      description: 'A management condition expression is an expression that produces a boolean value when evaluated, i.e. one of true or false, indicating that a management condition statement is activated/deactivated. A management condition expression may be composed of a combination of the expression variables and boolean-valued expression operators.'
+    microsoft.graph.resourceAction:
+      title: resourceAction
+      type: object
+      properties:
+        allowedResourceActions:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: Allowed Actions
+        notAllowedResourceActions:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: Not Allowed Actions.
+      additionalProperties:
+        type: object
+      description: Set of allowed and not allowed actions for a resource.
+    microsoft.graph.roleScopeTagAutoAssignment:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: roleScopeTagAutoAssignment
+          type: object
+          properties:
+            target:
+              $ref: '#/components/schemas/microsoft.graph.deviceAndAppManagementAssignmentTarget'
+          additionalProperties:
+            type: object
+          description: Contains the properties for auto-assigning a Role Scope Tag to a group to be applied to Devices.
+    microsoft.graph.diskType:
+      title: diskType
+      enum:
+        - unkown
+        - hdd
+        - ssd
+      type: string
+    microsoft.graph.userExperienceAnalyticsHealthState:
+      title: userExperienceAnalyticsHealthState
+      enum:
+        - unknown
+        - insufficientData
+        - needsAttention
+        - meetingGoals
+      type: string
+    microsoft.graph.userExperienceAnalyticsMetric:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: userExperienceAnalyticsMetric
+          type: object
+          properties:
+            unit:
+              type: string
+              description: The unit of the user experience analytics metric.
+              nullable: true
+            value:
+              type: number
+              description: The value of the user experience analytics metric.
+              format: double
+          additionalProperties:
+            type: object
+          description: The user experience analytics metric contains the score and units of a metric of a user experience anlaytics category.
+    odata.error:
+      required:
+        - error
+      type: object
+      properties:
+        error:
+          $ref: '#/components/schemas/odata.error.main'
+      additionalProperties:
+        type: object
+    microsoft.graph.settingSourceType:
+      title: settingSourceType
+      enum:
+        - deviceConfiguration
+        - deviceIntent
+      type: string
+    microsoft.graph.deviceAndAppManagementAssignmentTarget:
+      title: deviceAndAppManagementAssignmentTarget
+      type: object
+      properties:
+        deviceAndAppManagementAssignmentFilterId:
+          type: string
+          description: The Id of the filter for the target assignment.
+          nullable: true
+        deviceAndAppManagementAssignmentFilterType:
+          $ref: '#/components/schemas/microsoft.graph.deviceAndAppManagementAssignmentFilterType'
+      additionalProperties:
+        type: object
+      description: Base type for assignment targets.
+    odata.error.main:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/odata.error.detail'
+        innererror:
+          type: object
+          additionalProperties:
+            type: object
+          description: The structure of this object is service-specific
+      additionalProperties:
+        type: object
+    microsoft.graph.deviceAndAppManagementAssignmentFilterType:
+      title: deviceAndAppManagementAssignmentFilterType
+      enum:
+        - none
+        - include
+        - exclude
+      type: string
+    odata.error.detail:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+      additionalProperties:
+        type: object
+  responses:
+    error:
+      description: error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/odata.error'
+  securitySchemes:
+    azureaadv2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/v2.0/authorize
+          tokenUrl: https://login.microsoftonline.com/common/oauth2/v2.0/token
+          scopes: { }
+security:
+  - azureaadv2: [ ]

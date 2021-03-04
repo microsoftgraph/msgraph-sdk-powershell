@@ -1,0 +1,172 @@
+openapi: 3.0.1
+info:
+  title: DeviceManagement.Functions
+  version: v1.0
+servers:
+  - url: https://graph.microsoft.com/v1.0/
+    description: Core
+paths:
+  /deviceManagement/applePushNotificationCertificate/microsoft.graph.downloadApplePushNotificationCertificateSigningRequest():
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function downloadApplePushNotificationCertificateSigningRequest
+      operationId: deviceManagement.applePushNotificationCertificate_downloadApplePushNotificationCertificateSigningRequest
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/deviceManagement/microsoft.graph.getEffectivePermissions(scope=''{scope}'')':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getEffectivePermissions
+      operationId: deviceManagement_getEffectivePermissions
+      parameters:
+        - name: scope
+          in: path
+          description: 'Usage: scope={scope}'
+          required: true
+          schema:
+            type: string
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.rolePermission'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/deviceManagement/microsoft.graph.verifyWindowsEnrollmentAutoDiscovery(domainName=''{domainName}'')':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function verifyWindowsEnrollmentAutoDiscovery
+      operationId: deviceManagement_verifyWindowsEnrollmentAutoDiscovery
+      parameters:
+        - name: domainName
+          in: path
+          description: 'Usage: domainName={domainName}'
+          required: true
+          schema:
+            type: string
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: boolean
+                default: false
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+components:
+  schemas:
+    microsoft.graph.rolePermission:
+      title: rolePermission
+      type: object
+      properties:
+        resourceActions:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.resourceAction'
+          description: Resource Actions each containing a set of allowed and not allowed permissions.
+      additionalProperties:
+        type: object
+      description: Contains the set of ResourceActions determining the allowed and not allowed permissions for each role.
+    microsoft.graph.resourceAction:
+      title: resourceAction
+      type: object
+      properties:
+        allowedResourceActions:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: Allowed Actions
+        notAllowedResourceActions:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: Not Allowed Actions.
+      additionalProperties:
+        type: object
+      description: Set of allowed and not allowed actions for a resource.
+    odata.error:
+      required:
+        - error
+      type: object
+      properties:
+        error:
+          $ref: '#/components/schemas/odata.error.main'
+      additionalProperties:
+        type: object
+    odata.error.main:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/odata.error.detail'
+        innererror:
+          type: object
+          additionalProperties:
+            type: object
+          description: The structure of this object is service-specific
+      additionalProperties:
+        type: object
+    odata.error.detail:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+      additionalProperties:
+        type: object
+  responses:
+    error:
+      description: error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/odata.error'
+  securitySchemes:
+    azureaadv2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/v2.0/authorize
+          tokenUrl: https://login.microsoftonline.com/common/oauth2/v2.0/token
+          scopes: { }
+security:
+  - azureaadv2: [ ]

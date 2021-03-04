@@ -3225,6 +3225,8 @@ paths:
                 - activity desc
                 - availability
                 - availability desc
+                - outOfOfficeSettings
+                - outOfOfficeSettings desc
               type: string
         - name: $select
           in: query
@@ -3239,6 +3241,7 @@ paths:
                 - id
                 - activity
                 - availability
+                - outOfOfficeSettings
               type: string
         - name: $expand
           in: query
@@ -3324,6 +3327,7 @@ paths:
                 - id
                 - activity
                 - availability
+                - outOfOfficeSettings
               type: string
         - name: $expand
           in: query
@@ -3950,6 +3954,7 @@ paths:
                 - id
                 - activity
                 - availability
+                - outOfOfficeSettings
               type: string
         - name: $expand
           in: query
@@ -4090,7 +4095,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.callRecords.callType'
             version:
               type: integer
-              description: Monotonically increasing version of the call record. Higher version call records with the same id includes additional data compared to the lower version.
+              description: Monotonically increasing version of the call record. Higher version call records with the same ID includes additional data compared to the lower version.
               format: int64
             sessions:
               type: array
@@ -4172,6 +4177,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.modality'
+              description: 'The list of active modalities. Possible values are: unknown, audio, video, videoBasedScreenSharing, data. Read-only.'
             answeredBy:
               $ref: '#/components/schemas/microsoft.graph.participantInfo'
             callbackUri:
@@ -4246,6 +4252,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.audioRoutingGroup'
+              description: Read-only. Nullable.
             operations:
               type: array
               items:
@@ -4269,6 +4276,7 @@ components:
               items:
                 type: string
                 nullable: true
+              description: List of receiving participant ids.
             routingMode:
               $ref: '#/components/schemas/microsoft.graph.routingMode'
             sources:
@@ -4276,6 +4284,7 @@ components:
               items:
                 type: string
                 nullable: true
+              description: List of source participant ids.
           additionalProperties:
             type: object
     microsoft.graph.mediaConfig:
@@ -4360,7 +4369,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.identitySet'
         replacesCallId:
           type: string
-          description: Optional. The call which the target identity is currently a part of. This call will be dropped once the participant is added.
+          description: Optional. The call which the target idenity is currently a part of. This call will be dropped once the participant is added.
           nullable: true
       additionalProperties:
         type: object
@@ -4446,6 +4455,7 @@ components:
               description: The list of media streams.
             metadata:
               type: string
+              description: A blob of data provided by the participant in the roster.
               nullable: true
             recordingInfo:
               $ref: '#/components/schemas/microsoft.graph.recordingInfo'
@@ -4533,12 +4543,14 @@ components:
           properties:
             activity:
               type: string
-              description: 'The supplemental information to a user''s availability. Possible values are Available, Away, BeRightBack,Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive,InAMeeting, Offline, OffWork,OutOfOffice, PresenceUnknown,Presenting, UrgentInterruptionsOnly.'
+              description: 'The supplemental information to a user''s availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive,InAMeeting, Offline, OffWork,OutOfOffice, PresenceUnknown,Presenting, UrgentInterruptionsOnly.'
               nullable: true
             availability:
               type: string
               description: 'The base presence information for a user. Possible values are Available, AvailableIdle,  Away, BeRightBack, Busy, BusyIdle, DoNotDisturb, Offline, PresenceUnknown'
               nullable: true
+            outOfOfficeSettings:
+              $ref: '#/components/schemas/microsoft.graph.outOfOfficeSettings'
           additionalProperties:
             type: object
     microsoft.graph.onlineMeeting:
@@ -4553,10 +4565,12 @@ components:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingPresenters'
             alternativeRecording:
               type: string
+              description: The content stream of the alternative recording of a live event. Read-only.
               format: base64url
               nullable: true
             attendeeReport:
               type: string
+              description: The content stream of the attendee report of a live event. Read-only.
               format: base64url
               nullable: true
             audioConferencing:
@@ -4572,6 +4586,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.meetingCapabilities'
+              description: 'The list of meeting capabilities. Possible values are: questionAndAnswer.'
             chatInfo:
               $ref: '#/components/schemas/microsoft.graph.chatInfo'
             creationDateTime:
@@ -4596,9 +4611,11 @@ components:
               nullable: true
             externalId:
               type: string
+              description: The external ID. A custom ID. Optional.
               nullable: true
             isBroadcast:
               type: boolean
+              description: Indicates if this is a live event.
               nullable: true
             isCancelled:
               type: boolean
@@ -4618,6 +4635,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.meetingParticipants'
             recording:
               type: string
+              description: The content stream of the recording of a live event. Read-only.
               format: base64url
               nullable: true
             startDateTime:
@@ -4642,7 +4660,7 @@ components:
       properties:
         messageId:
           type: string
-          description: The unique identifier of a message in a Microsoft Teams channel.
+          description: The unique identifier for a message in a Microsoft Teams channel.
           nullable: true
         replyChainMessageId:
           type: string
@@ -4666,12 +4684,14 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
+          description: For broadcast meeting only.
         organizer:
           $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
         producers:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
+          description: For broadcast meeting only.
       additionalProperties:
         type: object
     microsoft.graph.entity:
@@ -4774,10 +4794,11 @@ components:
           nullable: true
         platformId:
           type: string
+          description: The client platform ID of the participant. Read-only.
           nullable: true
         region:
           type: string
-          description: 'The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant''s current physical location. Read-only.'
+          description: 'The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant''s current physical location, unlike countryCode. Read-only.'
           nullable: true
       additionalProperties:
         type: object
@@ -4810,13 +4831,13 @@ components:
       properties:
         observedParticipantId:
           type: string
-          description: The ID of the participant that is under observation. Read-only.
+          description: The id of the participant that is under observation. Read-only.
           nullable: true
         onBehalfOf:
           $ref: '#/components/schemas/microsoft.graph.identitySet'
         sourceParticipantId:
           type: string
-          description: The ID of the participant that triggered the incoming call. Read-only.
+          description: The id of the participant that triggered the incoming call. Read-only.
           nullable: true
         transferor:
           $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -4836,8 +4857,10 @@ components:
       properties:
         allowAnonymousUsersToDialOut:
           type: boolean
+          description: Indicates whether anonymous users dialout is allowed in a meeting.
         allowAnonymousUsersToStartMeeting:
           type: boolean
+          description: Indicates whether anonymous users are allowed to start a meeting.
         autoAdmittedUsers:
           $ref: '#/components/schemas/microsoft.graph.autoAdmittedUsersType'
       additionalProperties:
@@ -4982,7 +5005,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.modality'
         serverMuted:
           type: boolean
-          description: If the media is muted by the server.
+          description: Indicates whether the media is muted by the server.
         sourceId:
           type: string
           description: The source ID.
@@ -5123,6 +5146,20 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.outOfOfficeSettings:
+      title: outOfOfficeSettings
+      type: object
+      properties:
+        isOutOfOffice:
+          type: boolean
+          description: 'True if either:It is currently in the out of office time window configured on the Outlook or Teams client.There is currently an event on the user''s calendar that''s marked as Show as Out of OfficeOtherwise, false.'
+          nullable: true
+        message:
+          type: string
+          description: The out of office message that the user configured on Outlook client (Automatic Replies (Out of Office)) or the Teams client (Schedule out of office).
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.accessLevel:
       title: accessLevel
       enum:
@@ -5170,15 +5207,19 @@ components:
           $ref: '#/components/schemas/microsoft.graph.broadcastMeetingAudience'
         isAttendeeReportEnabled:
           type: boolean
+          description: Indicates whether attendee report is enabled for this live event. Default value is false.
           nullable: true
         isQuestionAndAnswerEnabled:
           type: boolean
+          description: Indicates whether Q&A is enabled for this live event. Default value is false.
           nullable: true
         isRecordingEnabled:
           type: boolean
+          description: Indicates whether recording is enabled for this live event. Default value is false.
           nullable: true
         isVideoOnDemandEnabled:
           type: boolean
+          description: Indicates whether video on demand is enabled for this live event. Default value is false.
           nullable: true
       additionalProperties:
         type: object
@@ -5724,8 +5765,8 @@ components:
       enum:
         - attendee
         - presenter
-        - producer
         - unknownFutureValue
+        - producer
       type: string
     odata.error.main:
       required:

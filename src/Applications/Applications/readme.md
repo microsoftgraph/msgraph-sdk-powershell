@@ -47,6 +47,15 @@ directive:
       subject: (Application|ServicePrincipal)SynchronizationJobCredentials
       variant: Validate1|ValidateExpanded1|ValidateViaIdentity1|ValidateViaIdentityExpanded1
     remove: true
+# Alias then rename cmdlets to avoid breaking change.
+  - where:
+      subject: ^(ServicePrincipal|Application)(Member|TransitiveMember|CreatedOnBehalf)$
+    set:
+      alias: ${verb}-Mg${subject}
+  - where:
+      subject: ^(ServicePrincipal|Application)(Member|TransitiveMember|CreatedOnBehalf)$
+    set:
+      subject: $1$2Of
 # Rename wrongly named cmdlets
   - where:
       verb: Get
@@ -81,6 +90,6 @@ directive:
 ### Versioning
 
 ``` yaml
-module-version: 1.3.1
+module-version: 1.4.0
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```
