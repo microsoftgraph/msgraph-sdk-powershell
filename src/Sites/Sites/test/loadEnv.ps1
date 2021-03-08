@@ -18,11 +18,16 @@ if ($TestMode -eq 'live') {
 
 if (Test-Path -Path (Join-Path $PSScriptRoot $envFile)) {
     $envFilePath = Join-Path $PSScriptRoot $envFile
-} else {
+}
+else {
     $envFilePath = Join-Path $PSScriptRoot '..\$envFile'
 }
 $env = @{}
 if (Test-Path -Path $envFilePath) {
-    $env = Get-Content (Join-Path $PSScriptRoot $envFile) | ConvertFrom-Json
-    $PSDefaultParameterValues=@{"*:SubscriptionId"=$env.SubscriptionId; "*:Tenant"=$env.Tenant}
+    # Load dummy configuration.
+    $env = Get-Content (Join-Path $PSScriptRoot $envFile) | ConvertFrom-Json -AsHashTable
+    [Microsoft.Graph.PowerShell.Authentication.GraphSession]::Instance.AuthContext = New-Object Microsoft.Graph.PowerShell.Authentication.AuthContext -Property @{
+        ClientId = $env.ClientId
+        TenantId = $env.TenantId
+    }
 }
