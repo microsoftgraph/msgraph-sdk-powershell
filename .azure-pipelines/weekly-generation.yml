@@ -1,12 +1,21 @@
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
 
+
 name: $(BuildDefinitionName)_$(SourceBranchName)_$(Date:yyyyMMdd)$(Rev:.r)
-pool: MsGraphDevXAzureAgents
+
+parameters:
+  - name: BuildAgent
+    default: MsGraphBuildAgentsLinux
+    displayName: Build Agent
 
 variables:
   Branch: "WeeklyOpenApiDocsDownload"
   BaseBranch: "dev"
+  BUILDAGENT: ${{ parameters.BuildAgent }}
+
+pool: $(BUILDAGENT)
+
 trigger: none
 pr: none
 schedules:

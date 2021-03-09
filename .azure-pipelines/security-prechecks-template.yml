@@ -5,7 +5,6 @@
 jobs:
 - job: MsGraphPSSDKSecurityPreChecks
   displayName: Microsoft Graph PowerShell SDK Security Pre Checks
-  pool: MsGraphDevXAzureAgents
   timeoutInMinutes: 600
 
   steps:
