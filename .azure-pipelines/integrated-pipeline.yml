@@ -6,6 +6,18 @@ parameters:
     default: MsGraphBuildAgentsLinux
     displayName: Build Agent
 
+  - name: AzureSubscription
+    default: "Microsoft Graph Build Agents (Win+Lin)"
+    displayName: Azure Subscription
+
+  - name: KeyVault
+    default: "msgraph-build-keyvault"
+    displayName: Build Key vault
+
+  - name: TestCertificate
+    default: "MsGraphPSSDKCertificate"
+    displayName: Test Certificate
+
 variables:
   AUTH_MODULE_NAME: 'Authentication'
   AUTH_MODULE_PATH: 'src\Authentication\Authentication'
@@ -23,6 +35,9 @@ variables:
   GitUserName: 'Microsoft Graph DevX Tooling'
   BUILDNUMBER: -1
   BUILDAGENT: ${{ parameters.BuildAgent }}
+  AZURESUBSCRIPTION: ${{ parameters.AzureSubscription }}
+  KEYVAULT: ${{ parameters.KeyVault }}
+  TESTCERTIFICATE: ${{ parameters.TestCertificate }}
 
 pool: $(BUILDAGENT)
 
@@ -60,8 +75,8 @@ stages:
     steps:
     - task: AzureKeyVault@1
       inputs:
-        azureSubscription: 'Microsoft Graph Build Agents'
-        KeyVaultName: 'msgraph-build-vault'
+        azureSubscription: $(AZURESUBSCRIPTION)
+        KeyVaultName: $(KEYVAULT)
         SecretsFilter: '*'
         RunAsPreJob: true
     
@@ -70,7 +85,7 @@ stages:
       inputs:
         targetType: 'inline'
         script: |
-          $kvSecretBytes = [System.Convert]::FromBase64String('$(MsGraphPSSDKCertificate)')
+          $kvSecretBytes = [System.Convert]::FromBase64String('$(TESTCERTIFICATE)')
           $certCollection = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2Collection
           $certCollection.Import($kvSecretBytes,$null,[System.Security.Cryptography.X509Certificates.X509KeyStorageFlags]::Exportable)
           $store = New-Object System.Security.Cryptography.X509Certificates.X509Store("My", "CurrentUser")
