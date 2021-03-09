@@ -4,6 +4,8 @@
 jobs:
 - job: MsGraphPSSDKSecurityPostChecks
   displayName: Microsoft Graph PowerShell SDK Security Post Checks
+  pool: 
+    vmImage: 'windows-latest'
 
   steps:
   - task: CodesignValidation@0
