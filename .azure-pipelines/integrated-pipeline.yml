@@ -24,7 +24,7 @@ variables:
   BUILDNUMBER: -1
   BUILDAGENT: ${{ parameters.BuildAgent }}
 
-pool: ${{ parameters.BuildAgent }}
+pool: $(BUILDAGENT)
 
 trigger:
     branches:
