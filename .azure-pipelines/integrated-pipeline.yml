@@ -1,6 +1,11 @@
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
 
+parameters:
+  - name: BuildAgent
+    default: MsGraphBuildAgentsLinux
+    displayName: Build Agent
+
 variables:
   AUTH_MODULE_NAME: 'Authentication'
   AUTH_MODULE_PATH: 'src\Authentication\Authentication'
@@ -17,8 +22,9 @@ variables:
   GitUserEmail: 'GraphTooling@service.microsoft.com'
   GitUserName: 'Microsoft Graph DevX Tooling'
   BUILDNUMBER: -1
+  BUILDAGENT: ${{ parameters.BuildAgent }}
 
-pool: MsGraphDevXAzureAgents
+pool: ${{ parameters.BuildAgent }}
 
 trigger:
     branches:
