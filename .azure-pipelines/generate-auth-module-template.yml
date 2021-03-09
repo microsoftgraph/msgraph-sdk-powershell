@@ -44,6 +44,8 @@ jobs:
 
   - task: DotNetCoreCLI@2
     displayName: 'Run: Enabled Tests'
+    pool: 
+        vmImage: "windows-latest"
     inputs:
       command: 'test'
       publishTestResults: true
