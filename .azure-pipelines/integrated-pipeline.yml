@@ -75,8 +75,8 @@ stages:
     steps:
     - task: AzureKeyVault@1
       inputs:
-        azureSubscription: $(AZURESUBSCRIPTION)
-        KeyVaultName: $(KEYVAULT)
+        azureSubscription: 'Microsoft Graph Build Agents (Win+Lin)'
+        KeyVaultName: 'msgraph-build-keyvault'
         SecretsFilter: '*'
         RunAsPreJob: true
     
