@@ -14,6 +14,12 @@ steps:
         debugMode: false
         version: 3.x
 
+    - task: UseDotNet@2
+      displayName: 'Use .NET Core SDK 5.x'
+      inputs:
+        debugMode: false
+        version: 5.x
+
     - task: NuGetToolInstaller@1
       displayName: 'Install Nuget 5.7'
       inputs:
@@ -28,7 +34,6 @@ steps:
         targetType: inline
         script: |
           dotnet tool update --global PowerShell
-          pwsh
 
     - task: PowerShell@2
       displayName: 'Version Check'
