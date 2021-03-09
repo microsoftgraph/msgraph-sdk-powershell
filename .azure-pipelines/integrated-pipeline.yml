@@ -14,10 +14,6 @@ parameters:
     default: "msgraph-build-keyvault"
     displayName: Build Key vault
 
-  - name: TestCertificate
-    default: "MsGraphPSSDKCertificate"
-    displayName: Test Certificate
-
 variables:
   AUTH_MODULE_NAME: 'Authentication'
   AUTH_MODULE_PATH: 'src\Authentication\Authentication'
@@ -37,7 +33,6 @@ variables:
   BUILDAGENT: ${{ parameters.BuildAgent }}
   AZURESUBSCRIPTION: ${{ parameters.AzureSubscription }}
   KEYVAULT: ${{ parameters.KeyVault }}
-  TESTCERTIFICATE: ${{ parameters.TestCertificate }}
 
 pool: $(BUILDAGENT)
 
@@ -75,8 +70,8 @@ stages:
     steps:
     - task: AzureKeyVault@1
       inputs:
-        azureSubscription: 'Microsoft Graph Build Agents (Win+Lin)'
-        KeyVaultName: 'msgraph-build-vault'
+        azureSubscription: $(AZURESUBSCRIPTION)
+        KeyVaultName: $(KEYVAULT)
         SecretsFilter: '*'
         RunAsPreJob: true
     
