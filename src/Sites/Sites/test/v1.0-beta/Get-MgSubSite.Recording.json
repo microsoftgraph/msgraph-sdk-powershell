@@ -1,0 +1,99 @@
+{
+  "Get-MgSubSite+[NoContext]+ShouldGetACollectionOfSubSites+$GET+https://graph.microsoft.com/beta/sites/root/sites+1": {
+    "Request": {
+      "Method": "GET",
+      "RequestUri": "https://graph.microsoft.com/beta/sites/root/sites",
+      "Content": null,
+      "Headers": {
+        "SdkVersion": [ "Graph-powershell-Microsoft.Graph.Authentication-1.4.0", "Graph-dotnet-1.20.1" ],
+        "FeatureFlag": [ "00000047" ],
+        "Cache-Control": [ "no-store, no-cache" ],
+        "Authorization": [ "[Filtered]" ],
+        "Accept-Encoding": [ "gzip" ]
+      },
+      "ContentHeaders": {
+      }
+    },
+    "Response": {
+      "StatusCode": 200,
+      "Headers": {
+        "Date": [ "Mon, 08 Mar 2021 21:13:00 GMT" ],
+        "Cache-Control": [ "no-cache" ],
+        "Transfer-Encoding": [ "chunked" ],
+        "Vary": [ "Accept-Encoding" ],
+        "Strict-Transport-Security": [ "max-age=31536000" ],
+        "request-id": [ "87c418b2-7763-4225-80f9-456d8d2d06ac" ],
+        "client-request-id": [ "87c418b2-7763-4225-80f9-456d8d2d06ac" ],
+        "x-ms-ags-diagnostic": [ "{\"ServerInfo\":{\"DataCenter\":\"West US 2\",\"Slice\":\"E\",\"Ring\":\"1\",\"ScaleUnit\":\"001\",\"RoleInstance\":\"MW2PEPF000031D0\"}}" ],
+        "OData-Version": [ "4.0" ]
+      },
+      "ContentHeaders": {
+      },
+      "Content": "{\"@odata.context\":\"https://graph.microsoft.com/beta/$metadata#sites\",\"value\":[\n{\n\"id\": \"randomId\",\n\"name\": \"Team A Subsite\",\n\"description\": \"\",\n\"createdDateTime\": \"2016-10-18T03:05:59Z\",\n\"lastModifiedDateTime\": \"2016-10-18T10:40:59Z\",\n\"webUrl\": \"https://contoso.sharepoint.com/sites/site/subsiteA\"\n    },\n    {\n\"id\": \"contoso.sharepoint.com,da60e844-ba1d-49bc-b4d4-d5e36bae9019,0271110f-634f-4300-a841-3a8a2e851851\",\n\"name\": \"Team B Subsite\",\n\"description\": \"\",\n\"createdDateTime\": \"2016-10-18T03:05:59Z\",\n\"lastModifiedDateTime\": \"2016-10-18T10:40:59Z\",\n\"webUrl\": \"https://contoso.sharepoint.com/sites/site/subsiteB\"\n }\n ]}"
+    }
+  },
+  "Get-MgSubSite+[NoContext]+ShouldGetASingleSubSite+$GET+https://graph.microsoft.com/beta/sites/root/sites/randomId+1": {
+    "Request": {
+      "Method": "GET",
+      "RequestUri": "https://graph.microsoft.com/beta/sites/root/sites/randomId",
+      "Content": null,
+      "Headers": {
+        "SdkVersion": [ "Graph-powershell-Microsoft.Graph.Authentication-1.4.0", "Graph-dotnet-1.20.1" ],
+        "FeatureFlag": [ "00000047" ],
+        "Cache-Control": [ "no-store, no-cache" ],
+        "Authorization": [ "[Filtered]" ],
+        "Accept-Encoding": [ "gzip" ]
+      },
+      "ContentHeaders": {
+      }
+    },
+    "Response": {
+      "StatusCode": 200,
+      "Headers": {
+        "Date": [ "Mon, 08 Mar 2021 21:13:01 GMT" ],
+        "Cache-Control": [ "no-cache" ],
+        "Transfer-Encoding": [ "chunked" ],
+        "Vary": [ "Accept-Encoding" ],
+        "Strict-Transport-Security": [ "max-age=31536000" ],
+        "request-id": [ "fb0cc495-e6cb-455f-a3ac-4b53016a3ec0" ],
+        "client-request-id": [ "fb0cc495-e6cb-455f-a3ac-4b53016a3ec0" ],
+        "x-ms-ags-diagnostic": [ "{\"ServerInfo\":{\"DataCenter\":\"West US 2\",\"Slice\":\"E\",\"Ring\":\"1\",\"ScaleUnit\":\"001\",\"RoleInstance\":\"MW2PEPF000039FD\"}}" ]
+      },
+      "ContentHeaders": {
+      },
+      "Content": "{\n \"id\": \"randomId\",\n \"name\": \"Team A Subsite\",\n \"description\": \"\",\n \"createdDateTime\": \"2016-10-18T03:05:59Z\",\n \"lastModifiedDateTime\": \"2016-10-18T10:40:59Z\",\n \"webUrl\": \"https://contoso.sharepoint.com/sites/site/subsiteA\"\n }"
+    }
+  },
+  "Get-MgSubSite+[NoContext]+ShouldGetASingleSubSiteViaInputObject+$GET+https://graph.microsoft.com/beta/sites/root/sites/randomId+1": {
+    "Request": {
+      "Method": "GET",
+      "RequestUri": "https://graph.microsoft.com/beta/sites/root/sites/randomId",
+      "Content": null,
+      "Headers": {
+        "SdkVersion": [ "Graph-powershell-Microsoft.Graph.Authentication-1.4.0", "Graph-dotnet-1.20.1" ],
+        "FeatureFlag": [ "00000047" ],
+        "Cache-Control": [ "no-store, no-cache" ],
+        "Authorization": [ "[Filtered]" ],
+        "Accept-Encoding": [ "gzip" ]
+      },
+      "ContentHeaders": {
+      }
+    },
+    "Response": {
+      "StatusCode": 200,
+      "Headers": {
+        "Date": [ "Mon, 08 Mar 2021 21:13:01 GMT" ],
+        "Cache-Control": [ "no-cache" ],
+        "Transfer-Encoding": [ "chunked" ],
+        "Vary": [ "Accept-Encoding" ],
+        "Strict-Transport-Security": [ "max-age=31536000" ],
+        "request-id": [ "f9d5ad8f-11d8-46f3-9086-e4eeafdc60bc" ],
+        "client-request-id": [ "f9d5ad8f-11d8-46f3-9086-e4eeafdc60bc" ],
+        "x-ms-ags-diagnostic": [ "{\"ServerInfo\":{\"DataCenter\":\"West US 2\",\"Slice\":\"E\",\"Ring\":\"1\",\"ScaleUnit\":\"001\",\"RoleInstance\":\"MW2PEPF000031CF\"}}" ]
+      },
+      "ContentHeaders": {
+      },
+      "Content": "{\n \"id\": \"randomId\",\n \"name\": \"Team A Subsite\",\n \"description\": \"\",\n \"createdDateTime\": \"2016-10-18T03:05:59Z\",\n \"lastModifiedDateTime\": \"2016-10-18T10:40:59Z\",\n \"webUrl\": \"https://contoso.sharepoint.com/sites/site/subsiteA\"\n }"
+    }
+  }
+}
