@@ -17786,7 +17786,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
-              description: Zero or more policys already applied on the registered app when it last synchronized with managment service.
+              description: Zero or more policys already applied on the registered app when it last synchronized with management service.
             intendedPolicies:
               type: array
               items:
@@ -19739,6 +19739,7 @@ components:
       properties:
         conferenceId:
           type: string
+          description: The conference id of the online meeting.
           nullable: true
         dialinUrl:
           type: string
@@ -22262,6 +22263,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             description:
               type: string
+              description: Verbose description of the application.
               nullable: true
             displayName:
               type: string
@@ -22276,6 +22278,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamsAppPublishingState'
             shortDescription:
               type: string
+              description: Short description of the application.
               nullable: true
             teamsAppId:
               type: string
