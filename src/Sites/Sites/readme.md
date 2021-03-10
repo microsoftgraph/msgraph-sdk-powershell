@@ -49,7 +49,7 @@ directive:
   - where:
       verb: Get
       subject: ^Site$
-      variant: ^Get$|^GetViaIdentity$|^List$|^Get3$|^GetViaIdentity3$|^List2$
+      variant: ^Get1$|^Get4$|^GetViaIdentity1$|^GetViaIdentity4$|^List$|^List2$
     set:
       subject: SubSite
   - where:
@@ -65,9 +65,15 @@ directive:
     set:
       subject: SubSite
   - where:
+      verb: Remove
+      subject: ^Site$
+      variant: ^Delete$|^DeleteViaIdentity$|^Delete2$|^DeleteViaIdentity2$
+    set:
+      subject: SubSite
+  - where:
       verb: Get
       subject: (^Site$)
-      variant: ^Get2$|^GetViaIdentity2$|^Get5$|^GetViaIdentity5$
+      variant: ^Get$|^GetViaIdentity$|^Get3$|^GetViaIdentity3$
     set:
       subject: $1ByPath
   - where:
