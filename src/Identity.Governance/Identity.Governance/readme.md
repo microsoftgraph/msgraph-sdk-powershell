@@ -164,6 +164,62 @@ directive:
       verb: Get
       subject: (.*)(EntitlementManagement)AccessPackageResourceRoleScope$
     remove: true
+  - where:
+      verb: New
+      subject: (.*)(EntitlementManagement)AccessPackageAssignment$
+    remove: true
+  - where:
+      verb: New
+      subject: (.*)(EntitlementManagement)AccessPackageAssignmentAccessPackageAssignmentRequest$
+    remove: true
+  - where:
+      verb: New
+      subject: (.*)(EntitlementManagement)AccessPackageAssignmentAccessPackageAssignmentResourceRole$
+    remove: true
+  - where:
+      verb: New
+      subject: (.*)(EntitlementManagement)AccessPackageAssignmentApproval$
+    remove: true
+  - where:
+      verb: New
+      subject: (.*)(EntitlementManagement)AccessPackageAssignmentApprovalStep$
+    remove: true
+  - where:
+      verb: New
+      subject: (.*)(EntitlementManagement)AccessPackageAssignmentResourceRole$
+    remove: true
+  - where:
+      verb: New
+      subject: (.*)(EntitlementManagement)AccessPackageAssignmentResourceRoleAccessPackageAssignment$
+    remove: true
+  - where:
+      verb: New
+      subject: (.*)(EntitlementManagement)AccessPackageCatalogAccessPackageResourceRole$
+    remove: true
+  - where:
+      verb: New
+      subject: (.*)(EntitlementManagement)AccessPackageCatalogAccessPackageResourceScope$
+    remove: true
+  - where:
+      verb: New
+      subject: (.*)(EntitlementManagement)AccessPackageResource$
+    remove: true
+  - where:
+      verb: New
+      subject: (.*)(EntitlementManagement)AccessPackageResourceAccessPackageResourceRole$
+    remove: true
+  - where:
+      verb: New
+      subject: (.*)(EntitlementManagement)AccessPackageResourceAccessPackageResourceScope$
+    remove: true
+  - where:
+      verb: New
+      subject: (.*)(EntitlementManagement)AccessPackageResourceEnvironment$
+    remove: true
+  - where:
+      verb: New
+      subject: (.*)(EntitlementManagement)AccessPackageResourceEnvironmentRefAccessPackageResource$
+    remove: true
 # Rename cmdlets with duplicates in their name.
   - where:
       subject: ^(BusinessFlowTemplate)(\1)+
