@@ -9,7 +9,7 @@ parameters:
     type: string
     default: "dev"
   - name: BuildAgent
-    default: MsGraphBuildAgentsLinux
+    default: MsGraphBuildAgentsWindows
     displayName: Build Agent
 
 jobs:

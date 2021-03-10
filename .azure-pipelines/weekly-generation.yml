@@ -6,7 +6,7 @@ name: $(BuildDefinitionName)_$(SourceBranchName)_$(Date:yyyyMMdd)$(Rev:.r)
 
 parameters:
   - name: BuildAgent
-    default: MsGraphBuildAgentsLinux
+    default: MsGraphBuildAgentsWindows
     displayName: Build Agent
 
 variables:
