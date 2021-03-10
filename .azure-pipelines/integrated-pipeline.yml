@@ -1,6 +1,19 @@
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
 
+parameters:
+  - name: BuildAgent
+    default: MsGraphBuildAgentsWindows
+    displayName: Build Agent
+
+  - name: AzureSubscription
+    default: "Microsoft Graph Build Agents (Win+Lin)"
+    displayName: Azure Subscription
+
+  - name: KeyVault
+    default: "msgraph-build-keyvault"
+    displayName: Build Key vault
+
 variables:
   AUTH_MODULE_NAME: 'Authentication'
   AUTH_MODULE_PATH: 'src\Authentication\Authentication'
@@ -17,8 +30,11 @@ variables:
   GitUserEmail: 'GraphTooling@service.microsoft.com'
   GitUserName: 'Microsoft Graph DevX Tooling'
   BUILDNUMBER: -1
+  BUILDAGENT: ${{ parameters.BuildAgent }}
+  AZURESUBSCRIPTION: ${{ parameters.AzureSubscription }}
+  KEYVAULT: ${{ parameters.KeyVault }}
 
-pool: MsGraphDevXAzureAgents
+pool: $(BUILDAGENT)
 
 trigger:
     branches:
@@ -54,8 +70,8 @@ stages:
     steps:
     - task: AzureKeyVault@1
       inputs:
-        azureSubscription: 'Microsoft Graph Build Agents'
-        KeyVaultName: 'msgraph-build-vault'
+        azureSubscription: $(AZURESUBSCRIPTION)
+        KeyVaultName: $(KEYVAULT)
         SecretsFilter: '*'
         RunAsPreJob: true
     
