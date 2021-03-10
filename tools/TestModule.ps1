@@ -16,9 +16,13 @@ if(-not $Isolated) {
 }
 
 $modulePsd1 = Get-Item -Path (Join-Path $ModulePath "./$ModuleName.psd1")
+$LocalLoadEnvPS1 = Join-Path $PSScriptRoot 'Tests/loadEnv.ps1'
 
 Import-Module -Name Pester
 Import-Module -Name $modulePsd1.FullName
+
+# Replace AutoREST loadEnv.ps1 with our local scipt.
+Copy-Item -Path $LocalLoadEnvPS1 -Destination "$ModulePath/test"
 
 $testFolder = Join-Path $ModulePath 'test'
 $PesterConfiguration = [PesterConfiguration]::Default
