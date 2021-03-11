@@ -392,6 +392,30 @@ directive:
       verb: Update
       subject: (.*)(EntitlementManagement)AccessPackageResourceRequestRequestor$
     remove: true
+  - where:
+      verb: Remove
+      subject: (.*)(EntitlementManagement)AccessPackageCatalogAccessPackageResourceRole$
+    remove: true
+  - where:
+      verb: Remove
+      subject: (.*)(EntitlementManagement)AccessPackageCatalogAccessPackageResourceScope$
+    remove: true
+  - where:
+      verb: Search
+      subject: (.*)(EntitlementManagement)AccessPackage$
+    remove: true
+  - where:
+      verb: Search
+      subject: (.*)(EntitlementManagement)AccessPackageCatalog$
+    remove: true
+  - where:
+      verb: Update
+      subject: (.*)(EntitlementManagement)AccessPackageCatalogAccessPackageResourceRole$
+    remove: true
+  - where:
+      verb: Update
+      subject: (.*)(EntitlementManagement)AccessPackageCatalogAccessPackageResourceScope$
+    remove: true
 # Rename cmdlets with duplicates in their name.
   - where:
       subject: ^(BusinessFlowTemplate)(\1)+
