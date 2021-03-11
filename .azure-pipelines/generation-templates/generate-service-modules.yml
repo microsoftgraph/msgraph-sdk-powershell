@@ -18,10 +18,10 @@ parameters:
   - name: PublishToFeed
     type: boolean
     default: false
+
 jobs:
   - job: GenerateServiceModules
     displayName: Service module generation
-    pool: MsGraphDevXAzureAgents
     timeoutInMinutes: 360
     condition: and(succeeded(), ne(stageDependencies.DownloadOpenAPIDocs.GetLatestDocs.outputs['OpenAPIDocDiff.ModulesWithChanges'], ''))
     variables:

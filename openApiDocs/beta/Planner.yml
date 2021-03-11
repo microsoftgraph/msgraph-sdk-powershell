@@ -12312,14 +12312,14 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerBucket'
-              description: Read-only. Nullable. Collection of buckets in the plan.
+              description: Collection of buckets in the plan. Read-only. Nullable.
             details:
               $ref: '#/components/schemas/microsoft.graph.plannerPlanDetails'
             tasks:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
-              description: Read-only. Nullable. Collection of tasks in the plan.
+              description: Collection of tasks in the plan. Read-only. Nullable.
           additionalProperties:
             type: object
     microsoft.graph.plannerBucket:
@@ -12636,7 +12636,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
-              description: Read-only. Nullable. Returns the plannerPlans shared with the user.
+              description: Read-only. Nullable. Returns the plannerTasks assigned to the user.
           additionalProperties:
             type: object
     microsoft.graph.plannerDelta:
@@ -12736,9 +12736,73 @@ components:
           type: string
           description: The label associated with Category 1
           nullable: true
+        category10:
+          type: string
+          description: The label associated with Category 10
+          nullable: true
+        category11:
+          type: string
+          description: The label associated with Category 11
+          nullable: true
+        category12:
+          type: string
+          description: The label associated with Category 12
+          nullable: true
+        category13:
+          type: string
+          description: The label associated with Category 13
+          nullable: true
+        category14:
+          type: string
+          description: The label associated with Category 14
+          nullable: true
+        category15:
+          type: string
+          description: The label associated with Category 15
+          nullable: true
+        category16:
+          type: string
+          description: The label associated with Category 16
+          nullable: true
+        category17:
+          type: string
+          description: The label associated with Category 17
+          nullable: true
+        category18:
+          type: string
+          description: The label associated with Category 18
+          nullable: true
+        category19:
+          type: string
+          description: The label associated with Category 19
+          nullable: true
         category2:
           type: string
           description: The label associated with Category 2
+          nullable: true
+        category20:
+          type: string
+          description: The label associated with Category 20
+          nullable: true
+        category21:
+          type: string
+          description: The label associated with Category 21
+          nullable: true
+        category22:
+          type: string
+          description: The label associated with Category 22
+          nullable: true
+        category23:
+          type: string
+          description: The label associated with Category 23
+          nullable: true
+        category24:
+          type: string
+          description: The label associated with Category 24
+          nullable: true
+        category25:
+          type: string
+          description: The label associated with Category 25
           nullable: true
         category3:
           type: string
@@ -12755,6 +12819,18 @@ components:
         category6:
           type: string
           description: The label associated with Category 6
+          nullable: true
+        category7:
+          type: string
+          description: The label associated with Category 7
+          nullable: true
+        category8:
+          type: string
+          description: The label associated with Category 8
+          nullable: true
+        category9:
+          type: string
+          description: The label associated with Category 9
           nullable: true
       additionalProperties:
         type: object

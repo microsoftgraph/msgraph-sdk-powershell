@@ -33,7 +33,6 @@ parameters:
 jobs:
 - job: MsGraphPSSDKServiceModulesGeneration
   displayName: Microsoft Graph PowerShell SDK Service Module Generation
-  pool: MsGraphDevXAzureAgents
   timeoutInMinutes: 600
 
   steps:

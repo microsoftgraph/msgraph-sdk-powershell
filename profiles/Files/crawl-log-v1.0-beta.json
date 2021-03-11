@@ -2,688 +2,1072 @@
   "resources": [],
   "operations": {
     "/drives": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/activities": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/activities/{itemActivityOLD-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/activities/{itemActivityOLD-id}/driveItem": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/activities/{itemActivityOLD-id}/driveItem/content": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/activities/{itemActivityOLD-id}/listItem": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/activities/{itemActivityOLD-id}/listItem/activities": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/activities/{itemActivityOLD-id}/listItem/activities/{itemActivityOLD-id1}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/activities/{itemActivityOLD-id}/listItem/analytics": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/activities/{itemActivityOLD-id}/listItem/analytics/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/activities/{itemActivityOLD-id}/listItem/driveItem": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/activities/{itemActivityOLD-id}/listItem/driveItem/content": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/activities/{itemActivityOLD-id}/listItem/fields": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/activities/{itemActivityOLD-id}/listItem/microsoft.graph.createLink": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/activities/{itemActivityOLD-id}/listItem/microsoft.graph.getActivitiesByInterval(startDateTime='{startDateTime}',endDateTime='{endDateTime}',interval='{interval}')": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/activities/{itemActivityOLD-id}/listItem/versions": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/activities/{itemActivityOLD-id}/listItem/versions/{listItemVersion-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/activities/{itemActivityOLD-id}/listItem/versions/{listItemVersion-id}/fields": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/activities/{itemActivityOLD-id}/listItem/versions/{listItemVersion-id}/microsoft.graph.restoreVersion": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/bundles": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/bundles/{driveItem-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/bundles/{driveItem-id}/content": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/following": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/following/{driveItem-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/following/{driveItem-id}/content": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/items": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/items/{driveItem-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/items/{driveItem-id}/content": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/list": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/list/activities": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/list/activities/{itemActivityOLD-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/list/activities/{itemActivityOLD-id}/driveItem": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/list/activities/{itemActivityOLD-id}/driveItem/content": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/list/activities/{itemActivityOLD-id}/listItem": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/list/activities/{itemActivityOLD-id}/listItem/activities": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/list/activities/{itemActivityOLD-id}/listItem/activities/{itemActivityOLD-id1}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/list/activities/{itemActivityOLD-id}/listItem/analytics": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/list/activities/{itemActivityOLD-id}/listItem/analytics/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/list/activities/{itemActivityOLD-id}/listItem/driveItem": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/list/activities/{itemActivityOLD-id}/listItem/driveItem/content": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/list/activities/{itemActivityOLD-id}/listItem/fields": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/list/activities/{itemActivityOLD-id}/listItem/microsoft.graph.createLink": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/list/activities/{itemActivityOLD-id}/listItem/microsoft.graph.getActivitiesByInterval(startDateTime='{startDateTime}',endDateTime='{endDateTime}',interval='{interval}')": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/list/activities/{itemActivityOLD-id}/listItem/versions": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/list/activities/{itemActivityOLD-id}/listItem/versions/{listItemVersion-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/list/activities/{itemActivityOLD-id}/listItem/versions/{listItemVersion-id}/fields": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/list/activities/{itemActivityOLD-id}/listItem/versions/{listItemVersion-id}/microsoft.graph.restoreVersion": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/list/columns": {
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/drives/{drive-id}/list/columns/{columnDefinition-id}": {
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/drives/{drive-id}/list/columns/{columnDefinition-id}/sourceColumn": {
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/drives/{drive-id}/list/columns/{columnDefinition-id}/sourceColumn/$ref": {
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/drives/{drive-id}/list/columns/{columnDefinition-id}/sourceColumn": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Files.yml"
     },
-    "/drives/{drive-id}/list/columns/{columnDefinition-id}": {
+    "/drives/{drive-id}/list/columns/{columnDefinition-id}/sourceColumn/$ref": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Files.yml"
     },
     "/drives/{drive-id}/list/contentTypes": {
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/drives/{drive-id}/list/contentTypes/{contentType-id}": {
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/drives/{drive-id}/list/contentTypes/{contentType-id}/base": {
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/drives/{drive-id}/list/contentTypes/{contentType-id}/base/$ref": {
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/drives/{drive-id}/list/contentTypes/{contentType-id}/base/microsoft.graph.associateWithHubSites": {
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/drives/{drive-id}/list/contentTypes/{contentType-id}/base/microsoft.graph.copyToDefaultContentLocation": {
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/drives/{drive-id}/list/contentTypes/{contentType-id}/base/microsoft.graph.isPublished()": {
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/drives/{drive-id}/list/contentTypes/{contentType-id}/base/microsoft.graph.publish": {
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/drives/{drive-id}/list/contentTypes/{contentType-id}/base/microsoft.graph.unpublish": {
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/drives/{drive-id}/list/contentTypes/{contentType-id}/baseTypes": {
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/drives/{drive-id}/list/contentTypes/{contentType-id}/baseTypes/$ref": {
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/drives/{drive-id}/list/contentTypes/{contentType-id}/baseTypes/microsoft.graph.addCopy": {
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/drives/{drive-id}/list/contentTypes/{contentType-id}/base": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Files.yml"
     },
-    "/drives/{drive-id}/list/contentTypes/{contentType-id}": {
+    "/drives/{drive-id}/list/contentTypes/{contentType-id}/base/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/drives/{drive-id}/list/contentTypes/{contentType-id}/base/microsoft.graph.associateWithHubSites": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/drives/{drive-id}/list/contentTypes/{contentType-id}/base/microsoft.graph.copyToDefaultContentLocation": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/drives/{drive-id}/list/contentTypes/{contentType-id}/base/microsoft.graph.isPublished()": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/drives/{drive-id}/list/contentTypes/{contentType-id}/base/microsoft.graph.publish": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/drives/{drive-id}/list/contentTypes/{contentType-id}/base/microsoft.graph.unpublish": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/drives/{drive-id}/list/contentTypes/{contentType-id}/baseTypes": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/drives/{drive-id}/list/contentTypes/{contentType-id}/baseTypes/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/drives/{drive-id}/list/contentTypes/{contentType-id}/baseTypes/microsoft.graph.addCopy": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Files.yml"
     },
     "/drives/{drive-id}/list/contentTypes/{contentType-id}/columnLinks": {
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/drives/{drive-id}/list/contentTypes/{contentType-id}/columnLinks/{columnLink-id}": {
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/drives/{drive-id}/list/contentTypes/{contentType-id}/columnPositions": {
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/drives/{drive-id}/list/contentTypes/{contentType-id}/columnPositions/$ref": {
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/drives/{drive-id}/list/contentTypes/{contentType-id}/columns": {
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/drives/{drive-id}/list/contentTypes/{contentType-id}/columns/{columnDefinition-id}": {
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/drives/{drive-id}/list/contentTypes/{contentType-id}/columns/{columnDefinition-id}/sourceColumn": {
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/drives/{drive-id}/list/contentTypes/{contentType-id}/columns/{columnDefinition-id}/sourceColumn/$ref": {
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/drives/{drive-id}/list/contentTypes/{contentType-id}/microsoft.graph.associateWithHubSites": {
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/drives/{drive-id}/list/contentTypes/{contentType-id}/microsoft.graph.copyToDefaultContentLocation": {
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/drives/{drive-id}/list/contentTypes/{contentType-id}/microsoft.graph.isPublished()": {
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/drives/{drive-id}/list/contentTypes/{contentType-id}/microsoft.graph.publish": {
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/drives/{drive-id}/list/contentTypes/{contentType-id}/microsoft.graph.unpublish": {
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/drives/{drive-id}/list/contentTypes/microsoft.graph.addCopy": {
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/drives/{drive-id}/list/contentTypes/{contentType-id}/columnPositions": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Files.yml"
     },
-    "/drives/{drive-id}/list/contentTypes/{contentType-id}/columnLinks/{columnLink-id}": {
+    "/drives/{drive-id}/list/contentTypes/{contentType-id}/columnPositions/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/drives/{drive-id}/list/contentTypes/{contentType-id}/columns": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/drives/{drive-id}/list/contentTypes/{contentType-id}/columns/{columnDefinition-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/drives/{drive-id}/list/contentTypes/{contentType-id}/columns/{columnDefinition-id}/sourceColumn": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/drives/{drive-id}/list/contentTypes/{contentType-id}/columns/{columnDefinition-id}/sourceColumn/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/drives/{drive-id}/list/contentTypes/{contentType-id}/microsoft.graph.associateWithHubSites": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/drives/{drive-id}/list/contentTypes/{contentType-id}/microsoft.graph.copyToDefaultContentLocation": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/drives/{drive-id}/list/contentTypes/{contentType-id}/microsoft.graph.isPublished()": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/drives/{drive-id}/list/contentTypes/{contentType-id}/microsoft.graph.publish": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/drives/{drive-id}/list/contentTypes/{contentType-id}/microsoft.graph.unpublish": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/drives/{drive-id}/list/contentTypes/microsoft.graph.addCopy": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Files.yml"
     },
     "/drives/{drive-id}/list/drive": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/list/items": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/list/items/{listItem-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/list/items/{listItem-id}/activities": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem/content": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/listItem": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/listItem/microsoft.graph.createLink": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/listItem/microsoft.graph.getActivitiesByInterval(startDateTime='{startDateTime}',endDateTime='{endDateTime}',interval='{interval}')": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/list/items/{listItem-id}/analytics": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/list/items/{listItem-id}/analytics/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/list/items/{listItem-id}/driveItem": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/list/items/{listItem-id}/driveItem/content": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/list/items/{listItem-id}/fields": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/list/items/{listItem-id}/microsoft.graph.createLink": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/list/items/{listItem-id}/microsoft.graph.getActivitiesByInterval(startDateTime='{startDateTime}',endDateTime='{endDateTime}',interval='{interval}')": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/list/items/{listItem-id}/versions": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/list/items/{listItem-id}/versions/{listItemVersion-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/list/items/{listItem-id}/versions/{listItemVersion-id}/fields": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/list/items/{listItem-id}/versions/{listItemVersion-id}/microsoft.graph.restoreVersion": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/list/subscriptions": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/list/subscriptions/{subscription-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/microsoft.graph.recent()": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/microsoft.graph.search(q='{q}')": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/microsoft.graph.sharedWithMe()": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/root": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/root/content": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/special": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/special/{driveItem-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/drives/{drive-id}/special/{driveItem-id}/content": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/groups/{group-id}/drive": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/groups/{group-id}/drives": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/groups/{group-id}/drives/{drive-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/driveItem": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/driveItem/content": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/items": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/items/{driveItem-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/items/{driveItem-id}/content": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/list": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/list/activities": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/list/activities/{itemActivityOLD-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/list/activities/{itemActivityOLD-id}/driveItem": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/list/activities/{itemActivityOLD-id}/driveItem/content": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/list/activities/{itemActivityOLD-id}/listItem": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/list/activities/{itemActivityOLD-id}/listItem/activities": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/list/activities/{itemActivityOLD-id}/listItem/activities/{itemActivityOLD-id1}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/list/activities/{itemActivityOLD-id}/listItem/analytics": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/list/activities/{itemActivityOLD-id}/listItem/analytics/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/list/activities/{itemActivityOLD-id}/listItem/driveItem": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/list/activities/{itemActivityOLD-id}/listItem/driveItem/content": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/list/activities/{itemActivityOLD-id}/listItem/fields": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/list/activities/{itemActivityOLD-id}/listItem/microsoft.graph.createLink": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/list/activities/{itemActivityOLD-id}/listItem/microsoft.graph.getActivitiesByInterval(startDateTime='{startDateTime}',endDateTime='{endDateTime}',interval='{interval}')": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/list/activities/{itemActivityOLD-id}/listItem/versions": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/list/activities/{itemActivityOLD-id}/listItem/versions/{listItemVersion-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/list/activities/{itemActivityOLD-id}/listItem/versions/{listItemVersion-id}/fields": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/list/activities/{itemActivityOLD-id}/listItem/versions/{listItemVersion-id}/microsoft.graph.restoreVersion": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/list/columns": {
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/shares/{sharedDriveItem-id}/list/columns/{columnDefinition-id}": {
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/shares/{sharedDriveItem-id}/list/columns/{columnDefinition-id}/sourceColumn": {
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/shares/{sharedDriveItem-id}/list/columns/{columnDefinition-id}/sourceColumn/$ref": {
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/shares/{sharedDriveItem-id}/list/columns/{columnDefinition-id}/sourceColumn": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Files.yml"
     },
-    "/shares/{sharedDriveItem-id}/list/columns/{columnDefinition-id}": {
+    "/shares/{sharedDriveItem-id}/list/columns/{columnDefinition-id}/sourceColumn/$ref": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Files.yml"
     },
     "/shares/{sharedDriveItem-id}/list/contentTypes": {
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}": {
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/base": {
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/base/$ref": {
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/base/microsoft.graph.associateWithHubSites": {
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/base/microsoft.graph.copyToDefaultContentLocation": {
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/base/microsoft.graph.isPublished()": {
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/base/microsoft.graph.publish": {
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/base/microsoft.graph.unpublish": {
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/baseTypes": {
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/baseTypes/$ref": {
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/baseTypes/microsoft.graph.addCopy": {
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/base": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Files.yml"
     },
-    "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}": {
+    "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/base/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/base/microsoft.graph.associateWithHubSites": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/base/microsoft.graph.copyToDefaultContentLocation": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/base/microsoft.graph.isPublished()": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/base/microsoft.graph.publish": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/base/microsoft.graph.unpublish": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/baseTypes": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/baseTypes/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/baseTypes/microsoft.graph.addCopy": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Files.yml"
     },
     "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/columnLinks": {
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/columnLinks/{columnLink-id}": {
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/columnPositions": {
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/columnPositions/$ref": {
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/columns": {
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/columns/{columnDefinition-id}": {
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/columns/{columnDefinition-id}/sourceColumn": {
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/columns/{columnDefinition-id}/sourceColumn/$ref": {
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/microsoft.graph.associateWithHubSites": {
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/microsoft.graph.copyToDefaultContentLocation": {
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/microsoft.graph.isPublished()": {
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/microsoft.graph.publish": {
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/microsoft.graph.unpublish": {
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/shares/{sharedDriveItem-id}/list/contentTypes/microsoft.graph.addCopy": {
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/columnPositions": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Files.yml"
     },
-    "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/columnLinks/{columnLink-id}": {
+    "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/columnPositions/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/columns": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/columns/{columnDefinition-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/columns/{columnDefinition-id}/sourceColumn": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/columns/{columnDefinition-id}/sourceColumn/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/microsoft.graph.associateWithHubSites": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/microsoft.graph.copyToDefaultContentLocation": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/microsoft.graph.isPublished()": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/microsoft.graph.publish": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/microsoft.graph.unpublish": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/shares/{sharedDriveItem-id}/list/contentTypes/microsoft.graph.addCopy": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Files.yml"
     },
     "/shares/{sharedDriveItem-id}/list/drive": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/list/items": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/list/items/{listItem-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/list/items/{listItem-id}/activities": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem/content": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/listItem": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/listItem/microsoft.graph.createLink": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/listItem/microsoft.graph.getActivitiesByInterval(startDateTime='{startDateTime}',endDateTime='{endDateTime}',interval='{interval}')": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/list/items/{listItem-id}/analytics": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/list/items/{listItem-id}/analytics/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/list/items/{listItem-id}/driveItem": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/list/items/{listItem-id}/driveItem/content": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/list/items/{listItem-id}/fields": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/list/items/{listItem-id}/microsoft.graph.createLink": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/list/items/{listItem-id}/microsoft.graph.getActivitiesByInterval(startDateTime='{startDateTime}',endDateTime='{endDateTime}',interval='{interval}')": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/list/items/{listItem-id}/versions": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/list/items/{listItem-id}/versions/{listItemVersion-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/list/items/{listItem-id}/versions/{listItemVersion-id}/fields": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/list/items/{listItem-id}/versions/{listItemVersion-id}/microsoft.graph.restoreVersion": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/list/subscriptions": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/list/subscriptions/{subscription-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/listItem": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/listItem/activities": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/listItem/activities/{itemActivityOLD-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/listItem/activities/{itemActivityOLD-id}/driveItem": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/listItem/activities/{itemActivityOLD-id}/driveItem/content": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/listItem/activities/{itemActivityOLD-id}/listItem": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/listItem/activities/{itemActivityOLD-id}/listItem/microsoft.graph.createLink": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/listItem/activities/{itemActivityOLD-id}/listItem/microsoft.graph.getActivitiesByInterval(startDateTime='{startDateTime}',endDateTime='{endDateTime}',interval='{interval}')": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/listItem/analytics": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/listItem/analytics/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/listItem/driveItem": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/listItem/driveItem/content": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/listItem/fields": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/listItem/microsoft.graph.createLink": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/listItem/microsoft.graph.getActivitiesByInterval(startDateTime='{startDateTime}',endDateTime='{endDateTime}',interval='{interval}')": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/listItem/versions": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/listItem/versions/{listItemVersion-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/listItem/versions/{listItemVersion-id}/fields": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/listItem/versions/{listItemVersion-id}/microsoft.graph.restoreVersion": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/permission": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/permission/microsoft.graph.grant": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/permission/microsoft.graph.revokeGrants": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/root": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/root/content": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/shares/{sharedDriveItem-id}/site": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/users/{user-id}/drive": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/users/{user-id}/drives": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/users/{user-id}/drives/{drive-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Files.yml"
+      "originalLocation": "/openApiDocs/beta/Files.yml",
+      "apiVersion": "v1.0-beta"
     }
   }
 }

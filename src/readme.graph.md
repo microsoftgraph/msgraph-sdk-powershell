@@ -88,6 +88,8 @@ directive:
     - microsoft.graph.parentLabelDetails
     - microsoft.graph.ediscovery.tag
     - microsoft.graph.ediscovery.sourceCollection
+    - microsoft.graph.contentType
+    - microsoft.graph.columnDefinition
 
   # Set parameter alias
   - where:

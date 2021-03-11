@@ -1,0 +1,66 @@
+{
+  "Get-MgSiteByPath+[NoContext]+ShouldFailToGetSiteByPath+$GET+https://graph.microsoft.com/v1.0/sites/root/microsoft.graph.getByPath(path=\u0027randomPath\u0027)+1": {
+    "Request": {
+      "Method": "GET",
+      "RequestUri": "https://graph.microsoft.com/v1.0/sites/root/microsoft.graph.getByPath(path=\u0027randomPath\u0027)",
+      "Content": null,
+      "Headers": {
+        "SdkVersion": [ "Graph-powershell-Microsoft.Graph.Authentication-1.4.0", "Graph-dotnet-1.20.1" ],
+        "FeatureFlag": [ "00000047" ],
+        "Cache-Control": [ "no-store, no-cache" ],
+        "Authorization": [ "[Filtered]" ],
+        "Accept-Encoding": [ "gzip" ]
+      },
+      "ContentHeaders": {
+      }
+    },
+    "Response": {
+      "StatusCode": 400,
+      "Headers": {
+        "Date": [ "Mon, 08 Mar 2021 21:12:39 GMT" ],
+        "Cache-Control": [ "no-cache" ],
+        "Transfer-Encoding": [ "chunked" ],
+        "Vary": [ "Accept-Encoding" ],
+        "Strict-Transport-Security": [ "max-age=31536000" ],
+        "request-id": [ "717a05c2-0a08-410a-9f2a-bf20860d9a85" ],
+        "client-request-id": [ "717a05c2-0a08-410a-9f2a-bf20860d9a85" ],
+        "x-ms-ags-diagnostic": [ "{\"ServerInfo\":{\"DataCenter\":\"West US 2\",\"Slice\":\"E\",\"Ring\":\"1\",\"ScaleUnit\":\"001\",\"RoleInstance\":\"MW2PEPF000031CF\"}}" ]
+      },
+      "ContentHeaders": {
+      },
+      "Content": "{\r\n  \"error\": {\r\n    \"code\": \"invalidRequest\",\r\n    \"message\": \"Invalid request\",\r\n    \"innerError\": {\r\n      \"date\": \"2021-03-08T21:12:39\",\r\n      \"request-id\": \"717a05c2-0a08-410a-9f2a-bf20860d9a85\",\r\n      \"client-request-id\": \"717a05c2-0a08-410a-9f2a-bf20860d9a85\"\r\n    }\r\n  }\r\n}"
+    }
+  },
+  "Get-MgSiteByPath+[NoContext]+ShouldFailToGetSiteByPathViaInputObject+$GET+https://graph.microsoft.com/v1.0/sites/root/microsoft.graph.getByPath(path=\u0027randomPath\u0027)+1": {
+    "Request": {
+      "Method": "GET",
+      "RequestUri": "https://graph.microsoft.com/v1.0/sites/root/microsoft.graph.getByPath(path=\u0027randomPath\u0027)",
+      "Content": null,
+      "Headers": {
+        "SdkVersion": [ "Graph-powershell-Microsoft.Graph.Authentication-1.4.0", "Graph-dotnet-1.20.1" ],
+        "FeatureFlag": [ "00000047" ],
+        "Cache-Control": [ "no-store, no-cache" ],
+        "Authorization": [ "[Filtered]" ],
+        "Accept-Encoding": [ "gzip" ]
+      },
+      "ContentHeaders": {
+      }
+    },
+    "Response": {
+      "StatusCode": 400,
+      "Headers": {
+        "Date": [ "Mon, 08 Mar 2021 21:12:39 GMT" ],
+        "Cache-Control": [ "no-cache" ],
+        "Transfer-Encoding": [ "chunked" ],
+        "Vary": [ "Accept-Encoding" ],
+        "Strict-Transport-Security": [ "max-age=31536000" ],
+        "request-id": [ "9c75914e-0016-4dde-94eb-76e1ec982723" ],
+        "client-request-id": [ "9c75914e-0016-4dde-94eb-76e1ec982723" ],
+        "x-ms-ags-diagnostic": [ "{\"ServerInfo\":{\"DataCenter\":\"West US 2\",\"Slice\":\"E\",\"Ring\":\"1\",\"ScaleUnit\":\"001\",\"RoleInstance\":\"MW2PEPF000031CC\"}}" ]
+      },
+      "ContentHeaders": {
+      },
+      "Content": "{\r\n  \"error\": {\r\n    \"code\": \"invalidRequest\",\r\n    \"message\": \"Invalid request\",\r\n    \"innerError\": {\r\n      \"date\": \"2021-03-08T21:12:40\",\r\n      \"request-id\": \"9c75914e-0016-4dde-94eb-76e1ec982723\",\r\n      \"client-request-id\": \"9c75914e-0016-4dde-94eb-76e1ec982723\"\r\n    }\r\n  }\r\n}"
+    }
+  }
+}

@@ -8,11 +8,14 @@ parameters:
   - name: BaseBranch
     type: string
     default: "dev"
+  - name: BuildAgent
+    default: MsGraphBuildAgentsWindows
+    displayName: Build Agent
 
 jobs:
   - job: GetLatestDocs
     displayName: Download OpenApiDocs
-    pool: MsGraphDevXAzureAgents
+    pool: $(BuildAgent)
     steps:
       - template: ./checkout.yml
 

@@ -920,6 +920,8 @@ paths:
                 - createdDateTime desc
                 - inference
                 - inference desc
+                - isSearchable
+                - isSearchable desc
                 - lastModifiedBy
                 - lastModifiedBy desc
                 - lastModifiedDateTime
@@ -950,6 +952,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
@@ -1059,6 +1062,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
@@ -1192,6 +1196,8 @@ paths:
                 - createdDateTime desc
                 - inference
                 - inference desc
+                - isSearchable
+                - isSearchable desc
                 - lastModifiedBy
                 - lastModifiedBy desc
                 - lastModifiedDateTime
@@ -1220,6 +1226,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
@@ -1328,6 +1335,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
@@ -1460,6 +1468,8 @@ paths:
                 - createdDateTime desc
                 - inference
                 - inference desc
+                - isSearchable
+                - isSearchable desc
                 - lastModifiedBy
                 - lastModifiedBy desc
                 - lastModifiedDateTime
@@ -1468,6 +1478,8 @@ paths:
                 - source desc
                 - date
                 - date desc
+                - displayName
+                - displayName desc
                 - type
                 - type desc
               type: string
@@ -1486,10 +1498,12 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
                 - date
+                - displayName
                 - type
               type: string
         - name: $expand
@@ -1510,13 +1524,13 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of personAnniversary
+                title: Collection of personAnnualEvent
                 type: object
                 properties:
                   value:
                     type: array
                     items:
-                      $ref: '#/components/schemas/microsoft.graph.personAnniversary'
+                      $ref: '#/components/schemas/microsoft.graph.personAnnualEvent'
                   '@odata.nextLink':
                     type: string
                 additionalProperties:
@@ -1545,7 +1559,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/microsoft.graph.personAnniversary'
+              $ref: '#/components/schemas/microsoft.graph.personAnnualEvent'
         required: true
       responses:
         '201':
@@ -1553,11 +1567,11 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.personAnniversary'
+                $ref: '#/components/schemas/microsoft.graph.personAnnualEvent'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/users/{user-id}/profile/anniversaries/{personAnniversary-id}':
+  '/users/{user-id}/profile/anniversaries/{personAnnualEvent-id}':
     get:
       tags:
         - users.profile
@@ -1571,13 +1585,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: user
-        - name: personAnniversary-id
+        - name: personAnnualEvent-id
           in: path
-          description: 'key: id of personAnniversary'
+          description: 'key: id of personAnnualEvent'
           required: true
           schema:
             type: string
-          x-ms-docs-key-type: personAnniversary
+          x-ms-docs-key-type: personAnnualEvent
         - name: $select
           in: query
           description: Select properties to be returned
@@ -1593,10 +1607,12 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
                 - date
+                - displayName
                 - type
               type: string
         - name: $expand
@@ -1617,7 +1633,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.personAnniversary'
+                $ref: '#/components/schemas/microsoft.graph.personAnnualEvent'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1634,19 +1650,19 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: user
-        - name: personAnniversary-id
+        - name: personAnnualEvent-id
           in: path
-          description: 'key: id of personAnniversary'
+          description: 'key: id of personAnnualEvent'
           required: true
           schema:
             type: string
-          x-ms-docs-key-type: personAnniversary
+          x-ms-docs-key-type: personAnnualEvent
       requestBody:
         description: New navigation property values
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/microsoft.graph.personAnniversary'
+              $ref: '#/components/schemas/microsoft.graph.personAnnualEvent'
         required: true
       responses:
         '204':
@@ -1667,13 +1683,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: user
-        - name: personAnniversary-id
+        - name: personAnnualEvent-id
           in: path
-          description: 'key: id of personAnniversary'
+          description: 'key: id of personAnnualEvent'
           required: true
           schema:
             type: string
-          x-ms-docs-key-type: personAnniversary
+          x-ms-docs-key-type: personAnnualEvent
         - name: If-Match
           in: header
           description: ETag
@@ -1724,6 +1740,8 @@ paths:
                 - createdDateTime desc
                 - inference
                 - inference desc
+                - isSearchable
+                - isSearchable desc
                 - lastModifiedBy
                 - lastModifiedBy desc
                 - lastModifiedDateTime
@@ -1758,6 +1776,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
@@ -1869,6 +1888,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
@@ -2004,6 +2024,8 @@ paths:
                 - createdDateTime desc
                 - inference
                 - inference desc
+                - isSearchable
+                - isSearchable desc
                 - lastModifiedBy
                 - lastModifiedBy desc
                 - lastModifiedDateTime
@@ -2046,6 +2068,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
@@ -2161,6 +2184,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
@@ -2300,6 +2324,8 @@ paths:
                 - createdDateTime desc
                 - inference
                 - inference desc
+                - isSearchable
+                - isSearchable desc
                 - lastModifiedBy
                 - lastModifiedBy desc
                 - lastModifiedDateTime
@@ -2332,6 +2358,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
@@ -2442,6 +2469,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
@@ -2576,6 +2604,8 @@ paths:
                 - createdDateTime desc
                 - inference
                 - inference desc
+                - isSearchable
+                - isSearchable desc
                 - lastModifiedBy
                 - lastModifiedBy desc
                 - lastModifiedDateTime
@@ -2604,6 +2634,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
@@ -2712,6 +2743,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
@@ -2844,6 +2876,8 @@ paths:
                 - createdDateTime desc
                 - inference
                 - inference desc
+                - isSearchable
+                - isSearchable desc
                 - lastModifiedBy
                 - lastModifiedBy desc
                 - lastModifiedDateTime
@@ -2858,6 +2892,8 @@ paths:
                 - description desc
                 - displayName
                 - displayName desc
+                - thumbnailUrl
+                - thumbnailUrl desc
                 - webUrl
                 - webUrl desc
               type: string
@@ -2876,6 +2912,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
@@ -2883,6 +2920,7 @@ paths:
                 - collaborationTags
                 - description
                 - displayName
+                - thumbnailUrl
                 - webUrl
               type: string
         - name: $expand
@@ -2986,6 +3024,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
@@ -2993,6 +3032,7 @@ paths:
                 - collaborationTags
                 - description
                 - displayName
+                - thumbnailUrl
                 - webUrl
               type: string
         - name: $expand
@@ -3120,6 +3160,8 @@ paths:
                 - createdDateTime desc
                 - inference
                 - inference desc
+                - isSearchable
+                - isSearchable desc
                 - lastModifiedBy
                 - lastModifiedBy desc
                 - lastModifiedDateTime
@@ -3136,6 +3178,8 @@ paths:
                 - spoken desc
                 - tag
                 - tag desc
+                - thumbnailUrl
+                - thumbnailUrl desc
                 - written
                 - written desc
               type: string
@@ -3154,6 +3198,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
@@ -3162,6 +3207,7 @@ paths:
                 - reading
                 - spoken
                 - tag
+                - thumbnailUrl
                 - written
               type: string
         - name: $expand
@@ -3265,6 +3311,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
@@ -3273,6 +3320,7 @@ paths:
                 - reading
                 - spoken
                 - tag
+                - thumbnailUrl
                 - written
               type: string
         - name: $expand
@@ -3400,6 +3448,8 @@ paths:
                 - createdDateTime desc
                 - inference
                 - inference desc
+                - isSearchable
+                - isSearchable desc
                 - lastModifiedBy
                 - lastModifiedBy desc
                 - lastModifiedDateTime
@@ -3444,6 +3494,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
@@ -3560,6 +3611,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
@@ -3700,6 +3752,8 @@ paths:
                 - createdDateTime desc
                 - inference
                 - inference desc
+                - isSearchable
+                - isSearchable desc
                 - lastModifiedBy
                 - lastModifiedBy desc
                 - lastModifiedDateTime
@@ -3710,6 +3764,8 @@ paths:
                 - detail desc
                 - displayName
                 - displayName desc
+                - thumbnailUrl
+                - thumbnailUrl desc
               type: string
         - name: $select
           in: query
@@ -3726,11 +3782,13 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
                 - detail
                 - displayName
+                - thumbnailUrl
               type: string
         - name: $expand
           in: query
@@ -3833,11 +3891,13 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
                 - detail
                 - displayName
+                - thumbnailUrl
               type: string
         - name: $expand
           in: query
@@ -3964,6 +4024,8 @@ paths:
                 - createdDateTime desc
                 - inference
                 - inference desc
+                - isSearchable
+                - isSearchable desc
                 - lastModifiedBy
                 - lastModifiedBy desc
                 - lastModifiedDateTime
@@ -4000,6 +4062,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
@@ -4112,6 +4175,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
@@ -4248,6 +4312,8 @@ paths:
                 - createdDateTime desc
                 - inference
                 - inference desc
+                - isSearchable
+                - isSearchable desc
                 - lastModifiedBy
                 - lastModifiedBy desc
                 - lastModifiedDateTime
@@ -4276,6 +4342,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
@@ -4384,6 +4451,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
@@ -4516,6 +4584,8 @@ paths:
                 - createdDateTime desc
                 - inference
                 - inference desc
+                - isSearchable
+                - isSearchable desc
                 - lastModifiedBy
                 - lastModifiedBy desc
                 - lastModifiedDateTime
@@ -4548,6 +4618,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
@@ -4658,6 +4729,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
@@ -4792,6 +4864,8 @@ paths:
                 - createdDateTime desc
                 - inference
                 - inference desc
+                - isSearchable
+                - isSearchable desc
                 - lastModifiedBy
                 - lastModifiedBy desc
                 - lastModifiedDateTime
@@ -4812,6 +4886,8 @@ paths:
                 - displayName desc
                 - sponsors
                 - sponsors desc
+                - thumbnailUrl
+                - thumbnailUrl desc
               type: string
         - name: $select
           in: query
@@ -4828,6 +4904,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
@@ -4838,6 +4915,7 @@ paths:
                 - detail
                 - displayName
                 - sponsors
+                - thumbnailUrl
               type: string
         - name: $expand
           in: query
@@ -4940,6 +5018,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
@@ -4950,6 +5029,7 @@ paths:
                 - detail
                 - displayName
                 - sponsors
+                - thumbnailUrl
               type: string
         - name: $expand
           in: query
@@ -5076,6 +5156,8 @@ paths:
                 - createdDateTime desc
                 - inference
                 - inference desc
+                - isSearchable
+                - isSearchable desc
                 - lastModifiedBy
                 - lastModifiedBy desc
                 - lastModifiedDateTime
@@ -5110,6 +5192,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
@@ -5221,6 +5304,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
@@ -5356,6 +5440,8 @@ paths:
                 - createdDateTime desc
                 - inference
                 - inference desc
+                - isSearchable
+                - isSearchable desc
                 - lastModifiedBy
                 - lastModifiedBy desc
                 - lastModifiedDateTime
@@ -5370,6 +5456,8 @@ paths:
                 - displayName desc
                 - proficiency
                 - proficiency desc
+                - thumbnailUrl
+                - thumbnailUrl desc
                 - webUrl
                 - webUrl desc
               type: string
@@ -5388,6 +5476,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
@@ -5395,6 +5484,7 @@ paths:
                 - collaborationTags
                 - displayName
                 - proficiency
+                - thumbnailUrl
                 - webUrl
               type: string
         - name: $expand
@@ -5498,6 +5588,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
@@ -5505,6 +5596,7 @@ paths:
                 - collaborationTags
                 - displayName
                 - proficiency
+                - thumbnailUrl
                 - webUrl
               type: string
         - name: $expand
@@ -5632,6 +5724,8 @@ paths:
                 - createdDateTime desc
                 - inference
                 - inference desc
+                - isSearchable
+                - isSearchable desc
                 - lastModifiedBy
                 - lastModifiedBy desc
                 - lastModifiedDateTime
@@ -5644,6 +5738,8 @@ paths:
                 - service desc
                 - statusMessage
                 - statusMessage desc
+                - thumbnailUrl
+                - thumbnailUrl desc
                 - userId
                 - userId desc
                 - webUrl
@@ -5664,12 +5760,14 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
                 - description
                 - service
                 - statusMessage
+                - thumbnailUrl
                 - userId
                 - webUrl
               type: string
@@ -5774,12 +5872,14 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
                 - description
                 - service
                 - statusMessage
+                - thumbnailUrl
                 - userId
                 - webUrl
               type: string
@@ -5908,6 +6008,8 @@ paths:
                 - createdDateTime desc
                 - inference
                 - inference desc
+                - isSearchable
+                - isSearchable desc
                 - lastModifiedBy
                 - lastModifiedBy desc
                 - lastModifiedDateTime
@@ -5920,6 +6022,8 @@ paths:
                 - description desc
                 - displayName
                 - displayName desc
+                - thumbnailUrl
+                - thumbnailUrl desc
                 - webUrl
                 - webUrl desc
               type: string
@@ -5938,12 +6042,14 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
                 - categories
                 - description
                 - displayName
+                - thumbnailUrl
                 - webUrl
               type: string
         - name: $expand
@@ -6047,12 +6153,14 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
                 - categories
                 - description
                 - displayName
+                - thumbnailUrl
                 - webUrl
               type: string
         - name: $expand
@@ -6236,7 +6344,7 @@ components:
               nullable: true
             personType:
               type: string
-              description: The type of person.
+              description: 'The type of person, for example distribution list.'
               nullable: true
             phones:
               type: array
@@ -6298,7 +6406,7 @@ components:
             anniversaries:
               type: array
               items:
-                $ref: '#/components/schemas/microsoft.graph.personAnniversary'
+                $ref: '#/components/schemas/microsoft.graph.personAnnualEvent'
               description: Represents the details of meaningful dates associated with a person.
             awards:
               type: array
@@ -6417,20 +6525,22 @@ components:
               $ref: '#/components/schemas/microsoft.graph.geoCoordinates'
           additionalProperties:
             type: object
-    microsoft.graph.personAnniversary:
+    microsoft.graph.personAnnualEvent:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.itemFacet'
-        - title: personAnniversary
+        - title: personAnnualEvent
           type: object
           properties:
             date:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
-              description: Contains the date associated with the anniversary type.
               format: date
               nullable: true
+            displayName:
+              type: string
+              nullable: true
             type:
-              $ref: '#/components/schemas/microsoft.graph.anniversaryType'
+              $ref: '#/components/schemas/microsoft.graph.personAnnualEventType'
           additionalProperties:
             type: object
     microsoft.graph.personAward:
@@ -6591,6 +6701,9 @@ components:
             displayName:
               type: string
               description: Contains a friendly name for the interest.
+            thumbnailUrl:
+              type: string
+              nullable: true
             webUrl:
               type: string
               description: Contains a link to a web page or resource about the interest.
@@ -6615,6 +6728,10 @@ components:
             tag:
               type: string
               description: 'Contains the four-character BCP47 name for the language (en-US, no-NB, en-AU).'
+              nullable: true
+            thumbnailUrl:
+              type: string
+              nullable: true
             written:
               $ref: '#/components/schemas/microsoft.graph.languageProficiencyLevel'
           additionalProperties:
@@ -6628,9 +6745,11 @@ components:
             displayName:
               type: string
               description: Provides an ordered rendering of firstName and lastName depending on the locale of the user or their device.
+              nullable: true
             first:
               type: string
               description: First name of the user.
+              nullable: true
             initials:
               type: string
               description: Initials of the user.
@@ -6642,6 +6761,7 @@ components:
             last:
               type: string
               description: Last name of the user.
+              nullable: true
             maiden:
               type: string
               description: Maiden name of the user.
@@ -6655,7 +6775,7 @@ components:
               description: Nickname of the user.
               nullable: true
             pronunciation:
-              $ref: '#/components/schemas/microsoft.graph.yomiPersonName'
+              $ref: '#/components/schemas/microsoft.graph.personNamePronounciation'
             suffix:
               type: string
               description: 'Designators used after the users name (eg: PhD.)'
@@ -6677,6 +6797,9 @@ components:
             displayName:
               type: string
               description: Contains a friendly name for the note.
+              nullable: true
+            thumbnailUrl:
+              type: string
               nullable: true
           additionalProperties:
             type: object
@@ -6796,6 +6919,9 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.relatedPerson'
               description: The Person or people who sponsored the project.
+            thumbnailUrl:
+              type: string
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.itemPublication:
@@ -6854,6 +6980,9 @@ components:
               description: Contains a friendly name for the skill.
             proficiency:
               $ref: '#/components/schemas/microsoft.graph.skillProficiencyLevel'
+            thumbnailUrl:
+              type: string
+              nullable: true
             webUrl:
               type: string
               description: Contains a link to an information source about the skill.
@@ -6875,6 +7004,9 @@ components:
             statusMessage:
               type: string
               description: Contains a status message from the cloud service if provided or synchronized.
+              nullable: true
+            thumbnailUrl:
+              type: string
               nullable: true
             userId:
               type: string
@@ -6904,6 +7036,9 @@ components:
             displayName:
               type: string
               description: Contains a friendly name for the website.
+            thumbnailUrl:
+              type: string
+              nullable: true
             webUrl:
               type: string
               description: Contains a link to the website itself.
@@ -7042,6 +7177,9 @@ components:
               format: date-time
             inference:
               $ref: '#/components/schemas/microsoft.graph.inferenceData'
+            isSearchable:
+              type: boolean
+              nullable: true
             lastModifiedBy:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             lastModifiedDateTime:
@@ -7110,21 +7248,23 @@ components:
           nullable: true
         latitude:
           type: number
-          description: 'Optional. The latitude, in decimal, for the item. Read-only.'
+          description: 'Optional. The latitude, in decimal, for the item. Writable on OneDrive Personal.'
           format: double
           nullable: true
         longitude:
           type: number
-          description: 'Optional. The longitude, in decimal, for the item. Read-only.'
+          description: 'Optional. The longitude, in decimal, for the item. Writable on OneDrive Personal.'
           format: double
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.anniversaryType:
-      title: anniversaryType
+    microsoft.graph.personAnnualEventType:
+      title: personAnnualEventType
       enum:
         - birthday
         - wedding
+        - work
+        - other
         - unknownFutureValue
       type: string
     microsoft.graph.institutionData:
@@ -7213,29 +7353,24 @@ components:
         - nativeOrBilingual
         - unknownFutureValue
       type: string
-    microsoft.graph.yomiPersonName:
-      title: yomiPersonName
+    microsoft.graph.personNamePronounciation:
+      title: personNamePronounciation
       type: object
       properties:
         displayName:
           type: string
-          description: Composite of first and last name pronunciation guides.
           nullable: true
         first:
           type: string
-          description: Pronunciation guide for the first name of the user.
           nullable: true
         last:
           type: string
-          description: Pronunciation guide for the last name of the user.
           nullable: true
         maiden:
           type: string
-          description: Pronunciation guide for the maiden name of the user.
           nullable: true
         middle:
           type: string
-          description: Pronunciation guide for the middle name of the user.
           nullable: true
       additionalProperties:
         type: object
@@ -7300,6 +7435,7 @@ components:
         jobTitle:
           type: string
           description: The title held when in that position.
+          nullable: true
         role:
           type: string
           description: The role the position entailed.
