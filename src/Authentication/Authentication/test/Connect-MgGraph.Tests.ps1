@@ -29,7 +29,7 @@ Describe 'Connect-MgGraph Depencency Resolution' {
         Install-Module Az.Accounts -Repository PSGallery -Scope CurrentUser -Force
     }
 
-    It 'ShouldSuccessfullyLoadMgModuleSideBySideWithAzModule.' {
+    It 'ShouldLoadMgModuleSideBySideWithAzModule.' {
         { Connect-AzAccount -ApplicationId $RandomClientId -CertificateThumbprint "Invalid" -Tenant "Invalid" -ErrorAction Stop } | Should -Throw -ExpectedMessage "*Could not find tenant id*"
         { Connect-MgGraph -Scopes "inavid.scope" -ErrorAction Stop } | Should -Throw -ExpectedMessage "*AADSTS70011:*"
     }
