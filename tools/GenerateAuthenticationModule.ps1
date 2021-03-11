@@ -74,7 +74,7 @@ elseif ($VersionState.Equals([VersionState]::Valid) -or $VersionState.Equals([Ve
     }
   }
   if ($Test) {
-    & $TestModulePS1 -ModulePath $AuthModulePath -ModuleName "$ModulePrefix.$ModuleName"
+    & $TestModulePS1 -ModulePath (Join-Path $AuthModulePath "artifacts" ) -ModuleName "$ModulePrefix.$ModuleName" -ModuleTestsPath (Join-Path $AuthModulePath "test")
   }
 
   if ($Pack) {

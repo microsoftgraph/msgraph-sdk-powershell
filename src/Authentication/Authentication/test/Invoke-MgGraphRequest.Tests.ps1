@@ -5,8 +5,9 @@
     }
     . ($loadEnvPath)
     $ModuleName = "Microsoft.Graph.Authentication"
-    $ModulePath = Join-Path $PSScriptRoot "..\$ModuleName.psd1"
+    $ModulePath = Join-Path $PSScriptRoot "..\artifacts\$ModuleName.psd1"
     Import-Module $ModulePath -Force
+    $PSDefaultParameterValues=@{"Connect-MgGraph:TenantId"=${env:TENANTIDENTIFIER}; "Connect-MgGraph:ClientId"=${env:CLIENTIDENTIFIER}; "Connect-MgGraph:CertificateThumbprint"=${env:CERTIFICATETHUMBPRINT}}
 }
 Describe 'Invoke-MgGraphRequest Collection Results' {
     BeforeAll {
