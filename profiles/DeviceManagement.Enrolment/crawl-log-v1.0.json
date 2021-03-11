@@ -2,24 +2,24 @@
   "resources": [],
   "operations": {
     "/deviceManagement/conditionalAccessSettings": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Enrolment.yml"
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Enrolment.yml",
+      "apiVersion": "v1.0"
     },
     "/deviceManagement/deviceEnrollmentConfigurations": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Enrolment.yml"
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Enrolment.yml",
+      "apiVersion": "v1.0"
     },
     "/deviceManagement/deviceEnrollmentConfigurations/{deviceEnrollmentConfiguration-id}": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Enrolment.yml"
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Enrolment.yml",
+      "apiVersion": "v1.0"
     },
     "/deviceManagement/deviceEnrollmentConfigurations/{deviceEnrollmentConfiguration-id}/assignments": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Enrolment.yml"
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Enrolment.yml",
+      "apiVersion": "v1.0"
     },
     "/deviceManagement/deviceEnrollmentConfigurations/{deviceEnrollmentConfiguration-id}/assignments/{enrollmentConfigurationAssignment-id}": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Enrolment.yml"
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Enrolment.yml",
+      "apiVersion": "v1.0"
     }
   }
 }

@@ -29,8 +29,7 @@ parameters:
 jobs:
 - job: MsGraphPSSDKAuthModuleGeneration
   displayName: Microsoft Graph PowerShell SDK Auth Module Generation
-  pool: MsGraphDevXAzureAgents
-  
+
   steps:
   - template: ./install-tools-template.yml
 

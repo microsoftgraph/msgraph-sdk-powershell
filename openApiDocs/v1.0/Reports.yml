@@ -4212,6 +4212,7 @@ components:
           properties:
             userPrincipalName:
               type: string
+              description: The UPN of the user represented by these statistics.
           additionalProperties:
             type: object
     microsoft.graph.report:
