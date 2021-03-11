@@ -529,6 +529,10 @@
       "originalLocation": "/openApiDocs/beta/Applications.yml",
       "apiVersion": "v1.0-beta"
     },
+    "/servicePrincipals/{servicePrincipal-id}/microsoft.graph.addTokenSigningCertificate": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
     "/servicePrincipals/{servicePrincipal-id}/microsoft.graph.checkMemberGroups": {
       "originalLocation": "/openApiDocs/beta/Applications.yml",
       "apiVersion": "v1.0-beta"

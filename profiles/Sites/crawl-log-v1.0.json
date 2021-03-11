@@ -605,6 +605,10 @@
       "originalLocation": "/openApiDocs/v1.0/Sites.yml",
       "apiVersion": "v1.0"
     },
+    "/sites/{site-id}/permissions/{permission-id}/microsoft.graph.grant": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Sites.yml"
+    },
     "/sites/{site-id}/sites": {
       "originalLocation": "/openApiDocs/v1.0/Sites.yml",
       "apiVersion": "v1.0"

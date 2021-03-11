@@ -77,6 +77,10 @@
       "originalLocation": "/openApiDocs/v1.0/Devices.CorporateManagement.yml",
       "apiVersion": "v1.0"
     },
+    "/deviceAppManagement/managedAppPolicies/{managedAppPolicy-id}/microsoft.graph.managedAppProtection/microsoft.graph.targetApps": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Devices.CorporateManagement.yml"
+    },
     "/deviceAppManagement/managedAppPolicies/{managedAppPolicy-id}/microsoft.graph.targetApps": {
       "originalLocation": "/openApiDocs/v1.0/Devices.CorporateManagement.yml",
       "apiVersion": "v1.0"
@@ -88,6 +92,14 @@
     "/deviceAppManagement/managedAppPolicies/{managedAppPolicy-id}/microsoft.graph.windowsInformationProtection/microsoft.graph.assign": {
       "originalLocation": "/openApiDocs/v1.0/Devices.CorporateManagement.yml",
       "apiVersion": "v1.0"
+    },
+    "/deviceAppManagement/managedAppPolicies/{managedAppPolicy-id}/microsoft.graph.targetedManagedAppProtection/microsoft.graph.assign": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Devices.CorporateManagement.yml"
+    },
+    "/deviceAppManagement/managedAppPolicies/{managedAppPolicy-id}/microsoft.graph.windowsInformationProtection/microsoft.graph.assign": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Devices.CorporateManagement.yml"
     },
     "/deviceAppManagement/managedAppRegistrations": {
       "originalLocation": "/openApiDocs/v1.0/Devices.CorporateManagement.yml",
@@ -109,6 +121,10 @@
       "originalLocation": "/openApiDocs/v1.0/Devices.CorporateManagement.yml",
       "apiVersion": "v1.0"
     },
+    "/deviceAppManagement/managedAppRegistrations/{managedAppRegistration-id}/appliedPolicies/{managedAppPolicy-id}/microsoft.graph.managedAppProtection/microsoft.graph.targetApps": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Devices.CorporateManagement.yml"
+    },
     "/deviceAppManagement/managedAppRegistrations/{managedAppRegistration-id}/appliedPolicies/{managedAppPolicy-id}/microsoft.graph.targetApps": {
       "originalLocation": "/openApiDocs/v1.0/Devices.CorporateManagement.yml",
       "apiVersion": "v1.0"
@@ -120,6 +136,14 @@
     "/deviceAppManagement/managedAppRegistrations/{managedAppRegistration-id}/appliedPolicies/{managedAppPolicy-id}/microsoft.graph.windowsInformationProtection/microsoft.graph.assign": {
       "originalLocation": "/openApiDocs/v1.0/Devices.CorporateManagement.yml",
       "apiVersion": "v1.0"
+    },
+    "/deviceAppManagement/managedAppRegistrations/{managedAppRegistration-id}/appliedPolicies/{managedAppPolicy-id}/microsoft.graph.targetedManagedAppProtection/microsoft.graph.assign": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Devices.CorporateManagement.yml"
+    },
+    "/deviceAppManagement/managedAppRegistrations/{managedAppRegistration-id}/appliedPolicies/{managedAppPolicy-id}/microsoft.graph.windowsInformationProtection/microsoft.graph.assign": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Devices.CorporateManagement.yml"
     },
     "/deviceAppManagement/managedAppRegistrations/{managedAppRegistration-id}/intendedPolicies": {
       "originalLocation": "/openApiDocs/v1.0/Devices.CorporateManagement.yml",
@@ -133,6 +157,10 @@
       "originalLocation": "/openApiDocs/v1.0/Devices.CorporateManagement.yml",
       "apiVersion": "v1.0"
     },
+    "/deviceAppManagement/managedAppRegistrations/{managedAppRegistration-id}/intendedPolicies/{managedAppPolicy-id}/microsoft.graph.managedAppProtection/microsoft.graph.targetApps": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Devices.CorporateManagement.yml"
+    },
     "/deviceAppManagement/managedAppRegistrations/{managedAppRegistration-id}/intendedPolicies/{managedAppPolicy-id}/microsoft.graph.targetApps": {
       "originalLocation": "/openApiDocs/v1.0/Devices.CorporateManagement.yml",
       "apiVersion": "v1.0"
@@ -144,6 +172,14 @@
     "/deviceAppManagement/managedAppRegistrations/{managedAppRegistration-id}/intendedPolicies/{managedAppPolicy-id}/microsoft.graph.windowsInformationProtection/microsoft.graph.assign": {
       "originalLocation": "/openApiDocs/v1.0/Devices.CorporateManagement.yml",
       "apiVersion": "v1.0"
+    },
+    "/deviceAppManagement/managedAppRegistrations/{managedAppRegistration-id}/intendedPolicies/{managedAppPolicy-id}/microsoft.graph.targetedManagedAppProtection/microsoft.graph.assign": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Devices.CorporateManagement.yml"
+    },
+    "/deviceAppManagement/managedAppRegistrations/{managedAppRegistration-id}/intendedPolicies/{managedAppPolicy-id}/microsoft.graph.windowsInformationProtection/microsoft.graph.assign": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Devices.CorporateManagement.yml"
     },
     "/deviceAppManagement/managedAppRegistrations/{managedAppRegistration-id}/operations": {
       "originalLocation": "/openApiDocs/v1.0/Devices.CorporateManagement.yml",

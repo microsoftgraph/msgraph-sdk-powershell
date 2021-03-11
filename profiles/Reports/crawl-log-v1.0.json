@@ -49,6 +49,22 @@
       "originalLocation": "/openApiDocs/v1.0/Reports.yml",
       "apiVersion": "v1.0"
     },
+    "/reports/dailyPrintUsageByPrinter": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/dailyPrintUsageByPrinter/{printUsageByPrinter-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/dailyPrintUsageByUser": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/dailyPrintUsageByUser/{printUsageByUser-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
     "/reports/microsoft.graph.deviceConfigurationDeviceActivity()": {
       "originalLocation": "/openApiDocs/v1.0/Reports.yml",
       "apiVersion": "v1.0"
@@ -96,6 +112,10 @@
     "/reports/microsoft.graph.getGroupArchivedPrintJobs(groupId='{groupId}',startDateTime={startDateTime},endDateTime={endDateTime})": {
       "originalLocation": "/openApiDocs/v1.0/Reports.yml",
       "apiVersion": "v1.0"
+    },
+    "/reports/microsoft.graph.getGroupArchivedPrintJobs(groupId='{groupId}',startDateTime={startDateTime},endDateTime={endDateTime})": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
     },
     "/reports/microsoft.graph.getMailboxUsageDetail(period='{period}')": {
       "originalLocation": "/openApiDocs/v1.0/Reports.yml",
@@ -204,6 +224,10 @@
     "/reports/microsoft.graph.getPrinterArchivedPrintJobs(printerId='{printerId}',startDateTime={startDateTime},endDateTime={endDateTime})": {
       "originalLocation": "/openApiDocs/v1.0/Reports.yml",
       "apiVersion": "v1.0"
+    },
+    "/reports/microsoft.graph.getPrinterArchivedPrintJobs(printerId='{printerId}',startDateTime={startDateTime},endDateTime={endDateTime})": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
     },
     "/reports/microsoft.graph.getSharePointActivityFileCounts(period='{period}')": {
       "originalLocation": "/openApiDocs/v1.0/Reports.yml",
@@ -352,6 +376,10 @@
     "/reports/microsoft.graph.getUserArchivedPrintJobs(userId='{userId}',startDateTime={startDateTime},endDateTime={endDateTime})": {
       "originalLocation": "/openApiDocs/v1.0/Reports.yml",
       "apiVersion": "v1.0"
+    },
+    "/reports/microsoft.graph.getUserArchivedPrintJobs(userId='{userId}',startDateTime={startDateTime},endDateTime={endDateTime})": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
     },
     "/reports/microsoft.graph.getYammerActivityCounts(period='{period}')": {
       "originalLocation": "/openApiDocs/v1.0/Reports.yml",

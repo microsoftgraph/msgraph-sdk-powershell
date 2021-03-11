@@ -269,6 +269,14 @@
       "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
       "apiVersion": "v1.0-beta"
     },
+    "/devices/{device-id}/usageRights": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/devices/{device-id}/usageRights/{usageRight-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
     "/devices/microsoft.graph.getByIds": {
       "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml",
       "apiVersion": "v1.0-beta"
