@@ -2,156 +2,156 @@
   "resources": [],
   "operations": {
     "/print": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml"
+      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml",
+      "apiVersion": "v1.0"
     },
     "/print/connectors": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml"
+      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml",
+      "apiVersion": "v1.0"
     },
     "/print/connectors/{printConnector-id}": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml"
+      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml",
+      "apiVersion": "v1.0"
     },
     "/print/operations": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml"
+      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml",
+      "apiVersion": "v1.0"
     },
     "/print/operations/{printOperation-id}": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml"
+      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml",
+      "apiVersion": "v1.0"
     },
     "/print/printers": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml"
+      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml",
+      "apiVersion": "v1.0"
     },
     "/print/printers/{printer-id}": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml"
+      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml",
+      "apiVersion": "v1.0"
     },
     "/print/printers/{printer-id}/connectors": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml"
+      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml",
+      "apiVersion": "v1.0"
     },
     "/print/printers/{printer-id}/connectors/$ref": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml"
+      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml",
+      "apiVersion": "v1.0"
     },
     "/print/printers/{printer-id}/microsoft.graph.restoreFactoryDefaults": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml"
+      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml",
+      "apiVersion": "v1.0"
     },
     "/print/printers/{printer-id}/shares": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml"
+      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml",
+      "apiVersion": "v1.0"
     },
     "/print/printers/{printer-id}/shares/$ref": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml"
+      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml",
+      "apiVersion": "v1.0"
     },
     "/print/printers/{printer-id}/taskTriggers": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml"
+      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml",
+      "apiVersion": "v1.0"
     },
     "/print/printers/{printer-id}/taskTriggers/{printTaskTrigger-id}": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml"
+      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml",
+      "apiVersion": "v1.0"
     },
     "/print/printers/{printer-id}/taskTriggers/{printTaskTrigger-id}/definition": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml"
+      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml",
+      "apiVersion": "v1.0"
     },
     "/print/printers/{printer-id}/taskTriggers/{printTaskTrigger-id}/definition/$ref": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml"
+      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml",
+      "apiVersion": "v1.0"
     },
     "/print/printers/microsoft.graph.create": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml"
+      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml",
+      "apiVersion": "v1.0"
     },
     "/print/services": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml"
+      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml",
+      "apiVersion": "v1.0"
     },
     "/print/services/{printService-id}": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml"
+      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml",
+      "apiVersion": "v1.0"
     },
     "/print/services/{printService-id}/endpoints": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml"
+      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml",
+      "apiVersion": "v1.0"
     },
     "/print/services/{printService-id}/endpoints/{printServiceEndpoint-id}": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml"
+      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml",
+      "apiVersion": "v1.0"
     },
     "/print/shares": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml"
+      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml",
+      "apiVersion": "v1.0"
     },
     "/print/shares/{printerShare-id}": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml"
+      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml",
+      "apiVersion": "v1.0"
     },
     "/print/shares/{printerShare-id}/allowedGroups": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml"
+      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml",
+      "apiVersion": "v1.0"
     },
     "/print/shares/{printerShare-id}/allowedGroups/$ref": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml"
+      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml",
+      "apiVersion": "v1.0"
     },
     "/print/shares/{printerShare-id}/allowedUsers": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml"
+      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml",
+      "apiVersion": "v1.0"
     },
     "/print/shares/{printerShare-id}/allowedUsers/$ref": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml"
+      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml",
+      "apiVersion": "v1.0"
     },
     "/print/shares/{printerShare-id}/printer": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml"
+      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml",
+      "apiVersion": "v1.0"
     },
     "/print/shares/{printerShare-id}/printer/$ref": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml"
+      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml",
+      "apiVersion": "v1.0"
     },
     "/print/shares/{printerShare-id}/printer/microsoft.graph.restoreFactoryDefaults": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml"
+      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml",
+      "apiVersion": "v1.0"
     },
     "/print/taskDefinitions": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml"
+      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml",
+      "apiVersion": "v1.0"
     },
     "/print/taskDefinitions/{printTaskDefinition-id}": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml"
+      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml",
+      "apiVersion": "v1.0"
     },
     "/print/taskDefinitions/{printTaskDefinition-id}/tasks": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml"
+      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml",
+      "apiVersion": "v1.0"
     },
     "/print/taskDefinitions/{printTaskDefinition-id}/tasks/{printTask-id}": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml"
+      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml",
+      "apiVersion": "v1.0"
     },
     "/print/taskDefinitions/{printTaskDefinition-id}/tasks/{printTask-id}/definition": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml"
+      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml",
+      "apiVersion": "v1.0"
     },
     "/print/taskDefinitions/{printTaskDefinition-id}/tasks/{printTask-id}/definition/$ref": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml"
+      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml",
+      "apiVersion": "v1.0"
     },
     "/print/taskDefinitions/{printTaskDefinition-id}/tasks/{printTask-id}/trigger": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml"
+      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml",
+      "apiVersion": "v1.0"
     },
     "/print/taskDefinitions/{printTaskDefinition-id}/tasks/{printTask-id}/trigger/$ref": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml"
+      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml",
+      "apiVersion": "v1.0"
     }
   }
 }

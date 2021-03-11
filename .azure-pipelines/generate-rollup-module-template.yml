@@ -33,7 +33,6 @@ parameters:
 jobs:
 - job: MsGraphPSSDKRollUpModuleGeneration
   displayName: Microsoft Graph PowerShell SDK Roll-Up Module Generation
-  pool: MsGraphDevXAzureAgents
   timeoutInMinutes: 600
     
   steps:

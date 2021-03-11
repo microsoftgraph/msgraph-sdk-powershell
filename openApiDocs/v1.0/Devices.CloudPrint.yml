@@ -4404,6 +4404,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.printOperation'
+          description: The list of print long running operations.
         printers:
           type: array
           items:
@@ -4423,6 +4424,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.printTaskDefinition'
+          description: List of abstract definition for a task that can be triggered when various events occur within Universal Print.
       additionalProperties:
         type: object
     microsoft.graph.printConnector:
@@ -5514,16 +5516,20 @@ components:
               $ref: '#/components/schemas/microsoft.graph.printerDefaults'
             displayName:
               type: string
+              description: The name of the printer/printerShare.
             isAcceptingJobs:
               type: boolean
+              description: Whether the printer/printerShare is currently accepting new print jobs.
               nullable: true
             location:
               $ref: '#/components/schemas/microsoft.graph.printerLocation'
             manufacturer:
               type: string
+              description: The manufacturer of the printer/printerShare.
               nullable: true
             model:
               type: string
+              description: The model name of the printer/printerShare.
               nullable: true
             status:
               $ref: '#/components/schemas/microsoft.graph.printerStatus'
@@ -5531,6 +5537,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.printJob'
+              description: The list of jobs that are queued for printing by the printer/printerShare.
           additionalProperties:
             type: object
     microsoft.graph.printEvent:
@@ -7444,7 +7451,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
-              description: Zero or more policys already applied on the registered app when it last synchronized with managment service.
+              description: Zero or more policys already applied on the registered app when it last synchronized with management service.
             intendedPolicies:
               type: array
               items:
@@ -10460,6 +10467,7 @@ components:
       properties:
         conferenceId:
           type: string
+          description: The conference id of the online meeting.
           nullable: true
         dialinUrl:
           type: string
@@ -12622,6 +12630,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             description:
               type: string
+              description: Verbose description of the application.
               nullable: true
             displayName:
               type: string
@@ -12636,6 +12645,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamsAppPublishingState'
             shortDescription:
               type: string
+              description: Short description of the application.
               nullable: true
             teamsAppId:
               type: string
