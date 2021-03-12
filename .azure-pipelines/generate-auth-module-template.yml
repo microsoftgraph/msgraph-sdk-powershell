@@ -75,9 +75,7 @@ jobs:
       ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet (AKV)'
       FolderPath: $(AUTH_MODULE_PATH)
       # Recursively finds files matching these patterns:
-      Pattern: |
-        **/Microsoft.Graph.Authentication.dll
-        **/Microsoft.Graph.Authentication.Core.dll
+      Pattern: 'Microsoft.Graph.Authentication.dll, Microsoft.Graph.Authentication.Core.dll'
       signConfigType: inlineSignParams
       inlineOperation: |
        [
@@ -105,9 +103,7 @@ jobs:
       ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet (AKV)'
       FolderPath: $(AUTH_MODULE_PATH)
       # Recursively finds files matching these patterns:
-      Pattern: |
-        **/Microsoft.Graph.Authentication.dll
-        **/Microsoft.Graph.Authentication.Core.dll
+      Pattern: 'Microsoft.Graph.Authentication.dll, Microsoft.Graph.Authentication.Core.dll, InitializeAssemblyResolver.ps1'
       signConfigType: inlineSignParams
       inlineOperation: |
        [
