@@ -44,15 +44,12 @@ namespace Microsoft.Graph.PowerShell.Authentication.Utilities
             {
                 FrameworkDependenciesDirPath = "Core";
             }
-            Console.WriteLine($"Initialize");
             // Set up our event handler when the module is loaded.
             AppDomain.CurrentDomain.AssemblyResolve += HandleResolveEvent;
         }
 
         internal static void Reset()
-        {
-            Console.WriteLine($"Resting");
-            // Remove our event hander when the module is unloaded.
+        {            // Remove our event hander when the module is unloaded.
             AppDomain.CurrentDomain.AssemblyResolve -= HandleResolveEvent;
         }
 
@@ -60,11 +57,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Utilities
         {
             try
             {
-                string ver = Assembly.GetEntryAssembly()?.GetCustomAttribute<System.Runtime.Versioning.TargetFrameworkAttribute>()?.FrameworkName;
-                Console.WriteLine($".NET Version: {ver}");
-
                 AssemblyName assemblymName = new AssemblyName(args.Name);
-                Console.WriteLine($"Loading: {assemblymName.Name}");
                 // We try to resolve our dependencies on our own.
                 if (Dependencies.TryGetValue(assemblymName.Name, out Version requiredVersion)
                     && requiredVersion >= assemblymName.Version
@@ -79,7 +72,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Utilities
                     {
                         requiredAssemblyPath = Path.Combine(DependenciesDirPath, $"{assemblymName.Name}.dll");
                     }
-                    Console.WriteLine($"Loading for engine assembly: {assemblymName.Name}");
                     return Assembly.LoadFile(requiredAssemblyPath);
                 }
             }

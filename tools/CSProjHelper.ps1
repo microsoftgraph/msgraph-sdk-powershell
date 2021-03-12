@@ -14,7 +14,12 @@ function Set-CSProjValues(
     # Set delay sign to true.
     $ModuleProjDoc = New-Object System.Xml.XmlDocument
     $ModuleProjDoc.Load($ModuleCsProj)
-    $ModuleProjElement = [System.Xml.XmlElement] $ModuleProjDoc.DocumentElement.PropertyGroup
+    if ($ModuleProjDoc.DocumentElement.PropertyGroup.Count -gt 1) {
+        $ModuleProjElement = [System.Xml.XmlElement] $ModuleProjDoc.DocumentElement.PropertyGroup[0]
+    } else {
+        $ModuleProjElement = [System.Xml.XmlElement] $ModuleProjDoc.DocumentElement.PropertyGroup
+    }
+    
     if (![string]::IsNullOrWhiteSpace($AssemblyOriginatorKeyFile)) {
         Set-ElementValue -XmlDocument $ModuleProjDoc -MetadataElement $ModuleProjElement -ElementName "AssemblyOriginatorKeyFile" -ElementValue (Join-Path $PSScriptRoot $AssemblyOriginatorKeyFile)
         Set-ElementValue -XmlDocument $ModuleProjDoc -MetadataElement $ModuleProjElement -ElementName "DelaySign" -ElementValue "true"

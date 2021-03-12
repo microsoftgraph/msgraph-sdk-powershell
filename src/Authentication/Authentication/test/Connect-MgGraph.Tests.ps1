@@ -26,7 +26,7 @@ Describe 'Connect-MgGraph In App Mode' {
 }
 Describe 'Connect-MgGraph Depencency Resolution' {
     BeforeAll {
-        Install-Module Az.Accounts -Repository PSGallery -Scope CurrentUser -Force
+        Install-Module Az.Accounts -Repository PSGallery -Force
     }
 
     It 'ShouldLoadMgModuleSideBySideWithAzModule.' {
