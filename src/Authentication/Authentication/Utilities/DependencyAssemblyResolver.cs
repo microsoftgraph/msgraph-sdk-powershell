@@ -23,12 +23,27 @@ namespace Microsoft.Graph.PowerShell.Authentication.Utilities
             { "Newtonsoft.Json", new Version("10.0.3.21018") },
         };
 
+        private static IList<string> MultiFrameworkDependencies = new List<string> {
+            "Microsoft.Identity.Client",
+            "System.Security.Cryptography.ProtectedData"
+        };
+
         // Set up the path to our dependency directory within the module.
         private static string DependenciesDirPath = Path.GetFullPath(Path.Combine(
                 Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "Dependencies"));
 
-        public static void Initialize()
+        private static string FrameworkDependenciesDirPath;
+
+        public static void Initialize(bool isDesktopEdition = false)
         {
+            if (isDesktopEdition)
+            {
+                FrameworkDependenciesDirPath = "Desktop";
+            }
+            else
+            {
+                FrameworkDependenciesDirPath = "Core";
+            }
             Console.WriteLine($"Initialize");
             // Set up our event handler when the module is loaded.
             AppDomain.CurrentDomain.AssemblyResolve += HandleResolveEvent;
@@ -45,6 +60,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Utilities
         {
             try
             {
+                string ver = Assembly.GetEntryAssembly()?.GetCustomAttribute<System.Runtime.Versioning.TargetFrameworkAttribute>()?.FrameworkName;
+                Console.WriteLine($".NET Version: {ver}");
+
                 AssemblyName assemblymName = new AssemblyName(args.Name);
                 Console.WriteLine($"Loading: {assemblymName.Name}");
                 // We try to resolve our dependencies on our own.
@@ -52,17 +70,25 @@ namespace Microsoft.Graph.PowerShell.Authentication.Utilities
                     && requiredVersion >= assemblymName.Version
                     && (requiredVersion.Major == assemblymName.Version.Major || string.Equals(assemblymName.Name, "Newtonsoft.Json", StringComparison.OrdinalIgnoreCase)))
                 {
-                    string requiredAssemblyPath = Path.Combine(DependenciesDirPath, $"{assemblymName.Name}.dll");
+                    string requiredAssemblyPath = string.Empty;
+                    if (MultiFrameworkDependencies.Contains(assemblymName.Name))
+                    {
+                        requiredAssemblyPath = Path.Combine(DependenciesDirPath, FrameworkDependenciesDirPath, $"{assemblymName.Name}.dll");
+                    }
+                    else
+                    {
+                        requiredAssemblyPath = Path.Combine(DependenciesDirPath, $"{assemblymName.Name}.dll");
+                    }
                     Console.WriteLine($"Loading for engine assembly: {assemblymName.Name}");
                     return Assembly.LoadFile(requiredAssemblyPath);
                 }
-            } catch
+            }
+            catch
             {
                 // If an error is encountered, we fall back to PowerShell's default dependency resolution.
             }
 
             return null;
         }
-
     }
 }

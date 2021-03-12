@@ -8,6 +8,8 @@ $ErrorActionPreference = 'Stop'
 $ModuleName = "Authentication"
 $ModulePrefix = "Microsoft.Graph"
 $netStandard = "netstandard2.0"
+$netCoreApp = "netcoreapp2.1"
+$netFx = "net461"
 $copyExtensions = @('.dll', '.pdb')
 
 # Source code locations
@@ -17,6 +19,8 @@ $cmdletsSrc = Join-Path $PSScriptRoot "../$ModuleName"
 # Generated output locations
 $outDir = "$PSScriptRoot/artifacts"
 $outDeps = "$outDir/Dependencies"
+$outCore = "$outDeps/Core"
+$outDesktop = "$outDeps/Desktop"
 
 $Configuration = 'Debug'
 if ($Release) {
@@ -61,7 +65,9 @@ if ((Test-Path "$cmdletsSrc/bin") -or (Test-Path "$cmdletsSrc/obj")) {
 Write-Host -ForegroundColor Green 'Compiling module...'
 # Build Authentication.Core
 Push-Location $coreSrc
-dotnet publish -c $Configuration --verbosity quiet /nologo
+dotnet publish -c $Configuration -f $netStandard --verbosity quiet /nologo
+dotnet publish -c $Configuration -f $netCoreApp --verbosity quiet /nologo
+dotnet publish -c $Configuration -f $netFx --verbosity quiet /nologo
 Pop-Location
 
 # Build Authentication
@@ -76,26 +82,41 @@ if ($LastExitCode -ne 0) {
 # Ensure out directory exists and is clean
 Remove-Item -Path $outDir -Recurse -ErrorAction Ignore
 New-Item -Path $outDir -ItemType Directory
+# New-Item -Path $outStartupScripts -ItemType Directory
 New-Item -Path $outDeps -ItemType Directory
+New-Item -Path $outCore -ItemType Directory
+New-Item -Path $outDesktop -ItemType Directory
 
 # Copy manifest.
 Copy-Item -Path "$cmdletsSrc/$ModulePrefix.$ModuleName.format.ps1xml" -Destination $outDir
 Copy-Item -Path "$cmdletsSrc/$ModulePrefix.$ModuleName.psm1" -Destination $outDir
 Copy-Item -Path "$cmdletsSrc/$ModulePrefix.$ModuleName.psd1" -Destination $outDir
+Copy-Item -Path "$cmdletsSrc/StartupScripts" -Recurse -Destination $outDir
 
 # Core assemblies to include with cmdlets (Let PowerShell load them).
 $CoreAssemblies = @('Microsoft.Graph.Authentication.Core', 'Microsoft.Graph.Core')
+$MultiFrameworkDependencies = @('Microsoft.Identity.Client', 'System.Security.Cryptography.ProtectedData')
 
 # Copy each core asset and remember it.
 $Deps = [System.Collections.Generic.HashSet[string]]::new()
 Get-ChildItem -Path "$coreSrc/bin/$Configuration/$netStandard/publish/" |
-    Where-Object { $_.Extension -in $copyExtensions } |
-    Where-Object { -not $CoreAssemblies.Contains($_.BaseName) } |
-    ForEach-Object { [void]$Deps.Add($_.Name); Copy-Item -Path $_.FullName -Destination $outDeps }
+Where-Object { $_.Extension -in $copyExtensions } |
+Where-Object { -not $CoreAssemblies.Contains($_.BaseName) } |
+ForEach-Object { [void]$Deps.Add($_.Name); Copy-Item -Path $_.FullName -Destination $outDeps }
+
+Get-ChildItem -Path "$coreSrc/bin/$Configuration/$netCoreApp/publish/" |
+Where-Object { $MultiFrameworkDependencies.Contains($_.BaseName) } |
+Where-Object { -not $CoreAssemblies.Contains($_.BaseName) } |
+ForEach-Object { [void]$Deps.Add($_.Name); Copy-Item -Path $_.FullName -Destination $outCore }
+
+Get-ChildItem -Path "$coreSrc/bin/$Configuration/$netFx/publish/" |
+Where-Object { $MultiFrameworkDependencies.Contains($_.BaseName) } |
+Where-Object { -not $CoreAssemblies.Contains($_.BaseName) } |
+ForEach-Object { [void]$Deps.Add($_.Name); Copy-Item -Path $_.FullName -Destination $outDesktop }
 
 # Now copy each Cmdlets asset, not taking any found in Engine.
 Get-ChildItem -Path "$cmdletsSrc/bin/$Configuration/$netStandard/publish/" |
-    Where-Object { -not $Deps.Contains($_.Name) -and $_.Extension -in $copyExtensions } |
-    ForEach-Object { Copy-Item -Path $_.FullName -Destination $outDir }
+Where-Object { -not $Deps.Contains($_.Name) -and $_.Extension -in $copyExtensions } |
+ForEach-Object { Copy-Item -Path $_.FullName -Destination $outDir }
 
 Write-Host -ForegroundColor Green '-------------Done-------------'
