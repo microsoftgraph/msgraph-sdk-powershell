@@ -23,6 +23,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Utilities
             { "Newtonsoft.Json", new Version("10.0.3.21018") },
         };
 
+        /// <summary>
+        /// Dependencies that need to be loaded per framework.
+        /// </summary>
         private static IList<string> MultiFrameworkDependencies = new List<string> {
             "Microsoft.Identity.Client",
             "System.Security.Cryptography.ProtectedData"
@@ -32,8 +35,15 @@ namespace Microsoft.Graph.PowerShell.Authentication.Utilities
         private static string DependenciesDirPath = Path.GetFullPath(Path.Combine(
                 Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "Dependencies"));
 
+        /// <summary>
+        /// Framework dependency path. /Desktop for PS 5.1, and /Core for PS 6+.
+        /// </summary>
         private static string FrameworkDependenciesDirPath;
 
+        /// <summary>
+        /// Initializes our custom assembly resolve event handler. This should be called on module import.
+        /// </summary>
+        /// <param name="isDesktopEdition"></param>
         public static void Initialize(bool isDesktopEdition = false)
         {
             if (isDesktopEdition)
@@ -48,10 +58,16 @@ namespace Microsoft.Graph.PowerShell.Authentication.Utilities
             AppDomain.CurrentDomain.AssemblyResolve += HandleResolveEvent;
         }
 
+        /// <summary>
+        /// Remove our custom assembly resolve event handler from the current app domain.
+        /// This should be called when our module is removed.
+        /// </summary>
         internal static void Reset()
-        {            // Remove our event hander when the module is unloaded.
+        {
+            // Remove our event hander when the module is unloaded.
             AppDomain.CurrentDomain.AssemblyResolve -= HandleResolveEvent;
         }
+
 
         private static Assembly HandleResolveEvent(object sender, ResolveEventArgs args)
         {
@@ -79,7 +95,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Utilities
             {
                 // If an error is encountered, we fall back to PowerShell's default dependency resolution.
             }
-
             return null;
         }
     }

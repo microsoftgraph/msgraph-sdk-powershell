@@ -8,7 +8,6 @@ namespace Microsoft.Graph.Authentication.Core
     using Microsoft.Graph.PowerShell.Authentication;
     using Microsoft.Graph.PowerShell.Authentication.Core;
     using Microsoft.Graph.PowerShell.Authentication.Helpers;
-    using Microsoft.Graph.PowerShell.Authentication.Models;
     using Microsoft.Identity.Client;
     using System;
     using System.Collections.Generic;
@@ -18,8 +17,18 @@ namespace Microsoft.Graph.Authentication.Core
     using System.Threading;
     using System.Threading.Tasks;
 
+    /// <summary>
+    /// Authenticator class for handling sign-ins and sign-outs.
+    /// </summary>
     public static class Authenticator
     {
+        /// <summary>
+        /// Authenticates the client using the provided <see cref="IAuthContext"/>.
+        /// </summary>
+        /// <param name="authContext">The <see cref="IAuthContext"/> to authenticate.</param>
+        /// <param name="forceRefresh">Whether or not to force refresh a token if one exists.</param>
+        /// <param name="cancellationToken">The cancellation token.</param>
+        /// <returns></returns>
         public static async Task<IAuthContext> AuthenticateAsync(IAuthContext authContext, bool forceRefresh, CancellationToken cancellationToken)
         {
             try
@@ -67,7 +76,7 @@ namespace Microsoft.Graph.Authentication.Core
                     account = accounts.FirstOrDefault();
                 }
 
-                DecodeJWT(httpRequestMessage.Headers.Authorization?.Parameter, account, ref authContext);
+                JwtHelpers.DecodeJWT(httpRequestMessage.Headers.Authorization?.Parameter, account, ref authContext);
                 return authContext;
             }
             catch (AuthenticationException authEx)
@@ -91,39 +100,13 @@ namespace Microsoft.Graph.Authentication.Core
             }
         }
 
+        /// <summary>
+        /// Signs out of the provided <see cref="IAuthContext"/>.
+        /// </summary>
+        /// <param name="authContext">The <see cref="IAuthContext"/> to sign-out from.</param>
         public static void LogOut(IAuthContext authContext)
         {
             AuthenticationHelpers.Logout(authContext);
         }
-
-        private static void DecodeJWT(string token, IAccount account, ref IAuthContext authContext)
-        {
-            JwtPayload jwtPayload = JwtHelpers.DecodeToObject<JwtPayload>(token);
-            if (authContext.AuthType == AuthenticationType.UserProvidedAccessToken)
-            {
-                if (jwtPayload == null)
-                {
-                    throw new Exception(string.Format(
-                            CultureInfo.CurrentCulture,
-                            ErrorConstants.Message.InvalidUserProvidedToken,
-                            "AccessToken"));
-                }
-
-                if (jwtPayload.Exp <= JwtHelpers.ConvertToUnixTimestamp(DateTime.UtcNow + TimeSpan.FromMinutes(Constants.TokenExpirationBufferInMinutes)))
-                {
-                    throw new Exception(string.Format(
-                            CultureInfo.CurrentCulture,
-                            ErrorConstants.Message.ExpiredUserProvidedToken,
-                            "AccessToken"));
-                }
-            }
-
-            authContext.ClientId = jwtPayload?.Appid ?? authContext.ClientId;
-            authContext.Scopes = jwtPayload?.Scp?.Split(' ') ?? jwtPayload?.Roles;
-            authContext.TenantId = jwtPayload?.Tid ?? account?.HomeAccountId?.TenantId;
-            authContext.AppName = jwtPayload?.AppDisplayname;
-            authContext.Account = jwtPayload?.Upn ?? account?.Username;
-        }
-
     }
 }
