@@ -22,13 +22,13 @@ $outDeps = "$outDir/Dependencies"
 $outCore = "$outDeps/Core"
 $outDesktop = "$outDeps/Desktop"
 
+if ($PSEdition -ne 'Core') {
+  Write-Error 'This script requires PowerShell Core to execute. [Note] Generated cmdlets will work in both PowerShell Core or Windows PowerShell.'
+}
+
 $Configuration = 'Debug'
 if ($Release) {
   $Configuration = 'Release'
-}
-
-if ($PSEdition -ne 'Core') {
-  Write-Error 'This script requires PowerShell Core to execute. [Note] Generated cmdlets will work in both PowerShell Core or Windows PowerShell.'
 }
 
 if (-not $Isolated) {
@@ -48,7 +48,6 @@ if (-not $Isolated) {
       return
     }
   }
-
   return
 }
 

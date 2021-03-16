@@ -17,8 +17,11 @@ if(-not $Isolated) {
 
 $modulePsd1 = Get-Item -Path (Join-Path $ModulePath "./$ModuleName.psd1")
 $LocalLoadEnvPS1 = Join-Path $PSScriptRoot 'Tests/loadEnv.ps1'
+$AuthModulePSd1 = Join-Path $PSScriptRoot "../src/Authentication/Authentication/artifacts/Microsoft.Graph.Authentication.psd1"
 
+# Import required modules.
 Import-Module -Name Pester
+Import-Module $AuthModulePSd1
 Import-Module -Name $modulePsd1.FullName
 
 # Replace AutoREST loadEnv.ps1 with our local scipt.
