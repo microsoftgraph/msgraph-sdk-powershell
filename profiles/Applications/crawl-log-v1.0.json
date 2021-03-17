@@ -125,18 +125,6 @@
       "originalLocation": "/openApiDocs/v1.0/Applications.yml",
       "apiVersion": "v1.0"
     },
-    "/applicationTemplates": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
-    },
-    "/applicationTemplates/{applicationTemplate-id}": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
-    },
-    "/applicationTemplates/{applicationTemplate-id}/microsoft.graph.instantiate": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
-    },
     "/groups/{group-id}/appRoleAssignments": {
       "originalLocation": "/openApiDocs/v1.0/Applications.yml",
       "apiVersion": "v1.0"
