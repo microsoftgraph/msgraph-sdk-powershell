@@ -73,34 +73,6 @@
       "originalLocation": "/openApiDocs/beta/Reports.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/deviceManagement/reports": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Reports.yml"
-    },
-    "/deviceManagement/reports/cachedReportConfigurations": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Reports.yml"
-    },
-    "/deviceManagement/reports/cachedReportConfigurations/{deviceManagementCachedReportConfiguration-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Reports.yml"
-    },
-    "/deviceManagement/reports/exportJobs": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Reports.yml"
-    },
-    "/deviceManagement/reports/exportJobs/{deviceManagementExportJob-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Reports.yml"
-    },
-    "/deviceManagement/reports/reportSchedules": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Reports.yml"
-    },
-    "/deviceManagement/reports/reportSchedules/{deviceManagementReportSchedule-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Reports.yml"
-    },
     "/reports": {
       "originalLocation": "/openApiDocs/beta/Reports.yml",
       "apiVersion": "v1.0-beta"
@@ -133,26 +105,6 @@
       "originalLocation": "/openApiDocs/beta/Reports.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/reports/authenticationMethods": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Reports.yml"
-    },
-    "/reports/authenticationMethods/microsoft.graph.usersRegisteredByFeature()": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Reports.yml"
-    },
-    "/reports/authenticationMethods/microsoft.graph.usersRegisteredByFeature(includedUserTypes={includedUserTypes},includedUserRoles={includedUserRoles})": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Reports.yml"
-    },
-    "/reports/authenticationMethods/microsoft.graph.usersRegisteredByMethod()": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Reports.yml"
-    },
-    "/reports/authenticationMethods/microsoft.graph.usersRegisteredByMethod(includedUserTypes={includedUserTypes},includedUserRoles={includedUserRoles})": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Reports.yml"
-    },
     "/reports/credentialUserRegistrationDetails": {
       "originalLocation": "/openApiDocs/beta/Reports.yml",
       "apiVersion": "v1.0-beta"
@@ -176,22 +128,6 @@
     "/reports/dailyPrintUsageByUser/{printUsageByUser-id}": {
       "originalLocation": "/openApiDocs/beta/Reports.yml",
       "apiVersion": "v1.0-beta"
-    },
-    "/reports/dailyPrintUsageByPrinter": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Reports.yml"
-    },
-    "/reports/dailyPrintUsageByPrinter/{printUsageByPrinter-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Reports.yml"
-    },
-    "/reports/dailyPrintUsageByUser": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Reports.yml"
-    },
-    "/reports/dailyPrintUsageByUser/{printUsageByUser-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/dailyPrintUsageSummariesByPrinter": {
       "originalLocation": "/openApiDocs/beta/Reports.yml",
@@ -280,10 +216,6 @@
     "/reports/microsoft.graph.getGroupArchivedPrintJobs(groupId='{groupId}',startDateTime={startDateTime},endDateTime={endDateTime})": {
       "originalLocation": "/openApiDocs/beta/Reports.yml",
       "apiVersion": "v1.0-beta"
-    },
-    "/reports/microsoft.graph.getGroupArchivedPrintJobs(groupId='{groupId}',startDateTime={startDateTime},endDateTime={endDateTime})": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getM365AppPlatformUserCounts(period='{period}')": {
       "originalLocation": "/openApiDocs/beta/Reports.yml",
@@ -408,10 +340,6 @@
     "/reports/microsoft.graph.getPrinterArchivedPrintJobs(printerId='{printerId}',startDateTime={startDateTime},endDateTime={endDateTime})": {
       "originalLocation": "/openApiDocs/beta/Reports.yml",
       "apiVersion": "v1.0-beta"
-    },
-    "/reports/microsoft.graph.getPrinterArchivedPrintJobs(printerId='{printerId}',startDateTime={startDateTime},endDateTime={endDateTime})": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getRelyingPartyDetailedSummary(period='{period}')": {
       "originalLocation": "/openApiDocs/beta/Reports.yml",
@@ -569,10 +497,6 @@
       "originalLocation": "/openApiDocs/beta/Reports.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/reports/microsoft.graph.getUserArchivedPrintJobs(userId='{userId}',startDateTime={startDateTime},endDateTime={endDateTime})": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Reports.yml"
-    },
     "/reports/microsoft.graph.getYammerActivityCounts(period='{period}')": {
       "originalLocation": "/openApiDocs/beta/Reports.yml",
       "apiVersion": "v1.0-beta"
@@ -664,22 +588,6 @@
     "/reports/monthlyPrintUsageByUser/{printUsageByUser-id}": {
       "originalLocation": "/openApiDocs/beta/Reports.yml",
       "apiVersion": "v1.0-beta"
-    },
-    "/reports/monthlyPrintUsageByPrinter": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Reports.yml"
-    },
-    "/reports/monthlyPrintUsageByPrinter/{printUsageByPrinter-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Reports.yml"
-    },
-    "/reports/monthlyPrintUsageByUser": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Reports.yml"
-    },
-    "/reports/monthlyPrintUsageByUser/{printUsageByUser-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/monthlyPrintUsageSummariesByPrinter": {
       "originalLocation": "/openApiDocs/beta/Reports.yml",

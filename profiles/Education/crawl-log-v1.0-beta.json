@@ -25,10 +25,6 @@
       "originalLocation": "/openApiDocs/beta/Education.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/education/classes/{educationClass-id}/assignmentDefaults": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Education.yml"
-    },
     "/education/classes/{educationClass-id}/assignments": {
       "originalLocation": "/openApiDocs/beta/Education.yml",
       "apiVersion": "v1.0-beta"
@@ -112,10 +108,6 @@
     "/education/classes/{educationClass-id}/assignmentSettings": {
       "originalLocation": "/openApiDocs/beta/Education.yml",
       "apiVersion": "v1.0-beta"
-    },
-    "/education/classes/{educationClass-id}/assignmentSettings": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/classes/{educationClass-id}/group": {
       "originalLocation": "/openApiDocs/beta/Education.yml",
