@@ -201,30 +201,6 @@
       "originalLocation": "/openApiDocs/beta/Planner.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/planner/rosters": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Planner.yml"
-    },
-    "/planner/rosters/{plannerRoster-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Planner.yml"
-    },
-    "/planner/rosters/{plannerRoster-id}/members": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Planner.yml"
-    },
-    "/planner/rosters/{plannerRoster-id}/members/{plannerRosterMember-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Planner.yml"
-    },
-    "/planner/rosters/{plannerRoster-id}/plans": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Planner.yml"
-    },
-    "/planner/rosters/{plannerRoster-id}/plans/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Planner.yml"
-    },
     "/planner/tasks": {
       "originalLocation": "/openApiDocs/beta/Planner.yml",
       "apiVersion": "v1.0-beta"
@@ -352,14 +328,6 @@
     "/users/{user-id}/planner/rosterPlans/$ref": {
       "originalLocation": "/openApiDocs/beta/Planner.yml",
       "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/planner/rosterPlans": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Planner.yml"
-    },
-    "/users/{user-id}/planner/rosterPlans/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Planner.yml"
     },
     "/users/{user-id}/planner/tasks": {
       "originalLocation": "/openApiDocs/beta/Planner.yml",

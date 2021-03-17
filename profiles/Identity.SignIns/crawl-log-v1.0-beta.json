@@ -209,10 +209,6 @@
       "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/policies/authenticationMethodsPolicy": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
-    },
     "/policies/authorizationPolicy": {
       "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
       "apiVersion": "v1.0-beta"
@@ -328,46 +324,6 @@
     "/policies/roleManagementPolicyAssignments/{unifiedRoleManagementPolicyAssignment-id}/policy/$ref": {
       "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
       "apiVersion": "v1.0-beta"
-    },
-    "/policies/roleManagementPolicies": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
-    },
-    "/policies/roleManagementPolicies/{unifiedRoleManagementPolicy-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
-    },
-    "/policies/roleManagementPolicies/{unifiedRoleManagementPolicy-id}/effectiveRules": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
-    },
-    "/policies/roleManagementPolicies/{unifiedRoleManagementPolicy-id}/effectiveRules/{unifiedRoleManagementPolicyRule-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
-    },
-    "/policies/roleManagementPolicies/{unifiedRoleManagementPolicy-id}/rules": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
-    },
-    "/policies/roleManagementPolicies/{unifiedRoleManagementPolicy-id}/rules/{unifiedRoleManagementPolicyRule-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
-    },
-    "/policies/roleManagementPolicyAssignments": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
-    },
-    "/policies/roleManagementPolicyAssignments/{unifiedRoleManagementPolicyAssignment-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
-    },
-    "/policies/roleManagementPolicyAssignments/{unifiedRoleManagementPolicyAssignment-id}/policy": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
-    },
-    "/policies/roleManagementPolicyAssignments/{unifiedRoleManagementPolicyAssignment-id}/policy/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
     },
     "/policies/tokenIssuancePolicies": {
       "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
@@ -501,18 +457,6 @@
       "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/users/{user-id}/authentication/microsoftAuthenticatorMethods": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
-    },
-    "/users/{user-id}/authentication/microsoftAuthenticatorMethods/{microsoftAuthenticatorAuthenticationMethod-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
-    },
-    "/users/{user-id}/authentication/microsoftAuthenticatorMethods/{microsoftAuthenticatorAuthenticationMethod-id}/device": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
-    },
     "/users/{user-id}/authentication/operations": {
       "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
       "apiVersion": "v1.0-beta"
@@ -568,26 +512,6 @@
     "/users/{user-id}/authentication/windowsHelloForBusinessMethods/{windowsHelloForBusinessAuthenticationMethod-id}/device": {
       "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
       "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/authentication/temporaryAccessPassMethods": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
-    },
-    "/users/{user-id}/authentication/temporaryAccessPassMethods/{temporaryAccessPassAuthenticationMethod-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
-    },
-    "/users/{user-id}/authentication/windowsHelloForBusinessMethods": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
-    },
-    "/users/{user-id}/authentication/windowsHelloForBusinessMethods/{windowsHelloForBusinessAuthenticationMethod-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
-    },
-    "/users/{user-id}/authentication/windowsHelloForBusinessMethods/{windowsHelloForBusinessAuthenticationMethod-id}/device": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
     },
     "/users/{user-id}/informationProtection": {
       "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
