@@ -12,12 +12,11 @@ parameters:
     default: MsGraphBuildAgentsWindows
     displayName: Build Agent
 
-variables:
-    DOCSBRANCH: ${{ parameters.DocsBranch }}
-
 jobs:
 - job: GenerateHelpDocs
   displayName: Helps Docs Generation
+  variables:
+    DOCSBRANCH: ${{ parameters.DocsBranch }}
   steps:
   - task: PowerShell@2
     name: "ComputeBranch"
