@@ -10,8 +10,6 @@ parameters:
   - name: BUILDAGENT
     default: MsGraphBuildAgentsWindows
     displayName: Build Agent
-variables:
-  ModulesToGenerate: ${{ parameters.ModulesToGenerate }}
 
 steps:
   - task: PowerShell@2
