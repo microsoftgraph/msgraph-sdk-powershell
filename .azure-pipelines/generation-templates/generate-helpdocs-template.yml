@@ -18,7 +18,7 @@ jobs:
   steps:
   - task: PowerShell@2
     name: "ComputeBranch"
-    displayName: "Compute weekly branch name"
+    displayName: "Compute Docs Branch Name"
     inputs:
       targetType: inline
       script: |
