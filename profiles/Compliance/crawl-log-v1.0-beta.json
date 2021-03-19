@@ -165,10 +165,6 @@
       "originalLocation": "/openApiDocs/beta/Compliance.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/compliance/ediscovery/cases/{case-id}/operations/{caseOperation-id}/microsoft.graph.ediscovery.caseExportOperation/microsoft.graph.ediscovery.getDownloadUrl()": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Compliance.yml"
-    },
     "/compliance/ediscovery/cases/{case-id}/reviewSets": {
       "originalLocation": "/openApiDocs/beta/Compliance.yml",
       "apiVersion": "v1.0-beta"

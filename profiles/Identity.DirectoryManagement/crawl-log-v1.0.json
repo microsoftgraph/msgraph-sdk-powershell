@@ -397,10 +397,6 @@
       "originalLocation": "/openApiDocs/v1.0/Identity.DirectoryManagement.yml",
       "apiVersion": "v1.0"
     },
-    "/organization/{organization-id}/branding": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Identity.DirectoryManagement.yml"
-    },
     "/organization/{organization-id}/extensions": {
       "originalLocation": "/openApiDocs/v1.0/Identity.DirectoryManagement.yml",
       "apiVersion": "v1.0"
