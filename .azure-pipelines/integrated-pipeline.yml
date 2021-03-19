@@ -130,7 +130,6 @@ stages:
   - template: ./generation-templates/generate-helpdocs-template.yml
     parameters:
       DOCSBRANCH: $(DOCSBRANCH)
-      BASEBRANCH: $(BASEBRANCH)
 
 - stage: GenerateRollUpModule
   displayName: 'Generate Roll-Up Module'
