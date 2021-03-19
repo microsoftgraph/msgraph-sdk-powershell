@@ -14,6 +14,10 @@ parameters:
     default: "msgraph-build-keyvault"
     displayName: Build Key vault
 
+  - name: BaseBranch
+    default: "dev"
+    displayName: "Base Branch"
+
 variables:
   AUTH_MODULE_NAME: 'Authentication'
   AUTH_MODULE_PATH: 'src\Authentication\Authentication'
@@ -33,6 +37,7 @@ variables:
   BUILDAGENT: ${{ parameters.BuildAgent }}
   AZURESUBSCRIPTION: ${{ parameters.AzureSubscription }}
   KEYVAULT: ${{ parameters.KeyVault }}
+  BASEBRANCH: ${{ parameters.BaseBranch }}
 
 pool: $(BUILDAGENT)
 
@@ -118,6 +123,14 @@ stages:
       AUTH_MODULE_DLL_PATTERN: $(AUTH_MODULE_DLL_PATTERN)
       EnableSigning: true
       BUILDNUMBER: $(BUILDNUMBER)
+
+- stage: GenerateHelpDocs
+  displayName: 'Generate Help Docs (Microsoft.Graph.*)'
+  jobs:
+  - template: ./generation-templates/generate-helpdocs-template.yml
+    parameters:
+      DOCSBRANCH: $(DOCSBRANCH)
+      BASEBRANCH: $(BASEBRANCH)
 
 - stage: GenerateRollUpModule
   displayName: 'Generate Roll-Up Module'

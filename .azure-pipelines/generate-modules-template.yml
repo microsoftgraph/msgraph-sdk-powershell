@@ -40,7 +40,7 @@ jobs:
   timeoutInMinutes: 600
 
   steps:
-  - template: ./install-tools-template.yml
+  - template: ./common-templates/install-tools.yml
 
   - task: PowerShell@2
     displayName: 'Generate Profiles'
@@ -142,7 +142,7 @@ jobs:
       pwsh: true
       script: |
          Write-Host $(BUILDNUMBER)
-         pwsh $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -ArtifactsLocation $(Build.ArtifactStagingDirectory)\ -Build -Test -EnableSigning -ModulePreviewNumber $(BUILDNUMBER) -UpdateAutoRest -RepositoryName "LocalNugetFeed"
+         pwsh $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -ArtifactsLocation $(Build.ArtifactStagingDirectory)\ -Build -Test -EnableSigning -ModulePreviewNumber $(BUILDNUMBER) -UpdateAutoRest -RepositoryName "LocalNugetFeed" -ExcludeExamples
   
   - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
     displayName: 'ESRP DLL Strong Name (Graph Resource Modules)'

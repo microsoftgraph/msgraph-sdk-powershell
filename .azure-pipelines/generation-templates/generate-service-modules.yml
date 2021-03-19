@@ -20,6 +20,9 @@ parameters:
   - name: PublishToFeed
     type: boolean
     default: false
+  - name: DOCSBRANCH
+    type: string
+    default: "DocsGeneration"
 
 jobs:
   - job: GenerateServiceModules
@@ -35,6 +38,7 @@ jobs:
       ModulePrefix: ${{ parameters.ModulePrefix }}
       EnableSigning: ${{ parameters.EnableSigning }}
       PublishToFeed: ${{ parameters.PublishToFeed }}
+      DocsBranch: ${{ parameters.DocsBranch }}
     steps:
       - template: ../common-templates/install-tools.yml
 
@@ -142,6 +146,11 @@ jobs:
             [bool]$EnableSigning = if ("$(EnableSigning)" -eq "true") { $true } else { $false }
             $Modules = "$(ModulesToGenerate)" -split " "
             . $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -Build -Test -UpdateAutoRest -EnableSigning:$EnableSigning -ModulesToGenerate $Modules
+       
+      - template: ./generation-templates/generate-helpdocs-template.yml
+        parameters:
+            DOCSBRANCH: $(DocsBranch)
+            ModulesToGenerate: $(ModulesToGenerate)
 
       - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
         displayName: ESRP DLL strong name (Service Modules)
