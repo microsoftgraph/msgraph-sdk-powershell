@@ -10,47 +10,49 @@ parameters:
   - name: BUILDAGENT
     default: MsGraphBuildAgentsWindows
     displayName: Build Agent
-
-steps:
-- task: PowerShell@2
-  name: "ComputeBranch"
-  displayName: "Compute weekly branch name"
-  inputs:
-    targetType: inline
-    script: |
-       $branch = "{0}/{1}" -f "$(DOCSBRANCH)", (Get-Date -Format yyyyMMddHHmm)
-       Write-Host "##vso[task.setvariable variable=DocsBranch;isOutput=true]$branch"
-
-- task: Bash@3
-  displayName: "Create Docs branch"
-  inputs:
-    targetType: inline
-    script: |
-      git status
-      git branch $(ComputeBranch.DocsBranch)
-      git checkout $(ComputeBranch.DocsBranch)
-      git status
-
-- task: PowerShell@2
-  displayName: Generate Help Docs
-  continueOnError: false
-  enabled: true
-  inputs:
-     targetType: 'inline'
-     pwsh: true
-     script: |  
-       $Modules = "$(ModulesToGenerate)" -split " "
-       . $(System.DefaultWorkingDirectory)/tools/GenerateHelp.ps1 -ModulesToGenerate $Modules
-
-- task: Bash@3
-  displayName: Commit Generated Help Docs files
-  env:
-    GITHUB_TOKEN: $(GITHUB_TOKEN)
+jobs:
+- job: GenerateHelpDocs
+  displayName: Helps Docs Generation
+  steps:
+  - task: PowerShell@2
+    name: "ComputeBranch"
+    displayName: "Compute weekly branch name"
     inputs:
-    targetType: inline
-    script: |
-      git status
-      git commit -m 'Docs Generation'
-      git status
-      git push --set-upstream origin $(ComputeBranch.DocsBranch)
-      git status
+      targetType: inline
+      script: |
+        $branch = "{0}/{1}" -f "$(DOCSBRANCH)", (Get-Date -Format yyyyMMddHHmm)
+        Write-Host "##vso[task.setvariable variable=DocsBranch;isOutput=true]$branch"
+
+  - task: Bash@3
+    displayName: "Create Docs branch"
+    inputs:
+      targetType: inline
+      script: |
+        git status
+        git branch $(ComputeBranch.DocsBranch)
+        git checkout $(ComputeBranch.DocsBranch)
+        git status
+
+  - task: PowerShell@2
+    displayName: Generate Help Docs
+    continueOnError: false
+    enabled: true
+    inputs:
+      targetType: 'inline'
+      pwsh: true
+      script: |  
+        $Modules = "$(ModulesToGenerate)" -split " "
+        . $(System.DefaultWorkingDirectory)/tools/GenerateHelp.ps1 -ModulesToGenerate $Modules
+
+  - task: Bash@3
+    displayName: Commit Generated Help Docs files
+    env:
+      GITHUB_TOKEN: $(GITHUB_TOKEN)
+      inputs:
+      targetType: inline
+      script: |
+        git status
+        git commit -m 'Docs Generation'
+        git status
+        git push --set-upstream origin $(ComputeBranch.DocsBranch)
+        git status
