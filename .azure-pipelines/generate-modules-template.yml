@@ -33,6 +33,10 @@ parameters:
       displayName: 'Build Number'
       type: string
       default: $[format('{0:yyMMddHH}', pipeline.startTime)]
+    - name: DOCSBRANCH
+      displayName: 'Docs Generation Branch'
+      type: string
+      default: "DocsGeneration"
 
 jobs:
 - job: MsGraphPSSDKServiceModulesGeneration
@@ -134,7 +138,7 @@ jobs:
            }
        ]
       SessionTimeout: 20
-  
+
   - task: PowerShell@2
     displayName: 'Generate and Build Graph Resource Modules'
     inputs:
@@ -143,7 +147,11 @@ jobs:
       script: |
          Write-Host $(BUILDNUMBER)
          pwsh $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -ArtifactsLocation $(Build.ArtifactStagingDirectory)\ -Build -Test -EnableSigning -ModulePreviewNumber $(BUILDNUMBER) -UpdateAutoRest -RepositoryName "LocalNugetFeed" -ExcludeExamples
-  
+
+  - template: ./generation-templates/generation-helpdocs-template.yml
+    parameters:
+        DOCSBRANCH: $(DOCSBRANCH)
+        
   - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
     displayName: 'ESRP DLL Strong Name (Graph Resource Modules)'
     enabled: true
