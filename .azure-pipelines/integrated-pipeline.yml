@@ -124,13 +124,6 @@ stages:
       EnableSigning: true
       BUILDNUMBER: $(BUILDNUMBER)
 
-- stage: GenerateHelpDocs
-  displayName: 'Generate Help Docs (Microsoft.Graph.*)'
-  jobs:
-  - template: ./generation-templates/generate-helpdocs-template.yml
-    parameters:
-      DOCSBRANCH: $(DOCSBRANCH)
-
 - stage: GenerateRollUpModule
   displayName: 'Generate Roll-Up Module'
   jobs:
