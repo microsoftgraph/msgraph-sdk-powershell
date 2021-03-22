@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <metadata>
-    <version>1.3.1</version>
+    <version>1.4.2</version>
     <id>Microsoft.Graph.Authentication</id>
     <description>Microsoft Graph PowerShell authentication module</description>
     <authors>Microsoft</authors>
@@ -16,20 +16,24 @@
     <dependencies />
   </metadata>
   <files>
-    <file src="Microsoft.Graph.Authentication.psd1" />
-    <file src="Microsoft.Graph.Authentication.format.ps1xml" />
-    <file src="Microsoft.Graph.Authentication.psm1" />
     <!-- https://github.com/NuGet/Home/issues/3584 -->
-    <file src="bin/Microsoft.Graph.Authentication.dll" target="bin" />
-    <file src="bin/Microsoft.Graph.Authentication.deps.json" target="bin" />
-    <file src="bin/Microsoft.Graph.Auth.dll" target="bin" />
-    <file src="bin/Microsoft.Graph.Core.dll" target="bin" />
-    <file src="bin/Microsoft.Identity.Client.dll" target="bin" />
-    <file src="bin/System.IdentityModel.Tokens.Jwt.dll" target="bin" />
-    <file src="bin/Newtonsoft.Json.dll" target="bin" />
-    <file src="bin/Microsoft.IdentityModel.JsonWebTokens.dll" target="bin" />
-    <file src="bin/Microsoft.IdentityModel.Tokens.dll" target="bin" />
-    <file src="bin/Microsoft.IdentityModel.Logging.dll" target="bin" />
-    <file src="bin/PreloadAssemblies/System.Security.Cryptography.ProtectedData.dll" target="bin/PreloadAssemblies" />
+    <file src="artifacts\Microsoft.Graph.Authentication.format.ps1xml" />
+    <file src="artifacts\Microsoft.Graph.Authentication.psm1" />
+    <file src="artifacts\Microsoft.Graph.Authentication.psd1" />
+    <file src="artifacts\Microsoft.Graph.Authentication.dll" />
+    <file src="artifacts\Microsoft.Graph.Authentication.Core.dll" />
+    <file src="artifacts\Microsoft.Graph.Core.dll" />
+    <file src="artifacts\StartupScripts\*" target="StartupScripts" />
+    <file src="artifacts\Dependencies\Newtonsoft.Json.dll" target="Dependencies" />
+    <file src="artifacts\Dependencies\Microsoft.Graph.Auth.dll" target="Dependencies" />
+    <file src="artifacts\Dependencies\Microsoft.IdentityModel.JsonWebTokens.dll" target="Dependencies" />
+    <file src="artifacts\Dependencies\Microsoft.IdentityModel.Tokens.dll" target="Dependencies" />
+    <file src="artifacts\Dependencies\Microsoft.IdentityModel.Logging.dll" target="Dependencies" />
+    <file src="artifacts\Dependencies\System.IdentityModel.Tokens.Jwt.dll" target="Dependencies" />
+    <!-- Copy framework dependent assemblies to respective framework directory. -->
+    <file src="artifacts\Dependencies\Core\Microsoft.Identity.Client.dll" target="Dependencies\Core" />
+    <file src="artifacts\Dependencies\Core\System.Security.Cryptography.ProtectedData.dll" target="Dependencies\Core" />
+    <file src="artifacts\Dependencies\Desktop\Microsoft.Identity.Client.dll" target="Dependencies\Desktop" />
+    <file src="artifacts\Dependencies\Desktop\System.Security.Cryptography.ProtectedData.dll" target="Dependencies\Desktop" />
   </files>
 </package>
