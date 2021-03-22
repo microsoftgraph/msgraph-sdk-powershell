@@ -148,7 +148,7 @@ jobs:
          Write-Host $(BUILDNUMBER)
          pwsh $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -ArtifactsLocation $(Build.ArtifactStagingDirectory)\ -Build -Test -EnableSigning -ModulePreviewNumber $(BUILDNUMBER) -UpdateAutoRest -RepositoryName "LocalNugetFeed" -ExcludeExamples
 
-  - template: ./generation-templates/generation-helpdocs-template.yml
+  - template: ./generation-templates/generate-helpdocs-template.yml
     parameters:
         DOCSBRANCH: $(DOCSBRANCH)
         
