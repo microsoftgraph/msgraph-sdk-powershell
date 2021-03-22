@@ -4,6 +4,7 @@
 
 namespace Microsoft.Graph.PowerShell.Authentication.TokenCache
 {
+    using Microsoft.Graph.PowerShell.Authentication.Core;
     using Microsoft.Graph.PowerShell.Authentication.TokenCache.NativePlatformLibs;
     using System;
     using System.Globalization;

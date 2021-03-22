@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.29201.188
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Graph.Authentication", "Authentication\Microsoft.Graph.Authentication.csproj", "{44FF315A-27B2-4401-81A9-1912E6511EE6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Graph.Authentication.Test", "Authentication.Test\Microsoft.Graph.Authentication.Test.csproj", "{416590B4-3A91-4B0D-9B40-3F69438B6D85}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Graph.Authentication.Test", "Authentication.Test\Microsoft.Graph.Authentication.Test.csproj", "{416590B4-3A91-4B0D-9B40-3F69438B6D85}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Graph.Authentication.Core", "Authentication.Core\Microsoft.Graph.Authentication.Core.csproj", "{50050576-74B8-4507-B1FE-C47740BB3B71}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{416590B4-3A91-4B0D-9B40-3F69438B6D85}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{416590B4-3A91-4B0D-9B40-3F69438B6D85}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{416590B4-3A91-4B0D-9B40-3F69438B6D85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50050576-74B8-4507-B1FE-C47740BB3B71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50050576-74B8-4507-B1FE-C47740BB3B71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50050576-74B8-4507-B1FE-C47740BB3B71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50050576-74B8-4507-B1FE-C47740BB3B71}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
