@@ -1,10 +1,10 @@
 
 # Load the module dll
-$null = Import-Module -Name (Join-Path $PSScriptRoot 'Microsoft.Graph.Authentication.dll')
+$null = Import-Module -Name (Join-Path $PSScriptRoot '.\artifacts\Microsoft.Graph.Authentication.dll')
 
-if (Test-Path -Path "$PSScriptRoot\StartupScripts" -ErrorAction Ignore)
+if (Test-Path -Path "$PSScriptRoot\artifacts\StartupScripts" -ErrorAction Ignore)
 {
-    Get-ChildItem "$PSScriptRoot\StartupScripts" -ErrorAction Stop | ForEach-Object {
+    Get-ChildItem "$PSScriptRoot\artifacts\StartupScripts" -ErrorAction Stop | ForEach-Object {
         . $_.FullName
     }
 }
