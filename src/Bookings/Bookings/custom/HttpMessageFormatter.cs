@@ -50,14 +50,7 @@ namespace Microsoft.Graph.PowerShell
         // Set of header fields that should not get serialized
         private static readonly HashSet<string> _neverSerializedHeaderFields = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
         {
-            "SdkVersion",
-            "FeatureFlag",
-            "Authorization",
-            "Cache-Control",
-            "Transfer-Encoding",
-            "Duration",
-            "Strict-Transport-Security",
-            "Date"
+            "Authorization"
         };
 
         private bool _contentConsumed;
@@ -209,7 +202,10 @@ namespace Microsoft.Graph.PowerShell
             {
                 Stream readStream = await _streamTask.Value;
                 ValidateStreamForReading(readStream);
-                await Content.CopyToAsync(stream);
+                if (!_contentConsumed)
+                {
+                    await Content.CopyToAsync(stream);
+                }
             }
         }
 
@@ -269,6 +265,8 @@ namespace Microsoft.Graph.PowerShell
         private static void SerializeStatusLine(StringBuilder message, HttpResponseMessage httpResponse)
         {
             Contract.Assert(message != null, "message cannot be null");
+            message.Append(httpResponse.RequestMessage?.Method + SP);
+            message.Append(httpResponse.RequestMessage?.RequestUri.AbsoluteUri + CRLF);
             message.Append($"HTTP/{(httpResponse.Version != null ? httpResponse.Version.ToString(2) : "1.1")}{SP}");
             message.Append((int)httpResponse.StatusCode + SP);
             message.Append(httpResponse.ReasonPhrase + CRLF);
