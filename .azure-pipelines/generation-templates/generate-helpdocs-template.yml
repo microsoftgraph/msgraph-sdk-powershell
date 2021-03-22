@@ -1,17 +1,5 @@
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
-
-parameters:
-  - name: DOCSBRANCH
-    type: string
-    default: "DocsGeneration"
-  - name: ModulesToGenerate
-    type: string
-    default: ""
-  - name: BUILDAGENT
-    default: MsGraphBuildAgentsWindows
-    displayName: Build Agent
-
 steps:
 - task: PowerShell@2
   name: "ComputeBranch"
@@ -19,7 +7,7 @@ steps:
   inputs:
     targetType: inline
     script: |
-      $branch = "{0}/{1}" -f "$(DOCSBRANCH)", (Get-Date -Format yyyyMMddHHmm)
+      $branch = "{0}/{1}" -f "DocsGeneration", (Get-Date -Format yyyyMMddHHmm)
       Write-Host "##vso[task.setvariable variable=DocsBranch;isOutput=true]$branch"
 
 - task: Bash@3
