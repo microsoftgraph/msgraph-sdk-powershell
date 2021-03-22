@@ -149,8 +149,6 @@ jobs:
          pwsh $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -ArtifactsLocation $(Build.ArtifactStagingDirectory)\ -Build -Test -EnableSigning -ModulePreviewNumber $(BUILDNUMBER) -UpdateAutoRest -RepositoryName "LocalNugetFeed" -ExcludeExamples
 
   - template: ./generation-templates/generate-helpdocs-template.yml
-    parameters:
-        DOCSBRANCH: $(DOCSBRANCH)
         
   - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
     displayName: 'ESRP DLL Strong Name (Graph Resource Modules)'
