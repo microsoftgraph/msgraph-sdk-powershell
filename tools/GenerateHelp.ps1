@@ -32,11 +32,14 @@ $ModulesToGenerate | ForEach-Object {
     #Handle Beta
     $betaModuleDocs = Join-Path $PSScriptRoot "..\src\$ModuleName\$ModuleName\docs\v1.0-beta"
     Write-Host $betaModuleDocs
-    if(Test-Path $betaModuleDocs){
+    if (Test-Path $betaModuleDocs) {
         Select-MgProfile beta
         Update-MarkdownHelpModule -Path $betaModuleDocs -RefreshModulePage -AlphabeticParamsOrder -ExcludeDontShow
         #Add Updated docs to current commit
         git add $betaModuleDocs
+    }
+    else {
+        Write-Warning "Beta Docs for $ModuleName not Found"
     }
 
     #Handle v1.0
@@ -46,6 +49,9 @@ $ModulesToGenerate | ForEach-Object {
         Select-MgProfile v1.0
         Update-MarkdownHelpModule -Path $v1ModuleDocs -RefreshModulePage -AlphabeticParamsOrder -ExcludeDontShow
         git add $v1ModuleDocs
+    }
+    else {
+        Write-Warning "v1.0 Docs for $ModuleName not Found"
     }
 }
 
