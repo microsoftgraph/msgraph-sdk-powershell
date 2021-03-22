@@ -23,29 +23,30 @@ if ($ModulesToGenerate.Count -eq 0) {
 }
 
 $ModulePrefix = "Microsoft.Graph"
-Import-Module ".\src\Authentication\Authentication\Microsoft.Graph.Authentication.psd1" -Force -Scope Global
+Import-Module (Join-Path $PSScriptRoot "..\src\Authentication\Authentication\Microsoft.Graph.Authentication.psm1") -Force -Scope Global
 $ModulesToGenerate | ForEach-Object {
     $ModuleName = $_
-    $modulePath = ".\src\$ModuleName\$ModuleName\$ModulePrefix.$ModuleName.psd1"
+    $modulePath = Join-Path $PSScriptRoot "..\src\$ModuleName\$ModuleName\$ModulePrefix.$ModuleName.psd1"
     Write-Host "Current Module Path $modulePath"
-    Import-Module $modulePath -Force -Scope Global
+    Import-Module $modulePath -Force -Scope Global -Verbose -Debug
     #Handle Beta
-    $betaModuleDocs = ".\src\$RequiredModule\$RequiredModule\docs\v1.0-beta\"
+    $betaModuleDocs = Join-Path $PSScriptRoot "..\src\$ModuleName\$ModuleName\docs\v1.0-beta"
+    Write-Host $betaModuleDocs
     if(Test-Path $betaModuleDocs){
         Select-MgProfile beta
         Update-MarkdownHelpModule -Path $betaModuleDocs -RefreshModulePage -AlphabeticParamsOrder -ExcludeDontShow
+        #Add Updated docs to current commit
+        git add $betaModuleDocs
     }
 
     #Handle v1.0
-    $v1ModuleDocs = ".\src\$RequiredModule\$RequiredModule\docs\v1.0\"
+    $v1ModuleDocs = Join-Path $PSScriptRoot "..\src\$ModuleName\$ModuleName\docs\v1.0"
+    Write-Host $v1ModuleDocs
     if (Test-Path $v1ModuleDocs) {
         Select-MgProfile v1.0
         Update-MarkdownHelpModule -Path $v1ModuleDocs -RefreshModulePage -AlphabeticParamsOrder -ExcludeDontShow
+        git add $v1ModuleDocs
     }
-
-    #Add Updated docs to current commit
-    git add $betaModuleDocs
-    git add $v1ModuleDocs        
 }
 
 Write-Host -ForegroundColor Green "-------------Done-------------"
