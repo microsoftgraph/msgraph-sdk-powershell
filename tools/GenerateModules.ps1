@@ -221,7 +221,9 @@ $ModulesToGenerate | ForEach-Object -ThrottleLimit $ModulesToGenerate.Count -Par
 
 if ($Error.Count -ge 1) {
     # Write generation errors to pipeline.
-    $Error
+    foreach ($item in $Error) {
+        Write-Error $item
+    }
     Write-Error "The SDK failed to build due to $($Error.Count) errors listed above." -ErrorAction "Stop"
 }
 
