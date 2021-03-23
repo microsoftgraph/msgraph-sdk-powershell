@@ -29,6 +29,7 @@ steps:
     targetType: inline
     script: |
       $branch = "{0}/{1}" -f "${{ parameters.DOCSBRANCH }}", (Get-Date -Format yyyyMMddHHmm)
+      Write-Host "Docs Branch $branch"
       Write-Host "##vso[task.setvariable variable=DocsBranch;isOutput=true]$branch"
 
 - task: Bash@3
