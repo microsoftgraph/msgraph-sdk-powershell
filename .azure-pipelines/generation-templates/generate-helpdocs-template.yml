@@ -47,7 +47,7 @@ steps:
   displayName: Commit Generated Help Docs files
   env:
     GITHUB_TOKEN: $(GITHUB_TOKEN)
-    inputs:
+  inputs:
     targetType: inline
     script: |
       git status
