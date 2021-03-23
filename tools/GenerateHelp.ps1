@@ -55,6 +55,7 @@ $ModulesToGenerate | ForEach-Object {
     else {
         Write-Warning "v1.0 Docs for $ModuleName not Found"
     }
+    git status
 }
 
 Write-Host -ForegroundColor Green "-------------Done-------------"
