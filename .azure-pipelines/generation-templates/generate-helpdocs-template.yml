@@ -13,6 +13,8 @@ parameters:
     displayName: Build Agent
 
 steps:
+- checkout: self
+  persistCredentials: true
 
 - task: PowerShell@2
   displayName: "Configure user"
