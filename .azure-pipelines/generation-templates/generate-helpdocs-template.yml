@@ -13,6 +13,15 @@ parameters:
     displayName: Build Agent
 
 steps:
+
+- task: PowerShell@2
+  displayName: "Configure user"
+  inputs:
+    targetType: "inline"
+    script: |
+      git config --global user.email "GraphTooling@service.microsoft.com"
+      git config --global user.name "Microsoft Graph DevX Tooling"
+
 - task: PowerShell@2
   name: "ComputeBranch"
   displayName: "Compute Docs Branch Name"
