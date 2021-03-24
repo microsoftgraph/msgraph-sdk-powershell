@@ -56,7 +56,7 @@ $ModulesToGenerate | ForEach-Object {
         Write-Warning "v1.0 Docs for $ModuleName not Found"
     }
     git status
-    git commit -m 'Docs Generation for $Module'
+    git commit -m "Docs Generation for $ModuleName"
 }
 
 Write-Host -ForegroundColor Green "-------------Done-------------"

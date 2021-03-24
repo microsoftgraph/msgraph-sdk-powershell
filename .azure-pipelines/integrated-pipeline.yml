@@ -54,8 +54,6 @@ stages:
   jobs:
   - job: ComputeVersion
     steps:
-    - template: ./common-templates/checkout.yml
-
     - task: PowerShell@2
       displayName: 'Compute Version'
       inputs:
@@ -112,6 +110,7 @@ stages:
 - stage: GenerateBetaModules
   displayName: 'Generate Beta Modules (Microsoft.Graph.*)'
   jobs:
+  - template: ./common-templates/checkout.yml
   - template: ./generate-modules-template.yml
     parameters:
       Api_Key: $(Api_Key)
