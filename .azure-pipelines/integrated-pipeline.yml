@@ -49,6 +49,8 @@ trigger:
       - features/*
 
 stages:
+- template: ./common-templates/checkout.yml
+
 - stage: ComputeVersion
   displayName: 'Compute Version'
   jobs:

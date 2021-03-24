@@ -13,17 +13,6 @@ parameters:
     displayName: Build Agent
 
 steps:
-- checkout: self
-  persistCredentials: true
-
-- task: PowerShell@2
-  displayName: "Configure user"
-  inputs:
-    targetType: "inline"
-    script: |
-      git config --global user.email "GraphTooling@service.microsoft.com"
-      git config --global user.name "Microsoft Graph DevX Tooling"
-
 - task: PowerShell@2
   name: "ComputeBranch"
   displayName: "Compute Docs Branch Name"
@@ -53,7 +42,7 @@ steps:
     pwsh: true
     script: |  
       $Modules = "${{ parameters.ModulesToGenerate }}" -split " "
-      . $(System.DefaultWorkingDirectory)/tools/GenerateHelp.ps1
+      . $(System.DefaultWorkingDirectory)/tools/GenerateHelp.ps1 -ModulesToGenerate $Modules
 
 - task: Bash@3
   displayName: Commit Generated Help Docs files
