@@ -31,5 +31,6 @@ namespace Microsoft.Graph.PowerShell.Authentication
         string AppName { get; set; }
         ContextScope ContextScope { get; set; }
         X509Certificate2 Certificate { get; set; }
+        bool UseDeviceAuth { get; set; }
     }
 }

@@ -13,6 +13,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
     using System.Collections;
     using System.Security.Cryptography.X509Certificates;
 
+    using Microsoft.Graph.PowerShell.Authentication.Properties;
+    using Microsoft.Identity.Client;
+
     using Microsoft.Graph.PowerShell.Authentication.Helpers;
     using Microsoft.Graph.PowerShell.Authentication.Models;
 
@@ -87,12 +90,27 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         [Alias("EnvironmentName", "NationalCloud")]
         public string Environment { get; set; }
 
+        [Parameter(ParameterSetName = Constants.UserParameterSet,
+            Mandatory = false, HelpMessage = "Use device code authentication instead of a browser control")]
+        [Alias("DeviceCode", "DeviceAuth", "Device")]
+        public SwitchParameter UseDeviceAuthentication { get; set; }
+        /// <summary>
+        ///     Wait for .NET debugger to attach
+        /// </summary>
+        [Parameter(Mandatory = false,
+            DontShow = true,
+            HelpMessage = "Wait for .NET debugger to attach")]
+        public SwitchParameter Break { get; set; }
+
         private readonly CancellationTokenSource _cancellationTokenSource = new CancellationTokenSource();
 
         private IGraphEnvironment environment;
-
         protected override void BeginProcessing()
         {
+            if (Break)
+            {
+                this.Break();
+            }
             base.BeginProcessing();
             ValidateParameters();
 
@@ -173,6 +191,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                             authContext.Scopes = processedScopes.Length == 0 ? new string[] { "User.Read" } : processedScopes;
                             // Default to CurrentUser but allow the customer to change this via `ContextScope` param.
                             authContext.ContextScope = this.IsParameterBound(nameof(ContextScope)) ? ContextScope : ContextScope.CurrentUser;
+                            authContext.UseDeviceAuth = this.UseDeviceAuthentication;
                         }
                         break;
                     case Constants.AppParameterSet:
@@ -201,15 +220,26 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                     // Save auth context to session state.
                     GraphSession.Instance.AuthContext = await Authenticator.AuthenticateAsync(authContext, ForceRefresh, _cancellationTokenSource.Token);
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
+                    if (IsUnableToOpenWebPageError(ex))
+                    {
+                        WriteWarning(Resources.InteractiveAuthNotSupported);
+                        WriteDebug(ex.ToString());
+                    }
+
                     throw ex;
                 }
 
                 WriteObject("Welcome To Microsoft Graph!");
             }
         }
-
+        private static bool IsUnableToOpenWebPageError(Exception exception)
+        {
+            return exception.InnerException is MsalClientException && 
+                   ((MsalClientException)exception.InnerException)?.ErrorCode == MsalError.LinuxXdgOpen || 
+                   (exception.Message?.ToLower()?.Contains("unable to open a web page") ?? false);
+        }
         protected override void StopProcessing()
         {
             _cancellationTokenSource.Cancel();

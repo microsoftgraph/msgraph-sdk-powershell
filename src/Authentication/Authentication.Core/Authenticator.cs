@@ -9,6 +9,7 @@ namespace Microsoft.Graph.Authentication.Core
     using Microsoft.Graph.PowerShell.Authentication.Core;
     using Microsoft.Graph.PowerShell.Authentication.Helpers;
     using Microsoft.Identity.Client;
+
     using System;
     using System.Collections.Generic;
     using System.Globalization;
@@ -36,9 +37,14 @@ namespace Microsoft.Graph.Authentication.Core
                 // Gets a static instance of IAuthenticationProvider when the client app hasn't changed.
                 IAuthenticationProvider authProvider = AuthenticationHelpers.GetAuthProvider(authContext);
                 IClientApplicationBase clientApplication = null;
-                if (authContext.AuthType == AuthenticationType.Delegated)
+
+                if (authContext.AuthType == AuthenticationType.Delegated && authContext.UseDeviceAuth)
                 {
                     clientApplication = (authProvider as DeviceCodeProvider).ClientApplication;
+                }
+                if (authContext.AuthType == AuthenticationType.Delegated && !authContext.UseDeviceAuth)
+                {
+                    clientApplication = (authProvider as InteractiveAuthenticationProvider).ClientApplication;
                 }
                 if (authContext.AuthType == AuthenticationType.AppOnly)
                 {
@@ -81,7 +87,7 @@ namespace Microsoft.Graph.Authentication.Core
             }
             catch (AuthenticationException authEx)
             {
-                if ((authEx.InnerException is TaskCanceledException) && cancellationToken.IsCancellationRequested)
+                if (authEx.InnerException is TaskCanceledException && cancellationToken.IsCancellationRequested)
                 {
                     // DeviceCodeTimeout
                     throw new Exception(string.Format(
@@ -89,10 +95,7 @@ namespace Microsoft.Graph.Authentication.Core
                             ErrorConstants.Message.DeviceCodeTimeout,
                             Constants.MaxDeviceCodeTimeOut));
                 }
-                else
-                {
-                    throw authEx.InnerException ?? authEx;
-                }
+                throw authEx.InnerException ?? authEx;
             }
             catch (Exception ex)
             {

@@ -24,7 +24,7 @@ Describe 'Connect-MgGraph In App Mode' {
     }
 
 }
-Describe 'Connect-MgGraph Depencency Resolution' {
+Describe 'Connect-MgGraph Dependency Resolution' {
     BeforeAll {
         Install-Module Az.Accounts -Repository PSGallery -Force
     }

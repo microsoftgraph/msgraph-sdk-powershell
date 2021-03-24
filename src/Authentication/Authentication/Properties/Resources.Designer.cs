@@ -205,6 +205,15 @@ namespace Microsoft.Graph.PowerShell.Authentication.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Interactive authentication is not supported in this session, please run cmdlet &apos;Connect-MgGraph -UseDeviceAuthentication&apos;..
+        /// </summary>
+        internal static string InteractiveAuthNotSupported {
+            get {
+                return ResourceManager.GetString("InteractiveAuthNotSupported", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Invalid Host {0}.
         /// </summary>
         internal static string InvokeGraphRequestInvalidHostErrorMessage {
