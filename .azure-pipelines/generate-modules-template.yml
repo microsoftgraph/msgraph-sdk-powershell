@@ -41,7 +41,7 @@ jobs:
 
   steps:
   - template: ./common-templates/install-tools.yml
-
+  - template: ./common-templates/checkout.yml
   - task: PowerShell@2
     displayName: 'Generate Profiles'
     continueOnError: false
