@@ -136,4 +136,6 @@ stages:
 - stage: SecurityPostChecks
   displayName: 'Security Post Checks'
   jobs:
-  - template: ./security-postchecks-template.yml
+  - job: 'SecurityPostChecks'
+    steps:
+    - template: ../common-templates/security-postchecks-template.yml
