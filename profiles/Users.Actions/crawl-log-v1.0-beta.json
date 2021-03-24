@@ -1661,6 +1661,10 @@
       "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
       "apiVersion": "v1.0-beta"
     },
+    "/users/{user-id}/pendingAccessReviewInstances/{accessReviewInstance-id}/microsoft.graph.batchRecordDecisions": {
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
     "/users/{user-id}/pendingAccessReviewInstances/{accessReviewInstance-id}/microsoft.graph.resetDecisions": {
       "originalLocation": "/openApiDocs/beta/Users.Actions.yml",
       "apiVersion": "v1.0-beta"

@@ -241,6 +241,22 @@
       "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
       "apiVersion": "v1.0-beta"
     },
+    "/policies/featureRolloutPolicies": {
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/policies/featureRolloutPolicies/{featureRolloutPolicy-id}": {
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/policies/featureRolloutPolicies/{featureRolloutPolicy-id}/appliesTo": {
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/policies/featureRolloutPolicies/{featureRolloutPolicy-id}/appliesTo/{directoryObject-id}": {
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
+      "apiVersion": "v1.0-beta"
+    },
     "/policies/homeRealmDiscoveryPolicies": {
       "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
       "apiVersion": "v1.0-beta"
@@ -282,6 +298,14 @@
       "apiVersion": "v1.0-beta"
     },
     "/policies/privateLinkResourcePolicies/{privateLinkResourcePolicy-id}": {
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/policies/privateLinkResourcePolicies/{privateLinkResourcePolicy-id}/privateEndpointConnections": {
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/policies/privateLinkResourcePolicies/{privateLinkResourcePolicy-id}/privateEndpointConnections/{privateEndpointConnection-id}": {
       "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml",
       "apiVersion": "v1.0-beta"
     },
