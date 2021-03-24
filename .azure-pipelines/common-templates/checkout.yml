@@ -15,7 +15,10 @@ steps:
         git config --global user.email "GraphTooling@service.microsoft.com"
         git config --global user.name "Microsoft Graph DevX Tooling"
 
-  - task: securedevelopmentteam.vss-secure-development-tools.build-task-credscan.CredScan@2
-    displayName: "Run CredScan"
+  - task: CredScan@2
+    displayName: 'Run CredScan'
     inputs:
       debugMode: false
+      batchSize: 20
+      toolMajorVersion: 'V2'
+      searchersFileType: 'Skype'
