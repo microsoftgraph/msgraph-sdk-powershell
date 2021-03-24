@@ -27,7 +27,7 @@ jobs:
   displayName: Microsoft Graph PowerShell SDK Auth Module Generation
 
   steps:
-  - template: ./install-tools-template.yml
+  - template: ./common-templates/install-tools.yml
 
   - task: PowerShell@2
     displayName: 'Generate and Build Auth Module'
