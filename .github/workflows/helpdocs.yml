@@ -39,7 +39,7 @@ jobs:
       shell: bash
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        MESSAGE_TITLE: Weekly OpenApiDocs Download
+        MESSAGE_TITLE: "Docs Generation"
         MESSAGE_BODY: "This pull request was automatically created by the GitHub Action,\n\n Contains Help Docs"
         REVIEWERS: peombwa,ddyett,darrelmiller
         ASSIGNEDTO: finsharp
