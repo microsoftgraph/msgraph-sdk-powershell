@@ -47,6 +47,8 @@ trigger:
       - releases/*
       - bugfixes/*
       - features/*
+      exclude:
+      - DocsGeneration/*
 
 stages:
 - stage: ComputeVersion
@@ -94,7 +96,9 @@ stages:
 - stage: SecurityPreChecks
   displayName: 'Security Pre Checks'
   jobs:
-  - template: ./security-prechecks-template.yml
+  - job: 'SecurityPreChecks'
+    steps:
+    - template: ./common-templates/security-prechecks-template.yml
 
 - stage: GenerateAuthModule
   displayName: 'Generate Authentication Module (Microsoft.Graph.Authentication)'
@@ -138,4 +142,4 @@ stages:
   jobs:
   - job: 'SecurityPostChecks'
     steps:
-    - template: ../common-templates/security-postchecks-template.yml
+    - template: ./common-templates/security-postchecks-template.yml
