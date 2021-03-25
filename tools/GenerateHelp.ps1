@@ -35,7 +35,7 @@ $ModulesToGenerate | ForEach-Object {
     if (Test-Path $betaModuleDocs) {
         Write-Host $betaModuleDocs
         Select-MgProfile beta
-        #Update-MarkdownHelpModule -Path $betaModuleDocs -RefreshModulePage -AlphabeticParamsOrder -ExcludeDontShow
+        Update-MarkdownHelpModule -Path $betaModuleDocs -RefreshModulePage -AlphabeticParamsOrder -ExcludeDontShow
         #Add Updated docs to current commit
         git add $betaModuleDocs
     }
@@ -49,7 +49,7 @@ $ModulesToGenerate | ForEach-Object {
     if (Test-Path $v1ModuleDocs) {
         Write-Host $v1ModuleDocs
         Select-MgProfile v1.0
-        #Update-MarkdownHelpModule -Path $v1ModuleDocs -RefreshModulePage -AlphabeticParamsOrder -ExcludeDontShow
+        Update-MarkdownHelpModule -Path $v1ModuleDocs -RefreshModulePage -AlphabeticParamsOrder -ExcludeDontShow
         git add $v1ModuleDocs
     }
     else {
