@@ -202,10 +202,7 @@ namespace Microsoft.Graph.PowerShell
             {
                 Stream readStream = await _streamTask.Value;
                 ValidateStreamForReading(readStream);
-                if (!_contentConsumed)
-                {
-                    await Content.CopyToAsync(stream);
-                }
+                await Content.CopyToAsync(stream);
             }
         }
 

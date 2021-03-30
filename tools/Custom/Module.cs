@@ -40,7 +40,7 @@ namespace Microsoft.Graph.PowerShell
         {
             this.EventListener = EventHandler;
         }
-        
+
         /// <summary>
         /// Common Module Event Listener, allows to handle emitted by CmdLets
         /// </summary>
@@ -88,11 +88,9 @@ namespace Microsoft.Graph.PowerShell
             using (Extensions.NoSynchronizationContext)
             {
                 var eventData = EventDataConverter.ConvertFrom(getEventData());
-                using (var responseFormatter = new HttpMessageFormatter(eventData.ResponseMessage as HttpResponseMessage))
-                {
-                    var responseString = await responseFormatter.ReadAsStringAsync();
-                    await signal(Events.Debug, cancellationToken, () => EventFactory.CreateLogEvent(responseString));
-                }
+                var responseFormatter = new HttpMessageFormatter(eventData.ResponseMessage as HttpResponseMessage);
+                var responseString = await responseFormatter.ReadAsStringAsync();
+                await signal(Events.Debug, cancellationToken, () => EventFactory.CreateLogEvent(responseString));
             }
         }
 
@@ -111,11 +109,9 @@ namespace Microsoft.Graph.PowerShell
             using (Extensions.NoSynchronizationContext)
             {
                 var eventData = EventDataConverter.ConvertFrom(getEventData());
-                using (var requestFormatter = new HttpMessageFormatter(eventData.RequestMessage as HttpRequestMessage))
-                {
-                    var requestString = await requestFormatter.ReadAsStringAsync();
-                    await signal(Events.Debug, cancellationToken, () => EventFactory.CreateLogEvent(requestString));
-                }
+                var requestFormatter = new HttpMessageFormatter(eventData.RequestMessage as HttpRequestMessage);
+                var requestString = await requestFormatter.ReadAsStringAsync();
+                await signal(Events.Debug, cancellationToken, () => EventFactory.CreateLogEvent(requestString));
             }
         }
     }
