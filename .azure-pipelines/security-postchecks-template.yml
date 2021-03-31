@@ -4,9 +4,6 @@
 jobs:
 - job: MsGraphPSSDKSecurityPostChecks
   displayName: Microsoft Graph PowerShell SDK Security Post Checks
-  pool: 
-    image: windows-latest
-  timeoutInMinutes: 600
 
   steps:
   - task: CodesignValidation@0

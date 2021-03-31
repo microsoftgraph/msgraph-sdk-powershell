@@ -16520,7 +16520,7 @@ components:
               nullable: true
             orderIdentifier:
               type: string
-              description: Order Id of the Windows autopilot device.
+              description: Order Id of the Windows autopilot device. - Deprecate
               nullable: true
             productKey:
               type: string
@@ -17572,6 +17572,7 @@ components:
       enum:
         - none
         - include
+        - exclude
       type: string
     microsoft.graph.deviceComplianceActionType:
       title: deviceComplianceActionType

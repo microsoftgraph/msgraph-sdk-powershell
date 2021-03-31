@@ -1,0 +1,101 @@
+{
+  "Get-MgSite+[NoContext]+ShouldGetACollectionOfSites+$GET+https://graph.microsoft.com/beta/sites+1": {
+    "Request": {
+      "Method": "GET",
+      "RequestUri": "https://graph.microsoft.com/beta/sites",
+      "Content": null,
+      "Headers": {
+        "SdkVersion": [ "Graph-powershell-Microsoft.Graph.Authentication-1.4.0", "Graph-dotnet-1.20.1" ],
+        "FeatureFlag": [ "00000047" ],
+        "Cache-Control": [ "no-store, no-cache" ],
+        "Authorization": [ "[Filtered]" ],
+        "Accept-Encoding": [ "gzip" ]
+      },
+      "ContentHeaders": {
+      }
+    },
+    "Response": {
+      "StatusCode": 200,
+      "Headers": {
+        "Date": [ "Mon, 08 Mar 2021 20:30:41 GMT" ],
+        "Cache-Control": [ "no-cache" ],
+        "Transfer-Encoding": [ "chunked" ],
+        "Vary": [ "Accept-Encoding" ],
+        "Strict-Transport-Security": [ "max-age=31536000" ],
+        "request-id": [ "5e29db13-a2c1-46b6-ad7e-d44e41a09d73" ],
+        "client-request-id": [ "5e29db13-a2c1-46b6-ad7e-d44e41a09d73" ],
+        "x-ms-ags-diagnostic": [ "{\"ServerInfo\":{\"DataCenter\":\"West US 2\",\"Slice\":\"E\",\"Ring\":\"1\",\"ScaleUnit\":\"000\",\"RoleInstance\":\"MW1PEPF00006AF8\"}}" ],
+        "OData-Version": [ "4.0" ]
+      },
+      "ContentHeaders": {
+      },
+      "Content": "{\"@odata.context\":\"https://graph.microsoft.com/beta/$metadata#sites\",\"value\":[]}"
+    }
+  },
+  "Get-MgSite+[NoContext]+ShouldGetASingleSite+$GET+https://graph.microsoft.com/beta/sites/root+1": {
+    "Request": {
+      "Method": "GET",
+      "RequestUri": "https://graph.microsoft.com/beta/sites/root",
+      "Content": null,
+      "Headers": {
+        "SdkVersion": [ "Graph-powershell-Microsoft.Graph.Authentication-1.4.0", "Graph-dotnet-1.20.1" ],
+        "FeatureFlag": [ "00000047" ],
+        "Cache-Control": [ "no-store, no-cache" ],
+        "Authorization": [ "[Filtered]" ],
+        "Accept-Encoding": [ "gzip" ]
+      },
+      "ContentHeaders": {
+      }
+    },
+    "Response": {
+      "StatusCode": 200,
+      "Headers": {
+        "Date": [ "Mon, 08 Mar 2021 20:30:41 GMT" ],
+        "Cache-Control": [ "no-cache" ],
+        "Transfer-Encoding": [ "chunked" ],
+        "Vary": [ "Accept-Encoding" ],
+        "Strict-Transport-Security": [ "max-age=31536000" ],
+        "request-id": [ "5461e4e9-e1cf-4966-8171-103bd1812b00" ],
+        "client-request-id": [ "5461e4e9-e1cf-4966-8171-103bd1812b00" ],
+        "x-ms-ags-diagnostic": [ "{\"ServerInfo\":{\"DataCenter\":\"West US 2\",\"Slice\":\"E\",\"Ring\":\"1\",\"ScaleUnit\":\"000\",\"RoleInstance\":\"MW1PEPF00006B0E\"}}" ],
+        "OData-Version": [ "4.0" ]
+      },
+      "ContentHeaders": {
+      },
+      "Content": "{\"@odata.context\":\"https://graph.microsoft.com/beta/$metadata#sites/$entity\",\"createdDateTime\":\"2020-02-13T19:06:48.53Z\",\"description\":\"\",\"id\":\"dummyRootId\",\"lastModifiedDateTime\":\"2021-02-26T16:43:51Z\",\"name\":\"\",\"webUrl\":\"https://dummyroot.sharepoint.com\",\"displayName\":\"Communication site\",\"root\":{},\"siteCollection\":{\"hostname\":\"dummyroot.sharepoint.com\"}}"
+    }
+  },
+  "Get-MgSite+[NoContext]+ShouldGetASingleSiteViaInputObject+$GET+https://graph.microsoft.com/beta/sites/root+1": {
+    "Request": {
+      "Method": "GET",
+      "RequestUri": "https://graph.microsoft.com/beta/sites/root",
+      "Content": null,
+      "Headers": {
+        "SdkVersion": [ "Graph-powershell-Microsoft.Graph.Authentication-1.4.0", "Graph-dotnet-1.20.1" ],
+        "FeatureFlag": [ "00000047" ],
+        "Cache-Control": [ "no-store, no-cache" ],
+        "Authorization": [ "[Filtered]" ],
+        "Accept-Encoding": [ "gzip" ]
+      },
+      "ContentHeaders": {
+      }
+    },
+    "Response": {
+      "StatusCode": 200,
+      "Headers": {
+        "Date": [ "Mon, 08 Mar 2021 20:30:42 GMT" ],
+        "Cache-Control": [ "no-cache" ],
+        "Transfer-Encoding": [ "chunked" ],
+        "Vary": [ "Accept-Encoding" ],
+        "Strict-Transport-Security": [ "max-age=31536000" ],
+        "request-id": [ "93a5e3d0-23e4-44bf-9bf5-368ce6c83e5c" ],
+        "client-request-id": [ "93a5e3d0-23e4-44bf-9bf5-368ce6c83e5c" ],
+        "x-ms-ags-diagnostic": [ "{\"ServerInfo\":{\"DataCenter\":\"West US 2\",\"Slice\":\"E\",\"Ring\":\"1\",\"ScaleUnit\":\"000\",\"RoleInstance\":\"MW1PEPF00006AFC\"}}" ],
+        "OData-Version": [ "4.0" ]
+      },
+      "ContentHeaders": {
+      },
+      "Content": "{\"@odata.context\":\"https://graph.microsoft.com/beta/$metadata#sites/$entity\",\"createdDateTime\":\"2020-02-13T19:06:48.53Z\",\"description\":\"\",\"id\":\"dummyRootId\",\"lastModifiedDateTime\":\"2021-02-26T16:43:51Z\",\"name\":\"\",\"webUrl\":\"https://dummyroot.sharepoint.com\",\"displayName\":\"Communication site\",\"root\":{},\"siteCollection\":{\"hostname\":\"dummyroot.sharepoint.com\"}}"
+    }
+  }
+}

@@ -6,10 +6,6 @@ parameters:
       displayName: 'Module Path'
       type: string
       default: 'src\Authentication\Authentication\bin\'
-    - name: AUTH_MODULE_DLL_PATTERN
-      displayName: 'Module Pattern'
-      type: string
-      default: 'Microsoft.Graph.Authentication.dll'
     - name: Api_Key
       displayName: 'Api Key'
       type: string
@@ -37,7 +33,6 @@ parameters:
 jobs:
 - job: MsGraphPSSDKServiceModulesGeneration
   displayName: Microsoft Graph PowerShell SDK Service Module Generation
-  pool: MsGraphDevXAzureAgents
   timeoutInMinutes: 600
 
   steps:
@@ -67,7 +62,7 @@ jobs:
     inputs:
       ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet (AKV)'
       FolderPath: $(AUTH_MODULE_PATH)
-      Pattern: '$(AUTH_MODULE_DLL_PATTERN)'
+      Pattern: 'Microsoft.Graph.Authentication.dll, Microsoft.Graph.Authentication.Core.dll'
       signConfigType: inlineSignParams
       inlineOperation: |
        [
@@ -94,7 +89,7 @@ jobs:
     inputs:
       ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet (AKV)'
       FolderPath: $(AUTH_MODULE_PATH)
-      Pattern: $(AUTH_MODULE_DLL_PATTERN)
+      Pattern: 'Microsoft.Graph.Authentication.dll, Microsoft.Graph.Authentication.Core.dll'
       signConfigType: inlineSignParams
       inlineOperation: |
        [
