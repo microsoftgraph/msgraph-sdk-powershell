@@ -5,6 +5,14 @@
       "originalLocation": "/openApiDocs/beta/Users.Functions.yml",
       "apiVersion": "v1.0-beta"
     },
+    "/users/{user-id}/appConsentRequestsForApproval/{appConsentRequest-id}/userConsentRequests/microsoft.graph.filterByCurrentUser(on={on})": {
+      "originalLocation": "/openApiDocs/beta/Users.Functions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/appConsentRequestsForApproval/microsoft.graph.filterByCurrentUser(on={on})": {
+      "originalLocation": "/openApiDocs/beta/Users.Functions.yml",
+      "apiVersion": "v1.0-beta"
+    },
     "/users/{user-id}/approvals/microsoft.graph.filterByCurrentUser(on={on})": {
       "originalLocation": "/openApiDocs/beta/Users.Functions.yml",
       "apiVersion": "v1.0-beta"

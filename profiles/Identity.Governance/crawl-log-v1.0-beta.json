@@ -129,6 +129,10 @@
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
+    "/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}/instances/{accessReviewInstance-id}/microsoft.graph.batchRecordDecisions": {
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
+      "apiVersion": "v1.0-beta"
+    },
     "/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}/instances/{accessReviewInstance-id}/microsoft.graph.resetDecisions": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
@@ -142,6 +146,14 @@
       "apiVersion": "v1.0-beta"
     },
     "/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}/microsoft.graph.stop": {
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/identityGovernance/appConsent/appConsentRequests/{appConsentRequest-id}/userConsentRequests/microsoft.graph.filterByCurrentUser(on={on})": {
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/identityGovernance/appConsent/appConsentRequests/microsoft.graph.filterByCurrentUser(on={on})": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -413,6 +425,10 @@
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
+    "/identityGovernance/entitlementManagement/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackages/microsoft.graph.filterByCurrentUser(on={on})": {
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
+      "apiVersion": "v1.0-beta"
+    },
     "/identityGovernance/entitlementManagement/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackages/microsoft.graph.Search()": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
@@ -586,6 +602,10 @@
       "apiVersion": "v1.0-beta"
     },
     "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/accessPackageAssignment/accessPackage/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackages/{accessPackage-id}": {
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/accessPackageAssignment/accessPackage/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackages/microsoft.graph.filterByCurrentUser(on={on})": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -921,6 +941,10 @@
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
+    "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/accessPackageAssignment/accessPackageAssignmentPolicy/accessPackageCatalog/accessPackages/microsoft.graph.filterByCurrentUser(on={on})": {
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
+      "apiVersion": "v1.0-beta"
+    },
     "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/accessPackageAssignment/accessPackageAssignmentPolicy/accessPackageCatalog/accessPackages/microsoft.graph.Search()": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
@@ -933,11 +957,11 @@
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/accessPackageAssignment/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id1}/microsoft.graph.Cancel": {
+    "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/accessPackageAssignment/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id1}/microsoft.graph.cancel": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/accessPackageAssignment/accessPackageAssignmentRequests/microsoft.graph.My()": {
+    "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/accessPackageAssignment/accessPackageAssignmentRequests/microsoft.graph.filterByCurrentUser(on={on})": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -957,7 +981,7 @@
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/accessPackageAssignment/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageAssignments/microsoft.graph.My()": {
+    "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/accessPackageAssignment/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageAssignments/microsoft.graph.filterByCurrentUser(on={on})": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -1061,7 +1085,7 @@
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/microsoft.graph.Cancel": {
+    "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/microsoft.graph.cancel": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -1077,7 +1101,7 @@
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/microsoft.graph.My()": {
+    "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/microsoft.graph.filterByCurrentUser(on={on})": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -1246,6 +1270,10 @@
       "apiVersion": "v1.0-beta"
     },
     "/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageAssignments/{accessPackageAssignment-id}/accessPackage/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackages/{accessPackage-id}": {
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageAssignments/{accessPackageAssignment-id}/accessPackage/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackages/microsoft.graph.filterByCurrentUser(on={on})": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -1581,6 +1609,10 @@
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
+    "/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentPolicy/accessPackageCatalog/accessPackages/microsoft.graph.filterByCurrentUser(on={on})": {
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
+      "apiVersion": "v1.0-beta"
+    },
     "/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentPolicy/accessPackageCatalog/accessPackages/microsoft.graph.Search()": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
@@ -1605,7 +1637,7 @@
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/microsoft.graph.Cancel": {
+    "/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/microsoft.graph.cancel": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -1621,7 +1653,7 @@
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentRequests/microsoft.graph.My()": {
+    "/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentRequests/microsoft.graph.filterByCurrentUser(on={on})": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -1649,7 +1681,7 @@
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageAssignments/microsoft.graph.My()": {
+    "/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageAssignments/microsoft.graph.filterByCurrentUser(on={on})": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -1898,6 +1930,10 @@
       "apiVersion": "v1.0-beta"
     },
     "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackage/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackages/{accessPackage-id}": {
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackage/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackages/microsoft.graph.filterByCurrentUser(on={on})": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -2233,6 +2269,10 @@
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
+    "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentPolicy/accessPackageCatalog/accessPackages/microsoft.graph.filterByCurrentUser(on={on})": {
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
+      "apiVersion": "v1.0-beta"
+    },
     "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentPolicy/accessPackageCatalog/accessPackages/microsoft.graph.Search()": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
@@ -2257,7 +2297,7 @@
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/microsoft.graph.Cancel": {
+    "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/microsoft.graph.cancel": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -2273,7 +2313,7 @@
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentRequests/microsoft.graph.My()": {
+    "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentRequests/microsoft.graph.filterByCurrentUser(on={on})": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -2293,7 +2333,7 @@
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageAssignments/microsoft.graph.My()": {
+    "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageAssignments/microsoft.graph.filterByCurrentUser(on={on})": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -2397,7 +2437,7 @@
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/identityGovernance/entitlementManagement/accessPackageAssignments/microsoft.graph.My()": {
+    "/identityGovernance/entitlementManagement/accessPackageAssignments/microsoft.graph.filterByCurrentUser(on={on})": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -2642,6 +2682,10 @@
       "apiVersion": "v1.0-beta"
     },
     "/identityGovernance/entitlementManagement/accessPackageCatalogs/{accessPackageCatalog-id}/accessPackages/{accessPackage-id}/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceScope/accessPackageResource/accessPackageResourceScopes/{accessPackageResourceScope-id}": {
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/identityGovernance/entitlementManagement/accessPackageCatalogs/{accessPackageCatalog-id}/accessPackages/microsoft.graph.filterByCurrentUser(on={on})": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -2973,6 +3017,10 @@
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
+    "/identityGovernance/entitlementManagement/accessPackages/{accessPackage-id}/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackages/microsoft.graph.filterByCurrentUser(on={on})": {
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
+      "apiVersion": "v1.0-beta"
+    },
     "/identityGovernance/entitlementManagement/accessPackages/{accessPackage-id}/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackages/microsoft.graph.Search()": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
@@ -3062,6 +3110,10 @@
       "apiVersion": "v1.0-beta"
     },
     "/identityGovernance/entitlementManagement/accessPackages/{accessPackage-id}/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceScope/accessPackageResource/accessPackageResourceScopes/{accessPackageResourceScope-id}": {
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/identityGovernance/entitlementManagement/accessPackages/microsoft.graph.filterByCurrentUser(on={on})": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },

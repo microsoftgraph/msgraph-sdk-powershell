@@ -85119,7 +85119,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.onenoteOperationError'
             percentComplete:
               type: string
-              description: The operation percent complete if the operation is still in running status
+              description: The operation percent complete if the operation is still in running status.
               nullable: true
             resourceId:
               type: string
