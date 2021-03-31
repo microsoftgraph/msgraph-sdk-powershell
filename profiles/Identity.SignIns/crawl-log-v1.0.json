@@ -105,6 +105,10 @@
       "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml",
       "apiVersion": "v1.0"
     },
+    "/policies/adminConsentRequestPolicy": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml",
+      "apiVersion": "v1.0"
+    },
     "/policies/authenticationMethodsPolicy": {
       "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml",
       "apiVersion": "v1.0"

@@ -13420,11 +13420,12 @@ components:
         - androidEnterprise
         - windows10x
         - androidnGMS
-        - cloudPC
+        - chromeOS
         - linux
         - blackberry
         - palm
         - unknown
+        - cloudPC
       type: string
     microsoft.graph.managementAgentType:
       title: managementAgentType
@@ -13853,7 +13854,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.resourceAction'
-          description: Resource Actions each containing a set of allowed and not allowed permissions.
+          description: Actions
       additionalProperties:
         type: object
       description: Contains the set of ResourceActions determining the allowed and not allowed permissions for each role.
@@ -13975,7 +13976,7 @@ components:
           items:
             type: string
             nullable: true
-          description: Not Allowed Actions.
+          description: Not Allowed Actions
       additionalProperties:
         type: object
       description: Set of allowed and not allowed actions for a resource.

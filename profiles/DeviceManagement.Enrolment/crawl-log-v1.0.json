@@ -20,6 +20,10 @@
     "/deviceManagement/deviceEnrollmentConfigurations/{deviceEnrollmentConfiguration-id}/assignments/{enrollmentConfigurationAssignment-id}": {
       "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Enrolment.yml",
       "apiVersion": "v1.0"
+    },
+    "/roleManagement": {
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Enrolment.yml",
+      "apiVersion": "v1.0"
     }
   }
 }

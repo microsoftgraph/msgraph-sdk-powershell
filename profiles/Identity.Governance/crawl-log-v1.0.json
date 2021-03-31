@@ -53,6 +53,14 @@
       "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml",
       "apiVersion": "v1.0"
     },
+    "/identityGovernance/appConsent/appConsentRequests/{appConsentRequest-id}/userConsentRequests/microsoft.graph.filterByCurrentUser(on={on})": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml",
+      "apiVersion": "v1.0"
+    },
+    "/identityGovernance/appConsent/appConsentRequests/microsoft.graph.filterByCurrentUser(on={on})": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml",
+      "apiVersion": "v1.0"
+    },
     "/users/{user-id}/agreementAcceptances": {
       "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml",
       "apiVersion": "v1.0"
