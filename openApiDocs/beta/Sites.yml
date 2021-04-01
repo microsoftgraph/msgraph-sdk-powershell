@@ -21647,6 +21647,270 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/sites/{site-id}/permissions':
+    get:
+      tags:
+        - sites.permission
+      summary: Get permissions from sites
+      operationId: sites_ListPermissions
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - expirationDateTime
+                - expirationDateTime desc
+                - grantedTo
+                - grantedTo desc
+                - grantedToIdentities
+                - grantedToIdentities desc
+                - hasPassword
+                - hasPassword desc
+                - inheritedFrom
+                - inheritedFrom desc
+                - invitation
+                - invitation desc
+                - link
+                - link desc
+                - roles
+                - roles desc
+                - shareId
+                - shareId desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - expirationDateTime
+                - grantedTo
+                - grantedToIdentities
+                - hasPassword
+                - inheritedFrom
+                - invitation
+                - link
+                - roles
+                - shareId
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of permission
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.permission'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - sites.permission
+      summary: Create new navigation property to permissions for sites
+      operationId: sites_CreatePermissions
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.permission'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.permission'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/sites/{site-id}/permissions/{permission-id}':
+    get:
+      tags:
+        - sites.permission
+      summary: Get permissions from sites
+      operationId: sites_GetPermissions
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: permission-id
+          in: path
+          description: 'key: id of permission'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: permission
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - expirationDateTime
+                - grantedTo
+                - grantedToIdentities
+                - hasPassword
+                - inheritedFrom
+                - invitation
+                - link
+                - roles
+                - shareId
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.permission'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - sites.permission
+      summary: Update the navigation property permissions in sites
+      operationId: sites_UpdatePermissions
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: permission-id
+          in: path
+          description: 'key: id of permission'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: permission
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.permission'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - sites.permission
+      summary: Delete navigation property permissions for sites
+      operationId: sites_DeletePermissions
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: permission-id
+          in: path
+          description: 'key: id of permission'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: permission
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/sites/{site-id}/permissions/{permission-id}/microsoft.graph.grant':
     post:
       tags:
