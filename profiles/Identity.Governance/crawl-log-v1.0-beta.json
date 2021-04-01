@@ -129,6 +129,10 @@
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
+    "/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}/instances/{accessReviewInstance-id}/microsoft.graph.batchRecordDecisions": {
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
+      "apiVersion": "v1.0-beta"
+    },
     "/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}/instances/{accessReviewInstance-id}/microsoft.graph.resetDecisions": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
@@ -142,6 +146,14 @@
       "apiVersion": "v1.0-beta"
     },
     "/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}/microsoft.graph.stop": {
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/identityGovernance/appConsent/appConsentRequests/{appConsentRequest-id}/userConsentRequests/microsoft.graph.filterByCurrentUser(on={on})": {
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/identityGovernance/appConsent/appConsentRequests/microsoft.graph.filterByCurrentUser(on={on})": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -168,26 +180,6 @@
     "/identityGovernance/entitlementManagement/accessPackageAssignmentApprovals/microsoft.graph.filterByCurrentUser(on={on})": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentApprovals": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentApprovals/{approval-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentApprovals/{approval-id}/steps": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentApprovals/{approval-id}/steps/{approvalStep-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentApprovals/microsoft.graph.filterByCurrentUser(on={on})": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },
     "/identityGovernance/entitlementManagement/accessPackageAssignmentPolicies": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
@@ -229,14 +221,6 @@
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackageResourceRoles/{accessPackageResourceRole-id}/accessPackageResource/accessPackageResourceEnvironment": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackageResourceRoles/{accessPackageResourceRole-id}/accessPackageResource/accessPackageResourceEnvironment/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
     "/identityGovernance/entitlementManagement/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackageResourceRoles/{accessPackageResourceRole-id}/accessPackageResource/accessPackageResourceRoles": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
@@ -272,14 +256,6 @@
     "/identityGovernance/entitlementManagement/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackageResources/{accessPackageResource-id}/accessPackageResourceEnvironment/$ref": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackageResources/{accessPackageResource-id}/accessPackageResourceEnvironment": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackageResources/{accessPackageResource-id}/accessPackageResourceEnvironment/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },
     "/identityGovernance/entitlementManagement/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackageResources/{accessPackageResource-id}/accessPackageResourceRoles": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
@@ -324,14 +300,6 @@
     "/identityGovernance/entitlementManagement/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackageResourceScopes/{accessPackageResourceScope-id}/accessPackageResource/accessPackageResourceEnvironment/$ref": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackageResourceScopes/{accessPackageResourceScope-id}/accessPackageResource/accessPackageResourceEnvironment": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackageResourceScopes/{accessPackageResourceScope-id}/accessPackageResource/accessPackageResourceEnvironment/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },
     "/identityGovernance/entitlementManagement/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackageResourceScopes/{accessPackageResourceScope-id}/accessPackageResource/accessPackageResourceRoles": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
@@ -401,14 +369,6 @@
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackages/{accessPackage-id}/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceRole/accessPackageResource/accessPackageResourceEnvironment": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackages/{accessPackage-id}/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceRole/accessPackageResource/accessPackageResourceEnvironment/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
     "/identityGovernance/entitlementManagement/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackages/{accessPackage-id}/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceRole/accessPackageResource/accessPackageResourceRoles": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
@@ -445,14 +405,6 @@
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackages/{accessPackage-id}/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceScope/accessPackageResource/accessPackageResourceEnvironment": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackages/{accessPackage-id}/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceScope/accessPackageResource/accessPackageResourceEnvironment/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
     "/identityGovernance/entitlementManagement/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackages/{accessPackage-id}/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceScope/accessPackageResource/accessPackageResourceRoles": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
@@ -470,6 +422,10 @@
       "apiVersion": "v1.0-beta"
     },
     "/identityGovernance/entitlementManagement/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackages/{accessPackage-id}/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceScope/accessPackageResource/accessPackageResourceScopes/{accessPackageResourceScope-id}": {
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/identityGovernance/entitlementManagement/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackages/microsoft.graph.filterByCurrentUser(on={on})": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -541,14 +497,6 @@
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/accessPackageAssignment/accessPackage/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackageResourceRoles/{accessPackageResourceRole-id}/accessPackageResource/accessPackageResourceEnvironment": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/accessPackageAssignment/accessPackage/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackageResourceRoles/{accessPackageResourceRole-id}/accessPackageResource/accessPackageResourceEnvironment/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
     "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/accessPackageAssignment/accessPackage/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackageResourceRoles/{accessPackageResourceRole-id}/accessPackageResource/accessPackageResourceRoles": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
@@ -584,14 +532,6 @@
     "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/accessPackageAssignment/accessPackage/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackageResources/{accessPackageResource-id}/accessPackageResourceEnvironment/$ref": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/accessPackageAssignment/accessPackage/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackageResources/{accessPackageResource-id}/accessPackageResourceEnvironment": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/accessPackageAssignment/accessPackage/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackageResources/{accessPackageResource-id}/accessPackageResourceEnvironment/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },
     "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/accessPackageAssignment/accessPackage/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackageResources/{accessPackageResource-id}/accessPackageResourceRoles": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
@@ -637,14 +577,6 @@
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/accessPackageAssignment/accessPackage/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackageResourceScopes/{accessPackageResourceScope-id}/accessPackageResource/accessPackageResourceEnvironment": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/accessPackageAssignment/accessPackage/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackageResourceScopes/{accessPackageResourceScope-id}/accessPackageResource/accessPackageResourceEnvironment/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
     "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/accessPackageAssignment/accessPackage/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackageResourceScopes/{accessPackageResourceScope-id}/accessPackageResource/accessPackageResourceRoles": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
@@ -670,6 +602,10 @@
       "apiVersion": "v1.0-beta"
     },
     "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/accessPackageAssignment/accessPackage/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackages/{accessPackage-id}": {
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/accessPackageAssignment/accessPackage/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackages/microsoft.graph.filterByCurrentUser(on={on})": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -709,14 +645,6 @@
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/accessPackageAssignment/accessPackage/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceRole/accessPackageResource/accessPackageResourceEnvironment": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/accessPackageAssignment/accessPackage/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceRole/accessPackageResource/accessPackageResourceEnvironment/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
     "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/accessPackageAssignment/accessPackage/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceRole/accessPackageResource/accessPackageResourceRoles": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
@@ -752,14 +680,6 @@
     "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/accessPackageAssignment/accessPackage/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceScope/accessPackageResource/accessPackageResourceEnvironment/$ref": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/accessPackageAssignment/accessPackage/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceScope/accessPackageResource/accessPackageResourceEnvironment": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/accessPackageAssignment/accessPackage/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceScope/accessPackageResource/accessPackageResourceEnvironment/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },
     "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/accessPackageAssignment/accessPackage/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceScope/accessPackageResource/accessPackageResourceRoles": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
@@ -817,14 +737,6 @@
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/accessPackageAssignment/accessPackageAssignmentPolicy/accessPackageCatalog/accessPackageResourceRoles/{accessPackageResourceRole-id}/accessPackageResource/accessPackageResourceEnvironment": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/accessPackageAssignment/accessPackageAssignmentPolicy/accessPackageCatalog/accessPackageResourceRoles/{accessPackageResourceRole-id}/accessPackageResource/accessPackageResourceEnvironment/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
     "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/accessPackageAssignment/accessPackageAssignmentPolicy/accessPackageCatalog/accessPackageResourceRoles/{accessPackageResourceRole-id}/accessPackageResource/accessPackageResourceRoles": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
@@ -860,14 +772,6 @@
     "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/accessPackageAssignment/accessPackageAssignmentPolicy/accessPackageCatalog/accessPackageResources/{accessPackageResource-id}/accessPackageResourceEnvironment/$ref": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/accessPackageAssignment/accessPackageAssignmentPolicy/accessPackageCatalog/accessPackageResources/{accessPackageResource-id}/accessPackageResourceEnvironment": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/accessPackageAssignment/accessPackageAssignmentPolicy/accessPackageCatalog/accessPackageResources/{accessPackageResource-id}/accessPackageResourceEnvironment/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },
     "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/accessPackageAssignment/accessPackageAssignmentPolicy/accessPackageCatalog/accessPackageResources/{accessPackageResource-id}/accessPackageResourceRoles": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
@@ -912,14 +816,6 @@
     "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/accessPackageAssignment/accessPackageAssignmentPolicy/accessPackageCatalog/accessPackageResourceScopes/{accessPackageResourceScope-id}/accessPackageResource/accessPackageResourceEnvironment/$ref": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/accessPackageAssignment/accessPackageAssignmentPolicy/accessPackageCatalog/accessPackageResourceScopes/{accessPackageResourceScope-id}/accessPackageResource/accessPackageResourceEnvironment": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/accessPackageAssignment/accessPackageAssignmentPolicy/accessPackageCatalog/accessPackageResourceScopes/{accessPackageResourceScope-id}/accessPackageResource/accessPackageResourceEnvironment/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },
     "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/accessPackageAssignment/accessPackageAssignmentPolicy/accessPackageCatalog/accessPackageResourceScopes/{accessPackageResourceScope-id}/accessPackageResource/accessPackageResourceRoles": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
@@ -989,14 +885,6 @@
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/accessPackageAssignment/accessPackageAssignmentPolicy/accessPackageCatalog/accessPackages/{accessPackage-id}/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceRole/accessPackageResource/accessPackageResourceEnvironment": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/accessPackageAssignment/accessPackageAssignmentPolicy/accessPackageCatalog/accessPackages/{accessPackage-id}/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceRole/accessPackageResource/accessPackageResourceEnvironment/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
     "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/accessPackageAssignment/accessPackageAssignmentPolicy/accessPackageCatalog/accessPackages/{accessPackage-id}/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceRole/accessPackageResource/accessPackageResourceRoles": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
@@ -1033,14 +921,6 @@
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/accessPackageAssignment/accessPackageAssignmentPolicy/accessPackageCatalog/accessPackages/{accessPackage-id}/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceScope/accessPackageResource/accessPackageResourceEnvironment": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/accessPackageAssignment/accessPackageAssignmentPolicy/accessPackageCatalog/accessPackages/{accessPackage-id}/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceScope/accessPackageResource/accessPackageResourceEnvironment/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
     "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/accessPackageAssignment/accessPackageAssignmentPolicy/accessPackageCatalog/accessPackages/{accessPackage-id}/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceScope/accessPackageResource/accessPackageResourceRoles": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
@@ -1061,6 +941,10 @@
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
+    "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/accessPackageAssignment/accessPackageAssignmentPolicy/accessPackageCatalog/accessPackages/microsoft.graph.filterByCurrentUser(on={on})": {
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
+      "apiVersion": "v1.0-beta"
+    },
     "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/accessPackageAssignment/accessPackageAssignmentPolicy/accessPackageCatalog/accessPackages/microsoft.graph.Search()": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
@@ -1073,11 +957,11 @@
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/accessPackageAssignment/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id1}/microsoft.graph.Cancel": {
+    "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/accessPackageAssignment/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id1}/microsoft.graph.cancel": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/accessPackageAssignment/accessPackageAssignmentRequests/microsoft.graph.My()": {
+    "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/accessPackageAssignment/accessPackageAssignmentRequests/microsoft.graph.filterByCurrentUser(on={on})": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -1097,7 +981,7 @@
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/accessPackageAssignment/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageAssignments/microsoft.graph.My()": {
+    "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/accessPackageAssignment/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageAssignments/microsoft.graph.filterByCurrentUser(on={on})": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -1116,14 +1000,6 @@
     "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/accessPackageAssignment/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageResourceRole/accessPackageResource/accessPackageResourceEnvironment/$ref": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/accessPackageAssignment/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageResourceRole/accessPackageResource/accessPackageResourceEnvironment": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/accessPackageAssignment/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageResourceRole/accessPackageResource/accessPackageResourceEnvironment/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },
     "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/accessPackageAssignment/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageResourceRole/accessPackageResource/accessPackageResourceRoles": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
@@ -1160,14 +1036,6 @@
     "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/accessPackageAssignment/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageResourceScope/accessPackageResource/accessPackageResourceEnvironment/$ref": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/accessPackageAssignment/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageResourceScope/accessPackageResource/accessPackageResourceEnvironment": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/accessPackageAssignment/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageResourceScope/accessPackageResource/accessPackageResourceEnvironment/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },
     "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/accessPackageAssignment/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageResourceScope/accessPackageResource/accessPackageResourceRoles": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
@@ -1217,7 +1085,7 @@
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/microsoft.graph.Cancel": {
+    "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/microsoft.graph.cancel": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -1233,7 +1101,7 @@
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/microsoft.graph.My()": {
+    "/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/microsoft.graph.filterByCurrentUser(on={on})": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -1297,14 +1165,6 @@
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageAssignments/{accessPackageAssignment-id}/accessPackage/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackageResourceRoles/{accessPackageResourceRole-id}/accessPackageResource/accessPackageResourceEnvironment": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageAssignments/{accessPackageAssignment-id}/accessPackage/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackageResourceRoles/{accessPackageResourceRole-id}/accessPackageResource/accessPackageResourceEnvironment/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
     "/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageAssignments/{accessPackageAssignment-id}/accessPackage/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackageResourceRoles/{accessPackageResourceRole-id}/accessPackageResource/accessPackageResourceRoles": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
@@ -1340,14 +1200,6 @@
     "/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageAssignments/{accessPackageAssignment-id}/accessPackage/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackageResources/{accessPackageResource-id}/accessPackageResourceEnvironment/$ref": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageAssignments/{accessPackageAssignment-id}/accessPackage/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackageResources/{accessPackageResource-id}/accessPackageResourceEnvironment": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageAssignments/{accessPackageAssignment-id}/accessPackage/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackageResources/{accessPackageResource-id}/accessPackageResourceEnvironment/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },
     "/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageAssignments/{accessPackageAssignment-id}/accessPackage/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackageResources/{accessPackageResource-id}/accessPackageResourceRoles": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
@@ -1393,14 +1245,6 @@
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageAssignments/{accessPackageAssignment-id}/accessPackage/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackageResourceScopes/{accessPackageResourceScope-id}/accessPackageResource/accessPackageResourceEnvironment": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageAssignments/{accessPackageAssignment-id}/accessPackage/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackageResourceScopes/{accessPackageResourceScope-id}/accessPackageResource/accessPackageResourceEnvironment/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
     "/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageAssignments/{accessPackageAssignment-id}/accessPackage/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackageResourceScopes/{accessPackageResourceScope-id}/accessPackageResource/accessPackageResourceRoles": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
@@ -1426,6 +1270,10 @@
       "apiVersion": "v1.0-beta"
     },
     "/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageAssignments/{accessPackageAssignment-id}/accessPackage/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackages/{accessPackage-id}": {
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageAssignments/{accessPackageAssignment-id}/accessPackage/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackages/microsoft.graph.filterByCurrentUser(on={on})": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -1465,14 +1313,6 @@
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageAssignments/{accessPackageAssignment-id}/accessPackage/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceRole/accessPackageResource/accessPackageResourceEnvironment": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageAssignments/{accessPackageAssignment-id}/accessPackage/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceRole/accessPackageResource/accessPackageResourceEnvironment/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
     "/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageAssignments/{accessPackageAssignment-id}/accessPackage/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceRole/accessPackageResource/accessPackageResourceRoles": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
@@ -1508,14 +1348,6 @@
     "/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageAssignments/{accessPackageAssignment-id}/accessPackage/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceScope/accessPackageResource/accessPackageResourceEnvironment/$ref": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageAssignments/{accessPackageAssignment-id}/accessPackage/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceScope/accessPackageResource/accessPackageResourceEnvironment": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageAssignments/{accessPackageAssignment-id}/accessPackage/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceScope/accessPackageResource/accessPackageResourceEnvironment/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },
     "/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageAssignments/{accessPackageAssignment-id}/accessPackage/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceScope/accessPackageResource/accessPackageResourceRoles": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
@@ -1573,14 +1405,6 @@
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentPolicy/accessPackageCatalog/accessPackageResourceRoles/{accessPackageResourceRole-id}/accessPackageResource/accessPackageResourceEnvironment": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentPolicy/accessPackageCatalog/accessPackageResourceRoles/{accessPackageResourceRole-id}/accessPackageResource/accessPackageResourceEnvironment/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
     "/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentPolicy/accessPackageCatalog/accessPackageResourceRoles/{accessPackageResourceRole-id}/accessPackageResource/accessPackageResourceRoles": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
@@ -1616,14 +1440,6 @@
     "/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentPolicy/accessPackageCatalog/accessPackageResources/{accessPackageResource-id}/accessPackageResourceEnvironment/$ref": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentPolicy/accessPackageCatalog/accessPackageResources/{accessPackageResource-id}/accessPackageResourceEnvironment": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentPolicy/accessPackageCatalog/accessPackageResources/{accessPackageResource-id}/accessPackageResourceEnvironment/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },
     "/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentPolicy/accessPackageCatalog/accessPackageResources/{accessPackageResource-id}/accessPackageResourceRoles": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
@@ -1668,14 +1484,6 @@
     "/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentPolicy/accessPackageCatalog/accessPackageResourceScopes/{accessPackageResourceScope-id}/accessPackageResource/accessPackageResourceEnvironment/$ref": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentPolicy/accessPackageCatalog/accessPackageResourceScopes/{accessPackageResourceScope-id}/accessPackageResource/accessPackageResourceEnvironment": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentPolicy/accessPackageCatalog/accessPackageResourceScopes/{accessPackageResourceScope-id}/accessPackageResource/accessPackageResourceEnvironment/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },
     "/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentPolicy/accessPackageCatalog/accessPackageResourceScopes/{accessPackageResourceScope-id}/accessPackageResource/accessPackageResourceRoles": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
@@ -1745,14 +1553,6 @@
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentPolicy/accessPackageCatalog/accessPackages/{accessPackage-id}/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceRole/accessPackageResource/accessPackageResourceEnvironment": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentPolicy/accessPackageCatalog/accessPackages/{accessPackage-id}/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceRole/accessPackageResource/accessPackageResourceEnvironment/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
     "/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentPolicy/accessPackageCatalog/accessPackages/{accessPackage-id}/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceRole/accessPackageResource/accessPackageResourceRoles": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
@@ -1789,14 +1589,6 @@
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentPolicy/accessPackageCatalog/accessPackages/{accessPackage-id}/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceScope/accessPackageResource/accessPackageResourceEnvironment": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentPolicy/accessPackageCatalog/accessPackages/{accessPackage-id}/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceScope/accessPackageResource/accessPackageResourceEnvironment/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
     "/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentPolicy/accessPackageCatalog/accessPackages/{accessPackage-id}/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceScope/accessPackageResource/accessPackageResourceRoles": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
@@ -1814,6 +1606,10 @@
       "apiVersion": "v1.0-beta"
     },
     "/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentPolicy/accessPackageCatalog/accessPackages/{accessPackage-id}/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceScope/accessPackageResource/accessPackageResourceScopes/{accessPackageResourceScope-id}": {
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentPolicy/accessPackageCatalog/accessPackages/microsoft.graph.filterByCurrentUser(on={on})": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -1841,7 +1637,7 @@
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/microsoft.graph.Cancel": {
+    "/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/microsoft.graph.cancel": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -1857,7 +1653,7 @@
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentRequests/microsoft.graph.My()": {
+    "/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentRequests/microsoft.graph.filterByCurrentUser(on={on})": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -1885,7 +1681,7 @@
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageAssignments/microsoft.graph.My()": {
+    "/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageAssignments/microsoft.graph.filterByCurrentUser(on={on})": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -1904,14 +1700,6 @@
     "/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageResourceRole/accessPackageResource/accessPackageResourceEnvironment/$ref": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageResourceRole/accessPackageResource/accessPackageResourceEnvironment": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageResourceRole/accessPackageResource/accessPackageResourceEnvironment/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },
     "/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageResourceRole/accessPackageResource/accessPackageResourceRoles": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
@@ -1948,14 +1736,6 @@
     "/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageResourceScope/accessPackageResource/accessPackageResourceEnvironment/$ref": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageResourceScope/accessPackageResource/accessPackageResourceEnvironment": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageResourceScope/accessPackageResource/accessPackageResourceEnvironment/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },
     "/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageResourceScope/accessPackageResource/accessPackageResourceRoles": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
@@ -2045,14 +1825,6 @@
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackage/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackageResourceRoles/{accessPackageResourceRole-id}/accessPackageResource/accessPackageResourceEnvironment": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackage/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackageResourceRoles/{accessPackageResourceRole-id}/accessPackageResource/accessPackageResourceEnvironment/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
     "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackage/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackageResourceRoles/{accessPackageResourceRole-id}/accessPackageResource/accessPackageResourceRoles": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
@@ -2088,14 +1860,6 @@
     "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackage/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackageResources/{accessPackageResource-id}/accessPackageResourceEnvironment/$ref": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackage/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackageResources/{accessPackageResource-id}/accessPackageResourceEnvironment": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackage/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackageResources/{accessPackageResource-id}/accessPackageResourceEnvironment/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },
     "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackage/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackageResources/{accessPackageResource-id}/accessPackageResourceRoles": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
@@ -2141,14 +1905,6 @@
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackage/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackageResourceScopes/{accessPackageResourceScope-id}/accessPackageResource/accessPackageResourceEnvironment": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackage/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackageResourceScopes/{accessPackageResourceScope-id}/accessPackageResource/accessPackageResourceEnvironment/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
     "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackage/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackageResourceScopes/{accessPackageResourceScope-id}/accessPackageResource/accessPackageResourceRoles": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
@@ -2174,6 +1930,10 @@
       "apiVersion": "v1.0-beta"
     },
     "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackage/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackages/{accessPackage-id}": {
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackage/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackages/microsoft.graph.filterByCurrentUser(on={on})": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -2213,14 +1973,6 @@
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackage/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceRole/accessPackageResource/accessPackageResourceEnvironment": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackage/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceRole/accessPackageResource/accessPackageResourceEnvironment/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
     "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackage/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceRole/accessPackageResource/accessPackageResourceRoles": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
@@ -2256,14 +2008,6 @@
     "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackage/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceScope/accessPackageResource/accessPackageResourceEnvironment/$ref": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackage/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceScope/accessPackageResource/accessPackageResourceEnvironment": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackage/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceScope/accessPackageResource/accessPackageResourceEnvironment/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },
     "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackage/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceScope/accessPackageResource/accessPackageResourceRoles": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
@@ -2321,14 +2065,6 @@
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentPolicy/accessPackageCatalog/accessPackageResourceRoles/{accessPackageResourceRole-id}/accessPackageResource/accessPackageResourceEnvironment": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentPolicy/accessPackageCatalog/accessPackageResourceRoles/{accessPackageResourceRole-id}/accessPackageResource/accessPackageResourceEnvironment/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
     "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentPolicy/accessPackageCatalog/accessPackageResourceRoles/{accessPackageResourceRole-id}/accessPackageResource/accessPackageResourceRoles": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
@@ -2364,14 +2100,6 @@
     "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentPolicy/accessPackageCatalog/accessPackageResources/{accessPackageResource-id}/accessPackageResourceEnvironment/$ref": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentPolicy/accessPackageCatalog/accessPackageResources/{accessPackageResource-id}/accessPackageResourceEnvironment": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentPolicy/accessPackageCatalog/accessPackageResources/{accessPackageResource-id}/accessPackageResourceEnvironment/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },
     "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentPolicy/accessPackageCatalog/accessPackageResources/{accessPackageResource-id}/accessPackageResourceRoles": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
@@ -2416,14 +2144,6 @@
     "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentPolicy/accessPackageCatalog/accessPackageResourceScopes/{accessPackageResourceScope-id}/accessPackageResource/accessPackageResourceEnvironment/$ref": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentPolicy/accessPackageCatalog/accessPackageResourceScopes/{accessPackageResourceScope-id}/accessPackageResource/accessPackageResourceEnvironment": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentPolicy/accessPackageCatalog/accessPackageResourceScopes/{accessPackageResourceScope-id}/accessPackageResource/accessPackageResourceEnvironment/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },
     "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentPolicy/accessPackageCatalog/accessPackageResourceScopes/{accessPackageResourceScope-id}/accessPackageResource/accessPackageResourceRoles": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
@@ -2493,14 +2213,6 @@
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentPolicy/accessPackageCatalog/accessPackages/{accessPackage-id}/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceRole/accessPackageResource/accessPackageResourceEnvironment": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentPolicy/accessPackageCatalog/accessPackages/{accessPackage-id}/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceRole/accessPackageResource/accessPackageResourceEnvironment/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
     "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentPolicy/accessPackageCatalog/accessPackages/{accessPackage-id}/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceRole/accessPackageResource/accessPackageResourceRoles": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
@@ -2537,14 +2249,6 @@
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentPolicy/accessPackageCatalog/accessPackages/{accessPackage-id}/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceScope/accessPackageResource/accessPackageResourceEnvironment": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentPolicy/accessPackageCatalog/accessPackages/{accessPackage-id}/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceScope/accessPackageResource/accessPackageResourceEnvironment/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
     "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentPolicy/accessPackageCatalog/accessPackages/{accessPackage-id}/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceScope/accessPackageResource/accessPackageResourceRoles": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
@@ -2562,6 +2266,10 @@
       "apiVersion": "v1.0-beta"
     },
     "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentPolicy/accessPackageCatalog/accessPackages/{accessPackage-id}/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceScope/accessPackageResource/accessPackageResourceScopes/{accessPackageResourceScope-id}": {
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentPolicy/accessPackageCatalog/accessPackages/microsoft.graph.filterByCurrentUser(on={on})": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -2589,7 +2297,7 @@
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/microsoft.graph.Cancel": {
+    "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentRequests/{accessPackageAssignmentRequest-id}/microsoft.graph.cancel": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -2605,7 +2313,7 @@
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentRequests/microsoft.graph.My()": {
+    "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentRequests/microsoft.graph.filterByCurrentUser(on={on})": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -2625,7 +2333,7 @@
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageAssignments/microsoft.graph.My()": {
+    "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageAssignments/microsoft.graph.filterByCurrentUser(on={on})": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -2644,14 +2352,6 @@
     "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageResourceRole/accessPackageResource/accessPackageResourceEnvironment/$ref": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageResourceRole/accessPackageResource/accessPackageResourceEnvironment": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageResourceRole/accessPackageResource/accessPackageResourceEnvironment/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },
     "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageResourceRole/accessPackageResource/accessPackageResourceRoles": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
@@ -2688,14 +2388,6 @@
     "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageResourceScope/accessPackageResource/accessPackageResourceEnvironment/$ref": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageResourceScope/accessPackageResource/accessPackageResourceEnvironment": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageResourceScope/accessPackageResource/accessPackageResourceEnvironment/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },
     "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentResourceRoles/{accessPackageAssignmentResourceRole-id}/accessPackageResourceScope/accessPackageResource/accessPackageResourceRoles": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
@@ -2745,7 +2437,7 @@
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/identityGovernance/entitlementManagement/accessPackageAssignments/microsoft.graph.My()": {
+    "/identityGovernance/entitlementManagement/accessPackageAssignments/microsoft.graph.filterByCurrentUser(on={on})": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -2776,14 +2468,6 @@
     "/identityGovernance/entitlementManagement/accessPackageCatalogs/{accessPackageCatalog-id}/accessPackageResourceRoles/{accessPackageResourceRole-id}/accessPackageResource/accessPackageResourceEnvironment/$ref": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageCatalogs/{accessPackageCatalog-id}/accessPackageResourceRoles/{accessPackageResourceRole-id}/accessPackageResource/accessPackageResourceEnvironment": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageCatalogs/{accessPackageCatalog-id}/accessPackageResourceRoles/{accessPackageResourceRole-id}/accessPackageResource/accessPackageResourceEnvironment/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },
     "/identityGovernance/entitlementManagement/accessPackageCatalogs/{accessPackageCatalog-id}/accessPackageResourceRoles/{accessPackageResourceRole-id}/accessPackageResource/accessPackageResourceRoles": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
@@ -2820,14 +2504,6 @@
     "/identityGovernance/entitlementManagement/accessPackageCatalogs/{accessPackageCatalog-id}/accessPackageResources/{accessPackageResource-id}/accessPackageResourceEnvironment/$ref": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageCatalogs/{accessPackageCatalog-id}/accessPackageResources/{accessPackageResource-id}/accessPackageResourceEnvironment": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageCatalogs/{accessPackageCatalog-id}/accessPackageResources/{accessPackageResource-id}/accessPackageResourceEnvironment/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },
     "/identityGovernance/entitlementManagement/accessPackageCatalogs/{accessPackageCatalog-id}/accessPackageResources/{accessPackageResource-id}/accessPackageResourceRoles": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
@@ -2872,14 +2548,6 @@
     "/identityGovernance/entitlementManagement/accessPackageCatalogs/{accessPackageCatalog-id}/accessPackageResourceScopes/{accessPackageResourceScope-id}/accessPackageResource/accessPackageResourceEnvironment/$ref": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageCatalogs/{accessPackageCatalog-id}/accessPackageResourceScopes/{accessPackageResourceScope-id}/accessPackageResource/accessPackageResourceEnvironment": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageCatalogs/{accessPackageCatalog-id}/accessPackageResourceScopes/{accessPackageResourceScope-id}/accessPackageResource/accessPackageResourceEnvironment/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },
     "/identityGovernance/entitlementManagement/accessPackageCatalogs/{accessPackageCatalog-id}/accessPackageResourceScopes/{accessPackageResourceScope-id}/accessPackageResource/accessPackageResourceRoles": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
@@ -2961,14 +2629,6 @@
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/identityGovernance/entitlementManagement/accessPackageCatalogs/{accessPackageCatalog-id}/accessPackages/{accessPackage-id}/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceRole/accessPackageResource/accessPackageResourceEnvironment": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageCatalogs/{accessPackageCatalog-id}/accessPackages/{accessPackage-id}/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceRole/accessPackageResource/accessPackageResourceEnvironment/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
     "/identityGovernance/entitlementManagement/accessPackageCatalogs/{accessPackageCatalog-id}/accessPackages/{accessPackage-id}/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceRole/accessPackageResource/accessPackageResourceRoles": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
@@ -3005,14 +2665,6 @@
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/identityGovernance/entitlementManagement/accessPackageCatalogs/{accessPackageCatalog-id}/accessPackages/{accessPackage-id}/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceScope/accessPackageResource/accessPackageResourceEnvironment": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageCatalogs/{accessPackageCatalog-id}/accessPackages/{accessPackage-id}/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceScope/accessPackageResource/accessPackageResourceEnvironment/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
     "/identityGovernance/entitlementManagement/accessPackageCatalogs/{accessPackageCatalog-id}/accessPackages/{accessPackage-id}/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceScope/accessPackageResource/accessPackageResourceRoles": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
@@ -3030,6 +2682,10 @@
       "apiVersion": "v1.0-beta"
     },
     "/identityGovernance/entitlementManagement/accessPackageCatalogs/{accessPackageCatalog-id}/accessPackages/{accessPackage-id}/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceScope/accessPackageResource/accessPackageResourceScopes/{accessPackageResourceScope-id}": {
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/identityGovernance/entitlementManagement/accessPackageCatalogs/{accessPackageCatalog-id}/accessPackages/microsoft.graph.filterByCurrentUser(on={on})": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -3056,22 +2712,6 @@
     "/identityGovernance/entitlementManagement/accessPackageResourceEnvironments/{accessPackageResourceEnvironment-id}/accessPackageResources/$ref": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageResourceEnvironments": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageResourceEnvironments/{accessPackageResourceEnvironment-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageResourceEnvironments/{accessPackageResourceEnvironment-id}/accessPackageResources": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageResourceEnvironments/{accessPackageResourceEnvironment-id}/accessPackageResources/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },
     "/identityGovernance/entitlementManagement/accessPackageResourceRequests": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
@@ -3125,14 +2765,6 @@
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/identityGovernance/entitlementManagement/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceRole/accessPackageResource/accessPackageResourceEnvironment": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceRole/accessPackageResource/accessPackageResourceEnvironment/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
     "/identityGovernance/entitlementManagement/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceRole/accessPackageResource/accessPackageResourceRoles": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
@@ -3169,14 +2801,6 @@
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/identityGovernance/entitlementManagement/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceScope/accessPackageResource/accessPackageResourceEnvironment": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceScope/accessPackageResource/accessPackageResourceEnvironment/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
     "/identityGovernance/entitlementManagement/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceScope/accessPackageResource/accessPackageResourceRoles": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
@@ -3212,14 +2836,6 @@
     "/identityGovernance/entitlementManagement/accessPackageResources/{accessPackageResource-id}/accessPackageResourceEnvironment/$ref": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageResources/{accessPackageResource-id}/accessPackageResourceEnvironment": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
-    "/identityGovernance/entitlementManagement/accessPackageResources/{accessPackageResource-id}/accessPackageResourceEnvironment/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },
     "/identityGovernance/entitlementManagement/accessPackageResources/{accessPackageResource-id}/accessPackageResourceRoles": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
@@ -3293,14 +2909,6 @@
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/identityGovernance/entitlementManagement/accessPackages/{accessPackage-id}/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackageResourceRoles/{accessPackageResourceRole-id}/accessPackageResource/accessPackageResourceEnvironment": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
-    "/identityGovernance/entitlementManagement/accessPackages/{accessPackage-id}/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackageResourceRoles/{accessPackageResourceRole-id}/accessPackageResource/accessPackageResourceEnvironment/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
     "/identityGovernance/entitlementManagement/accessPackages/{accessPackage-id}/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackageResourceRoles/{accessPackageResourceRole-id}/accessPackageResource/accessPackageResourceRoles": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
@@ -3336,14 +2944,6 @@
     "/identityGovernance/entitlementManagement/accessPackages/{accessPackage-id}/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackageResources/{accessPackageResource-id}/accessPackageResourceEnvironment/$ref": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
-    },
-    "/identityGovernance/entitlementManagement/accessPackages/{accessPackage-id}/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackageResources/{accessPackageResource-id}/accessPackageResourceEnvironment": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
-    "/identityGovernance/entitlementManagement/accessPackages/{accessPackage-id}/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackageResources/{accessPackageResource-id}/accessPackageResourceEnvironment/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },
     "/identityGovernance/entitlementManagement/accessPackages/{accessPackage-id}/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackageResources/{accessPackageResource-id}/accessPackageResourceRoles": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
@@ -3389,14 +2989,6 @@
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/identityGovernance/entitlementManagement/accessPackages/{accessPackage-id}/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackageResourceScopes/{accessPackageResourceScope-id}/accessPackageResource/accessPackageResourceEnvironment": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
-    "/identityGovernance/entitlementManagement/accessPackages/{accessPackage-id}/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackageResourceScopes/{accessPackageResourceScope-id}/accessPackageResource/accessPackageResourceEnvironment/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
     "/identityGovernance/entitlementManagement/accessPackages/{accessPackage-id}/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackageResourceScopes/{accessPackageResourceScope-id}/accessPackageResource/accessPackageResourceRoles": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
@@ -3422,6 +3014,10 @@
       "apiVersion": "v1.0-beta"
     },
     "/identityGovernance/entitlementManagement/accessPackages/{accessPackage-id}/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackages/{accessPackage-id1}": {
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/identityGovernance/entitlementManagement/accessPackages/{accessPackage-id}/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/accessPackageCatalog/accessPackages/microsoft.graph.filterByCurrentUser(on={on})": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -3461,14 +3057,6 @@
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/identityGovernance/entitlementManagement/accessPackages/{accessPackage-id}/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceRole/accessPackageResource/accessPackageResourceEnvironment": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
-    "/identityGovernance/entitlementManagement/accessPackages/{accessPackage-id}/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceRole/accessPackageResource/accessPackageResourceEnvironment/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
     "/identityGovernance/entitlementManagement/accessPackages/{accessPackage-id}/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceRole/accessPackageResource/accessPackageResourceRoles": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
@@ -3505,14 +3093,6 @@
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/identityGovernance/entitlementManagement/accessPackages/{accessPackage-id}/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceScope/accessPackageResource/accessPackageResourceEnvironment": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
-    "/identityGovernance/entitlementManagement/accessPackages/{accessPackage-id}/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceScope/accessPackageResource/accessPackageResourceEnvironment/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
-    },
     "/identityGovernance/entitlementManagement/accessPackages/{accessPackage-id}/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceScope/accessPackageResource/accessPackageResourceRoles": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
@@ -3530,6 +3110,10 @@
       "apiVersion": "v1.0-beta"
     },
     "/identityGovernance/entitlementManagement/accessPackages/{accessPackage-id}/accessPackageResourceRoleScopes/{accessPackageResourceRoleScope-id}/accessPackageResourceScope/accessPackageResource/accessPackageResourceScopes/{accessPackageResourceScope-id}": {
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/identityGovernance/entitlementManagement/accessPackages/microsoft.graph.filterByCurrentUser(on={on})": {
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml",
       "apiVersion": "v1.0-beta"
     },

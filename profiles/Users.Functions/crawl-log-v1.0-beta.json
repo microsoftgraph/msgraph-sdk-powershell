@@ -5,13 +5,17 @@
       "originalLocation": "/openApiDocs/beta/Users.Functions.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/users/{user-id}/approvals/microsoft.graph.filterByCurrentUser(on={on})": {
+    "/users/{user-id}/appConsentRequestsForApproval/{appConsentRequest-id}/userConsentRequests/microsoft.graph.filterByCurrentUser(on={on})": {
+      "originalLocation": "/openApiDocs/beta/Users.Functions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/appConsentRequestsForApproval/microsoft.graph.filterByCurrentUser(on={on})": {
       "originalLocation": "/openApiDocs/beta/Users.Functions.yml",
       "apiVersion": "v1.0-beta"
     },
     "/users/{user-id}/approvals/microsoft.graph.filterByCurrentUser(on={on})": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Users.Functions.yml"
+      "originalLocation": "/openApiDocs/beta/Users.Functions.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/users/{user-id}/calendar/calendarView/{event-id}/calendar/microsoft.graph.allowedCalendarSharingRoles(User='{User}')": {
       "originalLocation": "/openApiDocs/beta/Users.Functions.yml",

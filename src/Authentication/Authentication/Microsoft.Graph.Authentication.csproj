@@ -1,38 +1,23 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Version>1.4.0</Version>
+    <Version>1.4.2</Version>
     <LangVersion>7.1</LangVersion>
     <TargetFramework>netstandard2.0</TargetFramework>
     <OutputType>Library</OutputType>
     <AssemblyName>Microsoft.Graph.Authentication</AssemblyName>
     <RootNamespace>Microsoft.Graph.PowerShell.Authentication</RootNamespace>
-    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
-    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-    <OutputPath>./bin</OutputPath>
-    <PublishDir>$(OutputPath)</PublishDir>
     <NoPackageAnalysis>true</NoPackageAnalysis>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <WarningsAsErrors />
     <NuspecFile>Microsoft.Graph.Authentication.nuspec</NuspecFile>
     <Copyright>© Microsoft Corporation. All rights reserved.</Copyright>
   </PropertyGroup>
-  <Import Project="$(MSBuildThisFileDirectory)..\..\..\Repo.props" />
   <ItemGroup>
-    <PreLoadAssemblies Include="$(RepoTools)Lib\System.Security.Cryptography.ProtectedData.dll" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="Microsoft.Graph.Auth" Version="1.0.0-preview.5" />
-    <PackageReference Include="Microsoft.Graph.Core" Version="1.20.1" />
-    <PackageReference Include="Microsoft.Identity.Client" Version="4.14.0" />
-    <PackageReference Include="Microsoft.IdentityModel.JsonWebTokens" Version="5.6.0" />
-    <PackageReference Include="Microsoft.IdentityModel.Logging" Version="5.6.0" />
-    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="5.6.0" />
     <PackageReference Include="Microsoft.Win32.Registry" Version="4.5.0" />
     <PackageReference Include="PowerShellStandard.Library" Version="5.1.0" />
-    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
-    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.6.0" />
-    <!--Always ensure this version matches the versions of System.Security.Cryptography.* dependencies of Microsoft.Identity.Client when targeting PowerShell 6 and below.-->
-    <PackageReference Include="System.Security.Cryptography.ProtectedData" Version="4.3.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Authentication.Core\Microsoft.Graph.Authentication.Core.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">
@@ -47,7 +32,4 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-  <Target Name="CopyFiles" AfterTargets="Build">
-    <Copy SourceFiles="@(PreLoadAssemblies)" DestinationFolder="$(TargetDir)\PreloadAssemblies" />
-  </Target>
 </Project>

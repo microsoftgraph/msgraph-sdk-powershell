@@ -65,6 +65,14 @@
       "originalLocation": "/openApiDocs/beta/Users.yml",
       "apiVersion": "v1.0-beta"
     },
+    "/users/{user-id}/oauth2PermissionGrants": {
+      "originalLocation": "/openApiDocs/beta/Users.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/oauth2PermissionGrants/$ref": {
+      "originalLocation": "/openApiDocs/beta/Users.yml",
+      "apiVersion": "v1.0-beta"
+    },
     "/users/{user-id}/outlook": {
       "originalLocation": "/openApiDocs/beta/Users.yml",
       "apiVersion": "v1.0-beta"
@@ -274,6 +282,10 @@
       "apiVersion": "v1.0-beta"
     },
     "/users/{user-id}/settings": {
+      "originalLocation": "/openApiDocs/beta/Users.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/settings/itemInsights": {
       "originalLocation": "/openApiDocs/beta/Users.yml",
       "apiVersion": "v1.0-beta"
     },

@@ -6,8 +6,6 @@ parameters:
     type: string
   - name: AuthModulePath
     type: string
-  - name: AuthModuleDllPattern
-    type: string
   - name: ServiceModulePath
     type: string
   - name: ModulePrefix
@@ -30,7 +28,6 @@ jobs:
       Branch: ${{ parameters.Branch }}
       ModulesToGenerate: ${{ parameters.ModulesToGenerate }}
       AuthModulePath: ${{ parameters.AuthModulePath }}
-      AuthModuleDllPattern: ${{ parameters.AuthModuleDllPattern }}
       ServiceModulePath: ${{ parameters.ServiceModulePath }}
       ModulePrefix: ${{ parameters.ModulePrefix }}
       EnableSigning: ${{ parameters.EnableSigning }}
@@ -64,7 +61,7 @@ jobs:
         inputs:
           ConnectedServiceName: "microsoftgraph ESRP CodeSign DLL and NuGet (AKV)"
           FolderPath: $(AuthModulePath)
-          Pattern: $(AuthModuleDllPattern)
+          Pattern: 'Microsoft.Graph.Authentication.dll, Microsoft.Graph.Authentication.Core.dll'
           signConfigType: inlineSignParams
           inlineOperation: |
             [
@@ -91,7 +88,7 @@ jobs:
         inputs:
           ConnectedServiceName: "microsoftgraph ESRP CodeSign DLL and NuGet (AKV)"
           FolderPath: $(AuthModulePath)
-          Pattern: $(AuthModuleDllPattern)
+          Pattern: 'Microsoft.Graph.Authentication.dll, Microsoft.Graph.Authentication.Core.dll'
           signConfigType: inlineSignParams
           inlineOperation: |
             [

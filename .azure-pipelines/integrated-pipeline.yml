@@ -17,8 +17,6 @@ parameters:
 variables:
   AUTH_MODULE_NAME: 'Authentication'
   AUTH_MODULE_PATH: 'src\Authentication\Authentication'
-  AUTH_MODULE_DLL_PATTERN: 'Microsoft.Graph.Authentication.dll'
-  MODULE_DLL_PATTERN: 'Microsoft.Graph.Authentication.dll'
   MODULE_PREFIX: 'Microsoft.Graph'
   ROLLUP_MODULE_NAME: 'Graph'
   ROLLUP_MODULE_PATH: 'src/Graph/Graph'
@@ -101,7 +99,6 @@ stages:
       Api_Key: $(Api_Key)
       AUTH_MODULE_NAME: $(AUTH_MODULE)
       AUTH_MODULE_PATH: $(AUTH_MODULE_PATH)
-      AUTH_MODULE_DLL_PATTERN: $(AUTH_MODULE_DLL_PATTERN)
       EnableSigning: true
       BUILDNUMBER: $(BUILDNUMBER)
 
@@ -115,7 +112,6 @@ stages:
       WORKLOAD_MODULE_PATH: $(WORKLOAD_MODULE_PATH)
       GRAPH_VERSION: $(GRAPH_VERSION)
       AUTH_MODULE_PATH: $(AUTH_MODULE_PATH)
-      AUTH_MODULE_DLL_PATTERN: $(AUTH_MODULE_DLL_PATTERN)
       EnableSigning: true
       BUILDNUMBER: $(BUILDNUMBER)
 

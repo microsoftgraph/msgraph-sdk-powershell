@@ -41,8 +41,19 @@ directive:
   - remove-path-by-operation: ^identityGovernance_(Get|Create|Update|Set|Delete)EntitlementManagement$|^identityGovernance\.entitlementManagement(_.*AccessPackageResourceRoleScopes|\.accessPackageResourceRoleScopes.*|\.accessPackageAssignmentPolicies\..*|\.accessPackageAssignmentRequests\..*|\.accessPackageAssignmentResourceRoles\..*|\.accessPackageAssignments\..*|\.accessPackageCatalogs\..*|\.accessPackageResourceRequests\..*|\.accessPackageResources\..*|\.accessPackages\..*)$
 # Remove cmdlets
   - where:
-      subject: AgreementFile
-      variant: Get(2|3)|GetViaIdentity(2|3)|Delete(1|3)|DeleteViaIdentity(1|3)|Update(1|3)|UpdateExpanded(1|3)|UpdateViaIdentity(1|3)|UpdateViaIdentityExpanded(1|3)
+      verb: Get
+      subject: ^AgreementFile$
+      variant: ^Get2|Get3|GetViaIdentity2|GetViaIdentity3$
+    remove: true
+  - where:
+      verb: Update
+      subject: ^AgreementFile$
+      variant: ^Update2|Update3|UpdateExpanded2|UpdateExpanded3|UpdateViaIdentity2|UpdateViaIdentity3|UpdateViaIdentityExpanded2|UpdateViaIdentityExpanded3$
+    remove: true
+  - where:
+      verb: Remove
+      subject: ^AgreementFile$
+      variant: ^Delete1|Delete3|DeleteViaIdentity1|DeleteViaIdentity3$
     remove: true
   - where:
       verb: Get
@@ -491,6 +502,6 @@ directive:
 ### Versioning
 
 ``` yaml
-module-version: 1.4.2
+module-version: 1.4.3
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

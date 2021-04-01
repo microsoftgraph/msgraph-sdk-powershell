@@ -4,6 +4,7 @@
 
 namespace Microsoft.Graph.PowerShell.Authentication
 {
+    using Microsoft.Graph.PowerShell.Authentication.Core;
     using Microsoft.Graph.PowerShell.Authentication.Interfaces;
     using System;
     using System.Security;
@@ -175,7 +176,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
         /// <summary>
         /// Resets the current instance of <see cref="GraphSession"/> to initial state.
         /// </summary>
-        internal static void Reset()
+        public static void Reset()
         {
             try
             {

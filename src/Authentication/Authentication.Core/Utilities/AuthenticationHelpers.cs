@@ -4,7 +4,7 @@
 namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 {
     using Microsoft.Graph.Auth;
-    using Microsoft.Graph.PowerShell.Authentication.Models;
+    using Microsoft.Graph.PowerShell.Authentication.Core;
     using Microsoft.Graph.PowerShell.Authentication.TokenCache;
     using Microsoft.Identity.Client;
 
@@ -18,11 +18,43 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 
     using AuthenticationException = System.Security.Authentication.AuthenticationException;
 
-    internal static class AuthenticationHelpers
+    /// <summary>
+    /// Helper class for authentication.
+    /// </summary>
+    public static class AuthenticationHelpers
     {
         static ReaderWriterLockSlim _cacheLock = new ReaderWriterLockSlim(LockRecursionPolicy.SupportsRecursion);
 
-        internal static IAuthenticationProvider GetAuthProvider(IAuthContext authContext)
+        /// <summary>
+        /// Signs out of the current session using the provided <see cref="IAuthContext"/>.
+        /// </summary>
+        /// <param name="authContext">The <see cref="IAuthContext"/> to sign-out from.</param>
+        internal static void Logout(IAuthContext authContext)
+        {
+            try
+            {
+                _cacheLock.EnterWriteLock();
+                if (authContext.AuthType == AuthenticationType.UserProvidedAccessToken)
+                {
+                    GraphSession.Instance.UserProvidedToken = null;
+                }
+                else
+                {
+                    TokenCacheStorage.DeleteToken(authContext);
+                }
+            }
+            finally
+            {
+                _cacheLock.ExitWriteLock();
+            }
+        }
+
+        /// <summary>
+        /// Gets an <see cref="IAuthenticationProvider"/> using the provide <see cref="IAuthContext"/>.
+        /// </summary>
+        /// <param name="authContext">The <see cref="IAuthContext"/> to get an auth provider for.</param>
+        /// <returns>A <see cref="IAuthenticationProvider"/> based on provided <see cref="IAuthContext"/>.</returns>
+        public static IAuthenticationProvider GetAuthProvider(IAuthContext authContext)
         {
             if (authContext is null)
             {
@@ -39,6 +71,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                         .Create(authContext.ClientId)
                         .WithTenantId(authContext.TenantId)
                         .WithAuthority(authorityUrl)
+                        .WithClientCapabilities(new[] { "cp1" })
                         .Build();
 
                         ConfigureTokenCache(publicClientApp.UserTokenCache, authContext);
@@ -75,70 +108,12 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
             }
             return authProvider;
         }
+
         /// <summary>
-        ///     Gets a certificate based on the current context.
-        ///     Priority is Name, ThumbPrint, then In-Memory Cert
+        /// Configures a token cache using the provide <see cref="IAuthContext"/>.
         /// </summary>
-        /// <param name="context">Current <see cref="IAuthContext"/> context</param>
-        /// <returns>A <see cref="X509Certificate2"/> based on provided <see cref="IAuthContext"/> context</returns>
-        private static X509Certificate2 GetCertificate(IAuthContext context)
-        {
-            X509Certificate2 certificate;
-            if (!string.IsNullOrWhiteSpace(context.CertificateName))
-            {
-                certificate = GetCertificateByName(context.CertificateName);
-            }
-            else if (!string.IsNullOrWhiteSpace(context.CertificateThumbprint))
-            {
-                certificate = GetCertificateByThumbprint(context.CertificateThumbprint);
-            }
-            else
-            {
-                certificate = context.Certificate;
-            }
-
-            if (certificate == null)
-            {
-                throw new ArgumentNullException(nameof(certificate), $"Certificate with the Specified ThumbPrint {context.CertificateThumbprint}, Name {context.CertificateName} or In-Memory could not be found");
-            }
-
-            return certificate;
-        }
-
-        private static string GetAuthorityUrl(IAuthContext authContext)
-        {
-            string audience = authContext.TenantId ?? GraphEnvironmentConstants.CommonAdTenant;
-            string defaultInstance = GraphEnvironment.BuiltInEnvironments[GraphEnvironmentConstants.EnvironmentName.Global].AzureADEndpoint;
-            string authorityUrl = $"{defaultInstance}/{audience}";
-
-            if (GraphSession.Instance.Environment != null)
-            {
-                authorityUrl = $"{GraphSession.Instance.Environment.AzureADEndpoint}/{audience}";
-            }
-
-            return authorityUrl;
-        }
-
-        internal static void Logout(IAuthContext authConfig)
-        {
-            try
-            {
-                _cacheLock.EnterWriteLock();
-                if (authConfig.AuthType == AuthenticationType.UserProvidedAccessToken)
-                {
-                    GraphSession.Instance.UserProvidedToken = null;
-                }
-                else
-                {
-                    TokenCacheStorage.DeleteToken(authConfig);
-                }
-            }
-            finally
-            {
-                _cacheLock.ExitWriteLock();
-            }
-        }
-
+        /// <param name="tokenCache">MSAL's token cache to configure.</param>
+        /// <param name="authContext">The <see cref="IAuthContext"/> to get configure an token cache for.</param>
         private static void ConfigureTokenCache(ITokenCache tokenCache, IAuthContext authContext)
         {
             tokenCache.SetBeforeAccess((TokenCacheNotificationArgs args) =>
@@ -169,6 +144,55 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                     }
                 }
             });
+        }
+
+        /// <summary>
+        /// Gets an authority URL from the provided <see cref="IAuthContext"/>.
+        /// </summary>
+        /// <param name="authContext">The <see cref="IAuthContext"/> to get an authority URL for.</param>
+        /// <returns></returns>
+        private static string GetAuthorityUrl(IAuthContext authContext)
+        {
+            string audience = authContext.TenantId ?? Constants.DefaulAdTenant;
+            string defaultInstance = Constants.DefaultAzureADEndpoint;
+            string authorityUrl = $"{defaultInstance}/{audience}";
+
+            if (GraphSession.Instance.Environment != null)
+            {
+                authorityUrl = $"{GraphSession.Instance.Environment.AzureADEndpoint}/{audience}";
+            }
+
+            return authorityUrl;
+        }
+
+        /// <summary>
+        /// Gets a certificate based on the current context.
+        /// Priority is Name, ThumbPrint, then In-Memory Cert
+        /// </summary>
+        /// <param name="context">Current <see cref="IAuthContext"/> context</param>
+        /// <returns>A <see cref="X509Certificate2"/> based on provided <see cref="IAuthContext"/> context</returns>
+        private static X509Certificate2 GetCertificate(IAuthContext context)
+        {
+            X509Certificate2 certificate;
+            if (!string.IsNullOrWhiteSpace(context.CertificateName))
+            {
+                certificate = GetCertificateByName(context.CertificateName);
+            }
+            else if (!string.IsNullOrWhiteSpace(context.CertificateThumbprint))
+            {
+                certificate = GetCertificateByThumbprint(context.CertificateThumbprint);
+            }
+            else
+            {
+                certificate = context.Certificate;
+            }
+
+            if (certificate == null)
+            {
+                throw new ArgumentNullException(nameof(certificate), $"Certificate with the Specified ThumbPrint {context.CertificateThumbprint}, Name {context.CertificateName} or In-Memory could not be found");
+            }
+
+            return certificate;
         }
 
         /// <summary>

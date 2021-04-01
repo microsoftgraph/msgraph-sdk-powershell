@@ -31,7 +31,7 @@ Describe 'New-MgInvitation' {
                 InviteRedirectUrl = 'https://myapp.contoso.com'
             }
             $Invitation = New-MgInvitation @Params
-            $Invitation | Should -BeOfType -ExpectedType 'Microsoft.Graph.PowerShell.Models.MicrosoftGraphInvitation'
+            $Invitation | Should -BeOfType -ExpectedType 'Microsoft.Graph.PowerShell.Models.MicrosoftGraphInvitation1'
             $Invitation | Should -HaveCount 1
             $Invitation.InvitedUserDisplayName | Should -Be $env.Users[0].DisplayName
             $Invitation.Status | Should -Be 'PendingAcceptance'
@@ -59,7 +59,7 @@ Describe 'New-MgInvitation' {
                 InviteRedirectUrl = 'https://myapp.contoso.com'
             }
             $Invitation = New-MgInvitation -BodyParameter $Params
-            $Invitation | Should -BeOfType -ExpectedType 'Microsoft.Graph.PowerShell.Models.MicrosoftGraphInvitation'
+            $Invitation | Should -BeOfType -ExpectedType 'Microsoft.Graph.PowerShell.Models.MicrosoftGraphInvitation1'
             $Invitation | Should -HaveCount 1
             $Invitation.InvitedUserDisplayName | Should -Be $env.Users[0].DisplayName
             $Invitation.Status | Should -Be 'PendingAcceptance'

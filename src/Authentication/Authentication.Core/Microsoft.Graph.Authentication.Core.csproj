@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="$(MSBuildThisFileDirectory)..\..\..\Repo.props" />
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;netcoreapp2.1;net461</TargetFrameworks>
+    <RootNamespace>Microsoft.Graph.PowerShell.Authentication.Core</RootNamespace>
+    <Version>1.4.2</Version>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Graph.Auth" Version="1.0.0-preview.6" />
+    <PackageReference Include="Microsoft.Graph.Core" Version="1.23.0" />
+    <PackageReference Include="Microsoft.Identity.Client" Version="4.23.0" />
+    <PackageReference Include="Microsoft.IdentityModel.JsonWebTokens" Version="5.6.0" />
+    <PackageReference Include="Microsoft.IdentityModel.Logging" Version="5.6.0" />
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="5.6.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.6.0" />
+    <!--Always ensure this version matches the versions of System.Security.Cryptography.* dependencies of Microsoft.Identity.Client when targeting PowerShell 6 and below.-->
+    <PackageReference Include="System.Security.Cryptography.ProtectedData" Version="4.3.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <PreLoadAssemblies Include="$(RepoTools)Lib\System.Security.Cryptography.ProtectedData.dll" />
+  </ItemGroup>
+  <Target Name="CopyFiles" AfterTargets="Build">
+    <Copy SourceFiles="@(PreLoadAssemblies)" DestinationFolder="$(OutputPath)/publish" />
+  </Target>
+</Project>

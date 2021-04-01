@@ -105,13 +105,13 @@
       "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml",
       "apiVersion": "v1.0"
     },
-    "/policies/authenticationMethodsPolicy": {
+    "/policies/adminConsentRequestPolicy": {
       "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml",
       "apiVersion": "v1.0"
     },
     "/policies/authenticationMethodsPolicy": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml",
+      "apiVersion": "v1.0"
     },
     "/policies/authorizationPolicy": {
       "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml",
@@ -130,6 +130,22 @@
       "apiVersion": "v1.0"
     },
     "/policies/conditionalAccessPolicies/{conditionalAccessPolicy-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml",
+      "apiVersion": "v1.0"
+    },
+    "/policies/featureRolloutPolicies": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml",
+      "apiVersion": "v1.0"
+    },
+    "/policies/featureRolloutPolicies/{featureRolloutPolicy-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml",
+      "apiVersion": "v1.0"
+    },
+    "/policies/featureRolloutPolicies/{featureRolloutPolicy-id}/appliesTo": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml",
+      "apiVersion": "v1.0"
+    },
+    "/policies/featureRolloutPolicies/{featureRolloutPolicy-id}/appliesTo/{directoryObject-id}": {
       "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml",
       "apiVersion": "v1.0"
     },

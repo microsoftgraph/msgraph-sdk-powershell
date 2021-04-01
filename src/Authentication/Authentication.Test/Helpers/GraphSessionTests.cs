@@ -52,7 +52,7 @@
         {
             InvalidOperationException exception = Assert.Throws<InvalidOperationException>(() => GraphSession.Instance);
 
-            Assert.Equal(ErrorConstants.Codes.SessionNotInitialized, exception.Message);
+            Assert.Equal(PowerShell.Authentication.Core.ErrorConstants.Codes.SessionNotInitialized, exception.Message);
 
             // reset static instance.
             GraphSession.Reset();

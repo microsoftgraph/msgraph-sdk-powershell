@@ -69,6 +69,10 @@
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml",
       "apiVersion": "v1.0-beta"
     },
+    "/deviceManagement/assignmentFilters/microsoft.graph.enable": {
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
     "/deviceManagement/assignmentFilters/microsoft.graph.validateFilter": {
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml",
       "apiVersion": "v1.0-beta"
@@ -1629,6 +1633,14 @@
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml",
       "apiVersion": "v1.0-beta"
     },
+    "/deviceManagement/reports/microsoft.graph.getWindowsQualityUpdateAlertsPerPolicyPerDeviceReport": {
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceManagement/reports/microsoft.graph.getWindowsQualityUpdateAlertSummaryReport": {
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
     "/deviceManagement/reports/microsoft.graph.getWindowsUpdateAlertsPerPolicyPerDeviceReport": {
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml",
       "apiVersion": "v1.0-beta"
@@ -1713,6 +1725,10 @@
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml",
       "apiVersion": "v1.0-beta"
     },
+    "/deviceManagement/windowsAutopilotDeploymentProfiles/{windowsAutopilotDeploymentProfile-id}/assignedDevices/microsoft.graph.deleteDevices": {
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
     "/deviceManagement/windowsAutopilotDeploymentProfiles/{windowsAutopilotDeploymentProfile-id}/microsoft.graph.assign": {
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml",
       "apiVersion": "v1.0-beta"
@@ -1746,6 +1762,10 @@
       "apiVersion": "v1.0-beta"
     },
     "/deviceManagement/windowsAutopilotDeviceIdentities/{windowsAutopilotDeviceIdentity-id}/microsoft.graph.updateDeviceProperties": {
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceManagement/windowsAutopilotDeviceIdentities/microsoft.graph.deleteDevices": {
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml",
       "apiVersion": "v1.0-beta"
     },

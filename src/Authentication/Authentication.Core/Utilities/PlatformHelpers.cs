@@ -6,7 +6,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 {
     using System.Runtime.InteropServices;
 
-    internal static class OperatingSystem
+    public static class OperatingSystem
     {
         /// <summary>
         /// Detects if the platform we are running on is Windows.
