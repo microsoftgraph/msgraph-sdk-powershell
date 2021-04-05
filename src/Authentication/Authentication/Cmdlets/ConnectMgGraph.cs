@@ -1,30 +1,30 @@
 ﻿// ------------------------------------------------------------------------------
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
+
+using AsyncHelpers = Microsoft.Graph.PowerShell.Authentication.Helpers.AsyncHelpers;
+
 namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 {
     using System;
+    using System.Collections;
     using System.Collections.Generic;
     using System.Linq;
     using System.Management.Automation;
+    using System.Net;
+    using System.Security.Cryptography.X509Certificates;
     using System.Threading;
     using System.Threading.Tasks;
-    using System.Net;
-    using System.Collections;
-    using System.Security.Cryptography.X509Certificates;
 
-    using Microsoft.Graph.PowerShell.Authentication.Properties;
-    using Microsoft.Identity.Client;
-
-    using Microsoft.Graph.PowerShell.Authentication.Helpers;
-    using Microsoft.Graph.PowerShell.Authentication.Models;
-
-    using Interfaces;
-    using Common;
-
-    using static Helpers.AsyncHelpers;
     using Microsoft.Graph.Authentication.Core;
+    using Microsoft.Graph.PowerShell.Authentication.Common;
+    using Microsoft.Graph.PowerShell.Authentication.Helpers;
+    using Microsoft.Graph.PowerShell.Authentication.Interfaces;
+    using Microsoft.Graph.PowerShell.Authentication.Models;
+    using Microsoft.Graph.PowerShell.Authentication.Properties;
     using Microsoft.Graph.PowerShell.Authentication.Utilities;
+
+    using static AsyncHelpers;
 
     [Cmdlet(VerbsCommunications.Connect, "MgGraph", DefaultParameterSetName = Constants.UserParameterSet)]
     [Alias("Connect-Graph")]
@@ -188,10 +188,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                             _cancellationTokenSource.CancelAfter(authTimeout);
                             authContext.AuthType = AuthenticationType.Delegated;
                             string[] processedScopes = ProcessScopes(Scopes);
-                            authContext.Scopes = processedScopes.Length == 0 ? new string[] { "User.Read" } : processedScopes;
+                            authContext.Scopes = processedScopes.Length == 0 ? new[] { "User.Read" } : processedScopes;
                             // Default to CurrentUser but allow the customer to change this via `ContextScope` param.
                             authContext.ContextScope = this.IsParameterBound(nameof(ContextScope)) ? ContextScope : ContextScope.CurrentUser;
-                            authContext.UseDeviceAuth = this.UseDeviceAuthentication;
+                            authContext.UseDeviceAuth = UseDeviceAuthentication;
                         }
                         break;
                     case Constants.AppParameterSet:
@@ -215,30 +215,36 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                         break;
                 }
 
-                try
-                {
-                    // Save auth context to session state.
-                    GraphSession.Instance.AuthContext = await Authenticator.AuthenticateAsync(authContext, ForceRefresh, _cancellationTokenSource.Token);
-                }
-                catch (Exception ex)
-                {
-                    if (IsUnableToOpenWebPageError(ex))
-                    {
-                        WriteWarning(Resources.InteractiveAuthNotSupported);
-                        WriteDebug(ex.ToString());
-                    }
+                // Save auth context to session state.
+                var (context, authError) = await Authenticator.AuthenticateAsync(authContext, ForceRefresh, _cancellationTokenSource.Token);
 
-                    throw ex;
+                switch (authError.AuthErrorType)
+                {
+                    case AuthErrorType.None:
+                    case AuthErrorType.FallBack:
+                        {
+                            GraphSession.Instance.AuthContext = context;
+                            if (authError.AuthErrorType == AuthErrorType.FallBack)
+                            {
+                                WriteWarning(Resources.DeviceCodeFallback);
+                            }
+                            WriteObject("Welcome To Microsoft Graph!");
+                            break;
+                        }
+                    case AuthErrorType.InteractiveAuthenticationFailure:
+                        {
+                            WriteWarning(Resources.InteractiveAuthNotSupported);
+                            WriteDebug(authError.Exception.ToString());
+                            throw authError.Exception;
+                        }
+                    case AuthErrorType.DeviceCodeFailure:
+                    case AuthErrorType.ClientCredentialsFailure:
+                    case AuthErrorType.Unknown:
+                        throw authError.Exception;
+                    default:
+                        throw new ArgumentOutOfRangeException();
                 }
-
-                WriteObject("Welcome To Microsoft Graph!");
             }
-        }
-        private static bool IsUnableToOpenWebPageError(Exception exception)
-        {
-            return exception.InnerException is MsalClientException && 
-                   ((MsalClientException)exception.InnerException)?.ErrorCode == MsalError.LinuxXdgOpen || 
-                   (exception.Message?.ToLower()?.Contains("unable to open a web page") ?? false);
         }
         protected override void StopProcessing()
         {
@@ -284,7 +290,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                         }
 
                         // Certificate Thumbprint, Name or Actual Certificate
-                        if (string.IsNullOrEmpty(CertificateThumbprint) && string.IsNullOrEmpty(CertificateName) && this.Certificate == null)
+                        if (string.IsNullOrEmpty(CertificateThumbprint) && string.IsNullOrEmpty(CertificateName) && Certificate == null)
                         {
                             this.ThrowParameterError($"{nameof(CertificateThumbprint)} or {nameof(CertificateName)} or {nameof(Certificate)}");
                         }

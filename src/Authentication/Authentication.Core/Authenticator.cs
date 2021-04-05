@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Authentication.Core
         /// <param name="forceRefresh">Whether or not to force refresh a token if one exists.</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns></returns>
-        public static async Task<IAuthContext> AuthenticateAsync(IAuthContext authContext, bool forceRefresh, CancellationToken cancellationToken)
+        public static async Task<(IAuthContext context, AuthError authError)> AuthenticateAsync(IAuthContext authContext, bool forceRefresh, CancellationToken cancellationToken)
         {
             try
             {
@@ -83,26 +83,38 @@ namespace Microsoft.Graph.Authentication.Core
                 }
 
                 JwtHelpers.DecodeJWT(httpRequestMessage.Headers.Authorization?.Parameter, account, ref authContext);
-                return authContext;
+                return (authContext, new AuthError(AuthErrorType.None, null));
             }
             catch (AuthenticationException authEx)
             {
+                //Interactive Authentication Failure: Could Not Open Browser, fallback to DeviceAuth
+                if (IsUnableToOpenWebPageError(authEx))
+                {
+                    authContext.UseDeviceAuth = true;
+                    //ReAuthenticate using DeviceCode as fallback.
+                    var (retryAuthContext, retryAuthError) = await AuthenticateAsync(authContext, forceRefresh, cancellationToken);
+                    //Indicate that this was a Fallback
+                    retryAuthError = new AuthError(AuthErrorType.FallBack, retryAuthError.Exception);
+                    return (retryAuthContext, retryAuthError);
+                }
+                // DeviceCode Authentication Failure: Timeout
                 if (authEx.InnerException is TaskCanceledException && cancellationToken.IsCancellationRequested)
                 {
                     // DeviceCodeTimeout
-                    throw new Exception(string.Format(
+                    var deviceCode = new Exception(string.Format(
                             CultureInfo.CurrentCulture,
                             ErrorConstants.Message.DeviceCodeTimeout,
                             Constants.MaxDeviceCodeTimeOut));
+                    return (authContext, new AuthError(AuthErrorType.DeviceCodeFailure, deviceCode.InnerException ?? deviceCode));
                 }
-                throw authEx.InnerException ?? authEx;
+                //Something Unknown Went Wrong
+                return (authContext, new AuthError(AuthErrorType.Unknown, authEx.InnerException ?? authEx));
             }
             catch (Exception ex)
             {
-                throw ex.InnerException ?? ex;
+                return (authContext, new AuthError(AuthErrorType.Unknown, ex.InnerException ?? ex));
             }
         }
-
         /// <summary>
         /// Signs out of the provided <see cref="IAuthContext"/>.
         /// </summary>
@@ -110,6 +122,13 @@ namespace Microsoft.Graph.Authentication.Core
         public static void LogOut(IAuthContext authContext)
         {
             AuthenticationHelpers.Logout(authContext);
+        }
+
+        private static bool IsUnableToOpenWebPageError(Exception exception)
+        {
+            return exception.InnerException is MsalClientException clientException &&
+                   clientException?.ErrorCode == MsalError.LinuxXdgOpen ||
+                   (exception.Message?.ToLower()?.Contains("unable to open a web page") ?? false);
         }
     }
 }

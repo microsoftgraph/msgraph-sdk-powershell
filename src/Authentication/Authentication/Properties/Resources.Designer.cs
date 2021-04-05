@@ -124,6 +124,15 @@ namespace Microsoft.Graph.PowerShell.Authentication.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Interactive authentication is not supported in this session, Falling Back to DeviceCode. Future versions will not automatically fallback to DeviceCode..
+        /// </summary>
+        internal static string DeviceCodeFallback {
+            get {
+                return ResourceManager.GetString("DeviceCodeFallback", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Path &apos;{0}&apos; resolves to a directory. Specify a path including a file name, and then retry the command..
         /// </summary>
         internal static string DirectoryPathSpecified {
