@@ -52,7 +52,7 @@ namespace Microsoft.Graph.PowerShell
         /// <param name="parameterSetName">The cmdlet's parameterset name</param>
         /// <param name="exception">the exception that is being thrown (if available)</param>
         /// <returns>
-        /// A <see cref="global::System.Threading.Tasks.Task" /> that will be complete when handling of the event is completed.
+        /// A <see cref="Task" /> that will be complete when handling of the event is completed.
         /// </returns>
         public async Task EventHandler(string id, CancellationToken cancellationToken, Func<EventArgs> getEventData, Func<string, CancellationToken, Func<EventArgs>, Task> signal, InvocationInfo invocationInfo, string parameterSetName, System.Exception exception)
         {
@@ -81,13 +81,13 @@ namespace Microsoft.Graph.PowerShell
         /// <param name="getEventData">A delegate to get the detailed event data</param>
         /// <param name="signal">The callback for the event dispatcher</param>
         /// <returns>
-        /// A <see cref="global::System.Threading.Tasks.Task" /> that will be complete when handling of the event is completed.
+        /// A <see cref="Task" /> that will be complete when handling of the event is completed.
         /// </returns>
         private async Task Finally(string id, CancellationToken cancellationToken, Func<EventArgs> getEventData, Func<string, CancellationToken, Func<EventArgs>, Task> signal)
         {
             using (Extensions.NoSynchronizationContext)
             {
-                var eventData = EventDataConverter.ConvertFrom(getEventData());
+ 				var eventData = EventDataConverter.ConvertFrom(getEventData());
                 var responseFormatter = new HttpMessageFormatter(eventData.ResponseMessage as HttpResponseMessage);
                 var responseString = await responseFormatter.ReadAsStringAsync();
                 await signal(Events.Debug, cancellationToken, () => EventFactory.CreateLogEvent(responseString));
@@ -102,17 +102,18 @@ namespace Microsoft.Graph.PowerShell
         /// <param name="getEventData">A delegate to get the detailed event data</param>
         /// <param name="signal">The callback for the event dispatcher</param>
         /// <returns>
-        /// A <see cref="global::System.Threading.Tasks.Task" /> that will be complete when handling of the event is completed.
+        /// A <see cref="Task" /> that will be complete when handling of the event is completed.
         /// </returns>
         private async Task BeforeCall(string id, CancellationToken cancellationToken, Func<EventArgs> getEventData, Func<string, CancellationToken, Func<EventArgs>, Task> signal)
         {
             using (Extensions.NoSynchronizationContext)
             {
-                var eventData = EventDataConverter.ConvertFrom(getEventData());
+  				var eventData = EventDataConverter.ConvertFrom(getEventData());
                 var requestFormatter = new HttpMessageFormatter(eventData.RequestMessage as HttpRequestMessage);
                 var requestString = await requestFormatter.ReadAsStringAsync();
                 await signal(Events.Debug, cancellationToken, () => EventFactory.CreateLogEvent(requestString));
             }
+
         }
     }
 }
