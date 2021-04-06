@@ -1625,6 +1625,10 @@
       "originalLocation": "/openApiDocs/v1.0/Users.Actions.yml",
       "apiVersion": "v1.0"
     },
+    "/users/{user-id}/teamwork/microsoft.graph.sendActivityNotification": {
+      "originalLocation": "/openApiDocs/v1.0/Users.Actions.yml",
+      "apiVersion": "v1.0"
+    },
     "/users/microsoft.graph.getAvailableExtensionProperties": {
       "originalLocation": "/openApiDocs/v1.0/Users.Actions.yml",
       "apiVersion": "v1.0"

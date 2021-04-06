@@ -13,6 +13,14 @@
       "originalLocation": "/openApiDocs/v1.0/Reports.yml",
       "apiVersion": "v1.0"
     },
+    "/auditLogs/provisioning": {
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
+      "apiVersion": "v1.0"
+    },
+    "/auditLogs/provisioning/{provisioningObjectSummary-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml",
+      "apiVersion": "v1.0"
+    },
     "/auditLogs/restrictedSignIns": {
       "originalLocation": "/openApiDocs/v1.0/Reports.yml",
       "apiVersion": "v1.0"
