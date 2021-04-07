@@ -99,6 +99,13 @@ $ModulesToGenerate | ForEach-Object -ThrottleLimit $ModulesToGenerate.Count -Par
     $FullyQualifiedModuleName = "$using:ModulePrefix.$ModuleName"
     Write-Host -ForegroundColor Green "Generating '$FullyQualifiedModuleName' module..."
     $ModuleProjectDir = Join-Path $Using:ModulesOutputDir "$ModuleName\$ModuleName"
+
+    # Test to see if a module's profile exists.
+    $ProfileReadmePath = Join-Path -Path $Using:ScriptRoot "..\profiles\$ModuleName\readme.md"
+    if (!(Test-Path -Path $ProfileReadmePath)) {
+        Write-Warning "[Generation skipped] : Module '$ModuleName' not found at $ProfileReadmePath."
+        break
+    }
     
     # Copy AutoRest readme.md config is none exists.
     if (-not (Test-Path "$ModuleProjectDir\readme.md")) {
