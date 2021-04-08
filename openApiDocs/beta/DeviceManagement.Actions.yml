@@ -464,6 +464,38 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /deviceManagement/chromeOSOnboardingSettings/microsoft.graph.connect:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action connect
+      operationId: deviceManagement.chromeOSOnboardingSettings_connect
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ownerUserPrincipalName:
+                  type: string
+                  nullable: true
+                serviceAccountCredentials:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chromeOSOnboardingStatus'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/comanagedDevices/{managedDevice-id}/logCollectionRequests/{deviceLogCollectionResponse-id}/microsoft.graph.createDownloadUrl':
     post:
       tags:
@@ -15972,6 +16004,14 @@ components:
       additionalProperties:
         type: object
       description: Represents result of Validation API.
+    microsoft.graph.chromeOSOnboardingStatus:
+      title: chromeOSOnboardingStatus
+      enum:
+        - unknown
+        - inprogress
+        - onboarded
+        - failed
+      type: string
     microsoft.graph.deviceLogCollectionRequest:
       title: deviceLogCollectionRequest
       type: object
