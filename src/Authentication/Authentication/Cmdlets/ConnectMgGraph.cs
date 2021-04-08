@@ -36,6 +36,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             Position = 1,
             Mandatory = true,
             HelpMessage = "The client id of your application.")]
+        [Parameter(ParameterSetName = Constants.UserParameterSet,
+            Mandatory = false,
+            HelpMessage = "The client id of your application.")]
         [Alias("AppId")]
         public string ClientId { get; set; }
 
@@ -173,6 +176,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                             authContext.Scopes = processedScopes.Length == 0 ? new string[] { "User.Read" } : processedScopes;
                             // Default to CurrentUser but allow the customer to change this via `ContextScope` param.
                             authContext.ContextScope = this.IsParameterBound(nameof(ContextScope)) ? ContextScope : ContextScope.CurrentUser;
+                            if (!string.IsNullOrEmpty(ClientId))
+                            {
+                                authContext.ClientId = ClientId;
+                            }
                         }
                         break;
                     case Constants.AppParameterSet:

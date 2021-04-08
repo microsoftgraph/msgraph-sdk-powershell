@@ -68,6 +68,28 @@
             GraphSession.Reset();
         }
 
+        [Fact]
+        public void ShouldUseDeviceCodeProviderWhenDelegatedContextAndClientIdIsProvided()
+        {
+            // Arrange
+            AuthContext delegatedAuthContext = new AuthContext
+            {
+                AuthType = AuthenticationType.Delegated,
+                ClientId = Guid.NewGuid().ToString(),
+                Scopes = new string[] { "User.Read" },
+                ContextScope = ContextScope.Process
+            };
+
+            // Act
+            IAuthenticationProvider authProvider = AuthenticationHelpers.GetAuthProvider(delegatedAuthContext);
+
+            // Assert
+            Assert.IsType<DeviceCodeProvider>(authProvider);
+
+            // reset static instance.
+            GraphSession.Reset();
+        }
+
 #if NETCORE
         [Fact]
         public void ShouldUseClientCredentialProviderWhenAppOnlyContextIsProvided()
