@@ -2,128 +2,128 @@
   "resources": [],
   "operations": {
     "/security": {
-      "originalLocation": "/openApiDocs/beta/Security.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
     },
     "/security/alerts": {
-      "originalLocation": "/openApiDocs/beta/Security.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
     },
     "/security/alerts/{alert-id}": {
-      "originalLocation": "/openApiDocs/beta/Security.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
     },
     "/security/alerts/microsoft.graph.updateAlerts": {
-      "originalLocation": "/openApiDocs/beta/Security.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
     },
     "/security/cloudAppSecurityProfiles": {
-      "originalLocation": "/openApiDocs/beta/Security.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
     },
     "/security/cloudAppSecurityProfiles/{cloudAppSecurityProfile-id}": {
-      "originalLocation": "/openApiDocs/beta/Security.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
     },
     "/security/domainSecurityProfiles": {
-      "originalLocation": "/openApiDocs/beta/Security.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
     },
     "/security/domainSecurityProfiles/{domainSecurityProfile-id}": {
-      "originalLocation": "/openApiDocs/beta/Security.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
     },
     "/security/fileSecurityProfiles": {
-      "originalLocation": "/openApiDocs/beta/Security.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
     },
     "/security/fileSecurityProfiles/{fileSecurityProfile-id}": {
-      "originalLocation": "/openApiDocs/beta/Security.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
     },
     "/security/hostSecurityProfiles": {
-      "originalLocation": "/openApiDocs/beta/Security.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
     },
     "/security/hostSecurityProfiles/{hostSecurityProfile-id}": {
-      "originalLocation": "/openApiDocs/beta/Security.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
     },
     "/security/ipSecurityProfiles": {
-      "originalLocation": "/openApiDocs/beta/Security.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
     },
     "/security/ipSecurityProfiles/{ipSecurityProfile-id}": {
-      "originalLocation": "/openApiDocs/beta/Security.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
     },
     "/security/providerTenantSettings": {
-      "originalLocation": "/openApiDocs/beta/Security.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
     },
     "/security/providerTenantSettings/{providerTenantSetting-id}": {
-      "originalLocation": "/openApiDocs/beta/Security.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
     },
     "/security/secureScoreControlProfiles": {
-      "originalLocation": "/openApiDocs/beta/Security.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
     },
     "/security/secureScoreControlProfiles/{secureScoreControlProfile-id}": {
-      "originalLocation": "/openApiDocs/beta/Security.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
     },
     "/security/secureScores": {
-      "originalLocation": "/openApiDocs/beta/Security.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
     },
     "/security/secureScores/{secureScore-id}": {
-      "originalLocation": "/openApiDocs/beta/Security.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
     },
     "/security/securityActions": {
-      "originalLocation": "/openApiDocs/beta/Security.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
     },
     "/security/securityActions/{securityAction-id}": {
-      "originalLocation": "/openApiDocs/beta/Security.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
     },
     "/security/securityActions/{securityAction-id}/microsoft.graph.cancelSecurityAction": {
-      "originalLocation": "/openApiDocs/beta/Security.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
     },
     "/security/tiIndicators": {
-      "originalLocation": "/openApiDocs/beta/Security.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
     },
     "/security/tiIndicators/{tiIndicator-id}": {
-      "originalLocation": "/openApiDocs/beta/Security.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
     },
     "/security/tiIndicators/microsoft.graph.deleteTiIndicators": {
-      "originalLocation": "/openApiDocs/beta/Security.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
     },
     "/security/tiIndicators/microsoft.graph.deleteTiIndicatorsByExternalId": {
-      "originalLocation": "/openApiDocs/beta/Security.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
     },
     "/security/tiIndicators/microsoft.graph.submitTiIndicators": {
-      "originalLocation": "/openApiDocs/beta/Security.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
     },
     "/security/tiIndicators/microsoft.graph.updateTiIndicators": {
-      "originalLocation": "/openApiDocs/beta/Security.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
     },
     "/security/userSecurityProfiles": {
-      "originalLocation": "/openApiDocs/beta/Security.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
     },
     "/security/userSecurityProfiles/{userSecurityProfile-id}": {
-      "originalLocation": "/openApiDocs/beta/Security.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
     }
   }
 }
