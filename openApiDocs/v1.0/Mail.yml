@@ -5200,7 +5200,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.itemBody'
             bodyPreview:
               type: string
-              description: The first 255 characters of the message body. It is in text format.
+              description: 'The first 255 characters of the message body. It is in text format. If the message contains instances of mention, this property would contain a concatenation of these mentions as well.'
               nullable: true
             ccRecipients:
               type: array
@@ -5334,7 +5334,7 @@ components:
               nullable: true
             name:
               type: string
-              description: The attachment's file name.
+              description: The display name of the attachment. This does not need to be the actual file name.
               nullable: true
             size:
               maximum: 2147483647
@@ -5398,11 +5398,11 @@ components:
       properties:
         address:
           type: string
-          description: The email address of the person or entity.
+          description: The email address of an entity instance.
           nullable: true
         name:
           type: string
-          description: The display name of the person or entity.
+          description: The display name of an entity instance.
           nullable: true
       additionalProperties:
         type: object
@@ -5452,7 +5452,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.recipient'
-          description: The email addresses to which a message should be redirected.
+          description: The email address to which a message should be redirected.
         stopProcessingRules:
           type: boolean
           description: Indicates whether subsequent rules should be evaluated.
@@ -5742,10 +5742,10 @@ components:
       properties:
         dateTime:
           type: string
-          description: 'A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).'
+          description: 'A single point of time in a combined date and time representation ({date}T{time}). For example, ''2019-04-16T09:00:00''.'
         timeZone:
           type: string
-          description: 'Represents a time zone, for example, ''Pacific Standard Time''. See below for more possible values.'
+          description: 'Represents a time zone, for example, ''Pacific Standard Time''. See below for possible values.'
           nullable: true
       additionalProperties:
         type: object

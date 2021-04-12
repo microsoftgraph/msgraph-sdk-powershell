@@ -6,8 +6,8 @@
 
 ``` yaml
 require:
-- $(this-folder)/definitions/v1.0.md
 - $(this-folder)/definitions/v1.0-beta.md
+- $(this-folder)/definitions/v1.0.md
 
 ```
 
