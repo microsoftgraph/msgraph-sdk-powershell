@@ -39,7 +39,7 @@ subject-prefix: ''
 ``` yaml
 directive:
 # Remove invalid paths.
-  - remove-path-by-operation: ^deviceManagement\.userExperienceAnalytics.*$
+  - remove-path-by-operation: ^deviceManagement_.*UserExperienceAnalytics.*$
 ```
 
 ### Versioning
