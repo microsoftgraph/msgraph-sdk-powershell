@@ -56,31 +56,31 @@ directive:
       variant: ^Delete1|Delete3|DeleteViaIdentity1|DeleteViaIdentity3$
     remove: true
   - where:
-      verb: Get
+      verb: Get|Remove|Set
       subject: (.*)(EntitlementManagement)AccessPackageRefAccessPackageCatalog$
     remove: true
   - where:
-      verb: Get
+      verb: Get|Remove|Update
       subject: (.*)(EntitlementManagement)AccessPackageAssignmentAccessPackage$
     remove: true
   - where:
-      verb: Get
+      verb: Get|Remove|Update
       subject: (.*)(EntitlementManagement)AccessPackageAssignmentAccessPackageAssignmentPolicy$
     remove: true
   - where:
-      verb: Get
+      verb: Get|New|Remove|Update
       subject: (.*)(EntitlementManagement)AccessPackageAssignmentAccessPackageAssignmentRequest$
     remove: true
   - where:
-      verb: Get
+      verb: Get|New|Remove|Update
       subject: (.*)(EntitlementManagement)AccessPackageAssignmentAccessPackageAssignmentResourceRole$
     remove: true
   - where:
-      verb: Get
+      verb: Get|New
       subject: (.*)(EntitlementManagement)AccessPackageAssignmentApproval$
     remove: true
   - where:
-      verb: Get
+      verb: Get|New
       subject: (.*)(EntitlementManagement)AccessPackageAssignmentApprovalStep$
     remove: true
   - where:
@@ -88,11 +88,11 @@ directive:
       subject: (.*)(EntitlementManagement)AccessPackageAssignmentPolicyAccessPackage$
     remove: true
   - where:
-      verb: Get
+      verb: Get|Set|Remove
       subject: (.*)(EntitlementManagement)AccessPackageAssignmentPolicyRefAccessPackage$
     remove: true
   - where:
-      verb: Get
+      verb: Get|Remove|Update
       subject: (.*)(EntitlementManagement)AccessPackageAssignmentPolicyAccessPackageCatalog$
     remove: true
   - where:
@@ -100,39 +100,39 @@ directive:
       subject: (.*)(EntitlementManagement)AccessPackageAssignmentRequestAccessPackage$
     remove: true
   - where:
-      verb: Get
+      verb: Get|Remove|Update
       subject: (.*)(EntitlementManagement)AccessPackageAssignmentRequestAccessPackageAssignment$
     remove: true
   - where:
-      verb: Get
+      verb: Get|Remove|Set
       subject: (.*)(EntitlementManagement)AccessPackageAssignmentRequestRefAccessPackage$
     remove: true
   - where:
-      verb: Get
+      verb: Get|Remove|Update
       subject: (.*)(EntitlementManagement)AccessPackageAssignmentRequestRequestor$
     remove: true
   - where:
-      verb: Get
+      verb: Get|New|Remove|Update
       subject: (.*)(EntitlementManagement)AccessPackageAssignmentResourceRoleAccessPackageAssignment$
     remove: true
   - where:
-      verb: Get
+      verb: Get|Remove|Update
       subject: (.*)(EntitlementManagement)AccessPackageAssignmentResourceRoleAccessPackageResourceRole$
     remove: true
   - where:
-      verb: Get
+      verb: Get|Remove|Update
       subject: (.*)(EntitlementManagement)AccessPackageAssignmentResourceRoleAccessPackageResourceScope$
     remove: true
   - where:
-      verb: Get
+      verb: Get|Remove|Update
       subject: (.*)(EntitlementManagement)AccessPackageAssignmentResourceRoleAccessPackageSubject$
     remove: true
   - where:
-      verb: Get
+      verb: Get|Remove|Update
       subject: (.*)(EntitlementManagement)AccessPackageAssignmentTarget$
     remove: true
   - where:
-      verb: Get
+      verb: Get|New|Remove|Update
       subject: (.*)(EntitlementManagement)AccessPackageCatalogAccessPackage$
     remove: true
   - where:
@@ -140,15 +140,15 @@ directive:
       subject: (.*)(EntitlementManagement)AccessPackageResourceAccessPackageResourceEnvironment$
     remove: true
   - where:
-      verb: Get
+      verb: Get|Remove|Set
       subject: (.*)(EntitlementManagement)AccessPackageResourceRefAccessPackageResourceEnvironment$
     remove: true
   - where:
-      verb: Get
+      verb: Get|New|Remove|Update
       subject: (.*)(EntitlementManagement)AccessPackageResourceAccessPackageResourceRole$
     remove: true
   - where:
-      verb: Get
+      verb: Get|New|Remove|Update
       subject: (.*)(EntitlementManagement)AccessPackageResourceAccessPackageResourceScope$
     remove: true
   - where:
@@ -156,7 +156,7 @@ directive:
       subject: (.*)(EntitlementManagement)AccessPackageResourceEnvironmentAccessPackageResource$
     remove: true
   - where:
-      verb: Get
+      verb: Get|New
       subject: (.*)(EntitlementManagement)AccessPackageResourceEnvironmentRefAccessPackageResource$
     remove: true
   - where:
@@ -164,11 +164,11 @@ directive:
       subject: (.*)(EntitlementManagement)AccessPackageResourceRequestAccessPackageResource$
     remove: true
   - where:
-      verb: Get
+      verb: Get|Remove|Set
       subject: (.*)(EntitlementManagement)AccessPackageResourceRequestRefAccessPackageResource$
     remove: true
   - where:
-      verb: Get
+      verb: Get|Remove|Update
       subject: (.*)(EntitlementManagement)AccessPackageResourceRequestRequestor$
     remove: true
   - where:
@@ -180,236 +180,24 @@ directive:
       subject: (.*)(EntitlementManagement)AccessPackageAssignment$
     remove: true
   - where:
-      verb: New
-      subject: (.*)(EntitlementManagement)AccessPackageAssignmentAccessPackageAssignmentRequest$
-    remove: true
-  - where:
-      verb: New
-      subject: (.*)(EntitlementManagement)AccessPackageAssignmentAccessPackageAssignmentResourceRole$
-    remove: true
-  - where:
-      verb: New
-      subject: (.*)(EntitlementManagement)AccessPackageAssignmentApproval$
-    remove: true
-  - where:
-      verb: New
-      subject: (.*)(EntitlementManagement)AccessPackageAssignmentApprovalStep$
-    remove: true
-  - where:
-      verb: New
+      verb: New|Remove|Update
       subject: (.*)(EntitlementManagement)AccessPackageAssignmentResourceRole$
     remove: true
   - where:
-      verb: New
-      subject: (.*)(EntitlementManagement)AccessPackageAssignmentResourceRoleAccessPackageAssignment$
-    remove: true
-  - where:
-      verb: New
+      verb: New|Remove|Update
       subject: (.*)(EntitlementManagement)AccessPackageCatalogAccessPackageResourceRole$
     remove: true
   - where:
-      verb: New
+      verb: New|Remove|Update
       subject: (.*)(EntitlementManagement)AccessPackageCatalogAccessPackageResourceScope$
     remove: true
   - where:
-      verb: New
+      verb: New|Remove|Update
       subject: (.*)(EntitlementManagement)AccessPackageResource$
     remove: true
   - where:
-      verb: New
-      subject: (.*)(EntitlementManagement)AccessPackageResourceAccessPackageResourceRole$
-    remove: true
-  - where:
-      verb: New
-      subject: (.*)(EntitlementManagement)AccessPackageResourceAccessPackageResourceScope$
-    remove: true
-  - where:
-      verb: New
+      verb: New|Remove|Update
       subject: (.*)(EntitlementManagement)AccessPackageResourceEnvironment$
-    remove: true
-  - where:
-      verb: New
-      subject: (.*)(EntitlementManagement)AccessPackageResourceEnvironmentRefAccessPackageResource$
-    remove: true
-  - where:
-      verb: Remove
-      subject: (.*)(EntitlementManagement)AccessPackageAssignmentAccessPackage$
-    remove: true
-  - where:
-      verb: Remove
-      subject: (.*)(EntitlementManagement)AccessPackageAssignmentAccessPackageAssignmentPolicy$
-    remove: true
-  - where:
-      verb: Remove
-      subject: (.*)(EntitlementManagement)AccessPackageAssignmentAccessPackageAssignmentRequest$
-    remove: true
-  - where:
-      verb: Remove
-      subject: (.*)(EntitlementManagement)AccessPackageAssignmentAccessPackageAssignmentResourceRole$
-    remove: true
-  - where:
-      verb: Remove
-      subject: (.*)(EntitlementManagement)AccessPackageAssignmentPolicyAccessPackageCatalog$
-    remove: true
-  - where:
-      verb: Remove
-      subject: (.*)(EntitlementManagement)AccessPackageAssignmentPolicyRefAccessPackage$
-    remove: true
-  - where:
-      verb: Remove
-      subject: (.*)(EntitlementManagement)AccessPackageAssignmentRequestAccessPackageAssignment$
-    remove: true
-  - where:
-      verb: Remove
-      subject: (.*)(EntitlementManagement)AccessPackageAssignmentRequestRefAccessPackage$
-    remove: true
-  - where:
-      verb: Remove
-      subject: (.*)(EntitlementManagement)AccessPackageAssignmentRequestRequestor$
-    remove: true
-  - where:
-      verb: Remove
-      subject: (.*)(EntitlementManagement)AccessPackageAssignmentResourceRole$
-    remove: true
-  - where:
-      verb: Remove
-      subject: (.*)(EntitlementManagement)AccessPackageAssignmentResourceRoleAccessPackageAssignment$
-    remove: true
-  - where:
-      verb: Remove
-      subject: (.*)(EntitlementManagement)AccessPackageAssignmentResourceRoleAccessPackageResourceRole$
-    remove: true
-  - where:
-      verb: Remove
-      subject: (.*)(EntitlementManagement)AccessPackageAssignmentResourceRoleAccessPackageResourceScope$
-    remove: true
-  - where:
-      verb: Remove
-      subject: (.*)(EntitlementManagement)AccessPackageAssignmentResourceRoleAccessPackageSubject$
-    remove: true
-  - where:
-      verb: Remove
-      subject: (.*)(EntitlementManagement)AccessPackageAssignmentTarget$
-    remove: true
-  - where:
-      verb: Remove
-      subject: (.*)(EntitlementManagement)AccessPackageRefAccessPackageCatalog$
-    remove: true
-  - where:
-      verb: Remove
-      subject: (.*)(EntitlementManagement)AccessPackageResourceAccessPackageResourceRole$
-    remove: true
-  - where:
-      verb: Remove
-      subject: (.*)(EntitlementManagement)AccessPackageResourceAccessPackageResourceScope$
-    remove: true
-  - where:
-      verb: Remove
-      subject: (.*)(EntitlementManagement)AccessPackageResourceEnvironment$
-    remove: true
-  - where:
-      verb: Remove
-      subject: (.*)(EntitlementManagement)AccessPackageResourceRefAccessPackageResourceEnvironment$
-    remove: true
-  - where:
-      verb: Remove
-      subject: (.*)(EntitlementManagement)AccessPackageResourceRequestRefAccessPackageResource$
-    remove: true
-  - where:
-      verb: Remove
-      subject: (.*)(EntitlementManagement)AccessPackageResourceRequestRequestor$
-    remove: true
-  - where:
-      verb: Set
-      subject: (.*)(EntitlementManagement)AccessPackageAssignmentPolicyRefAccessPackage$
-    remove: true
-  - where:
-      verb: Set
-      subject: (.*)(EntitlementManagement)AccessPackageAssignmentRequestRefAccessPackage$
-    remove: true
-  - where:
-      verb: Set
-      subject: (.*)(EntitlementManagement)AccessPackageRefAccessPackageCatalog$
-    remove: true
-  - where:
-      verb: Set
-      subject: (.*)(EntitlementManagement)AccessPackageResourceRefAccessPackageResourceEnvironment$
-    remove: true
-  - where:
-      verb: Set
-      subject: (.*)(EntitlementManagement)AccessPackageResourceRequestRefAccessPackageResource$
-    remove: true
-  - where:
-      verb: Update
-      subject: (.*)(EntitlementManagement)AccessPackageAssignmentAccessPackage$
-    remove: true
-  - where:
-      verb: Update
-      subject: (.*)(EntitlementManagement)AccessPackageAssignmentAccessPackageAssignmentPolicy$
-    remove: true
-  - where:
-      verb: Update
-      subject: (.*)(EntitlementManagement)AccessPackageAssignmentAccessPackageAssignmentRequest$
-    remove: true
-  - where:
-      verb: Update
-      subject: (.*)(EntitlementManagement)AccessPackageAssignmentAccessPackageAssignmentResourceRole$
-    remove: true
-  - where:
-      verb: Update
-      subject: (.*)(EntitlementManagement)AccessPackageAssignmentPolicyAccessPackageCatalog$
-    remove: true
-  - where:
-      verb: Update
-      subject: (.*)(EntitlementManagement)AccessPackageAssignmentRequestAccessPackageAssignment$
-    remove: true
-  - where:
-      verb: Update
-      subject: (.*)(EntitlementManagement)AccessPackageAssignmentRequestRequestor$
-    remove: true
-  - where:
-      verb: Update
-      subject: (.*)(EntitlementManagement)AccessPackageAssignmentResourceRole$
-    remove: true
-  - where:
-      verb: Update
-      subject: (.*)(EntitlementManagement)AccessPackageAssignmentResourceRoleAccessPackageAssignment$
-    remove: true
-  - where:
-      verb: Update
-      subject: (.*)(EntitlementManagement)AccessPackageAssignmentResourceRoleAccessPackageResourceRole$
-    remove: true
-  - where:
-      verb: Update
-      subject: (.*)(EntitlementManagement)AccessPackageAssignmentResourceRoleAccessPackageResourceScope$
-    remove: true
-  - where:
-      verb: Update
-      subject: (.*)(EntitlementManagement)AccessPackageAssignmentResourceRoleAccessPackageSubject$
-    remove: true
-  - where:
-      verb: Update
-      subject: (.*)(EntitlementManagement)AccessPackageResourceAccessPackageResourceRole$
-    remove: true
-  - where:
-      verb: Update
-      subject: (.*)(EntitlementManagement)AccessPackageResourceAccessPackageResourceScope$
-    remove: true
-  - where:
-      verb: Update
-      subject: (.*)(EntitlementManagement)AccessPackageResourceEnvironment$
-    remove: true
-  - where:
-      verb: Update
-      subject: (.*)(EntitlementManagement)AccessPackageResourceRequestRequestor$
-    remove: true
-  - where:
-      verb: Remove
-      subject: (.*)(EntitlementManagement)AccessPackageCatalogAccessPackageResourceRole$
-    remove: true
-  - where:
-      verb: Remove
-      subject: (.*)(EntitlementManagement)AccessPackageCatalogAccessPackageResourceScope$
     remove: true
   - where:
       verb: Search
@@ -420,52 +208,12 @@ directive:
       subject: (.*)(EntitlementManagement)AccessPackageCatalog$
     remove: true
   - where:
-      verb: Update
-      subject: (.*)(EntitlementManagement)AccessPackageCatalogAccessPackageResourceRole$
-    remove: true
-  - where:
-      verb: Update
-      subject: (.*)(EntitlementManagement)AccessPackageCatalogAccessPackageResourceScope$
-    remove: true
-  - where:
-      verb: New
-      subject: (.*)(EntitlementManagement)AccessPackageCatalogAccessPackage$
-    remove: true
-  - where:
-      verb: New
+      verb: New|Remove|Update
       subject: (.*)(EntitlementManagement)AccessPackageCatalogAccessPackageResource$
-    remove: true
-  - where:
-      verb: Remove
-      subject: (.*)(EntitlementManagement)AccessPackageCatalogAccessPackage$
-    remove: true
-  - where:
-      verb: Remove
-      subject: (.*)(EntitlementManagement)AccessPackageCatalogAccessPackageResource$
-    remove: true
-  - where:
-      verb: Remove
-      subject: (.*)(EntitlementManagement)AccessPackageResource$
     remove: true
   - where:
       verb: Remove
       subject: (.*)(EntitlementManagement)Setting$
-    remove: true
-  - where:
-      verb: Update
-      subject: (.*)(EntitlementManagement)AccessPackageAssignmentTarget$
-    remove: true
-  - where:
-      verb: Update
-      subject: (.*)(EntitlementManagement)AccessPackageCatalogAccessPackage$
-    remove: true
-  - where:
-      verb: Update
-      subject: (.*)(EntitlementManagement)AccessPackageCatalogAccessPackageResource$
-    remove: true
-  - where:
-      verb: Update
-      subject: (.*)(EntitlementManagement)AccessPackageResource$
     remove: true
 # Rename cmdlets with duplicates in their name.
   - where:
