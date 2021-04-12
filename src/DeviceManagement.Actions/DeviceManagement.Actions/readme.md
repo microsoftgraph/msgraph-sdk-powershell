@@ -77,6 +77,11 @@ directive:
     set:
       subject: $1Multiple$2
   - where:
+      verb: Remove
+      subject: ^(DeviceManagementWindowAutopilotDeploymentProfile)(AssignedDevice)$
+    set:
+      subject: $1Multiple$2
+  - where:
       verb: Update
       subject: ^(DeviceManagementManagedDevice)$
     set:

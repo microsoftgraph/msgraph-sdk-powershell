@@ -31,6 +31,17 @@ require:
 title: $(service-name)
 subject-prefix: ''
 ```
+
+### Directives
+
+> see https://github.com/Azure/autorest/blob/master/docs/powershell/directives.md
+
+``` yaml
+directive:
+# Remove invalid paths.
+  - remove-path-by-operation: ^deviceManagement\.userExperienceAnalytics.*$
+```
+
 ### Versioning
 
 ``` yaml
