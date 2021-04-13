@@ -66,45 +66,52 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
             switch (authContext.AuthType)
             {
                 case AuthenticationType.Delegated:
-                    {
-                        IPublicClientApplication publicClientApp = PublicClientApplicationBuilder
+                {
+                    //Specify Default RedirectUri
+                    //https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/MSAL.NET-uses-web-browser
+                    IPublicClientApplication publicClientApp = PublicClientApplicationBuilder
                         .Create(authContext.ClientId)
                         .WithTenantId(authContext.TenantId)
                         .WithAuthority(authorityUrl)
                         .WithClientCapabilities(new[] { "cp1" })
+                        .WithDefaultRedirectUri()
                         .Build();
-
-                        ConfigureTokenCache(publicClientApp.UserTokenCache, authContext);
+                    ConfigureTokenCache(publicClientApp.UserTokenCache, authContext);
+                    if (authContext.UseDeviceAuth)
+                    {
                         authProvider = new DeviceCodeProvider(publicClientApp, authContext.Scopes, async (result) =>
                         {
                             await Console.Out.WriteLineAsync(result.Message);
                         });
-                        break;
                     }
-                case AuthenticationType.AppOnly:
+                    else
                     {
-                        IConfidentialClientApplication confidentialClientApp = ConfidentialClientApplicationBuilder
+                        authProvider = new InteractiveAuthenticationProvider(publicClientApp, authContext.Scopes);
+                    }
+                    break;
+                }
+                case AuthenticationType.AppOnly:
+                {
+                    IConfidentialClientApplication confidentialClientApp = ConfidentialClientApplicationBuilder
                         .Create(authContext.ClientId)
                         .WithTenantId(authContext.TenantId)
                         .WithAuthority(authorityUrl)
                         .WithCertificate(GetCertificate(authContext))
                         .Build();
 
-                        ConfigureTokenCache(confidentialClientApp.AppTokenCache, authContext);
-                        string graphBaseUrl = GraphSession.Instance.Environment?.GraphEndpoint ?? "https://graph.microsoft.com";
-                        authProvider = new ClientCredentialProvider(confidentialClientApp, $"{graphBaseUrl}/.default");
-                        break;
-                    }
+                    ConfigureTokenCache(confidentialClientApp.AppTokenCache, authContext);
+                    string graphBaseUrl = GraphSession.Instance.Environment?.GraphEndpoint ?? "https://graph.microsoft.com";
+                    authProvider = new ClientCredentialProvider(confidentialClientApp, $"{graphBaseUrl}/.default");
+                    break;
+                }
                 case AuthenticationType.UserProvidedAccessToken:
+                    authProvider = new DelegateAuthenticationProvider((requestMessage) =>
                     {
-                        authProvider = new DelegateAuthenticationProvider((requestMessage) =>
-                        {
-                            requestMessage.Headers.Authorization = new AuthenticationHeaderValue("Bearer",
-                                new NetworkCredential(string.Empty, GraphSession.Instance.UserProvidedToken).Password);
-                            return Task.CompletedTask;
-                        });
-                        break;
-                    }
+                        requestMessage.Headers.Authorization = new AuthenticationHeaderValue("Bearer",
+                            new NetworkCredential(string.Empty, GraphSession.Instance.UserProvidedToken).Password);
+                        return Task.CompletedTask;
+                    });
+                    break;
             }
             return authProvider;
         }

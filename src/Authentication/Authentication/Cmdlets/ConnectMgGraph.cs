@@ -1,27 +1,30 @@
 ﻿// ------------------------------------------------------------------------------
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
+
+using AsyncHelpers = Microsoft.Graph.PowerShell.Authentication.Helpers.AsyncHelpers;
+
 namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 {
     using System;
+    using System.Collections;
     using System.Collections.Generic;
     using System.Linq;
     using System.Management.Automation;
+    using System.Net;
+    using System.Security.Cryptography.X509Certificates;
     using System.Threading;
     using System.Threading.Tasks;
-    using System.Net;
-    using System.Collections;
-    using System.Security.Cryptography.X509Certificates;
 
-    using Microsoft.Graph.PowerShell.Authentication.Helpers;
-    using Microsoft.Graph.PowerShell.Authentication.Models;
-
-    using Interfaces;
-    using Common;
-
-    using static Helpers.AsyncHelpers;
     using Microsoft.Graph.Authentication.Core;
+    using Microsoft.Graph.PowerShell.Authentication.Common;
+    using Microsoft.Graph.PowerShell.Authentication.Helpers;
+    using Microsoft.Graph.PowerShell.Authentication.Interfaces;
+    using Microsoft.Graph.PowerShell.Authentication.Models;
+    using Microsoft.Graph.PowerShell.Authentication.Properties;
     using Microsoft.Graph.PowerShell.Authentication.Utilities;
+
+    using static AsyncHelpers;
 
     [Cmdlet(VerbsCommunications.Connect, "MgGraph", DefaultParameterSetName = Constants.UserParameterSet)]
     [Alias("Connect-Graph")]
@@ -87,12 +90,27 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         [Alias("EnvironmentName", "NationalCloud")]
         public string Environment { get; set; }
 
+        [Parameter(ParameterSetName = Constants.UserParameterSet,
+            Mandatory = false, HelpMessage = "Use device code authentication instead of a browser control")]
+        [Alias("DeviceCode", "DeviceAuth", "Device")]
+        public SwitchParameter UseDeviceAuthentication { get; set; }
+        /// <summary>
+        ///     Wait for .NET debugger to attach
+        /// </summary>
+        [Parameter(Mandatory = false,
+            DontShow = true,
+            HelpMessage = "Wait for .NET debugger to attach")]
+        public SwitchParameter Break { get; set; }
+
         private readonly CancellationTokenSource _cancellationTokenSource = new CancellationTokenSource();
 
         private IGraphEnvironment environment;
-
         protected override void BeginProcessing()
         {
+            if (Break)
+            {
+                this.Break();
+            }
             base.BeginProcessing();
             ValidateParameters();
 
@@ -109,12 +127,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 environment = GraphEnvironment.BuiltInEnvironments[GraphEnvironmentConstants.EnvironmentName.Global];
             }
         }
-
-        protected override void EndProcessing()
-        {
-            base.EndProcessing();
-        }
-
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
@@ -170,9 +182,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                             _cancellationTokenSource.CancelAfter(authTimeout);
                             authContext.AuthType = AuthenticationType.Delegated;
                             string[] processedScopes = ProcessScopes(Scopes);
-                            authContext.Scopes = processedScopes.Length == 0 ? new string[] { "User.Read" } : processedScopes;
+                            authContext.Scopes = processedScopes.Length == 0 ? new[] { "User.Read" } : processedScopes;
                             // Default to CurrentUser but allow the customer to change this via `ContextScope` param.
                             authContext.ContextScope = this.IsParameterBound(nameof(ContextScope)) ? ContextScope : ContextScope.CurrentUser;
+                            authContext.UseDeviceAuth = UseDeviceAuthentication;
                         }
                         break;
                     case Constants.AppParameterSet:
@@ -196,20 +209,37 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                         break;
                 }
 
-                try
-                {
-                    // Save auth context to session state.
-                    GraphSession.Instance.AuthContext = await Authenticator.AuthenticateAsync(authContext, ForceRefresh, _cancellationTokenSource.Token);
-                }
-                catch(Exception ex)
-                {
-                    throw ex;
-                }
+                // Save auth context to session state.
+                var (context, authError) = await Authenticator.AuthenticateAsync(authContext, ForceRefresh, _cancellationTokenSource.Token);
 
-                WriteObject("Welcome To Microsoft Graph!");
+                switch (authError.AuthErrorType)
+                {
+                    case AuthErrorType.None:
+                    case AuthErrorType.FallBack:
+                        {
+                            GraphSession.Instance.AuthContext = context;
+                            if (authError.AuthErrorType == AuthErrorType.FallBack)
+                            {
+                                WriteWarning(Resources.DeviceCodeFallback);
+                            }
+                            WriteObject("Welcome To Microsoft Graph!");
+                            break;
+                        }
+                    case AuthErrorType.InteractiveAuthenticationFailure:
+                        {
+                            WriteWarning(Resources.InteractiveAuthNotSupported);
+                            WriteDebug(authError.Exception.ToString());
+                            throw authError.Exception;
+                        }
+                    case AuthErrorType.DeviceCodeFailure:
+                    case AuthErrorType.ClientCredentialsFailure:
+                    case AuthErrorType.Unknown:
+                        throw authError.Exception;
+                    default:
+                        throw new ArgumentOutOfRangeException();
+                }
             }
         }
-
         protected override void StopProcessing()
         {
             _cancellationTokenSource.Cancel();
@@ -254,7 +284,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                         }
 
                         // Certificate Thumbprint, Name or Actual Certificate
-                        if (string.IsNullOrEmpty(CertificateThumbprint) && string.IsNullOrEmpty(CertificateName) && this.Certificate == null)
+                        if (string.IsNullOrEmpty(CertificateThumbprint) && string.IsNullOrEmpty(CertificateName) && Certificate == null)
                         {
                             this.ThrowParameterError($"{nameof(CertificateThumbprint)} or {nameof(CertificateName)} or {nameof(Certificate)}");
                         }

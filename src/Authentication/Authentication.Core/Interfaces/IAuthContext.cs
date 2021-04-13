@@ -4,6 +4,7 @@
 
 namespace Microsoft.Graph.PowerShell.Authentication
 {
+    using System;
     using System.Security.Cryptography.X509Certificates;
 
     public enum AuthenticationType
@@ -18,7 +19,26 @@ namespace Microsoft.Graph.PowerShell.Authentication
         Process,
         CurrentUser
     }
+    public enum AuthErrorType
+    {
+        None,
+        FallBack,
+        DeviceCodeFailure,
+        InteractiveAuthenticationFailure,
+        ClientCredentialsFailure,
+        Unknown
+    }
 
+    public readonly struct AuthError
+    {
+        public AuthError(AuthErrorType errorType, Exception ex)
+        {
+            AuthErrorType = errorType;
+            Exception = ex;
+        }
+        public AuthErrorType AuthErrorType { get; }
+        public Exception Exception { get; }
+    }
     public interface IAuthContext
     {
         string ClientId { get; set; }
@@ -31,5 +51,6 @@ namespace Microsoft.Graph.PowerShell.Authentication
         string AppName { get; set; }
         ContextScope ContextScope { get; set; }
         X509Certificate2 Certificate { get; set; }
+        bool UseDeviceAuth { get; set; }
     }
 }
