@@ -56,20 +56,17 @@ namespace Microsoft.Graph.PowerShell
         /// </returns>
         public async Task EventHandler(string id, CancellationToken cancellationToken, Func<EventArgs> getEventData, Func<string, CancellationToken, Func<EventArgs>, Task> signal, InvocationInfo invocationInfo, string parameterSetName, System.Exception exception)
         {
-            if (invocationInfo.BoundParameters.ContainsKey("Debug"))
+            switch (id)
             {
-                switch (id)
-                {
-                    case Events.BeforeCall:
-                        await BeforeCall(id, cancellationToken, getEventData, signal);
-                        break;
-                    case Events.Finally:
-                        await Finally(id, cancellationToken, getEventData, signal);
-                        break;
-                    default:
-                        getEventData.Print(signal, cancellationToken, Events.Information, id);
-                        break;
-                }
+                case Events.BeforeCall:
+                    await BeforeCall(id, cancellationToken, getEventData, signal);
+                    break;
+                case Events.Finally:
+                    await Finally(id, cancellationToken, getEventData, signal);
+                    break;
+                default:
+                    getEventData.Print(signal, cancellationToken, Events.Information, id);
+                    break;
             }
         }
 
@@ -87,7 +84,7 @@ namespace Microsoft.Graph.PowerShell
         {
             using (Extensions.NoSynchronizationContext)
             {
- 				var eventData = EventDataConverter.ConvertFrom(getEventData());
+                var eventData = EventDataConverter.ConvertFrom(getEventData());
                 var responseFormatter = new HttpMessageFormatter(eventData.ResponseMessage as HttpResponseMessage);
                 var responseString = await responseFormatter.ReadAsStringAsync();
                 await signal(Events.Debug, cancellationToken, () => EventFactory.CreateLogEvent(responseString));
@@ -108,7 +105,7 @@ namespace Microsoft.Graph.PowerShell
         {
             using (Extensions.NoSynchronizationContext)
             {
-  				var eventData = EventDataConverter.ConvertFrom(getEventData());
+                var eventData = EventDataConverter.ConvertFrom(getEventData());
                 var requestFormatter = new HttpMessageFormatter(eventData.RequestMessage as HttpRequestMessage);
                 var requestString = await requestFormatter.ReadAsStringAsync();
                 await signal(Events.Debug, cancellationToken, () => EventFactory.CreateLogEvent(requestString));
