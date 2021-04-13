@@ -2,12 +2,12 @@
   "resources": [],
   "operations": {
     "/subscriptions": {
-      "originalLocation": "/openApiDocs/beta/ChangeNotifications.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/ChangeNotifications.yml"
     },
     "/subscriptions/{subscription-id}": {
-      "originalLocation": "/openApiDocs/beta/ChangeNotifications.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/ChangeNotifications.yml"
     }
   }
 }

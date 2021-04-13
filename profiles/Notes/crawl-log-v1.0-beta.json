@@ -2,2008 +2,2008 @@
   "resources": [],
   "operations": {
     "/groups/{group-id}/onenote": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/notebooks": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/notebooks/{notebook-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/parentSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sectionGroups": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sectionGroups/{sectionGroup-id1}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/parentSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/parentSectionGroup/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/parentSectionGroup/parentSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/parentSectionGroup/sectionGroups": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/parentSectionGroup/sectionGroups/{sectionGroup-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/parentSectionGroup/sections": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/parentSectionGroup/sections/{onenoteSection-id1}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/operations": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/operations/{onenoteOperation-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/pages": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/pages/{onenotePage-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/pages/{onenotePage-id}/content": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/pages/{onenotePage-id}/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/parentSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sectionGroups": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sectionGroups/{sectionGroup-id1}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id1}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id1}/content": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/pages": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/pages/{onenotePage-id1}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/pages/{onenotePage-id1}/content": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/parentSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/parentSectionGroup/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/parentSectionGroup/parentSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/parentSectionGroup/sectionGroups": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/parentSectionGroup/sectionGroups/{sectionGroup-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/parentSectionGroup/sections": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/parentSectionGroup/sections/{onenoteSection-id1}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/pages/{onenotePage-id}/parentSection": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/pages/{onenotePage-id}/parentSection/pages": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/pages/{onenotePage-id}/parentSection/pages/{onenotePage-id1}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/pages/{onenotePage-id}/parentSection/pages/{onenotePage-id1}/content": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/pages/{onenotePage-id}/parentSection/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/pages/{onenotePage-id}/parentSection/parentNotebook/sectionGroups": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/pages/{onenotePage-id}/parentSection/parentNotebook/sectionGroups/{sectionGroup-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/pages/{onenotePage-id}/parentSection/parentNotebook/sectionGroups/{sectionGroup-id}/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/pages/{onenotePage-id}/parentSection/parentNotebook/sectionGroups/{sectionGroup-id}/parentSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/pages/{onenotePage-id}/parentSection/parentNotebook/sectionGroups/{sectionGroup-id}/sectionGroups": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/pages/{onenotePage-id}/parentSection/parentNotebook/sectionGroups/{sectionGroup-id}/sectionGroups/{sectionGroup-id1}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/pages/{onenotePage-id}/parentSection/parentNotebook/sectionGroups/{sectionGroup-id}/sections": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/pages/{onenotePage-id}/parentSection/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/pages/{onenotePage-id}/parentSection/parentNotebook/sections": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/pages/{onenotePage-id}/parentSection/parentNotebook/sections/{onenoteSection-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/pages/{onenotePage-id}/parentSection/parentSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/pages/{onenotePage-id}/parentSection/parentSectionGroup/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/pages/{onenotePage-id}/parentSection/parentSectionGroup/parentNotebook/sectionGroups": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/pages/{onenotePage-id}/parentSection/parentSectionGroup/parentNotebook/sectionGroups/{sectionGroup-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/pages/{onenotePage-id}/parentSection/parentSectionGroup/parentNotebook/sections": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/pages/{onenotePage-id}/parentSection/parentSectionGroup/parentNotebook/sections/{onenoteSection-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/pages/{onenotePage-id}/parentSection/parentSectionGroup/parentSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/pages/{onenotePage-id}/parentSection/parentSectionGroup/sectionGroups": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/pages/{onenotePage-id}/parentSection/parentSectionGroup/sectionGroups/{sectionGroup-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/pages/{onenotePage-id}/parentSection/parentSectionGroup/sections": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/pages/{onenotePage-id}/parentSection/parentSectionGroup/sections/{onenoteSection-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/resources": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/resources/{onenoteResource-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/resources/{onenoteResource-id}/content": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sectionGroups": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sectionGroups": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sectionGroups/{sectionGroup-id1}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sections": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sections/{onenoteSection-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sections/{onenoteSection-id}/pages": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sections/{onenoteSection-id}/pages/{onenotePage-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sections/{onenoteSection-id}/pages/{onenotePage-id}/content": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sections/{onenoteSection-id}/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sections/{onenoteSection-id}/parentSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/parentSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sectionGroups": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sectionGroups/{sectionGroup-id1}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sectionGroups": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id1}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sections": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id1}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentNotebook/sectionGroups": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentNotebook/sectionGroups/{sectionGroup-id1}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentNotebook/sections": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentNotebook/sections/{onenoteSection-id1}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sections": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sections/{onenoteSection-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sections/{onenoteSection-id}/pages": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/content": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sectionGroups": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/parentSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sectionGroups": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sectionGroups/{sectionGroup-id1}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id1}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sections": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id1}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sections/{onenoteSection-id}/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sections/{onenoteSection-id}/parentNotebook/sectionGroups": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sections/{onenoteSection-id}/parentNotebook/sectionGroups/{sectionGroup-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sections/{onenoteSection-id}/parentNotebook/sectionGroups/{sectionGroup-id}/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sections/{onenoteSection-id}/parentNotebook/sectionGroups/{sectionGroup-id}/parentSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sections/{onenoteSection-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sectionGroups": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sections/{onenoteSection-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sectionGroups/{sectionGroup-id1}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sections/{onenoteSection-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sections/{onenoteSection-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id1}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sections/{onenoteSection-id}/parentNotebook/sections": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sections/{onenoteSection-id}/parentNotebook/sections/{onenoteSection-id1}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sections/{onenoteSection-id}/parentSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sections/{onenoteSection-id}/parentSectionGroup/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sections/{onenoteSection-id}/parentSectionGroup/parentNotebook/sectionGroups": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sections/{onenoteSection-id}/parentSectionGroup/parentNotebook/sectionGroups/{sectionGroup-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sections/{onenoteSection-id}/parentSectionGroup/parentNotebook/sections": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sections/{onenoteSection-id}/parentSectionGroup/parentNotebook/sections/{onenoteSection-id1}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sections/{onenoteSection-id}/parentSectionGroup/parentSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sections/{onenoteSection-id}/parentSectionGroup/sectionGroups": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sections/{onenoteSection-id}/parentSectionGroup/sectionGroups/{sectionGroup-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sections/{onenoteSection-id}/parentSectionGroup/sections": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/groups/{group-id}/onenote/sections/{onenoteSection-id}/parentSectionGroup/sections/{onenoteSection-id1}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/notebooks": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/notebooks/{notebook-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/parentSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sectionGroups": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sectionGroups/{sectionGroup-id1}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/parentSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/parentSectionGroup/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/parentSectionGroup/parentSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/parentSectionGroup/sectionGroups": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/parentSectionGroup/sectionGroups/{sectionGroup-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/parentSectionGroup/sections": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/parentSectionGroup/sections/{onenoteSection-id1}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/operations": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/operations/{onenoteOperation-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/pages": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/pages/{onenotePage-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/pages/{onenotePage-id}/content": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/parentSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sectionGroups": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sectionGroups/{sectionGroup-id1}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id1}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id1}/content": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/pages": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/pages/{onenotePage-id1}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/pages/{onenotePage-id1}/content": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/parentSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/parentSectionGroup/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/parentSectionGroup/parentSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/parentSectionGroup/sectionGroups": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/parentSectionGroup/sectionGroups/{sectionGroup-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/parentSectionGroup/sections": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/parentSectionGroup/sections/{onenoteSection-id1}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentSection": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentSection/pages": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentSection/pages/{onenotePage-id1}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentSection/pages/{onenotePage-id1}/content": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentSection/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentSection/parentNotebook/sectionGroups": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentSection/parentNotebook/sectionGroups/{sectionGroup-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentSection/parentNotebook/sectionGroups/{sectionGroup-id}/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentSection/parentNotebook/sectionGroups/{sectionGroup-id}/parentSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentSection/parentNotebook/sectionGroups/{sectionGroup-id}/sectionGroups": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentSection/parentNotebook/sectionGroups/{sectionGroup-id}/sectionGroups/{sectionGroup-id1}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentSection/parentNotebook/sectionGroups/{sectionGroup-id}/sections": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentSection/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentSection/parentNotebook/sections": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentSection/parentNotebook/sections/{onenoteSection-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentSection/parentSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentSection/parentSectionGroup/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentSection/parentSectionGroup/parentNotebook/sectionGroups": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentSection/parentSectionGroup/parentNotebook/sectionGroups/{sectionGroup-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentSection/parentSectionGroup/parentNotebook/sections": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentSection/parentSectionGroup/parentNotebook/sections/{onenoteSection-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentSection/parentSectionGroup/parentSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentSection/parentSectionGroup/sectionGroups": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentSection/parentSectionGroup/sectionGroups/{sectionGroup-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentSection/parentSectionGroup/sections": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentSection/parentSectionGroup/sections/{onenoteSection-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/resources": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/resources/{onenoteResource-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/resources/{onenoteResource-id}/content": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sectionGroups": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sectionGroups": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sectionGroups/{sectionGroup-id1}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sections": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sections/{onenoteSection-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sections/{onenoteSection-id}/pages": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sections/{onenoteSection-id}/pages/{onenotePage-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sections/{onenoteSection-id}/pages/{onenotePage-id}/content": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sections/{onenoteSection-id}/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sections/{onenoteSection-id}/parentSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/parentSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sectionGroups": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sectionGroups/{sectionGroup-id1}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sectionGroups": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id1}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sections": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id1}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentNotebook/sectionGroups": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentNotebook/sectionGroups/{sectionGroup-id1}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentNotebook/sections": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentNotebook/sections/{onenoteSection-id1}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sections": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sections/{onenoteSection-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/content": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sectionGroups": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/parentSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sectionGroups": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sectionGroups/{sectionGroup-id1}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id1}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sections": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id1}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sections/{onenoteSection-id}/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sections/{onenoteSection-id}/parentNotebook/sectionGroups": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sections/{onenoteSection-id}/parentNotebook/sectionGroups/{sectionGroup-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sections/{onenoteSection-id}/parentNotebook/sectionGroups/{sectionGroup-id}/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sections/{onenoteSection-id}/parentNotebook/sectionGroups/{sectionGroup-id}/parentSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sections/{onenoteSection-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sectionGroups": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sections/{onenoteSection-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sectionGroups/{sectionGroup-id1}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sections/{onenoteSection-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sections/{onenoteSection-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id1}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sections/{onenoteSection-id}/parentNotebook/sections": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sections/{onenoteSection-id}/parentNotebook/sections/{onenoteSection-id1}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sections/{onenoteSection-id}/parentSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sections/{onenoteSection-id}/parentSectionGroup/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sections/{onenoteSection-id}/parentSectionGroup/parentNotebook/sectionGroups": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sections/{onenoteSection-id}/parentSectionGroup/parentNotebook/sectionGroups/{sectionGroup-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sections/{onenoteSection-id}/parentSectionGroup/parentNotebook/sections": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sections/{onenoteSection-id}/parentSectionGroup/parentNotebook/sections/{onenoteSection-id1}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sections/{onenoteSection-id}/parentSectionGroup/parentSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sections/{onenoteSection-id}/parentSectionGroup/sectionGroups": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sections/{onenoteSection-id}/parentSectionGroup/sectionGroups/{sectionGroup-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sections/{onenoteSection-id}/parentSectionGroup/sections": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/sites/{site-id}/onenote/sections/{onenoteSection-id}/parentSectionGroup/sections/{onenoteSection-id1}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/notebooks": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/notebooks/{notebook-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/parentSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sectionGroups": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sectionGroups/{sectionGroup-id1}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/notebooks/{notebook-id}/sections": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/parentSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/parentSectionGroup/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/parentSectionGroup/parentSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/parentSectionGroup/sectionGroups": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/parentSectionGroup/sectionGroups/{sectionGroup-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/parentSectionGroup/sections": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/parentSectionGroup/sections/{onenoteSection-id1}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/operations": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/operations/{onenoteOperation-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/pages": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/pages/{onenotePage-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/pages/{onenotePage-id}/content": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/pages/{onenotePage-id}/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/parentSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sectionGroups": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sectionGroups/{sectionGroup-id1}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id1}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id1}/content": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/pages": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/pages/{onenotePage-id1}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/pages/{onenotePage-id1}/content": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/parentSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/parentSectionGroup/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/parentSectionGroup/parentSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/parentSectionGroup/sectionGroups": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/parentSectionGroup/sectionGroups/{sectionGroup-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/parentSectionGroup/sections": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/parentSectionGroup/sections/{onenoteSection-id1}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/pages/{onenotePage-id}/parentSection": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/pages/{onenotePage-id}/parentSection/pages": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/pages/{onenotePage-id}/parentSection/pages/{onenotePage-id1}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/pages/{onenotePage-id}/parentSection/pages/{onenotePage-id1}/content": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/pages/{onenotePage-id}/parentSection/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/pages/{onenotePage-id}/parentSection/parentNotebook/sectionGroups": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/pages/{onenotePage-id}/parentSection/parentNotebook/sectionGroups/{sectionGroup-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/pages/{onenotePage-id}/parentSection/parentNotebook/sectionGroups/{sectionGroup-id}/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/pages/{onenotePage-id}/parentSection/parentNotebook/sectionGroups/{sectionGroup-id}/parentSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/pages/{onenotePage-id}/parentSection/parentNotebook/sectionGroups/{sectionGroup-id}/sectionGroups": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/pages/{onenotePage-id}/parentSection/parentNotebook/sectionGroups/{sectionGroup-id}/sectionGroups/{sectionGroup-id1}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/pages/{onenotePage-id}/parentSection/parentNotebook/sectionGroups/{sectionGroup-id}/sections": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/pages/{onenotePage-id}/parentSection/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/pages/{onenotePage-id}/parentSection/parentNotebook/sections": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/pages/{onenotePage-id}/parentSection/parentNotebook/sections/{onenoteSection-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/pages/{onenotePage-id}/parentSection/parentSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/pages/{onenotePage-id}/parentSection/parentSectionGroup/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/pages/{onenotePage-id}/parentSection/parentSectionGroup/parentNotebook/sectionGroups": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/pages/{onenotePage-id}/parentSection/parentSectionGroup/parentNotebook/sectionGroups/{sectionGroup-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/pages/{onenotePage-id}/parentSection/parentSectionGroup/parentNotebook/sections": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/pages/{onenotePage-id}/parentSection/parentSectionGroup/parentNotebook/sections/{onenoteSection-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/pages/{onenotePage-id}/parentSection/parentSectionGroup/parentSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/pages/{onenotePage-id}/parentSection/parentSectionGroup/sectionGroups": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/pages/{onenotePage-id}/parentSection/parentSectionGroup/sectionGroups/{sectionGroup-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/pages/{onenotePage-id}/parentSection/parentSectionGroup/sections": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/pages/{onenotePage-id}/parentSection/parentSectionGroup/sections/{onenoteSection-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/resources": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/resources/{onenoteResource-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/resources/{onenoteResource-id}/content": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sectionGroups": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sectionGroups": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sectionGroups/{sectionGroup-id1}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sections": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sections/{onenoteSection-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sections/{onenoteSection-id}/pages": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sections/{onenoteSection-id}/pages/{onenotePage-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sections/{onenoteSection-id}/pages/{onenotePage-id}/content": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sections/{onenoteSection-id}/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sections/{onenoteSection-id}/parentSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/parentSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sectionGroups": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sectionGroups/{sectionGroup-id1}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sectionGroups": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id1}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sections": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id1}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentNotebook/sectionGroups": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentNotebook/sectionGroups/{sectionGroup-id1}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentNotebook/sections": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentNotebook/sections/{onenoteSection-id1}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sections": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sections/{onenoteSection-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sections/{onenoteSection-id}/pages": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/content": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sectionGroups": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/parentSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sectionGroups": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sectionGroups/{sectionGroup-id1}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id1}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sections": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id1}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sections/{onenoteSection-id}/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sections/{onenoteSection-id}/parentNotebook/sectionGroups": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sections/{onenoteSection-id}/parentNotebook/sectionGroups/{sectionGroup-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sections/{onenoteSection-id}/parentNotebook/sectionGroups/{sectionGroup-id}/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sections/{onenoteSection-id}/parentNotebook/sectionGroups/{sectionGroup-id}/parentSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sections/{onenoteSection-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sectionGroups": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sections/{onenoteSection-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sectionGroups/{sectionGroup-id1}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sections/{onenoteSection-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sections/{onenoteSection-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id1}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sections/{onenoteSection-id}/parentNotebook/sections": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sections/{onenoteSection-id}/parentNotebook/sections/{onenoteSection-id1}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sections/{onenoteSection-id}/parentSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sections/{onenoteSection-id}/parentSectionGroup/parentNotebook": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sections/{onenoteSection-id}/parentSectionGroup/parentNotebook/sectionGroups": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sections/{onenoteSection-id}/parentSectionGroup/parentNotebook/sectionGroups/{sectionGroup-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sections/{onenoteSection-id}/parentSectionGroup/parentNotebook/sections": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sections/{onenoteSection-id}/parentSectionGroup/parentNotebook/sections/{onenoteSection-id1}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sections/{onenoteSection-id}/parentSectionGroup/parentSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sections/{onenoteSection-id}/parentSectionGroup/sectionGroups": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sections/{onenoteSection-id}/parentSectionGroup/sectionGroups/{sectionGroup-id}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sections/{onenoteSection-id}/parentSectionGroup/sections": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     },
     "/users/{user-id}/onenote/sections/{onenoteSection-id}/parentSectionGroup/sections/{onenoteSection-id1}": {
-      "originalLocation": "/openApiDocs/beta/Notes.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notes.yml"
     }
   }
 }

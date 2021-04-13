@@ -640,38 +640,38 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Not yet documented
+              description: Created date time in UTC of the device enrollment configuration
               format: date-time
             description:
               type: string
-              description: Not yet documented
+              description: The description of the device enrollment configuration
               nullable: true
             displayName:
               type: string
-              description: Not yet documented
+              description: The display name of the device enrollment configuration
               nullable: true
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Not yet documented
+              description: Last modified date time in UTC of the device enrollment configuration
               format: date-time
             priority:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Not yet documented
+              description: Priority is used when a user exists in multiple groups that are assigned enrollment configuration. Users are subject only to the configuration with the lowest priority value.
               format: int32
             version:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Not yet documented
+              description: The version of the device enrollment configuration
               format: int32
             assignments:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.enrollmentConfigurationAssignment'
-              description: The list of group assignments for the device configuration profile.
+              description: The list of group assignments for the device configuration profile
           additionalProperties:
             type: object
           description: The Base Class of Device Enrollment Configuration
