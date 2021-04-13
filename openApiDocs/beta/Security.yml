@@ -5350,7 +5350,7 @@ components:
       properties:
         description:
           type: string
-          description: 'Description of the NIC (e.g. Ethernet adapter, Wireless LAN adapter Local Area Connection <#>, etc.).'
+          description: 'Description of the NIC (e.g. Ethernet adapter, Wireless LAN adapter Local Area Connection <#/>, etc.).'
           nullable: true
         ipV4Address:
           type: string

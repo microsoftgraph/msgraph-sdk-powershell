@@ -8054,6 +8054,7 @@ paths:
                 - licenseDetails
                 - manager
                 - memberOf
+                - oauth2PermissionGrants
                 - ownedDevices
                 - ownedObjects
                 - registeredDevices
@@ -8125,6 +8126,7 @@ paths:
                 - licenseDetails
                 - manager
                 - memberOf
+                - oauth2PermissionGrants
                 - ownedDevices
                 - ownedObjects
                 - registeredDevices
@@ -8202,6 +8204,8 @@ paths:
               operationId: education.me.User.GetManager
             memberOf:
               operationId: education.me.User.ListMemberOf
+            oauth2PermissionGrants:
+              operationId: education.me.User.ListOauth2PermissionGrants
             ownedDevices:
               operationId: education.me.User.ListOwnedDevices
             ownedObjects:
@@ -8337,6 +8341,8 @@ paths:
               operationId: education.me.User.GetManager
             memberOf:
               operationId: education.me.User.ListMemberOf
+            oauth2PermissionGrants:
+              operationId: education.me.User.ListOauth2PermissionGrants
             ownedDevices:
               operationId: education.me.User.ListOwnedDevices
             ownedObjects:
@@ -14262,6 +14268,7 @@ paths:
                 - licenseDetails
                 - manager
                 - memberOf
+                - oauth2PermissionGrants
                 - ownedDevices
                 - ownedObjects
                 - registeredDevices
@@ -14333,6 +14340,7 @@ paths:
                 - licenseDetails
                 - manager
                 - memberOf
+                - oauth2PermissionGrants
                 - ownedDevices
                 - ownedObjects
                 - registeredDevices
@@ -14426,6 +14434,10 @@ paths:
                 educationUser-id: $request.path.educationUser-id
             memberOf:
               operationId: education.users.User.ListMemberOf
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+            oauth2PermissionGrants:
+              operationId: education.users.User.ListOauth2PermissionGrants
               parameters:
                 educationUser-id: $request.path.educationUser-id
             ownedDevices:
@@ -14687,6 +14699,10 @@ paths:
                 educationUser-id: $request.path.educationUser-id
             memberOf:
               operationId: education.users.User.ListMemberOf
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+            oauth2PermissionGrants:
+              operationId: education.users.User.ListOauth2PermissionGrants
               parameters:
                 educationUser-id: $request.path.educationUser-id
             ownedDevices:
@@ -15120,13 +15136,13 @@ components:
             assignDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date when the assignment should become active.  If in the future, the assignment is not shown to the student until this date.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              description: 'The date when the assignment should become active.  If in the future, the assignment is not shown to the student until this date.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             assignedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The moment that the assignment was published to students and the assignment shows up on the students timeline.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              description: 'The moment that the assignment was published to students and the assignment shows up on the students timeline.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             assignTo:
@@ -15138,7 +15154,7 @@ components:
             closeDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Date when the assignment will be closed for submissions. This is an optional field that can be null if the assignment does not allowLateSubmissions or when the closeDateTime is the same as the dueDateTime. But if specified, then the closeDateTime must be greater than or equal to the dueDateTime. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              description: 'Date when the assignment will be closed for submissions. This is an optional field that can be null if the assignment does not allowLateSubmissions or when the closeDateTime is the same as the dueDateTime. But if specified, then the closeDateTime must be greater than or equal to the dueDateTime. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             createdBy:
@@ -15146,7 +15162,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Moment when the assignment was created.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              description: 'Moment when the assignment was created.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             displayName:
@@ -15156,7 +15172,7 @@ components:
             dueDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Date when the students assignment is due.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              description: 'Date when the students assignment is due.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             grading:
@@ -15168,7 +15184,7 @@ components:
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Moment when the assignment was last modified.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              description: 'Moment when the assignment was last modified.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             notificationChannelUrl:
@@ -15221,7 +15237,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             description:
@@ -15237,7 +15253,7 @@ components:
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Moment in time when the resource was last modified.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              description: 'Moment in time when the resource was last modified.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             levels:
@@ -15265,7 +15281,7 @@ components:
             releasedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Moment in time when the submission was released. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              description: 'Moment in time when the submission was released. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             resourcesFolderUrl:
@@ -15277,7 +15293,7 @@ components:
             returnedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Moment in time when the submission was returned. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              description: 'Moment in time when the submission was returned. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             status:
@@ -15287,7 +15303,7 @@ components:
             submittedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Moment in time when the submission was moved into the submitted state. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              description: 'Moment in time when the submission was moved into the submitted state. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             unsubmittedBy:
@@ -15295,7 +15311,7 @@ components:
             unsubmittedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Moment in time when the submission was moved from submitted into the working state. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              description: 'Moment in time when the submission was moved from submitted into the working state. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             outcomes:
@@ -15383,7 +15399,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Timestamp of when the group was created. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Returned by default. Read-only.'
+              description: 'Timestamp of when the group was created. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only.'
               format: date-time
               nullable: true
             description:
@@ -15397,7 +15413,7 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Timestamp of when the group is set to expire. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Returned by default. Read-only.'
+              description: 'Timestamp of when the group is set to expire. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only.'
               format: date-time
               nullable: true
             groupTypes:
@@ -15441,7 +15457,7 @@ components:
               nullable: true
             membershipRuleProcessingState:
               type: string
-              description: Indicates whether the dynamic membership processing is on or paused. Possible values are 'On' or 'Paused'. Returned by default.
+              description: Indicates whether the dynamic membership processing is on or paused. Possible values are On or Paused. Returned by default.
               nullable: true
             onPremisesDomainName:
               type: string
@@ -15450,7 +15466,7 @@ components:
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Indicates the last time at which the group was synced with the on-premises directory.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Returned by default. Read-only. Supports $filter.'
+              description: 'Indicates the last time at which the group was synced with the on-premises directory.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only. Supports $filter.'
               format: date-time
               nullable: true
             onPremisesNetBiosName:
@@ -15490,7 +15506,7 @@ components:
             renewedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Timestamp of when the group was last renewed. This cannot be modified directly and is only updated via the renew service action. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Returned by default. Read-only.'
+              description: 'Timestamp of when the group was last renewed. This cannot be modified directly and is only updated via the renew service action. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only.'
               format: date-time
               nullable: true
             resourceBehaviorOptions:
@@ -15523,26 +15539,26 @@ components:
               $ref: '#/components/schemas/microsoft.graph.groupAccessType'
             allowExternalSenders:
               type: boolean
-              description: Indicates if people external to the organization can send messages to the group. Default value is false. Returned only on $select.
+              description: 'Indicates if people external to the organization can send messages to the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
               nullable: true
             autoSubscribeNewMembers:
               type: boolean
-              description: Indicates if new members added to the group will be auto-subscribed to receive email notifications. You can set this property in a PATCH request for the group; do not set it in the initial POST request that creates the group. Default value is false. Returned only on $select.
+              description: 'Indicates if new members added to the group will be auto-subscribed to receive email notifications. You can set this property in a PATCH request for the group; do not set it in the initial POST request that creates the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
               nullable: true
             hideFromAddressLists:
               type: boolean
-              description: 'True if the group is not displayed in certain parts of the Outlook user interface: in the Address Book, in address lists for selecting message recipients, and in the Browse Groups dialog for searching groups; false otherwise. Default value is false. Returned only on $select.'
+              description: 'true if the group is not displayed in certain parts of the Outlook user interface: in the Address Book, in address lists for selecting message recipients, and in the Browse Groups dialog for searching groups; false otherwise. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
               nullable: true
             hideFromOutlookClients:
               type: boolean
-              description: 'True if the group is not displayed in Outlook clients, such as Outlook for Windows and Outlook on the web, false otherwise. Default value is false. Returned only on $select.'
+              description: 'true if the group is not displayed in Outlook clients, such as Outlook for Windows and Outlook on the web, false otherwise. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
               nullable: true
             isFavorite:
               type: boolean
               nullable: true
             isSubscribedByMail:
               type: boolean
-              description: Indicates whether the signed-in user is subscribed to receive email conversations. Default value is true. Returned only on $select.
+              description: 'Indicates whether the signed-in user is subscribed to receive email conversations. Default value is true. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
               nullable: true
             unseenConversationsCount:
               maximum: 2147483647
@@ -15555,7 +15571,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Count of conversations that have received new posts since the signed-in user last visited the group. This property is the same as unseenConversationsCount.Returned only on $select.
+              description: 'Count of conversations that have received new posts since the signed-in user last visited the group. This property is the same as unseenConversationsCount.Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
               format: int32
               nullable: true
             unseenMessagesCount:
@@ -15916,7 +15932,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLicense'
-              description: The licenses that are assigned to the user. Returned only on $select. Not nullable.
+              description: The licenses that are assigned to the user. Not nullable. Supports $filter.
             assignedPlans:
               type: array
               items:
@@ -15933,7 +15949,7 @@ components:
               nullable: true
             companyName:
               type: string
-              description: The company name which the user is associated. This property can be useful for describing the company that an external user comes from. The maximum length of the company name is 64 chararcters.Returned only on $select.
+              description: The company name which the user is associated. This property can be useful for describing the company that an external user comes from. The maximum length of the company name is 64 characters.Returned only on $select.
               nullable: true
             consentProvidedForMinor:
               type: string
@@ -16024,7 +16040,7 @@ components:
             lastPasswordChangeDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The time when this Azure AD user last changed their password. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is ''2014-01-01T00:00:00Z'' Returned only on $select. Read-only.'
+              description: 'The time when this Azure AD user last changed their password. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select. Read-only.'
               format: date-time
               nullable: true
             legalAgeGroupClassification:
@@ -16069,7 +16085,7 @@ components:
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Indicates the last time at which the object was synced with the on-premises directory; for example: ''2013-02-16T03:04:54Z''. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is ''2014-01-01T00:00:00Z''. Returned only on $select. Read-only.'
+              description: 'Indicates the last time at which the object was synced with the on-premises directory; for example: ''2013-02-16T03:04:54Z''. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned only on $select. Read-only.'
               format: date-time
               nullable: true
             onPremisesProvisioningErrors:
@@ -16181,12 +16197,12 @@ components:
             birthday:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is ''2014-01-01T00:00:00Z'' Returned only on $select.'
+              description: 'The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.'
               format: date-time
             hireDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is ''2014-01-01T00:00:00Z''. Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.'
+              description: 'The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.'
               format: date-time
             interests:
               type: array
@@ -16261,6 +16277,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: 'The groups, directory roles and administrative units that the user is a member of. Read-only. Nullable.'
+            oauth2PermissionGrants:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.oAuth2PermissionGrant'
             ownedDevices:
               type: array
               items:
@@ -16480,7 +16500,7 @@ components:
               nullable: true
             visibility:
               type: string
-              description: 'Controls whether the adminstrative unit and its members are hidden or public. Can be set to HiddenMembership or Public. If not set, default behavior is Public. When set to HiddenMembership, only members of the administrative unit can list other members of the adminstrative unit.'
+              description: 'Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership or Public. If not set, default behavior is Public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.'
               nullable: true
             members:
               type: array
@@ -16737,7 +16757,7 @@ components:
         createdDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+          description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
           format: date-time
           nullable: true
         displayName:
@@ -16749,7 +16769,7 @@ components:
         lastModifiedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'Moment in time when the resource was last modified.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+          description: 'Moment in time when the resource was last modified.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
           format: date-time
           nullable: true
       additionalProperties:
@@ -16927,12 +16947,12 @@ components:
             appRoleId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
-              description: 'The identifier (id) for the app role which is assigned to the principal. This app role must be exposed in the appRoles property on the resource application''s service principal (resourceId). If the resource application has not declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create. Does not support $filter.'
+              description: 'The identifier (id) for the app role which is assigned to the principal. This app role must be exposed in the appRoles property on the resource application''s service principal (resourceId). If the resource application has not declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create.'
               format: uuid
             creationTimestamp:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The time when the app role assignment was created.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Read-only. Does not support $filter.'
+              description: 'The time when the app role assignment was created.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
             principalDisplayName:
@@ -16942,16 +16962,16 @@ components:
             principalId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
-              description: 'The unique identifier (id) for the user, group or service principal being granted the app role. Required on create. Does not support $filter.'
+              description: 'The unique identifier (id) for the user, group or service principal being granted the app role. Required on create.'
               format: uuid
               nullable: true
             principalType:
               type: string
-              description: 'The type of the assigned principal. This can either be ''User'', ''Group'' or ''ServicePrincipal''. Read-only. Does not support $filter.'
+              description: 'The type of the assigned principal. This can either be User, Group or ServicePrincipal. Read-only.'
               nullable: true
             resourceDisplayName:
               type: string
-              description: The display name of the resource app's service principal to which the assignment is made. Does not support $filter.
+              description: The display name of the resource app's service principal to which the assignment is made.
               nullable: true
             resourceId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
@@ -16996,18 +17016,23 @@ components:
           properties:
             clientAppId:
               type: string
+              description: ID of the service principal of the Azure AD app that has been granted access. Read-only.
               nullable: true
             clientId:
               type: string
+              description: ID of the Azure AD app that has been granted access. Read-only.
               nullable: true
             permission:
               type: string
+              description: The name of the permission. Read-only.
               nullable: true
             permissionType:
               type: string
+              description: 'The type of permission. Possible values are: Application,Delegated. Read-only.'
               nullable: true
             resourceAppId:
               type: string
+              description: ID of the Azure AD app that is hosting the resource. Read-only.
               nullable: true
           additionalProperties:
             type: object
@@ -17050,15 +17075,15 @@ components:
               nullable: true
             canEdit:
               type: boolean
-              description: 'True if the user can write to the calendar, false otherwise. This property is true for the user who created the calendar. This property is also true for a user who has been shared a calendar and granted write access, through an Outlook client or the corresponding calendarPermission resource. Read-only.'
+              description: 'true if the user can write to the calendar, false otherwise. This property is true for the user who created the calendar. This property is also true for a user who has been shared a calendar and granted write access, through an Outlook client or the corresponding calendarPermission resource. Read-only.'
               nullable: true
             canShare:
               type: boolean
-              description: 'True if the user has the permission to share the calendar, false otherwise. Only the user who created the calendar can share it. Read-only.'
+              description: 'true if the user has the permission to share the calendar, false otherwise. Only the user who created the calendar can share it. Read-only.'
               nullable: true
             canViewPrivateItems:
               type: boolean
-              description: 'True if the user can read calendar items that have been marked private, false otherwise. This property is set through an Outlook client or the corresponding calendarPermission resource. Read-only.'
+              description: 'true if the user can read calendar items that have been marked private, false otherwise. This property is set through an Outlook client or the corresponding calendarPermission resource. Read-only.'
               nullable: true
             changeKey:
               type: string
@@ -17070,11 +17095,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingProviderType'
             hexColor:
               type: string
-              description: 'The calendar color, expressed in a hex color code of three hexidecimal values, each ranging from 00 to FF and representing the red, green, or blue components of the color in the RGB color space. If the user has never explicitly set a color for the calendar, this property is  empty.'
+              description: 'The calendar color, expressed in a hex color code of three hexadecimal values, each ranging from 00 to FF and representing the red, green, or blue components of the color in the RGB color space. If the user has never explicitly set a color for the calendar, this property is  empty.'
               nullable: true
             isDefaultCalendar:
               type: boolean
-              description: 'True if this is the default calendar where new events are created by default, false otherwise.'
+              description: 'true if this is the default calendar where new events are created by default, false otherwise.'
               nullable: true
             isRemovable:
               type: boolean
@@ -17082,11 +17107,11 @@ components:
               nullable: true
             isShared:
               type: boolean
-              description: 'True if the user has shared the calendar with other users, false otherwise. Since only the user who created the calendar can share it, isShared and isSharedWithMe cannot be true for the same user. This property is set when sharing is initiated in an Outlook client, and can be reset when the sharing is cancelled through the client or the corresponding calendarPermission resource. Read-only.'
+              description: 'true if the user has shared the calendar with other users, false otherwise. Since only the user who created the calendar can share it, isShared and isSharedWithMe cannot be true for the same user. This property is set when sharing is initiated in an Outlook client, and can be reset when the sharing is cancelled through the client or the corresponding calendarPermission resource. Read-only.'
               nullable: true
             isSharedWithMe:
               type: boolean
-              description: 'True if the user has been shared this calendar, false otherwise. This property is always false for a calendar owner. This property is set when sharing is initiated in an Outlook client, and can be reset when the sharing is cancelled through the client or the corresponding calendarPermission resource. Read-only.'
+              description: 'true if the user has been shared this calendar, false otherwise. This property is always false for a calendar owner. This property is set when sharing is initiated in an Outlook client, and can be reset when the sharing is cancelled through the client or the corresponding calendarPermission resource. Read-only.'
               nullable: true
             isTallyingResponses:
               type: boolean
@@ -17215,7 +17240,7 @@ components:
             originalStart:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             originalStartTimeZone:
@@ -17309,7 +17334,7 @@ components:
             lastDeliveredDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
             preview:
               type: string
@@ -17349,7 +17374,7 @@ components:
             lastDeliveredDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
             preview:
               type: string
@@ -17464,6 +17489,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.columnDefinition'
+              description: The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
             items:
               type: array
               items:
@@ -17489,6 +17515,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.site'
               description: The collection of the sub-sites under this site.
+            termStore:
+              $ref: '#/components/schemas/microsoft.graph.termStore.store'
             onenote:
               $ref: '#/components/schemas/microsoft.graph.onenote'
           additionalProperties:
@@ -17609,7 +17637,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Read only. Timestamp at which the team was created.
+              description: Timestamp at which the team was created.
               format: date-time
               nullable: true
             description:
@@ -17650,8 +17678,6 @@ components:
               type: string
               description: 'A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.'
               nullable: true
-            schedule:
-              $ref: '#/components/schemas/microsoft.graph.schedule'
             channels:
               type: array
               items:
@@ -17689,6 +17715,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.teamworkTag'
             template:
               $ref: '#/components/schemas/microsoft.graph.teamsTemplate'
+            schedule:
+              $ref: '#/components/schemas/microsoft.graph.schedule'
           additionalProperties:
             type: object
     microsoft.graph.relatedContact:
@@ -17704,7 +17732,7 @@ components:
           description: Name of the contact. Required.
         emailAddress:
           type: string
-          description: Primary email address of the contact.
+          description: Email address of the contact.
           nullable: true
         id:
           type: string
@@ -17725,7 +17753,7 @@ components:
         assignedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The date and time at which the plan was assigned; for example: 2013-01-02T19:32:30Z. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+          description: 'The date and time at which the plan was assigned; for example: 2013-01-02T19:32:30Z. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
           format: date-time
           nullable: true
         capabilityStatus:
@@ -17902,7 +17930,7 @@ components:
         lastSignInDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The last sign-in date for a specific user. You can use this field to calculate the last time a user signed in to the directory. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.'
+          description: 'The last interactive sign-in date for a specific user. You can use this field to calculate the last time a user signed in to the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.'
           format: date-time
           nullable: true
         lastSignInRequestId:
@@ -18173,6 +18201,44 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.oAuth2PermissionGrant:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: oAuth2PermissionGrant
+          type: object
+          properties:
+            clientId:
+              type: string
+              description: The id of the client service principal for the application which is authorized to act on behalf of a signed-in user when accessing an API. Required. Supports $filter (eq only).
+            consentType:
+              type: string
+              description: 'Indicates if authorization is granted for the client application to impersonate all users or only a specific user. AllPrincipals indicates authorization to impersonate all users. Principal indicates authorization to impersonate a specific user. Consent on behalf of all users can be granted by an administrator. Non-admin users may be authorized to consent on behalf of themselves in some cases, for some delegated permissions. Required. Supports $filter (eq only).'
+              nullable: true
+            expiryTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Currently, the end time value is ignored, but a value is required when creating an oAuth2PermissionGrant. Required.'
+              format: date-time
+              nullable: true
+            principalId:
+              type: string
+              description: 'The id of the user on behalf of whom the client is authorized to access the resource, when consentType is Principal. If consentType is AllPrincipals this value is null. Required when consentType is Principal.'
+              nullable: true
+            resourceId:
+              type: string
+              description: The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user.
+            scope:
+              type: string
+              description: 'A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal.'
+              nullable: true
+            startTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Currently, the start time value is ignored, but a value is required when creating an oAuth2PermissionGrant. Required.'
+              format: date-time
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.scopedRoleMembership:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -18269,7 +18335,7 @@ components:
             birthday:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The contact''s birthday. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              description: 'The contact''s birthday. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             children:
@@ -18582,7 +18648,7 @@ components:
             receivedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time the message was received.  The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''.'
+              description: 'The date and time the message was received.  The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             replyTo:
@@ -18595,7 +18661,7 @@ components:
             sentDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time the message was sent.  The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''.'
+              description: 'The date and time the message was sent.  The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             subject:
@@ -18774,20 +18840,25 @@ components:
           properties:
             appDisplayName:
               type: string
+              description: The display name of the app for which consent is requested. Required. Supports $filter (eq only) and $orderby.
               nullable: true
             appId:
               type: string
+              description: The identifier of the application. Required. Supports $filter (eq only) and $orderby.
             consentType:
               type: string
+              description: 'The consent type of the request. Possible values are: Static and Dynamic. These represent static and dynamic permissions, respectively, requested in the consent workflow. Supports $filter (eq only) and $orderby. Required.'
               nullable: true
             pendingScopes:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appConsentRequestScope'
+              description: A list of pending scopes waiting for approval. This is empty if the consentType is Static. Required.
             userConsentRequests:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.userConsentRequest'
+              description: A list of pending user consent requests.
           additionalProperties:
             type: object
     microsoft.graph.approval:
@@ -18811,7 +18882,7 @@ components:
             endDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: DateTime when review instance is scheduled to end.
+              description: 'DateTime when review instance is scheduled to end.The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             scope:
@@ -18819,7 +18890,7 @@ components:
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: DateTime when review instance is scheduled to start. May be in the future.
+              description: 'DateTime when review instance is scheduled to start. May be in the future. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             status:
@@ -18868,13 +18939,13 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The expiration date time of the acceptance. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              description: 'The expiration date time of the acceptance. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             recordedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             state:
@@ -18982,6 +19053,11 @@ components:
               nullable: true
             chassisType:
               $ref: '#/components/schemas/microsoft.graph.chassisType'
+            chromeOSDeviceInfo:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.chromeOSDeviceProperty'
+              description: List of properties of the ChromeOS Device.
             complianceGracePeriodExpirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -19575,6 +19651,8 @@ components:
             contributionToContentDiscoveryDisabled:
               type: boolean
               description: 'When set to true, the delegate access to the user''s trending API is disabled. When set to true, documents in the user''s Office Delve are disabled. When set to true, the relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected. Users can control this setting in Office Delve.'
+            itemInsights:
+              $ref: '#/components/schemas/microsoft.graph.userInsightsSettings'
             regionalAndLanguageSettings:
               $ref: '#/components/schemas/microsoft.graph.regionalAndLanguageSettings'
             shiftPreferences:
@@ -19763,13 +19841,13 @@ components:
             approximateLastSignInDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Read-only.'
+              description: 'The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
             complianceExpirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The timestamp when the device is no longer deemed compliant. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Read-only.'
+              description: 'The timestamp when the device is no longer deemed compliant. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
             deviceCategory:
@@ -19778,7 +19856,7 @@ components:
               nullable: true
             deviceId:
               type: string
-              description: Unique identifier set by Azure Device Registration Service at the time of registration.
+              description: Identifier set by Azure Device Registration Service at the time of registration.
               nullable: true
             deviceMetadata:
               type: string
@@ -19818,6 +19896,7 @@ components:
               items:
                 type: string
                 nullable: true
+              description: List of hostNames for the device.
             isCompliant:
               type: boolean
               description: 'true if the device complies with Mobile Device Management (MDM) policies; otherwise, false. Read-only. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices.'
@@ -19837,7 +19916,7 @@ components:
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The last time at which the object was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'' Read-only.'
+              description: 'The last time at which the object was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Read-only.'
               format: date-time
               nullable: true
             onPremisesSyncEnabled:
@@ -19859,12 +19938,12 @@ components:
               description: For internal use only. Not nullable.
             profileType:
               type: string
-              description: The profile type of the device. Possible values:RegisteredDevice (default)SecureVMPrinterSharedIoT
+              description: 'The profile type of the device. Possible values: RegisteredDevice (default), SecureVM, Printer, Shared, IoT.'
               nullable: true
             registrationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Date and time of when the device was registered. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Read-only.'
+              description: 'Date and time of when the device was registered. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
             systemLabels:
@@ -19874,10 +19953,11 @@ components:
               description: List of labels applied to the device by the system.
             trustType:
               type: string
-              description: 'Type of trust for the joined device. Read-only. Possible values: Workplace - indicates bring your own personal devicesAzureAd - Cloud only joined devicesServerAd - on-premises domain joined devices joined to Azure AD. For more details, see Introduction to device management in Azure Active Directory'
+              description: 'Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory'
               nullable: true
             kind:
               type: string
+              description: Form factor of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
               nullable: true
             manufacturer:
               type: string
@@ -19889,12 +19969,15 @@ components:
               nullable: true
             name:
               type: string
+              description: Friendly name of a device. Only returned if user signs in with a Microsoft account as part of Project Rome.
               nullable: true
             platform:
               type: string
+              description: Platform of device. Only returned if user signs in with a Microsoft account as part of Project Rome. Only returned if user signs in with a Microsoft account as part of Project Rome.
               nullable: true
             status:
               type: string
+              description: Device is online or offline. Only returned if user signs in with a Microsoft account as part of Project Rome.
               nullable: true
             usageRights:
               type: array
@@ -19965,7 +20048,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.meetingCapabilities'
-              description: 'The list of meeting capabilities. Possible values are: questionAndAnswer.'
+              description: 'The list of meeting capabilities. Possible values are: questionAndAnswer,unknownFutureValue.'
             chatInfo:
               $ref: '#/components/schemas/microsoft.graph.chatInfo'
             creationDateTime:
@@ -20031,6 +20114,8 @@ components:
               type: string
               description: The video teleconferencing ID. Read-only.
               nullable: true
+            meetingAttendanceReport:
+              $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
           additionalProperties:
             type: object
     microsoft.graph.presence:
@@ -20138,6 +20223,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessage'
               description: A collection of all the messages in the chat. Nullable.
+            permissionGrants:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
+              description: A collection of permissions granted to apps for the chat.
             tabs:
               type: array
               items:
@@ -20382,13 +20472,13 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
           additionalProperties:
@@ -20527,7 +20617,7 @@ components:
         time:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The date and time that the response was returned. It uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+          description: 'The date and time that the response was returned. It uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
           format: date-time
           nullable: true
       additionalProperties:
@@ -20574,7 +20664,7 @@ components:
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             name:
@@ -20620,7 +20710,7 @@ components:
             receivedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Specifies when the post was received. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              description: 'Specifies when the post was received. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
             sender:
               $ref: '#/components/schemas/microsoft.graph.recipient'
@@ -20816,6 +20906,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.image'
             location:
               $ref: '#/components/schemas/microsoft.graph.geoCoordinates'
+            media:
+              $ref: '#/components/schemas/microsoft.graph.media'
             package:
               $ref: '#/components/schemas/microsoft.graph.package'
             pendingOperations:
@@ -20839,6 +20931,8 @@ components:
               description: Size of the item in bytes. Read-only.
               format: int64
               nullable: true
+            source:
+              $ref: '#/components/schemas/microsoft.graph.driveItemSource'
             specialFolder:
               $ref: '#/components/schemas/microsoft.graph.specialFolder'
             video:
@@ -21027,12 +21121,15 @@ components:
               nullable: true
             isDeletable:
               type: boolean
+              description: Indicates whether this column can be deleted.
               nullable: true
             isReorderable:
               type: boolean
+              description: Indicates whether values in the column can be reordered. Read-only.
               nullable: true
             isSealed:
               type: boolean
+              description: Specifies whether column can be changed.
               nullable: true
             lookup:
               $ref: '#/components/schemas/microsoft.graph.lookupColumn'
@@ -21046,6 +21143,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.personOrGroupColumn'
             propagateChanges:
               type: boolean
+              description: If 'True' changes to this column will be propagated to lists that implement the column.
               nullable: true
             readOnly:
               type: boolean
@@ -21080,6 +21178,7 @@ components:
               items:
                 type: string
                 nullable: true
+              description: List of canonical URLs for hub sites with which this content type is associated to. This will contain all hubsites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type will be applied to the lists in the enforced sites.
             description:
               type: string
               description: The descriptive text for the item.
@@ -21100,6 +21199,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.itemReference'
             isBuiltIn:
               type: boolean
+              description: Specifies if a content type is a built-in content type.
               nullable: true
             name:
               type: string
@@ -21113,6 +21213,7 @@ components:
               nullable: true
             propagateChanges:
               type: boolean
+              description: 'If true, any changes made to the content type will be pushed to inherited content types and lists that implement the content type.'
               nullable: true
             readOnly:
               type: boolean
@@ -21128,6 +21229,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.contentType'
+              description: The collection of content types that are ancestors of this content type.
             columnLinks:
               type: array
               items:
@@ -21137,10 +21239,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.columnDefinition'
+              description: Column order information in a content type.
             columns:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.columnDefinition'
+              description: The collection of column definitions for this contentType.
           additionalProperties:
             type: object
     microsoft.graph.sitePage:
@@ -21206,6 +21310,32 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.termStore.store:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: store
+          type: object
+          properties:
+            defaultLanguageTag:
+              type: string
+              description: Default language of the term store.
+            languageTags:
+              type: array
+              items:
+                type: string
+              description: List of languages for the term store.
+            groups:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.termStore.group'
+              description: Collection of all groups available in the term store.
+            sets:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.termStore.set'
+              description: Collection of all sets available in the term store.
+          additionalProperties:
+            type: object
     microsoft.graph.plannerPlan:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
@@ -21221,7 +21351,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Read-only. Date and time at which the plan is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              description: 'Read-only. Date and time at which the plan is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             owner:
@@ -21293,7 +21423,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.onenoteOperationError'
             percentComplete:
               type: string
-              description: The operation percent complete if the operation is still in running status
+              description: The operation percent complete if the operation is still in running status.
               nullable: true
             resourceId:
               type: string
@@ -21327,7 +21457,7 @@ components:
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the page was last modified. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Read-only.'
+              description: 'The date and time when the page was last modified. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
             level:
@@ -21555,99 +21685,6 @@ components:
         - hiddenMembership
         - unknownFutureValue
       type: string
-    microsoft.graph.schedule:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: schedule
-          type: object
-          properties:
-            enabled:
-              type: boolean
-              description: Indicates whether the schedule is enabled for the team. Required.
-              nullable: true
-            offerShiftRequestsEnabled:
-              type: boolean
-              description: Indicates whether offer shift requests are enabled for the schedule.
-              nullable: true
-            openShiftsEnabled:
-              type: boolean
-              description: Indicates whether open shifts are enabled for the schedule.
-              nullable: true
-            provisionStatus:
-              $ref: '#/components/schemas/microsoft.graph.operationStatus'
-            provisionStatusCode:
-              type: string
-              description: Additional information about why schedule provisioning failed.
-              nullable: true
-            swapShiftsRequestsEnabled:
-              type: boolean
-              description: Indicates whether swap shifts requests are enabled for the schedule.
-              nullable: true
-            timeClockEnabled:
-              type: boolean
-              description: Indicates whether time clock is enabled for the schedule.
-              nullable: true
-            timeClockSettings:
-              $ref: '#/components/schemas/microsoft.graph.timeClockSettings'
-            timeOffRequestsEnabled:
-              type: boolean
-              description: Indicates whether time off requests are enabled for the schedule.
-              nullable: true
-            timeZone:
-              type: string
-              description: Indicates the time zone of the schedule team using tz database format. Required.
-              nullable: true
-            workforceIntegrationIds:
-              type: array
-              items:
-                type: string
-                nullable: true
-            offerShiftRequests:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.offerShiftRequest'
-            openShiftChangeRequests:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.openShiftChangeRequest'
-            openShifts:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.openShift'
-            schedulingGroups:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.schedulingGroup'
-              description: The logical grouping of users in the schedule (usually by role).
-            shifts:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.shift'
-              description: The shifts in the schedule.
-            swapShiftsChangeRequests:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.swapShiftsChangeRequest'
-            timeCards:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.timeCard'
-            timeOffReasons:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.timeOffReason'
-              description: The set of reasons for a time off in the schedule.
-            timeOffRequests:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.timeOffRequest'
-            timesOff:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.timeOff'
-              description: The instances of times off in the schedule.
-          additionalProperties:
-            type: object
     microsoft.graph.channel:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -21810,6 +21847,99 @@ components:
         - $ref: '#/components/schemas/microsoft.graph.entity'
         - title: teamsTemplate
           type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.schedule:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: schedule
+          type: object
+          properties:
+            enabled:
+              type: boolean
+              description: Indicates whether the schedule is enabled for the team. Required.
+              nullable: true
+            offerShiftRequestsEnabled:
+              type: boolean
+              description: Indicates whether offer shift requests are enabled for the schedule.
+              nullable: true
+            openShiftsEnabled:
+              type: boolean
+              description: Indicates whether open shifts are enabled for the schedule.
+              nullable: true
+            provisionStatus:
+              $ref: '#/components/schemas/microsoft.graph.operationStatus'
+            provisionStatusCode:
+              type: string
+              description: Additional information about why schedule provisioning failed.
+              nullable: true
+            swapShiftsRequestsEnabled:
+              type: boolean
+              description: Indicates whether swap shifts requests are enabled for the schedule.
+              nullable: true
+            timeClockEnabled:
+              type: boolean
+              description: Indicates whether time clock is enabled for the schedule.
+              nullable: true
+            timeClockSettings:
+              $ref: '#/components/schemas/microsoft.graph.timeClockSettings'
+            timeOffRequestsEnabled:
+              type: boolean
+              description: Indicates whether time off requests are enabled for the schedule.
+              nullable: true
+            timeZone:
+              type: string
+              description: Indicates the time zone of the schedule team using tz database format. Required.
+              nullable: true
+            workforceIntegrationIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+            offerShiftRequests:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.offerShiftRequest'
+            openShiftChangeRequests:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.openShiftChangeRequest'
+            openShifts:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.openShift'
+            schedulingGroups:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.schedulingGroup'
+              description: The logical grouping of users in the schedule (usually by role).
+            shifts:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.shift'
+              description: The shifts in the schedule.
+            swapShiftsChangeRequests:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.swapShiftsChangeRequest'
+            timeCards:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.timeCard'
+            timeOffReasons:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.timeOffReason'
+              description: The set of reasons for a time off in the schedule.
+            timeOffRequests:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.timeOffRequest'
+            timesOff:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.timeOff'
+              description: The instances of times off in the schedule.
           additionalProperties:
             type: object
     microsoft.graph.contactRelationship:
@@ -22100,7 +22230,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''.'
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             expectedAssessment:
@@ -22505,6 +22635,7 @@ components:
       properties:
         displayName:
           type: string
+          description: The name of the scope.
           nullable: true
       additionalProperties:
         type: object
@@ -22516,6 +22647,7 @@ components:
           properties:
             reason:
               type: string
+              description: The user's justification for requiring access to the app. Supports $filter (eq only) and $orderby.
               nullable: true
             approval:
               $ref: '#/components/schemas/microsoft.graph.approval'
@@ -22527,36 +22659,39 @@ components:
         - title: approvalStep
           type: object
           properties:
+            assignedToMe:
+              type: boolean
+              description: Indicates whether the step is assigned to the calling user to review. Read-only.
+              nullable: true
             displayName:
               type: string
+              description: The label provided by the policy creator to identify an approval step. Read-only.
               nullable: true
             justification:
               type: string
+              description: The justification associated with the approval step decision.
               nullable: true
             reviewedBy:
               $ref: '#/components/schemas/microsoft.graph.identity'
             reviewedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when a decision was recorded. The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
             reviewResult:
               type: string
+              description: 'The result of this approval record. Possible values include: NotReviewed, Approved, Denied.'
+              nullable: true
+            status:
+              type: string
+              description: 'The step status. Possible values: InProgress, Initializing, Completed, Expired. Read-only.'
               nullable: true
           additionalProperties:
             type: object
     microsoft.graph.accessReviewScope:
       title: accessReviewScope
       type: object
-      properties:
-        query:
-          type: string
-          description: The query specifying what will be reviewed. See table for examples.
-          nullable: true
-        queryType:
-          type: string
-          description: The type of query. Examples include MicrosoftGraph and ARM.
-          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.accessReviewInstanceDecisionItem:
@@ -22573,7 +22708,7 @@ components:
             appliedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The DateTime when the approval decision was applied.
+              description: 'The timestamp when the approval decision was applied. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             applyResult:
@@ -22588,16 +22723,26 @@ components:
               type: string
               description: The review decision justification.
               nullable: true
+            principal:
+              $ref: '#/components/schemas/microsoft.graph.identity'
+            principalLink:
+              type: string
+              nullable: true
             recommendation:
               type: string
               description: 'A system-generated recommendation for the approval decision. Possible values: Approve, Deny, or NotAvailable.'
+              nullable: true
+            resource:
+              $ref: '#/components/schemas/microsoft.graph.accessReviewInstanceDecisionItemResource'
+            resourceLink:
+              type: string
               nullable: true
             reviewedBy:
               $ref: '#/components/schemas/microsoft.graph.userIdentity'
             reviewedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The DateTime when the review occurred.
+              description: The timestamp when the review occurred.
               format: date-time
               nullable: true
             target:
@@ -22620,7 +22765,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: DateTime when review series was created.
+              description: Timestamp when review series was created.
               format: date-time
               nullable: true
             descriptionForAdmins:
@@ -22640,7 +22785,7 @@ components:
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: DateTime when review series was last modified.
+              description: Timestamp when review series was last modified.
               format: date-time
               nullable: true
             reviewers:
@@ -22700,6 +22845,28 @@ components:
         - mobileOther
         - mobileUnknown
       type: string
+    microsoft.graph.chromeOSDeviceProperty:
+      title: chromeOSDeviceProperty
+      type: object
+      properties:
+        name:
+          type: string
+          description: Name of the property
+          nullable: true
+        updatable:
+          type: boolean
+          description: Whether this property is updatable
+        value:
+          type: string
+          description: Value of the property
+          nullable: true
+        valueType:
+          type: string
+          description: Type of the value
+          nullable: true
+      additionalProperties:
+        type: object
+      description: Represents a property of the ChromeOS device.
     microsoft.graph.complianceState:
       title: complianceState
       enum:
@@ -22991,11 +23158,12 @@ components:
         - androidEnterprise
         - windows10x
         - androidnGMS
-        - cloudPC
+        - chromeOS
         - linux
         - blackberry
         - palm
         - unknown
+        - cloudPC
       type: string
     microsoft.graph.deviceManagementExchangeAccessState:
       title: deviceManagementExchangeAccessState
@@ -23886,7 +24054,7 @@ components:
             completedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Read-only. Date and time at which the ''percentComplete'' of the task is set to ''100''. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              description: 'Read-only. Date and time at which the ''percentComplete'' of the task is set to ''100''. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             conversationThreadId:
@@ -23898,7 +24066,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Read-only. Date and time at which the task is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              description: 'Read-only. Date and time at which the task is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             creationSource:
@@ -23906,7 +24074,7 @@ components:
             dueDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Date and time at which the task is due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              description: 'Date and time at which the task is due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             hasDescription:
@@ -23947,7 +24115,7 @@ components:
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Date and time at which the task starts. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              description: 'Date and time at which the task starts. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             title:
@@ -23984,6 +24152,16 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.usedInsight'
               description: Access this property from the derived type itemInsights.
+          additionalProperties:
+            type: object
+    microsoft.graph.userInsightsSettings:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: userInsightsSettings
+          type: object
+          properties:
+            isEnabled:
+              type: boolean
           additionalProperties:
             type: object
     microsoft.graph.regionalAndLanguageSettings:
@@ -24744,6 +24922,7 @@ components:
       properties:
         conferenceId:
           type: string
+          description: The conference id of the online meeting.
           nullable: true
         dialinUrl:
           type: string
@@ -24841,6 +25020,18 @@ components:
           description: For broadcast meeting only.
       additionalProperties:
         type: object
+    microsoft.graph.meetingAttendanceReport:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: meetingAttendanceReport
+          type: object
+          properties:
+            attendanceRecords:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.attendanceRecord'
+          additionalProperties:
+            type: object
     microsoft.graph.outOfOfficeSettings:
       title: outOfOfficeSettings
       type: object
@@ -24888,6 +25079,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The timestamp when this key was registered to the user.
               format: date-time
               nullable: true
             creationDateTime:
@@ -25006,7 +25198,7 @@ components:
             creationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when this password was last updated. This property is currently not populated. Read-only. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              description: 'The date and time when this password was last updated. This property is currently not populated. Read-only. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             password:
@@ -25121,11 +25313,12 @@ components:
               $ref: '#/components/schemas/microsoft.graph.channelIdentity'
             chatId:
               type: string
+              description: 'If the message was sent in a chat, represents the identity of the chat.'
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Read only. Timestamp of when the chat message was created.
+              description: Timestamp of when the chat message was created.
               format: date-time
               nullable: true
             deletedDateTime:
@@ -25156,7 +25349,7 @@ components:
               nullable: true
             locale:
               type: string
-              description: Locale of the chat message set by the client.
+              description: Locale of the chat message set by the client. Always set to en-us.
             mentions:
               type: array
               items:
@@ -25185,15 +25378,18 @@ components:
               nullable: true
             webUrl:
               type: string
+              description: Read-only. Link to the message in Microsoft Teams.
               nullable: true
             hostedContents:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
+              description: 'Content in a message hosted by Microsoft Teams e.g. images, code snippets etc.'
             replies:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessage'
+              description: Replies for a specified message.
           additionalProperties:
             type: object
     microsoft.graph.teamsTab:
@@ -25770,6 +25966,17 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.media:
+      title: media
+      type: object
+      properties:
+        isTranscriptionShown:
+          type: boolean
+          nullable: true
+        mediaSource:
+          $ref: '#/components/schemas/microsoft.graph.mediaSource'
+      additionalProperties:
+        type: object
     microsoft.graph.package:
       title: package
       type: object
@@ -25949,6 +26156,17 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.driveItemSource:
+      title: driveItemSource
+      type: object
+      properties:
+        application:
+          $ref: '#/components/schemas/microsoft.graph.driveItemSourceApplication'
+        externalId:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.specialFolder:
       title: specialFolder
       type: object
@@ -26109,9 +26327,11 @@ components:
               nullable: true
             notificationContentType:
               type: string
+              description: Desired content-type for MS Graph change notifications for supported resource types. The default content-type is the 'application/json' content-type.
               nullable: true
             notificationQueryOptions:
               type: string
+              description: 'OData Query Options for specifying value for the targeting resource. Clients receive notifications when resource reaches the state matching the query options provided here. With this new property in the subscription creation payload along with all existing properties, Webhooks will deliver notifications whenever a resource reaches the desired state mentioned in the notificationQueryOptions property eg  when the print job is completed, when a print job resource isFetchable property value becomes true etc.'
               nullable: true
             notificationUrl:
               type: string
@@ -26310,6 +26530,7 @@ components:
       properties:
         isPicture:
           type: boolean
+          description: Specifies whether the display format used for URL columns is an image or a hyperlink.
           nullable: true
       additionalProperties:
         type: object
@@ -26387,9 +26608,11 @@ components:
       properties:
         allowMultipleValues:
           type: boolean
+          description: Specifies whether the column will allow more than one value
           nullable: true
         showFullyQualifiedName:
           type: boolean
+          description: Specifies whether to display the entire term path or only the term label.
           nullable: true
       additionalProperties:
         type: object
@@ -26459,13 +26682,16 @@ components:
       properties:
         defaultLanguage:
           type: string
+          description: Default BCP 47 language tag for the description.
           nullable: true
         descriptions:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.displayNameLocalization'
+          description: Localized messages that explain what is needed for this column's value to be considered valid. User will be prompted with this message if validation fails.
         formula:
           type: string
+          description: 'The formula to validate column value. For examples, see Examples of common formulas in lists'
           nullable: true
       additionalProperties:
         type: object
@@ -26477,18 +26703,23 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.contentTypeInfo'
+          description: Content types allowed in document set.
         defaultContents:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.documentSetContent'
+          description: Default contents of document set.
         propagateWelcomePageChanges:
           type: boolean
+          description: Specifies whether to push welcome page changes to inherited content types.
           nullable: true
         shouldPrefixNameToFile:
           type: boolean
+          description: Add the name of the Document Set to each file name.
           nullable: true
         welcomePageUrl:
           type: string
+          description: Welcome page absolute URL.
           nullable: true
         sharedColumns:
           type: array
@@ -26508,9 +26739,11 @@ components:
           $ref: '#/components/schemas/microsoft.graph.contentTypeInfo'
         fileName:
           type: string
+          description: Name of the file in resource folder that should be added as a default content or a template in the document set
           nullable: true
         folderName:
           type: string
+          description: Folder name in which the file will be placed when a new document set is created in the library.
           nullable: true
       additionalProperties:
         type: object
@@ -26619,6 +26852,84 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.termStore.group:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: group
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date and time of group creation. Read-only.
+              format: date-time
+              nullable: true
+            description:
+              type: string
+              description: Description giving details on the term usage.
+              nullable: true
+            displayName:
+              type: string
+              description: Name of group.
+              nullable: true
+            parentSiteId:
+              type: string
+              description: Id of the parent site of this group.
+              nullable: true
+            scope:
+              $ref: '#/components/schemas/microsoft.graph.termStore.termGroupScope'
+            sets:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.termStore.set'
+              description: 'All sets under the group in a term [store].'
+          additionalProperties:
+            type: object
+    microsoft.graph.termStore.set:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: set
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date and time of set creation. Read-only.
+              format: date-time
+              nullable: true
+            description:
+              type: string
+              description: Description giving details on the term usage.
+              nullable: true
+            localizedNames:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.termStore.localizedName'
+              description: Name of the set for each languageTag.
+            properties:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.keyValue'
+              description: Custom properties for the set.
+            children:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.termStore.term'
+              description: 'Children terms of set in term [store].'
+            parentGroup:
+              $ref: '#/components/schemas/microsoft.graph.termStore.group'
+            relations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.termStore.relation'
+              description: Indicates which terms have been pinned or reused directly under the set.
+            terms:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.termStore.term'
+              description: All the terms under the set.
+          additionalProperties:
+            type: object
     microsoft.graph.plannerPlanContainer:
       title: plannerPlanContainer
       type: object
@@ -26693,7 +27004,7 @@ components:
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the notebook was last modified. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Read-only.'
+              description: 'The date and time when the notebook was last modified. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
           additionalProperties:
@@ -26761,7 +27072,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the page was created. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Read-only.'
+              description: 'The date and time when the page was created. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
           additionalProperties:
@@ -26805,6 +27116,157 @@ components:
         - moderate
         - unknownFutureValue
       type: string
+    microsoft.graph.channelMembershipType:
+      title: channelMembershipType
+      enum:
+        - standard
+        - private
+        - unknownFutureValue
+        - shared
+      type: string
+    microsoft.graph.channelModerationSettings:
+      title: channelModerationSettings
+      type: object
+      properties:
+        allowNewMessageFromBots:
+          type: boolean
+          description: Indicates whether bots are allowed to post messages.
+          nullable: true
+        allowNewMessageFromConnectors:
+          type: boolean
+          description: Indicates whether connectors are allowed to post messages.
+          nullable: true
+        replyRestriction:
+          $ref: '#/components/schemas/microsoft.graph.replyRestriction'
+        userNewMessageRestriction:
+          $ref: '#/components/schemas/microsoft.graph.userNewMessageRestriction'
+      additionalProperties:
+        type: object
+    microsoft.graph.teamsApp:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamsApp
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: The name of the catalog app provided by the app developer in the Microsoft Teams zip app package.
+              nullable: true
+            distributionMethod:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppDistributionMethod'
+            externalId:
+              type: string
+              description: The ID of the catalog provided by the app developer in the Microsoft Teams zip app package.
+              nullable: true
+            appDefinitions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.teamsAppDefinition'
+              description: The details for each version of the app.
+          additionalProperties:
+            type: object
+    microsoft.graph.teamsAppDefinition:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamsAppDefinition
+          type: object
+          properties:
+            allowedInstallationScopes:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppInstallationScopes'
+            azureADAppId:
+              type: string
+              description: The WebApplicationInfo.id from the Teams App manifest.
+              nullable: true
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            description:
+              type: string
+              description: Verbose description of the application.
+              nullable: true
+            displayName:
+              type: string
+              description: The name of the app provided by the app developer.
+              nullable: true
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            publishingState:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppPublishingState'
+            shortdescription:
+              type: string
+              nullable: true
+            teamsAppId:
+              type: string
+              description: The id from the Teams App manifest.
+              nullable: true
+            version:
+              type: string
+              description: The version number of the application.
+              nullable: true
+            bot:
+              $ref: '#/components/schemas/microsoft.graph.teamworkBot'
+          additionalProperties:
+            type: object
+    microsoft.graph.operationError:
+      title: operationError
+      type: object
+      properties:
+        code:
+          type: string
+          description: Operation error code.
+          nullable: true
+        message:
+          type: string
+          description: Operation error message.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.teamsAsyncOperationType:
+      title: teamsAsyncOperationType
+      enum:
+        - invalid
+        - cloneTeam
+        - archiveTeam
+        - unarchiveTeam
+        - createTeam
+        - unknownFutureValue
+        - teamifyGroup
+        - createChannel
+      type: string
+    microsoft.graph.teamsAsyncOperationStatus:
+      title: teamsAsyncOperationStatus
+      enum:
+        - invalid
+        - notStarted
+        - inProgress
+        - succeeded
+        - failed
+        - unknownFutureValue
+      type: string
+    microsoft.graph.teamworkTagType:
+      title: teamworkTagType
+      enum:
+        - standard
+      type: string
+    microsoft.graph.teamworkTagMember:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamworkTagMember
+          type: object
+          properties:
+            displayName:
+              type: string
+              nullable: true
+            tenantId:
+              type: string
+              nullable: true
+            userId:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.operationStatus:
       title: operationStatus
       enum:
@@ -26830,7 +27292,7 @@ components:
             recipientActionDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             recipientActionMessage:
@@ -26989,13 +27451,13 @@ components:
             endDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             timeOffReasonId:
@@ -27020,154 +27482,6 @@ components:
             userId:
               type: string
               description: ID of the user assigned to the timeOff. Required.
-              nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.channelMembershipType:
-      title: channelMembershipType
-      enum:
-        - standard
-        - private
-        - unknownFutureValue
-        - shared
-      type: string
-    microsoft.graph.channelModerationSettings:
-      title: channelModerationSettings
-      type: object
-      properties:
-        allowNewMessageFromBots:
-          type: boolean
-          description: Indicates whether bots are allowed to post messages.
-          nullable: true
-        allowNewMessageFromConnectors:
-          type: boolean
-          description: Indicates whether connectors are allowed to post messages.
-          nullable: true
-        replyRestriction:
-          $ref: '#/components/schemas/microsoft.graph.replyRestriction'
-        userNewMessageRestriction:
-          $ref: '#/components/schemas/microsoft.graph.userNewMessageRestriction'
-      additionalProperties:
-        type: object
-    microsoft.graph.teamsApp:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: teamsApp
-          type: object
-          properties:
-            displayName:
-              type: string
-              description: The name of the catalog app provided by the app developer in the Microsoft Teams zip app package.
-              nullable: true
-            distributionMethod:
-              $ref: '#/components/schemas/microsoft.graph.teamsAppDistributionMethod'
-            externalId:
-              type: string
-              description: The ID of the catalog provided by the app developer in the Microsoft Teams zip app package.
-              nullable: true
-            appDefinitions:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.teamsAppDefinition'
-              description: The details for each version of the app.
-          additionalProperties:
-            type: object
-    microsoft.graph.teamsAppDefinition:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: teamsAppDefinition
-          type: object
-          properties:
-            azureADAppId:
-              type: string
-              description: The WebApplicationInfo.id from the Teams App manifest.
-              nullable: true
-            createdBy:
-              $ref: '#/components/schemas/microsoft.graph.identitySet'
-            description:
-              type: string
-              nullable: true
-            displayName:
-              type: string
-              description: The name of the app provided by the app developer.
-              nullable: true
-            lastModifiedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              format: date-time
-              nullable: true
-            publishingState:
-              $ref: '#/components/schemas/microsoft.graph.teamsAppPublishingState'
-            shortdescription:
-              type: string
-              nullable: true
-            teamsAppId:
-              type: string
-              description: The id from the Teams App manifest.
-              nullable: true
-            version:
-              type: string
-              description: The version number of the application.
-              nullable: true
-            bot:
-              $ref: '#/components/schemas/microsoft.graph.teamworkBot'
-          additionalProperties:
-            type: object
-    microsoft.graph.operationError:
-      title: operationError
-      type: object
-      properties:
-        code:
-          type: string
-          description: Operation error code.
-          nullable: true
-        message:
-          type: string
-          description: Operation error message.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.teamsAsyncOperationType:
-      title: teamsAsyncOperationType
-      enum:
-        - invalid
-        - cloneTeam
-        - archiveTeam
-        - unarchiveTeam
-        - createTeam
-        - unknownFutureValue
-        - teamifyGroup
-        - createChannel
-      type: string
-    microsoft.graph.teamsAsyncOperationStatus:
-      title: teamsAsyncOperationStatus
-      enum:
-        - invalid
-        - notStarted
-        - inProgress
-        - succeeded
-        - failed
-        - unknownFutureValue
-      type: string
-    microsoft.graph.teamworkTagType:
-      title: teamworkTagType
-      enum:
-        - standard
-      type: string
-    microsoft.graph.teamworkTagMember:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: teamworkTagMember
-          type: object
-          properties:
-            displayName:
-              type: string
-              nullable: true
-            tenantId:
-              type: string
-              nullable: true
-            userId:
-              type: string
               nullable: true
           additionalProperties:
             type: object
@@ -27365,7 +27679,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''.'
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             message:
@@ -27685,6 +27999,24 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.accessReviewInstanceDecisionItemResource:
+      title: accessReviewInstanceDecisionItemResource
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: Display name of the resource
+          nullable: true
+        id:
+          type: string
+          description: Resource ID
+          nullable: true
+        type:
+          type: string
+          description: 'Type of resource. Types include: Group, ServicePrincipal, DirectoryRole, AzureRole, AccessPackageAssignmentPolicy.'
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.accessReviewInstanceDecisionItemTarget:
       title: accessReviewInstanceDecisionItemTarget
       type: object
@@ -27696,9 +28028,17 @@ components:
         - title: accessReviewReviewerScope
           type: object
           properties:
+            query:
+              type: string
+              description: The query specifying who will be the reviewer. See table for examples.
+              nullable: true
             queryRoot:
               type: string
               description: 'In the scenario where reviewers need to be specified dynamically, this property is used to indicate the relative source of the query. This property is only required if a relative query (i.e., ./manager) is specified.'
+              nullable: true
+            queryType:
+              type: string
+              description: The type of query. Examples include MicrosoftGraph and ARM.
               nullable: true
           additionalProperties:
             type: object
@@ -28431,6 +28771,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.translationLanguageOverride'
+          description: 'Translation override behavior for languages, if any.Returned by default.'
         translationBehavior:
           $ref: '#/components/schemas/microsoft.graph.translationBehavior'
         untranslatedLanguages:
@@ -28438,6 +28779,7 @@ components:
           items:
             type: string
             nullable: true
+          description: 'The list of languages the user does not need translated. This is computed from the authoringLanguages collection in regionalAndLanguageSettings, and the languageOverrides collection in translationPreferences. The list specifies neutral culture values that include the language code without any country or region association. For example, it would specify ''fr'' for the neutral French culture, but not ''fr-FR'' for the French culture in France. Returned by default. Read only.'
       additionalProperties:
         type: object
     microsoft.graph.changeTrackedEntity:
@@ -28451,7 +28793,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             lastModifiedBy:
@@ -28459,7 +28801,7 @@ components:
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
           additionalProperties:
@@ -28784,6 +29126,30 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.attendanceRecord:
+      title: attendanceRecord
+      type: object
+      properties:
+        attendanceIntervals:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.attendanceInterval'
+        emailAddress:
+          type: string
+          nullable: true
+        identity:
+          $ref: '#/components/schemas/microsoft.graph.identity'
+        role:
+          type: string
+          nullable: true
+        totalAttendanceInSeconds:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.attestationLevel:
       title: attestationLevel
       enum:
@@ -28861,9 +29227,11 @@ components:
       properties:
         channelId:
           type: string
+          description: The identity of the channel in which the message was posted.
           nullable: true
         teamId:
           type: string
+          description: The identity of the team in which the message was posted.
           nullable: true
       additionalProperties:
         type: object
@@ -28925,7 +29293,7 @@ components:
         createdDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+          description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
           format: date-time
         reactionType:
           type: string
@@ -28936,19 +29304,9 @@ components:
         type: object
     microsoft.graph.chatMessageHostedContent:
       allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - $ref: '#/components/schemas/microsoft.graph.teamworkHostedContent'
         - title: chatMessageHostedContent
           type: object
-          properties:
-            contentBytes:
-              type: string
-              description: 'Write-only. When posting new chat message hosted content, represents the bytes of the payload. These are represented as a base64Encoded string.'
-              format: base64url
-              nullable: true
-            contentType:
-              type: string
-              description: 'Write-only. When posting new chat message hosted content, represents the type of content, such as image/png.'
-              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.teamsTabConfiguration:
@@ -29255,6 +29613,14 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.mediaSource:
+      title: mediaSource
+      type: object
+      properties:
+        contentCategory:
+          $ref: '#/components/schemas/microsoft.graph.mediaSourceContentCategory'
+      additionalProperties:
+        type: object
     microsoft.graph.pendingContentUpdate:
       title: pendingContentUpdate
       type: object
@@ -29267,6 +29633,18 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.driveItemSourceApplication:
+      title: driveItemSourceApplication
+      enum:
+        - teams
+        - yammer
+        - sharePoint
+        - oneDrive
+        - stream
+        - powerPoint
+        - office
+        - unknownFutureValue
+      type: string
     microsoft.graph.workbookApplication:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -29575,6 +29953,104 @@ components:
       type: object
       additionalProperties:
         type: object
+    microsoft.graph.termStore.termGroupScope:
+      title: termGroupScope
+      enum:
+        - global
+        - system
+        - siteCollection
+      type: string
+    microsoft.graph.termStore.localizedName:
+      title: localizedName
+      type: object
+      properties:
+        languageTag:
+          type: string
+          description: The language tag for the label.
+          nullable: true
+        name:
+          type: string
+          description: The name in the localized language.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.keyValue:
+      title: keyValue
+      type: object
+      properties:
+        key:
+          type: string
+          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
+          nullable: true
+        value:
+          type: string
+          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.termStore.term:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: term
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date and time of term creation. Read-only
+              format: date-time
+              nullable: true
+            descriptions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.termStore.localizedDescription'
+              description: Description about term that is dependent on the languageTag
+            labels:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.termStore.localizedLabel'
+              description: Label metadata for a term
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Last date and time of term modification. Read-only
+              format: date-time
+              nullable: true
+            properties:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.keyValue'
+              description: Collection of properties on the term
+            children:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.termStore.term'
+              description: Children of current term
+            relations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.termStore.relation'
+              description: To indicate which terms are related to the current term as either pinned or reused
+            set:
+              $ref: '#/components/schemas/microsoft.graph.termStore.set'
+          additionalProperties:
+            type: object
+    microsoft.graph.termStore.relation:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: relation
+          type: object
+          properties:
+            relationship:
+              $ref: '#/components/schemas/microsoft.graph.termStore.relationType'
+            fromTerm:
+              $ref: '#/components/schemas/microsoft.graph.termStore.term'
+            set:
+              $ref: '#/components/schemas/microsoft.graph.termStore.set'
+            toTerm:
+              $ref: '#/components/schemas/microsoft.graph.termStore.term'
+          additionalProperties:
+            type: object
     microsoft.graph.plannerContainerType:
       title: plannerContainerType
       enum:
@@ -29708,6 +30184,52 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.replyRestriction:
+      title: replyRestriction
+      enum:
+        - everyone
+        - authorAndModerators
+        - unknownFutureValue
+      type: string
+    microsoft.graph.userNewMessageRestriction:
+      title: userNewMessageRestriction
+      enum:
+        - everyone
+        - everyoneExceptGuests
+        - moderators
+        - unknownFutureValue
+      type: string
+    microsoft.graph.teamsAppDistributionMethod:
+      title: teamsAppDistributionMethod
+      enum:
+        - store
+        - organization
+        - sideloaded
+        - unknownFutureValue
+      type: string
+    microsoft.graph.teamsAppInstallationScopes:
+      title: teamsAppInstallationScopes
+      enum:
+        - team
+        - groupChat
+        - personal
+        - unknownFutureValue
+      type: string
+    microsoft.graph.teamsAppPublishingState:
+      title: teamsAppPublishingState
+      enum:
+        - submitted
+        - rejected
+        - published
+        - unknownFutureValue
+      type: string
+    microsoft.graph.teamworkBot:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamworkBot
+          type: object
+          additionalProperties:
+            type: object
     microsoft.graph.scheduleChangeRequest:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.changeTrackedEntity'
@@ -29873,44 +30395,6 @@ components:
               type: string
               description: ID of the timeOffReason for this timeOffItem. Required.
               nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.replyRestriction:
-      title: replyRestriction
-      enum:
-        - everyone
-        - authorAndModerators
-        - unknownFutureValue
-      type: string
-    microsoft.graph.userNewMessageRestriction:
-      title: userNewMessageRestriction
-      enum:
-        - everyone
-        - everyoneExceptGuests
-        - moderators
-        - unknownFutureValue
-      type: string
-    microsoft.graph.teamsAppDistributionMethod:
-      title: teamsAppDistributionMethod
-      enum:
-        - store
-        - organization
-        - sideloaded
-        - unknownFutureValue
-      type: string
-    microsoft.graph.teamsAppPublishingState:
-      title: teamsAppPublishingState
-      enum:
-        - submitted
-        - rejected
-        - published
-        - unknownFutureValue
-      type: string
-    microsoft.graph.teamworkBot:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: teamworkBot
-          type: object
           additionalProperties:
             type: object
     microsoft.graph.volumeType:
@@ -30289,6 +30773,7 @@ components:
       properties:
         languageTag:
           type: string
+          description: The language to apply the override.Returned by default. Not nullable.
         translationBehavior:
           $ref: '#/components/schemas/microsoft.graph.translationBehavior'
       additionalProperties:
@@ -30384,6 +30869,28 @@ components:
         - unknownFutureValue
         - producer
       type: string
+    microsoft.graph.attendanceInterval:
+      title: attendanceInterval
+      type: object
+      properties:
+        durationInSeconds:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+          nullable: true
+        joinDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        leaveDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.chatMessagePolicyViolationDlpActionTypes:
       title: chatMessagePolicyViolationDlpActionTypes
       enum:
@@ -30427,6 +30934,23 @@ components:
         - allowOverrideWithoutJustification
         - allowOverrideWithJustification
       type: string
+    microsoft.graph.teamworkHostedContent:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamworkHostedContent
+          type: object
+          properties:
+            contentBytes:
+              type: string
+              description: Write only. Bytes for the hosted content (such as images).
+              format: base64url
+              nullable: true
+            contentType:
+              type: string
+              description: 'Write only. Content type, such as image/png, image/jpg.'
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.linkedResource:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -30451,6 +30975,15 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.mediaSourceContentCategory:
+      title: mediaSourceContentCategory
+      enum:
+        - meeting
+        - liveStream
+        - presentation
+        - screenRecording
+        - unknownFutureValue
+      type: string
     microsoft.graph.workbookCommentReply:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -30624,6 +31157,44 @@ components:
       type: object
       additionalProperties:
         type: object
+    microsoft.graph.termStore.localizedDescription:
+      title: localizedDescription
+      type: object
+      properties:
+        description:
+          type: string
+          description: The description in the localized language.
+          nullable: true
+        languageTag:
+          type: string
+          description: The language tag for the label.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.termStore.localizedLabel:
+      title: localizedLabel
+      type: object
+      properties:
+        isDefault:
+          type: boolean
+          description: Indicates whether the label is the default label.
+          nullable: true
+        languageTag:
+          type: string
+          description: The anguage tag for the label.
+          nullable: true
+        name:
+          type: string
+          description: The name of the label.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.termStore.relationType:
+      title: relationType
+      enum:
+        - pin
+        - reuse
+      type: string
     microsoft.graph.scheduleChangeRequestActor:
       title: scheduleChangeRequestActor
       enum:
@@ -30674,7 +31245,7 @@ components:
         endDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The end date and time for the shiftActivity. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Required.'
+          description: 'The end date and time for the shiftActivity. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.'
           format: date-time
           nullable: true
         isPaid:
@@ -30684,7 +31255,7 @@ components:
         startDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The start date and time for the shiftActivity. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Required.'
+          description: 'The start date and time for the shiftActivity. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.'
           format: date-time
           nullable: true
         theme:

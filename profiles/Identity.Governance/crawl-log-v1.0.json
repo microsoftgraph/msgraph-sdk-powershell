@@ -2,64 +2,72 @@
   "resources": [],
   "operations": {
     "/agreements": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
     },
     "/agreements/{agreement-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
     },
     "/agreements/{agreement-id}/acceptances": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
     },
     "/agreements/{agreement-id}/acceptances/{agreementAcceptance-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
     },
     "/agreements/{agreement-id}/file": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
     },
     "/agreements/{agreement-id}/file/localizations": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
     },
     "/agreements/{agreement-id}/file/localizations/{agreementFileLocalization-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
     },
     "/agreements/{agreement-id}/file/localizations/{agreementFileLocalization-id}/versions": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
     },
     "/agreements/{agreement-id}/file/localizations/{agreementFileLocalization-id}/versions/{agreementFileVersion-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
     },
     "/agreements/{agreement-id}/files": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
     },
     "/agreements/{agreement-id}/files/{agreementFileLocalization-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
     },
     "/agreements/{agreement-id}/files/{agreementFileLocalization-id}/versions": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
     },
     "/agreements/{agreement-id}/files/{agreementFileLocalization-id}/versions/{agreementFileVersion-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
+    },
+    "/identityGovernance/appConsent/appConsentRequests/{appConsentRequest-id}/userConsentRequests/microsoft.graph.filterByCurrentUser(on={on})": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
+    },
+    "/identityGovernance/appConsent/appConsentRequests/microsoft.graph.filterByCurrentUser(on={on})": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
     },
     "/users/{user-id}/agreementAcceptances": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
     },
     "/users/{user-id}/agreementAcceptances/$ref": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
     }
   }
 }

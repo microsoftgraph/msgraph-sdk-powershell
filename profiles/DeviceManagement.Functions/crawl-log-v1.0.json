@@ -2,16 +2,16 @@
   "resources": [],
   "operations": {
     "/deviceManagement/applePushNotificationCertificate/microsoft.graph.downloadApplePushNotificationCertificateSigningRequest()": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Functions.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Functions.yml"
     },
     "/deviceManagement/microsoft.graph.getEffectivePermissions(scope='{scope}')": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Functions.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Functions.yml"
     },
     "/deviceManagement/microsoft.graph.verifyWindowsEnrollmentAutoDiscovery(domainName='{domainName}')": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Functions.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Functions.yml"
     }
   }
 }
