@@ -77,6 +77,11 @@ directive:
     set:
       subject: $1Multiple$2
   - where:
+      verb: Remove
+      subject: ^(DeviceManagementWindowAutopilotDeploymentProfile)(AssignedDevice)$
+    set:
+      subject: $1Multiple$2
+  - where:
       verb: Update
       subject: ^(DeviceManagementManagedDevice)$
     set:
@@ -86,6 +91,6 @@ directive:
 ### Versioning
 
 ``` yaml
-module-version: 1.4.3
+module-version: 1.5.0
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```
