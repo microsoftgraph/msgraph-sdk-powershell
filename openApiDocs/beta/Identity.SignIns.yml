@@ -4886,7 +4886,6 @@ paths:
                 - claimsMappingPolicies
                 - homeRealmDiscoveryPolicies
                 - permissionGrantPolicies
-                - privateLinkResourcePolicies
                 - tokenIssuancePolicies
                 - tokenLifetimePolicies
                 - featureRolloutPolicies
@@ -4916,7 +4915,6 @@ paths:
                 - claimsMappingPolicies
                 - homeRealmDiscoveryPolicies
                 - permissionGrantPolicies
-                - privateLinkResourcePolicies
                 - tokenIssuancePolicies
                 - tokenLifetimePolicies
                 - featureRolloutPolicies
@@ -4951,8 +4949,6 @@ paths:
               operationId: policies.ListHomeRealmDiscoveryPolicies
             permissionGrantPolicies:
               operationId: policies.ListPermissionGrantPolicies
-            privateLinkResourcePolicies:
-              operationId: policies.ListPrivateLinkResourcePolicies
             tokenIssuancePolicies:
               operationId: policies.ListTokenIssuancePolicies
             tokenLifetimePolicies:
@@ -5397,6 +5393,7 @@ paths:
                 - lastModifiedDateTime
                 - policyVersion
                 - reconfirmationInDays
+                - registrationEnforcement
                 - authenticationMethodConfigurations
               type: string
         - name: $expand
@@ -7785,455 +7782,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: permissionGrantConditionSet
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  /policies/privateLinkResourcePolicies:
-    get:
-      tags:
-        - policies.privateLinkResourcePolicy
-      summary: Get privateLinkResourcePolicies from policies
-      operationId: policies_ListPrivateLinkResourcePolicies
-      parameters:
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - id desc
-                - allowedTenantIds
-                - allowedTenantIds desc
-                - displayName
-                - displayName desc
-                - externalPrivateLinkId
-                - externalPrivateLinkId desc
-              type: string
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - allowedTenantIds
-                - displayName
-                - externalPrivateLinkId
-                - privateEndpointConnections
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - privateEndpointConnections
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of privateLinkResourcePolicy
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.privateLinkResourcePolicy'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - policies.privateLinkResourcePolicy
-      summary: Create new navigation property to privateLinkResourcePolicies for policies
-      operationId: policies_CreatePrivateLinkResourcePolicies
-      requestBody:
-        description: New navigation property
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.privateLinkResourcePolicy'
-        required: true
-      responses:
-        '201':
-          description: Created navigation property.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.privateLinkResourcePolicy'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/policies/privateLinkResourcePolicies/{privateLinkResourcePolicy-id}':
-    get:
-      tags:
-        - policies.privateLinkResourcePolicy
-      summary: Get privateLinkResourcePolicies from policies
-      operationId: policies_GetPrivateLinkResourcePolicies
-      parameters:
-        - name: privateLinkResourcePolicy-id
-          in: path
-          description: 'key: id of privateLinkResourcePolicy'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: privateLinkResourcePolicy
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - allowedTenantIds
-                - displayName
-                - externalPrivateLinkId
-                - privateEndpointConnections
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - privateEndpointConnections
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.privateLinkResourcePolicy'
-          links:
-            privateEndpointConnections:
-              operationId: policies.PrivateLinkResourcePolicies.ListPrivateEndpointConnections
-              parameters:
-                privateLinkResourcePolicy-id: $request.path.privateLinkResourcePolicy-id
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - policies.privateLinkResourcePolicy
-      summary: Update the navigation property privateLinkResourcePolicies in policies
-      operationId: policies_UpdatePrivateLinkResourcePolicies
-      parameters:
-        - name: privateLinkResourcePolicy-id
-          in: path
-          description: 'key: id of privateLinkResourcePolicy'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: privateLinkResourcePolicy
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.privateLinkResourcePolicy'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - policies.privateLinkResourcePolicy
-      summary: Delete navigation property privateLinkResourcePolicies for policies
-      operationId: policies_DeletePrivateLinkResourcePolicies
-      parameters:
-        - name: privateLinkResourcePolicy-id
-          in: path
-          description: 'key: id of privateLinkResourcePolicy'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: privateLinkResourcePolicy
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/policies/privateLinkResourcePolicies/{privateLinkResourcePolicy-id}/privateEndpointConnections':
-    get:
-      tags:
-        - policies.privateLinkResourcePolicy
-      summary: Get privateEndpointConnections from policies
-      operationId: policies.privateLinkResourcePolicies_ListPrivateEndpointConnections
-      parameters:
-        - name: privateLinkResourcePolicy-id
-          in: path
-          description: 'key: id of privateLinkResourcePolicy'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: privateLinkResourcePolicy
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - id desc
-                - externalPrivateEndpointId
-                - externalPrivateEndpointId desc
-                - privateLinkIds
-                - privateLinkIds desc
-              type: string
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - externalPrivateEndpointId
-                - privateLinkIds
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of privateEndpointConnection
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.privateEndpointConnection'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - policies.privateLinkResourcePolicy
-      summary: Create new navigation property to privateEndpointConnections for policies
-      operationId: policies.privateLinkResourcePolicies_CreatePrivateEndpointConnections
-      parameters:
-        - name: privateLinkResourcePolicy-id
-          in: path
-          description: 'key: id of privateLinkResourcePolicy'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: privateLinkResourcePolicy
-      requestBody:
-        description: New navigation property
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.privateEndpointConnection'
-        required: true
-      responses:
-        '201':
-          description: Created navigation property.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.privateEndpointConnection'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/policies/privateLinkResourcePolicies/{privateLinkResourcePolicy-id}/privateEndpointConnections/{privateEndpointConnection-id}':
-    get:
-      tags:
-        - policies.privateLinkResourcePolicy
-      summary: Get privateEndpointConnections from policies
-      operationId: policies.privateLinkResourcePolicies_GetPrivateEndpointConnections
-      parameters:
-        - name: privateLinkResourcePolicy-id
-          in: path
-          description: 'key: id of privateLinkResourcePolicy'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: privateLinkResourcePolicy
-        - name: privateEndpointConnection-id
-          in: path
-          description: 'key: id of privateEndpointConnection'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: privateEndpointConnection
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - externalPrivateEndpointId
-                - privateLinkIds
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.privateEndpointConnection'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - policies.privateLinkResourcePolicy
-      summary: Update the navigation property privateEndpointConnections in policies
-      operationId: policies.privateLinkResourcePolicies_UpdatePrivateEndpointConnections
-      parameters:
-        - name: privateLinkResourcePolicy-id
-          in: path
-          description: 'key: id of privateLinkResourcePolicy'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: privateLinkResourcePolicy
-        - name: privateEndpointConnection-id
-          in: path
-          description: 'key: id of privateEndpointConnection'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: privateEndpointConnection
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.privateEndpointConnection'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - policies.privateLinkResourcePolicy
-      summary: Delete navigation property privateEndpointConnections for policies
-      operationId: policies.privateLinkResourcePolicies_DeletePrivateEndpointConnections
-      parameters:
-        - name: privateLinkResourcePolicy-id
-          in: path
-          description: 'key: id of privateLinkResourcePolicy'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: privateLinkResourcePolicy
-        - name: privateEndpointConnection-id
-          in: path
-          description: 'key: id of privateEndpointConnection'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: privateEndpointConnection
         - name: If-Match
           in: header
           description: ETag
@@ -15940,10 +15488,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.permissionGrantPolicy'
-        privateLinkResourcePolicies:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.privateLinkResourcePolicy'
         tokenIssuancePolicies:
           type: array
           items:
@@ -16062,6 +15606,8 @@ components:
               type: integer
               format: int32
               nullable: true
+            registrationEnforcement:
+              $ref: '#/components/schemas/microsoft.graph.registrationEnforcement'
             authenticationMethodConfigurations:
               type: array
               items:
@@ -16271,41 +15817,6 @@ components:
               type: string
               description: 'The appId of the resource application (e.g. the API) for which a permission is being granted, or any to match with any resource application or API. Default is any.'
               nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.privateLinkResourcePolicy:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: privateLinkResourcePolicy
-          type: object
-          properties:
-            allowedTenantIds:
-              type: array
-              items:
-                type: string
-            displayName:
-              type: string
-            externalPrivateLinkId:
-              type: string
-            privateEndpointConnections:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.privateEndpointConnection'
-          additionalProperties:
-            type: object
-    microsoft.graph.privateEndpointConnection:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: privateEndpointConnection
-          type: object
-          properties:
-            externalPrivateEndpointId:
-              type: string
-            privateLinkIds:
-              type: array
-              items:
-                type: integer
-                format: int64
           additionalProperties:
             type: object
     microsoft.graph.unifiedRoleManagementPolicy:
@@ -16931,7 +16442,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Groups that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable.'
+              description: 'Groups that this device is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable.'
             registeredOwners:
               type: array
               items:
@@ -20654,6 +20165,14 @@ components:
         isEnabled:
           type: boolean
           description: Indicates whether self-service sign-up flow is enabled or disabled. The default value is false. This property is not a key. Required.
+      additionalProperties:
+        type: object
+    microsoft.graph.registrationEnforcement:
+      title: registrationEnforcement
+      type: object
+      properties:
+        authenticationMethodsRegistrationCampaign:
+          $ref: '#/components/schemas/microsoft.graph.authenticationMethodsRegistrationCampaign'
       additionalProperties:
         type: object
     microsoft.graph.authenticationMethodConfiguration:
@@ -25719,7 +25238,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
-              description: 'Content in a message hosted by Microsoft Teams e.g. images, code snippets etc.'
+              description: 'Content in a message hosted by Microsoft Teams e.g., images, code snippets etc.'
             replies:
               type: array
               items:
@@ -26138,6 +25657,27 @@ components:
               description: The tasks in this task list. Read-only. Nullable.
           additionalProperties:
             type: object
+    microsoft.graph.authenticationMethodsRegistrationCampaign:
+      title: authenticationMethodsRegistrationCampaign
+      type: object
+      properties:
+        excludeTargets:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.excludeTarget'
+        includeTargets:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.authenticationMethodsRegistrationCampaignIncludeTarget'
+        snoozeDurationInDays:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+        state:
+          $ref: '#/components/schemas/microsoft.graph.advancedConfigState'
+      additionalProperties:
+        type: object
     microsoft.graph.authenticationMethodState:
       title: authenticationMethodState
       enum:
@@ -29554,6 +29094,10 @@ components:
               nullable: true
             bot:
               $ref: '#/components/schemas/microsoft.graph.teamworkBot'
+            colorIcon:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppIcon'
+            outlineIcon:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppIcon'
           additionalProperties:
             type: object
     microsoft.graph.chatMessageAttachment:
@@ -30067,6 +29611,37 @@ components:
               description: A collection of resources linked to the task.
           additionalProperties:
             type: object
+    microsoft.graph.excludeTarget:
+      title: excludeTarget
+      type: object
+      properties:
+        id:
+          type: string
+        targetType:
+          $ref: '#/components/schemas/microsoft.graph.authenticationMethodTargetType'
+      additionalProperties:
+        type: object
+    microsoft.graph.authenticationMethodsRegistrationCampaignIncludeTarget:
+      title: authenticationMethodsRegistrationCampaignIncludeTarget
+      type: object
+      properties:
+        id:
+          type: string
+        targetedAuthenticationMethod:
+          type: string
+          nullable: true
+        targetType:
+          $ref: '#/components/schemas/microsoft.graph.authenticationMethodTargetType'
+      additionalProperties:
+        type: object
+    microsoft.graph.advancedConfigState:
+      title: advancedConfigState
+      enum:
+        - default
+        - enabled
+        - disabled
+        - unknownFutureValue
+      type: string
     odata.error.detail:
       required:
         - code
@@ -31360,6 +30935,19 @@ components:
           type: object
           additionalProperties:
             type: object
+    microsoft.graph.teamsAppIcon:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamsAppIcon
+          type: object
+          properties:
+            webUrl:
+              type: string
+              nullable: true
+            hostedContent:
+              $ref: '#/components/schemas/microsoft.graph.teamworkHostedContent'
+          additionalProperties:
+            type: object
     microsoft.graph.chatMessagePolicyViolationDlpActionTypes:
       title: chatMessagePolicyViolationDlpActionTypes
       enum:
@@ -31626,6 +31214,13 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.authenticationMethodTargetType:
+      title: authenticationMethodTargetType
+      enum:
+        - user
+        - group
+        - unknownFutureValue
+      type: string
     microsoft.graph.mediaSourceContentCategory:
       title: mediaSourceContentCategory
       enum:

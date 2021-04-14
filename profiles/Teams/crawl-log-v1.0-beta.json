@@ -21,6 +21,30 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Teams.yml"
     },
+    "/appCatalogs/teamsApps/{teamsApp-id}/appDefinitions/{teamsAppDefinition-id}/colorIcon": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Teams.yml"
+    },
+    "/appCatalogs/teamsApps/{teamsApp-id}/appDefinitions/{teamsAppDefinition-id}/colorIcon/hostedContent": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Teams.yml"
+    },
+    "/appCatalogs/teamsApps/{teamsApp-id}/appDefinitions/{teamsAppDefinition-id}/colorIcon/hostedContent/$value": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Teams.yml"
+    },
+    "/appCatalogs/teamsApps/{teamsApp-id}/appDefinitions/{teamsAppDefinition-id}/outlineIcon": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Teams.yml"
+    },
+    "/appCatalogs/teamsApps/{teamsApp-id}/appDefinitions/{teamsAppDefinition-id}/outlineIcon/hostedContent": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Teams.yml"
+    },
+    "/appCatalogs/teamsApps/{teamsApp-id}/appDefinitions/{teamsAppDefinition-id}/outlineIcon/hostedContent/$value": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Teams.yml"
+    },
     "/chats": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Teams.yml"
