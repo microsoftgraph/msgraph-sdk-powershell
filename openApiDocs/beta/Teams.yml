@@ -293,6 +293,8 @@ paths:
                 - teamsAppId
                 - version
                 - bot
+                - colorIcon
+                - outlineIcon
               type: string
         - name: $expand
           in: query
@@ -306,6 +308,8 @@ paths:
               enum:
                 - '*'
                 - bot
+                - colorIcon
+                - outlineIcon
               type: string
       responses:
         '200':
@@ -403,6 +407,8 @@ paths:
                 - teamsAppId
                 - version
                 - bot
+                - colorIcon
+                - outlineIcon
               type: string
         - name: $expand
           in: query
@@ -416,6 +422,8 @@ paths:
               enum:
                 - '*'
                 - bot
+                - colorIcon
+                - outlineIcon
               type: string
       responses:
         '200':
@@ -427,6 +435,16 @@ paths:
           links:
             bot:
               operationId: appCatalogs.teamsApps.AppDefinitions.GetBot
+              parameters:
+                teamsApp-id: $request.path.teamsApp-id
+                teamsAppDefinition-id: $request.path.teamsAppDefinition-id
+            colorIcon:
+              operationId: appCatalogs.teamsApps.AppDefinitions.GetColorIcon
+              parameters:
+                teamsApp-id: $request.path.teamsApp-id
+                teamsAppDefinition-id: $request.path.teamsAppDefinition-id
+            outlineIcon:
+              operationId: appCatalogs.teamsApps.AppDefinitions.GetOutlineIcon
               parameters:
                 teamsApp-id: $request.path.teamsApp-id
                 teamsAppDefinition-id: $request.path.teamsAppDefinition-id
@@ -610,6 +628,636 @@ paths:
           description: ETag
           schema:
             type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/appCatalogs/teamsApps/{teamsApp-id}/appDefinitions/{teamsAppDefinition-id}/colorIcon':
+    get:
+      tags:
+        - appCatalogs.teamsApp
+      summary: Get colorIcon from appCatalogs
+      operationId: appCatalogs.teamsApps.appDefinitions_GetColorIcon
+      parameters:
+        - name: teamsApp-id
+          in: path
+          description: 'key: id of teamsApp'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsApp
+        - name: teamsAppDefinition-id
+          in: path
+          description: 'key: id of teamsAppDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsAppDefinition
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - webUrl
+                - hostedContent
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - hostedContent
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamsAppIcon'
+          links:
+            hostedContent:
+              operationId: appCatalogs.teamsApps.appDefinitions.ColorIcon.GetHostedContent
+              parameters:
+                teamsApp-id: $request.path.teamsApp-id
+                teamsAppDefinition-id: $request.path.teamsAppDefinition-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - appCatalogs.teamsApp
+      summary: Update the navigation property colorIcon in appCatalogs
+      operationId: appCatalogs.teamsApps.appDefinitions_UpdateColorIcon
+      parameters:
+        - name: teamsApp-id
+          in: path
+          description: 'key: id of teamsApp'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsApp
+        - name: teamsAppDefinition-id
+          in: path
+          description: 'key: id of teamsAppDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsAppDefinition
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppIcon'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - appCatalogs.teamsApp
+      summary: Delete navigation property colorIcon for appCatalogs
+      operationId: appCatalogs.teamsApps.appDefinitions_DeleteColorIcon
+      parameters:
+        - name: teamsApp-id
+          in: path
+          description: 'key: id of teamsApp'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsApp
+        - name: teamsAppDefinition-id
+          in: path
+          description: 'key: id of teamsAppDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsAppDefinition
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/appCatalogs/teamsApps/{teamsApp-id}/appDefinitions/{teamsAppDefinition-id}/colorIcon/hostedContent':
+    get:
+      tags:
+        - appCatalogs.teamsApp
+      summary: Get hostedContent from appCatalogs
+      operationId: appCatalogs.teamsApps.appDefinitions.colorIcon_GetHostedContent
+      parameters:
+        - name: teamsApp-id
+          in: path
+          description: 'key: id of teamsApp'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsApp
+        - name: teamsAppDefinition-id
+          in: path
+          description: 'key: id of teamsAppDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsAppDefinition
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - contentBytes
+                - contentType
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamworkHostedContent'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - appCatalogs.teamsApp
+      summary: Update the navigation property hostedContent in appCatalogs
+      operationId: appCatalogs.teamsApps.appDefinitions.colorIcon_UpdateHostedContent
+      parameters:
+        - name: teamsApp-id
+          in: path
+          description: 'key: id of teamsApp'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsApp
+        - name: teamsAppDefinition-id
+          in: path
+          description: 'key: id of teamsAppDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsAppDefinition
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.teamworkHostedContent'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - appCatalogs.teamsApp
+      summary: Delete navigation property hostedContent for appCatalogs
+      operationId: appCatalogs.teamsApps.appDefinitions.colorIcon_DeleteHostedContent
+      parameters:
+        - name: teamsApp-id
+          in: path
+          description: 'key: id of teamsApp'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsApp
+        - name: teamsAppDefinition-id
+          in: path
+          description: 'key: id of teamsAppDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsAppDefinition
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/appCatalogs/teamsApps/{teamsApp-id}/appDefinitions/{teamsAppDefinition-id}/colorIcon/hostedContent/$value':
+    get:
+      tags:
+        - appCatalogs.teamsApp
+      summary: Get media content for the navigation property hostedContent from appCatalogs
+      operationId: appCatalogs.teamsApps.appDefinitions.colorIcon_GetHostedContentContent
+      parameters:
+        - name: teamsApp-id
+          in: path
+          description: 'key: id of teamsApp'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsApp
+        - name: teamsAppDefinition-id
+          in: path
+          description: 'key: id of teamsAppDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsAppDefinition
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - appCatalogs.teamsApp
+      summary: Update media content for the navigation property hostedContent in appCatalogs
+      operationId: appCatalogs.teamsApps.appDefinitions.colorIcon_SetHostedContentContent
+      parameters:
+        - name: teamsApp-id
+          in: path
+          description: 'key: id of teamsApp'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsApp
+        - name: teamsAppDefinition-id
+          in: path
+          description: 'key: id of teamsAppDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsAppDefinition
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/appCatalogs/teamsApps/{teamsApp-id}/appDefinitions/{teamsAppDefinition-id}/outlineIcon':
+    get:
+      tags:
+        - appCatalogs.teamsApp
+      summary: Get outlineIcon from appCatalogs
+      operationId: appCatalogs.teamsApps.appDefinitions_GetOutlineIcon
+      parameters:
+        - name: teamsApp-id
+          in: path
+          description: 'key: id of teamsApp'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsApp
+        - name: teamsAppDefinition-id
+          in: path
+          description: 'key: id of teamsAppDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsAppDefinition
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - webUrl
+                - hostedContent
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - hostedContent
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamsAppIcon'
+          links:
+            hostedContent:
+              operationId: appCatalogs.teamsApps.appDefinitions.OutlineIcon.GetHostedContent
+              parameters:
+                teamsApp-id: $request.path.teamsApp-id
+                teamsAppDefinition-id: $request.path.teamsAppDefinition-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - appCatalogs.teamsApp
+      summary: Update the navigation property outlineIcon in appCatalogs
+      operationId: appCatalogs.teamsApps.appDefinitions_UpdateOutlineIcon
+      parameters:
+        - name: teamsApp-id
+          in: path
+          description: 'key: id of teamsApp'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsApp
+        - name: teamsAppDefinition-id
+          in: path
+          description: 'key: id of teamsAppDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsAppDefinition
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppIcon'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - appCatalogs.teamsApp
+      summary: Delete navigation property outlineIcon for appCatalogs
+      operationId: appCatalogs.teamsApps.appDefinitions_DeleteOutlineIcon
+      parameters:
+        - name: teamsApp-id
+          in: path
+          description: 'key: id of teamsApp'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsApp
+        - name: teamsAppDefinition-id
+          in: path
+          description: 'key: id of teamsAppDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsAppDefinition
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/appCatalogs/teamsApps/{teamsApp-id}/appDefinitions/{teamsAppDefinition-id}/outlineIcon/hostedContent':
+    get:
+      tags:
+        - appCatalogs.teamsApp
+      summary: Get hostedContent from appCatalogs
+      operationId: appCatalogs.teamsApps.appDefinitions.outlineIcon_GetHostedContent
+      parameters:
+        - name: teamsApp-id
+          in: path
+          description: 'key: id of teamsApp'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsApp
+        - name: teamsAppDefinition-id
+          in: path
+          description: 'key: id of teamsAppDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsAppDefinition
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - contentBytes
+                - contentType
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamworkHostedContent'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - appCatalogs.teamsApp
+      summary: Update the navigation property hostedContent in appCatalogs
+      operationId: appCatalogs.teamsApps.appDefinitions.outlineIcon_UpdateHostedContent
+      parameters:
+        - name: teamsApp-id
+          in: path
+          description: 'key: id of teamsApp'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsApp
+        - name: teamsAppDefinition-id
+          in: path
+          description: 'key: id of teamsAppDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsAppDefinition
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.teamworkHostedContent'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - appCatalogs.teamsApp
+      summary: Delete navigation property hostedContent for appCatalogs
+      operationId: appCatalogs.teamsApps.appDefinitions.outlineIcon_DeleteHostedContent
+      parameters:
+        - name: teamsApp-id
+          in: path
+          description: 'key: id of teamsApp'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsApp
+        - name: teamsAppDefinition-id
+          in: path
+          description: 'key: id of teamsAppDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsAppDefinition
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/appCatalogs/teamsApps/{teamsApp-id}/appDefinitions/{teamsAppDefinition-id}/outlineIcon/hostedContent/$value':
+    get:
+      tags:
+        - appCatalogs.teamsApp
+      summary: Get media content for the navigation property hostedContent from appCatalogs
+      operationId: appCatalogs.teamsApps.appDefinitions.outlineIcon_GetHostedContentContent
+      parameters:
+        - name: teamsApp-id
+          in: path
+          description: 'key: id of teamsApp'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsApp
+        - name: teamsAppDefinition-id
+          in: path
+          description: 'key: id of teamsAppDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsAppDefinition
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - appCatalogs.teamsApp
+      summary: Update media content for the navigation property hostedContent in appCatalogs
+      operationId: appCatalogs.teamsApps.appDefinitions.outlineIcon_SetHostedContentContent
+      parameters:
+        - name: teamsApp-id
+          in: path
+          description: 'key: id of teamsApp'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsApp
+        - name: teamsAppDefinition-id
+          in: path
+          description: 'key: id of teamsAppDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsAppDefinition
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
       responses:
         '204':
           description: Success
@@ -1351,6 +1999,8 @@ paths:
                 - teamsAppId
                 - version
                 - bot
+                - colorIcon
+                - outlineIcon
               type: string
         - name: $expand
           in: query
@@ -1364,6 +2014,8 @@ paths:
               enum:
                 - '*'
                 - bot
+                - colorIcon
+                - outlineIcon
               type: string
       responses:
         '200':
@@ -1375,6 +2027,16 @@ paths:
           links:
             bot:
               operationId: chats.installedApps.TeamsAppDefinition.GetBot
+              parameters:
+                chat-id: $request.path.chat-id
+                teamsAppInstallation-id: $request.path.teamsAppInstallation-id
+            colorIcon:
+              operationId: chats.installedApps.TeamsAppDefinition.GetColorIcon
+              parameters:
+                chat-id: $request.path.chat-id
+                teamsAppInstallation-id: $request.path.teamsAppInstallation-id
+            outlineIcon:
+              operationId: chats.installedApps.TeamsAppDefinition.GetOutlineIcon
               parameters:
                 chat-id: $request.path.chat-id
                 teamsAppInstallation-id: $request.path.teamsAppInstallation-id
@@ -1412,6 +2074,16 @@ paths:
           links:
             bot:
               operationId: chats.installedApps.TeamsAppDefinition.GetBot
+              parameters:
+                chat-id: $request.path.chat-id
+                teamsAppInstallation-id: $request.path.teamsAppInstallation-id
+            colorIcon:
+              operationId: chats.installedApps.TeamsAppDefinition.GetColorIcon
+              parameters:
+                chat-id: $request.path.chat-id
+                teamsAppInstallation-id: $request.path.teamsAppInstallation-id
+            outlineIcon:
+              operationId: chats.installedApps.TeamsAppDefinition.GetOutlineIcon
               parameters:
                 chat-id: $request.path.chat-id
                 teamsAppInstallation-id: $request.path.teamsAppInstallation-id
@@ -7649,6 +8321,8 @@ paths:
                 - teamsAppId
                 - version
                 - bot
+                - colorIcon
+                - outlineIcon
               type: string
         - name: $expand
           in: query
@@ -7662,6 +8336,8 @@ paths:
               enum:
                 - '*'
                 - bot
+                - colorIcon
+                - outlineIcon
               type: string
       responses:
         '200':
@@ -7673,6 +8349,16 @@ paths:
           links:
             bot:
               operationId: teams.installedApps.TeamsAppDefinition.GetBot
+              parameters:
+                team-id: $request.path.team-id
+                teamsAppInstallation-id: $request.path.teamsAppInstallation-id
+            colorIcon:
+              operationId: teams.installedApps.TeamsAppDefinition.GetColorIcon
+              parameters:
+                team-id: $request.path.team-id
+                teamsAppInstallation-id: $request.path.teamsAppInstallation-id
+            outlineIcon:
+              operationId: teams.installedApps.TeamsAppDefinition.GetOutlineIcon
               parameters:
                 team-id: $request.path.team-id
                 teamsAppInstallation-id: $request.path.teamsAppInstallation-id
@@ -7710,6 +8396,16 @@ paths:
           links:
             bot:
               operationId: teams.installedApps.TeamsAppDefinition.GetBot
+              parameters:
+                team-id: $request.path.team-id
+                teamsAppInstallation-id: $request.path.teamsAppInstallation-id
+            colorIcon:
+              operationId: teams.installedApps.TeamsAppDefinition.GetColorIcon
+              parameters:
+                team-id: $request.path.team-id
+                teamsAppInstallation-id: $request.path.teamsAppInstallation-id
+            outlineIcon:
+              operationId: teams.installedApps.TeamsAppDefinition.GetOutlineIcon
               parameters:
                 team-id: $request.path.team-id
                 teamsAppInstallation-id: $request.path.teamsAppInstallation-id
@@ -16793,6 +17489,10 @@ components:
               nullable: true
             bot:
               $ref: '#/components/schemas/microsoft.graph.teamworkBot'
+            colorIcon:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppIcon'
+            outlineIcon:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppIcon'
           additionalProperties:
             type: object
     microsoft.graph.teamworkBot:
@@ -16800,6 +17500,36 @@ components:
         - $ref: '#/components/schemas/microsoft.graph.entity'
         - title: teamworkBot
           type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.teamsAppIcon:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamsAppIcon
+          type: object
+          properties:
+            webUrl:
+              type: string
+              nullable: true
+            hostedContent:
+              $ref: '#/components/schemas/microsoft.graph.teamworkHostedContent'
+          additionalProperties:
+            type: object
+    microsoft.graph.teamworkHostedContent:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamworkHostedContent
+          type: object
+          properties:
+            contentBytes:
+              type: string
+              description: Write only. Bytes for the hosted content (such as images).
+              format: base64url
+              nullable: true
+            contentType:
+              type: string
+              description: 'Write only. Content type, such as image/png, image/jpg.'
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.chat:
@@ -16984,7 +17714,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
-              description: 'Content in a message hosted by Microsoft Teams e.g. images, code snippets etc.'
+              description: 'Content in a message hosted by Microsoft Teams e.g., images, code snippets etc.'
             replies:
               type: array
               items:
@@ -18945,23 +19675,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.identitySet'
       additionalProperties:
         type: object
-    microsoft.graph.teamworkHostedContent:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: teamworkHostedContent
-          type: object
-          properties:
-            contentBytes:
-              type: string
-              description: Write only. Bytes for the hosted content (such as images).
-              format: base64url
-              nullable: true
-            contentType:
-              type: string
-              description: 'Write only. Content type, such as image/png, image/jpg.'
-              nullable: true
-          additionalProperties:
-            type: object
     microsoft.graph.teamworkActivityTopicSource:
       title: teamworkActivityTopicSource
       enum:
@@ -22838,7 +23551,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Groups that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable.'
+              description: 'Groups that this device is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable.'
             registeredOwners:
               type: array
               items:
@@ -23291,6 +24004,10 @@ components:
         - openShiftRequest
         - offerShiftRequest
         - unknownFutureValue
+        - timeCard
+        - timeOffReason
+        - timeOff
+        - timeOffRequest
       type: string
     odata.error:
       required:
