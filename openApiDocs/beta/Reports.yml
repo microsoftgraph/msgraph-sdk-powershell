@@ -5878,6 +5878,31 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getTeamsDeviceUsageDistributionTotalUserCounts(period=''{period}'')':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getTeamsDeviceUsageDistributionTotalUserCounts
+      operationId: reports_getTeamsDeviceUsageDistributionTotalUserCounts
+      parameters:
+        - name: period
+          in: path
+          description: 'Usage: period={period}'
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.teamsDeviceUsageDistributionUserCounts'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/reports/microsoft.graph.getTeamsDeviceUsageDistributionUserCounts(period=''{period}'')':
     get:
       tags:
@@ -5900,6 +5925,31 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/microsoft.graph.teamsDeviceUsageDistributionUserCounts'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getTeamsDeviceUsageTotalUserCounts(period=''{period}'')':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getTeamsDeviceUsageTotalUserCounts
+      operationId: reports_getTeamsDeviceUsageTotalUserCounts
+      parameters:
+        - name: period
+          in: path
+          description: 'Usage: period={period}'
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.teamsDeviceUsageUserCounts'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6002,6 +6052,106 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/microsoft.graph.teamsUserActivityCounts'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getTeamsUserActivityDistributionTotalUserCounts(period=''{period}'')':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getTeamsUserActivityDistributionTotalUserCounts
+      operationId: reports_getTeamsUserActivityDistributionTotalUserCounts
+      parameters:
+        - name: period
+          in: path
+          description: 'Usage: period={period}'
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.teamsUserActivityDistributionUserCounts'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getTeamsUserActivityDistributionUserCounts(period=''{period}'')':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getTeamsUserActivityDistributionUserCounts
+      operationId: reports_getTeamsUserActivityDistributionUserCounts
+      parameters:
+        - name: period
+          in: path
+          description: 'Usage: period={period}'
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.teamsUserActivityDistributionUserCounts'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getTeamsUserActivityTotalCounts(period=''{period}'')':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getTeamsUserActivityTotalCounts
+      operationId: reports_getTeamsUserActivityTotalCounts
+      parameters:
+        - name: period
+          in: path
+          description: 'Usage: period={period}'
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.teamsUserActivityCounts'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getTeamsUserActivityTotalUserCounts(period=''{period}'')':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getTeamsUserActivityTotalUserCounts
+      operationId: reports_getTeamsUserActivityTotalUserCounts
+      parameters:
+        - name: period
+          in: path
+          description: 'Usage: period={period}'
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.teamsUserActivityUserCounts'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -7792,7 +7942,7 @@ components:
             activityDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Indicates the date and time the activity was performed. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              description: 'Indicates the date and time the activity was performed. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
             activityDisplayName:
               type: string
@@ -7822,7 +7972,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.operationResult'
             resultReason:
               type: string
-              description: Indicates the reason for failure if the result is 'Failure' or 'timeout'.
+              description: Indicates the reason for failure if the result is failure or timeout.
               nullable: true
             targetResources:
               type: array
@@ -7844,7 +7994,7 @@ components:
             activityDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
             changeId:
               type: string
@@ -7957,7 +8107,7 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.authenticationRequirementPolicy'
             clientAppUsed:
               type: string
-              description: 'The legacy client used for sign-in activity. For example, Browser, Exchange Active Sync,Modern clients, IMAP, MAPI, SMTP, or POP.'
+              description: 'The legacy client used for sign-in activity. For example: Browser, Exchange Active Sync, Modern clients, IMAP, MAPI, SMTP, or POP.'
               nullable: true
             conditionalAccessStatus:
               $ref: '#/components/schemas/microsoft.graph.conditionalAccessStatus'
@@ -7968,7 +8118,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time the sign-in was initiated. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''.'
+              description: 'The date and time the sign-in was initiated. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
             deviceDetail:
               $ref: '#/components/schemas/microsoft.graph.deviceDetail'
@@ -7997,7 +8147,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.networkLocationDetail'
-              description: 'The network location details, such as IP address, location of the sign-in, the type of network used, and its names. Possible values: Named Netowrk, Extranet, Intranet, or Trusted Network.'
+              description: The network location details including the type of network used and its names.
             originalRequestId:
               type: string
               description: The request identifier of the first request in the authentication sequence.
@@ -8319,7 +8469,7 @@ components:
             aggregatedEventDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''.'
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             appDisplayName:
@@ -8409,16 +8559,16 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.registrationAuthMethod'
-              description: 'Represents the authentication method that the user has registered. Possible values are: email, mobilePhone, officePhone, securityQuestion (only used for self-service password reset), appNotification, appCode, and alternateMobilePhone (supported only in registration).'
+              description: 'Represents the authentication method that the user has registered. Possible values are: email, mobilePhone, officePhone,  securityQuestion (only used for self-service password reset), appNotification,  appCode, alternateMobilePhone (supported only in registration),  fido,  appPassword,  unknownFutureValue.'
             isCapable:
               type: boolean
               description: Indicates whether the user is ready to perform self-service password reset or MFA.
             isEnabled:
               type: boolean
-              description: Indiciates whether the user enabled to perform self-service password reset.
+              description: Indicates whether the user enabled to perform self-service password reset.
             isMfaRegistered:
               type: boolean
-              description: Indiciates whether the user is registered for MFA.
+              description: Indicates whether the user is registered for MFA.
             isRegistered:
               type: boolean
               description: Indicates whether the user has registered any authentication methods for self-service password reset.
@@ -8449,6 +8599,7 @@ components:
           properties:
             userPrincipalName:
               type: string
+              description: The UPN of the user represented by these statistics.
               nullable: true
           additionalProperties:
             type: object
@@ -10021,7 +10172,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.keyValuePair'
-              description: 'Specifies all the validations check done on applications configuration details to evaluate if the application is ready to be moved to Azure AD. Possible names are: AdditionalWSFedEndpointCheckResult,  AllowedAuthenticationClassReferencesCheckResult, AlwaysRequireAuthenticationCheckResult,   AutoUpdateEnabledCheckResult, ClaimsProviderNameCheckResult, EncryptClaimsCheckResult,  EncryptedNameIdRequiredCheckResult, MonitoringEnabledCheckResult,NotBeforeSkewCheckResult,  RequestMFAFromClaimsProvidersCheckResult, SignedSamlRequestsRequiredCheckResult, AdditionalAuthenticationRulesCheckResult, TokenLifetimeCheckResult,  DelegationAuthorizationRulesCheckResult, IssuanceAuthorizationRulesCheckResult, IssuanceTransformRulesCheckResult. Possible result values are 0, 1, or 2. 0 when the validation check passed, 1 when the validation check failed and 2 when the validation check is a warning.'
+              description: Specifies all the validations check done on applications configuration details to evaluate if the application is ready to be moved to Azure AD.
             relyingPartyId:
               type: string
               description: This identifier is used to identify the relying party to this Federation Service. It is used when issuing claims to the relying party.
@@ -11067,7 +11218,15 @@ components:
               type: integer
               format: int64
               nullable: true
+            chromeOS:
+              type: integer
+              format: int64
+              nullable: true
             ios:
+              type: integer
+              format: int64
+              nullable: true
+            linux:
               type: integer
               format: int64
               nullable: true
@@ -11107,7 +11266,15 @@ components:
               type: integer
               format: int64
               nullable: true
+            chromeOS:
+              type: integer
+              format: int64
+              nullable: true
             ios:
+              type: integer
+              format: int64
+              nullable: true
+            linux:
               type: integer
               format: int64
               nullable: true
@@ -11156,6 +11323,9 @@ components:
             isDeleted:
               type: boolean
               nullable: true
+            isLicensed:
+              type: boolean
+              nullable: true
             lastActivityDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
@@ -11172,7 +11342,13 @@ components:
             usedAndroidPhone:
               type: boolean
               nullable: true
+            usedChromeOS:
+              type: boolean
+              nullable: true
             usediOS:
+              type: boolean
+              nullable: true
+            usedLinux:
               type: boolean
               nullable: true
             usedMac:
@@ -11214,6 +11390,38 @@ components:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
               format: date
+              nullable: true
+            reportPeriod:
+              type: string
+              nullable: true
+            reportRefreshDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
+            teamChatMessages:
+              type: integer
+              format: int64
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.teamsUserActivityDistributionUserCounts:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamsUserActivityDistributionUserCounts
+          type: object
+          properties:
+            calls:
+              type: integer
+              format: int64
+              nullable: true
+            meetings:
+              type: integer
+              format: int64
+              nullable: true
+            privateChatMessages:
+              type: integer
+              format: int64
               nullable: true
             reportPeriod:
               type: string
@@ -11276,11 +11484,24 @@ components:
         - title: teamsUserActivityUserDetail
           type: object
           properties:
+            adHocMeetingsAttendedCount:
+              type: integer
+              format: int64
+              nullable: true
+            adHocMeetingsOrganizedCount:
+              type: integer
+              format: int64
+              nullable: true
             assignedProducts:
               type: array
               items:
                 type: string
                 nullable: true
+            audioDuration:
+              pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+              type: string
+              format: duration
+              nullable: true
             callCount:
               type: integer
               format: int64
@@ -11296,12 +11517,23 @@ components:
             isDeleted:
               type: boolean
               nullable: true
+            isLicensed:
+              type: boolean
+              nullable: true
             lastActivityDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
               format: date
               nullable: true
             meetingCount:
+              type: integer
+              format: int64
+              nullable: true
+            meetingsAttendedCount:
+              type: integer
+              format: int64
+              nullable: true
+            meetingsOrganizedCount:
               type: integer
               format: int64
               nullable: true
@@ -11317,12 +11549,38 @@ components:
               type: string
               format: date
               nullable: true
+            scheduledOneTimeMeetingsAttendedCount:
+              type: integer
+              format: int64
+              nullable: true
+            scheduledOneTimeMeetingsOrganizedCount:
+              type: integer
+              format: int64
+              nullable: true
+            scheduledRecurringMeetingsAttendedCount:
+              type: integer
+              format: int64
+              nullable: true
+            scheduledRecurringMeetingsOrganizedCount:
+              type: integer
+              format: int64
+              nullable: true
+            screenShareDuration:
+              pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+              type: string
+              format: duration
+              nullable: true
             teamChatMessageCount:
               type: integer
               format: int64
               nullable: true
             userPrincipalName:
               type: string
+              nullable: true
+            videoDuration:
+              pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+              type: string
+              format: duration
               nullable: true
           additionalProperties:
             type: object
@@ -11701,7 +11959,7 @@ components:
             eventDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''.'
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: 2014-01-01T00:00:00Z.'
               format: date-time
             failureReason:
               type: string
@@ -11920,7 +12178,7 @@ components:
           description: 'Refers to the session controls enforced by the conditional access policy (example: ''Require app enforced controls'').'
         id:
           type: string
-          description: Unique GUID of the conditional access policy.
+          description: Identifier of the conditional access policy.
           nullable: true
         result:
           $ref: '#/components/schemas/microsoft.graph.appliedConditionalAccessPolicyResult'
@@ -11932,7 +12190,7 @@ components:
       properties:
         authenticationMethod:
           type: string
-          description: 'The type of authentication method used to perform this step of authentication. Possible values: Password, SMS, Voice, Authenticator App, Software OATH token, Satisfied by token.'
+          description: 'The type of authentication method used to perform this step of authentication. Possible values: Password, SMS, Voice, Authenticator App, Software OATH token, Satisfied by token, Previously satisfied.'
           nullable: true
         authenticationMethodDetail:
           type: string
@@ -11941,7 +12199,7 @@ components:
         authenticationStepDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'Represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''.'
+          description: 'Represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
           nullable: true
         authenticationStepRequirement:
@@ -12507,8 +12765,8 @@ components:
         - success
         - failure
         - skipped
-        - unknownFutureValue
         - warning
+        - unknownFutureValue
       type: string
     microsoft.graph.identity:
       title: identity

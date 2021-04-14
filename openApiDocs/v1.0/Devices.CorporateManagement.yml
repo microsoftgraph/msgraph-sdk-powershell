@@ -11608,7 +11608,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
-              description: Zero or more policys already applied on the registered app when it last synchronized with management service.
+              description: Zero or more policys already applied on the registered app when it last synchronized with managment service.
             intendedPolicies:
               type: array
               items:
