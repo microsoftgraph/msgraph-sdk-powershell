@@ -31,9 +31,20 @@ require:
 title: $(service-name)
 subject-prefix: ''
 ```
+
+### Directives
+
+> see https://github.com/Azure/autorest/blob/master/docs/powershell/directives.md
+
+``` yaml
+directive:
+# Remove invalid paths.
+  - remove-path-by-operation: ^deviceManagement_.*UserExperienceAnalytics.*$
+```
+
 ### Versioning
 
 ``` yaml
-module-version: 1.4.3
+module-version: 1.5.0
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```
