@@ -227,6 +227,6 @@
     <value>Interactive authentication is not supported in this session, please run cmdlet 'Connect-MgGraph -UseDeviceAuthentication'.</value>
   </data>
   <data name="DeviceCodeFallback" xml:space="preserve">
-    <value>Interactive authentication is not supported in this session, Falling Back to DeviceCode. Future versions will not automatically fallback to DeviceCode.</value>
+    <value>Interactive authentication is not supported in this session, falling back to DeviceCode. Future versions will not automatically fallback to DeviceCode.</value>
   </data>
 </root>
