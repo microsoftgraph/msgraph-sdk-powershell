@@ -50,6 +50,8 @@ paths:
                 - latestSupportedTlsVersion desc
                 - lifecycleNotificationUrl
                 - lifecycleNotificationUrl desc
+                - notificationQueryOptions
+                - notificationQueryOptions desc
                 - notificationUrl
                 - notificationUrl desc
                 - resource
@@ -76,6 +78,7 @@ paths:
                 - includeResourceData
                 - latestSupportedTlsVersion
                 - lifecycleNotificationUrl
+                - notificationQueryOptions
                 - notificationUrl
                 - resource
               type: string
@@ -171,6 +174,7 @@ paths:
                 - includeResourceData
                 - latestSupportedTlsVersion
                 - lifecycleNotificationUrl
+                - notificationQueryOptions
                 - notificationUrl
                 - resource
               type: string
@@ -293,6 +297,10 @@ components:
             lifecycleNotificationUrl:
               type: string
               description: 'The URL of the endpoint that receives lifecycle notifications, including subscriptionRemoved and missed notifications. This URL must make use of the HTTPS protocol. Optional. Read more about how Outlook resources use lifecycle notifications.'
+              nullable: true
+            notificationQueryOptions:
+              type: string
+              description: 'OData Query Options for specifying value for the targeting resource. Clients receive notifications when resource reaches the state matching the query options provided here. With this new property in the subscription creation payload along with all existing properties, Webhooks will deliver notifications whenever a resource reaches the desired state mentioned in the notificationQueryOptions property eg  when the print job is completed, when a print job resource isFetchable property value becomes true etc.'
               nullable: true
             notificationUrl:
               type: string

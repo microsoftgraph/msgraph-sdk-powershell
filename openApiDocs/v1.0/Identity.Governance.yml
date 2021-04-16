@@ -1749,6 +1749,63 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/identityGovernance/appConsent/appConsentRequests/{appConsentRequest-id}/userConsentRequests/microsoft.graph.filterByCurrentUser(on={on})':
+    get:
+      tags:
+        - identityGovernance.Functions
+      summary: Invoke function filterByCurrentUser
+      operationId: identityGovernance.appConsent.appConsentRequests.userConsentRequests_filterByCurrentUser
+      parameters:
+        - name: appConsentRequest-id
+          in: path
+          description: 'key: id of appConsentRequest'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: appConsentRequest
+        - name: on
+          in: path
+          description: 'Usage: on={on}'
+          required: true
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.consentRequestFilterByCurrentUserOptions'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.userConsentRequest'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/identityGovernance/appConsent/appConsentRequests/microsoft.graph.filterByCurrentUser(on={on})':
+    get:
+      tags:
+        - identityGovernance.Functions
+      summary: Invoke function filterByCurrentUser
+      operationId: identityGovernance.appConsent.appConsentRequests_filterByCurrentUser
+      parameters:
+        - name: on
+          in: path
+          description: 'Usage: on={on}'
+          required: true
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.consentRequestFilterByCurrentUserOptions'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.appConsentRequest'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/users/{user-id}/agreementAcceptances':
     get:
       tags:
@@ -2057,13 +2114,13 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The expiration date time of the acceptance. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              description: 'The expiration date time of the acceptance. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             recordedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             state:
@@ -2117,6 +2174,51 @@ components:
           type: object
           additionalProperties:
             type: object
+    microsoft.graph.consentRequestFilterByCurrentUserOptions:
+      title: consentRequestFilterByCurrentUserOptions
+      enum:
+        - reviewer
+        - unknownFutureValue
+      type: string
+    microsoft.graph.userConsentRequest:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.request'
+        - title: userConsentRequest
+          type: object
+          properties:
+            reason:
+              type: string
+              description: The user's justification for requiring access to the app. Supports $filter (eq only) and $orderby.
+              nullable: true
+            approval:
+              $ref: '#/components/schemas/microsoft.graph.approval'
+          additionalProperties:
+            type: object
+    microsoft.graph.appConsentRequest:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: appConsentRequest
+          type: object
+          properties:
+            appDisplayName:
+              type: string
+              description: The display name of the app for which consent is requested. Required. Supports $filter (eq only) and $orderby.
+              nullable: true
+            appId:
+              type: string
+              description: The identifier of the application. Required. Supports $filter (eq only) and $orderby.
+            pendingScopes:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.appConsentRequestScope'
+              description: A list of pending scopes waiting for approval. This is empty if the consentType is Static. Required.
+            userConsentRequests:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.userConsentRequest'
+              description: A list of pending user consent requests.
+          additionalProperties:
+            type: object
     microsoft.graph.entity:
       title: entity
       type: object
@@ -2139,7 +2241,7 @@ components:
         startDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The DateTime when the agreement is set to expire for all users. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''.'
+          description: 'The DateTime when the agreement is set to expire for all users. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
           nullable: true
       additionalProperties:
@@ -2181,6 +2283,57 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.request:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: request
+          type: object
+          properties:
+            approvalId:
+              type: string
+              nullable: true
+            completedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            customData:
+              type: string
+              nullable: true
+            status:
+              type: string
+          additionalProperties:
+            type: object
+    microsoft.graph.approval:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: approval
+          type: object
+          properties:
+            stages:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.approvalStage'
+              description: 'Used for the approvalStages property of approval settings in the requestApprovalSettings property of an access package assignment policy. Specifies the primary, fallback, and escalation approvers of each stage.'
+          additionalProperties:
+            type: object
+    microsoft.graph.appConsentRequestScope:
+      title: appConsentRequestScope
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: The name of the scope.
+          nullable: true
+      additionalProperties:
+        type: object
     odata.error:
       required:
         - error
@@ -2200,6 +2353,54 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.identitySet:
+      title: identitySet
+      type: object
+      properties:
+        application:
+          $ref: '#/components/schemas/microsoft.graph.identity'
+        device:
+          $ref: '#/components/schemas/microsoft.graph.identity'
+        user:
+          $ref: '#/components/schemas/microsoft.graph.identity'
+      additionalProperties:
+        type: object
+    microsoft.graph.approvalStage:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: approvalStage
+          type: object
+          properties:
+            assignedToMe:
+              type: boolean
+              description: Indicates whether the stage is assigned to the calling user to review. Read-only.
+              nullable: true
+            displayName:
+              type: string
+              description: The label provided by the policy creator to identify an approval stage. Read-only.
+              nullable: true
+            justification:
+              type: string
+              description: The justification associated with the approval stage decision.
+              nullable: true
+            reviewedBy:
+              $ref: '#/components/schemas/microsoft.graph.identity'
+            reviewedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when a decision was recorded. The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              format: date-time
+              nullable: true
+            reviewResult:
+              type: string
+              description: 'The result of this approval record. Possible values include: NotReviewed, Approved, Denied.'
+              nullable: true
+            status:
+              type: string
+              description: 'The stage status. Possible values: InProgress, Initializing, Completed, Expired. Read-only.'
+              nullable: true
+          additionalProperties:
+            type: object
     odata.error.main:
       required:
         - code
@@ -2221,6 +2422,20 @@ components:
           additionalProperties:
             type: object
           description: The structure of this object is service-specific
+      additionalProperties:
+        type: object
+    microsoft.graph.identity:
+      title: identity
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          nullable: true
+        id:
+          type: string
+          description: Unique identifier for the identity.
+          nullable: true
       additionalProperties:
         type: object
     odata.error.detail:

@@ -2,532 +2,524 @@
   "resources": [],
   "operations": {
     "/education": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/classes": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/classes/{educationClass-id}": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/classes/{educationClass-id}/assignmentCategories": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/classes/{educationClass-id}/assignmentCategories/{educationCategory-id}": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/education/classes/{educationClass-id}/assignmentDefaults": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/classes/{educationClass-id}/assignmentDefaults": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/classes/{educationClass-id}/assignments": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/classes/{educationClass-id}/assignments/{educationAssignment-id}": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/categories": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/categories/{educationCategory-id}": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/microsoft.graph.getResourcesFolderUrl()": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/microsoft.graph.publish": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/resources": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/resources/{educationAssignmentResource-id}": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/rubric": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/submissions": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/microsoft.graph.return": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/microsoft.graph.submit": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/microsoft.graph.unsubmit": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/outcomes": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/outcomes/{educationOutcome-id}": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/resources": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/resources/{educationSubmissionResource-id}": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/submittedResources": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/submittedResources/{educationSubmissionResource-id}": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/education/classes/{educationClass-id}/assignmentSettings": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/classes/{educationClass-id}/assignmentSettings": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/classes/{educationClass-id}/group": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/classes/{educationClass-id}/group/$ref": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/classes/{educationClass-id}/members": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/classes/{educationClass-id}/members/$ref": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/classes/{educationClass-id}/members/microsoft.graph.delta()": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/classes/{educationClass-id}/schools": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/classes/{educationClass-id}/schools/$ref": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/classes/{educationClass-id}/schools/microsoft.graph.delta()": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/classes/{educationClass-id}/teachers": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/classes/{educationClass-id}/teachers/$ref": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/classes/{educationClass-id}/teachers/microsoft.graph.delta()": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/classes/microsoft.graph.delta()": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/me": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/me/assignments": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/me/assignments/{educationAssignment-id}": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/me/assignments/{educationAssignment-id}/categories": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/me/assignments/{educationAssignment-id}/categories/{educationCategory-id}": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/me/assignments/{educationAssignment-id}/microsoft.graph.getResourcesFolderUrl()": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/me/assignments/{educationAssignment-id}/microsoft.graph.publish": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/me/assignments/{educationAssignment-id}/resources": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/me/assignments/{educationAssignment-id}/resources/{educationAssignmentResource-id}": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/me/assignments/{educationAssignment-id}/rubric": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/me/assignments/{educationAssignment-id}/submissions": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/me/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/me/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/microsoft.graph.return": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/me/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/microsoft.graph.submit": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/me/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/microsoft.graph.unsubmit": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/me/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/outcomes": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/me/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/outcomes/{educationOutcome-id}": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/me/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/resources": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/me/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/resources/{educationSubmissionResource-id}": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/me/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/submittedResources": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/me/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/submittedResources/{educationSubmissionResource-id}": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/me/classes": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/me/classes/$ref": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/me/classes/microsoft.graph.delta()": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/me/rubrics": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/me/rubrics/{educationRubric-id}": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/me/schools": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/me/schools/$ref": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/me/schools/microsoft.graph.delta()": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/me/taughtClasses": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/me/taughtClasses/$ref": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/me/taughtClasses/microsoft.graph.delta()": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/me/user": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/me/user/$ref": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/schools": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/schools/{educationSchool-id}": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/schools/{educationSchool-id}/administrativeUnit": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/schools/{educationSchool-id}/administrativeUnit/$ref": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/schools/{educationSchool-id}/classes": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/schools/{educationSchool-id}/classes/$ref": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/schools/{educationSchool-id}/classes/microsoft.graph.delta()": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/schools/{educationSchool-id}/users": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/schools/{educationSchool-id}/users/$ref": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/schools/{educationSchool-id}/users/microsoft.graph.delta()": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/schools/microsoft.graph.delta()": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/synchronizationProfiles": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/synchronizationProfiles/{educationSynchronizationProfile-id}": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/synchronizationProfiles/{educationSynchronizationProfile-id}/errors": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/synchronizationProfiles/{educationSynchronizationProfile-id}/errors/{educationSynchronizationError-id}": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/synchronizationProfiles/{educationSynchronizationProfile-id}/microsoft.graph.pause": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/synchronizationProfiles/{educationSynchronizationProfile-id}/microsoft.graph.reset": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/synchronizationProfiles/{educationSynchronizationProfile-id}/microsoft.graph.resume": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/synchronizationProfiles/{educationSynchronizationProfile-id}/microsoft.graph.start": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/synchronizationProfiles/{educationSynchronizationProfile-id}/microsoft.graph.uploadUrl()": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/synchronizationProfiles/{educationSynchronizationProfile-id}/profileStatus": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/users": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/users/{educationUser-id}": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/users/{educationUser-id}/assignments": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/users/{educationUser-id}/assignments/{educationAssignment-id}": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/users/{educationUser-id}/assignments/{educationAssignment-id}/categories": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/users/{educationUser-id}/assignments/{educationAssignment-id}/categories/{educationCategory-id}": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/users/{educationUser-id}/assignments/{educationAssignment-id}/microsoft.graph.getResourcesFolderUrl()": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/users/{educationUser-id}/assignments/{educationAssignment-id}/microsoft.graph.publish": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/users/{educationUser-id}/assignments/{educationAssignment-id}/resources": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/users/{educationUser-id}/assignments/{educationAssignment-id}/resources/{educationAssignmentResource-id}": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/users/{educationUser-id}/assignments/{educationAssignment-id}/rubric": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/users/{educationUser-id}/assignments/{educationAssignment-id}/submissions": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/users/{educationUser-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/users/{educationUser-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/microsoft.graph.return": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/users/{educationUser-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/microsoft.graph.submit": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/users/{educationUser-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/microsoft.graph.unsubmit": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/users/{educationUser-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/outcomes": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/users/{educationUser-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/outcomes/{educationOutcome-id}": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/users/{educationUser-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/resources": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/users/{educationUser-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/resources/{educationSubmissionResource-id}": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/users/{educationUser-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/submittedResources": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/users/{educationUser-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/submittedResources/{educationSubmissionResource-id}": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/users/{educationUser-id}/classes": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/users/{educationUser-id}/classes/$ref": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/users/{educationUser-id}/classes/microsoft.graph.delta()": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/users/{educationUser-id}/rubrics": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/users/{educationUser-id}/rubrics/{educationRubric-id}": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/users/{educationUser-id}/schools": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/users/{educationUser-id}/schools/$ref": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/users/{educationUser-id}/schools/microsoft.graph.delta()": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/users/{educationUser-id}/taughtClasses": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/users/{educationUser-id}/taughtClasses/$ref": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/users/{educationUser-id}/taughtClasses/microsoft.graph.delta()": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/users/{educationUser-id}/user": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/users/{educationUser-id}/user/$ref": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/users/microsoft.graph.delta()": {
-      "originalLocation": "/openApiDocs/beta/Education.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
     }
   }
 }

@@ -5,20 +5,53 @@
 namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 {
     using Microsoft.Graph.Auth;
-    using Microsoft.IdentityModel.Tokens;
+    using Microsoft.Graph.PowerShell.Authentication.Core;
+    using Microsoft.Identity.Client;
     using Newtonsoft.Json;
-    using Newtonsoft.Json.Linq;
     using System;
-    using System.Collections.Generic;
+    using System.Globalization;
     using System.IdentityModel.Tokens.Jwt;
-    using System.Security.Claims;
-    using System.Text;
 
     /// <summary>
     /// A JwtHelpers class.
     /// </summary>
     internal static class JwtHelpers
     {
+        /// <summary>
+        /// Decodes a JWT token and store claims in the provided <see cref="IAuthContext"/> by ref.
+        /// </summary>
+        /// <param name="jwToken">A JWT string.</param>
+        /// <param name="account">MSAL's <see cref="IAccount"/>.</param>
+        /// <param name="authContext">An <see cref="IAuthContext"/> to store JWT claims in.</param>
+        internal static void DecodeJWT(string jwToken, IAccount account, ref IAuthContext authContext)
+        {
+            var jwtPayload = JwtHelpers.DecodeToObject<Models.JwtPayload>(jwToken);
+            if (authContext.AuthType == AuthenticationType.UserProvidedAccessToken)
+            {
+                if (jwtPayload == null)
+                {
+                    throw new Exception(string.Format(
+                            CultureInfo.CurrentCulture,
+                            ErrorConstants.Message.InvalidUserProvidedToken,
+                            "AccessToken"));
+                }
+
+                if (jwtPayload.Exp <= JwtHelpers.ConvertToUnixTimestamp(DateTime.UtcNow + TimeSpan.FromMinutes(Constants.TokenExpirationBufferInMinutes)))
+                {
+                    throw new Exception(string.Format(
+                            CultureInfo.CurrentCulture,
+                            ErrorConstants.Message.ExpiredUserProvidedToken,
+                            "AccessToken"));
+                }
+            }
+
+            authContext.ClientId = jwtPayload?.Appid ?? authContext.ClientId;
+            authContext.Scopes = jwtPayload?.Scp?.Split(' ') ?? jwtPayload?.Roles;
+            authContext.TenantId = jwtPayload?.Tid ?? account?.HomeAccountId?.TenantId;
+            authContext.AppName = jwtPayload?.AppDisplayname;
+            authContext.Account = jwtPayload?.Upn ?? account?.Username;
+        }
+
         /// <summary>
         /// Decodes a JWT token by extracting claims from the payload.
         /// </summary>

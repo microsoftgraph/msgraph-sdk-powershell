@@ -411,6 +411,31 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /deviceManagement/assignmentFilters/microsoft.graph.enable:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action enable
+      operationId: deviceManagement.assignmentFilters_enable
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                enable:
+                  type: boolean
+                  default: false
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /deviceManagement/assignmentFilters/microsoft.graph.validateFilter:
     post:
       tags:
@@ -436,6 +461,38 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.assignmentFilterValidationResult'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /deviceManagement/chromeOSOnboardingSettings/microsoft.graph.connect:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action connect
+      operationId: deviceManagement.chromeOSOnboardingSettings_connect
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ownerUserPrincipalName:
+                  type: string
+                  nullable: true
+                serviceAccountCredentials:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chromeOSOnboardingStatus'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -14495,6 +14552,140 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /deviceManagement/reports/microsoft.graph.getWindowsQualityUpdateAlertsPerPolicyPerDeviceReport:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action getWindowsQualityUpdateAlertsPerPolicyPerDeviceReport
+      operationId: deviceManagement.reports_getWindowsQualityUpdateAlertsPerPolicyPerDeviceReport
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  nullable: true
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                search:
+                  type: string
+                  nullable: true
+                groupBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                sessionId:
+                  type: string
+                  nullable: true
+                filter:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                format: base64url
+                nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /deviceManagement/reports/microsoft.graph.getWindowsQualityUpdateAlertSummaryReport:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action getWindowsQualityUpdateAlertSummaryReport
+      operationId: deviceManagement.reports_getWindowsQualityUpdateAlertSummaryReport
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  nullable: true
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                search:
+                  type: string
+                  nullable: true
+                groupBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                sessionId:
+                  type: string
+                  nullable: true
+                filter:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                format: base64url
+                nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /deviceManagement/reports/microsoft.graph.getWindowsUpdateAlertsPerPolicyPerDeviceReport:
     post:
       tags:
@@ -15315,6 +15506,47 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/windowsAutopilotDeploymentProfiles/{windowsAutopilotDeploymentProfile-id}/assignedDevices/microsoft.graph.deleteDevices':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action deleteDevices
+      operationId: deviceManagement.windowsAutopilotDeploymentProfiles.assignedDevices_deleteDevices
+      parameters:
+        - name: windowsAutopilotDeploymentProfile-id
+          in: path
+          description: 'key: id of windowsAutopilotDeploymentProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: windowsAutopilotDeploymentProfile
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                serialNumbers:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.deletedWindowsAutopilotDeviceState'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/windowsAutopilotDeploymentProfiles/{windowsAutopilotDeploymentProfile-id}/microsoft.graph.assign':
     post:
       tags:
@@ -15610,6 +15842,39 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /deviceManagement/windowsAutopilotDeviceIdentities/microsoft.graph.deleteDevices:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action deleteDevices
+      operationId: deviceManagement.windowsAutopilotDeviceIdentities_deleteDevices
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                serialNumbers:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.deletedWindowsAutopilotDeviceState'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /deviceManagement/windowsAutopilotSettings/microsoft.graph.sync:
     post:
       tags:
@@ -15739,6 +16004,14 @@ components:
       additionalProperties:
         type: object
       description: Represents result of Validation API.
+    microsoft.graph.chromeOSOnboardingStatus:
+      title: chromeOSOnboardingStatus
+      enum:
+        - unknown
+        - inprogress
+        - onboarded
+        - failed
+      type: string
     microsoft.graph.deviceLogCollectionRequest:
       title: deviceLogCollectionRequest
       type: object
@@ -16518,10 +16791,6 @@ components:
               type: string
               description: The Import Id of the Windows autopilot device.
               nullable: true
-            orderIdentifier:
-              type: string
-              description: Order Id of the Windows autopilot device. - Deprecate
-              nullable: true
             productKey:
               type: string
               description: Product Key of the Windows autopilot device.
@@ -16815,6 +17084,26 @@ components:
               $ref: '#/components/schemas/microsoft.graph.cloudPcManagementAssignmentTarget'
           additionalProperties:
             type: object
+    microsoft.graph.deletedWindowsAutopilotDeviceState:
+      title: deletedWindowsAutopilotDeviceState
+      type: object
+      properties:
+        deletionState:
+          $ref: '#/components/schemas/microsoft.graph.windowsAutopilotDeviceDeletionState'
+        deviceRegistrationId:
+          type: string
+          description: ZTD Device Registration ID .
+          nullable: true
+        errorMessage:
+          type: string
+          description: Device deletion error message.
+          nullable: true
+        serialNumber:
+          type: string
+          description: Autopilot Device Serial Number
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.windowsFeatureUpdateProfileAssignment:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -16991,11 +17280,12 @@ components:
         - androidEnterprise
         - windows10x
         - androidnGMS
-        - cloudPC
+        - chromeOS
         - linux
         - blackberry
         - palm
         - unknown
+        - cloudPC
       type: string
     microsoft.graph.managementAgentType:
       title: managementAgentType
@@ -17525,6 +17815,11 @@ components:
           $ref: '#/components/schemas/microsoft.graph.devicePlatformType'
         assignmentFilterType:
           $ref: '#/components/schemas/microsoft.graph.deviceAndAppManagementAssignmentFilterType'
+        assignmentFilterTypeAndEvaluationResults:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.assignmentFilterTypeAndEvaluationResult'
+          description: A collection of filter types and their corresponding evaluation results.
         evaluationDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
@@ -17558,6 +17853,14 @@ components:
       type: object
       additionalProperties:
         type: object
+    microsoft.graph.windowsAutopilotDeviceDeletionState:
+      title: windowsAutopilotDeviceDeletionState
+      enum:
+        - unknown
+        - failed
+        - accepted
+        - error
+      type: string
     odata.error:
       required:
         - error
@@ -18196,6 +18499,17 @@ components:
           additionalProperties:
             type: object
           description: Entity representing a setting category
+    microsoft.graph.assignmentFilterTypeAndEvaluationResult:
+      title: assignmentFilterTypeAndEvaluationResult
+      type: object
+      properties:
+        assignmentFilterType:
+          $ref: '#/components/schemas/microsoft.graph.deviceAndAppManagementAssignmentFilterType'
+        evaluationResult:
+          $ref: '#/components/schemas/microsoft.graph.assignmentFilterEvaluationResult'
+      additionalProperties:
+        type: object
+      description: Represents the filter type and evalaution result of the filter.
     microsoft.graph.assignmentFilterEvaluationResult:
       title: assignmentFilterEvaluationResult
       enum:

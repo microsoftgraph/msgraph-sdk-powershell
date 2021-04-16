@@ -2,180 +2,180 @@
   "resources": [],
   "operations": {
     "/users/{user-id}/analytics": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
     },
     "/users/{user-id}/analytics/activityStatistics": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
     },
     "/users/{user-id}/analytics/activityStatistics/{activityStatistics-id}": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
     },
     "/users/{user-id}/people": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
     },
     "/users/{user-id}/people/{person-id}": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
     },
     "/users/{user-id}/profile": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
     },
     "/users/{user-id}/profile/account": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
     },
     "/users/{user-id}/profile/account/{userAccountInformation-id}": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
     },
     "/users/{user-id}/profile/addresses": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
     },
     "/users/{user-id}/profile/addresses/{itemAddress-id}": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
     },
     "/users/{user-id}/profile/anniversaries": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
     },
     "/users/{user-id}/profile/anniversaries/{personAnnualEvent-id}": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
     },
     "/users/{user-id}/profile/awards": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
     },
     "/users/{user-id}/profile/awards/{personAward-id}": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
     },
     "/users/{user-id}/profile/certifications": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
     },
     "/users/{user-id}/profile/certifications/{personCertification-id}": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
     },
     "/users/{user-id}/profile/educationalActivities": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
     },
     "/users/{user-id}/profile/educationalActivities/{educationalActivity-id}": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
     },
     "/users/{user-id}/profile/emails": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
     },
     "/users/{user-id}/profile/emails/{itemEmail-id}": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
     },
     "/users/{user-id}/profile/interests": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
     },
     "/users/{user-id}/profile/interests/{personInterest-id}": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
     },
     "/users/{user-id}/profile/languages": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
     },
     "/users/{user-id}/profile/languages/{languageProficiency-id}": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
     },
     "/users/{user-id}/profile/names": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
     },
     "/users/{user-id}/profile/names/{personName-id}": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
     },
     "/users/{user-id}/profile/notes": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
     },
     "/users/{user-id}/profile/notes/{personAnnotation-id}": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
     },
     "/users/{user-id}/profile/patents": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
     },
     "/users/{user-id}/profile/patents/{itemPatent-id}": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
     },
     "/users/{user-id}/profile/phones": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
     },
     "/users/{user-id}/profile/phones/{itemPhone-id}": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
     },
     "/users/{user-id}/profile/positions": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
     },
     "/users/{user-id}/profile/positions/{workPosition-id}": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
     },
     "/users/{user-id}/profile/projects": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
     },
     "/users/{user-id}/profile/projects/{projectParticipation-id}": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
     },
     "/users/{user-id}/profile/publications": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
     },
     "/users/{user-id}/profile/publications/{itemPublication-id}": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
     },
     "/users/{user-id}/profile/skills": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
     },
     "/users/{user-id}/profile/skills/{skillProficiency-id}": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
     },
     "/users/{user-id}/profile/webAccounts": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
     },
     "/users/{user-id}/profile/webAccounts/{webAccount-id}": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
     },
     "/users/{user-id}/profile/websites": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
     },
     "/users/{user-id}/profile/websites/{personWebsite-id}": {
-      "originalLocation": "/openApiDocs/beta/People.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/People.yml"
     }
   }
 }

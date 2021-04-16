@@ -3439,8 +3439,6 @@ paths:
                 - hardwareIdentifier desc
                 - importId
                 - importId desc
-                - orderIdentifier
-                - orderIdentifier desc
                 - productKey
                 - productKey desc
                 - serialNumber
@@ -3463,7 +3461,6 @@ paths:
                 - groupTag
                 - hardwareIdentifier
                 - importId
-                - orderIdentifier
                 - productKey
                 - serialNumber
                 - state
@@ -3554,7 +3551,6 @@ paths:
                 - groupTag
                 - hardwareIdentifier
                 - importId
-                - orderIdentifier
                 - productKey
                 - serialNumber
                 - state
@@ -3620,6 +3616,234 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: importedWindowsAutopilotDeviceIdentity
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /deviceManagement/userExperienceAnalyticsNotAutopilotReadyDevice:
+    get:
+      tags:
+        - deviceManagement.userExperienceAnalyticsNotAutopilotReadyDevice
+      summary: Get userExperienceAnalyticsNotAutopilotReadyDevice from deviceManagement
+      operationId: deviceManagement_ListUserExperienceAnalyticsNotAutopilotReadyDevice
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - autoPilotProfileAssigned
+                - autoPilotProfileAssigned desc
+                - autoPilotRegistered
+                - autoPilotRegistered desc
+                - azureAdJoinType
+                - azureAdJoinType desc
+                - azureAdRegistered
+                - azureAdRegistered desc
+                - deviceName
+                - deviceName desc
+                - managedBy
+                - managedBy desc
+                - manufacturer
+                - manufacturer desc
+                - model
+                - model desc
+                - serialNumber
+                - serialNumber desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - autoPilotProfileAssigned
+                - autoPilotRegistered
+                - azureAdJoinType
+                - azureAdRegistered
+                - deviceName
+                - managedBy
+                - manufacturer
+                - model
+                - serialNumber
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of userExperienceAnalyticsNotAutopilotReadyDevice
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsNotAutopilotReadyDevice'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - deviceManagement.userExperienceAnalyticsNotAutopilotReadyDevice
+      summary: Create new navigation property to userExperienceAnalyticsNotAutopilotReadyDevice for deviceManagement
+      operationId: deviceManagement_CreateUserExperienceAnalyticsNotAutopilotReadyDevice
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsNotAutopilotReadyDevice'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsNotAutopilotReadyDevice'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/deviceManagement/userExperienceAnalyticsNotAutopilotReadyDevice/{userExperienceAnalyticsNotAutopilotReadyDevice-id}':
+    get:
+      tags:
+        - deviceManagement.userExperienceAnalyticsNotAutopilotReadyDevice
+      summary: Get userExperienceAnalyticsNotAutopilotReadyDevice from deviceManagement
+      operationId: deviceManagement_GetUserExperienceAnalyticsNotAutopilotReadyDevice
+      parameters:
+        - name: userExperienceAnalyticsNotAutopilotReadyDevice-id
+          in: path
+          description: 'key: id of userExperienceAnalyticsNotAutopilotReadyDevice'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userExperienceAnalyticsNotAutopilotReadyDevice
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - autoPilotProfileAssigned
+                - autoPilotRegistered
+                - azureAdJoinType
+                - azureAdRegistered
+                - deviceName
+                - managedBy
+                - manufacturer
+                - model
+                - serialNumber
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsNotAutopilotReadyDevice'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - deviceManagement.userExperienceAnalyticsNotAutopilotReadyDevice
+      summary: Update the navigation property userExperienceAnalyticsNotAutopilotReadyDevice in deviceManagement
+      operationId: deviceManagement_UpdateUserExperienceAnalyticsNotAutopilotReadyDevice
+      parameters:
+        - name: userExperienceAnalyticsNotAutopilotReadyDevice-id
+          in: path
+          description: 'key: id of userExperienceAnalyticsNotAutopilotReadyDevice'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userExperienceAnalyticsNotAutopilotReadyDevice
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsNotAutopilotReadyDevice'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceManagement.userExperienceAnalyticsNotAutopilotReadyDevice
+      summary: Delete navigation property userExperienceAnalyticsNotAutopilotReadyDevice for deviceManagement
+      operationId: deviceManagement_DeleteUserExperienceAnalyticsNotAutopilotReadyDevice
+      parameters:
+        - name: userExperienceAnalyticsNotAutopilotReadyDevice-id
+          in: path
+          description: 'key: id of userExperienceAnalyticsNotAutopilotReadyDevice'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userExperienceAnalyticsNotAutopilotReadyDevice
         - name: If-Match
           in: header
           description: ETag
@@ -3923,6 +4147,8 @@ paths:
                 - addressableUserName desc
                 - azureActiveDirectoryDeviceId
                 - azureActiveDirectoryDeviceId desc
+                - azureAdDeviceId
+                - azureAdDeviceId desc
                 - deploymentProfileAssignedDateTime
                 - deploymentProfileAssignedDateTime desc
                 - deploymentProfileAssignmentDetailedStatus
@@ -3943,8 +4169,6 @@ paths:
                 - manufacturer desc
                 - model
                 - model desc
-                - orderIdentifier
-                - orderIdentifier desc
                 - productKey
                 - productKey desc
                 - purchaseOrderIdentifier
@@ -3973,6 +4197,7 @@ paths:
                 - id
                 - addressableUserName
                 - azureActiveDirectoryDeviceId
+                - azureAdDeviceId
                 - deploymentProfileAssignedDateTime
                 - deploymentProfileAssignmentDetailedStatus
                 - deploymentProfileAssignmentStatus
@@ -3983,7 +4208,6 @@ paths:
                 - managedDeviceId
                 - manufacturer
                 - model
-                - orderIdentifier
                 - productKey
                 - purchaseOrderIdentifier
                 - resourceName
@@ -4095,6 +4319,7 @@ paths:
                 - id
                 - addressableUserName
                 - azureActiveDirectoryDeviceId
+                - azureAdDeviceId
                 - deploymentProfileAssignedDateTime
                 - deploymentProfileAssignmentDetailedStatus
                 - deploymentProfileAssignmentStatus
@@ -4105,7 +4330,6 @@ paths:
                 - managedDeviceId
                 - manufacturer
                 - model
-                - orderIdentifier
                 - productKey
                 - purchaseOrderIdentifier
                 - resourceName
@@ -4863,6 +5087,8 @@ paths:
                 - addressableUserName desc
                 - azureActiveDirectoryDeviceId
                 - azureActiveDirectoryDeviceId desc
+                - azureAdDeviceId
+                - azureAdDeviceId desc
                 - deploymentProfileAssignedDateTime
                 - deploymentProfileAssignedDateTime desc
                 - deploymentProfileAssignmentDetailedStatus
@@ -4883,8 +5109,6 @@ paths:
                 - manufacturer desc
                 - model
                 - model desc
-                - orderIdentifier
-                - orderIdentifier desc
                 - productKey
                 - productKey desc
                 - purchaseOrderIdentifier
@@ -4913,6 +5137,7 @@ paths:
                 - id
                 - addressableUserName
                 - azureActiveDirectoryDeviceId
+                - azureAdDeviceId
                 - deploymentProfileAssignedDateTime
                 - deploymentProfileAssignmentDetailedStatus
                 - deploymentProfileAssignmentStatus
@@ -4923,7 +5148,6 @@ paths:
                 - managedDeviceId
                 - manufacturer
                 - model
-                - orderIdentifier
                 - productKey
                 - purchaseOrderIdentifier
                 - resourceName
@@ -5020,6 +5244,7 @@ paths:
                 - id
                 - addressableUserName
                 - azureActiveDirectoryDeviceId
+                - azureAdDeviceId
                 - deploymentProfileAssignedDateTime
                 - deploymentProfileAssignmentDetailedStatus
                 - deploymentProfileAssignmentStatus
@@ -5030,7 +5255,6 @@ paths:
                 - managedDeviceId
                 - manufacturer
                 - model
-                - orderIdentifier
                 - productKey
                 - purchaseOrderIdentifier
                 - resourceName
@@ -5545,6 +5769,8 @@ paths:
                 - id desc
                 - createdDateTime
                 - createdDateTime desc
+                - deployableContentDisplayName
+                - deployableContentDisplayName desc
                 - description
                 - description desc
                 - displayName
@@ -5568,6 +5794,7 @@ paths:
               enum:
                 - id
                 - createdDateTime
+                - deployableContentDisplayName
                 - description
                 - displayName
                 - featureUpdateVersion
@@ -5661,6 +5888,7 @@ paths:
               enum:
                 - id
                 - createdDateTime
+                - deployableContentDisplayName
                 - description
                 - displayName
                 - featureUpdateVersion
@@ -8533,6 +8761,7 @@ paths:
                 - resourceNamespaces
                 - roleAssignments
                 - roleDefinitions
+                - roleAssignmentApprovals
                 - roleAssignmentRequests
                 - roleAssignmentScheduleInstances
                 - roleAssignmentSchedules
@@ -8554,6 +8783,7 @@ paths:
                 - resourceNamespaces
                 - roleAssignments
                 - roleDefinitions
+                - roleAssignmentApprovals
                 - roleAssignmentRequests
                 - roleAssignmentScheduleInstances
                 - roleAssignmentSchedules
@@ -8575,6 +8805,8 @@ paths:
               operationId: roleManagement.Directory.ListRoleAssignments
             roleDefinitions:
               operationId: roleManagement.Directory.ListRoleDefinitions
+            roleAssignmentApprovals:
+              operationId: roleManagement.Directory.ListRoleAssignmentApprovals
             roleAssignmentRequests:
               operationId: roleManagement.Directory.ListRoleAssignmentRequests
             roleAssignmentScheduleInstances:
@@ -9341,6 +9573,488 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /roleManagement/directory/roleAssignmentApprovals:
+    get:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Get roleAssignmentApprovals from roleManagement
+      operationId: roleManagement.directory_ListRoleAssignmentApprovals
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - steps
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - steps
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of approval
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.approval'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Create new navigation property to roleAssignmentApprovals for roleManagement
+      operationId: roleManagement.directory_CreateRoleAssignmentApprovals
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.approval'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.approval'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/directory/roleAssignmentApprovals/{approval-id}':
+    get:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Get roleAssignmentApprovals from roleManagement
+      operationId: roleManagement.directory_GetRoleAssignmentApprovals
+      parameters:
+        - name: approval-id
+          in: path
+          description: 'key: id of approval'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: approval
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - steps
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - steps
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.approval'
+          links:
+            steps:
+              operationId: roleManagement.directory.RoleAssignmentApprovals.ListSteps
+              parameters:
+                approval-id: $request.path.approval-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Update the navigation property roleAssignmentApprovals in roleManagement
+      operationId: roleManagement.directory_UpdateRoleAssignmentApprovals
+      parameters:
+        - name: approval-id
+          in: path
+          description: 'key: id of approval'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: approval
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.approval'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Delete navigation property roleAssignmentApprovals for roleManagement
+      operationId: roleManagement.directory_DeleteRoleAssignmentApprovals
+      parameters:
+        - name: approval-id
+          in: path
+          description: 'key: id of approval'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: approval
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/directory/roleAssignmentApprovals/{approval-id}/steps':
+    get:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Get steps from roleManagement
+      operationId: roleManagement.directory.roleAssignmentApprovals_ListSteps
+      parameters:
+        - name: approval-id
+          in: path
+          description: 'key: id of approval'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: approval
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - assignedToMe
+                - assignedToMe desc
+                - displayName
+                - displayName desc
+                - justification
+                - justification desc
+                - reviewedBy
+                - reviewedBy desc
+                - reviewedDateTime
+                - reviewedDateTime desc
+                - reviewResult
+                - reviewResult desc
+                - status
+                - status desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - assignedToMe
+                - displayName
+                - justification
+                - reviewedBy
+                - reviewedDateTime
+                - reviewResult
+                - status
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of approvalStep
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.approvalStep'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Create new navigation property to steps for roleManagement
+      operationId: roleManagement.directory.roleAssignmentApprovals_CreateSteps
+      parameters:
+        - name: approval-id
+          in: path
+          description: 'key: id of approval'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: approval
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.approvalStep'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.approvalStep'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/directory/roleAssignmentApprovals/{approval-id}/steps/{approvalStep-id}':
+    get:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Get steps from roleManagement
+      operationId: roleManagement.directory.roleAssignmentApprovals_GetSteps
+      parameters:
+        - name: approval-id
+          in: path
+          description: 'key: id of approval'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: approval
+        - name: approvalStep-id
+          in: path
+          description: 'key: id of approvalStep'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: approvalStep
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - assignedToMe
+                - displayName
+                - justification
+                - reviewedBy
+                - reviewedDateTime
+                - reviewResult
+                - status
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.approvalStep'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Update the navigation property steps in roleManagement
+      operationId: roleManagement.directory.roleAssignmentApprovals_UpdateSteps
+      parameters:
+        - name: approval-id
+          in: path
+          description: 'key: id of approval'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: approval
+        - name: approvalStep-id
+          in: path
+          description: 'key: id of approvalStep'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: approvalStep
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.approvalStep'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Delete navigation property steps for roleManagement
+      operationId: roleManagement.directory.roleAssignmentApprovals_DeleteSteps
+      parameters:
+        - name: approval-id
+          in: path
+          description: 'key: id of approval'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: approval
+        - name: approvalStep-id
+          in: path
+          description: 'key: id of approvalStep'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: approvalStep
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/directory/roleAssignmentApprovals/microsoft.graph.filterByCurrentUser(on={on})':
+    get:
+      tags:
+        - roleManagement.Functions
+      summary: Invoke function filterByCurrentUser
+      operationId: roleManagement.directory.roleAssignmentApprovals_filterByCurrentUser
+      parameters:
+        - name: on
+          in: path
+          description: 'Usage: on={on}'
+          required: true
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.approvalFilterByCurrentUserOptions'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.approval'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   /roleManagement/directory/roleAssignmentRequests:
     get:
       tags:
@@ -14401,6 +15115,7 @@ paths:
                 - resourceNamespaces
                 - roleAssignments
                 - roleDefinitions
+                - roleAssignmentApprovals
                 - roleAssignmentRequests
                 - roleAssignmentScheduleInstances
                 - roleAssignmentSchedules
@@ -14422,6 +15137,7 @@ paths:
                 - resourceNamespaces
                 - roleAssignments
                 - roleDefinitions
+                - roleAssignmentApprovals
                 - roleAssignmentRequests
                 - roleAssignmentScheduleInstances
                 - roleAssignmentSchedules
@@ -14443,6 +15159,8 @@ paths:
               operationId: roleManagement.EntitlementManagement.ListRoleAssignments
             roleDefinitions:
               operationId: roleManagement.EntitlementManagement.ListRoleDefinitions
+            roleAssignmentApprovals:
+              operationId: roleManagement.EntitlementManagement.ListRoleAssignmentApprovals
             roleAssignmentRequests:
               operationId: roleManagement.EntitlementManagement.ListRoleAssignmentRequests
             roleAssignmentScheduleInstances:
@@ -15209,6 +15927,488 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /roleManagement/entitlementManagement/roleAssignmentApprovals:
+    get:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Get roleAssignmentApprovals from roleManagement
+      operationId: roleManagement.entitlementManagement_ListRoleAssignmentApprovals
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - steps
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - steps
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of approval
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.approval'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Create new navigation property to roleAssignmentApprovals for roleManagement
+      operationId: roleManagement.entitlementManagement_CreateRoleAssignmentApprovals
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.approval'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.approval'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/entitlementManagement/roleAssignmentApprovals/{approval-id}':
+    get:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Get roleAssignmentApprovals from roleManagement
+      operationId: roleManagement.entitlementManagement_GetRoleAssignmentApprovals
+      parameters:
+        - name: approval-id
+          in: path
+          description: 'key: id of approval'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: approval
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - steps
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - steps
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.approval'
+          links:
+            steps:
+              operationId: roleManagement.entitlementManagement.RoleAssignmentApprovals.ListSteps
+              parameters:
+                approval-id: $request.path.approval-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Update the navigation property roleAssignmentApprovals in roleManagement
+      operationId: roleManagement.entitlementManagement_UpdateRoleAssignmentApprovals
+      parameters:
+        - name: approval-id
+          in: path
+          description: 'key: id of approval'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: approval
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.approval'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Delete navigation property roleAssignmentApprovals for roleManagement
+      operationId: roleManagement.entitlementManagement_DeleteRoleAssignmentApprovals
+      parameters:
+        - name: approval-id
+          in: path
+          description: 'key: id of approval'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: approval
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/entitlementManagement/roleAssignmentApprovals/{approval-id}/steps':
+    get:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Get steps from roleManagement
+      operationId: roleManagement.entitlementManagement.roleAssignmentApprovals_ListSteps
+      parameters:
+        - name: approval-id
+          in: path
+          description: 'key: id of approval'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: approval
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - assignedToMe
+                - assignedToMe desc
+                - displayName
+                - displayName desc
+                - justification
+                - justification desc
+                - reviewedBy
+                - reviewedBy desc
+                - reviewedDateTime
+                - reviewedDateTime desc
+                - reviewResult
+                - reviewResult desc
+                - status
+                - status desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - assignedToMe
+                - displayName
+                - justification
+                - reviewedBy
+                - reviewedDateTime
+                - reviewResult
+                - status
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of approvalStep
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.approvalStep'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Create new navigation property to steps for roleManagement
+      operationId: roleManagement.entitlementManagement.roleAssignmentApprovals_CreateSteps
+      parameters:
+        - name: approval-id
+          in: path
+          description: 'key: id of approval'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: approval
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.approvalStep'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.approvalStep'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/entitlementManagement/roleAssignmentApprovals/{approval-id}/steps/{approvalStep-id}':
+    get:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Get steps from roleManagement
+      operationId: roleManagement.entitlementManagement.roleAssignmentApprovals_GetSteps
+      parameters:
+        - name: approval-id
+          in: path
+          description: 'key: id of approval'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: approval
+        - name: approvalStep-id
+          in: path
+          description: 'key: id of approvalStep'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: approvalStep
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - assignedToMe
+                - displayName
+                - justification
+                - reviewedBy
+                - reviewedDateTime
+                - reviewResult
+                - status
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.approvalStep'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Update the navigation property steps in roleManagement
+      operationId: roleManagement.entitlementManagement.roleAssignmentApprovals_UpdateSteps
+      parameters:
+        - name: approval-id
+          in: path
+          description: 'key: id of approval'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: approval
+        - name: approvalStep-id
+          in: path
+          description: 'key: id of approvalStep'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: approvalStep
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.approvalStep'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Delete navigation property steps for roleManagement
+      operationId: roleManagement.entitlementManagement.roleAssignmentApprovals_DeleteSteps
+      parameters:
+        - name: approval-id
+          in: path
+          description: 'key: id of approval'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: approval
+        - name: approvalStep-id
+          in: path
+          description: 'key: id of approvalStep'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: approvalStep
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/entitlementManagement/roleAssignmentApprovals/microsoft.graph.filterByCurrentUser(on={on})':
+    get:
+      tags:
+        - roleManagement.Functions
+      summary: Invoke function filterByCurrentUser
+      operationId: roleManagement.entitlementManagement.roleAssignmentApprovals_filterByCurrentUser
+      parameters:
+        - name: on
+          in: path
+          description: 'Usage: on={on}'
+          required: true
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.approvalFilterByCurrentUserOptions'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.approval'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   /roleManagement/entitlementManagement/roleAssignmentRequests:
     get:
       tags:
@@ -21010,10 +22210,6 @@ components:
               type: string
               description: The Import Id of the Windows autopilot device.
               nullable: true
-            orderIdentifier:
-              type: string
-              description: Order Id of the Windows autopilot device. - Deprecate
-              nullable: true
             productKey:
               type: string
               description: Product Key of the Windows autopilot device.
@@ -21027,6 +22223,47 @@ components:
           additionalProperties:
             type: object
           description: Imported windows autopilot devices.
+    microsoft.graph.userExperienceAnalyticsNotAutopilotReadyDevice:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: userExperienceAnalyticsNotAutopilotReadyDevice
+          type: object
+          properties:
+            autoPilotProfileAssigned:
+              type: boolean
+              description: The intune device's autopilotProfileAssigned.
+            autoPilotRegistered:
+              type: boolean
+              description: The intune device's autopilotRegistered.
+            azureAdJoinType:
+              type: string
+              description: The intune device's azure Ad joinType.
+              nullable: true
+            azureAdRegistered:
+              $ref: '#/components/schemas/microsoft.graph.azureAdRegisteredState'
+            deviceName:
+              type: string
+              description: The intune device's name.
+              nullable: true
+            managedBy:
+              type: string
+              description: The intune device's managed by.
+              nullable: true
+            manufacturer:
+              type: string
+              description: The intune device's manufacturer.
+              nullable: true
+            model:
+              type: string
+              description: The intune device's model.
+              nullable: true
+            serialNumber:
+              type: string
+              description: The intune device's serial number.
+              nullable: true
+          additionalProperties:
+            type: object
+          description: The user experience analytics Device not windows autopilot ready.
     microsoft.graph.windowsAutopilotDeploymentProfile:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -21102,6 +22339,10 @@ components:
               nullable: true
             azureActiveDirectoryDeviceId:
               type: string
+              description: AAD Device ID - to be deprecated
+              nullable: true
+            azureAdDeviceId:
+              type: string
               description: AAD Device ID
               nullable: true
             deploymentProfileAssignedDateTime:
@@ -21139,10 +22380,6 @@ components:
             model:
               type: string
               description: Model name of the Windows autopilot device.
-              nullable: true
-            orderIdentifier:
-              type: string
-              description: Order Identifier of the Windows autopilot device - Deprecated
               nullable: true
             productKey:
               type: string
@@ -21228,6 +22465,10 @@ components:
               type: string
               description: The date time that the profile was created.
               format: date-time
+            deployableContentDisplayName:
+              type: string
+              description: Friendly display name of the quality update profile deployable content
+              nullable: true
             description:
               type: string
               description: The description of the profile which is specified by the user.
@@ -21548,6 +22789,10 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+            roleAssignmentApprovals:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.approval'
             roleAssignmentRequests:
               type: array
               items:
@@ -21646,6 +22891,62 @@ components:
               $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
           additionalProperties:
             type: object
+    microsoft.graph.approval:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: approval
+          type: object
+          properties:
+            steps:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.approvalStep'
+          additionalProperties:
+            type: object
+    microsoft.graph.approvalStep:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: approvalStep
+          type: object
+          properties:
+            assignedToMe:
+              type: boolean
+              description: Indicates whether the step is assigned to the calling user to review. Read-only.
+              nullable: true
+            displayName:
+              type: string
+              description: The label provided by the policy creator to identify an approval step. Read-only.
+              nullable: true
+            justification:
+              type: string
+              description: The justification associated with the approval step decision.
+              nullable: true
+            reviewedBy:
+              $ref: '#/components/schemas/microsoft.graph.identity'
+            reviewedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when a decision was recorded. The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              format: date-time
+              nullable: true
+            reviewResult:
+              type: string
+              description: 'The result of this approval record. Possible values include: NotReviewed, Approved, Denied.'
+              nullable: true
+            status:
+              type: string
+              description: 'The step status. Possible values: InProgress, Initializing, Completed, Expired. Read-only.'
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.approvalFilterByCurrentUserOptions:
+      title: approvalFilterByCurrentUserOptions
+      enum:
+        - target
+        - createdBy
+        - approver
+        - unknownFutureValue
+      type: string
     microsoft.graph.unifiedRoleAssignmentRequest:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.request'
@@ -22188,6 +23489,13 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.azureAdRegisteredState:
+      title: azureAdRegisteredState
+      enum:
+        - no
+        - yes
+        - unknown
+      type: string
     microsoft.graph.windowsAutopilotDeviceType:
       title: windowsAutopilotDeviceType
       enum:
@@ -22307,6 +23615,20 @@ components:
             nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.identity:
+      title: identity
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          nullable: true
+        id:
+          type: string
+          description: Unique identifier for the identity.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.request:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -22346,7 +23668,7 @@ components:
         startDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''.'
+          description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
           nullable: true
       additionalProperties:
@@ -22432,7 +23754,7 @@ components:
         endDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''.'
+          description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
           nullable: true
         type:
@@ -22470,20 +23792,6 @@ components:
           additionalProperties:
             type: object
           description: The structure of this object is service-specific
-      additionalProperties:
-        type: object
-    microsoft.graph.identity:
-      title: identity
-      type: object
-      properties:
-        displayName:
-          type: string
-          description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
-          nullable: true
-        id:
-          type: string
-          description: Unique identifier for the identity.
-          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.expirationPatternType:

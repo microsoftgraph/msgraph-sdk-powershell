@@ -7,17 +7,12 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
     using System.Collections.Generic;
     using System.Linq;
     using System.Management.Automation;
-    using System.Net.Http;
     using System.Threading;
     using System.Threading.Tasks;
     using System.Net;
-    using System.Globalization;
     using System.Collections;
     using System.Security.Cryptography.X509Certificates;
 
-    using Identity.Client;
-
-    using Microsoft.Graph.Auth;
     using Microsoft.Graph.PowerShell.Authentication.Helpers;
     using Microsoft.Graph.PowerShell.Authentication.Models;
 
@@ -25,6 +20,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
     using Common;
 
     using static Helpers.AsyncHelpers;
+    using Microsoft.Graph.Authentication.Core;
+    using Microsoft.Graph.PowerShell.Authentication.Utilities;
 
     [Cmdlet(VerbsCommunications.Connect, "MgGraph", DefaultParameterSetName = Constants.UserParameterSet)]
     [Alias("Connect-Graph")]
@@ -168,7 +165,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                     case Constants.UserParameterSet:
                         {
                             // 2 mins timeout. 1 min < HTTP timeout.
-                            TimeSpan authTimeout = new TimeSpan(0, 0, Constants.MaxDeviceCodeTimeOut);
+                            TimeSpan authTimeout = new TimeSpan(0, 0, Core.Constants.MaxDeviceCodeTimeOut);
                             // To avoid re-initializing the tokenSource, use CancelAfter
                             _cancellationTokenSource.CancelAfter(authTimeout);
                             authContext.AuthType = AuthenticationType.Delegated;
@@ -201,71 +198,12 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 
                 try
                 {
-                    // Gets a static instance of IAuthenticationProvider when the client app hasn't changed.
-                    IAuthenticationProvider authProvider = AuthenticationHelpers.GetAuthProvider(authContext);
-                    IClientApplicationBase clientApplication = null;
-                    if (ParameterSetName == Constants.UserParameterSet)
-                    {
-                        clientApplication = (authProvider as DeviceCodeProvider).ClientApplication;
-                    }
-                    else if (ParameterSetName == Constants.AppParameterSet)
-                    {
-                        clientApplication = (authProvider as ClientCredentialProvider).ClientApplication;
-                    }
-
-                    // Incremental scope consent without re-instantiating the auth provider. We will use a static instance.
-                    GraphRequestContext graphRequestContext = new GraphRequestContext();
-                    graphRequestContext.CancellationToken = _cancellationTokenSource.Token;
-                    graphRequestContext.MiddlewareOptions = new Dictionary<string, IMiddlewareOption>
-                {
-                    {
-                        typeof(AuthenticationHandlerOption).ToString(),
-                        new AuthenticationHandlerOption
-                        {
-                            AuthenticationProviderOption = new AuthenticationProviderOption
-                            {
-                                Scopes = authContext.Scopes,
-                                ForceRefresh = ForceRefresh
-                            }
-                        }
-                    }
-                };
-
-                    // Trigger consent.
-                    HttpRequestMessage httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, "https://graph.microsoft.com/v1.0/me");
-                    httpRequestMessage.Properties.Add(typeof(GraphRequestContext).ToString(), graphRequestContext);
-                    await authProvider.AuthenticateRequestAsync(httpRequestMessage);
-
-                    IAccount account = null;
-                    if (clientApplication != null)
-                    {
-                        // Only get accounts when we are using MSAL to get an access token.
-                        IEnumerable<IAccount> accounts = clientApplication.GetAccountsAsync().GetAwaiter().GetResult();
-                        account = accounts.FirstOrDefault();
-                    }
-                    DecodeJWT(httpRequestMessage.Headers.Authorization?.Parameter, account, ref authContext);
-
                     // Save auth context to session state.
-                    GraphSession.Instance.AuthContext = authContext;
+                    GraphSession.Instance.AuthContext = await Authenticator.AuthenticateAsync(authContext, ForceRefresh, _cancellationTokenSource.Token);
                 }
-                catch (AuthenticationException authEx)
+                catch(Exception ex)
                 {
-                    if ((authEx.InnerException is TaskCanceledException) && _cancellationTokenSource.Token.IsCancellationRequested)
-                    {
-                        // DeviceCodeTimeout
-                        throw new Exception(string.Format(
-                                CultureInfo.CurrentCulture,
-                                ErrorConstants.Message.DeviceCodeTimeout,
-                                Constants.MaxDeviceCodeTimeOut));
-                    }
-                    else
-                    {
-                        throw authEx.InnerException ?? authEx;
-                    }
-                }
-                catch (Exception ex)
-                {
-                    throw ex.InnerException ?? ex;
+                    throw ex;
                 }
 
                 WriteObject("Welcome To Microsoft Graph!");
@@ -348,35 +286,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             }
         }
 
-        private void DecodeJWT(string token, IAccount account, ref IAuthContext authContext)
-        {
-            JwtPayload jwtPayload = JwtHelpers.DecodeToObject<JwtPayload>(token);
-            if (authContext.AuthType == AuthenticationType.UserProvidedAccessToken)
-            {
-                if (jwtPayload == null)
-                {
-                    throw new Exception(string.Format(
-                            CultureInfo.CurrentCulture,
-                            ErrorConstants.Message.InvalidUserProvidedToken,
-                            nameof(AccessToken)));
-                }
-
-                if (jwtPayload.Exp <= JwtHelpers.ConvertToUnixTimestamp(DateTime.UtcNow + TimeSpan.FromMinutes(Constants.TokenExpirationBufferInMinutes)))
-                {
-                    throw new Exception(string.Format(
-                            CultureInfo.CurrentCulture,
-                            ErrorConstants.Message.ExpiredUserProvidedToken,
-                            nameof(AccessToken)));
-                }
-            }
-
-            authContext.ClientId = jwtPayload?.Appid ?? authContext.ClientId;
-            authContext.Scopes = jwtPayload?.Scp?.Split(' ') ?? jwtPayload?.Roles;
-            authContext.TenantId = jwtPayload?.Tid ?? account?.HomeAccountId?.TenantId;
-            authContext.AppName = jwtPayload?.AppDisplayname;
-            authContext.Account = jwtPayload?.Upn ?? account?.Username;
-        }
-
         /// <summary>
         /// Globally initializes GraphSession.
         /// </summary>
@@ -393,6 +302,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         public void OnRemove(PSModuleInfo psModuleInfo)
         {
             GraphSession.Reset();
+            DependencyAssemblyResolver.Reset();
         }
     }
 }

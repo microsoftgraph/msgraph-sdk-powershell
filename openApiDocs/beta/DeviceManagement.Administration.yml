@@ -13420,11 +13420,12 @@ components:
         - androidEnterprise
         - windows10x
         - androidnGMS
-        - cloudPC
+        - chromeOS
         - linux
         - blackberry
         - palm
         - unknown
+        - cloudPC
       type: string
     microsoft.graph.managementAgentType:
       title: managementAgentType

@@ -10,10 +10,6 @@ parameters:
     displayName: 'Authentication Module Name'
     type: string
     default: 'Authentication'
-  - name: AUTH_MODULE_DLL_PATTERN
-    displayName: 'Authentication Module DLL Pattern'
-    type: string
-    default: 'Microsoft.Graph.Authentication.dll'
   - name: Api_Key
     displayName: 'Api Key'
     type: string
@@ -78,7 +74,8 @@ jobs:
     inputs:
       ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet (AKV)'
       FolderPath: $(AUTH_MODULE_PATH)
-      Pattern: $(AUTH_MODULE_DLL_PATTERN)
+      # Recursively finds files matching these patterns:
+      Pattern: 'Microsoft.Graph.Authentication.dll, Microsoft.Graph.Authentication.Core.dll'
       signConfigType: inlineSignParams
       inlineOperation: |
        [
@@ -105,7 +102,8 @@ jobs:
     inputs:
       ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet (AKV)'
       FolderPath: $(AUTH_MODULE_PATH)
-      Pattern: $(AUTH_MODULE_DLL_PATTERN)
+      # Recursively finds files matching these patterns:
+      Pattern: 'Microsoft.Graph.Authentication.dll, Microsoft.Graph.Authentication.Core.dll, InitializeAssemblyResolver.ps1'
       signConfigType: inlineSignParams
       inlineOperation: |
        [

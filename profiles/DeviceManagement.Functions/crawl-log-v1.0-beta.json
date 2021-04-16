@@ -2,236 +2,244 @@
   "resources": [],
   "operations": {
     "/deviceManagement/applePushNotificationCertificate/microsoft.graph.downloadApplePushNotificationCertificateSigningRequest()": {
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
+    },
+    "/deviceManagement/assignmentFilters/microsoft.graph.getState()": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
     },
     "/deviceManagement/auditEvents/microsoft.graph.getAuditActivityTypes(category='{category}')": {
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
     },
     "/deviceManagement/auditEvents/microsoft.graph.getAuditCategories()": {
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
     },
     "/deviceManagement/comanagedDevices/{managedDevice-id}/microsoft.graph.getFileVaultKey()": {
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
     },
     "/deviceManagement/comanagedDevices/{managedDevice-id}/microsoft.graph.getNonCompliantSettings()": {
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
     },
     "/deviceManagement/configManagerCollections/microsoft.graph.getPolicySummary(policyId='{policyId}')": {
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
     },
     "/deviceManagement/depOnboardingSettings/{depOnboardingSetting-id}/enrollmentProfiles/{enrollmentProfile-id}/microsoft.graph.exportMobileConfig()": {
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
     },
     "/deviceManagement/depOnboardingSettings/{depOnboardingSetting-id}/microsoft.graph.getEncryptionPublicKey()": {
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
     },
     "/deviceManagement/depOnboardingSettings/microsoft.graph.getExpiringVppTokenCount(expiringBeforeDateTime='{expiringBeforeDateTime}')": {
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
     },
     "/deviceManagement/deviceComplianceScripts/{deviceComplianceScript-id}/deviceRunStates/{deviceComplianceScriptDeviceState-id}/managedDevice/microsoft.graph.getFileVaultKey()": {
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
     },
     "/deviceManagement/deviceComplianceScripts/{deviceComplianceScript-id}/deviceRunStates/{deviceComplianceScriptDeviceState-id}/managedDevice/microsoft.graph.getNonCompliantSettings()": {
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
     },
     "/deviceManagement/deviceConfigurations/microsoft.graph.getIosAvailableUpdateVersions()": {
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
     },
     "/deviceManagement/deviceCustomAttributeShellScripts/{deviceCustomAttributeShellScript-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.getFileVaultKey()": {
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
     },
     "/deviceManagement/deviceCustomAttributeShellScripts/{deviceCustomAttributeShellScript-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.getNonCompliantSettings()": {
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
     },
     "/deviceManagement/deviceCustomAttributeShellScripts/{deviceCustomAttributeShellScript-id}/userRunStates/{deviceManagementScriptUserState-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.getFileVaultKey()": {
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
     },
     "/deviceManagement/deviceCustomAttributeShellScripts/{deviceCustomAttributeShellScript-id}/userRunStates/{deviceManagementScriptUserState-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.getNonCompliantSettings()": {
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
     },
     "/deviceManagement/deviceHealthScripts/{deviceHealthScript-id}/deviceRunStates/{deviceHealthScriptDeviceState-id}/managedDevice/microsoft.graph.getFileVaultKey()": {
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
     },
     "/deviceManagement/deviceHealthScripts/{deviceHealthScript-id}/deviceRunStates/{deviceHealthScriptDeviceState-id}/managedDevice/microsoft.graph.getNonCompliantSettings()": {
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
     },
     "/deviceManagement/deviceHealthScripts/{deviceHealthScript-id}/microsoft.graph.getRemediationHistory()": {
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
     },
     "/deviceManagement/deviceHealthScripts/microsoft.graph.areGlobalScriptsAvailable()": {
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
     },
     "/deviceManagement/deviceHealthScripts/microsoft.graph.getRemediationSummary()": {
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
     },
     "/deviceManagement/deviceManagementScripts/{deviceManagementScript-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.getFileVaultKey()": {
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
     },
     "/deviceManagement/deviceManagementScripts/{deviceManagementScript-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.getNonCompliantSettings()": {
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
     },
     "/deviceManagement/deviceManagementScripts/{deviceManagementScript-id}/userRunStates/{deviceManagementScriptUserState-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.getFileVaultKey()": {
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
     },
     "/deviceManagement/deviceManagementScripts/{deviceManagementScript-id}/userRunStates/{deviceManagementScriptUserState-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.getNonCompliantSettings()": {
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
     },
     "/deviceManagement/deviceShellScripts/{deviceShellScript-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.getFileVaultKey()": {
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
     },
     "/deviceManagement/deviceShellScripts/{deviceShellScript-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.getNonCompliantSettings()": {
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
     },
     "/deviceManagement/deviceShellScripts/{deviceShellScript-id}/userRunStates/{deviceManagementScriptUserState-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.getFileVaultKey()": {
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
     },
     "/deviceManagement/deviceShellScripts/{deviceShellScript-id}/userRunStates/{deviceManagementScriptUserState-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.getNonCompliantSettings()": {
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
     },
     "/deviceManagement/intents/{deviceManagementIntent-id}/microsoft.graph.compare(templateId='{templateId}')": {
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
     },
     "/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.getFileVaultKey()": {
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
     },
     "/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.getNonCompliantSettings()": {
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
     },
     "/deviceManagement/managementConditions/{managementCondition-id}/managementConditionStatements/microsoft.graph.getManagementConditionStatementsForPlatform(platform={platform})": {
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
     },
     "/deviceManagement/managementConditions/microsoft.graph.getManagementConditionsForPlatform(platform={platform})": {
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
     },
     "/deviceManagement/managementConditionStatements/{managementConditionStatement-id}/managementConditions/microsoft.graph.getManagementConditionsForPlatform(platform={platform})": {
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
     },
     "/deviceManagement/managementConditionStatements/{managementConditionStatement-id}/microsoft.graph.getManagementConditionStatementExpressionString()": {
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
     },
     "/deviceManagement/managementConditionStatements/microsoft.graph.getManagementConditionStatementsForPlatform(platform={platform})": {
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
     },
     "/deviceManagement/microsoft.graph.getAssignedRoleDetails()": {
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
     },
     "/deviceManagement/microsoft.graph.getComanagedDevicesSummary()": {
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
     },
     "/deviceManagement/microsoft.graph.getComanagementEligibleDevicesSummary()": {
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
     },
     "/deviceManagement/microsoft.graph.getEffectivePermissions()": {
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
     },
     "/deviceManagement/microsoft.graph.getEffectivePermissions(scope='{scope}')": {
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
     },
     "/deviceManagement/microsoft.graph.getRoleScopeTagsByIds(ids=@ids)": {
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
     },
     "/deviceManagement/microsoft.graph.getRoleScopeTagsByResource(resource='{resource}')": {
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
     },
     "/deviceManagement/microsoft.graph.getSuggestedEnrollmentLimit(enrollmentType='{enrollmentType}')": {
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
     },
     "/deviceManagement/microsoft.graph.scopedForResource(resource='{resource}')": {
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
+    },
+    "/deviceManagement/microsoft.graph.userExperienceAnalyticsSummarizeWorkFromAnywhereDevices()": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
     },
     "/deviceManagement/microsoft.graph.verifyWindowsEnrollmentAutoDiscovery(domainName='{domainName}')": {
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
     },
     "/deviceManagement/resourceOperations/{resourceOperation-id}/microsoft.graph.getScopesForUser(userid='{userid}')": {
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
     },
     "/deviceManagement/roleAssignments/{deviceAndAppManagementRoleAssignment-id}/roleScopeTags/microsoft.graph.hasCustomRoleScopeTag()": {
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
     },
     "/deviceManagement/roleScopeTags/microsoft.graph.hasCustomRoleScopeTag()": {
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
     },
     "/deviceManagement/templates/{deviceManagementTemplate-id}/microsoft.graph.compare(templateId='{templateId}')": {
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
     },
     "/deviceManagement/templates/{deviceManagementTemplate-id}/migratableTo/{deviceManagementTemplate-id1}/microsoft.graph.compare(templateId='{templateId}')": {
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
     },
     "/deviceManagement/userExperienceAnalyticsDevicePerformance/microsoft.graph.summarizeDevicePerformanceDevices(summarizeBy={summarizeBy})": {
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
     },
     "/deviceManagement/userExperienceAnalyticsRegressionSummary/microsoft.graph.summarizeDeviceRegressionPerformance(summarizeBy={summarizeBy})": {
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
     },
     "/deviceManagement/userExperienceAnalyticsRemoteConnection/microsoft.graph.summarizeDeviceRemoteConnection(summarizeBy={summarizeBy})": {
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
     },
     "/deviceManagement/userExperienceAnalyticsResourcePerformance/microsoft.graph.summarizeDeviceResourcePerformance(summarizeBy={summarizeBy})": {
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
     },
     "/deviceManagement/virtualEndpoint/deviceImages/microsoft.graph.getSourceImages()": {
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
     },
     "/deviceManagement/virtualEndpoint/microsoft.graph.getEffectivePermissions()": {
-      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
     }
   }
 }

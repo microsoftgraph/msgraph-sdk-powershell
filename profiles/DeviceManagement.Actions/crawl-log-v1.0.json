@@ -2,112 +2,112 @@
   "resources": [],
   "operations": {
     "/deviceManagement/deviceCompliancePolicies/{deviceCompliancePolicy-id}/microsoft.graph.assign": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml"
     },
     "/deviceManagement/deviceCompliancePolicies/{deviceCompliancePolicy-id}/microsoft.graph.scheduleActionsForRules": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml"
     },
     "/deviceManagement/deviceConfigurations/{deviceConfiguration-id}/microsoft.graph.assign": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml"
     },
     "/deviceManagement/deviceEnrollmentConfigurations/{deviceEnrollmentConfiguration-id}/microsoft.graph.assign": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml"
     },
     "/deviceManagement/deviceEnrollmentConfigurations/{deviceEnrollmentConfiguration-id}/microsoft.graph.setPriority": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml"
     },
     "/deviceManagement/exchangeConnectors/{deviceManagementExchangeConnector-id}/microsoft.graph.sync": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml"
     },
     "/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.bypassActivationLock": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml"
     },
     "/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.cleanWindowsDevice": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml"
     },
     "/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.deleteUserFromSharedAppleDevice": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml"
     },
     "/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.disableLostMode": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml"
     },
     "/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.locateDevice": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml"
     },
     "/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.logoutSharedAppleDeviceActiveUser": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml"
     },
     "/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.rebootNow": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml"
     },
     "/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.recoverPasscode": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml"
     },
     "/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.remoteLock": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml"
     },
     "/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.requestRemoteAssistance": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml"
     },
     "/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.resetPasscode": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml"
     },
     "/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.retire": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml"
     },
     "/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.shutDown": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml"
     },
     "/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.syncDevice": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml"
     },
     "/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.updateWindowsDeviceAccount": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml"
     },
     "/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.windowsDefenderScan": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml"
     },
     "/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.windowsDefenderUpdateSignatures": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml"
     },
     "/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.wipe": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml"
     },
     "/deviceManagement/notificationMessageTemplates/{notificationMessageTemplate-id}/microsoft.graph.sendTestMessage": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml"
     },
     "/deviceManagement/remoteAssistancePartners/{remoteAssistancePartner-id}/microsoft.graph.beginOnboarding": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml"
     },
     "/deviceManagement/remoteAssistancePartners/{remoteAssistancePartner-id}/microsoft.graph.disconnect": {
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml"
     }
   }
 }

@@ -2,128 +2,116 @@
   "resources": [],
   "operations": {
     "/applications": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/applications/{application-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/applications/{application-id}/createdOnBehalfOf": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/applications/{application-id}/createdOnBehalfOf/$ref": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/applications/{application-id}/extensionProperties": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/applications/{application-id}/extensionProperties/{extensionProperty-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/applications/{application-id}/homeRealmDiscoveryPolicies": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/applications/{application-id}/homeRealmDiscoveryPolicies/$ref": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/applications/{application-id}/logo": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/applications/{application-id}/microsoft.graph.addKey": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/applications/{application-id}/microsoft.graph.addPassword": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/applications/{application-id}/microsoft.graph.checkMemberGroups": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/applications/{application-id}/microsoft.graph.checkMemberObjects": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/applications/{application-id}/microsoft.graph.getMemberGroups": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/applications/{application-id}/microsoft.graph.getMemberObjects": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/applications/{application-id}/microsoft.graph.removeKey": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/applications/{application-id}/microsoft.graph.removePassword": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/applications/{application-id}/microsoft.graph.restore": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/applications/{application-id}/owners": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/applications/{application-id}/owners/$ref": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/applications/{application-id}/tokenIssuancePolicies": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/applications/{application-id}/tokenIssuancePolicies/$ref": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/applications/{application-id}/tokenLifetimePolicies": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/applications/{application-id}/tokenLifetimePolicies/$ref": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/applications/microsoft.graph.delta()": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/applications/microsoft.graph.getAvailableExtensionProperties": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/applications/microsoft.graph.getByIds": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/applications/microsoft.graph.validateProperties": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
-    },
-    "/applicationTemplates": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
-    },
-    "/applicationTemplates/{applicationTemplate-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
-    },
-    "/applicationTemplates/{applicationTemplate-id}/microsoft.graph.instantiate": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/applicationTemplates": {
       "apiVersion": "v1.0",
@@ -138,192 +126,192 @@
       "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/groups/{group-id}/appRoleAssignments": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/groups/{group-id}/appRoleAssignments/{appRoleAssignment-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/servicePrincipals": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/servicePrincipals/{servicePrincipal-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/servicePrincipals/{servicePrincipal-id}/appRoleAssignedTo": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/servicePrincipals/{servicePrincipal-id}/appRoleAssignedTo/{appRoleAssignment-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/servicePrincipals/{servicePrincipal-id}/appRoleAssignments": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/servicePrincipals/{servicePrincipal-id}/appRoleAssignments/{appRoleAssignment-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/servicePrincipals/{servicePrincipal-id}/claimsMappingPolicies": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/servicePrincipals/{servicePrincipal-id}/claimsMappingPolicies/$ref": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/servicePrincipals/{servicePrincipal-id}/createdObjects": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/servicePrincipals/{servicePrincipal-id}/createdObjects/$ref": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/servicePrincipals/{servicePrincipal-id}/delegatedPermissionClassifications": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/servicePrincipals/{servicePrincipal-id}/delegatedPermissionClassifications/{delegatedPermissionClassification-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/servicePrincipals/{servicePrincipal-id}/endpoints": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/servicePrincipals/{servicePrincipal-id}/endpoints/{endpoint-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/servicePrincipals/{servicePrincipal-id}/homeRealmDiscoveryPolicies": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/servicePrincipals/{servicePrincipal-id}/homeRealmDiscoveryPolicies/$ref": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/servicePrincipals/{servicePrincipal-id}/memberOf": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/servicePrincipals/{servicePrincipal-id}/memberOf/$ref": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/servicePrincipals/{servicePrincipal-id}/microsoft.graph.addKey": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/servicePrincipals/{servicePrincipal-id}/microsoft.graph.addPassword": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/servicePrincipals/{servicePrincipal-id}/microsoft.graph.checkMemberGroups": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/servicePrincipals/{servicePrincipal-id}/microsoft.graph.checkMemberObjects": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/servicePrincipals/{servicePrincipal-id}/microsoft.graph.getMemberGroups": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/servicePrincipals/{servicePrincipal-id}/microsoft.graph.getMemberObjects": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/servicePrincipals/{servicePrincipal-id}/microsoft.graph.removeKey": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/servicePrincipals/{servicePrincipal-id}/microsoft.graph.removePassword": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/servicePrincipals/{servicePrincipal-id}/microsoft.graph.restore": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/servicePrincipals/{servicePrincipal-id}/oauth2PermissionGrants": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/servicePrincipals/{servicePrincipal-id}/oauth2PermissionGrants/$ref": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/servicePrincipals/{servicePrincipal-id}/ownedObjects": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/servicePrincipals/{servicePrincipal-id}/ownedObjects/$ref": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/servicePrincipals/{servicePrincipal-id}/owners": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/servicePrincipals/{servicePrincipal-id}/owners/$ref": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/servicePrincipals/{servicePrincipal-id}/tokenIssuancePolicies": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/servicePrincipals/{servicePrincipal-id}/tokenIssuancePolicies/$ref": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/servicePrincipals/{servicePrincipal-id}/tokenLifetimePolicies": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/servicePrincipals/{servicePrincipal-id}/tokenLifetimePolicies/$ref": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/servicePrincipals/{servicePrincipal-id}/transitiveMemberOf": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/servicePrincipals/{servicePrincipal-id}/transitiveMemberOf/$ref": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/servicePrincipals/microsoft.graph.delta()": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/servicePrincipals/microsoft.graph.getAvailableExtensionProperties": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/servicePrincipals/microsoft.graph.getByIds": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/servicePrincipals/microsoft.graph.validateProperties": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/users/{user-id}/appRoleAssignments": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
     "/users/{user-id}/appRoleAssignments/{appRoleAssignment-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Applications.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     }
   }
 }

@@ -53,7 +53,7 @@ try {
                 Write-Host "Crawling '$moduleName' paths for resources and operations ..." -ForegroundColor Green
                 $crawlResult = [ordered]@{resources= @(); operations = [ordered]@{}}
                 foreach ($path in ($allPaths | Sort-Object -Property endpoint)) {
-                    $crawlResult.operations[$path.endpoint] = (@{apiVersion = $path.apiVersion; originalLocation = $path.originalLocation})
+                    $crawlResult.operations[$path.endpoint] = ([ordered]@{apiVersion = $path.apiVersion; originalLocation = $path.originalLocation})
                 }
                 $telemetryDir = Join-Path $ModuleProfilesDirectory "crawl-log-$profileName.json"
                 Set-Content -Path $telemetryDir -Value ($crawlResult | ConvertTo-Json)
@@ -85,7 +85,7 @@ $profilesInYaml
     # Get all profile defintions of a module and generate a single readme.
     foreach ($moduleItem in (Get-ChildItem $ProfilesDirectory)) {
         $definitionsRelativePaths = @{ require = @()}
-        foreach ($moduleDefinition in (Get-ChildItem -Filter *.md -Path "$($moduleItem.FullName)/definitions")) {
+        foreach ($moduleDefinition in (Get-ChildItem -Filter *.md -Path "$($moduleItem.FullName)/definitions" | Sort-Object -Property name -desc)) {
             $definitionsRelativePaths.require += '$(this-folder)/definitions/'+ $moduleDefinition.Name
         }
         $definitionsRelativePathsAsYaml = ($definitionsRelativePaths | Sort-Object -Property require | ConvertTo-Yaml)

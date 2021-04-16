@@ -2,76 +2,48 @@
   "resources": [],
   "operations": {
     "/auditLogs": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/auditLogs/directoryAudits": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/auditLogs/directoryAudits/{directoryAudit-id}": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/auditLogs/directoryProvisioning": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/auditLogs/directoryProvisioning/{provisioningObjectSummary-id}": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/auditLogs/provisioning": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/auditLogs/provisioning/{provisioningObjectSummary-id}": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/auditLogs/restrictedSignIns": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/auditLogs/restrictedSignIns/{restrictedSignIn-id}": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/auditLogs/signIns": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/auditLogs/signIns/{signIn-id}": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/deviceManagement/reports": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/deviceManagement/reports/cachedReportConfigurations": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/deviceManagement/reports/cachedReportConfigurations/{deviceManagementCachedReportConfiguration-id}": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/deviceManagement/reports/exportJobs": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/deviceManagement/reports/exportJobs/{deviceManagementExportJob-id}": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/deviceManagement/reports/reportSchedules": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/deviceManagement/reports/reportSchedules/{deviceManagementReportSchedule-id}": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/deviceManagement/reports": {
       "apiVersion": "v1.0-beta",
@@ -102,36 +74,16 @@
       "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/applicationSignInDetailedSummary": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/applicationSignInDetailedSummary/{applicationSignInDetailedSummary-id}": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/reports/authenticationMethods": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/reports/authenticationMethods/microsoft.graph.usersRegisteredByFeature()": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/reports/authenticationMethods/microsoft.graph.usersRegisteredByFeature(includedUserTypes={includedUserTypes},includedUserRoles={includedUserRoles})": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/reports/authenticationMethods/microsoft.graph.usersRegisteredByMethod()": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/reports/authenticationMethods/microsoft.graph.usersRegisteredByMethod(includedUserTypes={includedUserTypes},includedUserRoles={includedUserRoles})": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/authenticationMethods": {
       "apiVersion": "v1.0-beta",
@@ -154,28 +106,12 @@
       "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/credentialUserRegistrationDetails": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/credentialUserRegistrationDetails/{credentialUserRegistrationDetails-id}": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/reports/dailyPrintUsageByPrinter": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/reports/dailyPrintUsageByPrinter/{printUsageByPrinter-id}": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/reports/dailyPrintUsageByUser": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/reports/dailyPrintUsageByUser/{printUsageByUser-id}": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/dailyPrintUsageByPrinter": {
       "apiVersion": "v1.0-beta",
@@ -194,476 +130,472 @@
       "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/dailyPrintUsageSummariesByPrinter": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/dailyPrintUsageSummariesByPrinter/{printUsageByPrinter-id}": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/dailyPrintUsageSummariesByUser": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/dailyPrintUsageSummariesByUser/{printUsageByUser-id}": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.deviceConfigurationDeviceActivity()": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.deviceConfigurationUserActivity()": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getAzureADApplicationSignInSummary(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getAzureADFeatureUsage(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getAzureADLicenseUsage(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getAzureADUserFeatureUsage()": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getCredentialUsageSummary(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getCredentialUserRegistrationCount()": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getEmailActivityCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getEmailActivityUserCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getEmailActivityUserDetail(date={date})": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getEmailActivityUserDetail(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getEmailAppUsageAppsUserCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getEmailAppUsageUserCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getEmailAppUsageUserDetail(date={date})": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getEmailAppUsageUserDetail(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getEmailAppUsageVersionsUserCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/reports/microsoft.graph.getGroupArchivedPrintJobs(groupId='{groupId}',startDateTime={startDateTime},endDateTime={endDateTime})": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getGroupArchivedPrintJobs(groupId='{groupId}',startDateTime={startDateTime},endDateTime={endDateTime})": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getM365AppPlatformUserCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getM365AppUserCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getM365AppUserDetail(date={date})": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getM365AppUserDetail(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getMailboxUsageDetail(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getMailboxUsageMailboxCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getMailboxUsageQuotaStatusMailboxCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getMailboxUsageStorage(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getOffice365ActivationCounts()": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getOffice365ActivationsUserCounts()": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getOffice365ActivationsUserDetail()": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getOffice365ActiveUserCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getOffice365ActiveUserDetail(date={date})": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getOffice365ActiveUserDetail(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getOffice365GroupsActivityCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getOffice365GroupsActivityDetail(date={date})": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getOffice365GroupsActivityDetail(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getOffice365GroupsActivityFileCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getOffice365GroupsActivityGroupCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getOffice365GroupsActivityStorage(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getOffice365ServicesUserCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getOneDriveActivityFileCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getOneDriveActivityUserCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getOneDriveActivityUserDetail(date={date})": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getOneDriveActivityUserDetail(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getOneDriveUsageAccountCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getOneDriveUsageAccountDetail(date={date})": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getOneDriveUsageAccountDetail(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getOneDriveUsageFileCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getOneDriveUsageStorage(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/reports/microsoft.graph.getPrinterArchivedPrintJobs(printerId='{printerId}',startDateTime={startDateTime},endDateTime={endDateTime})": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getPrinterArchivedPrintJobs(printerId='{printerId}',startDateTime={startDateTime},endDateTime={endDateTime})": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getRelyingPartyDetailedSummary(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getSharePointActivityFileCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getSharePointActivityPages(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getSharePointActivityUserCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getSharePointActivityUserDetail(date={date})": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getSharePointActivityUserDetail(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getSharePointSiteUsageDetail(date={date})": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getSharePointSiteUsageDetail(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getSharePointSiteUsageFileCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getSharePointSiteUsagePages(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getSharePointSiteUsageSiteCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getSharePointSiteUsageStorage(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getSkypeForBusinessActivityCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getSkypeForBusinessActivityUserCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getSkypeForBusinessActivityUserDetail(date={date})": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getSkypeForBusinessActivityUserDetail(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getSkypeForBusinessDeviceUsageDistributionUserCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getSkypeForBusinessDeviceUsageUserCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getSkypeForBusinessDeviceUsageUserDetail(date={date})": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getSkypeForBusinessDeviceUsageUserDetail(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getSkypeForBusinessOrganizerActivityCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getSkypeForBusinessOrganizerActivityMinuteCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getSkypeForBusinessOrganizerActivityUserCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getSkypeForBusinessParticipantActivityCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getSkypeForBusinessParticipantActivityMinuteCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getSkypeForBusinessParticipantActivityUserCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getSkypeForBusinessPeerToPeerActivityCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getSkypeForBusinessPeerToPeerActivityMinuteCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getSkypeForBusinessPeerToPeerActivityUserCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
+    },
+    "/reports/microsoft.graph.getTeamsDeviceUsageDistributionTotalUserCounts(period='{period}')": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getTeamsDeviceUsageDistributionUserCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
+    },
+    "/reports/microsoft.graph.getTeamsDeviceUsageTotalUserCounts(period='{period}')": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getTeamsDeviceUsageUserCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getTeamsDeviceUsageUserDetail(date={date})": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getTeamsDeviceUsageUserDetail(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getTeamsUserActivityCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
+    },
+    "/reports/microsoft.graph.getTeamsUserActivityDistributionTotalUserCounts(period='{period}')": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
+    },
+    "/reports/microsoft.graph.getTeamsUserActivityDistributionUserCounts(period='{period}')": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
+    },
+    "/reports/microsoft.graph.getTeamsUserActivityTotalCounts(period='{period}')": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
+    },
+    "/reports/microsoft.graph.getTeamsUserActivityTotalUserCounts(period='{period}')": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getTeamsUserActivityUserCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getTeamsUserActivityUserDetail(date={date})": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getTeamsUserActivityUserDetail(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getTenantSecureScores(period={period})": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/reports/microsoft.graph.getUserArchivedPrintJobs(userId='{userId}',startDateTime={startDateTime},endDateTime={endDateTime})": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getUserArchivedPrintJobs(userId='{userId}',startDateTime={startDateTime},endDateTime={endDateTime})": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getYammerActivityCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getYammerActivityUserCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getYammerActivityUserDetail(date={date})": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getYammerActivityUserDetail(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getYammerDeviceUsageDistributionUserCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getYammerDeviceUsageUserCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getYammerDeviceUsageUserDetail(date={date})": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getYammerDeviceUsageUserDetail(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getYammerGroupsActivityCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getYammerGroupsActivityDetail(date={date})": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getYammerGroupsActivityDetail(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.getYammerGroupsActivityGroupCounts(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.managedDeviceEnrollmentAbandonmentDetails(skip={skip},top={top},filter='{filter}',skipToken='{skipToken}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.managedDeviceEnrollmentAbandonmentSummary(skip={skip},top={top},filter='{filter}',skipToken='{skipToken}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.managedDeviceEnrollmentFailureDetails()": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.managedDeviceEnrollmentFailureDetails(skip={skip},top={top},filter='{filter}',skipToken='{skipToken}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.managedDeviceEnrollmentFailureTrends()": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.managedDeviceEnrollmentTopFailures()": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/microsoft.graph.managedDeviceEnrollmentTopFailures(period='{period}')": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/reports/monthlyPrintUsageByPrinter": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/reports/monthlyPrintUsageByPrinter/{printUsageByPrinter-id}": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/reports/monthlyPrintUsageByUser": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/reports/monthlyPrintUsageByUser/{printUsageByUser-id}": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/monthlyPrintUsageByPrinter": {
       "apiVersion": "v1.0-beta",
@@ -682,28 +614,28 @@
       "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/monthlyPrintUsageSummariesByPrinter": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/monthlyPrintUsageSummariesByPrinter/{printUsageByPrinter-id}": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/monthlyPrintUsageSummariesByUser": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/monthlyPrintUsageSummariesByUser/{printUsageByUser-id}": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/userCredentialUsageDetails": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
     "/reports/userCredentialUsageDetails/{userCredentialUsageDetails-id}": {
-      "originalLocation": "/openApiDocs/beta/Reports.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
     }
   }
 }

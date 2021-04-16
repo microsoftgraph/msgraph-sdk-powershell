@@ -543,6 +543,63 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /roleManagement:
+    get:
+      tags:
+        - roleManagement.roleManagement
+      summary: Get roleManagement
+      operationId: roleManagement.roleManagement_GetRoleManagement
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.roleManagement'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - roleManagement.roleManagement
+      summary: Update roleManagement
+      operationId: roleManagement.roleManagement_UpdateRoleManagement
+      requestBody:
+        description: New property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.roleManagement'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
 components:
   schemas:
     microsoft.graph.onPremisesConditionalAccessSettings:
@@ -629,6 +686,11 @@ components:
           additionalProperties:
             type: object
           description: Enrollment Configuration Assignment
+    microsoft.graph.roleManagement:
+      title: roleManagement
+      type: object
+      additionalProperties:
+        type: object
     microsoft.graph.entity:
       title: entity
       type: object

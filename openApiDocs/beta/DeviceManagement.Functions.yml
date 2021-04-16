@@ -23,6 +23,22 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  /deviceManagement/assignmentFilters/microsoft.graph.getState():
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getState
+      operationId: deviceManagement.assignmentFilters_getState
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.assignmentFilterState'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/deviceManagement/auditEvents/microsoft.graph.getAuditActivityTypes(category=''{category}'')':
     get:
       tags:
@@ -1279,6 +1295,22 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  /deviceManagement/microsoft.graph.userExperienceAnalyticsSummarizeWorkFromAnywhereDevices():
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function userExperienceAnalyticsSummarizeWorkFromAnywhereDevices
+      operationId: deviceManagement_userExperienceAnalyticsSummarizeWorkFromAnywhereDevices
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsWorkFromAnywhereDevicesSummary'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/deviceManagement/microsoft.graph.verifyWindowsEnrollmentAutoDiscovery(domainName=''{domainName}'')':
     get:
       tags:
@@ -1590,6 +1622,16 @@ paths:
       x-ms-docs-operation-type: function
 components:
   schemas:
+    microsoft.graph.assignmentFilterState:
+      title: assignmentFilterState
+      type: object
+      properties:
+        enabled:
+          type: boolean
+          description: Indicator to if AssignmentFilter is enabled or disabled.
+      additionalProperties:
+        type: object
+      description: Represents result of GetState API.
     microsoft.graph.deviceCompliancePolicySettingState:
       title: deviceCompliancePolicySettingState
       type: object
@@ -2078,6 +2120,19 @@ components:
       additionalProperties:
         type: object
       description: The suggestedEnrollmentLimit resource represents the suggested enrollment limit when given an enrollment type.
+    microsoft.graph.userExperienceAnalyticsWorkFromAnywhereDevicesSummary:
+      title: userExperienceAnalyticsWorkFromAnywhereDevicesSummary
+      type: object
+      properties:
+        autopilotDevicesSummary:
+          $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsAutopilotDevicesSummary'
+        cloudManagementDevicesSummary:
+          $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsCloudManagementDevicesSummary'
+        windows10DevicesSummary:
+          $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsWindows10DevicesSummary'
+      additionalProperties:
+        type: object
+      description: The user experience analytics Work From Anywhere metrics devices summary.
     microsoft.graph.userExperienceAnalyticsSummarizedBy:
       title: userExperienceAnalyticsSummarizedBy
       enum:
@@ -2445,6 +2500,63 @@ components:
           additionalProperties:
             type: object
           description: Contains the properties for auto-assigning a Role Scope Tag to a group to be applied to Devices.
+    microsoft.graph.userExperienceAnalyticsAutopilotDevicesSummary:
+      title: userExperienceAnalyticsAutopilotDevicesSummary
+      type: object
+      properties:
+        devicesNotAutopilotRegistered:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The count of intune devices that are not autopilot registerd.
+          format: int32
+        devicesWithoutAutopilotProfileAssigned:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The count of intune devices not autopilot profile assigned.
+          format: int32
+      additionalProperties:
+        type: object
+      description: The user experience analytics summary of Devices not windows autopilot ready.
+    microsoft.graph.userExperienceAnalyticsCloudManagementDevicesSummary:
+      title: userExperienceAnalyticsCloudManagementDevicesSummary
+      type: object
+      properties:
+        coManagedDeviceCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Total number of  co-managed devices.
+          format: int32
+        intuneDeviceCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The count of intune devices that are not autopilot registerd.
+          format: int32
+        tenantAttachDeviceCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Total count of tenant attach devices.
+          format: int32
+      additionalProperties:
+        type: object
+      description: The user experience work from anywhere Cloud management devices summary.
+    microsoft.graph.userExperienceAnalyticsWindows10DevicesSummary:
+      title: userExperienceAnalyticsWindows10DevicesSummary
+      type: object
+      properties:
+        unsupportedOSversionDeviceCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The count of Windows 10 devices that have unsupported OS versions.
+          format: int32
+      additionalProperties:
+        type: object
+      description: The user experience analytics work from anywhere Windows 10 devices summary.
     microsoft.graph.diskType:
       title: diskType
       enum:
