@@ -15885,7 +15885,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Groups that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable.'
+              description: 'Groups that this device is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable.'
             registeredOwners:
               type: array
               items:
@@ -21031,7 +21031,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
-              description: 'Content in a message hosted by Microsoft Teams e.g. images, code snippets etc.'
+              description: 'Content in a message hosted by Microsoft Teams e.g., images, code snippets etc.'
             replies:
               type: array
               items:
@@ -24841,6 +24841,10 @@ components:
               nullable: true
             bot:
               $ref: '#/components/schemas/microsoft.graph.teamworkBot'
+            colorIcon:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppIcon'
+            outlineIcon:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppIcon'
           additionalProperties:
             type: object
     microsoft.graph.chatMessageAttachment:
@@ -26570,6 +26574,19 @@ components:
         - $ref: '#/components/schemas/microsoft.graph.entity'
         - title: teamworkBot
           type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.teamsAppIcon:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamsAppIcon
+          type: object
+          properties:
+            webUrl:
+              type: string
+              nullable: true
+            hostedContent:
+              $ref: '#/components/schemas/microsoft.graph.teamworkHostedContent'
           additionalProperties:
             type: object
     microsoft.graph.chatMessagePolicyViolationDlpActionTypes:
