@@ -13,7 +13,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Utilities
         // Catalog our dependencies here to ensure we don't load anything else.
         private static IReadOnlyDictionary<string, Version> Dependencies = new Dictionary<string, Version>
         {
-            { "Microsoft.Identity.Client", new Version("4.23.0.0") },
+            { "Microsoft.Identity.Client", new Version("4.29.0.0") },
             { "Microsoft.Graph.Auth",  new Version("1.0.0.0") },
             { "Microsoft.IdentityModel.Tokens", new Version("5.6.0.61018") },
             { "Microsoft.IdentityModel.Logging", new Version("5.6.0.61018") },

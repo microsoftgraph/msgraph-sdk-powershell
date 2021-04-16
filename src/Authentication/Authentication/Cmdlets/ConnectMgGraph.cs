@@ -209,8 +209,16 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                         break;
                 }
 
-                // Save auth context to session state.
-                var (context, authError) = await Authenticator.AuthenticateAsync(authContext, ForceRefresh, _cancellationTokenSource.Token);
+                
+                var (context, authError) = await Authenticator.AuthenticateAsync(authContext, ForceRefresh, _cancellationTokenSource.Token,
+                   type =>
+                   {
+                       // Early Detection of FallBack to DeviceCode
+                       if (type == AuthProviderType.DeviceCodeProviderFallBack)
+                       {
+                           WriteWarning(Resources.DeviceCodeFallback);
+                       }
+                   });
 
                 switch (authError.AuthErrorType)
                 {
@@ -218,6 +226,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                     case AuthErrorType.FallBack:
                         {
                             GraphSession.Instance.AuthContext = context;
+                            //Fallback was due to an Exception, ie Browser Could not be Opened.
                             if (authError.AuthErrorType == AuthErrorType.FallBack)
                             {
                                 WriteWarning(Resources.DeviceCodeFallback);

@@ -28,6 +28,14 @@ namespace Microsoft.Graph.PowerShell.Authentication
         ClientCredentialsFailure,
         Unknown
     }
+    public enum AuthProviderType
+    {
+        None,
+        InteractiveAuthenticationProvider,
+        DeviceCodeProvider,
+        DeviceCodeProviderFallBack,
+        ClientCredentialProvider
+    }
 
     public readonly struct AuthError
     {
