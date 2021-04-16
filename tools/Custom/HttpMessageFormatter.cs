@@ -33,6 +33,9 @@ namespace Microsoft.Graph.PowerShell
         private const string DefaultRequestMsgType = "request";
         private const string DefaultResponseMsgType = "response";
 
+        private const string DefaultRequestMediaType = DefaultMediaType + "; " + MsgTypeParameter + "=" + DefaultRequestMsgType;
+        private const string DefaultResponseMediaType = DefaultMediaType + "; " + MsgTypeParameter + "=" + DefaultResponseMsgType;
+
         // Set of header fields that only support single values such as Set-Cookie.
         private static readonly HashSet<string> _singleValueHeaderFields = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
         {
@@ -101,7 +104,7 @@ namespace Microsoft.Graph.PowerShell
 
         private void InitializeStreamTask()
         {
-            _streamTask = new Lazy<Task<Stream>>(() => Content?.ReadAsStreamAsync());
+            _streamTask = new Lazy<Task<Stream>>(() => Content == null ? null : Content.ReadAsStreamAsync());
         }
 
         /// <summary>
@@ -198,14 +201,11 @@ namespace Microsoft.Graph.PowerShell
             byte[] header = SerializeHeader();
             await stream.WriteAsync(header, 0, header.Length);
 
-            if (Content != null)
+            if (Content != null && Content.Headers.ContentLength > 0)
             {
                 Stream readStream = await _streamTask.Value;
                 ValidateStreamForReading(readStream);
-                if (!_contentConsumed)
-                {
-                    await Content.CopyToAsync(stream);
-                }
+                await Content.CopyToAsync(stream);
             }
         }
 
@@ -230,12 +230,49 @@ namespace Microsoft.Graph.PowerShell
             length = 0;
 
             // Cases #1, #2, #3
+            if (hasContent)
+            {
+                Stream readStream;
+                if (!_streamTask.Value.TryGetResult(out readStream) // Case #1
+                    || readStream == null || !readStream.CanSeek) // Case #2
+                {
+                    length = -1;
+                    return false;
+                }
+
+                length = readStream.Length; // Case #3
+            }
+
             // We serialize header to a StringBuilder so that we can determine the length
             // following the pattern for HttpContent to try and determine the message length.
             // The perf overhead is no larger than for the other HttpContent implementations.
             byte[] header = SerializeHeader();
             length += header.Length;
             return true;
+        }
+
+        /// <summary>
+        /// Releases unmanaged and - optionally - managed resources
+        /// </summary>
+        /// <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                if (HttpRequestMessage != null)
+                {
+                    HttpRequestMessage.Dispose();
+                    HttpRequestMessage = null;
+                }
+
+                if (HttpResponseMessage != null)
+                {
+                    HttpResponseMessage.Dispose();
+                    HttpResponseMessage = null;
+                }
+            }
+
+            base.Dispose(disposing);
         }
 
         /// <summary>
@@ -310,8 +347,8 @@ namespace Microsoft.Graph.PowerShell
         private byte[] SerializeHeader()
         {
             StringBuilder message = new StringBuilder(DefaultHeaderAllocation);
-            HttpHeaders headers;
-            HttpContent content;
+            HttpHeaders headers = null;
+            HttpContent content = null;
             if (HttpRequestMessage != null)
             {
                 SerializeRequestLine(message, HttpRequestMessage);
@@ -353,6 +390,22 @@ namespace Microsoft.Graph.PowerShell
             }
 
             _contentConsumed = true;
+        }
+
+    }
+
+    public static class TaskExtensions
+    {
+        public static bool TryGetResult<TResult>(this Task<TResult> task, out TResult result)
+        {
+            if (task.Status == TaskStatus.RanToCompletion)
+            {
+                result = task.Result;
+                return true;
+            }
+
+            result = default(TResult);
+            return false;
         }
     }
 }
