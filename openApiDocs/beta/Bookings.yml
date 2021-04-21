@@ -632,7 +632,7 @@ paths:
       tags:
         - bookingBusinesses.Actions
       summary: Invoke action cancel
-      operationId: bookingBusinesses.appointments_cancel
+      operationId: bookingBusinesses.bookingBusiness.appointments.bookingAppointment_cancel
       parameters:
         - name: bookingBusiness-id
           in: path
@@ -1040,7 +1040,7 @@ paths:
       tags:
         - bookingBusinesses.Actions
       summary: Invoke action cancel
-      operationId: bookingBusinesses.calendarView_cancel
+      operationId: bookingBusinesses.bookingBusiness.calendarView.bookingAppointment_cancel
       parameters:
         - name: bookingBusiness-id
           in: path
@@ -1316,7 +1316,7 @@ paths:
       tags:
         - bookingBusinesses.Actions
       summary: Invoke action publish
-      operationId: bookingBusinesses_publish
+      operationId: bookingBusinesses.bookingBusiness_publish
       parameters:
         - name: bookingBusiness-id
           in: path
@@ -1336,7 +1336,7 @@ paths:
       tags:
         - bookingBusinesses.Actions
       summary: Invoke action unpublish
-      operationId: bookingBusinesses_unpublish
+      operationId: bookingBusinesses.bookingBusiness_unpublish
       parameters:
         - name: bookingBusiness-id
           in: path
@@ -2515,10 +2515,10 @@ components:
       properties:
         dateTime:
           type: string
-          description: 'A single point of time in a combined date and time representation ({date}T{time}). For example, ''2019-04-16T09:00:00''.'
+          description: 'A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).'
         timeZone:
           type: string
-          description: 'Represents a time zone, for example, ''Pacific Standard Time''. See below for possible values.'
+          description: 'Represents a time zone, for example, ''Pacific Standard Time''. See below for more possible values.'
           nullable: true
       additionalProperties:
         type: object

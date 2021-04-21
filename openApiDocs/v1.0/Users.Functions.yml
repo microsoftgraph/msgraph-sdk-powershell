@@ -11,7 +11,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function recent
-      operationId: users.activities_recent
+      operationId: users.user.activities_recent
       parameters:
         - name: user-id
           in: path
@@ -37,7 +37,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function allowedCalendarSharingRoles
-      operationId: users.calendar.calendarView.calendar_allowedCalendarSharingRoles
+      operationId: users.user.calendar.calendarView.event.calendar_allowedCalendarSharingRoles
       parameters:
         - name: user-id
           in: path
@@ -76,7 +76,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.calendar.calendarView.instances_delta
+      operationId: users.user.calendar.calendarView.event.instances_delta
       parameters:
         - name: user-id
           in: path
@@ -109,7 +109,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.calendar.calendarView_delta
+      operationId: users.user.calendar.calendarView_delta
       parameters:
         - name: user-id
           in: path
@@ -135,7 +135,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function allowedCalendarSharingRoles
-      operationId: users.calendar.events.calendar_allowedCalendarSharingRoles
+      operationId: users.user.calendar.events.event.calendar_allowedCalendarSharingRoles
       parameters:
         - name: user-id
           in: path
@@ -174,7 +174,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.calendar.events.instances_delta
+      operationId: users.user.calendar.events.event.instances_delta
       parameters:
         - name: user-id
           in: path
@@ -207,7 +207,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.calendar.events_delta
+      operationId: users.user.calendar.events_delta
       parameters:
         - name: user-id
           in: path
@@ -233,7 +233,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function allowedCalendarSharingRoles
-      operationId: users.calendar_allowedCalendarSharingRoles
+      operationId: users.user.calendar_allowedCalendarSharingRoles
       parameters:
         - name: user-id
           in: path
@@ -265,7 +265,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function allowedCalendarSharingRoles
-      operationId: users.calendarGroups.calendars.calendarView.calendar_allowedCalendarSharingRoles
+      operationId: users.user.calendarGroups.calendarGroup.calendars.calendar.calendarView.event.calendar_allowedCalendarSharingRoles
       parameters:
         - name: user-id
           in: path
@@ -318,7 +318,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.calendarGroups.calendars.calendarView.instances_delta
+      operationId: users.user.calendarGroups.calendarGroup.calendars.calendar.calendarView.event.instances_delta
       parameters:
         - name: user-id
           in: path
@@ -365,7 +365,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.calendarGroups.calendars.calendarView_delta
+      operationId: users.user.calendarGroups.calendarGroup.calendars.calendar.calendarView_delta
       parameters:
         - name: user-id
           in: path
@@ -405,7 +405,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function allowedCalendarSharingRoles
-      operationId: users.calendarGroups.calendars.events.calendar_allowedCalendarSharingRoles
+      operationId: users.user.calendarGroups.calendarGroup.calendars.calendar.events.event.calendar_allowedCalendarSharingRoles
       parameters:
         - name: user-id
           in: path
@@ -458,7 +458,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.calendarGroups.calendars.events.instances_delta
+      operationId: users.user.calendarGroups.calendarGroup.calendars.calendar.events.event.instances_delta
       parameters:
         - name: user-id
           in: path
@@ -505,7 +505,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.calendarGroups.calendars.events_delta
+      operationId: users.user.calendarGroups.calendarGroup.calendars.calendar.events_delta
       parameters:
         - name: user-id
           in: path
@@ -545,7 +545,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function allowedCalendarSharingRoles
-      operationId: users.calendarGroups.calendars_allowedCalendarSharingRoles
+      operationId: users.user.calendarGroups.calendarGroup.calendars.calendar_allowedCalendarSharingRoles
       parameters:
         - name: user-id
           in: path
@@ -591,7 +591,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function allowedCalendarSharingRoles
-      operationId: users.calendars.calendarView.calendar_allowedCalendarSharingRoles
+      operationId: users.user.calendars.calendar.calendarView.event.calendar_allowedCalendarSharingRoles
       parameters:
         - name: user-id
           in: path
@@ -637,7 +637,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.calendars.calendarView.instances_delta
+      operationId: users.user.calendars.calendar.calendarView.event.instances_delta
       parameters:
         - name: user-id
           in: path
@@ -677,7 +677,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.calendars.calendarView_delta
+      operationId: users.user.calendars.calendar.calendarView_delta
       parameters:
         - name: user-id
           in: path
@@ -710,7 +710,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function allowedCalendarSharingRoles
-      operationId: users.calendars.events.calendar_allowedCalendarSharingRoles
+      operationId: users.user.calendars.calendar.events.event.calendar_allowedCalendarSharingRoles
       parameters:
         - name: user-id
           in: path
@@ -756,7 +756,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.calendars.events.instances_delta
+      operationId: users.user.calendars.calendar.events.event.instances_delta
       parameters:
         - name: user-id
           in: path
@@ -796,7 +796,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.calendars.events_delta
+      operationId: users.user.calendars.calendar.events_delta
       parameters:
         - name: user-id
           in: path
@@ -829,7 +829,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function allowedCalendarSharingRoles
-      operationId: users.calendars_allowedCalendarSharingRoles
+      operationId: users.user.calendars.calendar_allowedCalendarSharingRoles
       parameters:
         - name: user-id
           in: path
@@ -868,7 +868,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.calendarView.calendar.calendarView_delta
+      operationId: users.user.calendarView.event.calendar.calendarView_delta
       parameters:
         - name: user-id
           in: path
@@ -901,7 +901,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.calendarView.calendar.events_delta
+      operationId: users.user.calendarView.event.calendar.events_delta
       parameters:
         - name: user-id
           in: path
@@ -934,7 +934,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function allowedCalendarSharingRoles
-      operationId: users.calendarView.calendar_allowedCalendarSharingRoles
+      operationId: users.user.calendarView.event.calendar_allowedCalendarSharingRoles
       parameters:
         - name: user-id
           in: path
@@ -973,7 +973,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.calendarView.instances_delta
+      operationId: users.user.calendarView.event.instances_delta
       parameters:
         - name: user-id
           in: path
@@ -1006,7 +1006,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.calendarView_delta
+      operationId: users.user.calendarView_delta
       parameters:
         - name: user-id
           in: path
@@ -1032,7 +1032,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.contactFolders.childFolders_delta
+      operationId: users.user.contactFolders.contactFolder.childFolders_delta
       parameters:
         - name: user-id
           in: path
@@ -1065,7 +1065,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.contactFolders.contacts_delta
+      operationId: users.user.contactFolders.contactFolder.contacts_delta
       parameters:
         - name: user-id
           in: path
@@ -1098,7 +1098,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.contactFolders_delta
+      operationId: users.user.contactFolders_delta
       parameters:
         - name: user-id
           in: path
@@ -1124,7 +1124,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.contacts_delta
+      operationId: users.user.contacts_delta
       parameters:
         - name: user-id
           in: path
@@ -1150,7 +1150,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.events.calendar.calendarView_delta
+      operationId: users.user.events.event.calendar.calendarView_delta
       parameters:
         - name: user-id
           in: path
@@ -1183,7 +1183,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.events.calendar.events_delta
+      operationId: users.user.events.event.calendar.events_delta
       parameters:
         - name: user-id
           in: path
@@ -1216,7 +1216,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function allowedCalendarSharingRoles
-      operationId: users.events.calendar_allowedCalendarSharingRoles
+      operationId: users.user.events.event.calendar_allowedCalendarSharingRoles
       parameters:
         - name: user-id
           in: path
@@ -1255,7 +1255,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.events.instances_delta
+      operationId: users.user.events.event.instances_delta
       parameters:
         - name: user-id
           in: path
@@ -1288,7 +1288,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.events_delta
+      operationId: users.user.events_delta
       parameters:
         - name: user-id
           in: path
@@ -1314,7 +1314,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function boundingRect
-      operationId: users.insights.shared.lastSharedMethod.microsoft.graph.workbookRange_boundingRect
+      operationId: users.user.insights.shared.sharedInsight.lastSharedMethod.microsoft.graph.workbookRange_boundingRect
       parameters:
         - name: user-id
           in: path
@@ -1352,7 +1352,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function cell
-      operationId: users.insights.shared.lastSharedMethod.microsoft.graph.workbookRange_cell
+      operationId: users.user.insights.shared.sharedInsight.lastSharedMethod.microsoft.graph.workbookRange_cell
       parameters:
         - name: user-id
           in: path
@@ -1401,7 +1401,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function column
-      operationId: users.insights.shared.lastSharedMethod.microsoft.graph.workbookRange_column
+      operationId: users.user.insights.shared.sharedInsight.lastSharedMethod.microsoft.graph.workbookRange_column
       parameters:
         - name: user-id
           in: path
@@ -1441,7 +1441,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function columnsAfter
-      operationId: users.insights.shared.lastSharedMethod.microsoft.graph.workbookRange_columnsAfter-9c18
+      operationId: users.user.insights.shared.sharedInsight.lastSharedMethod.microsoft.graph.workbookRange_columnsAfter-9c18
       parameters:
         - name: user-id
           in: path
@@ -1472,7 +1472,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function columnsAfter
-      operationId: users.insights.shared.lastSharedMethod.microsoft.graph.workbookRange_columnsAfter-db2a
+      operationId: users.user.insights.shared.sharedInsight.lastSharedMethod.microsoft.graph.workbookRange_columnsAfter-db2a
       parameters:
         - name: user-id
           in: path
@@ -1513,7 +1513,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function columnsBefore
-      operationId: users.insights.shared.lastSharedMethod.microsoft.graph.workbookRange_columnsBefore-72e4
+      operationId: users.user.insights.shared.sharedInsight.lastSharedMethod.microsoft.graph.workbookRange_columnsBefore-72e4
       parameters:
         - name: user-id
           in: path
@@ -1544,7 +1544,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function columnsBefore
-      operationId: users.insights.shared.lastSharedMethod.microsoft.graph.workbookRange_columnsBefore-1bca
+      operationId: users.user.insights.shared.sharedInsight.lastSharedMethod.microsoft.graph.workbookRange_columnsBefore-1bca
       parameters:
         - name: user-id
           in: path
@@ -1585,7 +1585,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function entireColumn
-      operationId: users.insights.shared.lastSharedMethod.microsoft.graph.workbookRange_entireColumn
+      operationId: users.user.insights.shared.sharedInsight.lastSharedMethod.microsoft.graph.workbookRange_entireColumn
       parameters:
         - name: user-id
           in: path
@@ -1616,7 +1616,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function entireRow
-      operationId: users.insights.shared.lastSharedMethod.microsoft.graph.workbookRange_entireRow
+      operationId: users.user.insights.shared.sharedInsight.lastSharedMethod.microsoft.graph.workbookRange_entireRow
       parameters:
         - name: user-id
           in: path
@@ -1647,7 +1647,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function intersection
-      operationId: users.insights.shared.lastSharedMethod.microsoft.graph.workbookRange_intersection
+      operationId: users.user.insights.shared.sharedInsight.lastSharedMethod.microsoft.graph.workbookRange_intersection
       parameters:
         - name: user-id
           in: path
@@ -1685,7 +1685,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function lastCell
-      operationId: users.insights.shared.lastSharedMethod.microsoft.graph.workbookRange_lastCell
+      operationId: users.user.insights.shared.sharedInsight.lastSharedMethod.microsoft.graph.workbookRange_lastCell
       parameters:
         - name: user-id
           in: path
@@ -1716,7 +1716,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function lastColumn
-      operationId: users.insights.shared.lastSharedMethod.microsoft.graph.workbookRange_lastColumn
+      operationId: users.user.insights.shared.sharedInsight.lastSharedMethod.microsoft.graph.workbookRange_lastColumn
       parameters:
         - name: user-id
           in: path
@@ -1747,7 +1747,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function lastRow
-      operationId: users.insights.shared.lastSharedMethod.microsoft.graph.workbookRange_lastRow
+      operationId: users.user.insights.shared.sharedInsight.lastSharedMethod.microsoft.graph.workbookRange_lastRow
       parameters:
         - name: user-id
           in: path
@@ -1778,7 +1778,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function offsetRange
-      operationId: users.insights.shared.lastSharedMethod.microsoft.graph.workbookRange_offsetRange
+      operationId: users.user.insights.shared.sharedInsight.lastSharedMethod.microsoft.graph.workbookRange_offsetRange
       parameters:
         - name: user-id
           in: path
@@ -1827,7 +1827,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function resizedRange
-      operationId: users.insights.shared.lastSharedMethod.microsoft.graph.workbookRange_resizedRange
+      operationId: users.user.insights.shared.sharedInsight.lastSharedMethod.microsoft.graph.workbookRange_resizedRange
       parameters:
         - name: user-id
           in: path
@@ -1876,7 +1876,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function row
-      operationId: users.insights.shared.lastSharedMethod.microsoft.graph.workbookRange_row
+      operationId: users.user.insights.shared.sharedInsight.lastSharedMethod.microsoft.graph.workbookRange_row
       parameters:
         - name: user-id
           in: path
@@ -1916,7 +1916,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function rowsAbove
-      operationId: users.insights.shared.lastSharedMethod.microsoft.graph.workbookRange_rowsAbove-3ac1
+      operationId: users.user.insights.shared.sharedInsight.lastSharedMethod.microsoft.graph.workbookRange_rowsAbove-3ac1
       parameters:
         - name: user-id
           in: path
@@ -1947,7 +1947,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function rowsAbove
-      operationId: users.insights.shared.lastSharedMethod.microsoft.graph.workbookRange_rowsAbove-251e
+      operationId: users.user.insights.shared.sharedInsight.lastSharedMethod.microsoft.graph.workbookRange_rowsAbove-251e
       parameters:
         - name: user-id
           in: path
@@ -1988,7 +1988,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function rowsBelow
-      operationId: users.insights.shared.lastSharedMethod.microsoft.graph.workbookRange_rowsBelow-3b3c
+      operationId: users.user.insights.shared.sharedInsight.lastSharedMethod.microsoft.graph.workbookRange_rowsBelow-3b3c
       parameters:
         - name: user-id
           in: path
@@ -2019,7 +2019,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function rowsBelow
-      operationId: users.insights.shared.lastSharedMethod.microsoft.graph.workbookRange_rowsBelow-cb11
+      operationId: users.user.insights.shared.sharedInsight.lastSharedMethod.microsoft.graph.workbookRange_rowsBelow-cb11
       parameters:
         - name: user-id
           in: path
@@ -2060,7 +2060,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function usedRange
-      operationId: users.insights.shared.lastSharedMethod.microsoft.graph.workbookRange_usedRange-ec2c
+      operationId: users.user.insights.shared.sharedInsight.lastSharedMethod.microsoft.graph.workbookRange_usedRange-ec2c
       parameters:
         - name: user-id
           in: path
@@ -2091,7 +2091,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function usedRange
-      operationId: users.insights.shared.lastSharedMethod.microsoft.graph.workbookRange_usedRange-206d
+      operationId: users.user.insights.shared.sharedInsight.lastSharedMethod.microsoft.graph.workbookRange_usedRange-206d
       parameters:
         - name: user-id
           in: path
@@ -2129,7 +2129,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function visibleView
-      operationId: users.insights.shared.lastSharedMethod.microsoft.graph.workbookRange_visibleView
+      operationId: users.user.insights.shared.sharedInsight.lastSharedMethod.microsoft.graph.workbookRange_visibleView
       parameters:
         - name: user-id
           in: path
@@ -2160,7 +2160,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function range
-      operationId: users.insights.shared.lastSharedMethod.microsoft.graph.workbookRangeView_range
+      operationId: users.user.insights.shared.sharedInsight.lastSharedMethod.microsoft.graph.workbookRangeView_range
       parameters:
         - name: user-id
           in: path
@@ -2191,7 +2191,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function boundingRect
-      operationId: users.insights.shared.resource.microsoft.graph.workbookRange_boundingRect
+      operationId: users.user.insights.shared.sharedInsight.resource.microsoft.graph.workbookRange_boundingRect
       parameters:
         - name: user-id
           in: path
@@ -2229,7 +2229,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function cell
-      operationId: users.insights.shared.resource.microsoft.graph.workbookRange_cell
+      operationId: users.user.insights.shared.sharedInsight.resource.microsoft.graph.workbookRange_cell
       parameters:
         - name: user-id
           in: path
@@ -2278,7 +2278,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function column
-      operationId: users.insights.shared.resource.microsoft.graph.workbookRange_column
+      operationId: users.user.insights.shared.sharedInsight.resource.microsoft.graph.workbookRange_column
       parameters:
         - name: user-id
           in: path
@@ -2318,7 +2318,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function columnsAfter
-      operationId: users.insights.shared.resource.microsoft.graph.workbookRange_columnsAfter-9c18
+      operationId: users.user.insights.shared.sharedInsight.resource.microsoft.graph.workbookRange_columnsAfter-9c18
       parameters:
         - name: user-id
           in: path
@@ -2349,7 +2349,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function columnsAfter
-      operationId: users.insights.shared.resource.microsoft.graph.workbookRange_columnsAfter-db2a
+      operationId: users.user.insights.shared.sharedInsight.resource.microsoft.graph.workbookRange_columnsAfter-db2a
       parameters:
         - name: user-id
           in: path
@@ -2390,7 +2390,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function columnsBefore
-      operationId: users.insights.shared.resource.microsoft.graph.workbookRange_columnsBefore-72e4
+      operationId: users.user.insights.shared.sharedInsight.resource.microsoft.graph.workbookRange_columnsBefore-72e4
       parameters:
         - name: user-id
           in: path
@@ -2421,7 +2421,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function columnsBefore
-      operationId: users.insights.shared.resource.microsoft.graph.workbookRange_columnsBefore-1bca
+      operationId: users.user.insights.shared.sharedInsight.resource.microsoft.graph.workbookRange_columnsBefore-1bca
       parameters:
         - name: user-id
           in: path
@@ -2462,7 +2462,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function entireColumn
-      operationId: users.insights.shared.resource.microsoft.graph.workbookRange_entireColumn
+      operationId: users.user.insights.shared.sharedInsight.resource.microsoft.graph.workbookRange_entireColumn
       parameters:
         - name: user-id
           in: path
@@ -2493,7 +2493,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function entireRow
-      operationId: users.insights.shared.resource.microsoft.graph.workbookRange_entireRow
+      operationId: users.user.insights.shared.sharedInsight.resource.microsoft.graph.workbookRange_entireRow
       parameters:
         - name: user-id
           in: path
@@ -2524,7 +2524,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function intersection
-      operationId: users.insights.shared.resource.microsoft.graph.workbookRange_intersection
+      operationId: users.user.insights.shared.sharedInsight.resource.microsoft.graph.workbookRange_intersection
       parameters:
         - name: user-id
           in: path
@@ -2562,7 +2562,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function lastCell
-      operationId: users.insights.shared.resource.microsoft.graph.workbookRange_lastCell
+      operationId: users.user.insights.shared.sharedInsight.resource.microsoft.graph.workbookRange_lastCell
       parameters:
         - name: user-id
           in: path
@@ -2593,7 +2593,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function lastColumn
-      operationId: users.insights.shared.resource.microsoft.graph.workbookRange_lastColumn
+      operationId: users.user.insights.shared.sharedInsight.resource.microsoft.graph.workbookRange_lastColumn
       parameters:
         - name: user-id
           in: path
@@ -2624,7 +2624,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function lastRow
-      operationId: users.insights.shared.resource.microsoft.graph.workbookRange_lastRow
+      operationId: users.user.insights.shared.sharedInsight.resource.microsoft.graph.workbookRange_lastRow
       parameters:
         - name: user-id
           in: path
@@ -2655,7 +2655,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function offsetRange
-      operationId: users.insights.shared.resource.microsoft.graph.workbookRange_offsetRange
+      operationId: users.user.insights.shared.sharedInsight.resource.microsoft.graph.workbookRange_offsetRange
       parameters:
         - name: user-id
           in: path
@@ -2704,7 +2704,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function resizedRange
-      operationId: users.insights.shared.resource.microsoft.graph.workbookRange_resizedRange
+      operationId: users.user.insights.shared.sharedInsight.resource.microsoft.graph.workbookRange_resizedRange
       parameters:
         - name: user-id
           in: path
@@ -2753,7 +2753,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function row
-      operationId: users.insights.shared.resource.microsoft.graph.workbookRange_row
+      operationId: users.user.insights.shared.sharedInsight.resource.microsoft.graph.workbookRange_row
       parameters:
         - name: user-id
           in: path
@@ -2793,7 +2793,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function rowsAbove
-      operationId: users.insights.shared.resource.microsoft.graph.workbookRange_rowsAbove-3ac1
+      operationId: users.user.insights.shared.sharedInsight.resource.microsoft.graph.workbookRange_rowsAbove-3ac1
       parameters:
         - name: user-id
           in: path
@@ -2824,7 +2824,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function rowsAbove
-      operationId: users.insights.shared.resource.microsoft.graph.workbookRange_rowsAbove-251e
+      operationId: users.user.insights.shared.sharedInsight.resource.microsoft.graph.workbookRange_rowsAbove-251e
       parameters:
         - name: user-id
           in: path
@@ -2865,7 +2865,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function rowsBelow
-      operationId: users.insights.shared.resource.microsoft.graph.workbookRange_rowsBelow-3b3c
+      operationId: users.user.insights.shared.sharedInsight.resource.microsoft.graph.workbookRange_rowsBelow-3b3c
       parameters:
         - name: user-id
           in: path
@@ -2896,7 +2896,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function rowsBelow
-      operationId: users.insights.shared.resource.microsoft.graph.workbookRange_rowsBelow-cb11
+      operationId: users.user.insights.shared.sharedInsight.resource.microsoft.graph.workbookRange_rowsBelow-cb11
       parameters:
         - name: user-id
           in: path
@@ -2937,7 +2937,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function usedRange
-      operationId: users.insights.shared.resource.microsoft.graph.workbookRange_usedRange-ec2c
+      operationId: users.user.insights.shared.sharedInsight.resource.microsoft.graph.workbookRange_usedRange-ec2c
       parameters:
         - name: user-id
           in: path
@@ -2968,7 +2968,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function usedRange
-      operationId: users.insights.shared.resource.microsoft.graph.workbookRange_usedRange-206d
+      operationId: users.user.insights.shared.sharedInsight.resource.microsoft.graph.workbookRange_usedRange-206d
       parameters:
         - name: user-id
           in: path
@@ -3006,7 +3006,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function visibleView
-      operationId: users.insights.shared.resource.microsoft.graph.workbookRange_visibleView
+      operationId: users.user.insights.shared.sharedInsight.resource.microsoft.graph.workbookRange_visibleView
       parameters:
         - name: user-id
           in: path
@@ -3037,7 +3037,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function range
-      operationId: users.insights.shared.resource.microsoft.graph.workbookRangeView_range
+      operationId: users.user.insights.shared.sharedInsight.resource.microsoft.graph.workbookRangeView_range
       parameters:
         - name: user-id
           in: path
@@ -3068,7 +3068,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function boundingRect
-      operationId: users.insights.trending.resource.microsoft.graph.workbookRange_boundingRect
+      operationId: users.user.insights.trending.trending.resource.microsoft.graph.workbookRange_boundingRect
       parameters:
         - name: user-id
           in: path
@@ -3106,7 +3106,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function cell
-      operationId: users.insights.trending.resource.microsoft.graph.workbookRange_cell
+      operationId: users.user.insights.trending.trending.resource.microsoft.graph.workbookRange_cell
       parameters:
         - name: user-id
           in: path
@@ -3155,7 +3155,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function column
-      operationId: users.insights.trending.resource.microsoft.graph.workbookRange_column
+      operationId: users.user.insights.trending.trending.resource.microsoft.graph.workbookRange_column
       parameters:
         - name: user-id
           in: path
@@ -3195,7 +3195,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function columnsAfter
-      operationId: users.insights.trending.resource.microsoft.graph.workbookRange_columnsAfter-9c18
+      operationId: users.user.insights.trending.trending.resource.microsoft.graph.workbookRange_columnsAfter-9c18
       parameters:
         - name: user-id
           in: path
@@ -3226,7 +3226,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function columnsAfter
-      operationId: users.insights.trending.resource.microsoft.graph.workbookRange_columnsAfter-db2a
+      operationId: users.user.insights.trending.trending.resource.microsoft.graph.workbookRange_columnsAfter-db2a
       parameters:
         - name: user-id
           in: path
@@ -3267,7 +3267,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function columnsBefore
-      operationId: users.insights.trending.resource.microsoft.graph.workbookRange_columnsBefore-72e4
+      operationId: users.user.insights.trending.trending.resource.microsoft.graph.workbookRange_columnsBefore-72e4
       parameters:
         - name: user-id
           in: path
@@ -3298,7 +3298,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function columnsBefore
-      operationId: users.insights.trending.resource.microsoft.graph.workbookRange_columnsBefore-1bca
+      operationId: users.user.insights.trending.trending.resource.microsoft.graph.workbookRange_columnsBefore-1bca
       parameters:
         - name: user-id
           in: path
@@ -3339,7 +3339,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function entireColumn
-      operationId: users.insights.trending.resource.microsoft.graph.workbookRange_entireColumn
+      operationId: users.user.insights.trending.trending.resource.microsoft.graph.workbookRange_entireColumn
       parameters:
         - name: user-id
           in: path
@@ -3370,7 +3370,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function entireRow
-      operationId: users.insights.trending.resource.microsoft.graph.workbookRange_entireRow
+      operationId: users.user.insights.trending.trending.resource.microsoft.graph.workbookRange_entireRow
       parameters:
         - name: user-id
           in: path
@@ -3401,7 +3401,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function intersection
-      operationId: users.insights.trending.resource.microsoft.graph.workbookRange_intersection
+      operationId: users.user.insights.trending.trending.resource.microsoft.graph.workbookRange_intersection
       parameters:
         - name: user-id
           in: path
@@ -3439,7 +3439,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function lastCell
-      operationId: users.insights.trending.resource.microsoft.graph.workbookRange_lastCell
+      operationId: users.user.insights.trending.trending.resource.microsoft.graph.workbookRange_lastCell
       parameters:
         - name: user-id
           in: path
@@ -3470,7 +3470,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function lastColumn
-      operationId: users.insights.trending.resource.microsoft.graph.workbookRange_lastColumn
+      operationId: users.user.insights.trending.trending.resource.microsoft.graph.workbookRange_lastColumn
       parameters:
         - name: user-id
           in: path
@@ -3501,7 +3501,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function lastRow
-      operationId: users.insights.trending.resource.microsoft.graph.workbookRange_lastRow
+      operationId: users.user.insights.trending.trending.resource.microsoft.graph.workbookRange_lastRow
       parameters:
         - name: user-id
           in: path
@@ -3532,7 +3532,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function offsetRange
-      operationId: users.insights.trending.resource.microsoft.graph.workbookRange_offsetRange
+      operationId: users.user.insights.trending.trending.resource.microsoft.graph.workbookRange_offsetRange
       parameters:
         - name: user-id
           in: path
@@ -3581,7 +3581,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function resizedRange
-      operationId: users.insights.trending.resource.microsoft.graph.workbookRange_resizedRange
+      operationId: users.user.insights.trending.trending.resource.microsoft.graph.workbookRange_resizedRange
       parameters:
         - name: user-id
           in: path
@@ -3630,7 +3630,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function row
-      operationId: users.insights.trending.resource.microsoft.graph.workbookRange_row
+      operationId: users.user.insights.trending.trending.resource.microsoft.graph.workbookRange_row
       parameters:
         - name: user-id
           in: path
@@ -3670,7 +3670,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function rowsAbove
-      operationId: users.insights.trending.resource.microsoft.graph.workbookRange_rowsAbove-3ac1
+      operationId: users.user.insights.trending.trending.resource.microsoft.graph.workbookRange_rowsAbove-3ac1
       parameters:
         - name: user-id
           in: path
@@ -3701,7 +3701,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function rowsAbove
-      operationId: users.insights.trending.resource.microsoft.graph.workbookRange_rowsAbove-251e
+      operationId: users.user.insights.trending.trending.resource.microsoft.graph.workbookRange_rowsAbove-251e
       parameters:
         - name: user-id
           in: path
@@ -3742,7 +3742,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function rowsBelow
-      operationId: users.insights.trending.resource.microsoft.graph.workbookRange_rowsBelow-3b3c
+      operationId: users.user.insights.trending.trending.resource.microsoft.graph.workbookRange_rowsBelow-3b3c
       parameters:
         - name: user-id
           in: path
@@ -3773,7 +3773,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function rowsBelow
-      operationId: users.insights.trending.resource.microsoft.graph.workbookRange_rowsBelow-cb11
+      operationId: users.user.insights.trending.trending.resource.microsoft.graph.workbookRange_rowsBelow-cb11
       parameters:
         - name: user-id
           in: path
@@ -3814,7 +3814,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function usedRange
-      operationId: users.insights.trending.resource.microsoft.graph.workbookRange_usedRange-ec2c
+      operationId: users.user.insights.trending.trending.resource.microsoft.graph.workbookRange_usedRange-ec2c
       parameters:
         - name: user-id
           in: path
@@ -3845,7 +3845,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function usedRange
-      operationId: users.insights.trending.resource.microsoft.graph.workbookRange_usedRange-206d
+      operationId: users.user.insights.trending.trending.resource.microsoft.graph.workbookRange_usedRange-206d
       parameters:
         - name: user-id
           in: path
@@ -3883,7 +3883,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function visibleView
-      operationId: users.insights.trending.resource.microsoft.graph.workbookRange_visibleView
+      operationId: users.user.insights.trending.trending.resource.microsoft.graph.workbookRange_visibleView
       parameters:
         - name: user-id
           in: path
@@ -3914,7 +3914,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function range
-      operationId: users.insights.trending.resource.microsoft.graph.workbookRangeView_range
+      operationId: users.user.insights.trending.trending.resource.microsoft.graph.workbookRangeView_range
       parameters:
         - name: user-id
           in: path
@@ -3945,7 +3945,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function boundingRect
-      operationId: users.insights.used.resource.microsoft.graph.workbookRange_boundingRect
+      operationId: users.user.insights.used.usedInsight.resource.microsoft.graph.workbookRange_boundingRect
       parameters:
         - name: user-id
           in: path
@@ -3983,7 +3983,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function cell
-      operationId: users.insights.used.resource.microsoft.graph.workbookRange_cell
+      operationId: users.user.insights.used.usedInsight.resource.microsoft.graph.workbookRange_cell
       parameters:
         - name: user-id
           in: path
@@ -4032,7 +4032,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function column
-      operationId: users.insights.used.resource.microsoft.graph.workbookRange_column
+      operationId: users.user.insights.used.usedInsight.resource.microsoft.graph.workbookRange_column
       parameters:
         - name: user-id
           in: path
@@ -4072,7 +4072,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function columnsAfter
-      operationId: users.insights.used.resource.microsoft.graph.workbookRange_columnsAfter-9c18
+      operationId: users.user.insights.used.usedInsight.resource.microsoft.graph.workbookRange_columnsAfter-9c18
       parameters:
         - name: user-id
           in: path
@@ -4103,7 +4103,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function columnsAfter
-      operationId: users.insights.used.resource.microsoft.graph.workbookRange_columnsAfter-db2a
+      operationId: users.user.insights.used.usedInsight.resource.microsoft.graph.workbookRange_columnsAfter-db2a
       parameters:
         - name: user-id
           in: path
@@ -4144,7 +4144,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function columnsBefore
-      operationId: users.insights.used.resource.microsoft.graph.workbookRange_columnsBefore-72e4
+      operationId: users.user.insights.used.usedInsight.resource.microsoft.graph.workbookRange_columnsBefore-72e4
       parameters:
         - name: user-id
           in: path
@@ -4175,7 +4175,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function columnsBefore
-      operationId: users.insights.used.resource.microsoft.graph.workbookRange_columnsBefore-1bca
+      operationId: users.user.insights.used.usedInsight.resource.microsoft.graph.workbookRange_columnsBefore-1bca
       parameters:
         - name: user-id
           in: path
@@ -4216,7 +4216,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function entireColumn
-      operationId: users.insights.used.resource.microsoft.graph.workbookRange_entireColumn
+      operationId: users.user.insights.used.usedInsight.resource.microsoft.graph.workbookRange_entireColumn
       parameters:
         - name: user-id
           in: path
@@ -4247,7 +4247,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function entireRow
-      operationId: users.insights.used.resource.microsoft.graph.workbookRange_entireRow
+      operationId: users.user.insights.used.usedInsight.resource.microsoft.graph.workbookRange_entireRow
       parameters:
         - name: user-id
           in: path
@@ -4278,7 +4278,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function intersection
-      operationId: users.insights.used.resource.microsoft.graph.workbookRange_intersection
+      operationId: users.user.insights.used.usedInsight.resource.microsoft.graph.workbookRange_intersection
       parameters:
         - name: user-id
           in: path
@@ -4316,7 +4316,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function lastCell
-      operationId: users.insights.used.resource.microsoft.graph.workbookRange_lastCell
+      operationId: users.user.insights.used.usedInsight.resource.microsoft.graph.workbookRange_lastCell
       parameters:
         - name: user-id
           in: path
@@ -4347,7 +4347,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function lastColumn
-      operationId: users.insights.used.resource.microsoft.graph.workbookRange_lastColumn
+      operationId: users.user.insights.used.usedInsight.resource.microsoft.graph.workbookRange_lastColumn
       parameters:
         - name: user-id
           in: path
@@ -4378,7 +4378,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function lastRow
-      operationId: users.insights.used.resource.microsoft.graph.workbookRange_lastRow
+      operationId: users.user.insights.used.usedInsight.resource.microsoft.graph.workbookRange_lastRow
       parameters:
         - name: user-id
           in: path
@@ -4409,7 +4409,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function offsetRange
-      operationId: users.insights.used.resource.microsoft.graph.workbookRange_offsetRange
+      operationId: users.user.insights.used.usedInsight.resource.microsoft.graph.workbookRange_offsetRange
       parameters:
         - name: user-id
           in: path
@@ -4458,7 +4458,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function resizedRange
-      operationId: users.insights.used.resource.microsoft.graph.workbookRange_resizedRange
+      operationId: users.user.insights.used.usedInsight.resource.microsoft.graph.workbookRange_resizedRange
       parameters:
         - name: user-id
           in: path
@@ -4507,7 +4507,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function row
-      operationId: users.insights.used.resource.microsoft.graph.workbookRange_row
+      operationId: users.user.insights.used.usedInsight.resource.microsoft.graph.workbookRange_row
       parameters:
         - name: user-id
           in: path
@@ -4547,7 +4547,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function rowsAbove
-      operationId: users.insights.used.resource.microsoft.graph.workbookRange_rowsAbove-3ac1
+      operationId: users.user.insights.used.usedInsight.resource.microsoft.graph.workbookRange_rowsAbove-3ac1
       parameters:
         - name: user-id
           in: path
@@ -4578,7 +4578,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function rowsAbove
-      operationId: users.insights.used.resource.microsoft.graph.workbookRange_rowsAbove-251e
+      operationId: users.user.insights.used.usedInsight.resource.microsoft.graph.workbookRange_rowsAbove-251e
       parameters:
         - name: user-id
           in: path
@@ -4619,7 +4619,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function rowsBelow
-      operationId: users.insights.used.resource.microsoft.graph.workbookRange_rowsBelow-3b3c
+      operationId: users.user.insights.used.usedInsight.resource.microsoft.graph.workbookRange_rowsBelow-3b3c
       parameters:
         - name: user-id
           in: path
@@ -4650,7 +4650,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function rowsBelow
-      operationId: users.insights.used.resource.microsoft.graph.workbookRange_rowsBelow-cb11
+      operationId: users.user.insights.used.usedInsight.resource.microsoft.graph.workbookRange_rowsBelow-cb11
       parameters:
         - name: user-id
           in: path
@@ -4691,7 +4691,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function usedRange
-      operationId: users.insights.used.resource.microsoft.graph.workbookRange_usedRange-ec2c
+      operationId: users.user.insights.used.usedInsight.resource.microsoft.graph.workbookRange_usedRange-ec2c
       parameters:
         - name: user-id
           in: path
@@ -4722,7 +4722,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function usedRange
-      operationId: users.insights.used.resource.microsoft.graph.workbookRange_usedRange-206d
+      operationId: users.user.insights.used.usedInsight.resource.microsoft.graph.workbookRange_usedRange-206d
       parameters:
         - name: user-id
           in: path
@@ -4760,7 +4760,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function visibleView
-      operationId: users.insights.used.resource.microsoft.graph.workbookRange_visibleView
+      operationId: users.user.insights.used.usedInsight.resource.microsoft.graph.workbookRange_visibleView
       parameters:
         - name: user-id
           in: path
@@ -4791,7 +4791,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function range
-      operationId: users.insights.used.resource.microsoft.graph.workbookRangeView_range
+      operationId: users.user.insights.used.usedInsight.resource.microsoft.graph.workbookRangeView_range
       parameters:
         - name: user-id
           in: path
@@ -4822,7 +4822,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.mailFolders.childFolders_delta
+      operationId: users.user.mailFolders.mailFolder.childFolders_delta
       parameters:
         - name: user-id
           in: path
@@ -4855,7 +4855,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.mailFolders.messages_delta
+      operationId: users.user.mailFolders.mailFolder.messages_delta
       parameters:
         - name: user-id
           in: path
@@ -4888,7 +4888,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.mailFolders_delta
+      operationId: users.user.mailFolders_delta
       parameters:
         - name: user-id
           in: path
@@ -4914,7 +4914,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getUserIdsWithFlaggedAppRegistration
-      operationId: users.managedAppRegistrations_getUserIdsWithFlaggedAppRegistration
+      operationId: users.user.managedAppRegistrations_getUserIdsWithFlaggedAppRegistration
       parameters:
         - name: user-id
           in: path
@@ -4941,7 +4941,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.messages_delta
+      operationId: users.user.messages_delta
       parameters:
         - name: user-id
           in: path
@@ -4967,7 +4967,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getManagedAppDiagnosticStatuses
-      operationId: users_getManagedAppDiagnosticStatuses
+      operationId: users.user_getManagedAppDiagnosticStatuses
       parameters:
         - name: user-id
           in: path
@@ -4993,7 +4993,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getManagedAppPolicies
-      operationId: users_getManagedAppPolicies
+      operationId: users.user_getManagedAppPolicies
       parameters:
         - name: user-id
           in: path
@@ -5019,7 +5019,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function reminderView
-      operationId: users_reminderView
+      operationId: users.user_reminderView
       parameters:
         - name: user-id
           in: path
@@ -5058,7 +5058,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function preview
-      operationId: users.onenote.notebooks.sectionGroups.sections.pages_preview
+      operationId: users.user.onenote.notebooks.notebook.sectionGroups.sectionGroup.sections.onenoteSection.pages.onenotePage_preview
       parameters:
         - name: user-id
           in: path
@@ -5110,7 +5110,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function preview
-      operationId: users.onenote.notebooks.sections.pages_preview
+      operationId: users.user.onenote.notebooks.notebook.sections.onenoteSection.pages.onenotePage_preview
       parameters:
         - name: user-id
           in: path
@@ -5155,7 +5155,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getRecentNotebooks
-      operationId: users.onenote.notebooks_getRecentNotebooks
+      operationId: users.user.onenote.notebooks_getRecentNotebooks
       parameters:
         - name: user-id
           in: path
@@ -5188,7 +5188,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function preview
-      operationId: users.onenote.pages_preview
+      operationId: users.user.onenote.pages.onenotePage_preview
       parameters:
         - name: user-id
           in: path
@@ -5219,7 +5219,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function preview
-      operationId: users.onenote.pages.parentNotebook.sectionGroups.sections.pages_preview
+      operationId: users.user.onenote.pages.onenotePage.parentNotebook.sectionGroups.sectionGroup.sections.onenoteSection.pages.onenotePage_preview
       parameters:
         - name: user-id
           in: path
@@ -5271,7 +5271,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function preview
-      operationId: users.onenote.pages.parentNotebook.sections.pages_preview
+      operationId: users.user.onenote.pages.onenotePage.parentNotebook.sections.onenoteSection.pages.onenotePage_preview
       parameters:
         - name: user-id
           in: path
@@ -5316,7 +5316,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function preview
-      operationId: users.onenote.pages.parentSection.pages_preview
+      operationId: users.user.onenote.pages.onenotePage.parentSection.pages.onenotePage_preview
       parameters:
         - name: user-id
           in: path
@@ -5354,7 +5354,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function preview
-      operationId: users.onenote.sectionGroups.parentNotebook.sections.pages_preview
+      operationId: users.user.onenote.sectionGroups.sectionGroup.parentNotebook.sections.onenoteSection.pages.onenotePage_preview
       parameters:
         - name: user-id
           in: path
@@ -5399,7 +5399,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function preview
-      operationId: users.onenote.sectionGroups.sections.pages_preview
+      operationId: users.user.onenote.sectionGroups.sectionGroup.sections.onenoteSection.pages.onenotePage_preview
       parameters:
         - name: user-id
           in: path
@@ -5444,7 +5444,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function preview
-      operationId: users.onenote.sections.pages_preview
+      operationId: users.user.onenote.sections.onenoteSection.pages.onenotePage_preview
       parameters:
         - name: user-id
           in: path
@@ -5482,7 +5482,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function supportedLanguages
-      operationId: users.outlook_supportedLanguages
+      operationId: users.user.outlook_supportedLanguages
       parameters:
         - name: user-id
           in: path
@@ -5508,7 +5508,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function supportedTimeZones
-      operationId: users.outlook_supportedTimeZones-ee48
+      operationId: users.user.outlook_supportedTimeZones-ee48
       parameters:
         - name: user-id
           in: path
@@ -5534,7 +5534,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function supportedTimeZones
-      operationId: users.outlook_supportedTimeZones-51c6
+      operationId: users.user.outlook_supportedTimeZones-51c6
       parameters:
         - name: user-id
           in: path
@@ -5566,7 +5566,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.todo.lists.tasks_delta
+      operationId: users.user.todo.lists.todoTaskList.tasks_delta
       parameters:
         - name: user-id
           in: path
@@ -5599,7 +5599,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.todo.lists_delta
+      operationId: users.user.todo.lists_delta
       parameters:
         - name: user-id
           in: path
@@ -6646,7 +6646,7 @@ components:
               description: The telephone numbers for the user. Only one number can be set for this property. Returned by default. Read-only for users synced from on-premises directory.
             city:
               type: string
-              description: The city in which the user is located. Returned only on $select. Supports $filter.
+              description: The city in which the user is located. Maximum length is 128 characters. Returned only on $select. Supports $filter.
               nullable: true
             companyName:
               type: string
@@ -6658,7 +6658,7 @@ components:
               nullable: true
             country:
               type: string
-              description: 'The country/region in which the user is located; for example, ''US'' or ''UK''. Returned only on $select. Supports $filter.'
+              description: 'The country/region in which the user is located; for example, ''US'' or ''UK''. Maximum length is 128 characters. Returned only on $select. Supports $filter.'
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -6672,11 +6672,11 @@ components:
               nullable: true
             department:
               type: string
-              description: The name for the department in which the user works. Returned only on $select. Supports $filter.
+              description: The name for the department in which the user works. Maximum length is 64 characters.Returned only on $select. Supports $filter.
               nullable: true
             displayName:
               type: string
-              description: 'The name displayed in the address book for the user. This value is usually the combination of the user''s first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates. Returned by default. Supports $filter and $orderby.'
+              description: 'The name displayed in the address book for the user. This value is usually the combination of the user''s first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates. Maximum length is 256 characters. Returned by default. Supports $filter and $orderby.'
               nullable: true
             employeeHireDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -6710,7 +6710,7 @@ components:
               nullable: true
             givenName:
               type: string
-              description: The given name (first name) of the user. Returned by default. Supports $filter.
+              description: The given name (first name) of the user. Maximum length is 64 characters. Returned by default. Supports $filter.
               nullable: true
             identities:
               type: array
@@ -6729,7 +6729,7 @@ components:
               nullable: true
             jobTitle:
               type: string
-              description: The user's job title. Returned by default. Supports $filter.
+              description: The user's job title. Maximum length is 128 characters. Returned by default. Supports $filter.
               nullable: true
             lastPasswordChangeDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -6752,7 +6752,7 @@ components:
               nullable: true
             mailNickname:
               type: string
-              description: The mail alias for the user. This property must be specified when a user is created. Returned only on $select. Supports $filter.
+              description: The mail alias for the user. This property must be specified when a user is created. Maximum length is 64 characters. Returned only on $select. Supports $filter.
               nullable: true
             mobilePhone:
               type: string
@@ -6760,7 +6760,7 @@ components:
               nullable: true
             officeLocation:
               type: string
-              description: The office location in the user's place of business. Returned by default.
+              description: The office location in the user's place of business. Maximum length is 128 characters. Returned by default.
               nullable: true
             onPremisesDistinguishedName:
               type: string
@@ -6816,7 +6816,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.passwordProfile'
             postalCode:
               type: string
-              description: 'The postal code for the user''s postal address. The postal code is specific to the user''s country/region. In the United States of America, this attribute contains the ZIP code. Returned only on $select.'
+              description: 'The postal code for the user''s postal address. The postal code is specific to the user''s country/region. In the United States of America, this attribute contains the ZIP code. Maximum length is 40 characters. Returned only on $select.'
               nullable: true
             preferredLanguage:
               type: string
@@ -6844,15 +6844,15 @@ components:
               nullable: true
             state:
               type: string
-              description: The state or province in the user's address. Returned only on $select. Supports $filter.
+              description: The state or province in the user's address. Maximum length is 128 characters. Returned only on $select. Supports $filter.
               nullable: true
             streetAddress:
               type: string
-              description: The street address of the user's place of business. Returned only on $select.
+              description: The street address of the user's place of business. Maximum length is 1024 characters. Returned only on $select.
               nullable: true
             surname:
               type: string
-              description: The user's surname (family name or last name). Returned by default. Supports $filter.
+              description: The user's surname (family name or last name). Maximum length is 64 characters. Returned by default. Supports $filter.
               nullable: true
             usageLocation:
               type: string
@@ -14096,7 +14096,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Groups that this device is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable.'
+              description: Groups that this device is a member of. Read-only. Nullable.
             registeredOwners:
               type: array
               items:
@@ -14111,6 +14111,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: Groups that this device is a member of. This operation is transitive.
             extensions:
               type: array
               items:
@@ -14473,7 +14474,7 @@ components:
               nullable: true
             permissionType:
               type: string
-              description: 'The type of permission. Possible values are: Application,Delegated. Read-only.'
+              description: 'The type of permission. Possible values are: Application, Delegated. Read-only.'
               nullable: true
             resourceAppId:
               type: string
@@ -14668,7 +14669,7 @@ components:
               nullable: true
             teamsAppId:
               type: string
-              description: The id from the Teams App manifest.
+              description: The ID from the Teams app manifest.
               nullable: true
             version:
               type: string

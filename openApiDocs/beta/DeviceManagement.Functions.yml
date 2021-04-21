@@ -90,7 +90,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getFileVaultKey
-      operationId: deviceManagement.comanagedDevices_getFileVaultKey
+      operationId: deviceManagement.comanagedDevices.managedDevice_getFileVaultKey
       parameters:
         - name: managedDevice-id
           in: path
@@ -115,7 +115,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getNonCompliantSettings
-      operationId: deviceManagement.comanagedDevices_getNonCompliantSettings
+      operationId: deviceManagement.comanagedDevices.managedDevice_getNonCompliantSettings
       parameters:
         - name: managedDevice-id
           in: path
@@ -165,7 +165,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function exportMobileConfig
-      operationId: deviceManagement.depOnboardingSettings.enrollmentProfiles_exportMobileConfig
+      operationId: deviceManagement.depOnboardingSettings.depOnboardingSetting.enrollmentProfiles.enrollmentProfile_exportMobileConfig
       parameters:
         - name: depOnboardingSetting-id
           in: path
@@ -197,7 +197,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getEncryptionPublicKey
-      operationId: deviceManagement.depOnboardingSettings_getEncryptionPublicKey
+      operationId: deviceManagement.depOnboardingSettings.depOnboardingSetting_getEncryptionPublicKey
       parameters:
         - name: depOnboardingSetting-id
           in: path
@@ -249,7 +249,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getFileVaultKey
-      operationId: deviceManagement.deviceComplianceScripts.deviceRunStates.managedDevice_getFileVaultKey
+      operationId: deviceManagement.deviceComplianceScripts.deviceComplianceScript.deviceRunStates.deviceComplianceScriptDeviceState.managedDevice_getFileVaultKey
       parameters:
         - name: deviceComplianceScript-id
           in: path
@@ -281,7 +281,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getNonCompliantSettings
-      operationId: deviceManagement.deviceComplianceScripts.deviceRunStates.managedDevice_getNonCompliantSettings
+      operationId: deviceManagement.deviceComplianceScripts.deviceComplianceScript.deviceRunStates.deviceComplianceScriptDeviceState.managedDevice_getNonCompliantSettings
       parameters:
         - name: deviceComplianceScript-id
           in: path
@@ -332,7 +332,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getFileVaultKey
-      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceRunStates.managedDevice_getFileVaultKey
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceCustomAttributeShellScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_getFileVaultKey
       parameters:
         - name: deviceCustomAttributeShellScript-id
           in: path
@@ -364,7 +364,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getNonCompliantSettings
-      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceRunStates.managedDevice_getNonCompliantSettings
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceCustomAttributeShellScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_getNonCompliantSettings
       parameters:
         - name: deviceCustomAttributeShellScript-id
           in: path
@@ -397,7 +397,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getFileVaultKey
-      operationId: deviceManagement.deviceCustomAttributeShellScripts.userRunStates.deviceRunStates.managedDevice_getFileVaultKey
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceCustomAttributeShellScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_getFileVaultKey
       parameters:
         - name: deviceCustomAttributeShellScript-id
           in: path
@@ -436,7 +436,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getNonCompliantSettings
-      operationId: deviceManagement.deviceCustomAttributeShellScripts.userRunStates.deviceRunStates.managedDevice_getNonCompliantSettings
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceCustomAttributeShellScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_getNonCompliantSettings
       parameters:
         - name: deviceCustomAttributeShellScript-id
           in: path
@@ -476,7 +476,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getFileVaultKey
-      operationId: deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_getFileVaultKey
+      operationId: deviceManagement.deviceHealthScripts.deviceHealthScript.deviceRunStates.deviceHealthScriptDeviceState.managedDevice_getFileVaultKey
       parameters:
         - name: deviceHealthScript-id
           in: path
@@ -508,7 +508,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getNonCompliantSettings
-      operationId: deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_getNonCompliantSettings
+      operationId: deviceManagement.deviceHealthScripts.deviceHealthScript.deviceRunStates.deviceHealthScriptDeviceState.managedDevice_getNonCompliantSettings
       parameters:
         - name: deviceHealthScript-id
           in: path
@@ -541,7 +541,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getRemediationHistory
-      operationId: deviceManagement.deviceHealthScripts_getRemediationHistory
+      operationId: deviceManagement.deviceHealthScripts.deviceHealthScript_getRemediationHistory
       parameters:
         - name: deviceHealthScript-id
           in: path
@@ -597,7 +597,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getFileVaultKey
-      operationId: deviceManagement.deviceManagementScripts.deviceRunStates.managedDevice_getFileVaultKey
+      operationId: deviceManagement.deviceManagementScripts.deviceManagementScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_getFileVaultKey
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -629,7 +629,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getNonCompliantSettings
-      operationId: deviceManagement.deviceManagementScripts.deviceRunStates.managedDevice_getNonCompliantSettings
+      operationId: deviceManagement.deviceManagementScripts.deviceManagementScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_getNonCompliantSettings
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -662,7 +662,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getFileVaultKey
-      operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_getFileVaultKey
+      operationId: deviceManagement.deviceManagementScripts.deviceManagementScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_getFileVaultKey
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -701,7 +701,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getNonCompliantSettings
-      operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_getNonCompliantSettings
+      operationId: deviceManagement.deviceManagementScripts.deviceManagementScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_getNonCompliantSettings
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -741,7 +741,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getFileVaultKey
-      operationId: deviceManagement.deviceShellScripts.deviceRunStates.managedDevice_getFileVaultKey
+      operationId: deviceManagement.deviceShellScripts.deviceShellScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_getFileVaultKey
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -773,7 +773,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getNonCompliantSettings
-      operationId: deviceManagement.deviceShellScripts.deviceRunStates.managedDevice_getNonCompliantSettings
+      operationId: deviceManagement.deviceShellScripts.deviceShellScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_getNonCompliantSettings
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -806,7 +806,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getFileVaultKey
-      operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates.managedDevice_getFileVaultKey
+      operationId: deviceManagement.deviceShellScripts.deviceShellScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_getFileVaultKey
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -845,7 +845,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getNonCompliantSettings
-      operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates.managedDevice_getNonCompliantSettings
+      operationId: deviceManagement.deviceShellScripts.deviceShellScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_getNonCompliantSettings
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -885,7 +885,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function compare
-      operationId: deviceManagement.intents_compare
+      operationId: deviceManagement.intents.deviceManagementIntent_compare
       parameters:
         - name: deviceManagementIntent-id
           in: path
@@ -918,7 +918,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getFileVaultKey
-      operationId: deviceManagement.managedDevices_getFileVaultKey
+      operationId: deviceManagement.managedDevices.managedDevice_getFileVaultKey
       parameters:
         - name: managedDevice-id
           in: path
@@ -943,7 +943,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getNonCompliantSettings
-      operationId: deviceManagement.managedDevices_getNonCompliantSettings
+      operationId: deviceManagement.managedDevices.managedDevice_getNonCompliantSettings
       parameters:
         - name: managedDevice-id
           in: path
@@ -969,7 +969,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getManagementConditionStatementsForPlatform
-      operationId: deviceManagement.managementConditions.managementConditionStatements_getManagementConditionStatementsForPlatform
+      operationId: deviceManagement.managementConditions.managementCondition.managementConditionStatements_getManagementConditionStatementsForPlatform
       parameters:
         - name: managementCondition-id
           in: path
@@ -1026,7 +1026,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getManagementConditionsForPlatform
-      operationId: deviceManagement.managementConditionStatements.managementConditions_getManagementConditionsForPlatform
+      operationId: deviceManagement.managementConditionStatements.managementConditionStatement.managementConditions_getManagementConditionsForPlatform
       parameters:
         - name: managementConditionStatement-id
           in: path
@@ -1058,7 +1058,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getManagementConditionStatementExpressionString
-      operationId: deviceManagement.managementConditionStatements_getManagementConditionStatementExpressionString
+      operationId: deviceManagement.managementConditionStatements.managementConditionStatement_getManagementConditionStatementExpressionString
       parameters:
         - name: managementConditionStatement-id
           in: path
@@ -1341,7 +1341,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getScopesForUser
-      operationId: deviceManagement.resourceOperations_getScopesForUser
+      operationId: deviceManagement.resourceOperations.resourceOperation_getScopesForUser
       parameters:
         - name: resourceOperation-id
           in: path
@@ -1375,7 +1375,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function hasCustomRoleScopeTag
-      operationId: deviceManagement.roleAssignments.roleScopeTags_hasCustomRoleScopeTag
+      operationId: deviceManagement.roleAssignments.deviceAndAppManagementRoleAssignment.roleScopeTags_hasCustomRoleScopeTag
       parameters:
         - name: deviceAndAppManagementRoleAssignment-id
           in: path
@@ -1417,7 +1417,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function compare
-      operationId: deviceManagement.templates_compare
+      operationId: deviceManagement.templates.deviceManagementTemplate_compare
       parameters:
         - name: deviceManagementTemplate-id
           in: path
@@ -1450,7 +1450,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function compare
-      operationId: deviceManagement.templates.migratableTo_compare
+      operationId: deviceManagement.templates.deviceManagementTemplate.migratableTo.deviceManagementTemplate_compare
       parameters:
         - name: deviceManagementTemplate-id
           in: path
@@ -2078,7 +2078,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.resourceAction'
-          description: Resource Actions each containing a set of allowed and not allowed permissions.
+          description: Actions
       additionalProperties:
         type: object
       description: Contains the set of ResourceActions determining the allowed and not allowed permissions for each role.
@@ -2485,7 +2485,7 @@ components:
           items:
             type: string
             nullable: true
-          description: Not Allowed Actions.
+          description: Not Allowed Actions
       additionalProperties:
         type: object
       description: Set of allowed and not allowed actions for a resource.

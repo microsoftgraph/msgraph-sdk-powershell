@@ -11,7 +11,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assign
-      operationId: deviceManagement.deviceCompliancePolicies_assign
+      operationId: deviceManagement.deviceCompliancePolicies.deviceCompliancePolicy_assign
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
@@ -51,7 +51,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action scheduleActionsForRules
-      operationId: deviceManagement.deviceCompliancePolicies_scheduleActionsForRules
+      operationId: deviceManagement.deviceCompliancePolicies.deviceCompliancePolicy_scheduleActionsForRules
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
@@ -85,7 +85,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assign
-      operationId: deviceManagement.deviceConfigurations_assign
+      operationId: deviceManagement.deviceConfigurations.deviceConfiguration_assign
       parameters:
         - name: deviceConfiguration-id
           in: path
@@ -125,7 +125,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assign
-      operationId: deviceManagement.deviceEnrollmentConfigurations_assign
+      operationId: deviceManagement.deviceEnrollmentConfigurations.deviceEnrollmentConfiguration_assign
       parameters:
         - name: deviceEnrollmentConfiguration-id
           in: path
@@ -159,7 +159,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action setPriority
-      operationId: deviceManagement.deviceEnrollmentConfigurations_setPriority
+      operationId: deviceManagement.deviceEnrollmentConfigurations.deviceEnrollmentConfiguration_setPriority
       parameters:
         - name: deviceEnrollmentConfiguration-id
           in: path
@@ -194,7 +194,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action sync
-      operationId: deviceManagement.exchangeConnectors_sync
+      operationId: deviceManagement.exchangeConnectors.deviceManagementExchangeConnector_sync
       parameters:
         - name: deviceManagementExchangeConnector-id
           in: path
@@ -226,7 +226,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action bypassActivationLock
-      operationId: deviceManagement.managedDevices_bypassActivationLock
+      operationId: deviceManagement.managedDevices.managedDevice_bypassActivationLock
       parameters:
         - name: managedDevice-id
           in: path
@@ -246,7 +246,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action cleanWindowsDevice
-      operationId: deviceManagement.managedDevices_cleanWindowsDevice
+      operationId: deviceManagement.managedDevices.managedDevice_cleanWindowsDevice
       parameters:
         - name: managedDevice-id
           in: path
@@ -279,7 +279,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action deleteUserFromSharedAppleDevice
-      operationId: deviceManagement.managedDevices_deleteUserFromSharedAppleDevice
+      operationId: deviceManagement.managedDevices.managedDevice_deleteUserFromSharedAppleDevice
       parameters:
         - name: managedDevice-id
           in: path
@@ -312,7 +312,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action disableLostMode
-      operationId: deviceManagement.managedDevices_disableLostMode
+      operationId: deviceManagement.managedDevices.managedDevice_disableLostMode
       parameters:
         - name: managedDevice-id
           in: path
@@ -332,7 +332,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action locateDevice
-      operationId: deviceManagement.managedDevices_locateDevice
+      operationId: deviceManagement.managedDevices.managedDevice_locateDevice
       parameters:
         - name: managedDevice-id
           in: path
@@ -352,7 +352,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action logoutSharedAppleDeviceActiveUser
-      operationId: deviceManagement.managedDevices_logoutSharedAppleDeviceActiveUser
+      operationId: deviceManagement.managedDevices.managedDevice_logoutSharedAppleDeviceActiveUser
       parameters:
         - name: managedDevice-id
           in: path
@@ -372,7 +372,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rebootNow
-      operationId: deviceManagement.managedDevices_rebootNow
+      operationId: deviceManagement.managedDevices.managedDevice_rebootNow
       parameters:
         - name: managedDevice-id
           in: path
@@ -392,7 +392,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action recoverPasscode
-      operationId: deviceManagement.managedDevices_recoverPasscode
+      operationId: deviceManagement.managedDevices.managedDevice_recoverPasscode
       parameters:
         - name: managedDevice-id
           in: path
@@ -412,7 +412,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action remoteLock
-      operationId: deviceManagement.managedDevices_remoteLock
+      operationId: deviceManagement.managedDevices.managedDevice_remoteLock
       parameters:
         - name: managedDevice-id
           in: path
@@ -432,7 +432,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action requestRemoteAssistance
-      operationId: deviceManagement.managedDevices_requestRemoteAssistance
+      operationId: deviceManagement.managedDevices.managedDevice_requestRemoteAssistance
       parameters:
         - name: managedDevice-id
           in: path
@@ -452,7 +452,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action resetPasscode
-      operationId: deviceManagement.managedDevices_resetPasscode
+      operationId: deviceManagement.managedDevices.managedDevice_resetPasscode
       parameters:
         - name: managedDevice-id
           in: path
@@ -472,7 +472,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action retire
-      operationId: deviceManagement.managedDevices_retire
+      operationId: deviceManagement.managedDevices.managedDevice_retire
       parameters:
         - name: managedDevice-id
           in: path
@@ -492,7 +492,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action shutDown
-      operationId: deviceManagement.managedDevices_shutDown
+      operationId: deviceManagement.managedDevices.managedDevice_shutDown
       parameters:
         - name: managedDevice-id
           in: path
@@ -512,7 +512,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action syncDevice
-      operationId: deviceManagement.managedDevices_syncDevice
+      operationId: deviceManagement.managedDevices.managedDevice_syncDevice
       parameters:
         - name: managedDevice-id
           in: path
@@ -532,7 +532,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action updateWindowsDeviceAccount
-      operationId: deviceManagement.managedDevices_updateWindowsDeviceAccount
+      operationId: deviceManagement.managedDevices.managedDevice_updateWindowsDeviceAccount
       parameters:
         - name: managedDevice-id
           in: path
@@ -564,7 +564,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action windowsDefenderScan
-      operationId: deviceManagement.managedDevices_windowsDefenderScan
+      operationId: deviceManagement.managedDevices.managedDevice_windowsDefenderScan
       parameters:
         - name: managedDevice-id
           in: path
@@ -597,7 +597,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action windowsDefenderUpdateSignatures
-      operationId: deviceManagement.managedDevices_windowsDefenderUpdateSignatures
+      operationId: deviceManagement.managedDevices.managedDevice_windowsDefenderUpdateSignatures
       parameters:
         - name: managedDevice-id
           in: path
@@ -617,7 +617,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action wipe
-      operationId: deviceManagement.managedDevices_wipe
+      operationId: deviceManagement.managedDevices.managedDevice_wipe
       parameters:
         - name: managedDevice-id
           in: path
@@ -658,7 +658,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action sendTestMessage
-      operationId: deviceManagement.notificationMessageTemplates_sendTestMessage
+      operationId: deviceManagement.notificationMessageTemplates.notificationMessageTemplate_sendTestMessage
       parameters:
         - name: notificationMessageTemplate-id
           in: path
@@ -678,7 +678,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action beginOnboarding
-      operationId: deviceManagement.remoteAssistancePartners_beginOnboarding
+      operationId: deviceManagement.remoteAssistancePartners.remoteAssistancePartner_beginOnboarding
       parameters:
         - name: remoteAssistancePartner-id
           in: path
@@ -698,7 +698,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action disconnect
-      operationId: deviceManagement.remoteAssistancePartners_disconnect
+      operationId: deviceManagement.remoteAssistancePartners.remoteAssistancePartner_disconnect
       parameters:
         - name: remoteAssistancePartner-id
           in: path

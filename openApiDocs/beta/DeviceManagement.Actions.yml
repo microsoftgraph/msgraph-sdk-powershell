@@ -11,7 +11,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action createToken
-      operationId: deviceManagement.androidDeviceOwnerEnrollmentProfiles_createToken
+      operationId: deviceManagement.androidDeviceOwnerEnrollmentProfiles.androidDeviceOwnerEnrollmentProfile_createToken
       parameters:
         - name: androidDeviceOwnerEnrollmentProfile-id
           in: path
@@ -46,7 +46,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action revokeToken
-      operationId: deviceManagement.androidDeviceOwnerEnrollmentProfiles_revokeToken
+      operationId: deviceManagement.androidDeviceOwnerEnrollmentProfiles.androidDeviceOwnerEnrollmentProfile_revokeToken
       parameters:
         - name: androidDeviceOwnerEnrollmentProfile-id
           in: path
@@ -66,7 +66,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action createToken
-      operationId: deviceManagement.androidForWorkEnrollmentProfiles_createToken
+      operationId: deviceManagement.androidForWorkEnrollmentProfiles.androidForWorkEnrollmentProfile_createToken
       parameters:
         - name: androidForWorkEnrollmentProfile-id
           in: path
@@ -101,7 +101,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action revokeToken
-      operationId: deviceManagement.androidForWorkEnrollmentProfiles_revokeToken
+      operationId: deviceManagement.androidForWorkEnrollmentProfiles.androidForWorkEnrollmentProfile_revokeToken
       parameters:
         - name: androidForWorkEnrollmentProfile-id
           in: path
@@ -381,7 +381,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action setPriority
-      operationId: deviceManagement.appleUserInitiatedEnrollmentProfiles_setPriority
+      operationId: deviceManagement.appleUserInitiatedEnrollmentProfiles.appleUserInitiatedEnrollmentProfile_setPriority
       parameters:
         - name: appleUserInitiatedEnrollmentProfile-id
           in: path
@@ -501,7 +501,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action createDownloadUrl
-      operationId: deviceManagement.comanagedDevices.logCollectionRequests_createDownloadUrl
+      operationId: deviceManagement.comanagedDevices.managedDevice.logCollectionRequests.deviceLogCollectionResponse_createDownloadUrl
       parameters:
         - name: managedDevice-id
           in: path
@@ -533,7 +533,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action bypassActivationLock
-      operationId: deviceManagement.comanagedDevices_bypassActivationLock
+      operationId: deviceManagement.comanagedDevices.managedDevice_bypassActivationLock
       parameters:
         - name: managedDevice-id
           in: path
@@ -553,7 +553,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action cleanWindowsDevice
-      operationId: deviceManagement.comanagedDevices_cleanWindowsDevice
+      operationId: deviceManagement.comanagedDevices.managedDevice_cleanWindowsDevice
       parameters:
         - name: managedDevice-id
           in: path
@@ -586,7 +586,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action createDeviceLogCollectionRequest
-      operationId: deviceManagement.comanagedDevices_createDeviceLogCollectionRequest
+      operationId: deviceManagement.comanagedDevices.managedDevice_createDeviceLogCollectionRequest
       parameters:
         - name: managedDevice-id
           in: path
@@ -622,7 +622,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action deleteUserFromSharedAppleDevice
-      operationId: deviceManagement.comanagedDevices_deleteUserFromSharedAppleDevice
+      operationId: deviceManagement.comanagedDevices.managedDevice_deleteUserFromSharedAppleDevice
       parameters:
         - name: managedDevice-id
           in: path
@@ -655,7 +655,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action disableLostMode
-      operationId: deviceManagement.comanagedDevices_disableLostMode
+      operationId: deviceManagement.comanagedDevices.managedDevice_disableLostMode
       parameters:
         - name: managedDevice-id
           in: path
@@ -675,7 +675,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action enableLostMode
-      operationId: deviceManagement.comanagedDevices_enableLostMode
+      operationId: deviceManagement.comanagedDevices.managedDevice_enableLostMode
       parameters:
         - name: managedDevice-id
           in: path
@@ -714,7 +714,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action locateDevice
-      operationId: deviceManagement.comanagedDevices_locateDevice
+      operationId: deviceManagement.comanagedDevices.managedDevice_locateDevice
       parameters:
         - name: managedDevice-id
           in: path
@@ -734,7 +734,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action logoutSharedAppleDeviceActiveUser
-      operationId: deviceManagement.comanagedDevices_logoutSharedAppleDeviceActiveUser
+      operationId: deviceManagement.comanagedDevices.managedDevice_logoutSharedAppleDeviceActiveUser
       parameters:
         - name: managedDevice-id
           in: path
@@ -754,7 +754,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action overrideComplianceState
-      operationId: deviceManagement.comanagedDevices_overrideComplianceState
+      operationId: deviceManagement.comanagedDevices.managedDevice_overrideComplianceState
       parameters:
         - name: managedDevice-id
           in: path
@@ -789,7 +789,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action playLostModeSound
-      operationId: deviceManagement.comanagedDevices_playLostModeSound
+      operationId: deviceManagement.comanagedDevices.managedDevice_playLostModeSound
       parameters:
         - name: managedDevice-id
           in: path
@@ -809,7 +809,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rebootNow
-      operationId: deviceManagement.comanagedDevices_rebootNow
+      operationId: deviceManagement.comanagedDevices.managedDevice_rebootNow
       parameters:
         - name: managedDevice-id
           in: path
@@ -829,7 +829,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action recoverPasscode
-      operationId: deviceManagement.comanagedDevices_recoverPasscode
+      operationId: deviceManagement.comanagedDevices.managedDevice_recoverPasscode
       parameters:
         - name: managedDevice-id
           in: path
@@ -849,7 +849,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action remoteLock
-      operationId: deviceManagement.comanagedDevices_remoteLock
+      operationId: deviceManagement.comanagedDevices.managedDevice_remoteLock
       parameters:
         - name: managedDevice-id
           in: path
@@ -869,7 +869,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action requestRemoteAssistance
-      operationId: deviceManagement.comanagedDevices_requestRemoteAssistance
+      operationId: deviceManagement.comanagedDevices.managedDevice_requestRemoteAssistance
       parameters:
         - name: managedDevice-id
           in: path
@@ -889,7 +889,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action resetPasscode
-      operationId: deviceManagement.comanagedDevices_resetPasscode
+      operationId: deviceManagement.comanagedDevices.managedDevice_resetPasscode
       parameters:
         - name: managedDevice-id
           in: path
@@ -909,7 +909,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action retire
-      operationId: deviceManagement.comanagedDevices_retire
+      operationId: deviceManagement.comanagedDevices.managedDevice_retire
       parameters:
         - name: managedDevice-id
           in: path
@@ -929,7 +929,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action revokeAppleVppLicenses
-      operationId: deviceManagement.comanagedDevices_revokeAppleVppLicenses
+      operationId: deviceManagement.comanagedDevices.managedDevice_revokeAppleVppLicenses
       parameters:
         - name: managedDevice-id
           in: path
@@ -949,7 +949,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rotateBitLockerKeys
-      operationId: deviceManagement.comanagedDevices_rotateBitLockerKeys
+      operationId: deviceManagement.comanagedDevices.managedDevice_rotateBitLockerKeys
       parameters:
         - name: managedDevice-id
           in: path
@@ -969,7 +969,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rotateFileVaultKey
-      operationId: deviceManagement.comanagedDevices_rotateFileVaultKey
+      operationId: deviceManagement.comanagedDevices.managedDevice_rotateFileVaultKey
       parameters:
         - name: managedDevice-id
           in: path
@@ -989,7 +989,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action sendCustomNotificationToCompanyPortal
-      operationId: deviceManagement.comanagedDevices_sendCustomNotificationToCompanyPortal
+      operationId: deviceManagement.comanagedDevices.managedDevice_sendCustomNotificationToCompanyPortal
       parameters:
         - name: managedDevice-id
           in: path
@@ -1023,7 +1023,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action setDeviceName
-      operationId: deviceManagement.comanagedDevices_setDeviceName
+      operationId: deviceManagement.comanagedDevices.managedDevice_setDeviceName
       parameters:
         - name: managedDevice-id
           in: path
@@ -1056,7 +1056,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action shutDown
-      operationId: deviceManagement.comanagedDevices_shutDown
+      operationId: deviceManagement.comanagedDevices.managedDevice_shutDown
       parameters:
         - name: managedDevice-id
           in: path
@@ -1076,7 +1076,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action syncDevice
-      operationId: deviceManagement.comanagedDevices_syncDevice
+      operationId: deviceManagement.comanagedDevices.managedDevice_syncDevice
       parameters:
         - name: managedDevice-id
           in: path
@@ -1096,7 +1096,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action triggerConfigurationManagerAction
-      operationId: deviceManagement.comanagedDevices_triggerConfigurationManagerAction
+      operationId: deviceManagement.comanagedDevices.managedDevice_triggerConfigurationManagerAction
       parameters:
         - name: managedDevice-id
           in: path
@@ -1128,7 +1128,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action updateWindowsDeviceAccount
-      operationId: deviceManagement.comanagedDevices_updateWindowsDeviceAccount
+      operationId: deviceManagement.comanagedDevices.managedDevice_updateWindowsDeviceAccount
       parameters:
         - name: managedDevice-id
           in: path
@@ -1160,7 +1160,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action windowsDefenderScan
-      operationId: deviceManagement.comanagedDevices_windowsDefenderScan
+      operationId: deviceManagement.comanagedDevices.managedDevice_windowsDefenderScan
       parameters:
         - name: managedDevice-id
           in: path
@@ -1193,7 +1193,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action windowsDefenderUpdateSignatures
-      operationId: deviceManagement.comanagedDevices_windowsDefenderUpdateSignatures
+      operationId: deviceManagement.comanagedDevices.managedDevice_windowsDefenderUpdateSignatures
       parameters:
         - name: managedDevice-id
           in: path
@@ -1213,7 +1213,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action wipe
-      operationId: deviceManagement.comanagedDevices_wipe
+      operationId: deviceManagement.comanagedDevices.managedDevice_wipe
       parameters:
         - name: managedDevice-id
           in: path
@@ -1308,7 +1308,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assign
-      operationId: deviceManagement.configurationPolicies_assign
+      operationId: deviceManagement.configurationPolicies.deviceManagementConfigurationPolicy_assign
       parameters:
         - name: deviceManagementConfigurationPolicy-id
           in: path
@@ -1348,7 +1348,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action consentToDataSharing
-      operationId: deviceManagement.dataSharingConsents_consentToDataSharing
+      operationId: deviceManagement.dataSharingConsents.dataSharingConsent_consentToDataSharing
       parameters:
         - name: dataSharingConsent-id
           in: path
@@ -1372,7 +1372,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action setDefaultProfile
-      operationId: deviceManagement.depOnboardingSettings.enrollmentProfiles_setDefaultProfile
+      operationId: deviceManagement.depOnboardingSettings.depOnboardingSetting.enrollmentProfiles.enrollmentProfile_setDefaultProfile
       parameters:
         - name: depOnboardingSetting-id
           in: path
@@ -1399,7 +1399,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action updateDeviceProfileAssignment
-      operationId: deviceManagement.depOnboardingSettings.enrollmentProfiles_updateDeviceProfileAssignment
+      operationId: deviceManagement.depOnboardingSettings.depOnboardingSetting.enrollmentProfiles.enrollmentProfile_updateDeviceProfileAssignment
       parameters:
         - name: depOnboardingSetting-id
           in: path
@@ -1441,7 +1441,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action importAppleDeviceIdentityList
-      operationId: deviceManagement.depOnboardingSettings.importedAppleDeviceIdentities_importAppleDeviceIdentityList
+      operationId: deviceManagement.depOnboardingSettings.depOnboardingSetting.importedAppleDeviceIdentities_importAppleDeviceIdentityList
       parameters:
         - name: depOnboardingSetting-id
           in: path
@@ -1484,7 +1484,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action generateEncryptionPublicKey
-      operationId: deviceManagement.depOnboardingSettings_generateEncryptionPublicKey
+      operationId: deviceManagement.depOnboardingSettings.depOnboardingSetting_generateEncryptionPublicKey
       parameters:
         - name: depOnboardingSetting-id
           in: path
@@ -1509,7 +1509,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action shareForSchoolDataSyncService
-      operationId: deviceManagement.depOnboardingSettings_shareForSchoolDataSyncService
+      operationId: deviceManagement.depOnboardingSettings.depOnboardingSetting_shareForSchoolDataSyncService
       parameters:
         - name: depOnboardingSetting-id
           in: path
@@ -1529,7 +1529,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action syncWithAppleDeviceEnrollmentProgram
-      operationId: deviceManagement.depOnboardingSettings_syncWithAppleDeviceEnrollmentProgram
+      operationId: deviceManagement.depOnboardingSettings.depOnboardingSetting_syncWithAppleDeviceEnrollmentProgram
       parameters:
         - name: depOnboardingSetting-id
           in: path
@@ -1549,7 +1549,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action unshareForSchoolDataSyncService
-      operationId: deviceManagement.depOnboardingSettings_unshareForSchoolDataSyncService
+      operationId: deviceManagement.depOnboardingSettings.depOnboardingSetting_unshareForSchoolDataSyncService
       parameters:
         - name: depOnboardingSetting-id
           in: path
@@ -1569,7 +1569,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action uploadDepToken
-      operationId: deviceManagement.depOnboardingSettings_uploadDepToken
+      operationId: deviceManagement.depOnboardingSettings.depOnboardingSetting_uploadDepToken
       parameters:
         - name: depOnboardingSetting-id
           in: path
@@ -1605,7 +1605,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action executeAction
-      operationId: deviceManagement.detectedApps.managedDevices_executeAction
+      operationId: deviceManagement.detectedApps.detectedApp.managedDevices_executeAction
       parameters:
         - name: detectedApp-id
           in: path
@@ -1663,7 +1663,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assign
-      operationId: deviceManagement.deviceCompliancePolicies_assign
+      operationId: deviceManagement.deviceCompliancePolicies.deviceCompliancePolicy_assign
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
@@ -1703,7 +1703,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action scheduleActionsForRules
-      operationId: deviceManagement.deviceCompliancePolicies_scheduleActionsForRules
+      operationId: deviceManagement.deviceCompliancePolicies.deviceCompliancePolicy_scheduleActionsForRules
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
@@ -1857,7 +1857,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action bypassActivationLock
-      operationId: deviceManagement.deviceComplianceScripts.deviceRunStates.managedDevice_bypassActivationLock
+      operationId: deviceManagement.deviceComplianceScripts.deviceComplianceScript.deviceRunStates.deviceComplianceScriptDeviceState.managedDevice_bypassActivationLock
       parameters:
         - name: deviceComplianceScript-id
           in: path
@@ -1884,7 +1884,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action cleanWindowsDevice
-      operationId: deviceManagement.deviceComplianceScripts.deviceRunStates.managedDevice_cleanWindowsDevice
+      operationId: deviceManagement.deviceComplianceScripts.deviceComplianceScript.deviceRunStates.deviceComplianceScriptDeviceState.managedDevice_cleanWindowsDevice
       parameters:
         - name: deviceComplianceScript-id
           in: path
@@ -1924,7 +1924,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action createDeviceLogCollectionRequest
-      operationId: deviceManagement.deviceComplianceScripts.deviceRunStates.managedDevice_createDeviceLogCollectionRequest
+      operationId: deviceManagement.deviceComplianceScripts.deviceComplianceScript.deviceRunStates.deviceComplianceScriptDeviceState.managedDevice_createDeviceLogCollectionRequest
       parameters:
         - name: deviceComplianceScript-id
           in: path
@@ -1967,7 +1967,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action deleteUserFromSharedAppleDevice
-      operationId: deviceManagement.deviceComplianceScripts.deviceRunStates.managedDevice_deleteUserFromSharedAppleDevice
+      operationId: deviceManagement.deviceComplianceScripts.deviceComplianceScript.deviceRunStates.deviceComplianceScriptDeviceState.managedDevice_deleteUserFromSharedAppleDevice
       parameters:
         - name: deviceComplianceScript-id
           in: path
@@ -2007,7 +2007,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action disableLostMode
-      operationId: deviceManagement.deviceComplianceScripts.deviceRunStates.managedDevice_disableLostMode
+      operationId: deviceManagement.deviceComplianceScripts.deviceComplianceScript.deviceRunStates.deviceComplianceScriptDeviceState.managedDevice_disableLostMode
       parameters:
         - name: deviceComplianceScript-id
           in: path
@@ -2034,7 +2034,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action enableLostMode
-      operationId: deviceManagement.deviceComplianceScripts.deviceRunStates.managedDevice_enableLostMode
+      operationId: deviceManagement.deviceComplianceScripts.deviceComplianceScript.deviceRunStates.deviceComplianceScriptDeviceState.managedDevice_enableLostMode
       parameters:
         - name: deviceComplianceScript-id
           in: path
@@ -2080,7 +2080,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action locateDevice
-      operationId: deviceManagement.deviceComplianceScripts.deviceRunStates.managedDevice_locateDevice
+      operationId: deviceManagement.deviceComplianceScripts.deviceComplianceScript.deviceRunStates.deviceComplianceScriptDeviceState.managedDevice_locateDevice
       parameters:
         - name: deviceComplianceScript-id
           in: path
@@ -2107,7 +2107,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action logoutSharedAppleDeviceActiveUser
-      operationId: deviceManagement.deviceComplianceScripts.deviceRunStates.managedDevice_logoutSharedAppleDeviceActiveUser
+      operationId: deviceManagement.deviceComplianceScripts.deviceComplianceScript.deviceRunStates.deviceComplianceScriptDeviceState.managedDevice_logoutSharedAppleDeviceActiveUser
       parameters:
         - name: deviceComplianceScript-id
           in: path
@@ -2134,7 +2134,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action overrideComplianceState
-      operationId: deviceManagement.deviceComplianceScripts.deviceRunStates.managedDevice_overrideComplianceState
+      operationId: deviceManagement.deviceComplianceScripts.deviceComplianceScript.deviceRunStates.deviceComplianceScriptDeviceState.managedDevice_overrideComplianceState
       parameters:
         - name: deviceComplianceScript-id
           in: path
@@ -2176,7 +2176,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action playLostModeSound
-      operationId: deviceManagement.deviceComplianceScripts.deviceRunStates.managedDevice_playLostModeSound
+      operationId: deviceManagement.deviceComplianceScripts.deviceComplianceScript.deviceRunStates.deviceComplianceScriptDeviceState.managedDevice_playLostModeSound
       parameters:
         - name: deviceComplianceScript-id
           in: path
@@ -2203,7 +2203,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rebootNow
-      operationId: deviceManagement.deviceComplianceScripts.deviceRunStates.managedDevice_rebootNow
+      operationId: deviceManagement.deviceComplianceScripts.deviceComplianceScript.deviceRunStates.deviceComplianceScriptDeviceState.managedDevice_rebootNow
       parameters:
         - name: deviceComplianceScript-id
           in: path
@@ -2230,7 +2230,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action recoverPasscode
-      operationId: deviceManagement.deviceComplianceScripts.deviceRunStates.managedDevice_recoverPasscode
+      operationId: deviceManagement.deviceComplianceScripts.deviceComplianceScript.deviceRunStates.deviceComplianceScriptDeviceState.managedDevice_recoverPasscode
       parameters:
         - name: deviceComplianceScript-id
           in: path
@@ -2257,7 +2257,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action remoteLock
-      operationId: deviceManagement.deviceComplianceScripts.deviceRunStates.managedDevice_remoteLock
+      operationId: deviceManagement.deviceComplianceScripts.deviceComplianceScript.deviceRunStates.deviceComplianceScriptDeviceState.managedDevice_remoteLock
       parameters:
         - name: deviceComplianceScript-id
           in: path
@@ -2284,7 +2284,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action requestRemoteAssistance
-      operationId: deviceManagement.deviceComplianceScripts.deviceRunStates.managedDevice_requestRemoteAssistance
+      operationId: deviceManagement.deviceComplianceScripts.deviceComplianceScript.deviceRunStates.deviceComplianceScriptDeviceState.managedDevice_requestRemoteAssistance
       parameters:
         - name: deviceComplianceScript-id
           in: path
@@ -2311,7 +2311,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action resetPasscode
-      operationId: deviceManagement.deviceComplianceScripts.deviceRunStates.managedDevice_resetPasscode
+      operationId: deviceManagement.deviceComplianceScripts.deviceComplianceScript.deviceRunStates.deviceComplianceScriptDeviceState.managedDevice_resetPasscode
       parameters:
         - name: deviceComplianceScript-id
           in: path
@@ -2338,7 +2338,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action retire
-      operationId: deviceManagement.deviceComplianceScripts.deviceRunStates.managedDevice_retire
+      operationId: deviceManagement.deviceComplianceScripts.deviceComplianceScript.deviceRunStates.deviceComplianceScriptDeviceState.managedDevice_retire
       parameters:
         - name: deviceComplianceScript-id
           in: path
@@ -2365,7 +2365,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action revokeAppleVppLicenses
-      operationId: deviceManagement.deviceComplianceScripts.deviceRunStates.managedDevice_revokeAppleVppLicenses
+      operationId: deviceManagement.deviceComplianceScripts.deviceComplianceScript.deviceRunStates.deviceComplianceScriptDeviceState.managedDevice_revokeAppleVppLicenses
       parameters:
         - name: deviceComplianceScript-id
           in: path
@@ -2392,7 +2392,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rotateBitLockerKeys
-      operationId: deviceManagement.deviceComplianceScripts.deviceRunStates.managedDevice_rotateBitLockerKeys
+      operationId: deviceManagement.deviceComplianceScripts.deviceComplianceScript.deviceRunStates.deviceComplianceScriptDeviceState.managedDevice_rotateBitLockerKeys
       parameters:
         - name: deviceComplianceScript-id
           in: path
@@ -2419,7 +2419,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rotateFileVaultKey
-      operationId: deviceManagement.deviceComplianceScripts.deviceRunStates.managedDevice_rotateFileVaultKey
+      operationId: deviceManagement.deviceComplianceScripts.deviceComplianceScript.deviceRunStates.deviceComplianceScriptDeviceState.managedDevice_rotateFileVaultKey
       parameters:
         - name: deviceComplianceScript-id
           in: path
@@ -2446,7 +2446,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action sendCustomNotificationToCompanyPortal
-      operationId: deviceManagement.deviceComplianceScripts.deviceRunStates.managedDevice_sendCustomNotificationToCompanyPortal
+      operationId: deviceManagement.deviceComplianceScripts.deviceComplianceScript.deviceRunStates.deviceComplianceScriptDeviceState.managedDevice_sendCustomNotificationToCompanyPortal
       parameters:
         - name: deviceComplianceScript-id
           in: path
@@ -2487,7 +2487,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action setDeviceName
-      operationId: deviceManagement.deviceComplianceScripts.deviceRunStates.managedDevice_setDeviceName
+      operationId: deviceManagement.deviceComplianceScripts.deviceComplianceScript.deviceRunStates.deviceComplianceScriptDeviceState.managedDevice_setDeviceName
       parameters:
         - name: deviceComplianceScript-id
           in: path
@@ -2527,7 +2527,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action shutDown
-      operationId: deviceManagement.deviceComplianceScripts.deviceRunStates.managedDevice_shutDown
+      operationId: deviceManagement.deviceComplianceScripts.deviceComplianceScript.deviceRunStates.deviceComplianceScriptDeviceState.managedDevice_shutDown
       parameters:
         - name: deviceComplianceScript-id
           in: path
@@ -2554,7 +2554,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action syncDevice
-      operationId: deviceManagement.deviceComplianceScripts.deviceRunStates.managedDevice_syncDevice
+      operationId: deviceManagement.deviceComplianceScripts.deviceComplianceScript.deviceRunStates.deviceComplianceScriptDeviceState.managedDevice_syncDevice
       parameters:
         - name: deviceComplianceScript-id
           in: path
@@ -2581,7 +2581,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action triggerConfigurationManagerAction
-      operationId: deviceManagement.deviceComplianceScripts.deviceRunStates.managedDevice_triggerConfigurationManagerAction
+      operationId: deviceManagement.deviceComplianceScripts.deviceComplianceScript.deviceRunStates.deviceComplianceScriptDeviceState.managedDevice_triggerConfigurationManagerAction
       parameters:
         - name: deviceComplianceScript-id
           in: path
@@ -2620,7 +2620,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action updateWindowsDeviceAccount
-      operationId: deviceManagement.deviceComplianceScripts.deviceRunStates.managedDevice_updateWindowsDeviceAccount
+      operationId: deviceManagement.deviceComplianceScripts.deviceComplianceScript.deviceRunStates.deviceComplianceScriptDeviceState.managedDevice_updateWindowsDeviceAccount
       parameters:
         - name: deviceComplianceScript-id
           in: path
@@ -2659,7 +2659,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action windowsDefenderScan
-      operationId: deviceManagement.deviceComplianceScripts.deviceRunStates.managedDevice_windowsDefenderScan
+      operationId: deviceManagement.deviceComplianceScripts.deviceComplianceScript.deviceRunStates.deviceComplianceScriptDeviceState.managedDevice_windowsDefenderScan
       parameters:
         - name: deviceComplianceScript-id
           in: path
@@ -2699,7 +2699,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action windowsDefenderUpdateSignatures
-      operationId: deviceManagement.deviceComplianceScripts.deviceRunStates.managedDevice_windowsDefenderUpdateSignatures
+      operationId: deviceManagement.deviceComplianceScripts.deviceComplianceScript.deviceRunStates.deviceComplianceScriptDeviceState.managedDevice_windowsDefenderUpdateSignatures
       parameters:
         - name: deviceComplianceScript-id
           in: path
@@ -2726,7 +2726,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action wipe
-      operationId: deviceManagement.deviceComplianceScripts.deviceRunStates.managedDevice_wipe
+      operationId: deviceManagement.deviceComplianceScripts.deviceComplianceScript.deviceRunStates.deviceComplianceScriptDeviceState.managedDevice_wipe
       parameters:
         - name: deviceComplianceScript-id
           in: path
@@ -2778,7 +2778,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assign
-      operationId: deviceManagement.deviceComplianceScripts_assign
+      operationId: deviceManagement.deviceComplianceScripts.deviceComplianceScript_assign
       parameters:
         - name: deviceComplianceScript-id
           in: path
@@ -2812,7 +2812,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assign
-      operationId: deviceManagement.deviceConfigurations.groupAssignments.deviceConfiguration_assign
+      operationId: deviceManagement.deviceConfigurations.deviceConfiguration.groupAssignments.deviceConfigurationGroupAssignment.deviceConfiguration_assign
       parameters:
         - name: deviceConfiguration-id
           in: path
@@ -2863,7 +2863,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assignedAccessMultiModeProfiles
-      operationId: deviceManagement.deviceConfigurations.groupAssignments.deviceConfiguration_assignedAccessMultiModeProfiles
+      operationId: deviceManagement.deviceConfigurations.deviceConfiguration.groupAssignments.deviceConfigurationGroupAssignment.deviceConfiguration_assignedAccessMultiModeProfiles
       parameters:
         - name: deviceConfiguration-id
           in: path
@@ -2904,7 +2904,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action windowsPrivacyAccessControls
-      operationId: deviceManagement.deviceConfigurations.groupAssignments.deviceConfiguration_windowsPrivacyAccessControls
+      operationId: deviceManagement.deviceConfigurations.deviceConfiguration.groupAssignments.deviceConfigurationGroupAssignment.deviceConfiguration_windowsPrivacyAccessControls
       parameters:
         - name: deviceConfiguration-id
           in: path
@@ -2945,7 +2945,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action extendFeatureUpdatesPause
-      operationId: deviceManagement.deviceConfigurations.groupAssignments.deviceConfiguration.microsoft.graph.windowsUpdateForBusinessConfiguration_extendFeatureUpdatesPause
+      operationId: deviceManagement.deviceConfigurations.deviceConfiguration.groupAssignments.deviceConfigurationGroupAssignment.deviceConfiguration.microsoft.graph.windowsUpdateForBusinessConfiguration_extendFeatureUpdatesPause
       parameters:
         - name: deviceConfiguration-id
           in: path
@@ -2972,7 +2972,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action extendQualityUpdatesPause
-      operationId: deviceManagement.deviceConfigurations.groupAssignments.deviceConfiguration.microsoft.graph.windowsUpdateForBusinessConfiguration_extendQualityUpdatesPause
+      operationId: deviceManagement.deviceConfigurations.deviceConfiguration.groupAssignments.deviceConfigurationGroupAssignment.deviceConfiguration.microsoft.graph.windowsUpdateForBusinessConfiguration_extendQualityUpdatesPause
       parameters:
         - name: deviceConfiguration-id
           in: path
@@ -2999,7 +2999,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assign
-      operationId: deviceManagement.deviceConfigurations_assign
+      operationId: deviceManagement.deviceConfigurations.deviceConfiguration_assign
       parameters:
         - name: deviceConfiguration-id
           in: path
@@ -3043,7 +3043,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assignedAccessMultiModeProfiles
-      operationId: deviceManagement.deviceConfigurations_assignedAccessMultiModeProfiles
+      operationId: deviceManagement.deviceConfigurations.deviceConfiguration_assignedAccessMultiModeProfiles
       parameters:
         - name: deviceConfiguration-id
           in: path
@@ -3077,7 +3077,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action windowsPrivacyAccessControls
-      operationId: deviceManagement.deviceConfigurations_windowsPrivacyAccessControls
+      operationId: deviceManagement.deviceConfigurations.deviceConfiguration_windowsPrivacyAccessControls
       parameters:
         - name: deviceConfiguration-id
           in: path
@@ -3111,7 +3111,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action extendFeatureUpdatesPause
-      operationId: deviceManagement.deviceConfigurations.microsoft.graph.windowsUpdateForBusinessConfiguration_extendFeatureUpdatesPause
+      operationId: deviceManagement.deviceConfigurations.deviceConfiguration.microsoft.graph.windowsUpdateForBusinessConfiguration_extendFeatureUpdatesPause
       parameters:
         - name: deviceConfiguration-id
           in: path
@@ -3131,7 +3131,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action extendQualityUpdatesPause
-      operationId: deviceManagement.deviceConfigurations.microsoft.graph.windowsUpdateForBusinessConfiguration_extendQualityUpdatesPause
+      operationId: deviceManagement.deviceConfigurations.deviceConfiguration.microsoft.graph.windowsUpdateForBusinessConfiguration_extendQualityUpdatesPause
       parameters:
         - name: deviceConfiguration-id
           in: path
@@ -3217,7 +3217,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action bypassActivationLock
-      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceRunStates.managedDevice_bypassActivationLock
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceCustomAttributeShellScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_bypassActivationLock
       parameters:
         - name: deviceCustomAttributeShellScript-id
           in: path
@@ -3244,7 +3244,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action cleanWindowsDevice
-      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceRunStates.managedDevice_cleanWindowsDevice
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceCustomAttributeShellScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_cleanWindowsDevice
       parameters:
         - name: deviceCustomAttributeShellScript-id
           in: path
@@ -3284,7 +3284,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action createDeviceLogCollectionRequest
-      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceRunStates.managedDevice_createDeviceLogCollectionRequest
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceCustomAttributeShellScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_createDeviceLogCollectionRequest
       parameters:
         - name: deviceCustomAttributeShellScript-id
           in: path
@@ -3327,7 +3327,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action deleteUserFromSharedAppleDevice
-      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceRunStates.managedDevice_deleteUserFromSharedAppleDevice
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceCustomAttributeShellScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_deleteUserFromSharedAppleDevice
       parameters:
         - name: deviceCustomAttributeShellScript-id
           in: path
@@ -3367,7 +3367,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action disableLostMode
-      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceRunStates.managedDevice_disableLostMode
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceCustomAttributeShellScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_disableLostMode
       parameters:
         - name: deviceCustomAttributeShellScript-id
           in: path
@@ -3394,7 +3394,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action enableLostMode
-      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceRunStates.managedDevice_enableLostMode
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceCustomAttributeShellScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_enableLostMode
       parameters:
         - name: deviceCustomAttributeShellScript-id
           in: path
@@ -3440,7 +3440,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action locateDevice
-      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceRunStates.managedDevice_locateDevice
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceCustomAttributeShellScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_locateDevice
       parameters:
         - name: deviceCustomAttributeShellScript-id
           in: path
@@ -3467,7 +3467,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action logoutSharedAppleDeviceActiveUser
-      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceRunStates.managedDevice_logoutSharedAppleDeviceActiveUser
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceCustomAttributeShellScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_logoutSharedAppleDeviceActiveUser
       parameters:
         - name: deviceCustomAttributeShellScript-id
           in: path
@@ -3494,7 +3494,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action overrideComplianceState
-      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceRunStates.managedDevice_overrideComplianceState
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceCustomAttributeShellScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_overrideComplianceState
       parameters:
         - name: deviceCustomAttributeShellScript-id
           in: path
@@ -3536,7 +3536,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action playLostModeSound
-      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceRunStates.managedDevice_playLostModeSound
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceCustomAttributeShellScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_playLostModeSound
       parameters:
         - name: deviceCustomAttributeShellScript-id
           in: path
@@ -3563,7 +3563,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rebootNow
-      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceRunStates.managedDevice_rebootNow
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceCustomAttributeShellScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_rebootNow
       parameters:
         - name: deviceCustomAttributeShellScript-id
           in: path
@@ -3590,7 +3590,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action recoverPasscode
-      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceRunStates.managedDevice_recoverPasscode
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceCustomAttributeShellScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_recoverPasscode
       parameters:
         - name: deviceCustomAttributeShellScript-id
           in: path
@@ -3617,7 +3617,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action remoteLock
-      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceRunStates.managedDevice_remoteLock
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceCustomAttributeShellScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_remoteLock
       parameters:
         - name: deviceCustomAttributeShellScript-id
           in: path
@@ -3644,7 +3644,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action requestRemoteAssistance
-      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceRunStates.managedDevice_requestRemoteAssistance
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceCustomAttributeShellScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_requestRemoteAssistance
       parameters:
         - name: deviceCustomAttributeShellScript-id
           in: path
@@ -3671,7 +3671,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action resetPasscode
-      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceRunStates.managedDevice_resetPasscode
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceCustomAttributeShellScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_resetPasscode
       parameters:
         - name: deviceCustomAttributeShellScript-id
           in: path
@@ -3698,7 +3698,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action retire
-      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceRunStates.managedDevice_retire
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceCustomAttributeShellScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_retire
       parameters:
         - name: deviceCustomAttributeShellScript-id
           in: path
@@ -3725,7 +3725,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action revokeAppleVppLicenses
-      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceRunStates.managedDevice_revokeAppleVppLicenses
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceCustomAttributeShellScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_revokeAppleVppLicenses
       parameters:
         - name: deviceCustomAttributeShellScript-id
           in: path
@@ -3752,7 +3752,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rotateBitLockerKeys
-      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceRunStates.managedDevice_rotateBitLockerKeys
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceCustomAttributeShellScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_rotateBitLockerKeys
       parameters:
         - name: deviceCustomAttributeShellScript-id
           in: path
@@ -3779,7 +3779,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rotateFileVaultKey
-      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceRunStates.managedDevice_rotateFileVaultKey
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceCustomAttributeShellScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_rotateFileVaultKey
       parameters:
         - name: deviceCustomAttributeShellScript-id
           in: path
@@ -3806,7 +3806,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action sendCustomNotificationToCompanyPortal
-      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceRunStates.managedDevice_sendCustomNotificationToCompanyPortal
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceCustomAttributeShellScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_sendCustomNotificationToCompanyPortal
       parameters:
         - name: deviceCustomAttributeShellScript-id
           in: path
@@ -3847,7 +3847,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action setDeviceName
-      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceRunStates.managedDevice_setDeviceName
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceCustomAttributeShellScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_setDeviceName
       parameters:
         - name: deviceCustomAttributeShellScript-id
           in: path
@@ -3887,7 +3887,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action shutDown
-      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceRunStates.managedDevice_shutDown
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceCustomAttributeShellScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_shutDown
       parameters:
         - name: deviceCustomAttributeShellScript-id
           in: path
@@ -3914,7 +3914,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action syncDevice
-      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceRunStates.managedDevice_syncDevice
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceCustomAttributeShellScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_syncDevice
       parameters:
         - name: deviceCustomAttributeShellScript-id
           in: path
@@ -3941,7 +3941,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action triggerConfigurationManagerAction
-      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceRunStates.managedDevice_triggerConfigurationManagerAction
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceCustomAttributeShellScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_triggerConfigurationManagerAction
       parameters:
         - name: deviceCustomAttributeShellScript-id
           in: path
@@ -3980,7 +3980,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action updateWindowsDeviceAccount
-      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceRunStates.managedDevice_updateWindowsDeviceAccount
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceCustomAttributeShellScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_updateWindowsDeviceAccount
       parameters:
         - name: deviceCustomAttributeShellScript-id
           in: path
@@ -4019,7 +4019,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action windowsDefenderScan
-      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceRunStates.managedDevice_windowsDefenderScan
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceCustomAttributeShellScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_windowsDefenderScan
       parameters:
         - name: deviceCustomAttributeShellScript-id
           in: path
@@ -4059,7 +4059,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action windowsDefenderUpdateSignatures
-      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceRunStates.managedDevice_windowsDefenderUpdateSignatures
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceCustomAttributeShellScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_windowsDefenderUpdateSignatures
       parameters:
         - name: deviceCustomAttributeShellScript-id
           in: path
@@ -4086,7 +4086,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action wipe
-      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceRunStates.managedDevice_wipe
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceCustomAttributeShellScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_wipe
       parameters:
         - name: deviceCustomAttributeShellScript-id
           in: path
@@ -4138,7 +4138,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assign
-      operationId: deviceManagement.deviceCustomAttributeShellScripts_assign
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceCustomAttributeShellScript_assign
       parameters:
         - name: deviceCustomAttributeShellScript-id
           in: path
@@ -4176,7 +4176,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action bypassActivationLock
-      operationId: deviceManagement.deviceCustomAttributeShellScripts.userRunStates.deviceRunStates.managedDevice_bypassActivationLock
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceCustomAttributeShellScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_bypassActivationLock
       parameters:
         - name: deviceCustomAttributeShellScript-id
           in: path
@@ -4210,7 +4210,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action cleanWindowsDevice
-      operationId: deviceManagement.deviceCustomAttributeShellScripts.userRunStates.deviceRunStates.managedDevice_cleanWindowsDevice
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceCustomAttributeShellScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_cleanWindowsDevice
       parameters:
         - name: deviceCustomAttributeShellScript-id
           in: path
@@ -4257,7 +4257,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action createDeviceLogCollectionRequest
-      operationId: deviceManagement.deviceCustomAttributeShellScripts.userRunStates.deviceRunStates.managedDevice_createDeviceLogCollectionRequest
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceCustomAttributeShellScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_createDeviceLogCollectionRequest
       parameters:
         - name: deviceCustomAttributeShellScript-id
           in: path
@@ -4307,7 +4307,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action deleteUserFromSharedAppleDevice
-      operationId: deviceManagement.deviceCustomAttributeShellScripts.userRunStates.deviceRunStates.managedDevice_deleteUserFromSharedAppleDevice
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceCustomAttributeShellScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_deleteUserFromSharedAppleDevice
       parameters:
         - name: deviceCustomAttributeShellScript-id
           in: path
@@ -4354,7 +4354,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action disableLostMode
-      operationId: deviceManagement.deviceCustomAttributeShellScripts.userRunStates.deviceRunStates.managedDevice_disableLostMode
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceCustomAttributeShellScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_disableLostMode
       parameters:
         - name: deviceCustomAttributeShellScript-id
           in: path
@@ -4388,7 +4388,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action enableLostMode
-      operationId: deviceManagement.deviceCustomAttributeShellScripts.userRunStates.deviceRunStates.managedDevice_enableLostMode
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceCustomAttributeShellScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_enableLostMode
       parameters:
         - name: deviceCustomAttributeShellScript-id
           in: path
@@ -4441,7 +4441,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action locateDevice
-      operationId: deviceManagement.deviceCustomAttributeShellScripts.userRunStates.deviceRunStates.managedDevice_locateDevice
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceCustomAttributeShellScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_locateDevice
       parameters:
         - name: deviceCustomAttributeShellScript-id
           in: path
@@ -4475,7 +4475,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action logoutSharedAppleDeviceActiveUser
-      operationId: deviceManagement.deviceCustomAttributeShellScripts.userRunStates.deviceRunStates.managedDevice_logoutSharedAppleDeviceActiveUser
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceCustomAttributeShellScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_logoutSharedAppleDeviceActiveUser
       parameters:
         - name: deviceCustomAttributeShellScript-id
           in: path
@@ -4509,7 +4509,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action overrideComplianceState
-      operationId: deviceManagement.deviceCustomAttributeShellScripts.userRunStates.deviceRunStates.managedDevice_overrideComplianceState
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceCustomAttributeShellScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_overrideComplianceState
       parameters:
         - name: deviceCustomAttributeShellScript-id
           in: path
@@ -4558,7 +4558,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action playLostModeSound
-      operationId: deviceManagement.deviceCustomAttributeShellScripts.userRunStates.deviceRunStates.managedDevice_playLostModeSound
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceCustomAttributeShellScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_playLostModeSound
       parameters:
         - name: deviceCustomAttributeShellScript-id
           in: path
@@ -4592,7 +4592,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rebootNow
-      operationId: deviceManagement.deviceCustomAttributeShellScripts.userRunStates.deviceRunStates.managedDevice_rebootNow
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceCustomAttributeShellScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_rebootNow
       parameters:
         - name: deviceCustomAttributeShellScript-id
           in: path
@@ -4626,7 +4626,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action recoverPasscode
-      operationId: deviceManagement.deviceCustomAttributeShellScripts.userRunStates.deviceRunStates.managedDevice_recoverPasscode
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceCustomAttributeShellScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_recoverPasscode
       parameters:
         - name: deviceCustomAttributeShellScript-id
           in: path
@@ -4660,7 +4660,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action remoteLock
-      operationId: deviceManagement.deviceCustomAttributeShellScripts.userRunStates.deviceRunStates.managedDevice_remoteLock
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceCustomAttributeShellScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_remoteLock
       parameters:
         - name: deviceCustomAttributeShellScript-id
           in: path
@@ -4694,7 +4694,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action requestRemoteAssistance
-      operationId: deviceManagement.deviceCustomAttributeShellScripts.userRunStates.deviceRunStates.managedDevice_requestRemoteAssistance
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceCustomAttributeShellScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_requestRemoteAssistance
       parameters:
         - name: deviceCustomAttributeShellScript-id
           in: path
@@ -4728,7 +4728,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action resetPasscode
-      operationId: deviceManagement.deviceCustomAttributeShellScripts.userRunStates.deviceRunStates.managedDevice_resetPasscode
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceCustomAttributeShellScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_resetPasscode
       parameters:
         - name: deviceCustomAttributeShellScript-id
           in: path
@@ -4762,7 +4762,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action retire
-      operationId: deviceManagement.deviceCustomAttributeShellScripts.userRunStates.deviceRunStates.managedDevice_retire
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceCustomAttributeShellScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_retire
       parameters:
         - name: deviceCustomAttributeShellScript-id
           in: path
@@ -4796,7 +4796,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action revokeAppleVppLicenses
-      operationId: deviceManagement.deviceCustomAttributeShellScripts.userRunStates.deviceRunStates.managedDevice_revokeAppleVppLicenses
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceCustomAttributeShellScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_revokeAppleVppLicenses
       parameters:
         - name: deviceCustomAttributeShellScript-id
           in: path
@@ -4830,7 +4830,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rotateBitLockerKeys
-      operationId: deviceManagement.deviceCustomAttributeShellScripts.userRunStates.deviceRunStates.managedDevice_rotateBitLockerKeys
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceCustomAttributeShellScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_rotateBitLockerKeys
       parameters:
         - name: deviceCustomAttributeShellScript-id
           in: path
@@ -4864,7 +4864,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rotateFileVaultKey
-      operationId: deviceManagement.deviceCustomAttributeShellScripts.userRunStates.deviceRunStates.managedDevice_rotateFileVaultKey
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceCustomAttributeShellScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_rotateFileVaultKey
       parameters:
         - name: deviceCustomAttributeShellScript-id
           in: path
@@ -4898,7 +4898,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action sendCustomNotificationToCompanyPortal
-      operationId: deviceManagement.deviceCustomAttributeShellScripts.userRunStates.deviceRunStates.managedDevice_sendCustomNotificationToCompanyPortal
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceCustomAttributeShellScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_sendCustomNotificationToCompanyPortal
       parameters:
         - name: deviceCustomAttributeShellScript-id
           in: path
@@ -4946,7 +4946,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action setDeviceName
-      operationId: deviceManagement.deviceCustomAttributeShellScripts.userRunStates.deviceRunStates.managedDevice_setDeviceName
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceCustomAttributeShellScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_setDeviceName
       parameters:
         - name: deviceCustomAttributeShellScript-id
           in: path
@@ -4993,7 +4993,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action shutDown
-      operationId: deviceManagement.deviceCustomAttributeShellScripts.userRunStates.deviceRunStates.managedDevice_shutDown
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceCustomAttributeShellScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_shutDown
       parameters:
         - name: deviceCustomAttributeShellScript-id
           in: path
@@ -5027,7 +5027,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action syncDevice
-      operationId: deviceManagement.deviceCustomAttributeShellScripts.userRunStates.deviceRunStates.managedDevice_syncDevice
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceCustomAttributeShellScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_syncDevice
       parameters:
         - name: deviceCustomAttributeShellScript-id
           in: path
@@ -5061,7 +5061,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action triggerConfigurationManagerAction
-      operationId: deviceManagement.deviceCustomAttributeShellScripts.userRunStates.deviceRunStates.managedDevice_triggerConfigurationManagerAction
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceCustomAttributeShellScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_triggerConfigurationManagerAction
       parameters:
         - name: deviceCustomAttributeShellScript-id
           in: path
@@ -5107,7 +5107,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action updateWindowsDeviceAccount
-      operationId: deviceManagement.deviceCustomAttributeShellScripts.userRunStates.deviceRunStates.managedDevice_updateWindowsDeviceAccount
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceCustomAttributeShellScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_updateWindowsDeviceAccount
       parameters:
         - name: deviceCustomAttributeShellScript-id
           in: path
@@ -5153,7 +5153,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action windowsDefenderScan
-      operationId: deviceManagement.deviceCustomAttributeShellScripts.userRunStates.deviceRunStates.managedDevice_windowsDefenderScan
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceCustomAttributeShellScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_windowsDefenderScan
       parameters:
         - name: deviceCustomAttributeShellScript-id
           in: path
@@ -5200,7 +5200,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action windowsDefenderUpdateSignatures
-      operationId: deviceManagement.deviceCustomAttributeShellScripts.userRunStates.deviceRunStates.managedDevice_windowsDefenderUpdateSignatures
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceCustomAttributeShellScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_windowsDefenderUpdateSignatures
       parameters:
         - name: deviceCustomAttributeShellScript-id
           in: path
@@ -5234,7 +5234,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action wipe
-      operationId: deviceManagement.deviceCustomAttributeShellScripts.userRunStates.deviceRunStates.managedDevice_wipe
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceCustomAttributeShellScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_wipe
       parameters:
         - name: deviceCustomAttributeShellScript-id
           in: path
@@ -5293,7 +5293,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assign
-      operationId: deviceManagement.deviceEnrollmentConfigurations_assign
+      operationId: deviceManagement.deviceEnrollmentConfigurations.deviceEnrollmentConfiguration_assign
       parameters:
         - name: deviceEnrollmentConfiguration-id
           in: path
@@ -5327,7 +5327,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action setPriority
-      operationId: deviceManagement.deviceEnrollmentConfigurations_setPriority
+      operationId: deviceManagement.deviceEnrollmentConfigurations.deviceEnrollmentConfiguration_setPriority
       parameters:
         - name: deviceEnrollmentConfiguration-id
           in: path
@@ -5395,7 +5395,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action bypassActivationLock
-      operationId: deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_bypassActivationLock
+      operationId: deviceManagement.deviceHealthScripts.deviceHealthScript.deviceRunStates.deviceHealthScriptDeviceState.managedDevice_bypassActivationLock
       parameters:
         - name: deviceHealthScript-id
           in: path
@@ -5422,7 +5422,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action cleanWindowsDevice
-      operationId: deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_cleanWindowsDevice
+      operationId: deviceManagement.deviceHealthScripts.deviceHealthScript.deviceRunStates.deviceHealthScriptDeviceState.managedDevice_cleanWindowsDevice
       parameters:
         - name: deviceHealthScript-id
           in: path
@@ -5462,7 +5462,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action createDeviceLogCollectionRequest
-      operationId: deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_createDeviceLogCollectionRequest
+      operationId: deviceManagement.deviceHealthScripts.deviceHealthScript.deviceRunStates.deviceHealthScriptDeviceState.managedDevice_createDeviceLogCollectionRequest
       parameters:
         - name: deviceHealthScript-id
           in: path
@@ -5505,7 +5505,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action deleteUserFromSharedAppleDevice
-      operationId: deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_deleteUserFromSharedAppleDevice
+      operationId: deviceManagement.deviceHealthScripts.deviceHealthScript.deviceRunStates.deviceHealthScriptDeviceState.managedDevice_deleteUserFromSharedAppleDevice
       parameters:
         - name: deviceHealthScript-id
           in: path
@@ -5545,7 +5545,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action disableLostMode
-      operationId: deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_disableLostMode
+      operationId: deviceManagement.deviceHealthScripts.deviceHealthScript.deviceRunStates.deviceHealthScriptDeviceState.managedDevice_disableLostMode
       parameters:
         - name: deviceHealthScript-id
           in: path
@@ -5572,7 +5572,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action enableLostMode
-      operationId: deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_enableLostMode
+      operationId: deviceManagement.deviceHealthScripts.deviceHealthScript.deviceRunStates.deviceHealthScriptDeviceState.managedDevice_enableLostMode
       parameters:
         - name: deviceHealthScript-id
           in: path
@@ -5618,7 +5618,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action locateDevice
-      operationId: deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_locateDevice
+      operationId: deviceManagement.deviceHealthScripts.deviceHealthScript.deviceRunStates.deviceHealthScriptDeviceState.managedDevice_locateDevice
       parameters:
         - name: deviceHealthScript-id
           in: path
@@ -5645,7 +5645,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action logoutSharedAppleDeviceActiveUser
-      operationId: deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_logoutSharedAppleDeviceActiveUser
+      operationId: deviceManagement.deviceHealthScripts.deviceHealthScript.deviceRunStates.deviceHealthScriptDeviceState.managedDevice_logoutSharedAppleDeviceActiveUser
       parameters:
         - name: deviceHealthScript-id
           in: path
@@ -5672,7 +5672,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action overrideComplianceState
-      operationId: deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_overrideComplianceState
+      operationId: deviceManagement.deviceHealthScripts.deviceHealthScript.deviceRunStates.deviceHealthScriptDeviceState.managedDevice_overrideComplianceState
       parameters:
         - name: deviceHealthScript-id
           in: path
@@ -5714,7 +5714,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action playLostModeSound
-      operationId: deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_playLostModeSound
+      operationId: deviceManagement.deviceHealthScripts.deviceHealthScript.deviceRunStates.deviceHealthScriptDeviceState.managedDevice_playLostModeSound
       parameters:
         - name: deviceHealthScript-id
           in: path
@@ -5741,7 +5741,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rebootNow
-      operationId: deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_rebootNow
+      operationId: deviceManagement.deviceHealthScripts.deviceHealthScript.deviceRunStates.deviceHealthScriptDeviceState.managedDevice_rebootNow
       parameters:
         - name: deviceHealthScript-id
           in: path
@@ -5768,7 +5768,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action recoverPasscode
-      operationId: deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_recoverPasscode
+      operationId: deviceManagement.deviceHealthScripts.deviceHealthScript.deviceRunStates.deviceHealthScriptDeviceState.managedDevice_recoverPasscode
       parameters:
         - name: deviceHealthScript-id
           in: path
@@ -5795,7 +5795,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action remoteLock
-      operationId: deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_remoteLock
+      operationId: deviceManagement.deviceHealthScripts.deviceHealthScript.deviceRunStates.deviceHealthScriptDeviceState.managedDevice_remoteLock
       parameters:
         - name: deviceHealthScript-id
           in: path
@@ -5822,7 +5822,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action requestRemoteAssistance
-      operationId: deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_requestRemoteAssistance
+      operationId: deviceManagement.deviceHealthScripts.deviceHealthScript.deviceRunStates.deviceHealthScriptDeviceState.managedDevice_requestRemoteAssistance
       parameters:
         - name: deviceHealthScript-id
           in: path
@@ -5849,7 +5849,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action resetPasscode
-      operationId: deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_resetPasscode
+      operationId: deviceManagement.deviceHealthScripts.deviceHealthScript.deviceRunStates.deviceHealthScriptDeviceState.managedDevice_resetPasscode
       parameters:
         - name: deviceHealthScript-id
           in: path
@@ -5876,7 +5876,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action retire
-      operationId: deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_retire
+      operationId: deviceManagement.deviceHealthScripts.deviceHealthScript.deviceRunStates.deviceHealthScriptDeviceState.managedDevice_retire
       parameters:
         - name: deviceHealthScript-id
           in: path
@@ -5903,7 +5903,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action revokeAppleVppLicenses
-      operationId: deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_revokeAppleVppLicenses
+      operationId: deviceManagement.deviceHealthScripts.deviceHealthScript.deviceRunStates.deviceHealthScriptDeviceState.managedDevice_revokeAppleVppLicenses
       parameters:
         - name: deviceHealthScript-id
           in: path
@@ -5930,7 +5930,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rotateBitLockerKeys
-      operationId: deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_rotateBitLockerKeys
+      operationId: deviceManagement.deviceHealthScripts.deviceHealthScript.deviceRunStates.deviceHealthScriptDeviceState.managedDevice_rotateBitLockerKeys
       parameters:
         - name: deviceHealthScript-id
           in: path
@@ -5957,7 +5957,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rotateFileVaultKey
-      operationId: deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_rotateFileVaultKey
+      operationId: deviceManagement.deviceHealthScripts.deviceHealthScript.deviceRunStates.deviceHealthScriptDeviceState.managedDevice_rotateFileVaultKey
       parameters:
         - name: deviceHealthScript-id
           in: path
@@ -5984,7 +5984,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action sendCustomNotificationToCompanyPortal
-      operationId: deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_sendCustomNotificationToCompanyPortal
+      operationId: deviceManagement.deviceHealthScripts.deviceHealthScript.deviceRunStates.deviceHealthScriptDeviceState.managedDevice_sendCustomNotificationToCompanyPortal
       parameters:
         - name: deviceHealthScript-id
           in: path
@@ -6025,7 +6025,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action setDeviceName
-      operationId: deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_setDeviceName
+      operationId: deviceManagement.deviceHealthScripts.deviceHealthScript.deviceRunStates.deviceHealthScriptDeviceState.managedDevice_setDeviceName
       parameters:
         - name: deviceHealthScript-id
           in: path
@@ -6065,7 +6065,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action shutDown
-      operationId: deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_shutDown
+      operationId: deviceManagement.deviceHealthScripts.deviceHealthScript.deviceRunStates.deviceHealthScriptDeviceState.managedDevice_shutDown
       parameters:
         - name: deviceHealthScript-id
           in: path
@@ -6092,7 +6092,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action syncDevice
-      operationId: deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_syncDevice
+      operationId: deviceManagement.deviceHealthScripts.deviceHealthScript.deviceRunStates.deviceHealthScriptDeviceState.managedDevice_syncDevice
       parameters:
         - name: deviceHealthScript-id
           in: path
@@ -6119,7 +6119,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action triggerConfigurationManagerAction
-      operationId: deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_triggerConfigurationManagerAction
+      operationId: deviceManagement.deviceHealthScripts.deviceHealthScript.deviceRunStates.deviceHealthScriptDeviceState.managedDevice_triggerConfigurationManagerAction
       parameters:
         - name: deviceHealthScript-id
           in: path
@@ -6158,7 +6158,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action updateWindowsDeviceAccount
-      operationId: deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_updateWindowsDeviceAccount
+      operationId: deviceManagement.deviceHealthScripts.deviceHealthScript.deviceRunStates.deviceHealthScriptDeviceState.managedDevice_updateWindowsDeviceAccount
       parameters:
         - name: deviceHealthScript-id
           in: path
@@ -6197,7 +6197,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action windowsDefenderScan
-      operationId: deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_windowsDefenderScan
+      operationId: deviceManagement.deviceHealthScripts.deviceHealthScript.deviceRunStates.deviceHealthScriptDeviceState.managedDevice_windowsDefenderScan
       parameters:
         - name: deviceHealthScript-id
           in: path
@@ -6237,7 +6237,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action windowsDefenderUpdateSignatures
-      operationId: deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_windowsDefenderUpdateSignatures
+      operationId: deviceManagement.deviceHealthScripts.deviceHealthScript.deviceRunStates.deviceHealthScriptDeviceState.managedDevice_windowsDefenderUpdateSignatures
       parameters:
         - name: deviceHealthScript-id
           in: path
@@ -6264,7 +6264,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action wipe
-      operationId: deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_wipe
+      operationId: deviceManagement.deviceHealthScripts.deviceHealthScript.deviceRunStates.deviceHealthScriptDeviceState.managedDevice_wipe
       parameters:
         - name: deviceHealthScript-id
           in: path
@@ -6316,7 +6316,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assign
-      operationId: deviceManagement.deviceHealthScripts_assign
+      operationId: deviceManagement.deviceHealthScripts.deviceHealthScript_assign
       parameters:
         - name: deviceHealthScript-id
           in: path
@@ -6350,7 +6350,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getGlobalScriptHighestAvailableVersion
-      operationId: deviceManagement.deviceHealthScripts_getGlobalScriptHighestAvailableVersion
+      operationId: deviceManagement.deviceHealthScripts.deviceHealthScript_getGlobalScriptHighestAvailableVersion
       parameters:
         - name: deviceHealthScript-id
           in: path
@@ -6375,7 +6375,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action updateGlobalScript
-      operationId: deviceManagement.deviceHealthScripts_updateGlobalScript
+      operationId: deviceManagement.deviceHealthScripts.deviceHealthScript_updateGlobalScript
       parameters:
         - name: deviceHealthScript-id
           in: path
@@ -6425,7 +6425,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action bypassActivationLock
-      operationId: deviceManagement.deviceManagementScripts.deviceRunStates.managedDevice_bypassActivationLock
+      operationId: deviceManagement.deviceManagementScripts.deviceManagementScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_bypassActivationLock
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -6452,7 +6452,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action cleanWindowsDevice
-      operationId: deviceManagement.deviceManagementScripts.deviceRunStates.managedDevice_cleanWindowsDevice
+      operationId: deviceManagement.deviceManagementScripts.deviceManagementScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_cleanWindowsDevice
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -6492,7 +6492,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action createDeviceLogCollectionRequest
-      operationId: deviceManagement.deviceManagementScripts.deviceRunStates.managedDevice_createDeviceLogCollectionRequest
+      operationId: deviceManagement.deviceManagementScripts.deviceManagementScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_createDeviceLogCollectionRequest
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -6535,7 +6535,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action deleteUserFromSharedAppleDevice
-      operationId: deviceManagement.deviceManagementScripts.deviceRunStates.managedDevice_deleteUserFromSharedAppleDevice
+      operationId: deviceManagement.deviceManagementScripts.deviceManagementScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_deleteUserFromSharedAppleDevice
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -6575,7 +6575,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action disableLostMode
-      operationId: deviceManagement.deviceManagementScripts.deviceRunStates.managedDevice_disableLostMode
+      operationId: deviceManagement.deviceManagementScripts.deviceManagementScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_disableLostMode
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -6602,7 +6602,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action enableLostMode
-      operationId: deviceManagement.deviceManagementScripts.deviceRunStates.managedDevice_enableLostMode
+      operationId: deviceManagement.deviceManagementScripts.deviceManagementScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_enableLostMode
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -6648,7 +6648,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action locateDevice
-      operationId: deviceManagement.deviceManagementScripts.deviceRunStates.managedDevice_locateDevice
+      operationId: deviceManagement.deviceManagementScripts.deviceManagementScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_locateDevice
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -6675,7 +6675,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action logoutSharedAppleDeviceActiveUser
-      operationId: deviceManagement.deviceManagementScripts.deviceRunStates.managedDevice_logoutSharedAppleDeviceActiveUser
+      operationId: deviceManagement.deviceManagementScripts.deviceManagementScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_logoutSharedAppleDeviceActiveUser
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -6702,7 +6702,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action overrideComplianceState
-      operationId: deviceManagement.deviceManagementScripts.deviceRunStates.managedDevice_overrideComplianceState
+      operationId: deviceManagement.deviceManagementScripts.deviceManagementScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_overrideComplianceState
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -6744,7 +6744,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action playLostModeSound
-      operationId: deviceManagement.deviceManagementScripts.deviceRunStates.managedDevice_playLostModeSound
+      operationId: deviceManagement.deviceManagementScripts.deviceManagementScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_playLostModeSound
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -6771,7 +6771,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rebootNow
-      operationId: deviceManagement.deviceManagementScripts.deviceRunStates.managedDevice_rebootNow
+      operationId: deviceManagement.deviceManagementScripts.deviceManagementScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_rebootNow
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -6798,7 +6798,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action recoverPasscode
-      operationId: deviceManagement.deviceManagementScripts.deviceRunStates.managedDevice_recoverPasscode
+      operationId: deviceManagement.deviceManagementScripts.deviceManagementScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_recoverPasscode
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -6825,7 +6825,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action remoteLock
-      operationId: deviceManagement.deviceManagementScripts.deviceRunStates.managedDevice_remoteLock
+      operationId: deviceManagement.deviceManagementScripts.deviceManagementScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_remoteLock
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -6852,7 +6852,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action requestRemoteAssistance
-      operationId: deviceManagement.deviceManagementScripts.deviceRunStates.managedDevice_requestRemoteAssistance
+      operationId: deviceManagement.deviceManagementScripts.deviceManagementScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_requestRemoteAssistance
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -6879,7 +6879,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action resetPasscode
-      operationId: deviceManagement.deviceManagementScripts.deviceRunStates.managedDevice_resetPasscode
+      operationId: deviceManagement.deviceManagementScripts.deviceManagementScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_resetPasscode
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -6906,7 +6906,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action retire
-      operationId: deviceManagement.deviceManagementScripts.deviceRunStates.managedDevice_retire
+      operationId: deviceManagement.deviceManagementScripts.deviceManagementScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_retire
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -6933,7 +6933,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action revokeAppleVppLicenses
-      operationId: deviceManagement.deviceManagementScripts.deviceRunStates.managedDevice_revokeAppleVppLicenses
+      operationId: deviceManagement.deviceManagementScripts.deviceManagementScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_revokeAppleVppLicenses
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -6960,7 +6960,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rotateBitLockerKeys
-      operationId: deviceManagement.deviceManagementScripts.deviceRunStates.managedDevice_rotateBitLockerKeys
+      operationId: deviceManagement.deviceManagementScripts.deviceManagementScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_rotateBitLockerKeys
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -6987,7 +6987,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rotateFileVaultKey
-      operationId: deviceManagement.deviceManagementScripts.deviceRunStates.managedDevice_rotateFileVaultKey
+      operationId: deviceManagement.deviceManagementScripts.deviceManagementScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_rotateFileVaultKey
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -7014,7 +7014,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action sendCustomNotificationToCompanyPortal
-      operationId: deviceManagement.deviceManagementScripts.deviceRunStates.managedDevice_sendCustomNotificationToCompanyPortal
+      operationId: deviceManagement.deviceManagementScripts.deviceManagementScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_sendCustomNotificationToCompanyPortal
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -7055,7 +7055,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action setDeviceName
-      operationId: deviceManagement.deviceManagementScripts.deviceRunStates.managedDevice_setDeviceName
+      operationId: deviceManagement.deviceManagementScripts.deviceManagementScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_setDeviceName
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -7095,7 +7095,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action shutDown
-      operationId: deviceManagement.deviceManagementScripts.deviceRunStates.managedDevice_shutDown
+      operationId: deviceManagement.deviceManagementScripts.deviceManagementScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_shutDown
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -7122,7 +7122,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action syncDevice
-      operationId: deviceManagement.deviceManagementScripts.deviceRunStates.managedDevice_syncDevice
+      operationId: deviceManagement.deviceManagementScripts.deviceManagementScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_syncDevice
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -7149,7 +7149,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action triggerConfigurationManagerAction
-      operationId: deviceManagement.deviceManagementScripts.deviceRunStates.managedDevice_triggerConfigurationManagerAction
+      operationId: deviceManagement.deviceManagementScripts.deviceManagementScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_triggerConfigurationManagerAction
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -7188,7 +7188,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action updateWindowsDeviceAccount
-      operationId: deviceManagement.deviceManagementScripts.deviceRunStates.managedDevice_updateWindowsDeviceAccount
+      operationId: deviceManagement.deviceManagementScripts.deviceManagementScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_updateWindowsDeviceAccount
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -7227,7 +7227,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action windowsDefenderScan
-      operationId: deviceManagement.deviceManagementScripts.deviceRunStates.managedDevice_windowsDefenderScan
+      operationId: deviceManagement.deviceManagementScripts.deviceManagementScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_windowsDefenderScan
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -7267,7 +7267,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action windowsDefenderUpdateSignatures
-      operationId: deviceManagement.deviceManagementScripts.deviceRunStates.managedDevice_windowsDefenderUpdateSignatures
+      operationId: deviceManagement.deviceManagementScripts.deviceManagementScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_windowsDefenderUpdateSignatures
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -7294,7 +7294,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action wipe
-      operationId: deviceManagement.deviceManagementScripts.deviceRunStates.managedDevice_wipe
+      operationId: deviceManagement.deviceManagementScripts.deviceManagementScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_wipe
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -7346,7 +7346,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assign
-      operationId: deviceManagement.deviceManagementScripts_assign
+      operationId: deviceManagement.deviceManagementScripts.deviceManagementScript_assign
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -7384,7 +7384,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action bypassActivationLock
-      operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_bypassActivationLock
+      operationId: deviceManagement.deviceManagementScripts.deviceManagementScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_bypassActivationLock
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -7418,7 +7418,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action cleanWindowsDevice
-      operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_cleanWindowsDevice
+      operationId: deviceManagement.deviceManagementScripts.deviceManagementScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_cleanWindowsDevice
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -7465,7 +7465,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action createDeviceLogCollectionRequest
-      operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_createDeviceLogCollectionRequest
+      operationId: deviceManagement.deviceManagementScripts.deviceManagementScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_createDeviceLogCollectionRequest
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -7515,7 +7515,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action deleteUserFromSharedAppleDevice
-      operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_deleteUserFromSharedAppleDevice
+      operationId: deviceManagement.deviceManagementScripts.deviceManagementScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_deleteUserFromSharedAppleDevice
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -7562,7 +7562,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action disableLostMode
-      operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_disableLostMode
+      operationId: deviceManagement.deviceManagementScripts.deviceManagementScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_disableLostMode
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -7596,7 +7596,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action enableLostMode
-      operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_enableLostMode
+      operationId: deviceManagement.deviceManagementScripts.deviceManagementScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_enableLostMode
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -7649,7 +7649,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action locateDevice
-      operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_locateDevice
+      operationId: deviceManagement.deviceManagementScripts.deviceManagementScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_locateDevice
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -7683,7 +7683,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action logoutSharedAppleDeviceActiveUser
-      operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_logoutSharedAppleDeviceActiveUser
+      operationId: deviceManagement.deviceManagementScripts.deviceManagementScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_logoutSharedAppleDeviceActiveUser
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -7717,7 +7717,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action overrideComplianceState
-      operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_overrideComplianceState
+      operationId: deviceManagement.deviceManagementScripts.deviceManagementScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_overrideComplianceState
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -7766,7 +7766,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action playLostModeSound
-      operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_playLostModeSound
+      operationId: deviceManagement.deviceManagementScripts.deviceManagementScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_playLostModeSound
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -7800,7 +7800,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rebootNow
-      operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_rebootNow
+      operationId: deviceManagement.deviceManagementScripts.deviceManagementScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_rebootNow
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -7834,7 +7834,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action recoverPasscode
-      operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_recoverPasscode
+      operationId: deviceManagement.deviceManagementScripts.deviceManagementScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_recoverPasscode
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -7868,7 +7868,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action remoteLock
-      operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_remoteLock
+      operationId: deviceManagement.deviceManagementScripts.deviceManagementScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_remoteLock
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -7902,7 +7902,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action requestRemoteAssistance
-      operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_requestRemoteAssistance
+      operationId: deviceManagement.deviceManagementScripts.deviceManagementScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_requestRemoteAssistance
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -7936,7 +7936,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action resetPasscode
-      operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_resetPasscode
+      operationId: deviceManagement.deviceManagementScripts.deviceManagementScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_resetPasscode
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -7970,7 +7970,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action retire
-      operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_retire
+      operationId: deviceManagement.deviceManagementScripts.deviceManagementScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_retire
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -8004,7 +8004,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action revokeAppleVppLicenses
-      operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_revokeAppleVppLicenses
+      operationId: deviceManagement.deviceManagementScripts.deviceManagementScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_revokeAppleVppLicenses
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -8038,7 +8038,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rotateBitLockerKeys
-      operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_rotateBitLockerKeys
+      operationId: deviceManagement.deviceManagementScripts.deviceManagementScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_rotateBitLockerKeys
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -8072,7 +8072,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rotateFileVaultKey
-      operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_rotateFileVaultKey
+      operationId: deviceManagement.deviceManagementScripts.deviceManagementScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_rotateFileVaultKey
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -8106,7 +8106,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action sendCustomNotificationToCompanyPortal
-      operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_sendCustomNotificationToCompanyPortal
+      operationId: deviceManagement.deviceManagementScripts.deviceManagementScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_sendCustomNotificationToCompanyPortal
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -8154,7 +8154,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action setDeviceName
-      operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_setDeviceName
+      operationId: deviceManagement.deviceManagementScripts.deviceManagementScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_setDeviceName
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -8201,7 +8201,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action shutDown
-      operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_shutDown
+      operationId: deviceManagement.deviceManagementScripts.deviceManagementScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_shutDown
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -8235,7 +8235,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action syncDevice
-      operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_syncDevice
+      operationId: deviceManagement.deviceManagementScripts.deviceManagementScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_syncDevice
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -8269,7 +8269,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action triggerConfigurationManagerAction
-      operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_triggerConfigurationManagerAction
+      operationId: deviceManagement.deviceManagementScripts.deviceManagementScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_triggerConfigurationManagerAction
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -8315,7 +8315,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action updateWindowsDeviceAccount
-      operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_updateWindowsDeviceAccount
+      operationId: deviceManagement.deviceManagementScripts.deviceManagementScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_updateWindowsDeviceAccount
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -8361,7 +8361,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action windowsDefenderScan
-      operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_windowsDefenderScan
+      operationId: deviceManagement.deviceManagementScripts.deviceManagementScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_windowsDefenderScan
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -8408,7 +8408,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action windowsDefenderUpdateSignatures
-      operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_windowsDefenderUpdateSignatures
+      operationId: deviceManagement.deviceManagementScripts.deviceManagementScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_windowsDefenderUpdateSignatures
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -8442,7 +8442,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action wipe
-      operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_wipe
+      operationId: deviceManagement.deviceManagementScripts.deviceManagementScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_wipe
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -8534,7 +8534,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action bypassActivationLock
-      operationId: deviceManagement.deviceShellScripts.deviceRunStates.managedDevice_bypassActivationLock
+      operationId: deviceManagement.deviceShellScripts.deviceShellScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_bypassActivationLock
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -8561,7 +8561,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action cleanWindowsDevice
-      operationId: deviceManagement.deviceShellScripts.deviceRunStates.managedDevice_cleanWindowsDevice
+      operationId: deviceManagement.deviceShellScripts.deviceShellScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_cleanWindowsDevice
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -8601,7 +8601,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action createDeviceLogCollectionRequest
-      operationId: deviceManagement.deviceShellScripts.deviceRunStates.managedDevice_createDeviceLogCollectionRequest
+      operationId: deviceManagement.deviceShellScripts.deviceShellScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_createDeviceLogCollectionRequest
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -8644,7 +8644,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action deleteUserFromSharedAppleDevice
-      operationId: deviceManagement.deviceShellScripts.deviceRunStates.managedDevice_deleteUserFromSharedAppleDevice
+      operationId: deviceManagement.deviceShellScripts.deviceShellScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_deleteUserFromSharedAppleDevice
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -8684,7 +8684,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action disableLostMode
-      operationId: deviceManagement.deviceShellScripts.deviceRunStates.managedDevice_disableLostMode
+      operationId: deviceManagement.deviceShellScripts.deviceShellScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_disableLostMode
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -8711,7 +8711,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action enableLostMode
-      operationId: deviceManagement.deviceShellScripts.deviceRunStates.managedDevice_enableLostMode
+      operationId: deviceManagement.deviceShellScripts.deviceShellScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_enableLostMode
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -8757,7 +8757,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action locateDevice
-      operationId: deviceManagement.deviceShellScripts.deviceRunStates.managedDevice_locateDevice
+      operationId: deviceManagement.deviceShellScripts.deviceShellScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_locateDevice
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -8784,7 +8784,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action logoutSharedAppleDeviceActiveUser
-      operationId: deviceManagement.deviceShellScripts.deviceRunStates.managedDevice_logoutSharedAppleDeviceActiveUser
+      operationId: deviceManagement.deviceShellScripts.deviceShellScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_logoutSharedAppleDeviceActiveUser
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -8811,7 +8811,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action overrideComplianceState
-      operationId: deviceManagement.deviceShellScripts.deviceRunStates.managedDevice_overrideComplianceState
+      operationId: deviceManagement.deviceShellScripts.deviceShellScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_overrideComplianceState
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -8853,7 +8853,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action playLostModeSound
-      operationId: deviceManagement.deviceShellScripts.deviceRunStates.managedDevice_playLostModeSound
+      operationId: deviceManagement.deviceShellScripts.deviceShellScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_playLostModeSound
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -8880,7 +8880,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rebootNow
-      operationId: deviceManagement.deviceShellScripts.deviceRunStates.managedDevice_rebootNow
+      operationId: deviceManagement.deviceShellScripts.deviceShellScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_rebootNow
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -8907,7 +8907,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action recoverPasscode
-      operationId: deviceManagement.deviceShellScripts.deviceRunStates.managedDevice_recoverPasscode
+      operationId: deviceManagement.deviceShellScripts.deviceShellScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_recoverPasscode
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -8934,7 +8934,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action remoteLock
-      operationId: deviceManagement.deviceShellScripts.deviceRunStates.managedDevice_remoteLock
+      operationId: deviceManagement.deviceShellScripts.deviceShellScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_remoteLock
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -8961,7 +8961,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action requestRemoteAssistance
-      operationId: deviceManagement.deviceShellScripts.deviceRunStates.managedDevice_requestRemoteAssistance
+      operationId: deviceManagement.deviceShellScripts.deviceShellScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_requestRemoteAssistance
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -8988,7 +8988,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action resetPasscode
-      operationId: deviceManagement.deviceShellScripts.deviceRunStates.managedDevice_resetPasscode
+      operationId: deviceManagement.deviceShellScripts.deviceShellScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_resetPasscode
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -9015,7 +9015,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action retire
-      operationId: deviceManagement.deviceShellScripts.deviceRunStates.managedDevice_retire
+      operationId: deviceManagement.deviceShellScripts.deviceShellScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_retire
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -9042,7 +9042,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action revokeAppleVppLicenses
-      operationId: deviceManagement.deviceShellScripts.deviceRunStates.managedDevice_revokeAppleVppLicenses
+      operationId: deviceManagement.deviceShellScripts.deviceShellScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_revokeAppleVppLicenses
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -9069,7 +9069,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rotateBitLockerKeys
-      operationId: deviceManagement.deviceShellScripts.deviceRunStates.managedDevice_rotateBitLockerKeys
+      operationId: deviceManagement.deviceShellScripts.deviceShellScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_rotateBitLockerKeys
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -9096,7 +9096,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rotateFileVaultKey
-      operationId: deviceManagement.deviceShellScripts.deviceRunStates.managedDevice_rotateFileVaultKey
+      operationId: deviceManagement.deviceShellScripts.deviceShellScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_rotateFileVaultKey
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -9123,7 +9123,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action sendCustomNotificationToCompanyPortal
-      operationId: deviceManagement.deviceShellScripts.deviceRunStates.managedDevice_sendCustomNotificationToCompanyPortal
+      operationId: deviceManagement.deviceShellScripts.deviceShellScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_sendCustomNotificationToCompanyPortal
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -9164,7 +9164,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action setDeviceName
-      operationId: deviceManagement.deviceShellScripts.deviceRunStates.managedDevice_setDeviceName
+      operationId: deviceManagement.deviceShellScripts.deviceShellScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_setDeviceName
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -9204,7 +9204,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action shutDown
-      operationId: deviceManagement.deviceShellScripts.deviceRunStates.managedDevice_shutDown
+      operationId: deviceManagement.deviceShellScripts.deviceShellScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_shutDown
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -9231,7 +9231,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action syncDevice
-      operationId: deviceManagement.deviceShellScripts.deviceRunStates.managedDevice_syncDevice
+      operationId: deviceManagement.deviceShellScripts.deviceShellScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_syncDevice
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -9258,7 +9258,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action triggerConfigurationManagerAction
-      operationId: deviceManagement.deviceShellScripts.deviceRunStates.managedDevice_triggerConfigurationManagerAction
+      operationId: deviceManagement.deviceShellScripts.deviceShellScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_triggerConfigurationManagerAction
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -9297,7 +9297,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action updateWindowsDeviceAccount
-      operationId: deviceManagement.deviceShellScripts.deviceRunStates.managedDevice_updateWindowsDeviceAccount
+      operationId: deviceManagement.deviceShellScripts.deviceShellScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_updateWindowsDeviceAccount
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -9336,7 +9336,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action windowsDefenderScan
-      operationId: deviceManagement.deviceShellScripts.deviceRunStates.managedDevice_windowsDefenderScan
+      operationId: deviceManagement.deviceShellScripts.deviceShellScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_windowsDefenderScan
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -9376,7 +9376,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action windowsDefenderUpdateSignatures
-      operationId: deviceManagement.deviceShellScripts.deviceRunStates.managedDevice_windowsDefenderUpdateSignatures
+      operationId: deviceManagement.deviceShellScripts.deviceShellScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_windowsDefenderUpdateSignatures
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -9403,7 +9403,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action wipe
-      operationId: deviceManagement.deviceShellScripts.deviceRunStates.managedDevice_wipe
+      operationId: deviceManagement.deviceShellScripts.deviceShellScript.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_wipe
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -9455,7 +9455,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assign
-      operationId: deviceManagement.deviceShellScripts_assign
+      operationId: deviceManagement.deviceShellScripts.deviceShellScript_assign
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -9493,7 +9493,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action bypassActivationLock
-      operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates.managedDevice_bypassActivationLock
+      operationId: deviceManagement.deviceShellScripts.deviceShellScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_bypassActivationLock
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -9527,7 +9527,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action cleanWindowsDevice
-      operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates.managedDevice_cleanWindowsDevice
+      operationId: deviceManagement.deviceShellScripts.deviceShellScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_cleanWindowsDevice
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -9574,7 +9574,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action createDeviceLogCollectionRequest
-      operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates.managedDevice_createDeviceLogCollectionRequest
+      operationId: deviceManagement.deviceShellScripts.deviceShellScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_createDeviceLogCollectionRequest
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -9624,7 +9624,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action deleteUserFromSharedAppleDevice
-      operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates.managedDevice_deleteUserFromSharedAppleDevice
+      operationId: deviceManagement.deviceShellScripts.deviceShellScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_deleteUserFromSharedAppleDevice
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -9671,7 +9671,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action disableLostMode
-      operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates.managedDevice_disableLostMode
+      operationId: deviceManagement.deviceShellScripts.deviceShellScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_disableLostMode
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -9705,7 +9705,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action enableLostMode
-      operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates.managedDevice_enableLostMode
+      operationId: deviceManagement.deviceShellScripts.deviceShellScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_enableLostMode
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -9758,7 +9758,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action locateDevice
-      operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates.managedDevice_locateDevice
+      operationId: deviceManagement.deviceShellScripts.deviceShellScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_locateDevice
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -9792,7 +9792,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action logoutSharedAppleDeviceActiveUser
-      operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates.managedDevice_logoutSharedAppleDeviceActiveUser
+      operationId: deviceManagement.deviceShellScripts.deviceShellScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_logoutSharedAppleDeviceActiveUser
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -9826,7 +9826,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action overrideComplianceState
-      operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates.managedDevice_overrideComplianceState
+      operationId: deviceManagement.deviceShellScripts.deviceShellScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_overrideComplianceState
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -9875,7 +9875,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action playLostModeSound
-      operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates.managedDevice_playLostModeSound
+      operationId: deviceManagement.deviceShellScripts.deviceShellScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_playLostModeSound
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -9909,7 +9909,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rebootNow
-      operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates.managedDevice_rebootNow
+      operationId: deviceManagement.deviceShellScripts.deviceShellScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_rebootNow
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -9943,7 +9943,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action recoverPasscode
-      operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates.managedDevice_recoverPasscode
+      operationId: deviceManagement.deviceShellScripts.deviceShellScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_recoverPasscode
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -9977,7 +9977,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action remoteLock
-      operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates.managedDevice_remoteLock
+      operationId: deviceManagement.deviceShellScripts.deviceShellScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_remoteLock
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -10011,7 +10011,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action requestRemoteAssistance
-      operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates.managedDevice_requestRemoteAssistance
+      operationId: deviceManagement.deviceShellScripts.deviceShellScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_requestRemoteAssistance
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -10045,7 +10045,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action resetPasscode
-      operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates.managedDevice_resetPasscode
+      operationId: deviceManagement.deviceShellScripts.deviceShellScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_resetPasscode
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -10079,7 +10079,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action retire
-      operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates.managedDevice_retire
+      operationId: deviceManagement.deviceShellScripts.deviceShellScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_retire
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -10113,7 +10113,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action revokeAppleVppLicenses
-      operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates.managedDevice_revokeAppleVppLicenses
+      operationId: deviceManagement.deviceShellScripts.deviceShellScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_revokeAppleVppLicenses
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -10147,7 +10147,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rotateBitLockerKeys
-      operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates.managedDevice_rotateBitLockerKeys
+      operationId: deviceManagement.deviceShellScripts.deviceShellScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_rotateBitLockerKeys
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -10181,7 +10181,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rotateFileVaultKey
-      operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates.managedDevice_rotateFileVaultKey
+      operationId: deviceManagement.deviceShellScripts.deviceShellScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_rotateFileVaultKey
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -10215,7 +10215,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action sendCustomNotificationToCompanyPortal
-      operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates.managedDevice_sendCustomNotificationToCompanyPortal
+      operationId: deviceManagement.deviceShellScripts.deviceShellScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_sendCustomNotificationToCompanyPortal
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -10263,7 +10263,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action setDeviceName
-      operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates.managedDevice_setDeviceName
+      operationId: deviceManagement.deviceShellScripts.deviceShellScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_setDeviceName
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -10310,7 +10310,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action shutDown
-      operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates.managedDevice_shutDown
+      operationId: deviceManagement.deviceShellScripts.deviceShellScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_shutDown
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -10344,7 +10344,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action syncDevice
-      operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates.managedDevice_syncDevice
+      operationId: deviceManagement.deviceShellScripts.deviceShellScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_syncDevice
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -10378,7 +10378,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action triggerConfigurationManagerAction
-      operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates.managedDevice_triggerConfigurationManagerAction
+      operationId: deviceManagement.deviceShellScripts.deviceShellScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_triggerConfigurationManagerAction
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -10424,7 +10424,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action updateWindowsDeviceAccount
-      operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates.managedDevice_updateWindowsDeviceAccount
+      operationId: deviceManagement.deviceShellScripts.deviceShellScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_updateWindowsDeviceAccount
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -10470,7 +10470,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action windowsDefenderScan
-      operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates.managedDevice_windowsDefenderScan
+      operationId: deviceManagement.deviceShellScripts.deviceShellScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_windowsDefenderScan
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -10517,7 +10517,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action windowsDefenderUpdateSignatures
-      operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates.managedDevice_windowsDefenderUpdateSignatures
+      operationId: deviceManagement.deviceShellScripts.deviceShellScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_windowsDefenderUpdateSignatures
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -10551,7 +10551,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action wipe
-      operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates.managedDevice_wipe
+      operationId: deviceManagement.deviceShellScripts.deviceShellScript.userRunStates.deviceManagementScriptUserState.deviceRunStates.deviceManagementScriptDeviceState.managedDevice_wipe
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -10610,7 +10610,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assign
-      operationId: deviceManagement.embeddedSIMActivationCodePools_assign
+      operationId: deviceManagement.embeddedSIMActivationCodePools.embeddedSIMActivationCodePool_assign
       parameters:
         - name: embeddedSIMActivationCodePool-id
           in: path
@@ -10650,7 +10650,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action sync
-      operationId: deviceManagement.exchangeConnectors_sync
+      operationId: deviceManagement.exchangeConnectors.deviceManagementExchangeConnector_sync
       parameters:
         - name: deviceManagementExchangeConnector-id
           in: path
@@ -10682,7 +10682,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assign
-      operationId: deviceManagement.groupPolicyConfigurations_assign
+      operationId: deviceManagement.groupPolicyConfigurations.groupPolicyConfiguration_assign
       parameters:
         - name: groupPolicyConfiguration-id
           in: path
@@ -10722,7 +10722,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action updateDefinitionValues
-      operationId: deviceManagement.groupPolicyConfigurations_updateDefinitionValues
+      operationId: deviceManagement.groupPolicyConfigurations.groupPolicyConfiguration_updateDefinitionValues
       parameters:
         - name: groupPolicyConfiguration-id
           in: path
@@ -10794,7 +10794,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action addLanguageFiles
-      operationId: deviceManagement.groupPolicyUploadedDefinitionFiles_addLanguageFiles
+      operationId: deviceManagement.groupPolicyUploadedDefinitionFiles.groupPolicyUploadedDefinitionFile_addLanguageFiles
       parameters:
         - name: groupPolicyUploadedDefinitionFile-id
           in: path
@@ -10828,7 +10828,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action remove
-      operationId: deviceManagement.groupPolicyUploadedDefinitionFiles_remove
+      operationId: deviceManagement.groupPolicyUploadedDefinitionFiles.groupPolicyUploadedDefinitionFile_remove
       parameters:
         - name: groupPolicyUploadedDefinitionFile-id
           in: path
@@ -10848,7 +10848,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action removeLanguageFiles
-      operationId: deviceManagement.groupPolicyUploadedDefinitionFiles_removeLanguageFiles
+      operationId: deviceManagement.groupPolicyUploadedDefinitionFiles.groupPolicyUploadedDefinitionFile_removeLanguageFiles
       parameters:
         - name: groupPolicyUploadedDefinitionFile-id
           in: path
@@ -10882,7 +10882,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action updateLanguageFiles
-      operationId: deviceManagement.groupPolicyUploadedDefinitionFiles_updateLanguageFiles
+      operationId: deviceManagement.groupPolicyUploadedDefinitionFiles.groupPolicyUploadedDefinitionFile_updateLanguageFiles
       parameters:
         - name: groupPolicyUploadedDefinitionFile-id
           in: path
@@ -10916,7 +10916,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action uploadNewVersion
-      operationId: deviceManagement.groupPolicyUploadedDefinitionFiles_uploadNewVersion
+      operationId: deviceManagement.groupPolicyUploadedDefinitionFiles.groupPolicyUploadedDefinitionFile_uploadNewVersion
       parameters:
         - name: groupPolicyUploadedDefinitionFile-id
           in: path
@@ -11052,7 +11052,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assign
-      operationId: deviceManagement.intents_assign
+      operationId: deviceManagement.intents.deviceManagementIntent_assign
       parameters:
         - name: deviceManagementIntent-id
           in: path
@@ -11086,7 +11086,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action createCopy
-      operationId: deviceManagement.intents_createCopy
+      operationId: deviceManagement.intents.deviceManagementIntent_createCopy
       parameters:
         - name: deviceManagementIntent-id
           in: path
@@ -11123,7 +11123,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action migrateToTemplate
-      operationId: deviceManagement.intents_migrateToTemplate
+      operationId: deviceManagement.intents.deviceManagementIntent_migrateToTemplate
       parameters:
         - name: deviceManagementIntent-id
           in: path
@@ -11159,7 +11159,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action updateSettings
-      operationId: deviceManagement.intents_updateSettings
+      operationId: deviceManagement.intents.deviceManagementIntent_updateSettings
       parameters:
         - name: deviceManagementIntent-id
           in: path
@@ -11193,7 +11193,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assign
-      operationId: deviceManagement.intuneBrandingProfiles_assign
+      operationId: deviceManagement.intuneBrandingProfiles.intuneBrandingProfile_assign
       parameters:
         - name: intuneBrandingProfile-id
           in: path
@@ -11227,7 +11227,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action createDownloadUrl
-      operationId: deviceManagement.managedDevices.logCollectionRequests_createDownloadUrl
+      operationId: deviceManagement.managedDevices.managedDevice.logCollectionRequests.deviceLogCollectionResponse_createDownloadUrl
       parameters:
         - name: managedDevice-id
           in: path
@@ -11259,7 +11259,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action bypassActivationLock
-      operationId: deviceManagement.managedDevices_bypassActivationLock
+      operationId: deviceManagement.managedDevices.managedDevice_bypassActivationLock
       parameters:
         - name: managedDevice-id
           in: path
@@ -11279,7 +11279,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action cleanWindowsDevice
-      operationId: deviceManagement.managedDevices_cleanWindowsDevice
+      operationId: deviceManagement.managedDevices.managedDevice_cleanWindowsDevice
       parameters:
         - name: managedDevice-id
           in: path
@@ -11312,7 +11312,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action createDeviceLogCollectionRequest
-      operationId: deviceManagement.managedDevices_createDeviceLogCollectionRequest
+      operationId: deviceManagement.managedDevices.managedDevice_createDeviceLogCollectionRequest
       parameters:
         - name: managedDevice-id
           in: path
@@ -11348,7 +11348,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action deleteUserFromSharedAppleDevice
-      operationId: deviceManagement.managedDevices_deleteUserFromSharedAppleDevice
+      operationId: deviceManagement.managedDevices.managedDevice_deleteUserFromSharedAppleDevice
       parameters:
         - name: managedDevice-id
           in: path
@@ -11381,7 +11381,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action disableLostMode
-      operationId: deviceManagement.managedDevices_disableLostMode
+      operationId: deviceManagement.managedDevices.managedDevice_disableLostMode
       parameters:
         - name: managedDevice-id
           in: path
@@ -11401,7 +11401,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action enableLostMode
-      operationId: deviceManagement.managedDevices_enableLostMode
+      operationId: deviceManagement.managedDevices.managedDevice_enableLostMode
       parameters:
         - name: managedDevice-id
           in: path
@@ -11440,7 +11440,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action locateDevice
-      operationId: deviceManagement.managedDevices_locateDevice
+      operationId: deviceManagement.managedDevices.managedDevice_locateDevice
       parameters:
         - name: managedDevice-id
           in: path
@@ -11460,7 +11460,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action logoutSharedAppleDeviceActiveUser
-      operationId: deviceManagement.managedDevices_logoutSharedAppleDeviceActiveUser
+      operationId: deviceManagement.managedDevices.managedDevice_logoutSharedAppleDeviceActiveUser
       parameters:
         - name: managedDevice-id
           in: path
@@ -11480,7 +11480,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action overrideComplianceState
-      operationId: deviceManagement.managedDevices_overrideComplianceState
+      operationId: deviceManagement.managedDevices.managedDevice_overrideComplianceState
       parameters:
         - name: managedDevice-id
           in: path
@@ -11515,7 +11515,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action playLostModeSound
-      operationId: deviceManagement.managedDevices_playLostModeSound
+      operationId: deviceManagement.managedDevices.managedDevice_playLostModeSound
       parameters:
         - name: managedDevice-id
           in: path
@@ -11535,7 +11535,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rebootNow
-      operationId: deviceManagement.managedDevices_rebootNow
+      operationId: deviceManagement.managedDevices.managedDevice_rebootNow
       parameters:
         - name: managedDevice-id
           in: path
@@ -11555,7 +11555,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action recoverPasscode
-      operationId: deviceManagement.managedDevices_recoverPasscode
+      operationId: deviceManagement.managedDevices.managedDevice_recoverPasscode
       parameters:
         - name: managedDevice-id
           in: path
@@ -11575,7 +11575,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action remoteLock
-      operationId: deviceManagement.managedDevices_remoteLock
+      operationId: deviceManagement.managedDevices.managedDevice_remoteLock
       parameters:
         - name: managedDevice-id
           in: path
@@ -11595,7 +11595,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action requestRemoteAssistance
-      operationId: deviceManagement.managedDevices_requestRemoteAssistance
+      operationId: deviceManagement.managedDevices.managedDevice_requestRemoteAssistance
       parameters:
         - name: managedDevice-id
           in: path
@@ -11615,7 +11615,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action resetPasscode
-      operationId: deviceManagement.managedDevices_resetPasscode
+      operationId: deviceManagement.managedDevices.managedDevice_resetPasscode
       parameters:
         - name: managedDevice-id
           in: path
@@ -11635,7 +11635,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action retire
-      operationId: deviceManagement.managedDevices_retire
+      operationId: deviceManagement.managedDevices.managedDevice_retire
       parameters:
         - name: managedDevice-id
           in: path
@@ -11655,7 +11655,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action revokeAppleVppLicenses
-      operationId: deviceManagement.managedDevices_revokeAppleVppLicenses
+      operationId: deviceManagement.managedDevices.managedDevice_revokeAppleVppLicenses
       parameters:
         - name: managedDevice-id
           in: path
@@ -11675,7 +11675,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rotateBitLockerKeys
-      operationId: deviceManagement.managedDevices_rotateBitLockerKeys
+      operationId: deviceManagement.managedDevices.managedDevice_rotateBitLockerKeys
       parameters:
         - name: managedDevice-id
           in: path
@@ -11695,7 +11695,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rotateFileVaultKey
-      operationId: deviceManagement.managedDevices_rotateFileVaultKey
+      operationId: deviceManagement.managedDevices.managedDevice_rotateFileVaultKey
       parameters:
         - name: managedDevice-id
           in: path
@@ -11715,7 +11715,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action sendCustomNotificationToCompanyPortal
-      operationId: deviceManagement.managedDevices_sendCustomNotificationToCompanyPortal
+      operationId: deviceManagement.managedDevices.managedDevice_sendCustomNotificationToCompanyPortal
       parameters:
         - name: managedDevice-id
           in: path
@@ -11749,7 +11749,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action setDeviceName
-      operationId: deviceManagement.managedDevices_setDeviceName
+      operationId: deviceManagement.managedDevices.managedDevice_setDeviceName
       parameters:
         - name: managedDevice-id
           in: path
@@ -11782,7 +11782,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action shutDown
-      operationId: deviceManagement.managedDevices_shutDown
+      operationId: deviceManagement.managedDevices.managedDevice_shutDown
       parameters:
         - name: managedDevice-id
           in: path
@@ -11802,7 +11802,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action syncDevice
-      operationId: deviceManagement.managedDevices_syncDevice
+      operationId: deviceManagement.managedDevices.managedDevice_syncDevice
       parameters:
         - name: managedDevice-id
           in: path
@@ -11822,7 +11822,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action triggerConfigurationManagerAction
-      operationId: deviceManagement.managedDevices_triggerConfigurationManagerAction
+      operationId: deviceManagement.managedDevices.managedDevice_triggerConfigurationManagerAction
       parameters:
         - name: managedDevice-id
           in: path
@@ -11854,7 +11854,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action updateWindowsDeviceAccount
-      operationId: deviceManagement.managedDevices_updateWindowsDeviceAccount
+      operationId: deviceManagement.managedDevices.managedDevice_updateWindowsDeviceAccount
       parameters:
         - name: managedDevice-id
           in: path
@@ -11886,7 +11886,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action windowsDefenderScan
-      operationId: deviceManagement.managedDevices_windowsDefenderScan
+      operationId: deviceManagement.managedDevices.managedDevice_windowsDefenderScan
       parameters:
         - name: managedDevice-id
           in: path
@@ -11919,7 +11919,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action windowsDefenderUpdateSignatures
-      operationId: deviceManagement.managedDevices_windowsDefenderUpdateSignatures
+      operationId: deviceManagement.managedDevices.managedDevice_windowsDefenderUpdateSignatures
       parameters:
         - name: managedDevice-id
           in: path
@@ -11939,7 +11939,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action wipe
-      operationId: deviceManagement.managedDevices_wipe
+      operationId: deviceManagement.managedDevices.managedDevice_wipe
       parameters:
         - name: managedDevice-id
           in: path
@@ -12155,7 +12155,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action createDownloadUrl
-      operationId: deviceManagement.microsoftTunnelServerLogCollectionResponses_createDownloadUrl
+      operationId: deviceManagement.microsoftTunnelServerLogCollectionResponses.microsoftTunnelServerLogCollectionResponse_createDownloadUrl
       parameters:
         - name: microsoftTunnelServerLogCollectionResponse-id
           in: path
@@ -12180,7 +12180,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action createServerLogCollectionRequest
-      operationId: deviceManagement.microsoftTunnelSites.microsoftTunnelServers_createServerLogCollectionRequest
+      operationId: deviceManagement.microsoftTunnelSites.microsoftTunnelSite.microsoftTunnelServers.microsoftTunnelServer_createServerLogCollectionRequest
       parameters:
         - name: microsoftTunnelSite-id
           in: path
@@ -12229,7 +12229,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getHealthMetrics
-      operationId: deviceManagement.microsoftTunnelSites.microsoftTunnelServers_getHealthMetrics
+      operationId: deviceManagement.microsoftTunnelSites.microsoftTunnelSite.microsoftTunnelServers.microsoftTunnelServer_getHealthMetrics
       parameters:
         - name: microsoftTunnelSite-id
           in: path
@@ -12277,7 +12277,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getHealthMetricTimeSeries
-      operationId: deviceManagement.microsoftTunnelSites.microsoftTunnelServers_getHealthMetricTimeSeries
+      operationId: deviceManagement.microsoftTunnelSites.microsoftTunnelSite.microsoftTunnelServers.microsoftTunnelServer_getHealthMetricTimeSeries
       parameters:
         - name: microsoftTunnelSite-id
           in: path
@@ -12331,7 +12331,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action createDownloadUrl
-      operationId: deviceManagement.mobileAppTroubleshootingEvents.appLogCollectionRequests_createDownloadUrl
+      operationId: deviceManagement.mobileAppTroubleshootingEvents.mobileAppTroubleshootingEvent.appLogCollectionRequests.appLogCollectionRequest_createDownloadUrl
       parameters:
         - name: mobileAppTroubleshootingEvent-id
           in: path
@@ -12362,7 +12362,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action sendTestMessage
-      operationId: deviceManagement.notificationMessageTemplates_sendTestMessage
+      operationId: deviceManagement.notificationMessageTemplates.notificationMessageTemplate_sendTestMessage
       parameters:
         - name: notificationMessageTemplate-id
           in: path
@@ -12382,7 +12382,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action beginOnboarding
-      operationId: deviceManagement.remoteAssistancePartners_beginOnboarding
+      operationId: deviceManagement.remoteAssistancePartners.remoteAssistancePartner_beginOnboarding
       parameters:
         - name: remoteAssistancePartner-id
           in: path
@@ -12402,7 +12402,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action disconnect
-      operationId: deviceManagement.remoteAssistancePartners_disconnect
+      operationId: deviceManagement.remoteAssistancePartners.remoteAssistancePartner_disconnect
       parameters:
         - name: remoteAssistancePartner-id
           in: path
@@ -14825,7 +14825,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assign
-      operationId: deviceManagement.resourceAccessProfiles_assign
+      operationId: deviceManagement.resourceAccessProfiles.deviceManagementResourceAccessProfileBase_assign
       parameters:
         - name: deviceManagementResourceAccessProfileBase-id
           in: path
@@ -14865,7 +14865,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getRoleScopeTagsById
-      operationId: deviceManagement.roleAssignments.roleScopeTags_getRoleScopeTagsById
+      operationId: deviceManagement.roleAssignments.deviceAndAppManagementRoleAssignment.roleScopeTags_getRoleScopeTagsById
       parameters:
         - name: deviceAndAppManagementRoleAssignment-id
           in: path
@@ -14906,7 +14906,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assign
-      operationId: deviceManagement.roleScopeTags_assign
+      operationId: deviceManagement.roleScopeTags.roleScopeTag_assign
       parameters:
         - name: roleScopeTag-id
           in: path
@@ -14979,7 +14979,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action createInstance
-      operationId: deviceManagement.templates_createInstance
+      operationId: deviceManagement.templates.deviceManagementTemplate_createInstance
       parameters:
         - name: deviceManagementTemplate-id
           in: path
@@ -15028,7 +15028,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action createInstance
-      operationId: deviceManagement.templates.migratableTo_createInstance
+      operationId: deviceManagement.templates.deviceManagementTemplate.migratableTo.deviceManagementTemplate_createInstance
       parameters:
         - name: deviceManagementTemplate-id
           in: path
@@ -15084,7 +15084,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action importOffice365DeviceConfigurationPolicies
-      operationId: deviceManagement.templates.migratableTo_importOffice365DeviceConfigurationPolicies
+      operationId: deviceManagement.templates.deviceManagementTemplate.migratableTo_importOffice365DeviceConfigurationPolicies
       parameters:
         - name: deviceManagementTemplate-id
           in: path
@@ -15128,7 +15128,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action reprovision
-      operationId: deviceManagement.virtualEndpoint.cloudPCs_reprovision
+      operationId: deviceManagement.virtualEndpoint.cloudPCs.cloudPC_reprovision
       parameters:
         - name: cloudPC-id
           in: path
@@ -15148,7 +15148,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action runHealthChecks
-      operationId: deviceManagement.virtualEndpoint.onPremisesConnections_runHealthChecks
+      operationId: deviceManagement.virtualEndpoint.onPremisesConnections.cloudPcOnPremisesConnection_runHealthChecks
       parameters:
         - name: cloudPcOnPremisesConnection-id
           in: path
@@ -15168,7 +15168,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action updateAdDomainPassword
-      operationId: deviceManagement.virtualEndpoint.onPremisesConnections_updateAdDomainPassword
+      operationId: deviceManagement.virtualEndpoint.onPremisesConnections.cloudPcOnPremisesConnection_updateAdDomainPassword
       parameters:
         - name: cloudPcOnPremisesConnection-id
           in: path
@@ -15201,7 +15201,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assign
-      operationId: deviceManagement.virtualEndpoint.provisioningPolicies_assign
+      operationId: deviceManagement.virtualEndpoint.provisioningPolicies.cloudPcProvisioningPolicy_assign
       parameters:
         - name: cloudPcProvisioningPolicy-id
           in: path
@@ -15235,7 +15235,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assign
-      operationId: deviceManagement.windowsAutopilotDeploymentProfiles.assignedDevices.deploymentProfile_assign
+      operationId: deviceManagement.windowsAutopilotDeploymentProfiles.windowsAutopilotDeploymentProfile.assignedDevices.windowsAutopilotDeviceIdentity.deploymentProfile_assign
       parameters:
         - name: windowsAutopilotDeploymentProfile-id
           in: path
@@ -15277,7 +15277,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assign
-      operationId: deviceManagement.windowsAutopilotDeploymentProfiles.assignedDevices.intendedDeploymentProfile_assign
+      operationId: deviceManagement.windowsAutopilotDeploymentProfiles.windowsAutopilotDeploymentProfile.assignedDevices.windowsAutopilotDeviceIdentity.intendedDeploymentProfile_assign
       parameters:
         - name: windowsAutopilotDeploymentProfile-id
           in: path
@@ -15319,7 +15319,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assignResourceAccountToDevice
-      operationId: deviceManagement.windowsAutopilotDeploymentProfiles.assignedDevices_assignResourceAccountToDevice
+      operationId: deviceManagement.windowsAutopilotDeploymentProfiles.windowsAutopilotDeploymentProfile.assignedDevices.windowsAutopilotDeviceIdentity_assignResourceAccountToDevice
       parameters:
         - name: windowsAutopilotDeploymentProfile-id
           in: path
@@ -15365,7 +15365,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assignUserToDevice
-      operationId: deviceManagement.windowsAutopilotDeploymentProfiles.assignedDevices_assignUserToDevice
+      operationId: deviceManagement.windowsAutopilotDeploymentProfiles.windowsAutopilotDeploymentProfile.assignedDevices.windowsAutopilotDeviceIdentity_assignUserToDevice
       parameters:
         - name: windowsAutopilotDeploymentProfile-id
           in: path
@@ -15408,7 +15408,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action unassignResourceAccountFromDevice
-      operationId: deviceManagement.windowsAutopilotDeploymentProfiles.assignedDevices_unassignResourceAccountFromDevice
+      operationId: deviceManagement.windowsAutopilotDeploymentProfiles.windowsAutopilotDeploymentProfile.assignedDevices.windowsAutopilotDeviceIdentity_unassignResourceAccountFromDevice
       parameters:
         - name: windowsAutopilotDeploymentProfile-id
           in: path
@@ -15435,7 +15435,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action unassignUserFromDevice
-      operationId: deviceManagement.windowsAutopilotDeploymentProfiles.assignedDevices_unassignUserFromDevice
+      operationId: deviceManagement.windowsAutopilotDeploymentProfiles.windowsAutopilotDeploymentProfile.assignedDevices.windowsAutopilotDeviceIdentity_unassignUserFromDevice
       parameters:
         - name: windowsAutopilotDeploymentProfile-id
           in: path
@@ -15462,7 +15462,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action updateDeviceProperties
-      operationId: deviceManagement.windowsAutopilotDeploymentProfiles.assignedDevices_updateDeviceProperties
+      operationId: deviceManagement.windowsAutopilotDeploymentProfiles.windowsAutopilotDeploymentProfile.assignedDevices.windowsAutopilotDeviceIdentity_updateDeviceProperties
       parameters:
         - name: windowsAutopilotDeploymentProfile-id
           in: path
@@ -15511,7 +15511,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action deleteDevices
-      operationId: deviceManagement.windowsAutopilotDeploymentProfiles.assignedDevices_deleteDevices
+      operationId: deviceManagement.windowsAutopilotDeploymentProfiles.windowsAutopilotDeploymentProfile.assignedDevices_deleteDevices
       parameters:
         - name: windowsAutopilotDeploymentProfile-id
           in: path
@@ -15552,7 +15552,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assign
-      operationId: deviceManagement.windowsAutopilotDeploymentProfiles_assign
+      operationId: deviceManagement.windowsAutopilotDeploymentProfiles.windowsAutopilotDeploymentProfile_assign
       parameters:
         - name: windowsAutopilotDeploymentProfile-id
           in: path
@@ -15620,7 +15620,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assign
-      operationId: deviceManagement.windowsAutopilotDeviceIdentities.deploymentProfile_assign
+      operationId: deviceManagement.windowsAutopilotDeviceIdentities.windowsAutopilotDeviceIdentity.deploymentProfile_assign
       parameters:
         - name: windowsAutopilotDeviceIdentity-id
           in: path
@@ -15655,7 +15655,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assign
-      operationId: deviceManagement.windowsAutopilotDeviceIdentities.intendedDeploymentProfile_assign
+      operationId: deviceManagement.windowsAutopilotDeviceIdentities.windowsAutopilotDeviceIdentity.intendedDeploymentProfile_assign
       parameters:
         - name: windowsAutopilotDeviceIdentity-id
           in: path
@@ -15690,7 +15690,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assignResourceAccountToDevice
-      operationId: deviceManagement.windowsAutopilotDeviceIdentities_assignResourceAccountToDevice
+      operationId: deviceManagement.windowsAutopilotDeviceIdentities.windowsAutopilotDeviceIdentity_assignResourceAccountToDevice
       parameters:
         - name: windowsAutopilotDeviceIdentity-id
           in: path
@@ -15729,7 +15729,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assignUserToDevice
-      operationId: deviceManagement.windowsAutopilotDeviceIdentities_assignUserToDevice
+      operationId: deviceManagement.windowsAutopilotDeviceIdentities.windowsAutopilotDeviceIdentity_assignUserToDevice
       parameters:
         - name: windowsAutopilotDeviceIdentity-id
           in: path
@@ -15765,7 +15765,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action unassignResourceAccountFromDevice
-      operationId: deviceManagement.windowsAutopilotDeviceIdentities_unassignResourceAccountFromDevice
+      operationId: deviceManagement.windowsAutopilotDeviceIdentities.windowsAutopilotDeviceIdentity_unassignResourceAccountFromDevice
       parameters:
         - name: windowsAutopilotDeviceIdentity-id
           in: path
@@ -15785,7 +15785,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action unassignUserFromDevice
-      operationId: deviceManagement.windowsAutopilotDeviceIdentities_unassignUserFromDevice
+      operationId: deviceManagement.windowsAutopilotDeviceIdentities.windowsAutopilotDeviceIdentity_unassignUserFromDevice
       parameters:
         - name: windowsAutopilotDeviceIdentity-id
           in: path
@@ -15805,7 +15805,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action updateDeviceProperties
-      operationId: deviceManagement.windowsAutopilotDeviceIdentities_updateDeviceProperties
+      operationId: deviceManagement.windowsAutopilotDeviceIdentities.windowsAutopilotDeviceIdentity_updateDeviceProperties
       parameters:
         - name: windowsAutopilotDeviceIdentity-id
           in: path
@@ -15892,7 +15892,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assign
-      operationId: deviceManagement.windowsFeatureUpdateProfiles_assign
+      operationId: deviceManagement.windowsFeatureUpdateProfiles.windowsFeatureUpdateProfile_assign
       parameters:
         - name: windowsFeatureUpdateProfile-id
           in: path
@@ -15926,7 +15926,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assign
-      operationId: deviceManagement.windowsQualityUpdateProfiles_assign
+      operationId: deviceManagement.windowsQualityUpdateProfiles.windowsQualityUpdateProfile_assign
       parameters:
         - name: windowsQualityUpdateProfile-id
           in: path
@@ -16229,7 +16229,7 @@ components:
               nullable: true
             isSupervised:
               type: boolean
-              description: 'Indicates if the Apple device is supervised. More information is at: https://support.apple.com/HT202837'
+              description: 'Indicates if the Apple device is supervised. More information is at: https://support.apple.com/en-us/HT202837'
             lastContactedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string

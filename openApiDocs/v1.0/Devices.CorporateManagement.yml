@@ -2487,7 +2487,7 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action targetApps
-      operationId: deviceAppManagement.managedAppPolicies.microsoft.graph.managedAppProtection_targetApps
+      operationId: deviceAppManagement.managedAppPolicies.managedAppPolicy.microsoft.graph.managedAppProtection_targetApps
       parameters:
         - name: managedAppPolicy-id
           in: path
@@ -2521,7 +2521,7 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action targetApps
-      operationId: deviceAppManagement.managedAppPolicies_targetApps
+      operationId: deviceAppManagement.managedAppPolicies.managedAppPolicy_targetApps
       parameters:
         - name: managedAppPolicy-id
           in: path
@@ -2555,7 +2555,7 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action assign
-      operationId: deviceAppManagement.managedAppPolicies.microsoft.graph.targetedManagedAppProtection_assign
+      operationId: deviceAppManagement.managedAppPolicies.managedAppPolicy.microsoft.graph.targetedManagedAppProtection_assign
       parameters:
         - name: managedAppPolicy-id
           in: path
@@ -2589,7 +2589,7 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action assign
-      operationId: deviceAppManagement.managedAppPolicies.microsoft.graph.windowsInformationProtection_assign
+      operationId: deviceAppManagement.managedAppPolicies.managedAppPolicy.microsoft.graph.windowsInformationProtection_assign
       parameters:
         - name: managedAppPolicy-id
           in: path
@@ -3136,7 +3136,7 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action targetApps
-      operationId: deviceAppManagement.managedAppRegistrations.appliedPolicies.microsoft.graph.managedAppProtection_targetApps
+      operationId: deviceAppManagement.managedAppRegistrations.managedAppRegistration.appliedPolicies.managedAppPolicy.microsoft.graph.managedAppProtection_targetApps
       parameters:
         - name: managedAppRegistration-id
           in: path
@@ -3177,7 +3177,7 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action targetApps
-      operationId: deviceAppManagement.managedAppRegistrations.appliedPolicies_targetApps
+      operationId: deviceAppManagement.managedAppRegistrations.managedAppRegistration.appliedPolicies.managedAppPolicy_targetApps
       parameters:
         - name: managedAppRegistration-id
           in: path
@@ -3218,7 +3218,7 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action assign
-      operationId: deviceAppManagement.managedAppRegistrations.appliedPolicies.microsoft.graph.targetedManagedAppProtection_assign
+      operationId: deviceAppManagement.managedAppRegistrations.managedAppRegistration.appliedPolicies.managedAppPolicy.microsoft.graph.targetedManagedAppProtection_assign
       parameters:
         - name: managedAppRegistration-id
           in: path
@@ -3259,7 +3259,7 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action assign
-      operationId: deviceAppManagement.managedAppRegistrations.appliedPolicies.microsoft.graph.windowsInformationProtection_assign
+      operationId: deviceAppManagement.managedAppRegistrations.managedAppRegistration.appliedPolicies.managedAppPolicy.microsoft.graph.windowsInformationProtection_assign
       parameters:
         - name: managedAppRegistration-id
           in: path
@@ -3548,7 +3548,7 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action targetApps
-      operationId: deviceAppManagement.managedAppRegistrations.intendedPolicies.microsoft.graph.managedAppProtection_targetApps
+      operationId: deviceAppManagement.managedAppRegistrations.managedAppRegistration.intendedPolicies.managedAppPolicy.microsoft.graph.managedAppProtection_targetApps
       parameters:
         - name: managedAppRegistration-id
           in: path
@@ -3589,7 +3589,7 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action targetApps
-      operationId: deviceAppManagement.managedAppRegistrations.intendedPolicies_targetApps
+      operationId: deviceAppManagement.managedAppRegistrations.managedAppRegistration.intendedPolicies.managedAppPolicy_targetApps
       parameters:
         - name: managedAppRegistration-id
           in: path
@@ -3630,7 +3630,7 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action assign
-      operationId: deviceAppManagement.managedAppRegistrations.intendedPolicies.microsoft.graph.targetedManagedAppProtection_assign
+      operationId: deviceAppManagement.managedAppRegistrations.managedAppRegistration.intendedPolicies.managedAppPolicy.microsoft.graph.targetedManagedAppProtection_assign
       parameters:
         - name: managedAppRegistration-id
           in: path
@@ -3671,7 +3671,7 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action assign
-      operationId: deviceAppManagement.managedAppRegistrations.intendedPolicies.microsoft.graph.windowsInformationProtection_assign
+      operationId: deviceAppManagement.managedAppRegistrations.managedAppRegistration.intendedPolicies.managedAppPolicy.microsoft.graph.windowsInformationProtection_assign
       parameters:
         - name: managedAppRegistration-id
           in: path
@@ -5036,7 +5036,7 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action assign
-      operationId: deviceAppManagement.managedEBooks_assign
+      operationId: deviceAppManagement.managedEBooks.managedEBook_assign
       parameters:
         - name: managedEBook-id
           in: path
@@ -7006,7 +7006,7 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action assign
-      operationId: deviceAppManagement.mobileAppConfigurations_assign
+      operationId: deviceAppManagement.mobileAppConfigurations.managedDeviceMobileAppConfiguration_assign
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
@@ -8072,7 +8072,7 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action assign
-      operationId: deviceAppManagement.mobileApps_assign
+      operationId: deviceAppManagement.mobileApps.mobileApp_assign
       parameters:
         - name: mobileApp-id
           in: path
@@ -8926,7 +8926,7 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action assign
-      operationId: deviceAppManagement.targetedManagedAppConfigurations_assign
+      operationId: deviceAppManagement.targetedManagedAppConfigurations.targetedManagedAppConfiguration_assign
       parameters:
         - name: targetedManagedAppConfiguration-id
           in: path
@@ -8960,7 +8960,7 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action targetApps
-      operationId: deviceAppManagement.targetedManagedAppConfigurations_targetApps
+      operationId: deviceAppManagement.targetedManagedAppConfigurations.targetedManagedAppConfiguration_targetApps
       parameters:
         - name: targetedManagedAppConfiguration-id
           in: path
@@ -9230,7 +9230,7 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action syncLicenses
-      operationId: deviceAppManagement.vppTokens_syncLicenses
+      operationId: deviceAppManagement.vppTokens.vppToken_syncLicenses
       parameters:
         - name: vppToken-id
           in: path

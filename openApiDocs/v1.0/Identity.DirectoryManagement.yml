@@ -15,10 +15,9 @@ paths:
       parameters:
         - name: ConsistencyLevel
           in: header
-          description: Indicates the requested consistency level.
+          description: 'Indicates the requested consistency level. Documentation URL: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/'
           schema:
             type: string
-          example: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/
           examples:
             example-1:
               description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
@@ -179,10 +178,9 @@ paths:
           x-ms-docs-key-type: orgContact
         - name: ConsistencyLevel
           in: header
-          description: Indicates the requested consistency level.
+          description: 'Indicates the requested consistency level. Documentation URL: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/'
           schema:
             type: string
-          example: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/
           examples:
             example-1:
               description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
@@ -787,7 +785,7 @@ paths:
       tags:
         - contacts.Actions
       summary: Invoke action checkMemberGroups
-      operationId: contacts_checkMemberGroups
+      operationId: contacts.orgContact_checkMemberGroups
       parameters:
         - name: orgContact-id
           in: path
@@ -827,7 +825,7 @@ paths:
       tags:
         - contacts.Actions
       summary: Invoke action checkMemberObjects
-      operationId: contacts_checkMemberObjects
+      operationId: contacts.orgContact_checkMemberObjects
       parameters:
         - name: orgContact-id
           in: path
@@ -867,7 +865,7 @@ paths:
       tags:
         - contacts.Actions
       summary: Invoke action getMemberGroups
-      operationId: contacts_getMemberGroups
+      operationId: contacts.orgContact_getMemberGroups
       parameters:
         - name: orgContact-id
           in: path
@@ -907,7 +905,7 @@ paths:
       tags:
         - contacts.Actions
       summary: Invoke action getMemberObjects
-      operationId: contacts_getMemberObjects
+      operationId: contacts.orgContact_getMemberObjects
       parameters:
         - name: orgContact-id
           in: path
@@ -947,7 +945,7 @@ paths:
       tags:
         - contacts.Actions
       summary: Invoke action restore
-      operationId: contacts_restore
+      operationId: contacts.orgContact_restore
       parameters:
         - name: orgContact-id
           in: path
@@ -1479,7 +1477,7 @@ paths:
       tags:
         - contracts.Actions
       summary: Invoke action checkMemberGroups
-      operationId: contracts_checkMemberGroups
+      operationId: contracts.contract_checkMemberGroups
       parameters:
         - name: contract-id
           in: path
@@ -1519,7 +1517,7 @@ paths:
       tags:
         - contracts.Actions
       summary: Invoke action checkMemberObjects
-      operationId: contracts_checkMemberObjects
+      operationId: contracts.contract_checkMemberObjects
       parameters:
         - name: contract-id
           in: path
@@ -1559,7 +1557,7 @@ paths:
       tags:
         - contracts.Actions
       summary: Invoke action getMemberGroups
-      operationId: contracts_getMemberGroups
+      operationId: contracts.contract_getMemberGroups
       parameters:
         - name: contract-id
           in: path
@@ -1599,7 +1597,7 @@ paths:
       tags:
         - contracts.Actions
       summary: Invoke action getMemberObjects
-      operationId: contracts_getMemberObjects
+      operationId: contracts.contract_getMemberObjects
       parameters:
         - name: contract-id
           in: path
@@ -1639,7 +1637,7 @@ paths:
       tags:
         - contracts.Actions
       summary: Invoke action restore
-      operationId: contracts_restore
+      operationId: contracts.contract_restore
       parameters:
         - name: contract-id
           in: path
@@ -1772,10 +1770,9 @@ paths:
       parameters:
         - name: ConsistencyLevel
           in: header
-          description: Indicates the requested consistency level.
+          description: 'Indicates the requested consistency level. Documentation URL: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/'
           schema:
             type: string
-          example: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/
           examples:
             example-1:
               description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
@@ -1953,10 +1950,9 @@ paths:
           x-ms-docs-key-type: device
         - name: ConsistencyLevel
           in: header
-          description: Indicates the requested consistency level.
+          description: 'Indicates the requested consistency level. Documentation URL: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/'
           schema:
             type: string
-          example: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/
           examples:
             example-1:
               description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
@@ -2502,7 +2498,7 @@ paths:
       tags:
         - devices.Actions
       summary: Invoke action checkMemberGroups
-      operationId: devices_checkMemberGroups
+      operationId: devices.device_checkMemberGroups
       parameters:
         - name: device-id
           in: path
@@ -2542,7 +2538,7 @@ paths:
       tags:
         - devices.Actions
       summary: Invoke action checkMemberObjects
-      operationId: devices_checkMemberObjects
+      operationId: devices.device_checkMemberObjects
       parameters:
         - name: device-id
           in: path
@@ -2582,7 +2578,7 @@ paths:
       tags:
         - devices.Actions
       summary: Invoke action getMemberGroups
-      operationId: devices_getMemberGroups
+      operationId: devices.device_getMemberGroups
       parameters:
         - name: device-id
           in: path
@@ -2622,7 +2618,7 @@ paths:
       tags:
         - devices.Actions
       summary: Invoke action getMemberObjects
-      operationId: devices_getMemberObjects
+      operationId: devices.device_getMemberObjects
       parameters:
         - name: device-id
           in: path
@@ -2662,7 +2658,7 @@ paths:
       tags:
         - devices.Actions
       summary: Invoke action restore
-      operationId: devices_restore
+      operationId: devices.device_restore
       parameters:
         - name: device-id
           in: path
@@ -4864,7 +4860,7 @@ paths:
       tags:
         - directoryRoles.Actions
       summary: Invoke action checkMemberGroups
-      operationId: directoryRoles_checkMemberGroups
+      operationId: directoryRoles.directoryRole_checkMemberGroups
       parameters:
         - name: directoryRole-id
           in: path
@@ -4904,7 +4900,7 @@ paths:
       tags:
         - directoryRoles.Actions
       summary: Invoke action checkMemberObjects
-      operationId: directoryRoles_checkMemberObjects
+      operationId: directoryRoles.directoryRole_checkMemberObjects
       parameters:
         - name: directoryRole-id
           in: path
@@ -4944,7 +4940,7 @@ paths:
       tags:
         - directoryRoles.Actions
       summary: Invoke action getMemberGroups
-      operationId: directoryRoles_getMemberGroups
+      operationId: directoryRoles.directoryRole_getMemberGroups
       parameters:
         - name: directoryRole-id
           in: path
@@ -4984,7 +4980,7 @@ paths:
       tags:
         - directoryRoles.Actions
       summary: Invoke action getMemberObjects
-      operationId: directoryRoles_getMemberObjects
+      operationId: directoryRoles.directoryRole_getMemberObjects
       parameters:
         - name: directoryRole-id
           in: path
@@ -5024,7 +5020,7 @@ paths:
       tags:
         - directoryRoles.Actions
       summary: Invoke action restore
-      operationId: directoryRoles_restore
+      operationId: directoryRoles.directoryRole_restore
       parameters:
         - name: directoryRole-id
           in: path
@@ -5615,7 +5611,7 @@ paths:
       tags:
         - directoryRoleTemplates.Actions
       summary: Invoke action checkMemberGroups
-      operationId: directoryRoleTemplates_checkMemberGroups
+      operationId: directoryRoleTemplates.directoryRoleTemplate_checkMemberGroups
       parameters:
         - name: directoryRoleTemplate-id
           in: path
@@ -5655,7 +5651,7 @@ paths:
       tags:
         - directoryRoleTemplates.Actions
       summary: Invoke action checkMemberObjects
-      operationId: directoryRoleTemplates_checkMemberObjects
+      operationId: directoryRoleTemplates.directoryRoleTemplate_checkMemberObjects
       parameters:
         - name: directoryRoleTemplate-id
           in: path
@@ -5695,7 +5691,7 @@ paths:
       tags:
         - directoryRoleTemplates.Actions
       summary: Invoke action getMemberGroups
-      operationId: directoryRoleTemplates_getMemberGroups
+      operationId: directoryRoleTemplates.directoryRoleTemplate_getMemberGroups
       parameters:
         - name: directoryRoleTemplate-id
           in: path
@@ -5735,7 +5731,7 @@ paths:
       tags:
         - directoryRoleTemplates.Actions
       summary: Invoke action getMemberObjects
-      operationId: directoryRoleTemplates_getMemberObjects
+      operationId: directoryRoleTemplates.directoryRoleTemplate_getMemberObjects
       parameters:
         - name: directoryRoleTemplate-id
           in: path
@@ -5775,7 +5771,7 @@ paths:
       tags:
         - directoryRoleTemplates.Actions
       summary: Invoke action restore
-      operationId: directoryRoleTemplates_restore
+      operationId: directoryRoleTemplates.directoryRoleTemplate_restore
       parameters:
         - name: directoryRoleTemplate-id
           in: path
@@ -6346,7 +6342,7 @@ paths:
       tags:
         - domains.Actions
       summary: Invoke action forceDelete
-      operationId: domains_forceDelete
+      operationId: domains.domain_forceDelete
       parameters:
         - name: domain-id
           in: path
@@ -6380,7 +6376,7 @@ paths:
       tags:
         - domains.Actions
       summary: Invoke action verify
-      operationId: domains_verify
+      operationId: domains.domain_verify
       parameters:
         - name: domain-id
           in: path
@@ -7548,7 +7544,7 @@ paths:
       tags:
         - organization.Actions
       summary: Invoke action checkMemberGroups
-      operationId: organization_checkMemberGroups
+      operationId: organization.organization_checkMemberGroups
       parameters:
         - name: organization-id
           in: path
@@ -7588,7 +7584,7 @@ paths:
       tags:
         - organization.Actions
       summary: Invoke action checkMemberObjects
-      operationId: organization_checkMemberObjects
+      operationId: organization.organization_checkMemberObjects
       parameters:
         - name: organization-id
           in: path
@@ -7628,7 +7624,7 @@ paths:
       tags:
         - organization.Actions
       summary: Invoke action getMemberGroups
-      operationId: organization_getMemberGroups
+      operationId: organization.organization_getMemberGroups
       parameters:
         - name: organization-id
           in: path
@@ -7668,7 +7664,7 @@ paths:
       tags:
         - organization.Actions
       summary: Invoke action getMemberObjects
-      operationId: organization_getMemberObjects
+      operationId: organization.organization_getMemberObjects
       parameters:
         - name: organization-id
           in: path
@@ -7708,7 +7704,7 @@ paths:
       tags:
         - organization.Actions
       summary: Invoke action restore
-      operationId: organization_restore
+      operationId: organization.organization_restore
       parameters:
         - name: organization-id
           in: path
@@ -7732,7 +7728,7 @@ paths:
       tags:
         - organization.Actions
       summary: Invoke action setMobileDeviceManagementAuthority
-      operationId: organization_setMobileDeviceManagementAuthority
+      operationId: organization.organization_setMobileDeviceManagementAuthority
       parameters:
         - name: organization-id
           in: path
@@ -8575,7 +8571,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Groups that this device is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable.'
+              description: Groups that this device is a member of. Read-only. Nullable.
             registeredOwners:
               type: array
               items:
@@ -8590,6 +8586,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: Groups that this device is a member of. This operation is transitive.
             extensions:
               type: array
               items:

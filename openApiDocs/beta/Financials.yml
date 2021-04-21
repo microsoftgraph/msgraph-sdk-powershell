@@ -10738,7 +10738,7 @@ paths:
       tags:
         - financials.Actions
       summary: Invoke action post
-      operationId: financials.companies.journals_post
+      operationId: financials.companies.company.journals.journal_post
       parameters:
         - name: company-id
           in: path
@@ -13142,7 +13142,7 @@ paths:
       tags:
         - financials.Actions
       summary: Invoke action post
-      operationId: financials.companies.purchaseInvoices_post
+      operationId: financials.companies.company.purchaseInvoices.purchaseInvoice_post
       parameters:
         - name: company-id
           in: path
@@ -21935,7 +21935,7 @@ paths:
       tags:
         - financials.Actions
       summary: Invoke action cancel
-      operationId: financials.companies.salesInvoices_cancel
+      operationId: financials.companies.company.salesInvoices.salesInvoice_cancel
       parameters:
         - name: company-id
           in: path
@@ -21962,7 +21962,7 @@ paths:
       tags:
         - financials.Actions
       summary: Invoke action cancelAndSend
-      operationId: financials.companies.salesInvoices_cancelAndSend
+      operationId: financials.companies.company.salesInvoices.salesInvoice_cancelAndSend
       parameters:
         - name: company-id
           in: path
@@ -21989,7 +21989,7 @@ paths:
       tags:
         - financials.Actions
       summary: Invoke action post
-      operationId: financials.companies.salesInvoices_post
+      operationId: financials.companies.company.salesInvoices.salesInvoice_post
       parameters:
         - name: company-id
           in: path
@@ -22016,7 +22016,7 @@ paths:
       tags:
         - financials.Actions
       summary: Invoke action postAndSend
-      operationId: financials.companies.salesInvoices_postAndSend
+      operationId: financials.companies.company.salesInvoices.salesInvoice_postAndSend
       parameters:
         - name: company-id
           in: path
@@ -22043,7 +22043,7 @@ paths:
       tags:
         - financials.Actions
       summary: Invoke action send
-      operationId: financials.companies.salesInvoices_send
+      operationId: financials.companies.company.salesInvoices.salesInvoice_send
       parameters:
         - name: company-id
           in: path
@@ -30221,7 +30221,7 @@ paths:
       tags:
         - financials.Actions
       summary: Invoke action makeInvoice
-      operationId: financials.companies.salesQuotes_makeInvoice
+      operationId: financials.companies.company.salesQuotes.salesQuote_makeInvoice
       parameters:
         - name: company-id
           in: path
@@ -30248,7 +30248,7 @@ paths:
       tags:
         - financials.Actions
       summary: Invoke action send
-      operationId: financials.companies.salesQuotes_send
+      operationId: financials.companies.company.salesQuotes.salesQuote_send
       parameters:
         - name: company-id
           in: path

@@ -15,10 +15,9 @@ paths:
       parameters:
         - name: ConsistencyLevel
           in: header
-          description: Indicates the requested consistency level.
+          description: 'Indicates the requested consistency level. Documentation URL: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/'
           schema:
             type: string
-          example: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/
           examples:
             example-1:
               description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
@@ -225,10 +224,9 @@ paths:
           x-ms-docs-key-type: application
         - name: ConsistencyLevel
           in: header
-          description: Indicates the requested consistency level.
+          description: 'Indicates the requested consistency level. Documentation URL: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/'
           schema:
             type: string
-          example: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/
           examples:
             example-1:
               description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
@@ -1012,7 +1010,7 @@ paths:
       tags:
         - applications.Actions
       summary: Invoke action addKey
-      operationId: applications_addKey
+      operationId: applications.application_addKey
       parameters:
         - name: application-id
           in: path
@@ -1052,7 +1050,7 @@ paths:
       tags:
         - applications.Actions
       summary: Invoke action addPassword
-      operationId: applications_addPassword
+      operationId: applications.application_addPassword
       parameters:
         - name: application-id
           in: path
@@ -1088,7 +1086,7 @@ paths:
       tags:
         - applications.Actions
       summary: Invoke action checkMemberGroups
-      operationId: applications_checkMemberGroups
+      operationId: applications.application_checkMemberGroups
       parameters:
         - name: application-id
           in: path
@@ -1128,7 +1126,7 @@ paths:
       tags:
         - applications.Actions
       summary: Invoke action checkMemberObjects
-      operationId: applications_checkMemberObjects
+      operationId: applications.application_checkMemberObjects
       parameters:
         - name: application-id
           in: path
@@ -1168,7 +1166,7 @@ paths:
       tags:
         - applications.Actions
       summary: Invoke action getMemberGroups
-      operationId: applications_getMemberGroups
+      operationId: applications.application_getMemberGroups
       parameters:
         - name: application-id
           in: path
@@ -1208,7 +1206,7 @@ paths:
       tags:
         - applications.Actions
       summary: Invoke action getMemberObjects
-      operationId: applications_getMemberObjects
+      operationId: applications.application_getMemberObjects
       parameters:
         - name: application-id
           in: path
@@ -1248,7 +1246,7 @@ paths:
       tags:
         - applications.Actions
       summary: Invoke action removeKey
-      operationId: applications_removeKey
+      operationId: applications.application_removeKey
       parameters:
         - name: application-id
           in: path
@@ -1284,7 +1282,7 @@ paths:
       tags:
         - applications.Actions
       summary: Invoke action removePassword
-      operationId: applications_removePassword
+      operationId: applications.application_removePassword
       parameters:
         - name: application-id
           in: path
@@ -1318,7 +1316,7 @@ paths:
       tags:
         - applications.Actions
       summary: Invoke action restore
-      operationId: applications_restore
+      operationId: applications.application_restore
       parameters:
         - name: application-id
           in: path
@@ -2252,7 +2250,7 @@ paths:
       tags:
         - applicationTemplates.Actions
       summary: Invoke action instantiate
-      operationId: applicationTemplates_instantiate
+      operationId: applicationTemplates.applicationTemplate_instantiate
       parameters:
         - name: applicationTemplate-id
           in: path
@@ -2553,10 +2551,9 @@ paths:
       parameters:
         - name: ConsistencyLevel
           in: header
-          description: Indicates the requested consistency level.
+          description: 'Indicates the requested consistency level. Documentation URL: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/'
           schema:
             type: string
-          example: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/
           examples:
             example-1:
               description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
@@ -2785,10 +2782,9 @@ paths:
           x-ms-docs-key-type: servicePrincipal
         - name: ConsistencyLevel
           in: header
-          description: Indicates the requested consistency level.
+          description: 'Indicates the requested consistency level. Documentation URL: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/'
           schema:
             type: string
-          example: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/
           examples:
             example-1:
               description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
@@ -4746,7 +4742,7 @@ paths:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action addKey
-      operationId: servicePrincipals_addKey
+      operationId: servicePrincipals.servicePrincipal_addKey
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -4786,7 +4782,7 @@ paths:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action addPassword
-      operationId: servicePrincipals_addPassword
+      operationId: servicePrincipals.servicePrincipal_addPassword
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -4822,7 +4818,7 @@ paths:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action checkMemberGroups
-      operationId: servicePrincipals_checkMemberGroups
+      operationId: servicePrincipals.servicePrincipal_checkMemberGroups
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -4862,7 +4858,7 @@ paths:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action checkMemberObjects
-      operationId: servicePrincipals_checkMemberObjects
+      operationId: servicePrincipals.servicePrincipal_checkMemberObjects
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -4902,7 +4898,7 @@ paths:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action getMemberGroups
-      operationId: servicePrincipals_getMemberGroups
+      operationId: servicePrincipals.servicePrincipal_getMemberGroups
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -4942,7 +4938,7 @@ paths:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action getMemberObjects
-      operationId: servicePrincipals_getMemberObjects
+      operationId: servicePrincipals.servicePrincipal_getMemberObjects
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -4982,7 +4978,7 @@ paths:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action removeKey
-      operationId: servicePrincipals_removeKey
+      operationId: servicePrincipals.servicePrincipal_removeKey
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -5018,7 +5014,7 @@ paths:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action removePassword
-      operationId: servicePrincipals_removePassword
+      operationId: servicePrincipals.servicePrincipal_removePassword
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -5052,7 +5048,7 @@ paths:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action restore
-      operationId: servicePrincipals_restore
+      operationId: servicePrincipals.servicePrincipal_restore
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -6577,6 +6573,7 @@ components:
               nullable: true
             applicationTemplateId:
               type: string
+              description: Unique identifier of the applicationTemplate.
               nullable: true
             appRoles:
               type: array
@@ -6609,6 +6606,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.informationalUrl'
             isDeviceOnlyAuthSupported:
               type: boolean
+              description: Specifies whether this application supports device authentication without a user. The default is false.
               nullable: true
             isFallbackPublicClient:
               type: boolean
@@ -6860,7 +6858,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: 'The list of categories for the application. Supported values can be: Collaboration, Business Management, Consumer,Content management, CRM, Data services, Developer services, E-commerce, Education, ERP, Finance, Health, Human resources, IT infrastructure, Mail, Management, Marketing, Media, Productivity, Project management, Telecommunications, Tools, Travel, and Web design & hosting.'
+              description: 'The list of categories for the application. Supported values can be: Collaboration, Business Management, Consumer, Content management, CRM, Data services, Developer services, E-commerce, Education, ERP, Finance, Health, Human resources, IT infrastructure, Mail, Management, Marketing, Media, Productivity, Project management, Telecommunications, Tools, Travel, and Web design & hosting.'
             description:
               type: string
               description: A description of the application.

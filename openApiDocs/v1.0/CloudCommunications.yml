@@ -1162,7 +1162,7 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action answer
-      operationId: communications.calls_answer
+      operationId: communications.calls.call_answer
       parameters:
         - name: call-id
           in: path
@@ -1200,7 +1200,7 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action cancelMediaProcessing
-      operationId: communications.calls_cancelMediaProcessing
+      operationId: communications.calls.call_cancelMediaProcessing
       parameters:
         - name: call-id
           in: path
@@ -1237,7 +1237,7 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action changeScreenSharingRole
-      operationId: communications.calls_changeScreenSharingRole
+      operationId: communications.calls.call_changeScreenSharingRole
       parameters:
         - name: call-id
           in: path
@@ -1269,7 +1269,7 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action keepAlive
-      operationId: communications.calls_keepAlive
+      operationId: communications.calls.call_keepAlive
       parameters:
         - name: call-id
           in: path
@@ -1289,7 +1289,7 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action mute
-      operationId: communications.calls_mute
+      operationId: communications.calls.call_mute
       parameters:
         - name: call-id
           in: path
@@ -1326,7 +1326,7 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action playPrompt
-      operationId: communications.calls_playPrompt
+      operationId: communications.calls.call_playPrompt
       parameters:
         - name: call-id
           in: path
@@ -1367,7 +1367,7 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action recordResponse
-      operationId: communications.calls_recordResponse
+      operationId: communications.calls.call_recordResponse
       parameters:
         - name: call-id
           in: path
@@ -1439,7 +1439,7 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action redirect
-      operationId: communications.calls_redirect
+      operationId: communications.calls.call_redirect
       parameters:
         - name: call-id
           in: path
@@ -1482,7 +1482,7 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action reject
-      operationId: communications.calls_reject
+      operationId: communications.calls.call_reject
       parameters:
         - name: call-id
           in: path
@@ -1517,7 +1517,7 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action subscribeToTone
-      operationId: communications.calls_subscribeToTone
+      operationId: communications.calls.call_subscribeToTone
       parameters:
         - name: call-id
           in: path
@@ -1554,7 +1554,7 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action transfer
-      operationId: communications.calls_transfer
+      operationId: communications.calls.call_transfer
       parameters:
         - name: call-id
           in: path
@@ -1586,7 +1586,7 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action unmute
-      operationId: communications.calls_unmute
+      operationId: communications.calls.call_unmute
       parameters:
         - name: call-id
           in: path
@@ -1623,7 +1623,7 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action updateRecordingStatus
-      operationId: communications.calls_updateRecordingStatus
+      operationId: communications.calls.call_updateRecordingStatus
       parameters:
         - name: call-id
           in: path
@@ -2150,7 +2150,7 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action mute
-      operationId: communications.calls.participants_mute
+      operationId: communications.calls.call.participants.participant_mute
       parameters:
         - name: call-id
           in: path
@@ -2194,7 +2194,7 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action invite
-      operationId: communications.calls.participants_invite
+      operationId: communications.calls.call.participants_invite
       parameters:
         - name: call-id
           in: path

@@ -15,10 +15,9 @@ paths:
       parameters:
         - name: ConsistencyLevel
           in: header
-          description: Indicates the requested consistency level.
+          description: 'Indicates the requested consistency level. Documentation URL: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/'
           schema:
             type: string
-          example: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/
           examples:
             example-1:
               description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
@@ -144,10 +143,9 @@ paths:
           x-ms-docs-key-type: administrativeUnit
         - name: ConsistencyLevel
           in: header
-          description: Indicates the requested consistency level.
+          description: 'Indicates the requested consistency level. Documentation URL: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/'
           schema:
             type: string
-          example: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/
           examples:
             example-1:
               description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
@@ -665,7 +663,7 @@ paths:
       tags:
         - administrativeUnits.Actions
       summary: Invoke action checkMemberGroups
-      operationId: administrativeUnits_checkMemberGroups
+      operationId: administrativeUnits.administrativeUnit_checkMemberGroups
       parameters:
         - name: administrativeUnit-id
           in: path
@@ -705,7 +703,7 @@ paths:
       tags:
         - administrativeUnits.Actions
       summary: Invoke action checkMemberObjects
-      operationId: administrativeUnits_checkMemberObjects
+      operationId: administrativeUnits.administrativeUnit_checkMemberObjects
       parameters:
         - name: administrativeUnit-id
           in: path
@@ -745,7 +743,7 @@ paths:
       tags:
         - administrativeUnits.Actions
       summary: Invoke action getMemberGroups
-      operationId: administrativeUnits_getMemberGroups
+      operationId: administrativeUnits.administrativeUnit_getMemberGroups
       parameters:
         - name: administrativeUnit-id
           in: path
@@ -785,7 +783,7 @@ paths:
       tags:
         - administrativeUnits.Actions
       summary: Invoke action getMemberObjects
-      operationId: administrativeUnits_getMemberObjects
+      operationId: administrativeUnits.administrativeUnit_getMemberObjects
       parameters:
         - name: administrativeUnit-id
           in: path
@@ -825,7 +823,7 @@ paths:
       tags:
         - administrativeUnits.Actions
       summary: Invoke action restore
-      operationId: administrativeUnits_restore
+      operationId: administrativeUnits.administrativeUnit_restore
       parameters:
         - name: administrativeUnit-id
           in: path
@@ -1216,10 +1214,9 @@ paths:
       parameters:
         - name: ConsistencyLevel
           in: header
-          description: Indicates the requested consistency level.
+          description: 'Indicates the requested consistency level. Documentation URL: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/'
           schema:
             type: string
-          example: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/
           examples:
             example-1:
               description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
@@ -1380,10 +1377,9 @@ paths:
           x-ms-docs-key-type: orgContact
         - name: ConsistencyLevel
           in: header
-          description: Indicates the requested consistency level.
+          description: 'Indicates the requested consistency level. Documentation URL: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/'
           schema:
             type: string
-          example: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/
           examples:
             example-1:
               description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
@@ -1988,7 +1984,7 @@ paths:
       tags:
         - contacts.Actions
       summary: Invoke action checkMemberGroups
-      operationId: contacts_checkMemberGroups
+      operationId: contacts.orgContact_checkMemberGroups
       parameters:
         - name: orgContact-id
           in: path
@@ -2028,7 +2024,7 @@ paths:
       tags:
         - contacts.Actions
       summary: Invoke action checkMemberObjects
-      operationId: contacts_checkMemberObjects
+      operationId: contacts.orgContact_checkMemberObjects
       parameters:
         - name: orgContact-id
           in: path
@@ -2068,7 +2064,7 @@ paths:
       tags:
         - contacts.Actions
       summary: Invoke action getMemberGroups
-      operationId: contacts_getMemberGroups
+      operationId: contacts.orgContact_getMemberGroups
       parameters:
         - name: orgContact-id
           in: path
@@ -2108,7 +2104,7 @@ paths:
       tags:
         - contacts.Actions
       summary: Invoke action getMemberObjects
-      operationId: contacts_getMemberObjects
+      operationId: contacts.orgContact_getMemberObjects
       parameters:
         - name: orgContact-id
           in: path
@@ -2148,7 +2144,7 @@ paths:
       tags:
         - contacts.Actions
       summary: Invoke action restore
-      operationId: contacts_restore
+      operationId: contacts.orgContact_restore
       parameters:
         - name: orgContact-id
           in: path
@@ -2680,7 +2676,7 @@ paths:
       tags:
         - contracts.Actions
       summary: Invoke action checkMemberGroups
-      operationId: contracts_checkMemberGroups
+      operationId: contracts.contract_checkMemberGroups
       parameters:
         - name: contract-id
           in: path
@@ -2720,7 +2716,7 @@ paths:
       tags:
         - contracts.Actions
       summary: Invoke action checkMemberObjects
-      operationId: contracts_checkMemberObjects
+      operationId: contracts.contract_checkMemberObjects
       parameters:
         - name: contract-id
           in: path
@@ -2760,7 +2756,7 @@ paths:
       tags:
         - contracts.Actions
       summary: Invoke action getMemberGroups
-      operationId: contracts_getMemberGroups
+      operationId: contracts.contract_getMemberGroups
       parameters:
         - name: contract-id
           in: path
@@ -2800,7 +2796,7 @@ paths:
       tags:
         - contracts.Actions
       summary: Invoke action getMemberObjects
-      operationId: contracts_getMemberObjects
+      operationId: contracts.contract_getMemberObjects
       parameters:
         - name: contract-id
           in: path
@@ -2840,7 +2836,7 @@ paths:
       tags:
         - contracts.Actions
       summary: Invoke action restore
-      operationId: contracts_restore
+      operationId: contracts.contract_restore
       parameters:
         - name: contract-id
           in: path
@@ -2973,10 +2969,9 @@ paths:
       parameters:
         - name: ConsistencyLevel
           in: header
-          description: Indicates the requested consistency level.
+          description: 'Indicates the requested consistency level. Documentation URL: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/'
           schema:
             type: string
-          example: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/
           examples:
             example-1:
               description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
@@ -3203,10 +3198,9 @@ paths:
           x-ms-docs-key-type: device
         - name: ConsistencyLevel
           in: header
-          description: Indicates the requested consistency level.
+          description: 'Indicates the requested consistency level. Documentation URL: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/'
           schema:
             type: string
-          example: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/
           examples:
             example-1:
               description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
@@ -4049,7 +4043,7 @@ paths:
       tags:
         - devices.Actions
       summary: Invoke action checkMemberGroups
-      operationId: devices_checkMemberGroups
+      operationId: devices.device_checkMemberGroups
       parameters:
         - name: device-id
           in: path
@@ -4089,7 +4083,7 @@ paths:
       tags:
         - devices.Actions
       summary: Invoke action checkMemberObjects
-      operationId: devices_checkMemberObjects
+      operationId: devices.device_checkMemberObjects
       parameters:
         - name: device-id
           in: path
@@ -4129,7 +4123,7 @@ paths:
       tags:
         - devices.Actions
       summary: Invoke action getMemberGroups
-      operationId: devices_getMemberGroups
+      operationId: devices.device_getMemberGroups
       parameters:
         - name: device-id
           in: path
@@ -4169,7 +4163,7 @@ paths:
       tags:
         - devices.Actions
       summary: Invoke action getMemberObjects
-      operationId: devices_getMemberObjects
+      operationId: devices.device_getMemberObjects
       parameters:
         - name: device-id
           in: path
@@ -4209,7 +4203,7 @@ paths:
       tags:
         - devices.Actions
       summary: Invoke action restore
-      operationId: devices_restore
+      operationId: devices.device_restore
       parameters:
         - name: device-id
           in: path
@@ -6649,7 +6643,7 @@ paths:
       tags:
         - directoryRoles.Actions
       summary: Invoke action checkMemberGroups
-      operationId: directoryRoles_checkMemberGroups
+      operationId: directoryRoles.directoryRole_checkMemberGroups
       parameters:
         - name: directoryRole-id
           in: path
@@ -6689,7 +6683,7 @@ paths:
       tags:
         - directoryRoles.Actions
       summary: Invoke action checkMemberObjects
-      operationId: directoryRoles_checkMemberObjects
+      operationId: directoryRoles.directoryRole_checkMemberObjects
       parameters:
         - name: directoryRole-id
           in: path
@@ -6729,7 +6723,7 @@ paths:
       tags:
         - directoryRoles.Actions
       summary: Invoke action getMemberGroups
-      operationId: directoryRoles_getMemberGroups
+      operationId: directoryRoles.directoryRole_getMemberGroups
       parameters:
         - name: directoryRole-id
           in: path
@@ -6769,7 +6763,7 @@ paths:
       tags:
         - directoryRoles.Actions
       summary: Invoke action getMemberObjects
-      operationId: directoryRoles_getMemberObjects
+      operationId: directoryRoles.directoryRole_getMemberObjects
       parameters:
         - name: directoryRole-id
           in: path
@@ -6809,7 +6803,7 @@ paths:
       tags:
         - directoryRoles.Actions
       summary: Invoke action restore
-      operationId: directoryRoles_restore
+      operationId: directoryRoles.directoryRole_restore
       parameters:
         - name: directoryRole-id
           in: path
@@ -7400,7 +7394,7 @@ paths:
       tags:
         - directoryRoleTemplates.Actions
       summary: Invoke action checkMemberGroups
-      operationId: directoryRoleTemplates_checkMemberGroups
+      operationId: directoryRoleTemplates.directoryRoleTemplate_checkMemberGroups
       parameters:
         - name: directoryRoleTemplate-id
           in: path
@@ -7440,7 +7434,7 @@ paths:
       tags:
         - directoryRoleTemplates.Actions
       summary: Invoke action checkMemberObjects
-      operationId: directoryRoleTemplates_checkMemberObjects
+      operationId: directoryRoleTemplates.directoryRoleTemplate_checkMemberObjects
       parameters:
         - name: directoryRoleTemplate-id
           in: path
@@ -7480,7 +7474,7 @@ paths:
       tags:
         - directoryRoleTemplates.Actions
       summary: Invoke action getMemberGroups
-      operationId: directoryRoleTemplates_getMemberGroups
+      operationId: directoryRoleTemplates.directoryRoleTemplate_getMemberGroups
       parameters:
         - name: directoryRoleTemplate-id
           in: path
@@ -7520,7 +7514,7 @@ paths:
       tags:
         - directoryRoleTemplates.Actions
       summary: Invoke action getMemberObjects
-      operationId: directoryRoleTemplates_getMemberObjects
+      operationId: directoryRoleTemplates.directoryRoleTemplate_getMemberObjects
       parameters:
         - name: directoryRoleTemplate-id
           in: path
@@ -7560,7 +7554,7 @@ paths:
       tags:
         - directoryRoleTemplates.Actions
       summary: Invoke action restore
-      operationId: directoryRoleTemplates_restore
+      operationId: directoryRoleTemplates.directoryRoleTemplate_restore
       parameters:
         - name: directoryRoleTemplate-id
           in: path
@@ -7897,7 +7891,7 @@ paths:
       tags:
         - directorySettingTemplates.Actions
       summary: Invoke action checkMemberGroups
-      operationId: directorySettingTemplates_checkMemberGroups
+      operationId: directorySettingTemplates.directorySettingTemplate_checkMemberGroups
       parameters:
         - name: directorySettingTemplate-id
           in: path
@@ -7937,7 +7931,7 @@ paths:
       tags:
         - directorySettingTemplates.Actions
       summary: Invoke action checkMemberObjects
-      operationId: directorySettingTemplates_checkMemberObjects
+      operationId: directorySettingTemplates.directorySettingTemplate_checkMemberObjects
       parameters:
         - name: directorySettingTemplate-id
           in: path
@@ -7977,7 +7971,7 @@ paths:
       tags:
         - directorySettingTemplates.Actions
       summary: Invoke action getMemberGroups
-      operationId: directorySettingTemplates_getMemberGroups
+      operationId: directorySettingTemplates.directorySettingTemplate_getMemberGroups
       parameters:
         - name: directorySettingTemplate-id
           in: path
@@ -8017,7 +8011,7 @@ paths:
       tags:
         - directorySettingTemplates.Actions
       summary: Invoke action getMemberObjects
-      operationId: directorySettingTemplates_getMemberObjects
+      operationId: directorySettingTemplates.directorySettingTemplate_getMemberObjects
       parameters:
         - name: directorySettingTemplate-id
           in: path
@@ -8057,7 +8051,7 @@ paths:
       tags:
         - directorySettingTemplates.Actions
       summary: Invoke action restore
-      operationId: directorySettingTemplates_restore
+      operationId: directorySettingTemplates.directorySettingTemplate_restore
       parameters:
         - name: directorySettingTemplate-id
           in: path
@@ -8628,7 +8622,7 @@ paths:
       tags:
         - domains.Actions
       summary: Invoke action forceDelete
-      operationId: domains_forceDelete
+      operationId: domains.domain_forceDelete
       parameters:
         - name: domain-id
           in: path
@@ -8662,7 +8656,7 @@ paths:
       tags:
         - domains.Actions
       summary: Invoke action verify
-      operationId: domains_verify
+      operationId: domains.domain_verify
       parameters:
         - name: domain-id
           in: path
@@ -10086,7 +10080,7 @@ paths:
       tags:
         - organization.Actions
       summary: Invoke action checkMemberGroups
-      operationId: organization_checkMemberGroups
+      operationId: organization.organization_checkMemberGroups
       parameters:
         - name: organization-id
           in: path
@@ -10126,7 +10120,7 @@ paths:
       tags:
         - organization.Actions
       summary: Invoke action checkMemberObjects
-      operationId: organization_checkMemberObjects
+      operationId: organization.organization_checkMemberObjects
       parameters:
         - name: organization-id
           in: path
@@ -10166,7 +10160,7 @@ paths:
       tags:
         - organization.Actions
       summary: Invoke action getMemberGroups
-      operationId: organization_getMemberGroups
+      operationId: organization.organization_getMemberGroups
       parameters:
         - name: organization-id
           in: path
@@ -10206,7 +10200,7 @@ paths:
       tags:
         - organization.Actions
       summary: Invoke action getMemberObjects
-      operationId: organization_getMemberObjects
+      operationId: organization.organization_getMemberObjects
       parameters:
         - name: organization-id
           in: path
@@ -10246,7 +10240,7 @@ paths:
       tags:
         - organization.Actions
       summary: Invoke action restore
-      operationId: organization_restore
+      operationId: organization.organization_restore
       parameters:
         - name: organization-id
           in: path
@@ -10270,7 +10264,7 @@ paths:
       tags:
         - organization.Actions
       summary: Invoke action setMobileDeviceManagementAuthority
-      operationId: organization_setMobileDeviceManagementAuthority
+      operationId: organization.organization_setMobileDeviceManagementAuthority
       parameters:
         - name: organization-id
           in: path
@@ -11705,7 +11699,7 @@ components:
           properties:
             accountEnabled:
               type: boolean
-              description: 'true if the account is enabled; otherwise, false. default is true.'
+              description: 'true if the account is enabled; otherwise, false. Required.'
               nullable: true
             alternativeSecurityIds:
               type: array
@@ -11730,7 +11724,7 @@ components:
               nullable: true
             deviceId:
               type: string
-              description: Identifier set by Azure Device Registration Service at the time of registration.
+              description: Unique identifier set by Azure Device Registration Service at the time of registration.
               nullable: true
             deviceMetadata:
               type: string
@@ -11803,7 +11797,7 @@ components:
               nullable: true
             operatingSystemVersion:
               type: string
-              description: Operating system version of the device. Required.
+              description: The version of the operating system on the device. Required.
               nullable: true
             physicalIds:
               type: array
@@ -11827,7 +11821,7 @@ components:
               description: List of labels applied to the device by the system.
             trustType:
               type: string
-              description: 'Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory'
+              description: 'Type of trust for the joined device. Read-only. Possible values:  Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory'
               nullable: true
             kind:
               type: string
@@ -11857,11 +11851,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.usageRight'
+              description: Represents the usage rights a device has been granted.
             memberOf:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Groups that this device is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable.'
+              description: Groups that this device is a member of. Read-only. Nullable.
             registeredOwners:
               type: array
               items:
@@ -11876,6 +11871,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: Groups that the device is a member of. This operation is transitive.
             extensions:
               type: array
               items:
@@ -11885,7 +11881,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.command'
-              description: Set of commands sent to this device
+              description: Set of commands sent to this device.
           additionalProperties:
             type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
@@ -12121,7 +12117,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'The capabilities assigned to the domain. Can include 0, 1 or more of following values: Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline,SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune. The values which you can add/remove using Graph API include: Email, OfficeCommunicationsOnline, Yammer. Not nullable'
+              description: 'The capabilities assigned to the domain. Can include 0, 1 or more of following values: Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline, SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune. The values which you can add/remove using Graph API include: Email, OfficeCommunicationsOnline, Yammer. Not nullable'
             domainNameReferences:
               type: array
               items:
@@ -12241,12 +12237,12 @@ components:
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The time and date at which the tenant was last synced with the on-premise directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              description: 'The time and date at which the tenant was last synced with the on-premise directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
             onPremisesSyncEnabled:
               type: boolean
-              description: true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; Nullable. null if this object has never been synced from an on-premises directory (default).
+              description: true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced. Nullable. null if this object has never been synced from an on-premises directory (default).
               nullable: true
             postalCode:
               type: string
@@ -12299,12 +12295,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.certificateBasedAuthConfiguration'
-              description: Navigation property to manage  certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
+              description: Navigation property to manage certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
             extensions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
-              description: The collection of open extensions defined for the organization resource. Nullable.
+              description: The collection of open extensions defined for the organization. Read-only. Nullable.
             settings:
               $ref: '#/components/schemas/microsoft.graph.organizationSettings'
           additionalProperties:
@@ -12644,19 +12640,19 @@ components:
       properties:
         defaultValue:
           type: string
-          description: Default value for the setting. Read-only.
+          description: Default value for the setting.
           nullable: true
         description:
           type: string
-          description: Description of the setting. Read-only.
+          description: Description of the setting.
           nullable: true
         name:
           type: string
-          description: Name of the setting. Read-only.
+          description: Name of the setting.
           nullable: true
         type:
           type: string
-          description: Type of the setting. Read-only.
+          description: Type of the setting.
           nullable: true
       additionalProperties:
         type: object
@@ -12687,12 +12683,12 @@ components:
         assignedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The date and time at which the plan was assigned; for example: 2013-01-02T19:32:30Z. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+          description: 'The date and time at which the plan was assigned. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
           nullable: true
         capabilityStatus:
           type: string
-          description: 'Condition of the capability assignment. The possible values are Enabled, Warning, Suspended, Deleted, LockedOut.'
+          description: 'Condition of the capability assignment. The possible values are Enabled, Warning, Suspended, Deleted, LockedOut. See a detailed description of each value.'
           nullable: true
         service:
           type: string
@@ -12903,7 +12899,7 @@ components:
       properties:
         name:
           type: string
-          description: Name of the setting (as defined by the directorySettingTemplate).
+          description: Name of the setting (as defined by the groupSettingTemplate).
           nullable: true
         value:
           type: string
@@ -12948,7 +12944,7 @@ components:
           nullable: true
         provisioningStatus:
           type: string
-          description: 'The provisioning status of the service plan. Possible values:''Success'' - Service is fully provisioned.''Disabled'' - Service has been disabled.''PendingInput'' - Service is not yet provisioned; awaiting service confirmation.''PendingActivation'' - Service is provisioned but requires explicit activation by administrator (for example, Intune_O365 service plan).''PendingProvisioning'' - Microsoft has added a new service to the product SKU and it has not been activated in the tenant, yet.'
+          description: 'The provisioning status of the service plan. Possible values:''Success'' - Service is fully provisioned.''Disabled'' - Service has been disabled.''PendingInput'' - Service is not yet provisioned; awaiting service confirmation.''PendingActivation'' - Service is provisioned but requires explicit activation by administrator (for example, Intune_O365 service plan)''PendingProvisioning'' - Microsoft has added a new service to the product SKU and it has not been activated in the tenant, yet.'
           nullable: true
         servicePlanId:
           pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'

@@ -15,10 +15,9 @@ paths:
       parameters:
         - name: ConsistencyLevel
           in: header
-          description: Indicates the requested consistency level.
+          description: 'Indicates the requested consistency level. Documentation URL: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/'
           schema:
             type: string
-          example: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/
           examples:
             example-1:
               description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
@@ -129,10 +128,9 @@ paths:
           x-ms-docs-key-type: directoryObject
         - name: ConsistencyLevel
           in: header
-          description: Indicates the requested consistency level.
+          description: 'Indicates the requested consistency level. Documentation URL: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/'
           schema:
             type: string
-          example: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/
           examples:
             example-1:
               description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
@@ -227,7 +225,7 @@ paths:
       tags:
         - directoryObjects.Actions
       summary: Invoke action checkMemberGroups
-      operationId: directoryObjects_checkMemberGroups
+      operationId: directoryObjects.directoryObject_checkMemberGroups
       parameters:
         - name: directoryObject-id
           in: path
@@ -267,7 +265,7 @@ paths:
       tags:
         - directoryObjects.Actions
       summary: Invoke action checkMemberObjects
-      operationId: directoryObjects_checkMemberObjects
+      operationId: directoryObjects.directoryObject_checkMemberObjects
       parameters:
         - name: directoryObject-id
           in: path
@@ -307,7 +305,7 @@ paths:
       tags:
         - directoryObjects.Actions
       summary: Invoke action getMemberGroups
-      operationId: directoryObjects_getMemberGroups
+      operationId: directoryObjects.directoryObject_getMemberGroups
       parameters:
         - name: directoryObject-id
           in: path
@@ -347,7 +345,7 @@ paths:
       tags:
         - directoryObjects.Actions
       summary: Invoke action getMemberObjects
-      operationId: directoryObjects_getMemberObjects
+      operationId: directoryObjects.directoryObject_getMemberObjects
       parameters:
         - name: directoryObject-id
           in: path
@@ -387,7 +385,7 @@ paths:
       tags:
         - directoryObjects.Actions
       summary: Invoke action restore
-      operationId: directoryObjects_restore
+      operationId: directoryObjects.directoryObject_restore
       parameters:
         - name: directoryObject-id
           in: path
