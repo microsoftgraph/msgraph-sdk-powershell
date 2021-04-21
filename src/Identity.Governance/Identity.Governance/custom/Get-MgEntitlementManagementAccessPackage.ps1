@@ -15,9 +15,9 @@
 
 <#
 .Synopsis
-Get accessPackageCatalogs from identityGovernance
+Get accessPackages from identityGovernance
 .Description
-Get accessPackageCatalogs from identityGovernance
+Get accessPackages from identityGovernance
 .Example
 PS C:\> {{ Add code here }}
 
@@ -30,14 +30,14 @@ PS C:\> {{ Add code here }}
 .Inputs
 Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
 .Outputs
-Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageCatalog
+Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackage
 .Notes
 .Link
-https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/get-mgentitlementmanagementaccesspackagecatalog
+https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/get-mgentitlementmanagementaccesspackage
 #>
-function Get-MgEntitlementManagementAccessPackageCatalog {
-[OutputType([Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageCatalog])]
-[CmdletBinding(DefaultParameterSetName='ListAll',PositionalBinding=$false)]
+function Get-MgEntitlementManagementAccessPackage {
+[OutputType([Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackage])]
+[CmdletBinding(DefaultParameterSetName='ListAll', PositionalBinding=$false)]
 [Microsoft.Graph.PowerShell.Profile('v1.0-beta')]
 param(
 
@@ -67,9 +67,9 @@ param(
     # Filter items by property values
     ${DisplayNameContains},
 
+    [Parameter(ParameterSetName='ListAll')]
     [Parameter(ParameterSetName='DisplayNameEq')]
     [Parameter(ParameterSetName='DisplayNameContains')]
-    [Parameter(ParameterSetName='ListAll')]
     [Alias('OrderBy')]
     [Microsoft.Graph.PowerShell.Category('Query')]
     [System.String[]]
@@ -123,9 +123,9 @@ param(
     # Use the default credentials for the proxy
     ${ProxyUseDefaultCredentials},
 
+    [Parameter(ParameterSetName='ListAll')]
     [Parameter(ParameterSetName='DisplayNameEq')]
     [Parameter(ParameterSetName='DisplayNameContains')]
-    [Parameter(ParameterSetName='ListAll')]
     [Microsoft.Graph.PowerShell.Category('Runtime')]
     [System.Management.Automation.SwitchParameter]
     # List all pages.
@@ -134,8 +134,12 @@ param(
 
 begin {
     try {
-
+        $outBuffer = $null
+        if ($PSBoundParameters.TryGetValue('OutBuffer', [ref]$outBuffer)) {
+            $PSBoundParameters['OutBuffer'] = 1
+        }
         $parameterSet = $PSCmdlet.ParameterSetName
+
         if ($parameterSet -eq "DisplayNameEq") {
             
             $Filter = "displayName eq '{0}'" -f $DisplayNameEq
@@ -154,8 +158,8 @@ begin {
         } else {
             $PSBoundParameters['All'] = $true
         }
-        
-        $mappedCmdList = 'Microsoft.Graph.Identity.Governance.private\Get-MgEntitlementManagementAccessPackageCatalog_List';
+
+        $mappedCmdList = 'Microsoft.Graph.Identity.Governance.private\Get-MgEntitlementManagementAccessPackage_List';
         $subWrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mappedCmdList), [System.Management.Automation.CommandTypes]::Cmdlet)
         $subScriptCmd = {& $subWrappedCmd @PSBoundParameters}
         $steppablePipeline = $subScriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
