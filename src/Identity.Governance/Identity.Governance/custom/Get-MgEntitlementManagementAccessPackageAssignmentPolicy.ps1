@@ -15,9 +15,9 @@
 
 <#
 .Synopsis
-Get accessPackages from identityGovernance
+Get accessPackageAssignmentPolicies from identityGovernance
 .Description
-Get accessPackages from identityGovernance
+Get accessPackageAssignmentPolicies from identityGovernance
 .Example
 PS C:\> {{ Add code here }}
 
@@ -30,13 +30,14 @@ PS C:\> {{ Add code here }}
 .Inputs
 Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
 .Outputs
-Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackage
+Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageAssignmentPolicy
 .Notes
+
 .Link
-https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/get-mgentitlementmanagementaccesspackage
+https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/get-mgentitlementmanagementaccesspackageassignmentpolicy
 #>
-function Get-MgEntitlementManagementAccessPackage {
-[OutputType([Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackage])]
+function Get-MgEntitlementManagementAccessPackageAssignmentPolicy {
+[OutputType([Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageAssignmentPolicy])]
 [CmdletBinding(DefaultParameterSetName='ListAll', PositionalBinding=$false)]
 [Microsoft.Graph.PowerShell.Profile('v1.0-beta')]
 param(
@@ -55,21 +56,6 @@ param(
     # Select properties to be returned
     ${Property},
 
-    [Parameter(ParameterSetName='CatalogId', Mandatory)]
-    [Microsoft.Graph.PowerShell.Category('Query')]
-    [ValidateScript( {
-        try {
-            [System.Guid]::Parse($_) | Out-Null
-            $true
-        }
-        catch {
-            throw "$_ is not a valid ObjectID format. Valid value is a GUID format only."
-        }
-    })]
-    [System.String]
-    # Filter items by property values
-    ${CatalogId},
-
     [Parameter(ParameterSetName='DisplayNameEq', Mandatory)]
     [Microsoft.Graph.PowerShell.Category('Query')]
     [System.String]
@@ -82,10 +68,9 @@ param(
     # Filter items by property values
     ${DisplayNameContains},
 
-    [Parameter(ParameterSetName='ListAll')]
-    [Parameter(ParameterSetName='CatalogId')]
     [Parameter(ParameterSetName='DisplayNameEq')]
     [Parameter(ParameterSetName='DisplayNameContains')]
+    [Parameter(ParameterSetName='ListAll')]
     [Alias('OrderBy')]
     [Microsoft.Graph.PowerShell.Category('Query')]
     [System.String[]]
@@ -94,7 +79,6 @@ param(
 
     [Parameter(ParameterSetName='DisplayNameEq')]
     [Parameter(ParameterSetName='DisplayNameContains')]
-    [Parameter(ParameterSetName='CatalogId')]
     [Alias('Limit')]
     [Microsoft.Graph.PowerShell.Category('Query')]
     [System.Int32]
@@ -140,14 +124,14 @@ param(
     # Use the default credentials for the proxy
     ${ProxyUseDefaultCredentials},
 
-    [Parameter(ParameterSetName='ListAll')]
     [Parameter(ParameterSetName='DisplayNameEq')]
     [Parameter(ParameterSetName='DisplayNameContains')]
-    [Parameter(ParameterSetName='CatalogId')]
+    [Parameter(ParameterSetName='ListAll')]
     [Microsoft.Graph.PowerShell.Category('Runtime')]
     [System.Management.Automation.SwitchParameter]
     # List all pages.
     ${All}
+
 )
 
 begin {
@@ -157,7 +141,6 @@ begin {
             $PSBoundParameters['OutBuffer'] = 1
         }
         $parameterSet = $PSCmdlet.ParameterSetName
-
         if ($parameterSet -eq "DisplayNameEq") {
             
             $Filter = "displayName eq '{0}'" -f $DisplayNameEq
@@ -169,12 +152,7 @@ begin {
             $Filter = "contains(tolower(displayName), '{0}')" -f $DisplayNameContains
             $PSBoundParameters['Filter'] = $Filter
             $null = $PSBoundParameters.Remove('DisplayNameContains')
-        } elseif ($parameterSet -eq "CatalogId") {
-
-            $Filter = "accessPackageCatalog/Id eq '{0}'" -f $CatalogId
-            $PSBoundParameters['Filter'] = $Filter
-            $null = $PSBoundParameters.Remove('CatalogId')
-        }
+        } 
         
         if ($PSBoundParameters.ContainsKey('Top') -or $PSBoundParameters.ContainsKey('All')) {
 
@@ -182,7 +160,7 @@ begin {
             $PSBoundParameters['All'] = $true
         }
 
-        $mappedCmdList = 'Microsoft.Graph.Identity.Governance.private\Get-MgEntitlementManagementAccessPackage_List';
+        $mappedCmdList = 'Microsoft.Graph.Identity.Governance.private\Get-MgEntitlementManagementAccessPackageAssignmentPolicy_List1';
         $subWrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mappedCmdList), [System.Management.Automation.CommandTypes]::Cmdlet)
         $subScriptCmd = {& $subWrappedCmd @PSBoundParameters}
         $steppablePipeline = $subScriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
