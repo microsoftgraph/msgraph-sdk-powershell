@@ -6577,6 +6577,7 @@ components:
               nullable: true
             applicationTemplateId:
               type: string
+              description: Unique identifier of the applicationTemplate.
               nullable: true
             appRoles:
               type: array
@@ -6609,6 +6610,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.informationalUrl'
             isDeviceOnlyAuthSupported:
               type: boolean
+              description: Specifies whether this application supports device authentication without a user. The default is false.
               nullable: true
             isFallbackPublicClient:
               type: boolean
@@ -6860,7 +6862,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: 'The list of categories for the application. Supported values can be: Collaboration, Business Management, Consumer,Content management, CRM, Data services, Developer services, E-commerce, Education, ERP, Finance, Health, Human resources, IT infrastructure, Mail, Management, Marketing, Media, Productivity, Project management, Telecommunications, Tools, Travel, and Web design & hosting.'
+              description: 'The list of categories for the application. Supported values can be: Collaboration, Business Management, Consumer, Content management, CRM, Data services, Developer services, E-commerce, Education, ERP, Finance, Health, Human resources, IT infrastructure, Mail, Management, Marketing, Media, Productivity, Project management, Telecommunications, Tools, Travel, and Web design & hosting.'
             description:
               type: string
               description: A description of the application.

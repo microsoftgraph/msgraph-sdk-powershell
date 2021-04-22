@@ -6494,6 +6494,7 @@ paths:
             items:
               enum:
                 - directory
+                - cloudPC
                 - entitlementManagement
                 - deviceManagement
               type: string
@@ -6509,6 +6510,7 @@ paths:
               enum:
                 - '*'
                 - directory
+                - cloudPC
                 - entitlementManagement
                 - deviceManagement
               type: string
@@ -6522,6 +6524,8 @@ paths:
           links:
             directory:
               operationId: roleManagement.GetDirectory
+            cloudPC:
+              operationId: roleManagement.GetCloudPC
             entitlementManagement:
               operationId: roleManagement.GetEntitlementManagement
             deviceManagement:
@@ -6541,6 +6545,2199 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.roleManagement'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /roleManagement/cloudPC:
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get cloudPC from roleManagement
+      operationId: roleManagement_GetCloudPC
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - resourceNamespaces
+                - roleAssignments
+                - roleDefinitions
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - resourceNamespaces
+                - roleAssignments
+                - roleDefinitions
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.rbacApplicationMultiple'
+          links:
+            resourceNamespaces:
+              operationId: roleManagement.CloudPC.ListResourceNamespaces
+            roleAssignments:
+              operationId: roleManagement.CloudPC.ListRoleAssignments
+            roleDefinitions:
+              operationId: roleManagement.CloudPC.ListRoleDefinitions
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Update the navigation property cloudPC in roleManagement
+      operationId: roleManagement_UpdateCloudPC
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.rbacApplicationMultiple'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Delete navigation property cloudPC for roleManagement
+      operationId: roleManagement_DeleteCloudPC
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /roleManagement/cloudPC/resourceNamespaces:
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get resourceNamespaces from roleManagement
+      operationId: roleManagement.cloudPC_ListResourceNamespaces
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - name
+                - name desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - name
+                - resourceActions
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - resourceActions
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of unifiedRbacResourceNamespace
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceNamespace'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Create new navigation property to resourceNamespaces for roleManagement
+      operationId: roleManagement.cloudPC_CreateResourceNamespaces
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceNamespace'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceNamespace'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/cloudPC/resourceNamespaces/{unifiedRbacResourceNamespace-id}':
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get resourceNamespaces from roleManagement
+      operationId: roleManagement.cloudPC_GetResourceNamespaces
+      parameters:
+        - name: unifiedRbacResourceNamespace-id
+          in: path
+          description: 'key: id of unifiedRbacResourceNamespace'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRbacResourceNamespace
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - name
+                - resourceActions
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - resourceActions
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceNamespace'
+          links:
+            resourceActions:
+              operationId: roleManagement.cloudPC.ResourceNamespaces.ListResourceActions
+              parameters:
+                unifiedRbacResourceNamespace-id: $request.path.unifiedRbacResourceNamespace-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Update the navigation property resourceNamespaces in roleManagement
+      operationId: roleManagement.cloudPC_UpdateResourceNamespaces
+      parameters:
+        - name: unifiedRbacResourceNamespace-id
+          in: path
+          description: 'key: id of unifiedRbacResourceNamespace'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRbacResourceNamespace
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceNamespace'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Delete navigation property resourceNamespaces for roleManagement
+      operationId: roleManagement.cloudPC_DeleteResourceNamespaces
+      parameters:
+        - name: unifiedRbacResourceNamespace-id
+          in: path
+          description: 'key: id of unifiedRbacResourceNamespace'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRbacResourceNamespace
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/cloudPC/resourceNamespaces/{unifiedRbacResourceNamespace-id}/microsoft.graph.importResourceActions':
+    post:
+      tags:
+        - roleManagement.Actions
+      summary: Invoke action importResourceActions
+      operationId: roleManagement.cloudPC.resourceNamespaces_importResourceActions
+      parameters:
+        - name: unifiedRbacResourceNamespace-id
+          in: path
+          description: 'key: id of unifiedRbacResourceNamespace'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRbacResourceNamespace
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                format:
+                  type: string
+                value:
+                  type: string
+                overwriteResourceNamespace:
+                  type: boolean
+                  default: false
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceNamespace'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/roleManagement/cloudPC/resourceNamespaces/{unifiedRbacResourceNamespace-id}/resourceActions':
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get resourceActions from roleManagement
+      operationId: roleManagement.cloudPC.resourceNamespaces_ListResourceActions
+      parameters:
+        - name: unifiedRbacResourceNamespace-id
+          in: path
+          description: 'key: id of unifiedRbacResourceNamespace'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRbacResourceNamespace
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - actionVerb
+                - actionVerb desc
+                - description
+                - description desc
+                - name
+                - name desc
+                - resourceScopeId
+                - resourceScopeId desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - actionVerb
+                - description
+                - name
+                - resourceScopeId
+                - resourceScope
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - resourceScope
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of unifiedRbacResourceAction
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceAction'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Create new navigation property to resourceActions for roleManagement
+      operationId: roleManagement.cloudPC.resourceNamespaces_CreateResourceActions
+      parameters:
+        - name: unifiedRbacResourceNamespace-id
+          in: path
+          description: 'key: id of unifiedRbacResourceNamespace'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRbacResourceNamespace
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceAction'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceAction'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/cloudPC/resourceNamespaces/{unifiedRbacResourceNamespace-id}/resourceActions/{unifiedRbacResourceAction-id}':
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get resourceActions from roleManagement
+      operationId: roleManagement.cloudPC.resourceNamespaces_GetResourceActions
+      parameters:
+        - name: unifiedRbacResourceNamespace-id
+          in: path
+          description: 'key: id of unifiedRbacResourceNamespace'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRbacResourceNamespace
+        - name: unifiedRbacResourceAction-id
+          in: path
+          description: 'key: id of unifiedRbacResourceAction'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRbacResourceAction
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - actionVerb
+                - description
+                - name
+                - resourceScopeId
+                - resourceScope
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - resourceScope
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceAction'
+          links:
+            resourceScope:
+              operationId: roleManagement.cloudPC.resourceNamespaces.ResourceActions.GetResourceScope
+              parameters:
+                unifiedRbacResourceNamespace-id: $request.path.unifiedRbacResourceNamespace-id
+                unifiedRbacResourceAction-id: $request.path.unifiedRbacResourceAction-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Update the navigation property resourceActions in roleManagement
+      operationId: roleManagement.cloudPC.resourceNamespaces_UpdateResourceActions
+      parameters:
+        - name: unifiedRbacResourceNamespace-id
+          in: path
+          description: 'key: id of unifiedRbacResourceNamespace'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRbacResourceNamespace
+        - name: unifiedRbacResourceAction-id
+          in: path
+          description: 'key: id of unifiedRbacResourceAction'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRbacResourceAction
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceAction'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Delete navigation property resourceActions for roleManagement
+      operationId: roleManagement.cloudPC.resourceNamespaces_DeleteResourceActions
+      parameters:
+        - name: unifiedRbacResourceNamespace-id
+          in: path
+          description: 'key: id of unifiedRbacResourceNamespace'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRbacResourceNamespace
+        - name: unifiedRbacResourceAction-id
+          in: path
+          description: 'key: id of unifiedRbacResourceAction'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRbacResourceAction
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/cloudPC/resourceNamespaces/{unifiedRbacResourceNamespace-id}/resourceActions/{unifiedRbacResourceAction-id}/resourceScope':
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get resourceScope from roleManagement
+      operationId: roleManagement.cloudPC.resourceNamespaces.resourceActions_GetResourceScope
+      parameters:
+        - name: unifiedRbacResourceNamespace-id
+          in: path
+          description: 'key: id of unifiedRbacResourceNamespace'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRbacResourceNamespace
+        - name: unifiedRbacResourceAction-id
+          in: path
+          description: 'key: id of unifiedRbacResourceAction'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRbacResourceAction
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - scope
+                - type
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceScope'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Update the navigation property resourceScope in roleManagement
+      operationId: roleManagement.cloudPC.resourceNamespaces.resourceActions_UpdateResourceScope
+      parameters:
+        - name: unifiedRbacResourceNamespace-id
+          in: path
+          description: 'key: id of unifiedRbacResourceNamespace'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRbacResourceNamespace
+        - name: unifiedRbacResourceAction-id
+          in: path
+          description: 'key: id of unifiedRbacResourceAction'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRbacResourceAction
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceScope'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Delete navigation property resourceScope for roleManagement
+      operationId: roleManagement.cloudPC.resourceNamespaces.resourceActions_DeleteResourceScope
+      parameters:
+        - name: unifiedRbacResourceNamespace-id
+          in: path
+          description: 'key: id of unifiedRbacResourceNamespace'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRbacResourceNamespace
+        - name: unifiedRbacResourceAction-id
+          in: path
+          description: 'key: id of unifiedRbacResourceAction'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRbacResourceAction
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /roleManagement/cloudPC/roleAssignments:
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get roleAssignments from roleManagement
+      operationId: roleManagement.cloudPC_ListRoleAssignments
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - appScopeIds
+                - appScopeIds desc
+                - condition
+                - condition desc
+                - description
+                - description desc
+                - directoryScopeIds
+                - directoryScopeIds desc
+                - displayName
+                - displayName desc
+                - principalIds
+                - principalIds desc
+                - roleDefinitionId
+                - roleDefinitionId desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - appScopeIds
+                - condition
+                - description
+                - directoryScopeIds
+                - displayName
+                - principalIds
+                - roleDefinitionId
+                - appScopes
+                - directoryScopes
+                - principals
+                - roleDefinition
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - appScopes
+                - directoryScopes
+                - principals
+                - roleDefinition
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of unifiedRoleAssignmentMultiple
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentMultiple'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Create new navigation property to roleAssignments for roleManagement
+      operationId: roleManagement.cloudPC_CreateRoleAssignments
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentMultiple'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentMultiple'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/cloudPC/roleAssignments/{unifiedRoleAssignmentMultiple-id}':
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get roleAssignments from roleManagement
+      operationId: roleManagement.cloudPC_GetRoleAssignments
+      parameters:
+        - name: unifiedRoleAssignmentMultiple-id
+          in: path
+          description: 'key: id of unifiedRoleAssignmentMultiple'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignmentMultiple
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - appScopeIds
+                - condition
+                - description
+                - directoryScopeIds
+                - displayName
+                - principalIds
+                - roleDefinitionId
+                - appScopes
+                - directoryScopes
+                - principals
+                - roleDefinition
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - appScopes
+                - directoryScopes
+                - principals
+                - roleDefinition
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentMultiple'
+          links:
+            appScopes:
+              operationId: roleManagement.cloudPC.RoleAssignments.ListAppScopes
+              parameters:
+                unifiedRoleAssignmentMultiple-id: $request.path.unifiedRoleAssignmentMultiple-id
+            directoryScopes:
+              operationId: roleManagement.cloudPC.RoleAssignments.ListDirectoryScopes
+              parameters:
+                unifiedRoleAssignmentMultiple-id: $request.path.unifiedRoleAssignmentMultiple-id
+            principals:
+              operationId: roleManagement.cloudPC.RoleAssignments.ListPrincipals
+              parameters:
+                unifiedRoleAssignmentMultiple-id: $request.path.unifiedRoleAssignmentMultiple-id
+            roleDefinition:
+              operationId: roleManagement.cloudPC.RoleAssignments.GetRoleDefinition
+              parameters:
+                unifiedRoleAssignmentMultiple-id: $request.path.unifiedRoleAssignmentMultiple-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Update the navigation property roleAssignments in roleManagement
+      operationId: roleManagement.cloudPC_UpdateRoleAssignments
+      parameters:
+        - name: unifiedRoleAssignmentMultiple-id
+          in: path
+          description: 'key: id of unifiedRoleAssignmentMultiple'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignmentMultiple
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentMultiple'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Delete navigation property roleAssignments for roleManagement
+      operationId: roleManagement.cloudPC_DeleteRoleAssignments
+      parameters:
+        - name: unifiedRoleAssignmentMultiple-id
+          in: path
+          description: 'key: id of unifiedRoleAssignmentMultiple'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignmentMultiple
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/cloudPC/roleAssignments/{unifiedRoleAssignmentMultiple-id}/appScopes':
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get appScopes from roleManagement
+      operationId: roleManagement.cloudPC.roleAssignments_ListAppScopes
+      parameters:
+        - name: unifiedRoleAssignmentMultiple-id
+          in: path
+          description: 'key: id of unifiedRoleAssignmentMultiple'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignmentMultiple
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - displayName
+                - displayName desc
+                - type
+                - type desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - type
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of appScope
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.appScope'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Create new navigation property to appScopes for roleManagement
+      operationId: roleManagement.cloudPC.roleAssignments_CreateAppScopes
+      parameters:
+        - name: unifiedRoleAssignmentMultiple-id
+          in: path
+          description: 'key: id of unifiedRoleAssignmentMultiple'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignmentMultiple
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.appScope'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.appScope'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/cloudPC/roleAssignments/{unifiedRoleAssignmentMultiple-id}/appScopes/{appScope-id}':
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get appScopes from roleManagement
+      operationId: roleManagement.cloudPC.roleAssignments_GetAppScopes
+      parameters:
+        - name: unifiedRoleAssignmentMultiple-id
+          in: path
+          description: 'key: id of unifiedRoleAssignmentMultiple'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignmentMultiple
+        - name: appScope-id
+          in: path
+          description: 'key: id of appScope'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: appScope
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - type
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.appScope'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Update the navigation property appScopes in roleManagement
+      operationId: roleManagement.cloudPC.roleAssignments_UpdateAppScopes
+      parameters:
+        - name: unifiedRoleAssignmentMultiple-id
+          in: path
+          description: 'key: id of unifiedRoleAssignmentMultiple'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignmentMultiple
+        - name: appScope-id
+          in: path
+          description: 'key: id of appScope'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: appScope
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.appScope'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Delete navigation property appScopes for roleManagement
+      operationId: roleManagement.cloudPC.roleAssignments_DeleteAppScopes
+      parameters:
+        - name: unifiedRoleAssignmentMultiple-id
+          in: path
+          description: 'key: id of unifiedRoleAssignmentMultiple'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignmentMultiple
+        - name: appScope-id
+          in: path
+          description: 'key: id of appScope'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: appScope
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/cloudPC/roleAssignments/{unifiedRoleAssignmentMultiple-id}/directoryScopes':
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get directoryScopes from roleManagement
+      operationId: roleManagement.cloudPC.roleAssignments_ListDirectoryScopes
+      parameters:
+        - name: unifiedRoleAssignmentMultiple-id
+          in: path
+          description: 'key: id of unifiedRoleAssignmentMultiple'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignmentMultiple
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/roleManagement/cloudPC/roleAssignments/{unifiedRoleAssignmentMultiple-id}/directoryScopes/$ref':
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get ref of directoryScopes from roleManagement
+      operationId: roleManagement.cloudPC.roleAssignments_ListRefDirectoryScopes
+      parameters:
+        - name: unifiedRoleAssignmentMultiple-id
+          in: path
+          description: 'key: id of unifiedRoleAssignmentMultiple'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignmentMultiple
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property links
+          content:
+            application/json:
+              schema:
+                title: Collection of links of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Create new navigation property ref to directoryScopes for roleManagement
+      operationId: roleManagement.cloudPC.roleAssignments_CreateRefDirectoryScopes
+      parameters:
+        - name: unifiedRoleAssignmentMultiple-id
+          in: path
+          description: 'key: id of unifiedRoleAssignmentMultiple'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignmentMultiple
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '201':
+          description: Created navigation property link.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/cloudPC/roleAssignments/{unifiedRoleAssignmentMultiple-id}/principals':
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get principals from roleManagement
+      operationId: roleManagement.cloudPC.roleAssignments_ListPrincipals
+      parameters:
+        - name: unifiedRoleAssignmentMultiple-id
+          in: path
+          description: 'key: id of unifiedRoleAssignmentMultiple'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignmentMultiple
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/roleManagement/cloudPC/roleAssignments/{unifiedRoleAssignmentMultiple-id}/principals/$ref':
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get ref of principals from roleManagement
+      operationId: roleManagement.cloudPC.roleAssignments_ListRefPrincipals
+      parameters:
+        - name: unifiedRoleAssignmentMultiple-id
+          in: path
+          description: 'key: id of unifiedRoleAssignmentMultiple'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignmentMultiple
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property links
+          content:
+            application/json:
+              schema:
+                title: Collection of links of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Create new navigation property ref to principals for roleManagement
+      operationId: roleManagement.cloudPC.roleAssignments_CreateRefPrincipals
+      parameters:
+        - name: unifiedRoleAssignmentMultiple-id
+          in: path
+          description: 'key: id of unifiedRoleAssignmentMultiple'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignmentMultiple
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '201':
+          description: Created navigation property link.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/cloudPC/roleAssignments/{unifiedRoleAssignmentMultiple-id}/roleDefinition':
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get roleDefinition from roleManagement
+      operationId: roleManagement.cloudPC.roleAssignments_GetRoleDefinition
+      parameters:
+        - name: unifiedRoleAssignmentMultiple-id
+          in: path
+          description: 'key: id of unifiedRoleAssignmentMultiple'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignmentMultiple
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - description
+                - displayName
+                - isBuiltIn
+                - isEnabled
+                - resourceScopes
+                - rolePermissions
+                - templateId
+                - version
+                - inheritsPermissionsFrom
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - inheritsPermissionsFrom
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+          links:
+            inheritsPermissionsFrom:
+              operationId: roleManagement.cloudPC.roleAssignments.RoleDefinition.ListInheritsPermissionsFrom
+              parameters:
+                unifiedRoleAssignmentMultiple-id: $request.path.unifiedRoleAssignmentMultiple-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/cloudPC/roleAssignments/{unifiedRoleAssignmentMultiple-id}/roleDefinition/$ref':
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get ref of roleDefinition from roleManagement
+      operationId: roleManagement.cloudPC.roleAssignments_GetRefRoleDefinition
+      parameters:
+        - name: unifiedRoleAssignmentMultiple-id
+          in: path
+          description: 'key: id of unifiedRoleAssignmentMultiple'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignmentMultiple
+      responses:
+        '200':
+          description: Retrieved navigation property link
+          content:
+            application/json:
+              schema:
+                type: string
+          links:
+            inheritsPermissionsFrom:
+              operationId: roleManagement.cloudPC.roleAssignments.RoleDefinition.ListInheritsPermissionsFrom
+              parameters:
+                unifiedRoleAssignmentMultiple-id: $request.path.unifiedRoleAssignmentMultiple-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Update the ref of navigation property roleDefinition in roleManagement
+      operationId: roleManagement.cloudPC.roleAssignments_SetRefRoleDefinition
+      parameters:
+        - name: unifiedRoleAssignmentMultiple-id
+          in: path
+          description: 'key: id of unifiedRoleAssignmentMultiple'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignmentMultiple
+      requestBody:
+        description: New navigation property ref values
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Delete ref of navigation property roleDefinition for roleManagement
+      operationId: roleManagement.cloudPC.roleAssignments_DeleteRefRoleDefinition
+      parameters:
+        - name: unifiedRoleAssignmentMultiple-id
+          in: path
+          description: 'key: id of unifiedRoleAssignmentMultiple'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignmentMultiple
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /roleManagement/cloudPC/roleDefinitions:
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get roleDefinitions from roleManagement
+      operationId: roleManagement.cloudPC_ListRoleDefinitions
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+                - isBuiltIn
+                - isBuiltIn desc
+                - isEnabled
+                - isEnabled desc
+                - resourceScopes
+                - resourceScopes desc
+                - rolePermissions
+                - rolePermissions desc
+                - templateId
+                - templateId desc
+                - version
+                - version desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - description
+                - displayName
+                - isBuiltIn
+                - isEnabled
+                - resourceScopes
+                - rolePermissions
+                - templateId
+                - version
+                - inheritsPermissionsFrom
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - inheritsPermissionsFrom
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of unifiedRoleDefinition
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Create new navigation property to roleDefinitions for roleManagement
+      operationId: roleManagement.cloudPC_CreateRoleDefinitions
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/cloudPC/roleDefinitions/{unifiedRoleDefinition-id}':
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get roleDefinitions from roleManagement
+      operationId: roleManagement.cloudPC_GetRoleDefinitions
+      parameters:
+        - name: unifiedRoleDefinition-id
+          in: path
+          description: 'key: id of unifiedRoleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - description
+                - displayName
+                - isBuiltIn
+                - isEnabled
+                - resourceScopes
+                - rolePermissions
+                - templateId
+                - version
+                - inheritsPermissionsFrom
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - inheritsPermissionsFrom
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+          links:
+            inheritsPermissionsFrom:
+              operationId: roleManagement.cloudPC.RoleDefinitions.ListInheritsPermissionsFrom
+              parameters:
+                unifiedRoleDefinition-id: $request.path.unifiedRoleDefinition-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Update the navigation property roleDefinitions in roleManagement
+      operationId: roleManagement.cloudPC_UpdateRoleDefinitions
+      parameters:
+        - name: unifiedRoleDefinition-id
+          in: path
+          description: 'key: id of unifiedRoleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Delete navigation property roleDefinitions for roleManagement
+      operationId: roleManagement.cloudPC_DeleteRoleDefinitions
+      parameters:
+        - name: unifiedRoleDefinition-id
+          in: path
+          description: 'key: id of unifiedRoleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/cloudPC/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom':
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get inheritsPermissionsFrom from roleManagement
+      operationId: roleManagement.cloudPC.roleDefinitions_ListInheritsPermissionsFrom
+      parameters:
+        - name: unifiedRoleDefinition-id
+          in: path
+          description: 'key: id of unifiedRoleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+                - isBuiltIn
+                - isBuiltIn desc
+                - isEnabled
+                - isEnabled desc
+                - resourceScopes
+                - resourceScopes desc
+                - rolePermissions
+                - rolePermissions desc
+                - templateId
+                - templateId desc
+                - version
+                - version desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - description
+                - displayName
+                - isBuiltIn
+                - isEnabled
+                - resourceScopes
+                - rolePermissions
+                - templateId
+                - version
+                - inheritsPermissionsFrom
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - inheritsPermissionsFrom
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of unifiedRoleDefinition
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Create new navigation property to inheritsPermissionsFrom for roleManagement
+      operationId: roleManagement.cloudPC.roleDefinitions_CreateInheritsPermissionsFrom
+      parameters:
+        - name: unifiedRoleDefinition-id
+          in: path
+          description: 'key: id of unifiedRoleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/cloudPC/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/{unifiedRoleDefinition-id1}':
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get inheritsPermissionsFrom from roleManagement
+      operationId: roleManagement.cloudPC.roleDefinitions_GetInheritsPermissionsFrom
+      parameters:
+        - name: unifiedRoleDefinition-id
+          in: path
+          description: 'key: id of unifiedRoleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+        - name: unifiedRoleDefinition-id1
+          in: path
+          description: 'key: id of unifiedRoleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - description
+                - displayName
+                - isBuiltIn
+                - isEnabled
+                - resourceScopes
+                - rolePermissions
+                - templateId
+                - version
+                - inheritsPermissionsFrom
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - inheritsPermissionsFrom
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+          links:
+            inheritsPermissionsFrom:
+              operationId: roleManagement.cloudPC.roleDefinitions.InheritsPermissionsFrom.ListInheritsPermissionsFrom
+              parameters:
+                unifiedRoleDefinition-id: $request.path.unifiedRoleDefinition-id
+                unifiedRoleDefinition-id1: $request.path.unifiedRoleDefinition-id1
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Update the navigation property inheritsPermissionsFrom in roleManagement
+      operationId: roleManagement.cloudPC.roleDefinitions_UpdateInheritsPermissionsFrom
+      parameters:
+        - name: unifiedRoleDefinition-id
+          in: path
+          description: 'key: id of unifiedRoleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+        - name: unifiedRoleDefinition-id1
+          in: path
+          description: 'key: id of unifiedRoleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Delete navigation property inheritsPermissionsFrom for roleManagement
+      operationId: roleManagement.cloudPC.roleDefinitions_DeleteInheritsPermissionsFrom
+      parameters:
+        - name: unifiedRoleDefinition-id
+          in: path
+          description: 'key: id of unifiedRoleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+        - name: unifiedRoleDefinition-id1
+          in: path
+          description: 'key: id of unifiedRoleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -22057,7 +24254,7 @@ components:
               nullable: true
             isSupervised:
               type: boolean
-              description: 'Indicates if the Apple device is supervised. More information is at: https://support.apple.com/HT202837'
+              description: 'Indicates if the Apple device is supervised. More information is at: https://support.apple.com/en-us/HT202837'
             lastContactedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -22091,26 +24288,26 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Created date time in UTC of the device enrollment configuration
+              description: Not yet documented
               format: date-time
             description:
               type: string
-              description: The description of the device enrollment configuration
+              description: Not yet documented
               nullable: true
             displayName:
               type: string
-              description: The display name of the device enrollment configuration
+              description: Not yet documented
               nullable: true
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Last modified date time in UTC of the device enrollment configuration
+              description: Not yet documented
               format: date-time
             priority:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Priority is used when a user exists in multiple groups that are assigned enrollment configuration. Users are subject only to the configuration with the lowest priority value.
+              description: Not yet documented
               format: int32
             roleScopeTagIds:
               type: array
@@ -22122,13 +24319,13 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: The version of the device enrollment configuration
+              description: Not yet documented
               format: int32
             assignments:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.enrollmentConfigurationAssignment'
-              description: The list of group assignments for the device configuration profile
+              description: The list of group assignments for the device configuration profile.
           additionalProperties:
             type: object
           description: The Base Class of Device Enrollment Configuration
@@ -22564,6 +24761,8 @@ components:
       properties:
         directory:
           $ref: '#/components/schemas/microsoft.graph.rbacApplication'
+        cloudPC:
+          $ref: '#/components/schemas/microsoft.graph.rbacApplicationMultiple'
         entitlementManagement:
           $ref: '#/components/schemas/microsoft.graph.rbacApplication'
         deviceManagement:
@@ -23816,7 +26015,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.dayOfWeek'
-          description: 'A collection of the days of the week on which the event occurs. Possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. If type is relativeMonthly or relativeYearly, and daysOfWeek specifies more than one day, the event falls on the first day that satisfies the pattern.  Required if type is weekly, relativeMonthly, or relativeYearly.'
+          description: 'A collection of the days of the week on which the event occurs. The possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. If type is relativeMonthly or relativeYearly, and daysOfWeek specifies more than one day, the event falls on the first day that satisfies the pattern.  Required if type is weekly, relativeMonthly, or relativeYearly.'
         firstDayOfWeek:
           $ref: '#/components/schemas/microsoft.graph.dayOfWeek'
         index:
