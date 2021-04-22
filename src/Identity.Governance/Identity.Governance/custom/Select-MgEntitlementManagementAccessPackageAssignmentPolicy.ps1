@@ -24,7 +24,7 @@ Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageAssignmentPolicy
 .Notes
 
 .Link
-https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/new-mgentitlementmanagementaccesspackageassignmentrequest
+https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/select-mgentitlementmanagementaccesspackageassignmentpolicy
 #>
 function Select-MgEntitlementManagementAccessPackageAssignmentPolicy {
 [OutputType([Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageAssignmentPolicy])]
@@ -33,6 +33,10 @@ function Select-MgEntitlementManagementAccessPackageAssignmentPolicy {
 param(
     [Parameter (ValueFromPipeline=$true)]
     [Microsoft.Graph.PowerShell.Models.MicrosoftGraphAccessPackageAssignmentPolicy[]]$Policy,
+
+    [Parameter (Mandatory = $False)]
+    [switch]
+    $NoApprovalRequiredForRequest,
 
     [Parameter (Mandatory = $False,ParameterSetName = "ExplicitScope")]
     [string[]]
@@ -64,6 +68,46 @@ process {
     }
     if ($acceptRequests -and $matchedScopeType -eq $false) {
         write-verbose "policy $policyId did not match scope type with $thisScopeType"
+        return
+    }
+
+    if ($NoApprovalRequiredForRequest -and $acceptRequests -eq $true) {
+        $approvalIsRequiredForRequest = $false
+
+        if ($Policy.RequestApprovalSettings) {
+            $isApprovalRequired = $Policy.RequestApprovalSettings.isApprovalRequired
+            $isApprovalRequiredForExtension = $Policy.RequestApprovalSettings.isApprovalRequiredForExtension
+
+            $isApprovalOverride = $true
+
+            if ($Policy.RequestApprovalSettings.ApprovalMode -eq "NoApproval") {
+                $isApprovalOverride = $false
+            }
+            if ($Policy.RequestApprovalSettings.ApprovalStages -eq $null -or $Policy.RequestApprovalSettings.ApprovalStages.Length -eq 0) {
+                $isApprovalOverride = $false
+            }
+
+            if ($isApprovalRequired -eq $true -and $isApprovalOverride -eq $true) {
+                $approvalIsRequiredForRequest = $true
+            } else {
+                write-verbose "policy $policyId did not require approval $isApprovalRequired $isApprovalRequiredForExtension $isApprovalOverride"
+            }
+
+        }
+
+        if ($approvalIsRequiredForRequest) {
+            write-verbose "policy $policyId requires approval"
+            return
+        }
+    }
+
+    if ($NoApprovalRequiredForRequest -and $acceptRequests -eq $false) {
+        # does not accept requests
+        write-verbose "policy $policyId does not accept requests"
+        return
+    }
+    if ($NoApprovalRequiredForRequest -and ($null -eq $ScopeType -or $ScopeType.Length -eq 0) -and $thisScopeType -eq "NoSubjects") {
+        write-verbose "policy $policyId has no subjects in scope"
         return
     }
 
