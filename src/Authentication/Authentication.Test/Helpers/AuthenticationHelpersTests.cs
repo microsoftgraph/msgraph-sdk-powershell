@@ -56,7 +56,28 @@
                 AuthType = AuthenticationType.Delegated,
                 Scopes = new[] { "User.Read" },
                 ContextScope = ContextScope.Process,
-                UseDeviceAuth = true
+                AuthProviderType = AuthProviderType.DeviceCodeProvider
+            };
+
+            // Act
+            IAuthenticationProvider authProvider = AuthenticationHelpers.GetAuthProvider(delegatedAuthContext);
+
+            // Assert
+            Assert.IsType<DeviceCodeProvider>(authProvider);
+
+            // reset static instance.
+            GraphSession.Reset();
+        }
+        [Fact]
+        public void ShouldUseDeviceCodeWhenFallback()
+        {
+            // Arrange
+            AuthContext delegatedAuthContext = new AuthContext
+            {
+                AuthType = AuthenticationType.Delegated,
+                Scopes = new[] { "User.Read" },
+                ContextScope = ContextScope.Process,
+                AuthProviderType = AuthProviderType.DeviceCodeProviderFallBack
             };
 
             // Act

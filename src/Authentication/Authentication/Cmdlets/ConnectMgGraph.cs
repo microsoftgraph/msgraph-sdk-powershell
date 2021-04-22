@@ -185,7 +185,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                             authContext.Scopes = processedScopes.Length == 0 ? new[] { "User.Read" } : processedScopes;
                             // Default to CurrentUser but allow the customer to change this via `ContextScope` param.
                             authContext.ContextScope = this.IsParameterBound(nameof(ContextScope)) ? ContextScope : ContextScope.CurrentUser;
-                            authContext.UseDeviceAuth = UseDeviceAuthentication;
+                            authContext.AuthProviderType = UseDeviceAuthentication ? AuthProviderType.DeviceCodeProvider : AuthProviderType.InteractiveAuthenticationProvider;
                         }
                         break;
                     case Constants.AppParameterSet:
@@ -197,6 +197,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                             authContext.Certificate = Certificate;
                             // Default to Process but allow the customer to change this via `ContextScope` param.
                             authContext.ContextScope = this.IsParameterBound(nameof(ContextScope)) ? ContextScope : ContextScope.Process;
+                            authContext.AuthProviderType = AuthProviderType.ClientCredentialProvider;
                         }
                         break;
                     case Constants.AccessTokenParameterSet:
@@ -205,48 +206,23 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                             authContext.ContextScope = ContextScope.Process;
                             // Store user provided access token to a session object.
                             GraphSession.Instance.UserProvidedToken = new NetworkCredential(string.Empty, AccessToken).SecurePassword;
+                            authContext.AuthProviderType = AuthProviderType.UserProvidedToken;
                         }
                         break;
                 }
 
-                
-                var (context, authError) = await Authenticator.AuthenticateAsync(authContext, ForceRefresh, _cancellationTokenSource.Token,
-                   type =>
-                   {
-                       // Early Detection of FallBack to DeviceCode
-                       if (type == AuthProviderType.DeviceCodeProviderFallBack)
-                       {
-                           WriteWarning(Resources.DeviceCodeFallback);
-                       }
-                   });
-
-                switch (authError.AuthErrorType)
+                try
                 {
-                    case AuthErrorType.None:
-                    case AuthErrorType.FallBack:
-                        {
-                            GraphSession.Instance.AuthContext = context;
-                            //Fallback was due to an Exception, ie Browser Could not be Opened.
-                            if (authError.AuthErrorType == AuthErrorType.FallBack)
-                            {
-                                WriteWarning(Resources.DeviceCodeFallback);
-                            }
-                            WriteObject("Welcome To Microsoft Graph!");
-                            break;
-                        }
-                    case AuthErrorType.InteractiveAuthenticationFailure:
-                        {
-                            WriteWarning(Resources.InteractiveAuthNotSupported);
-                            WriteDebug(authError.Exception.ToString());
-                            throw authError.Exception;
-                        }
-                    case AuthErrorType.DeviceCodeFailure:
-                    case AuthErrorType.ClientCredentialsFailure:
-                    case AuthErrorType.Unknown:
-                        throw authError.Exception;
-                    default:
-                        throw new ArgumentOutOfRangeException();
+
+                    GraphSession.Instance.AuthContext = await Authenticator.AuthenticateAsync(authContext, ForceRefresh,
+                        _cancellationTokenSource.Token,
+                        () => { WriteWarning(Resources.DeviceCodeFallback); });
                 }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                WriteObject("Welcome To Microsoft Graph!");
             }
         }
         protected override void StopProcessing()

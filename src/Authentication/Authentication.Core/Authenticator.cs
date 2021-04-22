@@ -29,49 +29,38 @@ namespace Microsoft.Graph.Authentication.Core
         /// <param name="authContext">The <see cref="IAuthContext"/> to authenticate.</param>
         /// <param name="forceRefresh">Whether or not to force refresh a token if one exists.</param>
         /// <param name="cancellationToken">The cancellation token.</param>
+        /// <param name="fallBackWarning">Callback to report FallBack to DeviceCode Authentication</param>
         /// <returns></returns>
-        public static Task<(IAuthContext context, AuthError authError)> AuthenticateAsync(IAuthContext authContext, bool forceRefresh, CancellationToken cancellationToken)
+        public static async Task<IAuthContext> AuthenticateAsync(IAuthContext authContext, bool forceRefresh, CancellationToken cancellationToken, Action fallBackWarning = null)
         {
             // Gets a static instance of IAuthenticationProvider when the client app hasn't changed.
-            var (authProvider, clientApplication, _) = GetClientApplication(authContext);
-            return AuthenticateAsync(clientApplication, authProvider, authContext, forceRefresh, cancellationToken);
-        }
-
-        /// <summary>
-        /// Authenticates the client using the provided <see cref="IAuthContext"/>.
-        /// </summary>
-        /// <param name="authContext">The <see cref="IAuthContext"/> to authenticate.</param>
-        /// <param name="forceRefresh">Whether or not to force refresh a token if one exists.</param>
-        /// <param name="cancellationToken">The cancellation token.</param>
-        /// <param name="fallBackWarning"></param>
-        /// <returns></returns>
-        public static Task<(IAuthContext context, AuthError authError)> AuthenticateAsync(IAuthContext authContext, bool forceRefresh, CancellationToken cancellationToken, Action<AuthProviderType> fallBackWarning)
-        {
-            // Gets a static instance of IAuthenticationProvider when the client app hasn't changed.
-            var (authProvider, clientApplication, authProviderType) = GetClientApplication(authContext);
-            fallBackWarning(authProviderType);
-            return AuthenticateAsync(clientApplication, authProvider, authContext, forceRefresh, cancellationToken);
-        }
-
-        /// <summary>
-        /// Signs out of the provided <see cref="IAuthContext"/>.
-        /// </summary>
-        /// <param name="authContext">The <see cref="IAuthContext"/> to sign-out from.</param>
-        public static void LogOut(IAuthContext authContext)
-        {
-            AuthenticationHelpers.Logout(authContext);
-        }
-        /// <summary>
-        /// Authenticates the client using the provided <see cref="IAuthContext"/>.
-        /// </summary>
-        /// <param name="clientApplication"></param>
-        /// <param name="authProvider"></param>
-        /// <param name="authContext"></param>
-        /// <param name="forceRefresh"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        private static async Task<(IAuthContext context, AuthError authError)> AuthenticateAsync(IClientApplicationBase clientApplication, IAuthenticationProvider authProvider, IAuthContext authContext, bool forceRefresh, CancellationToken cancellationToken)
-        {
+            var authProvider = AuthenticationHelpers.GetAuthProvider(authContext);
+            IClientApplicationBase clientApplication = null;
+            switch (authContext.AuthProviderType)
+            {
+                case AuthProviderType.DeviceCodeProvider:
+                case AuthProviderType.DeviceCodeProviderFallBack:
+                    clientApplication = (authProvider as DeviceCodeProvider).ClientApplication;
+                    break;
+                case AuthProviderType.InteractiveAuthenticationProvider:
+                    {
+                        var interactiveProvider = (authProvider as InteractiveAuthenticationProvider).ClientApplication;
+                        //When User is not Interactive, Pre-Emptively Fallback and warn, to DeviceCode
+                        if (!interactiveProvider.IsUserInteractive())
+                        {
+                            authContext.AuthProviderType = AuthProviderType.DeviceCodeProviderFallBack;
+                            fallBackWarning?.Invoke();
+                            var fallBackAuthContext= await AuthenticateAsync(authContext, forceRefresh, cancellationToken, fallBackWarning);
+                            return fallBackAuthContext;
+                        }
+                        break;
+                    }
+                case AuthProviderType.ClientCredentialProvider:
+                    {
+                        clientApplication = (authProvider as ClientCredentialProvider).ClientApplication;
+                        break;
+                    }
+            }
             try
             {
                 // Incremental scope consent without re-instantiating the auth provider. We will use provided instance.
@@ -106,76 +95,45 @@ namespace Microsoft.Graph.Authentication.Core
                 }
 
                 JwtHelpers.DecodeJWT(httpRequestMessage.Headers.Authorization?.Parameter, account, ref authContext);
-                return (authContext, new AuthError(AuthErrorType.None, null));
+                return authContext;
             }
             catch (AuthenticationException authEx)
             {
                 //Interactive Authentication Failure: Could Not Open Browser, fallback to DeviceAuth
                 if (IsUnableToOpenWebPageError(authEx))
                 {
-                    authContext.UseDeviceAuth = true;
+                    authContext.AuthProviderType = AuthProviderType.DeviceCodeProviderFallBack;
                     //ReAuthenticate using DeviceCode as fallback.
-                    var (retryAuthContext, retryAuthError) = await AuthenticateAsync(authContext, forceRefresh, cancellationToken);
+                    var fallBackAuthContext = await AuthenticateAsync(authContext, forceRefresh, cancellationToken);
                     //Indicate that this was a Fallback
-                    retryAuthError = new AuthError(AuthErrorType.FallBack, retryAuthError.Exception ?? authEx);
-                    return (retryAuthContext, retryAuthError);
+                    if (fallBackWarning != null && fallBackAuthContext.AuthProviderType == AuthProviderType.DeviceCodeProviderFallBack)
+                    {
+                        fallBackWarning();
+                    }
+                    return fallBackAuthContext;
                 }
                 // DeviceCode Authentication Failure: Timeout
                 if (authEx.InnerException is TaskCanceledException && cancellationToken.IsCancellationRequested)
                 {
                     // DeviceCodeTimeout
-                    var deviceCode = new Exception(string.Format(
-                            CultureInfo.CurrentCulture,
-                            ErrorConstants.Message.DeviceCodeTimeout,
-                            Constants.MaxDeviceCodeTimeOut));
-                    return (authContext, new AuthError(AuthErrorType.DeviceCodeFailure, deviceCode.InnerException ?? deviceCode));
+                    throw new Exception(string.Format(CultureInfo.CurrentCulture, ErrorConstants.Message.DeviceCodeTimeout, Constants.MaxDeviceCodeTimeOut));
                 }
                 //Something Unknown Went Wrong
-                return (authContext, new AuthError(AuthErrorType.Unknown, authEx.InnerException ?? authEx));
+                throw authEx.InnerException ?? authEx;
             }
             catch (Exception ex)
             {
-                return (authContext, new AuthError(AuthErrorType.Unknown, ex.InnerException ?? ex));
+                throw ex.InnerException ?? ex;
             }
         }
 
         /// <summary>
-        ///  Gets a static instance of IAuthenticationProvider when the client app hasn't changed.
+        /// Signs out of the provided <see cref="IAuthContext"/>.
         /// </summary>
-        /// <param name="authContext"></param>
-        /// <returns></returns>
-        private static (IAuthenticationProvider authProvider, IClientApplicationBase clientApplication, AuthProviderType authProviderType) GetClientApplication(IAuthContext authContext)
+        /// <param name="authContext">The <see cref="IAuthContext"/> to sign-out from.</param>
+        public static void LogOut(IAuthContext authContext)
         {
-            // Gets a static instance of IAuthenticationProvider when the client app hasn't changed.
-            var authProvider = AuthenticationHelpers.GetAuthProvider(authContext);
-            IClientApplicationBase clientApplication = null;
-            var authProviderType = AuthProviderType.None;
-
-            if (authContext.AuthType == AuthenticationType.Delegated && authContext.UseDeviceAuth)
-            {
-                clientApplication = (authProvider as DeviceCodeProvider).ClientApplication;
-                authProviderType = AuthProviderType.DeviceCodeProvider;
-            }
-
-            if (authContext.AuthType == AuthenticationType.Delegated && !authContext.UseDeviceAuth)
-            {
-                var interactiveProvider = (authProvider as InteractiveAuthenticationProvider).ClientApplication;
-                authProviderType = AuthProviderType.InteractiveAuthenticationProvider;
-                if (!interactiveProvider.IsUserInteractive())
-                {
-                    authContext.UseDeviceAuth = true;
-                    var (fallBackAuthProvider, fallBackClientApplication, fallBackAuthProviderType) = GetClientApplication(authContext);
-                    fallBackAuthProviderType = AuthProviderType.DeviceCodeProviderFallBack;
-                    return (fallBackAuthProvider, fallBackClientApplication, fallBackAuthProviderType);
-                }
-            }
-            if (authContext.AuthType == AuthenticationType.AppOnly)
-            {
-                clientApplication = (authProvider as ClientCredentialProvider).ClientApplication;
-                authProviderType = AuthProviderType.ClientCredentialProvider;
-            }
-
-            return (authProvider, clientApplication, authProviderType);
+            AuthenticationHelpers.Logout(authContext);
         }
 
         private static bool IsUnableToOpenWebPageError(Exception exception)
@@ -184,6 +142,5 @@ namespace Microsoft.Graph.Authentication.Core
                    clientException?.ErrorCode == MsalError.LinuxXdgOpen ||
                    (exception.Message?.ToLower()?.Contains("unable to open a web page") ?? false);
         }
-
     }
 }

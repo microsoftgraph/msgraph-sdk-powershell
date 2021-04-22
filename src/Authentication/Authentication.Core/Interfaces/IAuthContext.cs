@@ -4,7 +4,6 @@
 
 namespace Microsoft.Graph.PowerShell.Authentication
 {
-    using System;
     using System.Security.Cryptography.X509Certificates;
 
     public enum AuthenticationType
@@ -19,33 +18,14 @@ namespace Microsoft.Graph.PowerShell.Authentication
         Process,
         CurrentUser
     }
-    public enum AuthErrorType
-    {
-        None,
-        FallBack,
-        DeviceCodeFailure,
-        InteractiveAuthenticationFailure,
-        ClientCredentialsFailure,
-        Unknown
-    }
     public enum AuthProviderType
     {
         None,
         InteractiveAuthenticationProvider,
         DeviceCodeProvider,
         DeviceCodeProviderFallBack,
-        ClientCredentialProvider
-    }
-
-    public readonly struct AuthError
-    {
-        public AuthError(AuthErrorType errorType, Exception ex)
-        {
-            AuthErrorType = errorType;
-            Exception = ex;
-        }
-        public AuthErrorType AuthErrorType { get; }
-        public Exception Exception { get; }
+        ClientCredentialProvider,
+        UserProvidedToken
     }
     public interface IAuthContext
     {
@@ -54,11 +34,11 @@ namespace Microsoft.Graph.PowerShell.Authentication
         string CertificateThumbprint { get; set; }
         string[] Scopes { get; set; }
         AuthenticationType AuthType { get; set; }
+        AuthProviderType AuthProviderType { get; set; }
         string CertificateName { get; set; }
         string Account { get; set; }
         string AppName { get; set; }
         ContextScope ContextScope { get; set; }
         X509Certificate2 Certificate { get; set; }
-        bool UseDeviceAuth { get; set; }
     }
 }
