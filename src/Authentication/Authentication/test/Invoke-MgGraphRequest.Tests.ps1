@@ -11,18 +11,18 @@
 }
 Describe 'Invoke-MgGraphRequest Collection Results' {
     BeforeAll {
-         Connect-MgGraph
+         Connect-MgGraph -Debug -Verbose
     }
     It 'ShouldReturnPsObject' {
-         Invoke-MgGraphRequest -OutputType PSObject -Uri "https://graph.microsoft.com/v1.0/users" | Should -BeOfType [System.Management.Automation.PSObject]
+         Invoke-MgGraphRequest -OutputType PSObject -Uri "https://graph.microsoft.com/v1.0/users" -Debug -Verbose | Should -BeOfType [System.Management.Automation.PSObject]
     }
 
     It 'ShouldReturnHashTable' {
-         $hashTable = Invoke-MgGraphRequest -OutputType Hashtable -Uri "https://graph.microsoft.com/v1.0/users" | Should -BeOfType [System.Collections.Hashtable]
+         $hashTable = Invoke-MgGraphRequest -OutputType Hashtable -Uri "https://graph.microsoft.com/v1.0/users" -Debug -Verbose  | Should -BeOfType [System.Collections.Hashtable]
     }
 
     It 'ShouldReturnJsonString' {
-         $jsonString = Invoke-MgGraphRequest -OutputType Json -Uri "https://graph.microsoft.com/v1.0/users" | Should -BeOfType [System.String]
+         $jsonString = Invoke-MgGraphRequest -OutputType Json -Uri "https://graph.microsoft.com/v1.0/users" -Debug -Verbose  | Should -BeOfType [System.String]
     }
 
     It 'ShouldReturnHttpResponseMessage' {
