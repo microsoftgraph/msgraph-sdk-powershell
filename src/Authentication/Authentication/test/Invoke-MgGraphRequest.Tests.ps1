@@ -11,7 +11,7 @@
 }
 Describe 'Invoke-MgGraphRequest Collection Results' {
     BeforeAll {
-         Connect-MgGraph -Debug -Verbose
+         Connect-MgGraph -Debug -Verbose -UseDeviceAuthentication
     }
     It 'ShouldReturnPsObject' {
          Invoke-MgGraphRequest -OutputType PSObject -Uri "https://graph.microsoft.com/v1.0/users" -Debug -Verbose | Should -BeOfType [System.Management.Automation.PSObject]
