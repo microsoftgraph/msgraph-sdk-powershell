@@ -70,19 +70,18 @@ elseif ($VersionState.Equals([VersionState]::Valid) -or $VersionState.Equals([Ve
         New-Item -Path $GraphModuleLocation -Type Directory
     }
     $AllowPreRelease = $true
-    if($ModulePreviewNumber -eq -1) {
+    if ($ModulePreviewNumber -eq -1) {
         $AllowPreRelease = $false
     }
 
     # Add auth module as a dependency.
     Find-Module "Microsoft.Graph.Authentication" -Repository $RepositoryName -AllowPrerelease:$AllowPreRelease
     $ExistingAuthModule = Find-Module "Microsoft.Graph.Authentication" -Repository $RepositoryName -AllowPrerelease:$AllowPreRelease
-    Write-Warning "Installing $ExistingAuthModule.Name $ExistingAuthModule.Version"
     Install-Module $ExistingAuthModule.Name -Repository $RepositoryName -Force -AllowClobber -AllowPrerelease:$AllowPreRelease
     
-    if($ExistingAuthModule.Version -like '*preview*' ) {
+    Write-Host "Adding dependency: $($ExistingAuthModule.Name) $($ExistingAuthModule.Version)" -ForegroundColor Green
+    if ($ExistingAuthModule.Version -like '*preview*' ) {
         $version = $ExistingAuthModule.Version.Remove($ExistingAuthModule.Version.IndexOf('-'))
-        Write-Warning "Required Version:  $ModulePrefix.$RequiredModule Version: $version"
         $RequiredGraphModules += @{ ModuleName = $ExistingAuthModule.Name ; ModuleVersion = $version }
     }
     else {
@@ -92,17 +91,21 @@ elseif ($VersionState.Equals([VersionState]::Valid) -or $VersionState.Equals([Ve
     foreach ($RequiredModule in $ModuleMapping.Keys) {
         # Install module locally in order to specify it as a dependency of the roll-up module down the generation pipeline.
         # https://stackoverflow.com/questions/46216038/how-do-i-define-requiredmodules-in-a-powershell-module-manifest-psd1.
-        $ExistingWorkloadModule = Find-Module "$ModulePrefix.$RequiredModule" -Repository $RepositoryName -AllowPrerelease:$AllowPreRelease
-        Write-Warning "Installing $ModulePrefix.$RequiredModule Version: $ExistingWorkloadModule.Version"
-        Install-Module $ExistingWorkloadModule.Name -Repository $RepositoryName -Force -AllowClobber -AllowPrerelease:$AllowPreRelease
-        #Remove "-preview" from Version Name if present
-        if($ExistingWorkloadModule.Version -like '*preview*' ) {
-            $version = $ExistingWorkloadModule.Version.Remove($ExistingWorkloadModule.Version.IndexOf('-'))
-            Write-Warning "Required Version:  $ModulePrefix.$RequiredModule Version: $version"
-            $RequiredGraphModules += @{ ModuleName = $ExistingWorkloadModule.Name ; RequiredVersion = $version }
+        $ExistingWorkloadModule = Find-Module "$ModulePrefix.$RequiredModule" -Repository $RepositoryName -AllowPrerelease:$AllowPreRelease -ErrorAction SilentlyContinue
+        if ($null -ne $ExistingWorkloadModule) {
+            Write-Host "Adding dependency: $($ExistingWorkloadModule.Name) $($ExistingWorkloadModule.Version)" -ForegroundColor Green
+            Install-Module $ExistingWorkloadModule.Name -Repository $RepositoryName -Force -AllowClobber -AllowPrerelease:$AllowPreRelease
+            #Remove "-preview" from Version Name if present
+            if ($ExistingWorkloadModule.Version -like '*preview*' ) {
+                $version = $ExistingWorkloadModule.Version.Remove($ExistingWorkloadModule.Version.IndexOf('-'))
+                $RequiredGraphModules += @{ ModuleName = $ExistingWorkloadModule.Name ; RequiredVersion = $version }
+            }
+            else {
+                $RequiredGraphModules += @{ ModuleName = $ExistingWorkloadModule.Name ; RequiredVersion = $ExistingWorkloadModule.Version }
+            }   
         }
         else {
-            $RequiredGraphModules += @{ ModuleName = $ExistingWorkloadModule.Name ; RequiredVersion = $ExistingWorkloadModule.Version }
+            Write-Warning "Skipped: $ModulePrefix.$RequiredModule"
         }
     }
 

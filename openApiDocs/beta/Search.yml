@@ -1027,6 +1027,9 @@ components:
         - fileName
         - fileExtension
         - unknownFutureValue
+        - iconUrl
+        - containerName
+        - containerUrl
       type: string
     microsoft.graph.externalConnectors.propertyType:
       title: propertyType

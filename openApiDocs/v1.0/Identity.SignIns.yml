@@ -943,6 +943,25 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /identityProviders/microsoft.graph.availableProviderTypes():
+    get:
+      tags:
+        - identityProviders.Functions
+      summary: Invoke function availableProviderTypes
+      operationId: identityProviders_availableProviderTypes
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+                  nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   /informationProtection:
     get:
       tags:
@@ -2777,6 +2796,7 @@ paths:
               enum:
                 - id
                 - authenticationMethodsPolicy
+                - authenticationFlowsPolicy
                 - activityBasedTimeoutPolicies
                 - authorizationPolicy
                 - claimsMappingPolicies
@@ -2801,6 +2821,7 @@ paths:
               enum:
                 - '*'
                 - authenticationMethodsPolicy
+                - authenticationFlowsPolicy
                 - activityBasedTimeoutPolicies
                 - authorizationPolicy
                 - claimsMappingPolicies
@@ -2823,6 +2844,8 @@ paths:
           links:
             authenticationMethodsPolicy:
               operationId: policies.GetAuthenticationMethodsPolicy
+            authenticationFlowsPolicy:
+              operationId: policies.GetAuthenticationFlowsPolicy
             activityBasedTimeoutPolicies:
               operationId: policies.ListActivityBasedTimeoutPolicies
             authorizationPolicy:
@@ -3157,6 +3180,85 @@ paths:
         - policies.adminConsentRequestPolicy
       summary: Delete navigation property adminConsentRequestPolicy for policies
       operationId: policies_DeleteAdminConsentRequestPolicy
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /policies/authenticationFlowsPolicy:
+    get:
+      tags:
+        - policies.authenticationFlowsPolicy
+      summary: Get authenticationFlowsPolicy from policies
+      operationId: policies_GetAuthenticationFlowsPolicy
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - description
+                - displayName
+                - selfServiceSignUp
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.authenticationFlowsPolicy'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - policies.authenticationFlowsPolicy
+      summary: Update the navigation property authenticationFlowsPolicy in policies
+      operationId: policies_UpdateAuthenticationFlowsPolicy
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.authenticationFlowsPolicy'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - policies.authenticationFlowsPolicy
+      summary: Delete navigation property authenticationFlowsPolicy for policies
+      operationId: policies_DeleteAuthenticationFlowsPolicy
       parameters:
         - name: If-Match
           in: header
@@ -7443,7 +7545,7 @@ components:
               description: The telephone numbers for the user. Only one number can be set for this property. Returned by default. Read-only for users synced from on-premises directory.
             city:
               type: string
-              description: The city in which the user is located. Returned only on $select. Supports $filter.
+              description: The city in which the user is located. Maximum length is 128 characters. Returned only on $select. Supports $filter.
               nullable: true
             companyName:
               type: string
@@ -7455,7 +7557,7 @@ components:
               nullable: true
             country:
               type: string
-              description: 'The country/region in which the user is located; for example, ''US'' or ''UK''. Returned only on $select. Supports $filter.'
+              description: 'The country/region in which the user is located; for example, ''US'' or ''UK''. Maximum length is 128 characters. Returned only on $select. Supports $filter.'
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -7469,11 +7571,11 @@ components:
               nullable: true
             department:
               type: string
-              description: The name for the department in which the user works. Returned only on $select. Supports $filter.
+              description: The name for the department in which the user works. Maximum length is 64 characters.Returned only on $select. Supports $filter.
               nullable: true
             displayName:
               type: string
-              description: 'The name displayed in the address book for the user. This value is usually the combination of the user''s first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates. Returned by default. Supports $filter and $orderby.'
+              description: 'The name displayed in the address book for the user. This value is usually the combination of the user''s first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates. Maximum length is 256 characters. Returned by default. Supports $filter and $orderby.'
               nullable: true
             employeeHireDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -7507,7 +7609,7 @@ components:
               nullable: true
             givenName:
               type: string
-              description: The given name (first name) of the user. Returned by default. Supports $filter.
+              description: The given name (first name) of the user. Maximum length is 64 characters. Returned by default. Supports $filter.
               nullable: true
             identities:
               type: array
@@ -7526,7 +7628,7 @@ components:
               nullable: true
             jobTitle:
               type: string
-              description: The user's job title. Returned by default. Supports $filter.
+              description: The user's job title. Maximum length is 128 characters. Returned by default. Supports $filter.
               nullable: true
             lastPasswordChangeDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -7549,7 +7651,7 @@ components:
               nullable: true
             mailNickname:
               type: string
-              description: The mail alias for the user. This property must be specified when a user is created. Returned only on $select. Supports $filter.
+              description: The mail alias for the user. This property must be specified when a user is created. Maximum length is 64 characters. Returned only on $select. Supports $filter.
               nullable: true
             mobilePhone:
               type: string
@@ -7557,7 +7659,7 @@ components:
               nullable: true
             officeLocation:
               type: string
-              description: The office location in the user's place of business. Returned by default.
+              description: The office location in the user's place of business. Maximum length is 128 characters. Returned by default.
               nullable: true
             onPremisesDistinguishedName:
               type: string
@@ -7613,7 +7715,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.passwordProfile'
             postalCode:
               type: string
-              description: 'The postal code for the user''s postal address. The postal code is specific to the user''s country/region. In the United States of America, this attribute contains the ZIP code. Returned only on $select.'
+              description: 'The postal code for the user''s postal address. The postal code is specific to the user''s country/region. In the United States of America, this attribute contains the ZIP code. Maximum length is 40 characters. Returned only on $select.'
               nullable: true
             preferredLanguage:
               type: string
@@ -7641,15 +7743,15 @@ components:
               nullable: true
             state:
               type: string
-              description: The state or province in the user's address. Returned only on $select. Supports $filter.
+              description: The state or province in the user's address. Maximum length is 128 characters. Returned only on $select. Supports $filter.
               nullable: true
             streetAddress:
               type: string
-              description: The street address of the user's place of business. Returned only on $select.
+              description: The street address of the user's place of business. Maximum length is 1024 characters. Returned only on $select.
               nullable: true
             surname:
               type: string
-              description: The user's surname (family name or last name). Returned by default. Supports $filter.
+              description: The user's surname (family name or last name). Maximum length is 64 characters. Returned by default. Supports $filter.
               nullable: true
             usageLocation:
               type: string
@@ -7952,6 +8054,8 @@ components:
           properties:
             authenticationMethodsPolicy:
               $ref: '#/components/schemas/microsoft.graph.authenticationMethodsPolicy'
+            authenticationFlowsPolicy:
+              $ref: '#/components/schemas/microsoft.graph.authenticationFlowsPolicy'
             activityBasedTimeoutPolicies:
               type: array
               items:
@@ -8032,6 +8136,24 @@ components:
               type: integer
               description: 'Specifies the version of this policy. When the policy is updated, this version is updated. Read-only.'
               format: int32
+          additionalProperties:
+            type: object
+    microsoft.graph.authenticationFlowsPolicy:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: authenticationFlowsPolicy
+          type: object
+          properties:
+            description:
+              type: string
+              description: Inherited property. A description of the policy. This property is not a key. Optional. Read-only.
+              nullable: true
+            displayName:
+              type: string
+              description: Inherited property. The human-readable name of the policy. This property is not a key. Optional. Read-only.
+              nullable: true
+            selfServiceSignUp:
+              $ref: '#/components/schemas/microsoft.graph.selfServiceSignUpAuthenticationFlowConfiguration'
           additionalProperties:
             type: object
     microsoft.graph.authenticationMethodsPolicy:
@@ -8434,7 +8556,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Groups that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable.'
+              description: Groups that this device is a member of. Read-only. Nullable.
             registeredOwners:
               type: array
               items:
@@ -8449,6 +8571,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: Groups that this device is a member of. This operation is transitive.
             extensions:
               type: array
               items:
@@ -10630,6 +10753,15 @@ components:
           type: string
           description: The type of query. Examples include MicrosoftGraph and ARM.
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.selfServiceSignUpAuthenticationFlowConfiguration:
+      title: selfServiceSignUpAuthenticationFlowConfiguration
+      type: object
+      properties:
+        isEnabled:
+          type: boolean
+          description: Indicates whether self-service sign-up flow is enabled or disabled. The default value is false. This property is not a key. Required.
       additionalProperties:
         type: object
     microsoft.graph.authenticationMethodConfiguration:
@@ -16010,7 +16142,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
-              description: 'Content in a message hosted by Microsoft Teams e.g. images, code snippets etc.'
+              description: 'Content in a message hosted by Microsoft Teams e.g., images, code snippets etc.'
             replies:
               type: array
               items:
@@ -16081,7 +16213,7 @@ components:
               nullable: true
             permissionType:
               type: string
-              description: 'The type of permission. Possible values are: Application,Delegated. Read-only.'
+              description: 'The type of permission. Possible values are: Application, Delegated. Read-only.'
               nullable: true
             resourceAppId:
               type: string
@@ -16276,7 +16408,7 @@ components:
               nullable: true
             teamsAppId:
               type: string
-              description: The id from the Teams App manifest.
+              description: The ID from the Teams app manifest.
               nullable: true
             version:
               type: string
