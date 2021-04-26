@@ -50,7 +50,7 @@ jobs:
   - task: PowerShell@2
     displayName: 'Install Test Certificate'
     inputs:
-    targetType: 'inline'
+      targetType: 'inline'
       script: |
           $kvSecretBytes = [System.Convert]::FromBase64String('$(MsGraphPSSDKCertificate)')
           $certCollection = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2Collection
