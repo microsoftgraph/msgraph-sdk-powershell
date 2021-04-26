@@ -20,7 +20,6 @@ namespace Microsoft.Graph.PowerShell.Authentication
     }
     public enum AuthProviderType
     {
-        None,
         InteractiveAuthenticationProvider,
         DeviceCodeProvider,
         DeviceCodeProviderFallBack,
