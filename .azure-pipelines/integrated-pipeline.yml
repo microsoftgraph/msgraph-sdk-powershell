@@ -81,7 +81,7 @@ stages:
           $kvSecretBytes = [System.Convert]::FromBase64String('$(MsGraphPSSDKCertificate)')
           $certCollection = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2Collection
           $certCollection.Import($kvSecretBytes,$null,[System.Security.Cryptography.X509Certificates.X509KeyStorageFlags]::Exportable)
-          $store = New-Object System.Security.Cryptography.X509Certificates.X509Store("My", "CurrentUser")
+          $store = New-Object System.Security.Cryptography.X509Certificates.X509Store("My", "LocalMachine")
           $store.Open([System.Security.Cryptography.X509Certificates.OpenFlags]::ReadWrite)
           $store.AddRange($certCollection)
           $store.Close()
