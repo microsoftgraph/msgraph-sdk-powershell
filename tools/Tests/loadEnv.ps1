@@ -29,5 +29,4 @@ if (Test-Path -Path $envFilePath) {
         ClientId = $env.ClientId
         TenantId = $env.TenantId
     }
-    $PSDefaultParameterValues=@{"Connect-MgGraph:TenantId"=$env.TenantId; "Connect-MgGraph:ClientId"=$env.ClientId; "Connect-MgGraph:CertificateThumbprint"=${env:CERTIFICATETHUMBPRINT}}
 }
