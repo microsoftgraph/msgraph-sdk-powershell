@@ -6,11 +6,11 @@ BeforeAll {
 }
 Describe 'Connect-MgGraph In Delegated Mode' {
     It 'ShouldThrowExceptionWhenInvalidTenantIdIsSpecified' {
-        { Connect-MgGraph -TenantId "thisdomaindoesnotexist.com" -Scopes 'User.Read.All' -ErrorAction Stop } | Should -Throw -ExpectedMessage "*Tenant 'thisdomaindoesnotexist.com' not found*"
+        { Connect-MgGraph -TenantId "thisdomaindoesnotexist.com" -Scopes 'User.Read.All' -ErrorAction Stop -UseDeviceAuthentication } | Should -Throw -ExpectedMessage "*Tenant 'thisdomaindoesnotexist.com' not found*"
     }
 
     It 'ShouldThrowExceptionWhenInvalidScopeIsSpecified' {
-        { Connect-MgGraph -Scopes 'User.Read.XYZ' -ErrorAction Stop } | Should -Throw -ExpectedMessage "*The scope 'User.Read.XYZ offline_access profile openid' does not exist*"
+        { Connect-MgGraph -Scopes 'User.Read.XYZ' -ErrorAction Stop -UseDeviceAuthentication } | Should -Throw -ExpectedMessage "*The scope 'User.Read.XYZ offline_access profile openid' does not exist*"
     }
 }
 
@@ -26,11 +26,11 @@ Describe 'Connect-MgGraph In App Mode' {
 }
 Describe 'Connect-MgGraph Dependency Resolution' {
     BeforeAll {
-        Install-Module Az.Accounts -Repository PSGallery -Force
+        Install-Module Az.Accounts -Repository PSGallery -Force -AllowClobber
     }
 
     It 'ShouldLoadMgModuleSideBySideWithAzModule.' {
         { Connect-AzAccount -ApplicationId $RandomClientId -CertificateThumbprint "Invalid" -Tenant "Invalid" -ErrorAction Stop } | Should -Throw -ExpectedMessage "*Could not find tenant id*"
-        { Connect-MgGraph -Scopes "inavid.scope" -ErrorAction Stop } | Should -Throw -ExpectedMessage "*AADSTS70011:*"
+        { Connect-MgGraph -Scopes "inavid.scope" -ErrorAction Stop -UseDeviceAuthentication } | Should -Throw -ExpectedMessage "*AADSTS70011:*"
     }
 }
