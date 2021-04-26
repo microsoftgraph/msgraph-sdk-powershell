@@ -29,9 +29,6 @@ parameters:
     default: "msgraph-build-keyvault"
     displayName: Build Key vault
 
-variables:
-    AZURESUBSCRIPTION: ${{ parameters.AZURESUBSCRIPTION }}
-    KEYVAULT: ${{ parameters.KEYVAULT }}
 
 jobs:
 - job: MsGraphPSSDKAuthModuleGeneration
