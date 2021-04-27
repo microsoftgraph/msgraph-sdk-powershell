@@ -176,7 +176,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                             authContext.Scopes = processedScopes.Length == 0 ? new string[] { "User.Read" } : processedScopes;
                             // Default to CurrentUser but allow the customer to change this via `ContextScope` param.
                             authContext.ContextScope = this.IsParameterBound(nameof(ContextScope)) ? ContextScope : ContextScope.CurrentUser;
-                            if (!string.IsNullOrEmpty(ClientId))
+                            if (!string.IsNullOrWhiteSpace(ClientId))
                             {
                                 authContext.ClientId = ClientId;
                             }
