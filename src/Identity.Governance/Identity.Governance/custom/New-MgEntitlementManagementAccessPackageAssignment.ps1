@@ -148,16 +148,118 @@ param(
 )
 
 begin {
-      
+    $alreadyDelivered = 0
+    $misdelivers = 0
+    $expires = 0
+    $notDelivered = 0
+    $nonUsers = 0
 
+    if ($null -eq $StartDate  -or $StartDate.Length -eq 0) {
+        $now = Get-Date
+        $ts = Get-Date $now.ToUniversalTime() -format "s"
+        $StartDate = $ts + "Z"
+    }
+
+    if ($null -eq $Justification) {
+        $Justification = ""
+    }
+
+    if ($PSBoundParameters.ContainsKey("ExistingAssignment") -eq $false) {
+        write-verbose "retrieving existing assignments on $AccessPackageId"
+        $ExistingAssignment = Get-MgEntitlementManagementAccessPackageAssignment -AccessPackageId $AccessPackageId -All -expandproperty target
+        $eac = $ExistingAssignment.Length
+        write-verbose "retrieved existing assignments $eac"
+    }
+
+    $delivereds = @{ }
+    $misdelivereds = @{ }
+    $expireds = @{ }
+    $noTarget = 0
+
+    if ($null -ne $ExistingAssignment) {
+       foreach ($a in $ExistingAssignment) {
+            if ($null -eq $a.Target) {
+                $noTarget++
+                continue
+            }
+            if ($a.target.type -ne "User") {
+                $noTarget++
+                continue
+            }
+            $uid = $a.Target.ObjectId
+            if ($a.AssignmentState -eq "Delivered") {
+                $delivereds.$uid = $a
+            } elseif ($a.AssignmentState -eq "Expired") {
+                $expireds.$uid = $a
+            } elseif ($a.AssignmentState -eq "Delivering") {
+                $delivereds.$uid = $a
+            } else {
+                $state = $a.AssignmentState
+                write-verbose "assignment to $uid in state $state"
+                $misdelivereds.$uid = $a
+            }
+        }
+
+        write-verbose "existing assignments no target user $noTarget"
+    }
+
+    if ($null -ne $RequiredGroupMember) {
+        foreach ($m in $RequiredGroupMember) {
+            if ($m.ContainsKey("@odata.type")) {
+                $membertype = $m.AdditionalProperties["@odata.type"]
+                # do not include nested groups, devices or service principals
+                if ($membertype -ne '#microsoft.graph.user') {
+                    $nonUsers++
+                    continue
+                }
+            }
+            $uid = $m.Id
+            $RequiredUserId += $uid
+
+        }
+    }
   
 }
 
 process {
+    foreach ($uid in $RequiredUserId) {
+        if ($delivereds.ContainsKey($uid)) {
+            $alreadyDelivered++
+        }
+        else {
+            if ($misdelivereds.ContainsKey($uid)) {
+                $misdelivers++
+            }
+            else {
 
+                if ($expireds.ContainsKey($uid)) {
+                    $expires++
+                }
+                else {
+                    $notDelivered++
+                }
+
+                if($PSCmdlet.ShouldProcess($uid,"Add Request")) {
+                    try {
+                        $res = New-MgEntitlementManagementAccessPackageAssignmentRequest -RequestType "AdminAdd" `
+                            -AccessPackageId $AccessPackageId -AssignmentPolicyId $AssignmentPolicyId -TargetId $uid `
+                            -StartDate $StartDate -Justification $Justification
+                        write-output $res
+                    } catch {
+                        if ($ErrorActionPreference -eq "Continue") {
+                            write-error "error on assignment $_"
+                            $misdelivers++
+                            continue
+                        }
+                        throw
+                    }
+                }
+            }
+        }
+    }
 }
 
 end {
-
+    write-verbose "already delivered $alreadyDelivered mis-delivers $misdelivers expired $expires needing delivered $notDelivered nonusers $nonUsers"
 }
 }
