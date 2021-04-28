@@ -8575,7 +8575,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Groups that this device is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable.'
+              description: Groups that this device is a member of. Read-only. Nullable.
             registeredOwners:
               type: array
               items:
@@ -8590,6 +8590,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: Groups that this device is a member of. This operation is transitive.
             extensions:
               type: array
               items:

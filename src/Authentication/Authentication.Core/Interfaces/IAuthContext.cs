@@ -18,7 +18,14 @@ namespace Microsoft.Graph.PowerShell.Authentication
         Process,
         CurrentUser
     }
-
+    public enum AuthProviderType
+    {
+        InteractiveAuthenticationProvider,
+        DeviceCodeProvider,
+        DeviceCodeProviderFallBack,
+        ClientCredentialProvider,
+        UserProvidedToken
+    }
     public interface IAuthContext
     {
         string ClientId { get; set; }
@@ -26,6 +33,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
         string CertificateThumbprint { get; set; }
         string[] Scopes { get; set; }
         AuthenticationType AuthType { get; set; }
+        AuthProviderType AuthProviderType { get; set; }
         string CertificateName { get; set; }
         string Account { get; set; }
         string AppName { get; set; }

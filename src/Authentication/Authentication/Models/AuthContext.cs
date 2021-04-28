@@ -13,6 +13,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
         public string CertificateThumbprint { get; set; }
         public string[] Scopes { get; set; }
         public AuthenticationType AuthType { get; set; }
+        public AuthProviderType AuthProviderType { get; set; }
         public string CertificateName { get; set; }
         public string Account { get; set; }
         public string AppName { get; set; }
