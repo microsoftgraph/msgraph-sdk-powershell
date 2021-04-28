@@ -21,6 +21,14 @@ parameters:
     displayName: 'Build Number'
     type: string
     default: $[format('{0:yyMMddHH}', pipeline.startTime)]
+  - name: AZURESUBSCRIPTION
+    default: "Microsoft Graph Build Agents (Win+Lin)"
+    displayName: Azure Subscription
+
+  - name: KEYVAULT
+    default: "msgraph-build-keyvault"
+    displayName: Build Key vault
+
 
 jobs:
 - job: MsGraphPSSDKAuthModuleGeneration
@@ -28,6 +36,26 @@ jobs:
 
   steps:
   - template: ./install-tools-template.yml
+
+  - task: AzureKeyVault@1
+    inputs:
+     azureSubscription: $(AZURESUBSCRIPTION)
+     KeyVaultName: $(KEYVAULT)
+     SecretsFilter: '*'
+     RunAsPreJob: true
+    
+  - task: PowerShell@2
+    displayName: 'Install Test Certificate'
+    inputs:
+      targetType: 'inline'
+      script: |
+          $kvSecretBytes = [System.Convert]::FromBase64String('$(MsGraphPSSDKCertificate)')
+          $certCollection = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2Collection
+          $certCollection.Import($kvSecretBytes,$null,[System.Security.Cryptography.X509Certificates.X509KeyStorageFlags]::Exportable)
+          $store = New-Object System.Security.Cryptography.X509Certificates.X509Store("My", "CurrentUser")
+          $store.Open([System.Security.Cryptography.X509Certificates.OpenFlags]::ReadWrite)
+          $store.AddRange($certCollection)
+          $store.Close()
 
   - task: PowerShell@2
     displayName: 'Generate and Build Auth Module'

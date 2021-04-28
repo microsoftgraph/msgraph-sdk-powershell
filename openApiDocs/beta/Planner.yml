@@ -12312,14 +12312,14 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerBucket'
-              description: Collection of buckets in the plan. Read-only. Nullable.
+              description: Read-only. Nullable. Collection of buckets in the plan.
             details:
               $ref: '#/components/schemas/microsoft.graph.plannerPlanDetails'
             tasks:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
-              description: Collection of tasks in the plan. Read-only. Nullable.
+              description: Read-only. Nullable. Collection of tasks in the plan.
           additionalProperties:
             type: object
     microsoft.graph.plannerBucket:
@@ -12636,7 +12636,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
-              description: Read-only. Nullable. Returns the plannerTasks assigned to the user.
+              description: Read-only. Nullable. Returns the plannerPlans shared with the user.
           additionalProperties:
             type: object
     microsoft.graph.plannerDelta:
