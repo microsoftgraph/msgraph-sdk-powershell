@@ -218,7 +218,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                         _cancellationTokenSource.Token,
                         () => { WriteWarning(Resources.DeviceCodeFallback); });
                 }
-                catch (Exception ex)
+                catch(Exception ex)
                 {
                     throw ex;
                 }

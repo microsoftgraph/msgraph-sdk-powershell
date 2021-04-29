@@ -11244,6 +11244,10 @@ components:
               description: The number of users who were active in the Teams desktop client on a ChromeOS computer.
               format: int64
               nullable: true
+            chromeOS:
+              type: integer
+              format: int64
+              nullable: true
             ios:
               type: integer
               description: The number of users who were active on the Teams mobile client for iOS.
@@ -11252,6 +11256,10 @@ components:
             linux:
               type: integer
               description: The number of users who were active in the Teams desktop client on a Linux computer.
+              format: int64
+              nullable: true
+            linux:
+              type: integer
               format: int64
               nullable: true
             mac:
@@ -11302,6 +11310,10 @@ components:
               description: The number of users who were active in the Teams desktop client on a ChromeOS computer.
               format: int64
               nullable: true
+            chromeOS:
+              type: integer
+              format: int64
+              nullable: true
             ios:
               type: integer
               description: The number of users who were active on the Teams mobile client for iOS.
@@ -11310,6 +11322,10 @@ components:
             linux:
               type: integer
               description: The number of users who were active in the Teams desktop client on a Linux computer.
+              format: int64
+              nullable: true
+            linux:
+              type: integer
               format: int64
               nullable: true
             mac:
@@ -11370,6 +11386,9 @@ components:
               type: boolean
               description: Whether the user has been assigned a Teams license.
               nullable: true
+            isLicensed:
+              type: boolean
+              nullable: true
             lastActivityDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
@@ -11394,6 +11413,9 @@ components:
               type: boolean
               description: Whether the user was active in the Teams desktop client on a ChromeOS computer.
               nullable: true
+            usedChromeOS:
+              type: boolean
+              nullable: true
             usediOS:
               type: boolean
               description: Whether the user was active on the Teams mobile client for iOS.
@@ -11401,6 +11423,9 @@ components:
             usedLinux:
               type: boolean
               description: Whether the user was active in the Teams desktop client on a Linux computer.
+              nullable: true
+            usedLinux:
+              type: boolean
               nullable: true
             usedMac:
               type: boolean
@@ -11506,6 +11531,38 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.teamsUserActivityDistributionUserCounts:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamsUserActivityDistributionUserCounts
+          type: object
+          properties:
+            calls:
+              type: integer
+              format: int64
+              nullable: true
+            meetings:
+              type: integer
+              format: int64
+              nullable: true
+            privateChatMessages:
+              type: integer
+              format: int64
+              nullable: true
+            reportPeriod:
+              type: string
+              nullable: true
+            reportRefreshDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
+            teamChatMessages:
+              type: integer
+              format: int64
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.teamsUserActivityUserCounts:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -11606,6 +11663,9 @@ components:
               type: boolean
               description: Whether the user has been assigned a Teams license.
               nullable: true
+            isLicensed:
+              type: boolean
+              nullable: true
             lastActivityDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
@@ -11625,6 +11685,14 @@ components:
             meetingsOrganizedCount:
               type: integer
               description: 'The sum of one-time scheduled, Recurring, ad hoc and unclassified meetings a user organized.'
+              format: int64
+              nullable: true
+            meetingsAttendedCount:
+              type: integer
+              format: int64
+              nullable: true
+            meetingsOrganizedCount:
+              type: integer
               format: int64
               nullable: true
             privateChatMessageCount:
@@ -11681,6 +11749,11 @@ components:
               pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
               type: string
               description: Video duration the user participated in.
+              format: duration
+              nullable: true
+            videoDuration:
+              pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+              type: string
               format: duration
               nullable: true
           additionalProperties:

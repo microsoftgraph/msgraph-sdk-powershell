@@ -1392,7 +1392,7 @@ components:
               nullable: true
             deviceId:
               type: string
-              description: Unique identifier set by Azure Device Registration Service at the time of registration.
+              description: Identifier set by Azure Device Registration Service at the time of registration.
               nullable: true
             deviceMetadata:
               type: string

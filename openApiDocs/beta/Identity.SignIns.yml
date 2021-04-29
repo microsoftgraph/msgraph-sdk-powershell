@@ -7006,6 +7006,8 @@ paths:
             items:
               enum:
                 - '*'
+                - excludes
+                - includes
               type: string
       responses:
         '200':
@@ -15969,7 +15971,7 @@ components:
               nullable: true
             userId:
               type: string
-              description: Unique ID of the user.
+              description: 'Unique ID of the user.  The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               nullable: true
             userPrincipalName:
               type: string
@@ -16312,7 +16314,7 @@ components:
               nullable: true
             deviceId:
               type: string
-              description: Unique identifier set by Azure Device Registration Service at the time of registration.
+              description: Identifier set by Azure Device Registration Service at the time of registration.
               nullable: true
             deviceMetadata:
               type: string
@@ -18857,13 +18859,13 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The expiration date time of the acceptance. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              description: 'The expiration date time of the acceptance. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             recordedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             state:
@@ -20138,6 +20140,27 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+          additionalProperties:
+            type: object
+          description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
+    microsoft.graph.accessReviewReviewerScope:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.accessReviewScope'
+        - title: accessReviewReviewerScope
+          type: object
+          properties:
+            query:
+              type: string
+              description: The query specifying who will be the reviewer. See table for examples.
+              nullable: true
+            queryRoot:
+              type: string
+              description: 'In the scenario where reviewers need to be specified dynamically, this property is used to indicate the relative source of the query. This property is only required if a relative query (i.e., ./manager) is specified.'
+              nullable: true
+            queryType:
+              type: string
+              description: The type of query. Examples include MicrosoftGraph and ARM.
+              nullable: true
           additionalProperties:
             type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
@@ -24088,6 +24111,16 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.usedInsight'
               description: 'Calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.'
+          additionalProperties:
+            type: object
+    microsoft.graph.userInsightsSettings:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: userInsightsSettings
+          type: object
+          properties:
+            isEnabled:
+              type: boolean
           additionalProperties:
             type: object
     microsoft.graph.userInsightsSettings:
@@ -29051,6 +29084,30 @@ components:
           minimum: -2147483648
           type: integer
           description: Total duration of the attendances in seconds.
+          format: int32
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.attendanceRecord:
+      title: attendanceRecord
+      type: object
+      properties:
+        attendanceIntervals:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.attendanceInterval'
+        emailAddress:
+          type: string
+          nullable: true
+        identity:
+          $ref: '#/components/schemas/microsoft.graph.identity'
+        role:
+          type: string
+          nullable: true
+        totalAttendanceInSeconds:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
           format: int32
           nullable: true
       additionalProperties:
