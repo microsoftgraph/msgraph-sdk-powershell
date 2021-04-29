@@ -8736,7 +8736,7 @@ components:
               nullable: true
             deviceId:
               type: string
-              description: Identifier set by Azure Device Registration Service at the time of registration.
+              description: Unique identifier set by Azure Device Registration Service at the time of registration.
               nullable: true
             deviceMetadata:
               type: string
@@ -11816,16 +11816,6 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.usedInsight'
               description: 'Calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.'
-          additionalProperties:
-            type: object
-    microsoft.graph.userInsightsSettings:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: userInsightsSettings
-          type: object
-          properties:
-            isEnabled:
-              type: boolean
           additionalProperties:
             type: object
     microsoft.graph.userInsightsSettings:

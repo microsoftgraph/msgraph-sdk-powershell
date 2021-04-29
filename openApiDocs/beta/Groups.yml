@@ -29526,110 +29526,6 @@ components:
         - title: plannerBucket
           type: object
           properties:
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: Date and time of group creation. Read-only.
-              format: date-time
-              nullable: true
-            description:
-              type: string
-              description: Description giving details on the term usage.
-              nullable: true
-            displayName:
-              type: string
-              description: Name of group.
-              nullable: true
-            parentSiteId:
-              type: string
-              description: Id of the parent site of this group.
-              nullable: true
-            scope:
-              $ref: '#/components/schemas/microsoft.graph.termStore.termGroupScope'
-            sets:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.termStore.set'
-              description: 'All sets under the group in a term [store].'
-          additionalProperties:
-            type: object
-    microsoft.graph.termStore.set:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: set
-          type: object
-          properties:
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: Date and time of set creation. Read-only.
-              format: date-time
-              nullable: true
-            description:
-              type: string
-              description: Description giving details on the term usage.
-              nullable: true
-            localizedNames:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.termStore.localizedName'
-              description: Name of the set for each languageTag.
-            properties:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.keyValue'
-              description: Custom properties for the set.
-            children:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.termStore.term'
-              description: 'Children terms of set in term [store].'
-            parentGroup:
-              $ref: '#/components/schemas/microsoft.graph.termStore.group'
-            relations:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.termStore.relation'
-              description: Indicates which terms have been pinned or reused directly under the set.
-            terms:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.termStore.term'
-              description: All the terms under the set.
-          additionalProperties:
-            type: object
-    microsoft.graph.plannerDelta:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: plannerDelta
-          type: object
-          additionalProperties:
-            type: object
-    microsoft.graph.plannerPlanContainer:
-      title: plannerPlanContainer
-      type: object
-      properties:
-        containerId:
-          type: string
-          description: The identifier of the resource that contains the plan.
-        type:
-          $ref: '#/components/schemas/microsoft.graph.plannerContainerType'
-        url:
-          type: string
-          description: The full canonical URL of the container.
-      additionalProperties:
-        type: object
-    microsoft.graph.plannerPlanContextCollection:
-      title: plannerPlanContextCollection
-      type: object
-      additionalProperties:
-        type: object
-    microsoft.graph.plannerBucket:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
-        - title: plannerBucket
-          type: object
-          properties:
             name:
               type: string
               description: Name of the bucket.
@@ -31188,13 +31084,13 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The expiration date time of the acceptance. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: 'The expiration date time of the acceptance. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
               format: date-time
               nullable: true
             recordedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
               format: date-time
               nullable: true
             state:
@@ -32105,7 +32001,7 @@ components:
               nullable: true
             deviceId:
               type: string
-              description: Identifier set by Azure Device Registration Service at the time of registration.
+              description: Unique identifier set by Azure Device Registration Service at the time of registration.
               nullable: true
             deviceMetadata:
               type: string
@@ -32220,16 +32116,15 @@ components:
               type: string
               description: Friendly name of a device. Only returned if user signs in with a Microsoft account as part of Project Rome.
               nullable: true
-            lastUpdatedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+            platform:
               type: string
               description: Platform of device. Only returned if user signs in with a Microsoft account as part of Project Rome. Only returned if user signs in with a Microsoft account as part of Project Rome.
               nullable: true
-            topic:
+            status:
               type: string
               description: Device is online or offline. Only returned if user signs in with a Microsoft account as part of Project Rome.
               nullable: true
-            installedApps:
+            usageRights:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.usageRight'
@@ -32242,14 +32137,14 @@ components:
             registeredOwners:
               type: array
               items:
-                $ref: '#/components/schemas/microsoft.graph.chatMessage'
-              description: A collection of all the messages in the chat. Nullable.
-            permissionGrants:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable.'
+            registeredUsers:
               type: array
               items:
-                $ref: '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
-              description: A collection of permissions granted to apps for the chat.
-            tabs:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: 'Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable.'
+            transitiveMemberOf:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
@@ -32257,42 +32152,44 @@ components:
             extensions:
               type: array
               items:
-                $ref: '#/components/schemas/microsoft.graph.userScopeTeamsAppInstallation'
-              description: The apps installed in the personal scope of this user.
-          additionalProperties:
-            type: object
-    microsoft.graph.todo:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: todo
-          type: object
-          properties:
-            lists:
+                $ref: '#/components/schemas/microsoft.graph.extension'
+              description: The collection of open extensions defined for the device. Read-only. Nullable.
+            commands:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.command'
               description: Set of commands sent to this device.
           additionalProperties:
             type: object
-    microsoft.graph.teamworkTagType:
-      title: teamworkTagType
-      enum:
-        - standard
-      type: string
-    microsoft.graph.teamworkTagMember:
+          description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
+    microsoft.graph.onlineMeeting:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: teamworkTagMember
+        - title: onlineMeeting
           type: object
           properties:
-            displayName:
+            accessLevel:
+              $ref: '#/components/schemas/microsoft.graph.accessLevel'
+            allowedPresenters:
+              $ref: '#/components/schemas/microsoft.graph.onlineMeetingPresenters'
+            alternativeRecording:
               type: string
+              description: The content stream of the alternative recording of a live event. Read-only.
+              format: base64url
               nullable: true
-            tenantId:
+            attendeeReport:
               type: string
+              description: The content stream of the attendee report of a live event. Read-only.
+              format: base64url
               nullable: true
-            userId:
+            audioConferencing:
+              $ref: '#/components/schemas/microsoft.graph.audioConferencing'
+            broadcastSettings:
+              $ref: '#/components/schemas/microsoft.graph.broadcastMeetingSettings'
+            canceledDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              format: date-time
               nullable: true
             capabilities:
               type: array
@@ -32303,105 +32200,74 @@ components:
             creationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: The meeting creation time in UTC. Read-only.
               format: date-time
               nullable: true
-            recipientActionMessage:
+            endDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Custom message sent by recipient of the offer shift request.
+              description: The meeting end time in UTC.
+              format: date-time
               nullable: true
-            recipientUserId:
-              type: string
-              description: User id of the recipient of the offer shift request.
-              nullable: true
-            senderShiftId:
-              type: string
-              description: User id of the sender of the offer shift request.
-              nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.openShiftChangeRequest:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.scheduleChangeRequest'
-        - title: openShiftChangeRequest
-          type: object
-          properties:
-            openShiftId:
-              type: string
-              description: ID for the open shift.
-              nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.openShift:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.changeTrackedEntity'
-        - title: openShift
-          type: object
-          properties:
-            draftOpenShift:
-              $ref: '#/components/schemas/microsoft.graph.openShiftItem'
-            isStagedForDeletion:
+            entryExitAnnouncement:
               type: boolean
               nullable: true
-            schedulingGroupId:
+            expirationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: ID for the scheduling group that the open shift belongs to.
+              format: date-time
               nullable: true
-            sharedOpenShift:
-              $ref: '#/components/schemas/microsoft.graph.openShiftItem'
-          additionalProperties:
-            type: object
-    microsoft.graph.schedulingGroup:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.changeTrackedEntity'
-        - title: schedulingGroup
-          type: object
-          properties:
-            displayName:
+            externalId:
               type: string
-              description: The display name for the schedulingGroup. Required.
+              description: The external ID. A custom ID. Optional.
               nullable: true
-            isActive:
+            isBroadcast:
               type: boolean
-              description: Indicates whether the schedulingGroup can be used when creating new entities or updating existing ones. Required.
+              description: Indicates if this is a live event.
               nullable: true
-            userIds:
-              type: array
-              items:
-                type: string
-                nullable: true
-              description: The list of user IDs that are a member of the schedulingGroup. Required.
-          additionalProperties:
-            type: object
-    microsoft.graph.shift:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.changeTrackedEntity'
-        - title: shift
-          type: object
-          properties:
-            draftShift:
-              $ref: '#/components/schemas/microsoft.graph.shiftItem'
-            isStagedForDeletion:
+            isCancelled:
               type: boolean
               nullable: true
-            schedulingGroupId:
-              type: string
-              description: ID of the scheduling group the shift is part of. Required.
+            isEntryExitAnnounced:
+              type: boolean
+              description: Whether or not to announce when callers join or leave.
               nullable: true
-            sharedShift:
-              $ref: '#/components/schemas/microsoft.graph.shiftItem'
-            userId:
+            joinInformation:
+              $ref: '#/components/schemas/microsoft.graph.itemBody'
+            joinUrl:
               type: string
-              description: ID of the user assigned to the shift. Required.
+              nullable: true
+            lobbyBypassSettings:
+              $ref: '#/components/schemas/microsoft.graph.lobbyBypassSettings'
+            participants:
+              $ref: '#/components/schemas/microsoft.graph.meetingParticipants'
+            recording:
+              type: string
+              description: The content stream of the recording of a live event. Read-only.
+              format: base64url
+              nullable: true
+            startDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The meeting start time in UTC.
+              format: date-time
+              nullable: true
+            subject:
+              type: string
+              description: The subject of the online meeting.
+              nullable: true
+            videoTeleconferenceId:
+              type: string
+              description: The video teleconferencing ID. Read-only.
               nullable: true
             meetingAttendanceReport:
               $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
           additionalProperties:
             type: object
-    microsoft.graph.swapShiftsChangeRequest:
+    microsoft.graph.presence:
       allOf:
-        - $ref: '#/components/schemas/microsoft.graph.offerShiftRequest'
-        - title: swapShiftsChangeRequest
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: presence
           type: object
           properties:
             activity:
@@ -32410,76 +32276,83 @@ components:
               nullable: true
             availability:
               type: string
-              description: Shift ID for the recipient user with whom the request is to swap.
+              description: 'The base presence information for a user. Possible values are Available, AvailableIdle,  Away, BeRightBack, Busy, BusyIdle, DoNotDisturb, Offline, PresenceUnknown'
               nullable: true
+            outOfOfficeSettings:
+              $ref: '#/components/schemas/microsoft.graph.outOfOfficeSettings'
           additionalProperties:
             type: object
-    microsoft.graph.timeCard:
+    microsoft.graph.authentication:
       allOf:
-        - $ref: '#/components/schemas/microsoft.graph.changeTrackedEntity'
-        - title: timeCard
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: authentication
           type: object
           properties:
-            breaks:
+            emailMethods:
               type: array
               items:
-                $ref: '#/components/schemas/microsoft.graph.timeCardBreak'
-            clockInEvent:
-              $ref: '#/components/schemas/microsoft.graph.timeCardEvent'
-            clockOutEvent:
-              $ref: '#/components/schemas/microsoft.graph.timeCardEvent'
-            confirmedBy:
-              $ref: '#/components/schemas/microsoft.graph.confirmedBy'
-            notes:
-              $ref: '#/components/schemas/microsoft.graph.itemBody'
-            originalEntry:
-              $ref: '#/components/schemas/microsoft.graph.timeCardEntry'
-            state:
-              $ref: '#/components/schemas/microsoft.graph.timeCardState'
-            userId:
-              type: string
-              nullable: true
+                $ref: '#/components/schemas/microsoft.graph.emailAuthenticationMethod'
+            fido2Methods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.fido2AuthenticationMethod'
+            methods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+            microsoftAuthenticatorMethods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.microsoftAuthenticatorAuthenticationMethod'
+            operations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.longRunningOperation'
+            passwordlessMicrosoftAuthenticatorMethods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.passwordlessMicrosoftAuthenticatorAuthenticationMethod'
+            passwordMethods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.passwordAuthenticationMethod'
+            phoneMethods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.phoneAuthenticationMethod'
+            temporaryAccessPassMethods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.temporaryAccessPassAuthenticationMethod'
+            windowsHelloForBusinessMethods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.windowsHelloForBusinessAuthenticationMethod'
           additionalProperties:
             type: object
-    microsoft.graph.timeOffReason:
+    microsoft.graph.chat:
       allOf:
-        - $ref: '#/components/schemas/microsoft.graph.changeTrackedEntity'
-        - title: timeOffReason
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: chat
           type: object
           properties:
-            displayName:
-              type: string
-              description: The name of the timeOffReason. Required.
-              nullable: true
-            iconType:
-              $ref: '#/components/schemas/microsoft.graph.timeOffReasonIconType'
-            isActive:
-              type: boolean
-              description: Indicates whether the timeOffReason can be used when creating new entities or updating existing ones. Required.
-              nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.timeOffRequest:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.scheduleChangeRequest'
-        - title: timeOffRequest
-          type: object
-          properties:
-            endDateTime:
+            chatType:
+              $ref: '#/components/schemas/microsoft.graph.chatType'
+            createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: Date and time at which the chat was created. Read-only.
               format: date-time
               nullable: true
-            startDateTime:
+            lastUpdatedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: Date and time at which the chat was renamed or list of members were last changed. Read-only.
               format: date-time
               nullable: true
-            timeOffReasonId:
+            topic:
               type: string
-              description: The reason for the time off.
+              description: (Optional) Subject or topic for the chat. Only available for group chats.
               nullable: true
             installedApps:
               type: array
@@ -32533,22 +32406,25 @@ components:
               description: The task lists in the users mailbox.
           additionalProperties:
             type: object
-    microsoft.graph.timeOff:
+    microsoft.graph.teamworkTagType:
+      title: teamworkTagType
+      enum:
+        - standard
+      type: string
+    microsoft.graph.teamworkTagMember:
       allOf:
-        - $ref: '#/components/schemas/microsoft.graph.changeTrackedEntity'
-        - title: timeOff
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamworkTagMember
           type: object
           properties:
-            draftTimeOff:
-              $ref: '#/components/schemas/microsoft.graph.timeOffItem'
-            isStagedForDeletion:
-              type: boolean
+            displayName:
+              type: string
               nullable: true
-            sharedTimeOff:
-              $ref: '#/components/schemas/microsoft.graph.timeOffItem'
+            tenantId:
+              type: string
+              nullable: true
             userId:
               type: string
-              description: ID of the user assigned to the timeOff. Required.
               nullable: true
           additionalProperties:
             type: object
@@ -33323,123 +33199,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             driveItem:
               $ref: '#/components/schemas/microsoft.graph.driveItem'
-          additionalProperties:
-            type: object
-    microsoft.graph.displayNameLocalization:
-      title: displayNameLocalization
-      type: object
-      properties:
-        displayName:
-          type: string
-          description: 'If present, the value of this field contains the displayName string that has been set for the language present in the languageTag field.'
-          nullable: true
-        languageTag:
-          type: string
-          description: Provides the language culture-code and friendly name of the language that the displayName field has been provided in.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.sitePageData:
-      title: sitePageData
-      type: object
-      additionalProperties:
-        type: object
-    microsoft.graph.termStore.termGroupScope:
-      title: termGroupScope
-      enum:
-        - global
-        - system
-        - siteCollection
-      type: string
-    microsoft.graph.termStore.localizedName:
-      title: localizedName
-      type: object
-      properties:
-        languageTag:
-          type: string
-          description: The language tag for the label.
-          nullable: true
-        name:
-          type: string
-          description: The name in the localized language.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.keyValue:
-      title: keyValue
-      type: object
-      properties:
-        key:
-          type: string
-          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
-          nullable: true
-        value:
-          type: string
-          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.termStore.term:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: term
-          type: object
-          properties:
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: Date and time of term creation. Read-only
-              format: date-time
-              nullable: true
-            descriptions:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.termStore.localizedDescription'
-              description: Description about term that is dependent on the languageTag
-            labels:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.termStore.localizedLabel'
-              description: Label metadata for a term
-            lastModifiedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: Last date and time of term modification. Read-only
-              format: date-time
-              nullable: true
-            properties:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.keyValue'
-              description: Collection of properties on the term
-            children:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.termStore.term'
-              description: Children of current term
-            relations:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.termStore.relation'
-              description: To indicate which terms are related to the current term as either pinned or reused
-            set:
-              $ref: '#/components/schemas/microsoft.graph.termStore.set'
-          additionalProperties:
-            type: object
-    microsoft.graph.termStore.relation:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: relation
-          type: object
-          properties:
-            relationship:
-              $ref: '#/components/schemas/microsoft.graph.termStore.relationType'
-            fromTerm:
-              $ref: '#/components/schemas/microsoft.graph.termStore.term'
-            set:
-              $ref: '#/components/schemas/microsoft.graph.termStore.set'
-            toTerm:
-              $ref: '#/components/schemas/microsoft.graph.termStore.term'
           additionalProperties:
             type: object
     microsoft.graph.displayNameLocalization:
@@ -35969,16 +35728,6 @@ components:
               type: boolean
           additionalProperties:
             type: object
-    microsoft.graph.userInsightsSettings:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: userInsightsSettings
-          type: object
-          properties:
-            isEnabled:
-              type: boolean
-          additionalProperties:
-            type: object
     microsoft.graph.regionalAndLanguageSettings:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -38194,10 +37943,6 @@ components:
             queryType:
               type: string
               description: 'In the scenario where reviewers need to be specified dynamically, this property is used to indicate the relative source of the query. This property is only required if a relative query (i.e., ./manager) is specified.'
-              nullable: true
-            queryType:
-              type: string
-              description: The type of query. Examples include MicrosoftGraph and ARM.
               nullable: true
           additionalProperties:
             type: object
