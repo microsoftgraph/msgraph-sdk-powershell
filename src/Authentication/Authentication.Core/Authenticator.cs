@@ -9,7 +9,6 @@ namespace Microsoft.Graph.Authentication.Core
     using Microsoft.Graph.PowerShell.Authentication.Core;
     using Microsoft.Graph.PowerShell.Authentication.Helpers;
     using Microsoft.Identity.Client;
-
     using System;
     using System.Collections.Generic;
     using System.Globalization;
