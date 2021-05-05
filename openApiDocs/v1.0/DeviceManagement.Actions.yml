@@ -221,6 +221,38 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /deviceManagement/importedWindowsAutopilotDeviceIdentities/microsoft.graph.import:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action import
+      operationId: deviceManagement.importedWindowsAutopilotDeviceIdentities_import
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                importedWindowsAutopilotDeviceIdentities:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.importedWindowsAutopilotDeviceIdentity'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.importedWindowsAutopilotDeviceIdentity'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.bypassActivationLock':
     post:
       tags:
@@ -713,6 +745,137 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/windowsAutopilotDeviceIdentities/{windowsAutopilotDeviceIdentity-id}/microsoft.graph.assignUserToDevice':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action assignUserToDevice
+      operationId: deviceManagement.windowsAutopilotDeviceIdentities_assignUserToDevice
+      parameters:
+        - name: windowsAutopilotDeviceIdentity-id
+          in: path
+          description: 'key: id of windowsAutopilotDeviceIdentity'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: windowsAutopilotDeviceIdentity
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userPrincipalName:
+                  type: string
+                  nullable: true
+                addressableUserName:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/windowsAutopilotDeviceIdentities/{windowsAutopilotDeviceIdentity-id}/microsoft.graph.unassignUserFromDevice':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action unassignUserFromDevice
+      operationId: deviceManagement.windowsAutopilotDeviceIdentities_unassignUserFromDevice
+      parameters:
+        - name: windowsAutopilotDeviceIdentity-id
+          in: path
+          description: 'key: id of windowsAutopilotDeviceIdentity'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: windowsAutopilotDeviceIdentity
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/windowsAutopilotDeviceIdentities/{windowsAutopilotDeviceIdentity-id}/microsoft.graph.updateDeviceProperties':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action updateDeviceProperties
+      operationId: deviceManagement.windowsAutopilotDeviceIdentities_updateDeviceProperties
+      parameters:
+        - name: windowsAutopilotDeviceIdentity-id
+          in: path
+          description: 'key: id of windowsAutopilotDeviceIdentity'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: windowsAutopilotDeviceIdentity
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userPrincipalName:
+                  type: string
+                  nullable: true
+                addressableUserName:
+                  type: string
+                  nullable: true
+                groupTag:
+                  type: string
+                  nullable: true
+                displayName:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /deviceManagement/windowsAutopilotDeviceIdentities/microsoft.graph.deleteDevices:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action deleteDevices
+      operationId: deviceManagement.windowsAutopilotDeviceIdentities_deleteDevices
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                serialNumbers:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.deletedWindowsAutopilotDeviceState'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
 components:
   schemas:
     microsoft.graph.deviceCompliancePolicyAssignment:
@@ -772,6 +935,42 @@ components:
         - fullSync
         - deltaSync
       type: string
+    microsoft.graph.importedWindowsAutopilotDeviceIdentity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: importedWindowsAutopilotDeviceIdentity
+          type: object
+          properties:
+            assignedUserPrincipalName:
+              type: string
+              description: UPN of the user the device will be assigned
+              nullable: true
+            groupTag:
+              type: string
+              description: Group Tag of the Windows autopilot device.
+              nullable: true
+            hardwareIdentifier:
+              type: string
+              description: Hardware Blob of the Windows autopilot device.
+              format: base64url
+              nullable: true
+            importId:
+              type: string
+              description: The Import Id of the Windows autopilot device.
+              nullable: true
+            productKey:
+              type: string
+              description: Product Key of the Windows autopilot device.
+              nullable: true
+            serialNumber:
+              type: string
+              description: Serial number of the Windows autopilot device.
+              nullable: true
+            state:
+              $ref: '#/components/schemas/microsoft.graph.importedWindowsAutopilotDeviceIdentityState'
+          additionalProperties:
+            type: object
+          description: Imported windows autopilot devices.
     microsoft.graph.updateWindowsDeviceAccountActionParameter:
       title: updateWindowsDeviceAccountActionParameter
       type: object
@@ -797,6 +996,26 @@ components:
         sessionInitiationProtocalAddress:
           type: string
           description: Not yet documented
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.deletedWindowsAutopilotDeviceState:
+      title: deletedWindowsAutopilotDeviceState
+      type: object
+      properties:
+        deletionState:
+          $ref: '#/components/schemas/microsoft.graph.windowsAutopilotDeviceDeletionState'
+        deviceRegistrationId:
+          type: string
+          description: ZTD Device Registration ID .
+          nullable: true
+        errorMessage:
+          type: string
+          description: Device deletion error message.
+          nullable: true
+        serialNumber:
+          type: string
+          description: Autopilot Device Serial Number
           nullable: true
       additionalProperties:
         type: object
@@ -842,6 +1061,28 @@ components:
           additionalProperties:
             type: object
           description: Scheduled Action Configuration
+    microsoft.graph.importedWindowsAutopilotDeviceIdentityState:
+      title: importedWindowsAutopilotDeviceIdentityState
+      type: object
+      properties:
+        deviceErrorCode:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Device error code reported by Device Directory Service(DDS).
+          format: int32
+        deviceErrorName:
+          type: string
+          description: Device error name reported by Device Directory Service(DDS).
+          nullable: true
+        deviceImportStatus:
+          $ref: '#/components/schemas/microsoft.graph.importedWindowsAutopilotDeviceIdentityImportStatus'
+        deviceRegistrationId:
+          type: string
+          description: Device Registration ID for successfully added device reported by Device Directory Service(DDS).
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.windowsDeviceAccount:
       title: windowsDeviceAccount
       type: object
@@ -852,6 +1093,14 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.windowsAutopilotDeviceDeletionState:
+      title: windowsAutopilotDeviceDeletionState
+      enum:
+        - unknown
+        - failed
+        - accepted
+        - error
+      type: string
     odata.error:
       required:
         - error
@@ -871,6 +1120,15 @@ components:
         - wipe
         - removeResourceAccessProfiles
         - pushNotification
+      type: string
+    microsoft.graph.importedWindowsAutopilotDeviceIdentityImportStatus:
+      title: importedWindowsAutopilotDeviceIdentityImportStatus
+      enum:
+        - unknown
+        - pending
+        - partial
+        - complete
+        - error
       type: string
     odata.error.main:
       required:
