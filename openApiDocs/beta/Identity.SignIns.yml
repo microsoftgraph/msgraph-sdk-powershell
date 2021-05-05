@@ -15669,6 +15669,7 @@ components:
               description: The tenant admin can configure local accounts using email if the email and password authentication method is enabled.
             isPhoneOneTimePasswordAuthenticationEnabled:
               type: boolean
+              description: The tenant admin can configure local accounts using phone number if the phone number and one-time password authentication method is enabled.
             isUserNameAuthenticationEnabled:
               type: boolean
               description: The tenant admin can configure local accounts using username if the username and password authentication method is enabled.
@@ -18201,6 +18202,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
+              description: The permission that has been granted for a group to a specific application.
             settings:
               type: array
               items:
@@ -19832,7 +19834,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.meetingCapabilities'
-              description: 'The list of meeting capabilities. Possible values are: questionAndAnswer,unknownFutureValue.'
             chatInfo:
               $ref: '#/components/schemas/microsoft.graph.chatInfo'
             creationDateTime:
@@ -22681,6 +22682,10 @@ components:
               type: string
               description: Name of access review series. Required on create.
               nullable: true
+            fallbackReviewers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScope'
             instanceEnumerationScope:
               $ref: '#/components/schemas/microsoft.graph.accessReviewScope'
             lastModifiedDateTime:
@@ -23129,6 +23134,10 @@ components:
           $ref: '#/components/schemas/microsoft.graph.deviceGuardVirtualizationBasedSecurityHardwareRequirementState'
         deviceGuardVirtualizationBasedSecurityState:
           $ref: '#/components/schemas/microsoft.graph.deviceGuardVirtualizationBasedSecurityState'
+        esimIdentifier:
+          type: string
+          description: eSIM identifier
+          nullable: true
         freeStorageSpace:
           type: integer
           description: Free storage space of the device.
@@ -24994,10 +25003,20 @@ components:
           type: string
           description: The toll-free number that connects to the Audio Conference Provider.
           nullable: true
+        tollFreeNumbers:
+          type: array
+          items:
+            type: string
+            nullable: true
         tollNumber:
           type: string
           description: The toll number that connects to the Audio Conference Provider.
           nullable: true
+        tollNumbers:
+          type: array
+          items:
+            type: string
+            nullable: true
       additionalProperties:
         type: object
     microsoft.graph.broadcastMeetingSettings:
@@ -25068,18 +25087,17 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
+          description: Information of the meeting attendees.
         contributors:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
-          description: For broadcast meeting only.
         organizer:
           $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
         producers:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
-          description: For broadcast meeting only.
       additionalProperties:
         type: object
     microsoft.graph.meetingAttendanceReport:

@@ -6846,13 +6846,13 @@ components:
           items:
             type: string
             nullable: true
-          description: 'The media sizes supported by the printer. Supports standard size names for ISO and ANSI media sizes, along with any custom sizes supported by the associated printer.'
+          description: The media sizes supported by the printer. Supports standard size names for ISO and ANSI media sizes. Valid values are in the following table.
         mediaTypes:
           type: array
           items:
             type: string
             nullable: true
-          description: The media types supported by the printer. Valid values are described in the following table.
+          description: The media types supported by the printer.
         multipageLayouts:
           type: array
           items:
@@ -7284,6 +7284,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
+              description: The permission that has been granted for a group to a specific application.
             settings:
               type: array
               items:
@@ -11477,7 +11478,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.meetingCapabilities'
-              description: 'The list of meeting capabilities. Possible values are: questionAndAnswer,unknownFutureValue.'
             chatInfo:
               $ref: '#/components/schemas/microsoft.graph.chatInfo'
             creationDateTime:
@@ -11885,11 +11885,11 @@ components:
           nullable: true
         mediaSize:
           type: string
-          description: 'The default media size to use. Supports standard size names for ISO and ANSI media sizes, along with any custom sizes supported by the associated printer.'
+          description: The default media size to use. Supports standard size names for ISO and ANSI media sizes. Valid values are listed in the printerCapabilities topic.
           nullable: true
         mediaType:
           type: string
-          description: The default media (such as paper) type to print the document on. Valid values are described in the following table.
+          description: The default media (such as paper) type to print the document on.
           nullable: true
         multipageLayout:
           $ref: '#/components/schemas/microsoft.graph.printMultipageLayout'
@@ -14456,6 +14456,10 @@ components:
               type: string
               description: Name of access review series. Required on create.
               nullable: true
+            fallbackReviewers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScope'
             instanceEnumerationScope:
               $ref: '#/components/schemas/microsoft.graph.accessReviewScope'
             lastModifiedDateTime:
@@ -14904,6 +14908,10 @@ components:
           $ref: '#/components/schemas/microsoft.graph.deviceGuardVirtualizationBasedSecurityHardwareRequirementState'
         deviceGuardVirtualizationBasedSecurityState:
           $ref: '#/components/schemas/microsoft.graph.deviceGuardVirtualizationBasedSecurityState'
+        esimIdentifier:
+          type: string
+          description: eSIM identifier
+          nullable: true
         freeStorageSpace:
           type: integer
           description: Free storage space of the device.
@@ -16608,10 +16616,20 @@ components:
           type: string
           description: The toll-free number that connects to the Audio Conference Provider.
           nullable: true
+        tollFreeNumbers:
+          type: array
+          items:
+            type: string
+            nullable: true
         tollNumber:
           type: string
           description: The toll number that connects to the Audio Conference Provider.
           nullable: true
+        tollNumbers:
+          type: array
+          items:
+            type: string
+            nullable: true
       additionalProperties:
         type: object
     microsoft.graph.broadcastMeetingSettings:
@@ -16682,18 +16700,17 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
+          description: Information of the meeting attendees.
         contributors:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
-          description: For broadcast meeting only.
         organizer:
           $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
         producers:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
-          description: For broadcast meeting only.
       additionalProperties:
         type: object
     microsoft.graph.meetingAttendanceReport:
@@ -17380,11 +17397,11 @@ components:
           $ref: '#/components/schemas/microsoft.graph.printMargin'
         mediaSize:
           type: string
-          description: 'The media sizeto use when printing. Supports standard size names for ISO and ANSI media sizes, along with any custom sizes supported by the associated printer.'
+          description: The media size to use when printing. Supports standard size names for ISO and ANSI media sizes. Valid values listed in the printerCapabilities topic.
           nullable: true
         mediaType:
           type: string
-          description: The default media (such as paper) type to print the document on. Valid values are described in the following table.
+          description: The default media (such as paper) type to print the document on.
           nullable: true
         multipageLayout:
           $ref: '#/components/schemas/microsoft.graph.printMultipageLayout'
