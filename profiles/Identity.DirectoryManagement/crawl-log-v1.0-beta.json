@@ -533,6 +533,10 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
     },
+    "/organization/{organization-id}/microsoft.graph.activateService": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
     "/organization/{organization-id}/microsoft.graph.checkMemberGroups": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"

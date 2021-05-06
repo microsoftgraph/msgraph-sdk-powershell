@@ -543,6 +543,482 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceManagement/importedWindowsAutopilotDeviceIdentities:
+    get:
+      tags:
+        - deviceManagement.importedWindowsAutopilotDeviceIdentity
+      summary: Get importedWindowsAutopilotDeviceIdentities from deviceManagement
+      operationId: deviceManagement_ListImportedWindowsAutopilotDeviceIdentities
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - assignedUserPrincipalName
+                - assignedUserPrincipalName desc
+                - groupTag
+                - groupTag desc
+                - hardwareIdentifier
+                - hardwareIdentifier desc
+                - importId
+                - importId desc
+                - productKey
+                - productKey desc
+                - serialNumber
+                - serialNumber desc
+                - state
+                - state desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - assignedUserPrincipalName
+                - groupTag
+                - hardwareIdentifier
+                - importId
+                - productKey
+                - serialNumber
+                - state
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of importedWindowsAutopilotDeviceIdentity
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.importedWindowsAutopilotDeviceIdentity'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - deviceManagement.importedWindowsAutopilotDeviceIdentity
+      summary: Create new navigation property to importedWindowsAutopilotDeviceIdentities for deviceManagement
+      operationId: deviceManagement_CreateImportedWindowsAutopilotDeviceIdentities
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.importedWindowsAutopilotDeviceIdentity'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.importedWindowsAutopilotDeviceIdentity'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/deviceManagement/importedWindowsAutopilotDeviceIdentities/{importedWindowsAutopilotDeviceIdentity-id}':
+    get:
+      tags:
+        - deviceManagement.importedWindowsAutopilotDeviceIdentity
+      summary: Get importedWindowsAutopilotDeviceIdentities from deviceManagement
+      operationId: deviceManagement_GetImportedWindowsAutopilotDeviceIdentities
+      parameters:
+        - name: importedWindowsAutopilotDeviceIdentity-id
+          in: path
+          description: 'key: id of importedWindowsAutopilotDeviceIdentity'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: importedWindowsAutopilotDeviceIdentity
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - assignedUserPrincipalName
+                - groupTag
+                - hardwareIdentifier
+                - importId
+                - productKey
+                - serialNumber
+                - state
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.importedWindowsAutopilotDeviceIdentity'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - deviceManagement.importedWindowsAutopilotDeviceIdentity
+      summary: Update the navigation property importedWindowsAutopilotDeviceIdentities in deviceManagement
+      operationId: deviceManagement_UpdateImportedWindowsAutopilotDeviceIdentities
+      parameters:
+        - name: importedWindowsAutopilotDeviceIdentity-id
+          in: path
+          description: 'key: id of importedWindowsAutopilotDeviceIdentity'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: importedWindowsAutopilotDeviceIdentity
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.importedWindowsAutopilotDeviceIdentity'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceManagement.importedWindowsAutopilotDeviceIdentity
+      summary: Delete navigation property importedWindowsAutopilotDeviceIdentities for deviceManagement
+      operationId: deviceManagement_DeleteImportedWindowsAutopilotDeviceIdentities
+      parameters:
+        - name: importedWindowsAutopilotDeviceIdentity-id
+          in: path
+          description: 'key: id of importedWindowsAutopilotDeviceIdentity'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: importedWindowsAutopilotDeviceIdentity
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /deviceManagement/windowsAutopilotDeviceIdentities:
+    get:
+      tags:
+        - deviceManagement.windowsAutopilotDeviceIdentity
+      summary: Get windowsAutopilotDeviceIdentities from deviceManagement
+      operationId: deviceManagement_ListWindowsAutopilotDeviceIdentities
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - addressableUserName
+                - addressableUserName desc
+                - azureActiveDirectoryDeviceId
+                - azureActiveDirectoryDeviceId desc
+                - displayName
+                - displayName desc
+                - enrollmentState
+                - enrollmentState desc
+                - groupTag
+                - groupTag desc
+                - lastContactedDateTime
+                - lastContactedDateTime desc
+                - managedDeviceId
+                - managedDeviceId desc
+                - manufacturer
+                - manufacturer desc
+                - model
+                - model desc
+                - productKey
+                - productKey desc
+                - purchaseOrderIdentifier
+                - purchaseOrderIdentifier desc
+                - resourceName
+                - resourceName desc
+                - serialNumber
+                - serialNumber desc
+                - skuNumber
+                - skuNumber desc
+                - systemFamily
+                - systemFamily desc
+                - userPrincipalName
+                - userPrincipalName desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - addressableUserName
+                - azureActiveDirectoryDeviceId
+                - displayName
+                - enrollmentState
+                - groupTag
+                - lastContactedDateTime
+                - managedDeviceId
+                - manufacturer
+                - model
+                - productKey
+                - purchaseOrderIdentifier
+                - resourceName
+                - serialNumber
+                - skuNumber
+                - systemFamily
+                - userPrincipalName
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of windowsAutopilotDeviceIdentity
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.windowsAutopilotDeviceIdentity'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - deviceManagement.windowsAutopilotDeviceIdentity
+      summary: Create new navigation property to windowsAutopilotDeviceIdentities for deviceManagement
+      operationId: deviceManagement_CreateWindowsAutopilotDeviceIdentities
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.windowsAutopilotDeviceIdentity'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsAutopilotDeviceIdentity'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/deviceManagement/windowsAutopilotDeviceIdentities/{windowsAutopilotDeviceIdentity-id}':
+    get:
+      tags:
+        - deviceManagement.windowsAutopilotDeviceIdentity
+      summary: Get windowsAutopilotDeviceIdentities from deviceManagement
+      operationId: deviceManagement_GetWindowsAutopilotDeviceIdentities
+      parameters:
+        - name: windowsAutopilotDeviceIdentity-id
+          in: path
+          description: 'key: id of windowsAutopilotDeviceIdentity'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: windowsAutopilotDeviceIdentity
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - addressableUserName
+                - azureActiveDirectoryDeviceId
+                - displayName
+                - enrollmentState
+                - groupTag
+                - lastContactedDateTime
+                - managedDeviceId
+                - manufacturer
+                - model
+                - productKey
+                - purchaseOrderIdentifier
+                - resourceName
+                - serialNumber
+                - skuNumber
+                - systemFamily
+                - userPrincipalName
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsAutopilotDeviceIdentity'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - deviceManagement.windowsAutopilotDeviceIdentity
+      summary: Update the navigation property windowsAutopilotDeviceIdentities in deviceManagement
+      operationId: deviceManagement_UpdateWindowsAutopilotDeviceIdentities
+      parameters:
+        - name: windowsAutopilotDeviceIdentity-id
+          in: path
+          description: 'key: id of windowsAutopilotDeviceIdentity'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: windowsAutopilotDeviceIdentity
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.windowsAutopilotDeviceIdentity'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceManagement.windowsAutopilotDeviceIdentity
+      summary: Delete navigation property windowsAutopilotDeviceIdentities for deviceManagement
+      operationId: deviceManagement_DeleteWindowsAutopilotDeviceIdentities
+      parameters:
+        - name: windowsAutopilotDeviceIdentity-id
+          in: path
+          description: 'key: id of windowsAutopilotDeviceIdentity'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: windowsAutopilotDeviceIdentity
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   /roleManagement:
     get:
       tags:
@@ -686,6 +1162,114 @@ components:
           additionalProperties:
             type: object
           description: Enrollment Configuration Assignment
+    microsoft.graph.importedWindowsAutopilotDeviceIdentity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: importedWindowsAutopilotDeviceIdentity
+          type: object
+          properties:
+            assignedUserPrincipalName:
+              type: string
+              description: UPN of the user the device will be assigned
+              nullable: true
+            groupTag:
+              type: string
+              description: Group Tag of the Windows autopilot device.
+              nullable: true
+            hardwareIdentifier:
+              type: string
+              description: Hardware Blob of the Windows autopilot device.
+              format: base64url
+              nullable: true
+            importId:
+              type: string
+              description: The Import Id of the Windows autopilot device.
+              nullable: true
+            productKey:
+              type: string
+              description: Product Key of the Windows autopilot device.
+              nullable: true
+            serialNumber:
+              type: string
+              description: Serial number of the Windows autopilot device.
+              nullable: true
+            state:
+              $ref: '#/components/schemas/microsoft.graph.importedWindowsAutopilotDeviceIdentityState'
+          additionalProperties:
+            type: object
+          description: Imported windows autopilot devices.
+    microsoft.graph.windowsAutopilotDeviceIdentity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: windowsAutopilotDeviceIdentity
+          type: object
+          properties:
+            addressableUserName:
+              type: string
+              description: Addressable user name.
+              nullable: true
+            azureActiveDirectoryDeviceId:
+              type: string
+              description: AAD Device ID - to be deprecated
+              nullable: true
+            displayName:
+              type: string
+              description: Display Name
+              nullable: true
+            enrollmentState:
+              $ref: '#/components/schemas/microsoft.graph.enrollmentState'
+            groupTag:
+              type: string
+              description: Group Tag of the Windows autopilot device.
+              nullable: true
+            lastContactedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Intune Last Contacted Date Time of the Windows autopilot device.
+              format: date-time
+            managedDeviceId:
+              type: string
+              description: Managed Device ID
+              nullable: true
+            manufacturer:
+              type: string
+              description: Oem manufacturer of the Windows autopilot device.
+              nullable: true
+            model:
+              type: string
+              description: Model name of the Windows autopilot device.
+              nullable: true
+            productKey:
+              type: string
+              description: Product Key of the Windows autopilot device.
+              nullable: true
+            purchaseOrderIdentifier:
+              type: string
+              description: Purchase Order Identifier of the Windows autopilot device.
+              nullable: true
+            resourceName:
+              type: string
+              description: Resource Name.
+              nullable: true
+            serialNumber:
+              type: string
+              description: Serial number of the Windows autopilot device.
+              nullable: true
+            skuNumber:
+              type: string
+              description: SKU Number
+              nullable: true
+            systemFamily:
+              type: string
+              description: System Family
+              nullable: true
+            userPrincipalName:
+              type: string
+              description: User Principal Name.
+              nullable: true
+          additionalProperties:
+            type: object
+          description: The windowsAutopilotDeviceIdentity resource represents a Windows Autopilot Device.
     microsoft.graph.roleManagement:
       title: roleManagement
       type: object
@@ -706,6 +1290,37 @@ components:
       additionalProperties:
         type: object
       description: Base type for assignment targets.
+    microsoft.graph.importedWindowsAutopilotDeviceIdentityState:
+      title: importedWindowsAutopilotDeviceIdentityState
+      type: object
+      properties:
+        deviceErrorCode:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Device error code reported by Device Directory Service(DDS).
+          format: int32
+        deviceErrorName:
+          type: string
+          description: Device error name reported by Device Directory Service(DDS).
+          nullable: true
+        deviceImportStatus:
+          $ref: '#/components/schemas/microsoft.graph.importedWindowsAutopilotDeviceIdentityImportStatus'
+        deviceRegistrationId:
+          type: string
+          description: Device Registration ID for successfully added device reported by Device Directory Service(DDS).
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.enrollmentState:
+      title: enrollmentState
+      enum:
+        - unknown
+        - enrolled
+        - pendingReset
+        - failed
+        - notContacted
+      type: string
     odata.error:
       required:
         - error
@@ -715,6 +1330,15 @@ components:
           $ref: '#/components/schemas/odata.error.main'
       additionalProperties:
         type: object
+    microsoft.graph.importedWindowsAutopilotDeviceIdentityImportStatus:
+      title: importedWindowsAutopilotDeviceIdentityImportStatus
+      enum:
+        - unknown
+        - pending
+        - partial
+        - complete
+        - error
+      type: string
     odata.error.main:
       required:
         - code

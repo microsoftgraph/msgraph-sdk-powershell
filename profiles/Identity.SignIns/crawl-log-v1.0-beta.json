@@ -197,6 +197,10 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
     },
+    "/policies/accessReviewPolicy": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
     "/policies/activityBasedTimeoutPolicies": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"

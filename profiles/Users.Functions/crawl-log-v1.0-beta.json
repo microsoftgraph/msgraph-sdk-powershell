@@ -205,6 +205,10 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Users.Functions.yml"
     },
+    "/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.getCloudPcRemoteActionResults()": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Functions.yml"
+    },
     "/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.getFileVaultKey()": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Users.Functions.yml"
