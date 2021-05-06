@@ -111,7 +111,7 @@
         }
 
         [Fact]
-        public void ShouldUseDeviceCodeProviderWhenDelegatedContextAndClientIdIsProvided()
+        public void ShouldUseInteractiveAuthenticationProviderWhenDelegatedContextAndClientIdIsProvided()
         {
             // Arrange
             AuthContext delegatedAuthContext = new AuthContext
@@ -126,7 +126,7 @@
             IAuthenticationProvider authProvider = AuthenticationHelpers.GetAuthProvider(delegatedAuthContext);
 
             // Assert
-            Assert.IsType<DeviceCodeProvider>(authProvider);
+            Assert.IsType<InteractiveAuthenticationProvider>(authProvider);
 
             // reset static instance.
             GraphSession.Reset();
