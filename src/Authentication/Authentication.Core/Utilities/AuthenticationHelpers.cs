@@ -67,28 +67,37 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
             {
                 case AuthenticationType.Delegated:
                     {
+                        //Specify Default RedirectUri
+                        //https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/MSAL.NET-uses-web-browser
                         IPublicClientApplication publicClientApp = PublicClientApplicationBuilder
-                        .Create(authContext.ClientId)
-                        .WithTenantId(authContext.TenantId)
-                        .WithAuthority(authorityUrl)
-                        .WithClientCapabilities(new[] { "cp1" })
-                        .Build();
-
+                            .Create(authContext.ClientId)
+                            .WithTenantId(authContext.TenantId)
+                            .WithAuthority(authorityUrl)
+                            .WithClientCapabilities(new[] { "cp1" })
+                            .WithDefaultRedirectUri()
+                            .Build();
                         ConfigureTokenCache(publicClientApp.UserTokenCache, authContext);
-                        authProvider = new DeviceCodeProvider(publicClientApp, authContext.Scopes, async (result) =>
+                        switch (authContext.AuthProviderType)
                         {
-                            await Console.Out.WriteLineAsync(result.Message);
-                        });
+                            case AuthProviderType.DeviceCodeProvider:
+                            case AuthProviderType.DeviceCodeProviderFallBack:
+                                authProvider = new DeviceCodeProvider(publicClientApp, authContext.Scopes,
+                                    async result => { await Console.Out.WriteLineAsync(result.Message); });
+                                break;
+                            case AuthProviderType.InteractiveAuthenticationProvider:
+                                authProvider = new InteractiveAuthenticationProvider(publicClientApp, authContext.Scopes);
+                                break;
+                        }
                         break;
                     }
                 case AuthenticationType.AppOnly:
                     {
                         IConfidentialClientApplication confidentialClientApp = ConfidentialClientApplicationBuilder
-                        .Create(authContext.ClientId)
-                        .WithTenantId(authContext.TenantId)
-                        .WithAuthority(authorityUrl)
-                        .WithCertificate(GetCertificate(authContext))
-                        .Build();
+                            .Create(authContext.ClientId)
+                            .WithTenantId(authContext.TenantId)
+                            .WithAuthority(authorityUrl)
+                            .WithCertificate(GetCertificate(authContext))
+                            .Build();
 
                         ConfigureTokenCache(confidentialClientApp.AppTokenCache, authContext);
                         string graphBaseUrl = GraphSession.Instance.Environment?.GraphEndpoint ?? "https://graph.microsoft.com";
@@ -96,15 +105,13 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                         break;
                     }
                 case AuthenticationType.UserProvidedAccessToken:
+                    authProvider = new DelegateAuthenticationProvider(requestMessage =>
                     {
-                        authProvider = new DelegateAuthenticationProvider((requestMessage) =>
-                        {
-                            requestMessage.Headers.Authorization = new AuthenticationHeaderValue("Bearer",
-                                new NetworkCredential(string.Empty, GraphSession.Instance.UserProvidedToken).Password);
-                            return Task.CompletedTask;
-                        });
-                        break;
-                    }
+                        requestMessage.Headers.Authorization = new AuthenticationHeaderValue("Bearer",
+                            new NetworkCredential(string.Empty, GraphSession.Instance.UserProvidedToken).Password);
+                        return Task.CompletedTask;
+                    });
+                    break;
             }
             return authProvider;
         }

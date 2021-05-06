@@ -1837,6 +1837,39 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  '/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.getCloudPcRemoteActionResults()':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function getCloudPcRemoteActionResults
+      operationId: users.managedDevices_getCloudPcRemoteActionResults
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: managedDevice-id
+          in: path
+          description: 'key: id of managedDevice'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.cloudPcRemoteActionResult'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.getFileVaultKey()':
     get:
       tags:
@@ -2807,6 +2840,77 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  '/users/{user-id}/pendingAccessReviewInstances/{accessReviewInstance-id}/decisions/microsoft.graph.filterByCurrentUser(on={on})':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function filterByCurrentUser
+      operationId: users.pendingAccessReviewInstances.decisions_filterByCurrentUser
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: accessReviewInstance-id
+          in: path
+          description: 'key: id of accessReviewInstance'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewInstance
+        - name: on
+          in: path
+          description: 'Usage: on={on}'
+          required: true
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.accessReviewInstanceDecisionItemFilterByCurrentUserOptions'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.accessReviewInstanceDecisionItem'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/users/{user-id}/pendingAccessReviewInstances/microsoft.graph.filterByCurrentUser(on={on})':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function filterByCurrentUser
+      operationId: users.pendingAccessReviewInstances_filterByCurrentUser
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: on
+          in: path
+          description: 'Usage: on={on}'
+          required: true
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.accessReviewInstanceFilterByCurrentUserOptions'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.accessReviewInstance'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/users/{user-id}/planner/all/microsoft.graph.delta()':
     get:
       tags:
@@ -3665,6 +3769,35 @@ components:
               description: The collection of single-value extended properties defined for the message. Nullable.
           additionalProperties:
             type: object
+    microsoft.graph.cloudPcRemoteActionResult:
+      title: cloudPcRemoteActionResult
+      type: object
+      properties:
+        actionName:
+          type: string
+          nullable: true
+        actionState:
+          $ref: '#/components/schemas/microsoft.graph.actionState'
+        cloudPcId:
+          type: string
+          nullable: true
+        lastUpdatedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        managedDeviceId:
+          type: string
+          nullable: true
+        startDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        statusDetails:
+          $ref: '#/components/schemas/microsoft.graph.cloudPcStatusDetails'
+      additionalProperties:
+        type: object
     microsoft.graph.deviceCompliancePolicySettingState:
       title: deviceCompliancePolicySettingState
       type: object
@@ -3805,6 +3938,10 @@ components:
         - title: managedDevice
           type: object
           properties:
+            cloudPcRemoteActionResults:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcRemoteActionResult'
             aadRegistered:
               type: boolean
               description: Whether the device is Azure Active Directory registered. This property is read-only.
@@ -4086,16 +4223,16 @@ components:
               type: integer
               description: Count of remediated malware for this windows device. This property is read-only.
               format: int32
-            deviceCompliancePolicyStates:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicyState'
-              description: Device compliance policy states for this device.
             assignmentFilterEvaluationStatusDetails:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignmentFilterEvaluationStatusDetails'
               description: Managed device mobile app configuration states for this device.
+            deviceCompliancePolicyStates:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicyState'
+              description: Device compliance policy states for this device.
             deviceConfigurationStates:
               type: array
               items:
@@ -4296,6 +4433,106 @@ components:
         - windows
         - iana
       type: string
+    microsoft.graph.accessReviewInstanceDecisionItemFilterByCurrentUserOptions:
+      title: accessReviewInstanceDecisionItemFilterByCurrentUserOptions
+      enum:
+        - reviewer
+        - unknownFutureValue
+      type: string
+    microsoft.graph.accessReviewInstanceDecisionItem:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: accessReviewInstanceDecisionItem
+          type: object
+          properties:
+            accessReviewId:
+              type: string
+              description: The identifier of the accessReviewInstance parent.
+            appliedBy:
+              $ref: '#/components/schemas/microsoft.graph.userIdentity'
+            appliedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The timestamp when the approval decision was applied. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              nullable: true
+            applyResult:
+              type: string
+              description: 'The result of applying the decision. Possible values: NotApplied, Success, Failed, NotFound, or NotSupported.'
+              nullable: true
+            decision:
+              type: string
+              description: 'Result of the review. Possible values: Approve, Deny, NotReviewed, or DontKnow.'
+              nullable: true
+            justification:
+              type: string
+              description: The review decision justification.
+              nullable: true
+            principal:
+              $ref: '#/components/schemas/microsoft.graph.identity'
+            principalLink:
+              type: string
+              nullable: true
+            recommendation:
+              type: string
+              description: 'A system-generated recommendation for the approval decision. Possible values: Approve, Deny, or NotAvailable.'
+              nullable: true
+            resource:
+              $ref: '#/components/schemas/microsoft.graph.accessReviewInstanceDecisionItemResource'
+            resourceLink:
+              type: string
+              nullable: true
+            reviewedBy:
+              $ref: '#/components/schemas/microsoft.graph.userIdentity'
+            reviewedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The timestamp when the review occurred.
+              format: date-time
+              nullable: true
+            target:
+              $ref: '#/components/schemas/microsoft.graph.accessReviewInstanceDecisionItemTarget'
+          additionalProperties:
+            type: object
+    microsoft.graph.accessReviewInstanceFilterByCurrentUserOptions:
+      title: accessReviewInstanceFilterByCurrentUserOptions
+      enum:
+        - reviewer
+        - unknownFutureValue
+      type: string
+    microsoft.graph.accessReviewInstance:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: accessReviewInstance
+          type: object
+          properties:
+            endDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'DateTime when review instance is scheduled to end.The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              nullable: true
+            scope:
+              $ref: '#/components/schemas/microsoft.graph.accessReviewScope'
+            startDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'DateTime when review instance is scheduled to start. May be in the future. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              nullable: true
+            status:
+              type: string
+              description: 'Specifies the status of an accessReview. The typical states include Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed.  Read-only.'
+              nullable: true
+            decisions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.accessReviewInstanceDecisionItem'
+              description: 'Each user reviewed in an accessReviewInstance has a decision item representing if their access was approved, denied, or not yet reviewed.'
+            definition:
+              $ref: '#/components/schemas/microsoft.graph.accessReviewScheduleDefinition'
+          additionalProperties:
+            type: object
     microsoft.graph.plannerDelta:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -4437,7 +4674,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The created date of the user object.
+              description: 'The created date of the user object. Supports $filter with the eq, lt, and ge operators.'
               format: date-time
               nullable: true
             creationType:
@@ -4529,7 +4766,7 @@ components:
               description: State of license assignments for this user. Read-only.
             mail:
               type: string
-              description: 'The SMTP address for the user, for example, ''jeff@contoso.onmicrosoft.com''. Returned by default. Supports $filter and endsWith.'
+              description: 'The SMTP address for the user, for example, ''jeff@contoso.onmicrosoft.com''.NOTE: While this property can contain accent characters, using them can cause access issues with other Microsoft applications for the user. Returned by default. Supports $filter and endsWith.'
               nullable: true
             mailNickname:
               type: string
@@ -4588,7 +4825,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'A list of additional email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com'']. Supports $filter.'
+              description: 'A list of additional email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com'']. NOTE: While this property can contain accent characters, they can cause access issues to first-party applications for the user.  Supports $filter.'
             passwordPolicies:
               type: string
               description: 'Specifies password policies for the user. This value is an enumeration with one possible value being ''DisableStrongPassword'', which allows weaker passwords than the default policy to be specified. ''DisablePasswordExpiration'' can also be specified. The two may be specified together; for example: ''DisablePasswordExpiration, DisableStrongPassword''.'
@@ -4651,7 +4888,7 @@ components:
               nullable: true
             userPrincipalName:
               type: string
-              description: 'The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user''s email name. The general format is alias@domain, where domain must be present in the tenant''s collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization. Returned by default. Supports $filter, $orderby, and endsWith.'
+              description: 'The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user''s email name. The general format is alias@domain, where domain must be present in the tenant''s collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: While this property can contain accent characters, they can cause access issues to first-party applications for the user. Returned by default. Supports $filter, $orderby, and endsWith.'
               nullable: true
             userType:
               type: string
@@ -5717,6 +5954,36 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.actionState:
+      title: actionState
+      enum:
+        - none
+        - pending
+        - canceled
+        - active
+        - done
+        - failed
+        - notSupported
+      type: string
+    microsoft.graph.cloudPcStatusDetails:
+      title: cloudPcStatusDetails
+      type: object
+      properties:
+        additionalInformation:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.keyValuePair'
+          description: Any additional information about the cloud PC status.
+        code:
+          type: string
+          description: The code associated with the cloud PC status.
+          nullable: true
+        message:
+          type: string
+          description: The status message.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.settingSource:
       title: settingSource
       type: object
@@ -6158,6 +6425,10 @@ components:
           $ref: '#/components/schemas/microsoft.graph.deviceGuardVirtualizationBasedSecurityHardwareRequirementState'
         deviceGuardVirtualizationBasedSecurityState:
           $ref: '#/components/schemas/microsoft.graph.deviceGuardVirtualizationBasedSecurityState'
+        esimIdentifier:
+          type: string
+          description: eSIM identifier
+          nullable: true
         freeStorageSpace:
           type: integer
           description: Free storage space of the device.
@@ -6351,6 +6622,19 @@ components:
       additionalProperties:
         type: object
       description: Logged On User
+    microsoft.graph.assignmentFilterEvaluationStatusDetails:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: assignmentFilterEvaluationStatusDetails
+          type: object
+          properties:
+            payloadId:
+              type: string
+              description: PayloadId on which filter has been applied.
+              nullable: true
+          additionalProperties:
+            type: object
+          description: A class containing information about the payloads on which filter has been applied.
     microsoft.graph.deviceCompliancePolicyState:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -6392,19 +6676,6 @@ components:
           additionalProperties:
             type: object
           description: Device Compliance Policy State for a given device.
-    microsoft.graph.assignmentFilterEvaluationStatusDetails:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: assignmentFilterEvaluationStatusDetails
-          type: object
-          properties:
-            payloadId:
-              type: string
-              description: PayloadId on which filter has been applied.
-              nullable: true
-          additionalProperties:
-            type: object
-          description: A class containing information about the payloads on which filter has been applied.
     microsoft.graph.deviceConfigurationState:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -6749,6 +7020,127 @@ components:
         - OneDriveForBusiness
         - OnPremOneDriveForBusiness
       type: string
+    microsoft.graph.userIdentity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.identity'
+        - title: userIdentity
+          type: object
+          properties:
+            ipAddress:
+              type: string
+              description: Indicates the client IP address used by user performing the activity (audit log only).
+              nullable: true
+            userPrincipalName:
+              type: string
+              description: The userPrincipalName attribute of the user.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.identity:
+      title: identity
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          nullable: true
+        id:
+          type: string
+          description: Unique identifier for the identity.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.accessReviewInstanceDecisionItemResource:
+      title: accessReviewInstanceDecisionItemResource
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: Display name of the resource
+          nullable: true
+        id:
+          type: string
+          description: Resource ID
+          nullable: true
+        type:
+          type: string
+          description: 'Type of resource. Types include: Group, ServicePrincipal, DirectoryRole, AzureRole, AccessPackageAssignmentPolicy.'
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.accessReviewInstanceDecisionItemTarget:
+      title: accessReviewInstanceDecisionItemTarget
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.accessReviewScope:
+      title: accessReviewScope
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.accessReviewScheduleDefinition:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: accessReviewScheduleDefinition
+          type: object
+          properties:
+            backupReviewers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScope'
+              description: 'This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user''s manager does not exist. See accessReviewReviewerScope.'
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.userIdentity'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Timestamp when review series was created.
+              format: date-time
+              nullable: true
+            descriptionForAdmins:
+              type: string
+              description: Description provided by review creators to provide more context of the review to admins.
+              nullable: true
+            descriptionForReviewers:
+              type: string
+              description: Description provided  by review creators to provide more context of the review to reviewers. Reviewers will see this description in the email sent to them requesting their review.
+              nullable: true
+            displayName:
+              type: string
+              description: Name of access review series. Required on create.
+              nullable: true
+            fallbackReviewers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScope'
+            instanceEnumerationScope:
+              $ref: '#/components/schemas/microsoft.graph.accessReviewScope'
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Timestamp when review series was last modified.
+              format: date-time
+              nullable: true
+            reviewers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScope'
+              description: This collection of access review scopes is used to define who are the reviewers. See accessReviewReviewerScope. Required on create.
+            scope:
+              $ref: '#/components/schemas/microsoft.graph.accessReviewScope'
+            settings:
+              $ref: '#/components/schemas/microsoft.graph.accessReviewScheduleSettings'
+            status:
+              type: string
+              description: 'This read-only field specifies the status of an accessReview. The typical states include Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed.'
+              nullable: true
+            instances:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.accessReviewInstance'
+              description: 'Set of access reviews instances for this access review series. Access reviews that do not recur will only have one instance; otherwise, there will be an instance for each recurrence.'
+          additionalProperties:
+            type: object
     microsoft.graph.taskStatus:
       title: taskStatus
       enum:
@@ -6907,7 +7299,7 @@ components:
           nullable: true
         issuerAssignedId:
           type: string
-          description: 'Specifies the unique identifier assigned to the user by the issuer. The combination of issuer and issuerAssignedId must be unique within the organization. Represents the sign-in name for the user, when signInType is set to emailAddress or userName (also known as local accounts).When signInType is set to: emailAddress, (or starts with emailAddress like emailAddress1) issuerAssignedId must be a valid email addressuserName, issuerAssignedId must be a valid local part of an email addressSupports $filter. 512 character limit.'
+          description: 'Specifies the unique identifier assigned to the user by the issuer. The combination of issuer and issuerAssignedId must be unique within the organization. Represents the sign-in name for the user, when signInType is set to emailAddress or userName (also known as local accounts).When signInType is set to: emailAddress, (or a custom string that starts with emailAddress like emailAddress1) issuerAssignedId must be a valid email addressuserName, issuerAssignedId must be a valid local part of an email addressSupports $filter. 100 character limit.'
           nullable: true
         signInType:
           type: string
@@ -7334,7 +7726,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLabel'
-              description: 'The list of sensitivity label pairs (label ID, label name) associated with an Microsoft 365 group. Returned only on $select. Read-only.'
+              description: 'The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select. Read-only.'
             assignedLicenses:
               type: array
               items:
@@ -7448,7 +7840,7 @@ components:
               nullable: true
             preferredLanguage:
               type: string
-              description: The preferred language for an Microsoft 365 group. Should follow ISO 639-1 Code; for example 'en-US'. Returned by default.
+              description: The preferred language for a Microsoft 365 group. Should follow ISO 639-1 Code; for example 'en-US'. Returned by default.
               nullable: true
             proxyAddresses:
               type: array
@@ -7481,7 +7873,7 @@ components:
               nullable: true
             theme:
               type: string
-              description: 'Specifies an Microsoft 365 group''s color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.'
+              description: 'Specifies a Microsoft 365 group''s color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.'
               nullable: true
             visibility:
               type: string
@@ -7574,6 +7966,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
+              description: The permission that has been granted for a group to a specific application.
             settings:
               type: array
               items:
@@ -7895,39 +8288,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.termStore.store'
             onenote:
               $ref: '#/components/schemas/microsoft.graph.onenote'
-          additionalProperties:
-            type: object
-    microsoft.graph.accessReviewInstance:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: accessReviewInstance
-          type: object
-          properties:
-            endDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'DateTime when review instance is scheduled to end.The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
-              format: date-time
-              nullable: true
-            scope:
-              $ref: '#/components/schemas/microsoft.graph.accessReviewScope'
-            startDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'DateTime when review instance is scheduled to start. May be in the future. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
-              format: date-time
-              nullable: true
-            status:
-              type: string
-              description: 'Specifies the status of an accessReview. The typical states include Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed.  Read-only.'
-              nullable: true
-            decisions:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.accessReviewInstanceDecisionItem'
-              description: 'Each user reviewed in an accessReviewInstance has a decision item representing if their access was approved, denied, or not yet reviewed.'
-            definition:
-              $ref: '#/components/schemas/microsoft.graph.accessReviewScheduleDefinition'
           additionalProperties:
             type: object
     microsoft.graph.agreementAcceptance:
@@ -8666,7 +9026,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.meetingCapabilities'
-              description: 'The list of meeting capabilities. Possible values are: questionAndAnswer,unknownFutureValue.'
             chatInfo:
               $ref: '#/components/schemas/microsoft.graph.chatInfo'
             creationDateTime:
@@ -9013,20 +9372,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.identity'
         user:
           $ref: '#/components/schemas/microsoft.graph.identity'
-      additionalProperties:
-        type: object
-    microsoft.graph.identity:
-      title: identity
-      type: object
-      properties:
-        displayName:
-          type: string
-          description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
-          nullable: true
-        id:
-          type: string
-          description: Unique identifier for the identity.
-          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.attendeeBase:
@@ -9458,6 +9803,19 @@ components:
           $ref: '#/components/schemas/microsoft.graph.sizeRange'
       additionalProperties:
         type: object
+    microsoft.graph.keyValuePair:
+      title: keyValuePair
+      type: object
+      properties:
+        name:
+          type: string
+          description: Name for this key-value pair
+        value:
+          type: string
+          description: Value for this key-value pair
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.settingSourceType:
       title: settingSourceType
       enum:
@@ -9492,17 +9850,6 @@ components:
         - installFailed
         - updateFailed
         - communicationError
-      type: string
-    microsoft.graph.actionState:
-      title: actionState
-      enum:
-        - none
-        - pending
-        - canceled
-        - active
-        - done
-        - failed
-        - notSupported
       type: string
     microsoft.graph.deviceGuardLocalSystemAuthorityCredentialGuardState:
       title: deviceGuardLocalSystemAuthorityCredentialGuardState
@@ -9829,6 +10176,67 @@ components:
           type: string
           description: The url of the link.
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.accessReviewReviewerScope:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.accessReviewScope'
+        - title: accessReviewReviewerScope
+          type: object
+          properties:
+            query:
+              type: string
+              description: The query specifying who will be the reviewer. See table for examples.
+              nullable: true
+            queryRoot:
+              type: string
+              description: The type of query. Examples include MicrosoftGraph and ARM.
+              nullable: true
+            queryType:
+              type: string
+              description: 'In the scenario where reviewers need to be specified dynamically, this property is used to indicate the relative source of the query. This property is only required if a relative query (i.e., ./manager) is specified.'
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.accessReviewScheduleSettings:
+      title: accessReviewScheduleSettings
+      type: object
+      properties:
+        applyActions:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.accessReviewApplyAction'
+          description: 'Optional field. Describes the  actions to take once a review is complete. There are two types that are currently supported: removeAccessApplyAction (default) and disableAndDeleteUserApplyAction. Field only needs to be specified in the case of disableAndDeleteUserApplyAction. See accessReviewApplyAction.'
+        autoApplyDecisionsEnabled:
+          type: boolean
+          description: Flag to indicate whether auto-apply feature is enabled.
+        defaultDecision:
+          type: string
+          description: 'Decision chosen if defaultDecisionEnabled is enabled. Can be one of ''Approve'', ''Deny'', or ''Recommendation''.'
+          nullable: true
+        defaultDecisionEnabled:
+          type: boolean
+          description: Flag to indicate whether default decision is enabled/disabled when reviewers do not respond.
+        instanceDurationInDays:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Duration of each recurrence of review (accessReviewInstance) in number of days.
+          format: int32
+        justificationRequiredOnApproval:
+          type: boolean
+          description: Flag to indicate whether reviewers are required to provide justification with their decision.
+        mailNotificationsEnabled:
+          type: boolean
+          description: Flag to indicate whether emails are enabled/disabled.
+        recommendationsEnabled:
+          type: boolean
+          description: Flag to indicate whether decision recommendations are enabled/disabled.
+        recurrence:
+          $ref: '#/components/schemas/microsoft.graph.patternedRecurrence'
+        reminderNotificationsEnabled:
+          type: boolean
+          description: Flag to indicate whether reminders are enabled/disabled.
       additionalProperties:
         type: object
     microsoft.graph.automaticRepliesSetting:
@@ -11134,125 +11542,6 @@ components:
               description: Collection of all sets available in the term store.
           additionalProperties:
             type: object
-    microsoft.graph.accessReviewScope:
-      title: accessReviewScope
-      type: object
-      additionalProperties:
-        type: object
-    microsoft.graph.accessReviewInstanceDecisionItem:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: accessReviewInstanceDecisionItem
-          type: object
-          properties:
-            accessReviewId:
-              type: string
-              description: The identifier of the accessReviewInstance parent.
-            appliedBy:
-              $ref: '#/components/schemas/microsoft.graph.userIdentity'
-            appliedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'The timestamp when the approval decision was applied. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
-              format: date-time
-              nullable: true
-            applyResult:
-              type: string
-              description: 'The result of applying the decision. Possible values: NotApplied, Success, Failed, NotFound, or NotSupported.'
-              nullable: true
-            decision:
-              type: string
-              description: 'Result of the review. Possible values: Approve, Deny, NotReviewed, or DontKnow.'
-              nullable: true
-            justification:
-              type: string
-              description: The review decision justification.
-              nullable: true
-            principal:
-              $ref: '#/components/schemas/microsoft.graph.identity'
-            principalLink:
-              type: string
-              nullable: true
-            recommendation:
-              type: string
-              description: 'A system-generated recommendation for the approval decision. Possible values: Approve, Deny, or NotAvailable.'
-              nullable: true
-            resource:
-              $ref: '#/components/schemas/microsoft.graph.accessReviewInstanceDecisionItemResource'
-            resourceLink:
-              type: string
-              nullable: true
-            reviewedBy:
-              $ref: '#/components/schemas/microsoft.graph.userIdentity'
-            reviewedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: The timestamp when the review occurred.
-              format: date-time
-              nullable: true
-            target:
-              $ref: '#/components/schemas/microsoft.graph.accessReviewInstanceDecisionItemTarget'
-          additionalProperties:
-            type: object
-    microsoft.graph.accessReviewScheduleDefinition:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: accessReviewScheduleDefinition
-          type: object
-          properties:
-            backupReviewers:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScope'
-              description: 'This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user''s manager does not exist. See accessReviewReviewerScope.'
-            createdBy:
-              $ref: '#/components/schemas/microsoft.graph.userIdentity'
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: Timestamp when review series was created.
-              format: date-time
-              nullable: true
-            descriptionForAdmins:
-              type: string
-              description: Description provided by review creators to provide more context of the review to admins.
-              nullable: true
-            descriptionForReviewers:
-              type: string
-              description: Description provided  by review creators to provide more context of the review to reviewers. Reviewers will see this description in the email sent to them requesting their review.
-              nullable: true
-            displayName:
-              type: string
-              description: Name of access review series. Required on create.
-              nullable: true
-            instanceEnumerationScope:
-              $ref: '#/components/schemas/microsoft.graph.accessReviewScope'
-            lastModifiedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: Timestamp when review series was last modified.
-              format: date-time
-              nullable: true
-            reviewers:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScope'
-              description: This collection of access review scopes is used to define who are the reviewers. See accessReviewReviewerScope. Required on create.
-            scope:
-              $ref: '#/components/schemas/microsoft.graph.accessReviewScope'
-            settings:
-              $ref: '#/components/schemas/microsoft.graph.accessReviewScheduleSettings'
-            status:
-              type: string
-              description: 'This read-only field specifies the status of an accessReview. The typical states include Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed.'
-              nullable: true
-            instances:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.accessReviewInstance'
-              description: 'Set of access reviews instances for this access review series. Access reviews that do not recur will only have one instance; otherwise, there will be an instance for each recurrence.'
-          additionalProperties:
-            type: object
     microsoft.graph.agreementAcceptanceState:
       title: agreementAcceptanceState
       enum:
@@ -11300,19 +11589,6 @@ components:
           additionalProperties:
             type: object
           description: Represents an operation applied against an app registration.
-    microsoft.graph.keyValuePair:
-      title: keyValuePair
-      type: object
-      properties:
-        name:
-          type: string
-          description: Name for this key-value pair
-        value:
-          type: string
-          description: Value for this key-value pair
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.deviceManagementTroubleshootingErrorDetails:
       title: deviceManagementTroubleshootingErrorDetails
       type: object
@@ -12508,10 +12784,22 @@ components:
           type: string
           description: The toll-free number that connects to the Audio Conference Provider.
           nullable: true
+        tollFreeNumbers:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: List of toll-free numbers that are displayed in the meeting invite.
         tollNumber:
           type: string
           description: The toll number that connects to the Audio Conference Provider.
           nullable: true
+        tollNumbers:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: List of toll numbers that are displayed in the meeting invite.
       additionalProperties:
         type: object
     microsoft.graph.broadcastMeetingSettings:
@@ -12582,18 +12870,17 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
+          description: Information of the meeting attendees.
         contributors:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
-          description: For broadcast meeting only.
         organizer:
           $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
         producers:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
-          description: For broadcast meeting only.
       additionalProperties:
         type: object
     microsoft.graph.meetingAttendanceReport:
@@ -13616,6 +13903,11 @@ components:
         - allowed
         - noStatusCleared
       type: string
+    microsoft.graph.accessReviewApplyAction:
+      title: accessReviewApplyAction
+      type: object
+      additionalProperties:
+        type: object
     microsoft.graph.externalAudienceScope:
       title: externalAudienceScope
       enum:
@@ -15211,106 +15503,6 @@ components:
               description: All the terms under the set.
           additionalProperties:
             type: object
-    microsoft.graph.userIdentity:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.identity'
-        - title: userIdentity
-          type: object
-          properties:
-            ipAddress:
-              type: string
-              description: Indicates the client IP address used by user performing the activity (audit log only).
-              nullable: true
-            userPrincipalName:
-              type: string
-              description: The userPrincipalName attribute of the user.
-              nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.accessReviewInstanceDecisionItemResource:
-      title: accessReviewInstanceDecisionItemResource
-      type: object
-      properties:
-        displayName:
-          type: string
-          description: Display name of the resource
-          nullable: true
-        id:
-          type: string
-          description: Resource ID
-          nullable: true
-        type:
-          type: string
-          description: 'Type of resource. Types include: Group, ServicePrincipal, DirectoryRole, AzureRole, AccessPackageAssignmentPolicy.'
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.accessReviewInstanceDecisionItemTarget:
-      title: accessReviewInstanceDecisionItemTarget
-      type: object
-      additionalProperties:
-        type: object
-    microsoft.graph.accessReviewReviewerScope:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.accessReviewScope'
-        - title: accessReviewReviewerScope
-          type: object
-          properties:
-            query:
-              type: string
-              description: The query specifying who will be the reviewer. See table for examples.
-              nullable: true
-            queryRoot:
-              type: string
-              description: The type of query. Examples include MicrosoftGraph and ARM.
-              nullable: true
-            queryType:
-              type: string
-              description: 'In the scenario where reviewers need to be specified dynamically, this property is used to indicate the relative source of the query. This property is only required if a relative query (i.e., ./manager) is specified.'
-              nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.accessReviewScheduleSettings:
-      title: accessReviewScheduleSettings
-      type: object
-      properties:
-        applyActions:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.accessReviewApplyAction'
-          description: 'Optional field. Describes the  actions to take once a review is complete. There are two types that are currently supported: removeAccessApplyAction (default) and disableAndDeleteUserApplyAction. Field only needs to be specified in the case of disableAndDeleteUserApplyAction. See accessReviewApplyAction.'
-        autoApplyDecisionsEnabled:
-          type: boolean
-          description: Flag to indicate whether auto-apply feature is enabled.
-        defaultDecision:
-          type: string
-          description: 'Decision chosen if defaultDecisionEnabled is enabled. Can be one of ''Approve'', ''Deny'', or ''Recommendation''.'
-          nullable: true
-        defaultDecisionEnabled:
-          type: boolean
-          description: Flag to indicate whether default decision is enabled/disabled when reviewers do not respond.
-        instanceDurationInDays:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: Duration of each recurrence of review (accessReviewInstance) in number of days.
-          format: int32
-        justificationRequiredOnApproval:
-          type: boolean
-          description: Flag to indicate whether reviewers are required to provide justification with their decision.
-        mailNotificationsEnabled:
-          type: boolean
-          description: Flag to indicate whether emails are enabled/disabled.
-        recommendationsEnabled:
-          type: boolean
-          description: Flag to indicate whether decision recommendations are enabled/disabled.
-        recurrence:
-          $ref: '#/components/schemas/microsoft.graph.patternedRecurrence'
-        reminderNotificationsEnabled:
-          type: boolean
-          description: Flag to indicate whether reminders are enabled/disabled.
-      additionalProperties:
-        type: object
     microsoft.graph.deviceManagementTroubleshootingErrorResource:
       title: deviceManagementTroubleshootingErrorResource
       type: object
@@ -17350,11 +17542,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.termStore.term'
           additionalProperties:
             type: object
-    microsoft.graph.accessReviewApplyAction:
-      title: accessReviewApplyAction
-      type: object
-      additionalProperties:
-        type: object
     microsoft.graph.plannerContainerType:
       title: plannerContainerType
       enum:

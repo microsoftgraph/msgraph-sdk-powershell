@@ -8666,22 +8666,27 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.ediscovery.custodian'
+              description: Returns a list of case custodian objects for this case.  Nullable.
             legalHolds:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.ediscovery.legalHold'
+              description: Returns a list of case legalHold objects for this case.  Nullable.
             noncustodialDataSources:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.ediscovery.noncustodialDataSource'
+              description: Returns a list of case noncustodialDataSource objects for this case.  Nullable.
             operations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.ediscovery.caseOperation'
+              description: Returns a list of case operation objects for this case. Nullable.
             reviewSets:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.ediscovery.reviewSet'
+              description: Returns a list of reviewSet objects in the case. Read-only. Nullable.
             settings:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.settings'
             sourceCollections:
@@ -8837,7 +8842,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLabel'
-              description: 'The list of sensitivity label pairs (label ID, label name) associated with an Microsoft 365 group. Returned only on $select. Read-only.'
+              description: 'The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select. Read-only.'
             assignedLicenses:
               type: array
               items:
@@ -8951,7 +8956,7 @@ components:
               nullable: true
             preferredLanguage:
               type: string
-              description: The preferred language for an Microsoft 365 group. Should follow ISO 639-1 Code; for example 'en-US'. Returned by default.
+              description: The preferred language for a Microsoft 365 group. Should follow ISO 639-1 Code; for example 'en-US'. Returned by default.
               nullable: true
             proxyAddresses:
               type: array
@@ -8984,7 +8989,7 @@ components:
               nullable: true
             theme:
               type: string
-              description: 'Specifies an Microsoft 365 group''s color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.'
+              description: 'Specifies a Microsoft 365 group''s color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.'
               nullable: true
             visibility:
               type: string
@@ -9077,6 +9082,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
+              description: The permission that has been granted for a group to a specific application.
             settings:
               type: array
               items:
@@ -9243,6 +9249,7 @@ components:
           properties:
             applyHoldToSource:
               type: boolean
+              description: Indicates if hold is applied to non-custodial data source (such as mailbox or site).
               nullable: true
             dataSource:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.dataSource'
@@ -9382,6 +9389,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.ediscovery.noncustodialDataSource'
+              description: noncustodialDataSource sources that are included in the sourceCollection
           additionalProperties:
             type: object
     microsoft.graph.ediscovery.additionalDataOptions:
@@ -9584,19 +9592,23 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Created date and time of the dataSourceContainer entity.
               format: date-time
               nullable: true
             displayName:
               type: string
+              description: Display name of the dataSourceContainer entity.
               nullable: true
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Last modified date and time of the dataSourceContainer.
               format: date-time
               nullable: true
             releasedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Date and time that the dataSourceContainer was released from the case.
               format: date-time
               nullable: true
             status:
@@ -10933,16 +10945,19 @@ components:
       properties:
         isEnabled:
           type: boolean
+          description: Indicates whether or not OCR is enabled for the case.
           nullable: true
         maxImageSize:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: Maximum image size that will be processed in KB).
           format: int32
           nullable: true
         timeout:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
+          description: 'The timeout duration for the OCR engine. A longer timeout may increase success of OCR, but may add to the total processing time.'
           format: duration
           nullable: true
       additionalProperties:
@@ -10953,23 +10968,27 @@ components:
       properties:
         isEnabled:
           type: boolean
+          description: Indicates whether email threading and near duplicate detection are enabled.
           nullable: true
         maxWords:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: See Minimum/maximum number of words to learn more.
           format: int32
           nullable: true
         minWords:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: See Minimum/maximum number of words to learn more.
           format: int32
           nullable: true
         similarityThreshold:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: See Document and email similarity threshold to learn more.
           format: int32
           nullable: true
       additionalProperties:
@@ -10980,17 +10999,21 @@ components:
       properties:
         dynamicallyAdjustTopicCount:
           type: boolean
+          description: 'To learn more, see Adjust maximum number of themes dynamically.'
           nullable: true
         ignoreNumbers:
           type: boolean
+          description: 'To learn more, see Include numbers in themes.'
           nullable: true
         isEnabled:
           type: boolean
+          description: Indicates whether themes is enabled for the case.
           nullable: true
         topicCount:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: 'To learn more, see Maximum number of themes.'
           format: int32
           nullable: true
       additionalProperties:
@@ -11118,7 +11141,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The created date of the user object.
+              description: 'The created date of the user object. Supports $filter with the eq, lt, and ge operators.'
               format: date-time
               nullable: true
             creationType:
@@ -11210,7 +11233,7 @@ components:
               description: State of license assignments for this user. Read-only.
             mail:
               type: string
-              description: 'The SMTP address for the user, for example, ''jeff@contoso.onmicrosoft.com''. Returned by default. Supports $filter and endsWith.'
+              description: 'The SMTP address for the user, for example, ''jeff@contoso.onmicrosoft.com''.NOTE: While this property can contain accent characters, using them can cause access issues with other Microsoft applications for the user. Returned by default. Supports $filter and endsWith.'
               nullable: true
             mailNickname:
               type: string
@@ -11269,7 +11292,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'A list of additional email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com'']. Supports $filter.'
+              description: 'A list of additional email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com'']. NOTE: While this property can contain accent characters, they can cause access issues to first-party applications for the user.  Supports $filter.'
             passwordPolicies:
               type: string
               description: 'Specifies password policies for the user. This value is an enumeration with one possible value being ''DisableStrongPassword'', which allows weaker passwords than the default policy to be specified. ''DisablePasswordExpiration'' can also be specified. The two may be specified together; for example: ''DisablePasswordExpiration, DisableStrongPassword''.'
@@ -11332,7 +11355,7 @@ components:
               nullable: true
             userPrincipalName:
               type: string
-              description: 'The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user''s email name. The general format is alias@domain, where domain must be present in the tenant''s collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization. Returned by default. Supports $filter, $orderby, and endsWith.'
+              description: 'The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user''s email name. The general format is alias@domain, where domain must be present in the tenant''s collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: While this property can contain accent characters, they can cause access issues to first-party applications for the user. Returned by default. Supports $filter, $orderby, and endsWith.'
               nullable: true
             userType:
               type: string
@@ -13572,7 +13595,7 @@ components:
           nullable: true
         issuerAssignedId:
           type: string
-          description: 'Specifies the unique identifier assigned to the user by the issuer. The combination of issuer and issuerAssignedId must be unique within the organization. Represents the sign-in name for the user, when signInType is set to emailAddress or userName (also known as local accounts).When signInType is set to: emailAddress, (or starts with emailAddress like emailAddress1) issuerAssignedId must be a valid email addressuserName, issuerAssignedId must be a valid local part of an email addressSupports $filter. 512 character limit.'
+          description: 'Specifies the unique identifier assigned to the user by the issuer. The combination of issuer and issuerAssignedId must be unique within the organization. Represents the sign-in name for the user, when signInType is set to emailAddress or userName (also known as local accounts).When signInType is set to: emailAddress, (or a custom string that starts with emailAddress like emailAddress1) issuerAssignedId must be a valid email addressuserName, issuerAssignedId must be a valid local part of an email addressSupports $filter. 100 character limit.'
           nullable: true
         signInType:
           type: string
@@ -14651,6 +14674,10 @@ components:
         - title: managedDevice
           type: object
           properties:
+            cloudPcRemoteActionResults:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcRemoteActionResult'
             aadRegistered:
               type: boolean
               description: Whether the device is Azure Active Directory registered. This property is read-only.
@@ -14932,16 +14959,16 @@ components:
               type: integer
               description: Count of remediated malware for this windows device. This property is read-only.
               format: int32
-            deviceCompliancePolicyStates:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicyState'
-              description: Device compliance policy states for this device.
             assignmentFilterEvaluationStatusDetails:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignmentFilterEvaluationStatusDetails'
               description: Managed device mobile app configuration states for this device.
+            deviceCompliancePolicyStates:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicyState'
+              description: Device compliance policy states for this device.
             deviceConfigurationStates:
               type: array
               items:
@@ -15677,7 +15704,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.meetingCapabilities'
-              description: 'The list of meeting capabilities. Possible values are: questionAndAnswer,unknownFutureValue.'
             chatInfo:
               $ref: '#/components/schemas/microsoft.graph.chatInfo'
             creationDateTime:
@@ -18497,6 +18523,10 @@ components:
               type: string
               description: Name of access review series. Required on create.
               nullable: true
+            fallbackReviewers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScope'
             instanceEnumerationScope:
               $ref: '#/components/schemas/microsoft.graph.accessReviewScope'
             lastModifiedDateTime:
@@ -18549,6 +18579,35 @@ components:
           additionalProperties:
             type: object
           description: Enrollment Configuration Assignment
+    microsoft.graph.cloudPcRemoteActionResult:
+      title: cloudPcRemoteActionResult
+      type: object
+      properties:
+        actionName:
+          type: string
+          nullable: true
+        actionState:
+          $ref: '#/components/schemas/microsoft.graph.actionState'
+        cloudPcId:
+          type: string
+          nullable: true
+        lastUpdatedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        managedDeviceId:
+          type: string
+          nullable: true
+        startDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        statusDetails:
+          $ref: '#/components/schemas/microsoft.graph.cloudPcStatusDetails'
+      additionalProperties:
+        type: object
     microsoft.graph.chassisType:
       title: chassisType
       enum:
@@ -18945,6 +19004,10 @@ components:
           $ref: '#/components/schemas/microsoft.graph.deviceGuardVirtualizationBasedSecurityHardwareRequirementState'
         deviceGuardVirtualizationBasedSecurityState:
           $ref: '#/components/schemas/microsoft.graph.deviceGuardVirtualizationBasedSecurityState'
+        esimIdentifier:
+          type: string
+          description: eSIM identifier
+          nullable: true
         freeStorageSpace:
           type: integer
           description: Free storage space of the device.
@@ -19138,6 +19201,19 @@ components:
       additionalProperties:
         type: object
       description: Logged On User
+    microsoft.graph.assignmentFilterEvaluationStatusDetails:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: assignmentFilterEvaluationStatusDetails
+          type: object
+          properties:
+            payloadId:
+              type: string
+              description: PayloadId on which filter has been applied.
+              nullable: true
+          additionalProperties:
+            type: object
+          description: A class containing information about the payloads on which filter has been applied.
     microsoft.graph.deviceCompliancePolicyState:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -19179,19 +19255,6 @@ components:
           additionalProperties:
             type: object
           description: Device Compliance Policy State for a given device.
-    microsoft.graph.assignmentFilterEvaluationStatusDetails:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: assignmentFilterEvaluationStatusDetails
-          type: object
-          properties:
-            payloadId:
-              type: string
-              description: PayloadId on which filter has been applied.
-              nullable: true
-          additionalProperties:
-            type: object
-          description: A class containing information about the payloads on which filter has been applied.
     microsoft.graph.deviceConfigurationState:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -20528,10 +20591,22 @@ components:
           type: string
           description: The toll-free number that connects to the Audio Conference Provider.
           nullable: true
+        tollFreeNumbers:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: List of toll-free numbers that are displayed in the meeting invite.
         tollNumber:
           type: string
           description: The toll number that connects to the Audio Conference Provider.
           nullable: true
+        tollNumbers:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: List of toll numbers that are displayed in the meeting invite.
       additionalProperties:
         type: object
     microsoft.graph.broadcastMeetingSettings:
@@ -20602,18 +20677,17 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
+          description: Information of the meeting attendees.
         contributors:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
-          description: For broadcast meeting only.
         organizer:
           $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
         producers:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
-          description: For broadcast meeting only.
       additionalProperties:
         type: object
     microsoft.graph.meetingAttendanceReport:
@@ -22662,16 +22736,6 @@ components:
       additionalProperties:
         type: object
       description: Base type for assignment targets.
-    microsoft.graph.configurationManagerClientState:
-      title: configurationManagerClientState
-      enum:
-        - unknown
-        - installed
-        - healthy
-        - installFailed
-        - updateFailed
-        - communicationError
-      type: string
     microsoft.graph.actionState:
       title: actionState
       enum:
@@ -22682,6 +22746,35 @@ components:
         - done
         - failed
         - notSupported
+      type: string
+    microsoft.graph.cloudPcStatusDetails:
+      title: cloudPcStatusDetails
+      type: object
+      properties:
+        additionalInformation:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.keyValuePair'
+          description: Any additional information about the cloud PC status.
+        code:
+          type: string
+          description: The code associated with the cloud PC status.
+          nullable: true
+        message:
+          type: string
+          description: The status message.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.configurationManagerClientState:
+      title: configurationManagerClientState
+      enum:
+        - unknown
+        - installed
+        - healthy
+        - installFailed
+        - updateFailed
+        - communicationError
       type: string
     microsoft.graph.deviceGuardLocalSystemAuthorityCredentialGuardState:
       title: deviceGuardLocalSystemAuthorityCredentialGuardState
