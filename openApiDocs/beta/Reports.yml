@@ -12280,10 +12280,18 @@ components:
             type: string
             nullable: true
           description: 'Refers to the session controls enforced by the conditional access policy (example: ''Require app enforced controls'').'
+        excludeRulesSatisfied:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.conditionalAccessRuleSatisfied'
         id:
           type: string
           description: An identifier of the conditional access policy.
           nullable: true
+        includeRulesSatisfied:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.conditionalAccessRuleSatisfied'
         result:
           $ref: '#/components/schemas/microsoft.graph.appliedConditionalAccessPolicyResult'
       additionalProperties:
@@ -12920,7 +12928,20 @@ components:
         - time
         - deviceState
         - client
+        - ipAddressSeenByAzureAD
+        - ipAddressSeenByResourceProvider
+        - unknownFutureValue
       type: string
+    microsoft.graph.conditionalAccessRuleSatisfied:
+      title: conditionalAccessRuleSatisfied
+      type: object
+      properties:
+        conditionalAccessCondition:
+          $ref: '#/components/schemas/microsoft.graph.conditionalAccessConditions'
+        ruleSatisfied:
+          $ref: '#/components/schemas/microsoft.graph.conditionalAccessRule'
+      additionalProperties:
+        type: object
     microsoft.graph.appliedConditionalAccessPolicyResult:
       title: appliedConditionalAccessPolicyResult
       enum:
@@ -12989,6 +13010,7 @@ components:
         - namedNetwork
         - trusted
         - unknownFutureValue
+        - trustedNamedLocation
       type: string
     microsoft.graph.authenticationMethodFeature:
       title: authenticationMethodFeature
@@ -13037,6 +13059,31 @@ components:
         - failure
         - nonServiceFailure
         - success
+        - unknownFutureValue
+      type: string
+    microsoft.graph.conditionalAccessRule:
+      title: conditionalAccessRule
+      enum:
+        - allApps
+        - firstPartyApps
+        - office365
+        - appId
+        - acr
+        - appFilter
+        - allUsers
+        - guest
+        - groupId
+        - roleId
+        - userId
+        - allDevicePlatforms
+        - devicePlatform
+        - allLocations
+        - insideCorpnet
+        - allTrustedLocations
+        - locationId
+        - allDevices
+        - deviceFilter
+        - deviceState
         - unknownFutureValue
       type: string
     odata.error.detail:

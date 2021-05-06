@@ -39,6 +39,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             Position = 1,
             Mandatory = true,
             HelpMessage = "The client id of your application.")]
+        [Parameter(ParameterSetName = Constants.UserParameterSet,
+            Mandatory = false,
+            HelpMessage = "The client id of your application.")]
         [Alias("AppId")]
         public string ClientId { get; set; }
 
@@ -186,6 +189,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                             // Default to CurrentUser but allow the customer to change this via `ContextScope` param.
                             authContext.ContextScope = this.IsParameterBound(nameof(ContextScope)) ? ContextScope : ContextScope.CurrentUser;
                             authContext.AuthProviderType = UseDeviceAuthentication ? AuthProviderType.DeviceCodeProvider : AuthProviderType.InteractiveAuthenticationProvider;
+                            if (!string.IsNullOrWhiteSpace(ClientId))
+                            {
+                                authContext.ClientId = ClientId;
+                            }
                         }
                         break;
                     case Constants.AppParameterSet:
@@ -218,7 +225,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                         _cancellationTokenSource.Token,
                         () => { WriteWarning(Resources.DeviceCodeFallback); });
                 }
-                catch (Exception ex)
+                catch(Exception ex)
                 {
                     throw ex;
                 }
