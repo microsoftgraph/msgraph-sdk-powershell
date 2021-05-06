@@ -4889,6 +4889,7 @@ paths:
                 - tokenIssuancePolicies
                 - tokenLifetimePolicies
                 - featureRolloutPolicies
+                - accessReviewPolicy
                 - adminConsentRequestPolicy
                 - directoryRoleAccessReviewPolicy
                 - conditionalAccessPolicies
@@ -4918,6 +4919,7 @@ paths:
                 - tokenIssuancePolicies
                 - tokenLifetimePolicies
                 - featureRolloutPolicies
+                - accessReviewPolicy
                 - adminConsentRequestPolicy
                 - directoryRoleAccessReviewPolicy
                 - conditionalAccessPolicies
@@ -4955,6 +4957,8 @@ paths:
               operationId: policies.ListTokenLifetimePolicies
             featureRolloutPolicies:
               operationId: policies.ListFeatureRolloutPolicies
+            accessReviewPolicy:
+              operationId: policies.GetAccessReviewPolicy
             adminConsentRequestPolicy:
               operationId: policies.GetAdminConsentRequestPolicy
             directoryRoleAccessReviewPolicy:
@@ -4982,6 +4986,85 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.policyRoot'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /policies/accessReviewPolicy:
+    get:
+      tags:
+        - policies.accessReviewPolicy
+      summary: Get accessReviewPolicy from policies
+      operationId: policies_GetAccessReviewPolicy
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - description
+                - displayName
+                - isGroupOwnerManagementEnabled
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.accessReviewPolicy'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - policies.accessReviewPolicy
+      summary: Update the navigation property accessReviewPolicy in policies
+      operationId: policies_UpdateAccessReviewPolicy
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.accessReviewPolicy'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - policies.accessReviewPolicy
+      summary: Delete navigation property accessReviewPolicy for policies
+      operationId: policies_DeleteAccessReviewPolicy
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -14885,7 +14968,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The created date of the user object.
+              description: 'The created date of the user object. Supports $filter with the eq, lt, and ge operators.'
               format: date-time
               nullable: true
             creationType:
@@ -14977,7 +15060,7 @@ components:
               description: State of license assignments for this user. Read-only.
             mail:
               type: string
-              description: 'The SMTP address for the user, for example, ''jeff@contoso.onmicrosoft.com''. Returned by default. Supports $filter and endsWith.'
+              description: 'The SMTP address for the user, for example, ''jeff@contoso.onmicrosoft.com''.NOTE: While this property can contain accent characters, using them can cause access issues with other Microsoft applications for the user. Returned by default. Supports $filter and endsWith.'
               nullable: true
             mailNickname:
               type: string
@@ -15036,7 +15119,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'A list of additional email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com'']. Supports $filter.'
+              description: 'A list of additional email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com'']. NOTE: While this property can contain accent characters, they can cause access issues to first-party applications for the user.  Supports $filter.'
             passwordPolicies:
               type: string
               description: 'Specifies password policies for the user. This value is an enumeration with one possible value being ''DisableStrongPassword'', which allows weaker passwords than the default policy to be specified. ''DisablePasswordExpiration'' can also be specified. The two may be specified together; for example: ''DisablePasswordExpiration, DisableStrongPassword''.'
@@ -15099,7 +15182,7 @@ components:
               nullable: true
             userPrincipalName:
               type: string
-              description: 'The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user''s email name. The general format is alias@domain, where domain must be present in the tenant''s collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization. Returned by default. Supports $filter, $orderby, and endsWith.'
+              description: 'The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user''s email name. The general format is alias@domain, where domain must be present in the tenant''s collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: While this property can contain accent characters, they can cause access issues to first-party applications for the user. Returned by default. Supports $filter, $orderby, and endsWith.'
               nullable: true
             userType:
               type: string
@@ -15500,6 +15583,8 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.featureRolloutPolicy'
+        accessReviewPolicy:
+          $ref: '#/components/schemas/microsoft.graph.accessReviewPolicy'
         adminConsentRequestPolicy:
           $ref: '#/components/schemas/microsoft.graph.adminConsentRequestPolicy'
         directoryRoleAccessReviewPolicy:
@@ -15520,6 +15605,24 @@ components:
             $ref: '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyAssignment'
       additionalProperties:
         type: object
+    microsoft.graph.accessReviewPolicy:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: accessReviewPolicy
+          type: object
+          properties:
+            description:
+              type: string
+              description: Description for this policy. Read-only.
+              nullable: true
+            displayName:
+              type: string
+              description: Display name for this policy. Read-only.
+            isGroupOwnerManagementEnabled:
+              type: boolean
+              description: 'If true, group owners can create and manage access reviews on groups they own.'
+          additionalProperties:
+            type: object
     microsoft.graph.activityBasedTimeoutPolicy:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.stsPolicy'
@@ -15633,7 +15736,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.allowInvitesFrom'
             blockMsolPowerShell:
               type: boolean
-              description: To disable the use of MSOL PowerShell set this property to true. Setting to true will also disable user-based access to the legacy service endpoint used by MSOL PowerShell. This does not affect Azure AD Connect or Microsoft Graph.
+              description: To disable the use of MSOL PowerShell set this property to true. This will also disable user-based access to the legacy service endpoint used by MSOL PowerShell. This does not affect Azure AD Connect or Microsoft Graph.
               nullable: true
             defaultUserRolePermissions:
               $ref: '#/components/schemas/microsoft.graph.defaultUserRolePermissions'
@@ -15646,7 +15749,7 @@ components:
             guestUserRoleId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
-              description: 'Represents role templateId for the role that should be granted to guest user. Refer to List unifiedRoleDefinitions to find the list of available role templates. Currently following roles are supported:  User (a0b1b346-4d3e-4e8b-98f8-753987be4970), Guest User (10dae51f-b6af-4016-8d66-8c2a99b929b3), and Restricted Guest User (2af84b1e-32c8-42b7-82bc-daa82404023b).'
+              description: 'Represents role templateId for the role that should be granted to guest user. Currently following roles are supported:  User (a0b1b346-4d3e-4e8b-98f8-753987be4970), Guest User (10dae51f-b6af-4016-8d66-8c2a99b929b3), and Restricted Guest User (2af84b1e-32c8-42b7-82bc-daa82404023b).'
               format: uuid
               nullable: true
             permissionGrantPolicyIdsAssignedToDefaultUserRole:
@@ -17133,7 +17236,7 @@ components:
           nullable: true
         issuerAssignedId:
           type: string
-          description: 'Specifies the unique identifier assigned to the user by the issuer. The combination of issuer and issuerAssignedId must be unique within the organization. Represents the sign-in name for the user, when signInType is set to emailAddress or userName (also known as local accounts).When signInType is set to: emailAddress, (or starts with emailAddress like emailAddress1) issuerAssignedId must be a valid email addressuserName, issuerAssignedId must be a valid local part of an email addressSupports $filter. 512 character limit.'
+          description: 'Specifies the unique identifier assigned to the user by the issuer. The combination of issuer and issuerAssignedId must be unique within the organization. Represents the sign-in name for the user, when signInType is set to emailAddress or userName (also known as local accounts).When signInType is set to: emailAddress, (or a custom string that starts with emailAddress like emailAddress1) issuerAssignedId must be a valid email addressuserName, issuerAssignedId must be a valid local part of an email addressSupports $filter. 100 character limit.'
           nullable: true
         signInType:
           type: string
@@ -17962,7 +18065,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLabel'
-              description: 'The list of sensitivity label pairs (label ID, label name) associated with an Microsoft 365 group. Returned only on $select. Read-only.'
+              description: 'The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select. Read-only.'
             assignedLicenses:
               type: array
               items:
@@ -18076,7 +18179,7 @@ components:
               nullable: true
             preferredLanguage:
               type: string
-              description: The preferred language for an Microsoft 365 group. Should follow ISO 639-1 Code; for example 'en-US'. Returned by default.
+              description: The preferred language for a Microsoft 365 group. Should follow ISO 639-1 Code; for example 'en-US'. Returned by default.
               nullable: true
             proxyAddresses:
               type: array
@@ -18109,7 +18212,7 @@ components:
               nullable: true
             theme:
               type: string
-              description: 'Specifies an Microsoft 365 group''s color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.'
+              description: 'Specifies a Microsoft 365 group''s color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.'
               nullable: true
             visibility:
               type: string
@@ -18942,6 +19045,10 @@ components:
         - title: managedDevice
           type: object
           properties:
+            cloudPcRemoteActionResults:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcRemoteActionResult'
             aadRegistered:
               type: boolean
               description: Whether the device is Azure Active Directory registered. This property is read-only.
@@ -19223,16 +19330,16 @@ components:
               type: integer
               description: Count of remediated malware for this windows device. This property is read-only.
               format: int32
-            deviceCompliancePolicyStates:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicyState'
-              description: Device compliance policy states for this device.
             assignmentFilterEvaluationStatusDetails:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignmentFilterEvaluationStatusDetails'
               description: Managed device mobile app configuration states for this device.
+            deviceCompliancePolicyStates:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicyState'
+              description: Device compliance policy states for this device.
             deviceConfigurationStates:
               type: array
               items:
@@ -22738,6 +22845,35 @@ components:
           additionalProperties:
             type: object
           description: Enrollment Configuration Assignment
+    microsoft.graph.cloudPcRemoteActionResult:
+      title: cloudPcRemoteActionResult
+      type: object
+      properties:
+        actionName:
+          type: string
+          nullable: true
+        actionState:
+          $ref: '#/components/schemas/microsoft.graph.actionState'
+        cloudPcId:
+          type: string
+          nullable: true
+        lastUpdatedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        managedDeviceId:
+          type: string
+          nullable: true
+        startDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        statusDetails:
+          $ref: '#/components/schemas/microsoft.graph.cloudPcStatusDetails'
+      additionalProperties:
+        type: object
     microsoft.graph.chassisType:
       title: chassisType
       enum:
@@ -23331,6 +23467,19 @@ components:
       additionalProperties:
         type: object
       description: Logged On User
+    microsoft.graph.assignmentFilterEvaluationStatusDetails:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: assignmentFilterEvaluationStatusDetails
+          type: object
+          properties:
+            payloadId:
+              type: string
+              description: PayloadId on which filter has been applied.
+              nullable: true
+          additionalProperties:
+            type: object
+          description: A class containing information about the payloads on which filter has been applied.
     microsoft.graph.deviceCompliancePolicyState:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -23372,19 +23521,6 @@ components:
           additionalProperties:
             type: object
           description: Device Compliance Policy State for a given device.
-    microsoft.graph.assignmentFilterEvaluationStatusDetails:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: assignmentFilterEvaluationStatusDetails
-          type: object
-          properties:
-            payloadId:
-              type: string
-              description: PayloadId on which filter has been applied.
-              nullable: true
-          additionalProperties:
-            type: object
-          description: A class containing information about the payloads on which filter has been applied.
     microsoft.graph.deviceConfigurationState:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -25008,6 +25144,7 @@ components:
           items:
             type: string
             nullable: true
+          description: List of toll-free numbers that are displayed in the meeting invite.
         tollNumber:
           type: string
           description: The toll number that connects to the Audio Conference Provider.
@@ -25017,6 +25154,7 @@ components:
           items:
             type: string
             nullable: true
+          description: List of toll numbers that are displayed in the meeting invite.
       additionalProperties:
         type: object
     microsoft.graph.broadcastMeetingSettings:
@@ -27836,16 +27974,6 @@ components:
       additionalProperties:
         type: object
       description: Base type for assignment targets.
-    microsoft.graph.configurationManagerClientState:
-      title: configurationManagerClientState
-      enum:
-        - unknown
-        - installed
-        - healthy
-        - installFailed
-        - updateFailed
-        - communicationError
-      type: string
     microsoft.graph.actionState:
       title: actionState
       enum:
@@ -27856,6 +27984,35 @@ components:
         - done
         - failed
         - notSupported
+      type: string
+    microsoft.graph.cloudPcStatusDetails:
+      title: cloudPcStatusDetails
+      type: object
+      properties:
+        additionalInformation:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.keyValuePair'
+          description: Any additional information about the cloud PC status.
+        code:
+          type: string
+          description: The code associated with the cloud PC status.
+          nullable: true
+        message:
+          type: string
+          description: The status message.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.configurationManagerClientState:
+      title: configurationManagerClientState
+      enum:
+        - unknown
+        - installed
+        - healthy
+        - installFailed
+        - updateFailed
+        - communicationError
       type: string
     microsoft.graph.deviceGuardLocalSystemAuthorityCredentialGuardState:
       title: deviceGuardLocalSystemAuthorityCredentialGuardState
