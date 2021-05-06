@@ -2547,10 +2547,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.windowsUpdates.deployment'
+              description: Deployments created using the deployment service. Read-only.
             updatableAssets:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
+              description: Assets registered with the deployment service that can receive updates. Read-only.
           additionalProperties:
             type: object
     microsoft.graph.windowsUpdates.catalog:
@@ -2563,6 +2565,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.windowsUpdates.catalogEntry'
+              description: Lists the content that you can approve for deployment. Read-only.
           additionalProperties:
             type: object
     microsoft.graph.windowsUpdates.catalogEntry:
@@ -2574,14 +2577,17 @@ components:
             deployableUntilDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date on which the content is no longer available to deploy using the service. Read-only.
               format: date-time
               nullable: true
             displayName:
               type: string
+              description: The display name of the content. Read-only.
               nullable: true
             releaseDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The release date for the content. Read-only.
               format: date-time
           additionalProperties:
             type: object
@@ -2596,10 +2602,12 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date and time the deployment was created. Returned by default. Read-only.
               format: date-time
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date and time the deployment was last modified. Returned by default. Read-only.
               format: date-time
             settings:
               $ref: '#/components/schemas/microsoft.graph.windowsUpdates.deploymentSettings'
@@ -2619,10 +2627,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
+              description: Specifies the assets to exclude from the audience.
             members:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
+              description: Specifies the assets to include in the audience.
           additionalProperties:
             type: object
     microsoft.graph.windowsUpdates.updatableAsset:
@@ -2671,6 +2681,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.windowsUpdates.deploymentStateReason'
+          description: Specifies the reasons the deployment has its state value. Read-only.
         requestedValue:
           $ref: '#/components/schemas/microsoft.graph.windowsUpdates.requestedDeploymentStateValue'
         value:
@@ -2694,6 +2705,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.windowsUpdates.monitoringRule'
+          description: Specifies the rules through which monitoring signals can trigger actions on the deployment. Rules are combined using 'or'.
       additionalProperties:
         type: object
     microsoft.graph.windowsUpdates.rolloutSettings:
@@ -2704,17 +2716,21 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: 'Specifies the number of devices that are offered at the same time. Has no effect when endDateTime is set. When endDateTime and devicesPerOffer are both not set, all devices in the deployment are offered content at the same time.'
           format: int32
         durationBetweenOffers:
           type: string
+          description: Specifies duration between each set of devices being offered the update. Has an effect when endDateTime or devicesPerOffer are defined. Default value is P1D (1 day).
           nullable: true
         endDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'Specifies the date before which all devices currently in the deployment are offered the update. Devices added after this date are offered immediately. When endDateTime and devicesPerOffer are both not set, all devices in the deployment are offered content at the same time.'
           format: date-time
         startDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'Date on which devices in the deployment start receiving the update. When not set, the deployment starts as soon as devices are assigned.'
           format: date-time
           nullable: true
       additionalProperties:
@@ -2780,6 +2796,7 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: The threshold for a signal at which to trigger action. An integer from 1 to 100 (inclusive).
           format: int32
           nullable: true
       additionalProperties:
