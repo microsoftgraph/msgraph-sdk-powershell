@@ -49,9 +49,7 @@ begin {
     $APWithNonZeroPolicies = 0
     $policyEvaluation = $false
 
-    if ($PolicyWithNoApprovalRequiredForRequest) {
-        $policyEvaluation = $true
-    } elseif ($null -ne $PolicyWithScopeType -and $PolicyWithScopeType.Length -gt 0) {
+    if ($PolicyWithNoApprovalRequiredForRequest -or ($null -ne $PolicyWithScopeType -and $PolicyWithScopeType.Length -gt 0)) {
         $policyEvaluation = $true
     }
 }
