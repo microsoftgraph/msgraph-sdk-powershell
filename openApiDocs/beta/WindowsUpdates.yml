@@ -1,74 +1,11 @@
 openapi: 3.0.1
 info:
-  title: Admin
+  title: WindowsUpdates
   version: v1.0-beta
 servers:
   - url: https://graph.microsoft.com/beta/
     description: Core
 paths:
-  /admin:
-    get:
-      tags:
-        - admin.admin
-      summary: Get admin
-      operationId: admin.admin_GetAdmin
-      parameters:
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - windows
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - windows
-              type: string
-      responses:
-        '200':
-          description: Retrieved entity
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.admin'
-          links:
-            windows:
-              operationId: admin.GetWindows
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - admin.admin
-      summary: Update admin
-      operationId: admin.admin_UpdateAdmin
-      requestBody:
-        description: New property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.admin'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   /admin/windows:
     get:
       tags:
@@ -2517,14 +2454,6 @@ paths:
       x-ms-docs-operation-type: action
 components:
   schemas:
-    microsoft.graph.windowsUpdates.admin:
-      title: admin
-      type: object
-      properties:
-        windows:
-          $ref: '#/components/schemas/microsoft.graph.windowsUpdates.windows'
-      additionalProperties:
-        type: object
     microsoft.graph.windowsUpdates.windows:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
