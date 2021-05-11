@@ -55,7 +55,7 @@ param(
     # Select properties to be returned
     ${Property},
 
-    [Parameter(ParameterSetName='CatalogId', Mandatory)]
+    [Parameter(ParameterSetName='ListByCatalogId', Mandatory)]
     [Microsoft.Graph.PowerShell.Category('Query')]
     [ValidateScript( {
         try {
@@ -70,31 +70,31 @@ param(
     # Filter items by property values
     ${CatalogId},
 
-    [Parameter(ParameterSetName='DisplayNameEq', Mandatory)]
+    [Parameter(ParameterSetName='ListByDisplayNameEq', Mandatory)]
     [Microsoft.Graph.PowerShell.Category('Query')]
     [System.String]
     # Filter items by property values
     ${DisplayNameEq},
 
-    [Parameter(ParameterSetName='DisplayNameContains', Mandatory)]
+    [Parameter(ParameterSetName='ListByDisplayNameContains', Mandatory)]
     [Microsoft.Graph.PowerShell.Category('Query')]
     [System.String]
     # Filter items by property values
     ${DisplayNameContains},
 
     [Parameter(ParameterSetName='ListAll')]
-    [Parameter(ParameterSetName='CatalogId')]
-    [Parameter(ParameterSetName='DisplayNameEq')]
-    [Parameter(ParameterSetName='DisplayNameContains')]
+    [Parameter(ParameterSetName='ListByCatalogId')]
+    [Parameter(ParameterSetName='ListByDisplayNameEq')]
+    [Parameter(ParameterSetName='ListByDisplayNameContains')]
     [Alias('OrderBy')]
     [Microsoft.Graph.PowerShell.Category('Query')]
     [System.String[]]
     # Order items by property values
     ${Sort},
 
-    [Parameter(ParameterSetName='DisplayNameEq')]
-    [Parameter(ParameterSetName='DisplayNameContains')]
-    [Parameter(ParameterSetName='CatalogId')]
+    [Parameter(ParameterSetName='ListByDisplayNameEq')]
+    [Parameter(ParameterSetName='ListByDisplayNameContains')]
+    [Parameter(ParameterSetName='ListByCatalogId')]
     [Alias('Limit')]
     [Microsoft.Graph.PowerShell.Category('Query')]
     [System.Int32]
@@ -141,9 +141,9 @@ param(
     ${ProxyUseDefaultCredentials},
 
     [Parameter(ParameterSetName='ListAll')]
-    [Parameter(ParameterSetName='DisplayNameEq')]
-    [Parameter(ParameterSetName='DisplayNameContains')]
-    [Parameter(ParameterSetName='CatalogId')]
+    [Parameter(ParameterSetName='ListByDisplayNameEq')]
+    [Parameter(ParameterSetName='ListByDisplayNameContains')]
+    [Parameter(ParameterSetName='ListByCatalogId')]
     [Microsoft.Graph.PowerShell.Category('Runtime')]
     [System.Management.Automation.SwitchParameter]
     # List all pages.
@@ -151,60 +151,45 @@ param(
 )
 
 begin {
-    try {
-        $outBuffer = $null
-        if ($PSBoundParameters.TryGetValue('OutBuffer', [ref]$outBuffer)) {
-            $PSBoundParameters['OutBuffer'] = 1
-        }
-        $parameterSet = $PSCmdlet.ParameterSetName
 
-        if ($parameterSet -eq "DisplayNameEq") {
-            
-            $Filter = "displayName eq '{0}'" -f $DisplayNameEq
-            $PSBoundParameters['Filter'] = $Filter
-            $null = $PSBoundParameters.Remove('DisplayNameEq')
-        
-        } elseif ($parameterSet -eq "DisplayNameContains") {
-            
-            $Filter = "contains(tolower(displayName), '{0}')" -f $DisplayNameContains
-            $PSBoundParameters['Filter'] = $Filter
-            $null = $PSBoundParameters.Remove('DisplayNameContains')
-        } elseif ($parameterSet -eq "CatalogId") {
-
-            $Filter = "accessPackageCatalog/Id eq '{0}'" -f $CatalogId
-            $PSBoundParameters['Filter'] = $Filter
-            $null = $PSBoundParameters.Remove('CatalogId')
-        }
-        
-        if ($PSBoundParameters.ContainsKey('Top') -or $PSBoundParameters.ContainsKey('All')) {
-
-        } else {
-            $PSBoundParameters['All'] = $true
-        }
-
-        $mappedCmdList = 'Microsoft.Graph.Identity.Governance.private\Get-MgEntitlementManagementAccessPackage_List';
-        $subWrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mappedCmdList), [System.Management.Automation.CommandTypes]::Cmdlet)
-        $subScriptCmd = {& $subWrappedCmd @PSBoundParameters}
-        $steppablePipeline = $subScriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
-        $steppablePipeline.Begin($PSCmdlet)
-    } catch {
-        throw
-    }
 }
 
 process {
-    try {
-        $steppablePipeline.Process($_)
-    } catch {
-        throw
+    $outBuffer = $null
+    if ($PSBoundParameters.TryGetValue('OutBuffer', [ref]$outBuffer)) {
+        $PSBoundParameters['OutBuffer'] = 1
     }
+    $parameterSet = $PSCmdlet.ParameterSetName
+
+    if ($parameterSet -eq "ListByDisplayNameEq") {
+
+        $Filter = "displayName eq '{0}'" -f $DisplayNameEq
+        $PSBoundParameters['Filter'] = $Filter
+        $null = $PSBoundParameters.Remove('DisplayNameEq')
+
+    } elseif ($parameterSet -eq "ListByDisplayNameContains") {
+
+        $Filter = "contains(tolower(displayName), '{0}')" -f $DisplayNameContains
+        $PSBoundParameters['Filter'] = $Filter
+        $null = $PSBoundParameters.Remove('DisplayNameContains')
+    } elseif ($parameterSet -eq "ListByCatalogId") {
+
+        $Filter = "accessPackageCatalog/Id eq '{0}'" -f $CatalogId
+        $PSBoundParameters['Filter'] = $Filter
+        $null = $PSBoundParameters.Remove('CatalogId')
+    }
+
+    if ($PSBoundParameters.ContainsKey('Top') -or $PSBoundParameters.ContainsKey('All')) {
+
+    } else {
+        $PSBoundParameters['All'] = $true
+    }
+
+    Microsoft.Graph.Identity.Governance.private\Get-MgEntitlementManagementAccessPackage_List @PSBoundParameters
+
 }
 
 end {
-    try {
-        $steppablePipeline.End()
-    } catch {
-        throw
-    }
+
 }
 }

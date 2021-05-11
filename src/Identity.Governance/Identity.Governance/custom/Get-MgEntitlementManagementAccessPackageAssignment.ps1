@@ -56,7 +56,7 @@ param(
     # Select properties to be returned
     ${Property},
 
-    [Parameter(ParameterSetName='AccessPackageId', Mandatory)]
+    [Parameter(ParameterSetName='ListByAccessPackageId', Mandatory)]
     [Microsoft.Graph.PowerShell.Category('Query')]
     [ValidateScript( {
         try {
@@ -72,14 +72,14 @@ param(
     ${AccessPackageId},
 
     [Parameter(ParameterSetName='ListAll')]
-    [Parameter(ParameterSetName='AccessPackageId')]
+    [Parameter(ParameterSetName='ListByAccessPackageId')]
     [Alias('OrderBy')]
     [Microsoft.Graph.PowerShell.Category('Query')]
     [System.String[]]
     # Order items by property values
     ${Sort},
 
-    [Parameter(ParameterSetName='AccessPackageId')]
+    [Parameter(ParameterSetName='ListByAccessPackageId')]
     [Alias('Limit')]
     [Microsoft.Graph.PowerShell.Category('Query')]
     [System.Int32]
@@ -126,7 +126,7 @@ param(
     ${ProxyUseDefaultCredentials},
 
     [Parameter(ParameterSetName='ListAll')]
-    [Parameter(ParameterSetName='AccessPackageId')]
+    [Parameter(ParameterSetName='ListByAccessPackageId')]
     [Microsoft.Graph.PowerShell.Category('Runtime')]
     [System.Management.Automation.SwitchParameter]
     # List all pages.
@@ -134,48 +134,33 @@ param(
 )
 
 begin {
-    try {
-        $outBuffer = $null
-        if ($PSBoundParameters.TryGetValue('OutBuffer', [ref]$outBuffer)) {
-            $PSBoundParameters['OutBuffer'] = 1
-        }
-        $parameterSet = $PSCmdlet.ParameterSetName
-        if ($parameterSet -eq "AccessPackageId") {
 
-            $Filter = "accessPackageId eq '{0}'" -f $AccessPackageId
-            $PSBoundParameters['Filter'] = $Filter
-            $null = $PSBoundParameters.Remove('AccessPackageId')
-        }
-        
-        if ($PSBoundParameters.ContainsKey('Top') -or $PSBoundParameters.ContainsKey('All')) {
-
-        } else {
-            $PSBoundParameters['All'] = $true
-        }
-
-        $mappedCmdList = 'Microsoft.Graph.Identity.Governance.private\Get-MgEntitlementManagementAccessPackageAssignment_List';
-        $subWrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mappedCmdList), [System.Management.Automation.CommandTypes]::Cmdlet)
-        $subScriptCmd = {& $subWrappedCmd @PSBoundParameters}
-        $steppablePipeline = $subScriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
-        $steppablePipeline.Begin($PSCmdlet)
-    } catch {
-        throw
-    }
 }
 
 process {
-    try {
-        $steppablePipeline.Process($_)
-    } catch {
-        throw
+    $outBuffer = $null
+    if ($PSBoundParameters.TryGetValue('OutBuffer', [ref]$outBuffer)) {
+        $PSBoundParameters['OutBuffer'] = 1
     }
+    $parameterSet = $PSCmdlet.ParameterSetName
+    if ($parameterSet -eq "ListByAccessPackageId") {
+
+        $Filter = "accessPackageId eq '{0}'" -f $AccessPackageId
+        $PSBoundParameters['Filter'] = $Filter
+        $null = $PSBoundParameters.Remove('AccessPackageId')
+    }
+
+    if ($PSBoundParameters.ContainsKey('Top') -or $PSBoundParameters.ContainsKey('All')) {
+
+    } else {
+        $PSBoundParameters['All'] = $true
+    }
+
+    Microsoft.Graph.Identity.Governance.private\Get-MgEntitlementManagementAccessPackageAssignment_List @PSBoundParameters
+
 }
 
 end {
-    try {
-        $steppablePipeline.End()
-    } catch {
-        throw
-    }
+
 }
 }
