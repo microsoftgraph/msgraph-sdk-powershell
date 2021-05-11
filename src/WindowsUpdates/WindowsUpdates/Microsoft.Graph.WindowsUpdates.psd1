@@ -18,7 +18,7 @@ ModuleVersion = '1.5.1'
 CompatiblePSEditions = 'Core', 'Desktop'
 
 # ID used to uniquely identify this module
-GUID = 'eebee727-78fb-41c4-8cc9-a738c2c82dde'
+GUID = '63972427-8001-4871-948c-cad3ec54dbc4'
 
 # Author of this module
 Author = 'Microsoft Corporation'
@@ -69,51 +69,27 @@ FormatsToProcess = './Microsoft.Graph.WindowsUpdates.format.ps1xml'
 # NestedModules = @()
 
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
-FunctionsToExport = 'Add-MgWindowsUpdateDeploymentAudienceExclusionMember', 
-               'Add-MgWindowsUpdateDeploymentAudienceExclusionMemberById', 
-               'Add-MgWindowsUpdateDeploymentAudienceMember', 
+FunctionsToExport = 'Add-MgWindowsUpdateDeploymentAudienceMember', 
                'Add-MgWindowsUpdateDeploymentAudienceMemberById', 
                'Add-MgWindowsUpdateUpdatableAssetMember', 
                'Add-MgWindowsUpdateUpdatableAssetMemberById', 
-               'Get-MgWindowsUpdateCatalog', 'Get-MgWindowsUpdateCatalogEntry', 
-               'Get-MgWindowsUpdateDeployment', 
+               'Get-MgWindowsUpdateCatalogEntry', 'Get-MgWindowsUpdateDeployment', 
                'Get-MgWindowsUpdateDeploymentAudienceExclusion', 
                'Get-MgWindowsUpdateDeploymentAudienceMember', 
                'Get-MgWindowsUpdateUpdatableAsset', 
-               'Invoke-MgEnrollWindowsUpdateDeploymentAudienceExclusionAsset', 
-               'Invoke-MgEnrollWindowsUpdateDeploymentAudienceExclusionAssetById', 
-               'Invoke-MgEnrollWindowsUpdateDeploymentAudienceMemberAsset', 
-               'Invoke-MgEnrollWindowsUpdateDeploymentAudienceMemberAssetById', 
                'Invoke-MgEnrollWindowsUpdateUpdatableAsset', 
                'Invoke-MgEnrollWindowsUpdateUpdatableAssetById', 
-               'Invoke-MgUnenrollWindowsUpdateDeploymentAudienceExclusionAsset', 
-               'Invoke-MgUnenrollWindowsUpdateDeploymentAudienceExclusionAssetById', 
-               'Invoke-MgUnenrollWindowsUpdateDeploymentAudienceMemberAsset', 
-               'Invoke-MgUnenrollWindowsUpdateDeploymentAudienceMemberAssetById', 
                'Invoke-MgUnenrollWindowsUpdateUpdatableAsset', 
                'Invoke-MgUnenrollWindowsUpdateUpdatableAssetById', 
-               'New-MgWindowsUpdateCatalogEntry', 'New-MgWindowsUpdateDeployment', 
-               'New-MgWindowsUpdateDeploymentAudienceExclusion', 
-               'New-MgWindowsUpdateDeploymentAudienceMember', 
+               'New-MgWindowsUpdateDeployment', 
                'New-MgWindowsUpdateUpdatableAsset', 
-               'Remove-MgWindowsUpdateCatalog', 
-               'Remove-MgWindowsUpdateCatalogEntry', 
                'Remove-MgWindowsUpdateDeployment', 
-               'Remove-MgWindowsUpdateDeploymentAudienceExclusion', 
-               'Remove-MgWindowsUpdateDeploymentAudienceExclusionMember', 
-               'Remove-MgWindowsUpdateDeploymentAudienceExclusionMemberById', 
-               'Remove-MgWindowsUpdateDeploymentAudienceMember', 
-               'Remove-MgWindowsUpdateDeploymentAudienceMemberById', 
                'Remove-MgWindowsUpdateUpdatableAsset', 
                'Remove-MgWindowsUpdateUpdatableAssetMember', 
                'Remove-MgWindowsUpdateUpdatableAssetMemberById', 
-               'Update-MgWindowsUpdateCatalog', 
-               'Update-MgWindowsUpdateCatalogEntry', 
                'Update-MgWindowsUpdateDeployment', 
                'Update-MgWindowsUpdateDeploymentAudience', 
                'Update-MgWindowsUpdateDeploymentAudienceById', 
-               'Update-MgWindowsUpdateDeploymentAudienceExclusion', 
-               'Update-MgWindowsUpdateDeploymentAudienceMember', 
                'Update-MgWindowsUpdateUpdatableAsset'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
@@ -123,41 +99,21 @@ CmdletsToExport = @()
 # VariablesToExport = @()
 
 # Aliases to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no aliases to export.
-AliasesToExport = 'Add-MgWuDeploymentAudienceExclusionMember', 
-               'Add-MgWuDeploymentAudienceExclusionMemberById', 
-               'Add-MgWuDeploymentAudienceMember', 
+AliasesToExport = 'Add-MgWuDeploymentAudienceMember', 
                'Add-MgWuDeploymentAudienceMemberById', 
                'Add-MgWuUpdatableAssetMember', 'Add-MgWuUpdatableAssetMemberById', 
-               'Get-MgWuCatalog', 'Get-MgWuCatalogEntry', 'Get-MgWuDeployment', 
+               'Get-MgWuCatalogEntry', 'Get-MgWuDeployment', 
                'Get-MgWuDeploymentAudienceExclusion', 
                'Get-MgWuDeploymentAudienceMember', 'Get-MgWuUpdatableAsset', 
-               'Invoke-MgEnrollWuDeploymentAudienceExclusionAsset', 
-               'Invoke-MgEnrollWuDeploymentAudienceExclusionAssetById', 
-               'Invoke-MgEnrollWuDeploymentAudienceMemberAsset', 
-               'Invoke-MgEnrollWuDeploymentAudienceMemberAssetById', 
                'Invoke-MgEnrollWuUpdatableAsset', 
                'Invoke-MgEnrollWuUpdatableAssetById', 
-               'Invoke-MgUnenrollWuDeploymentAudienceExclusionAsset', 
-               'Invoke-MgUnenrollWuDeploymentAudienceExclusionAssetById', 
-               'Invoke-MgUnenrollWuDeploymentAudienceMemberAsset', 
-               'Invoke-MgUnenrollWuDeploymentAudienceMemberAssetById', 
                'Invoke-MgUnenrollWuUpdatableAsset', 
-               'Invoke-MgUnenrollWuUpdatableAssetById', 'New-MgWuCatalogEntry', 
-               'New-MgWuDeployment', 'New-MgWuDeploymentAudienceExclusion', 
-               'New-MgWuDeploymentAudienceMember', 'New-MgWuUpdatableAsset', 
-               'Remove-MgWuCatalog', 'Remove-MgWuCatalogEntry', 
-               'Remove-MgWuDeployment', 'Remove-MgWuDeploymentAudienceExclusion', 
-               'Remove-MgWuDeploymentAudienceExclusionMember', 
-               'Remove-MgWuDeploymentAudienceExclusionMemberById', 
-               'Remove-MgWuDeploymentAudienceMember', 
-               'Remove-MgWuDeploymentAudienceMemberById', 
+               'Invoke-MgUnenrollWuUpdatableAssetById', 'New-MgWuDeployment', 
+               'New-MgWuUpdatableAsset', 'Remove-MgWuDeployment', 
                'Remove-MgWuUpdatableAsset', 'Remove-MgWuUpdatableAssetMember', 
-               'Remove-MgWuUpdatableAssetMemberById', 'Update-MgWuCatalog', 
-               'Update-MgWuCatalogEntry', 'Update-MgWuDeployment', 
+               'Remove-MgWuUpdatableAssetMemberById', 'Update-MgWuDeployment', 
                'Update-MgWuDeploymentAudience', 
-               'Update-MgWuDeploymentAudienceById', 
-               'Update-MgWuDeploymentAudienceExclusion', 
-               'Update-MgWuDeploymentAudienceMember', 'Update-MgWuUpdatableAsset'
+               'Update-MgWuDeploymentAudienceById', 'Update-MgWuUpdatableAsset'
 
 # DSC resources to export from this module
 # DscResourcesToExport = @()

@@ -45,6 +45,22 @@ directive:
       subject: (.*)AdminWindowUpdate(.*)
     set:
       subject: $1WindowsUpdate$2
+# Remove cmdlets.
+  - where:
+      subject: ^WindowsUpdateCatalog$
+    remove: true
+  - where:
+      verb: New|Remove|Update
+      subject: ^WindowsUpdate(CatalogEntry|DeploymentAudienceMember|DeploymentAudienceExclusion)$
+    remove: true
+  - where:
+      verb: Add|Remove
+      subject: ^WindowsUpdateDeploymentAudience(ExclusionMember|ExclusionMemberById)$
+    remove: true
+  - where:
+      verb: Invoke
+      subject: ^(Enroll|UnEnroll)WindowsUpdateDeploymentAudience(ExclusionAsset|ExclusionAssetById|MemberAsset|MemberAssetById)$
+    remove: true
 # Rename cmdlets.
   - where:
       verb: Add
