@@ -41,8 +41,8 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         MESSAGE_TITLE: Weekly OpenApiDocs Download
         MESSAGE_BODY: "This pull request was automatically created by the GitHub Action,\n\n Contains OpenApiDocs Updates from Graph Explorer API"
-        REVIEWERS: peombwa,ddyett,darrelmiller
-        ASSIGNEDTO: finsharp
+        REVIEWERS: peombwa,ddyett,darrelmiller,georgend
+        ASSIGNEDTO: peombwa
         LABELS: generated
         BASE: dev
         HEAD: ${{steps.create_branch.outputs.branch}}
