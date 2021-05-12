@@ -1367,7 +1367,7 @@ components:
           properties:
             accountEnabled:
               type: boolean
-              description: 'true if the account is enabled; otherwise, false. Required.'
+              description: 'true if the account is enabled; otherwise, false. default is true.'
               nullable: true
             alternativeSecurityIds:
               type: array
@@ -1392,7 +1392,7 @@ components:
               nullable: true
             deviceId:
               type: string
-              description: Unique identifier set by Azure Device Registration Service at the time of registration.
+              description: Identifier set by Azure Device Registration Service at the time of registration.
               nullable: true
             deviceMetadata:
               type: string
@@ -1465,7 +1465,7 @@ components:
               nullable: true
             operatingSystemVersion:
               type: string
-              description: The version of the operating system on the device. Required.
+              description: Operating system version of the device. Required.
               nullable: true
             physicalIds:
               type: array
@@ -1489,7 +1489,7 @@ components:
               description: List of labels applied to the device by the system.
             trustType:
               type: string
-              description: 'Type of trust for the joined device. Read-only. Possible values:  Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory'
+              description: 'Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory'
               nullable: true
             kind:
               type: string
@@ -1539,7 +1539,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: Groups that the device is a member of. This operation is transitive.
+              description: Groups that this device is a member of. This operation is transitive.
             extensions:
               type: array
               items:
