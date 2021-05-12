@@ -6344,7 +6344,7 @@ components:
               nullable: true
             personType:
               type: string
-              description: The type of person.
+              description: 'The type of person, for example distribution list.'
               nullable: true
             phones:
               type: array
@@ -7248,12 +7248,12 @@ components:
           nullable: true
         latitude:
           type: number
-          description: 'Optional. The latitude, in decimal, for the item. Read-only.'
+          description: 'Optional. The latitude, in decimal, for the item. Writable on OneDrive Personal.'
           format: double
           nullable: true
         longitude:
           type: number
-          description: 'Optional. The longitude, in decimal, for the item. Read-only.'
+          description: 'Optional. The longitude, in decimal, for the item. Writable on OneDrive Personal.'
           format: double
           nullable: true
       additionalProperties:
