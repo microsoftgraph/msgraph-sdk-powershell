@@ -28,43 +28,43 @@ https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.gove
 #>
 function New-MgEntitlementManagementAccessPackageAssignmentRequest {
 [OutputType([Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageAssignmentRequest])]
-[CmdletBinding(DefaultParameterSetName='RequestAdminAdd', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
+[CmdletBinding(DefaultParameterSetName='CreateRequestAdminAdd', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 [Microsoft.Graph.PowerShell.Profile('v1.0-beta')]
 param(
 
-    [Parameter(ParameterSetName='RequestAdminAdd')]
-    [Parameter(ParameterSetName='RequestAdminAddExternal')]
+    [Parameter(ParameterSetName='CreateRequestAdminAdd')]
+    [Parameter(ParameterSetName='CreateRequestAdminAddExternal')]
     [Microsoft.Graph.PowerShell.Category('Body')]
     [Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageAnswer[]]
     # Answers provided by the requestor to accessPackageQuestions asked of them at the time of request.
     # To construct, see NOTES section for ANSWERS properties and create a hash table.
     ${Answers},
 
-    [Parameter(ParameterSetName='RequestAdminAdd')]
-    [Parameter(ParameterSetName='RequestAdminAddExternal')]
-    [Parameter(ParameterSetName='RequestAdminRemove')]
+    [Parameter(ParameterSetName='CreateRequestAdminAdd')]
+    [Parameter(ParameterSetName='CreateRequestAdminAddExternal')]
+    [Parameter(ParameterSetName='CreateRequestAdminRemove')]
     [Microsoft.Graph.PowerShell.Category('Body')]
     [System.String]
     # The requestor's supplied justification.
     ${Justification},
 
-    [Parameter(ParameterSetName='RequestAdminAdd')]
-    [Parameter(ParameterSetName='RequestAdminAddExternal')]
-    [Parameter(ParameterSetName='RequestAdminRemove')]
+    [Parameter(ParameterSetName='CreateRequestAdminAdd')]
+    [Parameter(ParameterSetName='CreateRequestAdminAddExternal')]
+    [Parameter(ParameterSetName='CreateRequestAdminRemove')]
     [Microsoft.Graph.PowerShell.Category('Body')]
     [System.String]
     # One of UserAdd, UserRemove, AdminAdd, AdminRemove or SystemRemove.
     # A request from the user themselves would have requestType of UserAdd or UserRemove.
     ${RequestType},
 
-    [Parameter(ParameterSetName='RequestAdminAdd')]
-    [Parameter(ParameterSetName='RequestAdminAddExternal')]
+    [Parameter(ParameterSetName='CreateRequestAdminAdd')]
+    [Parameter(ParameterSetName='CreateRequestAdminAddExternal')]
     [Microsoft.Graph.PowerShell.Category('Body')]
     [string]
-    ${StartDate},    
+    ${StartDate},
 
     [Parameter(Mandatory = $true,
-        ParameterSetName='RequestAdminRemove')]
+        ParameterSetName='CreateRequestAdminRemove')]
     [Microsoft.Graph.PowerShell.Category('Body')]
     [ValidateScript( {
                 try {
@@ -79,9 +79,9 @@ param(
     ${AccessPackageAssignmentId},
 
     [Parameter(Mandatory = $True,
-        ParameterSetName='RequestAdminAdd')]
+        ParameterSetName='CreateRequestAdminAdd')]
     [Parameter(Mandatory = $True,
-        ParameterSetName='RequestAdminAddExternal')]
+        ParameterSetName='CreateRequestAdminAddExternal')]
     [Microsoft.Graph.PowerShell.Category('Body')]
     [ValidateScript( {
             try {
@@ -96,9 +96,9 @@ param(
     ${AccessPackageId},
 
     [Parameter(Mandatory = $True,
-        ParameterSetName='RequestAdminAdd')]
-    [Parameter(Mandatory = $True,
-        ParameterSetName='RequestAdminAddExternal')]
+        ParameterSetName='CreateRequestAdminAdd')]
+        [Parameter(Mandatory = $True,
+        ParameterSetName='CreateRequestAdminAddExternal')]
     [Microsoft.Graph.PowerShell.Category('Body')]
     [ValidateScript( {
             try {
@@ -113,7 +113,7 @@ param(
     ${AssignmentPolicyId},
 
     [Parameter(Mandatory = $True,
-        ParameterSetName='RequestAdminAdd')]
+        ParameterSetName='CreateRequestAdminAdd')]
     [Microsoft.Graph.PowerShell.Category('Body')]
     [ValidateScript( {
             try {
@@ -128,25 +128,10 @@ param(
     ${TargetId},
 
     [Parameter(Mandatory = $True,
-    ParameterSetName='RequestAdminAddExternal')]
+    ParameterSetName='CreateRequestAdminAddExternal')]
     [Microsoft.Graph.PowerShell.Category('Body')]
     [string]
     ${TargetEmail},
-
-    [Parameter(Mandatory = $True,
-    ParameterSetName='RequestAdminAddExternal')]
-    [Microsoft.Graph.PowerShell.Category('Body')]
-    [ValidateScript( {
-        try {
-            [System.Guid]::Parse($_) | Out-Null
-            $true
-        }
-        catch {
-            throw "$_ is not a valid ObjectID format. Valid value is a GUID format only."
-        }
-    })]
-    [string]
-    ${ConnectedOrganizationId},
 
     [Parameter(DontShow)]
     [Microsoft.Graph.PowerShell.Category('Runtime')]
@@ -189,96 +174,76 @@ param(
 )
 
 begin {
-      
-      if ($RequestType -eq $null -or $RequestType.Length -eq 0) {
-          if ($AccessPackageAssignmentId -ne $null -and $AccessPackageAssignmentId.Length -ne 0) {
-              $RequestType = "AdminRemove"
-          } else {
-              $RequestType = "AdminAdd"
-          }
-          write-debug "setting requesttype $RequestType"
-      }
-  
-      if ($RequestType -ne "AdminRemove") {
-         if ($null -ne $StartDate -or $StartDate.Length -eq 0) {
-              $now = Get-Date
-              $ts = Get-Date $now.ToUniversalTime() -format "s"
-              $StartDate = $ts + "Z"
-          }
-      }
-  
-      $AccessPackageAssignmentRequestBodyAccessPackageAssignment = new-object microsoft.graph.powershell.models.MicrosoftGraphAccessPackageAssignment
-      if ($AccessPackageAssignmentId -ne $null -and $AccessPackageAssignmentId.Length -ne 0) {
-          $AccessPackageAssignmentRequestBodyAccessPackageAssignment.Id = $AccessPackageAssignmentId
-      }
-      if ($TargetId -ne $null -and $TargetId.Length -ne 0) {
-          $AccessPackageAssignmentRequestBodyAccessPackageAssignment.TargetId = $TargetId
-      } elseif ($TargetEmail -ne $null -and $TargetEmail.Length -ne 0) {
-          $AccessPackageAssignmentRequestBodyAccessPackageAssignment.Target = new-object microsoft.graph.powershell.models.MicrosoftGraphAccessPackageSubject
-          $AccessPackageAssignmentRequestBodyAccessPackageAssignment.Target.Email = $TargetEmail
-          if ($ConnectedOrganizationId -ne $null -and $ConnectedOrganizationId.Length -ne 0) {
-              $AccessPackageAssignmentRequestBodyAccessPackageAssignment.Target.ConnectedOrganization = new-object microsoft.graph.powershell.models.MicrosoftGraphConnectedOrganization
-              $AccessPackageAssignmentRequestBodyAccessPackageAssignment.Target.ConnectedOrganization.Id = $ConnectedOrganizationId
-          }
-      }
-      if ($AssignmentPolicyId -ne $null -and $AssignmentPolicyId.Length -ne 0) {
-          $AccessPackageAssignmentRequestBodyAccessPackageAssignment.AssignmentPolicyId = $AssignmentPolicyId
-      }
-      if ($AccessPackageId -ne $null -and $AccessPackageId.Length -ne 0) {
-          $AccessPackageAssignmentRequestBodyAccessPackageAssignment.AccessPackageId = $AccessPackageId
-      }
-      
-      if ($null -ne $StartDate -and $StartDate.Length -ne 0) {
-          $AccessPackageAssignmentRequestBodyAccessPackageAssignment.Schedule = new-object Microsoft.Graph.PowerShell.Models.MicrosoftGraphRequestSchedule
-          $AccessPackageAssignmentRequestBodyAccessPackageAssignment.Schedule.StartDateTime = $StartDate
-      }
-    
-      $null = $PSBoundParameters.Remove("AccessPackageAssignmentId")
-      $null = $PSBoundParameters.Remove("AccessPackageId")
-      $null = $PSBoundParameters.Remove("AssignmentPolicyId")
-      $null = $PSBoundParameters.Remove("TargetId")
-      $null = $PSBoundParameters.Remove("TargetEmail")
-      $null = $PSBoundParameters.Remove("ConnectedOrganizationId")
-      $null = $PSBoundParameters.Remove("StartDate")
 
-      $PSBoundParameters['AccessPackageAssignment'] = $AccessPackageAssignmentRequestBodyAccessPackageAssignment
-
-      $PSBoundParameters['Answers'] = $Answers
-      if ($Justification -ne $null -and $Justification.Length -ne 0) {
-        $PSBoundParameters['Justification'] = $Justification
-      }
-      $PSBoundParameters['RequestType'] = $RequestType
-  
-      try {
-        $outBuffer = $null
-        if ($PSBoundParameters.TryGetValue('OutBuffer', [ref]$outBuffer)) {
-            $PSBoundParameters['OutBuffer'] = 1
-        }
-        $subecmd = 'Microsoft.Graph.Identity.Governance.private\New-MgEntitlementManagementAccessPackageAssignmentRequest_CreateExpanded'
-        
-        $subWrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($subecmd), [System.Management.Automation.CommandTypes]::Cmdlet)
-        $subScriptCmd = {& $subWrappedCmd @PSBoundParameters}
-        $steppablePipeline = $subScriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
-        $steppablePipeline.Begin($PSCmdlet)
-    } catch {
-        throw
-    }
-  
 }
 
 process {
-    try {
-        $steppablePipeline.Process($_)
-    } catch {
-        throw
+    $outBuffer = $null
+    if ($PSBoundParameters.TryGetValue('OutBuffer', [ref]$outBuffer)) {
+          $PSBoundParameters['OutBuffer'] = 1
     }
+
+    if ($RequestType -eq $null -or $RequestType.Length -eq 0) {
+        if ($AccessPackageAssignmentId -ne $null -and $AccessPackageAssignmentId.Length -ne 0) {
+            $RequestType = "AdminRemove"
+        } else {
+            $RequestType = "AdminAdd"
+        }
+        write-debug "setting requesttype $RequestType"
+    }
+
+    if ($RequestType -ne "AdminRemove") {
+       if ($null -ne $StartDate -or $StartDate.Length -eq 0) {
+            $now = Get-Date
+            $ts = Get-Date $now.ToUniversalTime() -format "s"
+            $StartDate = $ts + "Z"
+        }
+    }
+
+    $AccessPackageAssignmentRequestBodyAccessPackageAssignment = new-object microsoft.graph.powershell.models.MicrosoftGraphAccessPackageAssignment
+    if ($AccessPackageAssignmentId -ne $null -and $AccessPackageAssignmentId.Length -ne 0) {
+        $AccessPackageAssignmentRequestBodyAccessPackageAssignment.Id = $AccessPackageAssignmentId
+    }
+    if ($TargetId -ne $null -and $TargetId.Length -ne 0) {
+        $AccessPackageAssignmentRequestBodyAccessPackageAssignment.TargetId = $TargetId
+    } elseif ($TargetEmail -ne $null -and $TargetEmail.Length -ne 0) {
+        $AccessPackageAssignmentRequestBodyAccessPackageAssignment.Target = new-object microsoft.graph.powershell.models.MicrosoftGraphAccessPackageSubject
+        $AccessPackageAssignmentRequestBodyAccessPackageAssignment.Target.Email = $TargetEmail
+    }
+
+    if ($AssignmentPolicyId -ne $null -and $AssignmentPolicyId.Length -ne 0) {
+        $AccessPackageAssignmentRequestBodyAccessPackageAssignment.AssignmentPolicyId = $AssignmentPolicyId
+    }
+    if ($AccessPackageId -ne $null -and $AccessPackageId.Length -ne 0) {
+        $AccessPackageAssignmentRequestBodyAccessPackageAssignment.AccessPackageId = $AccessPackageId
+    }
+
+    if ($null -ne $StartDate -and $StartDate.Length -ne 0) {
+        $AccessPackageAssignmentRequestBodyAccessPackageAssignment.Schedule = new-object Microsoft.Graph.PowerShell.Models.MicrosoftGraphRequestSchedule
+        $AccessPackageAssignmentRequestBodyAccessPackageAssignment.Schedule.StartDateTime = $StartDate
+    }
+
+    $null = $PSBoundParameters.Remove("AccessPackageAssignmentId")
+    $null = $PSBoundParameters.Remove("AccessPackageId")
+    $null = $PSBoundParameters.Remove("AssignmentPolicyId")
+    $null = $PSBoundParameters.Remove("TargetId")
+    $null = $PSBoundParameters.Remove("TargetEmail")
+    $null = $PSBoundParameters.Remove("StartDate")
+
+    $PSBoundParameters['AccessPackageAssignment'] = $AccessPackageAssignmentRequestBodyAccessPackageAssignment
+
+    $PSBoundParameters['Answers'] = $Answers
+    if ($Justification -ne $null -and $Justification.Length -ne 0) {
+      $PSBoundParameters['Justification'] = $Justification
+    }
+    $PSBoundParameters['RequestType'] = $RequestType
+
+    Microsoft.Graph.Identity.Governance.private\New-MgEntitlementManagementAccessPackageAssignmentRequest_CreateExpanded @PSBoundParameters
+
+
 }
 
 end {
-    try {
-        $steppablePipeline.End()
-    } catch {
-        throw
-    }
+
 }
 }
