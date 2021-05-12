@@ -245,7 +245,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'Set of Microsoft Graph types (that can support extensions) that the schema extension can be applied to. Select from contact, device, event, group, message, organization, post, or user.'
+              description: 'Set of Microsoft Graph types (that can support extensions) that the schema extension can be applied to. Select from administrativeUnit, contact, device, event, group, message, organization, post, or user.'
           additionalProperties:
             type: object
     microsoft.graph.entity:
@@ -263,7 +263,7 @@ components:
       properties:
         name:
           type: string
-          description: The name of the strongly-typed property defined as part of a schema extension.
+          description: The name of the strongly typed property defined as part of a schema extension.
           nullable: true
         type:
           type: string
