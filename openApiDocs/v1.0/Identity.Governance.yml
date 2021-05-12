@@ -2353,7 +2353,7 @@ components:
               nullable: true
             isPerDeviceAcceptanceRequired:
               type: boolean
-              description: 'Indicates whether end users are required to accept this agreement on every device that they access it from. The end user is required to register their device in Azure AD, if they haven''t already done so.'
+              description: 'This setting enables you to require end users to accept this agreement on every device that they are accessing it from. The end user will be required to register their device in Azure AD, if they haven''t already done so.'
               nullable: true
             isViewingBeforeAcceptanceRequired:
               type: boolean
@@ -2378,7 +2378,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.agreementFileLocalization'
-              description: PDFs linked to this agreement. This property is in the process of being deprecated. Use the  file property instead.
+              description: 'PDFs linked to this agreement. Note: This property is in the process of being deprecated. Use the  file property instead.'
           additionalProperties:
             type: object
     microsoft.graph.agreementAcceptance:
@@ -2389,11 +2389,11 @@ components:
           properties:
             agreementFileId:
               type: string
-              description: The identifier of the agreement file accepted by the user.
+              description: ID of the agreement file accepted by the user.
               nullable: true
             agreementId:
               type: string
-              description: The identifier of the agreement.
+              description: ID of the agreement.
               nullable: true
             deviceDisplayName:
               type: string
@@ -2405,22 +2405,22 @@ components:
               nullable: true
             deviceOSType:
               type: string
-              description: The operating system used to accept the agreement.
+              description: The operating system used for accepting the agreement.
               nullable: true
             deviceOSVersion:
               type: string
-              description: The operating system version of the device used to accept the agreement.
+              description: The operating system version of the device used for accepting the agreement.
               nullable: true
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The expiration date time of the acceptance. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              description: 'The expiration date time of the acceptance. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             recordedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             state:
@@ -2435,7 +2435,7 @@ components:
               nullable: true
             userId:
               type: string
-              description: The identifier of the user who accepted the agreement.
+              description: ID of the user who accepted the agreement.
               nullable: true
             userPrincipalName:
               type: string
@@ -2671,7 +2671,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appConsentRequestScope'
-              description: A list of pending scopes waiting for approval. Required.
+              description: A list of pending scopes waiting for approval. This is empty if the consentType is Static. Required.
             userConsentRequests:
               type: array
               items:
@@ -2701,7 +2701,7 @@ components:
         startDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The DateTime when the agreement is set to expire for all users. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''.'
+          description: 'The DateTime when the agreement is set to expire for all users. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
           nullable: true
       additionalProperties:
@@ -2806,11 +2806,11 @@ components:
           nullable: true
         queryRoot:
           type: string
-          description: The type of query. Examples include MicrosoftGraph and ARM.
+          description: 'In the scenario where reviewers need to be specified dynamically, this property is used to indicate the relative source of the query. This property is only required if a relative query (i.e., ./manager) is specified.'
           nullable: true
         queryType:
           type: string
-          description: 'In the scenario where reviewers need to be specified dynamically, this property is used to indicate the relative source of the query. This property is only required if a relative query (i.e., ./manager) is specified.'
+          description: The type of query. Examples include MicrosoftGraph and ARM.
           nullable: true
       additionalProperties:
         type: object
@@ -2893,7 +2893,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.approvalStage'
-              description: A collection of stages in the approval decision.
+              description: 'Used for the approvalStages property of approval settings in the requestApprovalSettings property of an access package assignment policy. Specifies the primary, fallback, and escalation approvers of each stage.'
           additionalProperties:
             type: object
     microsoft.graph.appConsentRequestScope:
@@ -3025,7 +3025,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.dayOfWeek'
-          description: 'A collection of the days of the week on which the event occurs. The possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. If type is relativeMonthly or relativeYearly, and daysOfWeek specifies more than one day, the event falls on the first day that satisfies the pattern.  Required if type is weekly, relativeMonthly, or relativeYearly.'
+          description: 'A collection of the days of the week on which the event occurs. Possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. If type is relativeMonthly or relativeYearly, and daysOfWeek specifies more than one day, the event falls on the first day that satisfies the pattern.  Required if type is weekly, relativeMonthly, or relativeYearly.'
         firstDayOfWeek:
           $ref: '#/components/schemas/microsoft.graph.dayOfWeek'
         index:

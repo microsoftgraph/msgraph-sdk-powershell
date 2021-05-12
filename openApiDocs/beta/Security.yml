@@ -4163,7 +4163,7 @@ components:
               description: The collection of compliance information associated with secure score control
             controlCategory:
               type: string
-              description: 'Control action category (Identity, Data, Device, Apps, Infrastructure).'
+              description: 'Control action category (Account, Data, Device, Apps, Infrastructure).'
               nullable: true
             controlStateUpdates:
               type: array
@@ -4186,7 +4186,7 @@ components:
               nullable: true
             maxScore:
               type: number
-              description: max attainable score for the control.
+              description: Current obtained max score on specified date.
               format: double
               nullable: true
             rank:
@@ -4213,7 +4213,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: 'List of threats the control mitigates (accountBreach,dataDeletion,dataExfiltration,dataSpillage,'
+              description: 'List of threats the control mitigates (accountBreach,dataDeletion,dataExfiltration,dataSpillage,elevationOfPrivilege,maliciousInsider,passwordCracking,phishingOrWhaling,spoofing).'
             tier:
               type: string
               description: 'Control tier (Core, Defense in Depth, Advanced.)'
@@ -4898,7 +4898,7 @@ components:
       properties:
         applicationName:
           type: string
-          description: 'Name of the application managing the network connection (for example, Facebook or SMTP).'
+          description: 'Name of the application managing the network connection (for example, Facebook, SMTP, etc.).'
           nullable: true
         destinationAddress:
           type: string
