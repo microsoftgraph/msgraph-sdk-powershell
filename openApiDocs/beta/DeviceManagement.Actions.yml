@@ -1310,6 +1310,33 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /deviceManagement/comanagedDevices/microsoft.graph.bulkReprovisionCloudPc:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action bulkReprovisionCloudPc
+      operationId: deviceManagement.comanagedDevices_bulkReprovisionCloudPc
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                managedDeviceIds:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /deviceManagement/comanagedDevices/microsoft.graph.executeAction:
     post:
       tags:
@@ -1688,6 +1715,41 @@ paths:
                 depToken:
                   type: string
                   nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/detectedApps/{detectedApp-id}/managedDevices/microsoft.graph.bulkReprovisionCloudPc':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action bulkReprovisionCloudPc
+      operationId: deviceManagement.detectedApps.managedDevices_bulkReprovisionCloudPc
+      parameters:
+        - name: detectedApp-id
+          in: path
+          description: 'key: id of detectedApp'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: detectedApp
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                managedDeviceIds:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -12734,6 +12796,33 @@ paths:
                   type: boolean
                   default: false
                   nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /deviceManagement/managedDevices/microsoft.graph.bulkReprovisionCloudPc:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action bulkReprovisionCloudPc
+      operationId: deviceManagement.managedDevices_bulkReprovisionCloudPc
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                managedDeviceIds:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
               additionalProperties:
                 type: object
         required: true
