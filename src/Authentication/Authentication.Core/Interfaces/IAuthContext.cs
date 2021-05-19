@@ -4,6 +4,7 @@
 
 namespace Microsoft.Graph.PowerShell.Authentication
 {
+    using System;
     using System.Security.Cryptography.X509Certificates;
 
     public enum AuthenticationType
@@ -18,6 +19,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
         Process,
         CurrentUser
     }
+
     public enum AuthProviderType
     {
         InteractiveAuthenticationProvider,
@@ -26,6 +28,16 @@ namespace Microsoft.Graph.PowerShell.Authentication
         ClientCredentialProvider,
         UserProvidedToken
     }
+
+    public interface IOutput
+    {
+        Action<string> WriteObject { get; set; }
+        Action<string> WriteDebug { get; set; }
+        Action<Exception, string, int, object> WriteError { get; set; }
+        Action<object, string[]> WriteInformation { get; set; }
+        Action<string> WriteVerbose { get; set; }
+    }
+
     public interface IAuthContext
     {
         string ClientId { get; set; }

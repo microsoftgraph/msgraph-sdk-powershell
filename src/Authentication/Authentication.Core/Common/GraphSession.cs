@@ -200,5 +200,9 @@ namespace Microsoft.Graph.PowerShell.Authentication
                 throw new InvalidOperationException(ErrorConstants.Codes.SessionLockWriteDisposed, disposedException);
             }
         }
+        /// <summary>
+        /// Provides Access to output methods provided by the Cmdlet
+        /// </summary>
+        public IOutput Output { get; set; }
     }
 }

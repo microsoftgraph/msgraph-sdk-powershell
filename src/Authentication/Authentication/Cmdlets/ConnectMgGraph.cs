@@ -225,7 +225,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                         _cancellationTokenSource.Token,
                         () => { WriteWarning(Resources.DeviceCodeFallback); });
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     throw ex;
                 }
@@ -313,7 +313,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         /// </summary>
         public void OnImport()
         {
-            GraphSessionInitializer.InitializeSession();
+            GraphSessionInitializer.InitializeSession(this);
             GraphSession.Instance.DataStore = new DiskDataStore();
         }
 
