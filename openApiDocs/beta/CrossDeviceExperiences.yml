@@ -1519,11 +1519,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.usageRight'
+              description: Represents the usage rights a device has been granted.
             memberOf:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Groups that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable.'
+              description: Groups that this device is a member of. Read-only. Nullable.
             registeredOwners:
               type: array
               items:
@@ -1538,6 +1539,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: Groups that this device is a member of. This operation is transitive.
             extensions:
               type: array
               items:
@@ -1547,7 +1549,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.command'
-              description: Set of commands sent to this device
+              description: Set of commands sent to this device.
           additionalProperties:
             type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.

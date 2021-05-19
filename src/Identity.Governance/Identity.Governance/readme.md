@@ -180,7 +180,7 @@ directive:
       subject: (.*)(EntitlementManagement)AccessPackageAssignment$
     remove: true
   - where:
-      verb: New|Remove|Update
+      verb: New|Invoke|Remove|Update
       subject: (.*)(EntitlementManagement)AccessPackageAssignmentResourceRole$
     remove: true
   - where:
@@ -250,6 +250,6 @@ directive:
 ### Versioning
 
 ``` yaml
-module-version: 1.4.3
+module-version: 1.5.1
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

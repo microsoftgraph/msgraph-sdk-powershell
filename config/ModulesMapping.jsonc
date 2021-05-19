@@ -1,4 +1,5 @@
 {
+    "Admin": "^admin\\.",
     "Applications": "^applicationTemplates\\.|^applications\\.|^servicePrincipals\\.|^onPremisesPublishingProfiles\\.|^users.appRoleAssignment$|^groups.appRoleAssignment$",
     "Bookings": "^bookingBusinesses\\.|^bookingCurrencies\\.",
     "Calendar": "^places\\.|^users.calendar$|^users.calendarGroup$|^users.event$|^groups.calendar$|^groups.event$",

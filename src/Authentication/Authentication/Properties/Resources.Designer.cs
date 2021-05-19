@@ -124,6 +124,15 @@ namespace Microsoft.Graph.PowerShell.Authentication.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Interactive authentication is not supported in this session, Falling Back to DeviceCode. Future versions will not automatically fallback to DeviceCode..
+        /// </summary>
+        internal static string DeviceCodeFallback {
+            get {
+                return ResourceManager.GetString("DeviceCodeFallback", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Path &apos;{0}&apos; resolves to a directory. Specify a path including a file name, and then retry the command..
         /// </summary>
         internal static string DirectoryPathSpecified {
@@ -201,6 +210,15 @@ namespace Microsoft.Graph.PowerShell.Authentication.Properties {
         internal static string InferredFileNameVerboseMessage {
             get {
                 return ResourceManager.GetString("InferredFileNameVerboseMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Interactive authentication is not supported in this session, please run cmdlet &apos;Connect-MgGraph -UseDeviceAuthentication&apos;..
+        /// </summary>
+        internal static string InteractiveAuthNotSupported {
+            get {
+                return ResourceManager.GetString("InteractiveAuthNotSupported", resourceCulture);
             }
         }
         

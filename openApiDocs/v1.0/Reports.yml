@@ -4415,11 +4415,11 @@ components:
           properties:
             appDisplayName:
               type: string
-              description: The application name displayed in the Azure Portal.
+              description: The application name displayed in the Azure Portal. Supports $filter (eq and startsWith operators only).
               nullable: true
             appId:
               type: string
-              description: The application identifier in Azure Active Directory.
+              description: The application identifier in Azure Active Directory. Supports $filter (eq operator only).
               nullable: true
             appliedConditionalAccessPolicies:
               type: array
@@ -4428,24 +4428,24 @@ components:
               description: A list of conditional access policies that are triggered by the corresponding sign-in activity.
             clientAppUsed:
               type: string
-              description: 'The legacy client used for sign-in activity. For example: Browser, Exchange Active Sync, Modern clients, IMAP, MAPI, SMTP, or POP.'
+              description: 'The legacy client used for sign-in activity. For example: Browser, Exchange Active Sync, Modern clients, IMAP, MAPI, SMTP, or POP. Supports $filter (eq operator only).'
               nullable: true
             conditionalAccessStatus:
               $ref: '#/components/schemas/microsoft.graph.conditionalAccessStatus'
             correlationId:
               type: string
-              description: The identifier that's sent from the client when sign-in is initiated. This is used for troubleshooting the corresponding sign-in activity when calling for support.
+              description: The identifier that's sent from the client when sign-in is initiated. This is used for troubleshooting the corresponding sign-in activity when calling for support. Supports $filter (eq operator only).
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time the sign-in was initiated. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              description: 'The date and time the sign-in was initiated. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $orderby and $filter (eq, le, and ge operators only).'
               format: date-time
             deviceDetail:
               $ref: '#/components/schemas/microsoft.graph.deviceDetail'
             ipAddress:
               type: string
-              description: The IP address of the client from where the sign-in occurred.
+              description: The IP address of the client from where the sign-in occurred. Supports $filter (eq and startsWith operators only).
               nullable: true
             isInteractive:
               type: boolean
@@ -4455,11 +4455,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.signInLocation'
             resourceDisplayName:
               type: string
-              description: The name of the resource that the user signed in to.
+              description: The name of the resource that the user signed in to. Supports $filter (eq operator only).
               nullable: true
             resourceId:
               type: string
-              description: The identifier of the resource that the user signed in to.
+              description: The identifier of the resource that the user signed in to. Supports $filter (eq operator only).
               nullable: true
             riskDetail:
               $ref: '#/components/schemas/microsoft.graph.riskDetail'
@@ -4467,13 +4467,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.riskEventType'
-              description: 'The list of risk event types associated with the sign-in. Possible values: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, or unknownFutureValue.'
+              description: 'The list of risk event types associated with the sign-in. Possible values: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, or unknownFutureValue. Supports $filter (eq operator only).'
             riskEventTypes_v2:
               type: array
               items:
                 type: string
                 nullable: true
-              description: 'The list of risk event types associated with the sign-in. Possible values: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, or unknownFutureValue.'
+              description: 'The list of risk event types associated with the sign-in. Possible values: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, or unknownFutureValue. Supports $filter (eq and startsWith operators only).'
             riskLevelAggregated:
               $ref: '#/components/schemas/microsoft.graph.riskLevel'
             riskLevelDuringSignIn:
@@ -4484,14 +4484,14 @@ components:
               $ref: '#/components/schemas/microsoft.graph.signInStatus'
             userDisplayName:
               type: string
-              description: The display name of the user.
+              description: The display name of the user. Supports $filter (eq and startsWith operators only).
               nullable: true
             userId:
               type: string
-              description: The identifier of the user.
+              description: The identifier of the user. Supports $filter (eq operator only).
             userPrincipalName:
               type: string
-              description: The UPN of the user.
+              description: The UPN of the user. Supports $filter (eq and startsWith operators only).
               nullable: true
           additionalProperties:
             type: object
@@ -4611,11 +4611,11 @@ components:
       properties:
         key:
           type: string
-          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object
@@ -4955,27 +4955,21 @@ components:
           additionalProperties:
             type: object
     microsoft.graph.userIdentity:
-      title: userIdentity
-      type: object
-      properties:
-        displayName:
-          type: string
-          description: The identity's display name. Note that this may not always be available or up-to-date.
-          nullable: true
-        id:
-          type: string
-          description: Unique identifier for the identity.
-          nullable: true
-        ipAddress:
-          type: string
-          description: Indicates the client IP address used by user performing the activity (audit log only).
-          nullable: true
-        userPrincipalName:
-          type: string
-          description: The userPrincipalName attribute of the user.
-          nullable: true
-      additionalProperties:
-        type: object
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.identity'
+        - title: userIdentity
+          type: object
+          properties:
+            ipAddress:
+              type: string
+              description: Indicates the client IP address used by user performing the activity (audit log only).
+              nullable: true
+            userPrincipalName:
+              type: string
+              description: The userPrincipalName attribute of the user.
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.printJobProcessingState:
       title: printJobProcessingState
       enum:
@@ -5055,17 +5049,21 @@ components:
       properties:
         additionalDetails:
           type: string
+          description: Additional details in case of error.
           nullable: true
         errorCategory:
           $ref: '#/components/schemas/microsoft.graph.provisioningStatusErrorCategory'
         errorCode:
           type: string
+          description: Unique error code if any occurred. Learn more
           nullable: true
         reason:
           type: string
+          description: Summarizes the status and describes why the status happened.
           nullable: true
         recommendedAction:
           type: string
+          description: Provides the resolution for the corresponding error.
           nullable: true
       additionalProperties:
         type: object

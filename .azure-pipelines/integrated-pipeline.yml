@@ -110,6 +110,8 @@ stages:
       AUTH_MODULE_PATH: $(AUTH_MODULE_PATH)
       EnableSigning: true
       BUILDNUMBER: $(BUILDNUMBER)
+      KEYVAULT: $(KEYVAULT)
+      AZURESUBSCRIPTION: $(AZURESUBSCRIPTION)
 
 - stage: GenerateBetaModules
   displayName: 'Generate Beta Modules (Microsoft.Graph.*)'

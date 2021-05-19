@@ -23,7 +23,6 @@ paths:
             type: array
             items:
               enum:
-                - id
                 - synchronizationProfiles
                 - classes
                 - me
@@ -789,8 +788,12 @@ paths:
                 - lastModifiedDateTime desc
                 - notificationChannelUrl
                 - notificationChannelUrl desc
+                - resourcesFolderUrl
+                - resourcesFolderUrl desc
                 - status
                 - status desc
+                - webUrl
+                - webUrl desc
               type: string
         - name: $select
           in: query
@@ -820,7 +823,9 @@ paths:
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - notificationChannelUrl
+                - resourcesFolderUrl
                 - status
+                - webUrl
                 - categories
                 - resources
                 - rubric
@@ -944,7 +949,9 @@ paths:
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - notificationChannelUrl
+                - resourcesFolderUrl
                 - status
+                - webUrl
                 - categories
                 - resources
                 - rubric
@@ -2166,6 +2173,45 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/microsoft.graph.setUpResourcesFolder()':
+    get:
+      tags:
+        - education.Functions
+      summary: Invoke function setUpResourcesFolder
+      operationId: education.classes.assignments.submissions_setUpResourcesFolder
+      parameters:
+        - name: educationClass-id
+          in: path
+          description: 'key: id of educationClass'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: educationClass
+        - name: educationAssignment-id
+          in: path
+          description: 'key: id of educationAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: educationAssignment
+        - name: educationSubmission-id
+          in: path
+          description: 'key: id of educationSubmission'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: educationSubmission
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/microsoft.graph.submit':
     post:
       tags:
@@ -4930,8 +4976,12 @@ paths:
                 - lastModifiedDateTime desc
                 - notificationChannelUrl
                 - notificationChannelUrl desc
+                - resourcesFolderUrl
+                - resourcesFolderUrl desc
                 - status
                 - status desc
+                - webUrl
+                - webUrl desc
               type: string
         - name: $select
           in: query
@@ -4961,7 +5011,9 @@ paths:
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - notificationChannelUrl
+                - resourcesFolderUrl
                 - status
+                - webUrl
                 - categories
                 - resources
                 - rubric
@@ -5070,7 +5122,9 @@ paths:
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - notificationChannelUrl
+                - resourcesFolderUrl
                 - status
+                - webUrl
                 - categories
                 - resources
                 - rubric
@@ -6124,6 +6178,38 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/education/me/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/microsoft.graph.setUpResourcesFolder()':
+    get:
+      tags:
+        - education.Functions
+      summary: Invoke function setUpResourcesFolder
+      operationId: education.me.assignments.submissions_setUpResourcesFolder
+      parameters:
+        - name: educationAssignment-id
+          in: path
+          description: 'key: id of educationAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: educationAssignment
+        - name: educationSubmission-id
+          in: path
+          description: 'key: id of educationSubmission'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: educationSubmission
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/education/me/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/microsoft.graph.submit':
     post:
       tags:
@@ -8060,6 +8146,7 @@ paths:
                 - registeredDevices
                 - scopedRoleMemberOf
                 - transitiveMemberOf
+                - transitiveReports
                 - calendar
                 - calendarGroups
                 - calendars
@@ -8132,6 +8219,7 @@ paths:
                 - registeredDevices
                 - scopedRoleMemberOf
                 - transitiveMemberOf
+                - transitiveReports
                 - calendar
                 - calendarGroups
                 - calendars
@@ -8216,6 +8304,8 @@ paths:
               operationId: education.me.User.ListScopedRoleMemberOf
             transitiveMemberOf:
               operationId: education.me.User.ListTransitiveMemberOf
+            transitiveReports:
+              operationId: education.me.User.ListTransitiveReports
             calendar:
               operationId: education.me.User.GetCalendar
             calendarGroups:
@@ -8353,6 +8443,8 @@ paths:
               operationId: education.me.User.ListScopedRoleMemberOf
             transitiveMemberOf:
               operationId: education.me.User.ListTransitiveMemberOf
+            transitiveReports:
+              operationId: education.me.User.ListTransitiveReports
             calendar:
               operationId: education.me.User.GetCalendar
             calendarGroups:
@@ -10709,8 +10801,12 @@ paths:
                 - lastModifiedDateTime desc
                 - notificationChannelUrl
                 - notificationChannelUrl desc
+                - resourcesFolderUrl
+                - resourcesFolderUrl desc
                 - status
                 - status desc
+                - webUrl
+                - webUrl desc
               type: string
         - name: $select
           in: query
@@ -10740,7 +10836,9 @@ paths:
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - notificationChannelUrl
+                - resourcesFolderUrl
                 - status
+                - webUrl
                 - categories
                 - resources
                 - rubric
@@ -10864,7 +10962,9 @@ paths:
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - notificationChannelUrl
+                - resourcesFolderUrl
                 - status
+                - webUrl
                 - categories
                 - resources
                 - rubric
@@ -12086,6 +12186,45 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/education/users/{educationUser-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/microsoft.graph.setUpResourcesFolder()':
+    get:
+      tags:
+        - education.Functions
+      summary: Invoke function setUpResourcesFolder
+      operationId: education.users.assignments.submissions_setUpResourcesFolder
+      parameters:
+        - name: educationUser-id
+          in: path
+          description: 'key: id of educationUser'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: educationUser
+        - name: educationAssignment-id
+          in: path
+          description: 'key: id of educationAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: educationAssignment
+        - name: educationSubmission-id
+          in: path
+          description: 'key: id of educationSubmission'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: educationSubmission
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/education/users/{educationUser-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/microsoft.graph.submit':
     post:
       tags:
@@ -14274,6 +14413,7 @@ paths:
                 - registeredDevices
                 - scopedRoleMemberOf
                 - transitiveMemberOf
+                - transitiveReports
                 - calendar
                 - calendarGroups
                 - calendars
@@ -14346,6 +14486,7 @@ paths:
                 - registeredDevices
                 - scopedRoleMemberOf
                 - transitiveMemberOf
+                - transitiveReports
                 - calendar
                 - calendarGroups
                 - calendars
@@ -14458,6 +14599,10 @@ paths:
                 educationUser-id: $request.path.educationUser-id
             transitiveMemberOf:
               operationId: education.users.User.ListTransitiveMemberOf
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+            transitiveReports:
+              operationId: education.users.User.ListTransitiveReports
               parameters:
                 educationUser-id: $request.path.educationUser-id
             calendar:
@@ -14725,6 +14870,10 @@ paths:
               operationId: education.users.User.ListTransitiveMemberOf
               parameters:
                 educationUser-id: $request.path.educationUser-id
+            transitiveReports:
+              operationId: education.users.User.ListTransitiveReports
+              parameters:
+                educationUser-id: $request.path.educationUser-id
             calendar:
               operationId: education.users.User.GetCalendar
               parameters:
@@ -14981,34 +15130,29 @@ paths:
 components:
   schemas:
     microsoft.graph.educationRoot:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: educationRoot
-          type: object
-          properties:
-            synchronizationProfiles:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.educationSynchronizationProfile'
-            classes:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.educationClass'
-              description: Read-only. Nullable.
-            me:
-              $ref: '#/components/schemas/microsoft.graph.educationUser'
-            schools:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.educationSchool'
-              description: Read-only. Nullable.
-            users:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.educationUser'
-              description: Read-only. Nullable.
-          additionalProperties:
-            type: object
+      title: educationRoot
+      type: object
+      properties:
+        synchronizationProfiles:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.educationSynchronizationProfile'
+        classes:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.educationClass'
+        me:
+          $ref: '#/components/schemas/microsoft.graph.educationUser'
+        schools:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.educationSchool'
+        users:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.educationUser'
+      additionalProperties:
+        type: object
     microsoft.graph.educationClass:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -15191,8 +15335,16 @@ components:
               type: string
               description: 'Optional field to specify the URL of the channel to post the assignment publish notification. If not specified or null, defaults to the General channel. This field only applies to assignments where the assignTo value is educationAssignmentClassRecipient. Updating the notificationChannelUrl is not allowed after the assignment has been published.'
               nullable: true
+            resourcesFolderUrl:
+              type: string
+              description: Folder URL where all the file resources for this assignment are stored.
+              nullable: true
             status:
               $ref: '#/components/schemas/microsoft.graph.educationAssignmentStatus'
+            webUrl:
+              type: string
+              description: The deep link URL for the given assignment.
+              nullable: true
             categories:
               type: array
               items:
@@ -15281,7 +15433,6 @@ components:
             releasedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Moment in time when the submission was released. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             resourcesFolderUrl:
@@ -15622,6 +15773,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
+              description: The permission that has been granted for a group to a specific application.
             settings:
               type: array
               items:
@@ -15804,6 +15956,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.physicalAddress'
             showInAddressList:
               type: boolean
+              description: 'true if the Outlook global address list should contain this user, otherwise false. If not set, this will be treated as true. For users invited through the invitation manager, this property will be set to false.'
               nullable: true
             student:
               $ref: '#/components/schemas/microsoft.graph.educationStudent'
@@ -15932,7 +16085,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLicense'
-              description: The licenses that are assigned to the user. Not nullable. Supports $filter.
+              description: 'The licenses that are assigned to the user, including inherited (group-based) licenses. Not nullable. Supports $filter.'
             assignedPlans:
               type: array
               items:
@@ -15945,7 +16098,7 @@ components:
               description: The telephone numbers for the user. Only one number can be set for this property. Returned by default. Read-only for users synced from on-premises directory.
             city:
               type: string
-              description: The city in which the user is located. Returned only on $select. Supports $filter.
+              description: The city in which the user is located. Maximum length is 128 characters. Returned only on $select. Supports $filter.
               nullable: true
             companyName:
               type: string
@@ -15957,12 +16110,12 @@ components:
               nullable: true
             country:
               type: string
-              description: 'The country/region in which the user is located; for example, ''US'' or ''UK''. Returned only on $select. Supports $filter.'
+              description: 'The country/region in which the user is located; for example, ''US'' or ''UK''. Maximum length is 128 characters. Returned only on $select. Supports $filter.'
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The date and time the user was created. The value cannot be modified and is automatically populated when the entity is created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. Property is nullable. A null value indicates that an accurate creation time couldn't be determined for the user. Returned only on $select. Read-only. Supports $filter.
+              description: 'The date and time the user was created. The value cannot be modified and is automatically populated when the entity is created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. Property is nullable. A null value indicates that an accurate creation time couldn''t be determined for the user. Returned only on $select. Read-only. Supports $filter with the eq, ne, le, and ge operators.'
               format: date-time
               nullable: true
             creationType:
@@ -15971,7 +16124,7 @@ components:
               nullable: true
             department:
               type: string
-              description: The name for the department in which the user works. Returned only on $select. Supports $filter.
+              description: The name for the department in which the user works. Maximum length is 64 characters.Returned only on $select. Supports $filter.
               nullable: true
             deviceKeys:
               type: array
@@ -15979,7 +16132,7 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.deviceKey'
             displayName:
               type: string
-              description: 'The name displayed in the address book for the user. This value is usually the combination of the user''s first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates. Returned by default. Supports $filter and $orderby.'
+              description: 'The name displayed in the address book for the user. This value is usually the combination of the user''s first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates. Maximum length is 256 characters. Returned by default. Supports $filter and $orderby.'
               nullable: true
             employeeHireDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -15995,7 +16148,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.employeeOrgData'
             employeeType:
               type: string
-              description: 'Captures enterprise worker type: Employee, Contractor, Consultant, Vendor, etc. Returned only on $select. Supports $filter.'
+              description: 'Captures enterprise worker type. For example, Employee, Contractor, Consultant, or Vendor. Returned only on $select. Supports $filter with the eq operator.'
               nullable: true
             externalUserState:
               type: string
@@ -16011,7 +16164,7 @@ components:
               nullable: true
             givenName:
               type: string
-              description: The given name (first name) of the user. Returned by default. Supports $filter.
+              description: The given name (first name) of the user. Maximum length is 64 characters. Returned by default. Supports $filter.
               nullable: true
             identities:
               type: array
@@ -16035,7 +16188,7 @@ components:
               nullable: true
             jobTitle:
               type: string
-              description: The user's job title. Returned by default. Supports $filter.
+              description: The user's job title. Maximum length is 128 characters. Returned by default. Supports $filter (eq and startsWith operators).
               nullable: true
             lastPasswordChangeDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -16054,11 +16207,11 @@ components:
               description: State of license assignments for this user. Returned only on $select. Read-only.
             mail:
               type: string
-              description: 'The SMTP address for the user, for example, ''jeff@contoso.onmicrosoft.com''. Returned by default. Supports $filter and endsWith.'
+              description: 'The SMTP address for the user, for example, ''jeff@contoso.onmicrosoft.com''.NOTE: While this property can contain accent characters, using them can cause access issues with other Microsoft applications for the user.Returned by default. Supports $filter and endsWith.'
               nullable: true
             mailNickname:
               type: string
-              description: The mail alias for the user. This property must be specified when a user is created. Returned only on $select. Supports $filter.
+              description: The mail alias for the user. This property must be specified when a user is created. Maximum length is 64 characters. Returned only on $select. Supports $filter.
               nullable: true
             mobilePhone:
               type: string
@@ -16066,7 +16219,7 @@ components:
               nullable: true
             officeLocation:
               type: string
-              description: The office location in the user's place of business. Returned by default.
+              description: The office location in the user's place of business. Maximum length is 128 characters. Returned by default.
               nullable: true
             onPremisesDistinguishedName:
               type: string
@@ -16113,7 +16266,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'A list of additional email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com''].Returned only on $select.  Supports$filter.'
+              description: 'A list of additional email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com''].NOTE: While this property can contain accent characters, they can cause access issues to first-party applications for the user.Returned only on $select.  Supports$filter.'
             passwordPolicies:
               type: string
               description: 'Specifies password policies for the user. This value is an enumeration with one possible value being ''DisableStrongPassword'', which allows weaker passwords than the default policy to be specified. ''DisablePasswordExpiration'' can also be specified. The two may be specified together; for example: ''DisablePasswordExpiration, DisableStrongPassword''.Returned only on $select.'
@@ -16122,7 +16275,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.passwordProfile'
             postalCode:
               type: string
-              description: 'The postal code for the user''s postal address. The postal code is specific to the user''s country/region. In the United States of America, this attribute contains the ZIP code. Returned only on $select.'
+              description: 'The postal code for the user''s postal address. The postal code is specific to the user''s country/region. In the United States of America, this attribute contains the ZIP code. Maximum length is 40 characters. Returned only on $select.'
               nullable: true
             preferredDataLocation:
               type: string
@@ -16160,15 +16313,15 @@ components:
               nullable: true
             state:
               type: string
-              description: The state or province in the user's address. Returned only on $select. Supports $filter.
+              description: The state or province in the user's address. Maximum length is 128 characters. Returned only on $select. Supports $filter.
               nullable: true
             streetAddress:
               type: string
-              description: The street address of the user's place of business. Returned only on $select.
+              description: The street address of the user's place of business. Maximum length is 1024 characters. Returned only on $select.
               nullable: true
             surname:
               type: string
-              description: The user's surname (family name or last name). Returned by default. Supports $filter.
+              description: The user's surname (family name or last name). Maximum length is 64 characters. Returned by default. Supports $filter.
               nullable: true
             usageLocation:
               type: string
@@ -16176,7 +16329,7 @@ components:
               nullable: true
             userPrincipalName:
               type: string
-              description: 'The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user''s email name. The general format is alias@domain, where domain must be present in the tenant''s collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization. Returned by default. Supports $filter, $orderby, and endsWith.'
+              description: 'The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user''s email name. The general format is alias@domain, where domain must be present in the tenant''s collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: While this property can contain accent characters, they can cause access issues to first-party applications for the user. Returned by default. Supports $filter, $orderby, and endsWith.'
               nullable: true
             userType:
               type: string
@@ -16302,6 +16455,10 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.scopedRoleMembership'
               description: The scoped-role administrative unit memberships for this user. Read-only. Nullable.
             transitiveMemberOf:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+            transitiveReports:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
@@ -17028,7 +17185,7 @@ components:
               nullable: true
             permissionType:
               type: string
-              description: 'The type of permission. Possible values are: Application,Delegated. Read-only.'
+              description: 'The type of permission. Possible values are: Application, Delegated. Read-only.'
               nullable: true
             resourceAppId:
               type: string
@@ -17920,6 +18077,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.educationExternalSource'
             externalSourceDetail:
               type: string
+              description: The name of the external source this resources was generated from.
               nullable: true
           additionalProperties:
             type: object
@@ -17981,7 +18139,7 @@ components:
           nullable: true
         issuerAssignedId:
           type: string
-          description: 'Specifies the unique identifier assigned to the user by the issuer. The combination of issuer and issuerAssignedId must be unique within the organization. Represents the sign-in name for the user, when signInType is set to emailAddress or userName (also known as local accounts).When signInType is set to: emailAddress, (or starts with emailAddress like emailAddress1) issuerAssignedId must be a valid email addressuserName, issuerAssignedId must be a valid local part of an email addressSupports $filter. 512 character limit.'
+          description: 'Specifies the unique identifier assigned to the user by the issuer. The combination of issuer and issuerAssignedId must be unique within the organization. Represents the sign-in name for the user, when signInType is set to emailAddress or userName (also known as local accounts).When signInType is set to: emailAddress, (or a custom string that starts with emailAddress like emailAddress1) issuerAssignedId must be a valid email addressuserName, issuerAssignedId must be a valid local part of an email addressSupports $filter. 100 character limit.'
           nullable: true
         signInType:
           type: string
@@ -18212,7 +18370,7 @@ components:
               description: The id of the client service principal for the application which is authorized to act on behalf of a signed-in user when accessing an API. Required. Supports $filter (eq only).
             consentType:
               type: string
-              description: 'Indicates if authorization is granted for the client application to impersonate all users or only a specific user. AllPrincipals indicates authorization to impersonate all users. Principal indicates authorization to impersonate a specific user. Consent on behalf of all users can be granted by an administrator. Non-admin users may be authorized to consent on behalf of themselves in some cases, for some delegated permissions. Required. Supports $filter (eq only).'
+              description: 'Indicates whether authorization is granted for the client application to impersonate all users or only a specific user. AllPrincipals indicates authorization to impersonate all users. Principal indicates authorization to impersonate a specific user. Consent on behalf of all users can be granted by an administrator. Non-admin users may be authorized to consent on behalf of themselves in some cases, for some delegated permissions. Required. Supports $filter (eq only).'
               nullable: true
             expiryTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -19024,6 +19182,10 @@ components:
         - title: managedDevice
           type: object
           properties:
+            cloudPcRemoteActionResults:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcRemoteActionResult'
             aadRegistered:
               type: boolean
               description: Whether the device is Azure Active Directory registered. This property is read-only.
@@ -19305,16 +19467,16 @@ components:
               type: integer
               description: Count of remediated malware for this windows device. This property is read-only.
               format: int32
-            deviceCompliancePolicyStates:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicyState'
-              description: Device compliance policy states for this device.
             assignmentFilterEvaluationStatusDetails:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignmentFilterEvaluationStatusDetails'
               description: Managed device mobile app configuration states for this device.
+            deviceCompliancePolicyStates:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicyState'
+              description: Device compliance policy states for this device.
             deviceConfigurationStates:
               type: array
               items:
@@ -19983,11 +20145,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.usageRight'
+              description: Represents the usage rights a device has been granted.
             memberOf:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Groups that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable.'
+              description: Groups that this device is a member of. Read-only. Nullable.
             registeredOwners:
               type: array
               items:
@@ -20002,6 +20165,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: Groups that this device is a member of. This operation is transitive.
             extensions:
               type: array
               items:
@@ -20011,7 +20175,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.command'
-              description: Set of commands sent to this device
+              description: Set of commands sent to this device.
           additionalProperties:
             type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
@@ -20048,7 +20212,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.meetingCapabilities'
-              description: 'The list of meeting capabilities. Possible values are: questionAndAnswer,unknownFutureValue.'
             chatInfo:
               $ref: '#/components/schemas/microsoft.graph.chatInfo'
             creationDateTime:
@@ -22780,6 +22943,10 @@ components:
               type: string
               description: Name of access review series. Required on create.
               nullable: true
+            fallbackReviewers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScope'
             instanceEnumerationScope:
               $ref: '#/components/schemas/microsoft.graph.accessReviewScope'
             lastModifiedDateTime:
@@ -22832,6 +22999,35 @@ components:
           additionalProperties:
             type: object
           description: Enrollment Configuration Assignment
+    microsoft.graph.cloudPcRemoteActionResult:
+      title: cloudPcRemoteActionResult
+      type: object
+      properties:
+        actionName:
+          type: string
+          nullable: true
+        actionState:
+          $ref: '#/components/schemas/microsoft.graph.actionState'
+        cloudPcId:
+          type: string
+          nullable: true
+        lastUpdatedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        managedDeviceId:
+          type: string
+          nullable: true
+        startDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        statusDetails:
+          $ref: '#/components/schemas/microsoft.graph.cloudPcStatusDetails'
+      additionalProperties:
+        type: object
     microsoft.graph.chassisType:
       title: chassisType
       enum:
@@ -23228,6 +23424,10 @@ components:
           $ref: '#/components/schemas/microsoft.graph.deviceGuardVirtualizationBasedSecurityHardwareRequirementState'
         deviceGuardVirtualizationBasedSecurityState:
           $ref: '#/components/schemas/microsoft.graph.deviceGuardVirtualizationBasedSecurityState'
+        esimIdentifier:
+          type: string
+          description: eSIM identifier
+          nullable: true
         freeStorageSpace:
           type: integer
           description: Free storage space of the device.
@@ -23421,6 +23621,19 @@ components:
       additionalProperties:
         type: object
       description: Logged On User
+    microsoft.graph.assignmentFilterEvaluationStatusDetails:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: assignmentFilterEvaluationStatusDetails
+          type: object
+          properties:
+            payloadId:
+              type: string
+              description: PayloadId on which filter has been applied.
+              nullable: true
+          additionalProperties:
+            type: object
+          description: A class containing information about the payloads on which filter has been applied.
     microsoft.graph.deviceCompliancePolicyState:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -23462,19 +23675,6 @@ components:
           additionalProperties:
             type: object
           description: Device Compliance Policy State for a given device.
-    microsoft.graph.assignmentFilterEvaluationStatusDetails:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: assignmentFilterEvaluationStatusDetails
-          type: object
-          properties:
-            payloadId:
-              type: string
-              description: PayloadId on which filter has been applied.
-              nullable: true
-          additionalProperties:
-            type: object
-          description: A class containing information about the payloads on which filter has been applied.
     microsoft.graph.deviceConfigurationState:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -24932,10 +25132,22 @@ components:
           type: string
           description: The toll-free number that connects to the Audio Conference Provider.
           nullable: true
+        tollFreeNumbers:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: List of toll-free numbers that are displayed in the meeting invite.
         tollNumber:
           type: string
           description: The toll number that connects to the Audio Conference Provider.
           nullable: true
+        tollNumbers:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: List of toll numbers that are displayed in the meeting invite.
       additionalProperties:
         type: object
     microsoft.graph.broadcastMeetingSettings:
@@ -25006,18 +25218,17 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
+          description: Information of the meeting attendees.
         contributors:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
-          description: For broadcast meeting only.
         organizer:
           $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
         producers:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
-          description: For broadcast meeting only.
       additionalProperties:
         type: object
     microsoft.graph.meetingAttendanceReport:
@@ -25030,6 +25241,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.attendanceRecord'
+              description: The list of attendance records.
           additionalProperties:
             type: object
     microsoft.graph.outOfOfficeSettings:
@@ -25085,7 +25297,6 @@ components:
             creationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The timestamp when this key was registered to the user.
               format: date-time
               nullable: true
             displayName:
@@ -25384,7 +25595,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
-              description: 'Content in a message hosted by Microsoft Teams e.g. images, code snippets etc.'
+              description: 'Content in a message hosted by Microsoft Teams e.g., images, code snippets etc.'
             replies:
               type: array
               items:
@@ -27175,7 +27386,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamsAppInstallationScopes'
             azureADAppId:
               type: string
-              description: The WebApplicationInfo.id from the Teams App manifest.
+              description: The WebApplicationInfo.Id from the Teams app manifest.
               nullable: true
             createdBy:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -27199,7 +27410,7 @@ components:
               nullable: true
             teamsAppId:
               type: string
-              description: The id from the Teams App manifest.
+              description: The ID from the Teams app manifest.
               nullable: true
             version:
               type: string
@@ -27207,6 +27418,10 @@ components:
               nullable: true
             bot:
               $ref: '#/components/schemas/microsoft.graph.teamworkBot'
+            colorIcon:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppIcon'
+            outlineIcon:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppIcon'
           additionalProperties:
             type: object
     microsoft.graph.operationError:
@@ -28102,16 +28317,6 @@ components:
       additionalProperties:
         type: object
       description: Base type for assignment targets.
-    microsoft.graph.configurationManagerClientState:
-      title: configurationManagerClientState
-      enum:
-        - unknown
-        - installed
-        - healthy
-        - installFailed
-        - updateFailed
-        - communicationError
-      type: string
     microsoft.graph.actionState:
       title: actionState
       enum:
@@ -28122,6 +28327,35 @@ components:
         - done
         - failed
         - notSupported
+      type: string
+    microsoft.graph.cloudPcStatusDetails:
+      title: cloudPcStatusDetails
+      type: object
+      properties:
+        additionalInformation:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.keyValuePair'
+          description: Any additional information about the cloud PC status.
+        code:
+          type: string
+          description: The code associated with the cloud PC status.
+          nullable: true
+        message:
+          type: string
+          description: The status message.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.configurationManagerClientState:
+      title: configurationManagerClientState
+      enum:
+        - unknown
+        - installed
+        - healthy
+        - installFailed
+        - updateFailed
+        - communicationError
       type: string
     microsoft.graph.deviceGuardLocalSystemAuthorityCredentialGuardState:
       title: deviceGuardLocalSystemAuthorityCredentialGuardState
@@ -29134,18 +29368,22 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.attendanceInterval'
+          description: List of time periods between joining and leaving.
         emailAddress:
           type: string
+          description: Email address.
           nullable: true
         identity:
           $ref: '#/components/schemas/microsoft.graph.identity'
         role:
           type: string
+          description: 'Role of the attendee. Possible values are None, Attendee, Presenter, and Organizer.'
           nullable: true
         totalAttendanceInSeconds:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: Total duration of the attendances in seconds.
           format: int32
           nullable: true
       additionalProperties:
@@ -30230,6 +30468,20 @@ components:
           type: object
           additionalProperties:
             type: object
+    microsoft.graph.teamsAppIcon:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamsAppIcon
+          type: object
+          properties:
+            webUrl:
+              type: string
+              description: The web URL that can be used for downloading the image.
+              nullable: true
+            hostedContent:
+              $ref: '#/components/schemas/microsoft.graph.teamworkHostedContent'
+          additionalProperties:
+            type: object
     microsoft.graph.scheduleChangeRequest:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.changeTrackedEntity'
@@ -30877,16 +31129,19 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: 'Duration of the meeting interval in seconds; that is, the difference between joinDateTime and leaveDateTime.'
           format: int32
           nullable: true
         joinDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: Time attendee joined in UTC.
           format: date-time
           nullable: true
         leaveDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: Time attendee left in UTC.
           format: date-time
           nullable: true
       additionalProperties:
