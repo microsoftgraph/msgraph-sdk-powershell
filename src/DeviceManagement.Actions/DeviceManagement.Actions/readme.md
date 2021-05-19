@@ -39,9 +39,13 @@ subject-prefix: ''
 ``` yaml
 directive:
 # Remove invalid paths that exceed Windows file name limit.
-  - remove-path-by-operation: ^deviceManagement.(deviceShellScripts.userRunStates.deviceRunStates.managedDevice_.*|windowsAutopilotDeploymentProfiles.(assignedDevices_updateDeviceProperties|assignedDevices.deploymentProfile_assign|assignedDevices.intendedDeploymentProfile_assign|assignedDevices_assignResourceAccountToDevice|assignedDevices_unassignResourceAccountFromDevice)|deviceComplianceScripts.deviceRunStates.managedDevice_.*|deviceCustomAttributeShellScripts.(deviceRunStates.managedDevice_.*|userRunStates.deviceRunStates.managedDevice_.*)|deviceManagementScripts.deviceRunStates.managedDevice(_updateWindowsDeviceAccount|_logoutSharedAppleDeviceActiveUser|_deleteUserFromSharedAppleDevice|_createDeviceLogCollectionRequest|_sendCustomNotificationToCompanyPortal|_triggerConfigurationManagerAction|_windowsDefenderUpdateSignatures)|deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_.*|deviceConfigurations.groupAssignments.deviceConfiguration(_assignedAccessMultiModeProfiles|_windowsPrivacyAccessControls)|deviceHealthScripts.deviceRunStates.managedDevice(_sendCustomNotificationToCompanyPortal|_createDeviceLogCollectionRequest)|deviceShellScripts.deviceRunStates.managedDevice_sendCustomNotificationToCompanyPortal)$
+  - remove-path-by-operation: ^deviceManagement.(reusablePolicySettings.referencingConfigurationPolicies_(assign|createCopy)|deviceShellScripts.userRunStates.deviceRunStates.managedDevice_.*|windowsAutopilotDeploymentProfiles.(assignedDevices_updateDeviceProperties|assignedDevices.deploymentProfile_assign|assignedDevices.intendedDeploymentProfile_assign|assignedDevices_assignResourceAccountToDevice|assignedDevices_unassignResourceAccountFromDevice)|deviceComplianceScripts.deviceRunStates.managedDevice_.*|deviceCustomAttributeShellScripts.(deviceRunStates.managedDevice_.*|userRunStates.deviceRunStates.managedDevice_.*)|deviceManagementScripts.deviceRunStates.managedDevice(_updateWindowsDeviceAccount|_logoutSharedAppleDeviceActiveUser|_deleteUserFromSharedAppleDevice|_createDeviceLogCollectionRequest|_sendCustomNotificationToCompanyPortal|_triggerConfigurationManagerAction|_windowsDefenderUpdateSignatures)|deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_.*|deviceConfigurations.groupAssignments.deviceConfiguration(_assignedAccessMultiModeProfiles|_windowsPrivacyAccessControls)|deviceHealthScripts.deviceRunStates.managedDevice(_sendCustomNotificationToCompanyPortal|_createDeviceLogCollectionRequest)|deviceShellScripts.deviceRunStates.managedDevice_sendCustomNotificationToCompanyPortal)$
 
 # Remove cmdlets.
+  - where:
+      verb: Get
+      subject: ^DeviceManagementReportCertificateReport$
+    remove: true
   - where:
       verb: New
       subject: ^DeviceManagementComanagedDeviceLogCollectionRequest$
@@ -77,6 +81,11 @@ directive:
     set:
       subject: $1Multiple$2
   - where:
+      verb: Remove
+      subject: ^(DeviceManagementWindowAutopilotDeploymentProfile)(AssignedDevice)$
+    set:
+      subject: $1Multiple$2
+  - where:
       verb: Update
       subject: ^(DeviceManagementManagedDevice)$
     set:
@@ -86,6 +95,6 @@ directive:
 ### Versioning
 
 ``` yaml
-module-version: 1.4.2
+module-version: 1.5.1
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

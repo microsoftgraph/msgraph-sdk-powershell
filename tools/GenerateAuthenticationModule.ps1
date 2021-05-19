@@ -61,7 +61,7 @@ elseif ($VersionState.Equals([VersionState]::EqualToFeed) -and !$BuildWhenEqual)
   Write-Warning "$ModulePrefix.$ModuleName module skipped. Version has not changed and is equal to what's on $RepositoryName."
 }
 elseif ($VersionState.Equals([VersionState]::Valid) -or $VersionState.Equals([VersionState]::NotOnFeed) -or $BuildWhenEqual) {
-  $ModuleVersion = $VersionState.Equals([VersionState]::NotOnFeed) ? "1.0.0" : $ManifestContent.ModuleVersion
+  $ModuleVersion = $ManifestContent.ModuleVersion
   # Build and pack generated module.
   if ($Build) {
     if ($EnableSigning) {

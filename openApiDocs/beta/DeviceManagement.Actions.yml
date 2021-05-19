@@ -411,6 +411,31 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /deviceManagement/assignmentFilters/microsoft.graph.enable:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action enable
+      operationId: deviceManagement.assignmentFilters_enable
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                enable:
+                  type: boolean
+                  default: false
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /deviceManagement/assignmentFilters/microsoft.graph.validateFilter:
     post:
       tags:
@@ -436,6 +461,38 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.assignmentFilterValidationResult'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /deviceManagement/chromeOSOnboardingSettings/microsoft.graph.connect:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action connect
+      operationId: deviceManagement.chromeOSOnboardingSettings_connect
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ownerUserPrincipalName:
+                  type: string
+                  nullable: true
+                serviceAccountCredentials:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chromeOSOnboardingStatus'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -468,6 +525,39 @@ paths:
               schema:
                 type: string
                 nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/comanagedDevices/{managedDevice-id}/microsoft.graph.activateDeviceEsim':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action activateDeviceEsim
+      operationId: deviceManagement.comanagedDevices_activateDeviceEsim
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: 'key: id of managedDevice'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                carrierUrl:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -793,6 +883,26 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action remoteLock
       operationId: deviceManagement.comanagedDevices_remoteLock
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: 'key: id of managedDevice'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/comanagedDevices/{managedDevice-id}/microsoft.graph.reprovisionCloudPc':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action reprovisionCloudPc
+      operationId: deviceManagement.comanagedDevices_reprovisionCloudPc
       parameters:
         - name: managedDevice-id
           in: path
@@ -1183,10 +1293,41 @@ paths:
                 macOsUnlockCode:
                   type: string
                   nullable: true
+                persistEsimDataPlan:
+                  type: boolean
+                  default: false
+                  nullable: true
                 useProtectedWipe:
                   type: boolean
                   default: false
                   nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /deviceManagement/comanagedDevices/microsoft.graph.bulkReprovisionCloudPc:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action bulkReprovisionCloudPc
+      operationId: deviceManagement.comanagedDevices_bulkReprovisionCloudPc
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                managedDeviceIds:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -1283,6 +1424,46 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationPolicyAssignment'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/configurationPolicies/{deviceManagementConfigurationPolicy-id}/microsoft.graph.createCopy':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action createCopy
+      operationId: deviceManagement.configurationPolicies_createCopy
+      parameters:
+        - name: deviceManagementConfigurationPolicy-id
+          in: path
+          description: 'key: id of deviceManagementConfigurationPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementConfigurationPolicy
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                displayName:
+                  type: string
+                  nullable: true
+                description:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationPolicy'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -1543,6 +1724,41 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/detectedApps/{detectedApp-id}/managedDevices/microsoft.graph.bulkReprovisionCloudPc':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action bulkReprovisionCloudPc
+      operationId: deviceManagement.detectedApps.managedDevices_bulkReprovisionCloudPc
+      parameters:
+        - name: detectedApp-id
+          in: path
+          description: 'key: id of detectedApp'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: detectedApp
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                managedDeviceIds:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/detectedApps/{detectedApp-id}/managedDevices/microsoft.graph.executeAction':
     post:
       tags:
@@ -1792,6 +2008,46 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.deviceComplianceScriptValidationResult'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/deviceComplianceScripts/{deviceComplianceScript-id}/deviceRunStates/{deviceComplianceScriptDeviceState-id}/managedDevice/microsoft.graph.activateDeviceEsim':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action activateDeviceEsim
+      operationId: deviceManagement.deviceComplianceScripts.deviceRunStates.managedDevice_activateDeviceEsim
+      parameters:
+        - name: deviceComplianceScript-id
+          in: path
+          description: 'key: id of deviceComplianceScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceComplianceScript
+        - name: deviceComplianceScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceComplianceScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceComplianceScriptDeviceState
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                carrierUrl:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -2201,6 +2457,33 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action remoteLock
       operationId: deviceManagement.deviceComplianceScripts.deviceRunStates.managedDevice_remoteLock
+      parameters:
+        - name: deviceComplianceScript-id
+          in: path
+          description: 'key: id of deviceComplianceScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceComplianceScript
+        - name: deviceComplianceScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceComplianceScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceComplianceScriptDeviceState
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/deviceComplianceScripts/{deviceComplianceScript-id}/deviceRunStates/{deviceComplianceScriptDeviceState-id}/managedDevice/microsoft.graph.reprovisionCloudPc':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action reprovisionCloudPc
+      operationId: deviceManagement.deviceComplianceScripts.deviceRunStates.managedDevice_reprovisionCloudPc
       parameters:
         - name: deviceComplianceScript-id
           in: path
@@ -2703,6 +2986,10 @@ paths:
                 macOsUnlockCode:
                   type: string
                   nullable: true
+                persistEsimDataPlan:
+                  type: boolean
+                  default: false
+                  nullable: true
                 useProtectedWipe:
                   type: boolean
                   default: false
@@ -3155,6 +3442,46 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/deviceCustomAttributeShellScripts/{deviceCustomAttributeShellScript-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.activateDeviceEsim':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action activateDeviceEsim
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceRunStates.managedDevice_activateDeviceEsim
+      parameters:
+        - name: deviceCustomAttributeShellScript-id
+          in: path
+          description: 'key: id of deviceCustomAttributeShellScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceCustomAttributeShellScript
+        - name: deviceManagementScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceManagementScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptDeviceState
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                carrierUrl:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/deviceCustomAttributeShellScripts/{deviceCustomAttributeShellScript-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.bypassActivationLock':
     post:
       tags:
@@ -3561,6 +3888,33 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action remoteLock
       operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceRunStates.managedDevice_remoteLock
+      parameters:
+        - name: deviceCustomAttributeShellScript-id
+          in: path
+          description: 'key: id of deviceCustomAttributeShellScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceCustomAttributeShellScript
+        - name: deviceManagementScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceManagementScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptDeviceState
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/deviceCustomAttributeShellScripts/{deviceCustomAttributeShellScript-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.reprovisionCloudPc':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action reprovisionCloudPc
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceRunStates.managedDevice_reprovisionCloudPc
       parameters:
         - name: deviceCustomAttributeShellScript-id
           in: path
@@ -4063,6 +4417,10 @@ paths:
                 macOsUnlockCode:
                   type: string
                   nullable: true
+                persistEsimDataPlan:
+                  type: boolean
+                  default: false
+                  nullable: true
                 useProtectedWipe:
                   type: boolean
                   default: false
@@ -4105,6 +4463,53 @@ paths:
                   type: array
                   items:
                     $ref: '#/components/schemas/microsoft.graph.deviceManagementScriptAssignment'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/deviceCustomAttributeShellScripts/{deviceCustomAttributeShellScript-id}/userRunStates/{deviceManagementScriptUserState-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.activateDeviceEsim':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action activateDeviceEsim
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.userRunStates.deviceRunStates.managedDevice_activateDeviceEsim
+      parameters:
+        - name: deviceCustomAttributeShellScript-id
+          in: path
+          description: 'key: id of deviceCustomAttributeShellScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceCustomAttributeShellScript
+        - name: deviceManagementScriptUserState-id
+          in: path
+          description: 'key: id of deviceManagementScriptUserState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptUserState
+        - name: deviceManagementScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceManagementScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptDeviceState
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                carrierUrl:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -4604,6 +5009,40 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action remoteLock
       operationId: deviceManagement.deviceCustomAttributeShellScripts.userRunStates.deviceRunStates.managedDevice_remoteLock
+      parameters:
+        - name: deviceCustomAttributeShellScript-id
+          in: path
+          description: 'key: id of deviceCustomAttributeShellScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceCustomAttributeShellScript
+        - name: deviceManagementScriptUserState-id
+          in: path
+          description: 'key: id of deviceManagementScriptUserState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptUserState
+        - name: deviceManagementScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceManagementScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptDeviceState
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/deviceCustomAttributeShellScripts/{deviceCustomAttributeShellScript-id}/userRunStates/{deviceManagementScriptUserState-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.reprovisionCloudPc':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action reprovisionCloudPc
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.userRunStates.deviceRunStates.managedDevice_reprovisionCloudPc
       parameters:
         - name: deviceCustomAttributeShellScript-id
           in: path
@@ -5218,6 +5657,10 @@ paths:
                 macOsUnlockCode:
                   type: string
                   nullable: true
+                persistEsimDataPlan:
+                  type: boolean
+                  default: false
+                  nullable: true
                 useProtectedWipe:
                   type: boolean
                   default: false
@@ -5330,6 +5773,46 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/microsoft.graph.hasPayloadLinkResultItem'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/deviceHealthScripts/{deviceHealthScript-id}/deviceRunStates/{deviceHealthScriptDeviceState-id}/managedDevice/microsoft.graph.activateDeviceEsim':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action activateDeviceEsim
+      operationId: deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_activateDeviceEsim
+      parameters:
+        - name: deviceHealthScript-id
+          in: path
+          description: 'key: id of deviceHealthScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceHealthScript
+        - name: deviceHealthScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceHealthScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceHealthScriptDeviceState
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                carrierUrl:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -5739,6 +6222,33 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action remoteLock
       operationId: deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_remoteLock
+      parameters:
+        - name: deviceHealthScript-id
+          in: path
+          description: 'key: id of deviceHealthScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceHealthScript
+        - name: deviceHealthScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceHealthScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceHealthScriptDeviceState
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/deviceHealthScripts/{deviceHealthScript-id}/deviceRunStates/{deviceHealthScriptDeviceState-id}/managedDevice/microsoft.graph.reprovisionCloudPc':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action reprovisionCloudPc
+      operationId: deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_reprovisionCloudPc
       parameters:
         - name: deviceHealthScript-id
           in: path
@@ -6241,6 +6751,10 @@ paths:
                 macOsUnlockCode:
                   type: string
                   nullable: true
+                persistEsimDataPlan:
+                  type: boolean
+                  default: false
+                  nullable: true
                 useProtectedWipe:
                   type: boolean
                   default: false
@@ -6357,6 +6871,46 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action enableGlobalScripts
       operationId: deviceManagement.deviceHealthScripts_enableGlobalScripts
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/deviceManagementScripts/{deviceManagementScript-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.activateDeviceEsim':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action activateDeviceEsim
+      operationId: deviceManagement.deviceManagementScripts.deviceRunStates.managedDevice_activateDeviceEsim
+      parameters:
+        - name: deviceManagementScript-id
+          in: path
+          description: 'key: id of deviceManagementScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScript
+        - name: deviceManagementScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceManagementScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptDeviceState
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                carrierUrl:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -6769,6 +7323,33 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action remoteLock
       operationId: deviceManagement.deviceManagementScripts.deviceRunStates.managedDevice_remoteLock
+      parameters:
+        - name: deviceManagementScript-id
+          in: path
+          description: 'key: id of deviceManagementScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScript
+        - name: deviceManagementScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceManagementScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptDeviceState
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/deviceManagementScripts/{deviceManagementScript-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.reprovisionCloudPc':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action reprovisionCloudPc
+      operationId: deviceManagement.deviceManagementScripts.deviceRunStates.managedDevice_reprovisionCloudPc
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -7271,6 +7852,10 @@ paths:
                 macOsUnlockCode:
                   type: string
                   nullable: true
+                persistEsimDataPlan:
+                  type: boolean
+                  default: false
+                  nullable: true
                 useProtectedWipe:
                   type: boolean
                   default: false
@@ -7313,6 +7898,53 @@ paths:
                   type: array
                   items:
                     $ref: '#/components/schemas/microsoft.graph.deviceManagementScriptAssignment'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/deviceManagementScripts/{deviceManagementScript-id}/userRunStates/{deviceManagementScriptUserState-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.activateDeviceEsim':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action activateDeviceEsim
+      operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_activateDeviceEsim
+      parameters:
+        - name: deviceManagementScript-id
+          in: path
+          description: 'key: id of deviceManagementScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScript
+        - name: deviceManagementScriptUserState-id
+          in: path
+          description: 'key: id of deviceManagementScriptUserState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptUserState
+        - name: deviceManagementScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceManagementScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptDeviceState
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                carrierUrl:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -7812,6 +8444,40 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action remoteLock
       operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_remoteLock
+      parameters:
+        - name: deviceManagementScript-id
+          in: path
+          description: 'key: id of deviceManagementScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScript
+        - name: deviceManagementScriptUserState-id
+          in: path
+          description: 'key: id of deviceManagementScriptUserState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptUserState
+        - name: deviceManagementScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceManagementScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptDeviceState
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/deviceManagementScripts/{deviceManagementScript-id}/userRunStates/{deviceManagementScriptUserState-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.reprovisionCloudPc':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action reprovisionCloudPc
+      operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_reprovisionCloudPc
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -8426,6 +9092,10 @@ paths:
                 macOsUnlockCode:
                   type: string
                   nullable: true
+                persistEsimDataPlan:
+                  type: boolean
+                  default: false
+                  nullable: true
                 useProtectedWipe:
                   type: boolean
                   default: false
@@ -8469,6 +9139,46 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/microsoft.graph.hasPayloadLinkResultItem'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/deviceShellScripts/{deviceShellScript-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.activateDeviceEsim':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action activateDeviceEsim
+      operationId: deviceManagement.deviceShellScripts.deviceRunStates.managedDevice_activateDeviceEsim
+      parameters:
+        - name: deviceShellScript-id
+          in: path
+          description: 'key: id of deviceShellScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceShellScript
+        - name: deviceManagementScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceManagementScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptDeviceState
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                carrierUrl:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -8878,6 +9588,33 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action remoteLock
       operationId: deviceManagement.deviceShellScripts.deviceRunStates.managedDevice_remoteLock
+      parameters:
+        - name: deviceShellScript-id
+          in: path
+          description: 'key: id of deviceShellScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceShellScript
+        - name: deviceManagementScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceManagementScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptDeviceState
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/deviceShellScripts/{deviceShellScript-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.reprovisionCloudPc':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action reprovisionCloudPc
+      operationId: deviceManagement.deviceShellScripts.deviceRunStates.managedDevice_reprovisionCloudPc
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -9380,6 +10117,10 @@ paths:
                 macOsUnlockCode:
                   type: string
                   nullable: true
+                persistEsimDataPlan:
+                  type: boolean
+                  default: false
+                  nullable: true
                 useProtectedWipe:
                   type: boolean
                   default: false
@@ -9422,6 +10163,53 @@ paths:
                   type: array
                   items:
                     $ref: '#/components/schemas/microsoft.graph.deviceManagementScriptAssignment'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/deviceShellScripts/{deviceShellScript-id}/userRunStates/{deviceManagementScriptUserState-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.activateDeviceEsim':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action activateDeviceEsim
+      operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates.managedDevice_activateDeviceEsim
+      parameters:
+        - name: deviceShellScript-id
+          in: path
+          description: 'key: id of deviceShellScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceShellScript
+        - name: deviceManagementScriptUserState-id
+          in: path
+          description: 'key: id of deviceManagementScriptUserState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptUserState
+        - name: deviceManagementScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceManagementScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptDeviceState
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                carrierUrl:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -9921,6 +10709,40 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action remoteLock
       operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates.managedDevice_remoteLock
+      parameters:
+        - name: deviceShellScript-id
+          in: path
+          description: 'key: id of deviceShellScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceShellScript
+        - name: deviceManagementScriptUserState-id
+          in: path
+          description: 'key: id of deviceManagementScriptUserState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptUserState
+        - name: deviceManagementScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceManagementScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptDeviceState
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/deviceShellScripts/{deviceShellScript-id}/userRunStates/{deviceManagementScriptUserState-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.reprovisionCloudPc':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action reprovisionCloudPc
+      operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates.managedDevice_reprovisionCloudPc
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -10534,6 +11356,10 @@ paths:
                   nullable: true
                 macOsUnlockCode:
                   type: string
+                  nullable: true
+                persistEsimDataPlan:
+                  type: boolean
+                  default: false
                   nullable: true
                 useProtectedWipe:
                   type: boolean
@@ -11197,6 +12023,39 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.activateDeviceEsim':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action activateDeviceEsim
+      operationId: deviceManagement.managedDevices_activateDeviceEsim
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: 'key: id of managedDevice'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                carrierUrl:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.bypassActivationLock':
     post:
       tags:
@@ -11519,6 +12378,26 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action remoteLock
       operationId: deviceManagement.managedDevices_remoteLock
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: 'key: id of managedDevice'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.reprovisionCloudPc':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action reprovisionCloudPc
+      operationId: deviceManagement.managedDevices_reprovisionCloudPc
       parameters:
         - name: managedDevice-id
           in: path
@@ -11909,10 +12788,41 @@ paths:
                 macOsUnlockCode:
                   type: string
                   nullable: true
+                persistEsimDataPlan:
+                  type: boolean
+                  default: false
+                  nullable: true
                 useProtectedWipe:
                   type: boolean
                   default: false
                   nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /deviceManagement/managedDevices/microsoft.graph.bulkReprovisionCloudPc:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action bulkReprovisionCloudPc
+      operationId: deviceManagement.managedDevices_bulkReprovisionCloudPc
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                managedDeviceIds:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -12115,6 +13025,26 @@ paths:
               schema:
                 type: string
                 nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/microsoftTunnelSites/{microsoftTunnelSite-id}/microsoft.graph.requestUpgrade':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action requestUpgrade
+      operationId: deviceManagement.microsoftTunnelSites_requestUpgrade
+      parameters:
+        - name: microsoftTunnelSite-id
+          in: path
+          description: 'key: id of microsoftTunnelSite'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: microsoftTunnelSite
+      responses:
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -12433,6 +13363,73 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action getActiveMalwareSummaryReport
       operationId: deviceManagement.reports_getActiveMalwareSummaryReport
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  nullable: true
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                search:
+                  type: string
+                  nullable: true
+                groupBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                sessionId:
+                  type: string
+                  nullable: true
+                filter:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                format: base64url
+                nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /deviceManagement/reports/microsoft.graph.getAllCertificatesReport:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action getAllCertificatesReport
+      operationId: deviceManagement.reports_getAllCertificatesReport
       requestBody:
         description: Action parameters
         content:
@@ -12957,6 +13954,73 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /deviceManagement/reports/microsoft.graph.getConfigManagerDevicePolicyStatusReport:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action getConfigManagerDevicePolicyStatusReport
+      operationId: deviceManagement.reports_getConfigManagerDevicePolicyStatusReport
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  nullable: true
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                search:
+                  type: string
+                  nullable: true
+                groupBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                sessionId:
+                  type: string
+                  nullable: true
+                filter:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                format: base64url
+                nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /deviceManagement/reports/microsoft.graph.getConfigurationPoliciesReportForDevice:
     post:
       tags:
@@ -13292,6 +14356,73 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /deviceManagement/reports/microsoft.graph.getConfigurationPolicySettingsDeviceSummaryReport:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action getConfigurationPolicySettingsDeviceSummaryReport
+      operationId: deviceManagement.reports_getConfigurationPolicySettingsDeviceSummaryReport
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  nullable: true
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                search:
+                  type: string
+                  nullable: true
+                groupBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                sessionId:
+                  type: string
+                  nullable: true
+                filter:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                format: base64url
+                nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /deviceManagement/reports/microsoft.graph.getConfigurationSettingDetailsReport:
     post:
       tags:
@@ -13499,6 +14630,73 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action getDeviceInstallStatusReport
       operationId: deviceManagement.reports_getDeviceInstallStatusReport
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  nullable: true
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                search:
+                  type: string
+                  nullable: true
+                groupBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                sessionId:
+                  type: string
+                  nullable: true
+                filter:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                format: base64url
+                nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /deviceManagement/reports/microsoft.graph.getDeviceManagementIntentSettingsReport:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action getDeviceManagementIntentSettingsReport
+      operationId: deviceManagement.reports_getDeviceManagementIntentSettingsReport
       requestBody:
         description: Action parameters
         content:
@@ -14093,6 +15291,73 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /deviceManagement/reports/microsoft.graph.getRelatedAppsStatusReport:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action getRelatedAppsStatusReport
+      operationId: deviceManagement.reports_getRelatedAppsStatusReport
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  nullable: true
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                search:
+                  type: string
+                  nullable: true
+                groupBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                sessionId:
+                  type: string
+                  nullable: true
+                filter:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                format: base64url
+                nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /deviceManagement/reports/microsoft.graph.getReportFilters:
     post:
       tags:
@@ -14495,6 +15760,140 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /deviceManagement/reports/microsoft.graph.getWindowsQualityUpdateAlertsPerPolicyPerDeviceReport:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action getWindowsQualityUpdateAlertsPerPolicyPerDeviceReport
+      operationId: deviceManagement.reports_getWindowsQualityUpdateAlertsPerPolicyPerDeviceReport
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  nullable: true
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                search:
+                  type: string
+                  nullable: true
+                groupBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                sessionId:
+                  type: string
+                  nullable: true
+                filter:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                format: base64url
+                nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /deviceManagement/reports/microsoft.graph.getWindowsQualityUpdateAlertSummaryReport:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action getWindowsQualityUpdateAlertSummaryReport
+      operationId: deviceManagement.reports_getWindowsQualityUpdateAlertSummaryReport
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  nullable: true
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                search:
+                  type: string
+                  nullable: true
+                groupBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                sessionId:
+                  type: string
+                  nullable: true
+                filter:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                format: base64url
+                nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /deviceManagement/reports/microsoft.graph.getWindowsUpdateAlertsPerPolicyPerDeviceReport:
     post:
       tags:
@@ -14666,6 +16065,124 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/microsoft.graph.deviceManagementResourceAccessProfileAssignment'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/reusablePolicySettings/{deviceManagementReusablePolicySetting-id}/microsoft.graph.clone':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action clone
+      operationId: deviceManagement.reusablePolicySettings_clone
+      parameters:
+        - name: deviceManagementReusablePolicySetting-id
+          in: path
+          description: 'key: id of deviceManagementReusablePolicySetting'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementReusablePolicySetting
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceManagementReusablePolicySetting'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/reusablePolicySettings/{deviceManagementReusablePolicySetting-id}/referencingConfigurationPolicies/{deviceManagementConfigurationPolicy-id}/microsoft.graph.assign':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action assign
+      operationId: deviceManagement.reusablePolicySettings.referencingConfigurationPolicies_assign
+      parameters:
+        - name: deviceManagementReusablePolicySetting-id
+          in: path
+          description: 'key: id of deviceManagementReusablePolicySetting'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementReusablePolicySetting
+        - name: deviceManagementConfigurationPolicy-id
+          in: path
+          description: 'key: id of deviceManagementConfigurationPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementConfigurationPolicy
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                assignments:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationPolicyAssignment'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationPolicyAssignment'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/reusablePolicySettings/{deviceManagementReusablePolicySetting-id}/referencingConfigurationPolicies/{deviceManagementConfigurationPolicy-id}/microsoft.graph.createCopy':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action createCopy
+      operationId: deviceManagement.reusablePolicySettings.referencingConfigurationPolicies_createCopy
+      parameters:
+        - name: deviceManagementReusablePolicySetting-id
+          in: path
+          description: 'key: id of deviceManagementReusablePolicySetting'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementReusablePolicySetting
+        - name: deviceManagementConfigurationPolicy-id
+          in: path
+          description: 'key: id of deviceManagementConfigurationPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementConfigurationPolicy
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                displayName:
+                  type: string
+                  nullable: true
+                description:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationPolicy'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -15315,6 +16832,47 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/windowsAutopilotDeploymentProfiles/{windowsAutopilotDeploymentProfile-id}/assignedDevices/microsoft.graph.deleteDevices':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action deleteDevices
+      operationId: deviceManagement.windowsAutopilotDeploymentProfiles.assignedDevices_deleteDevices
+      parameters:
+        - name: windowsAutopilotDeploymentProfile-id
+          in: path
+          description: 'key: id of windowsAutopilotDeploymentProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: windowsAutopilotDeploymentProfile
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                serialNumbers:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.deletedWindowsAutopilotDeviceState'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/windowsAutopilotDeploymentProfiles/{windowsAutopilotDeploymentProfile-id}/microsoft.graph.assign':
     post:
       tags:
@@ -15610,6 +17168,39 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /deviceManagement/windowsAutopilotDeviceIdentities/microsoft.graph.deleteDevices:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action deleteDevices
+      operationId: deviceManagement.windowsAutopilotDeviceIdentities_deleteDevices
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                serialNumbers:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.deletedWindowsAutopilotDeviceState'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /deviceManagement/windowsAutopilotSettings/microsoft.graph.sync:
     post:
       tags:
@@ -15739,6 +17330,14 @@ components:
       additionalProperties:
         type: object
       description: Represents result of Validation API.
+    microsoft.graph.chromeOSOnboardingStatus:
+      title: chromeOSOnboardingStatus
+      enum:
+        - unknown
+        - inprogress
+        - onboarded
+        - failed
+      type: string
     microsoft.graph.deviceLogCollectionRequest:
       title: deviceLogCollectionRequest
       type: object
@@ -15898,6 +17497,68 @@ components:
           additionalProperties:
             type: object
           description: The DeviceManagementConfigurationPolicyAssignment entity assigns a specific DeviceManagementConfigurationPolicy to an AAD group.
+    microsoft.graph.deviceManagementConfigurationPolicy:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: deviceManagementConfigurationPolicy
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Policy creation date and time. This property is read-only.
+              format: date-time
+            creationSource:
+              type: string
+              description: Policy creation source
+              nullable: true
+            description:
+              type: string
+              description: Policy description
+              nullable: true
+            isAssigned:
+              type: boolean
+              description: Policy assignment status. This property is read-only.
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Policy last modification date and time. This property is read-only.
+              format: date-time
+            name:
+              type: string
+              description: Policy name
+              nullable: true
+            platforms:
+              $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationPlatforms'
+            roleScopeTagIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: List of Scope Tags for this Entity instance.
+            settingCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Number of settings. This property is read-only.
+              format: int32
+            technologies:
+              $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationTechnologies'
+            templateReference:
+              $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationPolicyTemplateReference'
+            assignments:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationPolicyAssignment'
+              description: Policy assignments
+            settings:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationSetting'
+              description: Policy settings
+          additionalProperties:
+            type: object
+          description: Device Management Configuration Policy
     microsoft.graph.dataSharingConsent:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -15956,7 +17617,7 @@ components:
               nullable: true
             isSupervised:
               type: boolean
-              description: 'Indicates if the Apple device is supervised. More information is at: https://support.apple.com/HT202837'
+              description: 'Indicates if the Apple device is supervised. More information is at: https://support.apple.com/en-us/HT202837'
             lastContactedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -16518,10 +18179,6 @@ components:
               type: string
               description: The Import Id of the Windows autopilot device.
               nullable: true
-            orderIdentifier:
-              type: string
-              description: Order Id of the Windows autopilot device. - Deprecate
-              nullable: true
             productKey:
               type: string
               description: Product Key of the Windows autopilot device.
@@ -16769,6 +18426,55 @@ components:
           additionalProperties:
             type: object
           description: Entity that describes tenant level settings for derived credentials
+    microsoft.graph.deviceManagementReusablePolicySetting:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: deviceManagementReusablePolicySetting
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: reusable setting creation date and time. This property is read-only.
+              format: date-time
+            description:
+              type: string
+              description: reusable setting description supplied by user.
+              nullable: true
+            displayName:
+              type: string
+              description: reusable setting display name supplied by user.
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: date and time when reusable setting was last modified. This property is read-only.
+              format: date-time
+            referencingConfigurationPolicyCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: count of configuration policies referencing the current reusable setting. Valid values 0 to 2147483647. This property is read-only.
+              format: int32
+            settingDefinitionId:
+              type: string
+              description: setting definition id associated with this reusable setting.
+              nullable: true
+            settingInstance:
+              $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationSettingInstance'
+            version:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: version number for reusable setting. Valid values 0 to 2147483647. This property is read-only.
+              format: int32
+            referencingConfigurationPolicies:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationPolicy'
+              description: configuration policies referencing the current reusable setting
+          additionalProperties:
+            type: object
+          description: Graph model for a reusable setting
     microsoft.graph.roleScopeTag:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -16815,6 +18521,26 @@ components:
               $ref: '#/components/schemas/microsoft.graph.cloudPcManagementAssignmentTarget'
           additionalProperties:
             type: object
+    microsoft.graph.deletedWindowsAutopilotDeviceState:
+      title: deletedWindowsAutopilotDeviceState
+      type: object
+      properties:
+        deletionState:
+          $ref: '#/components/schemas/microsoft.graph.windowsAutopilotDeviceDeletionState'
+        deviceRegistrationId:
+          type: string
+          description: ZTD Device Registration ID .
+          nullable: true
+        errorMessage:
+          type: string
+          description: Device deletion error message.
+          nullable: true
+        serialNumber:
+          type: string
+          description: Autopilot Device Serial Number
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.windowsFeatureUpdateProfileAssignment:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -16895,6 +18621,59 @@ components:
       additionalProperties:
         type: object
       description: Base type for assignment targets.
+    microsoft.graph.deviceManagementConfigurationPlatforms:
+      title: deviceManagementConfigurationPlatforms
+      enum:
+        - none
+        - macOS
+        - windows10X
+        - windows10
+      type: string
+    microsoft.graph.deviceManagementConfigurationTechnologies:
+      title: deviceManagementConfigurationTechnologies
+      enum:
+        - none
+        - mdm
+        - windows10XManagement
+        - configManager
+      type: string
+    microsoft.graph.deviceManagementConfigurationPolicyTemplateReference:
+      title: deviceManagementConfigurationPolicyTemplateReference
+      type: object
+      properties:
+        templateDisplayName:
+          type: string
+          description: Template Display Name of the referenced template. This property is read-only.
+          nullable: true
+        templateDisplayVersion:
+          type: string
+          description: Template Display Version of the referenced Template. This property is read-only.
+          nullable: true
+        templateFamily:
+          $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationTemplateFamily'
+        templateId:
+          type: string
+          description: Template id
+          nullable: true
+      additionalProperties:
+        type: object
+      description: Policy template reference information
+    microsoft.graph.deviceManagementConfigurationSetting:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: deviceManagementConfigurationSetting
+          type: object
+          properties:
+            settingInstance:
+              $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationSettingInstance'
+            settingDefinitions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationSettingDefinition'
+              description: List of related Setting Definitions
+          additionalProperties:
+            type: object
+          description: Setting instance within policy
     microsoft.graph.discoverySource:
       title: discoverySource
       enum:
@@ -16991,11 +18770,12 @@ components:
         - androidEnterprise
         - windows10x
         - androidnGMS
-        - cloudPC
+        - chromeOS
         - linux
         - blackberry
         - palm
         - unknown
+        - cloudPC
       type: string
     microsoft.graph.managementAgentType:
       title: managementAgentType
@@ -17525,6 +19305,11 @@ components:
           $ref: '#/components/schemas/microsoft.graph.devicePlatformType'
         assignmentFilterType:
           $ref: '#/components/schemas/microsoft.graph.deviceAndAppManagementAssignmentFilterType'
+        assignmentFilterTypeAndEvaluationResults:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.assignmentFilterTypeAndEvaluationResult'
+          description: A collection of filter types and their corresponding evaluation results.
         evaluationDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
@@ -17553,11 +19338,29 @@ components:
         - apply
         - remove
       type: string
+    microsoft.graph.deviceManagementConfigurationSettingInstance:
+      title: deviceManagementConfigurationSettingInstance
+      type: object
+      properties:
+        settingDefinitionId:
+          type: string
+          description: Setting Definition Id
+      additionalProperties:
+        type: object
+      description: Setting instance within policy
     microsoft.graph.cloudPcManagementAssignmentTarget:
       title: cloudPcManagementAssignmentTarget
       type: object
       additionalProperties:
         type: object
+    microsoft.graph.windowsAutopilotDeviceDeletionState:
+      title: windowsAutopilotDeviceDeletionState
+      enum:
+        - unknown
+        - failed
+        - accepted
+        - error
+      type: string
     odata.error:
       required:
         - error
@@ -17574,6 +19377,91 @@ components:
         - include
         - exclude
       type: string
+    microsoft.graph.deviceManagementConfigurationTemplateFamily:
+      title: deviceManagementConfigurationTemplateFamily
+      enum:
+        - none
+        - endpointSecurityAntivirus
+        - endpointSecurityDiskEncryption
+        - endpointSecurityFirewall
+        - endpointSecurityEndpointDectionAndResponse
+        - endpointSecurityAttackSurfaceReduction
+        - endpointSecurityAccountProtection
+        - endpointSecurityApplicationControl
+      type: string
+    microsoft.graph.deviceManagementConfigurationSettingDefinition:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: deviceManagementConfigurationSettingDefinition
+          type: object
+          properties:
+            accessTypes:
+              $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationSettingAccessTypes'
+            applicability:
+              $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationSettingApplicability'
+            baseUri:
+              type: string
+              description: Base CSP Path
+              nullable: true
+            categoryId:
+              type: string
+              description: Specifies the area group under which the setting is configured in a specified configuration service provider (CSP)
+              nullable: true
+            description:
+              type: string
+              description: Description of the item
+              nullable: true
+            displayName:
+              type: string
+              description: Display name of the item
+              nullable: true
+            helpText:
+              type: string
+              description: Help text of the item
+              nullable: true
+            infoUrls:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: List of links more info for the setting can be found at
+            keywords:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: Tokens which to search settings on
+            name:
+              type: string
+              description: Name of the item
+              nullable: true
+            occurrence:
+              $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationSettingOccurrence'
+            offsetUri:
+              type: string
+              description: Offset CSP Path from Base
+              nullable: true
+            referredSettingInformationList:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationReferredSettingInformation'
+              description: List of referred setting information.
+            rootDefinitionId:
+              type: string
+              description: Root setting definition if the setting is a child setting.
+              nullable: true
+            settingUsage:
+              $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationSettingUsage'
+            uxBehavior:
+              $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationControlType'
+            version:
+              type: string
+              description: Item Version
+              nullable: true
+            visibility:
+              $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationSettingVisibility'
+          additionalProperties:
+            type: object
     microsoft.graph.deviceComplianceActionType:
       title: deviceComplianceActionType
       enum:
@@ -18196,6 +20084,17 @@ components:
           additionalProperties:
             type: object
           description: Entity representing a setting category
+    microsoft.graph.assignmentFilterTypeAndEvaluationResult:
+      title: assignmentFilterTypeAndEvaluationResult
+      type: object
+      properties:
+        assignmentFilterType:
+          $ref: '#/components/schemas/microsoft.graph.deviceAndAppManagementAssignmentFilterType'
+        evaluationResult:
+          $ref: '#/components/schemas/microsoft.graph.assignmentFilterEvaluationResult'
+      additionalProperties:
+        type: object
+      description: Represents the filter type and evalaution result of the filter.
     microsoft.graph.assignmentFilterEvaluationResult:
       title: assignmentFilterEvaluationResult
       enum:
@@ -18229,6 +20128,88 @@ components:
           description: The structure of this object is service-specific
       additionalProperties:
         type: object
+    microsoft.graph.deviceManagementConfigurationSettingAccessTypes:
+      title: deviceManagementConfigurationSettingAccessTypes
+      enum:
+        - none
+        - add
+        - copy
+        - delete
+        - get
+        - replace
+        - execute
+      type: string
+    microsoft.graph.deviceManagementConfigurationSettingApplicability:
+      title: deviceManagementConfigurationSettingApplicability
+      type: object
+      properties:
+        description:
+          type: string
+          description: description of the setting
+          nullable: true
+        deviceMode:
+          $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationDeviceMode'
+        platform:
+          $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationPlatforms'
+        technologies:
+          $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationTechnologies'
+      additionalProperties:
+        type: object
+    microsoft.graph.deviceManagementConfigurationSettingOccurrence:
+      title: deviceManagementConfigurationSettingOccurrence
+      type: object
+      properties:
+        maxDeviceOccurrence:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Maximum times setting can be set on device.
+          format: int32
+          nullable: true
+        minDeviceOccurrence:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Minimum times setting can be set on device. A MinDeviceOccurrence of 0 means setting is optional
+          format: int32
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.deviceManagementConfigurationReferredSettingInformation:
+      title: deviceManagementConfigurationReferredSettingInformation
+      type: object
+      properties:
+        settingDefinitionId:
+          type: string
+          description: Setting definition id that is being referred to a setting. Applicable for reusable setting
+          nullable: true
+      additionalProperties:
+        type: object
+      description: Referred setting information about reusable setting
+    microsoft.graph.deviceManagementConfigurationSettingUsage:
+      title: deviceManagementConfigurationSettingUsage
+      enum:
+        - none
+        - configuration
+      type: string
+    microsoft.graph.deviceManagementConfigurationControlType:
+      title: deviceManagementConfigurationControlType
+      enum:
+        - default
+        - dropdown
+        - smallTextBox
+        - largeTextBox
+        - toggle
+        - multiheaderGrid
+        - contextPane
+      type: string
+    microsoft.graph.deviceManagementConfigurationSettingVisibility:
+      title: deviceManagementConfigurationSettingVisibility
+      enum:
+        - none
+        - settingsCatalog
+        - template
+      type: string
     microsoft.graph.windows10DeviceModeType:
       title: windows10DeviceModeType
       enum:
@@ -18332,6 +20313,12 @@ components:
           type: string
       additionalProperties:
         type: object
+    microsoft.graph.deviceManagementConfigurationDeviceMode:
+      title: deviceManagementConfigurationDeviceMode
+      enum:
+        - none
+        - kiosk
+      type: string
     microsoft.graph.deviceManagementConstraint:
       title: deviceManagementConstraint
       type: object
