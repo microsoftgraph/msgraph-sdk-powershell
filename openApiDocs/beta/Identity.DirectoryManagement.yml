@@ -1302,6 +1302,7 @@ paths:
                 - manager
                 - memberOf
                 - transitiveMemberOf
+                - transitiveReports
               type: string
         - name: $expand
           in: query
@@ -1318,6 +1319,7 @@ paths:
                 - manager
                 - memberOf
                 - transitiveMemberOf
+                - transitiveReports
               type: string
       responses:
         '200':
@@ -1418,6 +1420,7 @@ paths:
                 - manager
                 - memberOf
                 - transitiveMemberOf
+                - transitiveReports
               type: string
         - name: $expand
           in: query
@@ -1434,6 +1437,7 @@ paths:
                 - manager
                 - memberOf
                 - transitiveMemberOf
+                - transitiveReports
               type: string
       responses:
         '200':
@@ -1457,6 +1461,10 @@ paths:
                 orgContact-id: $request.path.orgContact-id
             transitiveMemberOf:
               operationId: contacts.ListTransitiveMemberOf
+              parameters:
+                orgContact-id: $request.path.orgContact-id
+            transitiveReports:
+              operationId: contacts.ListTransitiveReports
               parameters:
                 orgContact-id: $request.path.orgContact-id
         default:
@@ -2311,6 +2319,179 @@ paths:
         - contacts.directoryObject
       summary: Create new navigation property ref to transitiveMemberOf for contacts
       operationId: contacts_CreateRefTransitiveMemberOf
+      parameters:
+        - name: orgContact-id
+          in: path
+          description: 'key: id of orgContact'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: orgContact
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '201':
+          description: Created navigation property link.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/contacts/{orgContact-id}/transitiveReports':
+    get:
+      tags:
+        - contacts.directoryObject
+      summary: Get transitiveReports from contacts
+      operationId: contacts_ListTransitiveReports
+      parameters:
+        - name: orgContact-id
+          in: path
+          description: 'key: id of orgContact'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: orgContact
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/contacts/{orgContact-id}/transitiveReports/$ref':
+    get:
+      tags:
+        - contacts.directoryObject
+      summary: Get ref of transitiveReports from contacts
+      operationId: contacts_ListRefTransitiveReports
+      parameters:
+        - name: orgContact-id
+          in: path
+          description: 'key: id of orgContact'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: orgContact
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property links
+          content:
+            application/json:
+              schema:
+                title: Collection of links of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - contacts.directoryObject
+      summary: Create new navigation property ref to transitiveReports for contacts
+      operationId: contacts_CreateRefTransitiveReports
       parameters:
         - name: orgContact-id
           in: path
@@ -11707,6 +11888,10 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: Groups that this contact is a member of. Read-only. Nullable.
             transitiveMemberOf:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+            transitiveReports:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
