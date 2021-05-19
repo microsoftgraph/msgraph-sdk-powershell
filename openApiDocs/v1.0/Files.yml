@@ -13487,7 +13487,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLicense'
-              description: The licenses that are assigned to the user. Not nullable. Supports $filter.
+              description: 'The licenses that are assigned to the user, including inherited (group-based) licenses. Not nullable. Supports $filter.'
             assignedPlans:
               type: array
               items:
@@ -13517,7 +13517,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time the user was created. The value cannot be modified and is automatically populated when the entity is created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. Property is nullable. A null value indicates that an accurate creation time couldn''t be determined for the user. Returned only on $select. Read-only. Supports $filter with the eq, lt, and ge operators.'
+              description: 'The date and time the user was created. The value cannot be modified and is automatically populated when the entity is created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. Property is nullable. A null value indicates that an accurate creation time couldn''t be determined for the user. Returned only on $select. Read-only. Supports $filter with the eq, ne, le, and ge operators.'
               format: date-time
               nullable: true
             creationType:
@@ -14873,7 +14873,7 @@ components:
               description: The id of the client service principal for the application which is authorized to act on behalf of a signed-in user when accessing an API. Required. Supports $filter (eq only).
             consentType:
               type: string
-              description: 'Indicates if authorization is granted for the client application to impersonate all users or only a specific user. AllPrincipals indicates authorization to impersonate all users. Principal indicates authorization to impersonate a specific user. Consent on behalf of all users can be granted by an administrator. Non-admin users may be authorized to consent on behalf of themselves in some cases, for some delegated permissions. Required. Supports $filter (eq only).'
+              description: 'Indicates whether authorization is granted for the client application to impersonate all users or only a specific user. AllPrincipals indicates authorization to impersonate all users. Principal indicates authorization to impersonate a specific user. Consent on behalf of all users can be granted by an administrator. Non-admin users may be authorized to consent on behalf of themselves in some cases, for some delegated permissions. Required. Supports $filter (eq only).'
               nullable: true
             principalId:
               type: string
@@ -15398,6 +15398,10 @@ components:
             displayName:
               type: string
               description: The mailFolder's display name.
+              nullable: true
+            isHidden:
+              type: boolean
+              description: Indicates whether the mailFolder is hidden. This property can be set only when creating the folder. Find more information in Hidden mail folders.
               nullable: true
             parentFolderId:
               type: string
