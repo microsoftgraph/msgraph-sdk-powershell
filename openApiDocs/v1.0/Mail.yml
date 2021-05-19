@@ -382,6 +382,8 @@ paths:
                 - childFolderCount desc
                 - displayName
                 - displayName desc
+                - isHidden
+                - isHidden desc
                 - parentFolderId
                 - parentFolderId desc
                 - totalItemCount
@@ -402,6 +404,7 @@ paths:
                 - id
                 - childFolderCount
                 - displayName
+                - isHidden
                 - parentFolderId
                 - totalItemCount
                 - unreadItemCount
@@ -515,6 +518,7 @@ paths:
                 - id
                 - childFolderCount
                 - displayName
+                - isHidden
                 - parentFolderId
                 - totalItemCount
                 - unreadItemCount
@@ -683,6 +687,8 @@ paths:
                 - childFolderCount desc
                 - displayName
                 - displayName desc
+                - isHidden
+                - isHidden desc
                 - parentFolderId
                 - parentFolderId desc
                 - totalItemCount
@@ -703,6 +709,7 @@ paths:
                 - id
                 - childFolderCount
                 - displayName
+                - isHidden
                 - parentFolderId
                 - totalItemCount
                 - unreadItemCount
@@ -830,6 +837,7 @@ paths:
                 - id
                 - childFolderCount
                 - displayName
+                - isHidden
                 - parentFolderId
                 - totalItemCount
                 - unreadItemCount
@@ -5102,6 +5110,10 @@ components:
             displayName:
               type: string
               description: The mailFolder's display name.
+              nullable: true
+            isHidden:
+              type: boolean
+              description: Indicates whether the mailFolder is hidden. This property can be set only when creating the folder. Find more information in Hidden mail folders.
               nullable: true
             parentFolderId:
               type: string

@@ -180,7 +180,7 @@ directive:
       subject: (.*)(EntitlementManagement)AccessPackageAssignment$
     remove: true
   - where:
-      verb: New|Remove|Update
+      verb: New|Invoke|Remove|Update
       subject: (.*)(EntitlementManagement)AccessPackageAssignmentResourceRole$
     remove: true
   - where:

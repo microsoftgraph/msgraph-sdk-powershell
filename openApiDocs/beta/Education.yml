@@ -2173,6 +2173,45 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/microsoft.graph.setUpResourcesFolder()':
+    get:
+      tags:
+        - education.Functions
+      summary: Invoke function setUpResourcesFolder
+      operationId: education.classes.assignments.submissions_setUpResourcesFolder
+      parameters:
+        - name: educationClass-id
+          in: path
+          description: 'key: id of educationClass'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: educationClass
+        - name: educationAssignment-id
+          in: path
+          description: 'key: id of educationAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: educationAssignment
+        - name: educationSubmission-id
+          in: path
+          description: 'key: id of educationSubmission'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: educationSubmission
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/microsoft.graph.submit':
     post:
       tags:
@@ -6139,6 +6178,38 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/education/me/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/microsoft.graph.setUpResourcesFolder()':
+    get:
+      tags:
+        - education.Functions
+      summary: Invoke function setUpResourcesFolder
+      operationId: education.me.assignments.submissions_setUpResourcesFolder
+      parameters:
+        - name: educationAssignment-id
+          in: path
+          description: 'key: id of educationAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: educationAssignment
+        - name: educationSubmission-id
+          in: path
+          description: 'key: id of educationSubmission'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: educationSubmission
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/education/me/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/microsoft.graph.submit':
     post:
       tags:
@@ -8075,6 +8146,7 @@ paths:
                 - registeredDevices
                 - scopedRoleMemberOf
                 - transitiveMemberOf
+                - transitiveReports
                 - calendar
                 - calendarGroups
                 - calendars
@@ -8147,6 +8219,7 @@ paths:
                 - registeredDevices
                 - scopedRoleMemberOf
                 - transitiveMemberOf
+                - transitiveReports
                 - calendar
                 - calendarGroups
                 - calendars
@@ -8231,6 +8304,8 @@ paths:
               operationId: education.me.User.ListScopedRoleMemberOf
             transitiveMemberOf:
               operationId: education.me.User.ListTransitiveMemberOf
+            transitiveReports:
+              operationId: education.me.User.ListTransitiveReports
             calendar:
               operationId: education.me.User.GetCalendar
             calendarGroups:
@@ -8368,6 +8443,8 @@ paths:
               operationId: education.me.User.ListScopedRoleMemberOf
             transitiveMemberOf:
               operationId: education.me.User.ListTransitiveMemberOf
+            transitiveReports:
+              operationId: education.me.User.ListTransitiveReports
             calendar:
               operationId: education.me.User.GetCalendar
             calendarGroups:
@@ -12109,6 +12186,45 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/education/users/{educationUser-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/microsoft.graph.setUpResourcesFolder()':
+    get:
+      tags:
+        - education.Functions
+      summary: Invoke function setUpResourcesFolder
+      operationId: education.users.assignments.submissions_setUpResourcesFolder
+      parameters:
+        - name: educationUser-id
+          in: path
+          description: 'key: id of educationUser'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: educationUser
+        - name: educationAssignment-id
+          in: path
+          description: 'key: id of educationAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: educationAssignment
+        - name: educationSubmission-id
+          in: path
+          description: 'key: id of educationSubmission'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: educationSubmission
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/education/users/{educationUser-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/microsoft.graph.submit':
     post:
       tags:
@@ -14297,6 +14413,7 @@ paths:
                 - registeredDevices
                 - scopedRoleMemberOf
                 - transitiveMemberOf
+                - transitiveReports
                 - calendar
                 - calendarGroups
                 - calendars
@@ -14369,6 +14486,7 @@ paths:
                 - registeredDevices
                 - scopedRoleMemberOf
                 - transitiveMemberOf
+                - transitiveReports
                 - calendar
                 - calendarGroups
                 - calendars
@@ -14481,6 +14599,10 @@ paths:
                 educationUser-id: $request.path.educationUser-id
             transitiveMemberOf:
               operationId: education.users.User.ListTransitiveMemberOf
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+            transitiveReports:
+              operationId: education.users.User.ListTransitiveReports
               parameters:
                 educationUser-id: $request.path.educationUser-id
             calendar:
@@ -14746,6 +14868,10 @@ paths:
                 educationUser-id: $request.path.educationUser-id
             transitiveMemberOf:
               operationId: education.users.User.ListTransitiveMemberOf
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+            transitiveReports:
+              operationId: education.users.User.ListTransitiveReports
               parameters:
                 educationUser-id: $request.path.educationUser-id
             calendar:
@@ -15959,7 +16085,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLicense'
-              description: The licenses that are assigned to the user. Not nullable. Supports $filter.
+              description: 'The licenses that are assigned to the user, including inherited (group-based) licenses. Not nullable. Supports $filter.'
             assignedPlans:
               type: array
               items:
@@ -15989,7 +16115,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time the user was created. The value cannot be modified and is automatically populated when the entity is created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. Property is nullable. A null value indicates that an accurate creation time couldn''t be determined for the user. Returned only on $select. Read-only. Supports $filter with the eq, lt, and ge operators.'
+              description: 'The date and time the user was created. The value cannot be modified and is automatically populated when the entity is created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. Property is nullable. A null value indicates that an accurate creation time couldn''t be determined for the user. Returned only on $select. Read-only. Supports $filter with the eq, ne, le, and ge operators.'
               format: date-time
               nullable: true
             creationType:
@@ -16329,6 +16455,10 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.scopedRoleMembership'
               description: The scoped-role administrative unit memberships for this user. Read-only. Nullable.
             transitiveMemberOf:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+            transitiveReports:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
@@ -18240,7 +18370,7 @@ components:
               description: The id of the client service principal for the application which is authorized to act on behalf of a signed-in user when accessing an API. Required. Supports $filter (eq only).
             consentType:
               type: string
-              description: 'Indicates if authorization is granted for the client application to impersonate all users or only a specific user. AllPrincipals indicates authorization to impersonate all users. Principal indicates authorization to impersonate a specific user. Consent on behalf of all users can be granted by an administrator. Non-admin users may be authorized to consent on behalf of themselves in some cases, for some delegated permissions. Required. Supports $filter (eq only).'
+              description: 'Indicates whether authorization is granted for the client application to impersonate all users or only a specific user. AllPrincipals indicates authorization to impersonate all users. Principal indicates authorization to impersonate a specific user. Consent on behalf of all users can be granted by an administrator. Non-admin users may be authorized to consent on behalf of themselves in some cases, for some delegated permissions. Required. Supports $filter (eq only).'
               nullable: true
             expiryTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -25167,7 +25297,6 @@ components:
             creationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The timestamp when this key was registered to the user.
               format: date-time
               nullable: true
             displayName:
