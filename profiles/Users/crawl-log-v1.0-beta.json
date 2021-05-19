@@ -348,6 +348,14 @@
     "/users/{user-id}/transitiveMemberOf/$ref": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/transitiveReports": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/transitiveReports/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
     }
   }
 }
