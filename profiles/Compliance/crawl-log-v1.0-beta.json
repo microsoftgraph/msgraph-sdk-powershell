@@ -145,11 +145,11 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Compliance.yml"
     },
-    "/compliance/ediscovery/cases/{case-id}/noncustodialDataSources/{noncustodialDataSource-id}/microsoft.graph.ediscovery.Release": {
+    "/compliance/ediscovery/cases/{case-id}/noncustodialDataSources/{noncustodialDataSource-id}/microsoft.graph.ediscovery.release": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Compliance.yml"
     },
-    "/compliance/ediscovery/cases/{case-id}/noncustodialDataSources/{noncustodialDataSource-id}/microsoft.graph.ediscovery.UpdateIndex": {
+    "/compliance/ediscovery/cases/{case-id}/noncustodialDataSources/{noncustodialDataSource-id}/microsoft.graph.ediscovery.updateIndex": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Compliance.yml"
     },
