@@ -203,6 +203,6 @@ namespace Microsoft.Graph.PowerShell.Authentication
         /// <summary>
         /// Provides Access to output methods provided by the Cmdlet
         /// </summary>
-        public IOutput Output { get; set; }
+        public IPSGraphOutputWriter Output { get; set; }
     }
 }

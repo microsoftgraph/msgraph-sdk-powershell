@@ -4,6 +4,8 @@
 
 using System;
 
+using Microsoft.Graph.PowerShell.Authentication.Models;
+
 namespace Microsoft.Graph.PowerShell.Authentication.Common
 {
     using System.Management.Automation;
@@ -12,14 +14,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Common
 
     public static class GraphSessionInitializer
     {
-        /// <summary>
-        /// Initializes <see cref="GraphSession"/>.
-        /// </summary>
-        public static void InitializeSession()
-        {
-            GraphSession.Initialize(() => CreateInstance());
-        }
-
         /// <summary>
         /// Creates a new instance of a <see cref="GraphSession"/>.
         /// </summary>
@@ -35,28 +29,37 @@ namespace Microsoft.Graph.PowerShell.Authentication.Common
         /// Initializes <see cref="GraphSession"/>. with Output via Cmdlet methods
         /// </summary>
         /// <param name="cmdLet"></param>
-        public static void InitializeSession(PSCmdlet cmdLet)
+        internal static void InitializeSession(Cmdlet cmdLet)
+        {
+            var writer = new PsGraphOutputWriter
+            {
+                WriteDebug = cmdLet.WriteDebug,
+                WriteInformation = cmdLet.WriteInformation,
+                WriteObject = cmdLet.WriteObject,
+                WriteVerbose = cmdLet.WriteVerbose,
+                WriteError = (exception, errorId, errorCategory, targetObject) =>
+                {
+                    var parseResult = Enum.TryParse(errorCategory.ToString(), out ErrorCategory result);
+                    if (!parseResult)
+                    {
+                        result = ErrorCategory.NotSpecified;
+                    }
+                    var errorRecord = new ErrorRecord(exception, errorId, result, targetObject);
+                    cmdLet.WriteError(errorRecord);
+                }
+            };
+            InitializeSession(writer);
+        }
+        /// <summary>
+        /// Initializes <see cref="GraphSession"/>. with Output via Cmdlet methods
+        /// </summary>
+        /// <param name="writer"></param>
+        internal static void InitializeSession(IPSGraphOutputWriter writer)
         {
             GraphSession.Initialize(() =>
             {
                 var instance = CreateInstance();
-                instance.Output = new Output
-                {
-                    WriteDebug = cmdLet.WriteDebug,
-                    WriteInformation = cmdLet.WriteInformation,
-                    WriteObject = cmdLet.WriteObject,
-                    WriteVerbose = cmdLet.WriteVerbose,
-                    WriteError = (exception, errorId, errorCategory, targetObject) =>
-                    {
-                        var parseResult = Enum.TryParse(errorCategory.ToString(), out ErrorCategory result);
-                        if (!parseResult)
-                        {
-                            result = ErrorCategory.NotSpecified;
-                        }
-                        var errorRecord = new ErrorRecord(exception, errorId, result, targetObject);
-                        cmdLet.WriteError(errorRecord);
-                    }
-                };
+                instance.Output = writer;
                 return instance;
             });
         }
