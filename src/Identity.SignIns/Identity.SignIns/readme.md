@@ -55,6 +55,10 @@ directive:
   - where:
       subject: ^InformationProtectionSensitivity(Label|LabelSublabel)$
     remove: true
+  - where:
+      verb: New|Update
+      subject: ^UserAuthenticationPasswordMethod$
+    remove: true
 ```
 ### Versioning
 
