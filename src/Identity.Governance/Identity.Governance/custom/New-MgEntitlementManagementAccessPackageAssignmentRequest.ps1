@@ -33,7 +33,6 @@ function New-MgEntitlementManagementAccessPackageAssignmentRequest {
 param(
 
     [Parameter(ParameterSetName='CreateRequestAdminAdd')]
-    [Parameter(ParameterSetName='CreateRequestAdminAddExternal')]
     [Microsoft.Graph.PowerShell.Category('Body')]
     [Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageAnswer[]]
     # Answers provided by the requestor to accessPackageQuestions asked of them at the time of request.
@@ -41,7 +40,6 @@ param(
     ${Answers},
 
     [Parameter(ParameterSetName='CreateRequestAdminAdd')]
-    [Parameter(ParameterSetName='CreateRequestAdminAddExternal')]
     [Parameter(ParameterSetName='CreateRequestAdminRemove')]
     [Microsoft.Graph.PowerShell.Category('Body')]
     [System.String]
@@ -49,7 +47,6 @@ param(
     ${Justification},
 
     [Parameter(ParameterSetName='CreateRequestAdminAdd')]
-    [Parameter(ParameterSetName='CreateRequestAdminAddExternal')]
     [Parameter(ParameterSetName='CreateRequestAdminRemove')]
     [Microsoft.Graph.PowerShell.Category('Body')]
     [System.String]
@@ -58,7 +55,6 @@ param(
     ${RequestType},
 
     [Parameter(ParameterSetName='CreateRequestAdminAdd')]
-    [Parameter(ParameterSetName='CreateRequestAdminAddExternal')]
     [Microsoft.Graph.PowerShell.Category('Body')]
     [string]
     ${StartDate},
@@ -80,8 +76,6 @@ param(
 
     [Parameter(Mandatory = $True,
         ParameterSetName='CreateRequestAdminAdd')]
-    [Parameter(Mandatory = $True,
-        ParameterSetName='CreateRequestAdminAddExternal')]
     [Microsoft.Graph.PowerShell.Category('Body')]
     [ValidateScript( {
             try {
@@ -97,8 +91,6 @@ param(
 
     [Parameter(Mandatory = $True,
         ParameterSetName='CreateRequestAdminAdd')]
-        [Parameter(Mandatory = $True,
-        ParameterSetName='CreateRequestAdminAddExternal')]
     [Microsoft.Graph.PowerShell.Category('Body')]
     [ValidateScript( {
             try {
@@ -126,12 +118,6 @@ param(
         })]
     [string]
     ${TargetId},
-
-    [Parameter(Mandatory = $True,
-    ParameterSetName='CreateRequestAdminAddExternal')]
-    [Microsoft.Graph.PowerShell.Category('Body')]
-    [string]
-    ${TargetEmail},
 
     [Parameter(DontShow)]
     [Microsoft.Graph.PowerShell.Category('Runtime')]
@@ -206,11 +192,7 @@ process {
     }
     if ($TargetId -ne $null -and $TargetId.Length -ne 0) {
         $AccessPackageAssignmentRequestBodyAccessPackageAssignment.TargetId = $TargetId
-    } elseif ($TargetEmail -ne $null -and $TargetEmail.Length -ne 0) {
-        $AccessPackageAssignmentRequestBodyAccessPackageAssignment.Target = new-object microsoft.graph.powershell.models.MicrosoftGraphAccessPackageSubject
-        $AccessPackageAssignmentRequestBodyAccessPackageAssignment.Target.Email = $TargetEmail
     }
-
     if ($AssignmentPolicyId -ne $null -and $AssignmentPolicyId.Length -ne 0) {
         $AccessPackageAssignmentRequestBodyAccessPackageAssignment.AssignmentPolicyId = $AssignmentPolicyId
     }
@@ -227,7 +209,6 @@ process {
     $null = $PSBoundParameters.Remove("AccessPackageId")
     $null = $PSBoundParameters.Remove("AssignmentPolicyId")
     $null = $PSBoundParameters.Remove("TargetId")
-    $null = $PSBoundParameters.Remove("TargetEmail")
     $null = $PSBoundParameters.Remove("StartDate")
 
     $PSBoundParameters['AccessPackageAssignment'] = $AccessPackageAssignmentRequestBodyAccessPackageAssignment
