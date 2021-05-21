@@ -84,7 +84,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                                 authProvider = new DeviceCodeProvider(publicClientApp, authContext.Scopes,
                                      result =>
                                     {
-                                        GraphSession.Instance.Output.WriteObject(result.Message);
+                                        GraphSession.Instance.OutputWriter.WriteObject(result.Message);
                                         return Task.CompletedTask;
                                     });
                                 break;

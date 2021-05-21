@@ -3,7 +3,7 @@
 // ------------------------------------------------------------------------------
 
 using System;
-
+using Microsoft.Graph.PowerShell.Authentication.Helpers;
 using Microsoft.Graph.PowerShell.Authentication.Models;
 
 namespace Microsoft.Graph.PowerShell.Authentication.Common
@@ -14,6 +14,13 @@ namespace Microsoft.Graph.PowerShell.Authentication.Common
 
     public static class GraphSessionInitializer
     {
+        /// <summary>
+        /// Initializes <see cref="GraphSession"/>.
+        /// </summary>
+        public static void InitializeSession()
+        {
+            GraphSession.Initialize(() => CreateInstance());
+        }
         /// <summary>
         /// Creates a new instance of a <see cref="GraphSession"/>.
         /// </summary>
@@ -29,12 +36,15 @@ namespace Microsoft.Graph.PowerShell.Authentication.Common
         /// Initializes <see cref="GraphSession"/>. with Output via Cmdlet methods
         /// </summary>
         /// <param name="cmdLet"></param>
-        internal static void InitializeSession(Cmdlet cmdLet)
+        internal static void InitializeOutput(CustomAsyncCommandRuntime cmdLet)
         {
-            var writer = new PsGraphOutputWriter
+            var outputWriter = new PsGraphOutputWriter
             {
                 WriteDebug = cmdLet.WriteDebug,
-                WriteInformation = cmdLet.WriteInformation,
+                WriteInformation = (o, strings) =>
+                {
+                    cmdLet.WriteInformation(new InformationRecord(o, strings));
+                },
                 WriteObject = cmdLet.WriteObject,
                 WriteVerbose = cmdLet.WriteVerbose,
                 WriteError = (exception, errorId, errorCategory, targetObject) =>
@@ -48,19 +58,17 @@ namespace Microsoft.Graph.PowerShell.Authentication.Common
                     cmdLet.WriteError(errorRecord);
                 }
             };
-            InitializeSession(writer);
+            InitializeOutput(outputWriter);
         }
         /// <summary>
         /// Initializes <see cref="GraphSession"/>. with Output via Cmdlet methods
         /// </summary>
-        /// <param name="writer"></param>
-        internal static void InitializeSession(IPSGraphOutputWriter writer)
+        /// <param name="outputWriter"></param>
+        internal static void InitializeOutput(IPSGraphOutputWriter outputWriter)
         {
-            GraphSession.Initialize(() =>
+            GraphSession.Modify(session =>
             {
-                var instance = CreateInstance();
-                instance.Output = writer;
-                return instance;
+                session.OutputWriter = outputWriter;
             });
         }
     }

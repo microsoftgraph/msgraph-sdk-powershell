@@ -15,6 +15,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core
             internal const string SessionLockWriteDisposed = "sessionLockWriteDisposed";
             internal const string SessionLockWriteRecursion = "sessionLockWriteRecursion";
             internal const string InvalidJWT = "invalidJWT";
+            internal const string OutputNotInitialized = nameof(OutputNotInitialized);
         }
 
         public static class Message

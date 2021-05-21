@@ -11,7 +11,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Models
         public Action<string> WriteObject { get; set; }
         public Action<string> WriteDebug { get; set; }
         public Action<Exception, string, int, object> WriteError { get; set; }
-        public Action<object, string[]> WriteInformation { get; set; }
+        public Action<object, string> WriteInformation { get; set; }
         public Action<string> WriteVerbose { get; set; }
     }
 }

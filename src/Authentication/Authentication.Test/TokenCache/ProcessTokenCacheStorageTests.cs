@@ -19,7 +19,8 @@
         public ProcessTokenCacheStorageTests(ITestOutputHelper outputHelper)
         {
             _testAppContext1 = new AuthContext { ClientId = "test_app_id_1" };
-            GraphSessionInitializer.InitializeSession(new PsGraphOutputWriter
+            GraphSessionInitializer.InitializeSession();
+            GraphSessionInitializer.InitializeOutput(new PsGraphOutputWriter
             {
                 WriteError = (exception, s, arg3, arg4) =>
                 {
