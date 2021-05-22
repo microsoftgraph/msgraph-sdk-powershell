@@ -82,7 +82,7 @@ directive:
       verb: Rename
       subject: ^(UserPassword)$
     set:
-      verb: Reset
+      verb: Update
       subject: $1
   - where:
       verb: Get
