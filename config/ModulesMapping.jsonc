@@ -1,5 +1,4 @@
 {
-    "WindowsUpdates": "^admin.windows$|^admin.Actions$|^admin.Functions$",
     "Applications": "^applicationTemplates\\.|^applications\\.|^servicePrincipals\\.|^onPremisesPublishingProfiles\\.|^users.appRoleAssignment$|^groups.appRoleAssignment$",
     "Bookings": "^bookingBusinesses\\.|^bookingCurrencies\\.",
     "Calendar": "^places\\.|^users.calendar$|^users.calendarGroup$|^users.event$|^groups.calendar$|^groups.event$",
@@ -35,6 +34,7 @@
     "Teams": "^teams\\.|^chats\\.|^users.chat$|^appCatalogs.teamsApp$|^users.userTeamwork$|^teamwork\\.|^users.team$|^groups.team$",
     "Users": "^users.user$|^users.directoryObject$|^users.licenseDetails$|^users.notification$|^users.outlookUser$|^users.profilePhoto$|^users.userSettings$|^users.extension$|^users.oAuth2PermissionGrant$|^users.todo$",
     "Users.Actions": "^users.Actions$",
-    "Users.Functions": "^users.Functions$"
+    "Users.Functions": "^users.Functions$",
+    "WindowsUpdates": "^admin.windows$|^admin.Actions$|^admin.Functions$",
     // "WorkBooks": "^workbooks\\.",// Max limit.
 }
