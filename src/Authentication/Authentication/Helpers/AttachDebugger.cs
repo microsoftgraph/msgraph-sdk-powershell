@@ -16,19 +16,17 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
         {
             while (!Debugger.IsAttached)
             {
-                Console.Error.WriteLine($"Waiting for debugger to attach to process {Process.GetCurrentProcess().Id}");
+                invokedCmdLet.WriteWarning($"Waiting for debugger to attach to process {Process.GetCurrentProcess().Id}");
                 for (var i = 0; i < 50; i++)
                 {
                     if (Debugger.IsAttached)
                     {
                         break;
                     }
-
                     Thread.Sleep(100);
-                    Console.Error.Write(".");
+                    invokedCmdLet.WriteProgress(new ProgressRecord(0, "Waiting for Debugger",
+                        "Waiting for Debugger to attach to process"));
                 }
-
-                Console.Error.WriteLine();
             }
 
             Debugger.Break();
