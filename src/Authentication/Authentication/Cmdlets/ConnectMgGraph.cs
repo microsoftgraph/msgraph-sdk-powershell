@@ -137,6 +137,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             {
                 using (var asyncCommandRuntime = new CustomAsyncCommandRuntime(this, _cancellationTokenSource.Token))
                 {
+                    // Init output to this Cmdlet
+                    GraphSessionInitializer.InitializeOutput(asyncCommandRuntime);
                     asyncCommandRuntime.Wait(ProcessRecordAsync(), _cancellationTokenSource.Token);
                 }
             }
@@ -174,7 +176,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 IAuthContext authContext = new AuthContext { TenantId = TenantId };
                 // Set selected environment to the session object.
                 GraphSession.Instance.Environment = environment;
-
                 switch (ParameterSetName)
                 {
                     case Constants.UserParameterSet:
@@ -225,7 +226,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                         _cancellationTokenSource.Token,
                         () => { WriteWarning(Resources.DeviceCodeFallback); });
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     throw ex;
                 }

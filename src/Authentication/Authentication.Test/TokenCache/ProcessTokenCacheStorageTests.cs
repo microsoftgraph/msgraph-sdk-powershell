@@ -1,21 +1,36 @@
 ﻿namespace Microsoft.Graph.Authentication.Test.TokenCache
 {
     using Microsoft.Graph.PowerShell.Authentication;
+    using Microsoft.Graph.PowerShell.Authentication.Models;
     using Microsoft.Graph.PowerShell.Authentication.Common;
     using Microsoft.Graph.PowerShell.Authentication.TokenCache;
+
     using System;
     using System.Text;
     using System.Threading;
-    using Xunit;
 
-    public class ProcessTokenCacheStorageTests: IDisposable
+    using Xunit;
+    using Xunit.Abstractions;
+
+    public class ProcessTokenCacheStorageTests : IDisposable
     {
         // Defaults to process context scope.
         private IAuthContext _testAppContext1;
-        public ProcessTokenCacheStorageTests()
+        public ProcessTokenCacheStorageTests(ITestOutputHelper outputHelper)
         {
             _testAppContext1 = new AuthContext { ClientId = "test_app_id_1" };
             GraphSessionInitializer.InitializeSession();
+            GraphSessionInitializer.InitializeOutput(new PsGraphOutputWriter
+            {
+                WriteError = (exception, s, arg3, arg4) =>
+                {
+                    outputHelper.WriteLine(exception.Message);
+                },
+                WriteDebug = outputHelper.WriteLine,
+                WriteInformation = (o, strings) => outputHelper.WriteLine(o.ToString()),
+                WriteObject = outputHelper.WriteLine,
+                WriteVerbose = outputHelper.WriteLine
+            });
         }
 
         [Fact]
@@ -93,7 +108,8 @@
             // Act
             for (int i = 0; i < threads.Length; i++)
             {
-                threads[i] = new Thread(() => {
+                threads[i] = new Thread(() =>
+                {
                     byte[] contentBuffer = Encoding.UTF8.GetBytes(i.ToString());
                     TokenCacheStorage.SetToken(_testAppContext1, contentBuffer);
                     Thread.Sleep(2000);
