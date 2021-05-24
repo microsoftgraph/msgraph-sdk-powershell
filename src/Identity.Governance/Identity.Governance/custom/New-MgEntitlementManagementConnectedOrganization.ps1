@@ -15,44 +15,18 @@
 
 <#
 .Synopsis
-Create new connectedOrganization for identityGovernance
+Create new connectedOrganization
 .Description
-Create new connectedOrganization for identityGovernance
+Create a new connected organization, for use in an Azure AD Entitlement Management policy.
 .Example
-PS C:\> {{ Add code here }}
+PS C:\> New-MgEntitlementManagementConnectedOrganization -DomainName microsoft.com
 
-{{ Add output here }}
-.Example
-PS C:\> {{ Add code here }}
+Id
+--
+a19c861f-c110-423c-a8bb-b54230a036c9
 
-{{ Add output here }}
-
-.Inputs
-Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConnectedOrganization
 .Outputs
 Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConnectedOrganization
-.Notes
-COMPLEX PARAMETER PROPERTIES
-
-To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-BODYPARAMETER <IMicrosoftGraphConnectedOrganization>: connectedOrganization
-  [(Any) <Object>]: This indicates any property can be added to this object.
-  [Id <String>]: Read-only.
-  [CreatedBy <String>]: UPN of the user who created this resource. Read-only.
-  [CreatedDateTime <DateTime?>]: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-  [Description <String>]: The description of the connected organization.
-  [DisplayName <String>]: The display name of the connected organization.
-  [ExternalSponsors <IMicrosoftGraphDirectoryObject[]>]: Nullable.
-    [Id <String>]: Read-only.
-    [DeletedDateTime <DateTime?>]: 
-  [IdentitySources <IMicrosoftGraphIdentitySource[]>]: 
-  [InternalSponsors <IMicrosoftGraphDirectoryObject[]>]: Nullable.
-  [ModifiedBy <String>]: UPN of the user who last modified this resource. Read-only.
-  [ModifiedDateTime <DateTime?>]: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-  [State <String>]: connectedOrganizationState
-
-
 .Link
 https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/new-mgentitlementmanagementconnectedorganization
 #>

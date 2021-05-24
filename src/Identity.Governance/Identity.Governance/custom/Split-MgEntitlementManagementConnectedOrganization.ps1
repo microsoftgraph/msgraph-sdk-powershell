@@ -15,18 +15,9 @@
 
 <#
 .Synopsis
-Split identity sources of a connectedOrganization
+Split elements of a connectedOrganization
 .Description
-Split identity sources of a connectedOrganization
-.Example
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-.Example
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-
+Split elements of one or more Azure AD entitlement management connected organizations, returned by Get-MgEntitlementManagementConnectedOrganization, to simplify reporting.
 .Inputs
 Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConnectedOrganization
 
@@ -45,7 +36,7 @@ param(
 
     [Parameter(Mandatory=$true, ParameterSetName='SplitByIdentitySource')]
     [switch]
-    ${SplitByIdentitySource}
+    ${ByIdentitySource}
 
 )
 
@@ -54,28 +45,24 @@ begin {
 }
 
 process {
-    if ($SplitByIdentitySource) {
+    if ($ByIdentitySource) {
 
-        foreach ($is in $ConnectedOrganization.IdentitySources) {
+        if ($null -ne $ConnectedOrganization.IdentitySources) {
+            foreach ($is in $ConnectedOrganization.IdentitySources) {
+                # identity sources, as an abstract class, does not have any properties
 
-            $aObj = [pscustomobject]@{
-                ConnectedOrganizationId = $ConnectedOrganization.Id
-                ConnectedOrganizationCreatedBy = $ConnectedOrganization.CreatedBy
-                ConnectedOrganizationCreatedDateTime = $ConnectedOrganization.CreatedDateTime
-                ConnectedOrganizationModifiedBy = $ConnectedOrganization.ModifiedBy
-                ConnectedOrganizationModifiedDateTime = $ConnectedOrganization.ModifiedDateTime
-                ConnectedOrganizationState = $ConnectedOrganization.State
-                ConnectedOrganizationDisplayName = $ConnectedOrganization.DisplayName
-                ConnectedOrganizationDescription = $ConnectedOrganization.Description
-            }
+                $aObj = [pscustomobject]@{
+                    ConnectedOrganizationId = $ConnectedOrganization.Id
+                }
             
-            $addl = $is.AdditionalProperties
-            foreach ($k in $addl.Keys) {
-                $isk = $k
-                $aObj | Add-Member -MemberType NoteProperty -Name $isk -Value $addl[$k] -Force
-            }
+                $addl = $is.AdditionalProperties
+                foreach ($k in $addl.Keys) {
+                    $isk = $k
+                    $aObj | Add-Member -MemberType NoteProperty -Name $isk -Value $addl[$k] -Force
+                }
 
-            write-output $aObj
+                write-output $aObj
+            }
         }
     }
 }
