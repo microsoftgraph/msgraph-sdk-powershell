@@ -18,6 +18,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
         Process,
         CurrentUser
     }
+
     public enum AuthProviderType
     {
         InteractiveAuthenticationProvider,
@@ -26,6 +27,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
         ClientCredentialProvider,
         UserProvidedToken
     }
+
     public interface IAuthContext
     {
         string ClientId { get; set; }

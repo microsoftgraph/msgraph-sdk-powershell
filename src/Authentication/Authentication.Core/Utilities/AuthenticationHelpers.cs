@@ -82,7 +82,11 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                             case AuthProviderType.DeviceCodeProvider:
                             case AuthProviderType.DeviceCodeProviderFallBack:
                                 authProvider = new DeviceCodeProvider(publicClientApp, authContext.Scopes,
-                                    async result => { await Console.Out.WriteLineAsync(result.Message); });
+                                     result =>
+                                    {
+                                        GraphSession.Instance.OutputWriter.WriteObject(result.Message);
+                                        return Task.CompletedTask;
+                                    });
                                 break;
                             case AuthProviderType.InteractiveAuthenticationProvider:
                                 authProvider = new InteractiveAuthenticationProvider(publicClientApp, authContext.Scopes);
