@@ -2,8 +2,14 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
+using System;
+using Microsoft.Graph.PowerShell.Authentication.Helpers;
+using Microsoft.Graph.PowerShell.Authentication.Models;
+
 namespace Microsoft.Graph.PowerShell.Authentication.Common
 {
+    using System.Management.Automation;
+
     using Microsoft.Graph.PowerShell.Authentication.Interfaces;
 
     public static class GraphSessionInitializer
@@ -15,7 +21,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Common
         {
             GraphSession.Initialize(() => CreateInstance());
         }
-
         /// <summary>
         /// Creates a new instance of a <see cref="GraphSession"/>.
         /// </summary>
@@ -26,6 +31,45 @@ namespace Microsoft.Graph.PowerShell.Authentication.Common
             {
                 DataStore = dataStore ?? new DiskDataStore()
             };
+        }
+        /// <summary>
+        /// Initializes <see cref="GraphSession"/>. with Output via Cmdlet methods
+        /// </summary>
+        /// <param name="cmdLet"></param>
+        internal static void InitializeOutput(CustomAsyncCommandRuntime cmdLet)
+        {
+            var outputWriter = new PsGraphOutputWriter
+            {
+                WriteDebug = cmdLet.WriteDebug,
+                WriteInformation = (o, strings) =>
+                {
+                    cmdLet.WriteInformation(new InformationRecord(o, strings));
+                },
+                WriteObject = cmdLet.WriteObject,
+                WriteVerbose = cmdLet.WriteVerbose,
+                WriteError = (exception, errorId, errorCategory, targetObject) =>
+                {
+                    var parseResult = Enum.TryParse(errorCategory.ToString(), out ErrorCategory result);
+                    if (!parseResult)
+                    {
+                        result = ErrorCategory.NotSpecified;
+                    }
+                    var errorRecord = new ErrorRecord(exception, errorId, result, targetObject);
+                    cmdLet.WriteError(errorRecord);
+                }
+            };
+            InitializeOutput(outputWriter);
+        }
+        /// <summary>
+        /// Initializes <see cref="GraphSession"/>. with Output via Cmdlet methods
+        /// </summary>
+        /// <param name="outputWriter"></param>
+        internal static void InitializeOutput(IPSGraphOutputWriter outputWriter)
+        {
+            GraphSession.Modify(session =>
+            {
+                session.OutputWriter = outputWriter;
+            });
         }
     }
 }
