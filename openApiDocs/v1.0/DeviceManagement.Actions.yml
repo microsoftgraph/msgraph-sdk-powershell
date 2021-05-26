@@ -676,6 +676,10 @@ paths:
                 macOsUnlockCode:
                   type: string
                   nullable: true
+                persistEsimDataPlan:
+                  type: boolean
+                  default: false
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -843,39 +847,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-  /deviceManagement/windowsAutopilotDeviceIdentities/microsoft.graph.deleteDevices:
-    post:
-      tags:
-        - deviceManagement.Actions
-      summary: Invoke action deleteDevices
-      operationId: deviceManagement.windowsAutopilotDeviceIdentities_deleteDevices
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                serialNumbers:
-                  type: array
-                  items:
-                    type: string
-                    nullable: true
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.deletedWindowsAutopilotDeviceState'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
 components:
   schemas:
     microsoft.graph.deviceCompliancePolicyAssignment:
@@ -999,26 +970,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.deletedWindowsAutopilotDeviceState:
-      title: deletedWindowsAutopilotDeviceState
-      type: object
-      properties:
-        deletionState:
-          $ref: '#/components/schemas/microsoft.graph.windowsAutopilotDeviceDeletionState'
-        deviceRegistrationId:
-          type: string
-          description: ZTD Device Registration ID .
-          nullable: true
-        errorMessage:
-          type: string
-          description: Device deletion error message.
-          nullable: true
-        serialNumber:
-          type: string
-          description: Autopilot Device Serial Number
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.entity:
       title: entity
       type: object
@@ -1093,14 +1044,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.windowsAutopilotDeviceDeletionState:
-      title: windowsAutopilotDeviceDeletionState
-      enum:
-        - unknown
-        - failed
-        - accepted
-        - error
-      type: string
     odata.error:
       required:
         - error

@@ -6752,7 +6752,7 @@ components:
               description: State of license assignments for this user. Returned only on $select. Read-only.
             mail:
               type: string
-              description: 'The SMTP address for the user, for example, ''jeff@contoso.onmicrosoft.com''.NOTE: While this property can contain accent characters, using them can cause access issues with other Microsoft applications for the user.Returned by default. Supports $filter and endsWith.'
+              description: 'The SMTP address for the user, for example, ''jeff@contoso.onmicrosoft.com''. Changes to this property will also update the user''s proxyAddresses collection to include the value as an SMTP address. While this property can contain accent characters, using them can cause access issues with other Microsoft applications for the user. Supports $filter and endsWith.'
               nullable: true
             mailNickname:
               type: string
@@ -8610,6 +8610,10 @@ components:
               type: string
               description: Enrollment time of the device. This property is read-only.
               format: date-time
+            ethernetMacAddress:
+              type: string
+              description: Ethernet MAC. This property is read-only.
+              nullable: true
             exchangeAccessState:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementExchangeAccessState'
             exchangeAccessStateReason:
@@ -8623,6 +8627,10 @@ components:
               type: integer
               description: Free Storage in Bytes. This property is read-only.
               format: int64
+            iccid:
+              type: string
+              description: 'Integrated Circuit Card Identifier, it is A SIM card''s unique identification number. This property is read-only.'
+              nullable: true
             imei:
               type: string
               description: IMEI. This property is read-only.
@@ -8662,6 +8670,10 @@ components:
               type: string
               description: Model of the device. This property is read-only.
               nullable: true
+            notes:
+              type: string
+              description: Notes on the device created by IT Admin
+              nullable: true
             operatingSystem:
               type: string
               description: 'Operating system of the device. Windows, iOS, etc. This property is read-only.'
@@ -8676,6 +8688,10 @@ components:
               type: string
               description: Phone number of the device. This property is read-only.
               nullable: true
+            physicalMemoryInBytes:
+              type: integer
+              description: Total Memory in Bytes. This property is read-only.
+              format: int64
             remoteAssistanceSessionErrorDetails:
               type: string
               description: An error string that identifies issues when creating Remote Assistance session objects. This property is read-only.
@@ -8696,6 +8712,10 @@ components:
               type: integer
               description: Total Storage in Bytes. This property is read-only.
               format: int64
+            udid:
+              type: string
+              description: Unique Device Identifier for iOS and macOS devices. This property is read-only.
+              nullable: true
             userDisplayName:
               type: string
               description: User display name. This property is read-only.
@@ -10570,6 +10590,9 @@ components:
         - windowsAutoEnrollment
         - windowsBulkAzureDomainJoin
         - windowsCoManagement
+        - windowsAzureADJoinUsingDeviceAuth
+        - appleUserEnrollment
+        - appleUserEnrollmentWithServiceAccount
       type: string
     microsoft.graph.deviceHealthAttestationState:
       title: deviceHealthAttestationState

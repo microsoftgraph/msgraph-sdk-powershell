@@ -474,6 +474,8 @@ paths:
                 - emailAddress desc
                 - enrolledDateTime
                 - enrolledDateTime desc
+                - ethernetMacAddress
+                - ethernetMacAddress desc
                 - exchangeAccessState
                 - exchangeAccessState desc
                 - exchangeAccessStateReason
@@ -482,6 +484,8 @@ paths:
                 - exchangeLastSuccessfulSyncDateTime desc
                 - freeStorageSpaceInBytes
                 - freeStorageSpaceInBytes desc
+                - iccid
+                - iccid desc
                 - imei
                 - imei desc
                 - isEncrypted
@@ -504,6 +508,8 @@ paths:
                 - meid desc
                 - model
                 - model desc
+                - notes
+                - notes desc
                 - operatingSystem
                 - operatingSystem desc
                 - osVersion
@@ -512,6 +518,8 @@ paths:
                 - partnerReportedThreatState desc
                 - phoneNumber
                 - phoneNumber desc
+                - physicalMemoryInBytes
+                - physicalMemoryInBytes desc
                 - remoteAssistanceSessionErrorDetails
                 - remoteAssistanceSessionErrorDetails desc
                 - remoteAssistanceSessionUrl
@@ -522,6 +530,8 @@ paths:
                 - subscriberCarrier desc
                 - totalStorageSpaceInBytes
                 - totalStorageSpaceInBytes desc
+                - udid
+                - udid desc
                 - userDisplayName
                 - userDisplayName desc
                 - userId
@@ -560,10 +570,12 @@ paths:
                 - easDeviceId
                 - emailAddress
                 - enrolledDateTime
+                - ethernetMacAddress
                 - exchangeAccessState
                 - exchangeAccessStateReason
                 - exchangeLastSuccessfulSyncDateTime
                 - freeStorageSpaceInBytes
+                - iccid
                 - imei
                 - isEncrypted
                 - isSupervised
@@ -575,15 +587,18 @@ paths:
                 - manufacturer
                 - meid
                 - model
+                - notes
                 - operatingSystem
                 - osVersion
                 - partnerReportedThreatState
                 - phoneNumber
+                - physicalMemoryInBytes
                 - remoteAssistanceSessionErrorDetails
                 - remoteAssistanceSessionUrl
                 - serialNumber
                 - subscriberCarrier
                 - totalStorageSpaceInBytes
+                - udid
                 - userDisplayName
                 - userId
                 - userPrincipalName
@@ -697,6 +712,8 @@ paths:
                 - emailAddress desc
                 - enrolledDateTime
                 - enrolledDateTime desc
+                - ethernetMacAddress
+                - ethernetMacAddress desc
                 - exchangeAccessState
                 - exchangeAccessState desc
                 - exchangeAccessStateReason
@@ -705,6 +722,8 @@ paths:
                 - exchangeLastSuccessfulSyncDateTime desc
                 - freeStorageSpaceInBytes
                 - freeStorageSpaceInBytes desc
+                - iccid
+                - iccid desc
                 - imei
                 - imei desc
                 - isEncrypted
@@ -727,6 +746,8 @@ paths:
                 - meid desc
                 - model
                 - model desc
+                - notes
+                - notes desc
                 - operatingSystem
                 - operatingSystem desc
                 - osVersion
@@ -735,6 +756,8 @@ paths:
                 - partnerReportedThreatState desc
                 - phoneNumber
                 - phoneNumber desc
+                - physicalMemoryInBytes
+                - physicalMemoryInBytes desc
                 - remoteAssistanceSessionErrorDetails
                 - remoteAssistanceSessionErrorDetails desc
                 - remoteAssistanceSessionUrl
@@ -745,6 +768,8 @@ paths:
                 - subscriberCarrier desc
                 - totalStorageSpaceInBytes
                 - totalStorageSpaceInBytes desc
+                - udid
+                - udid desc
                 - userDisplayName
                 - userDisplayName desc
                 - userId
@@ -5322,6 +5347,8 @@ paths:
                 - emailAddress desc
                 - enrolledDateTime
                 - enrolledDateTime desc
+                - ethernetMacAddress
+                - ethernetMacAddress desc
                 - exchangeAccessState
                 - exchangeAccessState desc
                 - exchangeAccessStateReason
@@ -5330,6 +5357,8 @@ paths:
                 - exchangeLastSuccessfulSyncDateTime desc
                 - freeStorageSpaceInBytes
                 - freeStorageSpaceInBytes desc
+                - iccid
+                - iccid desc
                 - imei
                 - imei desc
                 - isEncrypted
@@ -5352,6 +5381,8 @@ paths:
                 - meid desc
                 - model
                 - model desc
+                - notes
+                - notes desc
                 - operatingSystem
                 - operatingSystem desc
                 - osVersion
@@ -5360,6 +5391,8 @@ paths:
                 - partnerReportedThreatState desc
                 - phoneNumber
                 - phoneNumber desc
+                - physicalMemoryInBytes
+                - physicalMemoryInBytes desc
                 - remoteAssistanceSessionErrorDetails
                 - remoteAssistanceSessionErrorDetails desc
                 - remoteAssistanceSessionUrl
@@ -5370,6 +5403,8 @@ paths:
                 - subscriberCarrier desc
                 - totalStorageSpaceInBytes
                 - totalStorageSpaceInBytes desc
+                - udid
+                - udid desc
                 - userDisplayName
                 - userDisplayName desc
                 - userId
@@ -5408,10 +5443,12 @@ paths:
                 - easDeviceId
                 - emailAddress
                 - enrolledDateTime
+                - ethernetMacAddress
                 - exchangeAccessState
                 - exchangeAccessStateReason
                 - exchangeLastSuccessfulSyncDateTime
                 - freeStorageSpaceInBytes
+                - iccid
                 - imei
                 - isEncrypted
                 - isSupervised
@@ -5423,15 +5460,18 @@ paths:
                 - manufacturer
                 - meid
                 - model
+                - notes
                 - operatingSystem
                 - osVersion
                 - partnerReportedThreatState
                 - phoneNumber
+                - physicalMemoryInBytes
                 - remoteAssistanceSessionErrorDetails
                 - remoteAssistanceSessionUrl
                 - serialNumber
                 - subscriberCarrier
                 - totalStorageSpaceInBytes
+                - udid
                 - userDisplayName
                 - userId
                 - userPrincipalName
@@ -5543,10 +5583,12 @@ paths:
                 - easDeviceId
                 - emailAddress
                 - enrolledDateTime
+                - ethernetMacAddress
                 - exchangeAccessState
                 - exchangeAccessStateReason
                 - exchangeLastSuccessfulSyncDateTime
                 - freeStorageSpaceInBytes
+                - iccid
                 - imei
                 - isEncrypted
                 - isSupervised
@@ -5558,15 +5600,18 @@ paths:
                 - manufacturer
                 - meid
                 - model
+                - notes
                 - operatingSystem
                 - osVersion
                 - partnerReportedThreatState
                 - phoneNumber
+                - physicalMemoryInBytes
                 - remoteAssistanceSessionErrorDetails
                 - remoteAssistanceSessionUrl
                 - serialNumber
                 - subscriberCarrier
                 - totalStorageSpaceInBytes
+                - udid
                 - userDisplayName
                 - userId
                 - userPrincipalName
@@ -7702,6 +7747,10 @@ components:
               type: string
               description: Enrollment time of the device. This property is read-only.
               format: date-time
+            ethernetMacAddress:
+              type: string
+              description: Ethernet MAC. This property is read-only.
+              nullable: true
             exchangeAccessState:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementExchangeAccessState'
             exchangeAccessStateReason:
@@ -7715,6 +7764,10 @@ components:
               type: integer
               description: Free Storage in Bytes. This property is read-only.
               format: int64
+            iccid:
+              type: string
+              description: 'Integrated Circuit Card Identifier, it is A SIM card''s unique identification number. This property is read-only.'
+              nullable: true
             imei:
               type: string
               description: IMEI. This property is read-only.
@@ -7754,6 +7807,10 @@ components:
               type: string
               description: Model of the device. This property is read-only.
               nullable: true
+            notes:
+              type: string
+              description: Notes on the device created by IT Admin
+              nullable: true
             operatingSystem:
               type: string
               description: 'Operating system of the device. Windows, iOS, etc. This property is read-only.'
@@ -7768,6 +7825,10 @@ components:
               type: string
               description: Phone number of the device. This property is read-only.
               nullable: true
+            physicalMemoryInBytes:
+              type: integer
+              description: Total Memory in Bytes. This property is read-only.
+              format: int64
             remoteAssistanceSessionErrorDetails:
               type: string
               description: An error string that identifies issues when creating Remote Assistance session objects. This property is read-only.
@@ -7788,6 +7849,10 @@ components:
               type: integer
               description: Total Storage in Bytes. This property is read-only.
               format: int64
+            udid:
+              type: string
+              description: Unique Device Identifier for iOS and macOS devices. This property is read-only.
+              nullable: true
             userDisplayName:
               type: string
               description: User display name. This property is read-only.
@@ -9387,6 +9452,10 @@ components:
               type: string
               description: Not yet documented
               nullable: true
+            certificateSerialNumber:
+              type: string
+              description: Certificate serial number. This property is read-only.
+              nullable: true
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -9702,6 +9771,9 @@ components:
         - windowsAutoEnrollment
         - windowsBulkAzureDomainJoin
         - windowsCoManagement
+        - windowsAzureADJoinUsingDeviceAuth
+        - appleUserEnrollment
+        - appleUserEnrollmentWithServiceAccount
       type: string
     microsoft.graph.deviceHealthAttestationState:
       title: deviceHealthAttestationState
