@@ -573,6 +573,14 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Groups.yml"
     },
+    "/groups/{group-id}/groupLifecyclePolicies": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groups/{group-id}/groupLifecyclePolicies/{groupLifecyclePolicy-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
     "/groups/{group-id}/memberOf": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Groups.yml"
