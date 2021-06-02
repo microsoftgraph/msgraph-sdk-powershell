@@ -7965,6 +7965,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action commit
+      description: Commits a file of a given app.
       operationId: users.insights.shared.lastSharedMethod.microsoft.graph.mobileAppContentFile_commit
       parameters:
         - name: user-id
@@ -8004,6 +8005,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action renewUpload
+      description: Renews the SAS URI for an application file upload.
       operationId: users.insights.shared.lastSharedMethod.microsoft.graph.mobileAppContentFile_renewUpload
       parameters:
         - name: user-id
@@ -8771,6 +8773,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action commit
+      description: Commits a file of a given app.
       operationId: users.insights.shared.resource.microsoft.graph.mobileAppContentFile_commit
       parameters:
         - name: user-id
@@ -8810,6 +8813,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action renewUpload
+      description: Renews the SAS URI for an application file upload.
       operationId: users.insights.shared.resource.microsoft.graph.mobileAppContentFile_renewUpload
       parameters:
         - name: user-id
@@ -9577,6 +9581,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action commit
+      description: Commits a file of a given app.
       operationId: users.insights.trending.resource.microsoft.graph.mobileAppContentFile_commit
       parameters:
         - name: user-id
@@ -9616,6 +9621,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action renewUpload
+      description: Renews the SAS URI for an application file upload.
       operationId: users.insights.trending.resource.microsoft.graph.mobileAppContentFile_renewUpload
       parameters:
         - name: user-id
@@ -10383,6 +10389,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action commit
+      description: Commits a file of a given app.
       operationId: users.insights.used.resource.microsoft.graph.mobileAppContentFile_commit
       parameters:
         - name: user-id
@@ -10422,6 +10429,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action renewUpload
+      description: Renews the SAS URI for an application file upload.
       operationId: users.insights.used.resource.microsoft.graph.mobileAppContentFile_renewUpload
       parameters:
         - name: user-id
@@ -11839,6 +11847,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action bypassActivationLock
+      description: Bypass activation lock
       operationId: users.managedDevices_bypassActivationLock
       parameters:
         - name: user-id
@@ -11866,6 +11875,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action cleanWindowsDevice
+      description: Clean Windows device
       operationId: users.managedDevices_cleanWindowsDevice
       parameters:
         - name: user-id
@@ -11906,6 +11916,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action deleteUserFromSharedAppleDevice
+      description: Delete user from shared Apple device
       operationId: users.managedDevices_deleteUserFromSharedAppleDevice
       parameters:
         - name: user-id
@@ -11946,6 +11957,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action disableLostMode
+      description: Disable lost mode
       operationId: users.managedDevices_disableLostMode
       parameters:
         - name: user-id
@@ -11973,6 +11985,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action locateDevice
+      description: Locate a device
       operationId: users.managedDevices_locateDevice
       parameters:
         - name: user-id
@@ -12000,6 +12013,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action logoutSharedAppleDeviceActiveUser
+      description: Logout shared Apple device active user
       operationId: users.managedDevices_logoutSharedAppleDeviceActiveUser
       parameters:
         - name: user-id
@@ -12027,6 +12041,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action rebootNow
+      description: Reboot device
       operationId: users.managedDevices_rebootNow
       parameters:
         - name: user-id
@@ -12054,6 +12069,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action recoverPasscode
+      description: Recover passcode
       operationId: users.managedDevices_recoverPasscode
       parameters:
         - name: user-id
@@ -12081,6 +12097,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action remoteLock
+      description: Remote lock
       operationId: users.managedDevices_remoteLock
       parameters:
         - name: user-id
@@ -12108,6 +12125,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action requestRemoteAssistance
+      description: Request remote assistance
       operationId: users.managedDevices_requestRemoteAssistance
       parameters:
         - name: user-id
@@ -12135,6 +12153,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action resetPasscode
+      description: Reset passcode
       operationId: users.managedDevices_resetPasscode
       parameters:
         - name: user-id
@@ -12162,6 +12181,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action retire
+      description: Retire a device
       operationId: users.managedDevices_retire
       parameters:
         - name: user-id
@@ -12189,6 +12209,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action shutDown
+      description: Shut down device
       operationId: users.managedDevices_shutDown
       parameters:
         - name: user-id
@@ -12349,6 +12370,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action wipe
+      description: Wipe a device
       operationId: users.managedDevices_wipe
       parameters:
         - name: user-id
@@ -12382,6 +12404,10 @@ paths:
                   nullable: true
                 macOsUnlockCode:
                   type: string
+                  nullable: true
+                persistEsimDataPlan:
+                  type: boolean
+                  default: false
                   nullable: true
               additionalProperties:
                 type: object
@@ -13236,6 +13262,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action removeAllDevicesFromManagement
+      description: Retire all devices from management for this user
       operationId: users_removeAllDevicesFromManagement
       parameters:
         - name: user-id
@@ -13410,6 +13437,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action wipeManagedAppRegistrationsByDeviceTag
+      description: Issues a wipe operation on an app registration with specified device tag.
       operationId: users_wipeManagedAppRegistrationsByDeviceTag
       parameters:
         - name: user-id
@@ -20811,7 +20839,7 @@ components:
               description: State of license assignments for this user. Returned only on $select. Read-only.
             mail:
               type: string
-              description: 'The SMTP address for the user, for example, ''jeff@contoso.onmicrosoft.com''.NOTE: While this property can contain accent characters, using them can cause access issues with other Microsoft applications for the user.Returned by default. Supports $filter and endsWith.'
+              description: 'The SMTP address for the user, for example, ''jeff@contoso.onmicrosoft.com''. Changes to this property will also update the user''s proxyAddresses collection to include the value as an SMTP address. While this property can contain accent characters, using them can cause access issues with other Microsoft applications for the user. Supports $filter and endsWith.'
               nullable: true
             mailNickname:
               type: string
@@ -23357,6 +23385,10 @@ components:
               type: string
               description: Enrollment time of the device. This property is read-only.
               format: date-time
+            ethernetMacAddress:
+              type: string
+              description: Ethernet MAC. This property is read-only.
+              nullable: true
             exchangeAccessState:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementExchangeAccessState'
             exchangeAccessStateReason:
@@ -23370,6 +23402,10 @@ components:
               type: integer
               description: Free Storage in Bytes. This property is read-only.
               format: int64
+            iccid:
+              type: string
+              description: 'Integrated Circuit Card Identifier, it is A SIM card''s unique identification number. This property is read-only.'
+              nullable: true
             imei:
               type: string
               description: IMEI. This property is read-only.
@@ -23409,6 +23445,10 @@ components:
               type: string
               description: Model of the device. This property is read-only.
               nullable: true
+            notes:
+              type: string
+              description: Notes on the device created by IT Admin
+              nullable: true
             operatingSystem:
               type: string
               description: 'Operating system of the device. Windows, iOS, etc. This property is read-only.'
@@ -23423,6 +23463,10 @@ components:
               type: string
               description: Phone number of the device. This property is read-only.
               nullable: true
+            physicalMemoryInBytes:
+              type: integer
+              description: Total Memory in Bytes. This property is read-only.
+              format: int64
             remoteAssistanceSessionErrorDetails:
               type: string
               description: An error string that identifies issues when creating Remote Assistance session objects. This property is read-only.
@@ -23443,6 +23487,10 @@ components:
               type: integer
               description: Total Storage in Bytes. This property is read-only.
               format: int64
+            udid:
+              type: string
+              description: Unique Device Identifier for iOS and macOS devices. This property is read-only.
+              nullable: true
             userDisplayName:
               type: string
               description: User display name. This property is read-only.
@@ -23825,7 +23873,7 @@ components:
               nullable: true
             description:
               type: string
-              description: An optional description for the team.
+              description: 'An optional description for the team. Maximum length: 1024 characters.'
               nullable: true
             displayName:
               type: string
@@ -25573,6 +25621,9 @@ components:
         - windowsAutoEnrollment
         - windowsBulkAzureDomainJoin
         - windowsCoManagement
+        - windowsAzureADJoinUsingDeviceAuth
+        - appleUserEnrollment
+        - appleUserEnrollmentWithServiceAccount
       type: string
     microsoft.graph.deviceHealthAttestationState:
       title: deviceHealthAttestationState

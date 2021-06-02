@@ -176,6 +176,7 @@ paths:
       tags:
         - deviceAppManagement.androidManagedAppProtection
       summary: Get androidManagedAppProtections from deviceAppManagement
+      description: Android managed app policies.
       operationId: deviceAppManagement_ListAndroidManagedAppProtections
       parameters:
         - $ref: '#/components/parameters/top'
@@ -505,6 +506,7 @@ paths:
       tags:
         - deviceAppManagement.androidManagedAppProtection
       summary: Create new navigation property to androidManagedAppProtections for deviceAppManagement
+      description: Android managed app policies.
       operationId: deviceAppManagement_CreateAndroidManagedAppProtections
       requestBody:
         description: New navigation property
@@ -528,6 +530,7 @@ paths:
       tags:
         - deviceAppManagement.androidManagedAppProtection
       summary: Get androidManagedAppProtections from deviceAppManagement
+      description: Android managed app policies.
       operationId: deviceAppManagement_GetAndroidManagedAppProtections
       parameters:
         - name: androidManagedAppProtection-id
@@ -678,6 +681,7 @@ paths:
       tags:
         - deviceAppManagement.androidManagedAppProtection
       summary: Update the navigation property androidManagedAppProtections in deviceAppManagement
+      description: Android managed app policies.
       operationId: deviceAppManagement_UpdateAndroidManagedAppProtections
       parameters:
         - name: androidManagedAppProtection-id
@@ -704,6 +708,7 @@ paths:
       tags:
         - deviceAppManagement.androidManagedAppProtection
       summary: Delete navigation property androidManagedAppProtections for deviceAppManagement
+      description: Android managed app policies.
       operationId: deviceAppManagement_DeleteAndroidManagedAppProtections
       parameters:
         - name: androidManagedAppProtection-id
@@ -729,6 +734,7 @@ paths:
       tags:
         - deviceAppManagement.androidManagedAppProtection
       summary: Get apps from deviceAppManagement
+      description: List of apps to which the policy is deployed.
       operationId: deviceAppManagement.androidManagedAppProtections_ListApps
       parameters:
         - name: androidManagedAppProtection-id
@@ -813,6 +819,7 @@ paths:
       tags:
         - deviceAppManagement.androidManagedAppProtection
       summary: Create new navigation property to apps for deviceAppManagement
+      description: List of apps to which the policy is deployed.
       operationId: deviceAppManagement.androidManagedAppProtections_CreateApps
       parameters:
         - name: androidManagedAppProtection-id
@@ -844,6 +851,7 @@ paths:
       tags:
         - deviceAppManagement.androidManagedAppProtection
       summary: Get apps from deviceAppManagement
+      description: List of apps to which the policy is deployed.
       operationId: deviceAppManagement.androidManagedAppProtections_GetApps
       parameters:
         - name: androidManagedAppProtection-id
@@ -900,6 +908,7 @@ paths:
       tags:
         - deviceAppManagement.androidManagedAppProtection
       summary: Update the navigation property apps in deviceAppManagement
+      description: List of apps to which the policy is deployed.
       operationId: deviceAppManagement.androidManagedAppProtections_UpdateApps
       parameters:
         - name: androidManagedAppProtection-id
@@ -933,6 +942,7 @@ paths:
       tags:
         - deviceAppManagement.androidManagedAppProtection
       summary: Delete navigation property apps for deviceAppManagement
+      description: List of apps to which the policy is deployed.
       operationId: deviceAppManagement.androidManagedAppProtections_DeleteApps
       parameters:
         - name: androidManagedAppProtection-id
@@ -965,6 +975,7 @@ paths:
       tags:
         - deviceAppManagement.androidManagedAppProtection
       summary: Get deploymentSummary from deviceAppManagement
+      description: Navigation property to deployment summary of the configuration.
       operationId: deviceAppManagement.androidManagedAppProtections_GetDeploymentSummary
       parameters:
         - name: androidManagedAppProtection-id
@@ -1017,6 +1028,7 @@ paths:
       tags:
         - deviceAppManagement.androidManagedAppProtection
       summary: Update the navigation property deploymentSummary in deviceAppManagement
+      description: Navigation property to deployment summary of the configuration.
       operationId: deviceAppManagement.androidManagedAppProtections_UpdateDeploymentSummary
       parameters:
         - name: androidManagedAppProtection-id
@@ -1043,6 +1055,7 @@ paths:
       tags:
         - deviceAppManagement.androidManagedAppProtection
       summary: Delete navigation property deploymentSummary for deviceAppManagement
+      description: Navigation property to deployment summary of the configuration.
       operationId: deviceAppManagement.androidManagedAppProtections_DeleteDeploymentSummary
       parameters:
         - name: androidManagedAppProtection-id
@@ -1101,6 +1114,7 @@ paths:
       tags:
         - deviceAppManagement.defaultManagedAppProtection
       summary: Get defaultManagedAppProtections from deviceAppManagement
+      description: Default managed app policies.
       operationId: deviceAppManagement_ListDefaultManagedAppProtections
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1458,6 +1472,7 @@ paths:
       tags:
         - deviceAppManagement.defaultManagedAppProtection
       summary: Create new navigation property to defaultManagedAppProtections for deviceAppManagement
+      description: Default managed app policies.
       operationId: deviceAppManagement_CreateDefaultManagedAppProtections
       requestBody:
         description: New navigation property
@@ -1481,6 +1496,7 @@ paths:
       tags:
         - deviceAppManagement.defaultManagedAppProtection
       summary: Get defaultManagedAppProtections from deviceAppManagement
+      description: Default managed app policies.
       operationId: deviceAppManagement_GetDefaultManagedAppProtections
       parameters:
         - name: defaultManagedAppProtection-id
@@ -1635,6 +1651,7 @@ paths:
       tags:
         - deviceAppManagement.defaultManagedAppProtection
       summary: Update the navigation property defaultManagedAppProtections in deviceAppManagement
+      description: Default managed app policies.
       operationId: deviceAppManagement_UpdateDefaultManagedAppProtections
       parameters:
         - name: defaultManagedAppProtection-id
@@ -1661,6 +1678,7 @@ paths:
       tags:
         - deviceAppManagement.defaultManagedAppProtection
       summary: Delete navigation property defaultManagedAppProtections for deviceAppManagement
+      description: Default managed app policies.
       operationId: deviceAppManagement_DeleteDefaultManagedAppProtections
       parameters:
         - name: defaultManagedAppProtection-id
@@ -1686,6 +1704,7 @@ paths:
       tags:
         - deviceAppManagement.defaultManagedAppProtection
       summary: Get apps from deviceAppManagement
+      description: List of apps to which the policy is deployed.
       operationId: deviceAppManagement.defaultManagedAppProtections_ListApps
       parameters:
         - name: defaultManagedAppProtection-id
@@ -1770,6 +1789,7 @@ paths:
       tags:
         - deviceAppManagement.defaultManagedAppProtection
       summary: Create new navigation property to apps for deviceAppManagement
+      description: List of apps to which the policy is deployed.
       operationId: deviceAppManagement.defaultManagedAppProtections_CreateApps
       parameters:
         - name: defaultManagedAppProtection-id
@@ -1801,6 +1821,7 @@ paths:
       tags:
         - deviceAppManagement.defaultManagedAppProtection
       summary: Get apps from deviceAppManagement
+      description: List of apps to which the policy is deployed.
       operationId: deviceAppManagement.defaultManagedAppProtections_GetApps
       parameters:
         - name: defaultManagedAppProtection-id
@@ -1857,6 +1878,7 @@ paths:
       tags:
         - deviceAppManagement.defaultManagedAppProtection
       summary: Update the navigation property apps in deviceAppManagement
+      description: List of apps to which the policy is deployed.
       operationId: deviceAppManagement.defaultManagedAppProtections_UpdateApps
       parameters:
         - name: defaultManagedAppProtection-id
@@ -1890,6 +1912,7 @@ paths:
       tags:
         - deviceAppManagement.defaultManagedAppProtection
       summary: Delete navigation property apps for deviceAppManagement
+      description: List of apps to which the policy is deployed.
       operationId: deviceAppManagement.defaultManagedAppProtections_DeleteApps
       parameters:
         - name: defaultManagedAppProtection-id
@@ -1922,6 +1945,7 @@ paths:
       tags:
         - deviceAppManagement.defaultManagedAppProtection
       summary: Get deploymentSummary from deviceAppManagement
+      description: Navigation property to deployment summary of the configuration.
       operationId: deviceAppManagement.defaultManagedAppProtections_GetDeploymentSummary
       parameters:
         - name: defaultManagedAppProtection-id
@@ -1974,6 +1998,7 @@ paths:
       tags:
         - deviceAppManagement.defaultManagedAppProtection
       summary: Update the navigation property deploymentSummary in deviceAppManagement
+      description: Navigation property to deployment summary of the configuration.
       operationId: deviceAppManagement.defaultManagedAppProtections_UpdateDeploymentSummary
       parameters:
         - name: defaultManagedAppProtection-id
@@ -2000,6 +2025,7 @@ paths:
       tags:
         - deviceAppManagement.defaultManagedAppProtection
       summary: Delete navigation property deploymentSummary for deviceAppManagement
+      description: Navigation property to deployment summary of the configuration.
       operationId: deviceAppManagement.defaultManagedAppProtections_DeleteDeploymentSummary
       parameters:
         - name: defaultManagedAppProtection-id
@@ -2025,6 +2051,7 @@ paths:
       tags:
         - deviceAppManagement.deviceAppManagementTask
       summary: Get deviceAppManagementTasks from deviceAppManagement
+      description: Device app management tasks.
       operationId: deviceAppManagement_ListDeviceAppManagementTasks
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2126,6 +2153,7 @@ paths:
       tags:
         - deviceAppManagement.deviceAppManagementTask
       summary: Create new navigation property to deviceAppManagementTasks for deviceAppManagement
+      description: Device app management tasks.
       operationId: deviceAppManagement_CreateDeviceAppManagementTasks
       requestBody:
         description: New navigation property
@@ -2149,6 +2177,7 @@ paths:
       tags:
         - deviceAppManagement.deviceAppManagementTask
       summary: Get deviceAppManagementTasks from deviceAppManagement
+      description: Device app management tasks.
       operationId: deviceAppManagement_GetDeviceAppManagementTasks
       parameters:
         - name: deviceAppManagementTask-id
@@ -2206,6 +2235,7 @@ paths:
       tags:
         - deviceAppManagement.deviceAppManagementTask
       summary: Update the navigation property deviceAppManagementTasks in deviceAppManagement
+      description: Device app management tasks.
       operationId: deviceAppManagement_UpdateDeviceAppManagementTasks
       parameters:
         - name: deviceAppManagementTask-id
@@ -2232,6 +2262,7 @@ paths:
       tags:
         - deviceAppManagement.deviceAppManagementTask
       summary: Delete navigation property deviceAppManagementTasks for deviceAppManagement
+      description: Device app management tasks.
       operationId: deviceAppManagement_DeleteDeviceAppManagementTasks
       parameters:
         - name: deviceAppManagementTask-id
@@ -2257,6 +2288,7 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action updateStatus
+      description: Set the task's status and attach a note.
       operationId: deviceAppManagement.deviceAppManagementTasks_updateStatus
       parameters:
         - name: deviceAppManagementTask-id
@@ -2292,6 +2324,7 @@ paths:
       tags:
         - deviceAppManagement.enterpriseCodeSigningCertificate
       summary: Get enterpriseCodeSigningCertificates from deviceAppManagement
+      description: The Windows Enterprise Code Signing Certificate.
       operationId: deviceAppManagement_ListEnterpriseCodeSigningCertificates
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2387,6 +2420,7 @@ paths:
       tags:
         - deviceAppManagement.enterpriseCodeSigningCertificate
       summary: Create new navigation property to enterpriseCodeSigningCertificates for deviceAppManagement
+      description: The Windows Enterprise Code Signing Certificate.
       operationId: deviceAppManagement_CreateEnterpriseCodeSigningCertificates
       requestBody:
         description: New navigation property
@@ -2410,6 +2444,7 @@ paths:
       tags:
         - deviceAppManagement.enterpriseCodeSigningCertificate
       summary: Get enterpriseCodeSigningCertificates from deviceAppManagement
+      description: The Windows Enterprise Code Signing Certificate.
       operationId: deviceAppManagement_GetEnterpriseCodeSigningCertificates
       parameters:
         - name: enterpriseCodeSigningCertificate-id
@@ -2465,6 +2500,7 @@ paths:
       tags:
         - deviceAppManagement.enterpriseCodeSigningCertificate
       summary: Update the navigation property enterpriseCodeSigningCertificates in deviceAppManagement
+      description: The Windows Enterprise Code Signing Certificate.
       operationId: deviceAppManagement_UpdateEnterpriseCodeSigningCertificates
       parameters:
         - name: enterpriseCodeSigningCertificate-id
@@ -2491,6 +2527,7 @@ paths:
       tags:
         - deviceAppManagement.enterpriseCodeSigningCertificate
       summary: Delete navigation property enterpriseCodeSigningCertificates for deviceAppManagement
+      description: The Windows Enterprise Code Signing Certificate.
       operationId: deviceAppManagement_DeleteEnterpriseCodeSigningCertificates
       parameters:
         - name: enterpriseCodeSigningCertificate-id
@@ -2516,6 +2553,7 @@ paths:
       tags:
         - deviceAppManagement.iosLobAppProvisioningConfiguration
       summary: Get iosLobAppProvisioningConfigurations from deviceAppManagement
+      description: The IOS Lob App Provisioning Configurations.
       operationId: deviceAppManagement_ListIosLobAppProvisioningConfigurations
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2622,6 +2660,7 @@ paths:
       tags:
         - deviceAppManagement.iosLobAppProvisioningConfiguration
       summary: Create new navigation property to iosLobAppProvisioningConfigurations for deviceAppManagement
+      description: The IOS Lob App Provisioning Configurations.
       operationId: deviceAppManagement_CreateIosLobAppProvisioningConfigurations
       requestBody:
         description: New navigation property
@@ -2645,6 +2684,7 @@ paths:
       tags:
         - deviceAppManagement.iosLobAppProvisioningConfiguration
       summary: Get iosLobAppProvisioningConfigurations from deviceAppManagement
+      description: The IOS Lob App Provisioning Configurations.
       operationId: deviceAppManagement_GetIosLobAppProvisioningConfigurations
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
@@ -2726,6 +2766,7 @@ paths:
       tags:
         - deviceAppManagement.iosLobAppProvisioningConfiguration
       summary: Update the navigation property iosLobAppProvisioningConfigurations in deviceAppManagement
+      description: The IOS Lob App Provisioning Configurations.
       operationId: deviceAppManagement_UpdateIosLobAppProvisioningConfigurations
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
@@ -2752,6 +2793,7 @@ paths:
       tags:
         - deviceAppManagement.iosLobAppProvisioningConfiguration
       summary: Delete navigation property iosLobAppProvisioningConfigurations for deviceAppManagement
+      description: The IOS Lob App Provisioning Configurations.
       operationId: deviceAppManagement_DeleteIosLobAppProvisioningConfigurations
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
@@ -2777,6 +2819,7 @@ paths:
       tags:
         - deviceAppManagement.iosLobAppProvisioningConfiguration
       summary: Get assignments from deviceAppManagement
+      description: The associated group assignments for IosLobAppProvisioningConfiguration.
       operationId: deviceAppManagement.iosLobAppProvisioningConfigurations_ListAssignments
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
@@ -2858,6 +2901,7 @@ paths:
       tags:
         - deviceAppManagement.iosLobAppProvisioningConfiguration
       summary: Create new navigation property to assignments for deviceAppManagement
+      description: The associated group assignments for IosLobAppProvisioningConfiguration.
       operationId: deviceAppManagement.iosLobAppProvisioningConfigurations_CreateAssignments
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
@@ -2889,6 +2933,7 @@ paths:
       tags:
         - deviceAppManagement.iosLobAppProvisioningConfiguration
       summary: Get assignments from deviceAppManagement
+      description: The associated group assignments for IosLobAppProvisioningConfiguration.
       operationId: deviceAppManagement.iosLobAppProvisioningConfigurations_GetAssignments
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
@@ -2944,6 +2989,7 @@ paths:
       tags:
         - deviceAppManagement.iosLobAppProvisioningConfiguration
       summary: Update the navigation property assignments in deviceAppManagement
+      description: The associated group assignments for IosLobAppProvisioningConfiguration.
       operationId: deviceAppManagement.iosLobAppProvisioningConfigurations_UpdateAssignments
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
@@ -2977,6 +3023,7 @@ paths:
       tags:
         - deviceAppManagement.iosLobAppProvisioningConfiguration
       summary: Delete navigation property assignments for deviceAppManagement
+      description: The associated group assignments for IosLobAppProvisioningConfiguration.
       operationId: deviceAppManagement.iosLobAppProvisioningConfigurations_DeleteAssignments
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
@@ -3009,6 +3056,7 @@ paths:
       tags:
         - deviceAppManagement.iosLobAppProvisioningConfiguration
       summary: Get deviceStatuses from deviceAppManagement
+      description: The list of device installation states for this mobile app configuration.
       operationId: deviceAppManagement.iosLobAppProvisioningConfigurations_ListDeviceStatuses
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
@@ -3111,6 +3159,7 @@ paths:
       tags:
         - deviceAppManagement.iosLobAppProvisioningConfiguration
       summary: Create new navigation property to deviceStatuses for deviceAppManagement
+      description: The list of device installation states for this mobile app configuration.
       operationId: deviceAppManagement.iosLobAppProvisioningConfigurations_CreateDeviceStatuses
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
@@ -3142,6 +3191,7 @@ paths:
       tags:
         - deviceAppManagement.iosLobAppProvisioningConfiguration
       summary: Get deviceStatuses from deviceAppManagement
+      description: The list of device installation states for this mobile app configuration.
       operationId: deviceAppManagement.iosLobAppProvisioningConfigurations_GetDeviceStatuses
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
@@ -3204,6 +3254,7 @@ paths:
       tags:
         - deviceAppManagement.iosLobAppProvisioningConfiguration
       summary: Update the navigation property deviceStatuses in deviceAppManagement
+      description: The list of device installation states for this mobile app configuration.
       operationId: deviceAppManagement.iosLobAppProvisioningConfigurations_UpdateDeviceStatuses
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
@@ -3237,6 +3288,7 @@ paths:
       tags:
         - deviceAppManagement.iosLobAppProvisioningConfiguration
       summary: Delete navigation property deviceStatuses for deviceAppManagement
+      description: The list of device installation states for this mobile app configuration.
       operationId: deviceAppManagement.iosLobAppProvisioningConfigurations_DeleteDeviceStatuses
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
@@ -3269,6 +3321,7 @@ paths:
       tags:
         - deviceAppManagement.iosLobAppProvisioningConfiguration
       summary: Get groupAssignments from deviceAppManagement
+      description: The associated group assignments.
       operationId: deviceAppManagement.iosLobAppProvisioningConfigurations_ListGroupAssignments
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
@@ -3350,6 +3403,7 @@ paths:
       tags:
         - deviceAppManagement.iosLobAppProvisioningConfiguration
       summary: Create new navigation property to groupAssignments for deviceAppManagement
+      description: The associated group assignments.
       operationId: deviceAppManagement.iosLobAppProvisioningConfigurations_CreateGroupAssignments
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
@@ -3381,6 +3435,7 @@ paths:
       tags:
         - deviceAppManagement.iosLobAppProvisioningConfiguration
       summary: Get groupAssignments from deviceAppManagement
+      description: The associated group assignments.
       operationId: deviceAppManagement.iosLobAppProvisioningConfigurations_GetGroupAssignments
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
@@ -3436,6 +3491,7 @@ paths:
       tags:
         - deviceAppManagement.iosLobAppProvisioningConfiguration
       summary: Update the navigation property groupAssignments in deviceAppManagement
+      description: The associated group assignments.
       operationId: deviceAppManagement.iosLobAppProvisioningConfigurations_UpdateGroupAssignments
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
@@ -3469,6 +3525,7 @@ paths:
       tags:
         - deviceAppManagement.iosLobAppProvisioningConfiguration
       summary: Delete navigation property groupAssignments for deviceAppManagement
+      description: The associated group assignments.
       operationId: deviceAppManagement.iosLobAppProvisioningConfigurations_DeleteGroupAssignments
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
@@ -3539,6 +3596,7 @@ paths:
       tags:
         - deviceAppManagement.iosLobAppProvisioningConfiguration
       summary: Get userStatuses from deviceAppManagement
+      description: The list of user installation states for this mobile app configuration.
       operationId: deviceAppManagement.iosLobAppProvisioningConfigurations_ListUserStatuses
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
@@ -3632,6 +3690,7 @@ paths:
       tags:
         - deviceAppManagement.iosLobAppProvisioningConfiguration
       summary: Create new navigation property to userStatuses for deviceAppManagement
+      description: The list of user installation states for this mobile app configuration.
       operationId: deviceAppManagement.iosLobAppProvisioningConfigurations_CreateUserStatuses
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
@@ -3663,6 +3722,7 @@ paths:
       tags:
         - deviceAppManagement.iosLobAppProvisioningConfiguration
       summary: Get userStatuses from deviceAppManagement
+      description: The list of user installation states for this mobile app configuration.
       operationId: deviceAppManagement.iosLobAppProvisioningConfigurations_GetUserStatuses
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
@@ -3722,6 +3782,7 @@ paths:
       tags:
         - deviceAppManagement.iosLobAppProvisioningConfiguration
       summary: Update the navigation property userStatuses in deviceAppManagement
+      description: The list of user installation states for this mobile app configuration.
       operationId: deviceAppManagement.iosLobAppProvisioningConfigurations_UpdateUserStatuses
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
@@ -3755,6 +3816,7 @@ paths:
       tags:
         - deviceAppManagement.iosLobAppProvisioningConfiguration
       summary: Delete navigation property userStatuses for deviceAppManagement
+      description: The list of user installation states for this mobile app configuration.
       operationId: deviceAppManagement.iosLobAppProvisioningConfigurations_DeleteUserStatuses
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
@@ -3820,6 +3882,7 @@ paths:
       tags:
         - deviceAppManagement.iosManagedAppProtection
       summary: Get iosManagedAppProtections from deviceAppManagement
+      description: iOS managed app policies.
       operationId: deviceAppManagement_ListIosManagedAppProtections
       parameters:
         - $ref: '#/components/parameters/top'
@@ -4095,6 +4158,7 @@ paths:
       tags:
         - deviceAppManagement.iosManagedAppProtection
       summary: Create new navigation property to iosManagedAppProtections for deviceAppManagement
+      description: iOS managed app policies.
       operationId: deviceAppManagement_CreateIosManagedAppProtections
       requestBody:
         description: New navigation property
@@ -4118,6 +4182,7 @@ paths:
       tags:
         - deviceAppManagement.iosManagedAppProtection
       summary: Get iosManagedAppProtections from deviceAppManagement
+      description: iOS managed app policies.
       operationId: deviceAppManagement_GetIosManagedAppProtections
       parameters:
         - name: iosManagedAppProtection-id
@@ -4250,6 +4315,7 @@ paths:
       tags:
         - deviceAppManagement.iosManagedAppProtection
       summary: Update the navigation property iosManagedAppProtections in deviceAppManagement
+      description: iOS managed app policies.
       operationId: deviceAppManagement_UpdateIosManagedAppProtections
       parameters:
         - name: iosManagedAppProtection-id
@@ -4276,6 +4342,7 @@ paths:
       tags:
         - deviceAppManagement.iosManagedAppProtection
       summary: Delete navigation property iosManagedAppProtections for deviceAppManagement
+      description: iOS managed app policies.
       operationId: deviceAppManagement_DeleteIosManagedAppProtections
       parameters:
         - name: iosManagedAppProtection-id
@@ -4301,6 +4368,7 @@ paths:
       tags:
         - deviceAppManagement.iosManagedAppProtection
       summary: Get apps from deviceAppManagement
+      description: List of apps to which the policy is deployed.
       operationId: deviceAppManagement.iosManagedAppProtections_ListApps
       parameters:
         - name: iosManagedAppProtection-id
@@ -4385,6 +4453,7 @@ paths:
       tags:
         - deviceAppManagement.iosManagedAppProtection
       summary: Create new navigation property to apps for deviceAppManagement
+      description: List of apps to which the policy is deployed.
       operationId: deviceAppManagement.iosManagedAppProtections_CreateApps
       parameters:
         - name: iosManagedAppProtection-id
@@ -4416,6 +4485,7 @@ paths:
       tags:
         - deviceAppManagement.iosManagedAppProtection
       summary: Get apps from deviceAppManagement
+      description: List of apps to which the policy is deployed.
       operationId: deviceAppManagement.iosManagedAppProtections_GetApps
       parameters:
         - name: iosManagedAppProtection-id
@@ -4472,6 +4542,7 @@ paths:
       tags:
         - deviceAppManagement.iosManagedAppProtection
       summary: Update the navigation property apps in deviceAppManagement
+      description: List of apps to which the policy is deployed.
       operationId: deviceAppManagement.iosManagedAppProtections_UpdateApps
       parameters:
         - name: iosManagedAppProtection-id
@@ -4505,6 +4576,7 @@ paths:
       tags:
         - deviceAppManagement.iosManagedAppProtection
       summary: Delete navigation property apps for deviceAppManagement
+      description: List of apps to which the policy is deployed.
       operationId: deviceAppManagement.iosManagedAppProtections_DeleteApps
       parameters:
         - name: iosManagedAppProtection-id
@@ -4537,6 +4609,7 @@ paths:
       tags:
         - deviceAppManagement.iosManagedAppProtection
       summary: Get deploymentSummary from deviceAppManagement
+      description: Navigation property to deployment summary of the configuration.
       operationId: deviceAppManagement.iosManagedAppProtections_GetDeploymentSummary
       parameters:
         - name: iosManagedAppProtection-id
@@ -4589,6 +4662,7 @@ paths:
       tags:
         - deviceAppManagement.iosManagedAppProtection
       summary: Update the navigation property deploymentSummary in deviceAppManagement
+      description: Navigation property to deployment summary of the configuration.
       operationId: deviceAppManagement.iosManagedAppProtections_UpdateDeploymentSummary
       parameters:
         - name: iosManagedAppProtection-id
@@ -4615,6 +4689,7 @@ paths:
       tags:
         - deviceAppManagement.iosManagedAppProtection
       summary: Delete navigation property deploymentSummary for deviceAppManagement
+      description: Navigation property to deployment summary of the configuration.
       operationId: deviceAppManagement.iosManagedAppProtections_DeleteDeploymentSummary
       parameters:
         - name: iosManagedAppProtection-id
@@ -4673,6 +4748,7 @@ paths:
       tags:
         - deviceAppManagement.managedAppPolicy
       summary: Get managedAppPolicies from deviceAppManagement
+      description: Managed app policies.
       operationId: deviceAppManagement_ListManagedAppPolicies
       parameters:
         - $ref: '#/components/parameters/top'
@@ -4762,6 +4838,7 @@ paths:
       tags:
         - deviceAppManagement.managedAppPolicy
       summary: Create new navigation property to managedAppPolicies for deviceAppManagement
+      description: Managed app policies.
       operationId: deviceAppManagement_CreateManagedAppPolicies
       requestBody:
         description: New navigation property
@@ -4785,6 +4862,7 @@ paths:
       tags:
         - deviceAppManagement.managedAppPolicy
       summary: Get managedAppPolicies from deviceAppManagement
+      description: Managed app policies.
       operationId: deviceAppManagement_GetManagedAppPolicies
       parameters:
         - name: managedAppPolicy-id
@@ -4838,6 +4916,7 @@ paths:
       tags:
         - deviceAppManagement.managedAppPolicy
       summary: Update the navigation property managedAppPolicies in deviceAppManagement
+      description: Managed app policies.
       operationId: deviceAppManagement_UpdateManagedAppPolicies
       parameters:
         - name: managedAppPolicy-id
@@ -4864,6 +4943,7 @@ paths:
       tags:
         - deviceAppManagement.managedAppPolicy
       summary: Delete navigation property managedAppPolicies for deviceAppManagement
+      description: Managed app policies.
       operationId: deviceAppManagement_DeleteManagedAppPolicies
       parameters:
         - name: managedAppPolicy-id
@@ -5025,6 +5105,7 @@ paths:
       tags:
         - deviceAppManagement.managedAppRegistration
       summary: Get managedAppRegistrations from deviceAppManagement
+      description: The managed app registrations.
       operationId: deviceAppManagement_ListManagedAppRegistrations
       parameters:
         - $ref: '#/components/parameters/top'
@@ -5150,6 +5231,7 @@ paths:
       tags:
         - deviceAppManagement.managedAppRegistration
       summary: Create new navigation property to managedAppRegistrations for deviceAppManagement
+      description: The managed app registrations.
       operationId: deviceAppManagement_CreateManagedAppRegistrations
       requestBody:
         description: New navigation property
@@ -5173,6 +5255,7 @@ paths:
       tags:
         - deviceAppManagement.managedAppRegistration
       summary: Get managedAppRegistrations from deviceAppManagement
+      description: The managed app registrations.
       operationId: deviceAppManagement_GetManagedAppRegistrations
       parameters:
         - name: managedAppRegistration-id
@@ -5255,6 +5338,7 @@ paths:
       tags:
         - deviceAppManagement.managedAppRegistration
       summary: Update the navigation property managedAppRegistrations in deviceAppManagement
+      description: The managed app registrations.
       operationId: deviceAppManagement_UpdateManagedAppRegistrations
       parameters:
         - name: managedAppRegistration-id
@@ -5281,6 +5365,7 @@ paths:
       tags:
         - deviceAppManagement.managedAppRegistration
       summary: Delete navigation property managedAppRegistrations for deviceAppManagement
+      description: The managed app registrations.
       operationId: deviceAppManagement_DeleteManagedAppRegistrations
       parameters:
         - name: managedAppRegistration-id
@@ -5306,6 +5391,7 @@ paths:
       tags:
         - deviceAppManagement.managedAppRegistration
       summary: Get appliedPolicies from deviceAppManagement
+      description: Zero or more policys already applied on the registered app when it last synchronized with managment service.
       operationId: deviceAppManagement.managedAppRegistrations_ListAppliedPolicies
       parameters:
         - name: managedAppRegistration-id
@@ -5402,6 +5488,7 @@ paths:
       tags:
         - deviceAppManagement.managedAppRegistration
       summary: Create new navigation property to appliedPolicies for deviceAppManagement
+      description: Zero or more policys already applied on the registered app when it last synchronized with managment service.
       operationId: deviceAppManagement.managedAppRegistrations_CreateAppliedPolicies
       parameters:
         - name: managedAppRegistration-id
@@ -5433,6 +5520,7 @@ paths:
       tags:
         - deviceAppManagement.managedAppRegistration
       summary: Get appliedPolicies from deviceAppManagement
+      description: Zero or more policys already applied on the registered app when it last synchronized with managment service.
       operationId: deviceAppManagement.managedAppRegistrations_GetAppliedPolicies
       parameters:
         - name: managedAppRegistration-id
@@ -5493,6 +5581,7 @@ paths:
       tags:
         - deviceAppManagement.managedAppRegistration
       summary: Update the navigation property appliedPolicies in deviceAppManagement
+      description: Zero or more policys already applied on the registered app when it last synchronized with managment service.
       operationId: deviceAppManagement.managedAppRegistrations_UpdateAppliedPolicies
       parameters:
         - name: managedAppRegistration-id
@@ -5526,6 +5615,7 @@ paths:
       tags:
         - deviceAppManagement.managedAppRegistration
       summary: Delete navigation property appliedPolicies for deviceAppManagement
+      description: Zero or more policys already applied on the registered app when it last synchronized with managment service.
       operationId: deviceAppManagement.managedAppRegistrations_DeleteAppliedPolicies
       parameters:
         - name: managedAppRegistration-id
@@ -5722,6 +5812,7 @@ paths:
       tags:
         - deviceAppManagement.managedAppRegistration
       summary: Get intendedPolicies from deviceAppManagement
+      description: Zero or more policies admin intended for the app as of now.
       operationId: deviceAppManagement.managedAppRegistrations_ListIntendedPolicies
       parameters:
         - name: managedAppRegistration-id
@@ -5818,6 +5909,7 @@ paths:
       tags:
         - deviceAppManagement.managedAppRegistration
       summary: Create new navigation property to intendedPolicies for deviceAppManagement
+      description: Zero or more policies admin intended for the app as of now.
       operationId: deviceAppManagement.managedAppRegistrations_CreateIntendedPolicies
       parameters:
         - name: managedAppRegistration-id
@@ -5849,6 +5941,7 @@ paths:
       tags:
         - deviceAppManagement.managedAppRegistration
       summary: Get intendedPolicies from deviceAppManagement
+      description: Zero or more policies admin intended for the app as of now.
       operationId: deviceAppManagement.managedAppRegistrations_GetIntendedPolicies
       parameters:
         - name: managedAppRegistration-id
@@ -5909,6 +6002,7 @@ paths:
       tags:
         - deviceAppManagement.managedAppRegistration
       summary: Update the navigation property intendedPolicies in deviceAppManagement
+      description: Zero or more policies admin intended for the app as of now.
       operationId: deviceAppManagement.managedAppRegistrations_UpdateIntendedPolicies
       parameters:
         - name: managedAppRegistration-id
@@ -5942,6 +6036,7 @@ paths:
       tags:
         - deviceAppManagement.managedAppRegistration
       summary: Delete navigation property intendedPolicies for deviceAppManagement
+      description: Zero or more policies admin intended for the app as of now.
       operationId: deviceAppManagement.managedAppRegistrations_DeleteIntendedPolicies
       parameters:
         - name: managedAppRegistration-id
@@ -6138,6 +6233,7 @@ paths:
       tags:
         - deviceAppManagement.managedAppRegistration
       summary: Get operations from deviceAppManagement
+      description: Zero or more long running operations triggered on the app registration.
       operationId: deviceAppManagement.managedAppRegistrations_ListOperations
       parameters:
         - name: managedAppRegistration-id
@@ -6228,6 +6324,7 @@ paths:
       tags:
         - deviceAppManagement.managedAppRegistration
       summary: Create new navigation property to operations for deviceAppManagement
+      description: Zero or more long running operations triggered on the app registration.
       operationId: deviceAppManagement.managedAppRegistrations_CreateOperations
       parameters:
         - name: managedAppRegistration-id
@@ -6259,6 +6356,7 @@ paths:
       tags:
         - deviceAppManagement.managedAppRegistration
       summary: Get operations from deviceAppManagement
+      description: Zero or more long running operations triggered on the app registration.
       operationId: deviceAppManagement.managedAppRegistrations_GetOperations
       parameters:
         - name: managedAppRegistration-id
@@ -6317,6 +6415,7 @@ paths:
       tags:
         - deviceAppManagement.managedAppRegistration
       summary: Update the navigation property operations in deviceAppManagement
+      description: Zero or more long running operations triggered on the app registration.
       operationId: deviceAppManagement.managedAppRegistrations_UpdateOperations
       parameters:
         - name: managedAppRegistration-id
@@ -6350,6 +6449,7 @@ paths:
       tags:
         - deviceAppManagement.managedAppRegistration
       summary: Delete navigation property operations for deviceAppManagement
+      description: Zero or more long running operations triggered on the app registration.
       operationId: deviceAppManagement.managedAppRegistrations_DeleteOperations
       parameters:
         - name: managedAppRegistration-id
@@ -6401,6 +6501,7 @@ paths:
       tags:
         - deviceAppManagement.managedAppStatus
       summary: Get managedAppStatuses from deviceAppManagement
+      description: The managed app statuses.
       operationId: deviceAppManagement_ListManagedAppStatuses
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6478,6 +6579,7 @@ paths:
       tags:
         - deviceAppManagement.managedAppStatus
       summary: Create new navigation property to managedAppStatuses for deviceAppManagement
+      description: The managed app statuses.
       operationId: deviceAppManagement_CreateManagedAppStatuses
       requestBody:
         description: New navigation property
@@ -6501,6 +6603,7 @@ paths:
       tags:
         - deviceAppManagement.managedAppStatus
       summary: Get managedAppStatuses from deviceAppManagement
+      description: The managed app statuses.
       operationId: deviceAppManagement_GetManagedAppStatuses
       parameters:
         - name: managedAppStatus-id
@@ -6550,6 +6653,7 @@ paths:
       tags:
         - deviceAppManagement.managedAppStatus
       summary: Update the navigation property managedAppStatuses in deviceAppManagement
+      description: The managed app statuses.
       operationId: deviceAppManagement_UpdateManagedAppStatuses
       parameters:
         - name: managedAppStatus-id
@@ -6576,6 +6680,7 @@ paths:
       tags:
         - deviceAppManagement.managedAppStatus
       summary: Delete navigation property managedAppStatuses for deviceAppManagement
+      description: The managed app statuses.
       operationId: deviceAppManagement_DeleteManagedAppStatuses
       parameters:
         - name: managedAppStatus-id
@@ -6601,6 +6706,7 @@ paths:
       tags:
         - deviceAppManagement.managedEBookCategory
       summary: Get managedEBookCategories from deviceAppManagement
+      description: The mobile eBook categories.
       operationId: deviceAppManagement_ListManagedEBookCategories
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6678,6 +6784,7 @@ paths:
       tags:
         - deviceAppManagement.managedEBookCategory
       summary: Create new navigation property to managedEBookCategories for deviceAppManagement
+      description: The mobile eBook categories.
       operationId: deviceAppManagement_CreateManagedEBookCategories
       requestBody:
         description: New navigation property
@@ -6701,6 +6808,7 @@ paths:
       tags:
         - deviceAppManagement.managedEBookCategory
       summary: Get managedEBookCategories from deviceAppManagement
+      description: The mobile eBook categories.
       operationId: deviceAppManagement_GetManagedEBookCategories
       parameters:
         - name: managedEBookCategory-id
@@ -6750,6 +6858,7 @@ paths:
       tags:
         - deviceAppManagement.managedEBookCategory
       summary: Update the navigation property managedEBookCategories in deviceAppManagement
+      description: The mobile eBook categories.
       operationId: deviceAppManagement_UpdateManagedEBookCategories
       parameters:
         - name: managedEBookCategory-id
@@ -6776,6 +6885,7 @@ paths:
       tags:
         - deviceAppManagement.managedEBookCategory
       summary: Delete navigation property managedEBookCategories for deviceAppManagement
+      description: The mobile eBook categories.
       operationId: deviceAppManagement_DeleteManagedEBookCategories
       parameters:
         - name: managedEBookCategory-id
@@ -6801,6 +6911,7 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Get managedEBooks from deviceAppManagement
+      description: The Managed eBook.
       operationId: deviceAppManagement_ListManagedEBooks
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6909,6 +7020,7 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Create new navigation property to managedEBooks for deviceAppManagement
+      description: The Managed eBook.
       operationId: deviceAppManagement_CreateManagedEBooks
       requestBody:
         description: New navigation property
@@ -6932,6 +7044,7 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Get managedEBooks from deviceAppManagement
+      description: The Managed eBook.
       operationId: deviceAppManagement_GetManagedEBooks
       parameters:
         - name: managedEBook-id
@@ -7019,6 +7132,7 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Update the navigation property managedEBooks in deviceAppManagement
+      description: The Managed eBook.
       operationId: deviceAppManagement_UpdateManagedEBooks
       parameters:
         - name: managedEBook-id
@@ -7045,6 +7159,7 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Delete navigation property managedEBooks for deviceAppManagement
+      description: The Managed eBook.
       operationId: deviceAppManagement_DeleteManagedEBooks
       parameters:
         - name: managedEBook-id
@@ -7070,6 +7185,7 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Get assignments from deviceAppManagement
+      description: The list of assignments for this eBook.
       operationId: deviceAppManagement.managedEBooks_ListAssignments
       parameters:
         - name: managedEBook-id
@@ -7154,6 +7270,7 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Create new navigation property to assignments for deviceAppManagement
+      description: The list of assignments for this eBook.
       operationId: deviceAppManagement.managedEBooks_CreateAssignments
       parameters:
         - name: managedEBook-id
@@ -7185,6 +7302,7 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Get assignments from deviceAppManagement
+      description: The list of assignments for this eBook.
       operationId: deviceAppManagement.managedEBooks_GetAssignments
       parameters:
         - name: managedEBook-id
@@ -7241,6 +7359,7 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Update the navigation property assignments in deviceAppManagement
+      description: The list of assignments for this eBook.
       operationId: deviceAppManagement.managedEBooks_UpdateAssignments
       parameters:
         - name: managedEBook-id
@@ -7274,6 +7393,7 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Delete navigation property assignments for deviceAppManagement
+      description: The list of assignments for this eBook.
       operationId: deviceAppManagement.managedEBooks_DeleteAssignments
       parameters:
         - name: managedEBook-id
@@ -7306,6 +7426,7 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Get categories from deviceAppManagement
+      description: The list of categories for this eBook.
       operationId: deviceAppManagement.managedEBooks_ListCategories
       parameters:
         - name: managedEBook-id
@@ -7391,6 +7512,7 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Get ref of categories from deviceAppManagement
+      description: The list of categories for this eBook.
       operationId: deviceAppManagement.managedEBooks_ListRefCategories
       parameters:
         - name: managedEBook-id
@@ -7449,6 +7571,7 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Create new navigation property ref to categories for deviceAppManagement
+      description: The list of categories for this eBook.
       operationId: deviceAppManagement.managedEBooks_CreateRefCategories
       parameters:
         - name: managedEBook-id
@@ -7484,6 +7607,7 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Get deviceStates from deviceAppManagement
+      description: The list of installation states for this eBook.
       operationId: deviceAppManagement.managedEBooks_ListDeviceStates
       parameters:
         - name: managedEBook-id
@@ -7586,6 +7710,7 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Create new navigation property to deviceStates for deviceAppManagement
+      description: The list of installation states for this eBook.
       operationId: deviceAppManagement.managedEBooks_CreateDeviceStates
       parameters:
         - name: managedEBook-id
@@ -7617,6 +7742,7 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Get deviceStates from deviceAppManagement
+      description: The list of installation states for this eBook.
       operationId: deviceAppManagement.managedEBooks_GetDeviceStates
       parameters:
         - name: managedEBook-id
@@ -7679,6 +7805,7 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Update the navigation property deviceStates in deviceAppManagement
+      description: The list of installation states for this eBook.
       operationId: deviceAppManagement.managedEBooks_UpdateDeviceStates
       parameters:
         - name: managedEBook-id
@@ -7712,6 +7839,7 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Delete navigation property deviceStates for deviceAppManagement
+      description: The list of installation states for this eBook.
       operationId: deviceAppManagement.managedEBooks_DeleteDeviceStates
       parameters:
         - name: managedEBook-id
@@ -7744,6 +7872,7 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Get installSummary from deviceAppManagement
+      description: Mobile App Install Summary.
       operationId: deviceAppManagement.managedEBooks_GetInstallSummary
       parameters:
         - name: managedEBook-id
@@ -7797,6 +7926,7 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Update the navigation property installSummary in deviceAppManagement
+      description: Mobile App Install Summary.
       operationId: deviceAppManagement.managedEBooks_UpdateInstallSummary
       parameters:
         - name: managedEBook-id
@@ -7823,6 +7953,7 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Delete navigation property installSummary for deviceAppManagement
+      description: Mobile App Install Summary.
       operationId: deviceAppManagement.managedEBooks_DeleteInstallSummary
       parameters:
         - name: managedEBook-id
@@ -7882,6 +8013,7 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Get userStateSummary from deviceAppManagement
+      description: The list of installation states for this eBook.
       operationId: deviceAppManagement.managedEBooks_ListUserStateSummary
       parameters:
         - name: managedEBook-id
@@ -7974,6 +8106,7 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Create new navigation property to userStateSummary for deviceAppManagement
+      description: The list of installation states for this eBook.
       operationId: deviceAppManagement.managedEBooks_CreateUserStateSummary
       parameters:
         - name: managedEBook-id
@@ -8005,6 +8138,7 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Get userStateSummary from deviceAppManagement
+      description: The list of installation states for this eBook.
       operationId: deviceAppManagement.managedEBooks_GetUserStateSummary
       parameters:
         - name: managedEBook-id
@@ -8071,6 +8205,7 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Update the navigation property userStateSummary in deviceAppManagement
+      description: The list of installation states for this eBook.
       operationId: deviceAppManagement.managedEBooks_UpdateUserStateSummary
       parameters:
         - name: managedEBook-id
@@ -8104,6 +8239,7 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Delete navigation property userStateSummary for deviceAppManagement
+      description: The list of installation states for this eBook.
       operationId: deviceAppManagement.managedEBooks_DeleteUserStateSummary
       parameters:
         - name: managedEBook-id
@@ -8136,6 +8272,7 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Get deviceStates from deviceAppManagement
+      description: The install state of the eBook.
       operationId: deviceAppManagement.managedEBooks.userStateSummary_ListDeviceStates
       parameters:
         - name: managedEBook-id
@@ -8245,6 +8382,7 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Create new navigation property to deviceStates for deviceAppManagement
+      description: The install state of the eBook.
       operationId: deviceAppManagement.managedEBooks.userStateSummary_CreateDeviceStates
       parameters:
         - name: managedEBook-id
@@ -8283,6 +8421,7 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Get deviceStates from deviceAppManagement
+      description: The install state of the eBook.
       operationId: deviceAppManagement.managedEBooks.userStateSummary_GetDeviceStates
       parameters:
         - name: managedEBook-id
@@ -8352,6 +8491,7 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Update the navigation property deviceStates in deviceAppManagement
+      description: The install state of the eBook.
       operationId: deviceAppManagement.managedEBooks.userStateSummary_UpdateDeviceStates
       parameters:
         - name: managedEBook-id
@@ -8392,6 +8532,7 @@ paths:
       tags:
         - deviceAppManagement.managedEBook
       summary: Delete navigation property deviceStates for deviceAppManagement
+      description: The install state of the eBook.
       operationId: deviceAppManagement.managedEBooks.userStateSummary_DeleteDeviceStates
       parameters:
         - name: managedEBook-id
@@ -8431,6 +8572,7 @@ paths:
       tags:
         - deviceAppManagement.mdmWindowsInformationProtectionPolicy
       summary: Get mdmWindowsInformationProtectionPolicies from deviceAppManagement
+      description: Windows information protection for apps running on devices which are MDM enrolled.
       operationId: deviceAppManagement_ListMdmWindowsInformationProtectionPolicies
       parameters:
         - $ref: '#/components/parameters/top'
@@ -8592,6 +8734,7 @@ paths:
       tags:
         - deviceAppManagement.mdmWindowsInformationProtectionPolicy
       summary: Create new navigation property to mdmWindowsInformationProtectionPolicies for deviceAppManagement
+      description: Windows information protection for apps running on devices which are MDM enrolled.
       operationId: deviceAppManagement_CreateMdmWindowsInformationProtectionPolicies
       requestBody:
         description: New navigation property
@@ -8615,6 +8758,7 @@ paths:
       tags:
         - deviceAppManagement.mdmWindowsInformationProtectionPolicy
       summary: Get mdmWindowsInformationProtectionPolicies from deviceAppManagement
+      description: Windows information protection for apps running on devices which are MDM enrolled.
       operationId: deviceAppManagement_GetMdmWindowsInformationProtectionPolicies
       parameters:
         - name: mdmWindowsInformationProtectionPolicy-id
@@ -8709,6 +8853,7 @@ paths:
       tags:
         - deviceAppManagement.mdmWindowsInformationProtectionPolicy
       summary: Update the navigation property mdmWindowsInformationProtectionPolicies in deviceAppManagement
+      description: Windows information protection for apps running on devices which are MDM enrolled.
       operationId: deviceAppManagement_UpdateMdmWindowsInformationProtectionPolicies
       parameters:
         - name: mdmWindowsInformationProtectionPolicy-id
@@ -8735,6 +8880,7 @@ paths:
       tags:
         - deviceAppManagement.mdmWindowsInformationProtectionPolicy
       summary: Delete navigation property mdmWindowsInformationProtectionPolicies for deviceAppManagement
+      description: Windows information protection for apps running on devices which are MDM enrolled.
       operationId: deviceAppManagement_DeleteMdmWindowsInformationProtectionPolicies
       parameters:
         - name: mdmWindowsInformationProtectionPolicy-id
@@ -8793,6 +8939,7 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action syncMicrosoftStoreForBusinessApps
+      description: Syncs Intune account with Microsoft Store For Business
       operationId: deviceAppManagement_syncMicrosoftStoreForBusinessApps
       responses:
         '204':
@@ -8805,6 +8952,7 @@ paths:
       tags:
         - deviceAppManagement.mobileAppCategory
       summary: Get mobileAppCategories from deviceAppManagement
+      description: The mobile app categories.
       operationId: deviceAppManagement_ListMobileAppCategories
       parameters:
         - $ref: '#/components/parameters/top'
@@ -8882,6 +9030,7 @@ paths:
       tags:
         - deviceAppManagement.mobileAppCategory
       summary: Create new navigation property to mobileAppCategories for deviceAppManagement
+      description: The mobile app categories.
       operationId: deviceAppManagement_CreateMobileAppCategories
       requestBody:
         description: New navigation property
@@ -8905,6 +9054,7 @@ paths:
       tags:
         - deviceAppManagement.mobileAppCategory
       summary: Get mobileAppCategories from deviceAppManagement
+      description: The mobile app categories.
       operationId: deviceAppManagement_GetMobileAppCategories
       parameters:
         - name: mobileAppCategory-id
@@ -8954,6 +9104,7 @@ paths:
       tags:
         - deviceAppManagement.mobileAppCategory
       summary: Update the navigation property mobileAppCategories in deviceAppManagement
+      description: The mobile app categories.
       operationId: deviceAppManagement_UpdateMobileAppCategories
       parameters:
         - name: mobileAppCategory-id
@@ -8980,6 +9131,7 @@ paths:
       tags:
         - deviceAppManagement.mobileAppCategory
       summary: Delete navigation property mobileAppCategories for deviceAppManagement
+      description: The mobile app categories.
       operationId: deviceAppManagement_DeleteMobileAppCategories
       parameters:
         - name: mobileAppCategory-id
@@ -9005,6 +9157,7 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Get mobileAppConfigurations from deviceAppManagement
+      description: The Managed Device Mobile Application Configurations.
       operationId: deviceAppManagement_ListMobileAppConfigurations
       parameters:
         - $ref: '#/components/parameters/top'
@@ -9107,6 +9260,7 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Create new navigation property to mobileAppConfigurations for deviceAppManagement
+      description: The Managed Device Mobile Application Configurations.
       operationId: deviceAppManagement_CreateMobileAppConfigurations
       requestBody:
         description: New navigation property
@@ -9130,6 +9284,7 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Get mobileAppConfigurations from deviceAppManagement
+      description: The Managed Device Mobile Application Configurations.
       operationId: deviceAppManagement_GetMobileAppConfigurations
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -9215,6 +9370,7 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Update the navigation property mobileAppConfigurations in deviceAppManagement
+      description: The Managed Device Mobile Application Configurations.
       operationId: deviceAppManagement_UpdateMobileAppConfigurations
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -9241,6 +9397,7 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Delete navigation property mobileAppConfigurations for deviceAppManagement
+      description: The Managed Device Mobile Application Configurations.
       operationId: deviceAppManagement_DeleteMobileAppConfigurations
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -9266,6 +9423,7 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Get assignments from deviceAppManagement
+      description: The list of group assignemenets for app configration.
       operationId: deviceAppManagement.mobileAppConfigurations_ListAssignments
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -9347,6 +9505,7 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Create new navigation property to assignments for deviceAppManagement
+      description: The list of group assignemenets for app configration.
       operationId: deviceAppManagement.mobileAppConfigurations_CreateAssignments
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -9378,6 +9537,7 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Get assignments from deviceAppManagement
+      description: The list of group assignemenets for app configration.
       operationId: deviceAppManagement.mobileAppConfigurations_GetAssignments
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -9433,6 +9593,7 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Update the navigation property assignments in deviceAppManagement
+      description: The list of group assignemenets for app configration.
       operationId: deviceAppManagement.mobileAppConfigurations_UpdateAssignments
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -9466,6 +9627,7 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Delete navigation property assignments for deviceAppManagement
+      description: The list of group assignemenets for app configration.
       operationId: deviceAppManagement.mobileAppConfigurations_DeleteAssignments
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -9498,6 +9660,7 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Get deviceStatuses from deviceAppManagement
+      description: List of ManagedDeviceMobileAppConfigurationDeviceStatus.
       operationId: deviceAppManagement.mobileAppConfigurations_ListDeviceStatuses
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -9600,6 +9763,7 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Create new navigation property to deviceStatuses for deviceAppManagement
+      description: List of ManagedDeviceMobileAppConfigurationDeviceStatus.
       operationId: deviceAppManagement.mobileAppConfigurations_CreateDeviceStatuses
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -9631,6 +9795,7 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Get deviceStatuses from deviceAppManagement
+      description: List of ManagedDeviceMobileAppConfigurationDeviceStatus.
       operationId: deviceAppManagement.mobileAppConfigurations_GetDeviceStatuses
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -9693,6 +9858,7 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Update the navigation property deviceStatuses in deviceAppManagement
+      description: List of ManagedDeviceMobileAppConfigurationDeviceStatus.
       operationId: deviceAppManagement.mobileAppConfigurations_UpdateDeviceStatuses
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -9726,6 +9892,7 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Delete navigation property deviceStatuses for deviceAppManagement
+      description: List of ManagedDeviceMobileAppConfigurationDeviceStatus.
       operationId: deviceAppManagement.mobileAppConfigurations_DeleteDeviceStatuses
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -9758,6 +9925,7 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Get deviceStatusSummary from deviceAppManagement
+      description: App configuration device status summary.
       operationId: deviceAppManagement.mobileAppConfigurations_GetDeviceStatusSummary
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -9814,6 +9982,7 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Update the navigation property deviceStatusSummary in deviceAppManagement
+      description: App configuration device status summary.
       operationId: deviceAppManagement.mobileAppConfigurations_UpdateDeviceStatusSummary
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -9840,6 +10009,7 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Delete navigation property deviceStatusSummary for deviceAppManagement
+      description: App configuration device status summary.
       operationId: deviceAppManagement.mobileAppConfigurations_DeleteDeviceStatusSummary
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -9899,6 +10069,7 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Get userStatuses from deviceAppManagement
+      description: List of ManagedDeviceMobileAppConfigurationUserStatus.
       operationId: deviceAppManagement.mobileAppConfigurations_ListUserStatuses
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -9992,6 +10163,7 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Create new navigation property to userStatuses for deviceAppManagement
+      description: List of ManagedDeviceMobileAppConfigurationUserStatus.
       operationId: deviceAppManagement.mobileAppConfigurations_CreateUserStatuses
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -10023,6 +10195,7 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Get userStatuses from deviceAppManagement
+      description: List of ManagedDeviceMobileAppConfigurationUserStatus.
       operationId: deviceAppManagement.mobileAppConfigurations_GetUserStatuses
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -10082,6 +10255,7 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Update the navigation property userStatuses in deviceAppManagement
+      description: List of ManagedDeviceMobileAppConfigurationUserStatus.
       operationId: deviceAppManagement.mobileAppConfigurations_UpdateUserStatuses
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -10115,6 +10289,7 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Delete navigation property userStatuses for deviceAppManagement
+      description: List of ManagedDeviceMobileAppConfigurationUserStatus.
       operationId: deviceAppManagement.mobileAppConfigurations_DeleteUserStatuses
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -10147,6 +10322,7 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Get userStatusSummary from deviceAppManagement
+      description: App configuration user status summary.
       operationId: deviceAppManagement.mobileAppConfigurations_GetUserStatusSummary
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -10202,6 +10378,7 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Update the navigation property userStatusSummary in deviceAppManagement
+      description: App configuration user status summary.
       operationId: deviceAppManagement.mobileAppConfigurations_UpdateUserStatusSummary
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -10228,6 +10405,7 @@ paths:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Delete navigation property userStatusSummary for deviceAppManagement
+      description: App configuration user status summary.
       operationId: deviceAppManagement.mobileAppConfigurations_DeleteUserStatusSummary
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -10253,6 +10431,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get mobileApps from deviceAppManagement
+      description: The mobile apps.
       operationId: deviceAppManagement_ListMobileApps
       parameters:
         - $ref: '#/components/parameters/top'
@@ -10393,6 +10572,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Create new navigation property to mobileApps for deviceAppManagement
+      description: The mobile apps.
       operationId: deviceAppManagement_CreateMobileApps
       requestBody:
         description: New navigation property
@@ -10416,6 +10596,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get mobileApps from deviceAppManagement
+      description: The mobile apps.
       operationId: deviceAppManagement_GetMobileApps
       parameters:
         - name: mobileApp-id
@@ -10519,6 +10700,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Update the navigation property mobileApps in deviceAppManagement
+      description: The mobile apps.
       operationId: deviceAppManagement_UpdateMobileApps
       parameters:
         - name: mobileApp-id
@@ -10545,6 +10727,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Delete navigation property mobileApps for deviceAppManagement
+      description: The mobile apps.
       operationId: deviceAppManagement_DeleteMobileApps
       parameters:
         - name: mobileApp-id
@@ -10570,6 +10753,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get assignments from deviceAppManagement
+      description: The list of group assignments for this mobile app.
       operationId: deviceAppManagement.mobileApps_ListAssignments
       parameters:
         - name: mobileApp-id
@@ -10663,6 +10847,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Create new navigation property to assignments for deviceAppManagement
+      description: The list of group assignments for this mobile app.
       operationId: deviceAppManagement.mobileApps_CreateAssignments
       parameters:
         - name: mobileApp-id
@@ -10694,6 +10879,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get assignments from deviceAppManagement
+      description: The list of group assignments for this mobile app.
       operationId: deviceAppManagement.mobileApps_GetAssignments
       parameters:
         - name: mobileApp-id
@@ -10753,6 +10939,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Update the navigation property assignments in deviceAppManagement
+      description: The list of group assignments for this mobile app.
       operationId: deviceAppManagement.mobileApps_UpdateAssignments
       parameters:
         - name: mobileApp-id
@@ -10786,6 +10973,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Delete navigation property assignments for deviceAppManagement
+      description: The list of group assignments for this mobile app.
       operationId: deviceAppManagement.mobileApps_DeleteAssignments
       parameters:
         - name: mobileApp-id
@@ -10818,6 +11006,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get categories from deviceAppManagement
+      description: The list of categories for this app.
       operationId: deviceAppManagement.mobileApps_ListCategories
       parameters:
         - name: mobileApp-id
@@ -10903,6 +11092,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get ref of categories from deviceAppManagement
+      description: The list of categories for this app.
       operationId: deviceAppManagement.mobileApps_ListRefCategories
       parameters:
         - name: mobileApp-id
@@ -10961,6 +11151,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Create new navigation property ref to categories for deviceAppManagement
+      description: The list of categories for this app.
       operationId: deviceAppManagement.mobileApps_CreateRefCategories
       parameters:
         - name: mobileApp-id
@@ -10996,6 +11187,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get deviceStatuses from deviceAppManagement
+      description: The list of installation states for this mobile app.
       operationId: deviceAppManagement.mobileApps_ListDeviceStatuses
       parameters:
         - name: mobileApp-id
@@ -11112,6 +11304,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Create new navigation property to deviceStatuses for deviceAppManagement
+      description: The list of installation states for this mobile app.
       operationId: deviceAppManagement.mobileApps_CreateDeviceStatuses
       parameters:
         - name: mobileApp-id
@@ -11143,6 +11336,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get deviceStatuses from deviceAppManagement
+      description: The list of installation states for this mobile app.
       operationId: deviceAppManagement.mobileApps_GetDeviceStatuses
       parameters:
         - name: mobileApp-id
@@ -11217,6 +11411,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Update the navigation property deviceStatuses in deviceAppManagement
+      description: The list of installation states for this mobile app.
       operationId: deviceAppManagement.mobileApps_UpdateDeviceStatuses
       parameters:
         - name: mobileApp-id
@@ -11250,6 +11445,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Delete navigation property deviceStatuses for deviceAppManagement
+      description: The list of installation states for this mobile app.
       operationId: deviceAppManagement.mobileApps_DeleteDeviceStatuses
       parameters:
         - name: mobileApp-id
@@ -11282,6 +11478,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get app from deviceAppManagement
+      description: The navigation link to the mobile app.
       operationId: deviceAppManagement.mobileApps.deviceStatuses_GetApp
       parameters:
         - name: mobileApp-id
@@ -11399,6 +11596,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get ref of app from deviceAppManagement
+      description: The navigation link to the mobile app.
       operationId: deviceAppManagement.mobileApps.deviceStatuses_GetRefApp
       parameters:
         - name: mobileApp-id
@@ -11460,6 +11658,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Update the ref of navigation property app in deviceAppManagement
+      description: The navigation link to the mobile app.
       operationId: deviceAppManagement.mobileApps.deviceStatuses_SetRefApp
       parameters:
         - name: mobileApp-id
@@ -11495,6 +11694,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Delete ref of navigation property app for deviceAppManagement
+      description: The navigation link to the mobile app.
       operationId: deviceAppManagement.mobileApps.deviceStatuses_DeleteRefApp
       parameters:
         - name: mobileApp-id
@@ -11615,6 +11815,7 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action revokeAllLicenses
+      description: Revoke all assigned iOS VPP licenses for given app.
       operationId: deviceAppManagement.mobileApps.deviceStatuses.app.microsoft.graph.iosVppApp_revokeAllLicenses
       parameters:
         - name: mobileApp-id
@@ -11655,6 +11856,7 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action revokeDeviceLicense
+      description: Revoke assigned iOS VPP device license for given app.
       operationId: deviceAppManagement.mobileApps.deviceStatuses.app.microsoft.graph.iosVppApp_revokeDeviceLicense
       parameters:
         - name: mobileApp-id
@@ -11698,6 +11900,7 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action revokeUserLicense
+      description: Revoke assigned iOS VPP user license for given app.
       operationId: deviceAppManagement.mobileApps.deviceStatuses.app.microsoft.graph.iosVppApp_revokeUserLicense
       parameters:
         - name: mobileApp-id
@@ -11782,6 +11985,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get installSummary from deviceAppManagement
+      description: Mobile App Install Summary.
       operationId: deviceAppManagement.mobileApps_GetInstallSummary
       parameters:
         - name: mobileApp-id
@@ -11839,6 +12043,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Update the navigation property installSummary in deviceAppManagement
+      description: Mobile App Install Summary.
       operationId: deviceAppManagement.mobileApps_UpdateInstallSummary
       parameters:
         - name: mobileApp-id
@@ -11865,6 +12070,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Delete navigation property installSummary for deviceAppManagement
+      description: Mobile App Install Summary.
       operationId: deviceAppManagement.mobileApps_DeleteInstallSummary
       parameters:
         - name: mobileApp-id
@@ -11964,6 +12170,7 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action revokeAllLicenses
+      description: Revoke all assigned iOS VPP licenses for given app.
       operationId: deviceAppManagement.mobileApps.microsoft.graph.iosVppApp_revokeAllLicenses
       parameters:
         - name: mobileApp-id
@@ -11997,6 +12204,7 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action revokeDeviceLicense
+      description: Revoke assigned iOS VPP device license for given app.
       operationId: deviceAppManagement.mobileApps.microsoft.graph.iosVppApp_revokeDeviceLicense
       parameters:
         - name: mobileApp-id
@@ -12033,6 +12241,7 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action revokeUserLicense
+      description: Revoke assigned iOS VPP user license for given app.
       operationId: deviceAppManagement.mobileApps.microsoft.graph.iosVppApp_revokeUserLicense
       parameters:
         - name: mobileApp-id
@@ -12103,6 +12312,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get relationships from deviceAppManagement
+      description: List of relationships for this mobile app.
       operationId: deviceAppManagement.mobileApps_ListRelationships
       parameters:
         - name: mobileApp-id
@@ -12196,6 +12406,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Create new navigation property to relationships for deviceAppManagement
+      description: List of relationships for this mobile app.
       operationId: deviceAppManagement.mobileApps_CreateRelationships
       parameters:
         - name: mobileApp-id
@@ -12227,6 +12438,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get relationships from deviceAppManagement
+      description: List of relationships for this mobile app.
       operationId: deviceAppManagement.mobileApps_GetRelationships
       parameters:
         - name: mobileApp-id
@@ -12286,6 +12498,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Update the navigation property relationships in deviceAppManagement
+      description: List of relationships for this mobile app.
       operationId: deviceAppManagement.mobileApps_UpdateRelationships
       parameters:
         - name: mobileApp-id
@@ -12319,6 +12532,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Delete navigation property relationships for deviceAppManagement
+      description: List of relationships for this mobile app.
       operationId: deviceAppManagement.mobileApps_DeleteRelationships
       parameters:
         - name: mobileApp-id
@@ -12351,6 +12565,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get userStatuses from deviceAppManagement
+      description: The list of installation states for this mobile app.
       operationId: deviceAppManagement.mobileApps_ListUserStatuses
       parameters:
         - name: mobileApp-id
@@ -12448,6 +12663,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Create new navigation property to userStatuses for deviceAppManagement
+      description: The list of installation states for this mobile app.
       operationId: deviceAppManagement.mobileApps_CreateUserStatuses
       parameters:
         - name: mobileApp-id
@@ -12479,6 +12695,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get userStatuses from deviceAppManagement
+      description: The list of installation states for this mobile app.
       operationId: deviceAppManagement.mobileApps_GetUserStatuses
       parameters:
         - name: mobileApp-id
@@ -12553,6 +12770,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Update the navigation property userStatuses in deviceAppManagement
+      description: The list of installation states for this mobile app.
       operationId: deviceAppManagement.mobileApps_UpdateUserStatuses
       parameters:
         - name: mobileApp-id
@@ -12586,6 +12804,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Delete navigation property userStatuses for deviceAppManagement
+      description: The list of installation states for this mobile app.
       operationId: deviceAppManagement.mobileApps_DeleteUserStatuses
       parameters:
         - name: mobileApp-id
@@ -12618,6 +12837,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get app from deviceAppManagement
+      description: The navigation link to the mobile app.
       operationId: deviceAppManagement.mobileApps.userStatuses_GetApp
       parameters:
         - name: mobileApp-id
@@ -12735,6 +12955,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get ref of app from deviceAppManagement
+      description: The navigation link to the mobile app.
       operationId: deviceAppManagement.mobileApps.userStatuses_GetRefApp
       parameters:
         - name: mobileApp-id
@@ -12796,6 +13017,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Update the ref of navigation property app in deviceAppManagement
+      description: The navigation link to the mobile app.
       operationId: deviceAppManagement.mobileApps.userStatuses_SetRefApp
       parameters:
         - name: mobileApp-id
@@ -12831,6 +13053,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Delete ref of navigation property app for deviceAppManagement
+      description: The navigation link to the mobile app.
       operationId: deviceAppManagement.mobileApps.userStatuses_DeleteRefApp
       parameters:
         - name: mobileApp-id
@@ -12951,6 +13174,7 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action revokeAllLicenses
+      description: Revoke all assigned iOS VPP licenses for given app.
       operationId: deviceAppManagement.mobileApps.userStatuses.app.microsoft.graph.iosVppApp_revokeAllLicenses
       parameters:
         - name: mobileApp-id
@@ -12991,6 +13215,7 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action revokeDeviceLicense
+      description: Revoke assigned iOS VPP device license for given app.
       operationId: deviceAppManagement.mobileApps.userStatuses.app.microsoft.graph.iosVppApp_revokeDeviceLicense
       parameters:
         - name: mobileApp-id
@@ -13034,6 +13259,7 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action revokeUserLicense
+      description: Revoke assigned iOS VPP user license for given app.
       operationId: deviceAppManagement.mobileApps.userStatuses.app.microsoft.graph.iosVppApp_revokeUserLicense
       parameters:
         - name: mobileApp-id
@@ -13118,6 +13344,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get deviceStatuses from deviceAppManagement
+      description: The install state of the app on devices.
       operationId: deviceAppManagement.mobileApps.userStatuses_ListDeviceStatuses
       parameters:
         - name: mobileApp-id
@@ -13241,6 +13468,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Create new navigation property to deviceStatuses for deviceAppManagement
+      description: The install state of the app on devices.
       operationId: deviceAppManagement.mobileApps.userStatuses_CreateDeviceStatuses
       parameters:
         - name: mobileApp-id
@@ -13279,6 +13507,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get deviceStatuses from deviceAppManagement
+      description: The install state of the app on devices.
       operationId: deviceAppManagement.mobileApps.userStatuses_GetDeviceStatuses
       parameters:
         - name: mobileApp-id
@@ -13361,6 +13590,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Update the navigation property deviceStatuses in deviceAppManagement
+      description: The install state of the app on devices.
       operationId: deviceAppManagement.mobileApps.userStatuses_UpdateDeviceStatuses
       parameters:
         - name: mobileApp-id
@@ -13401,6 +13631,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Delete navigation property deviceStatuses for deviceAppManagement
+      description: The install state of the app on devices.
       operationId: deviceAppManagement.mobileApps.userStatuses_DeleteDeviceStatuses
       parameters:
         - name: mobileApp-id
@@ -13440,6 +13671,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get app from deviceAppManagement
+      description: The navigation link to the mobile app.
       operationId: deviceAppManagement.mobileApps.userStatuses.deviceStatuses_GetApp
       parameters:
         - name: mobileApp-id
@@ -13570,6 +13802,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get ref of app from deviceAppManagement
+      description: The navigation link to the mobile app.
       operationId: deviceAppManagement.mobileApps.userStatuses.deviceStatuses_GetRefApp
       parameters:
         - name: mobileApp-id
@@ -13644,6 +13877,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Update the ref of navigation property app in deviceAppManagement
+      description: The navigation link to the mobile app.
       operationId: deviceAppManagement.mobileApps.userStatuses.deviceStatuses_SetRefApp
       parameters:
         - name: mobileApp-id
@@ -13686,6 +13920,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Delete ref of navigation property app for deviceAppManagement
+      description: The navigation link to the mobile app.
       operationId: deviceAppManagement.mobileApps.userStatuses.deviceStatuses_DeleteRefApp
       parameters:
         - name: mobileApp-id
@@ -13827,6 +14062,7 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action revokeAllLicenses
+      description: Revoke all assigned iOS VPP licenses for given app.
       operationId: deviceAppManagement.mobileApps.userStatuses.deviceStatuses.app.microsoft.graph.iosVppApp_revokeAllLicenses
       parameters:
         - name: mobileApp-id
@@ -13874,6 +14110,7 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action revokeDeviceLicense
+      description: Revoke assigned iOS VPP device license for given app.
       operationId: deviceAppManagement.mobileApps.userStatuses.deviceStatuses.app.microsoft.graph.iosVppApp_revokeDeviceLicense
       parameters:
         - name: mobileApp-id
@@ -13924,6 +14161,7 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action revokeUserLicense
+      description: Revoke assigned iOS VPP user license for given app.
       operationId: deviceAppManagement.mobileApps.userStatuses.deviceStatuses.app.microsoft.graph.iosVppApp_revokeUserLicense
       parameters:
         - name: mobileApp-id
@@ -14143,6 +14381,7 @@ paths:
       tags:
         - deviceAppManagement.policySet
       summary: Get policySets from deviceAppManagement
+      description: The PolicySet of Policies and Applications
       operationId: deviceAppManagement_ListPolicySets
       parameters:
         - $ref: '#/components/parameters/top'
@@ -14242,6 +14481,7 @@ paths:
       tags:
         - deviceAppManagement.policySet
       summary: Create new navigation property to policySets for deviceAppManagement
+      description: The PolicySet of Policies and Applications
       operationId: deviceAppManagement_CreatePolicySets
       requestBody:
         description: New navigation property
@@ -14265,6 +14505,7 @@ paths:
       tags:
         - deviceAppManagement.policySet
       summary: Get policySets from deviceAppManagement
+      description: The PolicySet of Policies and Applications
       operationId: deviceAppManagement_GetPolicySets
       parameters:
         - name: policySet-id
@@ -14333,6 +14574,7 @@ paths:
       tags:
         - deviceAppManagement.policySet
       summary: Update the navigation property policySets in deviceAppManagement
+      description: The PolicySet of Policies and Applications
       operationId: deviceAppManagement_UpdatePolicySets
       parameters:
         - name: policySet-id
@@ -14359,6 +14601,7 @@ paths:
       tags:
         - deviceAppManagement.policySet
       summary: Delete navigation property policySets for deviceAppManagement
+      description: The PolicySet of Policies and Applications
       operationId: deviceAppManagement_DeletePolicySets
       parameters:
         - name: policySet-id
@@ -14384,6 +14627,7 @@ paths:
       tags:
         - deviceAppManagement.policySet
       summary: Get assignments from deviceAppManagement
+      description: Assignments of the PolicySet.
       operationId: deviceAppManagement.policySets_ListAssignments
       parameters:
         - name: policySet-id
@@ -14468,6 +14712,7 @@ paths:
       tags:
         - deviceAppManagement.policySet
       summary: Create new navigation property to assignments for deviceAppManagement
+      description: Assignments of the PolicySet.
       operationId: deviceAppManagement.policySets_CreateAssignments
       parameters:
         - name: policySet-id
@@ -14499,6 +14744,7 @@ paths:
       tags:
         - deviceAppManagement.policySet
       summary: Get assignments from deviceAppManagement
+      description: Assignments of the PolicySet.
       operationId: deviceAppManagement.policySets_GetAssignments
       parameters:
         - name: policySet-id
@@ -14555,6 +14801,7 @@ paths:
       tags:
         - deviceAppManagement.policySet
       summary: Update the navigation property assignments in deviceAppManagement
+      description: Assignments of the PolicySet.
       operationId: deviceAppManagement.policySets_UpdateAssignments
       parameters:
         - name: policySet-id
@@ -14588,6 +14835,7 @@ paths:
       tags:
         - deviceAppManagement.policySet
       summary: Delete navigation property assignments for deviceAppManagement
+      description: Assignments of the PolicySet.
       operationId: deviceAppManagement.policySets_DeleteAssignments
       parameters:
         - name: policySet-id
@@ -14620,6 +14868,7 @@ paths:
       tags:
         - deviceAppManagement.policySet
       summary: Get items from deviceAppManagement
+      description: Items of the PolicySet with maximum count 100.
       operationId: deviceAppManagement.policySets_ListItems
       parameters:
         - name: policySet-id
@@ -14722,6 +14971,7 @@ paths:
       tags:
         - deviceAppManagement.policySet
       summary: Create new navigation property to items for deviceAppManagement
+      description: Items of the PolicySet with maximum count 100.
       operationId: deviceAppManagement.policySets_CreateItems
       parameters:
         - name: policySet-id
@@ -14753,6 +15003,7 @@ paths:
       tags:
         - deviceAppManagement.policySet
       summary: Get items from deviceAppManagement
+      description: Items of the PolicySet with maximum count 100.
       operationId: deviceAppManagement.policySets_GetItems
       parameters:
         - name: policySet-id
@@ -14815,6 +15066,7 @@ paths:
       tags:
         - deviceAppManagement.policySet
       summary: Update the navigation property items in deviceAppManagement
+      description: Items of the PolicySet with maximum count 100.
       operationId: deviceAppManagement.policySets_UpdateItems
       parameters:
         - name: policySet-id
@@ -14848,6 +15100,7 @@ paths:
       tags:
         - deviceAppManagement.policySet
       summary: Delete navigation property items for deviceAppManagement
+      description: Items of the PolicySet with maximum count 100.
       operationId: deviceAppManagement.policySets_DeleteItems
       parameters:
         - name: policySet-id
@@ -14960,6 +15213,7 @@ paths:
       tags:
         - deviceAppManagement.sideLoadingKey
       summary: Get sideLoadingKeys from deviceAppManagement
+      description: Side Loading Keys that are required for the Windows 8 and 8.1 Apps installation.
       operationId: deviceAppManagement_ListSideLoadingKeys
       parameters:
         - $ref: '#/components/parameters/top'
@@ -15046,6 +15300,7 @@ paths:
       tags:
         - deviceAppManagement.sideLoadingKey
       summary: Create new navigation property to sideLoadingKeys for deviceAppManagement
+      description: Side Loading Keys that are required for the Windows 8 and 8.1 Apps installation.
       operationId: deviceAppManagement_CreateSideLoadingKeys
       requestBody:
         description: New navigation property
@@ -15069,6 +15324,7 @@ paths:
       tags:
         - deviceAppManagement.sideLoadingKey
       summary: Get sideLoadingKeys from deviceAppManagement
+      description: Side Loading Keys that are required for the Windows 8 and 8.1 Apps installation.
       operationId: deviceAppManagement_GetSideLoadingKeys
       parameters:
         - name: sideLoadingKey-id
@@ -15121,6 +15377,7 @@ paths:
       tags:
         - deviceAppManagement.sideLoadingKey
       summary: Update the navigation property sideLoadingKeys in deviceAppManagement
+      description: Side Loading Keys that are required for the Windows 8 and 8.1 Apps installation.
       operationId: deviceAppManagement_UpdateSideLoadingKeys
       parameters:
         - name: sideLoadingKey-id
@@ -15147,6 +15404,7 @@ paths:
       tags:
         - deviceAppManagement.sideLoadingKey
       summary: Delete navigation property sideLoadingKeys for deviceAppManagement
+      description: Side Loading Keys that are required for the Windows 8 and 8.1 Apps installation.
       operationId: deviceAppManagement_DeleteSideLoadingKeys
       parameters:
         - name: sideLoadingKey-id
@@ -15172,6 +15430,7 @@ paths:
       tags:
         - deviceAppManagement.symantecCodeSigningCertificate
       summary: Get symantecCodeSigningCertificate from deviceAppManagement
+      description: The WinPhone Symantec Code Signing Certificate.
       operationId: deviceAppManagement_GetSymantecCodeSigningCertificate
       parameters:
         - name: $select
@@ -15221,6 +15480,7 @@ paths:
       tags:
         - deviceAppManagement.symantecCodeSigningCertificate
       summary: Update the navigation property symantecCodeSigningCertificate in deviceAppManagement
+      description: The WinPhone Symantec Code Signing Certificate.
       operationId: deviceAppManagement_UpdateSymantecCodeSigningCertificate
       requestBody:
         description: New navigation property values
@@ -15239,6 +15499,7 @@ paths:
       tags:
         - deviceAppManagement.symantecCodeSigningCertificate
       summary: Delete navigation property symantecCodeSigningCertificate for deviceAppManagement
+      description: The WinPhone Symantec Code Signing Certificate.
       operationId: deviceAppManagement_DeleteSymantecCodeSigningCertificate
       parameters:
         - name: If-Match
@@ -15257,6 +15518,7 @@ paths:
       tags:
         - deviceAppManagement.targetedManagedAppConfiguration
       summary: Get targetedManagedAppConfigurations from deviceAppManagement
+      description: Targeted managed app configurations.
       operationId: deviceAppManagement_ListTargetedManagedAppConfigurations
       parameters:
         - $ref: '#/components/parameters/top'
@@ -15361,6 +15623,7 @@ paths:
       tags:
         - deviceAppManagement.targetedManagedAppConfiguration
       summary: Create new navigation property to targetedManagedAppConfigurations for deviceAppManagement
+      description: Targeted managed app configurations.
       operationId: deviceAppManagement_CreateTargetedManagedAppConfigurations
       requestBody:
         description: New navigation property
@@ -15384,6 +15647,7 @@ paths:
       tags:
         - deviceAppManagement.targetedManagedAppConfiguration
       summary: Get targetedManagedAppConfigurations from deviceAppManagement
+      description: Targeted managed app configurations.
       operationId: deviceAppManagement_GetTargetedManagedAppConfigurations
       parameters:
         - name: targetedManagedAppConfiguration-id
@@ -15459,6 +15723,7 @@ paths:
       tags:
         - deviceAppManagement.targetedManagedAppConfiguration
       summary: Update the navigation property targetedManagedAppConfigurations in deviceAppManagement
+      description: Targeted managed app configurations.
       operationId: deviceAppManagement_UpdateTargetedManagedAppConfigurations
       parameters:
         - name: targetedManagedAppConfiguration-id
@@ -15485,6 +15750,7 @@ paths:
       tags:
         - deviceAppManagement.targetedManagedAppConfiguration
       summary: Delete navigation property targetedManagedAppConfigurations for deviceAppManagement
+      description: Targeted managed app configurations.
       operationId: deviceAppManagement_DeleteTargetedManagedAppConfigurations
       parameters:
         - name: targetedManagedAppConfiguration-id
@@ -15510,6 +15776,7 @@ paths:
       tags:
         - deviceAppManagement.targetedManagedAppConfiguration
       summary: Get apps from deviceAppManagement
+      description: List of apps to which the policy is deployed.
       operationId: deviceAppManagement.targetedManagedAppConfigurations_ListApps
       parameters:
         - name: targetedManagedAppConfiguration-id
@@ -15594,6 +15861,7 @@ paths:
       tags:
         - deviceAppManagement.targetedManagedAppConfiguration
       summary: Create new navigation property to apps for deviceAppManagement
+      description: List of apps to which the policy is deployed.
       operationId: deviceAppManagement.targetedManagedAppConfigurations_CreateApps
       parameters:
         - name: targetedManagedAppConfiguration-id
@@ -15625,6 +15893,7 @@ paths:
       tags:
         - deviceAppManagement.targetedManagedAppConfiguration
       summary: Get apps from deviceAppManagement
+      description: List of apps to which the policy is deployed.
       operationId: deviceAppManagement.targetedManagedAppConfigurations_GetApps
       parameters:
         - name: targetedManagedAppConfiguration-id
@@ -15681,6 +15950,7 @@ paths:
       tags:
         - deviceAppManagement.targetedManagedAppConfiguration
       summary: Update the navigation property apps in deviceAppManagement
+      description: List of apps to which the policy is deployed.
       operationId: deviceAppManagement.targetedManagedAppConfigurations_UpdateApps
       parameters:
         - name: targetedManagedAppConfiguration-id
@@ -15714,6 +15984,7 @@ paths:
       tags:
         - deviceAppManagement.targetedManagedAppConfiguration
       summary: Delete navigation property apps for deviceAppManagement
+      description: List of apps to which the policy is deployed.
       operationId: deviceAppManagement.targetedManagedAppConfigurations_DeleteApps
       parameters:
         - name: targetedManagedAppConfiguration-id
@@ -15746,6 +16017,7 @@ paths:
       tags:
         - deviceAppManagement.targetedManagedAppConfiguration
       summary: Get assignments from deviceAppManagement
+      description: Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
       operationId: deviceAppManagement.targetedManagedAppConfigurations_ListAssignments
       parameters:
         - name: targetedManagedAppConfiguration-id
@@ -15833,6 +16105,7 @@ paths:
       tags:
         - deviceAppManagement.targetedManagedAppConfiguration
       summary: Create new navigation property to assignments for deviceAppManagement
+      description: Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
       operationId: deviceAppManagement.targetedManagedAppConfigurations_CreateAssignments
       parameters:
         - name: targetedManagedAppConfiguration-id
@@ -15864,6 +16137,7 @@ paths:
       tags:
         - deviceAppManagement.targetedManagedAppConfiguration
       summary: Get assignments from deviceAppManagement
+      description: Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
       operationId: deviceAppManagement.targetedManagedAppConfigurations_GetAssignments
       parameters:
         - name: targetedManagedAppConfiguration-id
@@ -15921,6 +16195,7 @@ paths:
       tags:
         - deviceAppManagement.targetedManagedAppConfiguration
       summary: Update the navigation property assignments in deviceAppManagement
+      description: Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
       operationId: deviceAppManagement.targetedManagedAppConfigurations_UpdateAssignments
       parameters:
         - name: targetedManagedAppConfiguration-id
@@ -15954,6 +16229,7 @@ paths:
       tags:
         - deviceAppManagement.targetedManagedAppConfiguration
       summary: Delete navigation property assignments for deviceAppManagement
+      description: Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
       operationId: deviceAppManagement.targetedManagedAppConfigurations_DeleteAssignments
       parameters:
         - name: targetedManagedAppConfiguration-id
@@ -15986,6 +16262,7 @@ paths:
       tags:
         - deviceAppManagement.targetedManagedAppConfiguration
       summary: Get deploymentSummary from deviceAppManagement
+      description: Navigation property to deployment summary of the configuration.
       operationId: deviceAppManagement.targetedManagedAppConfigurations_GetDeploymentSummary
       parameters:
         - name: targetedManagedAppConfiguration-id
@@ -16038,6 +16315,7 @@ paths:
       tags:
         - deviceAppManagement.targetedManagedAppConfiguration
       summary: Update the navigation property deploymentSummary in deviceAppManagement
+      description: Navigation property to deployment summary of the configuration.
       operationId: deviceAppManagement.targetedManagedAppConfigurations_UpdateDeploymentSummary
       parameters:
         - name: targetedManagedAppConfiguration-id
@@ -16064,6 +16342,7 @@ paths:
       tags:
         - deviceAppManagement.targetedManagedAppConfiguration
       summary: Delete navigation property deploymentSummary for deviceAppManagement
+      description: Navigation property to deployment summary of the configuration.
       operationId: deviceAppManagement.targetedManagedAppConfigurations_DeleteDeploymentSummary
       parameters:
         - name: targetedManagedAppConfiguration-id
@@ -16190,6 +16469,7 @@ paths:
       tags:
         - deviceAppManagement.vppToken
       summary: Get vppTokens from deviceAppManagement
+      description: List of Vpp tokens for this organization.
       operationId: deviceAppManagement_ListVppTokens
       parameters:
         - $ref: '#/components/parameters/top'
@@ -16312,6 +16592,7 @@ paths:
       tags:
         - deviceAppManagement.vppToken
       summary: Create new navigation property to vppTokens for deviceAppManagement
+      description: List of Vpp tokens for this organization.
       operationId: deviceAppManagement_CreateVppTokens
       requestBody:
         description: New navigation property
@@ -16335,6 +16616,7 @@ paths:
       tags:
         - deviceAppManagement.vppToken
       summary: Get vppTokens from deviceAppManagement
+      description: List of Vpp tokens for this organization.
       operationId: deviceAppManagement_GetVppTokens
       parameters:
         - name: vppToken-id
@@ -16399,6 +16681,7 @@ paths:
       tags:
         - deviceAppManagement.vppToken
       summary: Update the navigation property vppTokens in deviceAppManagement
+      description: List of Vpp tokens for this organization.
       operationId: deviceAppManagement_UpdateVppTokens
       parameters:
         - name: vppToken-id
@@ -16425,6 +16708,7 @@ paths:
       tags:
         - deviceAppManagement.vppToken
       summary: Delete navigation property vppTokens for deviceAppManagement
+      description: List of Vpp tokens for this organization.
       operationId: deviceAppManagement_DeleteVppTokens
       parameters:
         - name: vppToken-id
@@ -16450,6 +16734,7 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action revokeLicenses
+      description: Revoke licenses associated with a specific appleVolumePurchaseProgramToken
       operationId: deviceAppManagement.vppTokens_revokeLicenses
       parameters:
         - name: vppToken-id
@@ -16487,6 +16772,7 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action syncLicenses
+      description: Syncs licenses associated with a specific appleVolumePurchaseProgramToken
       operationId: deviceAppManagement.vppTokens_syncLicenses
       parameters:
         - name: vppToken-id
@@ -16549,6 +16835,7 @@ paths:
       tags:
         - deviceAppManagement.windowsDefenderApplicationControlSupplementalPolicy
       summary: Get wdacSupplementalPolicies from deviceAppManagement
+      description: The collection of Windows Defender Application Control Supplemental Policies.
       operationId: deviceAppManagement_ListWdacSupplementalPolicies
       parameters:
         - $ref: '#/components/parameters/top'
@@ -16650,6 +16937,7 @@ paths:
       tags:
         - deviceAppManagement.windowsDefenderApplicationControlSupplementalPolicy
       summary: Create new navigation property to wdacSupplementalPolicies for deviceAppManagement
+      description: The collection of Windows Defender Application Control Supplemental Policies.
       operationId: deviceAppManagement_CreateWdacSupplementalPolicies
       requestBody:
         description: New navigation property
@@ -16673,6 +16961,7 @@ paths:
       tags:
         - deviceAppManagement.windowsDefenderApplicationControlSupplementalPolicy
       summary: Get wdacSupplementalPolicies from deviceAppManagement
+      description: The collection of Windows Defender Application Control Supplemental Policies.
       operationId: deviceAppManagement_GetWdacSupplementalPolicies
       parameters:
         - name: windowsDefenderApplicationControlSupplementalPolicy-id
@@ -16747,6 +17036,7 @@ paths:
       tags:
         - deviceAppManagement.windowsDefenderApplicationControlSupplementalPolicy
       summary: Update the navigation property wdacSupplementalPolicies in deviceAppManagement
+      description: The collection of Windows Defender Application Control Supplemental Policies.
       operationId: deviceAppManagement_UpdateWdacSupplementalPolicies
       parameters:
         - name: windowsDefenderApplicationControlSupplementalPolicy-id
@@ -16773,6 +17063,7 @@ paths:
       tags:
         - deviceAppManagement.windowsDefenderApplicationControlSupplementalPolicy
       summary: Delete navigation property wdacSupplementalPolicies for deviceAppManagement
+      description: The collection of Windows Defender Application Control Supplemental Policies.
       operationId: deviceAppManagement_DeleteWdacSupplementalPolicies
       parameters:
         - name: windowsDefenderApplicationControlSupplementalPolicy-id
@@ -16798,6 +17089,7 @@ paths:
       tags:
         - deviceAppManagement.windowsDefenderApplicationControlSupplementalPolicy
       summary: Get assignments from deviceAppManagement
+      description: The associated group assignments for this WindowsDefenderApplicationControl supplemental policy.
       operationId: deviceAppManagement.wdacSupplementalPolicies_ListAssignments
       parameters:
         - name: windowsDefenderApplicationControlSupplementalPolicy-id
@@ -16879,6 +17171,7 @@ paths:
       tags:
         - deviceAppManagement.windowsDefenderApplicationControlSupplementalPolicy
       summary: Create new navigation property to assignments for deviceAppManagement
+      description: The associated group assignments for this WindowsDefenderApplicationControl supplemental policy.
       operationId: deviceAppManagement.wdacSupplementalPolicies_CreateAssignments
       parameters:
         - name: windowsDefenderApplicationControlSupplementalPolicy-id
@@ -16910,6 +17203,7 @@ paths:
       tags:
         - deviceAppManagement.windowsDefenderApplicationControlSupplementalPolicy
       summary: Get assignments from deviceAppManagement
+      description: The associated group assignments for this WindowsDefenderApplicationControl supplemental policy.
       operationId: deviceAppManagement.wdacSupplementalPolicies_GetAssignments
       parameters:
         - name: windowsDefenderApplicationControlSupplementalPolicy-id
@@ -16965,6 +17259,7 @@ paths:
       tags:
         - deviceAppManagement.windowsDefenderApplicationControlSupplementalPolicy
       summary: Update the navigation property assignments in deviceAppManagement
+      description: The associated group assignments for this WindowsDefenderApplicationControl supplemental policy.
       operationId: deviceAppManagement.wdacSupplementalPolicies_UpdateAssignments
       parameters:
         - name: windowsDefenderApplicationControlSupplementalPolicy-id
@@ -16998,6 +17293,7 @@ paths:
       tags:
         - deviceAppManagement.windowsDefenderApplicationControlSupplementalPolicy
       summary: Delete navigation property assignments for deviceAppManagement
+      description: The associated group assignments for this WindowsDefenderApplicationControl supplemental policy.
       operationId: deviceAppManagement.wdacSupplementalPolicies_DeleteAssignments
       parameters:
         - name: windowsDefenderApplicationControlSupplementalPolicy-id
@@ -17030,6 +17326,7 @@ paths:
       tags:
         - deviceAppManagement.windowsDefenderApplicationControlSupplementalPolicy
       summary: Get deploySummary from deviceAppManagement
+      description: WindowsDefenderApplicationControl supplemental policy deployment summary.
       operationId: deviceAppManagement.wdacSupplementalPolicies_GetDeploySummary
       parameters:
         - name: windowsDefenderApplicationControlSupplementalPolicy-id
@@ -17079,6 +17376,7 @@ paths:
       tags:
         - deviceAppManagement.windowsDefenderApplicationControlSupplementalPolicy
       summary: Update the navigation property deploySummary in deviceAppManagement
+      description: WindowsDefenderApplicationControl supplemental policy deployment summary.
       operationId: deviceAppManagement.wdacSupplementalPolicies_UpdateDeploySummary
       parameters:
         - name: windowsDefenderApplicationControlSupplementalPolicy-id
@@ -17105,6 +17403,7 @@ paths:
       tags:
         - deviceAppManagement.windowsDefenderApplicationControlSupplementalPolicy
       summary: Delete navigation property deploySummary for deviceAppManagement
+      description: WindowsDefenderApplicationControl supplemental policy deployment summary.
       operationId: deviceAppManagement.wdacSupplementalPolicies_DeleteDeploySummary
       parameters:
         - name: windowsDefenderApplicationControlSupplementalPolicy-id
@@ -17130,6 +17429,7 @@ paths:
       tags:
         - deviceAppManagement.windowsDefenderApplicationControlSupplementalPolicy
       summary: Get deviceStatuses from deviceAppManagement
+      description: The list of device deployment states for this WindowsDefenderApplicationControl supplemental policy.
       operationId: deviceAppManagement.wdacSupplementalPolicies_ListDeviceStatuses
       parameters:
         - name: windowsDefenderApplicationControlSupplementalPolicy-id
@@ -17237,6 +17537,7 @@ paths:
       tags:
         - deviceAppManagement.windowsDefenderApplicationControlSupplementalPolicy
       summary: Create new navigation property to deviceStatuses for deviceAppManagement
+      description: The list of device deployment states for this WindowsDefenderApplicationControl supplemental policy.
       operationId: deviceAppManagement.wdacSupplementalPolicies_CreateDeviceStatuses
       parameters:
         - name: windowsDefenderApplicationControlSupplementalPolicy-id
@@ -17268,6 +17569,7 @@ paths:
       tags:
         - deviceAppManagement.windowsDefenderApplicationControlSupplementalPolicy
       summary: Get deviceStatuses from deviceAppManagement
+      description: The list of device deployment states for this WindowsDefenderApplicationControl supplemental policy.
       operationId: deviceAppManagement.wdacSupplementalPolicies_GetDeviceStatuses
       parameters:
         - name: windowsDefenderApplicationControlSupplementalPolicy-id
@@ -17339,6 +17641,7 @@ paths:
       tags:
         - deviceAppManagement.windowsDefenderApplicationControlSupplementalPolicy
       summary: Update the navigation property deviceStatuses in deviceAppManagement
+      description: The list of device deployment states for this WindowsDefenderApplicationControl supplemental policy.
       operationId: deviceAppManagement.wdacSupplementalPolicies_UpdateDeviceStatuses
       parameters:
         - name: windowsDefenderApplicationControlSupplementalPolicy-id
@@ -17372,6 +17675,7 @@ paths:
       tags:
         - deviceAppManagement.windowsDefenderApplicationControlSupplementalPolicy
       summary: Delete navigation property deviceStatuses for deviceAppManagement
+      description: The list of device deployment states for this WindowsDefenderApplicationControl supplemental policy.
       operationId: deviceAppManagement.wdacSupplementalPolicies_DeleteDeviceStatuses
       parameters:
         - name: windowsDefenderApplicationControlSupplementalPolicy-id
@@ -17404,6 +17708,7 @@ paths:
       tags:
         - deviceAppManagement.windowsDefenderApplicationControlSupplementalPolicy
       summary: Get policy from deviceAppManagement
+      description: The navigation link to the WindowsDefenderApplicationControl supplemental policy.
       operationId: deviceAppManagement.wdacSupplementalPolicies.deviceStatuses_GetPolicy
       parameters:
         - name: windowsDefenderApplicationControlSupplementalPolicy-id
@@ -17489,6 +17794,7 @@ paths:
       tags:
         - deviceAppManagement.windowsDefenderApplicationControlSupplementalPolicy
       summary: Get ref of policy from deviceAppManagement
+      description: The navigation link to the WindowsDefenderApplicationControl supplemental policy.
       operationId: deviceAppManagement.wdacSupplementalPolicies.deviceStatuses_GetRefPolicy
       parameters:
         - name: windowsDefenderApplicationControlSupplementalPolicy-id
@@ -17535,6 +17841,7 @@ paths:
       tags:
         - deviceAppManagement.windowsDefenderApplicationControlSupplementalPolicy
       summary: Update the ref of navigation property policy in deviceAppManagement
+      description: The navigation link to the WindowsDefenderApplicationControl supplemental policy.
       operationId: deviceAppManagement.wdacSupplementalPolicies.deviceStatuses_SetRefPolicy
       parameters:
         - name: windowsDefenderApplicationControlSupplementalPolicy-id
@@ -17570,6 +17877,7 @@ paths:
       tags:
         - deviceAppManagement.windowsDefenderApplicationControlSupplementalPolicy
       summary: Delete ref of navigation property policy for deviceAppManagement
+      description: The navigation link to the WindowsDefenderApplicationControl supplemental policy.
       operationId: deviceAppManagement.wdacSupplementalPolicies.deviceStatuses_DeleteRefPolicy
       parameters:
         - name: windowsDefenderApplicationControlSupplementalPolicy-id
@@ -17677,6 +17985,7 @@ paths:
       tags:
         - deviceAppManagement.windowsInformationProtectionDeviceRegistration
       summary: Get windowsInformationProtectionDeviceRegistrations from deviceAppManagement
+      description: Windows information protection device registrations that are not MDM enrolled.
       operationId: deviceAppManagement_ListWindowsInformationProtectionDeviceRegistrations
       parameters:
         - $ref: '#/components/parameters/top'
@@ -17766,6 +18075,7 @@ paths:
       tags:
         - deviceAppManagement.windowsInformationProtectionDeviceRegistration
       summary: Create new navigation property to windowsInformationProtectionDeviceRegistrations for deviceAppManagement
+      description: Windows information protection device registrations that are not MDM enrolled.
       operationId: deviceAppManagement_CreateWindowsInformationProtectionDeviceRegistrations
       requestBody:
         description: New navigation property
@@ -17789,6 +18099,7 @@ paths:
       tags:
         - deviceAppManagement.windowsInformationProtectionDeviceRegistration
       summary: Get windowsInformationProtectionDeviceRegistrations from deviceAppManagement
+      description: Windows information protection device registrations that are not MDM enrolled.
       operationId: deviceAppManagement_GetWindowsInformationProtectionDeviceRegistrations
       parameters:
         - name: windowsInformationProtectionDeviceRegistration-id
@@ -17842,6 +18153,7 @@ paths:
       tags:
         - deviceAppManagement.windowsInformationProtectionDeviceRegistration
       summary: Update the navigation property windowsInformationProtectionDeviceRegistrations in deviceAppManagement
+      description: Windows information protection device registrations that are not MDM enrolled.
       operationId: deviceAppManagement_UpdateWindowsInformationProtectionDeviceRegistrations
       parameters:
         - name: windowsInformationProtectionDeviceRegistration-id
@@ -17868,6 +18180,7 @@ paths:
       tags:
         - deviceAppManagement.windowsInformationProtectionDeviceRegistration
       summary: Delete navigation property windowsInformationProtectionDeviceRegistrations for deviceAppManagement
+      description: Windows information protection device registrations that are not MDM enrolled.
       operationId: deviceAppManagement_DeleteWindowsInformationProtectionDeviceRegistrations
       parameters:
         - name: windowsInformationProtectionDeviceRegistration-id
@@ -17913,6 +18226,7 @@ paths:
       tags:
         - deviceAppManagement.windowsInformationProtectionPolicy
       summary: Get windowsInformationProtectionPolicies from deviceAppManagement
+      description: Windows information protection for apps running on devices which are not MDM enrolled.
       operationId: deviceAppManagement_ListWindowsInformationProtectionPolicies
       parameters:
         - $ref: '#/components/parameters/top'
@@ -18110,6 +18424,7 @@ paths:
       tags:
         - deviceAppManagement.windowsInformationProtectionPolicy
       summary: Create new navigation property to windowsInformationProtectionPolicies for deviceAppManagement
+      description: Windows information protection for apps running on devices which are not MDM enrolled.
       operationId: deviceAppManagement_CreateWindowsInformationProtectionPolicies
       requestBody:
         description: New navigation property
@@ -18133,6 +18448,7 @@ paths:
       tags:
         - deviceAppManagement.windowsInformationProtectionPolicy
       summary: Get windowsInformationProtectionPolicies from deviceAppManagement
+      description: Windows information protection for apps running on devices which are not MDM enrolled.
       operationId: deviceAppManagement_GetWindowsInformationProtectionPolicies
       parameters:
         - name: windowsInformationProtectionPolicy-id
@@ -18239,6 +18555,7 @@ paths:
       tags:
         - deviceAppManagement.windowsInformationProtectionPolicy
       summary: Update the navigation property windowsInformationProtectionPolicies in deviceAppManagement
+      description: Windows information protection for apps running on devices which are not MDM enrolled.
       operationId: deviceAppManagement_UpdateWindowsInformationProtectionPolicies
       parameters:
         - name: windowsInformationProtectionPolicy-id
@@ -18265,6 +18582,7 @@ paths:
       tags:
         - deviceAppManagement.windowsInformationProtectionPolicy
       summary: Delete navigation property windowsInformationProtectionPolicies for deviceAppManagement
+      description: Windows information protection for apps running on devices which are not MDM enrolled.
       operationId: deviceAppManagement_DeleteWindowsInformationProtectionPolicies
       parameters:
         - name: windowsInformationProtectionPolicy-id
@@ -18290,6 +18608,7 @@ paths:
       tags:
         - deviceAppManagement.windowsInformationProtectionWipeAction
       summary: Get windowsInformationProtectionWipeActions from deviceAppManagement
+      description: Windows information protection wipe actions.
       operationId: deviceAppManagement_ListWindowsInformationProtectionWipeActions
       parameters:
         - $ref: '#/components/parameters/top'
@@ -18379,6 +18698,7 @@ paths:
       tags:
         - deviceAppManagement.windowsInformationProtectionWipeAction
       summary: Create new navigation property to windowsInformationProtectionWipeActions for deviceAppManagement
+      description: Windows information protection wipe actions.
       operationId: deviceAppManagement_CreateWindowsInformationProtectionWipeActions
       requestBody:
         description: New navigation property
@@ -18402,6 +18722,7 @@ paths:
       tags:
         - deviceAppManagement.windowsInformationProtectionWipeAction
       summary: Get windowsInformationProtectionWipeActions from deviceAppManagement
+      description: Windows information protection wipe actions.
       operationId: deviceAppManagement_GetWindowsInformationProtectionWipeActions
       parameters:
         - name: windowsInformationProtectionWipeAction-id
@@ -18455,6 +18776,7 @@ paths:
       tags:
         - deviceAppManagement.windowsInformationProtectionWipeAction
       summary: Update the navigation property windowsInformationProtectionWipeActions in deviceAppManagement
+      description: Windows information protection wipe actions.
       operationId: deviceAppManagement_UpdateWindowsInformationProtectionWipeActions
       parameters:
         - name: windowsInformationProtectionWipeAction-id
@@ -18481,6 +18803,7 @@ paths:
       tags:
         - deviceAppManagement.windowsInformationProtectionWipeAction
       summary: Delete navigation property windowsInformationProtectionWipeActions for deviceAppManagement
+      description: Windows information protection wipe actions.
       operationId: deviceAppManagement_DeleteWindowsInformationProtectionWipeActions
       parameters:
         - name: windowsInformationProtectionWipeAction-id
@@ -18506,6 +18829,7 @@ paths:
       tags:
         - deviceAppManagement.windowsManagementApp
       summary: Get windowsManagementApp from deviceAppManagement
+      description: Windows management app.
       operationId: deviceAppManagement_GetWindowsManagementApp
       parameters:
         - name: $select
@@ -18520,6 +18844,8 @@ paths:
               enum:
                 - id
                 - availableVersion
+                - managedInstaller
+                - managedInstallerConfiguredDateTime
                 - healthStates
               type: string
         - name: $expand
@@ -18553,6 +18879,7 @@ paths:
       tags:
         - deviceAppManagement.windowsManagementApp
       summary: Get ref of windowsManagementApp from deviceAppManagement
+      description: Windows management app.
       operationId: deviceAppManagement_GetRefWindowsManagementApp
       responses:
         '200':
@@ -18571,6 +18898,7 @@ paths:
       tags:
         - deviceAppManagement.windowsManagementApp
       summary: Update the ref of navigation property windowsManagementApp in deviceAppManagement
+      description: Windows management app.
       operationId: deviceAppManagement_SetRefWindowsManagementApp
       requestBody:
         description: New navigation property ref values
@@ -18591,6 +18919,7 @@ paths:
       tags:
         - deviceAppManagement.windowsManagementApp
       summary: Delete ref of navigation property windowsManagementApp for deviceAppManagement
+      description: Windows management app.
       operationId: deviceAppManagement_DeleteRefWindowsManagementApp
       parameters:
         - name: If-Match
@@ -18604,6 +18933,19 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceAppManagement/windowsManagementApp/microsoft.graph.setAsManagedInstaller:
+    post:
+      tags:
+        - deviceAppManagement.Actions
+      summary: Invoke action setAsManagedInstaller
+      description: Set the Managed Installer status for the caller tenant
+      operationId: deviceAppManagement.windowsManagementApp_setAsManagedInstaller
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /officeConfiguration:
     get:
       tags:
@@ -18674,6 +19016,7 @@ paths:
       tags:
         - officeConfiguration.officeClientConfiguration
       summary: Get clientConfigurations from officeConfiguration
+      description: List of office Client configuration.
       operationId: officeConfiguration_ListClientConfigurations
       parameters:
         - $ref: '#/components/parameters/top'
@@ -18768,6 +19111,7 @@ paths:
       tags:
         - officeConfiguration.officeClientConfiguration
       summary: Create new navigation property to clientConfigurations for officeConfiguration
+      description: List of office Client configuration.
       operationId: officeConfiguration_CreateClientConfigurations
       requestBody:
         description: New navigation property
@@ -18791,6 +19135,7 @@ paths:
       tags:
         - officeConfiguration.officeClientConfiguration
       summary: Get clientConfigurations from officeConfiguration
+      description: List of office Client configuration.
       operationId: officeConfiguration_GetClientConfigurations
       parameters:
         - name: officeClientConfiguration-id
@@ -18852,6 +19197,7 @@ paths:
       tags:
         - officeConfiguration.officeClientConfiguration
       summary: Update the navigation property clientConfigurations in officeConfiguration
+      description: List of office Client configuration.
       operationId: officeConfiguration_UpdateClientConfigurations
       parameters:
         - name: officeClientConfiguration-id
@@ -18878,6 +19224,7 @@ paths:
       tags:
         - officeConfiguration.officeClientConfiguration
       summary: Delete navigation property clientConfigurations for officeConfiguration
+      description: List of office Client configuration.
       operationId: officeConfiguration_DeleteClientConfigurations
       parameters:
         - name: officeClientConfiguration-id
@@ -18903,6 +19250,7 @@ paths:
       tags:
         - officeConfiguration.officeClientConfiguration
       summary: Get assignments from officeConfiguration
+      description: The list of group assignments for the policy.
       operationId: officeConfiguration.clientConfigurations_ListAssignments
       parameters:
         - name: officeClientConfiguration-id
@@ -18984,6 +19332,7 @@ paths:
       tags:
         - officeConfiguration.officeClientConfiguration
       summary: Create new navigation property to assignments for officeConfiguration
+      description: The list of group assignments for the policy.
       operationId: officeConfiguration.clientConfigurations_CreateAssignments
       parameters:
         - name: officeClientConfiguration-id
@@ -19015,6 +19364,7 @@ paths:
       tags:
         - officeConfiguration.officeClientConfiguration
       summary: Get assignments from officeConfiguration
+      description: The list of group assignments for the policy.
       operationId: officeConfiguration.clientConfigurations_GetAssignments
       parameters:
         - name: officeClientConfiguration-id
@@ -19070,6 +19420,7 @@ paths:
       tags:
         - officeConfiguration.officeClientConfiguration
       summary: Update the navigation property assignments in officeConfiguration
+      description: The list of group assignments for the policy.
       operationId: officeConfiguration.clientConfigurations_UpdateAssignments
       parameters:
         - name: officeClientConfiguration-id
@@ -19103,6 +19454,7 @@ paths:
       tags:
         - officeConfiguration.officeClientConfiguration
       summary: Delete navigation property assignments for officeConfiguration
+      description: The list of group assignments for the policy.
       operationId: officeConfiguration.clientConfigurations_DeleteAssignments
       parameters:
         - name: officeClientConfiguration-id
@@ -19313,6 +19665,7 @@ paths:
       tags:
         - users.deviceEnrollmentConfiguration
       summary: Get deviceEnrollmentConfigurations from users
+      description: Get enrollment configurations targeted to the user
       operationId: users_ListDeviceEnrollmentConfigurations
       parameters:
         - name: user-id
@@ -19414,6 +19767,7 @@ paths:
       tags:
         - users.deviceEnrollmentConfiguration
       summary: Create new navigation property to deviceEnrollmentConfigurations for users
+      description: Get enrollment configurations targeted to the user
       operationId: users_CreateDeviceEnrollmentConfigurations
       parameters:
         - name: user-id
@@ -19445,6 +19799,7 @@ paths:
       tags:
         - users.deviceEnrollmentConfiguration
       summary: Get deviceEnrollmentConfigurations from users
+      description: Get enrollment configurations targeted to the user
       operationId: users_GetDeviceEnrollmentConfigurations
       parameters:
         - name: user-id
@@ -19514,6 +19869,7 @@ paths:
       tags:
         - users.deviceEnrollmentConfiguration
       summary: Update the navigation property deviceEnrollmentConfigurations in users
+      description: Get enrollment configurations targeted to the user
       operationId: users_UpdateDeviceEnrollmentConfigurations
       parameters:
         - name: user-id
@@ -19547,6 +19903,7 @@ paths:
       tags:
         - users.deviceEnrollmentConfiguration
       summary: Delete navigation property deviceEnrollmentConfigurations for users
+      description: Get enrollment configurations targeted to the user
       operationId: users_DeleteDeviceEnrollmentConfigurations
       parameters:
         - name: user-id
@@ -19579,6 +19936,7 @@ paths:
       tags:
         - users.deviceEnrollmentConfiguration
       summary: Get assignments from users
+      description: The list of group assignments for the device configuration profile
       operationId: users.deviceEnrollmentConfigurations_ListAssignments
       parameters:
         - name: user-id
@@ -19673,6 +20031,7 @@ paths:
       tags:
         - users.deviceEnrollmentConfiguration
       summary: Create new navigation property to assignments for users
+      description: The list of group assignments for the device configuration profile
       operationId: users.deviceEnrollmentConfigurations_CreateAssignments
       parameters:
         - name: user-id
@@ -19711,6 +20070,7 @@ paths:
       tags:
         - users.deviceEnrollmentConfiguration
       summary: Get assignments from users
+      description: The list of group assignments for the device configuration profile
       operationId: users.deviceEnrollmentConfigurations_GetAssignments
       parameters:
         - name: user-id
@@ -19775,6 +20135,7 @@ paths:
       tags:
         - users.deviceEnrollmentConfiguration
       summary: Update the navigation property assignments in users
+      description: The list of group assignments for the device configuration profile
       operationId: users.deviceEnrollmentConfigurations_UpdateAssignments
       parameters:
         - name: user-id
@@ -19815,6 +20176,7 @@ paths:
       tags:
         - users.deviceEnrollmentConfiguration
       summary: Delete navigation property assignments for users
+      description: The list of group assignments for the device configuration profile
       operationId: users.deviceEnrollmentConfigurations_DeleteAssignments
       parameters:
         - name: user-id
@@ -19854,6 +20216,7 @@ paths:
       tags:
         - users.deviceManagementTroubleshootingEvent
       summary: Get deviceManagementTroubleshootingEvents from users
+      description: The list of troubleshooting events for this user.
       operationId: users_ListDeviceManagementTroubleshootingEvents
       parameters:
         - name: user-id
@@ -19947,6 +20310,7 @@ paths:
       tags:
         - users.deviceManagementTroubleshootingEvent
       summary: Create new navigation property to deviceManagementTroubleshootingEvents for users
+      description: The list of troubleshooting events for this user.
       operationId: users_CreateDeviceManagementTroubleshootingEvents
       parameters:
         - name: user-id
@@ -19978,6 +20342,7 @@ paths:
       tags:
         - users.deviceManagementTroubleshootingEvent
       summary: Get deviceManagementTroubleshootingEvents from users
+      description: The list of troubleshooting events for this user.
       operationId: users_GetDeviceManagementTroubleshootingEvents
       parameters:
         - name: user-id
@@ -20037,6 +20402,7 @@ paths:
       tags:
         - users.deviceManagementTroubleshootingEvent
       summary: Update the navigation property deviceManagementTroubleshootingEvents in users
+      description: The list of troubleshooting events for this user.
       operationId: users_UpdateDeviceManagementTroubleshootingEvents
       parameters:
         - name: user-id
@@ -20070,6 +20436,7 @@ paths:
       tags:
         - users.deviceManagementTroubleshootingEvent
       summary: Delete navigation property deviceManagementTroubleshootingEvents for users
+      description: The list of troubleshooting events for this user.
       operationId: users_DeleteDeviceManagementTroubleshootingEvents
       parameters:
         - name: user-id
@@ -20102,6 +20469,7 @@ paths:
       tags:
         - users.managedAppRegistration
       summary: Get managedAppRegistrations from users
+      description: Zero or more managed app registrations that belong to the user.
       operationId: users_ListManagedAppRegistrations
       parameters:
         - name: user-id
@@ -20235,6 +20603,7 @@ paths:
       tags:
         - users.managedAppRegistration
       summary: Get ref of managedAppRegistrations from users
+      description: Zero or more managed app registrations that belong to the user.
       operationId: users_ListRefManagedAppRegistrations
       parameters:
         - name: user-id
@@ -20321,6 +20690,7 @@ paths:
       tags:
         - users.managedAppRegistration
       summary: Create new navigation property ref to managedAppRegistrations for users
+      description: Zero or more managed app registrations that belong to the user.
       operationId: users_CreateRefManagedAppRegistrations
       parameters:
         - name: user-id
@@ -20356,6 +20726,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Get managedDevices from users
+      description: The managed devices associated with the user.
       operationId: users_ListManagedDevices
       parameters:
         - name: user-id
@@ -20688,6 +21059,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Create new navigation property to managedDevices for users
+      description: The managed devices associated with the user.
       operationId: users_CreateManagedDevices
       parameters:
         - name: user-id
@@ -20719,6 +21091,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Get managedDevices from users
+      description: The managed devices associated with the user.
       operationId: users_GetManagedDevices
       parameters:
         - name: user-id
@@ -20922,6 +21295,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Update the navigation property managedDevices in users
+      description: The managed devices associated with the user.
       operationId: users_UpdateManagedDevices
       parameters:
         - name: user-id
@@ -20955,6 +21329,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Delete navigation property managedDevices for users
+      description: The managed devices associated with the user.
       operationId: users_DeleteManagedDevices
       parameters:
         - name: user-id
@@ -20987,6 +21362,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Get assignmentFilterEvaluationStatusDetails from users
+      description: Managed device mobile app configuration states for this device.
       operationId: users.managedDevices_ListAssignmentFilterEvaluationStatusDetails
       parameters:
         - name: user-id
@@ -21075,6 +21451,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Create new navigation property to assignmentFilterEvaluationStatusDetails for users
+      description: Managed device mobile app configuration states for this device.
       operationId: users.managedDevices_CreateAssignmentFilterEvaluationStatusDetails
       parameters:
         - name: user-id
@@ -21113,6 +21490,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Get assignmentFilterEvaluationStatusDetails from users
+      description: Managed device mobile app configuration states for this device.
       operationId: users.managedDevices_GetAssignmentFilterEvaluationStatusDetails
       parameters:
         - name: user-id
@@ -21175,6 +21553,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Update the navigation property assignmentFilterEvaluationStatusDetails in users
+      description: Managed device mobile app configuration states for this device.
       operationId: users.managedDevices_UpdateAssignmentFilterEvaluationStatusDetails
       parameters:
         - name: user-id
@@ -21215,6 +21594,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Delete navigation property assignmentFilterEvaluationStatusDetails for users
+      description: Managed device mobile app configuration states for this device.
       operationId: users.managedDevices_DeleteAssignmentFilterEvaluationStatusDetails
       parameters:
         - name: user-id
@@ -21254,6 +21634,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Get detectedApps from users
+      description: All applications currently installed on the device
       operationId: users.managedDevices_ListDetectedApps
       parameters:
         - name: user-id
@@ -21354,6 +21735,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Get ref of detectedApps from users
+      description: All applications currently installed on the device
       operationId: users.managedDevices_ListRefDetectedApps
       parameters:
         - name: user-id
@@ -21423,6 +21805,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Create new navigation property ref to detectedApps for users
+      description: All applications currently installed on the device
       operationId: users.managedDevices_CreateRefDetectedApps
       parameters:
         - name: user-id
@@ -21465,6 +21848,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Get deviceCategory from users
+      description: Device category
       operationId: users.managedDevices_GetDeviceCategory
       parameters:
         - name: user-id
@@ -21522,6 +21906,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Update the navigation property deviceCategory in users
+      description: Device category
       operationId: users.managedDevices_UpdateDeviceCategory
       parameters:
         - name: user-id
@@ -21555,6 +21940,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Delete navigation property deviceCategory for users
+      description: Device category
       operationId: users.managedDevices_DeleteDeviceCategory
       parameters:
         - name: user-id
@@ -21587,6 +21973,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Get deviceCompliancePolicyStates from users
+      description: Device compliance policy states for this device.
       operationId: users.managedDevices_ListDeviceCompliancePolicyStates
       parameters:
         - name: user-id
@@ -21696,6 +22083,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Create new navigation property to deviceCompliancePolicyStates for users
+      description: Device compliance policy states for this device.
       operationId: users.managedDevices_CreateDeviceCompliancePolicyStates
       parameters:
         - name: user-id
@@ -21734,6 +22122,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Get deviceCompliancePolicyStates from users
+      description: Device compliance policy states for this device.
       operationId: users.managedDevices_GetDeviceCompliancePolicyStates
       parameters:
         - name: user-id
@@ -21803,6 +22192,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Update the navigation property deviceCompliancePolicyStates in users
+      description: Device compliance policy states for this device.
       operationId: users.managedDevices_UpdateDeviceCompliancePolicyStates
       parameters:
         - name: user-id
@@ -21843,6 +22233,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Delete navigation property deviceCompliancePolicyStates for users
+      description: Device compliance policy states for this device.
       operationId: users.managedDevices_DeleteDeviceCompliancePolicyStates
       parameters:
         - name: user-id
@@ -21882,6 +22273,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Get deviceConfigurationStates from users
+      description: Device configuration states for this device.
       operationId: users.managedDevices_ListDeviceConfigurationStates
       parameters:
         - name: user-id
@@ -21991,6 +22383,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Create new navigation property to deviceConfigurationStates for users
+      description: Device configuration states for this device.
       operationId: users.managedDevices_CreateDeviceConfigurationStates
       parameters:
         - name: user-id
@@ -22029,6 +22422,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Get deviceConfigurationStates from users
+      description: Device configuration states for this device.
       operationId: users.managedDevices_GetDeviceConfigurationStates
       parameters:
         - name: user-id
@@ -22098,6 +22492,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Update the navigation property deviceConfigurationStates in users
+      description: Device configuration states for this device.
       operationId: users.managedDevices_UpdateDeviceConfigurationStates
       parameters:
         - name: user-id
@@ -22138,6 +22533,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Delete navigation property deviceConfigurationStates for users
+      description: Device configuration states for this device.
       operationId: users.managedDevices_DeleteDeviceConfigurationStates
       parameters:
         - name: user-id
@@ -22177,6 +22573,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Get logCollectionRequests from users
+      description: List of log collection requests
       operationId: users.managedDevices_ListLogCollectionRequests
       parameters:
         - name: user-id
@@ -22286,6 +22683,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Create new navigation property to logCollectionRequests for users
+      description: List of log collection requests
       operationId: users.managedDevices_CreateLogCollectionRequests
       parameters:
         - name: user-id
@@ -22324,6 +22722,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Get logCollectionRequests from users
+      description: List of log collection requests
       operationId: users.managedDevices_GetLogCollectionRequests
       parameters:
         - name: user-id
@@ -22393,6 +22792,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Update the navigation property logCollectionRequests in users
+      description: List of log collection requests
       operationId: users.managedDevices_UpdateLogCollectionRequests
       parameters:
         - name: user-id
@@ -22433,6 +22833,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Delete navigation property logCollectionRequests for users
+      description: List of log collection requests
       operationId: users.managedDevices_DeleteLogCollectionRequests
       parameters:
         - name: user-id
@@ -22472,6 +22873,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Get managedDeviceMobileAppConfigurationStates from users
+      description: Managed device mobile app configuration states for this device.
       operationId: users.managedDevices_ListManagedDeviceMobileAppConfigurationStates
       parameters:
         - name: user-id
@@ -22581,6 +22983,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Create new navigation property to managedDeviceMobileAppConfigurationStates for users
+      description: Managed device mobile app configuration states for this device.
       operationId: users.managedDevices_CreateManagedDeviceMobileAppConfigurationStates
       parameters:
         - name: user-id
@@ -22619,6 +23022,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Get managedDeviceMobileAppConfigurationStates from users
+      description: Managed device mobile app configuration states for this device.
       operationId: users.managedDevices_GetManagedDeviceMobileAppConfigurationStates
       parameters:
         - name: user-id
@@ -22688,6 +23092,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Update the navigation property managedDeviceMobileAppConfigurationStates in users
+      description: Managed device mobile app configuration states for this device.
       operationId: users.managedDevices_UpdateManagedDeviceMobileAppConfigurationStates
       parameters:
         - name: user-id
@@ -22728,6 +23133,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Delete navigation property managedDeviceMobileAppConfigurationStates for users
+      description: Managed device mobile app configuration states for this device.
       operationId: users.managedDevices_DeleteManagedDeviceMobileAppConfigurationStates
       parameters:
         - name: user-id
@@ -22767,6 +23173,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Get securityBaselineStates from users
+      description: Security baseline states for this device.
       operationId: users.managedDevices_ListSecurityBaselineStates
       parameters:
         - name: user-id
@@ -22866,6 +23273,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Create new navigation property to securityBaselineStates for users
+      description: Security baseline states for this device.
       operationId: users.managedDevices_CreateSecurityBaselineStates
       parameters:
         - name: user-id
@@ -22904,6 +23312,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Get securityBaselineStates from users
+      description: Security baseline states for this device.
       operationId: users.managedDevices_GetSecurityBaselineStates
       parameters:
         - name: user-id
@@ -22978,6 +23387,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Update the navigation property securityBaselineStates in users
+      description: Security baseline states for this device.
       operationId: users.managedDevices_UpdateSecurityBaselineStates
       parameters:
         - name: user-id
@@ -23018,6 +23428,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Delete navigation property securityBaselineStates for users
+      description: Security baseline states for this device.
       operationId: users.managedDevices_DeleteSecurityBaselineStates
       parameters:
         - name: user-id
@@ -23057,6 +23468,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Get settingStates from users
+      description: The security baseline state for different settings for a device
       operationId: users.managedDevices.securityBaselineStates_ListSettingStates
       parameters:
         - name: user-id
@@ -23173,6 +23585,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Create new navigation property to settingStates for users
+      description: The security baseline state for different settings for a device
       operationId: users.managedDevices.securityBaselineStates_CreateSettingStates
       parameters:
         - name: user-id
@@ -23218,6 +23631,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Get settingStates from users
+      description: The security baseline state for different settings for a device
       operationId: users.managedDevices.securityBaselineStates_GetSettingStates
       parameters:
         - name: user-id
@@ -23294,6 +23708,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Update the navigation property settingStates in users
+      description: The security baseline state for different settings for a device
       operationId: users.managedDevices.securityBaselineStates_UpdateSettingStates
       parameters:
         - name: user-id
@@ -23341,6 +23756,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Delete navigation property settingStates for users
+      description: The security baseline state for different settings for a device
       operationId: users.managedDevices.securityBaselineStates_DeleteSettingStates
       parameters:
         - name: user-id
@@ -23387,6 +23803,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Get users from users
+      description: The primary users associated with the managed device.
       operationId: users.managedDevices_ListUsers
       parameters:
         - name: user-id
@@ -23819,6 +24236,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Create new navigation property to users for users
+      description: The primary users associated with the managed device.
       operationId: users.managedDevices_CreateUsers
       parameters:
         - name: user-id
@@ -23857,6 +24275,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Get users from users
+      description: The primary users associated with the managed device.
       operationId: users.managedDevices_GetUsers
       parameters:
         - name: user-id
@@ -24482,6 +24901,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Update the navigation property users in users
+      description: The primary users associated with the managed device.
       operationId: users.managedDevices_UpdateUsers
       parameters:
         - name: user-id
@@ -24522,6 +24942,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Delete navigation property users for users
+      description: The primary users associated with the managed device.
       operationId: users.managedDevices_DeleteUsers
       parameters:
         - name: user-id
@@ -24561,6 +24982,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Get windowsProtectionState from users
+      description: The device protection status.
       operationId: users.managedDevices_GetWindowsProtectionState
       parameters:
         - name: user-id
@@ -24643,6 +25065,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Update the navigation property windowsProtectionState in users
+      description: The device protection status.
       operationId: users.managedDevices_UpdateWindowsProtectionState
       parameters:
         - name: user-id
@@ -24676,6 +25099,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Delete navigation property windowsProtectionState for users
+      description: The device protection status.
       operationId: users.managedDevices_DeleteWindowsProtectionState
       parameters:
         - name: user-id
@@ -24708,6 +25132,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Get detectedMalwareState from users
+      description: Device malware list
       operationId: users.managedDevices.windowsProtectionState_ListDetectedMalwareState
       parameters:
         - name: user-id
@@ -24823,6 +25248,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Create new navigation property to detectedMalwareState for users
+      description: Device malware list
       operationId: users.managedDevices.windowsProtectionState_CreateDetectedMalwareState
       parameters:
         - name: user-id
@@ -24861,6 +25287,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Get detectedMalwareState from users
+      description: Device malware list
       operationId: users.managedDevices.windowsProtectionState_GetDetectedMalwareState
       parameters:
         - name: user-id
@@ -24932,6 +25359,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Update the navigation property detectedMalwareState in users
+      description: Device malware list
       operationId: users.managedDevices.windowsProtectionState_UpdateDetectedMalwareState
       parameters:
         - name: user-id
@@ -24972,6 +25400,7 @@ paths:
       tags:
         - users.managedDevice
       summary: Delete navigation property detectedMalwareState for users
+      description: Device malware list
       operationId: users.managedDevices.windowsProtectionState_DeleteDetectedMalwareState
       parameters:
         - name: user-id
@@ -25011,6 +25440,7 @@ paths:
       tags:
         - users.mobileAppIntentAndState
       summary: Get mobileAppIntentAndStates from users
+      description: The list of troubleshooting events for this user.
       operationId: users_ListMobileAppIntentAndStates
       parameters:
         - name: user-id
@@ -25098,6 +25528,7 @@ paths:
       tags:
         - users.mobileAppIntentAndState
       summary: Create new navigation property to mobileAppIntentAndStates for users
+      description: The list of troubleshooting events for this user.
       operationId: users_CreateMobileAppIntentAndStates
       parameters:
         - name: user-id
@@ -25129,6 +25560,7 @@ paths:
       tags:
         - users.mobileAppIntentAndState
       summary: Get mobileAppIntentAndStates from users
+      description: The list of troubleshooting events for this user.
       operationId: users_GetMobileAppIntentAndStates
       parameters:
         - name: user-id
@@ -25186,6 +25618,7 @@ paths:
       tags:
         - users.mobileAppIntentAndState
       summary: Update the navigation property mobileAppIntentAndStates in users
+      description: The list of troubleshooting events for this user.
       operationId: users_UpdateMobileAppIntentAndStates
       parameters:
         - name: user-id
@@ -25219,6 +25652,7 @@ paths:
       tags:
         - users.mobileAppIntentAndState
       summary: Delete navigation property mobileAppIntentAndStates for users
+      description: The list of troubleshooting events for this user.
       operationId: users_DeleteMobileAppIntentAndStates
       parameters:
         - name: user-id
@@ -25251,6 +25685,7 @@ paths:
       tags:
         - users.mobileAppTroubleshootingEvent
       summary: Get mobileAppTroubleshootingEvents from users
+      description: The list of mobile app troubleshooting events for this user.
       operationId: users_ListMobileAppTroubleshootingEvents
       parameters:
         - name: user-id
@@ -25358,6 +25793,7 @@ paths:
       tags:
         - users.mobileAppTroubleshootingEvent
       summary: Create new navigation property to mobileAppTroubleshootingEvents for users
+      description: The list of mobile app troubleshooting events for this user.
       operationId: users_CreateMobileAppTroubleshootingEvents
       parameters:
         - name: user-id
@@ -25389,6 +25825,7 @@ paths:
       tags:
         - users.mobileAppTroubleshootingEvent
       summary: Get mobileAppTroubleshootingEvents from users
+      description: The list of mobile app troubleshooting events for this user.
       operationId: users_GetMobileAppTroubleshootingEvents
       parameters:
         - name: user-id
@@ -25460,6 +25897,7 @@ paths:
       tags:
         - users.mobileAppTroubleshootingEvent
       summary: Update the navigation property mobileAppTroubleshootingEvents in users
+      description: The list of mobile app troubleshooting events for this user.
       operationId: users_UpdateMobileAppTroubleshootingEvents
       parameters:
         - name: user-id
@@ -25493,6 +25931,7 @@ paths:
       tags:
         - users.mobileAppTroubleshootingEvent
       summary: Delete navigation property mobileAppTroubleshootingEvents for users
+      description: The list of mobile app troubleshooting events for this user.
       operationId: users_DeleteMobileAppTroubleshootingEvents
       parameters:
         - name: user-id
@@ -25525,6 +25964,7 @@ paths:
       tags:
         - users.mobileAppTroubleshootingEvent
       summary: Get appLogCollectionRequests from users
+      description: The collection property of AppLogUploadRequest.
       operationId: users.mobileAppTroubleshootingEvents_ListAppLogCollectionRequests
       parameters:
         - name: user-id
@@ -25622,6 +26062,7 @@ paths:
       tags:
         - users.mobileAppTroubleshootingEvent
       summary: Create new navigation property to appLogCollectionRequests for users
+      description: The collection property of AppLogUploadRequest.
       operationId: users.mobileAppTroubleshootingEvents_CreateAppLogCollectionRequests
       parameters:
         - name: user-id
@@ -25660,6 +26101,7 @@ paths:
       tags:
         - users.mobileAppTroubleshootingEvent
       summary: Get appLogCollectionRequests from users
+      description: The collection property of AppLogUploadRequest.
       operationId: users.mobileAppTroubleshootingEvents_GetAppLogCollectionRequests
       parameters:
         - name: user-id
@@ -25725,6 +26167,7 @@ paths:
       tags:
         - users.mobileAppTroubleshootingEvent
       summary: Update the navigation property appLogCollectionRequests in users
+      description: The collection property of AppLogUploadRequest.
       operationId: users.mobileAppTroubleshootingEvents_UpdateAppLogCollectionRequests
       parameters:
         - name: user-id
@@ -25765,6 +26208,7 @@ paths:
       tags:
         - users.mobileAppTroubleshootingEvent
       summary: Delete navigation property appLogCollectionRequests for users
+      description: The collection property of AppLogUploadRequest.
       operationId: users.mobileAppTroubleshootingEvents_DeleteAppLogCollectionRequests
       parameters:
         - name: user-id
@@ -25804,6 +26248,7 @@ paths:
       tags:
         - users.windowsInformationProtectionDeviceRegistration
       summary: Get windowsInformationProtectionDeviceRegistrations from users
+      description: Zero or more WIP device registrations that belong to the user.
       operationId: users_ListWindowsInformationProtectionDeviceRegistrations
       parameters:
         - name: user-id
@@ -25901,6 +26346,7 @@ paths:
       tags:
         - users.windowsInformationProtectionDeviceRegistration
       summary: Get ref of windowsInformationProtectionDeviceRegistrations from users
+      description: Zero or more WIP device registrations that belong to the user.
       operationId: users_ListRefWindowsInformationProtectionDeviceRegistrations
       parameters:
         - name: user-id
@@ -25967,6 +26413,7 @@ paths:
       tags:
         - users.windowsInformationProtectionDeviceRegistration
       summary: Create new navigation property ref to windowsInformationProtectionDeviceRegistrations for users
+      description: Zero or more WIP device registrations that belong to the user.
       operationId: users_CreateRefWindowsInformationProtectionDeviceRegistrations
       parameters:
         - name: user-id
@@ -28442,6 +28889,12 @@ components:
               type: string
               description: Windows management app available version.
               nullable: true
+            managedInstaller:
+              $ref: '#/components/schemas/microsoft.graph.managedInstallerStatus'
+            managedInstallerConfiguredDateTime:
+              type: string
+              description: Managed Installer Configured Date Time
+              nullable: true
             healthStates:
               type: array
               items:
@@ -28458,12 +28911,14 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.officeClientCheckinStatus'
+          description: List of office Client check-in status.
         tenantUserCheckinSummary:
           $ref: '#/components/schemas/microsoft.graph.officeUserCheckinSummary'
         clientConfigurations:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.officeClientConfiguration'
+          description: List of office Client configuration.
       additionalProperties:
         type: object
     microsoft.graph.officeClientConfiguration:
@@ -28476,31 +28931,38 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.officeClientCheckinStatus'
+              description: List of office Client check-in status.
             description:
               type: string
+              description: Not yet documented
               nullable: true
             displayName:
               type: string
+              description: Admin provided description of the office client configuration policy.
               nullable: true
             policyPayload:
               type: string
+              description: 'Policy settings JSON string in binary format, these values cannot be changed by the user.'
               format: base64url
               nullable: true
             priority:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: 'Priority value should be unique value for each policy under a tenant and will be used for conflict resolution, lower values mean priority is high.'
               format: int32
             userCheckinSummary:
               $ref: '#/components/schemas/microsoft.graph.officeUserCheckinSummary'
             userPreferencePayload:
               type: string
+              description: 'Preference settings JSON string in binary format, these values can be overridden by the user.'
               format: base64url
               nullable: true
             assignments:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.officeClientConfigurationAssignment'
+              description: The list of group assignments for the policy.
           additionalProperties:
             type: object
     microsoft.graph.officeClientConfigurationAssignment:
@@ -29395,7 +29857,7 @@ components:
               description: State of license assignments for this user. Returned only on $select. Read-only.
             mail:
               type: string
-              description: 'The SMTP address for the user, for example, ''jeff@contoso.onmicrosoft.com''.NOTE: While this property can contain accent characters, using them can cause access issues with other Microsoft applications for the user.Returned by default. Supports $filter and endsWith.'
+              description: 'The SMTP address for the user, for example, ''jeff@contoso.onmicrosoft.com''. Changes to this property will also update the user''s proxyAddresses collection to include the value as an SMTP address. While this property can contain accent characters, using them can cause access issues with other Microsoft applications for the user. Supports $filter and endsWith.'
               nullable: true
             mailNickname:
               type: string
@@ -30099,10 +30561,10 @@ components:
       properties:
         name:
           type: string
-          description: Name for this key-value pair
+          description: 'Name for this key-value pair. Possible names are: AdditionalWSFedEndpointCheckResult,  AllowedAuthenticationClassReferencesCheckResult, AlwaysRequireAuthenticationCheckResult,   AutoUpdateEnabledCheckResult, ClaimsProviderNameCheckResult, EncryptClaimsCheckResult,  EncryptedNameIdRequiredCheckResult, MonitoringEnabledCheckResult,NotBeforeSkewCheckResult,  RequestMFAFromClaimsProvidersCheckResult, SignedSamlRequestsRequiredCheckResult, AdditionalAuthenticationRulesCheckResult, TokenLifetimeCheckResult,  DelegationAuthorizationRulesCheckResult, IssuanceAuthorizationRulesCheckResult, IssuanceTransformRulesCheckResult.'
         value:
           type: string
-          description: Value for this key-value pair
+          description: 'Value for this key-value pair. Possible result values are 0 (when the validation check passed), 1 (when the validation check failed), or 2 (when the validation check is a warning).'
           nullable: true
       additionalProperties:
         type: object
@@ -30690,6 +31152,12 @@ components:
         - failed
         - notSupported
       type: string
+    microsoft.graph.managedInstallerStatus:
+      title: managedInstallerStatus
+      enum:
+        - disabled
+        - enabled
+      type: string
     microsoft.graph.windowsManagementAppHealthState:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -30727,29 +31195,38 @@ components:
           items:
             type: string
             nullable: true
+          description: List of policies delivered to the device as last checkin.
         checkinDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: Last device check-in time in UTC.
           format: date-time
         deviceName:
           type: string
+          description: Device name trying to check-in.
           nullable: true
         devicePlatform:
           type: string
+          description: Device platform trying to check-in.
           nullable: true
         devicePlatformVersion:
           type: string
+          description: Device platform version trying to check-in.
           nullable: true
         errorMessage:
           type: string
+          description: Error message if any associated for the last checkin.
           nullable: true
         userId:
           type: string
+          description: User identifier using the device.
         userPrincipalName:
           type: string
+          description: User principal name using the device.
           nullable: true
         wasSuccessful:
           type: boolean
+          description: If the last checkin was successful.
       additionalProperties:
         type: object
     microsoft.graph.officeUserCheckinSummary:
@@ -30760,11 +31237,13 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: Total failed user check ins for the last 3 months.
           format: int32
         succeededUserCount:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: Total successful user check ins for the last 3 months.
           format: int32
       additionalProperties:
         type: object
@@ -34344,7 +34823,7 @@ components:
               nullable: true
             description:
               type: string
-              description: An optional description for the team.
+              description: 'An optional description for the team. Maximum length: 1024 characters.'
               nullable: true
             discoverySettings:
               $ref: '#/components/schemas/microsoft.graph.teamDiscoverySettings'
@@ -36968,57 +37447,58 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScope'
-              description: 'This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user''s manager does not exist. See accessReviewReviewerScope.'
+              description: 'This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user''s manager does not exist. Supports $select. Note: This property has been replaced by fallbackReviewers. However, specifying either backupReviewers or fallbackReviewers automatically populates the same values to the other property.'
             createdBy:
               $ref: '#/components/schemas/microsoft.graph.userIdentity'
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Timestamp when review series was created.
+              description: Timestamp when the access review series was created. Supports $select.
               format: date-time
               nullable: true
             descriptionForAdmins:
               type: string
-              description: Description provided by review creators to provide more context of the review to admins.
+              description: Description provided by review creators to provide more context of the review to admins. Supports $select.
               nullable: true
             descriptionForReviewers:
               type: string
-              description: Description provided  by review creators to provide more context of the review to reviewers. Reviewers will see this description in the email sent to them requesting their review.
+              description: Description provided  by review creators to provide more context of the review to reviewers. Reviewers will see this description in the email sent to them requesting their review. Supports $select.
               nullable: true
             displayName:
               type: string
-              description: Name of access review series. Required on create.
+              description: Name of the access review series. Required on create. Supports $select.
               nullable: true
             fallbackReviewers:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScope'
+              description: 'This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user''s manager does not exist. Supports $select.'
             instanceEnumerationScope:
               $ref: '#/components/schemas/microsoft.graph.accessReviewScope'
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Timestamp when review series was last modified.
+              description: Timestamp when the access review series was last modified. Supports $select.
               format: date-time
               nullable: true
             reviewers:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScope'
-              description: This collection of access review scopes is used to define who are the reviewers. See accessReviewReviewerScope. Required on create.
+              description: 'This collection of access review scopes is used to define who are the reviewers. Required on create. Supports $select. For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API.'
             scope:
               $ref: '#/components/schemas/microsoft.graph.accessReviewScope'
             settings:
               $ref: '#/components/schemas/microsoft.graph.accessReviewScheduleSettings'
             status:
               type: string
-              description: 'This read-only field specifies the status of an accessReview. The typical states include Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed.'
+              description: 'This read-only field specifies the status of an access review. The typical states include Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed. Supports $select, $orderby, and $filter (eq only).'
               nullable: true
             instances:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewInstance'
-              description: 'Set of access reviews instances for this access review series. Access reviews that do not recur will only have one instance; otherwise, there will be an instance for each recurrence.'
+              description: 'Set of access reviews instances for this access review series. Access reviews that do not recur will only have one instance; otherwise, there is an instance for each recurrence.'
           additionalProperties:
             type: object
     microsoft.graph.agreementAcceptanceState:
@@ -38666,6 +39146,8 @@ components:
               type: string
               description: Read-only. Version number of the chat message.
               nullable: true
+            eventDetail:
+              $ref: '#/components/schemas/microsoft.graph.eventMessageDetail'
             from:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             importance:
@@ -41302,7 +41784,7 @@ components:
               nullable: true
             queryRoot:
               type: string
-              description: 'In the scenario where reviewers need to be specified dynamically, this property is used to indicate the relative source of the query. This property is only required if a relative query (i.e., ./manager) is specified.'
+              description: 'In the scenario where reviewers need to be specified dynamically, this property is used to indicate the relative source of the query. This property is only required if a relative query, for example, ./manager, is specified. Possible value: decisions.'
               nullable: true
             queryType:
               type: string
@@ -41321,14 +41803,14 @@ components:
           description: 'Optional field. Describes the  actions to take once a review is complete. There are two types that are currently supported: removeAccessApplyAction (default) and disableAndDeleteUserApplyAction. Field only needs to be specified in the case of disableAndDeleteUserApplyAction. See accessReviewApplyAction.'
         autoApplyDecisionsEnabled:
           type: boolean
-          description: Flag to indicate whether auto-apply feature is enabled.
+          description: 'Indicates whether decisions are automatically applied. When set to false, a user must apply the decisions manually once the reviewer completes the access review. When set to true, decisions are applied automatically after the access review instance duration ends, whether or not the reviewers have responded. Default value is false.'
         defaultDecision:
           type: string
-          description: 'Decision chosen if defaultDecisionEnabled is enabled. Can be one of ''Approve'', ''Deny'', or ''Recommendation''.'
+          description: 'Decision chosen if defaultDecisionEnabled is enabled. Can be one of Approve, Deny, or Recommendation.'
           nullable: true
         defaultDecisionEnabled:
           type: boolean
-          description: Flag to indicate whether default decision is enabled/disabled when reviewers do not respond.
+          description: Indicates whether the default decision is enabled or disabled when reviewers do not respond. Default value is false.
         instanceDurationInDays:
           maximum: 2147483647
           minimum: -2147483648
@@ -41337,18 +41819,18 @@ components:
           format: int32
         justificationRequiredOnApproval:
           type: boolean
-          description: Flag to indicate whether reviewers are required to provide justification with their decision.
+          description: Indicates whether reviewers are required to provide justification with their decision. Default value is false.
         mailNotificationsEnabled:
           type: boolean
-          description: Flag to indicate whether emails are enabled/disabled.
+          description: Indicates whether emails are enabled or disabled. Default value is false.
         recommendationsEnabled:
           type: boolean
-          description: Flag to indicate whether decision recommendations are enabled/disabled.
+          description: Indicates whether decision recommendations are enabled/disabled.
         recurrence:
           $ref: '#/components/schemas/microsoft.graph.patternedRecurrence'
         reminderNotificationsEnabled:
           type: boolean
-          description: Flag to indicate whether reminders are enabled/disabled.
+          description: Indicates whether reminders are enabled or disabled. Default value is false.
       additionalProperties:
         type: object
     microsoft.graph.visualProperties:
@@ -42269,6 +42751,11 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.eventMessageDetail:
+      title: eventMessageDetail
+      type: object
+      additionalProperties:
+        type: object
     microsoft.graph.chatMessageImportance:
       title: chatMessageImportance
       enum:
@@ -42301,6 +42788,8 @@ components:
         - message
         - chatEvent
         - typing
+        - unknownFutureValue
+        - systemEventMessage
       type: string
     microsoft.graph.chatMessagePolicyViolation:
       title: chatMessagePolicyViolation
@@ -42764,17 +43253,22 @@ components:
       properties:
         color:
           type: string
+          description: 'The color that the user interface should display for the label, if configured.'
           nullable: true
         description:
           type: string
+          description: The admin-defined description for the label.
           nullable: true
         id:
           type: string
+          description: The label ID is a globally unique identifier (GUID).
           nullable: true
         isActive:
           type: boolean
+          description: Indicates whether the label is active or not. Active labels should be hidden or disabled in user interfaces.
         name:
           type: string
+          description: The plaintext name of the label.
           nullable: true
         parent:
           $ref: '#/components/schemas/microsoft.graph.parentLabelDetails'
@@ -42782,9 +43276,11 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: 'The sensitivity value of the label, where lower is less sensitive.'
           format: int32
         tooltip:
           type: string
+          description: The tooltip that should be displayed for the label in a user interface.
           nullable: true
       additionalProperties:
         type: object
@@ -43403,11 +43899,11 @@ components:
       properties:
         key:
           type: string
-          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object
@@ -44397,7 +44893,7 @@ components:
           nullable: true
         languageTag:
           type: string
-          description: The anguage tag for the label.
+          description: The language tag for the label.
           nullable: true
         name:
           type: string
