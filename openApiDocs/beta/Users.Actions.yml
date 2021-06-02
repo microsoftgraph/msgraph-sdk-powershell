@@ -12013,6 +12013,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action activateDeviceEsim
+      description: Activate eSIM on the device.
       operationId: users.managedDevices_activateDeviceEsim
       parameters:
         - name: user-id
@@ -12053,6 +12054,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action bypassActivationLock
+      description: Bypass activation lock
       operationId: users.managedDevices_bypassActivationLock
       parameters:
         - name: user-id
@@ -12080,6 +12082,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action cleanWindowsDevice
+      description: Clean Windows device
       operationId: users.managedDevices_cleanWindowsDevice
       parameters:
         - name: user-id
@@ -12163,6 +12166,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action deleteUserFromSharedAppleDevice
+      description: Delete user from shared Apple device
       operationId: users.managedDevices_deleteUserFromSharedAppleDevice
       parameters:
         - name: user-id
@@ -12203,6 +12207,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action disableLostMode
+      description: Disable lost mode
       operationId: users.managedDevices_disableLostMode
       parameters:
         - name: user-id
@@ -12230,6 +12235,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action enableLostMode
+      description: Enable lost mode
       operationId: users.managedDevices_enableLostMode
       parameters:
         - name: user-id
@@ -12276,6 +12282,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action locateDevice
+      description: Locate a device
       operationId: users.managedDevices_locateDevice
       parameters:
         - name: user-id
@@ -12303,6 +12310,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action logoutSharedAppleDeviceActiveUser
+      description: Logout shared Apple device active user
       operationId: users.managedDevices_logoutSharedAppleDeviceActiveUser
       parameters:
         - name: user-id
@@ -12372,6 +12380,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action playLostModeSound
+      description: Remote lock
       operationId: users.managedDevices_playLostModeSound
       parameters:
         - name: user-id
@@ -12399,6 +12408,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action rebootNow
+      description: Reboot device
       operationId: users.managedDevices_rebootNow
       parameters:
         - name: user-id
@@ -12426,6 +12436,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action recoverPasscode
+      description: Recover passcode
       operationId: users.managedDevices_recoverPasscode
       parameters:
         - name: user-id
@@ -12453,6 +12464,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action remoteLock
+      description: Remote lock
       operationId: users.managedDevices_remoteLock
       parameters:
         - name: user-id
@@ -12507,6 +12519,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action requestRemoteAssistance
+      description: Request remote assistance
       operationId: users.managedDevices_requestRemoteAssistance
       parameters:
         - name: user-id
@@ -12534,6 +12547,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action resetPasscode
+      description: Reset passcode
       operationId: users.managedDevices_resetPasscode
       parameters:
         - name: user-id
@@ -12556,11 +12570,52 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.resizeCloudPc':
+    post:
+      tags:
+        - users.Actions
+      summary: Invoke action resizeCloudPc
+      operationId: users.managedDevices_resizeCloudPc
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: managedDevice-id
+          in: path
+          description: 'key: id of managedDevice'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                targetServicePlanId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.retire':
     post:
       tags:
         - users.Actions
       summary: Invoke action retire
+      description: Retire a device
       operationId: users.managedDevices_retire
       parameters:
         - name: user-id
@@ -12588,6 +12643,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action revokeAppleVppLicenses
+      description: Revoke all Apple Vpp licenses for a device
       operationId: users.managedDevices_revokeAppleVppLicenses
       parameters:
         - name: user-id
@@ -12615,6 +12671,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action rotateBitLockerKeys
+      description: Rotate BitLockerKeys
       operationId: users.managedDevices_rotateBitLockerKeys
       parameters:
         - name: user-id
@@ -12710,6 +12767,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action setDeviceName
+      description: Set device name of the device.
       operationId: users.managedDevices_setDeviceName
       parameters:
         - name: user-id
@@ -12750,6 +12808,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action shutDown
+      description: Shut down device
       operationId: users.managedDevices_shutDown
       parameters:
         - name: user-id
@@ -12804,6 +12863,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action triggerConfigurationManagerAction
+      description: Trigger action on ConfigurationManager client
       operationId: users.managedDevices_triggerConfigurationManagerAction
       parameters:
         - name: user-id
@@ -12949,6 +13009,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action wipe
+      description: Wipe a device
       operationId: users.managedDevices_wipe
       parameters:
         - name: user-id
@@ -14164,6 +14225,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action removeAllDevicesFromManagement
+      description: Retire all devices from management for this user
       operationId: users_removeAllDevicesFromManagement
       parameters:
         - name: user-id
@@ -14338,6 +14400,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action unblockManagedApps
+      description: Unblocks the managed app user from app check-in.
       operationId: users_unblockManagedApps
       parameters:
         - name: user-id
@@ -14358,6 +14421,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action wipeAndBlockManagedApps
+      description: Blocks the managed app user from app check-in.
       operationId: users_wipeAndBlockManagedApps
       parameters:
         - name: user-id
@@ -14378,6 +14442,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action wipeManagedAppRegistrationByDeviceTag
+      description: Issues a wipe operation on an app registration with specified device tag.
       operationId: users_wipeManagedAppRegistrationByDeviceTag
       parameters:
         - name: user-id
@@ -14411,6 +14476,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action wipeManagedAppRegistrationsByDeviceTag
+      description: Issues a wipe operation on an app registration with specified device tag.
       operationId: users_wipeManagedAppRegistrationsByDeviceTag
       parameters:
         - name: user-id
@@ -22301,7 +22367,7 @@ components:
               description: State of license assignments for this user. Returned only on $select. Read-only.
             mail:
               type: string
-              description: 'The SMTP address for the user, for example, ''jeff@contoso.onmicrosoft.com''.NOTE: While this property can contain accent characters, using them can cause access issues with other Microsoft applications for the user.Returned by default. Supports $filter and endsWith.'
+              description: 'The SMTP address for the user, for example, ''jeff@contoso.onmicrosoft.com''. Changes to this property will also update the user''s proxyAddresses collection to include the value as an SMTP address. While this property can contain accent characters, using them can cause access issues with other Microsoft applications for the user. Supports $filter and endsWith.'
               nullable: true
             mailNickname:
               type: string
@@ -23241,10 +23307,10 @@ components:
       properties:
         name:
           type: string
-          description: Name for this key-value pair
+          description: 'Name for this key-value pair. Possible names are: AdditionalWSFedEndpointCheckResult,  AllowedAuthenticationClassReferencesCheckResult, AlwaysRequireAuthenticationCheckResult,   AutoUpdateEnabledCheckResult, ClaimsProviderNameCheckResult, EncryptClaimsCheckResult,  EncryptedNameIdRequiredCheckResult, MonitoringEnabledCheckResult,NotBeforeSkewCheckResult,  RequestMFAFromClaimsProvidersCheckResult, SignedSamlRequestsRequiredCheckResult, AdditionalAuthenticationRulesCheckResult, TokenLifetimeCheckResult,  DelegationAuthorizationRulesCheckResult, IssuanceAuthorizationRulesCheckResult, IssuanceTransformRulesCheckResult.'
         value:
           type: string
-          description: Value for this key-value pair
+          description: 'Value for this key-value pair. Possible result values are 0 (when the validation check passed), 1 (when the validation check failed), or 2 (when the validation check is a warning).'
           nullable: true
       additionalProperties:
         type: object
@@ -26497,7 +26563,7 @@ components:
               nullable: true
             description:
               type: string
-              description: An optional description for the team.
+              description: 'An optional description for the team. Maximum length: 1024 characters.'
               nullable: true
             discoverySettings:
               $ref: '#/components/schemas/microsoft.graph.teamDiscoverySettings'
@@ -28761,57 +28827,58 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScope'
-              description: 'This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user''s manager does not exist. See accessReviewReviewerScope.'
+              description: 'This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user''s manager does not exist. Supports $select. Note: This property has been replaced by fallbackReviewers. However, specifying either backupReviewers or fallbackReviewers automatically populates the same values to the other property.'
             createdBy:
               $ref: '#/components/schemas/microsoft.graph.userIdentity'
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Timestamp when review series was created.
+              description: Timestamp when the access review series was created. Supports $select.
               format: date-time
               nullable: true
             descriptionForAdmins:
               type: string
-              description: Description provided by review creators to provide more context of the review to admins.
+              description: Description provided by review creators to provide more context of the review to admins. Supports $select.
               nullable: true
             descriptionForReviewers:
               type: string
-              description: Description provided  by review creators to provide more context of the review to reviewers. Reviewers will see this description in the email sent to them requesting their review.
+              description: Description provided  by review creators to provide more context of the review to reviewers. Reviewers will see this description in the email sent to them requesting their review. Supports $select.
               nullable: true
             displayName:
               type: string
-              description: Name of access review series. Required on create.
+              description: Name of the access review series. Required on create. Supports $select.
               nullable: true
             fallbackReviewers:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScope'
+              description: 'This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user''s manager does not exist. Supports $select.'
             instanceEnumerationScope:
               $ref: '#/components/schemas/microsoft.graph.accessReviewScope'
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Timestamp when review series was last modified.
+              description: Timestamp when the access review series was last modified. Supports $select.
               format: date-time
               nullable: true
             reviewers:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScope'
-              description: This collection of access review scopes is used to define who are the reviewers. See accessReviewReviewerScope. Required on create.
+              description: 'This collection of access review scopes is used to define who are the reviewers. Required on create. Supports $select. For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API.'
             scope:
               $ref: '#/components/schemas/microsoft.graph.accessReviewScope'
             settings:
               $ref: '#/components/schemas/microsoft.graph.accessReviewScheduleSettings'
             status:
               type: string
-              description: 'This read-only field specifies the status of an accessReview. The typical states include Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed.'
+              description: 'This read-only field specifies the status of an access review. The typical states include Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed. Supports $select, $orderby, and $filter (eq only).'
               nullable: true
             instances:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewInstance'
-              description: 'Set of access reviews instances for this access review series. Access reviews that do not recur will only have one instance; otherwise, there will be an instance for each recurrence.'
+              description: 'Set of access reviews instances for this access review series. Access reviews that do not recur will only have one instance; otherwise, there is an instance for each recurrence.'
           additionalProperties:
             type: object
     microsoft.graph.agreementAcceptanceState:
@@ -31400,6 +31467,8 @@ components:
               type: string
               description: Read-only. Version number of the chat message.
               nullable: true
+            eventDetail:
+              $ref: '#/components/schemas/microsoft.graph.eventMessageDetail'
             from:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             importance:
@@ -33843,7 +33912,7 @@ components:
               nullable: true
             queryRoot:
               type: string
-              description: 'In the scenario where reviewers need to be specified dynamically, this property is used to indicate the relative source of the query. This property is only required if a relative query (i.e., ./manager) is specified.'
+              description: 'In the scenario where reviewers need to be specified dynamically, this property is used to indicate the relative source of the query. This property is only required if a relative query, for example, ./manager, is specified. Possible value: decisions.'
               nullable: true
             queryType:
               type: string
@@ -33862,14 +33931,14 @@ components:
           description: 'Optional field. Describes the  actions to take once a review is complete. There are two types that are currently supported: removeAccessApplyAction (default) and disableAndDeleteUserApplyAction. Field only needs to be specified in the case of disableAndDeleteUserApplyAction. See accessReviewApplyAction.'
         autoApplyDecisionsEnabled:
           type: boolean
-          description: Flag to indicate whether auto-apply feature is enabled.
+          description: 'Indicates whether decisions are automatically applied. When set to false, a user must apply the decisions manually once the reviewer completes the access review. When set to true, decisions are applied automatically after the access review instance duration ends, whether or not the reviewers have responded. Default value is false.'
         defaultDecision:
           type: string
-          description: 'Decision chosen if defaultDecisionEnabled is enabled. Can be one of ''Approve'', ''Deny'', or ''Recommendation''.'
+          description: 'Decision chosen if defaultDecisionEnabled is enabled. Can be one of Approve, Deny, or Recommendation.'
           nullable: true
         defaultDecisionEnabled:
           type: boolean
-          description: Flag to indicate whether default decision is enabled/disabled when reviewers do not respond.
+          description: Indicates whether the default decision is enabled or disabled when reviewers do not respond. Default value is false.
         instanceDurationInDays:
           maximum: 2147483647
           minimum: -2147483648
@@ -33878,18 +33947,18 @@ components:
           format: int32
         justificationRequiredOnApproval:
           type: boolean
-          description: Flag to indicate whether reviewers are required to provide justification with their decision.
+          description: Indicates whether reviewers are required to provide justification with their decision. Default value is false.
         mailNotificationsEnabled:
           type: boolean
-          description: Flag to indicate whether emails are enabled/disabled.
+          description: Indicates whether emails are enabled or disabled. Default value is false.
         recommendationsEnabled:
           type: boolean
-          description: Flag to indicate whether decision recommendations are enabled/disabled.
+          description: Indicates whether decision recommendations are enabled/disabled.
         recurrence:
           $ref: '#/components/schemas/microsoft.graph.patternedRecurrence'
         reminderNotificationsEnabled:
           type: boolean
-          description: Flag to indicate whether reminders are enabled/disabled.
+          description: Indicates whether reminders are enabled or disabled. Default value is false.
       additionalProperties:
         type: object
     microsoft.graph.actionState:
@@ -35185,6 +35254,11 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.eventMessageDetail:
+      title: eventMessageDetail
+      type: object
+      additionalProperties:
+        type: object
     microsoft.graph.chatMessageImportance:
       title: chatMessageImportance
       enum:
@@ -35217,6 +35291,8 @@ components:
         - message
         - chatEvent
         - typing
+        - unknownFutureValue
+        - systemEventMessage
       type: string
     microsoft.graph.chatMessagePolicyViolation:
       title: chatMessagePolicyViolation
@@ -35723,17 +35799,22 @@ components:
       properties:
         color:
           type: string
+          description: 'The color that the user interface should display for the label, if configured.'
           nullable: true
         description:
           type: string
+          description: The admin-defined description for the label.
           nullable: true
         id:
           type: string
+          description: The label ID is a globally unique identifier (GUID).
           nullable: true
         isActive:
           type: boolean
+          description: Indicates whether the label is active or not. Active labels should be hidden or disabled in user interfaces.
         name:
           type: string
+          description: The plaintext name of the label.
           nullable: true
         parent:
           $ref: '#/components/schemas/microsoft.graph.parentLabelDetails'
@@ -35741,9 +35822,11 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: 'The sensitivity value of the label, where lower is less sensitive.'
           format: int32
         tooltip:
           type: string
+          description: The tooltip that should be displayed for the label in a user interface.
           nullable: true
       additionalProperties:
         type: object
@@ -36294,11 +36377,11 @@ components:
       properties:
         key:
           type: string
-          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object
@@ -37382,7 +37465,7 @@ components:
           nullable: true
         languageTag:
           type: string
-          description: The anguage tag for the label.
+          description: The language tag for the label.
           nullable: true
         name:
           type: string

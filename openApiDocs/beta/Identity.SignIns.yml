@@ -1540,6 +1540,7 @@ paths:
       tags:
         - informationProtection.bitlocker
       summary: Get recoveryKeys from informationProtection
+      description: The recovery keys associated with the bitlocker entity.
       operationId: informationProtection.bitlocker_ListRecoveryKeys
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1623,6 +1624,7 @@ paths:
       tags:
         - informationProtection.bitlocker
       summary: Create new navigation property to recoveryKeys for informationProtection
+      description: The recovery keys associated with the bitlocker entity.
       operationId: informationProtection.bitlocker_CreateRecoveryKeys
       requestBody:
         description: New navigation property
@@ -1646,6 +1648,7 @@ paths:
       tags:
         - informationProtection.bitlocker
       summary: Get recoveryKeys from informationProtection
+      description: The recovery keys associated with the bitlocker entity.
       operationId: informationProtection.bitlocker_GetRecoveryKeys
       parameters:
         - name: bitlockerRecoveryKey-id
@@ -1697,6 +1700,7 @@ paths:
       tags:
         - informationProtection.bitlocker
       summary: Update the navigation property recoveryKeys in informationProtection
+      description: The recovery keys associated with the bitlocker entity.
       operationId: informationProtection.bitlocker_UpdateRecoveryKeys
       parameters:
         - name: bitlockerRecoveryKey-id
@@ -1723,6 +1727,7 @@ paths:
       tags:
         - informationProtection.bitlocker
       summary: Delete navigation property recoveryKeys for informationProtection
+      description: The recovery keys associated with the bitlocker entity.
       operationId: informationProtection.bitlocker_DeleteRecoveryKeys
       parameters:
         - name: bitlockerRecoveryKey-id
@@ -3385,6 +3390,7 @@ paths:
       tags:
         - informationProtection.threatAssessmentRequest
       summary: Get results from informationProtection
+      description: 'A collection of threat assessment results. Read-only. By default, a GET /threatAssessmentRequests/{id} does not return this property unless you apply $expand on it.'
       operationId: informationProtection.threatAssessmentRequests_ListResults
       parameters:
         - name: threatAssessmentRequest-id
@@ -3472,6 +3478,7 @@ paths:
       tags:
         - informationProtection.threatAssessmentRequest
       summary: Create new navigation property to results for informationProtection
+      description: 'A collection of threat assessment results. Read-only. By default, a GET /threatAssessmentRequests/{id} does not return this property unless you apply $expand on it.'
       operationId: informationProtection.threatAssessmentRequests_CreateResults
       parameters:
         - name: threatAssessmentRequest-id
@@ -3503,6 +3510,7 @@ paths:
       tags:
         - informationProtection.threatAssessmentRequest
       summary: Get results from informationProtection
+      description: 'A collection of threat assessment results. Read-only. By default, a GET /threatAssessmentRequests/{id} does not return this property unless you apply $expand on it.'
       operationId: informationProtection.threatAssessmentRequests_GetResults
       parameters:
         - name: threatAssessmentRequest-id
@@ -3560,6 +3568,7 @@ paths:
       tags:
         - informationProtection.threatAssessmentRequest
       summary: Update the navigation property results in informationProtection
+      description: 'A collection of threat assessment results. Read-only. By default, a GET /threatAssessmentRequests/{id} does not return this property unless you apply $expand on it.'
       operationId: informationProtection.threatAssessmentRequests_UpdateResults
       parameters:
         - name: threatAssessmentRequest-id
@@ -3593,6 +3602,7 @@ paths:
       tags:
         - informationProtection.threatAssessmentRequest
       summary: Delete navigation property results for informationProtection
+      description: 'A collection of threat assessment results. Read-only. By default, a GET /threatAssessmentRequests/{id} does not return this property unless you apply $expand on it.'
       operationId: informationProtection.threatAssessmentRequests_DeleteResults
       parameters:
         - name: threatAssessmentRequest-id
@@ -3862,6 +3872,7 @@ paths:
       tags:
         - invitations.user
       summary: Get invitedUser from invitations
+      description: The user created as part of the invitation creation. Read-Only
       operationId: invitations_GetInvitedUser
       parameters:
         - name: invitation-id
@@ -4352,6 +4363,7 @@ paths:
       tags:
         - invitations.user
       summary: Get ref of invitedUser from invitations
+      description: The user created as part of the invitation creation. Read-Only
       operationId: invitations_GetRefInvitedUser
       parameters:
         - name: invitation-id
@@ -4620,6 +4632,7 @@ paths:
       tags:
         - invitations.user
       summary: Update the ref of navigation property invitedUser in invitations
+      description: The user created as part of the invitation creation. Read-Only
       operationId: invitations_SetRefInvitedUser
       parameters:
         - name: invitation-id
@@ -4648,6 +4661,7 @@ paths:
       tags:
         - invitations.user
       summary: Delete ref of navigation property invitedUser for invitations
+      description: The user created as part of the invitation creation. Read-Only
       operationId: invitations_DeleteRefInvitedUser
       parameters:
         - name: invitation-id
@@ -4911,6 +4925,7 @@ paths:
       tags:
         - organization.certificateBasedAuthConfiguration
       summary: Get certificateBasedAuthConfiguration from organization
+      description: Navigation property to manage  certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
       operationId: organization_ListCertificateBasedAuthConfiguration
       parameters:
         - name: organization-id
@@ -4993,6 +5008,7 @@ paths:
       tags:
         - organization.certificateBasedAuthConfiguration
       summary: Get ref of certificateBasedAuthConfiguration from organization
+      description: Navigation property to manage  certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
       operationId: organization_ListRefCertificateBasedAuthConfiguration
       parameters:
         - name: organization-id
@@ -5049,6 +5065,7 @@ paths:
       tags:
         - organization.certificateBasedAuthConfiguration
       summary: Create new navigation property ref to certificateBasedAuthConfiguration for organization
+      description: Navigation property to manage  certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
       operationId: organization_CreateRefCertificateBasedAuthConfiguration
       parameters:
         - name: organization-id
@@ -6825,6 +6842,7 @@ paths:
       tags:
         - policies.featureRolloutPolicy
       summary: Get appliesTo from policies
+      description: Nullable. Specifies a list of directoryObjects that feature is enabled for.
       operationId: policies.featureRolloutPolicies_ListAppliesTo
       parameters:
         - name: featureRolloutPolicy-id
@@ -6906,6 +6924,7 @@ paths:
       tags:
         - policies.featureRolloutPolicy
       summary: Create new navigation property to appliesTo for policies
+      description: Nullable. Specifies a list of directoryObjects that feature is enabled for.
       operationId: policies.featureRolloutPolicies_CreateAppliesTo
       parameters:
         - name: featureRolloutPolicy-id
@@ -6937,6 +6956,7 @@ paths:
       tags:
         - policies.featureRolloutPolicy
       summary: Get appliesTo from policies
+      description: Nullable. Specifies a list of directoryObjects that feature is enabled for.
       operationId: policies.featureRolloutPolicies_GetAppliesTo
       parameters:
         - name: featureRolloutPolicy-id
@@ -6992,6 +7012,7 @@ paths:
       tags:
         - policies.featureRolloutPolicy
       summary: Update the navigation property appliesTo in policies
+      description: Nullable. Specifies a list of directoryObjects that feature is enabled for.
       operationId: policies.featureRolloutPolicies_UpdateAppliesTo
       parameters:
         - name: featureRolloutPolicy-id
@@ -7025,6 +7046,7 @@ paths:
       tags:
         - policies.featureRolloutPolicy
       summary: Delete navigation property appliesTo for policies
+      description: Nullable. Specifies a list of directoryObjects that feature is enabled for.
       operationId: policies.featureRolloutPolicies_DeleteAppliesTo
       parameters:
         - name: featureRolloutPolicy-id
@@ -7579,6 +7601,7 @@ paths:
       tags:
         - policies.permissionGrantPolicy
       summary: Get excludes from policies
+      description: Condition sets which are excluded in this permission grant policy. Automatically expanded on GET.
       operationId: policies.permissionGrantPolicies_ListExcludes
       parameters:
         - name: permissionGrantPolicy-id
@@ -7681,6 +7704,7 @@ paths:
       tags:
         - policies.permissionGrantPolicy
       summary: Create new navigation property to excludes for policies
+      description: Condition sets which are excluded in this permission grant policy. Automatically expanded on GET.
       operationId: policies.permissionGrantPolicies_CreateExcludes
       parameters:
         - name: permissionGrantPolicy-id
@@ -7712,6 +7736,7 @@ paths:
       tags:
         - policies.permissionGrantPolicy
       summary: Get excludes from policies
+      description: Condition sets which are excluded in this permission grant policy. Automatically expanded on GET.
       operationId: policies.permissionGrantPolicies_GetExcludes
       parameters:
         - name: permissionGrantPolicy-id
@@ -7774,6 +7799,7 @@ paths:
       tags:
         - policies.permissionGrantPolicy
       summary: Update the navigation property excludes in policies
+      description: Condition sets which are excluded in this permission grant policy. Automatically expanded on GET.
       operationId: policies.permissionGrantPolicies_UpdateExcludes
       parameters:
         - name: permissionGrantPolicy-id
@@ -7807,6 +7833,7 @@ paths:
       tags:
         - policies.permissionGrantPolicy
       summary: Delete navigation property excludes for policies
+      description: Condition sets which are excluded in this permission grant policy. Automatically expanded on GET.
       operationId: policies.permissionGrantPolicies_DeleteExcludes
       parameters:
         - name: permissionGrantPolicy-id
@@ -7839,6 +7866,7 @@ paths:
       tags:
         - policies.permissionGrantPolicy
       summary: Get includes from policies
+      description: Condition sets which are included in this permission grant policy. Automatically expanded on GET.
       operationId: policies.permissionGrantPolicies_ListIncludes
       parameters:
         - name: permissionGrantPolicy-id
@@ -7941,6 +7969,7 @@ paths:
       tags:
         - policies.permissionGrantPolicy
       summary: Create new navigation property to includes for policies
+      description: Condition sets which are included in this permission grant policy. Automatically expanded on GET.
       operationId: policies.permissionGrantPolicies_CreateIncludes
       parameters:
         - name: permissionGrantPolicy-id
@@ -7972,6 +8001,7 @@ paths:
       tags:
         - policies.permissionGrantPolicy
       summary: Get includes from policies
+      description: Condition sets which are included in this permission grant policy. Automatically expanded on GET.
       operationId: policies.permissionGrantPolicies_GetIncludes
       parameters:
         - name: permissionGrantPolicy-id
@@ -8034,6 +8064,7 @@ paths:
       tags:
         - policies.permissionGrantPolicy
       summary: Update the navigation property includes in policies
+      description: Condition sets which are included in this permission grant policy. Automatically expanded on GET.
       operationId: policies.permissionGrantPolicies_UpdateIncludes
       parameters:
         - name: permissionGrantPolicy-id
@@ -8067,6 +8098,7 @@ paths:
       tags:
         - policies.permissionGrantPolicy
       summary: Delete navigation property includes for policies
+      description: Condition sets which are included in this permission grant policy. Automatically expanded on GET.
       operationId: policies.permissionGrantPolicies_DeleteIncludes
       parameters:
         - name: permissionGrantPolicy-id
@@ -8336,6 +8368,7 @@ paths:
       tags:
         - policies.unifiedRoleManagementPolicy
       summary: Get effectiveRules from policies
+      description: 'The list of effective rules like approval rule, expiration rule, etc. evaluated based on inherited referenced rules. E.g. If there is a tenant wide policy to enforce enabling approval rule, the effective rule will be to enable approval even if the polcy has a rule to disable approval.'
       operationId: policies.roleManagementPolicies_ListEffectiveRules
       parameters:
         - name: unifiedRoleManagementPolicy-id
@@ -8417,6 +8450,7 @@ paths:
       tags:
         - policies.unifiedRoleManagementPolicy
       summary: Create new navigation property to effectiveRules for policies
+      description: 'The list of effective rules like approval rule, expiration rule, etc. evaluated based on inherited referenced rules. E.g. If there is a tenant wide policy to enforce enabling approval rule, the effective rule will be to enable approval even if the polcy has a rule to disable approval.'
       operationId: policies.roleManagementPolicies_CreateEffectiveRules
       parameters:
         - name: unifiedRoleManagementPolicy-id
@@ -8448,6 +8482,7 @@ paths:
       tags:
         - policies.unifiedRoleManagementPolicy
       summary: Get effectiveRules from policies
+      description: 'The list of effective rules like approval rule, expiration rule, etc. evaluated based on inherited referenced rules. E.g. If there is a tenant wide policy to enforce enabling approval rule, the effective rule will be to enable approval even if the polcy has a rule to disable approval.'
       operationId: policies.roleManagementPolicies_GetEffectiveRules
       parameters:
         - name: unifiedRoleManagementPolicy-id
@@ -8503,6 +8538,7 @@ paths:
       tags:
         - policies.unifiedRoleManagementPolicy
       summary: Update the navigation property effectiveRules in policies
+      description: 'The list of effective rules like approval rule, expiration rule, etc. evaluated based on inherited referenced rules. E.g. If there is a tenant wide policy to enforce enabling approval rule, the effective rule will be to enable approval even if the polcy has a rule to disable approval.'
       operationId: policies.roleManagementPolicies_UpdateEffectiveRules
       parameters:
         - name: unifiedRoleManagementPolicy-id
@@ -8536,6 +8572,7 @@ paths:
       tags:
         - policies.unifiedRoleManagementPolicy
       summary: Delete navigation property effectiveRules for policies
+      description: 'The list of effective rules like approval rule, expiration rule, etc. evaluated based on inherited referenced rules. E.g. If there is a tenant wide policy to enforce enabling approval rule, the effective rule will be to enable approval even if the polcy has a rule to disable approval.'
       operationId: policies.roleManagementPolicies_DeleteEffectiveRules
       parameters:
         - name: unifiedRoleManagementPolicy-id
@@ -8568,6 +8605,7 @@ paths:
       tags:
         - policies.unifiedRoleManagementPolicy
       summary: Get rules from policies
+      description: 'The collection of rules like approval rule, expiration rule, etc.'
       operationId: policies.roleManagementPolicies_ListRules
       parameters:
         - name: unifiedRoleManagementPolicy-id
@@ -8649,6 +8687,7 @@ paths:
       tags:
         - policies.unifiedRoleManagementPolicy
       summary: Create new navigation property to rules for policies
+      description: 'The collection of rules like approval rule, expiration rule, etc.'
       operationId: policies.roleManagementPolicies_CreateRules
       parameters:
         - name: unifiedRoleManagementPolicy-id
@@ -8680,6 +8719,7 @@ paths:
       tags:
         - policies.unifiedRoleManagementPolicy
       summary: Get rules from policies
+      description: 'The collection of rules like approval rule, expiration rule, etc.'
       operationId: policies.roleManagementPolicies_GetRules
       parameters:
         - name: unifiedRoleManagementPolicy-id
@@ -8735,6 +8775,7 @@ paths:
       tags:
         - policies.unifiedRoleManagementPolicy
       summary: Update the navigation property rules in policies
+      description: 'The collection of rules like approval rule, expiration rule, etc.'
       operationId: policies.roleManagementPolicies_UpdateRules
       parameters:
         - name: unifiedRoleManagementPolicy-id
@@ -8768,6 +8809,7 @@ paths:
       tags:
         - policies.unifiedRoleManagementPolicy
       summary: Delete navigation property rules for policies
+      description: 'The collection of rules like approval rule, expiration rule, etc.'
       operationId: policies.roleManagementPolicies_DeleteRules
       parameters:
         - name: unifiedRoleManagementPolicy-id
@@ -9017,6 +9059,7 @@ paths:
       tags:
         - policies.unifiedRoleManagementPolicyAssignment
       summary: Get policy from policies
+      description: The policy for the assignment.
       operationId: policies.roleManagementPolicyAssignments_GetPolicy
       parameters:
         - name: unifiedRoleManagementPolicyAssignment-id
@@ -9085,6 +9128,7 @@ paths:
       tags:
         - policies.unifiedRoleManagementPolicyAssignment
       summary: Get ref of policy from policies
+      description: The policy for the assignment.
       operationId: policies.roleManagementPolicyAssignments_GetRefPolicy
       parameters:
         - name: unifiedRoleManagementPolicyAssignment-id
@@ -9117,6 +9161,7 @@ paths:
       tags:
         - policies.unifiedRoleManagementPolicyAssignment
       summary: Update the ref of navigation property policy in policies
+      description: The policy for the assignment.
       operationId: policies.roleManagementPolicyAssignments_SetRefPolicy
       parameters:
         - name: unifiedRoleManagementPolicyAssignment-id
@@ -9145,6 +9190,7 @@ paths:
       tags:
         - policies.unifiedRoleManagementPolicyAssignment
       summary: Delete ref of navigation property policy for policies
+      description: The policy for the assignment.
       operationId: policies.roleManagementPolicyAssignments_DeleteRefPolicy
       parameters:
         - name: unifiedRoleManagementPolicyAssignment-id
@@ -10117,6 +10163,7 @@ paths:
       tags:
         - riskyUsers.riskyUserHistoryItem
       summary: Get history from riskyUsers
+      description: The activity related to user risk level change
       operationId: riskyUsers_ListHistory
       parameters:
         - name: riskyUser-id
@@ -10230,6 +10277,7 @@ paths:
       tags:
         - riskyUsers.riskyUserHistoryItem
       summary: Create new navigation property to history for riskyUsers
+      description: The activity related to user risk level change
       operationId: riskyUsers_CreateHistory
       parameters:
         - name: riskyUser-id
@@ -10261,6 +10309,7 @@ paths:
       tags:
         - riskyUsers.riskyUserHistoryItem
       summary: Get history from riskyUsers
+      description: The activity related to user risk level change
       operationId: riskyUsers_GetHistory
       parameters:
         - name: riskyUser-id
@@ -10334,6 +10383,7 @@ paths:
       tags:
         - riskyUsers.riskyUserHistoryItem
       summary: Update the navigation property history in riskyUsers
+      description: The activity related to user risk level change
       operationId: riskyUsers_UpdateHistory
       parameters:
         - name: riskyUser-id
@@ -10367,6 +10417,7 @@ paths:
       tags:
         - riskyUsers.riskyUserHistoryItem
       summary: Delete navigation property history for riskyUsers
+      description: The activity related to user risk level change
       operationId: riskyUsers_DeleteHistory
       parameters:
         - name: riskyUser-id
@@ -12286,6 +12337,7 @@ paths:
       tags:
         - users.authentication
       summary: Get device from users
+      description: The registered device on which Microsoft Authenticator resides. This property is null if the device is not registered for passwordless Phone Sign-In.
       operationId: users.authentication.microsoftAuthenticatorMethods_GetDevice
       parameters:
         - name: user-id
@@ -12425,6 +12477,7 @@ paths:
       tags:
         - users.authentication
       summary: Update the navigation property device in users
+      description: The registered device on which Microsoft Authenticator resides. This property is null if the device is not registered for passwordless Phone Sign-In.
       operationId: users.authentication.microsoftAuthenticatorMethods_UpdateDevice
       parameters:
         - name: user-id
@@ -12458,6 +12511,7 @@ paths:
       tags:
         - users.authentication
       summary: Delete navigation property device for users
+      description: The registered device on which Microsoft Authenticator resides. This property is null if the device is not registered for passwordless Phone Sign-In.
       operationId: users.authentication.microsoftAuthenticatorMethods_DeleteDevice
       parameters:
         - name: user-id
@@ -14178,6 +14232,7 @@ paths:
       tags:
         - users.authentication
       summary: Get device from users
+      description: The registered device on which this Windows Hello for Business key resides.
       operationId: users.authentication.windowsHelloForBusinessMethods_GetDevice
       parameters:
         - name: user-id
@@ -14317,6 +14372,7 @@ paths:
       tags:
         - users.authentication
       summary: Update the navigation property device in users
+      description: The registered device on which this Windows Hello for Business key resides.
       operationId: users.authentication.windowsHelloForBusinessMethods_UpdateDevice
       parameters:
         - name: user-id
@@ -14350,6 +14406,7 @@ paths:
       tags:
         - users.authentication
       summary: Delete navigation property device for users
+      description: The registered device on which this Windows Hello for Business key resides.
       operationId: users.authentication.windowsHelloForBusinessMethods_DeleteDevice
       parameters:
         - name: user-id
@@ -15303,7 +15360,7 @@ components:
               description: State of license assignments for this user. Returned only on $select. Read-only.
             mail:
               type: string
-              description: 'The SMTP address for the user, for example, ''jeff@contoso.onmicrosoft.com''.NOTE: While this property can contain accent characters, using them can cause access issues with other Microsoft applications for the user.Returned by default. Supports $filter and endsWith.'
+              description: 'The SMTP address for the user, for example, ''jeff@contoso.onmicrosoft.com''. Changes to this property will also update the user''s proxyAddresses collection to include the value as an SMTP address. While this property can contain accent characters, using them can cause access issues with other Microsoft applications for the user. Supports $filter and endsWith.'
               nullable: true
             mailNickname:
               type: string
@@ -15938,17 +15995,21 @@ components:
           properties:
             description:
               type: string
+              description: A description of the policy.
               nullable: true
             displayName:
               type: string
+              description: The name of the policy.
               nullable: true
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date and time of the last update to the policy.
               format: date-time
               nullable: true
             policyVersion:
               type: string
+              description: The version of the policy in use.
               nullable: true
             reconfirmationInDays:
               maximum: 2147483647
@@ -15962,6 +16023,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.authenticationMethodConfiguration'
+              description: Represents the settings for each authentication method.
           additionalProperties:
             type: object
     microsoft.graph.authorizationPolicy:
@@ -17163,17 +17225,22 @@ components:
       properties:
         color:
           type: string
+          description: 'The color that the user interface should display for the label, if configured.'
           nullable: true
         description:
           type: string
+          description: The admin-defined description for the label.
           nullable: true
         id:
           type: string
+          description: The label ID is a globally unique identifier (GUID).
           nullable: true
         isActive:
           type: boolean
+          description: Indicates whether the label is active or not. Active labels should be hidden or disabled in user interfaces.
         name:
           type: string
+          description: The plaintext name of the label.
           nullable: true
         parent:
           $ref: '#/components/schemas/microsoft.graph.parentLabelDetails'
@@ -17181,9 +17248,11 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: 'The sensitivity value of the label, where lower is less sensitive.'
           format: int32
         tooltip:
           type: string
+          description: The tooltip that should be displayed for the label in a user interface.
           nullable: true
       additionalProperties:
         type: object
@@ -17199,10 +17268,10 @@ components:
       properties:
         name:
           type: string
-          description: Name for this key-value pair
+          description: 'Name for this key-value pair. Possible names are: AdditionalWSFedEndpointCheckResult,  AllowedAuthenticationClassReferencesCheckResult, AlwaysRequireAuthenticationCheckResult,   AutoUpdateEnabledCheckResult, ClaimsProviderNameCheckResult, EncryptClaimsCheckResult,  EncryptedNameIdRequiredCheckResult, MonitoringEnabledCheckResult,NotBeforeSkewCheckResult,  RequestMFAFromClaimsProvidersCheckResult, SignedSamlRequestsRequiredCheckResult, AdditionalAuthenticationRulesCheckResult, TokenLifetimeCheckResult,  DelegationAuthorizationRulesCheckResult, IssuanceAuthorizationRulesCheckResult, IssuanceTransformRulesCheckResult.'
         value:
           type: string
-          description: Value for this key-value pair
+          description: 'Value for this key-value pair. Possible result values are 0 (when the validation check passed), 1 (when the validation check failed), or 2 (when the validation check is a warning).'
           nullable: true
       additionalProperties:
         type: object
@@ -20340,7 +20409,7 @@ components:
               nullable: true
             description:
               type: string
-              description: An optional description for the team.
+              description: 'An optional description for the team. Maximum length: 1024 characters.'
               nullable: true
             discoverySettings:
               $ref: '#/components/schemas/microsoft.graph.teamDiscoverySettings'
@@ -20504,7 +20573,7 @@ components:
               nullable: true
             queryRoot:
               type: string
-              description: 'In the scenario where reviewers need to be specified dynamically, this property is used to indicate the relative source of the query. This property is only required if a relative query (i.e., ./manager) is specified.'
+              description: 'In the scenario where reviewers need to be specified dynamically, this property is used to indicate the relative source of the query. This property is only required if a relative query, for example, ./manager, is specified. Possible value: decisions.'
               nullable: true
             queryType:
               type: string
@@ -20589,14 +20658,14 @@ components:
           description: 'Optional field. Describes the  actions to take once a review is complete. There are two types that are currently supported: removeAccessApplyAction (default) and disableAndDeleteUserApplyAction. Field only needs to be specified in the case of disableAndDeleteUserApplyAction. See accessReviewApplyAction.'
         autoApplyDecisionsEnabled:
           type: boolean
-          description: Flag to indicate whether auto-apply feature is enabled.
+          description: 'Indicates whether decisions are automatically applied. When set to false, a user must apply the decisions manually once the reviewer completes the access review. When set to true, decisions are applied automatically after the access review instance duration ends, whether or not the reviewers have responded. Default value is false.'
         defaultDecision:
           type: string
-          description: 'Decision chosen if defaultDecisionEnabled is enabled. Can be one of ''Approve'', ''Deny'', or ''Recommendation''.'
+          description: 'Decision chosen if defaultDecisionEnabled is enabled. Can be one of Approve, Deny, or Recommendation.'
           nullable: true
         defaultDecisionEnabled:
           type: boolean
-          description: Flag to indicate whether default decision is enabled/disabled when reviewers do not respond.
+          description: Indicates whether the default decision is enabled or disabled when reviewers do not respond. Default value is false.
         instanceDurationInDays:
           maximum: 2147483647
           minimum: -2147483648
@@ -20605,18 +20674,18 @@ components:
           format: int32
         justificationRequiredOnApproval:
           type: boolean
-          description: Flag to indicate whether reviewers are required to provide justification with their decision.
+          description: Indicates whether reviewers are required to provide justification with their decision. Default value is false.
         mailNotificationsEnabled:
           type: boolean
-          description: Flag to indicate whether emails are enabled/disabled.
+          description: Indicates whether emails are enabled or disabled. Default value is false.
         recommendationsEnabled:
           type: boolean
-          description: Flag to indicate whether decision recommendations are enabled/disabled.
+          description: Indicates whether decision recommendations are enabled/disabled.
         recurrence:
           $ref: '#/components/schemas/microsoft.graph.patternedRecurrence'
         reminderNotificationsEnabled:
           type: boolean
-          description: Flag to indicate whether reminders are enabled/disabled.
+          description: Indicates whether reminders are enabled or disabled. Default value is false.
       additionalProperties:
         type: object
     microsoft.graph.stagedFeatureName:
@@ -23004,57 +23073,58 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScope'
-              description: 'This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user''s manager does not exist. See accessReviewReviewerScope.'
+              description: 'This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user''s manager does not exist. Supports $select. Note: This property has been replaced by fallbackReviewers. However, specifying either backupReviewers or fallbackReviewers automatically populates the same values to the other property.'
             createdBy:
               $ref: '#/components/schemas/microsoft.graph.userIdentity'
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Timestamp when review series was created.
+              description: Timestamp when the access review series was created. Supports $select.
               format: date-time
               nullable: true
             descriptionForAdmins:
               type: string
-              description: Description provided by review creators to provide more context of the review to admins.
+              description: Description provided by review creators to provide more context of the review to admins. Supports $select.
               nullable: true
             descriptionForReviewers:
               type: string
-              description: Description provided  by review creators to provide more context of the review to reviewers. Reviewers will see this description in the email sent to them requesting their review.
+              description: Description provided  by review creators to provide more context of the review to reviewers. Reviewers will see this description in the email sent to them requesting their review. Supports $select.
               nullable: true
             displayName:
               type: string
-              description: Name of access review series. Required on create.
+              description: Name of the access review series. Required on create. Supports $select.
               nullable: true
             fallbackReviewers:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScope'
+              description: 'This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user''s manager does not exist. Supports $select.'
             instanceEnumerationScope:
               $ref: '#/components/schemas/microsoft.graph.accessReviewScope'
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Timestamp when review series was last modified.
+              description: Timestamp when the access review series was last modified. Supports $select.
               format: date-time
               nullable: true
             reviewers:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScope'
-              description: This collection of access review scopes is used to define who are the reviewers. See accessReviewReviewerScope. Required on create.
+              description: 'This collection of access review scopes is used to define who are the reviewers. Required on create. Supports $select. For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API.'
             scope:
               $ref: '#/components/schemas/microsoft.graph.accessReviewScope'
             settings:
               $ref: '#/components/schemas/microsoft.graph.accessReviewScheduleSettings'
             status:
               type: string
-              description: 'This read-only field specifies the status of an accessReview. The typical states include Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed.'
+              description: 'This read-only field specifies the status of an access review. The typical states include Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed. Supports $select, $orderby, and $filter (eq only).'
               nullable: true
             instances:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewInstance'
-              description: 'Set of access reviews instances for this access review series. Access reviews that do not recur will only have one instance; otherwise, there will be an instance for each recurrence.'
+              description: 'Set of access reviews instances for this access review series. Access reviews that do not recur will only have one instance; otherwise, there is an instance for each recurrence.'
           additionalProperties:
             type: object
     microsoft.graph.agreementAcceptanceState:
@@ -25580,6 +25650,8 @@ components:
               type: string
               description: Read-only. Version number of the chat message.
               nullable: true
+            eventDetail:
+              $ref: '#/components/schemas/microsoft.graph.eventMessageDetail'
             from:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             importance:
@@ -26060,14 +26132,17 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.excludeTarget'
+          description: Users and groups of users that are excluded from being prompted to set up the authentication method.
         includeTargets:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.authenticationMethodsRegistrationCampaignIncludeTarget'
+          description: Users and groups of users that are prompted to set up the authentication method.
         snoozeDurationInDays:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: 'Specifies the number of days that the user sees a prompt again if they select ''Not now'' and snoozes the prompt. Minimum 0 days. Maximum: 14 days. If the value is ''0'' – The user is prompted during every MFA attempt.'
           format: int32
         state:
           $ref: '#/components/schemas/microsoft.graph.advancedConfigState'
@@ -29562,6 +29637,11 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.eventMessageDetail:
+      title: eventMessageDetail
+      type: object
+      additionalProperties:
+        type: object
     microsoft.graph.chatMessageImportance:
       title: chatMessageImportance
       enum:
@@ -29594,6 +29674,8 @@ components:
         - message
         - chatEvent
         - typing
+        - unknownFutureValue
+        - systemEventMessage
       type: string
     microsoft.graph.chatMessagePolicyViolation:
       title: chatMessagePolicyViolation
@@ -30035,6 +30117,7 @@ components:
       properties:
         id:
           type: string
+          description: The object identifier of an Azure AD user or group.
         targetType:
           $ref: '#/components/schemas/microsoft.graph.authenticationMethodTargetType'
       additionalProperties:
@@ -30045,8 +30128,10 @@ components:
       properties:
         id:
           type: string
+          description: The object identifier of an Azure AD user or group.
         targetedAuthenticationMethod:
           type: string
+          description: The authentication method that the user is prompted to register. The value must be microsoftAuthenticator.
           nullable: true
         targetType:
           $ref: '#/components/schemas/microsoft.graph.authenticationMethodTargetType'
@@ -30709,11 +30794,11 @@ components:
       properties:
         key:
           type: string
-          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object
@@ -31849,7 +31934,7 @@ components:
           nullable: true
         languageTag:
           type: string
-          description: The anguage tag for the label.
+          description: The language tag for the label.
           nullable: true
         name:
           type: string

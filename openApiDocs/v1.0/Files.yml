@@ -316,6 +316,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get following from drives
+      description: The list of items the user is following. Only in OneDrive for Business.
       operationId: drives_ListFollowing
       parameters:
         - name: drive-id
@@ -507,6 +508,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Create new navigation property to following for drives
+      description: The list of items the user is following. Only in OneDrive for Business.
       operationId: drives_CreateFollowing
       parameters:
         - name: drive-id
@@ -538,6 +540,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get following from drives
+      description: The list of items the user is following. Only in OneDrive for Business.
       operationId: drives_GetFollowing
       parameters:
         - name: drive-id
@@ -694,6 +697,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Update the navigation property following in drives
+      description: The list of items the user is following. Only in OneDrive for Business.
       operationId: drives_UpdateFollowing
       parameters:
         - name: drive-id
@@ -727,6 +731,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Delete navigation property following for drives
+      description: The list of items the user is following. Only in OneDrive for Business.
       operationId: drives_DeleteFollowing
       parameters:
         - name: drive-id
@@ -825,6 +830,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get items from drives
+      description: All items contained in the drive. Read-only. Nullable.
       operationId: drives_ListItems
       parameters:
         - name: drive-id
@@ -1016,6 +1022,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Create new navigation property to items for drives
+      description: All items contained in the drive. Read-only. Nullable.
       operationId: drives_CreateItems
       parameters:
         - name: drive-id
@@ -1047,6 +1054,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get items from drives
+      description: All items contained in the drive. Read-only. Nullable.
       operationId: drives_GetItems
       parameters:
         - name: drive-id
@@ -1203,6 +1211,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Update the navigation property items in drives
+      description: All items contained in the drive. Read-only. Nullable.
       operationId: drives_UpdateItems
       parameters:
         - name: drive-id
@@ -1236,6 +1245,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Delete navigation property items for drives
+      description: All items contained in the drive. Read-only. Nullable.
       operationId: drives_DeleteItems
       parameters:
         - name: drive-id
@@ -1334,6 +1344,7 @@ paths:
       tags:
         - drives.list
       summary: Get list from drives
+      description: 'For drives in SharePoint, the underlying document library list. Read-only. Nullable.'
       operationId: drives_GetList
       parameters:
         - name: drive-id
@@ -1437,6 +1448,7 @@ paths:
       tags:
         - drives.list
       summary: Update the navigation property list in drives
+      description: 'For drives in SharePoint, the underlying document library list. Read-only. Nullable.'
       operationId: drives_UpdateList
       parameters:
         - name: drive-id
@@ -1463,6 +1475,7 @@ paths:
       tags:
         - drives.list
       summary: Delete navigation property list for drives
+      description: 'For drives in SharePoint, the underlying document library list. Read-only. Nullable.'
       operationId: drives_DeleteList
       parameters:
         - name: drive-id
@@ -1488,6 +1501,7 @@ paths:
       tags:
         - drives.list
       summary: Get columns from drives
+      description: The collection of field definitions for this list.
       operationId: drives.list_ListColumns
       parameters:
         - name: drive-id
@@ -1626,6 +1640,7 @@ paths:
       tags:
         - drives.list
       summary: Create new navigation property to columns for drives
+      description: The collection of field definitions for this list.
       operationId: drives.list_CreateColumns
       parameters:
         - name: drive-id
@@ -1657,6 +1672,7 @@ paths:
       tags:
         - drives.list
       summary: Get columns from drives
+      description: The collection of field definitions for this list.
       operationId: drives.list_GetColumns
       parameters:
         - name: drive-id
@@ -1731,6 +1747,7 @@ paths:
       tags:
         - drives.list
       summary: Update the navigation property columns in drives
+      description: The collection of field definitions for this list.
       operationId: drives.list_UpdateColumns
       parameters:
         - name: drive-id
@@ -1764,6 +1781,7 @@ paths:
       tags:
         - drives.list
       summary: Delete navigation property columns for drives
+      description: The collection of field definitions for this list.
       operationId: drives.list_DeleteColumns
       parameters:
         - name: drive-id
@@ -1796,6 +1814,7 @@ paths:
       tags:
         - drives.list
       summary: Get contentTypes from drives
+      description: The collection of content types present in this list.
       operationId: drives.list_ListContentTypes
       parameters:
         - name: drive-id
@@ -1903,6 +1922,7 @@ paths:
       tags:
         - drives.list
       summary: Create new navigation property to contentTypes for drives
+      description: The collection of content types present in this list.
       operationId: drives.list_CreateContentTypes
       parameters:
         - name: drive-id
@@ -1934,6 +1954,7 @@ paths:
       tags:
         - drives.list
       summary: Get contentTypes from drives
+      description: The collection of content types present in this list.
       operationId: drives.list_GetContentTypes
       parameters:
         - name: drive-id
@@ -2005,6 +2026,7 @@ paths:
       tags:
         - drives.list
       summary: Update the navigation property contentTypes in drives
+      description: The collection of content types present in this list.
       operationId: drives.list_UpdateContentTypes
       parameters:
         - name: drive-id
@@ -2038,6 +2060,7 @@ paths:
       tags:
         - drives.list
       summary: Delete navigation property contentTypes for drives
+      description: The collection of content types present in this list.
       operationId: drives.list_DeleteContentTypes
       parameters:
         - name: drive-id
@@ -2070,6 +2093,7 @@ paths:
       tags:
         - drives.list
       summary: Get columnLinks from drives
+      description: The collection of columns that are required by this content type
       operationId: drives.list.contentTypes_ListColumnLinks
       parameters:
         - name: drive-id
@@ -2158,6 +2182,7 @@ paths:
       tags:
         - drives.list
       summary: Create new navigation property to columnLinks for drives
+      description: The collection of columns that are required by this content type
       operationId: drives.list.contentTypes_CreateColumnLinks
       parameters:
         - name: drive-id
@@ -2196,6 +2221,7 @@ paths:
       tags:
         - drives.list
       summary: Get columnLinks from drives
+      description: The collection of columns that are required by this content type
       operationId: drives.list.contentTypes_GetColumnLinks
       parameters:
         - name: drive-id
@@ -2258,6 +2284,7 @@ paths:
       tags:
         - drives.list
       summary: Update the navigation property columnLinks in drives
+      description: The collection of columns that are required by this content type
       operationId: drives.list.contentTypes_UpdateColumnLinks
       parameters:
         - name: drive-id
@@ -2298,6 +2325,7 @@ paths:
       tags:
         - drives.list
       summary: Delete navigation property columnLinks for drives
+      description: The collection of columns that are required by this content type
       operationId: drives.list.contentTypes_DeleteColumnLinks
       parameters:
         - name: drive-id
@@ -2337,6 +2365,7 @@ paths:
       tags:
         - drives.list
       summary: Get drive from drives
+      description: 'Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].'
       operationId: drives.list_GetDrive
       parameters:
         - name: drive-id
@@ -2441,6 +2470,7 @@ paths:
       tags:
         - drives.list
       summary: Update the navigation property drive in drives
+      description: 'Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].'
       operationId: drives.list_UpdateDrive
       parameters:
         - name: drive-id
@@ -2467,6 +2497,7 @@ paths:
       tags:
         - drives.list
       summary: Delete navigation property drive for drives
+      description: 'Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].'
       operationId: drives.list_DeleteDrive
       parameters:
         - name: drive-id
@@ -2492,6 +2523,7 @@ paths:
       tags:
         - drives.list
       summary: Get items from drives
+      description: All items contained in the list.
       operationId: drives.list_ListItems
       parameters:
         - name: drive-id
@@ -2615,6 +2647,7 @@ paths:
       tags:
         - drives.list
       summary: Create new navigation property to items for drives
+      description: All items contained in the list.
       operationId: drives.list_CreateItems
       parameters:
         - name: drive-id
@@ -2646,6 +2679,7 @@ paths:
       tags:
         - drives.list
       summary: Get items from drives
+      description: All items contained in the list.
       operationId: drives.list_GetItems
       parameters:
         - name: drive-id
@@ -2754,6 +2788,7 @@ paths:
       tags:
         - drives.list
       summary: Update the navigation property items in drives
+      description: All items contained in the list.
       operationId: drives.list_UpdateItems
       parameters:
         - name: drive-id
@@ -2787,6 +2822,7 @@ paths:
       tags:
         - drives.list
       summary: Delete navigation property items for drives
+      description: All items contained in the list.
       operationId: drives.list_DeleteItems
       parameters:
         - name: drive-id
@@ -2819,6 +2855,7 @@ paths:
       tags:
         - drives.list
       summary: Get analytics from drives
+      description: Analytics about the view activities that took place on this item.
       operationId: drives.list.items_GetAnalytics
       parameters:
         - name: drive-id
@@ -2896,6 +2933,7 @@ paths:
       tags:
         - drives.list
       summary: Get ref of analytics from drives
+      description: Analytics about the view activities that took place on this item.
       operationId: drives.list.items_GetRefAnalytics
       parameters:
         - name: drive-id
@@ -2942,6 +2980,7 @@ paths:
       tags:
         - drives.list
       summary: Update the ref of navigation property analytics in drives
+      description: Analytics about the view activities that took place on this item.
       operationId: drives.list.items_SetRefAnalytics
       parameters:
         - name: drive-id
@@ -2977,6 +3016,7 @@ paths:
       tags:
         - drives.list
       summary: Delete ref of navigation property analytics for drives
+      description: Analytics about the view activities that took place on this item.
       operationId: drives.list.items_DeleteRefAnalytics
       parameters:
         - name: drive-id
@@ -3009,6 +3049,7 @@ paths:
       tags:
         - drives.list
       summary: Get driveItem from drives
+      description: 'For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]'
       operationId: drives.list.items_GetDriveItem
       parameters:
         - name: drive-id
@@ -3165,6 +3206,7 @@ paths:
       tags:
         - drives.list
       summary: Update the navigation property driveItem in drives
+      description: 'For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]'
       operationId: drives.list.items_UpdateDriveItem
       parameters:
         - name: drive-id
@@ -3198,6 +3240,7 @@ paths:
       tags:
         - drives.list
       summary: Delete navigation property driveItem for drives
+      description: 'For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]'
       operationId: drives.list.items_DeleteDriveItem
       parameters:
         - name: drive-id
@@ -3296,6 +3339,7 @@ paths:
       tags:
         - drives.list
       summary: Get fields from drives
+      description: The values of the columns set on this list item.
       operationId: drives.list.items_GetFields
       parameters:
         - name: drive-id
@@ -3350,6 +3394,7 @@ paths:
       tags:
         - drives.list
       summary: Update the navigation property fields in drives
+      description: The values of the columns set on this list item.
       operationId: drives.list.items_UpdateFields
       parameters:
         - name: drive-id
@@ -3383,6 +3428,7 @@ paths:
       tags:
         - drives.list
       summary: Delete navigation property fields for drives
+      description: The values of the columns set on this list item.
       operationId: drives.list.items_DeleteFields
       parameters:
         - name: drive-id
@@ -3502,6 +3548,7 @@ paths:
       tags:
         - drives.list
       summary: Get versions from drives
+      description: The list of previous versions of the list item.
       operationId: drives.list.items_ListVersions
       parameters:
         - name: drive-id
@@ -3598,6 +3645,7 @@ paths:
       tags:
         - drives.list
       summary: Create new navigation property to versions for drives
+      description: The list of previous versions of the list item.
       operationId: drives.list.items_CreateVersions
       parameters:
         - name: drive-id
@@ -3636,6 +3684,7 @@ paths:
       tags:
         - drives.list
       summary: Get versions from drives
+      description: The list of previous versions of the list item.
       operationId: drives.list.items_GetVersions
       parameters:
         - name: drive-id
@@ -3709,6 +3758,7 @@ paths:
       tags:
         - drives.list
       summary: Update the navigation property versions in drives
+      description: The list of previous versions of the list item.
       operationId: drives.list.items_UpdateVersions
       parameters:
         - name: drive-id
@@ -3749,6 +3799,7 @@ paths:
       tags:
         - drives.list
       summary: Delete navigation property versions for drives
+      description: The list of previous versions of the list item.
       operationId: drives.list.items_DeleteVersions
       parameters:
         - name: drive-id
@@ -3788,6 +3839,7 @@ paths:
       tags:
         - drives.list
       summary: Get fields from drives
+      description: A collection of the fields and values for this version of the list item.
       operationId: drives.list.items.versions_GetFields
       parameters:
         - name: drive-id
@@ -3849,6 +3901,7 @@ paths:
       tags:
         - drives.list
       summary: Update the navigation property fields in drives
+      description: A collection of the fields and values for this version of the list item.
       operationId: drives.list.items.versions_UpdateFields
       parameters:
         - name: drive-id
@@ -3889,6 +3942,7 @@ paths:
       tags:
         - drives.list
       summary: Delete navigation property fields for drives
+      description: A collection of the fields and values for this version of the list item.
       operationId: drives.list.items.versions_DeleteFields
       parameters:
         - name: drive-id
@@ -3962,6 +4016,7 @@ paths:
       tags:
         - drives.list
       summary: Get subscriptions from drives
+      description: The set of subscriptions on the list.
       operationId: drives.list_ListSubscriptions
       parameters:
         - name: drive-id
@@ -4079,6 +4134,7 @@ paths:
       tags:
         - drives.list
       summary: Create new navigation property to subscriptions for drives
+      description: The set of subscriptions on the list.
       operationId: drives.list_CreateSubscriptions
       parameters:
         - name: drive-id
@@ -4110,6 +4166,7 @@ paths:
       tags:
         - drives.list
       summary: Get subscriptions from drives
+      description: The set of subscriptions on the list.
       operationId: drives.list_GetSubscriptions
       parameters:
         - name: drive-id
@@ -4177,6 +4234,7 @@ paths:
       tags:
         - drives.list
       summary: Update the navigation property subscriptions in drives
+      description: The set of subscriptions on the list.
       operationId: drives.list_UpdateSubscriptions
       parameters:
         - name: drive-id
@@ -4210,6 +4268,7 @@ paths:
       tags:
         - drives.list
       summary: Delete navigation property subscriptions for drives
+      description: The set of subscriptions on the list.
       operationId: drives.list_DeleteSubscriptions
       parameters:
         - name: drive-id
@@ -4327,6 +4386,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get root from drives
+      description: The root folder of the drive. Read-only.
       operationId: drives_GetRoot
       parameters:
         - name: drive-id
@@ -4466,6 +4526,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Update the navigation property root in drives
+      description: The root folder of the drive. Read-only.
       operationId: drives_UpdateRoot
       parameters:
         - name: drive-id
@@ -4492,6 +4553,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Delete navigation property root for drives
+      description: The root folder of the drive. Read-only.
       operationId: drives_DeleteRoot
       parameters:
         - name: drive-id
@@ -4569,6 +4631,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get special from drives
+      description: Collection of common folders available in OneDrive. Read-only. Nullable.
       operationId: drives_ListSpecial
       parameters:
         - name: drive-id
@@ -4760,6 +4823,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Create new navigation property to special for drives
+      description: Collection of common folders available in OneDrive. Read-only. Nullable.
       operationId: drives_CreateSpecial
       parameters:
         - name: drive-id
@@ -4791,6 +4855,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Get special from drives
+      description: Collection of common folders available in OneDrive. Read-only. Nullable.
       operationId: drives_GetSpecial
       parameters:
         - name: drive-id
@@ -4947,6 +5012,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Update the navigation property special in drives
+      description: Collection of common folders available in OneDrive. Read-only. Nullable.
       operationId: drives_UpdateSpecial
       parameters:
         - name: drive-id
@@ -4980,6 +5046,7 @@ paths:
       tags:
         - drives.driveItem
       summary: Delete navigation property special for drives
+      description: Collection of common folders available in OneDrive. Read-only. Nullable.
       operationId: drives_DeleteSpecial
       parameters:
         - name: drive-id
@@ -5078,6 +5145,7 @@ paths:
       tags:
         - groups.drive
       summary: Get drive from groups
+      description: The group's default drive. Read-only.
       operationId: groups_GetDrive
       parameters:
         - name: group-id
@@ -5182,6 +5250,7 @@ paths:
       tags:
         - groups.drive
       summary: Update the navigation property drive in groups
+      description: The group's default drive. Read-only.
       operationId: groups_UpdateDrive
       parameters:
         - name: group-id
@@ -5208,6 +5277,7 @@ paths:
       tags:
         - groups.drive
       summary: Delete navigation property drive for groups
+      description: The group's default drive. Read-only.
       operationId: groups_DeleteDrive
       parameters:
         - name: group-id
@@ -5233,6 +5303,7 @@ paths:
       tags:
         - groups.drive
       summary: Get drives from groups
+      description: The group's drives. Read-only.
       operationId: groups_ListDrives
       parameters:
         - name: group-id
@@ -5367,6 +5438,7 @@ paths:
       tags:
         - groups.drive
       summary: Create new navigation property to drives for groups
+      description: The group's drives. Read-only.
       operationId: groups_CreateDrives
       parameters:
         - name: group-id
@@ -5398,6 +5470,7 @@ paths:
       tags:
         - groups.drive
       summary: Get drives from groups
+      description: The group's drives. Read-only.
       operationId: groups_GetDrives
       parameters:
         - name: group-id
@@ -5516,6 +5589,7 @@ paths:
       tags:
         - groups.drive
       summary: Update the navigation property drives in groups
+      description: The group's drives. Read-only.
       operationId: groups_UpdateDrives
       parameters:
         - name: group-id
@@ -5549,6 +5623,7 @@ paths:
       tags:
         - groups.drive
       summary: Delete navigation property drives for groups
+      description: The group's drives. Read-only.
       operationId: groups_DeleteDrives
       parameters:
         - name: group-id
@@ -5886,6 +5961,7 @@ paths:
       tags:
         - shares.driveItem
       summary: Get driveItem from shares
+      description: Used to access the underlying driveItem
       operationId: shares_GetDriveItem
       parameters:
         - name: sharedDriveItem-id
@@ -6025,6 +6101,7 @@ paths:
       tags:
         - shares.driveItem
       summary: Update the navigation property driveItem in shares
+      description: Used to access the underlying driveItem
       operationId: shares_UpdateDriveItem
       parameters:
         - name: sharedDriveItem-id
@@ -6051,6 +6128,7 @@ paths:
       tags:
         - shares.driveItem
       summary: Delete navigation property driveItem for shares
+      description: Used to access the underlying driveItem
       operationId: shares_DeleteDriveItem
       parameters:
         - name: sharedDriveItem-id
@@ -6128,6 +6206,7 @@ paths:
       tags:
         - shares.driveItem
       summary: Get items from shares
+      description: All driveItems contained in the sharing root. This collection cannot be enumerated.
       operationId: shares_ListItems
       parameters:
         - name: sharedDriveItem-id
@@ -6319,6 +6398,7 @@ paths:
       tags:
         - shares.driveItem
       summary: Create new navigation property to items for shares
+      description: All driveItems contained in the sharing root. This collection cannot be enumerated.
       operationId: shares_CreateItems
       parameters:
         - name: sharedDriveItem-id
@@ -6350,6 +6430,7 @@ paths:
       tags:
         - shares.driveItem
       summary: Get items from shares
+      description: All driveItems contained in the sharing root. This collection cannot be enumerated.
       operationId: shares_GetItems
       parameters:
         - name: sharedDriveItem-id
@@ -6506,6 +6587,7 @@ paths:
       tags:
         - shares.driveItem
       summary: Update the navigation property items in shares
+      description: All driveItems contained in the sharing root. This collection cannot be enumerated.
       operationId: shares_UpdateItems
       parameters:
         - name: sharedDriveItem-id
@@ -6539,6 +6621,7 @@ paths:
       tags:
         - shares.driveItem
       summary: Delete navigation property items for shares
+      description: All driveItems contained in the sharing root. This collection cannot be enumerated.
       operationId: shares_DeleteItems
       parameters:
         - name: sharedDriveItem-id
@@ -6637,6 +6720,7 @@ paths:
       tags:
         - shares.list
       summary: Get list from shares
+      description: Used to access the underlying list
       operationId: shares_GetList
       parameters:
         - name: sharedDriveItem-id
@@ -6740,6 +6824,7 @@ paths:
       tags:
         - shares.list
       summary: Update the navigation property list in shares
+      description: Used to access the underlying list
       operationId: shares_UpdateList
       parameters:
         - name: sharedDriveItem-id
@@ -6766,6 +6851,7 @@ paths:
       tags:
         - shares.list
       summary: Delete navigation property list for shares
+      description: Used to access the underlying list
       operationId: shares_DeleteList
       parameters:
         - name: sharedDriveItem-id
@@ -6791,6 +6877,7 @@ paths:
       tags:
         - shares.list
       summary: Get columns from shares
+      description: The collection of field definitions for this list.
       operationId: shares.list_ListColumns
       parameters:
         - name: sharedDriveItem-id
@@ -6929,6 +7016,7 @@ paths:
       tags:
         - shares.list
       summary: Create new navigation property to columns for shares
+      description: The collection of field definitions for this list.
       operationId: shares.list_CreateColumns
       parameters:
         - name: sharedDriveItem-id
@@ -6960,6 +7048,7 @@ paths:
       tags:
         - shares.list
       summary: Get columns from shares
+      description: The collection of field definitions for this list.
       operationId: shares.list_GetColumns
       parameters:
         - name: sharedDriveItem-id
@@ -7034,6 +7123,7 @@ paths:
       tags:
         - shares.list
       summary: Update the navigation property columns in shares
+      description: The collection of field definitions for this list.
       operationId: shares.list_UpdateColumns
       parameters:
         - name: sharedDriveItem-id
@@ -7067,6 +7157,7 @@ paths:
       tags:
         - shares.list
       summary: Delete navigation property columns for shares
+      description: The collection of field definitions for this list.
       operationId: shares.list_DeleteColumns
       parameters:
         - name: sharedDriveItem-id
@@ -7099,6 +7190,7 @@ paths:
       tags:
         - shares.list
       summary: Get contentTypes from shares
+      description: The collection of content types present in this list.
       operationId: shares.list_ListContentTypes
       parameters:
         - name: sharedDriveItem-id
@@ -7206,6 +7298,7 @@ paths:
       tags:
         - shares.list
       summary: Create new navigation property to contentTypes for shares
+      description: The collection of content types present in this list.
       operationId: shares.list_CreateContentTypes
       parameters:
         - name: sharedDriveItem-id
@@ -7237,6 +7330,7 @@ paths:
       tags:
         - shares.list
       summary: Get contentTypes from shares
+      description: The collection of content types present in this list.
       operationId: shares.list_GetContentTypes
       parameters:
         - name: sharedDriveItem-id
@@ -7308,6 +7402,7 @@ paths:
       tags:
         - shares.list
       summary: Update the navigation property contentTypes in shares
+      description: The collection of content types present in this list.
       operationId: shares.list_UpdateContentTypes
       parameters:
         - name: sharedDriveItem-id
@@ -7341,6 +7436,7 @@ paths:
       tags:
         - shares.list
       summary: Delete navigation property contentTypes for shares
+      description: The collection of content types present in this list.
       operationId: shares.list_DeleteContentTypes
       parameters:
         - name: sharedDriveItem-id
@@ -7373,6 +7469,7 @@ paths:
       tags:
         - shares.list
       summary: Get columnLinks from shares
+      description: The collection of columns that are required by this content type
       operationId: shares.list.contentTypes_ListColumnLinks
       parameters:
         - name: sharedDriveItem-id
@@ -7461,6 +7558,7 @@ paths:
       tags:
         - shares.list
       summary: Create new navigation property to columnLinks for shares
+      description: The collection of columns that are required by this content type
       operationId: shares.list.contentTypes_CreateColumnLinks
       parameters:
         - name: sharedDriveItem-id
@@ -7499,6 +7597,7 @@ paths:
       tags:
         - shares.list
       summary: Get columnLinks from shares
+      description: The collection of columns that are required by this content type
       operationId: shares.list.contentTypes_GetColumnLinks
       parameters:
         - name: sharedDriveItem-id
@@ -7561,6 +7660,7 @@ paths:
       tags:
         - shares.list
       summary: Update the navigation property columnLinks in shares
+      description: The collection of columns that are required by this content type
       operationId: shares.list.contentTypes_UpdateColumnLinks
       parameters:
         - name: sharedDriveItem-id
@@ -7601,6 +7701,7 @@ paths:
       tags:
         - shares.list
       summary: Delete navigation property columnLinks for shares
+      description: The collection of columns that are required by this content type
       operationId: shares.list.contentTypes_DeleteColumnLinks
       parameters:
         - name: sharedDriveItem-id
@@ -7640,6 +7741,7 @@ paths:
       tags:
         - shares.list
       summary: Get drive from shares
+      description: 'Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].'
       operationId: shares.list_GetDrive
       parameters:
         - name: sharedDriveItem-id
@@ -7744,6 +7846,7 @@ paths:
       tags:
         - shares.list
       summary: Update the navigation property drive in shares
+      description: 'Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].'
       operationId: shares.list_UpdateDrive
       parameters:
         - name: sharedDriveItem-id
@@ -7770,6 +7873,7 @@ paths:
       tags:
         - shares.list
       summary: Delete navigation property drive for shares
+      description: 'Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].'
       operationId: shares.list_DeleteDrive
       parameters:
         - name: sharedDriveItem-id
@@ -7795,6 +7899,7 @@ paths:
       tags:
         - shares.list
       summary: Get items from shares
+      description: All items contained in the list.
       operationId: shares.list_ListItems
       parameters:
         - name: sharedDriveItem-id
@@ -7918,6 +8023,7 @@ paths:
       tags:
         - shares.list
       summary: Create new navigation property to items for shares
+      description: All items contained in the list.
       operationId: shares.list_CreateItems
       parameters:
         - name: sharedDriveItem-id
@@ -7949,6 +8055,7 @@ paths:
       tags:
         - shares.list
       summary: Get items from shares
+      description: All items contained in the list.
       operationId: shares.list_GetItems
       parameters:
         - name: sharedDriveItem-id
@@ -8057,6 +8164,7 @@ paths:
       tags:
         - shares.list
       summary: Update the navigation property items in shares
+      description: All items contained in the list.
       operationId: shares.list_UpdateItems
       parameters:
         - name: sharedDriveItem-id
@@ -8090,6 +8198,7 @@ paths:
       tags:
         - shares.list
       summary: Delete navigation property items for shares
+      description: All items contained in the list.
       operationId: shares.list_DeleteItems
       parameters:
         - name: sharedDriveItem-id
@@ -8122,6 +8231,7 @@ paths:
       tags:
         - shares.list
       summary: Get analytics from shares
+      description: Analytics about the view activities that took place on this item.
       operationId: shares.list.items_GetAnalytics
       parameters:
         - name: sharedDriveItem-id
@@ -8199,6 +8309,7 @@ paths:
       tags:
         - shares.list
       summary: Get ref of analytics from shares
+      description: Analytics about the view activities that took place on this item.
       operationId: shares.list.items_GetRefAnalytics
       parameters:
         - name: sharedDriveItem-id
@@ -8245,6 +8356,7 @@ paths:
       tags:
         - shares.list
       summary: Update the ref of navigation property analytics in shares
+      description: Analytics about the view activities that took place on this item.
       operationId: shares.list.items_SetRefAnalytics
       parameters:
         - name: sharedDriveItem-id
@@ -8280,6 +8392,7 @@ paths:
       tags:
         - shares.list
       summary: Delete ref of navigation property analytics for shares
+      description: Analytics about the view activities that took place on this item.
       operationId: shares.list.items_DeleteRefAnalytics
       parameters:
         - name: sharedDriveItem-id
@@ -8312,6 +8425,7 @@ paths:
       tags:
         - shares.list
       summary: Get driveItem from shares
+      description: 'For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]'
       operationId: shares.list.items_GetDriveItem
       parameters:
         - name: sharedDriveItem-id
@@ -8468,6 +8582,7 @@ paths:
       tags:
         - shares.list
       summary: Update the navigation property driveItem in shares
+      description: 'For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]'
       operationId: shares.list.items_UpdateDriveItem
       parameters:
         - name: sharedDriveItem-id
@@ -8501,6 +8616,7 @@ paths:
       tags:
         - shares.list
       summary: Delete navigation property driveItem for shares
+      description: 'For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]'
       operationId: shares.list.items_DeleteDriveItem
       parameters:
         - name: sharedDriveItem-id
@@ -8599,6 +8715,7 @@ paths:
       tags:
         - shares.list
       summary: Get fields from shares
+      description: The values of the columns set on this list item.
       operationId: shares.list.items_GetFields
       parameters:
         - name: sharedDriveItem-id
@@ -8653,6 +8770,7 @@ paths:
       tags:
         - shares.list
       summary: Update the navigation property fields in shares
+      description: The values of the columns set on this list item.
       operationId: shares.list.items_UpdateFields
       parameters:
         - name: sharedDriveItem-id
@@ -8686,6 +8804,7 @@ paths:
       tags:
         - shares.list
       summary: Delete navigation property fields for shares
+      description: The values of the columns set on this list item.
       operationId: shares.list.items_DeleteFields
       parameters:
         - name: sharedDriveItem-id
@@ -8805,6 +8924,7 @@ paths:
       tags:
         - shares.list
       summary: Get versions from shares
+      description: The list of previous versions of the list item.
       operationId: shares.list.items_ListVersions
       parameters:
         - name: sharedDriveItem-id
@@ -8901,6 +9021,7 @@ paths:
       tags:
         - shares.list
       summary: Create new navigation property to versions for shares
+      description: The list of previous versions of the list item.
       operationId: shares.list.items_CreateVersions
       parameters:
         - name: sharedDriveItem-id
@@ -8939,6 +9060,7 @@ paths:
       tags:
         - shares.list
       summary: Get versions from shares
+      description: The list of previous versions of the list item.
       operationId: shares.list.items_GetVersions
       parameters:
         - name: sharedDriveItem-id
@@ -9012,6 +9134,7 @@ paths:
       tags:
         - shares.list
       summary: Update the navigation property versions in shares
+      description: The list of previous versions of the list item.
       operationId: shares.list.items_UpdateVersions
       parameters:
         - name: sharedDriveItem-id
@@ -9052,6 +9175,7 @@ paths:
       tags:
         - shares.list
       summary: Delete navigation property versions for shares
+      description: The list of previous versions of the list item.
       operationId: shares.list.items_DeleteVersions
       parameters:
         - name: sharedDriveItem-id
@@ -9091,6 +9215,7 @@ paths:
       tags:
         - shares.list
       summary: Get fields from shares
+      description: A collection of the fields and values for this version of the list item.
       operationId: shares.list.items.versions_GetFields
       parameters:
         - name: sharedDriveItem-id
@@ -9152,6 +9277,7 @@ paths:
       tags:
         - shares.list
       summary: Update the navigation property fields in shares
+      description: A collection of the fields and values for this version of the list item.
       operationId: shares.list.items.versions_UpdateFields
       parameters:
         - name: sharedDriveItem-id
@@ -9192,6 +9318,7 @@ paths:
       tags:
         - shares.list
       summary: Delete navigation property fields for shares
+      description: A collection of the fields and values for this version of the list item.
       operationId: shares.list.items.versions_DeleteFields
       parameters:
         - name: sharedDriveItem-id
@@ -9265,6 +9392,7 @@ paths:
       tags:
         - shares.list
       summary: Get subscriptions from shares
+      description: The set of subscriptions on the list.
       operationId: shares.list_ListSubscriptions
       parameters:
         - name: sharedDriveItem-id
@@ -9382,6 +9510,7 @@ paths:
       tags:
         - shares.list
       summary: Create new navigation property to subscriptions for shares
+      description: The set of subscriptions on the list.
       operationId: shares.list_CreateSubscriptions
       parameters:
         - name: sharedDriveItem-id
@@ -9413,6 +9542,7 @@ paths:
       tags:
         - shares.list
       summary: Get subscriptions from shares
+      description: The set of subscriptions on the list.
       operationId: shares.list_GetSubscriptions
       parameters:
         - name: sharedDriveItem-id
@@ -9480,6 +9610,7 @@ paths:
       tags:
         - shares.list
       summary: Update the navigation property subscriptions in shares
+      description: The set of subscriptions on the list.
       operationId: shares.list_UpdateSubscriptions
       parameters:
         - name: sharedDriveItem-id
@@ -9513,6 +9644,7 @@ paths:
       tags:
         - shares.list
       summary: Delete navigation property subscriptions for shares
+      description: The set of subscriptions on the list.
       operationId: shares.list_DeleteSubscriptions
       parameters:
         - name: sharedDriveItem-id
@@ -9545,6 +9677,7 @@ paths:
       tags:
         - shares.listItem
       summary: Get listItem from shares
+      description: Used to access the underlying listItem
       operationId: shares_GetListItem
       parameters:
         - name: sharedDriveItem-id
@@ -9640,6 +9773,7 @@ paths:
       tags:
         - shares.listItem
       summary: Update the navigation property listItem in shares
+      description: Used to access the underlying listItem
       operationId: shares_UpdateListItem
       parameters:
         - name: sharedDriveItem-id
@@ -9666,6 +9800,7 @@ paths:
       tags:
         - shares.listItem
       summary: Delete navigation property listItem for shares
+      description: Used to access the underlying listItem
       operationId: shares_DeleteListItem
       parameters:
         - name: sharedDriveItem-id
@@ -9691,6 +9826,7 @@ paths:
       tags:
         - shares.listItem
       summary: Get analytics from shares
+      description: Analytics about the view activities that took place on this item.
       operationId: shares.listItem_GetAnalytics
       parameters:
         - name: sharedDriveItem-id
@@ -9758,6 +9894,7 @@ paths:
       tags:
         - shares.listItem
       summary: Get ref of analytics from shares
+      description: Analytics about the view activities that took place on this item.
       operationId: shares.listItem_GetRefAnalytics
       parameters:
         - name: sharedDriveItem-id
@@ -9794,6 +9931,7 @@ paths:
       tags:
         - shares.listItem
       summary: Update the ref of navigation property analytics in shares
+      description: Analytics about the view activities that took place on this item.
       operationId: shares.listItem_SetRefAnalytics
       parameters:
         - name: sharedDriveItem-id
@@ -9822,6 +9960,7 @@ paths:
       tags:
         - shares.listItem
       summary: Delete ref of navigation property analytics for shares
+      description: Analytics about the view activities that took place on this item.
       operationId: shares.listItem_DeleteRefAnalytics
       parameters:
         - name: sharedDriveItem-id
@@ -9847,6 +9986,7 @@ paths:
       tags:
         - shares.listItem
       summary: Get driveItem from shares
+      description: 'For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]'
       operationId: shares.listItem_GetDriveItem
       parameters:
         - name: sharedDriveItem-id
@@ -9986,6 +10126,7 @@ paths:
       tags:
         - shares.listItem
       summary: Update the navigation property driveItem in shares
+      description: 'For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]'
       operationId: shares.listItem_UpdateDriveItem
       parameters:
         - name: sharedDriveItem-id
@@ -10012,6 +10153,7 @@ paths:
       tags:
         - shares.listItem
       summary: Delete navigation property driveItem for shares
+      description: 'For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]'
       operationId: shares.listItem_DeleteDriveItem
       parameters:
         - name: sharedDriveItem-id
@@ -10089,6 +10231,7 @@ paths:
       tags:
         - shares.listItem
       summary: Get fields from shares
+      description: The values of the columns set on this list item.
       operationId: shares.listItem_GetFields
       parameters:
         - name: sharedDriveItem-id
@@ -10136,6 +10279,7 @@ paths:
       tags:
         - shares.listItem
       summary: Update the navigation property fields in shares
+      description: The values of the columns set on this list item.
       operationId: shares.listItem_UpdateFields
       parameters:
         - name: sharedDriveItem-id
@@ -10162,6 +10306,7 @@ paths:
       tags:
         - shares.listItem
       summary: Delete navigation property fields for shares
+      description: The values of the columns set on this list item.
       operationId: shares.listItem_DeleteFields
       parameters:
         - name: sharedDriveItem-id
@@ -10260,6 +10405,7 @@ paths:
       tags:
         - shares.listItem
       summary: Get versions from shares
+      description: The list of previous versions of the list item.
       operationId: shares.listItem_ListVersions
       parameters:
         - name: sharedDriveItem-id
@@ -10349,6 +10495,7 @@ paths:
       tags:
         - shares.listItem
       summary: Create new navigation property to versions for shares
+      description: The list of previous versions of the list item.
       operationId: shares.listItem_CreateVersions
       parameters:
         - name: sharedDriveItem-id
@@ -10380,6 +10527,7 @@ paths:
       tags:
         - shares.listItem
       summary: Get versions from shares
+      description: The list of previous versions of the list item.
       operationId: shares.listItem_GetVersions
       parameters:
         - name: sharedDriveItem-id
@@ -10445,6 +10593,7 @@ paths:
       tags:
         - shares.listItem
       summary: Update the navigation property versions in shares
+      description: The list of previous versions of the list item.
       operationId: shares.listItem_UpdateVersions
       parameters:
         - name: sharedDriveItem-id
@@ -10478,6 +10627,7 @@ paths:
       tags:
         - shares.listItem
       summary: Delete navigation property versions for shares
+      description: The list of previous versions of the list item.
       operationId: shares.listItem_DeleteVersions
       parameters:
         - name: sharedDriveItem-id
@@ -10510,6 +10660,7 @@ paths:
       tags:
         - shares.listItem
       summary: Get fields from shares
+      description: A collection of the fields and values for this version of the list item.
       operationId: shares.listItem.versions_GetFields
       parameters:
         - name: sharedDriveItem-id
@@ -10564,6 +10715,7 @@ paths:
       tags:
         - shares.listItem
       summary: Update the navigation property fields in shares
+      description: A collection of the fields and values for this version of the list item.
       operationId: shares.listItem.versions_UpdateFields
       parameters:
         - name: sharedDriveItem-id
@@ -10597,6 +10749,7 @@ paths:
       tags:
         - shares.listItem
       summary: Delete navigation property fields for shares
+      description: A collection of the fields and values for this version of the list item.
       operationId: shares.listItem.versions_DeleteFields
       parameters:
         - name: sharedDriveItem-id
@@ -10656,6 +10809,7 @@ paths:
       tags:
         - shares.permission
       summary: Get permission from shares
+      description: Used to access the permission representing the underlying sharing link
       operationId: shares_GetPermission
       parameters:
         - name: sharedDriveItem-id
@@ -10712,6 +10866,7 @@ paths:
       tags:
         - shares.permission
       summary: Update the navigation property permission in shares
+      description: Used to access the permission representing the underlying sharing link
       operationId: shares_UpdatePermission
       parameters:
         - name: sharedDriveItem-id
@@ -10738,6 +10893,7 @@ paths:
       tags:
         - shares.permission
       summary: Delete navigation property permission for shares
+      description: Used to access the permission representing the underlying sharing link
       operationId: shares_DeletePermission
       parameters:
         - name: sharedDriveItem-id
@@ -10808,6 +10964,7 @@ paths:
       tags:
         - shares.driveItem
       summary: Get root from shares
+      description: Used to access the underlying driveItem. Deprecated -- use driveItem instead.
       operationId: shares_GetRoot
       parameters:
         - name: sharedDriveItem-id
@@ -10947,6 +11104,7 @@ paths:
       tags:
         - shares.driveItem
       summary: Update the navigation property root in shares
+      description: Used to access the underlying driveItem. Deprecated -- use driveItem instead.
       operationId: shares_UpdateRoot
       parameters:
         - name: sharedDriveItem-id
@@ -10973,6 +11131,7 @@ paths:
       tags:
         - shares.driveItem
       summary: Delete navigation property root for shares
+      description: Used to access the underlying driveItem. Deprecated -- use driveItem instead.
       operationId: shares_DeleteRoot
       parameters:
         - name: sharedDriveItem-id
@@ -11050,6 +11209,7 @@ paths:
       tags:
         - shares.site
       summary: Get site from shares
+      description: Used to access the underlying site
       operationId: shares_GetSite
       parameters:
         - name: sharedDriveItem-id
@@ -11184,6 +11344,7 @@ paths:
       tags:
         - shares.site
       summary: Update the navigation property site in shares
+      description: Used to access the underlying site
       operationId: shares_UpdateSite
       parameters:
         - name: sharedDriveItem-id
@@ -11210,6 +11371,7 @@ paths:
       tags:
         - shares.site
       summary: Delete navigation property site for shares
+      description: Used to access the underlying site
       operationId: shares_DeleteSite
       parameters:
         - name: sharedDriveItem-id
@@ -11235,6 +11397,7 @@ paths:
       tags:
         - users.drive
       summary: Get drive from users
+      description: The user's OneDrive. Read-only.
       operationId: users_GetDrive
       parameters:
         - name: user-id
@@ -11339,6 +11502,7 @@ paths:
       tags:
         - users.drive
       summary: Update the navigation property drive in users
+      description: The user's OneDrive. Read-only.
       operationId: users_UpdateDrive
       parameters:
         - name: user-id
@@ -11365,6 +11529,7 @@ paths:
       tags:
         - users.drive
       summary: Delete navigation property drive for users
+      description: The user's OneDrive. Read-only.
       operationId: users_DeleteDrive
       parameters:
         - name: user-id
@@ -11390,6 +11555,7 @@ paths:
       tags:
         - users.drive
       summary: Get drives from users
+      description: A collection of drives available for this user. Read-only.
       operationId: users_ListDrives
       parameters:
         - name: user-id
@@ -11524,6 +11690,7 @@ paths:
       tags:
         - users.drive
       summary: Create new navigation property to drives for users
+      description: A collection of drives available for this user. Read-only.
       operationId: users_CreateDrives
       parameters:
         - name: user-id
@@ -11555,6 +11722,7 @@ paths:
       tags:
         - users.drive
       summary: Get drives from users
+      description: A collection of drives available for this user. Read-only.
       operationId: users_GetDrives
       parameters:
         - name: user-id
@@ -11673,6 +11841,7 @@ paths:
       tags:
         - users.drive
       summary: Update the navigation property drives in users
+      description: A collection of drives available for this user. Read-only.
       operationId: users_UpdateDrives
       parameters:
         - name: user-id
@@ -11706,6 +11875,7 @@ paths:
       tags:
         - users.drive
       summary: Delete navigation property drives for users
+      description: A collection of drives available for this user. Read-only.
       operationId: users_DeleteDrives
       parameters:
         - name: user-id
@@ -13602,7 +13772,7 @@ components:
               description: State of license assignments for this user. Returned only on $select. Read-only.
             mail:
               type: string
-              description: 'The SMTP address for the user, for example, ''jeff@contoso.onmicrosoft.com''.NOTE: While this property can contain accent characters, using them can cause access issues with other Microsoft applications for the user.Returned by default. Supports $filter and endsWith.'
+              description: 'The SMTP address for the user, for example, ''jeff@contoso.onmicrosoft.com''. Changes to this property will also update the user''s proxyAddresses collection to include the value as an SMTP address. While this property can contain accent characters, using them can cause access issues with other Microsoft applications for the user. Supports $filter and endsWith.'
               nullable: true
             mailNickname:
               type: string
@@ -15837,6 +16007,10 @@ components:
               type: string
               description: Enrollment time of the device. This property is read-only.
               format: date-time
+            ethernetMacAddress:
+              type: string
+              description: Ethernet MAC. This property is read-only.
+              nullable: true
             exchangeAccessState:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementExchangeAccessState'
             exchangeAccessStateReason:
@@ -15850,6 +16024,10 @@ components:
               type: integer
               description: Free Storage in Bytes. This property is read-only.
               format: int64
+            iccid:
+              type: string
+              description: 'Integrated Circuit Card Identifier, it is A SIM card''s unique identification number. This property is read-only.'
+              nullable: true
             imei:
               type: string
               description: IMEI. This property is read-only.
@@ -15889,6 +16067,10 @@ components:
               type: string
               description: Model of the device. This property is read-only.
               nullable: true
+            notes:
+              type: string
+              description: Notes on the device created by IT Admin
+              nullable: true
             operatingSystem:
               type: string
               description: 'Operating system of the device. Windows, iOS, etc. This property is read-only.'
@@ -15903,6 +16085,10 @@ components:
               type: string
               description: Phone number of the device. This property is read-only.
               nullable: true
+            physicalMemoryInBytes:
+              type: integer
+              description: Total Memory in Bytes. This property is read-only.
+              format: int64
             remoteAssistanceSessionErrorDetails:
               type: string
               description: An error string that identifies issues when creating Remote Assistance session objects. This property is read-only.
@@ -15923,6 +16109,10 @@ components:
               type: integer
               description: Total Storage in Bytes. This property is read-only.
               format: int64
+            udid:
+              type: string
+              description: Unique Device Identifier for iOS and macOS devices. This property is read-only.
+              nullable: true
             userDisplayName:
               type: string
               description: User display name. This property is read-only.
@@ -16325,7 +16515,7 @@ components:
               nullable: true
             description:
               type: string
-              description: An optional description for the team.
+              description: 'An optional description for the team. Maximum length: 1024 characters.'
               nullable: true
             displayName:
               type: string
@@ -17396,6 +17586,9 @@ components:
         - windowsAutoEnrollment
         - windowsBulkAzureDomainJoin
         - windowsCoManagement
+        - windowsAzureADJoinUsingDeviceAuth
+        - appleUserEnrollment
+        - appleUserEnrollmentWithServiceAccount
       type: string
     microsoft.graph.deviceHealthAttestationState:
       title: deviceHealthAttestationState
