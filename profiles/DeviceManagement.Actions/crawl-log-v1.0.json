@@ -124,10 +124,6 @@
     "/deviceManagement/windowsAutopilotDeviceIdentities/{windowsAutopilotDeviceIdentity-id}/microsoft.graph.updateDeviceProperties": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml"
-    },
-    "/deviceManagement/windowsAutopilotDeviceIdentities/microsoft.graph.deleteDevices": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml"
     }
   }
 }

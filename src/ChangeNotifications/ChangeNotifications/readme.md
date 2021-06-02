@@ -34,6 +34,6 @@ subject-prefix: ''
 ### Versioning
 
 ``` yaml
-module-version: 1.5.1
+module-version: 1.6.0
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```
