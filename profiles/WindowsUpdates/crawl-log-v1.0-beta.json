@@ -1,6 +1,38 @@
 {
   "resources": [],
   "operations": {
+    "/admin/serviceAnnouncement/healthOverviews/{serviceHealth-id}/issues/{serviceHealthIssue-id}/microsoft.graph.incidentReport()": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/WindowsUpdates.yml"
+    },
+    "/admin/serviceAnnouncement/issues/{serviceHealthIssue-id}/microsoft.graph.incidentReport()": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/WindowsUpdates.yml"
+    },
+    "/admin/serviceAnnouncement/messages/microsoft.graph.archive": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/WindowsUpdates.yml"
+    },
+    "/admin/serviceAnnouncement/messages/microsoft.graph.favorite": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/WindowsUpdates.yml"
+    },
+    "/admin/serviceAnnouncement/messages/microsoft.graph.markRead": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/WindowsUpdates.yml"
+    },
+    "/admin/serviceAnnouncement/messages/microsoft.graph.markUnread": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/WindowsUpdates.yml"
+    },
+    "/admin/serviceAnnouncement/messages/microsoft.graph.unarchive": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/WindowsUpdates.yml"
+    },
+    "/admin/serviceAnnouncement/messages/microsoft.graph.unfavorite": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/WindowsUpdates.yml"
+    },
     "/admin/windows": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/WindowsUpdates.yml"

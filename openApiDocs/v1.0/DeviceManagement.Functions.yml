@@ -11,6 +11,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function downloadApplePushNotificationCertificateSigningRequest
+      description: Download Apple push notification certificate signing request
       operationId: deviceManagement.applePushNotificationCertificate_downloadApplePushNotificationCertificateSigningRequest
       responses:
         '200':
@@ -28,6 +29,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getEffectivePermissions
+      description: Retrieves the effective permissions of the currently authenticated user
       operationId: deviceManagement_getEffectivePermissions
       parameters:
         - name: scope
