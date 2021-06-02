@@ -223,12 +223,12 @@ directive:
       subject: (.*)(IdentityGovernance)$
     remove: true
   - where:
-      verb: New|Remove|Update|Get
-      subject: (.*)(IdentityGovernance)Term
+      verb: Get|Remove|Update
+      subject: (.*)(IdentityGovernance)AccessReview$
     remove: true
   - where:
-      verb: New|Remove|Update|Get|Add|Invoke|Reset|Send|Set|Stop
-      subject: (.*)(IdentityGovernance)AccessReview
+      verb: New|Remove|Update|Get
+      subject: (.*)(IdentityGovernance)Term
     remove: true
   - where:
       verb: New|Remove|Update|Get|Invoke
@@ -263,6 +263,10 @@ directive:
       subject: $1Role$2
   - where:
       subject: (.*)(IdentityGovernance)(EntitlementManagement)(.*)$
+    set:
+      subject: $1$3$4
+  - where:
+      subject: (.*)(IdentityGovernance)(AccessReviewDefinition|AccessReviewHistoryDefinition|AccessReviewPolicy)(.*)$
     set:
       subject: $1$3$4
 ```
