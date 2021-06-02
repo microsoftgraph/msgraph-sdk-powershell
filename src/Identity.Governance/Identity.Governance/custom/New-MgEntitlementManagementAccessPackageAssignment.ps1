@@ -28,16 +28,16 @@ https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.gove
 #>
 function New-MgEntitlementManagementAccessPackageAssignment {
 [OutputType([Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageAssignment])]
-[CmdletBinding(DefaultParameterSetName='BulkAddExistingUser', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
+[CmdletBinding(DefaultParameterSetName='CreateMultipleRequestAdminAddExistingUser', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 [Microsoft.Graph.PowerShell.Profile('v1.0-beta')]
 param(
 
     [Parameter(Mandatory = $True,
-        ParameterSetName='BulkAddExistingGroupMember')]
+        ParameterSetName='CreateMultipleRequestAdminAddExistingGroupMember')]
     [PSCustomObject[]]$RequiredGroupMember,
 
     [Parameter(Mandatory = $True,
-        ParameterSetName='BulkAddExistingUser')]
+        ParameterSetName='CreateMultipleRequestAdminAddExistingUser')]
     [ValidateScript( {
             try {
                 [System.Guid]::Parse($_) | Out-Null
@@ -49,34 +49,35 @@ param(
         })]
     [string[]]$RequiredUserId,
 
-    [Parameter()]
+    [Parameter(ParameterSetName='CreateMultipleRequestAdminAddExistingUser')]
+    [Parameter(ParameterSetName='CreateMultipleRequestAdminAddExistingGroupMember')]
     [Microsoft.Graph.PowerShell.Models.MicrosoftGraphAccessPackageAssignment[]]$ExistingAssignment,
 
-    [Parameter(ParameterSetName='BulkAddExistingUser')]
-    [Parameter(ParameterSetName='BulkAddExistingGroupMember')]
+    [Parameter(ParameterSetName='CreateMultipleRequestAdminAddExistingUser')]
+    [Parameter(ParameterSetName='CreateMultipleRequestAdminAddExistingGroupMember')]
     [Microsoft.Graph.PowerShell.Category('Body')]
     [Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageAnswer[]]
     # Answers provided by the requestor to accessPackageQuestions asked of them at the time of request.
     # To construct, see NOTES section for ANSWERS properties and create a hash table.
     ${Answers},
 
-    [Parameter(ParameterSetName='BulkAddExistingUser')]
-    [Parameter(ParameterSetName='BulkAddExistingGroupMember')]
+    [Parameter(ParameterSetName='CreateMultipleRequestAdminAddExistingUser')]
+    [Parameter(ParameterSetName='CreateMultipleRequestAdminAddExistingGroupMember')]
     [Microsoft.Graph.PowerShell.Category('Body')]
     [System.String]
     # The requestor's supplied justification.
     ${Justification},
 
-    [Parameter(ParameterSetName='BulkAddExistingUser')]
-    [Parameter(ParameterSetName='BulkAddExistingGroupMember')]
+    [Parameter(ParameterSetName='CreateMultipleRequestAdminAddExistingUser')]
+    [Parameter(ParameterSetName='CreateMultipleRequestAdminAddExistingGroupMember')]
     [Microsoft.Graph.PowerShell.Category('Body')]
     [string]
     ${StartDate},
 
     [Parameter(Mandatory = $True,
-        ParameterSetName='BulkAddExistingUser')]
+        ParameterSetName='CreateMultipleRequestAdminAddExistingUser')]
     [Parameter(Mandatory = $True,
-    ParameterSetName='BulkAddExistingGroupMember')]
+    ParameterSetName='CreateMultipleRequestAdminAddExistingGroupMember')]
     [Microsoft.Graph.PowerShell.Category('Body')]
     [ValidateScript( {
             try {
@@ -91,9 +92,9 @@ param(
     ${AccessPackageId},
 
     [Parameter(Mandatory = $True,
-        ParameterSetName='BulkAddExistingUser')]
+        ParameterSetName='CreateMultipleRequestAdminAddExistingUser')]
     [Parameter(Mandatory = $True,
-        ParameterSetName='BulkAddExistingGroupMember')]
+        ParameterSetName='CreateMultipleRequestAdminAddExistingGroupMember')]
     [Microsoft.Graph.PowerShell.Category('Body')]
     [ValidateScript( {
             try {
