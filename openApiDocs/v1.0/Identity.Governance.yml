@@ -248,6 +248,7 @@ paths:
       tags:
         - agreements.agreementAcceptance
       summary: Get acceptances from agreements
+      description: Read-only. Information about acceptances of this agreement.
       operationId: agreements_ListAcceptances
       parameters:
         - name: agreement-id
@@ -365,6 +366,7 @@ paths:
       tags:
         - agreements.agreementAcceptance
       summary: Create new navigation property to acceptances for agreements
+      description: Read-only. Information about acceptances of this agreement.
       operationId: agreements_CreateAcceptances
       parameters:
         - name: agreement-id
@@ -396,6 +398,7 @@ paths:
       tags:
         - agreements.agreementAcceptance
       summary: Get acceptances from agreements
+      description: Read-only. Information about acceptances of this agreement.
       operationId: agreements_GetAcceptances
       parameters:
         - name: agreement-id
@@ -463,6 +466,7 @@ paths:
       tags:
         - agreements.agreementAcceptance
       summary: Update the navigation property acceptances in agreements
+      description: Read-only. Information about acceptances of this agreement.
       operationId: agreements_UpdateAcceptances
       parameters:
         - name: agreement-id
@@ -496,6 +500,7 @@ paths:
       tags:
         - agreements.agreementAcceptance
       summary: Delete navigation property acceptances for agreements
+      description: Read-only. Information about acceptances of this agreement.
       operationId: agreements_DeleteAcceptances
       parameters:
         - name: agreement-id
@@ -528,6 +533,7 @@ paths:
       tags:
         - agreements.agreementFile
       summary: Get file from agreements
+      description: Default PDF linked to this agreement.
       operationId: agreements_GetFile
       parameters:
         - name: agreement-id
@@ -589,6 +595,7 @@ paths:
       tags:
         - agreements.agreementFile
       summary: Update the navigation property file in agreements
+      description: Default PDF linked to this agreement.
       operationId: agreements_UpdateFile
       parameters:
         - name: agreement-id
@@ -615,6 +622,7 @@ paths:
       tags:
         - agreements.agreementFile
       summary: Delete navigation property file for agreements
+      description: Default PDF linked to this agreement.
       operationId: agreements_DeleteFile
       parameters:
         - name: agreement-id
@@ -1197,6 +1205,7 @@ paths:
       tags:
         - agreements.agreementFileLocalization
       summary: Get files from agreements
+      description: 'PDFs linked to this agreement. Note: This property is in the process of being deprecated. Use the  file property instead.'
       operationId: agreements_ListFiles
       parameters:
         - name: agreement-id
@@ -1298,6 +1307,7 @@ paths:
       tags:
         - agreements.agreementFileLocalization
       summary: Create new navigation property to files for agreements
+      description: 'PDFs linked to this agreement. Note: This property is in the process of being deprecated. Use the  file property instead.'
       operationId: agreements_CreateFiles
       parameters:
         - name: agreement-id
@@ -1329,6 +1339,7 @@ paths:
       tags:
         - agreements.agreementFileLocalization
       summary: Get files from agreements
+      description: 'PDFs linked to this agreement. Note: This property is in the process of being deprecated. Use the  file property instead.'
       operationId: agreements_GetFiles
       parameters:
         - name: agreement-id
@@ -1398,6 +1409,7 @@ paths:
       tags:
         - agreements.agreementFileLocalization
       summary: Update the navigation property files in agreements
+      description: 'PDFs linked to this agreement. Note: This property is in the process of being deprecated. Use the  file property instead.'
       operationId: agreements_UpdateFiles
       parameters:
         - name: agreement-id
@@ -1431,6 +1443,7 @@ paths:
       tags:
         - agreements.agreementFileLocalization
       summary: Delete navigation property files for agreements
+      description: 'PDFs linked to this agreement. Note: This property is in the process of being deprecated. Use the  file property instead.'
       operationId: agreements_DeleteFiles
       parameters:
         - name: agreement-id
@@ -2111,6 +2124,7 @@ paths:
       tags:
         - users.agreementAcceptance
       summary: Get agreementAcceptances from users
+      description: The user's terms of use acceptance statuses. Read-only. Nullable.
       operationId: users_ListAgreementAcceptances
       parameters:
         - name: user-id
@@ -2229,6 +2243,7 @@ paths:
       tags:
         - users.agreementAcceptance
       summary: Get ref of agreementAcceptances from users
+      description: The user's terms of use acceptance statuses. Read-only. Nullable.
       operationId: users_ListRefAgreementAcceptances
       parameters:
         - name: user-id
@@ -2309,6 +2324,7 @@ paths:
       tags:
         - users.agreementAcceptance
       summary: Create new navigation property ref to agreementAcceptances for users
+      description: The user's terms of use acceptance statuses. Read-only. Nullable.
       operationId: users_CreateRefAgreementAcceptances
       parameters:
         - name: user-id
@@ -2587,51 +2603,52 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Timestamp when review series was created.
+              description: Timestamp when the access review series was created. Supports $select.
               format: date-time
               nullable: true
             descriptionForAdmins:
               type: string
-              description: Description provided by review creators to provide more context of the review to admins.
+              description: Description provided by review creators to provide more context of the review to admins. Supports $select.
               nullable: true
             descriptionForReviewers:
               type: string
-              description: Description provided  by review creators to provide more context of the review to reviewers. Reviewers will see this description in the email sent to them requesting their review.
+              description: Description provided  by review creators to provide more context of the review to reviewers. Reviewers will see this description in the email sent to them requesting their review. Supports $select.
               nullable: true
             displayName:
               type: string
-              description: Name of access review series. Required on create.
+              description: Name of the access review series. Required on create. Supports $select.
               nullable: true
             fallbackReviewers:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScope'
+              description: 'This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user''s manager does not exist. Supports $select.'
             instanceEnumerationScope:
               $ref: '#/components/schemas/microsoft.graph.accessReviewScope'
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Timestamp when review series was last modified.
+              description: Timestamp when the access review series was last modified. Supports $select.
               format: date-time
               nullable: true
             reviewers:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScope'
-              description: This collection of access review scopes is used to define who are the reviewers. See accessReviewReviewerScope. Required on create.
+              description: 'This collection of access review scopes is used to define who are the reviewers. Required on create. Supports $select. For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API.'
             scope:
               $ref: '#/components/schemas/microsoft.graph.accessReviewScope'
             settings:
               $ref: '#/components/schemas/microsoft.graph.accessReviewScheduleSettings'
             status:
               type: string
-              description: 'This read-only field specifies the status of an accessReview. The typical states include Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed.'
+              description: 'This read-only field specifies the status of an access review. The typical states include Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed. Supports $select, $orderby, and $filter (eq only).'
               nullable: true
             instances:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewInstance'
-              description: 'Set of access reviews instances for this access review series. Access reviews that do not recur will only have one instance; otherwise, there will be an instance for each recurrence.'
+              description: 'Set of access reviews instances for this access review series. Access reviews that do not recur will only have one instance; otherwise, there is an instance for each recurrence.'
           additionalProperties:
             type: object
     microsoft.graph.consentRequestFilterByCurrentUserOptions:
@@ -2806,7 +2823,7 @@ components:
           nullable: true
         queryRoot:
           type: string
-          description: 'In the scenario where reviewers need to be specified dynamically, this property is used to indicate the relative source of the query. This property is only required if a relative query (i.e., ./manager) is specified.'
+          description: 'In the scenario where reviewers need to be specified dynamically, this property is used to indicate the relative source of the query. This property is only required if a relative query, for example, ./manager, is specified. Possible value: decisions.'
           nullable: true
         queryType:
           type: string
@@ -2825,14 +2842,14 @@ components:
           description: 'Optional field. Describes the  actions to take once a review is complete. There are two types that are currently supported: removeAccessApplyAction (default) and disableAndDeleteUserApplyAction. Field only needs to be specified in the case of disableAndDeleteUserApplyAction. See accessReviewApplyAction.'
         autoApplyDecisionsEnabled:
           type: boolean
-          description: Flag to indicate whether auto-apply feature is enabled.
+          description: 'Indicates whether decisions are automatically applied. When set to false, a user must apply the decisions manually once the reviewer completes the access review. When set to true, decisions are applied automatically after the access review instance duration ends, whether or not the reviewers have responded. Default value is false.'
         defaultDecision:
           type: string
-          description: 'Decision chosen if defaultDecisionEnabled is enabled. Can be one of ''Approve'', ''Deny'', or ''Recommendation''.'
+          description: 'Decision chosen if defaultDecisionEnabled is enabled. Can be one of Approve, Deny, or Recommendation.'
           nullable: true
         defaultDecisionEnabled:
           type: boolean
-          description: Flag to indicate whether default decision is enabled/disabled when reviewers do not respond.
+          description: Indicates whether the default decision is enabled or disabled when reviewers do not respond. Default value is false.
         instanceDurationInDays:
           maximum: 2147483647
           minimum: -2147483648
@@ -2841,18 +2858,18 @@ components:
           format: int32
         justificationRequiredOnApproval:
           type: boolean
-          description: Flag to indicate whether reviewers are required to provide justification with their decision.
+          description: Indicates whether reviewers are required to provide justification with their decision. Default value is false.
         mailNotificationsEnabled:
           type: boolean
-          description: Flag to indicate whether emails are enabled/disabled.
+          description: Indicates whether emails are enabled or disabled. Default value is false.
         recommendationsEnabled:
           type: boolean
-          description: Flag to indicate whether decision recommendations are enabled/disabled.
+          description: Indicates whether decision recommendations are enabled/disabled.
         recurrence:
           $ref: '#/components/schemas/microsoft.graph.patternedRecurrence'
         reminderNotificationsEnabled:
           type: boolean
-          description: Flag to indicate whether reminders are enabled/disabled.
+          description: Indicates whether reminders are enabled or disabled. Default value is false.
       additionalProperties:
         type: object
     microsoft.graph.request:

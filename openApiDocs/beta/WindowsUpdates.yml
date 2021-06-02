@@ -6,6 +6,263 @@ servers:
   - url: https://graph.microsoft.com/beta/
     description: Core
 paths:
+  '/admin/serviceAnnouncement/healthOverviews/{serviceHealth-id}/issues/{serviceHealthIssue-id}/microsoft.graph.incidentReport()':
+    get:
+      tags:
+        - admin.Functions
+      summary: Invoke function incidentReport
+      operationId: admin.serviceAnnouncement.healthOverviews.issues_incidentReport
+      parameters:
+        - name: serviceHealth-id
+          in: path
+          description: 'key: id of serviceHealth'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: serviceHealth
+        - name: serviceHealthIssue-id
+          in: path
+          description: 'key: id of serviceHealthIssue'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: serviceHealthIssue
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                format: base64url
+                nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/admin/serviceAnnouncement/issues/{serviceHealthIssue-id}/microsoft.graph.incidentReport()':
+    get:
+      tags:
+        - admin.Functions
+      summary: Invoke function incidentReport
+      operationId: admin.serviceAnnouncement.issues_incidentReport
+      parameters:
+        - name: serviceHealthIssue-id
+          in: path
+          description: 'key: id of serviceHealthIssue'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: serviceHealthIssue
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                format: base64url
+                nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  /admin/serviceAnnouncement/messages/microsoft.graph.archive:
+    post:
+      tags:
+        - admin.Actions
+      summary: Invoke action archive
+      operationId: admin.serviceAnnouncement.messages_archive
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                messageIds:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: boolean
+                default: false
+                nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /admin/serviceAnnouncement/messages/microsoft.graph.favorite:
+    post:
+      tags:
+        - admin.Actions
+      summary: Invoke action favorite
+      operationId: admin.serviceAnnouncement.messages_favorite
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                messageIds:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: boolean
+                default: false
+                nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /admin/serviceAnnouncement/messages/microsoft.graph.markRead:
+    post:
+      tags:
+        - admin.Actions
+      summary: Invoke action markRead
+      operationId: admin.serviceAnnouncement.messages_markRead
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                messageIds:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: boolean
+                default: false
+                nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /admin/serviceAnnouncement/messages/microsoft.graph.markUnread:
+    post:
+      tags:
+        - admin.Actions
+      summary: Invoke action markUnread
+      operationId: admin.serviceAnnouncement.messages_markUnread
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                messageIds:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: boolean
+                default: false
+                nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /admin/serviceAnnouncement/messages/microsoft.graph.unarchive:
+    post:
+      tags:
+        - admin.Actions
+      summary: Invoke action unarchive
+      operationId: admin.serviceAnnouncement.messages_unarchive
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                messageIds:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: boolean
+                default: false
+                nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /admin/serviceAnnouncement/messages/microsoft.graph.unfavorite:
+    post:
+      tags:
+        - admin.Actions
+      summary: Invoke action unfavorite
+      operationId: admin.serviceAnnouncement.messages_unfavorite
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                messageIds:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: boolean
+                default: false
+                nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /admin/windows:
     get:
       tags:
@@ -92,6 +349,7 @@ paths:
       tags:
         - admin.windows
       summary: Get updates from admin
+      description: Entity that acts as a container for the functionality of the Windows Update for Business deployment service. Read-only.
       operationId: admin.windows_GetUpdates
       parameters:
         - name: $select
@@ -145,6 +403,7 @@ paths:
       tags:
         - admin.windows
       summary: Update the navigation property updates in admin
+      description: Entity that acts as a container for the functionality of the Windows Update for Business deployment service. Read-only.
       operationId: admin.windows_UpdateUpdates
       requestBody:
         description: New navigation property values
@@ -163,6 +422,7 @@ paths:
       tags:
         - admin.windows
       summary: Delete navigation property updates for admin
+      description: Entity that acts as a container for the functionality of the Windows Update for Business deployment service. Read-only.
       operationId: admin.windows_DeleteUpdates
       parameters:
         - name: If-Match
@@ -181,6 +441,7 @@ paths:
       tags:
         - admin.windows
       summary: Get catalog from admin
+      description: Catalog of content that can be approved for deployment by the deployment service. Read-only.
       operationId: admin.windows.updates_GetCatalog
       parameters:
         - name: $select
@@ -226,6 +487,7 @@ paths:
       tags:
         - admin.windows
       summary: Update the navigation property catalog in admin
+      description: Catalog of content that can be approved for deployment by the deployment service. Read-only.
       operationId: admin.windows.updates_UpdateCatalog
       requestBody:
         description: New navigation property values
@@ -244,6 +506,7 @@ paths:
       tags:
         - admin.windows
       summary: Delete navigation property catalog for admin
+      description: Catalog of content that can be approved for deployment by the deployment service. Read-only.
       operationId: admin.windows.updates_DeleteCatalog
       parameters:
         - name: If-Match
@@ -262,6 +525,7 @@ paths:
       tags:
         - admin.windows
       summary: Get entries from admin
+      description: Lists the content that you can approve for deployment. Read-only.
       operationId: admin.windows.updates.catalog_ListEntries
       parameters:
         - $ref: '#/components/parameters/top'
@@ -342,6 +606,7 @@ paths:
       tags:
         - admin.windows
       summary: Create new navigation property to entries for admin
+      description: Lists the content that you can approve for deployment. Read-only.
       operationId: admin.windows.updates.catalog_CreateEntries
       requestBody:
         description: New navigation property
@@ -365,6 +630,7 @@ paths:
       tags:
         - admin.windows
       summary: Get entries from admin
+      description: Lists the content that you can approve for deployment. Read-only.
       operationId: admin.windows.updates.catalog_GetEntries
       parameters:
         - name: catalogEntry-id
@@ -415,6 +681,7 @@ paths:
       tags:
         - admin.windows
       summary: Update the navigation property entries in admin
+      description: Lists the content that you can approve for deployment. Read-only.
       operationId: admin.windows.updates.catalog_UpdateEntries
       parameters:
         - name: catalogEntry-id
@@ -441,6 +708,7 @@ paths:
       tags:
         - admin.windows
       summary: Delete navigation property entries for admin
+      description: Lists the content that you can approve for deployment. Read-only.
       operationId: admin.windows.updates.catalog_DeleteEntries
       parameters:
         - name: catalogEntry-id
@@ -466,6 +734,7 @@ paths:
       tags:
         - admin.windows
       summary: Get deployments from admin
+      description: Deployments created using the deployment service. Read-only.
       operationId: admin.windows.updates_ListDeployments
       parameters:
         - $ref: '#/components/parameters/top'
@@ -554,6 +823,7 @@ paths:
       tags:
         - admin.windows
       summary: Create new navigation property to deployments for admin
+      description: Deployments created using the deployment service. Read-only.
       operationId: admin.windows.updates_CreateDeployments
       requestBody:
         description: New navigation property
@@ -577,6 +847,7 @@ paths:
       tags:
         - admin.windows
       summary: Get deployments from admin
+      description: Deployments created using the deployment service. Read-only.
       operationId: admin.windows.updates_GetDeployments
       parameters:
         - name: deployment-id
@@ -636,6 +907,7 @@ paths:
       tags:
         - admin.windows
       summary: Update the navigation property deployments in admin
+      description: Deployments created using the deployment service. Read-only.
       operationId: admin.windows.updates_UpdateDeployments
       parameters:
         - name: deployment-id
@@ -662,6 +934,7 @@ paths:
       tags:
         - admin.windows
       summary: Delete navigation property deployments for admin
+      description: Deployments created using the deployment service. Read-only.
       operationId: admin.windows.updates_DeleteDeployments
       parameters:
         - name: deployment-id
@@ -687,6 +960,7 @@ paths:
       tags:
         - admin.windows
       summary: Get audience from admin
+      description: Specifies the audience to which content is deployed.
       operationId: admin.windows.updates.deployments_GetAudience
       parameters:
         - name: deployment-id
@@ -747,6 +1021,7 @@ paths:
       tags:
         - admin.windows
       summary: Update the navigation property audience in admin
+      description: Specifies the audience to which content is deployed.
       operationId: admin.windows.updates.deployments_UpdateAudience
       parameters:
         - name: deployment-id
@@ -773,6 +1048,7 @@ paths:
       tags:
         - admin.windows
       summary: Delete navigation property audience for admin
+      description: Specifies the audience to which content is deployed.
       operationId: admin.windows.updates.deployments_DeleteAudience
       parameters:
         - name: deployment-id
@@ -798,6 +1074,7 @@ paths:
       tags:
         - admin.windows
       summary: Get exclusions from admin
+      description: Specifies the assets to exclude from the audience.
       operationId: admin.windows.updates.deployments.audience_ListExclusions
       parameters:
         - name: deployment-id
@@ -876,6 +1153,7 @@ paths:
       tags:
         - admin.windows
       summary: Create new navigation property to exclusions for admin
+      description: Specifies the assets to exclude from the audience.
       operationId: admin.windows.updates.deployments.audience_CreateExclusions
       parameters:
         - name: deployment-id
@@ -907,6 +1185,7 @@ paths:
       tags:
         - admin.windows
       summary: Get exclusions from admin
+      description: Specifies the assets to exclude from the audience.
       operationId: admin.windows.updates.deployments.audience_GetExclusions
       parameters:
         - name: deployment-id
@@ -961,6 +1240,7 @@ paths:
       tags:
         - admin.windows
       summary: Update the navigation property exclusions in admin
+      description: Specifies the assets to exclude from the audience.
       operationId: admin.windows.updates.deployments.audience_UpdateExclusions
       parameters:
         - name: deployment-id
@@ -994,6 +1274,7 @@ paths:
       tags:
         - admin.windows
       summary: Delete navigation property exclusions for admin
+      description: Specifies the assets to exclude from the audience.
       operationId: admin.windows.updates.deployments.audience_DeleteExclusions
       parameters:
         - name: deployment-id
@@ -1350,6 +1631,7 @@ paths:
       tags:
         - admin.windows
       summary: Get members from admin
+      description: Specifies the assets to include in the audience.
       operationId: admin.windows.updates.deployments.audience_ListMembers
       parameters:
         - name: deployment-id
@@ -1428,6 +1710,7 @@ paths:
       tags:
         - admin.windows
       summary: Create new navigation property to members for admin
+      description: Specifies the assets to include in the audience.
       operationId: admin.windows.updates.deployments.audience_CreateMembers
       parameters:
         - name: deployment-id
@@ -1459,6 +1742,7 @@ paths:
       tags:
         - admin.windows
       summary: Get members from admin
+      description: Specifies the assets to include in the audience.
       operationId: admin.windows.updates.deployments.audience_GetMembers
       parameters:
         - name: deployment-id
@@ -1513,6 +1797,7 @@ paths:
       tags:
         - admin.windows
       summary: Update the navigation property members in admin
+      description: Specifies the assets to include in the audience.
       operationId: admin.windows.updates.deployments.audience_UpdateMembers
       parameters:
         - name: deployment-id
@@ -1546,6 +1831,7 @@ paths:
       tags:
         - admin.windows
       summary: Delete navigation property members for admin
+      description: Specifies the assets to include in the audience.
       operationId: admin.windows.updates.deployments.audience_DeleteMembers
       parameters:
         - name: deployment-id
@@ -2001,6 +2287,7 @@ paths:
       tags:
         - admin.windows
       summary: Get updatableAssets from admin
+      description: Assets registered with the deployment service that can receive updates. Read-only.
       operationId: admin.windows.updates_ListUpdatableAssets
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2072,6 +2359,7 @@ paths:
       tags:
         - admin.windows
       summary: Create new navigation property to updatableAssets for admin
+      description: Assets registered with the deployment service that can receive updates. Read-only.
       operationId: admin.windows.updates_CreateUpdatableAssets
       requestBody:
         description: New navigation property
@@ -2095,6 +2383,7 @@ paths:
       tags:
         - admin.windows
       summary: Get updatableAssets from admin
+      description: Assets registered with the deployment service that can receive updates. Read-only.
       operationId: admin.windows.updates_GetUpdatableAssets
       parameters:
         - name: updatableAsset-id
@@ -2142,6 +2431,7 @@ paths:
       tags:
         - admin.windows
       summary: Update the navigation property updatableAssets in admin
+      description: Assets registered with the deployment service that can receive updates. Read-only.
       operationId: admin.windows.updates_UpdateUpdatableAssets
       parameters:
         - name: updatableAsset-id
@@ -2168,6 +2458,7 @@ paths:
       tags:
         - admin.windows
       summary: Delete navigation property updatableAssets for admin
+      description: Assets registered with the deployment service that can receive updates. Read-only.
       operationId: admin.windows.updates_DeleteUpdatableAssets
       parameters:
         - name: updatableAsset-id

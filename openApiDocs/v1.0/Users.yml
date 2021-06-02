@@ -15,10 +15,9 @@ paths:
       parameters:
         - name: ConsistencyLevel
           in: header
-          description: Indicates the requested consistency level.
+          description: 'Indicates the requested consistency level. Documentation URL: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/'
           schema:
             type: string
-          example: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/
           examples:
             example-1:
               description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
@@ -417,6 +416,7 @@ paths:
       tags:
         - users.user
       summary: Get entity from users by key
+      description: Represents an Azure Active Directory user object.
       operationId: users.user_GetUser
       parameters:
         - name: user-id
@@ -428,10 +428,9 @@ paths:
           x-ms-docs-key-type: user
         - name: ConsistencyLevel
           in: header
-          description: Indicates the requested consistency level.
+          description: 'Indicates the requested consistency level. Documentation URL: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/'
           schema:
             type: string
-          example: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/
           examples:
             example-1:
               description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
@@ -821,6 +820,7 @@ paths:
       tags:
         - users.user
       summary: Update entity in users
+      description: Represents an Azure Active Directory user object.
       operationId: users.user_UpdateUser
       parameters:
         - name: user-id
@@ -847,6 +847,7 @@ paths:
       tags:
         - users.user
       summary: Delete entity from users
+      description: Represents an Azure Active Directory user object.
       operationId: users.user_DeleteUser
       parameters:
         - name: user-id
@@ -872,6 +873,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get createdObjects from users
+      description: Directory objects that were created by the user. Read-only. Nullable.
       operationId: users_ListCreatedObjects
       parameters:
         - name: user-id
@@ -954,6 +956,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get ref of createdObjects from users
+      description: Directory objects that were created by the user. Read-only. Nullable.
       operationId: users_ListRefCreatedObjects
       parameters:
         - name: user-id
@@ -1010,6 +1013,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Create new navigation property ref to createdObjects for users
+      description: Directory objects that were created by the user. Read-only. Nullable.
       operationId: users_CreateRefCreatedObjects
       parameters:
         - name: user-id
@@ -1045,6 +1049,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get directReports from users
+      description: The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable.
       operationId: users_ListDirectReports
       parameters:
         - name: user-id
@@ -1127,6 +1132,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get ref of directReports from users
+      description: The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable.
       operationId: users_ListRefDirectReports
       parameters:
         - name: user-id
@@ -1183,6 +1189,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Create new navigation property ref to directReports for users
+      description: The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable.
       operationId: users_CreateRefDirectReports
       parameters:
         - name: user-id
@@ -1218,6 +1225,7 @@ paths:
       tags:
         - users.extension
       summary: Get extensions from users
+      description: The collection of open extensions defined for the user. Nullable.
       operationId: users_ListExtensions
       parameters:
         - name: user-id
@@ -1296,6 +1304,7 @@ paths:
       tags:
         - users.extension
       summary: Create new navigation property to extensions for users
+      description: The collection of open extensions defined for the user. Nullable.
       operationId: users_CreateExtensions
       parameters:
         - name: user-id
@@ -1327,6 +1336,7 @@ paths:
       tags:
         - users.extension
       summary: Get extensions from users
+      description: The collection of open extensions defined for the user. Nullable.
       operationId: users_GetExtensions
       parameters:
         - name: user-id
@@ -1381,6 +1391,7 @@ paths:
       tags:
         - users.extension
       summary: Update the navigation property extensions in users
+      description: The collection of open extensions defined for the user. Nullable.
       operationId: users_UpdateExtensions
       parameters:
         - name: user-id
@@ -1414,6 +1425,7 @@ paths:
       tags:
         - users.extension
       summary: Delete navigation property extensions for users
+      description: The collection of open extensions defined for the user. Nullable.
       operationId: users_DeleteExtensions
       parameters:
         - name: user-id
@@ -1446,6 +1458,7 @@ paths:
       tags:
         - users.licenseDetails
       summary: Get licenseDetails from users
+      description: A collection of this user's license details. Read-only.
       operationId: users_ListLicenseDetails
       parameters:
         - name: user-id
@@ -1533,6 +1546,7 @@ paths:
       tags:
         - users.licenseDetails
       summary: Create new navigation property to licenseDetails for users
+      description: A collection of this user's license details. Read-only.
       operationId: users_CreateLicenseDetails
       parameters:
         - name: user-id
@@ -1564,6 +1578,7 @@ paths:
       tags:
         - users.licenseDetails
       summary: Get licenseDetails from users
+      description: A collection of this user's license details. Read-only.
       operationId: users_GetLicenseDetails
       parameters:
         - name: user-id
@@ -1621,6 +1636,7 @@ paths:
       tags:
         - users.licenseDetails
       summary: Update the navigation property licenseDetails in users
+      description: A collection of this user's license details. Read-only.
       operationId: users_UpdateLicenseDetails
       parameters:
         - name: user-id
@@ -1654,6 +1670,7 @@ paths:
       tags:
         - users.licenseDetails
       summary: Delete navigation property licenseDetails for users
+      description: A collection of this user's license details. Read-only.
       operationId: users_DeleteLicenseDetails
       parameters:
         - name: user-id
@@ -1686,6 +1703,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get manager from users
+      description: 'The user or contact that is this user''s manager. Read-only. (HTTP Methods: GET, PUT, DELETE.)'
       operationId: users_GetManager
       parameters:
         - name: user-id
@@ -1735,6 +1753,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get ref of manager from users
+      description: 'The user or contact that is this user''s manager. Read-only. (HTTP Methods: GET, PUT, DELETE.)'
       operationId: users_GetRefManager
       parameters:
         - name: user-id
@@ -1758,6 +1777,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Update the ref of navigation property manager in users
+      description: 'The user or contact that is this user''s manager. Read-only. (HTTP Methods: GET, PUT, DELETE.)'
       operationId: users_SetRefManager
       parameters:
         - name: user-id
@@ -1786,6 +1806,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Delete ref of navigation property manager for users
+      description: 'The user or contact that is this user''s manager. Read-only. (HTTP Methods: GET, PUT, DELETE.)'
       operationId: users_DeleteRefManager
       parameters:
         - name: user-id
@@ -1811,6 +1832,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get memberOf from users
+      description: 'The groups, directory roles and administrative units that the user is a member of. Read-only. Nullable.'
       operationId: users_ListMemberOf
       parameters:
         - name: user-id
@@ -1893,6 +1915,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get ref of memberOf from users
+      description: 'The groups, directory roles and administrative units that the user is a member of. Read-only. Nullable.'
       operationId: users_ListRefMemberOf
       parameters:
         - name: user-id
@@ -1949,6 +1972,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Create new navigation property ref to memberOf for users
+      description: 'The groups, directory roles and administrative units that the user is a member of. Read-only. Nullable.'
       operationId: users_CreateRefMemberOf
       parameters:
         - name: user-id
@@ -2177,6 +2201,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Get outlook from users
+      description: Selective Outlook services available to the user. Read-only. Nullable.
       operationId: users_GetOutlook
       parameters:
         - name: user-id
@@ -2231,6 +2256,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Update the navigation property outlook in users
+      description: Selective Outlook services available to the user. Read-only. Nullable.
       operationId: users_UpdateOutlook
       parameters:
         - name: user-id
@@ -2257,6 +2283,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Delete navigation property outlook for users
+      description: Selective Outlook services available to the user. Read-only. Nullable.
       operationId: users_DeleteOutlook
       parameters:
         - name: user-id
@@ -2282,6 +2309,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Get masterCategories from users
+      description: A list of categories defined for the user.
       operationId: users.outlook_ListMasterCategories
       parameters:
         - name: user-id
@@ -2366,6 +2394,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Create new navigation property to masterCategories for users
+      description: A list of categories defined for the user.
       operationId: users.outlook_CreateMasterCategories
       parameters:
         - name: user-id
@@ -2397,6 +2426,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Get masterCategories from users
+      description: A list of categories defined for the user.
       operationId: users.outlook_GetMasterCategories
       parameters:
         - name: user-id
@@ -2453,6 +2483,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Update the navigation property masterCategories in users
+      description: A list of categories defined for the user.
       operationId: users.outlook_UpdateMasterCategories
       parameters:
         - name: user-id
@@ -2486,6 +2517,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Delete navigation property masterCategories for users
+      description: A list of categories defined for the user.
       operationId: users.outlook_DeleteMasterCategories
       parameters:
         - name: user-id
@@ -2518,6 +2550,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get ownedDevices from users
+      description: Devices that are owned by the user. Read-only. Nullable.
       operationId: users_ListOwnedDevices
       parameters:
         - name: user-id
@@ -2600,6 +2633,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get ref of ownedDevices from users
+      description: Devices that are owned by the user. Read-only. Nullable.
       operationId: users_ListRefOwnedDevices
       parameters:
         - name: user-id
@@ -2656,6 +2690,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Create new navigation property ref to ownedDevices for users
+      description: Devices that are owned by the user. Read-only. Nullable.
       operationId: users_CreateRefOwnedDevices
       parameters:
         - name: user-id
@@ -2691,6 +2726,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get ownedObjects from users
+      description: Directory objects that are owned by the user. Read-only. Nullable.
       operationId: users_ListOwnedObjects
       parameters:
         - name: user-id
@@ -2773,6 +2809,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get ref of ownedObjects from users
+      description: Directory objects that are owned by the user. Read-only. Nullable.
       operationId: users_ListRefOwnedObjects
       parameters:
         - name: user-id
@@ -2829,6 +2866,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Create new navigation property ref to ownedObjects for users
+      description: Directory objects that are owned by the user. Read-only. Nullable.
       operationId: users_CreateRefOwnedObjects
       parameters:
         - name: user-id
@@ -2864,6 +2902,7 @@ paths:
       tags:
         - users.profilePhoto
       summary: Get photo from users
+      description: The user's profile photo. Read-only.
       operationId: users_GetPhoto
       parameters:
         - name: user-id
@@ -2913,6 +2952,7 @@ paths:
       tags:
         - users.profilePhoto
       summary: Update the navigation property photo in users
+      description: The user's profile photo. Read-only.
       operationId: users_UpdatePhoto
       parameters:
         - name: user-id
@@ -2939,6 +2979,7 @@ paths:
       tags:
         - users.profilePhoto
       summary: Delete navigation property photo for users
+      description: The user's profile photo. Read-only.
       operationId: users_DeletePhoto
       parameters:
         - name: user-id
@@ -2964,6 +3005,7 @@ paths:
       tags:
         - users.profilePhoto
       summary: Get media content for the navigation property photo from users
+      description: The user's profile photo. Read-only.
       operationId: users_GetPhotoContent
       parameters:
         - name: user-id
@@ -2988,6 +3030,7 @@ paths:
       tags:
         - users.profilePhoto
       summary: Update media content for the navigation property photo in users
+      description: The user's profile photo. Read-only.
       operationId: users_SetPhotoContent
       parameters:
         - name: user-id
@@ -3016,6 +3059,7 @@ paths:
       tags:
         - users.profilePhoto
       summary: Get photos from users
+      description: Read-only. Nullable.
       operationId: users_ListPhotos
       parameters:
         - name: user-id
@@ -3100,6 +3144,7 @@ paths:
       tags:
         - users.profilePhoto
       summary: Create new navigation property to photos for users
+      description: Read-only. Nullable.
       operationId: users_CreatePhotos
       parameters:
         - name: user-id
@@ -3131,6 +3176,7 @@ paths:
       tags:
         - users.profilePhoto
       summary: Get photos from users
+      description: Read-only. Nullable.
       operationId: users_GetPhotos
       parameters:
         - name: user-id
@@ -3187,6 +3233,7 @@ paths:
       tags:
         - users.profilePhoto
       summary: Update the navigation property photos in users
+      description: Read-only. Nullable.
       operationId: users_UpdatePhotos
       parameters:
         - name: user-id
@@ -3220,6 +3267,7 @@ paths:
       tags:
         - users.profilePhoto
       summary: Delete navigation property photos for users
+      description: Read-only. Nullable.
       operationId: users_DeletePhotos
       parameters:
         - name: user-id
@@ -3318,6 +3366,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get registeredDevices from users
+      description: Devices that are registered for the user. Read-only. Nullable.
       operationId: users_ListRegisteredDevices
       parameters:
         - name: user-id
@@ -3400,6 +3449,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get ref of registeredDevices from users
+      description: Devices that are registered for the user. Read-only. Nullable.
       operationId: users_ListRefRegisteredDevices
       parameters:
         - name: user-id
@@ -3456,6 +3506,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Create new navigation property ref to registeredDevices for users
+      description: Devices that are registered for the user. Read-only. Nullable.
       operationId: users_CreateRefRegisteredDevices
       parameters:
         - name: user-id
@@ -3491,6 +3542,7 @@ paths:
       tags:
         - users.userSettings
       summary: Get settings from users
+      description: Read-only. Nullable.
       operationId: users_GetSettings
       parameters:
         - name: user-id
@@ -3547,6 +3599,7 @@ paths:
       tags:
         - users.userSettings
       summary: Update the navigation property settings in users
+      description: Read-only. Nullable.
       operationId: users_UpdateSettings
       parameters:
         - name: user-id
@@ -3573,6 +3626,7 @@ paths:
       tags:
         - users.userSettings
       summary: Delete navigation property settings for users
+      description: Read-only. Nullable.
       operationId: users_DeleteSettings
       parameters:
         - name: user-id
@@ -3598,6 +3652,7 @@ paths:
       tags:
         - users.userSettings
       summary: Get shiftPreferences from users
+      description: The shift preferences for the user.
       operationId: users.settings_GetShiftPreferences
       parameters:
         - name: user-id
@@ -3649,6 +3704,7 @@ paths:
       tags:
         - users.userSettings
       summary: Update the navigation property shiftPreferences in users
+      description: The shift preferences for the user.
       operationId: users.settings_UpdateShiftPreferences
       parameters:
         - name: user-id
@@ -3675,6 +3731,7 @@ paths:
       tags:
         - users.userSettings
       summary: Delete navigation property shiftPreferences for users
+      description: The shift preferences for the user.
       operationId: users.settings_DeleteShiftPreferences
       parameters:
         - name: user-id
@@ -3700,6 +3757,7 @@ paths:
       tags:
         - users.todo
       summary: Get todo from users
+      description: Represents the To Do services available to a user.
       operationId: users_GetTodo
       parameters:
         - name: user-id
@@ -3754,6 +3812,7 @@ paths:
       tags:
         - users.todo
       summary: Update the navigation property todo in users
+      description: Represents the To Do services available to a user.
       operationId: users_UpdateTodo
       parameters:
         - name: user-id
@@ -3780,6 +3839,7 @@ paths:
       tags:
         - users.todo
       summary: Delete navigation property todo for users
+      description: Represents the To Do services available to a user.
       operationId: users_DeleteTodo
       parameters:
         - name: user-id
@@ -3805,6 +3865,7 @@ paths:
       tags:
         - users.todo
       summary: Get lists from users
+      description: The task lists in the users mailbox.
       operationId: users.todo_ListLists
       parameters:
         - name: user-id
@@ -3899,6 +3960,7 @@ paths:
       tags:
         - users.todo
       summary: Create new navigation property to lists for users
+      description: The task lists in the users mailbox.
       operationId: users.todo_CreateLists
       parameters:
         - name: user-id
@@ -3930,6 +3992,7 @@ paths:
       tags:
         - users.todo
       summary: Get lists from users
+      description: The task lists in the users mailbox.
       operationId: users.todo_GetLists
       parameters:
         - name: user-id
@@ -4003,6 +4066,7 @@ paths:
       tags:
         - users.todo
       summary: Update the navigation property lists in users
+      description: The task lists in the users mailbox.
       operationId: users.todo_UpdateLists
       parameters:
         - name: user-id
@@ -4036,6 +4100,7 @@ paths:
       tags:
         - users.todo
       summary: Delete navigation property lists for users
+      description: The task lists in the users mailbox.
       operationId: users.todo_DeleteLists
       parameters:
         - name: user-id
@@ -4068,6 +4133,7 @@ paths:
       tags:
         - users.todo
       summary: Get extensions from users
+      description: The collection of open extensions defined for the task list. Nullable.
       operationId: users.todo.lists_ListExtensions
       parameters:
         - name: user-id
@@ -4153,6 +4219,7 @@ paths:
       tags:
         - users.todo
       summary: Create new navigation property to extensions for users
+      description: The collection of open extensions defined for the task list. Nullable.
       operationId: users.todo.lists_CreateExtensions
       parameters:
         - name: user-id
@@ -4191,6 +4258,7 @@ paths:
       tags:
         - users.todo
       summary: Get extensions from users
+      description: The collection of open extensions defined for the task list. Nullable.
       operationId: users.todo.lists_GetExtensions
       parameters:
         - name: user-id
@@ -4252,6 +4320,7 @@ paths:
       tags:
         - users.todo
       summary: Update the navigation property extensions in users
+      description: The collection of open extensions defined for the task list. Nullable.
       operationId: users.todo.lists_UpdateExtensions
       parameters:
         - name: user-id
@@ -4292,6 +4361,7 @@ paths:
       tags:
         - users.todo
       summary: Delete navigation property extensions for users
+      description: The collection of open extensions defined for the task list. Nullable.
       operationId: users.todo.lists_DeleteExtensions
       parameters:
         - name: user-id
@@ -4331,6 +4401,7 @@ paths:
       tags:
         - users.todo
       summary: Get tasks from users
+      description: The tasks in this task list. Read-only. Nullable.
       operationId: users.todo.lists_ListTasks
       parameters:
         - name: user-id
@@ -4456,6 +4527,7 @@ paths:
       tags:
         - users.todo
       summary: Create new navigation property to tasks for users
+      description: The tasks in this task list. Read-only. Nullable.
       operationId: users.todo.lists_CreateTasks
       parameters:
         - name: user-id
@@ -4494,6 +4566,7 @@ paths:
       tags:
         - users.todo
       summary: Get tasks from users
+      description: The tasks in this task list. Read-only. Nullable.
       operationId: users.todo.lists_GetTasks
       parameters:
         - name: user-id
@@ -4584,6 +4657,7 @@ paths:
       tags:
         - users.todo
       summary: Update the navigation property tasks in users
+      description: The tasks in this task list. Read-only. Nullable.
       operationId: users.todo.lists_UpdateTasks
       parameters:
         - name: user-id
@@ -4624,6 +4698,7 @@ paths:
       tags:
         - users.todo
       summary: Delete navigation property tasks for users
+      description: The tasks in this task list. Read-only. Nullable.
       operationId: users.todo.lists_DeleteTasks
       parameters:
         - name: user-id
@@ -4663,6 +4738,7 @@ paths:
       tags:
         - users.todo
       summary: Get extensions from users
+      description: The collection of open extensions defined for the task. Nullable.
       operationId: users.todo.lists.tasks_ListExtensions
       parameters:
         - name: user-id
@@ -4755,6 +4831,7 @@ paths:
       tags:
         - users.todo
       summary: Create new navigation property to extensions for users
+      description: The collection of open extensions defined for the task. Nullable.
       operationId: users.todo.lists.tasks_CreateExtensions
       parameters:
         - name: user-id
@@ -4800,6 +4877,7 @@ paths:
       tags:
         - users.todo
       summary: Get extensions from users
+      description: The collection of open extensions defined for the task. Nullable.
       operationId: users.todo.lists.tasks_GetExtensions
       parameters:
         - name: user-id
@@ -4868,6 +4946,7 @@ paths:
       tags:
         - users.todo
       summary: Update the navigation property extensions in users
+      description: The collection of open extensions defined for the task. Nullable.
       operationId: users.todo.lists.tasks_UpdateExtensions
       parameters:
         - name: user-id
@@ -4915,6 +4994,7 @@ paths:
       tags:
         - users.todo
       summary: Delete navigation property extensions for users
+      description: The collection of open extensions defined for the task. Nullable.
       operationId: users.todo.lists.tasks_DeleteExtensions
       parameters:
         - name: user-id
@@ -4961,6 +5041,7 @@ paths:
       tags:
         - users.todo
       summary: Get linkedResources from users
+      description: A collection of resources linked to the task.
       operationId: users.todo.lists.tasks_ListLinkedResources
       parameters:
         - name: user-id
@@ -5065,6 +5146,7 @@ paths:
       tags:
         - users.todo
       summary: Create new navigation property to linkedResources for users
+      description: A collection of resources linked to the task.
       operationId: users.todo.lists.tasks_CreateLinkedResources
       parameters:
         - name: user-id
@@ -5110,6 +5192,7 @@ paths:
       tags:
         - users.todo
       summary: Get linkedResources from users
+      description: A collection of resources linked to the task.
       operationId: users.todo.lists.tasks_GetLinkedResources
       parameters:
         - name: user-id
@@ -5182,6 +5265,7 @@ paths:
       tags:
         - users.todo
       summary: Update the navigation property linkedResources in users
+      description: A collection of resources linked to the task.
       operationId: users.todo.lists.tasks_UpdateLinkedResources
       parameters:
         - name: user-id
@@ -5229,6 +5313,7 @@ paths:
       tags:
         - users.todo
       summary: Delete navigation property linkedResources for users
+      description: A collection of resources linked to the task.
       operationId: users.todo.lists.tasks_DeleteLinkedResources
       parameters:
         - name: user-id
@@ -5578,7 +5663,7 @@ components:
               description: State of license assignments for this user. Returned only on $select. Read-only.
             mail:
               type: string
-              description: 'The SMTP address for the user, for example, ''jeff@contoso.onmicrosoft.com''.NOTE: While this property can contain accent characters, using them can cause access issues with other Microsoft applications for the user.Returned by default. Supports $filter and endsWith.'
+              description: 'The SMTP address for the user, for example, ''jeff@contoso.onmicrosoft.com''. Changes to this property will also update the user''s proxyAddresses collection to include the value as an SMTP address. While this property can contain accent characters, using them can cause access issues with other Microsoft applications for the user. Supports $filter and endsWith.'
               nullable: true
             mailNickname:
               type: string
@@ -7527,6 +7612,10 @@ components:
               type: string
               description: Enrollment time of the device. This property is read-only.
               format: date-time
+            ethernetMacAddress:
+              type: string
+              description: Ethernet MAC. This property is read-only.
+              nullable: true
             exchangeAccessState:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementExchangeAccessState'
             exchangeAccessStateReason:
@@ -7540,6 +7629,10 @@ components:
               type: integer
               description: Free Storage in Bytes. This property is read-only.
               format: int64
+            iccid:
+              type: string
+              description: 'Integrated Circuit Card Identifier, it is A SIM card''s unique identification number. This property is read-only.'
+              nullable: true
             imei:
               type: string
               description: IMEI. This property is read-only.
@@ -7579,6 +7672,10 @@ components:
               type: string
               description: Model of the device. This property is read-only.
               nullable: true
+            notes:
+              type: string
+              description: Notes on the device created by IT Admin
+              nullable: true
             operatingSystem:
               type: string
               description: 'Operating system of the device. Windows, iOS, etc. This property is read-only.'
@@ -7593,6 +7690,10 @@ components:
               type: string
               description: Phone number of the device. This property is read-only.
               nullable: true
+            physicalMemoryInBytes:
+              type: integer
+              description: Total Memory in Bytes. This property is read-only.
+              format: int64
             remoteAssistanceSessionErrorDetails:
               type: string
               description: An error string that identifies issues when creating Remote Assistance session objects. This property is read-only.
@@ -7613,6 +7714,10 @@ components:
               type: integer
               description: Total Storage in Bytes. This property is read-only.
               format: int64
+            udid:
+              type: string
+              description: Unique Device Identifier for iOS and macOS devices. This property is read-only.
+              nullable: true
             userDisplayName:
               type: string
               description: User display name. This property is read-only.
@@ -8037,7 +8142,7 @@ components:
               nullable: true
             description:
               type: string
-              description: An optional description for the team.
+              description: 'An optional description for the team. Maximum length: 1024 characters.'
               nullable: true
             displayName:
               type: string
@@ -9364,6 +9469,9 @@ components:
         - windowsAutoEnrollment
         - windowsBulkAzureDomainJoin
         - windowsCoManagement
+        - windowsAzureADJoinUsingDeviceAuth
+        - appleUserEnrollment
+        - appleUserEnrollmentWithServiceAccount
       type: string
     microsoft.graph.deviceHealthAttestationState:
       title: deviceHealthAttestationState

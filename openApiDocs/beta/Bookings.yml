@@ -148,6 +148,7 @@ paths:
       tags:
         - bookingBusinesses.bookingBusiness
       summary: Get entity from bookingBusinesses by key
+      description: Represents a Microsot Bookings Business.
       operationId: bookingBusinesses.bookingBusiness_GetBookingBusiness
       parameters:
         - name: bookingBusiness-id
@@ -237,6 +238,7 @@ paths:
       tags:
         - bookingBusinesses.bookingBusiness
       summary: Update entity in bookingBusinesses
+      description: Represents a Microsot Bookings Business.
       operationId: bookingBusinesses.bookingBusiness_UpdateBookingBusiness
       parameters:
         - name: bookingBusiness-id
@@ -263,6 +265,7 @@ paths:
       tags:
         - bookingBusinesses.bookingBusiness
       summary: Delete entity from bookingBusinesses
+      description: Represents a Microsot Bookings Business.
       operationId: bookingBusinesses.bookingBusiness_DeleteBookingBusiness
       parameters:
         - name: bookingBusiness-id
@@ -288,6 +291,7 @@ paths:
       tags:
         - bookingBusinesses.bookingAppointment
       summary: Get appointments from bookingBusinesses
+      description: All the appointments of this business. Read-only. Nullable.
       operationId: bookingBusinesses_ListAppointments
       parameters:
         - name: bookingBusiness-id
@@ -453,6 +457,7 @@ paths:
       tags:
         - bookingBusinesses.bookingAppointment
       summary: Create new navigation property to appointments for bookingBusinesses
+      description: All the appointments of this business. Read-only. Nullable.
       operationId: bookingBusinesses_CreateAppointments
       parameters:
         - name: bookingBusiness-id
@@ -484,6 +489,7 @@ paths:
       tags:
         - bookingBusinesses.bookingAppointment
       summary: Get appointments from bookingBusinesses
+      description: All the appointments of this business. Read-only. Nullable.
       operationId: bookingBusinesses_GetAppointments
       parameters:
         - name: bookingBusiness-id
@@ -567,6 +573,7 @@ paths:
       tags:
         - bookingBusinesses.bookingAppointment
       summary: Update the navigation property appointments in bookingBusinesses
+      description: All the appointments of this business. Read-only. Nullable.
       operationId: bookingBusinesses_UpdateAppointments
       parameters:
         - name: bookingBusiness-id
@@ -600,6 +607,7 @@ paths:
       tags:
         - bookingBusinesses.bookingAppointment
       summary: Delete navigation property appointments for bookingBusinesses
+      description: All the appointments of this business. Read-only. Nullable.
       operationId: bookingBusinesses_DeleteAppointments
       parameters:
         - name: bookingBusiness-id
@@ -632,6 +640,7 @@ paths:
       tags:
         - bookingBusinesses.Actions
       summary: Invoke action cancel
+      description: 'Cancels the giving booking appointment, sending a message to the involved parties.'
       operationId: bookingBusinesses.appointments_cancel
       parameters:
         - name: bookingBusiness-id
@@ -672,6 +681,7 @@ paths:
       tags:
         - bookingBusinesses.bookingAppointment
       summary: Get calendarView from bookingBusinesses
+      description: The set of appointments of this business in a specified date range. Read-only. Nullable.
       operationId: bookingBusinesses_ListCalendarView
       parameters:
         - name: bookingBusiness-id
@@ -849,6 +859,7 @@ paths:
       tags:
         - bookingBusinesses.bookingAppointment
       summary: Create new navigation property to calendarView for bookingBusinesses
+      description: The set of appointments of this business in a specified date range. Read-only. Nullable.
       operationId: bookingBusinesses_CreateCalendarView
       parameters:
         - name: bookingBusiness-id
@@ -880,6 +891,7 @@ paths:
       tags:
         - bookingBusinesses.bookingAppointment
       summary: Get calendarView from bookingBusinesses
+      description: The set of appointments of this business in a specified date range. Read-only. Nullable.
       operationId: bookingBusinesses_GetCalendarView
       parameters:
         - name: bookingBusiness-id
@@ -975,6 +987,7 @@ paths:
       tags:
         - bookingBusinesses.bookingAppointment
       summary: Update the navigation property calendarView in bookingBusinesses
+      description: The set of appointments of this business in a specified date range. Read-only. Nullable.
       operationId: bookingBusinesses_UpdateCalendarView
       parameters:
         - name: bookingBusiness-id
@@ -1008,6 +1021,7 @@ paths:
       tags:
         - bookingBusinesses.bookingAppointment
       summary: Delete navigation property calendarView for bookingBusinesses
+      description: The set of appointments of this business in a specified date range. Read-only. Nullable.
       operationId: bookingBusinesses_DeleteCalendarView
       parameters:
         - name: bookingBusiness-id
@@ -1040,6 +1054,7 @@ paths:
       tags:
         - bookingBusinesses.Actions
       summary: Invoke action cancel
+      description: 'Cancels the giving booking appointment, sending a message to the involved parties.'
       operationId: bookingBusinesses.calendarView_cancel
       parameters:
         - name: bookingBusiness-id
@@ -1080,6 +1095,7 @@ paths:
       tags:
         - bookingBusinesses.bookingCustomer
       summary: Get customers from bookingBusinesses
+      description: All the customers of this business. Read-only. Nullable.
       operationId: bookingBusinesses_ListCustomers
       parameters:
         - name: bookingBusiness-id
@@ -1164,6 +1180,7 @@ paths:
       tags:
         - bookingBusinesses.bookingCustomer
       summary: Create new navigation property to customers for bookingBusinesses
+      description: All the customers of this business. Read-only. Nullable.
       operationId: bookingBusinesses_CreateCustomers
       parameters:
         - name: bookingBusiness-id
@@ -1195,6 +1212,7 @@ paths:
       tags:
         - bookingBusinesses.bookingCustomer
       summary: Get customers from bookingBusinesses
+      description: All the customers of this business. Read-only. Nullable.
       operationId: bookingBusinesses_GetCustomers
       parameters:
         - name: bookingBusiness-id
@@ -1251,6 +1269,7 @@ paths:
       tags:
         - bookingBusinesses.bookingCustomer
       summary: Update the navigation property customers in bookingBusinesses
+      description: All the customers of this business. Read-only. Nullable.
       operationId: bookingBusinesses_UpdateCustomers
       parameters:
         - name: bookingBusiness-id
@@ -1284,6 +1303,7 @@ paths:
       tags:
         - bookingBusinesses.bookingCustomer
       summary: Delete navigation property customers for bookingBusinesses
+      description: All the customers of this business. Read-only. Nullable.
       operationId: bookingBusinesses_DeleteCustomers
       parameters:
         - name: bookingBusiness-id
@@ -1316,6 +1336,7 @@ paths:
       tags:
         - bookingBusinesses.Actions
       summary: Invoke action publish
+      description: Makes the scheduling page of this business available to the general public.
       operationId: bookingBusinesses_publish
       parameters:
         - name: bookingBusiness-id
@@ -1336,6 +1357,7 @@ paths:
       tags:
         - bookingBusinesses.Actions
       summary: Invoke action unpublish
+      description: Prevents the general public from seeing the scheduling page of this business.
       operationId: bookingBusinesses_unpublish
       parameters:
         - name: bookingBusiness-id
@@ -1356,6 +1378,7 @@ paths:
       tags:
         - bookingBusinesses.bookingService
       summary: Get services from bookingBusinesses
+      description: All the services offered by this business. Read-only. Nullable.
       operationId: bookingBusinesses_ListServices
       parameters:
         - name: bookingBusiness-id
@@ -1479,6 +1502,7 @@ paths:
       tags:
         - bookingBusinesses.bookingService
       summary: Create new navigation property to services for bookingBusinesses
+      description: All the services offered by this business. Read-only. Nullable.
       operationId: bookingBusinesses_CreateServices
       parameters:
         - name: bookingBusiness-id
@@ -1510,6 +1534,7 @@ paths:
       tags:
         - bookingBusinesses.bookingService
       summary: Get services from bookingBusinesses
+      description: All the services offered by this business. Read-only. Nullable.
       operationId: bookingBusinesses_GetServices
       parameters:
         - name: bookingBusiness-id
@@ -1579,6 +1604,7 @@ paths:
       tags:
         - bookingBusinesses.bookingService
       summary: Update the navigation property services in bookingBusinesses
+      description: All the services offered by this business. Read-only. Nullable.
       operationId: bookingBusinesses_UpdateServices
       parameters:
         - name: bookingBusiness-id
@@ -1612,6 +1638,7 @@ paths:
       tags:
         - bookingBusinesses.bookingService
       summary: Delete navigation property services for bookingBusinesses
+      description: All the services offered by this business. Read-only. Nullable.
       operationId: bookingBusinesses_DeleteServices
       parameters:
         - name: bookingBusiness-id
@@ -1644,6 +1671,7 @@ paths:
       tags:
         - bookingBusinesses.bookingStaffMember
       summary: Get staffMembers from bookingBusinesses
+      description: All the staff members that provide services in this business. Read-only. Nullable.
       operationId: bookingBusinesses_ListStaffMembers
       parameters:
         - name: bookingBusiness-id
@@ -1743,6 +1771,7 @@ paths:
       tags:
         - bookingBusinesses.bookingStaffMember
       summary: Create new navigation property to staffMembers for bookingBusinesses
+      description: All the staff members that provide services in this business. Read-only. Nullable.
       operationId: bookingBusinesses_CreateStaffMembers
       parameters:
         - name: bookingBusiness-id
@@ -1774,6 +1803,7 @@ paths:
       tags:
         - bookingBusinesses.bookingStaffMember
       summary: Get staffMembers from bookingBusinesses
+      description: All the staff members that provide services in this business. Read-only. Nullable.
       operationId: bookingBusinesses_GetStaffMembers
       parameters:
         - name: bookingBusiness-id
@@ -1835,6 +1865,7 @@ paths:
       tags:
         - bookingBusinesses.bookingStaffMember
       summary: Update the navigation property staffMembers in bookingBusinesses
+      description: All the staff members that provide services in this business. Read-only. Nullable.
       operationId: bookingBusinesses_UpdateStaffMembers
       parameters:
         - name: bookingBusiness-id
@@ -1868,6 +1899,7 @@ paths:
       tags:
         - bookingBusinesses.bookingStaffMember
       summary: Delete navigation property staffMembers for bookingBusinesses
+      description: All the staff members that provide services in this business. Read-only. Nullable.
       operationId: bookingBusinesses_DeleteStaffMembers
       parameters:
         - name: bookingBusiness-id
