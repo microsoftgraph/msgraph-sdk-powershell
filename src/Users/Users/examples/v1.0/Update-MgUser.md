@@ -1,18 +1,7 @@
-### Example 1: {{ Add title here }}
+### Example 1: Update a user's display name
 ```powershell
-PS C:\> {{ Add code here }}
+PS C:\> Update-MgUser -UserId "f36aae05-82e9-41ce-ab77-d6ff7031412d" -DisplayName "Kristi Laar"
 
-{{ Add output here }}
 ```
 
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example updates the specified user's display name.

@@ -1,18 +1,25 @@
-### Example 1: {{ Add title here }}
+### Example 1: Get the list of all the users
+
 ```powershell
-PS C:\> {{ Add code here }}
+PS C:\>  Get-MgUser
 
-{{ Add output here }}
+Id                                   DisplayName              Mail                                           UserPrincipalName                              UserType
+--                                   -----------              ----                                           -----------------                              --------
+f36aae05-82e9-41ce-ab77-d6ff7031412d Conf Room Adams          Adams@contoso.com              Adams@contoso.com
+8a7c50d3-fcbd-4727-a889-8ab232dfea01 Adele Vance              AdeleV@contoso.com             AdeleV@contoso.com
 ```
+This command get a list of users
 
-{{ Add description here }}
+### Example 2: Get a user by Id
 
-### Example 2: {{ Add title here }}
 ```powershell
-PS C:\> {{ Add code here }}
+PS C:\>  Get-MgUser -UserId 3d939dc2-d0a0-4d4d-b3f4-6bb75ce6ff6e
 
-{{ Add output here }}
+Id                                   DisplayName      Mail                               UserPrincipalName                  UserType
+--                                   -----------      ----                               -----------------                  --------
+3d939dc2-d0a0-4d4d-b3f4-6bb75ce6ff6e Irvin Sayers     IrvinS@contoso.com                 IrvinS@contoso.com
+
 ```
+This command gets the specified user.
 
-{{ Add description here }}
 

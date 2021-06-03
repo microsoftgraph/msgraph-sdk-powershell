@@ -1,18 +1,10 @@
-### Example 1: {{ Add title here }}
+### Example 1: Get a user's manager
 ```powershell
-PS C:\> {{ Add code here }}
+PS C:\> Get-MgUserManager -UserId "daa76fd1-93ce-4b1e-afb2-0a4f92fa2d54"
 
-{{ Add output here }}
+Id                                   DeletedDateTime
+--                                   ---------------
+f890ceed-822a-4647-8748-73d88013ae9d
 ```
 
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+The commands get the manager of the specified user.

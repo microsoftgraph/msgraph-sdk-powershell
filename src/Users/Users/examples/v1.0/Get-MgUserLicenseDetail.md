@@ -1,18 +1,9 @@
-### Example 1: {{ Add title here }}
+### Example 1: Get a user's license details
 ```powershell
-PS C:\> {{ Add code here }}
+PS C:\> Get-MgUserLicenseDetail -UserId "68550c41-18a3-495e-aa1d-cf628c171b48"
 
-{{ Add output here }}
+Id                                          SkuId                                SkuPartNumber
+--                                          -----                                -------------
+BF5i-6pS2kKxDRTxGV1mX6sU3Mts2TBMufRq2nzcHUY cbdc14ab-d96c-4c30-b9f4-6ada7cdc1d46 SPB
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example retrieves the license details for the specified user.

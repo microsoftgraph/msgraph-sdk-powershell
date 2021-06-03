@@ -1,18 +1,10 @@
-### Example 1: {{ Add title here }}
+### Example 1: Get a user's photo properties
 ```powershell
-PS C:\> {{ Add code here }}
+PS C:\> Get-MgUserPhoto -UserId "8a7c50d3-fcbd-4727-a889-8ab232dfea01"
 
-{{ Add output here }}
+Id      Height Width
+--      ------ -----
+240X240 240    240
 ```
 
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example retrieves the profile photo properties for the specified user.
