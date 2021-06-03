@@ -195,6 +195,7 @@ paths:
       tags:
         - deviceManagement.detectedApp
       summary: Get detectedApps from deviceManagement
+      description: The list of detected apps associated with a device.
       operationId: deviceManagement_ListDetectedApps
       parameters:
         - $ref: '#/components/parameters/top'
@@ -280,6 +281,7 @@ paths:
       tags:
         - deviceManagement.detectedApp
       summary: Create new navigation property to detectedApps for deviceManagement
+      description: The list of detected apps associated with a device.
       operationId: deviceManagement_CreateDetectedApps
       requestBody:
         description: New navigation property
@@ -303,6 +305,7 @@ paths:
       tags:
         - deviceManagement.detectedApp
       summary: Get detectedApps from deviceManagement
+      description: The list of detected apps associated with a device.
       operationId: deviceManagement_GetDetectedApps
       parameters:
         - name: detectedApp-id
@@ -361,6 +364,7 @@ paths:
       tags:
         - deviceManagement.detectedApp
       summary: Update the navigation property detectedApps in deviceManagement
+      description: The list of detected apps associated with a device.
       operationId: deviceManagement_UpdateDetectedApps
       parameters:
         - name: detectedApp-id
@@ -387,6 +391,7 @@ paths:
       tags:
         - deviceManagement.detectedApp
       summary: Delete navigation property detectedApps for deviceManagement
+      description: The list of detected apps associated with a device.
       operationId: deviceManagement_DeleteDetectedApps
       parameters:
         - name: detectedApp-id
@@ -412,6 +417,7 @@ paths:
       tags:
         - deviceManagement.detectedApp
       summary: Get managedDevices from deviceManagement
+      description: The devices that have the discovered application installed
       operationId: deviceManagement.detectedApps_ListManagedDevices
       parameters:
         - name: detectedApp-id
@@ -474,6 +480,8 @@ paths:
                 - emailAddress desc
                 - enrolledDateTime
                 - enrolledDateTime desc
+                - ethernetMacAddress
+                - ethernetMacAddress desc
                 - exchangeAccessState
                 - exchangeAccessState desc
                 - exchangeAccessStateReason
@@ -482,6 +490,8 @@ paths:
                 - exchangeLastSuccessfulSyncDateTime desc
                 - freeStorageSpaceInBytes
                 - freeStorageSpaceInBytes desc
+                - iccid
+                - iccid desc
                 - imei
                 - imei desc
                 - isEncrypted
@@ -504,6 +514,8 @@ paths:
                 - meid desc
                 - model
                 - model desc
+                - notes
+                - notes desc
                 - operatingSystem
                 - operatingSystem desc
                 - osVersion
@@ -512,6 +524,8 @@ paths:
                 - partnerReportedThreatState desc
                 - phoneNumber
                 - phoneNumber desc
+                - physicalMemoryInBytes
+                - physicalMemoryInBytes desc
                 - remoteAssistanceSessionErrorDetails
                 - remoteAssistanceSessionErrorDetails desc
                 - remoteAssistanceSessionUrl
@@ -522,6 +536,8 @@ paths:
                 - subscriberCarrier desc
                 - totalStorageSpaceInBytes
                 - totalStorageSpaceInBytes desc
+                - udid
+                - udid desc
                 - userDisplayName
                 - userDisplayName desc
                 - userId
@@ -560,10 +576,12 @@ paths:
                 - easDeviceId
                 - emailAddress
                 - enrolledDateTime
+                - ethernetMacAddress
                 - exchangeAccessState
                 - exchangeAccessStateReason
                 - exchangeLastSuccessfulSyncDateTime
                 - freeStorageSpaceInBytes
+                - iccid
                 - imei
                 - isEncrypted
                 - isSupervised
@@ -575,15 +593,18 @@ paths:
                 - manufacturer
                 - meid
                 - model
+                - notes
                 - operatingSystem
                 - osVersion
                 - partnerReportedThreatState
                 - phoneNumber
+                - physicalMemoryInBytes
                 - remoteAssistanceSessionErrorDetails
                 - remoteAssistanceSessionUrl
                 - serialNumber
                 - subscriberCarrier
                 - totalStorageSpaceInBytes
+                - udid
                 - userDisplayName
                 - userId
                 - userPrincipalName
@@ -635,6 +656,7 @@ paths:
       tags:
         - deviceManagement.detectedApp
       summary: Get ref of managedDevices from deviceManagement
+      description: The devices that have the discovered application installed
       operationId: deviceManagement.detectedApps_ListRefManagedDevices
       parameters:
         - name: detectedApp-id
@@ -697,6 +719,8 @@ paths:
                 - emailAddress desc
                 - enrolledDateTime
                 - enrolledDateTime desc
+                - ethernetMacAddress
+                - ethernetMacAddress desc
                 - exchangeAccessState
                 - exchangeAccessState desc
                 - exchangeAccessStateReason
@@ -705,6 +729,8 @@ paths:
                 - exchangeLastSuccessfulSyncDateTime desc
                 - freeStorageSpaceInBytes
                 - freeStorageSpaceInBytes desc
+                - iccid
+                - iccid desc
                 - imei
                 - imei desc
                 - isEncrypted
@@ -727,6 +753,8 @@ paths:
                 - meid desc
                 - model
                 - model desc
+                - notes
+                - notes desc
                 - operatingSystem
                 - operatingSystem desc
                 - osVersion
@@ -735,6 +763,8 @@ paths:
                 - partnerReportedThreatState desc
                 - phoneNumber
                 - phoneNumber desc
+                - physicalMemoryInBytes
+                - physicalMemoryInBytes desc
                 - remoteAssistanceSessionErrorDetails
                 - remoteAssistanceSessionErrorDetails desc
                 - remoteAssistanceSessionUrl
@@ -745,6 +775,8 @@ paths:
                 - subscriberCarrier desc
                 - totalStorageSpaceInBytes
                 - totalStorageSpaceInBytes desc
+                - udid
+                - udid desc
                 - userDisplayName
                 - userDisplayName desc
                 - userId
@@ -781,6 +813,7 @@ paths:
       tags:
         - deviceManagement.detectedApp
       summary: Create new navigation property ref to managedDevices for deviceManagement
+      description: The devices that have the discovered application installed
       operationId: deviceManagement.detectedApps_CreateRefManagedDevices
       parameters:
         - name: detectedApp-id
@@ -816,6 +849,7 @@ paths:
       tags:
         - deviceManagement.deviceCategory
       summary: Get deviceCategories from deviceManagement
+      description: The list of device categories with the tenant.
       operationId: deviceManagement_ListDeviceCategories
       parameters:
         - $ref: '#/components/parameters/top'
@@ -893,6 +927,7 @@ paths:
       tags:
         - deviceManagement.deviceCategory
       summary: Create new navigation property to deviceCategories for deviceManagement
+      description: The list of device categories with the tenant.
       operationId: deviceManagement_CreateDeviceCategories
       requestBody:
         description: New navigation property
@@ -916,6 +951,7 @@ paths:
       tags:
         - deviceManagement.deviceCategory
       summary: Get deviceCategories from deviceManagement
+      description: The list of device categories with the tenant.
       operationId: deviceManagement_GetDeviceCategories
       parameters:
         - name: deviceCategory-id
@@ -965,6 +1001,7 @@ paths:
       tags:
         - deviceManagement.deviceCategory
       summary: Update the navigation property deviceCategories in deviceManagement
+      description: The list of device categories with the tenant.
       operationId: deviceManagement_UpdateDeviceCategories
       parameters:
         - name: deviceCategory-id
@@ -991,6 +1028,7 @@ paths:
       tags:
         - deviceManagement.deviceCategory
       summary: Delete navigation property deviceCategories for deviceManagement
+      description: The list of device categories with the tenant.
       operationId: deviceManagement_DeleteDeviceCategories
       parameters:
         - name: deviceCategory-id
@@ -1016,6 +1054,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get deviceCompliancePolicies from deviceManagement
+      description: The device compliance policies.
       operationId: deviceManagement_ListDeviceCompliancePolicies
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1116,6 +1155,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Create new navigation property to deviceCompliancePolicies for deviceManagement
+      description: The device compliance policies.
       operationId: deviceManagement_CreateDeviceCompliancePolicies
       requestBody:
         description: New navigation property
@@ -1139,6 +1179,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get deviceCompliancePolicies from deviceManagement
+      description: The device compliance policies.
       operationId: deviceManagement_GetDeviceCompliancePolicies
       parameters:
         - name: deviceCompliancePolicy-id
@@ -1234,6 +1275,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Update the navigation property deviceCompliancePolicies in deviceManagement
+      description: The device compliance policies.
       operationId: deviceManagement_UpdateDeviceCompliancePolicies
       parameters:
         - name: deviceCompliancePolicy-id
@@ -1260,6 +1302,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Delete navigation property deviceCompliancePolicies for deviceManagement
+      description: The device compliance policies.
       operationId: deviceManagement_DeleteDeviceCompliancePolicies
       parameters:
         - name: deviceCompliancePolicy-id
@@ -1285,6 +1328,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get assignments from deviceManagement
+      description: The collection of assignments for this compliance policy.
       operationId: deviceManagement.deviceCompliancePolicies_ListAssignments
       parameters:
         - name: deviceCompliancePolicy-id
@@ -1366,6 +1410,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Create new navigation property to assignments for deviceManagement
+      description: The collection of assignments for this compliance policy.
       operationId: deviceManagement.deviceCompliancePolicies_CreateAssignments
       parameters:
         - name: deviceCompliancePolicy-id
@@ -1397,6 +1442,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get assignments from deviceManagement
+      description: The collection of assignments for this compliance policy.
       operationId: deviceManagement.deviceCompliancePolicies_GetAssignments
       parameters:
         - name: deviceCompliancePolicy-id
@@ -1452,6 +1498,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Update the navigation property assignments in deviceManagement
+      description: The collection of assignments for this compliance policy.
       operationId: deviceManagement.deviceCompliancePolicies_UpdateAssignments
       parameters:
         - name: deviceCompliancePolicy-id
@@ -1485,6 +1532,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Delete navigation property assignments for deviceManagement
+      description: The collection of assignments for this compliance policy.
       operationId: deviceManagement.deviceCompliancePolicies_DeleteAssignments
       parameters:
         - name: deviceCompliancePolicy-id
@@ -1517,6 +1565,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get deviceSettingStateSummaries from deviceManagement
+      description: Compliance Setting State Device Summary
       operationId: deviceManagement.deviceCompliancePolicies_ListDeviceSettingStateSummaries
       parameters:
         - name: deviceCompliancePolicy-id
@@ -1622,6 +1671,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Create new navigation property to deviceSettingStateSummaries for deviceManagement
+      description: Compliance Setting State Device Summary
       operationId: deviceManagement.deviceCompliancePolicies_CreateDeviceSettingStateSummaries
       parameters:
         - name: deviceCompliancePolicy-id
@@ -1653,6 +1703,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get deviceSettingStateSummaries from deviceManagement
+      description: Compliance Setting State Device Summary
       operationId: deviceManagement.deviceCompliancePolicies_GetDeviceSettingStateSummaries
       parameters:
         - name: deviceCompliancePolicy-id
@@ -1716,6 +1767,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Update the navigation property deviceSettingStateSummaries in deviceManagement
+      description: Compliance Setting State Device Summary
       operationId: deviceManagement.deviceCompliancePolicies_UpdateDeviceSettingStateSummaries
       parameters:
         - name: deviceCompliancePolicy-id
@@ -1749,6 +1801,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Delete navigation property deviceSettingStateSummaries for deviceManagement
+      description: Compliance Setting State Device Summary
       operationId: deviceManagement.deviceCompliancePolicies_DeleteDeviceSettingStateSummaries
       parameters:
         - name: deviceCompliancePolicy-id
@@ -1781,6 +1834,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get deviceStatuses from deviceManagement
+      description: List of DeviceComplianceDeviceStatus.
       operationId: deviceManagement.deviceCompliancePolicies_ListDeviceStatuses
       parameters:
         - name: deviceCompliancePolicy-id
@@ -1880,6 +1934,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Create new navigation property to deviceStatuses for deviceManagement
+      description: List of DeviceComplianceDeviceStatus.
       operationId: deviceManagement.deviceCompliancePolicies_CreateDeviceStatuses
       parameters:
         - name: deviceCompliancePolicy-id
@@ -1911,6 +1966,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get deviceStatuses from deviceManagement
+      description: List of DeviceComplianceDeviceStatus.
       operationId: deviceManagement.deviceCompliancePolicies_GetDeviceStatuses
       parameters:
         - name: deviceCompliancePolicy-id
@@ -1972,6 +2028,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Update the navigation property deviceStatuses in deviceManagement
+      description: List of DeviceComplianceDeviceStatus.
       operationId: deviceManagement.deviceCompliancePolicies_UpdateDeviceStatuses
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2005,6 +2062,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Delete navigation property deviceStatuses for deviceManagement
+      description: List of DeviceComplianceDeviceStatus.
       operationId: deviceManagement.deviceCompliancePolicies_DeleteDeviceStatuses
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2037,6 +2095,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get deviceStatusOverview from deviceManagement
+      description: Device compliance devices status overview
       operationId: deviceManagement.deviceCompliancePolicies_GetDeviceStatusOverview
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2091,6 +2150,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Update the navigation property deviceStatusOverview in deviceManagement
+      description: Device compliance devices status overview
       operationId: deviceManagement.deviceCompliancePolicies_UpdateDeviceStatusOverview
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2117,6 +2177,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Delete navigation property deviceStatusOverview for deviceManagement
+      description: Device compliance devices status overview
       operationId: deviceManagement.deviceCompliancePolicies_DeleteDeviceStatusOverview
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2142,6 +2203,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get scheduledActionsForRule from deviceManagement
+      description: The list of scheduled action for this rule
       operationId: deviceManagement.deviceCompliancePolicies_ListScheduledActionsForRule
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2225,6 +2287,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Create new navigation property to scheduledActionsForRule for deviceManagement
+      description: The list of scheduled action for this rule
       operationId: deviceManagement.deviceCompliancePolicies_CreateScheduledActionsForRule
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2256,6 +2319,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get scheduledActionsForRule from deviceManagement
+      description: The list of scheduled action for this rule
       operationId: deviceManagement.deviceCompliancePolicies_GetScheduledActionsForRule
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2319,6 +2383,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Update the navigation property scheduledActionsForRule in deviceManagement
+      description: The list of scheduled action for this rule
       operationId: deviceManagement.deviceCompliancePolicies_UpdateScheduledActionsForRule
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2352,6 +2417,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Delete navigation property scheduledActionsForRule for deviceManagement
+      description: The list of scheduled action for this rule
       operationId: deviceManagement.deviceCompliancePolicies_DeleteScheduledActionsForRule
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2384,6 +2450,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get scheduledActionConfigurations from deviceManagement
+      description: The list of scheduled action configurations for this compliance policy.
       operationId: deviceManagement.deviceCompliancePolicies.scheduledActionsForRule_ListScheduledActionConfigurations
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2481,6 +2548,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Create new navigation property to scheduledActionConfigurations for deviceManagement
+      description: The list of scheduled action configurations for this compliance policy.
       operationId: deviceManagement.deviceCompliancePolicies.scheduledActionsForRule_CreateScheduledActionConfigurations
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2519,6 +2587,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get scheduledActionConfigurations from deviceManagement
+      description: The list of scheduled action configurations for this compliance policy.
       operationId: deviceManagement.deviceCompliancePolicies.scheduledActionsForRule_GetScheduledActionConfigurations
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2584,6 +2653,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Update the navigation property scheduledActionConfigurations in deviceManagement
+      description: The list of scheduled action configurations for this compliance policy.
       operationId: deviceManagement.deviceCompliancePolicies.scheduledActionsForRule_UpdateScheduledActionConfigurations
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2624,6 +2694,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Delete navigation property scheduledActionConfigurations for deviceManagement
+      description: The list of scheduled action configurations for this compliance policy.
       operationId: deviceManagement.deviceCompliancePolicies.scheduledActionsForRule_DeleteScheduledActionConfigurations
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2663,6 +2734,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get userStatuses from deviceManagement
+      description: List of DeviceComplianceUserStatus.
       operationId: deviceManagement.deviceCompliancePolicies_ListUserStatuses
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2756,6 +2828,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Create new navigation property to userStatuses for deviceManagement
+      description: List of DeviceComplianceUserStatus.
       operationId: deviceManagement.deviceCompliancePolicies_CreateUserStatuses
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2787,6 +2860,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get userStatuses from deviceManagement
+      description: List of DeviceComplianceUserStatus.
       operationId: deviceManagement.deviceCompliancePolicies_GetUserStatuses
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2846,6 +2920,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Update the navigation property userStatuses in deviceManagement
+      description: List of DeviceComplianceUserStatus.
       operationId: deviceManagement.deviceCompliancePolicies_UpdateUserStatuses
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2879,6 +2954,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Delete navigation property userStatuses for deviceManagement
+      description: List of DeviceComplianceUserStatus.
       operationId: deviceManagement.deviceCompliancePolicies_DeleteUserStatuses
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2911,6 +2987,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get userStatusOverview from deviceManagement
+      description: Device compliance users status overview
       operationId: deviceManagement.deviceCompliancePolicies_GetUserStatusOverview
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2965,6 +3042,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Update the navigation property userStatusOverview in deviceManagement
+      description: Device compliance users status overview
       operationId: deviceManagement.deviceCompliancePolicies_UpdateUserStatusOverview
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2991,6 +3069,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Delete navigation property userStatusOverview for deviceManagement
+      description: Device compliance users status overview
       operationId: deviceManagement.deviceCompliancePolicies_DeleteUserStatusOverview
       parameters:
         - name: deviceCompliancePolicy-id
@@ -3016,6 +3095,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicyDeviceStateSummary
       summary: Get deviceCompliancePolicyDeviceStateSummary from deviceManagement
+      description: The device compliance state summary for this account.
       operationId: deviceManagement_GetDeviceCompliancePolicyDeviceStateSummary
       parameters:
         - name: $select
@@ -3065,6 +3145,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicyDeviceStateSummary
       summary: Update the navigation property deviceCompliancePolicyDeviceStateSummary in deviceManagement
+      description: The device compliance state summary for this account.
       operationId: deviceManagement_UpdateDeviceCompliancePolicyDeviceStateSummary
       requestBody:
         description: New navigation property values
@@ -3083,6 +3164,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicyDeviceStateSummary
       summary: Delete navigation property deviceCompliancePolicyDeviceStateSummary for deviceManagement
+      description: The device compliance state summary for this account.
       operationId: deviceManagement_DeleteDeviceCompliancePolicyDeviceStateSummary
       parameters:
         - name: If-Match
@@ -3101,6 +3183,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicySettingStateSummary
       summary: Get deviceCompliancePolicySettingStateSummaries from deviceManagement
+      description: The summary states of compliance policy settings for this account.
       operationId: deviceManagement_ListDeviceCompliancePolicySettingStateSummaries
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3204,6 +3287,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicySettingStateSummary
       summary: Create new navigation property to deviceCompliancePolicySettingStateSummaries for deviceManagement
+      description: The summary states of compliance policy settings for this account.
       operationId: deviceManagement_CreateDeviceCompliancePolicySettingStateSummaries
       requestBody:
         description: New navigation property
@@ -3227,6 +3311,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicySettingStateSummary
       summary: Get deviceCompliancePolicySettingStateSummaries from deviceManagement
+      description: The summary states of compliance policy settings for this account.
       operationId: deviceManagement_GetDeviceCompliancePolicySettingStateSummaries
       parameters:
         - name: deviceCompliancePolicySettingStateSummary-id
@@ -3291,6 +3376,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicySettingStateSummary
       summary: Update the navigation property deviceCompliancePolicySettingStateSummaries in deviceManagement
+      description: The summary states of compliance policy settings for this account.
       operationId: deviceManagement_UpdateDeviceCompliancePolicySettingStateSummaries
       parameters:
         - name: deviceCompliancePolicySettingStateSummary-id
@@ -3317,6 +3403,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicySettingStateSummary
       summary: Delete navigation property deviceCompliancePolicySettingStateSummaries for deviceManagement
+      description: The summary states of compliance policy settings for this account.
       operationId: deviceManagement_DeleteDeviceCompliancePolicySettingStateSummaries
       parameters:
         - name: deviceCompliancePolicySettingStateSummary-id
@@ -3342,6 +3429,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicySettingStateSummary
       summary: Get deviceComplianceSettingStates from deviceManagement
+      description: Not yet documented
       operationId: deviceManagement.deviceCompliancePolicySettingStateSummaries_ListDeviceComplianceSettingStates
       parameters:
         - name: deviceCompliancePolicySettingStateSummary-id
@@ -3453,6 +3541,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicySettingStateSummary
       summary: Create new navigation property to deviceComplianceSettingStates for deviceManagement
+      description: Not yet documented
       operationId: deviceManagement.deviceCompliancePolicySettingStateSummaries_CreateDeviceComplianceSettingStates
       parameters:
         - name: deviceCompliancePolicySettingStateSummary-id
@@ -3484,6 +3573,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicySettingStateSummary
       summary: Get deviceComplianceSettingStates from deviceManagement
+      description: Not yet documented
       operationId: deviceManagement.deviceCompliancePolicySettingStateSummaries_GetDeviceComplianceSettingStates
       parameters:
         - name: deviceCompliancePolicySettingStateSummary-id
@@ -3549,6 +3639,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicySettingStateSummary
       summary: Update the navigation property deviceComplianceSettingStates in deviceManagement
+      description: Not yet documented
       operationId: deviceManagement.deviceCompliancePolicySettingStateSummaries_UpdateDeviceComplianceSettingStates
       parameters:
         - name: deviceCompliancePolicySettingStateSummary-id
@@ -3582,6 +3673,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicySettingStateSummary
       summary: Delete navigation property deviceComplianceSettingStates for deviceManagement
+      description: Not yet documented
       operationId: deviceManagement.deviceCompliancePolicySettingStateSummaries_DeleteDeviceComplianceSettingStates
       parameters:
         - name: deviceCompliancePolicySettingStateSummary-id
@@ -3614,6 +3706,7 @@ paths:
       tags:
         - deviceManagement.deviceConfigurationDeviceStateSummary
       summary: Get deviceConfigurationDeviceStateSummaries from deviceManagement
+      description: The device configuration device state summary for this account.
       operationId: deviceManagement_GetDeviceConfigurationDeviceStateSummaries
       parameters:
         - name: $select
@@ -3661,6 +3754,7 @@ paths:
       tags:
         - deviceManagement.deviceConfigurationDeviceStateSummary
       summary: Update the navigation property deviceConfigurationDeviceStateSummaries in deviceManagement
+      description: The device configuration device state summary for this account.
       operationId: deviceManagement_UpdateDeviceConfigurationDeviceStateSummaries
       requestBody:
         description: New navigation property values
@@ -3679,6 +3773,7 @@ paths:
       tags:
         - deviceManagement.deviceConfigurationDeviceStateSummary
       summary: Delete navigation property deviceConfigurationDeviceStateSummaries for deviceManagement
+      description: The device configuration device state summary for this account.
       operationId: deviceManagement_DeleteDeviceConfigurationDeviceStateSummaries
       parameters:
         - name: If-Match
@@ -3697,6 +3792,7 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Get deviceConfigurations from deviceManagement
+      description: The device configurations.
       operationId: deviceManagement_ListDeviceConfigurations
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3795,6 +3891,7 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Create new navigation property to deviceConfigurations for deviceManagement
+      description: The device configurations.
       operationId: deviceManagement_CreateDeviceConfigurations
       requestBody:
         description: New navigation property
@@ -3818,6 +3915,7 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Get deviceConfigurations from deviceManagement
+      description: The device configurations.
       operationId: deviceManagement_GetDeviceConfigurations
       parameters:
         - name: deviceConfiguration-id
@@ -3907,6 +4005,7 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Update the navigation property deviceConfigurations in deviceManagement
+      description: The device configurations.
       operationId: deviceManagement_UpdateDeviceConfigurations
       parameters:
         - name: deviceConfiguration-id
@@ -3933,6 +4032,7 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Delete navigation property deviceConfigurations for deviceManagement
+      description: The device configurations.
       operationId: deviceManagement_DeleteDeviceConfigurations
       parameters:
         - name: deviceConfiguration-id
@@ -3958,6 +4058,7 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Get assignments from deviceManagement
+      description: The list of assignments for the device configuration profile.
       operationId: deviceManagement.deviceConfigurations_ListAssignments
       parameters:
         - name: deviceConfiguration-id
@@ -4039,6 +4140,7 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Create new navigation property to assignments for deviceManagement
+      description: The list of assignments for the device configuration profile.
       operationId: deviceManagement.deviceConfigurations_CreateAssignments
       parameters:
         - name: deviceConfiguration-id
@@ -4070,6 +4172,7 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Get assignments from deviceManagement
+      description: The list of assignments for the device configuration profile.
       operationId: deviceManagement.deviceConfigurations_GetAssignments
       parameters:
         - name: deviceConfiguration-id
@@ -4125,6 +4228,7 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Update the navigation property assignments in deviceManagement
+      description: The list of assignments for the device configuration profile.
       operationId: deviceManagement.deviceConfigurations_UpdateAssignments
       parameters:
         - name: deviceConfiguration-id
@@ -4158,6 +4262,7 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Delete navigation property assignments for deviceManagement
+      description: The list of assignments for the device configuration profile.
       operationId: deviceManagement.deviceConfigurations_DeleteAssignments
       parameters:
         - name: deviceConfiguration-id
@@ -4190,6 +4295,7 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Get deviceSettingStateSummaries from deviceManagement
+      description: Device Configuration Setting State Device Summary
       operationId: deviceManagement.deviceConfigurations_ListDeviceSettingStateSummaries
       parameters:
         - name: deviceConfiguration-id
@@ -4295,6 +4401,7 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Create new navigation property to deviceSettingStateSummaries for deviceManagement
+      description: Device Configuration Setting State Device Summary
       operationId: deviceManagement.deviceConfigurations_CreateDeviceSettingStateSummaries
       parameters:
         - name: deviceConfiguration-id
@@ -4326,6 +4433,7 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Get deviceSettingStateSummaries from deviceManagement
+      description: Device Configuration Setting State Device Summary
       operationId: deviceManagement.deviceConfigurations_GetDeviceSettingStateSummaries
       parameters:
         - name: deviceConfiguration-id
@@ -4389,6 +4497,7 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Update the navigation property deviceSettingStateSummaries in deviceManagement
+      description: Device Configuration Setting State Device Summary
       operationId: deviceManagement.deviceConfigurations_UpdateDeviceSettingStateSummaries
       parameters:
         - name: deviceConfiguration-id
@@ -4422,6 +4531,7 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Delete navigation property deviceSettingStateSummaries for deviceManagement
+      description: Device Configuration Setting State Device Summary
       operationId: deviceManagement.deviceConfigurations_DeleteDeviceSettingStateSummaries
       parameters:
         - name: deviceConfiguration-id
@@ -4454,6 +4564,7 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Get deviceStatuses from deviceManagement
+      description: Device configuration installation status by device.
       operationId: deviceManagement.deviceConfigurations_ListDeviceStatuses
       parameters:
         - name: deviceConfiguration-id
@@ -4553,6 +4664,7 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Create new navigation property to deviceStatuses for deviceManagement
+      description: Device configuration installation status by device.
       operationId: deviceManagement.deviceConfigurations_CreateDeviceStatuses
       parameters:
         - name: deviceConfiguration-id
@@ -4584,6 +4696,7 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Get deviceStatuses from deviceManagement
+      description: Device configuration installation status by device.
       operationId: deviceManagement.deviceConfigurations_GetDeviceStatuses
       parameters:
         - name: deviceConfiguration-id
@@ -4645,6 +4758,7 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Update the navigation property deviceStatuses in deviceManagement
+      description: Device configuration installation status by device.
       operationId: deviceManagement.deviceConfigurations_UpdateDeviceStatuses
       parameters:
         - name: deviceConfiguration-id
@@ -4678,6 +4792,7 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Delete navigation property deviceStatuses for deviceManagement
+      description: Device configuration installation status by device.
       operationId: deviceManagement.deviceConfigurations_DeleteDeviceStatuses
       parameters:
         - name: deviceConfiguration-id
@@ -4710,6 +4825,7 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Get deviceStatusOverview from deviceManagement
+      description: Device Configuration devices status overview
       operationId: deviceManagement.deviceConfigurations_GetDeviceStatusOverview
       parameters:
         - name: deviceConfiguration-id
@@ -4764,6 +4880,7 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Update the navigation property deviceStatusOverview in deviceManagement
+      description: Device Configuration devices status overview
       operationId: deviceManagement.deviceConfigurations_UpdateDeviceStatusOverview
       parameters:
         - name: deviceConfiguration-id
@@ -4790,6 +4907,7 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Delete navigation property deviceStatusOverview for deviceManagement
+      description: Device Configuration devices status overview
       operationId: deviceManagement.deviceConfigurations_DeleteDeviceStatusOverview
       parameters:
         - name: deviceConfiguration-id
@@ -4815,6 +4933,7 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Get userStatuses from deviceManagement
+      description: Device configuration installation status by user.
       operationId: deviceManagement.deviceConfigurations_ListUserStatuses
       parameters:
         - name: deviceConfiguration-id
@@ -4908,6 +5027,7 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Create new navigation property to userStatuses for deviceManagement
+      description: Device configuration installation status by user.
       operationId: deviceManagement.deviceConfigurations_CreateUserStatuses
       parameters:
         - name: deviceConfiguration-id
@@ -4939,6 +5059,7 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Get userStatuses from deviceManagement
+      description: Device configuration installation status by user.
       operationId: deviceManagement.deviceConfigurations_GetUserStatuses
       parameters:
         - name: deviceConfiguration-id
@@ -4998,6 +5119,7 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Update the navigation property userStatuses in deviceManagement
+      description: Device configuration installation status by user.
       operationId: deviceManagement.deviceConfigurations_UpdateUserStatuses
       parameters:
         - name: deviceConfiguration-id
@@ -5031,6 +5153,7 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Delete navigation property userStatuses for deviceManagement
+      description: Device configuration installation status by user.
       operationId: deviceManagement.deviceConfigurations_DeleteUserStatuses
       parameters:
         - name: deviceConfiguration-id
@@ -5063,6 +5186,7 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Get userStatusOverview from deviceManagement
+      description: Device Configuration users status overview
       operationId: deviceManagement.deviceConfigurations_GetUserStatusOverview
       parameters:
         - name: deviceConfiguration-id
@@ -5117,6 +5241,7 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Update the navigation property userStatusOverview in deviceManagement
+      description: Device Configuration users status overview
       operationId: deviceManagement.deviceConfigurations_UpdateUserStatusOverview
       parameters:
         - name: deviceConfiguration-id
@@ -5143,6 +5268,7 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Delete navigation property userStatusOverview for deviceManagement
+      description: Device Configuration users status overview
       operationId: deviceManagement.deviceConfigurations_DeleteUserStatusOverview
       parameters:
         - name: deviceConfiguration-id
@@ -5168,6 +5294,7 @@ paths:
       tags:
         - deviceManagement.managedDeviceOverview
       summary: Get managedDeviceOverview from deviceManagement
+      description: Device overview
       operationId: deviceManagement_GetManagedDeviceOverview
       parameters:
         - name: $select
@@ -5214,6 +5341,7 @@ paths:
       tags:
         - deviceManagement.managedDeviceOverview
       summary: Get ref of managedDeviceOverview from deviceManagement
+      description: Device overview
       operationId: deviceManagement_GetRefManagedDeviceOverview
       responses:
         '200':
@@ -5229,6 +5357,7 @@ paths:
       tags:
         - deviceManagement.managedDeviceOverview
       summary: Update the ref of navigation property managedDeviceOverview in deviceManagement
+      description: Device overview
       operationId: deviceManagement_SetRefManagedDeviceOverview
       requestBody:
         description: New navigation property ref values
@@ -5249,6 +5378,7 @@ paths:
       tags:
         - deviceManagement.managedDeviceOverview
       summary: Delete ref of navigation property managedDeviceOverview for deviceManagement
+      description: Device overview
       operationId: deviceManagement_DeleteRefManagedDeviceOverview
       parameters:
         - name: If-Match
@@ -5267,6 +5397,7 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get managedDevices from deviceManagement
+      description: The list of managed devices.
       operationId: deviceManagement_ListManagedDevices
       parameters:
         - $ref: '#/components/parameters/top'
@@ -5322,6 +5453,8 @@ paths:
                 - emailAddress desc
                 - enrolledDateTime
                 - enrolledDateTime desc
+                - ethernetMacAddress
+                - ethernetMacAddress desc
                 - exchangeAccessState
                 - exchangeAccessState desc
                 - exchangeAccessStateReason
@@ -5330,6 +5463,8 @@ paths:
                 - exchangeLastSuccessfulSyncDateTime desc
                 - freeStorageSpaceInBytes
                 - freeStorageSpaceInBytes desc
+                - iccid
+                - iccid desc
                 - imei
                 - imei desc
                 - isEncrypted
@@ -5352,6 +5487,8 @@ paths:
                 - meid desc
                 - model
                 - model desc
+                - notes
+                - notes desc
                 - operatingSystem
                 - operatingSystem desc
                 - osVersion
@@ -5360,6 +5497,8 @@ paths:
                 - partnerReportedThreatState desc
                 - phoneNumber
                 - phoneNumber desc
+                - physicalMemoryInBytes
+                - physicalMemoryInBytes desc
                 - remoteAssistanceSessionErrorDetails
                 - remoteAssistanceSessionErrorDetails desc
                 - remoteAssistanceSessionUrl
@@ -5370,6 +5509,8 @@ paths:
                 - subscriberCarrier desc
                 - totalStorageSpaceInBytes
                 - totalStorageSpaceInBytes desc
+                - udid
+                - udid desc
                 - userDisplayName
                 - userDisplayName desc
                 - userId
@@ -5408,10 +5549,12 @@ paths:
                 - easDeviceId
                 - emailAddress
                 - enrolledDateTime
+                - ethernetMacAddress
                 - exchangeAccessState
                 - exchangeAccessStateReason
                 - exchangeLastSuccessfulSyncDateTime
                 - freeStorageSpaceInBytes
+                - iccid
                 - imei
                 - isEncrypted
                 - isSupervised
@@ -5423,15 +5566,18 @@ paths:
                 - manufacturer
                 - meid
                 - model
+                - notes
                 - operatingSystem
                 - osVersion
                 - partnerReportedThreatState
                 - phoneNumber
+                - physicalMemoryInBytes
                 - remoteAssistanceSessionErrorDetails
                 - remoteAssistanceSessionUrl
                 - serialNumber
                 - subscriberCarrier
                 - totalStorageSpaceInBytes
+                - udid
                 - userDisplayName
                 - userId
                 - userPrincipalName
@@ -5482,6 +5628,7 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Create new navigation property to managedDevices for deviceManagement
+      description: The list of managed devices.
       operationId: deviceManagement_CreateManagedDevices
       requestBody:
         description: New navigation property
@@ -5505,6 +5652,7 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get managedDevices from deviceManagement
+      description: The list of managed devices.
       operationId: deviceManagement_GetManagedDevices
       parameters:
         - name: managedDevice-id
@@ -5543,10 +5691,12 @@ paths:
                 - easDeviceId
                 - emailAddress
                 - enrolledDateTime
+                - ethernetMacAddress
                 - exchangeAccessState
                 - exchangeAccessStateReason
                 - exchangeLastSuccessfulSyncDateTime
                 - freeStorageSpaceInBytes
+                - iccid
                 - imei
                 - isEncrypted
                 - isSupervised
@@ -5558,15 +5708,18 @@ paths:
                 - manufacturer
                 - meid
                 - model
+                - notes
                 - operatingSystem
                 - osVersion
                 - partnerReportedThreatState
                 - phoneNumber
+                - physicalMemoryInBytes
                 - remoteAssistanceSessionErrorDetails
                 - remoteAssistanceSessionUrl
                 - serialNumber
                 - subscriberCarrier
                 - totalStorageSpaceInBytes
+                - udid
                 - userDisplayName
                 - userId
                 - userPrincipalName
@@ -5617,6 +5770,7 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Update the navigation property managedDevices in deviceManagement
+      description: The list of managed devices.
       operationId: deviceManagement_UpdateManagedDevices
       parameters:
         - name: managedDevice-id
@@ -5643,6 +5797,7 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Delete navigation property managedDevices for deviceManagement
+      description: The list of managed devices.
       operationId: deviceManagement_DeleteManagedDevices
       parameters:
         - name: managedDevice-id
@@ -5668,6 +5823,7 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get deviceCategory from deviceManagement
+      description: Device category
       operationId: deviceManagement.managedDevices_GetDeviceCategory
       parameters:
         - name: managedDevice-id
@@ -5717,6 +5873,7 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Update the navigation property deviceCategory in deviceManagement
+      description: Device category
       operationId: deviceManagement.managedDevices_UpdateDeviceCategory
       parameters:
         - name: managedDevice-id
@@ -5743,6 +5900,7 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Delete navigation property deviceCategory for deviceManagement
+      description: Device category
       operationId: deviceManagement.managedDevices_DeleteDeviceCategory
       parameters:
         - name: managedDevice-id
@@ -5768,6 +5926,7 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get deviceCompliancePolicyStates from deviceManagement
+      description: Device compliance policy states for this device.
       operationId: deviceManagement.managedDevices_ListDeviceCompliancePolicyStates
       parameters:
         - name: managedDevice-id
@@ -5864,6 +6023,7 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Create new navigation property to deviceCompliancePolicyStates for deviceManagement
+      description: Device compliance policy states for this device.
       operationId: deviceManagement.managedDevices_CreateDeviceCompliancePolicyStates
       parameters:
         - name: managedDevice-id
@@ -5895,6 +6055,7 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get deviceCompliancePolicyStates from deviceManagement
+      description: Device compliance policy states for this device.
       operationId: deviceManagement.managedDevices_GetDeviceCompliancePolicyStates
       parameters:
         - name: managedDevice-id
@@ -5955,6 +6116,7 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Update the navigation property deviceCompliancePolicyStates in deviceManagement
+      description: Device compliance policy states for this device.
       operationId: deviceManagement.managedDevices_UpdateDeviceCompliancePolicyStates
       parameters:
         - name: managedDevice-id
@@ -5988,6 +6150,7 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Delete navigation property deviceCompliancePolicyStates for deviceManagement
+      description: Device compliance policy states for this device.
       operationId: deviceManagement.managedDevices_DeleteDeviceCompliancePolicyStates
       parameters:
         - name: managedDevice-id
@@ -6020,6 +6183,7 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get deviceConfigurationStates from deviceManagement
+      description: Device configuration states for this device.
       operationId: deviceManagement.managedDevices_ListDeviceConfigurationStates
       parameters:
         - name: managedDevice-id
@@ -6116,6 +6280,7 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Create new navigation property to deviceConfigurationStates for deviceManagement
+      description: Device configuration states for this device.
       operationId: deviceManagement.managedDevices_CreateDeviceConfigurationStates
       parameters:
         - name: managedDevice-id
@@ -6147,6 +6312,7 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get deviceConfigurationStates from deviceManagement
+      description: Device configuration states for this device.
       operationId: deviceManagement.managedDevices_GetDeviceConfigurationStates
       parameters:
         - name: managedDevice-id
@@ -6207,6 +6373,7 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Update the navigation property deviceConfigurationStates in deviceManagement
+      description: Device configuration states for this device.
       operationId: deviceManagement.managedDevices_UpdateDeviceConfigurationStates
       parameters:
         - name: managedDevice-id
@@ -6240,6 +6407,7 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Delete navigation property deviceConfigurationStates for deviceManagement
+      description: Device configuration states for this device.
       operationId: deviceManagement.managedDevices_DeleteDeviceConfigurationStates
       parameters:
         - name: managedDevice-id
@@ -6272,6 +6440,7 @@ paths:
       tags:
         - deviceManagement.notificationMessageTemplate
       summary: Get notificationMessageTemplates from deviceManagement
+      description: The Notification Message Templates.
       operationId: deviceManagement_ListNotificationMessageTemplates
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6357,6 +6526,7 @@ paths:
       tags:
         - deviceManagement.notificationMessageTemplate
       summary: Create new navigation property to notificationMessageTemplates for deviceManagement
+      description: The Notification Message Templates.
       operationId: deviceManagement_CreateNotificationMessageTemplates
       requestBody:
         description: New navigation property
@@ -6380,6 +6550,7 @@ paths:
       tags:
         - deviceManagement.notificationMessageTemplate
       summary: Get notificationMessageTemplates from deviceManagement
+      description: The Notification Message Templates.
       operationId: deviceManagement_GetNotificationMessageTemplates
       parameters:
         - name: notificationMessageTemplate-id
@@ -6438,6 +6609,7 @@ paths:
       tags:
         - deviceManagement.notificationMessageTemplate
       summary: Update the navigation property notificationMessageTemplates in deviceManagement
+      description: The Notification Message Templates.
       operationId: deviceManagement_UpdateNotificationMessageTemplates
       parameters:
         - name: notificationMessageTemplate-id
@@ -6464,6 +6636,7 @@ paths:
       tags:
         - deviceManagement.notificationMessageTemplate
       summary: Delete navigation property notificationMessageTemplates for deviceManagement
+      description: The Notification Message Templates.
       operationId: deviceManagement_DeleteNotificationMessageTemplates
       parameters:
         - name: notificationMessageTemplate-id
@@ -6489,6 +6662,7 @@ paths:
       tags:
         - deviceManagement.notificationMessageTemplate
       summary: Get localizedNotificationMessages from deviceManagement
+      description: The list of localized messages for this Notification Message Template.
       operationId: deviceManagement.notificationMessageTemplates_ListLocalizedNotificationMessages
       parameters:
         - name: notificationMessageTemplate-id
@@ -6582,6 +6756,7 @@ paths:
       tags:
         - deviceManagement.notificationMessageTemplate
       summary: Create new navigation property to localizedNotificationMessages for deviceManagement
+      description: The list of localized messages for this Notification Message Template.
       operationId: deviceManagement.notificationMessageTemplates_CreateLocalizedNotificationMessages
       parameters:
         - name: notificationMessageTemplate-id
@@ -6613,6 +6788,7 @@ paths:
       tags:
         - deviceManagement.notificationMessageTemplate
       summary: Get localizedNotificationMessages from deviceManagement
+      description: The list of localized messages for this Notification Message Template.
       operationId: deviceManagement.notificationMessageTemplates_GetLocalizedNotificationMessages
       parameters:
         - name: notificationMessageTemplate-id
@@ -6672,6 +6848,7 @@ paths:
       tags:
         - deviceManagement.notificationMessageTemplate
       summary: Update the navigation property localizedNotificationMessages in deviceManagement
+      description: The list of localized messages for this Notification Message Template.
       operationId: deviceManagement.notificationMessageTemplates_UpdateLocalizedNotificationMessages
       parameters:
         - name: notificationMessageTemplate-id
@@ -6705,6 +6882,7 @@ paths:
       tags:
         - deviceManagement.notificationMessageTemplate
       summary: Delete navigation property localizedNotificationMessages for deviceManagement
+      description: The list of localized messages for this Notification Message Template.
       operationId: deviceManagement.notificationMessageTemplates_DeleteLocalizedNotificationMessages
       parameters:
         - name: notificationMessageTemplate-id
@@ -6737,6 +6915,7 @@ paths:
       tags:
         - deviceManagement.softwareUpdateStatusSummary
       summary: Get softwareUpdateStatusSummary from deviceManagement
+      description: The software update status summary.
       operationId: deviceManagement_GetSoftwareUpdateStatusSummary
       parameters:
         - name: $select
@@ -6793,6 +6972,7 @@ paths:
       tags:
         - deviceManagement.softwareUpdateStatusSummary
       summary: Get ref of softwareUpdateStatusSummary from deviceManagement
+      description: The software update status summary.
       operationId: deviceManagement_GetRefSoftwareUpdateStatusSummary
       responses:
         '200':
@@ -6808,6 +6988,7 @@ paths:
       tags:
         - deviceManagement.softwareUpdateStatusSummary
       summary: Update the ref of navigation property softwareUpdateStatusSummary in deviceManagement
+      description: The software update status summary.
       operationId: deviceManagement_SetRefSoftwareUpdateStatusSummary
       requestBody:
         description: New navigation property ref values
@@ -6828,6 +7009,7 @@ paths:
       tags:
         - deviceManagement.softwareUpdateStatusSummary
       summary: Delete ref of navigation property softwareUpdateStatusSummary for deviceManagement
+      description: The software update status summary.
       operationId: deviceManagement_DeleteRefSoftwareUpdateStatusSummary
       parameters:
         - name: If-Match
@@ -6846,6 +7028,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementTroubleshootingEvent
       summary: Get troubleshootingEvents from deviceManagement
+      description: The list of troubleshooting events for the tenant.
       operationId: deviceManagement_ListTroubleshootingEvents
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6923,6 +7106,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementTroubleshootingEvent
       summary: Create new navigation property to troubleshootingEvents for deviceManagement
+      description: The list of troubleshooting events for the tenant.
       operationId: deviceManagement_CreateTroubleshootingEvents
       requestBody:
         description: New navigation property
@@ -6946,6 +7130,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementTroubleshootingEvent
       summary: Get troubleshootingEvents from deviceManagement
+      description: The list of troubleshooting events for the tenant.
       operationId: deviceManagement_GetTroubleshootingEvents
       parameters:
         - name: deviceManagementTroubleshootingEvent-id
@@ -6995,6 +7180,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementTroubleshootingEvent
       summary: Update the navigation property troubleshootingEvents in deviceManagement
+      description: The list of troubleshooting events for the tenant.
       operationId: deviceManagement_UpdateTroubleshootingEvents
       parameters:
         - name: deviceManagementTroubleshootingEvent-id
@@ -7021,6 +7207,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementTroubleshootingEvent
       summary: Delete navigation property troubleshootingEvents for deviceManagement
+      description: The list of troubleshooting events for the tenant.
       operationId: deviceManagement_DeleteTroubleshootingEvents
       parameters:
         - name: deviceManagementTroubleshootingEvent-id
@@ -7046,6 +7233,7 @@ paths:
       tags:
         - deviceManagement.windowsInformationProtectionAppLearningSummary
       summary: Get windowsInformationProtectionAppLearningSummaries from deviceManagement
+      description: The windows information protection app learning summaries.
       operationId: deviceManagement_ListWindowsInformationProtectionAppLearningSummaries
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7126,6 +7314,7 @@ paths:
       tags:
         - deviceManagement.windowsInformationProtectionAppLearningSummary
       summary: Create new navigation property to windowsInformationProtectionAppLearningSummaries for deviceManagement
+      description: The windows information protection app learning summaries.
       operationId: deviceManagement_CreateWindowsInformationProtectionAppLearningSummaries
       requestBody:
         description: New navigation property
@@ -7149,6 +7338,7 @@ paths:
       tags:
         - deviceManagement.windowsInformationProtectionAppLearningSummary
       summary: Get windowsInformationProtectionAppLearningSummaries from deviceManagement
+      description: The windows information protection app learning summaries.
       operationId: deviceManagement_GetWindowsInformationProtectionAppLearningSummaries
       parameters:
         - name: windowsInformationProtectionAppLearningSummary-id
@@ -7199,6 +7389,7 @@ paths:
       tags:
         - deviceManagement.windowsInformationProtectionAppLearningSummary
       summary: Update the navigation property windowsInformationProtectionAppLearningSummaries in deviceManagement
+      description: The windows information protection app learning summaries.
       operationId: deviceManagement_UpdateWindowsInformationProtectionAppLearningSummaries
       parameters:
         - name: windowsInformationProtectionAppLearningSummary-id
@@ -7225,6 +7416,7 @@ paths:
       tags:
         - deviceManagement.windowsInformationProtectionAppLearningSummary
       summary: Delete navigation property windowsInformationProtectionAppLearningSummaries for deviceManagement
+      description: The windows information protection app learning summaries.
       operationId: deviceManagement_DeleteWindowsInformationProtectionAppLearningSummaries
       parameters:
         - name: windowsInformationProtectionAppLearningSummary-id
@@ -7250,6 +7442,7 @@ paths:
       tags:
         - deviceManagement.windowsInformationProtectionNetworkLearningSummary
       summary: Get windowsInformationProtectionNetworkLearningSummaries from deviceManagement
+      description: The windows information protection network learning summaries.
       operationId: deviceManagement_ListWindowsInformationProtectionNetworkLearningSummaries
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7327,6 +7520,7 @@ paths:
       tags:
         - deviceManagement.windowsInformationProtectionNetworkLearningSummary
       summary: Create new navigation property to windowsInformationProtectionNetworkLearningSummaries for deviceManagement
+      description: The windows information protection network learning summaries.
       operationId: deviceManagement_CreateWindowsInformationProtectionNetworkLearningSummaries
       requestBody:
         description: New navigation property
@@ -7350,6 +7544,7 @@ paths:
       tags:
         - deviceManagement.windowsInformationProtectionNetworkLearningSummary
       summary: Get windowsInformationProtectionNetworkLearningSummaries from deviceManagement
+      description: The windows information protection network learning summaries.
       operationId: deviceManagement_GetWindowsInformationProtectionNetworkLearningSummaries
       parameters:
         - name: windowsInformationProtectionNetworkLearningSummary-id
@@ -7399,6 +7594,7 @@ paths:
       tags:
         - deviceManagement.windowsInformationProtectionNetworkLearningSummary
       summary: Update the navigation property windowsInformationProtectionNetworkLearningSummaries in deviceManagement
+      description: The windows information protection network learning summaries.
       operationId: deviceManagement_UpdateWindowsInformationProtectionNetworkLearningSummaries
       parameters:
         - name: windowsInformationProtectionNetworkLearningSummary-id
@@ -7425,6 +7621,7 @@ paths:
       tags:
         - deviceManagement.windowsInformationProtectionNetworkLearningSummary
       summary: Delete navigation property windowsInformationProtectionNetworkLearningSummaries for deviceManagement
+      description: The windows information protection network learning summaries.
       operationId: deviceManagement_DeleteWindowsInformationProtectionNetworkLearningSummaries
       parameters:
         - name: windowsInformationProtectionNetworkLearningSummary-id
@@ -7702,6 +7899,10 @@ components:
               type: string
               description: Enrollment time of the device. This property is read-only.
               format: date-time
+            ethernetMacAddress:
+              type: string
+              description: Ethernet MAC. This property is read-only.
+              nullable: true
             exchangeAccessState:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementExchangeAccessState'
             exchangeAccessStateReason:
@@ -7715,6 +7916,10 @@ components:
               type: integer
               description: Free Storage in Bytes. This property is read-only.
               format: int64
+            iccid:
+              type: string
+              description: 'Integrated Circuit Card Identifier, it is A SIM card''s unique identification number. This property is read-only.'
+              nullable: true
             imei:
               type: string
               description: IMEI. This property is read-only.
@@ -7754,6 +7959,10 @@ components:
               type: string
               description: Model of the device. This property is read-only.
               nullable: true
+            notes:
+              type: string
+              description: Notes on the device created by IT Admin
+              nullable: true
             operatingSystem:
               type: string
               description: 'Operating system of the device. Windows, iOS, etc. This property is read-only.'
@@ -7768,6 +7977,10 @@ components:
               type: string
               description: Phone number of the device. This property is read-only.
               nullable: true
+            physicalMemoryInBytes:
+              type: integer
+              description: Total Memory in Bytes. This property is read-only.
+              format: int64
             remoteAssistanceSessionErrorDetails:
               type: string
               description: An error string that identifies issues when creating Remote Assistance session objects. This property is read-only.
@@ -7788,6 +8001,10 @@ components:
               type: integer
               description: Total Storage in Bytes. This property is read-only.
               format: int64
+            udid:
+              type: string
+              description: Unique Device Identifier for iOS and macOS devices. This property is read-only.
+              nullable: true
             userDisplayName:
               type: string
               description: User display name. This property is read-only.
@@ -9387,6 +9604,10 @@ components:
               type: string
               description: Not yet documented
               nullable: true
+            certificateSerialNumber:
+              type: string
+              description: Certificate serial number. This property is read-only.
+              nullable: true
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -9702,6 +9923,9 @@ components:
         - windowsAutoEnrollment
         - windowsBulkAzureDomainJoin
         - windowsCoManagement
+        - windowsAzureADJoinUsingDeviceAuth
+        - appleUserEnrollment
+        - appleUserEnrollmentWithServiceAccount
       type: string
     microsoft.graph.deviceHealthAttestationState:
       title: deviceHealthAttestationState

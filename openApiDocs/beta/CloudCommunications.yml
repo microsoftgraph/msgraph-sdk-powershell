@@ -324,6 +324,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Get sessions from communications
+      description: 'List of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.'
       operationId: communications.callRecords_ListSessions
       parameters:
         - name: callRecord-id
@@ -422,6 +423,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Create new navigation property to sessions for communications
+      description: 'List of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.'
       operationId: communications.callRecords_CreateSessions
       parameters:
         - name: callRecord-id
@@ -453,6 +455,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Get sessions from communications
+      description: 'List of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.'
       operationId: communications.callRecords_GetSessions
       parameters:
         - name: callRecord-id
@@ -521,6 +524,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Update the navigation property sessions in communications
+      description: 'List of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.'
       operationId: communications.callRecords_UpdateSessions
       parameters:
         - name: callRecord-id
@@ -554,6 +558,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Delete navigation property sessions for communications
+      description: 'List of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.'
       operationId: communications.callRecords_DeleteSessions
       parameters:
         - name: callRecord-id
@@ -586,6 +591,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Get segments from communications
+      description: The list of segments involved in the session. Read-only. Nullable.
       operationId: communications.callRecords.sessions_ListSegments
       parameters:
         - name: callRecord-id
@@ -689,6 +695,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Create new navigation property to segments for communications
+      description: The list of segments involved in the session. Read-only. Nullable.
       operationId: communications.callRecords.sessions_CreateSegments
       parameters:
         - name: callRecord-id
@@ -727,6 +734,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Get segments from communications
+      description: The list of segments involved in the session. Read-only. Nullable.
       operationId: communications.callRecords.sessions_GetSegments
       parameters:
         - name: callRecord-id
@@ -794,6 +802,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Update the navigation property segments in communications
+      description: The list of segments involved in the session. Read-only. Nullable.
       operationId: communications.callRecords.sessions_UpdateSegments
       parameters:
         - name: callRecord-id
@@ -834,6 +843,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Delete navigation property segments for communications
+      description: The list of segments involved in the session. Read-only. Nullable.
       operationId: communications.callRecords.sessions_DeleteSegments
       parameters:
         - name: callRecord-id
@@ -1194,6 +1204,7 @@ paths:
       tags:
         - communications.call
       summary: Get audioRoutingGroups from communications
+      description: Read-only. Nullable.
       operationId: communications.calls_ListAudioRoutingGroups
       parameters:
         - name: call-id
@@ -1281,6 +1292,7 @@ paths:
       tags:
         - communications.call
       summary: Create new navigation property to audioRoutingGroups for communications
+      description: Read-only. Nullable.
       operationId: communications.calls_CreateAudioRoutingGroups
       parameters:
         - name: call-id
@@ -1312,6 +1324,7 @@ paths:
       tags:
         - communications.call
       summary: Get audioRoutingGroups from communications
+      description: Read-only. Nullable.
       operationId: communications.calls_GetAudioRoutingGroups
       parameters:
         - name: call-id
@@ -1369,6 +1382,7 @@ paths:
       tags:
         - communications.call
       summary: Update the navigation property audioRoutingGroups in communications
+      description: Read-only. Nullable.
       operationId: communications.calls_UpdateAudioRoutingGroups
       parameters:
         - name: call-id
@@ -1402,6 +1416,7 @@ paths:
       tags:
         - communications.call
       summary: Delete navigation property audioRoutingGroups for communications
+      description: Read-only. Nullable.
       operationId: communications.calls_DeleteAudioRoutingGroups
       parameters:
         - name: call-id
@@ -2034,6 +2049,7 @@ paths:
       tags:
         - communications.call
       summary: Get operations from communications
+      description: Read-only. Nullable.
       operationId: communications.calls_ListOperations
       parameters:
         - name: call-id
@@ -2121,6 +2137,7 @@ paths:
       tags:
         - communications.call
       summary: Create new navigation property to operations for communications
+      description: Read-only. Nullable.
       operationId: communications.calls_CreateOperations
       parameters:
         - name: call-id
@@ -2152,6 +2169,7 @@ paths:
       tags:
         - communications.call
       summary: Get operations from communications
+      description: Read-only. Nullable.
       operationId: communications.calls_GetOperations
       parameters:
         - name: call-id
@@ -2209,6 +2227,7 @@ paths:
       tags:
         - communications.call
       summary: Update the navigation property operations in communications
+      description: Read-only. Nullable.
       operationId: communications.calls_UpdateOperations
       parameters:
         - name: call-id
@@ -2242,6 +2261,7 @@ paths:
       tags:
         - communications.call
       summary: Delete navigation property operations for communications
+      description: Read-only. Nullable.
       operationId: communications.calls_DeleteOperations
       parameters:
         - name: call-id
@@ -2274,6 +2294,7 @@ paths:
       tags:
         - communications.call
       summary: Get participants from communications
+      description: Read-only. Nullable.
       operationId: communications.calls_ListParticipants
       parameters:
         - name: call-id
@@ -2370,6 +2391,7 @@ paths:
       tags:
         - communications.call
       summary: Create new navigation property to participants for communications
+      description: Read-only. Nullable.
       operationId: communications.calls_CreateParticipants
       parameters:
         - name: call-id
@@ -2401,6 +2423,7 @@ paths:
       tags:
         - communications.call
       summary: Get participants from communications
+      description: Read-only. Nullable.
       operationId: communications.calls_GetParticipants
       parameters:
         - name: call-id
@@ -2461,6 +2484,7 @@ paths:
       tags:
         - communications.call
       summary: Update the navigation property participants in communications
+      description: Read-only. Nullable.
       operationId: communications.calls_UpdateParticipants
       parameters:
         - name: call-id
@@ -2494,6 +2518,7 @@ paths:
       tags:
         - communications.call
       summary: Delete navigation property participants for communications
+      description: Read-only. Nullable.
       operationId: communications.calls_DeleteParticipants
       parameters:
         - name: call-id

@@ -83,6 +83,7 @@ paths:
       tags:
         - security.alert
       summary: Get alerts from security
+      description: Read-only. Nullable.
       operationId: security_ListAlerts
       parameters:
         - $ref: '#/components/parameters/top'
@@ -271,6 +272,7 @@ paths:
       tags:
         - security.alert
       summary: Create new navigation property to alerts for security
+      description: Read-only. Nullable.
       operationId: security_CreateAlerts
       requestBody:
         description: New navigation property
@@ -294,6 +296,7 @@ paths:
       tags:
         - security.alert
       summary: Get alerts from security
+      description: Read-only. Nullable.
       operationId: security_GetAlerts
       parameters:
         - name: alert-id
@@ -380,6 +383,7 @@ paths:
       tags:
         - security.alert
       summary: Update the navigation property alerts in security
+      description: Read-only. Nullable.
       operationId: security_UpdateAlerts
       parameters:
         - name: alert-id
@@ -406,6 +410,7 @@ paths:
       tags:
         - security.alert
       summary: Delete navigation property alerts for security
+      description: Read-only. Nullable.
       operationId: security_DeleteAlerts
       parameters:
         - name: alert-id
