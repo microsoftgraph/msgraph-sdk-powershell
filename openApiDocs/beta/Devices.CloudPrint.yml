@@ -103,6 +103,7 @@ paths:
       tags:
         - print.printConnector
       summary: Get connectors from print
+      description: The list of available print connectors.
       operationId: print_ListConnectors
       parameters:
         - $ref: '#/components/parameters/top'
@@ -198,6 +199,7 @@ paths:
       tags:
         - print.printConnector
       summary: Create new navigation property to connectors for print
+      description: The list of available print connectors.
       operationId: print_CreateConnectors
       requestBody:
         description: New navigation property
@@ -221,6 +223,7 @@ paths:
       tags:
         - print.printConnector
       summary: Get connectors from print
+      description: The list of available print connectors.
       operationId: print_GetConnectors
       parameters:
         - name: printConnector-id
@@ -276,6 +279,7 @@ paths:
       tags:
         - print.printConnector
       summary: Update the navigation property connectors in print
+      description: The list of available print connectors.
       operationId: print_UpdateConnectors
       parameters:
         - name: printConnector-id
@@ -302,6 +306,7 @@ paths:
       tags:
         - print.printConnector
       summary: Delete navigation property connectors for print
+      description: The list of available print connectors.
       operationId: print_DeleteConnectors
       parameters:
         - name: printConnector-id
@@ -327,6 +332,7 @@ paths:
       tags:
         - print.printOperation
       summary: Get operations from print
+      description: The list of print long running operations.
       operationId: print_ListOperations
       parameters:
         - $ref: '#/components/parameters/top'
@@ -404,6 +410,7 @@ paths:
       tags:
         - print.printOperation
       summary: Create new navigation property to operations for print
+      description: The list of print long running operations.
       operationId: print_CreateOperations
       requestBody:
         description: New navigation property
@@ -427,6 +434,7 @@ paths:
       tags:
         - print.printOperation
       summary: Get operations from print
+      description: The list of print long running operations.
       operationId: print_GetOperations
       parameters:
         - name: printOperation-id
@@ -476,6 +484,7 @@ paths:
       tags:
         - print.printOperation
       summary: Update the navigation property operations in print
+      description: The list of print long running operations.
       operationId: print_UpdateOperations
       parameters:
         - name: printOperation-id
@@ -502,6 +511,7 @@ paths:
       tags:
         - print.printOperation
       summary: Delete navigation property operations for print
+      description: The list of print long running operations.
       operationId: print_DeleteOperations
       parameters:
         - name: printOperation-id
@@ -527,6 +537,7 @@ paths:
       tags:
         - print.printer
       summary: Get printers from print
+      description: The list of printers registered in the tenant.
       operationId: print_ListPrinters
       parameters:
         - $ref: '#/components/parameters/top'
@@ -650,6 +661,7 @@ paths:
       tags:
         - print.printer
       summary: Create new navigation property to printers for print
+      description: The list of printers registered in the tenant.
       operationId: print_CreatePrinters
       requestBody:
         description: New navigation property
@@ -673,6 +685,7 @@ paths:
       tags:
         - print.printer
       summary: Get printers from print
+      description: The list of printers registered in the tenant.
       operationId: print_GetPrinters
       parameters:
         - name: printer-id
@@ -765,6 +778,7 @@ paths:
       tags:
         - print.printer
       summary: Update the navigation property printers in print
+      description: The list of printers registered in the tenant.
       operationId: print_UpdatePrinters
       parameters:
         - name: printer-id
@@ -791,6 +805,7 @@ paths:
       tags:
         - print.printer
       summary: Delete navigation property printers for print
+      description: The list of printers registered in the tenant.
       operationId: print_DeletePrinters
       parameters:
         - name: printer-id
@@ -816,6 +831,7 @@ paths:
       tags:
         - print.printer
       summary: Get connectors from print
+      description: The connectors that are associated with the printer.
       operationId: print.printers_ListConnectors
       parameters:
         - name: printer-id
@@ -919,6 +935,7 @@ paths:
       tags:
         - print.printer
       summary: Get ref of connectors from print
+      description: The connectors that are associated with the printer.
       operationId: print.printers_ListRefConnectors
       parameters:
         - name: printer-id
@@ -989,6 +1006,7 @@ paths:
       tags:
         - print.printer
       summary: Create new navigation property ref to connectors for print
+      description: The connectors that are associated with the printer.
       operationId: print.printers_CreateRefConnectors
       parameters:
         - name: printer-id
@@ -1265,6 +1283,7 @@ paths:
       tags:
         - print.printer
       summary: Get shares from print
+      description: 'The list of printerShares that are associated with the printer. Currently, only one printerShare can be associated with the printer. Read-only. Nullable.'
       operationId: print.printers_ListShares
       parameters:
         - name: printer-id
@@ -1385,6 +1404,7 @@ paths:
       tags:
         - print.printer
       summary: Get ref of shares from print
+      description: 'The list of printerShares that are associated with the printer. Currently, only one printerShare can be associated with the printer. Read-only. Nullable.'
       operationId: print.printers_ListRefShares
       parameters:
         - name: printer-id
@@ -1461,6 +1481,7 @@ paths:
       tags:
         - print.printer
       summary: Create new navigation property ref to shares for print
+      description: 'The list of printerShares that are associated with the printer. Currently, only one printerShare can be associated with the printer. Read-only. Nullable.'
       operationId: print.printers_CreateRefShares
       parameters:
         - name: printer-id
@@ -1496,6 +1517,7 @@ paths:
       tags:
         - print.printer
       summary: Get taskTriggers from print
+      description: A list of task triggers that are associated with the printer.
       operationId: print.printers_ListTaskTriggers
       parameters:
         - name: printer-id
@@ -1579,6 +1601,7 @@ paths:
       tags:
         - print.printer
       summary: Create new navigation property to taskTriggers for print
+      description: A list of task triggers that are associated with the printer.
       operationId: print.printers_CreateTaskTriggers
       parameters:
         - name: printer-id
@@ -1610,6 +1633,7 @@ paths:
       tags:
         - print.printer
       summary: Get taskTriggers from print
+      description: A list of task triggers that are associated with the printer.
       operationId: print.printers_GetTaskTriggers
       parameters:
         - name: printer-id
@@ -1673,6 +1697,7 @@ paths:
       tags:
         - print.printer
       summary: Update the navigation property taskTriggers in print
+      description: A list of task triggers that are associated with the printer.
       operationId: print.printers_UpdateTaskTriggers
       parameters:
         - name: printer-id
@@ -1706,6 +1731,7 @@ paths:
       tags:
         - print.printer
       summary: Delete navigation property taskTriggers for print
+      description: A list of task triggers that are associated with the printer.
       operationId: print.printers_DeleteTaskTriggers
       parameters:
         - name: printer-id
@@ -1738,6 +1764,7 @@ paths:
       tags:
         - print.printer
       summary: Get definition from print
+      description: An abstract definition that will be used to create a printTask when triggered by a print event. Read-only.
       operationId: print.printers.taskTriggers_GetDefinition
       parameters:
         - name: printer-id
@@ -1803,6 +1830,7 @@ paths:
       tags:
         - print.printer
       summary: Get ref of definition from print
+      description: An abstract definition that will be used to create a printTask when triggered by a print event. Read-only.
       operationId: print.printers.taskTriggers_GetRefDefinition
       parameters:
         - name: printer-id
@@ -1839,6 +1867,7 @@ paths:
       tags:
         - print.printer
       summary: Update the ref of navigation property definition in print
+      description: An abstract definition that will be used to create a printTask when triggered by a print event. Read-only.
       operationId: print.printers.taskTriggers_SetRefDefinition
       parameters:
         - name: printer-id
@@ -1874,6 +1903,7 @@ paths:
       tags:
         - print.printer
       summary: Delete ref of navigation property definition for print
+      description: An abstract definition that will be used to create a printTask when triggered by a print event. Read-only.
       operationId: print.printers.taskTriggers_DeleteRefDefinition
       parameters:
         - name: printer-id
@@ -2215,6 +2245,7 @@ paths:
       tags:
         - print.printerShare
       summary: Get allowedGroups from print
+      description: The groups whose users have access to print using the printer.
       operationId: print.printerShares_ListAllowedGroups
       parameters:
         - name: printerShare-id
@@ -2497,6 +2528,7 @@ paths:
       tags:
         - print.printerShare
       summary: Get ref of allowedGroups from print
+      description: The groups whose users have access to print using the printer.
       operationId: print.printerShares_ListRefAllowedGroups
       parameters:
         - name: printerShare-id
@@ -2649,6 +2681,7 @@ paths:
       tags:
         - print.printerShare
       summary: Create new navigation property ref to allowedGroups for print
+      description: The groups whose users have access to print using the printer.
       operationId: print.printerShares_CreateRefAllowedGroups
       parameters:
         - name: printerShare-id
@@ -2684,6 +2717,7 @@ paths:
       tags:
         - print.printerShare
       summary: Get allowedUsers from print
+      description: The users who have access to print using the printer.
       operationId: print.printerShares_ListAllowedUsers
       parameters:
         - name: printerShare-id
@@ -2962,6 +2996,7 @@ paths:
                 - registeredDevices
                 - scopedRoleMemberOf
                 - transitiveMemberOf
+                - transitiveReports
                 - calendar
                 - calendarGroups
                 - calendars
@@ -3034,6 +3069,7 @@ paths:
                 - registeredDevices
                 - scopedRoleMemberOf
                 - transitiveMemberOf
+                - transitiveReports
                 - calendar
                 - calendarGroups
                 - calendars
@@ -3108,6 +3144,7 @@ paths:
       tags:
         - print.printerShare
       summary: Get ref of allowedUsers from print
+      description: The users who have access to print using the printer.
       operationId: print.printerShares_ListRefAllowedUsers
       parameters:
         - name: printerShare-id
@@ -3312,6 +3349,7 @@ paths:
       tags:
         - print.printerShare
       summary: Create new navigation property ref to allowedUsers for print
+      description: The users who have access to print using the printer.
       operationId: print.printerShares_CreateRefAllowedUsers
       parameters:
         - name: printerShare-id
@@ -3347,6 +3385,7 @@ paths:
       tags:
         - print.printerShare
       summary: Get printer from print
+      description: The printer that this printer share is related to.
       operationId: print.printerShares_GetPrinter
       parameters:
         - name: printerShare-id
@@ -3440,6 +3479,7 @@ paths:
       tags:
         - print.printerShare
       summary: Get ref of printer from print
+      description: The printer that this printer share is related to.
       operationId: print.printerShares_GetRefPrinter
       parameters:
         - name: printerShare-id
@@ -3484,6 +3524,7 @@ paths:
       tags:
         - print.printerShare
       summary: Update the ref of navigation property printer in print
+      description: The printer that this printer share is related to.
       operationId: print.printerShares_SetRefPrinter
       parameters:
         - name: printerShare-id
@@ -3512,6 +3553,7 @@ paths:
       tags:
         - print.printerShare
       summary: Delete ref of navigation property printer for print
+      description: The printer that this printer share is related to.
       operationId: print.printerShares_DeleteRefPrinter
       parameters:
         - name: printerShare-id
@@ -3726,6 +3768,7 @@ paths:
       tags:
         - print.printService
       summary: Get services from print
+      description: The list of available Universal Print service endpoints.
       operationId: print_ListServices
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3799,6 +3842,7 @@ paths:
       tags:
         - print.printService
       summary: Create new navigation property to services for print
+      description: The list of available Universal Print service endpoints.
       operationId: print_CreateServices
       requestBody:
         description: New navigation property
@@ -3822,6 +3866,7 @@ paths:
       tags:
         - print.printService
       summary: Get services from print
+      description: The list of available Universal Print service endpoints.
       operationId: print_GetServices
       parameters:
         - name: printService-id
@@ -3876,6 +3921,7 @@ paths:
       tags:
         - print.printService
       summary: Update the navigation property services in print
+      description: The list of available Universal Print service endpoints.
       operationId: print_UpdateServices
       parameters:
         - name: printService-id
@@ -3902,6 +3948,7 @@ paths:
       tags:
         - print.printService
       summary: Delete navigation property services for print
+      description: The list of available Universal Print service endpoints.
       operationId: print_DeleteServices
       parameters:
         - name: printService-id
@@ -3927,6 +3974,7 @@ paths:
       tags:
         - print.printService
       summary: Get endpoints from print
+      description: Endpoints that can be used to access the service. Read-only. Nullable.
       operationId: print.services_ListEndpoints
       parameters:
         - name: printService-id
@@ -4011,6 +4059,7 @@ paths:
       tags:
         - print.printService
       summary: Create new navigation property to endpoints for print
+      description: Endpoints that can be used to access the service. Read-only. Nullable.
       operationId: print.services_CreateEndpoints
       parameters:
         - name: printService-id
@@ -4042,6 +4091,7 @@ paths:
       tags:
         - print.printService
       summary: Get endpoints from print
+      description: Endpoints that can be used to access the service. Read-only. Nullable.
       operationId: print.services_GetEndpoints
       parameters:
         - name: printService-id
@@ -4098,6 +4148,7 @@ paths:
       tags:
         - print.printService
       summary: Update the navigation property endpoints in print
+      description: Endpoints that can be used to access the service. Read-only. Nullable.
       operationId: print.services_UpdateEndpoints
       parameters:
         - name: printService-id
@@ -4131,6 +4182,7 @@ paths:
       tags:
         - print.printService
       summary: Delete navigation property endpoints for print
+      description: Endpoints that can be used to access the service. Read-only. Nullable.
       operationId: print.services_DeleteEndpoints
       parameters:
         - name: printService-id
@@ -4163,6 +4215,7 @@ paths:
       tags:
         - print.printerShare
       summary: Get shares from print
+      description: The list of printer shares registered in the tenant.
       operationId: print_ListShares
       parameters:
         - $ref: '#/components/parameters/top'
@@ -4275,6 +4328,7 @@ paths:
       tags:
         - print.printerShare
       summary: Create new navigation property to shares for print
+      description: The list of printer shares registered in the tenant.
       operationId: print_CreateShares
       requestBody:
         description: New navigation property
@@ -4298,6 +4352,7 @@ paths:
       tags:
         - print.printerShare
       summary: Get shares from print
+      description: The list of printer shares registered in the tenant.
       operationId: print_GetShares
       parameters:
         - name: printerShare-id
@@ -4381,6 +4436,7 @@ paths:
       tags:
         - print.printerShare
       summary: Update the navigation property shares in print
+      description: The list of printer shares registered in the tenant.
       operationId: print_UpdateShares
       parameters:
         - name: printerShare-id
@@ -4407,6 +4463,7 @@ paths:
       tags:
         - print.printerShare
       summary: Delete navigation property shares for print
+      description: The list of printer shares registered in the tenant.
       operationId: print_DeleteShares
       parameters:
         - name: printerShare-id
@@ -4432,6 +4489,7 @@ paths:
       tags:
         - print.printerShare
       summary: Get allowedGroups from print
+      description: The groups whose users have access to print using the printer.
       operationId: print.shares_ListAllowedGroups
       parameters:
         - name: printerShare-id
@@ -4714,6 +4772,7 @@ paths:
       tags:
         - print.printerShare
       summary: Get ref of allowedGroups from print
+      description: The groups whose users have access to print using the printer.
       operationId: print.shares_ListRefAllowedGroups
       parameters:
         - name: printerShare-id
@@ -4866,6 +4925,7 @@ paths:
       tags:
         - print.printerShare
       summary: Create new navigation property ref to allowedGroups for print
+      description: The groups whose users have access to print using the printer.
       operationId: print.shares_CreateRefAllowedGroups
       parameters:
         - name: printerShare-id
@@ -4901,6 +4961,7 @@ paths:
       tags:
         - print.printerShare
       summary: Get allowedUsers from print
+      description: The users who have access to print using the printer.
       operationId: print.shares_ListAllowedUsers
       parameters:
         - name: printerShare-id
@@ -5179,6 +5240,7 @@ paths:
                 - registeredDevices
                 - scopedRoleMemberOf
                 - transitiveMemberOf
+                - transitiveReports
                 - calendar
                 - calendarGroups
                 - calendars
@@ -5251,6 +5313,7 @@ paths:
                 - registeredDevices
                 - scopedRoleMemberOf
                 - transitiveMemberOf
+                - transitiveReports
                 - calendar
                 - calendarGroups
                 - calendars
@@ -5325,6 +5388,7 @@ paths:
       tags:
         - print.printerShare
       summary: Get ref of allowedUsers from print
+      description: The users who have access to print using the printer.
       operationId: print.shares_ListRefAllowedUsers
       parameters:
         - name: printerShare-id
@@ -5529,6 +5593,7 @@ paths:
       tags:
         - print.printerShare
       summary: Create new navigation property ref to allowedUsers for print
+      description: The users who have access to print using the printer.
       operationId: print.shares_CreateRefAllowedUsers
       parameters:
         - name: printerShare-id
@@ -5564,6 +5629,7 @@ paths:
       tags:
         - print.printerShare
       summary: Get printer from print
+      description: The printer that this printer share is related to.
       operationId: print.shares_GetPrinter
       parameters:
         - name: printerShare-id
@@ -5657,6 +5723,7 @@ paths:
       tags:
         - print.printerShare
       summary: Get ref of printer from print
+      description: The printer that this printer share is related to.
       operationId: print.shares_GetRefPrinter
       parameters:
         - name: printerShare-id
@@ -5701,6 +5768,7 @@ paths:
       tags:
         - print.printerShare
       summary: Update the ref of navigation property printer in print
+      description: The printer that this printer share is related to.
       operationId: print.shares_SetRefPrinter
       parameters:
         - name: printerShare-id
@@ -5729,6 +5797,7 @@ paths:
       tags:
         - print.printerShare
       summary: Delete ref of navigation property printer for print
+      description: The printer that this printer share is related to.
       operationId: print.shares_DeleteRefPrinter
       parameters:
         - name: printerShare-id
@@ -5818,6 +5887,7 @@ paths:
       tags:
         - print.printTaskDefinition
       summary: Get taskDefinitions from print
+      description: List of abstract definition for a task that can be triggered when various events occur within Universal Print.
       operationId: print_ListTaskDefinitions
       parameters:
         - $ref: '#/components/parameters/top'
@@ -5897,6 +5967,7 @@ paths:
       tags:
         - print.printTaskDefinition
       summary: Create new navigation property to taskDefinitions for print
+      description: List of abstract definition for a task that can be triggered when various events occur within Universal Print.
       operationId: print_CreateTaskDefinitions
       requestBody:
         description: New navigation property
@@ -5920,6 +5991,7 @@ paths:
       tags:
         - print.printTaskDefinition
       summary: Get taskDefinitions from print
+      description: List of abstract definition for a task that can be triggered when various events occur within Universal Print.
       operationId: print_GetTaskDefinitions
       parameters:
         - name: printTaskDefinition-id
@@ -5976,6 +6048,7 @@ paths:
       tags:
         - print.printTaskDefinition
       summary: Update the navigation property taskDefinitions in print
+      description: List of abstract definition for a task that can be triggered when various events occur within Universal Print.
       operationId: print_UpdateTaskDefinitions
       parameters:
         - name: printTaskDefinition-id
@@ -6002,6 +6075,7 @@ paths:
       tags:
         - print.printTaskDefinition
       summary: Delete navigation property taskDefinitions for print
+      description: List of abstract definition for a task that can be triggered when various events occur within Universal Print.
       operationId: print_DeleteTaskDefinitions
       parameters:
         - name: printTaskDefinition-id
@@ -6027,6 +6101,7 @@ paths:
       tags:
         - print.printTaskDefinition
       summary: Get tasks from print
+      description: A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
       operationId: print.taskDefinitions_ListTasks
       parameters:
         - name: printTaskDefinition-id
@@ -6115,6 +6190,7 @@ paths:
       tags:
         - print.printTaskDefinition
       summary: Create new navigation property to tasks for print
+      description: A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
       operationId: print.taskDefinitions_CreateTasks
       parameters:
         - name: printTaskDefinition-id
@@ -6146,6 +6222,7 @@ paths:
       tags:
         - print.printTaskDefinition
       summary: Get tasks from print
+      description: A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
       operationId: print.taskDefinitions_GetTasks
       parameters:
         - name: printTaskDefinition-id
@@ -6217,6 +6294,7 @@ paths:
       tags:
         - print.printTaskDefinition
       summary: Update the navigation property tasks in print
+      description: A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
       operationId: print.taskDefinitions_UpdateTasks
       parameters:
         - name: printTaskDefinition-id
@@ -6250,6 +6328,7 @@ paths:
       tags:
         - print.printTaskDefinition
       summary: Delete navigation property tasks for print
+      description: A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
       operationId: print.taskDefinitions_DeleteTasks
       parameters:
         - name: printTaskDefinition-id
@@ -6282,6 +6361,7 @@ paths:
       tags:
         - print.printTaskDefinition
       summary: Get definition from print
+      description: The printTaskDefinition that was used to create this task. Read-only.
       operationId: print.taskDefinitions.tasks_GetDefinition
       parameters:
         - name: printTaskDefinition-id
@@ -6347,6 +6427,7 @@ paths:
       tags:
         - print.printTaskDefinition
       summary: Get ref of definition from print
+      description: The printTaskDefinition that was used to create this task. Read-only.
       operationId: print.taskDefinitions.tasks_GetRefDefinition
       parameters:
         - name: printTaskDefinition-id
@@ -6383,6 +6464,7 @@ paths:
       tags:
         - print.printTaskDefinition
       summary: Update the ref of navigation property definition in print
+      description: The printTaskDefinition that was used to create this task. Read-only.
       operationId: print.taskDefinitions.tasks_SetRefDefinition
       parameters:
         - name: printTaskDefinition-id
@@ -6418,6 +6500,7 @@ paths:
       tags:
         - print.printTaskDefinition
       summary: Delete ref of navigation property definition for print
+      description: The printTaskDefinition that was used to create this task. Read-only.
       operationId: print.taskDefinitions.tasks_DeleteRefDefinition
       parameters:
         - name: printTaskDefinition-id
@@ -6450,6 +6533,7 @@ paths:
       tags:
         - print.printTaskDefinition
       summary: Get trigger from print
+      description: The printTaskTrigger that triggered this task's execution. Read-only.
       operationId: print.taskDefinitions.tasks_GetTrigger
       parameters:
         - name: printTaskDefinition-id
@@ -6514,6 +6598,7 @@ paths:
       tags:
         - print.printTaskDefinition
       summary: Get ref of trigger from print
+      description: The printTaskTrigger that triggered this task's execution. Read-only.
       operationId: print.taskDefinitions.tasks_GetRefTrigger
       parameters:
         - name: printTaskDefinition-id
@@ -6550,6 +6635,7 @@ paths:
       tags:
         - print.printTaskDefinition
       summary: Update the ref of navigation property trigger in print
+      description: The printTaskTrigger that triggered this task's execution. Read-only.
       operationId: print.taskDefinitions.tasks_SetRefTrigger
       parameters:
         - name: printTaskDefinition-id
@@ -6585,6 +6671,7 @@ paths:
       tags:
         - print.printTaskDefinition
       summary: Delete ref of navigation property trigger for print
+      description: The printTaskTrigger that triggered this task's execution. Read-only.
       operationId: print.taskDefinitions.tasks_DeleteRefTrigger
       parameters:
         - name: printTaskDefinition-id
@@ -6846,13 +6933,13 @@ components:
           items:
             type: string
             nullable: true
-          description: 'The media sizes supported by the printer. Supports standard size names for ISO and ANSI media sizes, along with any custom sizes supported by the associated printer.'
+          description: The media sizes supported by the printer. Supports standard size names for ISO and ANSI media sizes. Valid values are in the following table.
         mediaTypes:
           type: array
           items:
             type: string
             nullable: true
-          description: The media types supported by the printer. Valid values are described in the following table.
+          description: The media types supported by the printer.
         multipageLayouts:
           type: array
           items:
@@ -7284,6 +7371,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
+              description: The permission that has been granted for a group to a specific application.
             settings:
               type: array
               items:
@@ -7387,7 +7475,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLicense'
-              description: The licenses that are assigned to the user. Not nullable. Supports $filter.
+              description: 'The licenses that are assigned to the user, including inherited (group-based) licenses. Not nullable. Supports $filter.'
             assignedPlans:
               type: array
               items:
@@ -7400,7 +7488,7 @@ components:
               description: The telephone numbers for the user. Only one number can be set for this property. Returned by default. Read-only for users synced from on-premises directory.
             city:
               type: string
-              description: The city in which the user is located. Returned only on $select. Supports $filter.
+              description: The city in which the user is located. Maximum length is 128 characters. Returned only on $select. Supports $filter.
               nullable: true
             companyName:
               type: string
@@ -7412,12 +7500,12 @@ components:
               nullable: true
             country:
               type: string
-              description: 'The country/region in which the user is located; for example, ''US'' or ''UK''. Returned only on $select. Supports $filter.'
+              description: 'The country/region in which the user is located; for example, ''US'' or ''UK''. Maximum length is 128 characters. Returned only on $select. Supports $filter.'
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The date and time the user was created. The value cannot be modified and is automatically populated when the entity is created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. Property is nullable. A null value indicates that an accurate creation time couldn't be determined for the user. Returned only on $select. Read-only. Supports $filter.
+              description: 'The date and time the user was created. The value cannot be modified and is automatically populated when the entity is created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. Property is nullable. A null value indicates that an accurate creation time couldn''t be determined for the user. Returned only on $select. Read-only. Supports $filter with the eq, ne, le, and ge operators.'
               format: date-time
               nullable: true
             creationType:
@@ -7426,7 +7514,7 @@ components:
               nullable: true
             department:
               type: string
-              description: The name for the department in which the user works. Returned only on $select. Supports $filter.
+              description: The name for the department in which the user works. Maximum length is 64 characters.Returned only on $select. Supports $filter.
               nullable: true
             deviceKeys:
               type: array
@@ -7434,7 +7522,7 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.deviceKey'
             displayName:
               type: string
-              description: 'The name displayed in the address book for the user. This value is usually the combination of the user''s first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates. Returned by default. Supports $filter and $orderby.'
+              description: 'The name displayed in the address book for the user. This value is usually the combination of the user''s first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates. Maximum length is 256 characters. Returned by default. Supports $filter and $orderby.'
               nullable: true
             employeeHireDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -7450,7 +7538,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.employeeOrgData'
             employeeType:
               type: string
-              description: 'Captures enterprise worker type: Employee, Contractor, Consultant, Vendor, etc. Returned only on $select. Supports $filter.'
+              description: 'Captures enterprise worker type. For example, Employee, Contractor, Consultant, or Vendor. Returned only on $select. Supports $filter with the eq operator.'
               nullable: true
             externalUserState:
               type: string
@@ -7466,7 +7554,7 @@ components:
               nullable: true
             givenName:
               type: string
-              description: The given name (first name) of the user. Returned by default. Supports $filter.
+              description: The given name (first name) of the user. Maximum length is 64 characters. Returned by default. Supports $filter.
               nullable: true
             identities:
               type: array
@@ -7490,7 +7578,7 @@ components:
               nullable: true
             jobTitle:
               type: string
-              description: The user's job title. Returned by default. Supports $filter.
+              description: The user's job title. Maximum length is 128 characters. Returned by default. Supports $filter (eq and startsWith operators).
               nullable: true
             lastPasswordChangeDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -7509,11 +7597,11 @@ components:
               description: State of license assignments for this user. Returned only on $select. Read-only.
             mail:
               type: string
-              description: 'The SMTP address for the user, for example, ''jeff@contoso.onmicrosoft.com''. Returned by default. Supports $filter and endsWith.'
+              description: 'The SMTP address for the user, for example, ''jeff@contoso.onmicrosoft.com''. Changes to this property will also update the user''s proxyAddresses collection to include the value as an SMTP address. While this property can contain accent characters, using them can cause access issues with other Microsoft applications for the user. Supports $filter and endsWith.'
               nullable: true
             mailNickname:
               type: string
-              description: The mail alias for the user. This property must be specified when a user is created. Returned only on $select. Supports $filter.
+              description: The mail alias for the user. This property must be specified when a user is created. Maximum length is 64 characters. Returned only on $select. Supports $filter.
               nullable: true
             mobilePhone:
               type: string
@@ -7521,7 +7609,7 @@ components:
               nullable: true
             officeLocation:
               type: string
-              description: The office location in the user's place of business. Returned by default.
+              description: The office location in the user's place of business. Maximum length is 128 characters. Returned by default.
               nullable: true
             onPremisesDistinguishedName:
               type: string
@@ -7568,7 +7656,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'A list of additional email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com''].Returned only on $select.  Supports$filter.'
+              description: 'A list of additional email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com''].NOTE: While this property can contain accent characters, they can cause access issues to first-party applications for the user.Returned only on $select.  Supports$filter.'
             passwordPolicies:
               type: string
               description: 'Specifies password policies for the user. This value is an enumeration with one possible value being ''DisableStrongPassword'', which allows weaker passwords than the default policy to be specified. ''DisablePasswordExpiration'' can also be specified. The two may be specified together; for example: ''DisablePasswordExpiration, DisableStrongPassword''.Returned only on $select.'
@@ -7577,7 +7665,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.passwordProfile'
             postalCode:
               type: string
-              description: 'The postal code for the user''s postal address. The postal code is specific to the user''s country/region. In the United States of America, this attribute contains the ZIP code. Returned only on $select.'
+              description: 'The postal code for the user''s postal address. The postal code is specific to the user''s country/region. In the United States of America, this attribute contains the ZIP code. Maximum length is 40 characters. Returned only on $select.'
               nullable: true
             preferredDataLocation:
               type: string
@@ -7615,15 +7703,15 @@ components:
               nullable: true
             state:
               type: string
-              description: The state or province in the user's address. Returned only on $select. Supports $filter.
+              description: The state or province in the user's address. Maximum length is 128 characters. Returned only on $select. Supports $filter.
               nullable: true
             streetAddress:
               type: string
-              description: The street address of the user's place of business. Returned only on $select.
+              description: The street address of the user's place of business. Maximum length is 1024 characters. Returned only on $select.
               nullable: true
             surname:
               type: string
-              description: The user's surname (family name or last name). Returned by default. Supports $filter.
+              description: The user's surname (family name or last name). Maximum length is 64 characters. Returned by default. Supports $filter.
               nullable: true
             usageLocation:
               type: string
@@ -7631,7 +7719,7 @@ components:
               nullable: true
             userPrincipalName:
               type: string
-              description: 'The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user''s email name. The general format is alias@domain, where domain must be present in the tenant''s collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization. Returned by default. Supports $filter, $orderby, and endsWith.'
+              description: 'The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user''s email name. The general format is alias@domain, where domain must be present in the tenant''s collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: While this property can contain accent characters, they can cause access issues to first-party applications for the user. Returned by default. Supports $filter, $orderby, and endsWith.'
               nullable: true
             userType:
               type: string
@@ -7757,6 +7845,10 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.scopedRoleMembership'
               description: The scoped-role administrative unit memberships for this user. Read-only. Nullable.
             transitiveMemberOf:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+            transitiveReports:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
@@ -8597,7 +8689,7 @@ components:
               nullable: true
             permissionType:
               type: string
-              description: 'The type of permission. Possible values are: Application,Delegated. Read-only.'
+              description: 'The type of permission. Possible values are: Application, Delegated. Read-only.'
               nullable: true
             resourceAppId:
               type: string
@@ -9211,7 +9303,7 @@ components:
               nullable: true
             description:
               type: string
-              description: An optional description for the team.
+              description: 'An optional description for the team. Maximum length: 1024 characters.'
               nullable: true
             discoverySettings:
               $ref: '#/components/schemas/microsoft.graph.teamDiscoverySettings'
@@ -9372,7 +9464,7 @@ components:
           nullable: true
         issuerAssignedId:
           type: string
-          description: 'Specifies the unique identifier assigned to the user by the issuer. The combination of issuer and issuerAssignedId must be unique within the organization. Represents the sign-in name for the user, when signInType is set to emailAddress or userName (also known as local accounts).When signInType is set to: emailAddress, (or starts with emailAddress like emailAddress1) issuerAssignedId must be a valid email addressuserName, issuerAssignedId must be a valid local part of an email addressSupports $filter. 512 character limit.'
+          description: 'Specifies the unique identifier assigned to the user by the issuer. The combination of issuer and issuerAssignedId must be unique within the organization. Represents the sign-in name for the user, when signInType is set to emailAddress or userName (also known as local accounts).When signInType is set to: emailAddress, (or a custom string that starts with emailAddress like emailAddress1) issuerAssignedId must be a valid email addressuserName, issuerAssignedId must be a valid local part of an email addressSupports $filter. 100 character limit.'
           nullable: true
         signInType:
           type: string
@@ -9639,7 +9731,7 @@ components:
               description: The id of the client service principal for the application which is authorized to act on behalf of a signed-in user when accessing an API. Required. Supports $filter (eq only).
             consentType:
               type: string
-              description: 'Indicates if authorization is granted for the client application to impersonate all users or only a specific user. AllPrincipals indicates authorization to impersonate all users. Principal indicates authorization to impersonate a specific user. Consent on behalf of all users can be granted by an administrator. Non-admin users may be authorized to consent on behalf of themselves in some cases, for some delegated permissions. Required. Supports $filter (eq only).'
+              description: 'Indicates whether authorization is granted for the client application to impersonate all users or only a specific user. AllPrincipals indicates authorization to impersonate all users. Principal indicates authorization to impersonate a specific user. Consent on behalf of all users can be granted by an administrator. Non-admin users may be authorized to consent on behalf of themselves in some cases, for some delegated permissions. Required. Supports $filter (eq only).'
               nullable: true
             expiryTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -10451,6 +10543,10 @@ components:
         - title: managedDevice
           type: object
           properties:
+            cloudPcRemoteActionResults:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcRemoteActionResult'
             aadRegistered:
               type: boolean
               description: Whether the device is Azure Active Directory registered. This property is read-only.
@@ -10732,16 +10828,16 @@ components:
               type: integer
               description: Count of remediated malware for this windows device. This property is read-only.
               format: int32
-            deviceCompliancePolicyStates:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicyState'
-              description: Device compliance policy states for this device.
             assignmentFilterEvaluationStatusDetails:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignmentFilterEvaluationStatusDetails'
               description: Managed device mobile app configuration states for this device.
+            deviceCompliancePolicyStates:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicyState'
+              description: Device compliance policy states for this device.
             deviceConfigurationStates:
               type: array
               items:
@@ -11410,11 +11506,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.usageRight'
+              description: Represents the usage rights a device has been granted.
             memberOf:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Groups that this device is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable.'
+              description: Groups that this device is a member of. Read-only. Nullable.
             registeredOwners:
               type: array
               items:
@@ -11429,6 +11526,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: Groups that this device is a member of. This operation is transitive.
             extensions:
               type: array
               items:
@@ -11438,7 +11536,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.command'
-              description: Set of commands sent to this device
+              description: Set of commands sent to this device.
           additionalProperties:
             type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
@@ -11475,7 +11573,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.meetingCapabilities'
-              description: 'The list of meeting capabilities. Possible values are: questionAndAnswer,unknownFutureValue.'
             chatInfo:
               $ref: '#/components/schemas/microsoft.graph.chatInfo'
             creationDateTime:
@@ -11883,11 +11980,11 @@ components:
           nullable: true
         mediaSize:
           type: string
-          description: 'The default media size to use. Supports standard size names for ISO and ANSI media sizes, along with any custom sizes supported by the associated printer.'
+          description: The default media size to use. Supports standard size names for ISO and ANSI media sizes. Valid values are listed in the printerCapabilities topic.
           nullable: true
         mediaType:
           type: string
-          description: The default media (such as paper) type to print the document on. Valid values are described in the following table.
+          description: The default media (such as paper) type to print the document on.
           nullable: true
         multipageLayout:
           $ref: '#/components/schemas/microsoft.graph.printMultipageLayout'
@@ -14433,53 +14530,58 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScope'
-              description: 'This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user''s manager does not exist. See accessReviewReviewerScope.'
+              description: 'This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user''s manager does not exist. Supports $select. Note: This property has been replaced by fallbackReviewers. However, specifying either backupReviewers or fallbackReviewers automatically populates the same values to the other property.'
             createdBy:
               $ref: '#/components/schemas/microsoft.graph.userIdentity'
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Timestamp when review series was created.
+              description: Timestamp when the access review series was created. Supports $select.
               format: date-time
               nullable: true
             descriptionForAdmins:
               type: string
-              description: Description provided by review creators to provide more context of the review to admins.
+              description: Description provided by review creators to provide more context of the review to admins. Supports $select.
               nullable: true
             descriptionForReviewers:
               type: string
-              description: Description provided  by review creators to provide more context of the review to reviewers. Reviewers will see this description in the email sent to them requesting their review.
+              description: Description provided  by review creators to provide more context of the review to reviewers. Reviewers will see this description in the email sent to them requesting their review. Supports $select.
               nullable: true
             displayName:
               type: string
-              description: Name of access review series. Required on create.
+              description: Name of the access review series. Required on create. Supports $select.
               nullable: true
+            fallbackReviewers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScope'
+              description: 'This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user''s manager does not exist. Supports $select.'
             instanceEnumerationScope:
               $ref: '#/components/schemas/microsoft.graph.accessReviewScope'
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Timestamp when review series was last modified.
+              description: Timestamp when the access review series was last modified. Supports $select.
               format: date-time
               nullable: true
             reviewers:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScope'
-              description: This collection of access review scopes is used to define who are the reviewers. See accessReviewReviewerScope. Required on create.
+              description: 'This collection of access review scopes is used to define who are the reviewers. Required on create. Supports $select. For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API.'
             scope:
               $ref: '#/components/schemas/microsoft.graph.accessReviewScope'
             settings:
               $ref: '#/components/schemas/microsoft.graph.accessReviewScheduleSettings'
             status:
               type: string
-              description: 'This read-only field specifies the status of an accessReview. The typical states include Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed.'
+              description: 'This read-only field specifies the status of an access review. The typical states include Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed. Supports $select, $orderby, and $filter (eq only).'
               nullable: true
             instances:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewInstance'
-              description: 'Set of access reviews instances for this access review series. Access reviews that do not recur will only have one instance; otherwise, there will be an instance for each recurrence.'
+              description: 'Set of access reviews instances for this access review series. Access reviews that do not recur will only have one instance; otherwise, there is an instance for each recurrence.'
           additionalProperties:
             type: object
     microsoft.graph.agreementAcceptanceState:
@@ -14506,6 +14608,35 @@ components:
           additionalProperties:
             type: object
           description: Enrollment Configuration Assignment
+    microsoft.graph.cloudPcRemoteActionResult:
+      title: cloudPcRemoteActionResult
+      type: object
+      properties:
+        actionName:
+          type: string
+          nullable: true
+        actionState:
+          $ref: '#/components/schemas/microsoft.graph.actionState'
+        cloudPcId:
+          type: string
+          nullable: true
+        lastUpdatedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        managedDeviceId:
+          type: string
+          nullable: true
+        startDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        statusDetails:
+          $ref: '#/components/schemas/microsoft.graph.cloudPcStatusDetails'
+      additionalProperties:
+        type: object
     microsoft.graph.chassisType:
       title: chassisType
       enum:
@@ -14902,6 +15033,10 @@ components:
           $ref: '#/components/schemas/microsoft.graph.deviceGuardVirtualizationBasedSecurityHardwareRequirementState'
         deviceGuardVirtualizationBasedSecurityState:
           $ref: '#/components/schemas/microsoft.graph.deviceGuardVirtualizationBasedSecurityState'
+        esimIdentifier:
+          type: string
+          description: eSIM identifier
+          nullable: true
         freeStorageSpace:
           type: integer
           description: Free storage space of the device.
@@ -15095,6 +15230,19 @@ components:
       additionalProperties:
         type: object
       description: Logged On User
+    microsoft.graph.assignmentFilterEvaluationStatusDetails:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: assignmentFilterEvaluationStatusDetails
+          type: object
+          properties:
+            payloadId:
+              type: string
+              description: PayloadId on which filter has been applied.
+              nullable: true
+          additionalProperties:
+            type: object
+          description: A class containing information about the payloads on which filter has been applied.
     microsoft.graph.deviceCompliancePolicyState:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -15136,19 +15284,6 @@ components:
           additionalProperties:
             type: object
           description: Device Compliance Policy State for a given device.
-    microsoft.graph.assignmentFilterEvaluationStatusDetails:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: assignmentFilterEvaluationStatusDetails
-          type: object
-          properties:
-            payloadId:
-              type: string
-              description: PayloadId on which filter has been applied.
-              nullable: true
-          additionalProperties:
-            type: object
-          description: A class containing information about the payloads on which filter has been applied.
     microsoft.graph.deviceConfigurationState:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -15539,10 +15674,10 @@ components:
       properties:
         name:
           type: string
-          description: Name for this key-value pair
+          description: 'Name for this key-value pair. Possible names are: AdditionalWSFedEndpointCheckResult,  AllowedAuthenticationClassReferencesCheckResult, AlwaysRequireAuthenticationCheckResult,   AutoUpdateEnabledCheckResult, ClaimsProviderNameCheckResult, EncryptClaimsCheckResult,  EncryptedNameIdRequiredCheckResult, MonitoringEnabledCheckResult,NotBeforeSkewCheckResult,  RequestMFAFromClaimsProvidersCheckResult, SignedSamlRequestsRequiredCheckResult, AdditionalAuthenticationRulesCheckResult, TokenLifetimeCheckResult,  DelegationAuthorizationRulesCheckResult, IssuanceAuthorizationRulesCheckResult, IssuanceTransformRulesCheckResult.'
         value:
           type: string
-          description: Value for this key-value pair
+          description: 'Value for this key-value pair. Possible result values are 0 (when the validation check passed), 1 (when the validation check failed), or 2 (when the validation check is a warning).'
           nullable: true
       additionalProperties:
         type: object
@@ -16606,10 +16741,22 @@ components:
           type: string
           description: The toll-free number that connects to the Audio Conference Provider.
           nullable: true
+        tollFreeNumbers:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: List of toll-free numbers that are displayed in the meeting invite.
         tollNumber:
           type: string
           description: The toll number that connects to the Audio Conference Provider.
           nullable: true
+        tollNumbers:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: List of toll numbers that are displayed in the meeting invite.
       additionalProperties:
         type: object
     microsoft.graph.broadcastMeetingSettings:
@@ -16680,18 +16827,17 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
+          description: Information of the meeting attendees.
         contributors:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
-          description: For broadcast meeting only.
         organizer:
           $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
         producers:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
-          description: For broadcast meeting only.
       additionalProperties:
         type: object
     microsoft.graph.meetingAttendanceReport:
@@ -16704,6 +16850,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.attendanceRecord'
+              description: The list of attendance records.
           additionalProperties:
             type: object
     microsoft.graph.outOfOfficeSettings:
@@ -16759,7 +16906,6 @@ components:
             creationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The timestamp when this key was registered to the user.
               format: date-time
               nullable: true
             displayName:
@@ -17005,6 +17151,8 @@ components:
               type: string
               description: Read-only. Version number of the chat message.
               nullable: true
+            eventDetail:
+              $ref: '#/components/schemas/microsoft.graph.eventMessageDetail'
             from:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             importance:
@@ -17377,11 +17525,11 @@ components:
           $ref: '#/components/schemas/microsoft.graph.printMargin'
         mediaSize:
           type: string
-          description: 'The media sizeto use when printing. Supports standard size names for ISO and ANSI media sizes, along with any custom sizes supported by the associated printer.'
+          description: The media sizeto use when printing. Supports standard size names for ISO and ANSI media sizes. Valid values are listed in the printerCapabilities topic.
           nullable: true
         mediaType:
           type: string
-          description: The default media (such as paper) type to print the document on. Valid values are described in the following table.
+          description: The default media (such as paper) type to print the document on.
           nullable: true
         multipageLayout:
           $ref: '#/components/schemas/microsoft.graph.printMultipageLayout'
@@ -19170,7 +19318,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamsAppInstallationScopes'
             azureADAppId:
               type: string
-              description: The WebApplicationInfo.id from the Teams App manifest.
+              description: The WebApplicationInfo.Id from the Teams app manifest.
               nullable: true
             createdBy:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -19194,7 +19342,7 @@ components:
               nullable: true
             teamsAppId:
               type: string
-              description: The id from the Teams App manifest.
+              description: The ID from the Teams app manifest.
               nullable: true
             version:
               type: string
@@ -20025,7 +20173,7 @@ components:
               nullable: true
             queryRoot:
               type: string
-              description: 'In the scenario where reviewers need to be specified dynamically, this property is used to indicate the relative source of the query. This property is only required if a relative query (i.e., ./manager) is specified.'
+              description: 'In the scenario where reviewers need to be specified dynamically, this property is used to indicate the relative source of the query. This property is only required if a relative query, for example, ./manager, is specified. Possible value: decisions.'
               nullable: true
             queryType:
               type: string
@@ -20044,14 +20192,14 @@ components:
           description: 'Optional field. Describes the  actions to take once a review is complete. There are two types that are currently supported: removeAccessApplyAction (default) and disableAndDeleteUserApplyAction. Field only needs to be specified in the case of disableAndDeleteUserApplyAction. See accessReviewApplyAction.'
         autoApplyDecisionsEnabled:
           type: boolean
-          description: Flag to indicate whether auto-apply feature is enabled.
+          description: 'Indicates whether decisions are automatically applied. When set to false, a user must apply the decisions manually once the reviewer completes the access review. When set to true, decisions are applied automatically after the access review instance duration ends, whether or not the reviewers have responded. Default value is false.'
         defaultDecision:
           type: string
-          description: 'Decision chosen if defaultDecisionEnabled is enabled. Can be one of ''Approve'', ''Deny'', or ''Recommendation''.'
+          description: 'Decision chosen if defaultDecisionEnabled is enabled. Can be one of Approve, Deny, or Recommendation.'
           nullable: true
         defaultDecisionEnabled:
           type: boolean
-          description: Flag to indicate whether default decision is enabled/disabled when reviewers do not respond.
+          description: Indicates whether the default decision is enabled or disabled when reviewers do not respond. Default value is false.
         instanceDurationInDays:
           maximum: 2147483647
           minimum: -2147483648
@@ -20060,18 +20208,18 @@ components:
           format: int32
         justificationRequiredOnApproval:
           type: boolean
-          description: Flag to indicate whether reviewers are required to provide justification with their decision.
+          description: Indicates whether reviewers are required to provide justification with their decision. Default value is false.
         mailNotificationsEnabled:
           type: boolean
-          description: Flag to indicate whether emails are enabled/disabled.
+          description: Indicates whether emails are enabled or disabled. Default value is false.
         recommendationsEnabled:
           type: boolean
-          description: Flag to indicate whether decision recommendations are enabled/disabled.
+          description: Indicates whether decision recommendations are enabled/disabled.
         recurrence:
           $ref: '#/components/schemas/microsoft.graph.patternedRecurrence'
         reminderNotificationsEnabled:
           type: boolean
-          description: Flag to indicate whether reminders are enabled/disabled.
+          description: Indicates whether reminders are enabled or disabled. Default value is false.
       additionalProperties:
         type: object
     microsoft.graph.deviceAndAppManagementAssignmentSource:
@@ -20093,16 +20241,6 @@ components:
       additionalProperties:
         type: object
       description: Base type for assignment targets.
-    microsoft.graph.configurationManagerClientState:
-      title: configurationManagerClientState
-      enum:
-        - unknown
-        - installed
-        - healthy
-        - installFailed
-        - updateFailed
-        - communicationError
-      type: string
     microsoft.graph.actionState:
       title: actionState
       enum:
@@ -20113,6 +20251,35 @@ components:
         - done
         - failed
         - notSupported
+      type: string
+    microsoft.graph.cloudPcStatusDetails:
+      title: cloudPcStatusDetails
+      type: object
+      properties:
+        additionalInformation:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.keyValuePair'
+          description: Any additional information about the cloud PC status.
+        code:
+          type: string
+          description: The code associated with the cloud PC status.
+          nullable: true
+        message:
+          type: string
+          description: The status message.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.configurationManagerClientState:
+      title: configurationManagerClientState
+      enum:
+        - unknown
+        - installed
+        - healthy
+        - installFailed
+        - updateFailed
+        - communicationError
       type: string
     microsoft.graph.deviceGuardLocalSystemAuthorityCredentialGuardState:
       title: deviceGuardLocalSystemAuthorityCredentialGuardState
@@ -21125,18 +21292,22 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.attendanceInterval'
+          description: List of time periods between joining and leaving.
         emailAddress:
           type: string
+          description: Email address.
           nullable: true
         identity:
           $ref: '#/components/schemas/microsoft.graph.identity'
         role:
           type: string
+          description: 'Role of the attendee. Possible values are None, Attendee, Presenter, and Organizer.'
           nullable: true
         totalAttendanceInSeconds:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: Total duration of the attendances in seconds.
           format: int32
           nullable: true
       additionalProperties:
@@ -21226,6 +21397,11 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.eventMessageDetail:
+      title: eventMessageDetail
+      type: object
+      additionalProperties:
+        type: object
     microsoft.graph.chatMessageImportance:
       title: chatMessageImportance
       enum:
@@ -21258,6 +21434,8 @@ components:
         - message
         - chatEvent
         - typing
+        - unknownFutureValue
+        - systemEventMessage
       type: string
     microsoft.graph.chatMessagePolicyViolation:
       title: chatMessagePolicyViolation
@@ -22097,11 +22275,11 @@ components:
       properties:
         key:
           type: string
-          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object
@@ -22355,6 +22533,7 @@ components:
           properties:
             webUrl:
               type: string
+              description: The web URL that can be used for downloading the image.
               nullable: true
             hostedContent:
               $ref: '#/components/schemas/microsoft.graph.teamworkHostedContent'
@@ -22541,17 +22720,22 @@ components:
       properties:
         color:
           type: string
+          description: 'The color that the user interface should display for the label, if configured.'
           nullable: true
         description:
           type: string
+          description: The admin-defined description for the label.
           nullable: true
         id:
           type: string
+          description: The label ID is a globally unique identifier (GUID).
           nullable: true
         isActive:
           type: boolean
+          description: Indicates whether the label is active or not. Active labels should be hidden or disabled in user interfaces.
         name:
           type: string
+          description: The plaintext name of the label.
           nullable: true
         parent:
           $ref: '#/components/schemas/microsoft.graph.parentLabelDetails'
@@ -22559,9 +22743,11 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: 'The sensitivity value of the label, where lower is less sensitive.'
           format: int32
         tooltip:
           type: string
+          description: The tooltip that should be displayed for the label in a user interface.
           nullable: true
       additionalProperties:
         type: object
@@ -23007,16 +23193,19 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: 'Duration of the meeting interval in seconds; that is, the difference between joinDateTime and leaveDateTime.'
           format: int32
           nullable: true
         joinDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: Time attendee joined in UTC.
           format: date-time
           nullable: true
         leaveDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: Time attendee left in UTC.
           format: date-time
           nullable: true
       additionalProperties:
@@ -23311,7 +23500,7 @@ components:
           nullable: true
         languageTag:
           type: string
-          description: The anguage tag for the label.
+          description: The language tag for the label.
           nullable: true
         name:
           type: string

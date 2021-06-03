@@ -180,16 +180,18 @@ directive:
       subject: (.*)(EntitlementManagement)AccessPackageAssignment$
     remove: true
   - where:
-      verb: New|Remove|Update
+      verb: New|Invoke|Remove|Update
       subject: (.*)(EntitlementManagement)AccessPackageAssignmentResourceRole$
     remove: true
   - where:
-      verb: New|Remove|Update
+      verb: New|Remove|Update|Get
       subject: (.*)(EntitlementManagement)AccessPackageCatalogAccessPackageResourceRole$
+      variant: (Create.*|Delete.*|Update.*|Get.*) # Removes all variants except List.*
     remove: true
   - where:
-      verb: New|Remove|Update
+      verb: New|Remove|Update|Get
       subject: (.*)(EntitlementManagement)AccessPackageCatalogAccessPackageResourceScope$
+      variant: (Create.*|Delete.*|Update.*|Get.*)
     remove: true
   - where:
       verb: New|Remove|Update
@@ -208,8 +210,9 @@ directive:
       subject: (.*)(EntitlementManagement)AccessPackageCatalog$
     remove: true
   - where:
-      verb: New|Remove|Update
+      verb: New|Remove|Update|Get
       subject: (.*)(EntitlementManagement)AccessPackageCatalogAccessPackageResource$
+      variant: (Create.*|Delete.*|Update.*|Get.*)
     remove: true
   - where:
       verb: Remove
@@ -250,6 +253,6 @@ directive:
 ### Versioning
 
 ``` yaml
-module-version: 1.5.0
+module-version: 1.6.0
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

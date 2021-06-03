@@ -52,10 +52,17 @@ directive:
   - where:
       subject: ^UserAuthentication$
     remove: true
+  - where:
+      subject: ^InformationProtectionSensitivity(Label|LabelSublabel)$
+    remove: true
+  - where:
+      verb: New|Update
+      subject: ^UserAuthenticationPasswordMethod$
+    remove: true
 ```
 ### Versioning
 
 ``` yaml
-module-version: 1.5.0
+module-version: 1.6.0
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

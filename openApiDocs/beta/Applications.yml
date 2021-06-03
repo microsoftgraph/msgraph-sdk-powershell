@@ -15,10 +15,9 @@ paths:
       parameters:
         - name: ConsistencyLevel
           in: header
-          description: Indicates the requested consistency level.
+          description: 'Indicates the requested consistency level. Documentation URL: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/'
           schema:
             type: string
-          example: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/
           examples:
             example-1:
               description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
@@ -218,6 +217,7 @@ paths:
       tags:
         - applications.application
       summary: Get entity from applications by key
+      description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
       operationId: applications.application_GetApplication
       parameters:
         - name: application-id
@@ -229,10 +229,9 @@ paths:
           x-ms-docs-key-type: application
         - name: ConsistencyLevel
           in: header
-          description: Indicates the requested consistency level.
+          description: 'Indicates the requested consistency level. Documentation URL: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/'
           schema:
             type: string
-          example: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/
           examples:
             example-1:
               description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
@@ -353,6 +352,7 @@ paths:
       tags:
         - applications.application
       summary: Update entity in applications
+      description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
       operationId: applications.application_UpdateApplication
       parameters:
         - name: application-id
@@ -379,6 +379,7 @@ paths:
       tags:
         - applications.application
       summary: Delete entity from applications
+      description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
       operationId: applications.application_DeleteApplication
       parameters:
         - name: application-id
@@ -404,6 +405,7 @@ paths:
       tags:
         - applications.connectorGroup
       summary: Get connectorGroup from applications
+      description: The connectorGroup the application is using with Azure AD Application Proxy. Nullable.
       operationId: applications_GetConnectorGroup
       parameters:
         - name: application-id
@@ -469,6 +471,7 @@ paths:
       tags:
         - applications.connectorGroup
       summary: Get ref of connectorGroup from applications
+      description: The connectorGroup the application is using with Azure AD Application Proxy. Nullable.
       operationId: applications_GetRefConnectorGroup
       parameters:
         - name: application-id
@@ -501,6 +504,7 @@ paths:
       tags:
         - applications.connectorGroup
       summary: Update the ref of navigation property connectorGroup in applications
+      description: The connectorGroup the application is using with Azure AD Application Proxy. Nullable.
       operationId: applications_SetRefConnectorGroup
       parameters:
         - name: application-id
@@ -529,6 +533,7 @@ paths:
       tags:
         - applications.connectorGroup
       summary: Delete ref of navigation property connectorGroup for applications
+      description: The connectorGroup the application is using with Azure AD Application Proxy. Nullable.
       operationId: applications_DeleteRefConnectorGroup
       parameters:
         - name: application-id
@@ -554,6 +559,7 @@ paths:
       tags:
         - applications.directoryObject
       summary: Get createdOnBehalfOf from applications
+      description: Read-only.
       operationId: applications_GetCreatedOnBehalfOf
       parameters:
         - name: application-id
@@ -603,6 +609,7 @@ paths:
       tags:
         - applications.directoryObject
       summary: Get ref of createdOnBehalfOf from applications
+      description: Read-only.
       operationId: applications_GetRefCreatedOnBehalfOf
       parameters:
         - name: application-id
@@ -626,6 +633,7 @@ paths:
       tags:
         - applications.directoryObject
       summary: Update the ref of navigation property createdOnBehalfOf in applications
+      description: Read-only.
       operationId: applications_SetRefCreatedOnBehalfOf
       parameters:
         - name: application-id
@@ -654,6 +662,7 @@ paths:
       tags:
         - applications.directoryObject
       summary: Delete ref of navigation property createdOnBehalfOf for applications
+      description: Read-only.
       operationId: applications_DeleteRefCreatedOnBehalfOf
       parameters:
         - name: application-id
@@ -679,6 +688,7 @@ paths:
       tags:
         - applications.extensionProperty
       summary: Get extensionProperties from applications
+      description: Read-only. Nullable.
       operationId: applications_ListExtensionProperties
       parameters:
         - name: application-id
@@ -775,6 +785,7 @@ paths:
       tags:
         - applications.extensionProperty
       summary: Create new navigation property to extensionProperties for applications
+      description: Read-only. Nullable.
       operationId: applications_CreateExtensionProperties
       parameters:
         - name: application-id
@@ -806,6 +817,7 @@ paths:
       tags:
         - applications.extensionProperty
       summary: Get extensionProperties from applications
+      description: Read-only. Nullable.
       operationId: applications_GetExtensionProperties
       parameters:
         - name: application-id
@@ -866,6 +878,7 @@ paths:
       tags:
         - applications.extensionProperty
       summary: Update the navigation property extensionProperties in applications
+      description: Read-only. Nullable.
       operationId: applications_UpdateExtensionProperties
       parameters:
         - name: application-id
@@ -899,6 +912,7 @@ paths:
       tags:
         - applications.extensionProperty
       summary: Delete navigation property extensionProperties for applications
+      description: Read-only. Nullable.
       operationId: applications_DeleteExtensionProperties
       parameters:
         - name: application-id
@@ -1126,6 +1140,7 @@ paths:
       tags:
         - applications.application
       summary: Get media content for application from applications
+      description: The main logo for the application. Not nullable.
       operationId: applications.application_GetLogo
       parameters:
         - name: application-id
@@ -1150,6 +1165,7 @@ paths:
       tags:
         - applications.application
       summary: Update media content for application in applications
+      description: The main logo for the application. Not nullable.
       operationId: applications.application_SetLogo
       parameters:
         - name: application-id
@@ -1508,6 +1524,7 @@ paths:
       tags:
         - applications.directoryObject
       summary: Get owners from applications
+      description: Directory objects that are owners of the application. Read-only. Nullable.
       operationId: applications_ListOwners
       parameters:
         - name: application-id
@@ -1590,6 +1607,7 @@ paths:
       tags:
         - applications.directoryObject
       summary: Get ref of owners from applications
+      description: Directory objects that are owners of the application. Read-only. Nullable.
       operationId: applications_ListRefOwners
       parameters:
         - name: application-id
@@ -1646,6 +1664,7 @@ paths:
       tags:
         - applications.directoryObject
       summary: Create new navigation property ref to owners for applications
+      description: Directory objects that are owners of the application. Read-only. Nullable.
       operationId: applications_CreateRefOwners
       parameters:
         - name: application-id
@@ -2263,6 +2282,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Get schema from applications
+      description: The synchronization schema configured for the job.
       operationId: applications.synchronization.jobs_GetSchema
       parameters:
         - name: application-id
@@ -2327,6 +2347,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Update the navigation property schema in applications
+      description: The synchronization schema configured for the job.
       operationId: applications.synchronization.jobs_UpdateSchema
       parameters:
         - name: application-id
@@ -2360,6 +2381,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Delete navigation property schema for applications
+      description: The synchronization schema configured for the job.
       operationId: applications.synchronization.jobs_DeleteSchema
       parameters:
         - name: application-id
@@ -2392,6 +2414,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Get directories from applications
+      description: Contains the collection of directories and all of their objects.
       operationId: applications.synchronization.jobs.schema_ListDirectories
       parameters:
         - name: application-id
@@ -2495,6 +2518,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Create new navigation property to directories for applications
+      description: Contains the collection of directories and all of their objects.
       operationId: applications.synchronization.jobs.schema_CreateDirectories
       parameters:
         - name: application-id
@@ -2533,6 +2557,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Get directories from applications
+      description: Contains the collection of directories and all of their objects.
       operationId: applications.synchronization.jobs.schema_GetDirectories
       parameters:
         - name: application-id
@@ -2600,6 +2625,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Update the navigation property directories in applications
+      description: Contains the collection of directories and all of their objects.
       operationId: applications.synchronization.jobs.schema_UpdateDirectories
       parameters:
         - name: application-id
@@ -2640,6 +2666,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Delete navigation property directories for applications
+      description: Contains the collection of directories and all of their objects.
       operationId: applications.synchronization.jobs.schema_DeleteDirectories
       parameters:
         - name: application-id
@@ -3196,6 +3223,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Get schema from applications
+      description: Default synchronization schema for the jobs based on this template.
       operationId: applications.synchronization.templates_GetSchema
       parameters:
         - name: application-id
@@ -3260,6 +3288,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Update the navigation property schema in applications
+      description: Default synchronization schema for the jobs based on this template.
       operationId: applications.synchronization.templates_UpdateSchema
       parameters:
         - name: application-id
@@ -3293,6 +3322,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Delete navigation property schema for applications
+      description: Default synchronization schema for the jobs based on this template.
       operationId: applications.synchronization.templates_DeleteSchema
       parameters:
         - name: application-id
@@ -3325,6 +3355,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Get directories from applications
+      description: Contains the collection of directories and all of their objects.
       operationId: applications.synchronization.templates.schema_ListDirectories
       parameters:
         - name: application-id
@@ -3428,6 +3459,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Create new navigation property to directories for applications
+      description: Contains the collection of directories and all of their objects.
       operationId: applications.synchronization.templates.schema_CreateDirectories
       parameters:
         - name: application-id
@@ -3466,6 +3498,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Get directories from applications
+      description: Contains the collection of directories and all of their objects.
       operationId: applications.synchronization.templates.schema_GetDirectories
       parameters:
         - name: application-id
@@ -3533,6 +3566,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Update the navigation property directories in applications
+      description: Contains the collection of directories and all of their objects.
       operationId: applications.synchronization.templates.schema_UpdateDirectories
       parameters:
         - name: application-id
@@ -3573,6 +3607,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Delete navigation property directories for applications
+      description: Contains the collection of directories and all of their objects.
       operationId: applications.synchronization.templates.schema_DeleteDirectories
       parameters:
         - name: application-id
@@ -3959,6 +3994,7 @@ paths:
       tags:
         - applications.tokenLifetimePolicy
       summary: Get tokenLifetimePolicies from applications
+      description: The tokenLifetimePolicies assigned to this application.
       operationId: applications_ListTokenLifetimePolicies
       parameters:
         - name: application-id
@@ -4055,6 +4091,7 @@ paths:
       tags:
         - applications.tokenLifetimePolicy
       summary: Get ref of tokenLifetimePolicies from applications
+      description: The tokenLifetimePolicies assigned to this application.
       operationId: applications_ListRefTokenLifetimePolicies
       parameters:
         - name: application-id
@@ -4119,6 +4156,7 @@ paths:
       tags:
         - applications.tokenLifetimePolicy
       summary: Create new navigation property ref to tokenLifetimePolicies for applications
+      description: The tokenLifetimePolicies assigned to this application.
       operationId: applications_CreateRefTokenLifetimePolicies
       parameters:
         - name: application-id
@@ -4538,6 +4576,7 @@ paths:
       tags:
         - groups.appRoleAssignment
       summary: Get appRoleAssignments from groups
+      description: Represents the app roles a group has been granted for an application.
       operationId: groups_ListAppRoleAssignments
       parameters:
         - name: group-id
@@ -4637,6 +4676,7 @@ paths:
       tags:
         - groups.appRoleAssignment
       summary: Create new navigation property to appRoleAssignments for groups
+      description: Represents the app roles a group has been granted for an application.
       operationId: groups_CreateAppRoleAssignments
       parameters:
         - name: group-id
@@ -4668,6 +4708,7 @@ paths:
       tags:
         - groups.appRoleAssignment
       summary: Get appRoleAssignments from groups
+      description: Represents the app roles a group has been granted for an application.
       operationId: groups_GetAppRoleAssignments
       parameters:
         - name: group-id
@@ -4729,6 +4770,7 @@ paths:
       tags:
         - groups.appRoleAssignment
       summary: Update the navigation property appRoleAssignments in groups
+      description: Represents the app roles a group has been granted for an application.
       operationId: groups_UpdateAppRoleAssignments
       parameters:
         - name: group-id
@@ -4762,6 +4804,7 @@ paths:
       tags:
         - groups.appRoleAssignment
       summary: Delete navigation property appRoleAssignments for groups
+      description: Represents the app roles a group has been granted for an application.
       operationId: groups_DeleteAppRoleAssignments
       parameters:
         - name: group-id
@@ -5035,6 +5078,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
       summary: Get agentGroups from onPremisesPublishingProfiles
+      description: List of existing onPremisesAgentGroup objects. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles_ListAgentGroups
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -5126,6 +5170,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
       summary: Create new navigation property to agentGroups for onPremisesPublishingProfiles
+      description: List of existing onPremisesAgentGroup objects. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles_CreateAgentGroups
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -5157,6 +5202,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
       summary: Get agentGroups from onPremisesPublishingProfiles
+      description: List of existing onPremisesAgentGroup objects. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles_GetAgentGroups
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -5229,6 +5275,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
       summary: Update the navigation property agentGroups in onPremisesPublishingProfiles
+      description: List of existing onPremisesAgentGroup objects. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles_UpdateAgentGroups
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -5262,6 +5309,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
       summary: Delete navigation property agentGroups for onPremisesPublishingProfiles
+      description: List of existing onPremisesAgentGroup objects. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles_DeleteAgentGroups
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -5294,6 +5342,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
       summary: Get agents from onPremisesPublishingProfiles
+      description: List of onPremisesAgent that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.agentGroups_ListAgents
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -5393,6 +5442,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
       summary: Create new navigation property to agents for onPremisesPublishingProfiles
+      description: List of onPremisesAgent that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.agentGroups_CreateAgents
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -5431,6 +5481,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
       summary: Get agents from onPremisesPublishingProfiles
+      description: List of onPremisesAgent that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.agentGroups_GetAgents
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -5505,6 +5556,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
       summary: Update the navigation property agents in onPremisesPublishingProfiles
+      description: List of onPremisesAgent that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.agentGroups_UpdateAgents
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -5545,6 +5597,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
       summary: Delete navigation property agents for onPremisesPublishingProfiles
+      description: List of onPremisesAgent that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.agentGroups_DeleteAgents
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -5584,6 +5637,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
       summary: Get agentGroups from onPremisesPublishingProfiles
+      description: List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.agentGroups.agents_ListAgentGroups
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -5689,6 +5743,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
       summary: Create new navigation property to agentGroups for onPremisesPublishingProfiles
+      description: List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.agentGroups.agents_CreateAgentGroups
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -5734,6 +5789,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
       summary: Get agentGroups from onPremisesPublishingProfiles
+      description: List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.agentGroups.agents_GetAgentGroups
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -5824,6 +5880,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
       summary: Update the navigation property agentGroups in onPremisesPublishingProfiles
+      description: List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.agentGroups.agents_UpdateAgentGroups
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -5871,6 +5928,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
       summary: Delete navigation property agentGroups for onPremisesPublishingProfiles
+      description: List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.agentGroups.agents_DeleteAgentGroups
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -5917,6 +5975,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
       summary: Get publishedResources from onPremisesPublishingProfiles
+      description: List of publishedResource that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.agentGroups_ListPublishedResources
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -6013,6 +6072,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
       summary: Create new navigation property to publishedResources for onPremisesPublishingProfiles
+      description: List of publishedResource that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.agentGroups_CreatePublishedResources
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -6051,6 +6111,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
       summary: Get publishedResources from onPremisesPublishingProfiles
+      description: List of publishedResource that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.agentGroups_GetPublishedResources
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -6124,6 +6185,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
       summary: Update the navigation property publishedResources in onPremisesPublishingProfiles
+      description: List of publishedResource that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.agentGroups_UpdatePublishedResources
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -6164,6 +6226,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
       summary: Delete navigation property publishedResources for onPremisesPublishingProfiles
+      description: List of publishedResource that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.agentGroups_DeletePublishedResources
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -6203,6 +6266,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
       summary: Get agentGroups from onPremisesPublishingProfiles
+      description: List of onPremisesAgentGroups that a publishedResource is assigned to. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.agentGroups.publishedResources_ListAgentGroups
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -6308,6 +6372,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
       summary: Create new navigation property to agentGroups for onPremisesPublishingProfiles
+      description: List of onPremisesAgentGroups that a publishedResource is assigned to. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.agentGroups.publishedResources_CreateAgentGroups
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -6353,6 +6418,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
       summary: Get agentGroups from onPremisesPublishingProfiles
+      description: List of onPremisesAgentGroups that a publishedResource is assigned to. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.agentGroups.publishedResources_GetAgentGroups
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -6443,6 +6509,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
       summary: Update the navigation property agentGroups in onPremisesPublishingProfiles
+      description: List of onPremisesAgentGroups that a publishedResource is assigned to. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.agentGroups.publishedResources_UpdateAgentGroups
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -6490,6 +6557,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
       summary: Delete navigation property agentGroups for onPremisesPublishingProfiles
+      description: List of onPremisesAgentGroups that a publishedResource is assigned to. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.agentGroups.publishedResources_DeleteAgentGroups
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -6536,6 +6604,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgent
       summary: Get agents from onPremisesPublishingProfiles
+      description: List of existing onPremisesAgent objects. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles_ListAgents
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -6628,6 +6697,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgent
       summary: Create new navigation property to agents for onPremisesPublishingProfiles
+      description: List of existing onPremisesAgent objects. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles_CreateAgents
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -6659,6 +6729,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgent
       summary: Get agents from onPremisesPublishingProfiles
+      description: List of existing onPremisesAgent objects. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles_GetAgents
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -6725,6 +6796,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgent
       summary: Update the navigation property agents in onPremisesPublishingProfiles
+      description: List of existing onPremisesAgent objects. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles_UpdateAgents
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -6758,6 +6830,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgent
       summary: Delete navigation property agents for onPremisesPublishingProfiles
+      description: List of existing onPremisesAgent objects. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles_DeleteAgents
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -6790,6 +6863,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgent
       summary: Get agentGroups from onPremisesPublishingProfiles
+      description: List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.agents_ListAgentGroups
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -6888,6 +6962,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgent
       summary: Create new navigation property to agentGroups for onPremisesPublishingProfiles
+      description: List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.agents_CreateAgentGroups
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -6926,6 +7001,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgent
       summary: Get agentGroups from onPremisesPublishingProfiles
+      description: List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.agents_GetAgentGroups
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -7007,6 +7083,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgent
       summary: Update the navigation property agentGroups in onPremisesPublishingProfiles
+      description: List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.agents_UpdateAgentGroups
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -7047,6 +7124,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgent
       summary: Delete navigation property agentGroups for onPremisesPublishingProfiles
+      description: List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.agents_DeleteAgentGroups
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -7086,6 +7164,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgent
       summary: Get agents from onPremisesPublishingProfiles
+      description: List of onPremisesAgent that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.agents.agentGroups_ListAgents
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -7192,6 +7271,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgent
       summary: Create new navigation property to agents for onPremisesPublishingProfiles
+      description: List of onPremisesAgent that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.agents.agentGroups_CreateAgents
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -7237,6 +7317,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgent
       summary: Get agents from onPremisesPublishingProfiles
+      description: List of onPremisesAgent that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.agents.agentGroups_GetAgents
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -7319,6 +7400,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgent
       summary: Update the navigation property agents in onPremisesPublishingProfiles
+      description: List of onPremisesAgent that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.agents.agentGroups_UpdateAgents
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -7366,6 +7448,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgent
       summary: Delete navigation property agents for onPremisesPublishingProfiles
+      description: List of onPremisesAgent that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.agents.agentGroups_DeleteAgents
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -7412,6 +7495,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgent
       summary: Get publishedResources from onPremisesPublishingProfiles
+      description: List of publishedResource that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.agents.agentGroups_ListPublishedResources
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -7515,6 +7599,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgent
       summary: Create new navigation property to publishedResources for onPremisesPublishingProfiles
+      description: List of publishedResource that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.agents.agentGroups_CreatePublishedResources
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -7560,6 +7645,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgent
       summary: Get publishedResources from onPremisesPublishingProfiles
+      description: List of publishedResource that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.agents.agentGroups_GetPublishedResources
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -7641,6 +7727,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgent
       summary: Update the navigation property publishedResources in onPremisesPublishingProfiles
+      description: List of publishedResource that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.agents.agentGroups_UpdatePublishedResources
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -7688,6 +7775,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgent
       summary: Delete navigation property publishedResources for onPremisesPublishingProfiles
+      description: List of publishedResource that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.agents.agentGroups_DeletePublishedResources
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -7734,6 +7822,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgent
       summary: Get agentGroups from onPremisesPublishingProfiles
+      description: List of onPremisesAgentGroups that a publishedResource is assigned to. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.agents.agentGroups.publishedResources_ListAgentGroups
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -7846,6 +7935,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgent
       summary: Create new navigation property to agentGroups for onPremisesPublishingProfiles
+      description: List of onPremisesAgentGroups that a publishedResource is assigned to. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.agents.agentGroups.publishedResources_CreateAgentGroups
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -7898,6 +7988,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgent
       summary: Get agentGroups from onPremisesPublishingProfiles
+      description: List of onPremisesAgentGroups that a publishedResource is assigned to. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.agents.agentGroups.publishedResources_GetAgentGroups
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -7997,6 +8088,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgent
       summary: Update the navigation property agentGroups in onPremisesPublishingProfiles
+      description: List of onPremisesAgentGroups that a publishedResource is assigned to. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.agents.agentGroups.publishedResources_UpdateAgentGroups
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -8051,6 +8143,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgent
       summary: Delete navigation property agentGroups for onPremisesPublishingProfiles
+      description: List of onPremisesAgentGroups that a publishedResource is assigned to. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.agents.agentGroups.publishedResources_DeleteAgentGroups
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -8104,6 +8197,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connectorGroup
       summary: Get connectorGroups from onPremisesPublishingProfiles
+      description: List of existing connectorGroup objects for applications published through Application Proxy. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles_ListConnectorGroups
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -8198,6 +8292,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connectorGroup
       summary: Create new navigation property to connectorGroups for onPremisesPublishingProfiles
+      description: List of existing connectorGroup objects for applications published through Application Proxy. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles_CreateConnectorGroups
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -8229,6 +8324,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connectorGroup
       summary: Get connectorGroups from onPremisesPublishingProfiles
+      description: List of existing connectorGroup objects for applications published through Application Proxy. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles_GetConnectorGroups
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -8302,6 +8398,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connectorGroup
       summary: Update the navigation property connectorGroups in onPremisesPublishingProfiles
+      description: List of existing connectorGroup objects for applications published through Application Proxy. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles_UpdateConnectorGroups
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -8335,6 +8432,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connectorGroup
       summary: Delete navigation property connectorGroups for onPremisesPublishingProfiles
+      description: List of existing connectorGroup objects for applications published through Application Proxy. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles_DeleteConnectorGroups
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -8367,6 +8465,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connectorGroup
       summary: Get applications from onPremisesPublishingProfiles
+      description: Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.connectorGroups_ListApplications
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -8556,6 +8655,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connectorGroup
       summary: Get ref of applications from onPremisesPublishingProfiles
+      description: Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.connectorGroups_ListRefApplications
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -8675,6 +8775,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connectorGroup
       summary: Create new navigation property ref to applications for onPremisesPublishingProfiles
+      description: Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.connectorGroups_CreateRefApplications
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -8717,6 +8818,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connectorGroup
       summary: Get members from onPremisesPublishingProfiles
+      description: Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.connectorGroups_ListMembers
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -8813,6 +8915,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connectorGroup
       summary: Create new navigation property to members for onPremisesPublishingProfiles
+      description: Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.connectorGroups_CreateMembers
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -8851,6 +8954,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connectorGroup
       summary: Get members from onPremisesPublishingProfiles
+      description: Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.connectorGroups_GetMembers
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -8924,6 +9028,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connectorGroup
       summary: Update the navigation property members in onPremisesPublishingProfiles
+      description: Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.connectorGroups_UpdateMembers
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -8964,6 +9069,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connectorGroup
       summary: Delete navigation property members for onPremisesPublishingProfiles
+      description: Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.connectorGroups_DeleteMembers
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -9003,6 +9109,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connectorGroup
       summary: Get memberOf from onPremisesPublishingProfiles
+      description: The connectorGroup that the connector is a member of. Read-only.
       operationId: onPremisesPublishingProfiles.connectorGroups.members_ListMemberOf
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -9111,6 +9218,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connectorGroup
       summary: Create new navigation property to memberOf for onPremisesPublishingProfiles
+      description: The connectorGroup that the connector is a member of. Read-only.
       operationId: onPremisesPublishingProfiles.connectorGroups.members_CreateMemberOf
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -9156,6 +9264,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connectorGroup
       summary: Get memberOf from onPremisesPublishingProfiles
+      description: The connectorGroup that the connector is a member of. Read-only.
       operationId: onPremisesPublishingProfiles.connectorGroups.members_GetMemberOf
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -9247,6 +9356,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connectorGroup
       summary: Update the navigation property memberOf in onPremisesPublishingProfiles
+      description: The connectorGroup that the connector is a member of. Read-only.
       operationId: onPremisesPublishingProfiles.connectorGroups.members_UpdateMemberOf
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -9294,6 +9404,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connectorGroup
       summary: Delete navigation property memberOf for onPremisesPublishingProfiles
+      description: The connectorGroup that the connector is a member of. Read-only.
       operationId: onPremisesPublishingProfiles.connectorGroups.members_DeleteMemberOf
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -9340,6 +9451,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connector
       summary: Get connectors from onPremisesPublishingProfiles
+      description: List of existing connector objects for applications published through Application Proxy. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles_ListConnectors
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -9429,6 +9541,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connector
       summary: Create new navigation property to connectors for onPremisesPublishingProfiles
+      description: List of existing connector objects for applications published through Application Proxy. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles_CreateConnectors
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -9460,6 +9573,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connector
       summary: Get connectors from onPremisesPublishingProfiles
+      description: List of existing connector objects for applications published through Application Proxy. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles_GetConnectors
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -9525,6 +9639,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connector
       summary: Update the navigation property connectors in onPremisesPublishingProfiles
+      description: List of existing connector objects for applications published through Application Proxy. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles_UpdateConnectors
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -9558,6 +9673,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connector
       summary: Delete navigation property connectors for onPremisesPublishingProfiles
+      description: List of existing connector objects for applications published through Application Proxy. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles_DeleteConnectors
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -9590,6 +9706,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connector
       summary: Get memberOf from onPremisesPublishingProfiles
+      description: The connectorGroup that the connector is a member of. Read-only.
       operationId: onPremisesPublishingProfiles.connectors_ListMemberOf
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -9691,6 +9808,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connector
       summary: Create new navigation property to memberOf for onPremisesPublishingProfiles
+      description: The connectorGroup that the connector is a member of. Read-only.
       operationId: onPremisesPublishingProfiles.connectors_CreateMemberOf
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -9729,6 +9847,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connector
       summary: Get memberOf from onPremisesPublishingProfiles
+      description: The connectorGroup that the connector is a member of. Read-only.
       operationId: onPremisesPublishingProfiles.connectors_GetMemberOf
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -9811,6 +9930,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connector
       summary: Update the navigation property memberOf in onPremisesPublishingProfiles
+      description: The connectorGroup that the connector is a member of. Read-only.
       operationId: onPremisesPublishingProfiles.connectors_UpdateMemberOf
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -9851,6 +9971,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connector
       summary: Delete navigation property memberOf for onPremisesPublishingProfiles
+      description: The connectorGroup that the connector is a member of. Read-only.
       operationId: onPremisesPublishingProfiles.connectors_DeleteMemberOf
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -9890,6 +10011,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connector
       summary: Get applications from onPremisesPublishingProfiles
+      description: Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.connectors.memberOf_ListApplications
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -10086,6 +10208,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connector
       summary: Get ref of applications from onPremisesPublishingProfiles
+      description: Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.connectors.memberOf_ListRefApplications
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -10212,6 +10335,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connector
       summary: Create new navigation property ref to applications for onPremisesPublishingProfiles
+      description: Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.connectors.memberOf_CreateRefApplications
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -10261,6 +10385,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connector
       summary: Get members from onPremisesPublishingProfiles
+      description: Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.connectors.memberOf_ListMembers
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -10364,6 +10489,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connector
       summary: Create new navigation property to members for onPremisesPublishingProfiles
+      description: Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.connectors.memberOf_CreateMembers
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -10409,6 +10535,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connector
       summary: Get members from onPremisesPublishingProfiles
+      description: Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.connectors.memberOf_GetMembers
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -10490,6 +10617,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connector
       summary: Update the navigation property members in onPremisesPublishingProfiles
+      description: Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.connectors.memberOf_UpdateMembers
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -10537,6 +10665,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connector
       summary: Delete navigation property members for onPremisesPublishingProfiles
+      description: Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.connectors.memberOf_DeleteMembers
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -10583,6 +10712,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.publishedResource
       summary: Get publishedResources from onPremisesPublishingProfiles
+      description: List of existing publishedResource objects. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles_ListPublishedResources
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -10672,6 +10802,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.publishedResource
       summary: Create new navigation property to publishedResources for onPremisesPublishingProfiles
+      description: List of existing publishedResource objects. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles_CreatePublishedResources
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -10703,6 +10834,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.publishedResource
       summary: Get publishedResources from onPremisesPublishingProfiles
+      description: List of existing publishedResource objects. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles_GetPublishedResources
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -10768,6 +10900,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.publishedResource
       summary: Update the navigation property publishedResources in onPremisesPublishingProfiles
+      description: List of existing publishedResource objects. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles_UpdatePublishedResources
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -10801,6 +10934,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.publishedResource
       summary: Delete navigation property publishedResources for onPremisesPublishingProfiles
+      description: List of existing publishedResource objects. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles_DeletePublishedResources
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -10833,6 +10967,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.publishedResource
       summary: Get agentGroups from onPremisesPublishingProfiles
+      description: List of onPremisesAgentGroups that a publishedResource is assigned to. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.publishedResources_ListAgentGroups
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -10931,6 +11066,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.publishedResource
       summary: Create new navigation property to agentGroups for onPremisesPublishingProfiles
+      description: List of onPremisesAgentGroups that a publishedResource is assigned to. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.publishedResources_CreateAgentGroups
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -10969,6 +11105,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.publishedResource
       summary: Get agentGroups from onPremisesPublishingProfiles
+      description: List of onPremisesAgentGroups that a publishedResource is assigned to. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.publishedResources_GetAgentGroups
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -11050,6 +11187,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.publishedResource
       summary: Update the navigation property agentGroups in onPremisesPublishingProfiles
+      description: List of onPremisesAgentGroups that a publishedResource is assigned to. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.publishedResources_UpdateAgentGroups
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -11090,6 +11228,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.publishedResource
       summary: Delete navigation property agentGroups for onPremisesPublishingProfiles
+      description: List of onPremisesAgentGroups that a publishedResource is assigned to. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.publishedResources_DeleteAgentGroups
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -11129,6 +11268,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.publishedResource
       summary: Get agents from onPremisesPublishingProfiles
+      description: List of onPremisesAgent that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.publishedResources.agentGroups_ListAgents
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -11235,6 +11375,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.publishedResource
       summary: Create new navigation property to agents for onPremisesPublishingProfiles
+      description: List of onPremisesAgent that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.publishedResources.agentGroups_CreateAgents
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -11280,6 +11421,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.publishedResource
       summary: Get agents from onPremisesPublishingProfiles
+      description: List of onPremisesAgent that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.publishedResources.agentGroups_GetAgents
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -11362,6 +11504,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.publishedResource
       summary: Update the navigation property agents in onPremisesPublishingProfiles
+      description: List of onPremisesAgent that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.publishedResources.agentGroups_UpdateAgents
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -11409,6 +11552,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.publishedResource
       summary: Delete navigation property agents for onPremisesPublishingProfiles
+      description: List of onPremisesAgent that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.publishedResources.agentGroups_DeleteAgents
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -11455,6 +11599,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.publishedResource
       summary: Get agentGroups from onPremisesPublishingProfiles
+      description: List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.publishedResources.agentGroups.agents_ListAgentGroups
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -11567,6 +11712,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.publishedResource
       summary: Create new navigation property to agentGroups for onPremisesPublishingProfiles
+      description: List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.publishedResources.agentGroups.agents_CreateAgentGroups
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -11619,6 +11765,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.publishedResource
       summary: Get agentGroups from onPremisesPublishingProfiles
+      description: List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.publishedResources.agentGroups.agents_GetAgentGroups
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -11718,6 +11865,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.publishedResource
       summary: Update the navigation property agentGroups in onPremisesPublishingProfiles
+      description: List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.publishedResources.agentGroups.agents_UpdateAgentGroups
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -11772,6 +11920,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.publishedResource
       summary: Delete navigation property agentGroups for onPremisesPublishingProfiles
+      description: List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.publishedResources.agentGroups.agents_DeleteAgentGroups
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -11825,6 +11974,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.publishedResource
       summary: Get publishedResources from onPremisesPublishingProfiles
+      description: List of publishedResource that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.publishedResources.agentGroups_ListPublishedResources
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -11928,6 +12078,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.publishedResource
       summary: Create new navigation property to publishedResources for onPremisesPublishingProfiles
+      description: List of publishedResource that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.publishedResources.agentGroups_CreatePublishedResources
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -11973,6 +12124,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.publishedResource
       summary: Get publishedResources from onPremisesPublishingProfiles
+      description: List of publishedResource that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.publishedResources.agentGroups_GetPublishedResources
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -12054,6 +12206,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.publishedResource
       summary: Update the navigation property publishedResources in onPremisesPublishingProfiles
+      description: List of publishedResource that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.publishedResources.agentGroups_UpdatePublishedResources
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -12101,6 +12254,7 @@ paths:
       tags:
         - onPremisesPublishingProfiles.publishedResource
       summary: Delete navigation property publishedResources for onPremisesPublishingProfiles
+      description: List of publishedResource that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
       operationId: onPremisesPublishingProfiles.publishedResources.agentGroups_DeletePublishedResources
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -12151,10 +12305,9 @@ paths:
       parameters:
         - name: ConsistencyLevel
           in: header
-          description: Indicates the requested consistency level.
+          description: 'Indicates the requested consistency level. Documentation URL: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/'
           schema:
             type: string
-          example: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/
           examples:
             example-1:
               description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
@@ -12391,6 +12544,7 @@ paths:
       tags:
         - servicePrincipals.servicePrincipal
       summary: Get entity from servicePrincipals by key
+      description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
       operationId: servicePrincipals.servicePrincipal_GetServicePrincipal
       parameters:
         - name: servicePrincipal-id
@@ -12402,10 +12556,9 @@ paths:
           x-ms-docs-key-type: servicePrincipal
         - name: ConsistencyLevel
           in: header
-          description: Indicates the requested consistency level.
+          description: 'Indicates the requested consistency level. Documentation URL: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/'
           schema:
             type: string
-          example: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/
           examples:
             example-1:
               description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
@@ -12581,6 +12734,7 @@ paths:
       tags:
         - servicePrincipals.servicePrincipal
       summary: Update entity in servicePrincipals
+      description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
       operationId: servicePrincipals.servicePrincipal_UpdateServicePrincipal
       parameters:
         - name: servicePrincipal-id
@@ -12607,6 +12761,7 @@ paths:
       tags:
         - servicePrincipals.servicePrincipal
       summary: Delete entity from servicePrincipals
+      description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
       operationId: servicePrincipals.servicePrincipal_DeleteServicePrincipal
       parameters:
         - name: servicePrincipal-id
@@ -12632,6 +12787,7 @@ paths:
       tags:
         - servicePrincipals.appRoleAssignment
       summary: Get appRoleAssignedTo from servicePrincipals
+      description: 'App role assignments for this app or service, granted to users, groups, and other service principals.'
       operationId: servicePrincipals_ListAppRoleAssignedTo
       parameters:
         - name: servicePrincipal-id
@@ -12731,6 +12887,7 @@ paths:
       tags:
         - servicePrincipals.appRoleAssignment
       summary: Create new navigation property to appRoleAssignedTo for servicePrincipals
+      description: 'App role assignments for this app or service, granted to users, groups, and other service principals.'
       operationId: servicePrincipals_CreateAppRoleAssignedTo
       parameters:
         - name: servicePrincipal-id
@@ -12762,6 +12919,7 @@ paths:
       tags:
         - servicePrincipals.appRoleAssignment
       summary: Get appRoleAssignedTo from servicePrincipals
+      description: 'App role assignments for this app or service, granted to users, groups, and other service principals.'
       operationId: servicePrincipals_GetAppRoleAssignedTo
       parameters:
         - name: servicePrincipal-id
@@ -12823,6 +12981,7 @@ paths:
       tags:
         - servicePrincipals.appRoleAssignment
       summary: Update the navigation property appRoleAssignedTo in servicePrincipals
+      description: 'App role assignments for this app or service, granted to users, groups, and other service principals.'
       operationId: servicePrincipals_UpdateAppRoleAssignedTo
       parameters:
         - name: servicePrincipal-id
@@ -12856,6 +13015,7 @@ paths:
       tags:
         - servicePrincipals.appRoleAssignment
       summary: Delete navigation property appRoleAssignedTo for servicePrincipals
+      description: 'App role assignments for this app or service, granted to users, groups, and other service principals.'
       operationId: servicePrincipals_DeleteAppRoleAssignedTo
       parameters:
         - name: servicePrincipal-id
@@ -12888,6 +13048,7 @@ paths:
       tags:
         - servicePrincipals.appRoleAssignment
       summary: Get appRoleAssignments from servicePrincipals
+      description: 'App role assignment for another app or service, granted to this service principal.'
       operationId: servicePrincipals_ListAppRoleAssignments
       parameters:
         - name: servicePrincipal-id
@@ -12987,6 +13148,7 @@ paths:
       tags:
         - servicePrincipals.appRoleAssignment
       summary: Create new navigation property to appRoleAssignments for servicePrincipals
+      description: 'App role assignment for another app or service, granted to this service principal.'
       operationId: servicePrincipals_CreateAppRoleAssignments
       parameters:
         - name: servicePrincipal-id
@@ -13018,6 +13180,7 @@ paths:
       tags:
         - servicePrincipals.appRoleAssignment
       summary: Get appRoleAssignments from servicePrincipals
+      description: 'App role assignment for another app or service, granted to this service principal.'
       operationId: servicePrincipals_GetAppRoleAssignments
       parameters:
         - name: servicePrincipal-id
@@ -13079,6 +13242,7 @@ paths:
       tags:
         - servicePrincipals.appRoleAssignment
       summary: Update the navigation property appRoleAssignments in servicePrincipals
+      description: 'App role assignment for another app or service, granted to this service principal.'
       operationId: servicePrincipals_UpdateAppRoleAssignments
       parameters:
         - name: servicePrincipal-id
@@ -13112,6 +13276,7 @@ paths:
       tags:
         - servicePrincipals.appRoleAssignment
       summary: Delete navigation property appRoleAssignments for servicePrincipals
+      description: 'App role assignment for another app or service, granted to this service principal.'
       operationId: servicePrincipals_DeleteAppRoleAssignments
       parameters:
         - name: servicePrincipal-id
@@ -13144,6 +13309,7 @@ paths:
       tags:
         - servicePrincipals.claimsMappingPolicy
       summary: Get claimsMappingPolicies from servicePrincipals
+      description: The claimsMappingPolicies assigned to this service principal.
       operationId: servicePrincipals_ListClaimsMappingPolicies
       parameters:
         - name: servicePrincipal-id
@@ -13240,6 +13406,7 @@ paths:
       tags:
         - servicePrincipals.claimsMappingPolicy
       summary: Get ref of claimsMappingPolicies from servicePrincipals
+      description: The claimsMappingPolicies assigned to this service principal.
       operationId: servicePrincipals_ListRefClaimsMappingPolicies
       parameters:
         - name: servicePrincipal-id
@@ -13304,6 +13471,7 @@ paths:
       tags:
         - servicePrincipals.claimsMappingPolicy
       summary: Create new navigation property ref to claimsMappingPolicies for servicePrincipals
+      description: The claimsMappingPolicies assigned to this service principal.
       operationId: servicePrincipals_CreateRefClaimsMappingPolicies
       parameters:
         - name: servicePrincipal-id
@@ -13339,6 +13507,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get createdObjects from servicePrincipals
+      description: Directory objects created by this service principal. Read-only. Nullable.
       operationId: servicePrincipals_ListCreatedObjects
       parameters:
         - name: servicePrincipal-id
@@ -13421,6 +13590,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get ref of createdObjects from servicePrincipals
+      description: Directory objects created by this service principal. Read-only. Nullable.
       operationId: servicePrincipals_ListRefCreatedObjects
       parameters:
         - name: servicePrincipal-id
@@ -13477,6 +13647,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Create new navigation property ref to createdObjects for servicePrincipals
+      description: Directory objects created by this service principal. Read-only. Nullable.
       operationId: servicePrincipals_CreateRefCreatedObjects
       parameters:
         - name: servicePrincipal-id
@@ -13512,6 +13683,7 @@ paths:
       tags:
         - servicePrincipals.delegatedPermissionClassification
       summary: Get delegatedPermissionClassifications from servicePrincipals
+      description: The permission classifications for delegated permissions exposed by the app that this service principal represents.
       operationId: servicePrincipals_ListDelegatedPermissionClassifications
       parameters:
         - name: servicePrincipal-id
@@ -13599,6 +13771,7 @@ paths:
       tags:
         - servicePrincipals.delegatedPermissionClassification
       summary: Create new navigation property to delegatedPermissionClassifications for servicePrincipals
+      description: The permission classifications for delegated permissions exposed by the app that this service principal represents.
       operationId: servicePrincipals_CreateDelegatedPermissionClassifications
       parameters:
         - name: servicePrincipal-id
@@ -13630,6 +13803,7 @@ paths:
       tags:
         - servicePrincipals.delegatedPermissionClassification
       summary: Get delegatedPermissionClassifications from servicePrincipals
+      description: The permission classifications for delegated permissions exposed by the app that this service principal represents.
       operationId: servicePrincipals_GetDelegatedPermissionClassifications
       parameters:
         - name: servicePrincipal-id
@@ -13687,6 +13861,7 @@ paths:
       tags:
         - servicePrincipals.delegatedPermissionClassification
       summary: Update the navigation property delegatedPermissionClassifications in servicePrincipals
+      description: The permission classifications for delegated permissions exposed by the app that this service principal represents.
       operationId: servicePrincipals_UpdateDelegatedPermissionClassifications
       parameters:
         - name: servicePrincipal-id
@@ -13720,6 +13895,7 @@ paths:
       tags:
         - servicePrincipals.delegatedPermissionClassification
       summary: Delete navigation property delegatedPermissionClassifications for servicePrincipals
+      description: The permission classifications for delegated permissions exposed by the app that this service principal represents.
       operationId: servicePrincipals_DeleteDelegatedPermissionClassifications
       parameters:
         - name: servicePrincipal-id
@@ -13752,6 +13928,7 @@ paths:
       tags:
         - servicePrincipals.endpoint
       summary: Get endpoints from servicePrincipals
+      description: Endpoints available for discovery. Services like Sharepoint populate this property with a tenant specific SharePoint endpoints that other applications can discover and use in their experiences.
       operationId: servicePrincipals_ListEndpoints
       parameters:
         - name: servicePrincipal-id
@@ -13848,6 +14025,7 @@ paths:
       tags:
         - servicePrincipals.endpoint
       summary: Create new navigation property to endpoints for servicePrincipals
+      description: Endpoints available for discovery. Services like Sharepoint populate this property with a tenant specific SharePoint endpoints that other applications can discover and use in their experiences.
       operationId: servicePrincipals_CreateEndpoints
       parameters:
         - name: servicePrincipal-id
@@ -13879,6 +14057,7 @@ paths:
       tags:
         - servicePrincipals.endpoint
       summary: Get endpoints from servicePrincipals
+      description: Endpoints available for discovery. Services like Sharepoint populate this property with a tenant specific SharePoint endpoints that other applications can discover and use in their experiences.
       operationId: servicePrincipals_GetEndpoints
       parameters:
         - name: servicePrincipal-id
@@ -13939,6 +14118,7 @@ paths:
       tags:
         - servicePrincipals.endpoint
       summary: Update the navigation property endpoints in servicePrincipals
+      description: Endpoints available for discovery. Services like Sharepoint populate this property with a tenant specific SharePoint endpoints that other applications can discover and use in their experiences.
       operationId: servicePrincipals_UpdateEndpoints
       parameters:
         - name: servicePrincipal-id
@@ -13972,6 +14152,7 @@ paths:
       tags:
         - servicePrincipals.endpoint
       summary: Delete navigation property endpoints for servicePrincipals
+      description: Endpoints available for discovery. Services like Sharepoint populate this property with a tenant specific SharePoint endpoints that other applications can discover and use in their experiences.
       operationId: servicePrincipals_DeleteEndpoints
       parameters:
         - name: servicePrincipal-id
@@ -14004,6 +14185,7 @@ paths:
       tags:
         - servicePrincipals.homeRealmDiscoveryPolicy
       summary: Get homeRealmDiscoveryPolicies from servicePrincipals
+      description: The homeRealmDiscoveryPolicies assigned to this service principal.
       operationId: servicePrincipals_ListHomeRealmDiscoveryPolicies
       parameters:
         - name: servicePrincipal-id
@@ -14100,6 +14282,7 @@ paths:
       tags:
         - servicePrincipals.homeRealmDiscoveryPolicy
       summary: Get ref of homeRealmDiscoveryPolicies from servicePrincipals
+      description: The homeRealmDiscoveryPolicies assigned to this service principal.
       operationId: servicePrincipals_ListRefHomeRealmDiscoveryPolicies
       parameters:
         - name: servicePrincipal-id
@@ -14164,6 +14347,7 @@ paths:
       tags:
         - servicePrincipals.homeRealmDiscoveryPolicy
       summary: Create new navigation property ref to homeRealmDiscoveryPolicies for servicePrincipals
+      description: The homeRealmDiscoveryPolicies assigned to this service principal.
       operationId: servicePrincipals_CreateRefHomeRealmDiscoveryPolicies
       parameters:
         - name: servicePrincipal-id
@@ -14439,6 +14623,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get memberOf from servicePrincipals
+      description: 'Roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable.'
       operationId: servicePrincipals_ListMemberOf
       parameters:
         - name: servicePrincipal-id
@@ -14521,6 +14706,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get ref of memberOf from servicePrincipals
+      description: 'Roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable.'
       operationId: servicePrincipals_ListRefMemberOf
       parameters:
         - name: servicePrincipal-id
@@ -14577,6 +14763,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Create new navigation property ref to memberOf for servicePrincipals
+      description: 'Roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable.'
       operationId: servicePrincipals_CreateRefMemberOf
       parameters:
         - name: servicePrincipal-id
@@ -14982,6 +15169,7 @@ paths:
       tags:
         - servicePrincipals.oAuth2PermissionGrant
       summary: Get oauth2PermissionGrants from servicePrincipals
+      description: Delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user. Read-only. Nullable.
       operationId: servicePrincipals_ListOauth2PermissionGrants
       parameters:
         - name: servicePrincipal-id
@@ -15082,6 +15270,7 @@ paths:
       tags:
         - servicePrincipals.oAuth2PermissionGrant
       summary: Get ref of oauth2PermissionGrants from servicePrincipals
+      description: Delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user. Read-only. Nullable.
       operationId: servicePrincipals_ListRefOauth2PermissionGrants
       parameters:
         - name: servicePrincipal-id
@@ -15150,6 +15339,7 @@ paths:
       tags:
         - servicePrincipals.oAuth2PermissionGrant
       summary: Create new navigation property ref to oauth2PermissionGrants for servicePrincipals
+      description: Delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user. Read-only. Nullable.
       operationId: servicePrincipals_CreateRefOauth2PermissionGrants
       parameters:
         - name: servicePrincipal-id
@@ -15185,6 +15375,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get ownedObjects from servicePrincipals
+      description: Directory objects that are owned by this service principal. Read-only. Nullable.
       operationId: servicePrincipals_ListOwnedObjects
       parameters:
         - name: servicePrincipal-id
@@ -15267,6 +15458,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get ref of ownedObjects from servicePrincipals
+      description: Directory objects that are owned by this service principal. Read-only. Nullable.
       operationId: servicePrincipals_ListRefOwnedObjects
       parameters:
         - name: servicePrincipal-id
@@ -15323,6 +15515,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Create new navigation property ref to ownedObjects for servicePrincipals
+      description: Directory objects that are owned by this service principal. Read-only. Nullable.
       operationId: servicePrincipals_CreateRefOwnedObjects
       parameters:
         - name: servicePrincipal-id
@@ -15358,6 +15551,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get owners from servicePrincipals
+      description: Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.
       operationId: servicePrincipals_ListOwners
       parameters:
         - name: servicePrincipal-id
@@ -15440,6 +15634,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get ref of owners from servicePrincipals
+      description: Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.
       operationId: servicePrincipals_ListRefOwners
       parameters:
         - name: servicePrincipal-id
@@ -15496,6 +15691,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Create new navigation property ref to owners for servicePrincipals
+      description: Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.
       operationId: servicePrincipals_CreateRefOwners
       parameters:
         - name: servicePrincipal-id
@@ -16113,6 +16309,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Get schema from servicePrincipals
+      description: The synchronization schema configured for the job.
       operationId: servicePrincipals.synchronization.jobs_GetSchema
       parameters:
         - name: servicePrincipal-id
@@ -16177,6 +16374,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Update the navigation property schema in servicePrincipals
+      description: The synchronization schema configured for the job.
       operationId: servicePrincipals.synchronization.jobs_UpdateSchema
       parameters:
         - name: servicePrincipal-id
@@ -16210,6 +16408,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Delete navigation property schema for servicePrincipals
+      description: The synchronization schema configured for the job.
       operationId: servicePrincipals.synchronization.jobs_DeleteSchema
       parameters:
         - name: servicePrincipal-id
@@ -16242,6 +16441,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Get directories from servicePrincipals
+      description: Contains the collection of directories and all of their objects.
       operationId: servicePrincipals.synchronization.jobs.schema_ListDirectories
       parameters:
         - name: servicePrincipal-id
@@ -16345,6 +16545,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Create new navigation property to directories for servicePrincipals
+      description: Contains the collection of directories and all of their objects.
       operationId: servicePrincipals.synchronization.jobs.schema_CreateDirectories
       parameters:
         - name: servicePrincipal-id
@@ -16383,6 +16584,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Get directories from servicePrincipals
+      description: Contains the collection of directories and all of their objects.
       operationId: servicePrincipals.synchronization.jobs.schema_GetDirectories
       parameters:
         - name: servicePrincipal-id
@@ -16450,6 +16652,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Update the navigation property directories in servicePrincipals
+      description: Contains the collection of directories and all of their objects.
       operationId: servicePrincipals.synchronization.jobs.schema_UpdateDirectories
       parameters:
         - name: servicePrincipal-id
@@ -16490,6 +16693,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Delete navigation property directories for servicePrincipals
+      description: Contains the collection of directories and all of their objects.
       operationId: servicePrincipals.synchronization.jobs.schema_DeleteDirectories
       parameters:
         - name: servicePrincipal-id
@@ -17046,6 +17250,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Get schema from servicePrincipals
+      description: Default synchronization schema for the jobs based on this template.
       operationId: servicePrincipals.synchronization.templates_GetSchema
       parameters:
         - name: servicePrincipal-id
@@ -17110,6 +17315,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Update the navigation property schema in servicePrincipals
+      description: Default synchronization schema for the jobs based on this template.
       operationId: servicePrincipals.synchronization.templates_UpdateSchema
       parameters:
         - name: servicePrincipal-id
@@ -17143,6 +17349,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Delete navigation property schema for servicePrincipals
+      description: Default synchronization schema for the jobs based on this template.
       operationId: servicePrincipals.synchronization.templates_DeleteSchema
       parameters:
         - name: servicePrincipal-id
@@ -17175,6 +17382,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Get directories from servicePrincipals
+      description: Contains the collection of directories and all of their objects.
       operationId: servicePrincipals.synchronization.templates.schema_ListDirectories
       parameters:
         - name: servicePrincipal-id
@@ -17278,6 +17486,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Create new navigation property to directories for servicePrincipals
+      description: Contains the collection of directories and all of their objects.
       operationId: servicePrincipals.synchronization.templates.schema_CreateDirectories
       parameters:
         - name: servicePrincipal-id
@@ -17316,6 +17525,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Get directories from servicePrincipals
+      description: Contains the collection of directories and all of their objects.
       operationId: servicePrincipals.synchronization.templates.schema_GetDirectories
       parameters:
         - name: servicePrincipal-id
@@ -17383,6 +17593,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Update the navigation property directories in servicePrincipals
+      description: Contains the collection of directories and all of their objects.
       operationId: servicePrincipals.synchronization.templates.schema_UpdateDirectories
       parameters:
         - name: servicePrincipal-id
@@ -17423,6 +17634,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Delete navigation property directories for servicePrincipals
+      description: Contains the collection of directories and all of their objects.
       operationId: servicePrincipals.synchronization.templates.schema_DeleteDirectories
       parameters:
         - name: servicePrincipal-id
@@ -17614,6 +17826,7 @@ paths:
       tags:
         - servicePrincipals.tokenIssuancePolicy
       summary: Get tokenIssuancePolicies from servicePrincipals
+      description: The tokenIssuancePolicies assigned to this service principal.
       operationId: servicePrincipals_ListTokenIssuancePolicies
       parameters:
         - name: servicePrincipal-id
@@ -17710,6 +17923,7 @@ paths:
       tags:
         - servicePrincipals.tokenIssuancePolicy
       summary: Get ref of tokenIssuancePolicies from servicePrincipals
+      description: The tokenIssuancePolicies assigned to this service principal.
       operationId: servicePrincipals_ListRefTokenIssuancePolicies
       parameters:
         - name: servicePrincipal-id
@@ -17774,6 +17988,7 @@ paths:
       tags:
         - servicePrincipals.tokenIssuancePolicy
       summary: Create new navigation property ref to tokenIssuancePolicies for servicePrincipals
+      description: The tokenIssuancePolicies assigned to this service principal.
       operationId: servicePrincipals_CreateRefTokenIssuancePolicies
       parameters:
         - name: servicePrincipal-id
@@ -17809,6 +18024,7 @@ paths:
       tags:
         - servicePrincipals.tokenLifetimePolicy
       summary: Get tokenLifetimePolicies from servicePrincipals
+      description: The tokenLifetimePolicies assigned to this service principal.
       operationId: servicePrincipals_ListTokenLifetimePolicies
       parameters:
         - name: servicePrincipal-id
@@ -17905,6 +18121,7 @@ paths:
       tags:
         - servicePrincipals.tokenLifetimePolicy
       summary: Get ref of tokenLifetimePolicies from servicePrincipals
+      description: The tokenLifetimePolicies assigned to this service principal.
       operationId: servicePrincipals_ListRefTokenLifetimePolicies
       parameters:
         - name: servicePrincipal-id
@@ -17969,6 +18186,7 @@ paths:
       tags:
         - servicePrincipals.tokenLifetimePolicy
       summary: Create new navigation property ref to tokenLifetimePolicies for servicePrincipals
+      description: The tokenLifetimePolicies assigned to this service principal.
       operationId: servicePrincipals_CreateRefTokenLifetimePolicies
       parameters:
         - name: servicePrincipal-id
@@ -18300,6 +18518,7 @@ paths:
       tags:
         - users.appRoleAssignment
       summary: Get appRoleAssignments from users
+      description: Represents the app roles a user has been granted for an application.
       operationId: users_ListAppRoleAssignments
       parameters:
         - name: user-id
@@ -18399,6 +18618,7 @@ paths:
       tags:
         - users.appRoleAssignment
       summary: Create new navigation property to appRoleAssignments for users
+      description: Represents the app roles a user has been granted for an application.
       operationId: users_CreateAppRoleAssignments
       parameters:
         - name: user-id
@@ -18430,6 +18650,7 @@ paths:
       tags:
         - users.appRoleAssignment
       summary: Get appRoleAssignments from users
+      description: Represents the app roles a user has been granted for an application.
       operationId: users_GetAppRoleAssignments
       parameters:
         - name: user-id
@@ -18491,6 +18712,7 @@ paths:
       tags:
         - users.appRoleAssignment
       summary: Update the navigation property appRoleAssignments in users
+      description: Represents the app roles a user has been granted for an application.
       operationId: users_UpdateAppRoleAssignments
       parameters:
         - name: user-id
@@ -18524,6 +18746,7 @@ paths:
       tags:
         - users.appRoleAssignment
       summary: Delete navigation property appRoleAssignments for users
+      description: Represents the app roles a user has been granted for an application.
       operationId: users_DeleteAppRoleAssignments
       parameters:
         - name: user-id
@@ -18599,6 +18822,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.informationalUrl'
             isDeviceOnlyAuthSupported:
               type: boolean
+              description: Specifies whether this application supports device authentication without a user. The default is false.
               nullable: true
             isFallbackPublicClient:
               type: boolean
@@ -19176,7 +19400,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: 'The list of categories for the application. Supported values can be: Collaboration, Business Management, Consumer,Content management, CRM, Data services, Developer services, E-commerce, Education, ERP, Finance, Health, Human resources, IT infrastructure, Mail, Management, Marketing, Media, Productivity, Project management, Telecommunications, Tools, Travel, and Web design & hosting.'
+              description: 'The list of categories for the application. Supported values can be: Collaboration, Business Management, Consumer, Content management, CRM, Data services, Developer services, E-commerce, Education, ERP, Finance, Health, Human resources, IT infrastructure, Mail, Management, Marketing, Media, Productivity, Project management, Telecommunications, Tools, Travel, and Web design & hosting.'
             description:
               type: string
               description: A description of the application.
@@ -19790,7 +20014,7 @@ components:
               description: The id of the client service principal for the application which is authorized to act on behalf of a signed-in user when accessing an API. Required. Supports $filter (eq only).
             consentType:
               type: string
-              description: 'Indicates if authorization is granted for the client application to impersonate all users or only a specific user. AllPrincipals indicates authorization to impersonate all users. Principal indicates authorization to impersonate a specific user. Consent on behalf of all users can be granted by an administrator. Non-admin users may be authorized to consent on behalf of themselves in some cases, for some delegated permissions. Required. Supports $filter (eq only).'
+              description: 'Indicates whether authorization is granted for the client application to impersonate all users or only a specific user. AllPrincipals indicates authorization to impersonate all users. Principal indicates authorization to impersonate a specific user. Consent on behalf of all users can be granted by an administrator. Non-admin users may be authorized to consent on behalf of themselves in some cases, for some delegated permissions. Required. Supports $filter (eq only).'
               nullable: true
             expiryTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -20191,10 +20415,10 @@ components:
       properties:
         name:
           type: string
-          description: Name for this key-value pair
+          description: 'Name for this key-value pair. Possible names are: AdditionalWSFedEndpointCheckResult,  AllowedAuthenticationClassReferencesCheckResult, AlwaysRequireAuthenticationCheckResult,   AutoUpdateEnabledCheckResult, ClaimsProviderNameCheckResult, EncryptClaimsCheckResult,  EncryptedNameIdRequiredCheckResult, MonitoringEnabledCheckResult,NotBeforeSkewCheckResult,  RequestMFAFromClaimsProvidersCheckResult, SignedSamlRequestsRequiredCheckResult, AdditionalAuthenticationRulesCheckResult, TokenLifetimeCheckResult,  DelegationAuthorizationRulesCheckResult, IssuanceAuthorizationRulesCheckResult, IssuanceTransformRulesCheckResult.'
         value:
           type: string
-          description: Value for this key-value pair
+          description: 'Value for this key-value pair. Possible result values are 0 (when the validation check passed), 1 (when the validation check failed), or 2 (when the validation check is a warning).'
           nullable: true
       additionalProperties:
         type: object
@@ -21039,11 +21263,11 @@ components:
       properties:
         key:
           type: string
-          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object

@@ -6,6 +6,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
 {
     using Microsoft.Graph.PowerShell.Authentication.Core;
     using Microsoft.Graph.PowerShell.Authentication.Interfaces;
+
     using System;
     using System.Security;
     using System.Threading;
@@ -199,6 +200,23 @@ namespace Microsoft.Graph.PowerShell.Authentication
             {
                 throw new InvalidOperationException(ErrorConstants.Codes.SessionLockWriteDisposed, disposedException);
             }
+        }
+
+        private IPSGraphOutputWriter _outputWriter;
+        /// <summary>
+        /// Provides Access to output methods provided by the Cmdlet
+        /// </summary>
+        public IPSGraphOutputWriter OutputWriter
+        {
+            get
+            {
+                if (_outputWriter == null)
+                {
+                    throw new InvalidOperationException(ErrorConstants.Codes.OutputNotInitialized);
+                }
+                return _outputWriter;
+            }
+            set => _outputWriter = value;
         }
     }
 }

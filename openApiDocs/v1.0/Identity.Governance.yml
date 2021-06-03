@@ -248,6 +248,7 @@ paths:
       tags:
         - agreements.agreementAcceptance
       summary: Get acceptances from agreements
+      description: Read-only. Information about acceptances of this agreement.
       operationId: agreements_ListAcceptances
       parameters:
         - name: agreement-id
@@ -365,6 +366,7 @@ paths:
       tags:
         - agreements.agreementAcceptance
       summary: Create new navigation property to acceptances for agreements
+      description: Read-only. Information about acceptances of this agreement.
       operationId: agreements_CreateAcceptances
       parameters:
         - name: agreement-id
@@ -396,6 +398,7 @@ paths:
       tags:
         - agreements.agreementAcceptance
       summary: Get acceptances from agreements
+      description: Read-only. Information about acceptances of this agreement.
       operationId: agreements_GetAcceptances
       parameters:
         - name: agreement-id
@@ -463,6 +466,7 @@ paths:
       tags:
         - agreements.agreementAcceptance
       summary: Update the navigation property acceptances in agreements
+      description: Read-only. Information about acceptances of this agreement.
       operationId: agreements_UpdateAcceptances
       parameters:
         - name: agreement-id
@@ -496,6 +500,7 @@ paths:
       tags:
         - agreements.agreementAcceptance
       summary: Delete navigation property acceptances for agreements
+      description: Read-only. Information about acceptances of this agreement.
       operationId: agreements_DeleteAcceptances
       parameters:
         - name: agreement-id
@@ -528,6 +533,7 @@ paths:
       tags:
         - agreements.agreementFile
       summary: Get file from agreements
+      description: Default PDF linked to this agreement.
       operationId: agreements_GetFile
       parameters:
         - name: agreement-id
@@ -589,6 +595,7 @@ paths:
       tags:
         - agreements.agreementFile
       summary: Update the navigation property file in agreements
+      description: Default PDF linked to this agreement.
       operationId: agreements_UpdateFile
       parameters:
         - name: agreement-id
@@ -615,6 +622,7 @@ paths:
       tags:
         - agreements.agreementFile
       summary: Delete navigation property file for agreements
+      description: Default PDF linked to this agreement.
       operationId: agreements_DeleteFile
       parameters:
         - name: agreement-id
@@ -1197,6 +1205,7 @@ paths:
       tags:
         - agreements.agreementFileLocalization
       summary: Get files from agreements
+      description: 'PDFs linked to this agreement. Note: This property is in the process of being deprecated. Use the  file property instead.'
       operationId: agreements_ListFiles
       parameters:
         - name: agreement-id
@@ -1298,6 +1307,7 @@ paths:
       tags:
         - agreements.agreementFileLocalization
       summary: Create new navigation property to files for agreements
+      description: 'PDFs linked to this agreement. Note: This property is in the process of being deprecated. Use the  file property instead.'
       operationId: agreements_CreateFiles
       parameters:
         - name: agreement-id
@@ -1329,6 +1339,7 @@ paths:
       tags:
         - agreements.agreementFileLocalization
       summary: Get files from agreements
+      description: 'PDFs linked to this agreement. Note: This property is in the process of being deprecated. Use the  file property instead.'
       operationId: agreements_GetFiles
       parameters:
         - name: agreement-id
@@ -1398,6 +1409,7 @@ paths:
       tags:
         - agreements.agreementFileLocalization
       summary: Update the navigation property files in agreements
+      description: 'PDFs linked to this agreement. Note: This property is in the process of being deprecated. Use the  file property instead.'
       operationId: agreements_UpdateFiles
       parameters:
         - name: agreement-id
@@ -1431,6 +1443,7 @@ paths:
       tags:
         - agreements.agreementFileLocalization
       summary: Delete navigation property files for agreements
+      description: 'PDFs linked to this agreement. Note: This property is in the process of being deprecated. Use the  file property instead.'
       operationId: agreements_DeleteFiles
       parameters:
         - name: agreement-id
@@ -1749,6 +1762,306 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}/instances/{accessReviewInstance-id}/decisions/microsoft.graph.filterByCurrentUser(on={on})':
+    get:
+      tags:
+        - identityGovernance.Functions
+      summary: Invoke function filterByCurrentUser
+      operationId: identityGovernance.accessReviews.definitions.instances.decisions_filterByCurrentUser
+      parameters:
+        - name: accessReviewScheduleDefinition-id
+          in: path
+          description: 'key: id of accessReviewScheduleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewScheduleDefinition
+        - name: accessReviewInstance-id
+          in: path
+          description: 'key: id of accessReviewInstance'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewInstance
+        - name: on
+          in: path
+          description: 'Usage: on={on}'
+          required: true
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.accessReviewInstanceDecisionItemFilterByCurrentUserOptions'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.accessReviewInstanceDecisionItem'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}/instances/{accessReviewInstance-id}/microsoft.graph.acceptRecommendations':
+    post:
+      tags:
+        - identityGovernance.Actions
+      summary: Invoke action acceptRecommendations
+      operationId: identityGovernance.accessReviews.definitions.instances_acceptRecommendations
+      parameters:
+        - name: accessReviewScheduleDefinition-id
+          in: path
+          description: 'key: id of accessReviewScheduleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewScheduleDefinition
+        - name: accessReviewInstance-id
+          in: path
+          description: 'key: id of accessReviewInstance'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewInstance
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}/instances/{accessReviewInstance-id}/microsoft.graph.applyDecisions':
+    post:
+      tags:
+        - identityGovernance.Actions
+      summary: Invoke action applyDecisions
+      operationId: identityGovernance.accessReviews.definitions.instances_applyDecisions
+      parameters:
+        - name: accessReviewScheduleDefinition-id
+          in: path
+          description: 'key: id of accessReviewScheduleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewScheduleDefinition
+        - name: accessReviewInstance-id
+          in: path
+          description: 'key: id of accessReviewInstance'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewInstance
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}/instances/{accessReviewInstance-id}/microsoft.graph.batchRecordDecisions':
+    post:
+      tags:
+        - identityGovernance.Actions
+      summary: Invoke action batchRecordDecisions
+      operationId: identityGovernance.accessReviews.definitions.instances_batchRecordDecisions
+      parameters:
+        - name: accessReviewScheduleDefinition-id
+          in: path
+          description: 'key: id of accessReviewScheduleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewScheduleDefinition
+        - name: accessReviewInstance-id
+          in: path
+          description: 'key: id of accessReviewInstance'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewInstance
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                decision:
+                  type: string
+                  nullable: true
+                justification:
+                  type: string
+                  nullable: true
+                principalId:
+                  type: string
+                  nullable: true
+                resourceId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}/instances/{accessReviewInstance-id}/microsoft.graph.resetDecisions':
+    post:
+      tags:
+        - identityGovernance.Actions
+      summary: Invoke action resetDecisions
+      operationId: identityGovernance.accessReviews.definitions.instances_resetDecisions
+      parameters:
+        - name: accessReviewScheduleDefinition-id
+          in: path
+          description: 'key: id of accessReviewScheduleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewScheduleDefinition
+        - name: accessReviewInstance-id
+          in: path
+          description: 'key: id of accessReviewInstance'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewInstance
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}/instances/{accessReviewInstance-id}/microsoft.graph.sendReminder':
+    post:
+      tags:
+        - identityGovernance.Actions
+      summary: Invoke action sendReminder
+      operationId: identityGovernance.accessReviews.definitions.instances_sendReminder
+      parameters:
+        - name: accessReviewScheduleDefinition-id
+          in: path
+          description: 'key: id of accessReviewScheduleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewScheduleDefinition
+        - name: accessReviewInstance-id
+          in: path
+          description: 'key: id of accessReviewInstance'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewInstance
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}/instances/{accessReviewInstance-id}/microsoft.graph.stop':
+    post:
+      tags:
+        - identityGovernance.Actions
+      summary: Invoke action stop
+      operationId: identityGovernance.accessReviews.definitions.instances_stop
+      parameters:
+        - name: accessReviewScheduleDefinition-id
+          in: path
+          description: 'key: id of accessReviewScheduleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewScheduleDefinition
+        - name: accessReviewInstance-id
+          in: path
+          description: 'key: id of accessReviewInstance'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewInstance
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}/instances/microsoft.graph.filterByCurrentUser(on={on})':
+    get:
+      tags:
+        - identityGovernance.Functions
+      summary: Invoke function filterByCurrentUser
+      operationId: identityGovernance.accessReviews.definitions.instances_filterByCurrentUser
+      parameters:
+        - name: accessReviewScheduleDefinition-id
+          in: path
+          description: 'key: id of accessReviewScheduleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewScheduleDefinition
+        - name: on
+          in: path
+          description: 'Usage: on={on}'
+          required: true
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.accessReviewInstanceFilterByCurrentUserOptions'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.accessReviewInstance'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}/microsoft.graph.stop':
+    post:
+      tags:
+        - identityGovernance.Actions
+      summary: Invoke action stop
+      operationId: identityGovernance.accessReviews.definitions_stop
+      parameters:
+        - name: accessReviewScheduleDefinition-id
+          in: path
+          description: 'key: id of accessReviewScheduleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewScheduleDefinition
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/identityGovernance/accessReviews/definitions/microsoft.graph.filterByCurrentUser(on={on})':
+    get:
+      tags:
+        - identityGovernance.Functions
+      summary: Invoke function filterByCurrentUser
+      operationId: identityGovernance.accessReviews.definitions_filterByCurrentUser
+      parameters:
+        - name: on
+          in: path
+          description: 'Usage: on={on}'
+          required: true
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.accessReviewScheduleDefinitionFilterByCurrentUserOptions'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.accessReviewScheduleDefinition'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/identityGovernance/appConsent/appConsentRequests/{appConsentRequest-id}/userConsentRequests/microsoft.graph.filterByCurrentUser(on={on})':
     get:
       tags:
@@ -1811,6 +2124,7 @@ paths:
       tags:
         - users.agreementAcceptance
       summary: Get agreementAcceptances from users
+      description: The user's terms of use acceptance statuses. Read-only. Nullable.
       operationId: users_ListAgreementAcceptances
       parameters:
         - name: user-id
@@ -1929,6 +2243,7 @@ paths:
       tags:
         - users.agreementAcceptance
       summary: Get ref of agreementAcceptances from users
+      description: The user's terms of use acceptance statuses. Read-only. Nullable.
       operationId: users_ListRefAgreementAcceptances
       parameters:
         - name: user-id
@@ -2009,6 +2324,7 @@ paths:
       tags:
         - users.agreementAcceptance
       summary: Create new navigation property ref to agreementAcceptances for users
+      description: The user's terms of use acceptance statuses. Read-only. Nullable.
       operationId: users_CreateRefAgreementAcceptances
       parameters:
         - name: user-id
@@ -2174,6 +2490,167 @@ components:
           type: object
           additionalProperties:
             type: object
+    microsoft.graph.accessReviewInstanceDecisionItemFilterByCurrentUserOptions:
+      title: accessReviewInstanceDecisionItemFilterByCurrentUserOptions
+      enum:
+        - reviewer
+        - unknownFutureValue
+      type: string
+    microsoft.graph.accessReviewInstanceDecisionItem:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: accessReviewInstanceDecisionItem
+          type: object
+          properties:
+            accessReviewId:
+              type: string
+              description: The identifier of the accessReviewInstance parent.
+            appliedBy:
+              $ref: '#/components/schemas/microsoft.graph.userIdentity'
+            appliedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The timestamp when the approval decision was applied. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              nullable: true
+            applyResult:
+              type: string
+              description: 'The result of applying the decision. Possible values: NotApplied, Success, Failed, NotFound, or NotSupported.'
+              nullable: true
+            decision:
+              type: string
+              description: 'Result of the review. Possible values: Approve, Deny, NotReviewed, or DontKnow.'
+              nullable: true
+            justification:
+              type: string
+              description: The review decision justification.
+              nullable: true
+            principal:
+              $ref: '#/components/schemas/microsoft.graph.identity'
+            principalLink:
+              type: string
+              nullable: true
+            recommendation:
+              type: string
+              description: 'A system-generated recommendation for the approval decision. Possible values: Approve, Deny, or NotAvailable.'
+              nullable: true
+            resource:
+              $ref: '#/components/schemas/microsoft.graph.accessReviewInstanceDecisionItemResource'
+            resourceLink:
+              type: string
+              nullable: true
+            reviewedBy:
+              $ref: '#/components/schemas/microsoft.graph.userIdentity'
+            reviewedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The timestamp when the review occurred.
+              format: date-time
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.accessReviewInstanceFilterByCurrentUserOptions:
+      title: accessReviewInstanceFilterByCurrentUserOptions
+      enum:
+        - reviewer
+        - unknownFutureValue
+      type: string
+    microsoft.graph.accessReviewInstance:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: accessReviewInstance
+          type: object
+          properties:
+            endDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'DateTime when review instance is scheduled to end.The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              nullable: true
+            scope:
+              $ref: '#/components/schemas/microsoft.graph.accessReviewScope'
+            startDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'DateTime when review instance is scheduled to start. May be in the future. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              nullable: true
+            status:
+              type: string
+              description: 'Specifies the status of an accessReview. The typical states include Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed.  Read-only.'
+              nullable: true
+            decisions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.accessReviewInstanceDecisionItem'
+              description: 'Each user reviewed in an accessReviewInstance has a decision item representing if their access was approved, denied, or not yet reviewed.'
+          additionalProperties:
+            type: object
+    microsoft.graph.accessReviewScheduleDefinitionFilterByCurrentUserOptions:
+      title: accessReviewScheduleDefinitionFilterByCurrentUserOptions
+      enum:
+        - reviewer
+        - unknownFutureValue
+      type: string
+    microsoft.graph.accessReviewScheduleDefinition:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: accessReviewScheduleDefinition
+          type: object
+          properties:
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.userIdentity'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Timestamp when the access review series was created. Supports $select.
+              format: date-time
+              nullable: true
+            descriptionForAdmins:
+              type: string
+              description: Description provided by review creators to provide more context of the review to admins. Supports $select.
+              nullable: true
+            descriptionForReviewers:
+              type: string
+              description: Description provided  by review creators to provide more context of the review to reviewers. Reviewers will see this description in the email sent to them requesting their review. Supports $select.
+              nullable: true
+            displayName:
+              type: string
+              description: Name of the access review series. Required on create. Supports $select.
+              nullable: true
+            fallbackReviewers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScope'
+              description: 'This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user''s manager does not exist. Supports $select.'
+            instanceEnumerationScope:
+              $ref: '#/components/schemas/microsoft.graph.accessReviewScope'
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Timestamp when the access review series was last modified. Supports $select.
+              format: date-time
+              nullable: true
+            reviewers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScope'
+              description: 'This collection of access review scopes is used to define who are the reviewers. Required on create. Supports $select. For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API.'
+            scope:
+              $ref: '#/components/schemas/microsoft.graph.accessReviewScope'
+            settings:
+              $ref: '#/components/schemas/microsoft.graph.accessReviewScheduleSettings'
+            status:
+              type: string
+              description: 'This read-only field specifies the status of an access review. The typical states include Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed. Supports $select, $orderby, and $filter (eq only).'
+              nullable: true
+            instances:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.accessReviewInstance'
+              description: 'Set of access reviews instances for this access review series. Access reviews that do not recur will only have one instance; otherwise, there is an instance for each recurrence.'
+          additionalProperties:
+            type: object
     microsoft.graph.consentRequestFilterByCurrentUserOptions:
       title: consentRequestFilterByCurrentUserOptions
       enum:
@@ -2283,6 +2760,118 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.userIdentity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.identity'
+        - title: userIdentity
+          type: object
+          properties:
+            ipAddress:
+              type: string
+              description: Indicates the client IP address used by user performing the activity (audit log only).
+              nullable: true
+            userPrincipalName:
+              type: string
+              description: The userPrincipalName attribute of the user.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.identity:
+      title: identity
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          nullable: true
+        id:
+          type: string
+          description: Unique identifier for the identity.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.accessReviewInstanceDecisionItemResource:
+      title: accessReviewInstanceDecisionItemResource
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: Display name of the resource
+          nullable: true
+        id:
+          type: string
+          description: Resource ID
+          nullable: true
+        type:
+          type: string
+          description: 'Type of resource. Types include: Group, ServicePrincipal, DirectoryRole, AzureRole, AccessPackageAssignmentPolicy.'
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.accessReviewScope:
+      title: accessReviewScope
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.accessReviewReviewerScope:
+      title: accessReviewReviewerScope
+      type: object
+      properties:
+        query:
+          type: string
+          description: The query specifying who will be the reviewer. See table for examples.
+          nullable: true
+        queryRoot:
+          type: string
+          description: 'In the scenario where reviewers need to be specified dynamically, this property is used to indicate the relative source of the query. This property is only required if a relative query, for example, ./manager, is specified. Possible value: decisions.'
+          nullable: true
+        queryType:
+          type: string
+          description: The type of query. Examples include MicrosoftGraph and ARM.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.accessReviewScheduleSettings:
+      title: accessReviewScheduleSettings
+      type: object
+      properties:
+        applyActions:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.accessReviewApplyAction'
+          description: 'Optional field. Describes the  actions to take once a review is complete. There are two types that are currently supported: removeAccessApplyAction (default) and disableAndDeleteUserApplyAction. Field only needs to be specified in the case of disableAndDeleteUserApplyAction. See accessReviewApplyAction.'
+        autoApplyDecisionsEnabled:
+          type: boolean
+          description: 'Indicates whether decisions are automatically applied. When set to false, a user must apply the decisions manually once the reviewer completes the access review. When set to true, decisions are applied automatically after the access review instance duration ends, whether or not the reviewers have responded. Default value is false.'
+        defaultDecision:
+          type: string
+          description: 'Decision chosen if defaultDecisionEnabled is enabled. Can be one of Approve, Deny, or Recommendation.'
+          nullable: true
+        defaultDecisionEnabled:
+          type: boolean
+          description: Indicates whether the default decision is enabled or disabled when reviewers do not respond. Default value is false.
+        instanceDurationInDays:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Duration of each recurrence of review (accessReviewInstance) in number of days.
+          format: int32
+        justificationRequiredOnApproval:
+          type: boolean
+          description: Indicates whether reviewers are required to provide justification with their decision. Default value is false.
+        mailNotificationsEnabled:
+          type: boolean
+          description: Indicates whether emails are enabled or disabled. Default value is false.
+        recommendationsEnabled:
+          type: boolean
+          description: Indicates whether decision recommendations are enabled/disabled.
+        recurrence:
+          $ref: '#/components/schemas/microsoft.graph.patternedRecurrence'
+        reminderNotificationsEnabled:
+          type: boolean
+          description: Indicates whether reminders are enabled or disabled. Default value is false.
+      additionalProperties:
+        type: object
     microsoft.graph.request:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -2351,6 +2940,21 @@ components:
           type: string
           format: base64url
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.accessReviewApplyAction:
+      title: accessReviewApplyAction
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.patternedRecurrence:
+      title: patternedRecurrence
+      type: object
+      properties:
+        pattern:
+          $ref: '#/components/schemas/microsoft.graph.recurrencePattern'
+        range:
+          $ref: '#/components/schemas/microsoft.graph.recurrenceRange'
       additionalProperties:
         type: object
     microsoft.graph.identitySet:
@@ -2424,18 +3028,69 @@ components:
           description: The structure of this object is service-specific
       additionalProperties:
         type: object
-    microsoft.graph.identity:
-      title: identity
+    microsoft.graph.recurrencePattern:
+      title: recurrencePattern
       type: object
       properties:
-        displayName:
+        dayOfMonth:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The day of the month on which the event occurs. Required if type is absoluteMonthly or absoluteYearly.
+          format: int32
+        daysOfWeek:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.dayOfWeek'
+          description: 'A collection of the days of the week on which the event occurs. Possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. If type is relativeMonthly or relativeYearly, and daysOfWeek specifies more than one day, the event falls on the first day that satisfies the pattern.  Required if type is weekly, relativeMonthly, or relativeYearly.'
+        firstDayOfWeek:
+          $ref: '#/components/schemas/microsoft.graph.dayOfWeek'
+        index:
+          $ref: '#/components/schemas/microsoft.graph.weekIndex'
+        interval:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: 'The number of units between occurrences, where units can be in days, weeks, months, or years, depending on the type. Required.'
+          format: int32
+        month:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The month in which the event occurs.  This is a number from 1 to 12.
+          format: int32
+        type:
+          $ref: '#/components/schemas/microsoft.graph.recurrencePatternType'
+      additionalProperties:
+        type: object
+    microsoft.graph.recurrenceRange:
+      title: recurrenceRange
+      type: object
+      properties:
+        endDate:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
           type: string
-          description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: 'The date to stop applying the recurrence pattern. Depending on the recurrence pattern of the event, the last occurrence of the meeting may not be this date. Required if type is endDate.'
+          format: date
           nullable: true
-        id:
+        numberOfOccurrences:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The number of times to repeat the event. Required and must be positive if type is numbered.
+          format: int32
+        recurrenceTimeZone:
           type: string
-          description: Unique identifier for the identity.
+          description: 'Time zone for the startDate and endDate properties. Optional. If not specified, the time zone of the event is used.'
           nullable: true
+        startDate:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+          type: string
+          description: 'The date to start applying the recurrence pattern. The first occurrence of the meeting may be this date or later, depending on the recurrence pattern of the event. Must be the same value as the start property of the recurring event. Required.'
+          format: date
+          nullable: true
+        type:
+          $ref: '#/components/schemas/microsoft.graph.recurrenceRangeType'
       additionalProperties:
         type: object
     odata.error.detail:
@@ -2452,6 +3107,43 @@ components:
           type: string
       additionalProperties:
         type: object
+    microsoft.graph.dayOfWeek:
+      title: dayOfWeek
+      enum:
+        - sunday
+        - monday
+        - tuesday
+        - wednesday
+        - thursday
+        - friday
+        - saturday
+      type: string
+    microsoft.graph.weekIndex:
+      title: weekIndex
+      enum:
+        - first
+        - second
+        - third
+        - fourth
+        - last
+      type: string
+    microsoft.graph.recurrencePatternType:
+      title: recurrencePatternType
+      enum:
+        - daily
+        - weekly
+        - absoluteMonthly
+        - relativeMonthly
+        - absoluteYearly
+        - relativeYearly
+      type: string
+    microsoft.graph.recurrenceRangeType:
+      title: recurrenceRangeType
+      enum:
+        - endDate
+        - noEnd
+        - numbered
+      type: string
   responses:
     error:
       description: error

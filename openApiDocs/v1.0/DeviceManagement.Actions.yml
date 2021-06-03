@@ -221,11 +221,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /deviceManagement/importedWindowsAutopilotDeviceIdentities/microsoft.graph.import:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action import
+      operationId: deviceManagement.importedWindowsAutopilotDeviceIdentities_import
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                importedWindowsAutopilotDeviceIdentities:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.importedWindowsAutopilotDeviceIdentity'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.importedWindowsAutopilotDeviceIdentity'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.bypassActivationLock':
     post:
       tags:
         - deviceManagement.Actions
       summary: Invoke action bypassActivationLock
+      description: Bypass activation lock
       operationId: deviceManagement.managedDevices_bypassActivationLock
       parameters:
         - name: managedDevice-id
@@ -246,6 +279,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action cleanWindowsDevice
+      description: Clean Windows device
       operationId: deviceManagement.managedDevices_cleanWindowsDevice
       parameters:
         - name: managedDevice-id
@@ -279,6 +313,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action deleteUserFromSharedAppleDevice
+      description: Delete user from shared Apple device
       operationId: deviceManagement.managedDevices_deleteUserFromSharedAppleDevice
       parameters:
         - name: managedDevice-id
@@ -312,6 +347,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action disableLostMode
+      description: Disable lost mode
       operationId: deviceManagement.managedDevices_disableLostMode
       parameters:
         - name: managedDevice-id
@@ -332,6 +368,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action locateDevice
+      description: Locate a device
       operationId: deviceManagement.managedDevices_locateDevice
       parameters:
         - name: managedDevice-id
@@ -352,6 +389,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action logoutSharedAppleDeviceActiveUser
+      description: Logout shared Apple device active user
       operationId: deviceManagement.managedDevices_logoutSharedAppleDeviceActiveUser
       parameters:
         - name: managedDevice-id
@@ -372,6 +410,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rebootNow
+      description: Reboot device
       operationId: deviceManagement.managedDevices_rebootNow
       parameters:
         - name: managedDevice-id
@@ -392,6 +431,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action recoverPasscode
+      description: Recover passcode
       operationId: deviceManagement.managedDevices_recoverPasscode
       parameters:
         - name: managedDevice-id
@@ -412,6 +452,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action remoteLock
+      description: Remote lock
       operationId: deviceManagement.managedDevices_remoteLock
       parameters:
         - name: managedDevice-id
@@ -432,6 +473,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action requestRemoteAssistance
+      description: Request remote assistance
       operationId: deviceManagement.managedDevices_requestRemoteAssistance
       parameters:
         - name: managedDevice-id
@@ -452,6 +494,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action resetPasscode
+      description: Reset passcode
       operationId: deviceManagement.managedDevices_resetPasscode
       parameters:
         - name: managedDevice-id
@@ -472,6 +515,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action retire
+      description: Retire a device
       operationId: deviceManagement.managedDevices_retire
       parameters:
         - name: managedDevice-id
@@ -492,6 +536,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action shutDown
+      description: Shut down device
       operationId: deviceManagement.managedDevices_shutDown
       parameters:
         - name: managedDevice-id
@@ -617,6 +662,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action wipe
+      description: Wipe a device
       operationId: deviceManagement.managedDevices_wipe
       parameters:
         - name: managedDevice-id
@@ -644,6 +690,10 @@ paths:
                 macOsUnlockCode:
                   type: string
                   nullable: true
+                persistEsimDataPlan:
+                  type: boolean
+                  default: false
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -658,6 +708,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action sendTestMessage
+      description: Sends test message using the specified notificationMessageTemplate in the default locale
       operationId: deviceManagement.notificationMessageTemplates_sendTestMessage
       parameters:
         - name: notificationMessageTemplate-id
@@ -678,6 +729,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action beginOnboarding
+      description: A request to start onboarding.  Must be coupled with the appropriate TeamViewer account information
       operationId: deviceManagement.remoteAssistancePartners_beginOnboarding
       parameters:
         - name: remoteAssistancePartner-id
@@ -698,6 +750,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action disconnect
+      description: A request to remove the active TeamViewer connector
       operationId: deviceManagement.remoteAssistancePartners_disconnect
       parameters:
         - name: remoteAssistancePartner-id
@@ -707,6 +760,107 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: remoteAssistancePartner
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/windowsAutopilotDeviceIdentities/{windowsAutopilotDeviceIdentity-id}/microsoft.graph.assignUserToDevice':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action assignUserToDevice
+      description: Assigns user to Autopilot devices.
+      operationId: deviceManagement.windowsAutopilotDeviceIdentities_assignUserToDevice
+      parameters:
+        - name: windowsAutopilotDeviceIdentity-id
+          in: path
+          description: 'key: id of windowsAutopilotDeviceIdentity'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: windowsAutopilotDeviceIdentity
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userPrincipalName:
+                  type: string
+                  nullable: true
+                addressableUserName:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/windowsAutopilotDeviceIdentities/{windowsAutopilotDeviceIdentity-id}/microsoft.graph.unassignUserFromDevice':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action unassignUserFromDevice
+      description: Unassigns the user from an Autopilot device.
+      operationId: deviceManagement.windowsAutopilotDeviceIdentities_unassignUserFromDevice
+      parameters:
+        - name: windowsAutopilotDeviceIdentity-id
+          in: path
+          description: 'key: id of windowsAutopilotDeviceIdentity'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: windowsAutopilotDeviceIdentity
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/windowsAutopilotDeviceIdentities/{windowsAutopilotDeviceIdentity-id}/microsoft.graph.updateDeviceProperties':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action updateDeviceProperties
+      description: Updates properties on Autopilot devices.
+      operationId: deviceManagement.windowsAutopilotDeviceIdentities_updateDeviceProperties
+      parameters:
+        - name: windowsAutopilotDeviceIdentity-id
+          in: path
+          description: 'key: id of windowsAutopilotDeviceIdentity'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: windowsAutopilotDeviceIdentity
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userPrincipalName:
+                  type: string
+                  nullable: true
+                addressableUserName:
+                  type: string
+                  nullable: true
+                groupTag:
+                  type: string
+                  nullable: true
+                displayName:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -772,6 +926,42 @@ components:
         - fullSync
         - deltaSync
       type: string
+    microsoft.graph.importedWindowsAutopilotDeviceIdentity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: importedWindowsAutopilotDeviceIdentity
+          type: object
+          properties:
+            assignedUserPrincipalName:
+              type: string
+              description: UPN of the user the device will be assigned
+              nullable: true
+            groupTag:
+              type: string
+              description: Group Tag of the Windows autopilot device.
+              nullable: true
+            hardwareIdentifier:
+              type: string
+              description: Hardware Blob of the Windows autopilot device.
+              format: base64url
+              nullable: true
+            importId:
+              type: string
+              description: The Import Id of the Windows autopilot device.
+              nullable: true
+            productKey:
+              type: string
+              description: Product Key of the Windows autopilot device.
+              nullable: true
+            serialNumber:
+              type: string
+              description: Serial number of the Windows autopilot device.
+              nullable: true
+            state:
+              $ref: '#/components/schemas/microsoft.graph.importedWindowsAutopilotDeviceIdentityState'
+          additionalProperties:
+            type: object
+          description: Imported windows autopilot devices.
     microsoft.graph.updateWindowsDeviceAccountActionParameter:
       title: updateWindowsDeviceAccountActionParameter
       type: object
@@ -842,6 +1032,28 @@ components:
           additionalProperties:
             type: object
           description: Scheduled Action Configuration
+    microsoft.graph.importedWindowsAutopilotDeviceIdentityState:
+      title: importedWindowsAutopilotDeviceIdentityState
+      type: object
+      properties:
+        deviceErrorCode:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Device error code reported by Device Directory Service(DDS).
+          format: int32
+        deviceErrorName:
+          type: string
+          description: Device error name reported by Device Directory Service(DDS).
+          nullable: true
+        deviceImportStatus:
+          $ref: '#/components/schemas/microsoft.graph.importedWindowsAutopilotDeviceIdentityImportStatus'
+        deviceRegistrationId:
+          type: string
+          description: Device Registration ID for successfully added device reported by Device Directory Service(DDS).
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.windowsDeviceAccount:
       title: windowsDeviceAccount
       type: object
@@ -871,6 +1083,15 @@ components:
         - wipe
         - removeResourceAccessProfiles
         - pushNotification
+      type: string
+    microsoft.graph.importedWindowsAutopilotDeviceIdentityImportStatus:
+      title: importedWindowsAutopilotDeviceIdentityImportStatus
+      enum:
+        - unknown
+        - pending
+        - partial
+        - complete
+        - error
       type: string
     odata.error.main:
       required:

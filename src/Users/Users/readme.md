@@ -40,6 +40,11 @@ subject-prefix: ''
 directive:
 # Remove invalid root paths e.g. users{id}/todo
   - remove-path-by-operation: users_(Get|Create|Update|Delete|Set)(Todo|outlook)
+# Remove commands
+  - where:
+      verb: New
+      subject: ^UserLicenseDetail$
+    remove: true
 # Alias then rename cmdlets to avoid breaking change.
   - where:
       subject: ^User(Member|TransitiveMember)$
@@ -53,6 +58,6 @@ directive:
 ### Versioning
 
 ``` yaml
-module-version: 1.5.0
+module-version: 1.6.0
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

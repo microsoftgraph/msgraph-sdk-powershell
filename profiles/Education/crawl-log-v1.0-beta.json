@@ -41,11 +41,11 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Education.yml"
     },
-    "/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/microsoft.graph.getResourcesFolderUrl()": {
+    "/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/microsoft.graph.publish": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Education.yml"
     },
-    "/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/microsoft.graph.publish": {
+    "/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/microsoft.graph.setUpResourcesFolder()": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Education.yml"
     },
@@ -70,6 +70,10 @@
       "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/microsoft.graph.return": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
+    },
+    "/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/microsoft.graph.setUpResourcesFolder()": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Education.yml"
     },
@@ -177,11 +181,11 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Education.yml"
     },
-    "/education/me/assignments/{educationAssignment-id}/microsoft.graph.getResourcesFolderUrl()": {
+    "/education/me/assignments/{educationAssignment-id}/microsoft.graph.publish": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Education.yml"
     },
-    "/education/me/assignments/{educationAssignment-id}/microsoft.graph.publish": {
+    "/education/me/assignments/{educationAssignment-id}/microsoft.graph.setUpResourcesFolder()": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Education.yml"
     },
@@ -206,6 +210,10 @@
       "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/me/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/microsoft.graph.return": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
+    },
+    "/education/me/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/microsoft.graph.setUpResourcesFolder()": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Education.yml"
     },
@@ -401,11 +409,11 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Education.yml"
     },
-    "/education/users/{educationUser-id}/assignments/{educationAssignment-id}/microsoft.graph.getResourcesFolderUrl()": {
+    "/education/users/{educationUser-id}/assignments/{educationAssignment-id}/microsoft.graph.publish": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Education.yml"
     },
-    "/education/users/{educationUser-id}/assignments/{educationAssignment-id}/microsoft.graph.publish": {
+    "/education/users/{educationUser-id}/assignments/{educationAssignment-id}/microsoft.graph.setUpResourcesFolder()": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Education.yml"
     },
@@ -430,6 +438,10 @@
       "originalLocation": "/openApiDocs/beta/Education.yml"
     },
     "/education/users/{educationUser-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/microsoft.graph.return": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
+    },
+    "/education/users/{educationUser-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/microsoft.graph.setUpResourcesFolder()": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Education.yml"
     },

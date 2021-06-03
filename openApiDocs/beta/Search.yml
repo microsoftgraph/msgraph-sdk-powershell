@@ -520,9 +520,11 @@ components:
       properties:
         enableModification:
           type: boolean
+          description: 'Indicates whether spelling modifications are enabled. If enabled, user will get the search results for corrected query when there are no results for the original query with typos and get the spelling modification information in queryAlterationResponse property of the response. Optional.'
           nullable: true
         enableSuggestion:
           type: boolean
+          description: 'Indicates whether spelling suggestions are enabled. If enabled, user will get the search results for original search query and suggesting spelling correction in queryAlterationResponse property of the response for typos in query. Optional.'
           nullable: true
       additionalProperties:
         type: object
@@ -536,6 +538,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.searchResultSet'
+          description: 'Represents results from a search query, and the terms used for the query.'
       additionalProperties:
         type: object
     microsoft.graph.entity:
@@ -689,6 +692,7 @@ components:
       properties:
         originalQueryString:
           type: string
+          description: Defines the original user query string.
           nullable: true
         queryAlteration:
           $ref: '#/components/schemas/microsoft.graph.searchAlteration'
@@ -704,11 +708,13 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.searchHitsContainer'
+          description: A collection of search results.
         searchTerms:
           type: array
           items:
             type: string
             nullable: true
+          description: Contains the search terms sent in the initial search query.
       additionalProperties:
         type: object
     odata.error:
@@ -870,14 +876,17 @@ components:
       properties:
         alteredHighlightedQueryString:
           type: string
+          description: 'Defines the altered highlighted query string with spelling correction. The annotation around the corrected segment is (/ue000, /ue001)'
           nullable: true
         alteredQueryString:
           type: string
+          description: Defines the altered query string with spelling correction.
           nullable: true
         alteredQueryTokens:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.alteredQueryToken'
+          description: Represents changed segments with respect to original query.
       additionalProperties:
         type: object
     microsoft.graph.searchAlterationType:
@@ -1027,6 +1036,9 @@ components:
         - fileName
         - fileExtension
         - unknownFutureValue
+        - iconUrl
+        - containerName
+        - containerUrl
       type: string
     microsoft.graph.externalConnectors.propertyType:
       title: propertyType
@@ -1069,16 +1081,19 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: Defines the length of a changed segment.
           format: int32
           nullable: true
         offset:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: Defines the offset of a changed segment.
           format: int32
           nullable: true
         suggestion:
           type: string
+          description: Represents the corrected segment string.
           nullable: true
       additionalProperties:
         type: object

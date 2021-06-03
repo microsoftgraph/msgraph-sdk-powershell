@@ -35,6 +35,6 @@
     "Users": "^users.user$|^users.directoryObject$|^users.licenseDetails$|^users.notification$|^users.outlookUser$|^users.profilePhoto$|^users.userSettings$|^users.extension$|^users.oAuth2PermissionGrant$|^users.todo$",
     "Users.Actions": "^users.Actions$",
     "Users.Functions": "^users.Functions$",
-
+    // "WindowsUpdates": "^admin.windows$|^admin.Actions$|^admin.Functions$",
     // "WorkBooks": "^workbooks\\.",// Max limit.
 }
