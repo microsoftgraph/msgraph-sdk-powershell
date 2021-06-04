@@ -1,11 +1,14 @@
 ### Example 1: Get a user's memberships
-```powershell
-PS C:\> Get-MgUserMemberOf -Userid "80466d12-1e49-4799-b024-021bf77d7189"
-
-Id                                   DeletedDateTime
---                                   ---------------
-bbfa9226-a965-47e1-9db2-bcfcb2c202e6
-929a850e-5c44-4d8c-a793-b655adf5f39f
-```
 
 This command gets the memberships for the specified user.
+
+```powershell
+Get-MgUserMemberOf -Userid "0ec3a5e8-b4b6-4678-90ff-ce786055065f"
+```
+
+```Output
+Id                                   DeletedDateTime
+--                                   ---------------
+b859c8be-ba51-4320-bf50-7d985f02e10c
+8b59fe93-4da9-4bd6-91f3-46a744a40e86
+```

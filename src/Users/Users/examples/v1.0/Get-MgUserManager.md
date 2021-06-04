@@ -1,10 +1,13 @@
 ### Example 1: Get a user's manager
-```powershell
-PS C:\> Get-MgUserManager -UserId "daa76fd1-93ce-4b1e-afb2-0a4f92fa2d54"
-
-Id                                   DeletedDateTime
---                                   ---------------
-f890ceed-822a-4647-8748-73d88013ae9d
-```
 
 The commands get the manager of the specified user.
+
+```powershell
+Get-MgUserManager -UserId "0ec3a5e8-b4b6-4678-90ff-ce786055065f"
+```
+
+```Output
+Id                                   DeletedDateTime
+--                                   ---------------
+e1428c8c-4219-4beb-b5cb-765c2590278b
+```
