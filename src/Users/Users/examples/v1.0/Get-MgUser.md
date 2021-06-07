@@ -1,6 +1,6 @@
 ### Example 1: Get the list of all the users
 
-This command get a list of users
+This command returns a list of all users.
 
 ```powershell
 Get-MgUser  | Format-List  ID, DisplayName, Mail, UserPrincipalName
@@ -23,7 +23,7 @@ UserPrincipalName : AdeleV@contoso.com
 This command gets the specified user.
 
 ```powershell
-Get-MgUser -UserId "e4e2b110-8d4f-434f-a990-7cd63e23aed6" | 
+Get-MgUser -UserId 'e4e2b110-8d4f-434f-a990-7cd63e23aed6' | 
   Format-List  ID, DisplayName, Mail, UserPrincipalName
 ```
 

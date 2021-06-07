@@ -3,7 +3,7 @@
 This command gets the memberships for the specified user.
 
 ```powershell
-Get-MgUserMemberOf -Userid "0ec3a5e8-b4b6-4678-90ff-ce786055065f"
+Get-MgUserMemberOf -Userid '0ec3a5e8-b4b6-4678-90ff-ce786055065f'
 ```
 
 ```Output

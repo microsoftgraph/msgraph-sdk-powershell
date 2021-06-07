@@ -3,5 +3,5 @@
 This example updates the specified user's display name.
 
 ```powershell
-Update-MgUser -UserId "f36aae05-82e9-41ce-ab77-d6ff7031412d" -DisplayName "Kristi Laar"
+Update-MgUser -UserId '2a1fa0b8-87d6-4f39-be8d-68d0db617b02' -DisplayName 'Kristi Laar'
 ```

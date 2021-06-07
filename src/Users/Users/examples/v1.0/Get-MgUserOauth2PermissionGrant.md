@@ -1,9 +1,9 @@
 ### Example 1: Get user's oAuth2PermissionGrant 
 
-This example gets Get oauth2PermissionGrants for the specified user.
+This example gets the oauth2PermissionGrants for the specified user.
 
 ```powershell
-Get-MgUserOauth2permissionGrant  -UserId "afeb5811-0582-4188-8546-4440c2b921bd" | Format-List
+Get-MgUserOauth2permissionGrant  -UserId 'afeb5811-0582-4188-8546-4440c2b921bd' | Format-List
 ```
 
 ```Output

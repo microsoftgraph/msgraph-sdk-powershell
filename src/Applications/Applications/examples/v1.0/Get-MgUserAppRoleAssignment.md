@@ -1,6 +1,6 @@
 ### Example 1: Get assigned user roles
 
-This command gets all the application roles that the selected userid has been assigned. 
+This command gets all the application roles that the selected user has been assigned.
 
 ```powershell
  Get-MgUserAppRoleAssignment -UserId "529827aa-d058-4821-a012-4de3ce093955" | 

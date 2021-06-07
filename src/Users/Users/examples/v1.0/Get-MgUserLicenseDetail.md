@@ -3,7 +3,7 @@
 This example retrieves the license details for the specified user.
 
 ```powershell
-Get-MgUserLicenseDetail -UserId "0ec3a5e8-b4b6-4678-90ff-ce786055065f" | Format-List
+Get-MgUserLicenseDetail -UserId '0ec3a5e8-b4b6-4678-90ff-ce786055065f' | Format-List
 ```
 
 ```Output
