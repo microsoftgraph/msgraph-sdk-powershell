@@ -25839,6 +25839,7 @@ components:
         - windows10AndLater
         - androidWorkProfile
         - unknown
+        - androidAOSP
       type: string
     microsoft.graph.deviceAndAppManagementAssignmentTarget:
       title: deviceAndAppManagementAssignmentTarget
