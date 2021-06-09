@@ -1,18 +1,35 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
+### Example 1: Get all service principals from the directory
 
-{{ Add output here }}
+This example retrieves all service principals from the directory.
+
+```powershell
+Get-MgServicePrincipal
 ```
 
-{{ Add description here }}
+```Output
+Id             : 304ae362-7953-4d08-8e15-aeece4d01017c
+DisplayName    : IC3 Gateway TestClone
+AppId          : 509ab5b8-1380-4906-9765-76d2ace9335d
+SignInAudience : AzureADMultipleOrgs
 
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Id             : 4297089a-3358-4bf5-92b0-a35fbdb2407c
+DisplayName    : Microsoft Forms
+AppId          : 67c93110-694e-4a54-b1af-d6cd2e3b12d7
+SignInAudience : AzureADMultipleOrgs
 ```
 
-{{ Add description here }}
+### Example 2: Get the service principal by display name
 
+This example gets the service principal by display name.
+
+```powershell
+ Get-MgServicePrincipal -Filter "DisplayName eq 'Power BI Service'" | 
+  Format-List Id, DisplayName,AppId, SignInAudience
+```
+
+```Output
+Id             : 9518fb8f-8d9e-4aae-be20-d398f9cc59ac
+DisplayName    : Power BI Service
+AppId          : 60dbf324-9702-41cc-a5fa-f8d19804b014
+SignInAudience : AzureADMultipleOrgs
+```
