@@ -3593,6 +3593,11 @@ paths:
                   type: string
                 activity:
                   type: string
+                expirationDuration:
+                  pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+                  type: string
+                  format: duration
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
