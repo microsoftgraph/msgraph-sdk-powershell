@@ -757,6 +757,10 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
     },
+    "/deviceAppManagement/windowsManagementApp/microsoft.graph.setAsManagedInstaller": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"
+    },
     "/officeConfiguration": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Devices.CorporateManagement.yml"

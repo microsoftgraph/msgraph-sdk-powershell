@@ -15,10 +15,9 @@ paths:
       parameters:
         - name: ConsistencyLevel
           in: header
-          description: Indicates the requested consistency level.
+          description: 'Indicates the requested consistency level. Documentation URL: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/'
           schema:
             type: string
-          example: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/
           examples:
             example-1:
               description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
@@ -56,6 +55,8 @@ paths:
                 - createdDateTime desc
                 - description
                 - description desc
+                - disabledByMicrosoftStatus
+                - disabledByMicrosoftStatus desc
                 - displayName
                 - displayName desc
                 - groupMembershipClaims
@@ -118,6 +119,7 @@ paths:
                 - appRoles
                 - createdDateTime
                 - description
+                - disabledByMicrosoftStatus
                 - displayName
                 - groupMembershipClaims
                 - identifierUris
@@ -214,6 +216,7 @@ paths:
       tags:
         - applications.application
       summary: Get entity from applications by key
+      description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
       operationId: applications.application_GetApplication
       parameters:
         - name: application-id
@@ -225,10 +228,9 @@ paths:
           x-ms-docs-key-type: application
         - name: ConsistencyLevel
           in: header
-          description: Indicates the requested consistency level.
+          description: 'Indicates the requested consistency level. Documentation URL: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/'
           schema:
             type: string
-          example: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/
           examples:
             example-1:
               description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
@@ -252,6 +254,7 @@ paths:
                 - appRoles
                 - createdDateTime
                 - description
+                - disabledByMicrosoftStatus
                 - displayName
                 - groupMembershipClaims
                 - identifierUris
@@ -337,6 +340,7 @@ paths:
       tags:
         - applications.application
       summary: Update entity in applications
+      description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
       operationId: applications.application_UpdateApplication
       parameters:
         - name: application-id
@@ -363,6 +367,7 @@ paths:
       tags:
         - applications.application
       summary: Delete entity from applications
+      description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
       operationId: applications.application_DeleteApplication
       parameters:
         - name: application-id
@@ -388,6 +393,7 @@ paths:
       tags:
         - applications.directoryObject
       summary: Get createdOnBehalfOf from applications
+      description: Read-only.
       operationId: applications_GetCreatedOnBehalfOf
       parameters:
         - name: application-id
@@ -437,6 +443,7 @@ paths:
       tags:
         - applications.directoryObject
       summary: Get ref of createdOnBehalfOf from applications
+      description: Read-only.
       operationId: applications_GetRefCreatedOnBehalfOf
       parameters:
         - name: application-id
@@ -460,6 +467,7 @@ paths:
       tags:
         - applications.directoryObject
       summary: Update the ref of navigation property createdOnBehalfOf in applications
+      description: Read-only.
       operationId: applications_SetRefCreatedOnBehalfOf
       parameters:
         - name: application-id
@@ -488,6 +496,7 @@ paths:
       tags:
         - applications.directoryObject
       summary: Delete ref of navigation property createdOnBehalfOf for applications
+      description: Read-only.
       operationId: applications_DeleteRefCreatedOnBehalfOf
       parameters:
         - name: application-id
@@ -513,6 +522,7 @@ paths:
       tags:
         - applications.extensionProperty
       summary: Get extensionProperties from applications
+      description: Read-only. Nullable.
       operationId: applications_ListExtensionProperties
       parameters:
         - name: application-id
@@ -609,6 +619,7 @@ paths:
       tags:
         - applications.extensionProperty
       summary: Create new navigation property to extensionProperties for applications
+      description: Read-only. Nullable.
       operationId: applications_CreateExtensionProperties
       parameters:
         - name: application-id
@@ -640,6 +651,7 @@ paths:
       tags:
         - applications.extensionProperty
       summary: Get extensionProperties from applications
+      description: Read-only. Nullable.
       operationId: applications_GetExtensionProperties
       parameters:
         - name: application-id
@@ -700,6 +712,7 @@ paths:
       tags:
         - applications.extensionProperty
       summary: Update the navigation property extensionProperties in applications
+      description: Read-only. Nullable.
       operationId: applications_UpdateExtensionProperties
       parameters:
         - name: application-id
@@ -733,6 +746,7 @@ paths:
       tags:
         - applications.extensionProperty
       summary: Delete navigation property extensionProperties for applications
+      description: Read-only. Nullable.
       operationId: applications_DeleteExtensionProperties
       parameters:
         - name: application-id
@@ -960,6 +974,7 @@ paths:
       tags:
         - applications.application
       summary: Get media content for application from applications
+      description: The main logo for the application. Not nullable.
       operationId: applications.application_GetLogo
       parameters:
         - name: application-id
@@ -984,6 +999,7 @@ paths:
       tags:
         - applications.application
       summary: Update media content for application in applications
+      description: The main logo for the application. Not nullable.
       operationId: applications.application_SetLogo
       parameters:
         - name: application-id
@@ -1342,6 +1358,7 @@ paths:
       tags:
         - applications.directoryObject
       summary: Get owners from applications
+      description: Directory objects that are owners of the application. Read-only. Nullable.
       operationId: applications_ListOwners
       parameters:
         - name: application-id
@@ -1424,6 +1441,7 @@ paths:
       tags:
         - applications.directoryObject
       summary: Get ref of owners from applications
+      description: Directory objects that are owners of the application. Read-only. Nullable.
       operationId: applications_ListRefOwners
       parameters:
         - name: application-id
@@ -1480,6 +1498,7 @@ paths:
       tags:
         - applications.directoryObject
       summary: Create new navigation property ref to owners for applications
+      description: Directory objects that are owners of the application. Read-only. Nullable.
       operationId: applications_CreateRefOwners
       parameters:
         - name: application-id
@@ -1710,6 +1729,7 @@ paths:
       tags:
         - applications.tokenLifetimePolicy
       summary: Get tokenLifetimePolicies from applications
+      description: The tokenLifetimePolicies assigned to this application.
       operationId: applications_ListTokenLifetimePolicies
       parameters:
         - name: application-id
@@ -1806,6 +1826,7 @@ paths:
       tags:
         - applications.tokenLifetimePolicy
       summary: Get ref of tokenLifetimePolicies from applications
+      description: The tokenLifetimePolicies assigned to this application.
       operationId: applications_ListRefTokenLifetimePolicies
       parameters:
         - name: application-id
@@ -1870,6 +1891,7 @@ paths:
       tags:
         - applications.tokenLifetimePolicy
       summary: Create new navigation property ref to tokenLifetimePolicies for applications
+      description: The tokenLifetimePolicies assigned to this application.
       operationId: applications_CreateRefTokenLifetimePolicies
       parameters:
         - name: application-id
@@ -2289,6 +2311,7 @@ paths:
       tags:
         - groups.appRoleAssignment
       summary: Get appRoleAssignments from groups
+      description: Represents the app roles a group has been granted for an application.
       operationId: groups_ListAppRoleAssignments
       parameters:
         - name: group-id
@@ -2391,6 +2414,7 @@ paths:
       tags:
         - groups.appRoleAssignment
       summary: Create new navigation property to appRoleAssignments for groups
+      description: Represents the app roles a group has been granted for an application.
       operationId: groups_CreateAppRoleAssignments
       parameters:
         - name: group-id
@@ -2422,6 +2446,7 @@ paths:
       tags:
         - groups.appRoleAssignment
       summary: Get appRoleAssignments from groups
+      description: Represents the app roles a group has been granted for an application.
       operationId: groups_GetAppRoleAssignments
       parameters:
         - name: group-id
@@ -2484,6 +2509,7 @@ paths:
       tags:
         - groups.appRoleAssignment
       summary: Update the navigation property appRoleAssignments in groups
+      description: Represents the app roles a group has been granted for an application.
       operationId: groups_UpdateAppRoleAssignments
       parameters:
         - name: group-id
@@ -2517,6 +2543,7 @@ paths:
       tags:
         - groups.appRoleAssignment
       summary: Delete navigation property appRoleAssignments for groups
+      description: Represents the app roles a group has been granted for an application.
       operationId: groups_DeleteAppRoleAssignments
       parameters:
         - name: group-id
@@ -2553,10 +2580,9 @@ paths:
       parameters:
         - name: ConsistencyLevel
           in: header
-          description: Indicates the requested consistency level.
+          description: 'Indicates the requested consistency level. Documentation URL: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/'
           schema:
             type: string
-          example: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/
           examples:
             example-1:
               description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
@@ -2602,6 +2628,8 @@ paths:
                 - appRoles desc
                 - description
                 - description desc
+                - disabledByMicrosoftStatus
+                - disabledByMicrosoftStatus desc
                 - displayName
                 - displayName desc
                 - homepage
@@ -2664,6 +2692,7 @@ paths:
                 - appRoleAssignmentRequired
                 - appRoles
                 - description
+                - disabledByMicrosoftStatus
                 - displayName
                 - homepage
                 - info
@@ -2774,6 +2803,7 @@ paths:
       tags:
         - servicePrincipals.servicePrincipal
       summary: Get entity from servicePrincipals by key
+      description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
       operationId: servicePrincipals.servicePrincipal_GetServicePrincipal
       parameters:
         - name: servicePrincipal-id
@@ -2785,10 +2815,9 @@ paths:
           x-ms-docs-key-type: servicePrincipal
         - name: ConsistencyLevel
           in: header
-          description: Indicates the requested consistency level.
+          description: 'Indicates the requested consistency level. Documentation URL: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/'
           schema:
             type: string
-          example: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/
           examples:
             example-1:
               description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
@@ -2816,6 +2845,7 @@ paths:
                 - appRoleAssignmentRequired
                 - appRoles
                 - description
+                - disabledByMicrosoftStatus
                 - displayName
                 - homepage
                 - info
@@ -2947,6 +2977,7 @@ paths:
       tags:
         - servicePrincipals.servicePrincipal
       summary: Update entity in servicePrincipals
+      description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
       operationId: servicePrincipals.servicePrincipal_UpdateServicePrincipal
       parameters:
         - name: servicePrincipal-id
@@ -2973,6 +3004,7 @@ paths:
       tags:
         - servicePrincipals.servicePrincipal
       summary: Delete entity from servicePrincipals
+      description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
       operationId: servicePrincipals.servicePrincipal_DeleteServicePrincipal
       parameters:
         - name: servicePrincipal-id
@@ -2998,6 +3030,7 @@ paths:
       tags:
         - servicePrincipals.appRoleAssignment
       summary: Get appRoleAssignedTo from servicePrincipals
+      description: 'App role assignments for this app or service, granted to users, groups, and other service principals.'
       operationId: servicePrincipals_ListAppRoleAssignedTo
       parameters:
         - name: servicePrincipal-id
@@ -3100,6 +3133,7 @@ paths:
       tags:
         - servicePrincipals.appRoleAssignment
       summary: Create new navigation property to appRoleAssignedTo for servicePrincipals
+      description: 'App role assignments for this app or service, granted to users, groups, and other service principals.'
       operationId: servicePrincipals_CreateAppRoleAssignedTo
       parameters:
         - name: servicePrincipal-id
@@ -3131,6 +3165,7 @@ paths:
       tags:
         - servicePrincipals.appRoleAssignment
       summary: Get appRoleAssignedTo from servicePrincipals
+      description: 'App role assignments for this app or service, granted to users, groups, and other service principals.'
       operationId: servicePrincipals_GetAppRoleAssignedTo
       parameters:
         - name: servicePrincipal-id
@@ -3193,6 +3228,7 @@ paths:
       tags:
         - servicePrincipals.appRoleAssignment
       summary: Update the navigation property appRoleAssignedTo in servicePrincipals
+      description: 'App role assignments for this app or service, granted to users, groups, and other service principals.'
       operationId: servicePrincipals_UpdateAppRoleAssignedTo
       parameters:
         - name: servicePrincipal-id
@@ -3226,6 +3262,7 @@ paths:
       tags:
         - servicePrincipals.appRoleAssignment
       summary: Delete navigation property appRoleAssignedTo for servicePrincipals
+      description: 'App role assignments for this app or service, granted to users, groups, and other service principals.'
       operationId: servicePrincipals_DeleteAppRoleAssignedTo
       parameters:
         - name: servicePrincipal-id
@@ -3258,6 +3295,7 @@ paths:
       tags:
         - servicePrincipals.appRoleAssignment
       summary: Get appRoleAssignments from servicePrincipals
+      description: 'App role assignment for another app or service, granted to this service principal.'
       operationId: servicePrincipals_ListAppRoleAssignments
       parameters:
         - name: servicePrincipal-id
@@ -3360,6 +3398,7 @@ paths:
       tags:
         - servicePrincipals.appRoleAssignment
       summary: Create new navigation property to appRoleAssignments for servicePrincipals
+      description: 'App role assignment for another app or service, granted to this service principal.'
       operationId: servicePrincipals_CreateAppRoleAssignments
       parameters:
         - name: servicePrincipal-id
@@ -3391,6 +3430,7 @@ paths:
       tags:
         - servicePrincipals.appRoleAssignment
       summary: Get appRoleAssignments from servicePrincipals
+      description: 'App role assignment for another app or service, granted to this service principal.'
       operationId: servicePrincipals_GetAppRoleAssignments
       parameters:
         - name: servicePrincipal-id
@@ -3453,6 +3493,7 @@ paths:
       tags:
         - servicePrincipals.appRoleAssignment
       summary: Update the navigation property appRoleAssignments in servicePrincipals
+      description: 'App role assignment for another app or service, granted to this service principal.'
       operationId: servicePrincipals_UpdateAppRoleAssignments
       parameters:
         - name: servicePrincipal-id
@@ -3486,6 +3527,7 @@ paths:
       tags:
         - servicePrincipals.appRoleAssignment
       summary: Delete navigation property appRoleAssignments for servicePrincipals
+      description: 'App role assignment for another app or service, granted to this service principal.'
       operationId: servicePrincipals_DeleteAppRoleAssignments
       parameters:
         - name: servicePrincipal-id
@@ -3518,6 +3560,7 @@ paths:
       tags:
         - servicePrincipals.claimsMappingPolicy
       summary: Get claimsMappingPolicies from servicePrincipals
+      description: The claimsMappingPolicies assigned to this service principal.
       operationId: servicePrincipals_ListClaimsMappingPolicies
       parameters:
         - name: servicePrincipal-id
@@ -3614,6 +3657,7 @@ paths:
       tags:
         - servicePrincipals.claimsMappingPolicy
       summary: Get ref of claimsMappingPolicies from servicePrincipals
+      description: The claimsMappingPolicies assigned to this service principal.
       operationId: servicePrincipals_ListRefClaimsMappingPolicies
       parameters:
         - name: servicePrincipal-id
@@ -3678,6 +3722,7 @@ paths:
       tags:
         - servicePrincipals.claimsMappingPolicy
       summary: Create new navigation property ref to claimsMappingPolicies for servicePrincipals
+      description: The claimsMappingPolicies assigned to this service principal.
       operationId: servicePrincipals_CreateRefClaimsMappingPolicies
       parameters:
         - name: servicePrincipal-id
@@ -3713,6 +3758,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get createdObjects from servicePrincipals
+      description: Directory objects created by this service principal. Read-only. Nullable.
       operationId: servicePrincipals_ListCreatedObjects
       parameters:
         - name: servicePrincipal-id
@@ -3795,6 +3841,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get ref of createdObjects from servicePrincipals
+      description: Directory objects created by this service principal. Read-only. Nullable.
       operationId: servicePrincipals_ListRefCreatedObjects
       parameters:
         - name: servicePrincipal-id
@@ -3851,6 +3898,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Create new navigation property ref to createdObjects for servicePrincipals
+      description: Directory objects created by this service principal. Read-only. Nullable.
       operationId: servicePrincipals_CreateRefCreatedObjects
       parameters:
         - name: servicePrincipal-id
@@ -3886,6 +3934,7 @@ paths:
       tags:
         - servicePrincipals.delegatedPermissionClassification
       summary: Get delegatedPermissionClassifications from servicePrincipals
+      description: The permission classifications for delegated permissions exposed by the app that this service principal represents.
       operationId: servicePrincipals_ListDelegatedPermissionClassifications
       parameters:
         - name: servicePrincipal-id
@@ -3973,6 +4022,7 @@ paths:
       tags:
         - servicePrincipals.delegatedPermissionClassification
       summary: Create new navigation property to delegatedPermissionClassifications for servicePrincipals
+      description: The permission classifications for delegated permissions exposed by the app that this service principal represents.
       operationId: servicePrincipals_CreateDelegatedPermissionClassifications
       parameters:
         - name: servicePrincipal-id
@@ -4004,6 +4054,7 @@ paths:
       tags:
         - servicePrincipals.delegatedPermissionClassification
       summary: Get delegatedPermissionClassifications from servicePrincipals
+      description: The permission classifications for delegated permissions exposed by the app that this service principal represents.
       operationId: servicePrincipals_GetDelegatedPermissionClassifications
       parameters:
         - name: servicePrincipal-id
@@ -4061,6 +4112,7 @@ paths:
       tags:
         - servicePrincipals.delegatedPermissionClassification
       summary: Update the navigation property delegatedPermissionClassifications in servicePrincipals
+      description: The permission classifications for delegated permissions exposed by the app that this service principal represents.
       operationId: servicePrincipals_UpdateDelegatedPermissionClassifications
       parameters:
         - name: servicePrincipal-id
@@ -4094,6 +4146,7 @@ paths:
       tags:
         - servicePrincipals.delegatedPermissionClassification
       summary: Delete navigation property delegatedPermissionClassifications for servicePrincipals
+      description: The permission classifications for delegated permissions exposed by the app that this service principal represents.
       operationId: servicePrincipals_DeleteDelegatedPermissionClassifications
       parameters:
         - name: servicePrincipal-id
@@ -4126,6 +4179,7 @@ paths:
       tags:
         - servicePrincipals.endpoint
       summary: Get endpoints from servicePrincipals
+      description: Endpoints available for discovery. Services like Sharepoint populate this property with a tenant specific SharePoint endpoints that other applications can discover and use in their experiences.
       operationId: servicePrincipals_ListEndpoints
       parameters:
         - name: servicePrincipal-id
@@ -4222,6 +4276,7 @@ paths:
       tags:
         - servicePrincipals.endpoint
       summary: Create new navigation property to endpoints for servicePrincipals
+      description: Endpoints available for discovery. Services like Sharepoint populate this property with a tenant specific SharePoint endpoints that other applications can discover and use in their experiences.
       operationId: servicePrincipals_CreateEndpoints
       parameters:
         - name: servicePrincipal-id
@@ -4253,6 +4308,7 @@ paths:
       tags:
         - servicePrincipals.endpoint
       summary: Get endpoints from servicePrincipals
+      description: Endpoints available for discovery. Services like Sharepoint populate this property with a tenant specific SharePoint endpoints that other applications can discover and use in their experiences.
       operationId: servicePrincipals_GetEndpoints
       parameters:
         - name: servicePrincipal-id
@@ -4313,6 +4369,7 @@ paths:
       tags:
         - servicePrincipals.endpoint
       summary: Update the navigation property endpoints in servicePrincipals
+      description: Endpoints available for discovery. Services like Sharepoint populate this property with a tenant specific SharePoint endpoints that other applications can discover and use in their experiences.
       operationId: servicePrincipals_UpdateEndpoints
       parameters:
         - name: servicePrincipal-id
@@ -4346,6 +4403,7 @@ paths:
       tags:
         - servicePrincipals.endpoint
       summary: Delete navigation property endpoints for servicePrincipals
+      description: Endpoints available for discovery. Services like Sharepoint populate this property with a tenant specific SharePoint endpoints that other applications can discover and use in their experiences.
       operationId: servicePrincipals_DeleteEndpoints
       parameters:
         - name: servicePrincipal-id
@@ -4378,6 +4436,7 @@ paths:
       tags:
         - servicePrincipals.homeRealmDiscoveryPolicy
       summary: Get homeRealmDiscoveryPolicies from servicePrincipals
+      description: The homeRealmDiscoveryPolicies assigned to this service principal.
       operationId: servicePrincipals_ListHomeRealmDiscoveryPolicies
       parameters:
         - name: servicePrincipal-id
@@ -4474,6 +4533,7 @@ paths:
       tags:
         - servicePrincipals.homeRealmDiscoveryPolicy
       summary: Get ref of homeRealmDiscoveryPolicies from servicePrincipals
+      description: The homeRealmDiscoveryPolicies assigned to this service principal.
       operationId: servicePrincipals_ListRefHomeRealmDiscoveryPolicies
       parameters:
         - name: servicePrincipal-id
@@ -4538,6 +4598,7 @@ paths:
       tags:
         - servicePrincipals.homeRealmDiscoveryPolicy
       summary: Create new navigation property ref to homeRealmDiscoveryPolicies for servicePrincipals
+      description: The homeRealmDiscoveryPolicies assigned to this service principal.
       operationId: servicePrincipals_CreateRefHomeRealmDiscoveryPolicies
       parameters:
         - name: servicePrincipal-id
@@ -4573,6 +4634,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get memberOf from servicePrincipals
+      description: 'Roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable.'
       operationId: servicePrincipals_ListMemberOf
       parameters:
         - name: servicePrincipal-id
@@ -4655,6 +4717,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get ref of memberOf from servicePrincipals
+      description: 'Roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable.'
       operationId: servicePrincipals_ListRefMemberOf
       parameters:
         - name: servicePrincipal-id
@@ -4711,6 +4774,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Create new navigation property ref to memberOf for servicePrincipals
+      description: 'Roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable.'
       operationId: servicePrincipals_CreateRefMemberOf
       parameters:
         - name: servicePrincipal-id
@@ -5076,6 +5140,7 @@ paths:
       tags:
         - servicePrincipals.oAuth2PermissionGrant
       summary: Get oauth2PermissionGrants from servicePrincipals
+      description: Delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user. Read-only. Nullable.
       operationId: servicePrincipals_ListOauth2PermissionGrants
       parameters:
         - name: servicePrincipal-id
@@ -5170,6 +5235,7 @@ paths:
       tags:
         - servicePrincipals.oAuth2PermissionGrant
       summary: Get ref of oauth2PermissionGrants from servicePrincipals
+      description: Delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user. Read-only. Nullable.
       operationId: servicePrincipals_ListRefOauth2PermissionGrants
       parameters:
         - name: servicePrincipal-id
@@ -5234,6 +5300,7 @@ paths:
       tags:
         - servicePrincipals.oAuth2PermissionGrant
       summary: Create new navigation property ref to oauth2PermissionGrants for servicePrincipals
+      description: Delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user. Read-only. Nullable.
       operationId: servicePrincipals_CreateRefOauth2PermissionGrants
       parameters:
         - name: servicePrincipal-id
@@ -5269,6 +5336,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get ownedObjects from servicePrincipals
+      description: Directory objects that are owned by this service principal. Read-only. Nullable.
       operationId: servicePrincipals_ListOwnedObjects
       parameters:
         - name: servicePrincipal-id
@@ -5351,6 +5419,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get ref of ownedObjects from servicePrincipals
+      description: Directory objects that are owned by this service principal. Read-only. Nullable.
       operationId: servicePrincipals_ListRefOwnedObjects
       parameters:
         - name: servicePrincipal-id
@@ -5407,6 +5476,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Create new navigation property ref to ownedObjects for servicePrincipals
+      description: Directory objects that are owned by this service principal. Read-only. Nullable.
       operationId: servicePrincipals_CreateRefOwnedObjects
       parameters:
         - name: servicePrincipal-id
@@ -5442,6 +5512,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get owners from servicePrincipals
+      description: Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.
       operationId: servicePrincipals_ListOwners
       parameters:
         - name: servicePrincipal-id
@@ -5524,6 +5595,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get ref of owners from servicePrincipals
+      description: Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.
       operationId: servicePrincipals_ListRefOwners
       parameters:
         - name: servicePrincipal-id
@@ -5580,6 +5652,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Create new navigation property ref to owners for servicePrincipals
+      description: Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.
       operationId: servicePrincipals_CreateRefOwners
       parameters:
         - name: servicePrincipal-id
@@ -5615,6 +5688,7 @@ paths:
       tags:
         - servicePrincipals.tokenIssuancePolicy
       summary: Get tokenIssuancePolicies from servicePrincipals
+      description: The tokenIssuancePolicies assigned to this service principal.
       operationId: servicePrincipals_ListTokenIssuancePolicies
       parameters:
         - name: servicePrincipal-id
@@ -5711,6 +5785,7 @@ paths:
       tags:
         - servicePrincipals.tokenIssuancePolicy
       summary: Get ref of tokenIssuancePolicies from servicePrincipals
+      description: The tokenIssuancePolicies assigned to this service principal.
       operationId: servicePrincipals_ListRefTokenIssuancePolicies
       parameters:
         - name: servicePrincipal-id
@@ -5775,6 +5850,7 @@ paths:
       tags:
         - servicePrincipals.tokenIssuancePolicy
       summary: Create new navigation property ref to tokenIssuancePolicies for servicePrincipals
+      description: The tokenIssuancePolicies assigned to this service principal.
       operationId: servicePrincipals_CreateRefTokenIssuancePolicies
       parameters:
         - name: servicePrincipal-id
@@ -5810,6 +5886,7 @@ paths:
       tags:
         - servicePrincipals.tokenLifetimePolicy
       summary: Get tokenLifetimePolicies from servicePrincipals
+      description: The tokenLifetimePolicies assigned to this service principal.
       operationId: servicePrincipals_ListTokenLifetimePolicies
       parameters:
         - name: servicePrincipal-id
@@ -5906,6 +5983,7 @@ paths:
       tags:
         - servicePrincipals.tokenLifetimePolicy
       summary: Get ref of tokenLifetimePolicies from servicePrincipals
+      description: The tokenLifetimePolicies assigned to this service principal.
       operationId: servicePrincipals_ListRefTokenLifetimePolicies
       parameters:
         - name: servicePrincipal-id
@@ -5970,6 +6048,7 @@ paths:
       tags:
         - servicePrincipals.tokenLifetimePolicy
       summary: Create new navigation property ref to tokenLifetimePolicies for servicePrincipals
+      description: The tokenLifetimePolicies assigned to this service principal.
       operationId: servicePrincipals_CreateRefTokenLifetimePolicies
       parameters:
         - name: servicePrincipal-id
@@ -6301,6 +6380,7 @@ paths:
       tags:
         - users.appRoleAssignment
       summary: Get appRoleAssignments from users
+      description: Represents the app roles a user has been granted for an application.
       operationId: users_ListAppRoleAssignments
       parameters:
         - name: user-id
@@ -6403,6 +6483,7 @@ paths:
       tags:
         - users.appRoleAssignment
       summary: Create new navigation property to appRoleAssignments for users
+      description: Represents the app roles a user has been granted for an application.
       operationId: users_CreateAppRoleAssignments
       parameters:
         - name: user-id
@@ -6434,6 +6515,7 @@ paths:
       tags:
         - users.appRoleAssignment
       summary: Get appRoleAssignments from users
+      description: Represents the app roles a user has been granted for an application.
       operationId: users_GetAppRoleAssignments
       parameters:
         - name: user-id
@@ -6496,6 +6578,7 @@ paths:
       tags:
         - users.appRoleAssignment
       summary: Update the navigation property appRoleAssignments in users
+      description: Represents the app roles a user has been granted for an application.
       operationId: users_UpdateAppRoleAssignments
       parameters:
         - name: user-id
@@ -6529,6 +6612,7 @@ paths:
       tags:
         - users.appRoleAssignment
       summary: Delete navigation property appRoleAssignments for users
+      description: Represents the app roles a user has been granted for an application.
       operationId: users_DeleteAppRoleAssignments
       parameters:
         - name: user-id
@@ -6592,6 +6676,10 @@ components:
               nullable: true
             description:
               type: string
+              nullable: true
+            disabledByMicrosoftStatus:
+              type: string
+              description: 'Specifies whether Microsoft has disabled the registered application. Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).'
               nullable: true
             displayName:
               type: string
@@ -7004,6 +7092,10 @@ components:
             description:
               type: string
               description: Free text field to provide an internal end-user facing description of the service principal. End-user portals such MyApps will display the application description in this field. The maximum allowed size is 1024 characters.
+              nullable: true
+            disabledByMicrosoftStatus:
+              type: string
+              description: 'Specifies whether Microsoft has disabled the registered application. Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).'
               nullable: true
             displayName:
               type: string

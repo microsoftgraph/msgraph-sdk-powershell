@@ -496,6 +496,8 @@ components:
           format: int32
         query:
           $ref: '#/components/schemas/microsoft.graph.searchQuery'
+        resultTemplateOptions:
+          $ref: '#/components/schemas/microsoft.graph.resultTemplateOption'
         size:
           maximum: 2147483647
           minimum: -2147483648
@@ -673,6 +675,15 @@ components:
           $ref: '#/components/schemas/microsoft.graph.searchQueryString'
       additionalProperties:
         type: object
+    microsoft.graph.resultTemplateOption:
+      title: resultTemplateOption
+      type: object
+      properties:
+        enableResultTemplate:
+          type: boolean
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.sortProperty:
       title: sortProperty
       type: object
@@ -709,6 +720,8 @@ components:
           items:
             $ref: '#/components/schemas/microsoft.graph.searchHitsContainer'
           description: A collection of search results.
+        resultTemplates:
+          $ref: '#/components/schemas/microsoft.graph.resultTemplateDictionary'
         searchTerms:
           type: array
           items:
@@ -922,6 +935,13 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.resultTemplateDictionary:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.Dictionary'
+        - title: resultTemplateDictionary
+          type: object
+          additionalProperties:
+            type: object
     odata.error.main:
       required:
         - code
@@ -1151,6 +1171,11 @@ components:
           $ref: '#/components/schemas/microsoft.graph.entity'
         _source:
           $ref: '#/components/schemas/microsoft.graph.entity'
+      additionalProperties:
+        type: object
+    microsoft.graph.Dictionary:
+      title: Dictionary
+      type: object
       additionalProperties:
         type: object
     odata.error.detail:

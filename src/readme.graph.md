@@ -401,7 +401,7 @@ directive:
       subject: $2$1
   - where:
       verb: Test
-      variant: ^Check(.*)
+      variant: ^(Check|Verify)(.*)
     set:
       verb: Confirm
 # Rename all /$ref cmdlets to *ByRef e.g. New-MgGroupOwnerByRef

@@ -15,10 +15,9 @@ paths:
       parameters:
         - name: ConsistencyLevel
           in: header
-          description: Indicates the requested consistency level.
+          description: 'Indicates the requested consistency level. Documentation URL: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/'
           schema:
             type: string
-          example: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/
           examples:
             example-1:
               description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
@@ -168,6 +167,7 @@ paths:
       tags:
         - contacts.orgContact
       summary: Get entity from contacts by key
+      description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
       operationId: contacts.orgContact_GetOrgContact
       parameters:
         - name: orgContact-id
@@ -179,10 +179,9 @@ paths:
           x-ms-docs-key-type: orgContact
         - name: ConsistencyLevel
           in: header
-          description: Indicates the requested consistency level.
+          description: 'Indicates the requested consistency level. Documentation URL: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/'
           schema:
             type: string
-          example: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/
           examples:
             example-1:
               description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
@@ -265,6 +264,7 @@ paths:
       tags:
         - contacts.orgContact
       summary: Update entity in contacts
+      description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
       operationId: contacts.orgContact_UpdateOrgContact
       parameters:
         - name: orgContact-id
@@ -291,6 +291,7 @@ paths:
       tags:
         - contacts.orgContact
       summary: Delete entity from contacts
+      description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
       operationId: contacts.orgContact_DeleteOrgContact
       parameters:
         - name: orgContact-id
@@ -316,6 +317,7 @@ paths:
       tags:
         - contacts.directoryObject
       summary: Get directReports from contacts
+      description: The contact's direct reports. (The users and contacts that have their manager property set to this contact.) Read-only. Nullable.
       operationId: contacts_ListDirectReports
       parameters:
         - name: orgContact-id
@@ -398,6 +400,7 @@ paths:
       tags:
         - contacts.directoryObject
       summary: Get ref of directReports from contacts
+      description: The contact's direct reports. (The users and contacts that have their manager property set to this contact.) Read-only. Nullable.
       operationId: contacts_ListRefDirectReports
       parameters:
         - name: orgContact-id
@@ -454,6 +457,7 @@ paths:
       tags:
         - contacts.directoryObject
       summary: Create new navigation property ref to directReports for contacts
+      description: The contact's direct reports. (The users and contacts that have their manager property set to this contact.) Read-only. Nullable.
       operationId: contacts_CreateRefDirectReports
       parameters:
         - name: orgContact-id
@@ -489,6 +493,7 @@ paths:
       tags:
         - contacts.directoryObject
       summary: Get manager from contacts
+      description: The user or contact that is this contact's manager. Read-only.
       operationId: contacts_GetManager
       parameters:
         - name: orgContact-id
@@ -538,6 +543,7 @@ paths:
       tags:
         - contacts.directoryObject
       summary: Get ref of manager from contacts
+      description: The user or contact that is this contact's manager. Read-only.
       operationId: contacts_GetRefManager
       parameters:
         - name: orgContact-id
@@ -561,6 +567,7 @@ paths:
       tags:
         - contacts.directoryObject
       summary: Update the ref of navigation property manager in contacts
+      description: The user or contact that is this contact's manager. Read-only.
       operationId: contacts_SetRefManager
       parameters:
         - name: orgContact-id
@@ -589,6 +596,7 @@ paths:
       tags:
         - contacts.directoryObject
       summary: Delete ref of navigation property manager for contacts
+      description: The user or contact that is this contact's manager. Read-only.
       operationId: contacts_DeleteRefManager
       parameters:
         - name: orgContact-id
@@ -614,6 +622,7 @@ paths:
       tags:
         - contacts.directoryObject
       summary: Get memberOf from contacts
+      description: Groups that this contact is a member of. Read-only. Nullable.
       operationId: contacts_ListMemberOf
       parameters:
         - name: orgContact-id
@@ -696,6 +705,7 @@ paths:
       tags:
         - contacts.directoryObject
       summary: Get ref of memberOf from contacts
+      description: Groups that this contact is a member of. Read-only. Nullable.
       operationId: contacts_ListRefMemberOf
       parameters:
         - name: orgContact-id
@@ -752,6 +762,7 @@ paths:
       tags:
         - contacts.directoryObject
       summary: Create new navigation property ref to memberOf for contacts
+      description: Groups that this contact is a member of. Read-only. Nullable.
       operationId: contacts_CreateRefMemberOf
       parameters:
         - name: orgContact-id
@@ -1376,6 +1387,7 @@ paths:
       tags:
         - contracts.contract
       summary: Get entity from contracts by key
+      description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
       operationId: contracts.contract_GetContract
       parameters:
         - name: contract-id
@@ -1428,6 +1440,7 @@ paths:
       tags:
         - contracts.contract
       summary: Update entity in contracts
+      description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
       operationId: contracts.contract_UpdateContract
       parameters:
         - name: contract-id
@@ -1454,6 +1467,7 @@ paths:
       tags:
         - contracts.contract
       summary: Delete entity from contracts
+      description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
       operationId: contracts.contract_DeleteContract
       parameters:
         - name: contract-id
@@ -1772,10 +1786,9 @@ paths:
       parameters:
         - name: ConsistencyLevel
           in: header
-          description: Indicates the requested consistency level.
+          description: 'Indicates the requested consistency level. Documentation URL: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/'
           schema:
             type: string
-          example: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/
           examples:
             example-1:
               description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
@@ -1942,6 +1955,7 @@ paths:
       tags:
         - devices.device
       summary: Get entity from devices by key
+      description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
       operationId: devices.device_GetDevice
       parameters:
         - name: device-id
@@ -1953,10 +1967,9 @@ paths:
           x-ms-docs-key-type: device
         - name: ConsistencyLevel
           in: header
-          description: Indicates the requested consistency level.
+          description: 'Indicates the requested consistency level. Documentation URL: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/'
           schema:
             type: string
-          example: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/
           examples:
             example-1:
               description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
@@ -2050,6 +2063,7 @@ paths:
       tags:
         - devices.device
       summary: Update entity in devices
+      description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
       operationId: devices.device_UpdateDevice
       parameters:
         - name: device-id
@@ -2076,6 +2090,7 @@ paths:
       tags:
         - devices.device
       summary: Delete entity from devices
+      description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
       operationId: devices.device_DeleteDevice
       parameters:
         - name: device-id
@@ -2101,6 +2116,7 @@ paths:
       tags:
         - devices.extension
       summary: Get extensions from devices
+      description: The collection of open extensions defined for the device. Read-only. Nullable.
       operationId: devices_ListExtensions
       parameters:
         - name: device-id
@@ -2179,6 +2195,7 @@ paths:
       tags:
         - devices.extension
       summary: Create new navigation property to extensions for devices
+      description: The collection of open extensions defined for the device. Read-only. Nullable.
       operationId: devices_CreateExtensions
       parameters:
         - name: device-id
@@ -2210,6 +2227,7 @@ paths:
       tags:
         - devices.extension
       summary: Get extensions from devices
+      description: The collection of open extensions defined for the device. Read-only. Nullable.
       operationId: devices_GetExtensions
       parameters:
         - name: device-id
@@ -2264,6 +2282,7 @@ paths:
       tags:
         - devices.extension
       summary: Update the navigation property extensions in devices
+      description: The collection of open extensions defined for the device. Read-only. Nullable.
       operationId: devices_UpdateExtensions
       parameters:
         - name: device-id
@@ -2297,6 +2316,7 @@ paths:
       tags:
         - devices.extension
       summary: Delete navigation property extensions for devices
+      description: The collection of open extensions defined for the device. Read-only. Nullable.
       operationId: devices_DeleteExtensions
       parameters:
         - name: device-id
@@ -2329,6 +2349,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Get memberOf from devices
+      description: Groups that this device is a member of. Read-only. Nullable.
       operationId: devices_ListMemberOf
       parameters:
         - name: device-id
@@ -2411,6 +2432,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Get ref of memberOf from devices
+      description: Groups that this device is a member of. Read-only. Nullable.
       operationId: devices_ListRefMemberOf
       parameters:
         - name: device-id
@@ -2467,6 +2489,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Create new navigation property ref to memberOf for devices
+      description: Groups that this device is a member of. Read-only. Nullable.
       operationId: devices_CreateRefMemberOf
       parameters:
         - name: device-id
@@ -2686,6 +2709,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Get registeredOwners from devices
+      description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable.'
       operationId: devices_ListRegisteredOwners
       parameters:
         - name: device-id
@@ -2768,6 +2792,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Get ref of registeredOwners from devices
+      description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable.'
       operationId: devices_ListRefRegisteredOwners
       parameters:
         - name: device-id
@@ -2824,6 +2849,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Create new navigation property ref to registeredOwners for devices
+      description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable.'
       operationId: devices_CreateRefRegisteredOwners
       parameters:
         - name: device-id
@@ -2859,6 +2885,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Get registeredUsers from devices
+      description: 'Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable.'
       operationId: devices_ListRegisteredUsers
       parameters:
         - name: device-id
@@ -2941,6 +2968,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Get ref of registeredUsers from devices
+      description: 'Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable.'
       operationId: devices_ListRefRegisteredUsers
       parameters:
         - name: device-id
@@ -2997,6 +3025,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Create new navigation property ref to registeredUsers for devices
+      description: 'Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable.'
       operationId: devices_CreateRefRegisteredUsers
       parameters:
         - name: device-id
@@ -3032,6 +3061,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Get transitiveMemberOf from devices
+      description: Groups that this device is a member of. This operation is transitive.
       operationId: devices_ListTransitiveMemberOf
       parameters:
         - name: device-id
@@ -3114,6 +3144,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Get ref of transitiveMemberOf from devices
+      description: Groups that this device is a member of. This operation is transitive.
       operationId: devices_ListRefTransitiveMemberOf
       parameters:
         - name: device-id
@@ -3170,6 +3201,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Create new navigation property ref to transitiveMemberOf for devices
+      description: Groups that this device is a member of. This operation is transitive.
       operationId: devices_CreateRefTransitiveMemberOf
       parameters:
         - name: device-id
@@ -3611,6 +3643,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Get extensions from directory
+      description: The collection of open extensions defined for this Administrative Unit. Nullable.
       operationId: directory.administrativeUnits_ListExtensions
       parameters:
         - name: administrativeUnit-id
@@ -3689,6 +3722,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Create new navigation property to extensions for directory
+      description: The collection of open extensions defined for this Administrative Unit. Nullable.
       operationId: directory.administrativeUnits_CreateExtensions
       parameters:
         - name: administrativeUnit-id
@@ -3720,6 +3754,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Get extensions from directory
+      description: The collection of open extensions defined for this Administrative Unit. Nullable.
       operationId: directory.administrativeUnits_GetExtensions
       parameters:
         - name: administrativeUnit-id
@@ -3774,6 +3809,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Update the navigation property extensions in directory
+      description: The collection of open extensions defined for this Administrative Unit. Nullable.
       operationId: directory.administrativeUnits_UpdateExtensions
       parameters:
         - name: administrativeUnit-id
@@ -3807,6 +3843,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Delete navigation property extensions for directory
+      description: The collection of open extensions defined for this Administrative Unit. Nullable.
       operationId: directory.administrativeUnits_DeleteExtensions
       parameters:
         - name: administrativeUnit-id
@@ -3839,6 +3876,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Get members from directory
+      description: 'Users and groups that are members of this Adminsitrative Unit. HTTP Methods: GET (list members), POST (add members), DELETE (remove members).'
       operationId: directory.administrativeUnits_ListMembers
       parameters:
         - name: administrativeUnit-id
@@ -3921,6 +3959,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Get ref of members from directory
+      description: 'Users and groups that are members of this Adminsitrative Unit. HTTP Methods: GET (list members), POST (add members), DELETE (remove members).'
       operationId: directory.administrativeUnits_ListRefMembers
       parameters:
         - name: administrativeUnit-id
@@ -3977,6 +4016,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Create new navigation property ref to members for directory
+      description: 'Users and groups that are members of this Adminsitrative Unit. HTTP Methods: GET (list members), POST (add members), DELETE (remove members).'
       operationId: directory.administrativeUnits_CreateRefMembers
       parameters:
         - name: administrativeUnit-id
@@ -4012,6 +4052,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Get scopedRoleMembers from directory
+      description: 'Scoped-role members of this Administrative Unit.  HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).'
       operationId: directory.administrativeUnits_ListScopedRoleMembers
       parameters:
         - name: administrativeUnit-id
@@ -4099,6 +4140,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Create new navigation property to scopedRoleMembers for directory
+      description: 'Scoped-role members of this Administrative Unit.  HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).'
       operationId: directory.administrativeUnits_CreateScopedRoleMembers
       parameters:
         - name: administrativeUnit-id
@@ -4130,6 +4172,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Get scopedRoleMembers from directory
+      description: 'Scoped-role members of this Administrative Unit.  HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).'
       operationId: directory.administrativeUnits_GetScopedRoleMembers
       parameters:
         - name: administrativeUnit-id
@@ -4187,6 +4230,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Update the navigation property scopedRoleMembers in directory
+      description: 'Scoped-role members of this Administrative Unit.  HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).'
       operationId: directory.administrativeUnits_UpdateScopedRoleMembers
       parameters:
         - name: administrativeUnit-id
@@ -4220,6 +4264,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Delete navigation property scopedRoleMembers for directory
+      description: 'Scoped-role members of this Administrative Unit.  HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).'
       operationId: directory.administrativeUnits_DeleteScopedRoleMembers
       parameters:
         - name: administrativeUnit-id
@@ -4270,6 +4315,7 @@ paths:
       tags:
         - directory.directoryObject
       summary: Get deletedItems from directory
+      description: Recently deleted items. Read-only. Nullable.
       operationId: directory_ListDeletedItems
       parameters:
         - $ref: '#/components/parameters/top'
@@ -4344,6 +4390,7 @@ paths:
       tags:
         - directory.directoryObject
       summary: Create new navigation property to deletedItems for directory
+      description: Recently deleted items. Read-only. Nullable.
       operationId: directory_CreateDeletedItems
       requestBody:
         description: New navigation property
@@ -4367,6 +4414,7 @@ paths:
       tags:
         - directory.directoryObject
       summary: Get deletedItems from directory
+      description: Recently deleted items. Read-only. Nullable.
       operationId: directory_GetDeletedItems
       parameters:
         - name: directoryObject-id
@@ -4415,6 +4463,7 @@ paths:
       tags:
         - directory.directoryObject
       summary: Update the navigation property deletedItems in directory
+      description: Recently deleted items. Read-only. Nullable.
       operationId: directory_UpdateDeletedItems
       parameters:
         - name: directoryObject-id
@@ -4441,6 +4490,7 @@ paths:
       tags:
         - directory.directoryObject
       summary: Delete navigation property deletedItems for directory
+      description: Recently deleted items. Read-only. Nullable.
       operationId: directory_DeleteDeletedItems
       parameters:
         - name: directoryObject-id
@@ -4576,6 +4626,7 @@ paths:
       tags:
         - directoryRoles.directoryRole
       summary: Get entity from directoryRoles by key
+      description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
       operationId: directoryRoles.directoryRole_GetDirectoryRole
       parameters:
         - name: directoryRole-id
@@ -4640,6 +4691,7 @@ paths:
       tags:
         - directoryRoles.directoryRole
       summary: Update entity in directoryRoles
+      description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
       operationId: directoryRoles.directoryRole_UpdateDirectoryRole
       parameters:
         - name: directoryRole-id
@@ -4666,6 +4718,7 @@ paths:
       tags:
         - directoryRoles.directoryRole
       summary: Delete entity from directoryRoles
+      description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
       operationId: directoryRoles.directoryRole_DeleteDirectoryRole
       parameters:
         - name: directoryRole-id
@@ -4691,6 +4744,7 @@ paths:
       tags:
         - directoryRoles.directoryObject
       summary: Get members from directoryRoles
+      description: 'Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable.'
       operationId: directoryRoles_ListMembers
       parameters:
         - name: directoryRole-id
@@ -4773,6 +4827,7 @@ paths:
       tags:
         - directoryRoles.directoryObject
       summary: Get ref of members from directoryRoles
+      description: 'Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable.'
       operationId: directoryRoles_ListRefMembers
       parameters:
         - name: directoryRole-id
@@ -4829,6 +4884,7 @@ paths:
       tags:
         - directoryRoles.directoryObject
       summary: Create new navigation property ref to members for directoryRoles
+      description: 'Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable.'
       operationId: directoryRoles_CreateRefMembers
       parameters:
         - name: directoryRole-id
@@ -5048,6 +5104,7 @@ paths:
       tags:
         - directoryRoles.scopedRoleMembership
       summary: Get scopedMembers from directoryRoles
+      description: Members of this directory role that are scoped to administrative units. Read-only. Nullable.
       operationId: directoryRoles_ListScopedMembers
       parameters:
         - name: directoryRole-id
@@ -5135,6 +5192,7 @@ paths:
       tags:
         - directoryRoles.scopedRoleMembership
       summary: Create new navigation property to scopedMembers for directoryRoles
+      description: Members of this directory role that are scoped to administrative units. Read-only. Nullable.
       operationId: directoryRoles_CreateScopedMembers
       parameters:
         - name: directoryRole-id
@@ -5166,6 +5224,7 @@ paths:
       tags:
         - directoryRoles.scopedRoleMembership
       summary: Get scopedMembers from directoryRoles
+      description: Members of this directory role that are scoped to administrative units. Read-only. Nullable.
       operationId: directoryRoles_GetScopedMembers
       parameters:
         - name: directoryRole-id
@@ -5223,6 +5282,7 @@ paths:
       tags:
         - directoryRoles.scopedRoleMembership
       summary: Update the navigation property scopedMembers in directoryRoles
+      description: Members of this directory role that are scoped to administrative units. Read-only. Nullable.
       operationId: directoryRoles_UpdateScopedMembers
       parameters:
         - name: directoryRole-id
@@ -5256,6 +5316,7 @@ paths:
       tags:
         - directoryRoles.scopedRoleMembership
       summary: Delete navigation property scopedMembers for directoryRoles
+      description: Members of this directory role that are scoped to administrative units. Read-only. Nullable.
       operationId: directoryRoles_DeleteScopedMembers
       parameters:
         - name: directoryRole-id
@@ -5514,6 +5575,7 @@ paths:
       tags:
         - directoryRoleTemplates.directoryRoleTemplate
       summary: Get entity from directoryRoleTemplates by key
+      description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
       operationId: directoryRoleTemplates.directoryRoleTemplate_GetDirectoryRoleTemplate
       parameters:
         - name: directoryRoleTemplate-id
@@ -5564,6 +5626,7 @@ paths:
       tags:
         - directoryRoleTemplates.directoryRoleTemplate
       summary: Update entity in directoryRoleTemplates
+      description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
       operationId: directoryRoleTemplates.directoryRoleTemplate_UpdateDirectoryRoleTemplate
       parameters:
         - name: directoryRoleTemplate-id
@@ -5590,6 +5653,7 @@ paths:
       tags:
         - directoryRoleTemplates.directoryRoleTemplate
       summary: Delete entity from directoryRoleTemplates
+      description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
       operationId: directoryRoleTemplates.directoryRoleTemplate_DeleteDirectoryRoleTemplate
       parameters:
         - name: directoryRoleTemplate-id
@@ -6173,6 +6237,7 @@ paths:
       tags:
         - domains.directoryObject
       summary: Get domainNameReferences from domains
+      description: 'Read-only, Nullable'
       operationId: domains_ListDomainNameReferences
       parameters:
         - name: domain-id
@@ -6255,6 +6320,7 @@ paths:
       tags:
         - domains.directoryObject
       summary: Get ref of domainNameReferences from domains
+      description: 'Read-only, Nullable'
       operationId: domains_ListRefDomainNameReferences
       parameters:
         - name: domain-id
@@ -6311,6 +6377,7 @@ paths:
       tags:
         - domains.directoryObject
       summary: Create new navigation property ref to domainNameReferences for domains
+      description: 'Read-only, Nullable'
       operationId: domains_CreateRefDomainNameReferences
       parameters:
         - name: domain-id
@@ -6404,6 +6471,7 @@ paths:
       tags:
         - domains.domainDnsRecord
       summary: Get serviceConfigurationRecords from domains
+      description: 'DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services. Read-only, Nullable'
       operationId: domains_ListServiceConfigurationRecords
       parameters:
         - name: domain-id
@@ -6497,6 +6565,7 @@ paths:
       tags:
         - domains.domainDnsRecord
       summary: Create new navigation property to serviceConfigurationRecords for domains
+      description: 'DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services. Read-only, Nullable'
       operationId: domains_CreateServiceConfigurationRecords
       parameters:
         - name: domain-id
@@ -6528,6 +6597,7 @@ paths:
       tags:
         - domains.domainDnsRecord
       summary: Get serviceConfigurationRecords from domains
+      description: 'DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services. Read-only, Nullable'
       operationId: domains_GetServiceConfigurationRecords
       parameters:
         - name: domain-id
@@ -6587,6 +6657,7 @@ paths:
       tags:
         - domains.domainDnsRecord
       summary: Update the navigation property serviceConfigurationRecords in domains
+      description: 'DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services. Read-only, Nullable'
       operationId: domains_UpdateServiceConfigurationRecords
       parameters:
         - name: domain-id
@@ -6620,6 +6691,7 @@ paths:
       tags:
         - domains.domainDnsRecord
       summary: Delete navigation property serviceConfigurationRecords for domains
+      description: 'DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services. Read-only, Nullable'
       operationId: domains_DeleteServiceConfigurationRecords
       parameters:
         - name: domain-id
@@ -6652,6 +6724,7 @@ paths:
       tags:
         - domains.domainDnsRecord
       summary: Get verificationDnsRecords from domains
+      description: 'DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD. Read-only, Nullable'
       operationId: domains_ListVerificationDnsRecords
       parameters:
         - name: domain-id
@@ -6745,6 +6818,7 @@ paths:
       tags:
         - domains.domainDnsRecord
       summary: Create new navigation property to verificationDnsRecords for domains
+      description: 'DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD. Read-only, Nullable'
       operationId: domains_CreateVerificationDnsRecords
       parameters:
         - name: domain-id
@@ -6776,6 +6850,7 @@ paths:
       tags:
         - domains.domainDnsRecord
       summary: Get verificationDnsRecords from domains
+      description: 'DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD. Read-only, Nullable'
       operationId: domains_GetVerificationDnsRecords
       parameters:
         - name: domain-id
@@ -6835,6 +6910,7 @@ paths:
       tags:
         - domains.domainDnsRecord
       summary: Update the navigation property verificationDnsRecords in domains
+      description: 'DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD. Read-only, Nullable'
       operationId: domains_UpdateVerificationDnsRecords
       parameters:
         - name: domain-id
@@ -6868,6 +6944,7 @@ paths:
       tags:
         - domains.domainDnsRecord
       summary: Delete navigation property verificationDnsRecords for domains
+      description: 'DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD. Read-only, Nullable'
       operationId: domains_DeleteVerificationDnsRecords
       parameters:
         - name: domain-id
@@ -7069,6 +7146,7 @@ paths:
       tags:
         - organization.organization
       summary: Get entity from organization by key
+      description: The organization resource represents an instance of global settings and resources which operate and are provisioned at the tenant-level.
       operationId: organization.organization_GetOrganization
       parameters:
         - name: organization-id
@@ -7158,6 +7236,7 @@ paths:
       tags:
         - organization.organization
       summary: Update entity in organization
+      description: The organization resource represents an instance of global settings and resources which operate and are provisioned at the tenant-level.
       operationId: organization.organization_UpdateOrganization
       parameters:
         - name: organization-id
@@ -7184,6 +7263,7 @@ paths:
       tags:
         - organization.organization
       summary: Delete entity from organization
+      description: The organization resource represents an instance of global settings and resources which operate and are provisioned at the tenant-level.
       operationId: organization.organization_DeleteOrganization
       parameters:
         - name: organization-id
@@ -7320,6 +7400,7 @@ paths:
       tags:
         - organization.extension
       summary: Get extensions from organization
+      description: The collection of open extensions defined for the organization resource. Nullable.
       operationId: organization_ListExtensions
       parameters:
         - name: organization-id
@@ -7398,6 +7479,7 @@ paths:
       tags:
         - organization.extension
       summary: Create new navigation property to extensions for organization
+      description: The collection of open extensions defined for the organization resource. Nullable.
       operationId: organization_CreateExtensions
       parameters:
         - name: organization-id
@@ -7429,6 +7511,7 @@ paths:
       tags:
         - organization.extension
       summary: Get extensions from organization
+      description: The collection of open extensions defined for the organization resource. Nullable.
       operationId: organization_GetExtensions
       parameters:
         - name: organization-id
@@ -7483,6 +7566,7 @@ paths:
       tags:
         - organization.extension
       summary: Update the navigation property extensions in organization
+      description: The collection of open extensions defined for the organization resource. Nullable.
       operationId: organization_UpdateExtensions
       parameters:
         - name: organization-id
@@ -7516,6 +7600,7 @@ paths:
       tags:
         - organization.extension
       summary: Delete navigation property extensions for organization
+      description: The collection of open extensions defined for the organization resource. Nullable.
       operationId: organization_DeleteExtensions
       parameters:
         - name: organization-id
@@ -7732,6 +7817,7 @@ paths:
       tags:
         - organization.Actions
       summary: Invoke action setMobileDeviceManagementAuthority
+      description: Set mobile device management authority
       operationId: organization_setMobileDeviceManagementAuthority
       parameters:
         - name: organization-id
@@ -8084,6 +8170,7 @@ paths:
       tags:
         - users.scopedRoleMembership
       summary: Get scopedRoleMemberOf from users
+      description: The scoped-role administrative unit memberships for this user. Read-only. Nullable.
       operationId: users_ListScopedRoleMemberOf
       parameters:
         - name: user-id
@@ -8171,6 +8258,7 @@ paths:
       tags:
         - users.scopedRoleMembership
       summary: Create new navigation property to scopedRoleMemberOf for users
+      description: The scoped-role administrative unit memberships for this user. Read-only. Nullable.
       operationId: users_CreateScopedRoleMemberOf
       parameters:
         - name: user-id
@@ -8202,6 +8290,7 @@ paths:
       tags:
         - users.scopedRoleMembership
       summary: Get scopedRoleMemberOf from users
+      description: The scoped-role administrative unit memberships for this user. Read-only. Nullable.
       operationId: users_GetScopedRoleMemberOf
       parameters:
         - name: user-id
@@ -8259,6 +8348,7 @@ paths:
       tags:
         - users.scopedRoleMembership
       summary: Update the navigation property scopedRoleMemberOf in users
+      description: The scoped-role administrative unit memberships for this user. Read-only. Nullable.
       operationId: users_UpdateScopedRoleMemberOf
       parameters:
         - name: user-id
@@ -8292,6 +8382,7 @@ paths:
       tags:
         - users.scopedRoleMembership
       summary: Delete navigation property scopedRoleMemberOf for users
+      description: The scoped-role administrative unit memberships for this user. Read-only. Nullable.
       operationId: users_DeleteScopedRoleMemberOf
       parameters:
         - name: user-id
@@ -8868,7 +8959,7 @@ components:
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The time and date at which the tenant was last synced with the on-premise directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              description: 'The time and date at which the tenant was last synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             onPremisesSyncEnabled:
