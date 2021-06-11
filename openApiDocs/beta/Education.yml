@@ -648,6 +648,7 @@ paths:
               enum:
                 - id
                 - addedStudentAction
+                - addToCalendarAction
                 - dueTime
                 - notificationChannelUrl
               type: string
@@ -757,6 +758,8 @@ paths:
                 - id desc
                 - addedStudentAction
                 - addedStudentAction desc
+                - addToCalendarAction
+                - addToCalendarAction desc
                 - allowLateSubmissions
                 - allowLateSubmissions desc
                 - allowStudentsToAddResourcesToSubmission
@@ -808,6 +811,7 @@ paths:
               enum:
                 - id
                 - addedStudentAction
+                - addToCalendarAction
                 - allowLateSubmissions
                 - allowStudentsToAddResourcesToSubmission
                 - assignDateTime
@@ -936,6 +940,7 @@ paths:
               enum:
                 - id
                 - addedStudentAction
+                - addToCalendarAction
                 - allowLateSubmissions
                 - allowStudentsToAddResourcesToSubmission
                 - assignDateTime
@@ -4986,6 +4991,8 @@ paths:
                 - id desc
                 - addedStudentAction
                 - addedStudentAction desc
+                - addToCalendarAction
+                - addToCalendarAction desc
                 - allowLateSubmissions
                 - allowLateSubmissions desc
                 - allowStudentsToAddResourcesToSubmission
@@ -5037,6 +5044,7 @@ paths:
               enum:
                 - id
                 - addedStudentAction
+                - addToCalendarAction
                 - allowLateSubmissions
                 - allowStudentsToAddResourcesToSubmission
                 - assignDateTime
@@ -5150,6 +5158,7 @@ paths:
               enum:
                 - id
                 - addedStudentAction
+                - addToCalendarAction
                 - allowLateSubmissions
                 - allowStudentsToAddResourcesToSubmission
                 - assignDateTime
@@ -10870,6 +10879,8 @@ paths:
                 - id desc
                 - addedStudentAction
                 - addedStudentAction desc
+                - addToCalendarAction
+                - addToCalendarAction desc
                 - allowLateSubmissions
                 - allowLateSubmissions desc
                 - allowStudentsToAddResourcesToSubmission
@@ -10921,6 +10932,7 @@ paths:
               enum:
                 - id
                 - addedStudentAction
+                - addToCalendarAction
                 - allowLateSubmissions
                 - allowStudentsToAddResourcesToSubmission
                 - assignDateTime
@@ -11049,6 +11061,7 @@ paths:
               enum:
                 - id
                 - addedStudentAction
+                - addToCalendarAction
                 - allowLateSubmissions
                 - allowStudentsToAddResourcesToSubmission
                 - assignDateTime
@@ -15390,6 +15403,8 @@ components:
           properties:
             addedStudentAction:
               $ref: '#/components/schemas/microsoft.graph.educationAddedStudentAction'
+            addToCalendarAction:
+              $ref: '#/components/schemas/microsoft.graph.educationAddToCalendarOptions'
             dueTime:
               pattern: '^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$'
               type: string
@@ -15410,6 +15425,8 @@ components:
           properties:
             addedStudentAction:
               $ref: '#/components/schemas/microsoft.graph.educationAddedStudentAction'
+            addToCalendarAction:
+              $ref: '#/components/schemas/microsoft.graph.educationAddToCalendarOptions'
             allowLateSubmissions:
               type: boolean
               description: 'Identifies whether students can submit after the due date. If this property is not specified during create, it defaults to true.'
@@ -17010,6 +17027,14 @@ components:
         - assignIfOpen
         - unknownFutureValue
       type: string
+    microsoft.graph.educationAddToCalendarOptions:
+      title: educationAddToCalendarOptions
+      enum:
+        - none
+        - studentsAndPublisher
+        - studentsAndTeamOwners
+        - unknownFutureValue
+      type: string
     microsoft.graph.educationAssignmentRecipient:
       title: educationAssignmentRecipient
       type: object
@@ -17996,6 +18021,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.user'
               description: 'The list of this team''s owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user delegated permissions, no owner can be specified (the current user is the owner). Owner must be specified as an object ID (GUID), not a UPN.'
+            permissionGrants:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
             photo:
               $ref: '#/components/schemas/microsoft.graph.profilePhoto'
             primaryChannel:
@@ -20520,6 +20549,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessage'
               description: A collection of all the messages in the chat. Nullable.
+            operations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.teamsAsyncOperation'
             permissionGrants:
               type: array
               items:
@@ -23687,6 +23720,7 @@ components:
         - googleCloudDevicePolicyController
         - microsoft365ManagedMdm
         - windowsManagementCloudApi
+        - intuneAosp
       type: string
     microsoft.graph.managedDeviceManagementFeatures:
       title: managedDeviceManagementFeatures
@@ -25732,7 +25766,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
-              description: 'Content in a message hosted by Microsoft Teams e.g., images, code snippets etc.'
+              description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
             replies:
               type: array
               items:
@@ -27586,6 +27620,7 @@ components:
         - unknownFutureValue
         - teamifyGroup
         - createChannel
+        - createChat
       type: string
     microsoft.graph.teamsAsyncOperationStatus:
       title: teamsAsyncOperationStatus
@@ -27759,6 +27794,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.timeCardBreak'
+              description: The list of breaks associated with the timeCard.
             clockInEvent:
               $ref: '#/components/schemas/microsoft.graph.timeCardEvent'
             clockOutEvent:
@@ -27773,6 +27809,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.timeCardState'
             userId:
               type: string
+              description: User ID to which  the timeCard belongs.
               nullable: true
           additionalProperties:
             type: object
@@ -28557,6 +28594,7 @@ components:
         - windows10AndLater
         - androidWorkProfile
         - windows10XProfile
+        - androidAOSP
         - all
       type: string
     microsoft.graph.deviceCompliancePolicySettingState:
@@ -30701,6 +30739,7 @@ components:
       properties:
         breakId:
           type: string
+          description: ID of the timeCardBreak.
           nullable: true
         end:
           $ref: '#/components/schemas/microsoft.graph.timeCardEvent'
@@ -30716,10 +30755,12 @@ components:
       properties:
         atApprovedLocation:
           type: boolean
+          description: Indicates whether the entry was recorded at the approved location.
           nullable: true
         dateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: The time the entry is recorded.
           format: date-time
         notes:
           $ref: '#/components/schemas/microsoft.graph.itemBody'
@@ -30741,6 +30782,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.timeCardBreak'
+          description: The list of breaks associated with the timeCard.
         clockInEvent:
           $ref: '#/components/schemas/microsoft.graph.timeCardEvent'
         clockOutEvent:

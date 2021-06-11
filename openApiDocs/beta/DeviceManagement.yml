@@ -50918,6 +50918,10 @@ components:
         - title: virtualEndpoint
           type: object
           properties:
+            auditEvents:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcAuditEvent'
             cloudPCs:
               type: array
               items:
@@ -53784,6 +53788,7 @@ components:
         - windows10AndLater
         - androidWorkProfile
         - unknown
+        - androidAOSP
       type: string
     microsoft.graph.deviceManagementConstraint:
       title: deviceManagementConstraint
@@ -54338,6 +54343,7 @@ components:
         - googleCloudDevicePolicyController
         - microsoft365ManagedMdm
         - windowsManagementCloudApi
+        - intuneAosp
       type: string
     microsoft.graph.managedDeviceManagementFeatures:
       title: managedDeviceManagementFeatures
@@ -54419,6 +54425,7 @@ components:
         - windows10AndLater
         - androidWorkProfile
         - windows10XProfile
+        - androidAOSP
         - all
       type: string
     microsoft.graph.deviceCompliancePolicySettingState:
@@ -57444,6 +57451,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessage'
               description: A collection of all the messages in the chat. Nullable.
+            operations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.teamsAsyncOperation'
             permissionGrants:
               type: array
               items:
@@ -57536,6 +57547,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.user'
               description: 'The list of this team''s owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user delegated permissions, no owner can be specified (the current user is the owner). Owner must be specified as an object ID (GUID), not a UPN.'
+            permissionGrants:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
             photo:
               $ref: '#/components/schemas/microsoft.graph.profilePhoto'
             primaryChannel:
@@ -58667,6 +58682,41 @@ components:
         - default
         - corporateOwnedDedicatedDeviceWithAzureADSharedMode
       type: string
+    microsoft.graph.cloudPcAuditEvent:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: cloudPcAuditEvent
+          type: object
+          properties:
+            activity:
+              type: string
+              nullable: true
+            activityDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            activityOperationType:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcAuditActivityOperationType'
+            activityResult:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcAuditActivityResult'
+            activityType:
+              type: string
+            actor:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcAuditActor'
+            category:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcAuditCategory'
+            componentName:
+              type: string
+            correlationId:
+              type: string
+            displayName:
+              type: string
+            resources:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcAuditResource'
+          additionalProperties:
+            type: object
     microsoft.graph.cloudPC:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -58680,6 +58730,7 @@ components:
             gracePeriodEndDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when the grace period ends and reprovisioning/deprovisioning happens. Required only if status is inGracePeriod. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             imageDisplayName:
@@ -58701,6 +58752,7 @@ components:
               nullable: true
             onPremisesConnectionName:
               type: string
+              description: The on-premises connection that is applied during provisioning of cloud PCs.
               nullable: true
             provisioningPolicyId:
               type: string
@@ -58708,6 +58760,7 @@ components:
               nullable: true
             provisioningPolicyName:
               type: string
+              description: The provisioning policy that is applied during provisioning of cloud PCs.
               nullable: true
             servicePlanId:
               type: string
@@ -58854,6 +58907,11 @@ components:
         - title: cloudPcUserSetting
           type: object
           properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
             displayName:
               type: string
               nullable: true
@@ -64401,12 +64459,50 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
-              description: 'Content in a message hosted by Microsoft Teams e.g., images, code snippets etc.'
+              description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
             replies:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessage'
               description: Replies for a specified message.
+          additionalProperties:
+            type: object
+    microsoft.graph.teamsAsyncOperation:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamsAsyncOperation
+          type: object
+          properties:
+            attemptsCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Number of times the operation was attempted before being marked successful or failed.
+              format: int32
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Time when the operation was created.
+              format: date-time
+            error:
+              $ref: '#/components/schemas/microsoft.graph.operationError'
+            lastActionDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Time when the async operation was last updated.
+              format: date-time
+            operationType:
+              $ref: '#/components/schemas/microsoft.graph.teamsAsyncOperationType'
+            status:
+              $ref: '#/components/schemas/microsoft.graph.teamsAsyncOperationStatus'
+            targetResourceId:
+              type: string
+              description: 'The ID of the object that''s created or modified as result of this async operation, typically a team.'
+              nullable: true
+            targetResourceLocation:
+              type: string
+              description: The location of the object that's created or modified as result of this async operation. This URL should be treated as an opaque value and not parsed into its component paths.
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.teamsTab:
@@ -64611,44 +64707,6 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamsTab'
               description: A collection of all the tabs in the channel. A navigation property.
-          additionalProperties:
-            type: object
-    microsoft.graph.teamsAsyncOperation:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: teamsAsyncOperation
-          type: object
-          properties:
-            attemptsCount:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              description: Number of times the operation was attempted before being marked successful or failed.
-              format: int32
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: Time when the operation was created.
-              format: date-time
-            error:
-              $ref: '#/components/schemas/microsoft.graph.operationError'
-            lastActionDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: Time when the async operation was last updated.
-              format: date-time
-            operationType:
-              $ref: '#/components/schemas/microsoft.graph.teamsAsyncOperationType'
-            status:
-              $ref: '#/components/schemas/microsoft.graph.teamsAsyncOperationStatus'
-            targetResourceId:
-              type: string
-              description: 'The ID of the object that''s created or modified as result of this async operation, typically a team.'
-              nullable: true
-            targetResourceLocation:
-              type: string
-              description: The location of the object that's created or modified as result of this async operation. This URL should be treated as an opaque value and not parsed into its component paths.
-              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.teamworkTag:
@@ -64922,6 +64980,86 @@ components:
         - remove
         - reset
       type: string
+    microsoft.graph.cloudPcAuditActivityOperationType:
+      title: cloudPcAuditActivityOperationType
+      enum:
+        - create
+        - delete
+        - patch
+        - other
+      type: string
+    microsoft.graph.cloudPcAuditActivityResult:
+      title: cloudPcAuditActivityResult
+      enum:
+        - success
+        - clientError
+        - failure
+        - timeout
+        - other
+      type: string
+    microsoft.graph.cloudPcAuditActor:
+      title: cloudPcAuditActor
+      type: object
+      properties:
+        applicationDisplayName:
+          type: string
+          nullable: true
+        applicationId:
+          type: string
+          nullable: true
+        ipAddress:
+          type: string
+          nullable: true
+        remoteTenantId:
+          type: string
+          nullable: true
+        remoteUserId:
+          type: string
+          nullable: true
+        servicePrincipalName:
+          type: string
+          nullable: true
+        type:
+          $ref: '#/components/schemas/microsoft.graph.cloudPcAuditActorType'
+        userId:
+          type: string
+          nullable: true
+        userPermissions:
+          type: array
+          items:
+            type: string
+        userPrincipalName:
+          type: string
+          nullable: true
+        userRoleScopeTags:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.cloudPcUserRoleScopeTagInfo'
+      additionalProperties:
+        type: object
+    microsoft.graph.cloudPcAuditCategory:
+      title: cloudPcAuditCategory
+      enum:
+        - cloudPC
+        - other
+      type: string
+    microsoft.graph.cloudPcAuditResource:
+      title: cloudPcAuditResource
+      type: object
+      properties:
+        displayName:
+          type: string
+          nullable: true
+        modifiedProperties:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.cloudPcAuditProperty'
+        resourceId:
+          type: string
+        type:
+          type: string
+      additionalProperties:
+        type: object
     microsoft.graph.cloudPcStatus:
       title: cloudPcStatus
       enum:
@@ -65003,6 +65141,11 @@ components:
         - title: cloudPcUserSettingAssignment
           type: object
           properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
             target:
               $ref: '#/components/schemas/microsoft.graph.cloudPcManagementAssignmentTarget'
           additionalProperties:
@@ -68489,6 +68632,43 @@ components:
           type: object
           additionalProperties:
             type: object
+    microsoft.graph.operationError:
+      title: operationError
+      type: object
+      properties:
+        code:
+          type: string
+          description: Operation error code.
+          nullable: true
+        message:
+          type: string
+          description: Operation error message.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.teamsAsyncOperationType:
+      title: teamsAsyncOperationType
+      enum:
+        - invalid
+        - cloneTeam
+        - archiveTeam
+        - unarchiveTeam
+        - createTeam
+        - unknownFutureValue
+        - teamifyGroup
+        - createChannel
+        - createChat
+      type: string
+    microsoft.graph.teamsAsyncOperationStatus:
+      title: teamsAsyncOperationStatus
+      enum:
+        - invalid
+        - notStarted
+        - inProgress
+        - succeeded
+        - failed
+        - unknownFutureValue
+      type: string
     microsoft.graph.teamsTabConfiguration:
       title: teamsTabConfiguration
       type: object
@@ -68544,42 +68724,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.userNewMessageRestriction'
       additionalProperties:
         type: object
-    microsoft.graph.operationError:
-      title: operationError
-      type: object
-      properties:
-        code:
-          type: string
-          description: Operation error code.
-          nullable: true
-        message:
-          type: string
-          description: Operation error message.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.teamsAsyncOperationType:
-      title: teamsAsyncOperationType
-      enum:
-        - invalid
-        - cloneTeam
-        - archiveTeam
-        - unarchiveTeam
-        - createTeam
-        - unknownFutureValue
-        - teamifyGroup
-        - createChannel
-      type: string
-    microsoft.graph.teamsAsyncOperationStatus:
-      title: teamsAsyncOperationStatus
-      enum:
-        - invalid
-        - notStarted
-        - inProgress
-        - succeeded
-        - failed
-        - unknownFutureValue
-      type: string
     microsoft.graph.teamworkTagType:
       title: teamworkTagType
       enum:
@@ -68742,6 +68886,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.timeCardBreak'
+              description: The list of breaks associated with the timeCard.
             clockInEvent:
               $ref: '#/components/schemas/microsoft.graph.timeCardEvent'
             clockOutEvent:
@@ -68756,6 +68901,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.timeCardState'
             userId:
               type: string
+              description: User ID to which  the timeCard belongs.
               nullable: true
           additionalProperties:
             type: object
@@ -68894,6 +69040,37 @@ components:
           type: string
         target:
           type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.cloudPcAuditActorType:
+      title: cloudPcAuditActorType
+      enum:
+        - itPro
+        - application
+        - partner
+        - unknown
+      type: string
+    microsoft.graph.cloudPcUserRoleScopeTagInfo:
+      title: cloudPcUserRoleScopeTagInfo
+      type: object
+      properties:
+        displayName:
+          type: string
+        roleScopeTagId:
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.cloudPcAuditProperty:
+      title: cloudPcAuditProperty
+      type: object
+      properties:
+        displayName:
+          type: string
+        newValue:
+          type: string
+        oldValue:
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.cloudPcOnPremisesConnectionHealthCheck:
@@ -70265,6 +70442,7 @@ components:
       properties:
         breakId:
           type: string
+          description: ID of the timeCardBreak.
           nullable: true
         end:
           $ref: '#/components/schemas/microsoft.graph.timeCardEvent'
@@ -70280,10 +70458,12 @@ components:
       properties:
         atApprovedLocation:
           type: boolean
+          description: Indicates whether the entry was recorded at the approved location.
           nullable: true
         dateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: The time the entry is recorded.
           format: date-time
         notes:
           $ref: '#/components/schemas/microsoft.graph.itemBody'
@@ -70305,6 +70485,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.timeCardBreak'
+          description: The list of breaks associated with the timeCard.
         clockInEvent:
           $ref: '#/components/schemas/microsoft.graph.timeCardEvent'
         clockOutEvent:
@@ -70397,15 +70578,21 @@ components:
         - endpointConnectivityCheckWVDUrlNotAllowListed
         - endpointConnectivityCheckIntuneUrlNotAllowListed
         - endpointConnectivityCheckUnknownError
-        - aadConnectivityCheckUnknownError
+        - azureAdDeviceSyncCheckDeviceNotFound
+        - azureAdDeviceSyncCheckLongSyncCircle
+        - azureAdDeviceSyncCheckUnknownError
         - resourceAvailabilityCheckNoSubnetIP
         - resourceAvailabilityCheckSubscriptionDisabled
+        - resourceAvailabilityCheckAzurePolicyViolation
         - resourceAvailabilityCheckUnsupportedVNetRegion
         - resourceAvailabilityCheckUnknownError
         - permissionCheckNoSubscriptionReaderRole
         - permissionCheckNoResourceGroupOwnerRole
         - permissionCheckNoVNetContributorRole
         - permissionCheckUnknownError
+        - internalServerErrorDeploymentCanceled
+        - internalServerErrorAllocateResourceFailed
+        - internalServerErrorVMDeploymentTimeout
         - internalServerUnknownError
       type: string
     microsoft.graph.mediaSourceContentCategory:

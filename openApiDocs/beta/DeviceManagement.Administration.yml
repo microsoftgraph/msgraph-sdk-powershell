@@ -13689,6 +13689,7 @@ components:
         - googleCloudDevicePolicyController
         - microsoft365ManagedMdm
         - windowsManagementCloudApi
+        - intuneAosp
       type: string
     microsoft.graph.managementState:
       title: managementState
@@ -13753,6 +13754,7 @@ components:
         - windows10AndLater
         - androidWorkProfile
         - windows10XProfile
+        - androidAOSP
         - all
       type: string
     microsoft.graph.managedDeviceReportedApp:
@@ -14199,6 +14201,7 @@ components:
         - windows10AndLater
         - androidWorkProfile
         - unknown
+        - androidAOSP
       type: string
     microsoft.graph.deviceAndAppManagementAssignmentFilterType:
       title: deviceAndAppManagementAssignmentFilterType

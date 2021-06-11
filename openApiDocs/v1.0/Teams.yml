@@ -2069,7 +2069,7 @@ paths:
       tags:
         - chats.chatMessage
       summary: Get hostedContents from chats
-      description: 'Content in a message hosted by Microsoft Teams e.g., images, code snippets etc.'
+      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: chats.messages_ListHostedContents
       parameters:
         - name: chat-id
@@ -2161,7 +2161,7 @@ paths:
       tags:
         - chats.chatMessage
       summary: Create new navigation property to hostedContents for chats
-      description: 'Content in a message hosted by Microsoft Teams e.g., images, code snippets etc.'
+      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: chats.messages_CreateHostedContents
       parameters:
         - name: chat-id
@@ -2200,7 +2200,7 @@ paths:
       tags:
         - chats.chatMessage
       summary: Get hostedContents from chats
-      description: 'Content in a message hosted by Microsoft Teams e.g., images, code snippets etc.'
+      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: chats.messages_GetHostedContents
       parameters:
         - name: chat-id
@@ -2264,7 +2264,7 @@ paths:
       tags:
         - chats.chatMessage
       summary: Update the navigation property hostedContents in chats
-      description: 'Content in a message hosted by Microsoft Teams e.g., images, code snippets etc.'
+      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: chats.messages_UpdateHostedContents
       parameters:
         - name: chat-id
@@ -2305,7 +2305,7 @@ paths:
       tags:
         - chats.chatMessage
       summary: Delete navigation property hostedContents for chats
-      description: 'Content in a message hosted by Microsoft Teams e.g., images, code snippets etc.'
+      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: chats.messages_DeleteHostedContents
       parameters:
         - name: chat-id
@@ -4967,7 +4967,7 @@ paths:
       tags:
         - teams.channel
       summary: Get hostedContents from teams
-      description: 'Content in a message hosted by Microsoft Teams e.g., images, code snippets etc.'
+      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: teams.channels.messages_ListHostedContents
       parameters:
         - name: team-id
@@ -5066,7 +5066,7 @@ paths:
       tags:
         - teams.channel
       summary: Create new navigation property to hostedContents for teams
-      description: 'Content in a message hosted by Microsoft Teams e.g., images, code snippets etc.'
+      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: teams.channels.messages_CreateHostedContents
       parameters:
         - name: team-id
@@ -5112,7 +5112,7 @@ paths:
       tags:
         - teams.channel
       summary: Get hostedContents from teams
-      description: 'Content in a message hosted by Microsoft Teams e.g., images, code snippets etc.'
+      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: teams.channels.messages_GetHostedContents
       parameters:
         - name: team-id
@@ -5183,7 +5183,7 @@ paths:
       tags:
         - teams.channel
       summary: Update the navigation property hostedContents in teams
-      description: 'Content in a message hosted by Microsoft Teams e.g., images, code snippets etc.'
+      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: teams.channels.messages_UpdateHostedContents
       parameters:
         - name: team-id
@@ -5231,7 +5231,7 @@ paths:
       tags:
         - teams.channel
       summary: Delete navigation property hostedContents for teams
-      description: 'Content in a message hosted by Microsoft Teams e.g., images, code snippets etc.'
+      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: teams.channels.messages_DeleteHostedContents
       parameters:
         - name: team-id
@@ -8974,7 +8974,7 @@ paths:
       tags:
         - teams.channel
       summary: Get hostedContents from teams
-      description: 'Content in a message hosted by Microsoft Teams e.g., images, code snippets etc.'
+      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: teams.primaryChannel.messages_ListHostedContents
       parameters:
         - name: team-id
@@ -9066,7 +9066,7 @@ paths:
       tags:
         - teams.channel
       summary: Create new navigation property to hostedContents for teams
-      description: 'Content in a message hosted by Microsoft Teams e.g., images, code snippets etc.'
+      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: teams.primaryChannel.messages_CreateHostedContents
       parameters:
         - name: team-id
@@ -9105,7 +9105,7 @@ paths:
       tags:
         - teams.channel
       summary: Get hostedContents from teams
-      description: 'Content in a message hosted by Microsoft Teams e.g., images, code snippets etc.'
+      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: teams.primaryChannel.messages_GetHostedContents
       parameters:
         - name: team-id
@@ -9169,7 +9169,7 @@ paths:
       tags:
         - teams.channel
       summary: Update the navigation property hostedContents in teams
-      description: 'Content in a message hosted by Microsoft Teams e.g., images, code snippets etc.'
+      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: teams.primaryChannel.messages_UpdateHostedContents
       parameters:
         - name: team-id
@@ -9210,7 +9210,7 @@ paths:
       tags:
         - teams.channel
       summary: Delete navigation property hostedContents for teams
-      description: 'Content in a message hosted by Microsoft Teams e.g., images, code snippets etc.'
+      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: teams.primaryChannel.messages_DeleteHostedContents
       parameters:
         - name: team-id
@@ -14651,7 +14651,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
-              description: 'Content in a message hosted by Microsoft Teams e.g., images, code snippets etc.'
+              description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
             replies:
               type: array
               items:
