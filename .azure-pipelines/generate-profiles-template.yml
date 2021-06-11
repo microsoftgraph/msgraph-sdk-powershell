@@ -2,7 +2,7 @@
 # Licensed under the MIT License.
  
 steps:
-  - template: ./install-tools-template.yml
+  - template: ./common-templates/install-tools.yml
   - task: PowerShell@2
     displayName: 'Generate Profiles'
     continueOnError: false
