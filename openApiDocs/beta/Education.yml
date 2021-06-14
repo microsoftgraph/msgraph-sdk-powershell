@@ -648,6 +648,7 @@ paths:
               enum:
                 - id
                 - addedStudentAction
+                - addToCalendarAction
                 - dueTime
                 - notificationChannelUrl
               type: string
@@ -728,6 +729,7 @@ paths:
       tags:
         - education.educationClass
       summary: Get assignments from education
+      description: All assignments associated with this class. Nullable.
       operationId: education.classes_ListAssignments
       parameters:
         - name: educationClass-id
@@ -756,6 +758,8 @@ paths:
                 - id desc
                 - addedStudentAction
                 - addedStudentAction desc
+                - addToCalendarAction
+                - addToCalendarAction desc
                 - allowLateSubmissions
                 - allowLateSubmissions desc
                 - allowStudentsToAddResourcesToSubmission
@@ -807,6 +811,7 @@ paths:
               enum:
                 - id
                 - addedStudentAction
+                - addToCalendarAction
                 - allowLateSubmissions
                 - allowStudentsToAddResourcesToSubmission
                 - assignDateTime
@@ -874,6 +879,7 @@ paths:
       tags:
         - education.educationClass
       summary: Create new navigation property to assignments for education
+      description: All assignments associated with this class. Nullable.
       operationId: education.classes_CreateAssignments
       parameters:
         - name: educationClass-id
@@ -905,6 +911,7 @@ paths:
       tags:
         - education.educationClass
       summary: Get assignments from education
+      description: All assignments associated with this class. Nullable.
       operationId: education.classes_GetAssignments
       parameters:
         - name: educationClass-id
@@ -933,6 +940,7 @@ paths:
               enum:
                 - id
                 - addedStudentAction
+                - addToCalendarAction
                 - allowLateSubmissions
                 - allowStudentsToAddResourcesToSubmission
                 - assignDateTime
@@ -1008,6 +1016,7 @@ paths:
       tags:
         - education.educationClass
       summary: Update the navigation property assignments in education
+      description: All assignments associated with this class. Nullable.
       operationId: education.classes_UpdateAssignments
       parameters:
         - name: educationClass-id
@@ -1041,6 +1050,7 @@ paths:
       tags:
         - education.educationClass
       summary: Delete navigation property assignments for education
+      description: All assignments associated with this class. Nullable.
       operationId: education.classes_DeleteAssignments
       parameters:
         - name: educationClass-id
@@ -1073,6 +1083,7 @@ paths:
       tags:
         - education.educationClass
       summary: Get categories from education
+      description: 'When set, enables users to easily find assignments of a given type.  Read-only. Nullable.'
       operationId: education.classes.assignments_ListCategories
       parameters:
         - name: educationClass-id
@@ -1161,6 +1172,7 @@ paths:
       tags:
         - education.educationClass
       summary: Create new navigation property to categories for education
+      description: 'When set, enables users to easily find assignments of a given type.  Read-only. Nullable.'
       operationId: education.classes.assignments_CreateCategories
       parameters:
         - name: educationClass-id
@@ -1199,6 +1211,7 @@ paths:
       tags:
         - education.educationClass
       summary: Get categories from education
+      description: 'When set, enables users to easily find assignments of a given type.  Read-only. Nullable.'
       operationId: education.classes.assignments_GetCategories
       parameters:
         - name: educationClass-id
@@ -1261,6 +1274,7 @@ paths:
       tags:
         - education.educationClass
       summary: Update the navigation property categories in education
+      description: 'When set, enables users to easily find assignments of a given type.  Read-only. Nullable.'
       operationId: education.classes.assignments_UpdateCategories
       parameters:
         - name: educationClass-id
@@ -1301,6 +1315,7 @@ paths:
       tags:
         - education.educationClass
       summary: Delete navigation property categories for education
+      description: 'When set, enables users to easily find assignments of a given type.  Read-only. Nullable.'
       operationId: education.classes.assignments_DeleteCategories
       parameters:
         - name: educationClass-id
@@ -1335,38 +1350,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/microsoft.graph.getResourcesFolderUrl()':
-    get:
-      tags:
-        - education.Functions
-      summary: Invoke function getResourcesFolderUrl
-      operationId: education.classes.assignments_getResourcesFolderUrl
-      parameters:
-        - name: educationClass-id
-          in: path
-          description: 'key: id of educationClass'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: educationClass
-        - name: educationAssignment-id
-          in: path
-          description: 'key: id of educationAssignment'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: educationAssignment
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: string
-                nullable: true
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
   '/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/microsoft.graph.publish':
     post:
       tags:
@@ -1398,11 +1381,43 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/microsoft.graph.setUpResourcesFolder()':
+    get:
+      tags:
+        - education.Functions
+      summary: Invoke function setUpResourcesFolder
+      operationId: education.classes.assignments_setUpResourcesFolder
+      parameters:
+        - name: educationClass-id
+          in: path
+          description: 'key: id of educationClass'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: educationClass
+        - name: educationAssignment-id
+          in: path
+          description: 'key: id of educationAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: educationAssignment
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationAssignment'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/resources':
     get:
       tags:
         - education.educationClass
       summary: Get resources from education
+      description: Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
       operationId: education.classes.assignments_ListResources
       parameters:
         - name: educationClass-id
@@ -1494,6 +1509,7 @@ paths:
       tags:
         - education.educationClass
       summary: Create new navigation property to resources for education
+      description: Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
       operationId: education.classes.assignments_CreateResources
       parameters:
         - name: educationClass-id
@@ -1532,6 +1548,7 @@ paths:
       tags:
         - education.educationClass
       summary: Get resources from education
+      description: Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
       operationId: education.classes.assignments_GetResources
       parameters:
         - name: educationClass-id
@@ -1595,6 +1612,7 @@ paths:
       tags:
         - education.educationClass
       summary: Update the navigation property resources in education
+      description: Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
       operationId: education.classes.assignments_UpdateResources
       parameters:
         - name: educationClass-id
@@ -1635,6 +1653,7 @@ paths:
       tags:
         - education.educationClass
       summary: Delete navigation property resources for education
+      description: Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
       operationId: education.classes.assignments_DeleteResources
       parameters:
         - name: educationClass-id
@@ -1674,6 +1693,7 @@ paths:
       tags:
         - education.educationClass
       summary: Get rubric from education
+      description: 'When set, the grading rubric attached to this assignment.'
       operationId: education.classes.assignments_GetRubric
       parameters:
         - name: educationClass-id
@@ -1737,6 +1757,7 @@ paths:
       tags:
         - education.educationClass
       summary: Update the navigation property rubric in education
+      description: 'When set, the grading rubric attached to this assignment.'
       operationId: education.classes.assignments_UpdateRubric
       parameters:
         - name: educationClass-id
@@ -1770,6 +1791,7 @@ paths:
       tags:
         - education.educationClass
       summary: Delete navigation property rubric for education
+      description: 'When set, the grading rubric attached to this assignment.'
       operationId: education.classes.assignments_DeleteRubric
       parameters:
         - name: educationClass-id
@@ -1802,6 +1824,7 @@ paths:
       tags:
         - education.educationClass
       summary: Get submissions from education
+      description: 'Once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.'
       operationId: education.classes.assignments_ListSubmissions
       parameters:
         - name: educationClass-id
@@ -1837,10 +1860,6 @@ paths:
                 - id desc
                 - recipient
                 - recipient desc
-                - releasedBy
-                - releasedBy desc
-                - releasedDateTime
-                - releasedDateTime desc
                 - resourcesFolderUrl
                 - resourcesFolderUrl desc
                 - returnedBy
@@ -1870,8 +1889,6 @@ paths:
               enum:
                 - id
                 - recipient
-                - releasedBy
-                - releasedDateTime
                 - resourcesFolderUrl
                 - returnedBy
                 - returnedDateTime
@@ -1926,6 +1943,7 @@ paths:
       tags:
         - education.educationClass
       summary: Create new navigation property to submissions for education
+      description: 'Once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.'
       operationId: education.classes.assignments_CreateSubmissions
       parameters:
         - name: educationClass-id
@@ -1964,6 +1982,7 @@ paths:
       tags:
         - education.educationClass
       summary: Get submissions from education
+      description: 'Once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.'
       operationId: education.classes.assignments_GetSubmissions
       parameters:
         - name: educationClass-id
@@ -1999,8 +2018,6 @@ paths:
               enum:
                 - id
                 - recipient
-                - releasedBy
-                - releasedDateTime
                 - resourcesFolderUrl
                 - returnedBy
                 - returnedDateTime
@@ -2061,6 +2078,7 @@ paths:
       tags:
         - education.educationClass
       summary: Update the navigation property submissions in education
+      description: 'Once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.'
       operationId: education.classes.assignments_UpdateSubmissions
       parameters:
         - name: educationClass-id
@@ -2101,6 +2119,7 @@ paths:
       tags:
         - education.educationClass
       summary: Delete navigation property submissions for education
+      description: 'Once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.'
       operationId: education.classes.assignments_DeleteSubmissions
       parameters:
         - name: educationClass-id
@@ -2207,8 +2226,7 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                nullable: true
+                $ref: '#/components/schemas/microsoft.graph.educationSubmission'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -2293,6 +2311,7 @@ paths:
       tags:
         - education.educationClass
       summary: Get outcomes from education
+      description: Read-Write. Nullable.
       operationId: education.classes.assignments.submissions_ListOutcomes
       parameters:
         - name: educationClass-id
@@ -2391,6 +2410,7 @@ paths:
       tags:
         - education.educationClass
       summary: Create new navigation property to outcomes for education
+      description: Read-Write. Nullable.
       operationId: education.classes.assignments.submissions_CreateOutcomes
       parameters:
         - name: educationClass-id
@@ -2436,6 +2456,7 @@ paths:
       tags:
         - education.educationClass
       summary: Get outcomes from education
+      description: Read-Write. Nullable.
       operationId: education.classes.assignments.submissions_GetOutcomes
       parameters:
         - name: educationClass-id
@@ -2506,6 +2527,7 @@ paths:
       tags:
         - education.educationClass
       summary: Update the navigation property outcomes in education
+      description: Read-Write. Nullable.
       operationId: education.classes.assignments.submissions_UpdateOutcomes
       parameters:
         - name: educationClass-id
@@ -2553,6 +2575,7 @@ paths:
       tags:
         - education.educationClass
       summary: Delete navigation property outcomes for education
+      description: Read-Write. Nullable.
       operationId: education.classes.assignments.submissions_DeleteOutcomes
       parameters:
         - name: educationClass-id
@@ -2599,6 +2622,7 @@ paths:
       tags:
         - education.educationClass
       summary: Get resources from education
+      description: Nullable.
       operationId: education.classes.assignments.submissions_ListResources
       parameters:
         - name: educationClass-id
@@ -2697,6 +2721,7 @@ paths:
       tags:
         - education.educationClass
       summary: Create new navigation property to resources for education
+      description: Nullable.
       operationId: education.classes.assignments.submissions_CreateResources
       parameters:
         - name: educationClass-id
@@ -2742,6 +2767,7 @@ paths:
       tags:
         - education.educationClass
       summary: Get resources from education
+      description: Nullable.
       operationId: education.classes.assignments.submissions_GetResources
       parameters:
         - name: educationClass-id
@@ -2812,6 +2838,7 @@ paths:
       tags:
         - education.educationClass
       summary: Update the navigation property resources in education
+      description: Nullable.
       operationId: education.classes.assignments.submissions_UpdateResources
       parameters:
         - name: educationClass-id
@@ -2859,6 +2886,7 @@ paths:
       tags:
         - education.educationClass
       summary: Delete navigation property resources for education
+      description: Nullable.
       operationId: education.classes.assignments.submissions_DeleteResources
       parameters:
         - name: educationClass-id
@@ -2905,6 +2933,7 @@ paths:
       tags:
         - education.educationClass
       summary: Get submittedResources from education
+      description: Read-only. Nullable.
       operationId: education.classes.assignments.submissions_ListSubmittedResources
       parameters:
         - name: educationClass-id
@@ -3003,6 +3032,7 @@ paths:
       tags:
         - education.educationClass
       summary: Create new navigation property to submittedResources for education
+      description: Read-only. Nullable.
       operationId: education.classes.assignments.submissions_CreateSubmittedResources
       parameters:
         - name: educationClass-id
@@ -3048,6 +3078,7 @@ paths:
       tags:
         - education.educationClass
       summary: Get submittedResources from education
+      description: Read-only. Nullable.
       operationId: education.classes.assignments.submissions_GetSubmittedResources
       parameters:
         - name: educationClass-id
@@ -3118,6 +3149,7 @@ paths:
       tags:
         - education.educationClass
       summary: Update the navigation property submittedResources in education
+      description: Read-only. Nullable.
       operationId: education.classes.assignments.submissions_UpdateSubmittedResources
       parameters:
         - name: educationClass-id
@@ -3165,6 +3197,7 @@ paths:
       tags:
         - education.educationClass
       summary: Delete navigation property submittedResources for education
+      description: Read-only. Nullable.
       operationId: education.classes.assignments.submissions_DeleteSubmittedResources
       parameters:
         - name: educationClass-id
@@ -3310,6 +3343,7 @@ paths:
       tags:
         - education.educationClass
       summary: Get group from education
+      description: The underlying Microsoft 365 group object.
       operationId: education.classes_GetGroup
       parameters:
         - name: educationClass-id
@@ -3576,6 +3610,7 @@ paths:
       tags:
         - education.educationClass
       summary: Get ref of group from education
+      description: The underlying Microsoft 365 group object.
       operationId: education.classes_GetRefGroup
       parameters:
         - name: educationClass-id
@@ -3712,6 +3747,7 @@ paths:
       tags:
         - education.educationClass
       summary: Update the ref of navigation property group in education
+      description: The underlying Microsoft 365 group object.
       operationId: education.classes_SetRefGroup
       parameters:
         - name: educationClass-id
@@ -3740,6 +3776,7 @@ paths:
       tags:
         - education.educationClass
       summary: Delete ref of navigation property group for education
+      description: The underlying Microsoft 365 group object.
       operationId: education.classes_DeleteRefGroup
       parameters:
         - name: educationClass-id
@@ -3765,6 +3802,7 @@ paths:
       tags:
         - education.educationClass
       summary: Get members from education
+      description: All users in the class. Nullable.
       operationId: education.classes_ListMembers
       parameters:
         - name: educationClass-id
@@ -3952,6 +3990,7 @@ paths:
       tags:
         - education.educationClass
       summary: Get ref of members from education
+      description: All users in the class. Nullable.
       operationId: education.classes_ListRefMembers
       parameters:
         - name: educationClass-id
@@ -4070,6 +4109,7 @@ paths:
       tags:
         - education.educationClass
       summary: Create new navigation property ref to members for education
+      description: All users in the class. Nullable.
       operationId: education.classes_CreateRefMembers
       parameters:
         - name: educationClass-id
@@ -4131,6 +4171,7 @@ paths:
       tags:
         - education.educationClass
       summary: Get schools from education
+      description: All schools that this class is associated with. Nullable.
       operationId: education.classes_ListSchools
       parameters:
         - name: educationClass-id
@@ -4261,6 +4302,7 @@ paths:
       tags:
         - education.educationClass
       summary: Get ref of schools from education
+      description: All schools that this class is associated with. Nullable.
       operationId: education.classes_ListRefSchools
       parameters:
         - name: educationClass-id
@@ -4345,6 +4387,7 @@ paths:
       tags:
         - education.educationClass
       summary: Create new navigation property ref to schools for education
+      description: All schools that this class is associated with. Nullable.
       operationId: education.classes_CreateRefSchools
       parameters:
         - name: educationClass-id
@@ -4406,6 +4449,7 @@ paths:
       tags:
         - education.educationClass
       summary: Get teachers from education
+      description: All teachers in the class. Nullable.
       operationId: education.classes_ListTeachers
       parameters:
         - name: educationClass-id
@@ -4593,6 +4637,7 @@ paths:
       tags:
         - education.educationClass
       summary: Get ref of teachers from education
+      description: All teachers in the class. Nullable.
       operationId: education.classes_ListRefTeachers
       parameters:
         - name: educationClass-id
@@ -4711,6 +4756,7 @@ paths:
       tags:
         - education.educationClass
       summary: Create new navigation property ref to teachers for education
+      description: All teachers in the class. Nullable.
       operationId: education.classes_CreateRefTeachers
       parameters:
         - name: educationClass-id
@@ -4923,6 +4969,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get assignments from education
+      description: List of assignments for the user. Nullable.
       operationId: education.me_ListAssignments
       parameters:
         - $ref: '#/components/parameters/top'
@@ -4944,6 +4991,8 @@ paths:
                 - id desc
                 - addedStudentAction
                 - addedStudentAction desc
+                - addToCalendarAction
+                - addToCalendarAction desc
                 - allowLateSubmissions
                 - allowLateSubmissions desc
                 - allowStudentsToAddResourcesToSubmission
@@ -4995,6 +5044,7 @@ paths:
               enum:
                 - id
                 - addedStudentAction
+                - addToCalendarAction
                 - allowLateSubmissions
                 - allowStudentsToAddResourcesToSubmission
                 - assignDateTime
@@ -5062,6 +5112,7 @@ paths:
       tags:
         - education.educationUser
       summary: Create new navigation property to assignments for education
+      description: List of assignments for the user. Nullable.
       operationId: education.me_CreateAssignments
       requestBody:
         description: New navigation property
@@ -5085,6 +5136,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get assignments from education
+      description: List of assignments for the user. Nullable.
       operationId: education.me_GetAssignments
       parameters:
         - name: educationAssignment-id
@@ -5106,6 +5158,7 @@ paths:
               enum:
                 - id
                 - addedStudentAction
+                - addToCalendarAction
                 - allowLateSubmissions
                 - allowStudentsToAddResourcesToSubmission
                 - assignDateTime
@@ -5177,6 +5230,7 @@ paths:
       tags:
         - education.educationUser
       summary: Update the navigation property assignments in education
+      description: List of assignments for the user. Nullable.
       operationId: education.me_UpdateAssignments
       parameters:
         - name: educationAssignment-id
@@ -5203,6 +5257,7 @@ paths:
       tags:
         - education.educationUser
       summary: Delete navigation property assignments for education
+      description: List of assignments for the user. Nullable.
       operationId: education.me_DeleteAssignments
       parameters:
         - name: educationAssignment-id
@@ -5228,6 +5283,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get categories from education
+      description: 'When set, enables users to easily find assignments of a given type.  Read-only. Nullable.'
       operationId: education.me.assignments_ListCategories
       parameters:
         - name: educationAssignment-id
@@ -5309,6 +5365,7 @@ paths:
       tags:
         - education.educationUser
       summary: Create new navigation property to categories for education
+      description: 'When set, enables users to easily find assignments of a given type.  Read-only. Nullable.'
       operationId: education.me.assignments_CreateCategories
       parameters:
         - name: educationAssignment-id
@@ -5340,6 +5397,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get categories from education
+      description: 'When set, enables users to easily find assignments of a given type.  Read-only. Nullable.'
       operationId: education.me.assignments_GetCategories
       parameters:
         - name: educationAssignment-id
@@ -5395,6 +5453,7 @@ paths:
       tags:
         - education.educationUser
       summary: Update the navigation property categories in education
+      description: 'When set, enables users to easily find assignments of a given type.  Read-only. Nullable.'
       operationId: education.me.assignments_UpdateCategories
       parameters:
         - name: educationAssignment-id
@@ -5428,6 +5487,7 @@ paths:
       tags:
         - education.educationUser
       summary: Delete navigation property categories for education
+      description: 'When set, enables users to easily find assignments of a given type.  Read-only. Nullable.'
       operationId: education.me.assignments_DeleteCategories
       parameters:
         - name: educationAssignment-id
@@ -5455,31 +5515,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/education/me/assignments/{educationAssignment-id}/microsoft.graph.getResourcesFolderUrl()':
-    get:
-      tags:
-        - education.Functions
-      summary: Invoke function getResourcesFolderUrl
-      operationId: education.me.assignments_getResourcesFolderUrl
-      parameters:
-        - name: educationAssignment-id
-          in: path
-          description: 'key: id of educationAssignment'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: educationAssignment
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: string
-                nullable: true
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
   '/education/me/assignments/{educationAssignment-id}/microsoft.graph.publish':
     post:
       tags:
@@ -5504,11 +5539,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/education/me/assignments/{educationAssignment-id}/microsoft.graph.setUpResourcesFolder()':
+    get:
+      tags:
+        - education.Functions
+      summary: Invoke function setUpResourcesFolder
+      operationId: education.me.assignments_setUpResourcesFolder
+      parameters:
+        - name: educationAssignment-id
+          in: path
+          description: 'key: id of educationAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: educationAssignment
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationAssignment'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/education/me/assignments/{educationAssignment-id}/resources':
     get:
       tags:
         - education.educationUser
       summary: Get resources from education
+      description: Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
       operationId: education.me.assignments_ListResources
       parameters:
         - name: educationAssignment-id
@@ -5593,6 +5653,7 @@ paths:
       tags:
         - education.educationUser
       summary: Create new navigation property to resources for education
+      description: Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
       operationId: education.me.assignments_CreateResources
       parameters:
         - name: educationAssignment-id
@@ -5624,6 +5685,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get resources from education
+      description: Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
       operationId: education.me.assignments_GetResources
       parameters:
         - name: educationAssignment-id
@@ -5680,6 +5742,7 @@ paths:
       tags:
         - education.educationUser
       summary: Update the navigation property resources in education
+      description: Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
       operationId: education.me.assignments_UpdateResources
       parameters:
         - name: educationAssignment-id
@@ -5713,6 +5776,7 @@ paths:
       tags:
         - education.educationUser
       summary: Delete navigation property resources for education
+      description: Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
       operationId: education.me.assignments_DeleteResources
       parameters:
         - name: educationAssignment-id
@@ -5745,6 +5809,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get rubric from education
+      description: 'When set, the grading rubric attached to this assignment.'
       operationId: education.me.assignments_GetRubric
       parameters:
         - name: educationAssignment-id
@@ -5801,6 +5866,7 @@ paths:
       tags:
         - education.educationUser
       summary: Update the navigation property rubric in education
+      description: 'When set, the grading rubric attached to this assignment.'
       operationId: education.me.assignments_UpdateRubric
       parameters:
         - name: educationAssignment-id
@@ -5827,6 +5893,7 @@ paths:
       tags:
         - education.educationUser
       summary: Delete navigation property rubric for education
+      description: 'When set, the grading rubric attached to this assignment.'
       operationId: education.me.assignments_DeleteRubric
       parameters:
         - name: educationAssignment-id
@@ -5852,6 +5919,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get submissions from education
+      description: 'Once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.'
       operationId: education.me.assignments_ListSubmissions
       parameters:
         - name: educationAssignment-id
@@ -5880,10 +5948,6 @@ paths:
                 - id desc
                 - recipient
                 - recipient desc
-                - releasedBy
-                - releasedBy desc
-                - releasedDateTime
-                - releasedDateTime desc
                 - resourcesFolderUrl
                 - resourcesFolderUrl desc
                 - returnedBy
@@ -5913,8 +5977,6 @@ paths:
               enum:
                 - id
                 - recipient
-                - releasedBy
-                - releasedDateTime
                 - resourcesFolderUrl
                 - returnedBy
                 - returnedDateTime
@@ -5969,6 +6031,7 @@ paths:
       tags:
         - education.educationUser
       summary: Create new navigation property to submissions for education
+      description: 'Once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.'
       operationId: education.me.assignments_CreateSubmissions
       parameters:
         - name: educationAssignment-id
@@ -6000,6 +6063,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get submissions from education
+      description: 'Once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.'
       operationId: education.me.assignments_GetSubmissions
       parameters:
         - name: educationAssignment-id
@@ -6028,8 +6092,6 @@ paths:
               enum:
                 - id
                 - recipient
-                - releasedBy
-                - releasedDateTime
                 - resourcesFolderUrl
                 - returnedBy
                 - returnedDateTime
@@ -6087,6 +6149,7 @@ paths:
       tags:
         - education.educationUser
       summary: Update the navigation property submissions in education
+      description: 'Once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.'
       operationId: education.me.assignments_UpdateSubmissions
       parameters:
         - name: educationAssignment-id
@@ -6120,6 +6183,7 @@ paths:
       tags:
         - education.educationUser
       summary: Delete navigation property submissions for education
+      description: 'Once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.'
       operationId: education.me.assignments_DeleteSubmissions
       parameters:
         - name: educationAssignment-id
@@ -6205,8 +6269,7 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                nullable: true
+                $ref: '#/components/schemas/microsoft.graph.educationSubmission'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6277,6 +6340,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get outcomes from education
+      description: Read-Write. Nullable.
       operationId: education.me.assignments.submissions_ListOutcomes
       parameters:
         - name: educationAssignment-id
@@ -6368,6 +6432,7 @@ paths:
       tags:
         - education.educationUser
       summary: Create new navigation property to outcomes for education
+      description: Read-Write. Nullable.
       operationId: education.me.assignments.submissions_CreateOutcomes
       parameters:
         - name: educationAssignment-id
@@ -6406,6 +6471,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get outcomes from education
+      description: Read-Write. Nullable.
       operationId: education.me.assignments.submissions_GetOutcomes
       parameters:
         - name: educationAssignment-id
@@ -6469,6 +6535,7 @@ paths:
       tags:
         - education.educationUser
       summary: Update the navigation property outcomes in education
+      description: Read-Write. Nullable.
       operationId: education.me.assignments.submissions_UpdateOutcomes
       parameters:
         - name: educationAssignment-id
@@ -6509,6 +6576,7 @@ paths:
       tags:
         - education.educationUser
       summary: Delete navigation property outcomes for education
+      description: Read-Write. Nullable.
       operationId: education.me.assignments.submissions_DeleteOutcomes
       parameters:
         - name: educationAssignment-id
@@ -6548,6 +6616,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get resources from education
+      description: Nullable.
       operationId: education.me.assignments.submissions_ListResources
       parameters:
         - name: educationAssignment-id
@@ -6639,6 +6708,7 @@ paths:
       tags:
         - education.educationUser
       summary: Create new navigation property to resources for education
+      description: Nullable.
       operationId: education.me.assignments.submissions_CreateResources
       parameters:
         - name: educationAssignment-id
@@ -6677,6 +6747,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get resources from education
+      description: Nullable.
       operationId: education.me.assignments.submissions_GetResources
       parameters:
         - name: educationAssignment-id
@@ -6740,6 +6811,7 @@ paths:
       tags:
         - education.educationUser
       summary: Update the navigation property resources in education
+      description: Nullable.
       operationId: education.me.assignments.submissions_UpdateResources
       parameters:
         - name: educationAssignment-id
@@ -6780,6 +6852,7 @@ paths:
       tags:
         - education.educationUser
       summary: Delete navigation property resources for education
+      description: Nullable.
       operationId: education.me.assignments.submissions_DeleteResources
       parameters:
         - name: educationAssignment-id
@@ -6819,6 +6892,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get submittedResources from education
+      description: Read-only. Nullable.
       operationId: education.me.assignments.submissions_ListSubmittedResources
       parameters:
         - name: educationAssignment-id
@@ -6910,6 +6984,7 @@ paths:
       tags:
         - education.educationUser
       summary: Create new navigation property to submittedResources for education
+      description: Read-only. Nullable.
       operationId: education.me.assignments.submissions_CreateSubmittedResources
       parameters:
         - name: educationAssignment-id
@@ -6948,6 +7023,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get submittedResources from education
+      description: Read-only. Nullable.
       operationId: education.me.assignments.submissions_GetSubmittedResources
       parameters:
         - name: educationAssignment-id
@@ -7011,6 +7087,7 @@ paths:
       tags:
         - education.educationUser
       summary: Update the navigation property submittedResources in education
+      description: Read-only. Nullable.
       operationId: education.me.assignments.submissions_UpdateSubmittedResources
       parameters:
         - name: educationAssignment-id
@@ -7051,6 +7128,7 @@ paths:
       tags:
         - education.educationUser
       summary: Delete navigation property submittedResources for education
+      description: Read-only. Nullable.
       operationId: education.me.assignments.submissions_DeleteSubmittedResources
       parameters:
         - name: educationAssignment-id
@@ -7090,6 +7168,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get classes from education
+      description: Classes to which the user belongs. Nullable.
       operationId: education.me_ListClasses
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7214,6 +7293,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get ref of classes from education
+      description: Classes to which the user belongs. Nullable.
       operationId: education.me_ListRefClasses
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7285,6 +7365,7 @@ paths:
       tags:
         - education.educationUser
       summary: Create new navigation property ref to classes for education
+      description: Classes to which the user belongs. Nullable.
       operationId: education.me_CreateRefClasses
       requestBody:
         description: New navigation property ref value
@@ -7558,6 +7639,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get schools from education
+      description: Schools to which the user belongs. Nullable.
       operationId: education.me_ListSchools
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7681,6 +7763,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get ref of schools from education
+      description: Schools to which the user belongs. Nullable.
       operationId: education.me_ListRefSchools
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7758,6 +7841,7 @@ paths:
       tags:
         - education.educationUser
       summary: Create new navigation property ref to schools for education
+      description: Schools to which the user belongs. Nullable.
       operationId: education.me_CreateRefSchools
       requestBody:
         description: New navigation property ref value
@@ -7803,6 +7887,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get taughtClasses from education
+      description: Classes for which the user is a teacher.
       operationId: education.me_ListTaughtClasses
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7927,6 +8012,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get ref of taughtClasses from education
+      description: Classes for which the user is a teacher.
       operationId: education.me_ListRefTaughtClasses
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7998,6 +8084,7 @@ paths:
       tags:
         - education.educationUser
       summary: Create new navigation property ref to taughtClasses for education
+      description: Classes for which the user is a teacher.
       operationId: education.me_CreateRefTaughtClasses
       requestBody:
         description: New navigation property ref value
@@ -8043,6 +8130,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get user from education
+      description: The directory user corresponding to this user.
       operationId: education.me_GetUser
       parameters:
         - name: $select
@@ -8404,6 +8492,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get ref of user from education
+      description: The directory user corresponding to this user.
       operationId: education.me_GetRefUser
       responses:
         '200':
@@ -8542,6 +8631,7 @@ paths:
       tags:
         - education.educationUser
       summary: Update the ref of navigation property user in education
+      description: The directory user corresponding to this user.
       operationId: education.me_SetRefUser
       requestBody:
         description: New navigation property ref values
@@ -8562,6 +8652,7 @@ paths:
       tags:
         - education.educationUser
       summary: Delete ref of navigation property user for education
+      description: The directory user corresponding to this user.
       operationId: education.me_DeleteRefUser
       parameters:
         - name: If-Match
@@ -8857,6 +8948,7 @@ paths:
       tags:
         - education.educationSchool
       summary: Get administrativeUnit from education
+      description: The underlying administrativeUnit for this school.
       operationId: education.schools_GetAdministrativeUnit
       parameters:
         - name: educationSchool-id
@@ -8928,6 +9020,7 @@ paths:
       tags:
         - education.educationSchool
       summary: Get ref of administrativeUnit from education
+      description: The underlying administrativeUnit for this school.
       operationId: education.schools_GetRefAdministrativeUnit
       parameters:
         - name: educationSchool-id
@@ -8964,6 +9057,7 @@ paths:
       tags:
         - education.educationSchool
       summary: Update the ref of navigation property administrativeUnit in education
+      description: The underlying administrativeUnit for this school.
       operationId: education.schools_SetRefAdministrativeUnit
       parameters:
         - name: educationSchool-id
@@ -8992,6 +9086,7 @@ paths:
       tags:
         - education.educationSchool
       summary: Delete ref of navigation property administrativeUnit for education
+      description: The underlying administrativeUnit for this school.
       operationId: education.schools_DeleteRefAdministrativeUnit
       parameters:
         - name: educationSchool-id
@@ -9017,6 +9112,7 @@ paths:
       tags:
         - education.educationSchool
       summary: Get classes from education
+      description: Classes taught at the school. Nullable.
       operationId: education.schools_ListClasses
       parameters:
         - name: educationSchool-id
@@ -9148,6 +9244,7 @@ paths:
       tags:
         - education.educationSchool
       summary: Get ref of classes from education
+      description: Classes taught at the school. Nullable.
       operationId: education.schools_ListRefClasses
       parameters:
         - name: educationSchool-id
@@ -9226,6 +9323,7 @@ paths:
       tags:
         - education.educationSchool
       summary: Create new navigation property ref to classes for education
+      description: Classes taught at the school. Nullable.
       operationId: education.schools_CreateRefClasses
       parameters:
         - name: educationSchool-id
@@ -9287,6 +9385,7 @@ paths:
       tags:
         - education.educationSchool
       summary: Get users from education
+      description: Users in the school. Nullable.
       operationId: education.schools_ListUsers
       parameters:
         - name: educationSchool-id
@@ -9474,6 +9573,7 @@ paths:
       tags:
         - education.educationSchool
       summary: Get ref of users from education
+      description: Users in the school. Nullable.
       operationId: education.schools_ListRefUsers
       parameters:
         - name: educationSchool-id
@@ -9592,6 +9692,7 @@ paths:
       tags:
         - education.educationSchool
       summary: Create new navigation property ref to users for education
+      description: Users in the school. Nullable.
       operationId: education.schools_CreateRefUsers
       parameters:
         - name: educationSchool-id
@@ -9908,6 +10009,7 @@ paths:
       tags:
         - education.educationSynchronizationProfile
       summary: Get errors from education
+      description: All errors associated with this synchronization profile.
       operationId: education.synchronizationProfiles_ListErrors
       parameters:
         - name: educationSynchronizationProfile-id
@@ -10004,6 +10106,7 @@ paths:
       tags:
         - education.educationSynchronizationProfile
       summary: Create new navigation property to errors for education
+      description: All errors associated with this synchronization profile.
       operationId: education.synchronizationProfiles_CreateErrors
       parameters:
         - name: educationSynchronizationProfile-id
@@ -10035,6 +10138,7 @@ paths:
       tags:
         - education.educationSynchronizationProfile
       summary: Get errors from education
+      description: All errors associated with this synchronization profile.
       operationId: education.synchronizationProfiles_GetErrors
       parameters:
         - name: educationSynchronizationProfile-id
@@ -10095,6 +10199,7 @@ paths:
       tags:
         - education.educationSynchronizationProfile
       summary: Update the navigation property errors in education
+      description: All errors associated with this synchronization profile.
       operationId: education.synchronizationProfiles_UpdateErrors
       parameters:
         - name: educationSynchronizationProfile-id
@@ -10128,6 +10233,7 @@ paths:
       tags:
         - education.educationSynchronizationProfile
       summary: Delete navigation property errors for education
+      description: All errors associated with this synchronization profile.
       operationId: education.synchronizationProfiles_DeleteErrors
       parameters:
         - name: educationSynchronizationProfile-id
@@ -10271,6 +10377,7 @@ paths:
       tags:
         - education.educationSynchronizationProfile
       summary: Get profileStatus from education
+      description: The synchronization status.
       operationId: education.synchronizationProfiles_GetProfileStatus
       parameters:
         - name: educationSynchronizationProfile-id
@@ -10321,6 +10428,7 @@ paths:
       tags:
         - education.educationSynchronizationProfile
       summary: Update the navigation property profileStatus in education
+      description: The synchronization status.
       operationId: education.synchronizationProfiles_UpdateProfileStatus
       parameters:
         - name: educationSynchronizationProfile-id
@@ -10347,6 +10455,7 @@ paths:
       tags:
         - education.educationSynchronizationProfile
       summary: Delete navigation property profileStatus for education
+      description: The synchronization status.
       operationId: education.synchronizationProfiles_DeleteProfileStatus
       parameters:
         - name: educationSynchronizationProfile-id
@@ -10741,6 +10850,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get assignments from education
+      description: List of assignments for the user. Nullable.
       operationId: education.users_ListAssignments
       parameters:
         - name: educationUser-id
@@ -10769,6 +10879,8 @@ paths:
                 - id desc
                 - addedStudentAction
                 - addedStudentAction desc
+                - addToCalendarAction
+                - addToCalendarAction desc
                 - allowLateSubmissions
                 - allowLateSubmissions desc
                 - allowStudentsToAddResourcesToSubmission
@@ -10820,6 +10932,7 @@ paths:
               enum:
                 - id
                 - addedStudentAction
+                - addToCalendarAction
                 - allowLateSubmissions
                 - allowStudentsToAddResourcesToSubmission
                 - assignDateTime
@@ -10887,6 +11000,7 @@ paths:
       tags:
         - education.educationUser
       summary: Create new navigation property to assignments for education
+      description: List of assignments for the user. Nullable.
       operationId: education.users_CreateAssignments
       parameters:
         - name: educationUser-id
@@ -10918,6 +11032,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get assignments from education
+      description: List of assignments for the user. Nullable.
       operationId: education.users_GetAssignments
       parameters:
         - name: educationUser-id
@@ -10946,6 +11061,7 @@ paths:
               enum:
                 - id
                 - addedStudentAction
+                - addToCalendarAction
                 - allowLateSubmissions
                 - allowStudentsToAddResourcesToSubmission
                 - assignDateTime
@@ -11021,6 +11137,7 @@ paths:
       tags:
         - education.educationUser
       summary: Update the navigation property assignments in education
+      description: List of assignments for the user. Nullable.
       operationId: education.users_UpdateAssignments
       parameters:
         - name: educationUser-id
@@ -11054,6 +11171,7 @@ paths:
       tags:
         - education.educationUser
       summary: Delete navigation property assignments for education
+      description: List of assignments for the user. Nullable.
       operationId: education.users_DeleteAssignments
       parameters:
         - name: educationUser-id
@@ -11086,6 +11204,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get categories from education
+      description: 'When set, enables users to easily find assignments of a given type.  Read-only. Nullable.'
       operationId: education.users.assignments_ListCategories
       parameters:
         - name: educationUser-id
@@ -11174,6 +11293,7 @@ paths:
       tags:
         - education.educationUser
       summary: Create new navigation property to categories for education
+      description: 'When set, enables users to easily find assignments of a given type.  Read-only. Nullable.'
       operationId: education.users.assignments_CreateCategories
       parameters:
         - name: educationUser-id
@@ -11212,6 +11332,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get categories from education
+      description: 'When set, enables users to easily find assignments of a given type.  Read-only. Nullable.'
       operationId: education.users.assignments_GetCategories
       parameters:
         - name: educationUser-id
@@ -11274,6 +11395,7 @@ paths:
       tags:
         - education.educationUser
       summary: Update the navigation property categories in education
+      description: 'When set, enables users to easily find assignments of a given type.  Read-only. Nullable.'
       operationId: education.users.assignments_UpdateCategories
       parameters:
         - name: educationUser-id
@@ -11314,6 +11436,7 @@ paths:
       tags:
         - education.educationUser
       summary: Delete navigation property categories for education
+      description: 'When set, enables users to easily find assignments of a given type.  Read-only. Nullable.'
       operationId: education.users.assignments_DeleteCategories
       parameters:
         - name: educationUser-id
@@ -11348,38 +11471,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/education/users/{educationUser-id}/assignments/{educationAssignment-id}/microsoft.graph.getResourcesFolderUrl()':
-    get:
-      tags:
-        - education.Functions
-      summary: Invoke function getResourcesFolderUrl
-      operationId: education.users.assignments_getResourcesFolderUrl
-      parameters:
-        - name: educationUser-id
-          in: path
-          description: 'key: id of educationUser'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: educationUser
-        - name: educationAssignment-id
-          in: path
-          description: 'key: id of educationAssignment'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: educationAssignment
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: string
-                nullable: true
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
   '/education/users/{educationUser-id}/assignments/{educationAssignment-id}/microsoft.graph.publish':
     post:
       tags:
@@ -11411,11 +11502,43 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/education/users/{educationUser-id}/assignments/{educationAssignment-id}/microsoft.graph.setUpResourcesFolder()':
+    get:
+      tags:
+        - education.Functions
+      summary: Invoke function setUpResourcesFolder
+      operationId: education.users.assignments_setUpResourcesFolder
+      parameters:
+        - name: educationUser-id
+          in: path
+          description: 'key: id of educationUser'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: educationUser
+        - name: educationAssignment-id
+          in: path
+          description: 'key: id of educationAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: educationAssignment
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationAssignment'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/education/users/{educationUser-id}/assignments/{educationAssignment-id}/resources':
     get:
       tags:
         - education.educationUser
       summary: Get resources from education
+      description: Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
       operationId: education.users.assignments_ListResources
       parameters:
         - name: educationUser-id
@@ -11507,6 +11630,7 @@ paths:
       tags:
         - education.educationUser
       summary: Create new navigation property to resources for education
+      description: Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
       operationId: education.users.assignments_CreateResources
       parameters:
         - name: educationUser-id
@@ -11545,6 +11669,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get resources from education
+      description: Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
       operationId: education.users.assignments_GetResources
       parameters:
         - name: educationUser-id
@@ -11608,6 +11733,7 @@ paths:
       tags:
         - education.educationUser
       summary: Update the navigation property resources in education
+      description: Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
       operationId: education.users.assignments_UpdateResources
       parameters:
         - name: educationUser-id
@@ -11648,6 +11774,7 @@ paths:
       tags:
         - education.educationUser
       summary: Delete navigation property resources for education
+      description: Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
       operationId: education.users.assignments_DeleteResources
       parameters:
         - name: educationUser-id
@@ -11687,6 +11814,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get rubric from education
+      description: 'When set, the grading rubric attached to this assignment.'
       operationId: education.users.assignments_GetRubric
       parameters:
         - name: educationUser-id
@@ -11750,6 +11878,7 @@ paths:
       tags:
         - education.educationUser
       summary: Update the navigation property rubric in education
+      description: 'When set, the grading rubric attached to this assignment.'
       operationId: education.users.assignments_UpdateRubric
       parameters:
         - name: educationUser-id
@@ -11783,6 +11912,7 @@ paths:
       tags:
         - education.educationUser
       summary: Delete navigation property rubric for education
+      description: 'When set, the grading rubric attached to this assignment.'
       operationId: education.users.assignments_DeleteRubric
       parameters:
         - name: educationUser-id
@@ -11815,6 +11945,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get submissions from education
+      description: 'Once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.'
       operationId: education.users.assignments_ListSubmissions
       parameters:
         - name: educationUser-id
@@ -11850,10 +11981,6 @@ paths:
                 - id desc
                 - recipient
                 - recipient desc
-                - releasedBy
-                - releasedBy desc
-                - releasedDateTime
-                - releasedDateTime desc
                 - resourcesFolderUrl
                 - resourcesFolderUrl desc
                 - returnedBy
@@ -11883,8 +12010,6 @@ paths:
               enum:
                 - id
                 - recipient
-                - releasedBy
-                - releasedDateTime
                 - resourcesFolderUrl
                 - returnedBy
                 - returnedDateTime
@@ -11939,6 +12064,7 @@ paths:
       tags:
         - education.educationUser
       summary: Create new navigation property to submissions for education
+      description: 'Once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.'
       operationId: education.users.assignments_CreateSubmissions
       parameters:
         - name: educationUser-id
@@ -11977,6 +12103,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get submissions from education
+      description: 'Once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.'
       operationId: education.users.assignments_GetSubmissions
       parameters:
         - name: educationUser-id
@@ -12012,8 +12139,6 @@ paths:
               enum:
                 - id
                 - recipient
-                - releasedBy
-                - releasedDateTime
                 - resourcesFolderUrl
                 - returnedBy
                 - returnedDateTime
@@ -12074,6 +12199,7 @@ paths:
       tags:
         - education.educationUser
       summary: Update the navigation property submissions in education
+      description: 'Once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.'
       operationId: education.users.assignments_UpdateSubmissions
       parameters:
         - name: educationUser-id
@@ -12114,6 +12240,7 @@ paths:
       tags:
         - education.educationUser
       summary: Delete navigation property submissions for education
+      description: 'Once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.'
       operationId: education.users.assignments_DeleteSubmissions
       parameters:
         - name: educationUser-id
@@ -12220,8 +12347,7 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                nullable: true
+                $ref: '#/components/schemas/microsoft.graph.educationSubmission'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -12306,6 +12432,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get outcomes from education
+      description: Read-Write. Nullable.
       operationId: education.users.assignments.submissions_ListOutcomes
       parameters:
         - name: educationUser-id
@@ -12404,6 +12531,7 @@ paths:
       tags:
         - education.educationUser
       summary: Create new navigation property to outcomes for education
+      description: Read-Write. Nullable.
       operationId: education.users.assignments.submissions_CreateOutcomes
       parameters:
         - name: educationUser-id
@@ -12449,6 +12577,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get outcomes from education
+      description: Read-Write. Nullable.
       operationId: education.users.assignments.submissions_GetOutcomes
       parameters:
         - name: educationUser-id
@@ -12519,6 +12648,7 @@ paths:
       tags:
         - education.educationUser
       summary: Update the navigation property outcomes in education
+      description: Read-Write. Nullable.
       operationId: education.users.assignments.submissions_UpdateOutcomes
       parameters:
         - name: educationUser-id
@@ -12566,6 +12696,7 @@ paths:
       tags:
         - education.educationUser
       summary: Delete navigation property outcomes for education
+      description: Read-Write. Nullable.
       operationId: education.users.assignments.submissions_DeleteOutcomes
       parameters:
         - name: educationUser-id
@@ -12612,6 +12743,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get resources from education
+      description: Nullable.
       operationId: education.users.assignments.submissions_ListResources
       parameters:
         - name: educationUser-id
@@ -12710,6 +12842,7 @@ paths:
       tags:
         - education.educationUser
       summary: Create new navigation property to resources for education
+      description: Nullable.
       operationId: education.users.assignments.submissions_CreateResources
       parameters:
         - name: educationUser-id
@@ -12755,6 +12888,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get resources from education
+      description: Nullable.
       operationId: education.users.assignments.submissions_GetResources
       parameters:
         - name: educationUser-id
@@ -12825,6 +12959,7 @@ paths:
       tags:
         - education.educationUser
       summary: Update the navigation property resources in education
+      description: Nullable.
       operationId: education.users.assignments.submissions_UpdateResources
       parameters:
         - name: educationUser-id
@@ -12872,6 +13007,7 @@ paths:
       tags:
         - education.educationUser
       summary: Delete navigation property resources for education
+      description: Nullable.
       operationId: education.users.assignments.submissions_DeleteResources
       parameters:
         - name: educationUser-id
@@ -12918,6 +13054,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get submittedResources from education
+      description: Read-only. Nullable.
       operationId: education.users.assignments.submissions_ListSubmittedResources
       parameters:
         - name: educationUser-id
@@ -13016,6 +13153,7 @@ paths:
       tags:
         - education.educationUser
       summary: Create new navigation property to submittedResources for education
+      description: Read-only. Nullable.
       operationId: education.users.assignments.submissions_CreateSubmittedResources
       parameters:
         - name: educationUser-id
@@ -13061,6 +13199,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get submittedResources from education
+      description: Read-only. Nullable.
       operationId: education.users.assignments.submissions_GetSubmittedResources
       parameters:
         - name: educationUser-id
@@ -13131,6 +13270,7 @@ paths:
       tags:
         - education.educationUser
       summary: Update the navigation property submittedResources in education
+      description: Read-only. Nullable.
       operationId: education.users.assignments.submissions_UpdateSubmittedResources
       parameters:
         - name: educationUser-id
@@ -13178,6 +13318,7 @@ paths:
       tags:
         - education.educationUser
       summary: Delete navigation property submittedResources for education
+      description: Read-only. Nullable.
       operationId: education.users.assignments.submissions_DeleteSubmittedResources
       parameters:
         - name: educationUser-id
@@ -13224,6 +13365,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get classes from education
+      description: Classes to which the user belongs. Nullable.
       operationId: education.users_ListClasses
       parameters:
         - name: educationUser-id
@@ -13355,6 +13497,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get ref of classes from education
+      description: Classes to which the user belongs. Nullable.
       operationId: education.users_ListRefClasses
       parameters:
         - name: educationUser-id
@@ -13433,6 +13576,7 @@ paths:
       tags:
         - education.educationUser
       summary: Create new navigation property ref to classes for education
+      description: Classes to which the user belongs. Nullable.
       operationId: education.users_CreateRefClasses
       parameters:
         - name: educationUser-id
@@ -13758,6 +13902,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get schools from education
+      description: Schools to which the user belongs. Nullable.
       operationId: education.users_ListSchools
       parameters:
         - name: educationUser-id
@@ -13888,6 +14033,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get ref of schools from education
+      description: Schools to which the user belongs. Nullable.
       operationId: education.users_ListRefSchools
       parameters:
         - name: educationUser-id
@@ -13972,6 +14118,7 @@ paths:
       tags:
         - education.educationUser
       summary: Create new navigation property ref to schools for education
+      description: Schools to which the user belongs. Nullable.
       operationId: education.users_CreateRefSchools
       parameters:
         - name: educationUser-id
@@ -14033,6 +14180,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get taughtClasses from education
+      description: Classes for which the user is a teacher.
       operationId: education.users_ListTaughtClasses
       parameters:
         - name: educationUser-id
@@ -14164,6 +14312,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get ref of taughtClasses from education
+      description: Classes for which the user is a teacher.
       operationId: education.users_ListRefTaughtClasses
       parameters:
         - name: educationUser-id
@@ -14242,6 +14391,7 @@ paths:
       tags:
         - education.educationUser
       summary: Create new navigation property ref to taughtClasses for education
+      description: Classes for which the user is a teacher.
       operationId: education.users_CreateRefTaughtClasses
       parameters:
         - name: educationUser-id
@@ -14303,6 +14453,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get user from education
+      description: The directory user corresponding to this user.
       operationId: education.users_GetUser
       parameters:
         - name: educationUser-id
@@ -14793,6 +14944,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get ref of user from education
+      description: The directory user corresponding to this user.
       operationId: education.users_GetRefUser
       parameters:
         - name: educationUser-id
@@ -15061,6 +15213,7 @@ paths:
       tags:
         - education.educationUser
       summary: Update the ref of navigation property user in education
+      description: The directory user corresponding to this user.
       operationId: education.users_SetRefUser
       parameters:
         - name: educationUser-id
@@ -15089,6 +15242,7 @@ paths:
       tags:
         - education.educationUser
       summary: Delete ref of navigation property user for education
+      description: The directory user corresponding to this user.
       operationId: education.users_DeleteRefUser
       parameters:
         - name: educationUser-id
@@ -15249,6 +15403,8 @@ components:
           properties:
             addedStudentAction:
               $ref: '#/components/schemas/microsoft.graph.educationAddedStudentAction'
+            addToCalendarAction:
+              $ref: '#/components/schemas/microsoft.graph.educationAddToCalendarOptions'
             dueTime:
               pattern: '^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$'
               type: string
@@ -15269,6 +15425,8 @@ components:
           properties:
             addedStudentAction:
               $ref: '#/components/schemas/microsoft.graph.educationAddedStudentAction'
+            addToCalendarAction:
+              $ref: '#/components/schemas/microsoft.graph.educationAddToCalendarOptions'
             allowLateSubmissions:
               type: boolean
               description: 'Identifies whether students can submit after the due date. If this property is not specified during create, it defaults to true.'
@@ -15428,13 +15586,6 @@ components:
           properties:
             recipient:
               $ref: '#/components/schemas/microsoft.graph.educationSubmissionRecipient'
-            releasedBy:
-              $ref: '#/components/schemas/microsoft.graph.identitySet'
-            releasedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              format: date-time
-              nullable: true
             resourcesFolderUrl:
               type: string
               description: Folder where all file resources for this submission need to be stored.
@@ -16207,7 +16358,7 @@ components:
               description: State of license assignments for this user. Returned only on $select. Read-only.
             mail:
               type: string
-              description: 'The SMTP address for the user, for example, ''jeff@contoso.onmicrosoft.com''.NOTE: While this property can contain accent characters, using them can cause access issues with other Microsoft applications for the user.Returned by default. Supports $filter and endsWith.'
+              description: 'The SMTP address for the user, for example, ''jeff@contoso.onmicrosoft.com''. Changes to this property will also update the user''s proxyAddresses collection to include the value as an SMTP address. While this property can contain accent characters, using them can cause access issues with other Microsoft applications for the user. Supports $filter and endsWith.'
               nullable: true
             mailNickname:
               type: string
@@ -16874,6 +17025,14 @@ components:
       enum:
         - none
         - assignIfOpen
+        - unknownFutureValue
+      type: string
+    microsoft.graph.educationAddToCalendarOptions:
+      title: educationAddToCalendarOptions
+      enum:
+        - none
+        - studentsAndPublisher
+        - studentsAndTeamOwners
         - unknownFutureValue
       type: string
     microsoft.graph.educationAssignmentRecipient:
@@ -17799,7 +17958,7 @@ components:
               nullable: true
             description:
               type: string
-              description: An optional description for the team.
+              description: 'An optional description for the team. Maximum length: 1024 characters.'
               nullable: true
             discoverySettings:
               $ref: '#/components/schemas/microsoft.graph.teamDiscoverySettings'
@@ -17862,6 +18021,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.user'
               description: 'The list of this team''s owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user delegated permissions, no owner can be specified (the current user is the owner). Owner must be specified as an object ID (GUID), not a UPN.'
+            permissionGrants:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
             photo:
               $ref: '#/components/schemas/microsoft.graph.profilePhoto'
             primaryChannel:
@@ -20386,6 +20549,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessage'
               description: A collection of all the messages in the chat. Nullable.
+            operations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.teamsAsyncOperation'
             permissionGrants:
               type: array
               items:
@@ -22922,57 +23089,58 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScope'
-              description: 'This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user''s manager does not exist. See accessReviewReviewerScope.'
+              description: 'This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user''s manager does not exist. Supports $select. Note: This property has been replaced by fallbackReviewers. However, specifying either backupReviewers or fallbackReviewers automatically populates the same values to the other property.'
             createdBy:
               $ref: '#/components/schemas/microsoft.graph.userIdentity'
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Timestamp when review series was created.
+              description: Timestamp when the access review series was created. Supports $select.
               format: date-time
               nullable: true
             descriptionForAdmins:
               type: string
-              description: Description provided by review creators to provide more context of the review to admins.
+              description: Description provided by review creators to provide more context of the review to admins. Supports $select.
               nullable: true
             descriptionForReviewers:
               type: string
-              description: Description provided  by review creators to provide more context of the review to reviewers. Reviewers will see this description in the email sent to them requesting their review.
+              description: Description provided  by review creators to provide more context of the review to reviewers. Reviewers will see this description in the email sent to them requesting their review. Supports $select.
               nullable: true
             displayName:
               type: string
-              description: Name of access review series. Required on create.
+              description: Name of the access review series. Required on create. Supports $select.
               nullable: true
             fallbackReviewers:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScope'
+              description: 'This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user''s manager does not exist. Supports $select.'
             instanceEnumerationScope:
               $ref: '#/components/schemas/microsoft.graph.accessReviewScope'
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Timestamp when review series was last modified.
+              description: Timestamp when the access review series was last modified. Supports $select.
               format: date-time
               nullable: true
             reviewers:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScope'
-              description: This collection of access review scopes is used to define who are the reviewers. See accessReviewReviewerScope. Required on create.
+              description: 'This collection of access review scopes is used to define who are the reviewers. Required on create. Supports $select. For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API.'
             scope:
               $ref: '#/components/schemas/microsoft.graph.accessReviewScope'
             settings:
               $ref: '#/components/schemas/microsoft.graph.accessReviewScheduleSettings'
             status:
               type: string
-              description: 'This read-only field specifies the status of an accessReview. The typical states include Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed.'
+              description: 'This read-only field specifies the status of an access review. The typical states include Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed. Supports $select, $orderby, and $filter (eq only).'
               nullable: true
             instances:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewInstance'
-              description: 'Set of access reviews instances for this access review series. Access reviews that do not recur will only have one instance; otherwise, there will be an instance for each recurrence.'
+              description: 'Set of access reviews instances for this access review series. Access reviews that do not recur will only have one instance; otherwise, there is an instance for each recurrence.'
           additionalProperties:
             type: object
     microsoft.graph.agreementAcceptanceState:
@@ -23552,6 +23720,7 @@ components:
         - googleCloudDevicePolicyController
         - microsoft365ManagedMdm
         - windowsManagementCloudApi
+        - intuneAosp
       type: string
     microsoft.graph.managedDeviceManagementFeatures:
       title: managedDeviceManagementFeatures
@@ -24065,10 +24234,10 @@ components:
       properties:
         name:
           type: string
-          description: Name for this key-value pair
+          description: 'Name for this key-value pair. Possible names are: AdditionalWSFedEndpointCheckResult,  AllowedAuthenticationClassReferencesCheckResult, AlwaysRequireAuthenticationCheckResult,   AutoUpdateEnabledCheckResult, ClaimsProviderNameCheckResult, EncryptClaimsCheckResult,  EncryptedNameIdRequiredCheckResult, MonitoringEnabledCheckResult,NotBeforeSkewCheckResult,  RequestMFAFromClaimsProvidersCheckResult, SignedSamlRequestsRequiredCheckResult, AdditionalAuthenticationRulesCheckResult, TokenLifetimeCheckResult,  DelegationAuthorizationRulesCheckResult, IssuanceAuthorizationRulesCheckResult, IssuanceTransformRulesCheckResult.'
         value:
           type: string
-          description: Value for this key-value pair
+          description: 'Value for this key-value pair. Possible result values are 0 (when the validation check passed), 1 (when the validation check failed), or 2 (when the validation check is a warning).'
           nullable: true
       additionalProperties:
         type: object
@@ -25542,6 +25711,8 @@ components:
               type: string
               description: Read-only. Version number of the chat message.
               nullable: true
+            eventDetail:
+              $ref: '#/components/schemas/microsoft.graph.eventMessageDetail'
             from:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             importance:
@@ -25595,7 +25766,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
-              description: 'Content in a message hosted by Microsoft Teams e.g., images, code snippets etc.'
+              description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
             replies:
               type: array
               items:
@@ -27449,6 +27620,7 @@ components:
         - unknownFutureValue
         - teamifyGroup
         - createChannel
+        - createChat
       type: string
     microsoft.graph.teamsAsyncOperationStatus:
       title: teamsAsyncOperationStatus
@@ -27622,6 +27794,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.timeCardBreak'
+              description: The list of breaks associated with the timeCard.
             clockInEvent:
               $ref: '#/components/schemas/microsoft.graph.timeCardEvent'
             clockOutEvent:
@@ -27636,6 +27809,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.timeCardState'
             userId:
               type: string
+              description: User ID to which  the timeCard belongs.
               nullable: true
           additionalProperties:
             type: object
@@ -28249,7 +28423,7 @@ components:
               nullable: true
             queryRoot:
               type: string
-              description: 'In the scenario where reviewers need to be specified dynamically, this property is used to indicate the relative source of the query. This property is only required if a relative query (i.e., ./manager) is specified.'
+              description: 'In the scenario where reviewers need to be specified dynamically, this property is used to indicate the relative source of the query. This property is only required if a relative query, for example, ./manager, is specified. Possible value: decisions.'
               nullable: true
             queryType:
               type: string
@@ -28268,14 +28442,14 @@ components:
           description: 'Optional field. Describes the  actions to take once a review is complete. There are two types that are currently supported: removeAccessApplyAction (default) and disableAndDeleteUserApplyAction. Field only needs to be specified in the case of disableAndDeleteUserApplyAction. See accessReviewApplyAction.'
         autoApplyDecisionsEnabled:
           type: boolean
-          description: Flag to indicate whether auto-apply feature is enabled.
+          description: 'Indicates whether decisions are automatically applied. When set to false, a user must apply the decisions manually once the reviewer completes the access review. When set to true, decisions are applied automatically after the access review instance duration ends, whether or not the reviewers have responded. Default value is false.'
         defaultDecision:
           type: string
-          description: 'Decision chosen if defaultDecisionEnabled is enabled. Can be one of ''Approve'', ''Deny'', or ''Recommendation''.'
+          description: 'Decision chosen if defaultDecisionEnabled is enabled. Can be one of Approve, Deny, or Recommendation.'
           nullable: true
         defaultDecisionEnabled:
           type: boolean
-          description: Flag to indicate whether default decision is enabled/disabled when reviewers do not respond.
+          description: Indicates whether the default decision is enabled or disabled when reviewers do not respond. Default value is false.
         instanceDurationInDays:
           maximum: 2147483647
           minimum: -2147483648
@@ -28284,18 +28458,18 @@ components:
           format: int32
         justificationRequiredOnApproval:
           type: boolean
-          description: Flag to indicate whether reviewers are required to provide justification with their decision.
+          description: Indicates whether reviewers are required to provide justification with their decision. Default value is false.
         mailNotificationsEnabled:
           type: boolean
-          description: Flag to indicate whether emails are enabled/disabled.
+          description: Indicates whether emails are enabled or disabled. Default value is false.
         recommendationsEnabled:
           type: boolean
-          description: Flag to indicate whether decision recommendations are enabled/disabled.
+          description: Indicates whether decision recommendations are enabled/disabled.
         recurrence:
           $ref: '#/components/schemas/microsoft.graph.patternedRecurrence'
         reminderNotificationsEnabled:
           type: boolean
-          description: Flag to indicate whether reminders are enabled/disabled.
+          description: Indicates whether reminders are enabled or disabled. Default value is false.
       additionalProperties:
         type: object
     microsoft.graph.deviceAndAppManagementAssignmentSource:
@@ -28420,6 +28594,7 @@ components:
         - windows10AndLater
         - androidWorkProfile
         - windows10XProfile
+        - androidAOSP
         - all
       type: string
     microsoft.graph.deviceCompliancePolicySettingState:
@@ -29473,6 +29648,11 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.eventMessageDetail:
+      title: eventMessageDetail
+      type: object
+      additionalProperties:
+        type: object
     microsoft.graph.chatMessageImportance:
       title: chatMessageImportance
       enum:
@@ -29505,6 +29685,8 @@ components:
         - message
         - chatEvent
         - typing
+        - unknownFutureValue
+        - systemEventMessage
       type: string
     microsoft.graph.chatMessagePolicyViolation:
       title: chatMessagePolicyViolation
@@ -30218,11 +30400,11 @@ components:
       properties:
         key:
           type: string
-          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object
@@ -30557,6 +30739,7 @@ components:
       properties:
         breakId:
           type: string
+          description: ID of the timeCardBreak.
           nullable: true
         end:
           $ref: '#/components/schemas/microsoft.graph.timeCardEvent'
@@ -30572,10 +30755,12 @@ components:
       properties:
         atApprovedLocation:
           type: boolean
+          description: Indicates whether the entry was recorded at the approved location.
           nullable: true
         dateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: The time the entry is recorded.
           format: date-time
         notes:
           $ref: '#/components/schemas/microsoft.graph.itemBody'
@@ -30597,6 +30782,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.timeCardBreak'
+          description: The list of breaks associated with the timeCard.
         clockInEvent:
           $ref: '#/components/schemas/microsoft.graph.timeCardEvent'
         clockOutEvent:
@@ -30663,17 +30849,22 @@ components:
       properties:
         color:
           type: string
+          description: 'The color that the user interface should display for the label, if configured.'
           nullable: true
         description:
           type: string
+          description: The admin-defined description for the label.
           nullable: true
         id:
           type: string
+          description: The label ID is a globally unique identifier (GUID).
           nullable: true
         isActive:
           type: boolean
+          description: Indicates whether the label is active or not. Active labels should be hidden or disabled in user interfaces.
         name:
           type: string
+          description: The plaintext name of the label.
           nullable: true
         parent:
           $ref: '#/components/schemas/microsoft.graph.parentLabelDetails'
@@ -30681,9 +30872,11 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: 'The sensitivity value of the label, where lower is less sensitive.'
           format: int32
         tooltip:
           type: string
+          description: The tooltip that should be displayed for the label in a user interface.
           nullable: true
       additionalProperties:
         type: object
@@ -31436,7 +31629,7 @@ components:
           nullable: true
         languageTag:
           type: string
-          description: The anguage tag for the label.
+          description: The language tag for the label.
           nullable: true
         name:
           type: string
