@@ -1,18 +1,13 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
+### Example 1: Get an owner of a group
 
-{{ Add output here }}
+This example gets the owner of the specified group.
+
+```powershell
+Get-MgGroupOwner -GroupId '4d5f57a1-85e0-41dd-8282-ff995ad5e1c3'
 ```
 
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+```Output
+Id                                   DeletedDateTime
+--                                   ---------------
+5fc5c052-8774-4258-8705-0b4ab3e9a2df
 ```
-
-{{ Add description here }}
-

@@ -1,18 +1,10 @@
-### Example 1: {{ Add title here }}
+### Example 1: Remove a user's application role assignment
+
+This example removes the specified application role from the specified user.
+
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Remove-MgUserAppRoleAssignment ` 
+-AppRoleAssignmentID '01B8ir38J0eoiYqyMt_qAVDX9vgSB6xDur4zn5zOluM' ` 
+-UserId '8a7c50d3-fcbd-4727-a889-8ab232dfea01'
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
