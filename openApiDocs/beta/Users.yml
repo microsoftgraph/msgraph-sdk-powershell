@@ -23,15 +23,11 @@ paths:
               description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
               value: eventual
         - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
         - name: $orderby
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -194,7 +190,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -276,79 +271,6 @@ paths:
                 - responsibilities
                 - schools
                 - skills
-                - analytics
-                - usageRights
-                - informationProtection
-                - appRoleAssignments
-                - createdObjects
-                - directReports
-                - licenseDetails
-                - manager
-                - memberOf
-                - oauth2PermissionGrants
-                - ownedDevices
-                - ownedObjects
-                - registeredDevices
-                - scopedRoleMemberOf
-                - transitiveMemberOf
-                - transitiveReports
-                - calendar
-                - calendarGroups
-                - calendars
-                - calendarView
-                - contactFolders
-                - contacts
-                - events
-                - inferenceClassification
-                - joinedGroups
-                - mailFolders
-                - messages
-                - outlook
-                - people
-                - drive
-                - drives
-                - followedSites
-                - extensions
-                - appConsentRequestsForApproval
-                - approvals
-                - pendingAccessReviewInstances
-                - agreementAcceptances
-                - deviceEnrollmentConfigurations
-                - managedDevices
-                - managedAppRegistrations
-                - windowsInformationProtectionDeviceRegistrations
-                - deviceManagementTroubleshootingEvents
-                - mobileAppIntentAndStates
-                - mobileAppTroubleshootingEvents
-                - notifications
-                - planner
-                - insights
-                - settings
-                - onenote
-                - photo
-                - photos
-                - profile
-                - activities
-                - devices
-                - onlineMeetings
-                - presence
-                - authentication
-                - chats
-                - joinedTeams
-                - teamwork
-                - todo
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
                 - analytics
                 - usageRights
                 - informationProtection
@@ -484,7 +406,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -566,79 +487,6 @@ paths:
                 - responsibilities
                 - schools
                 - skills
-                - analytics
-                - usageRights
-                - informationProtection
-                - appRoleAssignments
-                - createdObjects
-                - directReports
-                - licenseDetails
-                - manager
-                - memberOf
-                - oauth2PermissionGrants
-                - ownedDevices
-                - ownedObjects
-                - registeredDevices
-                - scopedRoleMemberOf
-                - transitiveMemberOf
-                - transitiveReports
-                - calendar
-                - calendarGroups
-                - calendars
-                - calendarView
-                - contactFolders
-                - contacts
-                - events
-                - inferenceClassification
-                - joinedGroups
-                - mailFolders
-                - messages
-                - outlook
-                - people
-                - drive
-                - drives
-                - followedSites
-                - extensions
-                - appConsentRequestsForApproval
-                - approvals
-                - pendingAccessReviewInstances
-                - agreementAcceptances
-                - deviceEnrollmentConfigurations
-                - managedDevices
-                - managedAppRegistrations
-                - windowsInformationProtectionDeviceRegistrations
-                - deviceManagementTroubleshootingEvents
-                - mobileAppIntentAndStates
-                - mobileAppTroubleshootingEvents
-                - notifications
-                - planner
-                - insights
-                - settings
-                - onenote
-                - photo
-                - photos
-                - profile
-                - activities
-                - devices
-                - onlineMeetings
-                - presence
-                - authentication
-                - chats
-                - joinedTeams
-                - teamwork
-                - todo
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
                 - analytics
                 - usageRights
                 - informationProtection
@@ -1032,7 +880,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1047,7 +894,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1060,7 +906,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1115,7 +960,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1208,7 +1052,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1223,7 +1066,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1236,7 +1078,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1291,7 +1132,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1384,7 +1224,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1397,7 +1236,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1409,7 +1247,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1497,7 +1334,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1509,7 +1345,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1617,7 +1452,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1636,7 +1470,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1651,7 +1484,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1739,7 +1571,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1754,7 +1585,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1857,7 +1687,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1870,7 +1699,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1991,7 +1819,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2006,7 +1833,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2019,7 +1845,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2074,7 +1899,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2166,7 +1990,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2193,7 +2016,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2212,7 +2034,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2298,7 +2119,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2317,7 +2137,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2422,7 +2241,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2449,7 +2267,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2468,7 +2285,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2522,7 +2338,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2621,29 +2436,12 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
             items:
               enum:
                 - id
-                - masterCategories
-                - taskFolders
-                - taskGroups
-                - tasks
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
                 - masterCategories
                 - taskFolders
                 - taskGroups
@@ -2745,14 +2543,12 @@ paths:
           x-ms-docs-key-type: user
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2769,7 +2565,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2778,18 +2573,6 @@ paths:
                 - id
                 - color
                 - displayName
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
               type: string
       responses:
         '200':
@@ -2871,7 +2654,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2880,18 +2662,6 @@ paths:
                 - id
                 - color
                 - displayName
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
               type: string
       responses:
         '200':
@@ -2985,14 +2755,12 @@ paths:
           x-ms-docs-key-type: user
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3013,7 +2781,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3024,21 +2791,6 @@ paths:
                 - isDefaultFolder
                 - name
                 - parentGroupKey
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-                - tasks
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
                 - multiValueExtendedProperties
                 - singleValueExtendedProperties
                 - tasks
@@ -3121,7 +2873,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3132,21 +2883,6 @@ paths:
                 - isDefaultFolder
                 - name
                 - parentGroupKey
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-                - tasks
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
                 - multiValueExtendedProperties
                 - singleValueExtendedProperties
                 - tasks
@@ -3272,7 +3008,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3287,7 +3022,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3300,7 +3034,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3402,7 +3135,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3415,7 +3147,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3544,7 +3275,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3559,7 +3289,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3572,7 +3301,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3674,7 +3402,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3687,7 +3414,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3809,14 +3535,12 @@ paths:
           x-ms-docs-key-type: outlookTaskFolder
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3867,7 +3591,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3893,21 +3616,6 @@ paths:
                 - startDateTime
                 - status
                 - subject
-                - attachments
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
                 - attachments
                 - multiValueExtendedProperties
                 - singleValueExtendedProperties
@@ -4006,7 +3714,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4032,21 +3739,6 @@ paths:
                 - startDateTime
                 - status
                 - subject
-                - attachments
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
                 - attachments
                 - multiValueExtendedProperties
                 - singleValueExtendedProperties
@@ -4191,14 +3883,12 @@ paths:
           x-ms-docs-key-type: outlookTask
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4221,7 +3911,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4238,7 +3927,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4354,7 +4042,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4371,7 +4058,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4521,7 +4207,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4536,7 +4221,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4549,7 +4233,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4665,7 +4348,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4678,7 +4360,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4828,7 +4509,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4843,7 +4523,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4856,7 +4535,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4972,7 +4650,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4985,7 +4662,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5113,14 +4789,12 @@ paths:
           x-ms-docs-key-type: user
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5141,7 +4815,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5152,19 +4825,6 @@ paths:
                 - groupKey
                 - isDefaultGroup
                 - name
-                - taskFolders
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
                 - taskFolders
               type: string
       responses:
@@ -5245,7 +4905,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5256,19 +4915,6 @@ paths:
                 - groupKey
                 - isDefaultGroup
                 - name
-                - taskFolders
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
                 - taskFolders
               type: string
       responses:
@@ -5375,14 +5021,12 @@ paths:
           x-ms-docs-key-type: outlookTaskGroup
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5403,7 +5047,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5414,21 +5057,6 @@ paths:
                 - isDefaultFolder
                 - name
                 - parentGroupKey
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-                - tasks
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
                 - multiValueExtendedProperties
                 - singleValueExtendedProperties
                 - tasks
@@ -5527,7 +5155,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5538,21 +5165,6 @@ paths:
                 - isDefaultFolder
                 - name
                 - parentGroupKey
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-                - tasks
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
                 - multiValueExtendedProperties
                 - singleValueExtendedProperties
                 - tasks
@@ -5704,7 +5316,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5719,7 +5330,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5732,7 +5342,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5848,7 +5457,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5861,7 +5469,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6011,7 +5618,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6026,7 +5632,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6039,7 +5644,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6155,7 +5759,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6168,7 +5771,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6311,14 +5913,12 @@ paths:
           x-ms-docs-key-type: outlookTaskFolder
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6369,7 +5969,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6395,21 +5994,6 @@ paths:
                 - startDateTime
                 - status
                 - subject
-                - attachments
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
                 - attachments
                 - multiValueExtendedProperties
                 - singleValueExtendedProperties
@@ -6522,7 +6106,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6548,21 +6131,6 @@ paths:
                 - startDateTime
                 - status
                 - subject
-                - attachments
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
                 - attachments
                 - multiValueExtendedProperties
                 - singleValueExtendedProperties
@@ -6731,14 +6299,12 @@ paths:
           x-ms-docs-key-type: outlookTask
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6761,7 +6327,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6778,7 +6343,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6908,7 +6472,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6925,7 +6488,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7096,7 +6658,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7111,7 +6672,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7124,7 +6684,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7254,7 +6813,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7267,7 +6825,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7438,7 +6995,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7453,7 +7009,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7466,7 +7021,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7596,7 +7150,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7609,7 +7162,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7751,14 +7303,12 @@ paths:
           x-ms-docs-key-type: user
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7809,7 +7359,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7835,21 +7384,6 @@ paths:
                 - startDateTime
                 - status
                 - subject
-                - attachments
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
                 - attachments
                 - multiValueExtendedProperties
                 - singleValueExtendedProperties
@@ -7932,7 +7466,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7958,21 +7491,6 @@ paths:
                 - startDateTime
                 - status
                 - subject
-                - attachments
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
                 - attachments
                 - multiValueExtendedProperties
                 - singleValueExtendedProperties
@@ -8091,14 +7609,12 @@ paths:
           x-ms-docs-key-type: outlookTask
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8121,7 +7637,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8138,7 +7653,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8240,7 +7754,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8257,7 +7770,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8386,7 +7898,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8401,7 +7912,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8414,7 +7924,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8516,7 +8025,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8529,7 +8037,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8658,7 +8165,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8673,7 +8179,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8686,7 +8191,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8788,7 +8292,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8801,7 +8304,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8923,7 +8425,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8938,7 +8439,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8951,7 +8451,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9006,7 +8505,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9099,7 +8597,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9114,7 +8611,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9127,7 +8623,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9182,7 +8677,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9270,7 +8764,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9279,18 +8772,6 @@ paths:
                 - id
                 - height
                 - width
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
               type: string
       responses:
         '200':
@@ -9425,14 +8906,12 @@ paths:
           x-ms-docs-key-type: user
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9449,7 +8928,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9458,18 +8936,6 @@ paths:
                 - id
                 - height
                 - width
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
               type: string
       responses:
         '200':
@@ -9551,7 +9017,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9560,18 +9025,6 @@ paths:
                 - id
                 - height
                 - width
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
               type: string
       responses:
         '200':
@@ -9739,7 +9192,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9754,7 +9206,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9767,7 +9218,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9822,7 +9272,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9910,7 +9359,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9927,7 +9375,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10031,7 +9478,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10044,7 +9490,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10131,7 +9576,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10150,7 +9594,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10239,7 +9682,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10256,7 +9698,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10345,7 +9786,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10358,7 +9798,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10458,7 +9897,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10479,7 +9917,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10497,7 +9934,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10587,7 +10023,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10605,7 +10040,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10733,7 +10167,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10746,7 +10179,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10758,7 +10190,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10860,7 +10291,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10872,7 +10302,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -11001,7 +10430,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -11038,7 +10466,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -11064,7 +10491,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -11168,7 +10594,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -11194,7 +10619,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -11345,7 +10769,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -11358,7 +10781,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -11370,7 +10792,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -11486,7 +10907,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -11498,7 +10918,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -11648,7 +11067,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -11669,7 +11087,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -11685,7 +11102,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -11801,7 +11217,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -11817,7 +11232,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -11952,7 +11366,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -11967,7 +11380,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -11980,7 +11392,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -12034,7 +11445,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -12125,7 +11535,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -12140,7 +11549,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -12153,7 +11561,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -12207,7 +11614,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -12287,56 +11693,56 @@ components:
               $ref: '#/components/schemas/microsoft.graph.signInActivity'
             accountEnabled:
               type: boolean
-              description: 'true if the account is enabled; otherwise, false. This property is required when a user is created. Returned only on $select. Supports $filter.'
+              description: 'true if the account is enabled; otherwise, false. This property is required when a user is created. Supports $filter (eq, ne, NOT, and in).'
               nullable: true
             ageGroup:
               type: string
-              description: 'Sets the age group of the user. Allowed values: null, minor, notAdult and adult. Refer to the legal age group property definitions for further information. Returned only on $select.'
+              description: 'Sets the age group of the user. Allowed values: null, minor, notAdult and adult. Refer to the legal age group property definitions for further information. Supports $filter (eq, ne, NOT, and in).'
               nullable: true
             assignedLicenses:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLicense'
-              description: 'The licenses that are assigned to the user, including inherited (group-based) licenses. Not nullable. Supports $filter.'
+              description: 'The licenses that are assigned to the user, including inherited (group-based) licenses. Not nullable. Supports $filter (eq and NOT).'
             assignedPlans:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedPlan'
-              description: The plans that are assigned to the user. Returned only on $select. Read-only. Not nullable.
+              description: The plans that are assigned to the user. Read-only. Not nullable.Supports $filter (eq and NOT).
             businessPhones:
               type: array
               items:
                 type: string
-              description: The telephone numbers for the user. Only one number can be set for this property. Returned by default. Read-only for users synced from on-premises directory.
+              description: The telephone numbers for the user. Only one number can be set for this property. Read-only for users synced from on-premises directory. Supports $filter (eq and NOT).
             city:
               type: string
-              description: The city in which the user is located. Maximum length is 128 characters. Returned only on $select. Supports $filter.
+              description: 'The city in which the user is located. Maximum length is 128 characters. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
               nullable: true
             companyName:
               type: string
-              description: The company name which the user is associated. This property can be useful for describing the company that an external user comes from. The maximum length of the company name is 64 characters.Returned only on $select.
+              description: 'The company name which the user is associated. This property can be useful for describing the company that an external user comes from. The maximum length of the company name is 64 characters.Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
               nullable: true
             consentProvidedForMinor:
               type: string
-              description: 'Sets whether consent has been obtained for minors. Allowed values: null, granted, denied and notRequired. Refer to the legal age group property definitions for further information. Returned only on $select.'
+              description: 'Sets whether consent has been obtained for minors. Allowed values: null, granted, denied and notRequired. Refer to the legal age group property definitions for further information. Supports $filter (eq, ne, NOT, and in).'
               nullable: true
             country:
               type: string
-              description: 'The country/region in which the user is located; for example, ''US'' or ''UK''. Maximum length is 128 characters. Returned only on $select. Supports $filter.'
+              description: 'The country/region in which the user is located; for example, US or UK. Maximum length is 128 characters. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time the user was created. The value cannot be modified and is automatically populated when the entity is created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. Property is nullable. A null value indicates that an accurate creation time couldn''t be determined for the user. Returned only on $select. Read-only. Supports $filter with the eq, ne, le, and ge operators.'
+              description: 'The date and time the user was created. The value cannot be modified and is automatically populated when the entity is created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. Property is nullable. A null value indicates that an accurate creation time couldn''t be determined for the user. Read-only. Supports $filter (eq, ne, NOT , ge, le, and in operators) and $orderBy.'
               format: date-time
               nullable: true
             creationType:
               type: string
-              description: 'Indicates whether the user account was created as a regular school or work account (null), an external account (Invitation), a local account for an Azure Active Directory B2C tenant (LocalAccount) or self-service sign-up using email verification (EmailVerified). Returned only on $select. Read-only.'
+              description: 'Indicates whether the user account was created as a regular school or work account (null), an external account (Invitation), a local account for an Azure Active Directory B2C tenant (LocalAccount) or self-service sign-up using email verification (EmailVerified). Read-only. Supports $filter (eq, ne, NOT, and in).'
               nullable: true
             department:
               type: string
-              description: The name for the department in which the user works. Maximum length is 64 characters.Returned only on $select. Supports $filter.
+              description: 'The name for the department in which the user works. Maximum length is 64 characters.Supports $filter (eq, ne, NOT , ge, le, and in operators).'
               nullable: true
             deviceKeys:
               type: array
@@ -12344,68 +11750,68 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.deviceKey'
             displayName:
               type: string
-              description: 'The name displayed in the address book for the user. This value is usually the combination of the user''s first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates. Maximum length is 256 characters. Returned by default. Supports $filter and $orderby.'
+              description: 'The name displayed in the address book for the user. This value is usually the combination of the user''s first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates. Maximum length is 256 characters. Supports $filter (eq, ne, NOT , ge, le, in, startsWith), $orderBy, and $search.'
               nullable: true
             employeeHireDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The date and time when the user was hired or will start work in case of a future hire. Returned only on $select. Supports $filter.
+              description: 'The date and time when the user was hired or will start work in case of a future hire. Supports $filter (eq, ne, NOT , ge, le, in).'
               format: date-time
               nullable: true
             employeeId:
               type: string
-              description: The employee identifier assigned to the user by the organization. Returned only on $select. Supports $filter.
+              description: 'The employee identifier assigned to the user by the organization. Supports $filter (eq, ne, NOT , ge, le, in, startsWith).'
               nullable: true
             employeeOrgData:
               $ref: '#/components/schemas/microsoft.graph.employeeOrgData'
             employeeType:
               type: string
-              description: 'Captures enterprise worker type. For example, Employee, Contractor, Consultant, or Vendor. Returned only on $select. Supports $filter with the eq operator.'
+              description: 'Captures enterprise worker type. For example, Employee, Contractor, Consultant, or Vendor. Supports $filter (eq, ne, NOT , ge, le, in, startsWith).'
               nullable: true
             externalUserState:
               type: string
-              description: 'For an external user invited to the tenant using the invitation API, this property represents the invited user''s invitation status. For invited users, the state can be PendingAcceptance or Accepted, or null for all other users. Returned only on $select. Supports $filter with the supported values. For example: $filter=externalUserState eq ''PendingAcceptance''.'
+              description: 'For an external user invited to the tenant using the invitation API, this property represents the invited user''s invitation status. For invited users, the state can be PendingAcceptance or Accepted, or null for all other users. Supports $filter (eq, ne, NOT , in).'
               nullable: true
             externalUserStateChangeDateTime:
               type: string
-              description: Shows the timestamp for the latest change to the externalUserState property. Returned only on $select.
+              description: 'Shows the timestamp for the latest change to the externalUserState property. Supports $filter (eq, ne, NOT , in).'
               nullable: true
             faxNumber:
               type: string
-              description: The fax number of the user. Returned only on $select.
+              description: 'The fax number of the user. Supports $filter (eq, ne, NOT , ge, le, in, startsWith).'
               nullable: true
             givenName:
               type: string
-              description: The given name (first name) of the user. Maximum length is 64 characters. Returned by default. Supports $filter.
+              description: 'The given name (first name) of the user. Maximum length is 64 characters. Supports $filter (eq, ne, NOT , ge, le, in, startsWith).'
               nullable: true
             identities:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.objectIdentity'
-              description: 'Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft, and tied to a user account. May contain multiple items with the same signInType value. Returned only on $select. Supports $filter.'
+              description: 'Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft, and tied to a user account. May contain multiple items with the same signInType value. Supports $filter (eq) only where the signInType is not userPrincipalName.'
             imAddresses:
               type: array
               items:
                 type: string
                 nullable: true
-              description: The instant message voice over IP (VOIP) session initiation protocol (SIP) addresses for the user. Read-only.
+              description: 'The instant message voice over IP (VOIP) session initiation protocol (SIP) addresses for the user. Read-only. Supports $filter (eq, NOT, ge, le, startsWith).'
             infoCatalogs:
               type: array
               items:
                 type: string
-              description: Identifies the info segments assigned to the user. Returned by default.
+              description: 'Identifies the info segments assigned to the user.  Supports $filter (eq, NOT, ge, le, startsWith).'
             isResourceAccount:
               type: boolean
               description: Do not use – reserved for future use.
               nullable: true
             jobTitle:
               type: string
-              description: The user's job title. Maximum length is 128 characters. Returned by default. Supports $filter (eq and startsWith operators).
+              description: 'The user''s job title. Maximum length is 128 characters. Supports $filter (eq, ne, NOT , ge, le, in, startsWith).'
               nullable: true
             lastPasswordChangeDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The time when this Azure AD user last changed their password. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select. Read-only.'
+              description: 'The time when this Azure AD user last changed their password. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only on $select.'
               format: date-time
               nullable: true
             legalAgeGroupClassification:
@@ -12416,136 +11822,136 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.licenseAssignmentState'
-              description: State of license assignments for this user. Returned only on $select. Read-only.
+              description: State of license assignments for this user. Read-only. Returned only on $select.
             mail:
               type: string
-              description: 'The SMTP address for the user, for example, ''jeff@contoso.onmicrosoft.com''. Changes to this property will also update the user''s proxyAddresses collection to include the value as an SMTP address. While this property can contain accent characters, using them can cause access issues with other Microsoft applications for the user. Supports $filter and endsWith.'
+              description: 'The SMTP address for the user, for example, admin@contoso.com. Changes to this property will also update the user''s proxyAddresses collection to include the value as an SMTP address. While this property can contain accent characters, using them can cause access issues with other Microsoft applications for the user. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, endsWith).'
               nullable: true
             mailNickname:
               type: string
-              description: The mail alias for the user. This property must be specified when a user is created. Maximum length is 64 characters. Returned only on $select. Supports $filter.
+              description: 'The mail alias for the user. This property must be specified when a user is created. Maximum length is 64 characters. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
               nullable: true
             mobilePhone:
               type: string
-              description: The primary cellular telephone number for the user. Returned by default. Read-only for users synced from on-premises directory.
+              description: 'The primary cellular telephone number for the user. Read-only for users synced from on-premises directory.  Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
               nullable: true
             officeLocation:
               type: string
-              description: The office location in the user's place of business. Maximum length is 128 characters. Returned by default.
+              description: 'The office location in the user''s place of business. Maximum length is 128 characters. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
               nullable: true
             onPremisesDistinguishedName:
               type: string
-              description: Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Returned only on $select. Read-only.
+              description: Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only.
               nullable: true
             onPremisesDomainName:
               type: string
-              description: 'Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Returned only on $select. Read-only.'
+              description: 'Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only.'
               nullable: true
             onPremisesExtensionAttributes:
               $ref: '#/components/schemas/microsoft.graph.onPremisesExtensionAttributes'
             onPremisesImmutableId:
               type: string
-              description: 'This property is used to associate an on-premises Active Directory user account to their Azure AD user object. This property must be specified when creating a new user account in the Graph if you are using a federated domain for the user''s userPrincipalName (UPN) property. Important: The $ and _ characters cannot be used when specifying this property. Returned only on $select. Supports $filter.'
+              description: 'This property is used to associate an on-premises Active Directory user account to their Azure AD user object. This property must be specified when creating a new user account in the Graph if you are using a federated domain for the user''s userPrincipalName (UPN) property. Note: The $ and _ characters cannot be used when specifying this property. Supports $filter (eq, ne, NOT, ge, le, in).'
               nullable: true
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Indicates the last time at which the object was synced with the on-premises directory; for example: ''2013-02-16T03:04:54Z''. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned only on $select. Read-only.'
+              description: 'Indicates the last time at which the object was synced with the on-premises directory; for example: ''2013-02-16T03:04:54Z''. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, NOT, ge, le, in).'
               format: date-time
               nullable: true
             onPremisesProvisioningErrors:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onPremisesProvisioningError'
-              description: Errors when using Microsoft synchronization product during provisioning. Returned only on $select.
+              description: Errors when using Microsoft synchronization product during provisioning.
             onPremisesSamAccountName:
               type: string
-              description: Contains the on-premises sAMAccountName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Returned only on $select. Read-only.
+              description: 'Contains the on-premises sAMAccountName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
               nullable: true
             onPremisesSecurityIdentifier:
               type: string
-              description: Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Returned only on $select. Read-only.
+              description: 'Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. Supports $filter (eq, ne, NOT, in).'
               nullable: true
             onPremisesSyncEnabled:
               type: boolean
-              description: true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Returned only on $select. Read-only.
+              description: 'true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, NOT, in).'
               nullable: true
             onPremisesUserPrincipalName:
               type: string
-              description: Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Returned only on $select. Read-only.
+              description: 'Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
               nullable: true
             otherMails:
               type: array
               items:
                 type: string
-              description: 'A list of additional email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com''].NOTE: While this property can contain accent characters, they can cause access issues to first-party applications for the user.Returned only on $select.  Supports$filter.'
+              description: 'A list of additional email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com''].NOTE: While this property can contain accent characters, they can cause access issues to first-party applications for the user.Supports $filter (eq, NOT, ge, le, in, startsWith).'
             passwordPolicies:
               type: string
-              description: 'Specifies password policies for the user. This value is an enumeration with one possible value being ''DisableStrongPassword'', which allows weaker passwords than the default policy to be specified. ''DisablePasswordExpiration'' can also be specified. The two may be specified together; for example: ''DisablePasswordExpiration, DisableStrongPassword''.Returned only on $select.'
+              description: 'Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword.Supports $filter (eq, ne, NOT).'
               nullable: true
             passwordProfile:
               $ref: '#/components/schemas/microsoft.graph.passwordProfile'
             postalCode:
               type: string
-              description: 'The postal code for the user''s postal address. The postal code is specific to the user''s country/region. In the United States of America, this attribute contains the ZIP code. Maximum length is 40 characters. Returned only on $select.'
+              description: 'The postal code for the user''s postal address. The postal code is specific to the user''s country/region. In the United States of America, this attribute contains the ZIP code. Maximum length is 40 characters. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
               nullable: true
             preferredDataLocation:
               type: string
-              description: 'The preferred data location for the user. For more information, see OneDrive Online Multi-Geo. Returned only on $select.'
+              description: 'The preferred data location for the user. For more information, see OneDrive Online Multi-Geo.'
               nullable: true
             preferredLanguage:
               type: string
-              description: The preferred language for the user. Should follow ISO 639-1 Code; for example 'en-US'. Returned by default.
+              description: 'The preferred language for the user. Should follow ISO 639-1 Code; for example en-US. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
               nullable: true
             provisionedPlans:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.provisionedPlan'
-              description: The plans that are provisioned for the user. Returned only on $select. Read-only. Not nullable.
+              description: The plans that are provisioned for the user. Read-only. Not nullable.
             proxyAddresses:
               type: array
               items:
                 type: string
-              description: 'For example: [''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com''] The any operator is required for filter expressions on multi-valued properties. Returned only on $select. Read-only, Not nullable. Supports $filter.'
+              description: 'For example: [''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com'']. Read-only, Not nullable. Supports $filter (eq, NOT, ge, le, startsWith).'
             refreshTokensValidFromDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Returned only on $select. Read-only. Use invalidateAllRefreshTokens to reset.'
+              description: 'Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use invalidateAllRefreshTokens to reset.'
               format: date-time
               nullable: true
             showInAddressList:
               type: boolean
-              description: 'true if the Outlook global address list should contain this user, otherwise false. If not set, this will be treated as true. For users invited through the invitation manager, this property will be set to false. Returned only on $select.'
+              description: 'true if the Outlook global address list should contain this user, otherwise false. If not set, this will be treated as true. For users invited through the invitation manager, this property will be set to false. Supports $filter (eq, ne, NOT, in).'
               nullable: true
             signInSessionsValidFromDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Returned only on $select. Read-only. Use revokeSignInSessions to reset.'
+              description: 'Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use revokeSignInSessions to reset.'
               format: date-time
               nullable: true
             state:
               type: string
-              description: The state or province in the user's address. Maximum length is 128 characters. Returned only on $select. Supports $filter.
+              description: 'The state or province in the user''s address. Maximum length is 128 characters. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
               nullable: true
             streetAddress:
               type: string
-              description: The street address of the user's place of business. Maximum length is 1024 characters. Returned only on $select.
+              description: 'The street address of the user''s place of business. Maximum length is 1024 characters. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
               nullable: true
             surname:
               type: string
-              description: The user's surname (family name or last name). Maximum length is 64 characters. Returned by default. Supports $filter.
+              description: 'The user''s surname (family name or last name). Maximum length is 64 characters. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
               nullable: true
             usageLocation:
               type: string
-              description: 'A two letter country code (ISO standard 3166). Required for users that will be assigned licenses due to legal requirement to check for availability of services in countries.  Examples include: ''US'', ''JP'', and ''GB''. Not nullable. Returned only on $select. Supports $filter.'
+              description: 'A two letter country code (ISO standard 3166). Required for users that will be assigned licenses due to legal requirement to check for availability of services in countries.  Examples include: US, JP, and GB. Not nullable. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
               nullable: true
             userPrincipalName:
               type: string
-              description: 'The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user''s email name. The general format is alias@domain, where domain must be present in the tenant''s collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: While this property can contain accent characters, they can cause access issues to first-party applications for the user. Returned by default. Supports $filter, $orderby, and endsWith.'
+              description: 'The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user''s email name. The general format is alias@domain, where domain must be present in the tenant''s collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: While this property can contain accent characters, they can cause access issues to first-party applications for the user. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, endsWith) and $orderBy.'
               nullable: true
             userType:
               type: string
-              description: 'A string value that can be used to classify user types in your directory, such as ''Member'' and ''Guest''. Returned only on $select. Supports $filter.'
+              description: 'A string value that can be used to classify user types in your directory, such as Member and Guest. Supports $filter (eq, ne, NOT, in, startsWith, endsWith).'
               nullable: true
             mailboxSettings:
               $ref: '#/components/schemas/microsoft.graph.mailboxSettings'
@@ -12567,7 +11973,7 @@ components:
             hireDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.'
+              description: 'The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.'
               format: date-time
             interests:
               type: array
@@ -14394,7 +13800,7 @@ components:
               description: Identifies the info segments assigned to the group. Returned by default.
             isAssignableToRole:
               type: boolean
-              description: 'Indicates whether this group can be assigned to an Azure Active Directory role or not.This property can only be set while creating the group and is immutable. Only Global Administrator and Privileged Role Administrator roles can set this property. For more information, see Using a group to manage Azure AD role assignmentsReturned by default.'
+              description: 'Indicates whether this group can be assigned to an Azure Active Directory role.This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership).Only callers in Global Administrator and Privileged Role Administrator roles can set this property. For more, see Using a group to manage Azure AD role assignmentsReturned by default.'
               nullable: true
             licenseProcessingState:
               $ref: '#/components/schemas/microsoft.graph.licenseProcessingState'
@@ -16281,8 +15687,22 @@ components:
           properties:
             accessLevel:
               $ref: '#/components/schemas/microsoft.graph.accessLevel'
+            allowAttendeeToEnableCamera:
+              type: boolean
+              description: Indicates whether attendees can turn on their camera.
+              nullable: true
+            allowAttendeeToEnableMic:
+              type: boolean
+              description: Indicates whether attendees can turn on their microphone.
+              nullable: true
             allowedPresenters:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingPresenters'
+            allowMeetingChat:
+              $ref: '#/components/schemas/microsoft.graph.meetingChatMode'
+            allowTeamworkReactions:
+              type: boolean
+              description: Indicates if Teams reactions are enabled for the meeting.
+              nullable: true
             alternativeRecording:
               type: string
               description: The content stream of the alternative recording of a live event. Read-only.
@@ -16334,14 +15754,14 @@ components:
               nullable: true
             isBroadcast:
               type: boolean
-              description: Indicates if this is a live event.
+              description: Indicates whether this is a live event.
               nullable: true
             isCancelled:
               type: boolean
               nullable: true
             isEntryExitAnnounced:
               type: boolean
-              description: Whether or not to announce when callers join or leave.
+              description: Indicates whether to announce when callers join or leave.
               nullable: true
             joinInformation:
               $ref: '#/components/schemas/microsoft.graph.itemBody'
@@ -16465,11 +15885,19 @@ components:
               type: string
               description: (Optional) Subject or topic for the chat. Only available for group chats.
               nullable: true
+            viewpoint:
+              $ref: '#/components/schemas/microsoft.graph.chatViewpoint'
+            webUrl:
+              type: string
+              description: 'A hyperlink that will go to the chat in Microsoft Teams. This URL should be treated as an opaque blob, and not parsed. Read-only.'
+              nullable: true
             installedApps:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamsAppInstallation'
               description: A collection of all the apps in the chat. Nullable.
+            lastMessagePreview:
+              $ref: '#/components/schemas/microsoft.graph.chatMessageInfo'
             members:
               type: array
               items:
@@ -18583,6 +18011,11 @@ components:
         - title: accessReviewScheduleDefinition
           type: object
           properties:
+            additionalNotificationRecipients:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.accessReviewNotificationRecipientItem'
+              description: Defines the list of additional users or group members to be notified of the access review progress.
             backupReviewers:
               type: array
               items:
@@ -20933,6 +20366,14 @@ components:
         - organizer
         - unknownFutureValue
       type: string
+    microsoft.graph.meetingChatMode:
+      title: meetingChatMode
+      enum:
+        - enabled
+        - disabled
+        - limited
+        - unknownFutureValue
+      type: string
     microsoft.graph.audioConferencing:
       title: audioConferencing
       type: object
@@ -21324,6 +20765,17 @@ components:
         - meeting
         - unknownFutureValue
       type: string
+    microsoft.graph.chatViewpoint:
+      title: chatViewpoint
+      type: object
+      properties:
+        lastMessageReadDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.teamsAppInstallation:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -21334,6 +20786,26 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamsApp'
             teamsAppDefinition:
               $ref: '#/components/schemas/microsoft.graph.teamsAppDefinition'
+          additionalProperties:
+            type: object
+    microsoft.graph.chatMessageInfo:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: chatMessageInfo
+          type: object
+          properties:
+            body:
+              $ref: '#/components/schemas/microsoft.graph.itemBody'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            from:
+              $ref: '#/components/schemas/microsoft.graph.chatMessageFromIdentitySet'
+            isDeleted:
+              type: boolean
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.conversationMember:
@@ -21398,7 +20870,7 @@ components:
             eventDetail:
               $ref: '#/components/schemas/microsoft.graph.eventMessageDetail'
             from:
-              $ref: '#/components/schemas/microsoft.graph.identitySet'
+              $ref: '#/components/schemas/microsoft.graph.chatMessageFromIdentitySet'
             importance:
               $ref: '#/components/schemas/microsoft.graph.chatMessageImportance'
             lastEditedDateTime:
@@ -23219,7 +22691,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookNamedItem'
-              description: Represents a collection of workbook scoped named items (named ranges and constants). Read-only.
+              description: Represents a collection of workbooks scoped named items (named ranges and constants). Read-only.
             operations:
               type: array
               items:
@@ -23955,6 +23427,18 @@ components:
       type: object
       additionalProperties:
         type: object
+    microsoft.graph.accessReviewNotificationRecipientItem:
+      title: accessReviewNotificationRecipientItem
+      type: object
+      properties:
+        notificationRecipientScope:
+          $ref: '#/components/schemas/microsoft.graph.accessReviewNotificationRecipientScope'
+        notificationTemplateType:
+          type: string
+          description: Indicates the type of access review email to be sent. Supported template type is CompletedAdditionalRecipients which sends review completion notifications to the recipients.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.accessReviewReviewerScope:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.accessReviewScope'
@@ -24006,6 +23490,11 @@ components:
         mailNotificationsEnabled:
           type: boolean
           description: Indicates whether emails are enabled or disabled. Default value is false.
+        recommendationLookBackDuration:
+          pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+          type: string
+          format: duration
+          nullable: true
         recommendationsEnabled:
           type: boolean
           description: Indicates whether decision recommendations are enabled/disabled.
@@ -25290,6 +24779,13 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamsAppIcon'
           additionalProperties:
             type: object
+    microsoft.graph.chatMessageFromIdentitySet:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.identitySet'
+        - title: chatMessageFromIdentitySet
+          type: object
+          additionalProperties:
+            type: object
     microsoft.graph.chatMessageAttachment:
       title: chatMessageAttachment
       type: object
@@ -25358,7 +24854,7 @@ components:
           format: int32
           nullable: true
         mentioned:
-          $ref: '#/components/schemas/microsoft.graph.identitySet'
+          $ref: '#/components/schemas/microsoft.graph.chatMessageMentionedIdentitySet'
         mentionText:
           type: string
           description: 'String used to represent the mention. For example, a user''s display name, a team name.'
@@ -25405,7 +24901,7 @@ components:
           type: string
           description: 'Supported values are like, angry, sad, laugh, heart, surprised.'
         user:
-          $ref: '#/components/schemas/microsoft.graph.identitySet'
+          $ref: '#/components/schemas/microsoft.graph.chatMessageReactionIdentitySet'
       additionalProperties:
         type: object
     microsoft.graph.chatMessageHostedContent:
@@ -26494,6 +25990,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.termStore.term'
           additionalProperties:
             type: object
+    microsoft.graph.accessReviewNotificationRecipientScope:
+      title: accessReviewNotificationRecipientScope
+      type: object
+      additionalProperties:
+        type: object
     microsoft.graph.accessReviewApplyAction:
       title: accessReviewApplyAction
       type: object
@@ -27053,6 +26554,18 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamworkHostedContent'
           additionalProperties:
             type: object
+    microsoft.graph.chatMessageMentionedIdentitySet:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.identitySet'
+        - title: chatMessageMentionedIdentitySet
+          type: object
+          properties:
+            conversation:
+              $ref: '#/components/schemas/microsoft.graph.teamworkConversationIdentity'
+            tag:
+              $ref: '#/components/schemas/microsoft.graph.teamworkTagIdentity'
+          additionalProperties:
+            type: object
     microsoft.graph.chatMessagePolicyViolationDlpActionTypes:
       title: chatMessagePolicyViolationDlpActionTypes
       enum:
@@ -27096,6 +26609,13 @@ components:
         - allowOverrideWithoutJustification
         - allowOverrideWithJustification
       type: string
+    microsoft.graph.chatMessageReactionIdentitySet:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.identitySet'
+        - title: chatMessageReactionIdentitySet
+          type: object
+          additionalProperties:
+            type: object
     microsoft.graph.teamworkHostedContent:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -27549,6 +27069,23 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.teamworkConversationIdentity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.identity'
+        - title: teamworkConversationIdentity
+          type: object
+          properties:
+            conversationIdentityType:
+              $ref: '#/components/schemas/microsoft.graph.teamworkConversationIdentityType'
+          additionalProperties:
+            type: object
+    microsoft.graph.teamworkTagIdentity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.identity'
+        - title: teamworkTagIdentity
+          type: object
+          additionalProperties:
+            type: object
     microsoft.graph.scheduleChangeRequestActor:
       title: scheduleChangeRequestActor
       enum:
@@ -27821,6 +27358,14 @@ components:
           description: Represents the worksheet protection option of allowing using sort feature.
       additionalProperties:
         type: object
+    microsoft.graph.teamworkConversationIdentityType:
+      title: teamworkConversationIdentityType
+      enum:
+        - team
+        - channel
+        - chat
+        - unknownFutureValue
+      type: string
     microsoft.graph.scheduleEntityTheme:
       title: scheduleEntityTheme
       enum:
@@ -28102,6 +27647,12 @@ components:
         minimum: 0
         type: integer
       example: 50
+    search:
+      name: $search
+      in: query
+      description: Search items by search phrases
+      schema:
+        type: string
     skip:
       name: $skip
       in: query
@@ -28109,12 +27660,6 @@ components:
       schema:
         minimum: 0
         type: integer
-    search:
-      name: $search
-      in: query
-      description: Search items by search phrases
-      schema:
-        type: string
     filter:
       name: $filter
       in: query
