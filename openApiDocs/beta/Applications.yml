@@ -53,6 +53,8 @@ paths:
                 - defaultRedirectUri desc
                 - description
                 - description desc
+                - disabledByMicrosoftStatus
+                - disabledByMicrosoftStatus desc
                 - displayName
                 - displayName desc
                 - groupMembershipClaims
@@ -116,6 +118,7 @@ paths:
                 - createdDateTime
                 - defaultRedirectUri
                 - description
+                - disabledByMicrosoftStatus
                 - displayName
                 - groupMembershipClaims
                 - identifierUris
@@ -254,6 +257,7 @@ paths:
                 - createdDateTime
                 - defaultRedirectUri
                 - description
+                - disabledByMicrosoftStatus
                 - displayName
                 - groupMembershipClaims
                 - identifierUris
@@ -8513,6 +8517,8 @@ paths:
                 - defaultRedirectUri desc
                 - description
                 - description desc
+                - disabledByMicrosoftStatus
+                - disabledByMicrosoftStatus desc
                 - displayName
                 - displayName desc
                 - groupMembershipClaims
@@ -8576,6 +8582,7 @@ paths:
                 - createdDateTime
                 - defaultRedirectUri
                 - description
+                - disabledByMicrosoftStatus
                 - displayName
                 - groupMembershipClaims
                 - identifierUris
@@ -8703,6 +8710,8 @@ paths:
                 - defaultRedirectUri desc
                 - description
                 - description desc
+                - disabledByMicrosoftStatus
+                - disabledByMicrosoftStatus desc
                 - displayName
                 - displayName desc
                 - groupMembershipClaims
@@ -10066,6 +10075,8 @@ paths:
                 - defaultRedirectUri desc
                 - description
                 - description desc
+                - disabledByMicrosoftStatus
+                - disabledByMicrosoftStatus desc
                 - displayName
                 - displayName desc
                 - groupMembershipClaims
@@ -10129,6 +10140,7 @@ paths:
                 - createdDateTime
                 - defaultRedirectUri
                 - description
+                - disabledByMicrosoftStatus
                 - displayName
                 - groupMembershipClaims
                 - identifierUris
@@ -10263,6 +10275,8 @@ paths:
                 - defaultRedirectUri desc
                 - description
                 - description desc
+                - disabledByMicrosoftStatus
+                - disabledByMicrosoftStatus desc
                 - displayName
                 - displayName desc
                 - groupMembershipClaims
@@ -12355,6 +12369,8 @@ paths:
                 - appRoles desc
                 - description
                 - description desc
+                - disabledByMicrosoftStatus
+                - disabledByMicrosoftStatus desc
                 - displayName
                 - displayName desc
                 - errorUrl
@@ -12426,6 +12442,7 @@ paths:
                 - appRoleAssignmentRequired
                 - appRoles
                 - description
+                - disabledByMicrosoftStatus
                 - displayName
                 - errorUrl
                 - homepage
@@ -12587,6 +12604,7 @@ paths:
                 - appRoleAssignmentRequired
                 - appRoles
                 - description
+                - disabledByMicrosoftStatus
                 - displayName
                 - errorUrl
                 - homepage
@@ -18805,6 +18823,10 @@ components:
             description:
               type: string
               nullable: true
+            disabledByMicrosoftStatus:
+              type: string
+              description: 'Specifies whether Microsoft has disabled the registered application. Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).'
+              nullable: true
             displayName:
               type: string
               description: The display name for the application.
@@ -19678,6 +19700,10 @@ components:
               type: string
               description: Free text field to provide an internal end-user facing description of the service principal. End-user portals such MyApps will display the application description in this field. The maximum allowed size is 1024 characters.
               nullable: true
+            disabledByMicrosoftStatus:
+              type: string
+              description: 'Specifies whether Microsoft has disabled the registered application. Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).'
+              nullable: true
             displayName:
               type: string
               description: The display name for the service principal.
@@ -20259,6 +20285,9 @@ components:
         internalUrl:
           type: string
           description: 'The internal url of the application. For example, https://intranet/.'
+          nullable: true
+        isBackendCertificateValidationEnabled:
+          type: boolean
           nullable: true
         isHttpOnlyCookieEnabled:
           type: boolean
