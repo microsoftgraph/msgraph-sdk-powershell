@@ -15,10 +15,9 @@ paths:
       parameters:
         - name: ConsistencyLevel
           in: header
-          description: Indicates the requested consistency level.
+          description: 'Indicates the requested consistency level. Documentation URL: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/'
           schema:
             type: string
-          example: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/
           examples:
             example-1:
               description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
@@ -462,6 +461,7 @@ paths:
       tags:
         - users.user
       summary: Get entity from users by key
+      description: Represents an Azure Active Directory user object.
       operationId: users.user_GetUser
       parameters:
         - name: user-id
@@ -473,10 +473,9 @@ paths:
           x-ms-docs-key-type: user
         - name: ConsistencyLevel
           in: header
-          description: Indicates the requested consistency level.
+          description: 'Indicates the requested consistency level. Documentation URL: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/'
           schema:
             type: string
-          example: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/
           examples:
             example-1:
               description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
@@ -961,6 +960,7 @@ paths:
       tags:
         - users.user
       summary: Update entity in users
+      description: Represents an Azure Active Directory user object.
       operationId: users.user_UpdateUser
       parameters:
         - name: user-id
@@ -987,6 +987,7 @@ paths:
       tags:
         - users.user
       summary: Delete entity from users
+      description: Represents an Azure Active Directory user object.
       operationId: users.user_DeleteUser
       parameters:
         - name: user-id
@@ -1012,6 +1013,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get createdObjects from users
+      description: Directory objects that were created by the user. Read-only. Nullable.
       operationId: users_ListCreatedObjects
       parameters:
         - name: user-id
@@ -1094,6 +1096,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get ref of createdObjects from users
+      description: Directory objects that were created by the user. Read-only. Nullable.
       operationId: users_ListRefCreatedObjects
       parameters:
         - name: user-id
@@ -1150,6 +1153,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Create new navigation property ref to createdObjects for users
+      description: Directory objects that were created by the user. Read-only. Nullable.
       operationId: users_CreateRefCreatedObjects
       parameters:
         - name: user-id
@@ -1185,6 +1189,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get directReports from users
+      description: The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable.
       operationId: users_ListDirectReports
       parameters:
         - name: user-id
@@ -1267,6 +1272,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get ref of directReports from users
+      description: The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable.
       operationId: users_ListRefDirectReports
       parameters:
         - name: user-id
@@ -1323,6 +1329,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Create new navigation property ref to directReports for users
+      description: The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable.
       operationId: users_CreateRefDirectReports
       parameters:
         - name: user-id
@@ -1358,6 +1365,7 @@ paths:
       tags:
         - users.extension
       summary: Get extensions from users
+      description: The collection of open extensions defined for the user. Nullable.
       operationId: users_ListExtensions
       parameters:
         - name: user-id
@@ -1436,6 +1444,7 @@ paths:
       tags:
         - users.extension
       summary: Create new navigation property to extensions for users
+      description: The collection of open extensions defined for the user. Nullable.
       operationId: users_CreateExtensions
       parameters:
         - name: user-id
@@ -1467,6 +1476,7 @@ paths:
       tags:
         - users.extension
       summary: Get extensions from users
+      description: The collection of open extensions defined for the user. Nullable.
       operationId: users_GetExtensions
       parameters:
         - name: user-id
@@ -1521,6 +1531,7 @@ paths:
       tags:
         - users.extension
       summary: Update the navigation property extensions in users
+      description: The collection of open extensions defined for the user. Nullable.
       operationId: users_UpdateExtensions
       parameters:
         - name: user-id
@@ -1554,6 +1565,7 @@ paths:
       tags:
         - users.extension
       summary: Delete navigation property extensions for users
+      description: The collection of open extensions defined for the user. Nullable.
       operationId: users_DeleteExtensions
       parameters:
         - name: user-id
@@ -1586,6 +1598,7 @@ paths:
       tags:
         - users.licenseDetails
       summary: Get licenseDetails from users
+      description: A collection of this user's license details. Read-only.
       operationId: users_ListLicenseDetails
       parameters:
         - name: user-id
@@ -1673,6 +1686,7 @@ paths:
       tags:
         - users.licenseDetails
       summary: Create new navigation property to licenseDetails for users
+      description: A collection of this user's license details. Read-only.
       operationId: users_CreateLicenseDetails
       parameters:
         - name: user-id
@@ -1704,6 +1718,7 @@ paths:
       tags:
         - users.licenseDetails
       summary: Get licenseDetails from users
+      description: A collection of this user's license details. Read-only.
       operationId: users_GetLicenseDetails
       parameters:
         - name: user-id
@@ -1761,6 +1776,7 @@ paths:
       tags:
         - users.licenseDetails
       summary: Update the navigation property licenseDetails in users
+      description: A collection of this user's license details. Read-only.
       operationId: users_UpdateLicenseDetails
       parameters:
         - name: user-id
@@ -1794,6 +1810,7 @@ paths:
       tags:
         - users.licenseDetails
       summary: Delete navigation property licenseDetails for users
+      description: A collection of this user's license details. Read-only.
       operationId: users_DeleteLicenseDetails
       parameters:
         - name: user-id
@@ -1826,6 +1843,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get manager from users
+      description: 'The user or contact that is this user''s manager. Read-only. (HTTP Methods: GET, PUT, DELETE.)'
       operationId: users_GetManager
       parameters:
         - name: user-id
@@ -1875,6 +1893,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get ref of manager from users
+      description: 'The user or contact that is this user''s manager. Read-only. (HTTP Methods: GET, PUT, DELETE.)'
       operationId: users_GetRefManager
       parameters:
         - name: user-id
@@ -1898,6 +1917,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Update the ref of navigation property manager in users
+      description: 'The user or contact that is this user''s manager. Read-only. (HTTP Methods: GET, PUT, DELETE.)'
       operationId: users_SetRefManager
       parameters:
         - name: user-id
@@ -1926,6 +1946,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Delete ref of navigation property manager for users
+      description: 'The user or contact that is this user''s manager. Read-only. (HTTP Methods: GET, PUT, DELETE.)'
       operationId: users_DeleteRefManager
       parameters:
         - name: user-id
@@ -1951,6 +1972,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get memberOf from users
+      description: 'The groups, directory roles and administrative units that the user is a member of. Read-only. Nullable.'
       operationId: users_ListMemberOf
       parameters:
         - name: user-id
@@ -2033,6 +2055,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get ref of memberOf from users
+      description: 'The groups, directory roles and administrative units that the user is a member of. Read-only. Nullable.'
       operationId: users_ListRefMemberOf
       parameters:
         - name: user-id
@@ -2089,6 +2112,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Create new navigation property ref to memberOf for users
+      description: 'The groups, directory roles and administrative units that the user is a member of. Read-only. Nullable.'
       operationId: users_CreateRefMemberOf
       parameters:
         - name: user-id
@@ -2583,6 +2607,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Get outlook from users
+      description: Selective Outlook services available to the user. Read-only. Nullable.
       operationId: users_GetOutlook
       parameters:
         - name: user-id
@@ -2655,6 +2680,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Update the navigation property outlook in users
+      description: Selective Outlook services available to the user. Read-only. Nullable.
       operationId: users_UpdateOutlook
       parameters:
         - name: user-id
@@ -2681,6 +2707,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Delete navigation property outlook for users
+      description: Selective Outlook services available to the user. Read-only. Nullable.
       operationId: users_DeleteOutlook
       parameters:
         - name: user-id
@@ -2706,6 +2733,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Get masterCategories from users
+      description: A list of categories defined for the user.
       operationId: users.outlook_ListMasterCategories
       parameters:
         - name: user-id
@@ -2790,6 +2818,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Create new navigation property to masterCategories for users
+      description: A list of categories defined for the user.
       operationId: users.outlook_CreateMasterCategories
       parameters:
         - name: user-id
@@ -2821,6 +2850,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Get masterCategories from users
+      description: A list of categories defined for the user.
       operationId: users.outlook_GetMasterCategories
       parameters:
         - name: user-id
@@ -2877,6 +2907,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Update the navigation property masterCategories in users
+      description: A list of categories defined for the user.
       operationId: users.outlook_UpdateMasterCategories
       parameters:
         - name: user-id
@@ -2910,6 +2941,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Delete navigation property masterCategories for users
+      description: A list of categories defined for the user.
       operationId: users.outlook_DeleteMasterCategories
       parameters:
         - name: user-id
@@ -3214,6 +3246,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the task folder. Read-only. Nullable.
       operationId: users.outlook.taskFolders_ListMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -3302,6 +3335,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Create new navigation property to multiValueExtendedProperties for users
+      description: The collection of multi-value extended properties defined for the task folder. Read-only. Nullable.
       operationId: users.outlook.taskFolders_CreateMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -3340,6 +3374,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the task folder. Read-only. Nullable.
       operationId: users.outlook.taskFolders_GetMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -3402,6 +3437,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Update the navigation property multiValueExtendedProperties in users
+      description: The collection of multi-value extended properties defined for the task folder. Read-only. Nullable.
       operationId: users.outlook.taskFolders_UpdateMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -3442,6 +3478,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Delete navigation property multiValueExtendedProperties for users
+      description: The collection of multi-value extended properties defined for the task folder. Read-only. Nullable.
       operationId: users.outlook.taskFolders_DeleteMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -3481,6 +3518,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the task folder. Read-only. Nullable.
       operationId: users.outlook.taskFolders_ListSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -3569,6 +3607,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Create new navigation property to singleValueExtendedProperties for users
+      description: The collection of single-value extended properties defined for the task folder. Read-only. Nullable.
       operationId: users.outlook.taskFolders_CreateSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -3607,6 +3646,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the task folder. Read-only. Nullable.
       operationId: users.outlook.taskFolders_GetSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -3669,6 +3709,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Update the navigation property singleValueExtendedProperties in users
+      description: The collection of single-value extended properties defined for the task folder. Read-only. Nullable.
       operationId: users.outlook.taskFolders_UpdateSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -3709,6 +3750,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Delete navigation property singleValueExtendedProperties for users
+      description: The collection of single-value extended properties defined for the task folder. Read-only. Nullable.
       operationId: users.outlook.taskFolders_DeleteSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -3748,6 +3790,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Get tasks from users
+      description: The tasks in this task folder. Read-only. Nullable.
       operationId: users.outlook.taskFolders_ListTasks
       parameters:
         - name: user-id
@@ -3896,6 +3939,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Create new navigation property to tasks for users
+      description: The tasks in this task folder. Read-only. Nullable.
       operationId: users.outlook.taskFolders_CreateTasks
       parameters:
         - name: user-id
@@ -3934,6 +3978,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Get tasks from users
+      description: The tasks in this task folder. Read-only. Nullable.
       operationId: users.outlook.taskFolders_GetTasks
       parameters:
         - name: user-id
@@ -4039,6 +4084,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Update the navigation property tasks in users
+      description: The tasks in this task folder. Read-only. Nullable.
       operationId: users.outlook.taskFolders_UpdateTasks
       parameters:
         - name: user-id
@@ -4079,6 +4125,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Delete navigation property tasks for users
+      description: The tasks in this task folder. Read-only. Nullable.
       operationId: users.outlook.taskFolders_DeleteTasks
       parameters:
         - name: user-id
@@ -4118,6 +4165,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Get attachments from users
+      description: 'The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.  Read-only. Nullable.'
       operationId: users.outlook.taskFolders.tasks_ListAttachments
       parameters:
         - name: user-id
@@ -4225,6 +4273,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Create new navigation property to attachments for users
+      description: 'The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.  Read-only. Nullable.'
       operationId: users.outlook.taskFolders.tasks_CreateAttachments
       parameters:
         - name: user-id
@@ -4270,6 +4319,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Get attachments from users
+      description: 'The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.  Read-only. Nullable.'
       operationId: users.outlook.taskFolders.tasks_GetAttachments
       parameters:
         - name: user-id
@@ -4343,6 +4393,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Update the navigation property attachments in users
+      description: 'The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.  Read-only. Nullable.'
       operationId: users.outlook.taskFolders.tasks_UpdateAttachments
       parameters:
         - name: user-id
@@ -4390,6 +4441,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Delete navigation property attachments for users
+      description: 'The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.  Read-only. Nullable.'
       operationId: users.outlook.taskFolders.tasks_DeleteAttachments
       parameters:
         - name: user-id
@@ -4436,6 +4488,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the task. Read-only. Nullable.
       operationId: users.outlook.taskFolders.tasks_ListMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -4531,6 +4584,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Create new navigation property to multiValueExtendedProperties for users
+      description: The collection of multi-value extended properties defined for the task. Read-only. Nullable.
       operationId: users.outlook.taskFolders.tasks_CreateMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -4576,6 +4630,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the task. Read-only. Nullable.
       operationId: users.outlook.taskFolders.tasks_GetMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -4645,6 +4700,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Update the navigation property multiValueExtendedProperties in users
+      description: The collection of multi-value extended properties defined for the task. Read-only. Nullable.
       operationId: users.outlook.taskFolders.tasks_UpdateMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -4692,6 +4748,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Delete navigation property multiValueExtendedProperties for users
+      description: The collection of multi-value extended properties defined for the task. Read-only. Nullable.
       operationId: users.outlook.taskFolders.tasks_DeleteMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -4738,6 +4795,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the task. Read-only. Nullable.
       operationId: users.outlook.taskFolders.tasks_ListSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -4833,6 +4891,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Create new navigation property to singleValueExtendedProperties for users
+      description: The collection of single-value extended properties defined for the task. Read-only. Nullable.
       operationId: users.outlook.taskFolders.tasks_CreateSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -4878,6 +4937,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the task. Read-only. Nullable.
       operationId: users.outlook.taskFolders.tasks_GetSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -4947,6 +5007,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Update the navigation property singleValueExtendedProperties in users
+      description: The collection of single-value extended properties defined for the task. Read-only. Nullable.
       operationId: users.outlook.taskFolders.tasks_UpdateSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -4994,6 +5055,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Delete navigation property singleValueExtendedProperties for users
+      description: The collection of single-value extended properties defined for the task. Read-only. Nullable.
       operationId: users.outlook.taskFolders.tasks_DeleteSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -5294,6 +5356,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Get taskFolders from users
+      description: The collection of task folders in the task group. Read-only. Nullable.
       operationId: users.outlook.taskGroups_ListTaskFolders
       parameters:
         - name: user-id
@@ -5397,6 +5460,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Create new navigation property to taskFolders for users
+      description: The collection of task folders in the task group. Read-only. Nullable.
       operationId: users.outlook.taskGroups_CreateTaskFolders
       parameters:
         - name: user-id
@@ -5435,6 +5499,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Get taskFolders from users
+      description: The collection of task folders in the task group. Read-only. Nullable.
       operationId: users.outlook.taskGroups_GetTaskFolders
       parameters:
         - name: user-id
@@ -5525,6 +5590,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Update the navigation property taskFolders in users
+      description: The collection of task folders in the task group. Read-only. Nullable.
       operationId: users.outlook.taskGroups_UpdateTaskFolders
       parameters:
         - name: user-id
@@ -5565,6 +5631,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Delete navigation property taskFolders for users
+      description: The collection of task folders in the task group. Read-only. Nullable.
       operationId: users.outlook.taskGroups_DeleteTaskFolders
       parameters:
         - name: user-id
@@ -5604,6 +5671,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the task folder. Read-only. Nullable.
       operationId: users.outlook.taskGroups.taskFolders_ListMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -5699,6 +5767,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Create new navigation property to multiValueExtendedProperties for users
+      description: The collection of multi-value extended properties defined for the task folder. Read-only. Nullable.
       operationId: users.outlook.taskGroups.taskFolders_CreateMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -5744,6 +5813,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the task folder. Read-only. Nullable.
       operationId: users.outlook.taskGroups.taskFolders_GetMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -5813,6 +5883,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Update the navigation property multiValueExtendedProperties in users
+      description: The collection of multi-value extended properties defined for the task folder. Read-only. Nullable.
       operationId: users.outlook.taskGroups.taskFolders_UpdateMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -5860,6 +5931,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Delete navigation property multiValueExtendedProperties for users
+      description: The collection of multi-value extended properties defined for the task folder. Read-only. Nullable.
       operationId: users.outlook.taskGroups.taskFolders_DeleteMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -5906,6 +5978,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the task folder. Read-only. Nullable.
       operationId: users.outlook.taskGroups.taskFolders_ListSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -6001,6 +6074,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Create new navigation property to singleValueExtendedProperties for users
+      description: The collection of single-value extended properties defined for the task folder. Read-only. Nullable.
       operationId: users.outlook.taskGroups.taskFolders_CreateSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -6046,6 +6120,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the task folder. Read-only. Nullable.
       operationId: users.outlook.taskGroups.taskFolders_GetSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -6115,6 +6190,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Update the navigation property singleValueExtendedProperties in users
+      description: The collection of single-value extended properties defined for the task folder. Read-only. Nullable.
       operationId: users.outlook.taskGroups.taskFolders_UpdateSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -6162,6 +6238,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Delete navigation property singleValueExtendedProperties for users
+      description: The collection of single-value extended properties defined for the task folder. Read-only. Nullable.
       operationId: users.outlook.taskGroups.taskFolders_DeleteSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -6208,6 +6285,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Get tasks from users
+      description: The tasks in this task folder. Read-only. Nullable.
       operationId: users.outlook.taskGroups.taskFolders_ListTasks
       parameters:
         - name: user-id
@@ -6363,6 +6441,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Create new navigation property to tasks for users
+      description: The tasks in this task folder. Read-only. Nullable.
       operationId: users.outlook.taskGroups.taskFolders_CreateTasks
       parameters:
         - name: user-id
@@ -6408,6 +6487,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Get tasks from users
+      description: The tasks in this task folder. Read-only. Nullable.
       operationId: users.outlook.taskGroups.taskFolders_GetTasks
       parameters:
         - name: user-id
@@ -6523,6 +6603,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Update the navigation property tasks in users
+      description: The tasks in this task folder. Read-only. Nullable.
       operationId: users.outlook.taskGroups.taskFolders_UpdateTasks
       parameters:
         - name: user-id
@@ -6570,6 +6651,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Delete navigation property tasks for users
+      description: The tasks in this task folder. Read-only. Nullable.
       operationId: users.outlook.taskGroups.taskFolders_DeleteTasks
       parameters:
         - name: user-id
@@ -6616,6 +6698,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Get attachments from users
+      description: 'The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.  Read-only. Nullable.'
       operationId: users.outlook.taskGroups.taskFolders.tasks_ListAttachments
       parameters:
         - name: user-id
@@ -6730,6 +6813,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Create new navigation property to attachments for users
+      description: 'The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.  Read-only. Nullable.'
       operationId: users.outlook.taskGroups.taskFolders.tasks_CreateAttachments
       parameters:
         - name: user-id
@@ -6782,6 +6866,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Get attachments from users
+      description: 'The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.  Read-only. Nullable.'
       operationId: users.outlook.taskGroups.taskFolders.tasks_GetAttachments
       parameters:
         - name: user-id
@@ -6862,6 +6947,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Update the navigation property attachments in users
+      description: 'The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.  Read-only. Nullable.'
       operationId: users.outlook.taskGroups.taskFolders.tasks_UpdateAttachments
       parameters:
         - name: user-id
@@ -6916,6 +7002,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Delete navigation property attachments for users
+      description: 'The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.  Read-only. Nullable.'
       operationId: users.outlook.taskGroups.taskFolders.tasks_DeleteAttachments
       parameters:
         - name: user-id
@@ -6969,6 +7056,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the task. Read-only. Nullable.
       operationId: users.outlook.taskGroups.taskFolders.tasks_ListMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -7071,6 +7159,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Create new navigation property to multiValueExtendedProperties for users
+      description: The collection of multi-value extended properties defined for the task. Read-only. Nullable.
       operationId: users.outlook.taskGroups.taskFolders.tasks_CreateMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -7123,6 +7212,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the task. Read-only. Nullable.
       operationId: users.outlook.taskGroups.taskFolders.tasks_GetMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -7199,6 +7289,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Update the navigation property multiValueExtendedProperties in users
+      description: The collection of multi-value extended properties defined for the task. Read-only. Nullable.
       operationId: users.outlook.taskGroups.taskFolders.tasks_UpdateMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -7253,6 +7344,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Delete navigation property multiValueExtendedProperties for users
+      description: The collection of multi-value extended properties defined for the task. Read-only. Nullable.
       operationId: users.outlook.taskGroups.taskFolders.tasks_DeleteMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -7306,6 +7398,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the task. Read-only. Nullable.
       operationId: users.outlook.taskGroups.taskFolders.tasks_ListSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -7408,6 +7501,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Create new navigation property to singleValueExtendedProperties for users
+      description: The collection of single-value extended properties defined for the task. Read-only. Nullable.
       operationId: users.outlook.taskGroups.taskFolders.tasks_CreateSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -7460,6 +7554,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the task. Read-only. Nullable.
       operationId: users.outlook.taskGroups.taskFolders.tasks_GetSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -7536,6 +7631,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Update the navigation property singleValueExtendedProperties in users
+      description: The collection of single-value extended properties defined for the task. Read-only. Nullable.
       operationId: users.outlook.taskGroups.taskFolders.tasks_UpdateSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -7590,6 +7686,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Delete navigation property singleValueExtendedProperties for users
+      description: The collection of single-value extended properties defined for the task. Read-only. Nullable.
       operationId: users.outlook.taskGroups.taskFolders.tasks_DeleteSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -7975,6 +8072,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Get attachments from users
+      description: 'The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.  Read-only. Nullable.'
       operationId: users.outlook.tasks_ListAttachments
       parameters:
         - name: user-id
@@ -8075,6 +8173,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Create new navigation property to attachments for users
+      description: 'The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.  Read-only. Nullable.'
       operationId: users.outlook.tasks_CreateAttachments
       parameters:
         - name: user-id
@@ -8113,6 +8212,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Get attachments from users
+      description: 'The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.  Read-only. Nullable.'
       operationId: users.outlook.tasks_GetAttachments
       parameters:
         - name: user-id
@@ -8179,6 +8279,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Update the navigation property attachments in users
+      description: 'The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.  Read-only. Nullable.'
       operationId: users.outlook.tasks_UpdateAttachments
       parameters:
         - name: user-id
@@ -8219,6 +8320,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Delete navigation property attachments for users
+      description: 'The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.  Read-only. Nullable.'
       operationId: users.outlook.tasks_DeleteAttachments
       parameters:
         - name: user-id
@@ -8258,6 +8360,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the task. Read-only. Nullable.
       operationId: users.outlook.tasks_ListMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -8346,6 +8449,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Create new navigation property to multiValueExtendedProperties for users
+      description: The collection of multi-value extended properties defined for the task. Read-only. Nullable.
       operationId: users.outlook.tasks_CreateMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -8384,6 +8488,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the task. Read-only. Nullable.
       operationId: users.outlook.tasks_GetMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -8446,6 +8551,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Update the navigation property multiValueExtendedProperties in users
+      description: The collection of multi-value extended properties defined for the task. Read-only. Nullable.
       operationId: users.outlook.tasks_UpdateMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -8486,6 +8592,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Delete navigation property multiValueExtendedProperties for users
+      description: The collection of multi-value extended properties defined for the task. Read-only. Nullable.
       operationId: users.outlook.tasks_DeleteMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -8525,6 +8632,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the task. Read-only. Nullable.
       operationId: users.outlook.tasks_ListSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -8613,6 +8721,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Create new navigation property to singleValueExtendedProperties for users
+      description: The collection of single-value extended properties defined for the task. Read-only. Nullable.
       operationId: users.outlook.tasks_CreateSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -8651,6 +8760,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the task. Read-only. Nullable.
       operationId: users.outlook.tasks_GetSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -8713,6 +8823,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Update the navigation property singleValueExtendedProperties in users
+      description: The collection of single-value extended properties defined for the task. Read-only. Nullable.
       operationId: users.outlook.tasks_UpdateSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -8753,6 +8864,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Delete navigation property singleValueExtendedProperties for users
+      description: The collection of single-value extended properties defined for the task. Read-only. Nullable.
       operationId: users.outlook.tasks_DeleteSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -8792,6 +8904,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get ownedDevices from users
+      description: Devices that are owned by the user. Read-only. Nullable.
       operationId: users_ListOwnedDevices
       parameters:
         - name: user-id
@@ -8874,6 +8987,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get ref of ownedDevices from users
+      description: Devices that are owned by the user. Read-only. Nullable.
       operationId: users_ListRefOwnedDevices
       parameters:
         - name: user-id
@@ -8930,6 +9044,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Create new navigation property ref to ownedDevices for users
+      description: Devices that are owned by the user. Read-only. Nullable.
       operationId: users_CreateRefOwnedDevices
       parameters:
         - name: user-id
@@ -8965,6 +9080,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get ownedObjects from users
+      description: Directory objects that are owned by the user. Read-only. Nullable.
       operationId: users_ListOwnedObjects
       parameters:
         - name: user-id
@@ -9047,6 +9163,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get ref of ownedObjects from users
+      description: Directory objects that are owned by the user. Read-only. Nullable.
       operationId: users_ListRefOwnedObjects
       parameters:
         - name: user-id
@@ -9103,6 +9220,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Create new navigation property ref to ownedObjects for users
+      description: Directory objects that are owned by the user. Read-only. Nullable.
       operationId: users_CreateRefOwnedObjects
       parameters:
         - name: user-id
@@ -9138,6 +9256,7 @@ paths:
       tags:
         - users.profilePhoto
       summary: Get photo from users
+      description: The user's profile photo. Read-only.
       operationId: users_GetPhoto
       parameters:
         - name: user-id
@@ -9187,6 +9306,7 @@ paths:
       tags:
         - users.profilePhoto
       summary: Update the navigation property photo in users
+      description: The user's profile photo. Read-only.
       operationId: users_UpdatePhoto
       parameters:
         - name: user-id
@@ -9213,6 +9333,7 @@ paths:
       tags:
         - users.profilePhoto
       summary: Delete navigation property photo for users
+      description: The user's profile photo. Read-only.
       operationId: users_DeletePhoto
       parameters:
         - name: user-id
@@ -9238,6 +9359,7 @@ paths:
       tags:
         - users.profilePhoto
       summary: Get media content for the navigation property photo from users
+      description: The user's profile photo. Read-only.
       operationId: users_GetPhotoContent
       parameters:
         - name: user-id
@@ -9262,6 +9384,7 @@ paths:
       tags:
         - users.profilePhoto
       summary: Update media content for the navigation property photo in users
+      description: The user's profile photo. Read-only.
       operationId: users_SetPhotoContent
       parameters:
         - name: user-id
@@ -9290,6 +9413,7 @@ paths:
       tags:
         - users.profilePhoto
       summary: Get photos from users
+      description: Read-only. Nullable.
       operationId: users_ListPhotos
       parameters:
         - name: user-id
@@ -9374,6 +9498,7 @@ paths:
       tags:
         - users.profilePhoto
       summary: Create new navigation property to photos for users
+      description: Read-only. Nullable.
       operationId: users_CreatePhotos
       parameters:
         - name: user-id
@@ -9405,6 +9530,7 @@ paths:
       tags:
         - users.profilePhoto
       summary: Get photos from users
+      description: Read-only. Nullable.
       operationId: users_GetPhotos
       parameters:
         - name: user-id
@@ -9461,6 +9587,7 @@ paths:
       tags:
         - users.profilePhoto
       summary: Update the navigation property photos in users
+      description: Read-only. Nullable.
       operationId: users_UpdatePhotos
       parameters:
         - name: user-id
@@ -9494,6 +9621,7 @@ paths:
       tags:
         - users.profilePhoto
       summary: Delete navigation property photos for users
+      description: Read-only. Nullable.
       operationId: users_DeletePhotos
       parameters:
         - name: user-id
@@ -9592,6 +9720,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get registeredDevices from users
+      description: Devices that are registered for the user. Read-only. Nullable.
       operationId: users_ListRegisteredDevices
       parameters:
         - name: user-id
@@ -9674,6 +9803,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get ref of registeredDevices from users
+      description: Devices that are registered for the user. Read-only. Nullable.
       operationId: users_ListRefRegisteredDevices
       parameters:
         - name: user-id
@@ -9730,6 +9860,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Create new navigation property ref to registeredDevices for users
+      description: Devices that are registered for the user. Read-only. Nullable.
       operationId: users_CreateRefRegisteredDevices
       parameters:
         - name: user-id
@@ -9765,6 +9896,7 @@ paths:
       tags:
         - users.userSettings
       summary: Get settings from users
+      description: Read-only. Nullable.
       operationId: users_GetSettings
       parameters:
         - name: user-id
@@ -9833,6 +9965,7 @@ paths:
       tags:
         - users.userSettings
       summary: Update the navigation property settings in users
+      description: Read-only. Nullable.
       operationId: users_UpdateSettings
       parameters:
         - name: user-id
@@ -9859,6 +9992,7 @@ paths:
       tags:
         - users.userSettings
       summary: Delete navigation property settings for users
+      description: Read-only. Nullable.
       operationId: users_DeleteSettings
       parameters:
         - name: user-id
@@ -9983,6 +10117,7 @@ paths:
       tags:
         - users.userSettings
       summary: Get regionalAndLanguageSettings from users
+      description: 'The user''s preferences for languages, regional locale and date/time formatting.'
       operationId: users.settings_GetRegionalAndLanguageSettings
       parameters:
         - name: user-id
@@ -10037,6 +10172,7 @@ paths:
       tags:
         - users.userSettings
       summary: Update the navigation property regionalAndLanguageSettings in users
+      description: 'The user''s preferences for languages, regional locale and date/time formatting.'
       operationId: users.settings_UpdateRegionalAndLanguageSettings
       parameters:
         - name: user-id
@@ -10063,6 +10199,7 @@ paths:
       tags:
         - users.userSettings
       summary: Delete navigation property regionalAndLanguageSettings for users
+      description: 'The user''s preferences for languages, regional locale and date/time formatting.'
       operationId: users.settings_DeleteRegionalAndLanguageSettings
       parameters:
         - name: user-id
@@ -10088,6 +10225,7 @@ paths:
       tags:
         - users.userSettings
       summary: Get shiftPreferences from users
+      description: The shift preferences for the user.
       operationId: users.settings_GetShiftPreferences
       parameters:
         - name: user-id
@@ -10140,6 +10278,7 @@ paths:
       tags:
         - users.userSettings
       summary: Update the navigation property shiftPreferences in users
+      description: The shift preferences for the user.
       operationId: users.settings_UpdateShiftPreferences
       parameters:
         - name: user-id
@@ -10166,6 +10305,7 @@ paths:
       tags:
         - users.userSettings
       summary: Delete navigation property shiftPreferences for users
+      description: The shift preferences for the user.
       operationId: users.settings_DeleteShiftPreferences
       parameters:
         - name: user-id
@@ -10191,6 +10331,7 @@ paths:
       tags:
         - users.todo
       summary: Get todo from users
+      description: Represents the To Do services available to a user.
       operationId: users_GetTodo
       parameters:
         - name: user-id
@@ -10245,6 +10386,7 @@ paths:
       tags:
         - users.todo
       summary: Update the navigation property todo in users
+      description: Represents the To Do services available to a user.
       operationId: users_UpdateTodo
       parameters:
         - name: user-id
@@ -10271,6 +10413,7 @@ paths:
       tags:
         - users.todo
       summary: Delete navigation property todo for users
+      description: Represents the To Do services available to a user.
       operationId: users_DeleteTodo
       parameters:
         - name: user-id
@@ -10296,6 +10439,7 @@ paths:
       tags:
         - users.todo
       summary: Get lists from users
+      description: The task lists in the users mailbox.
       operationId: users.todo_ListLists
       parameters:
         - name: user-id
@@ -10390,6 +10534,7 @@ paths:
       tags:
         - users.todo
       summary: Create new navigation property to lists for users
+      description: The task lists in the users mailbox.
       operationId: users.todo_CreateLists
       parameters:
         - name: user-id
@@ -10421,6 +10566,7 @@ paths:
       tags:
         - users.todo
       summary: Get lists from users
+      description: The task lists in the users mailbox.
       operationId: users.todo_GetLists
       parameters:
         - name: user-id
@@ -10494,6 +10640,7 @@ paths:
       tags:
         - users.todo
       summary: Update the navigation property lists in users
+      description: The task lists in the users mailbox.
       operationId: users.todo_UpdateLists
       parameters:
         - name: user-id
@@ -10527,6 +10674,7 @@ paths:
       tags:
         - users.todo
       summary: Delete navigation property lists for users
+      description: The task lists in the users mailbox.
       operationId: users.todo_DeleteLists
       parameters:
         - name: user-id
@@ -10559,6 +10707,7 @@ paths:
       tags:
         - users.todo
       summary: Get extensions from users
+      description: The collection of open extensions defined for the task list. Nullable.
       operationId: users.todo.lists_ListExtensions
       parameters:
         - name: user-id
@@ -10644,6 +10793,7 @@ paths:
       tags:
         - users.todo
       summary: Create new navigation property to extensions for users
+      description: The collection of open extensions defined for the task list. Nullable.
       operationId: users.todo.lists_CreateExtensions
       parameters:
         - name: user-id
@@ -10682,6 +10832,7 @@ paths:
       tags:
         - users.todo
       summary: Get extensions from users
+      description: The collection of open extensions defined for the task list. Nullable.
       operationId: users.todo.lists_GetExtensions
       parameters:
         - name: user-id
@@ -10743,6 +10894,7 @@ paths:
       tags:
         - users.todo
       summary: Update the navigation property extensions in users
+      description: The collection of open extensions defined for the task list. Nullable.
       operationId: users.todo.lists_UpdateExtensions
       parameters:
         - name: user-id
@@ -10783,6 +10935,7 @@ paths:
       tags:
         - users.todo
       summary: Delete navigation property extensions for users
+      description: The collection of open extensions defined for the task list. Nullable.
       operationId: users.todo.lists_DeleteExtensions
       parameters:
         - name: user-id
@@ -10822,6 +10975,7 @@ paths:
       tags:
         - users.todo
       summary: Get tasks from users
+      description: The tasks in this task list. Read-only. Nullable.
       operationId: users.todo.lists_ListTasks
       parameters:
         - name: user-id
@@ -10947,6 +11101,7 @@ paths:
       tags:
         - users.todo
       summary: Create new navigation property to tasks for users
+      description: The tasks in this task list. Read-only. Nullable.
       operationId: users.todo.lists_CreateTasks
       parameters:
         - name: user-id
@@ -10985,6 +11140,7 @@ paths:
       tags:
         - users.todo
       summary: Get tasks from users
+      description: The tasks in this task list. Read-only. Nullable.
       operationId: users.todo.lists_GetTasks
       parameters:
         - name: user-id
@@ -11075,6 +11231,7 @@ paths:
       tags:
         - users.todo
       summary: Update the navigation property tasks in users
+      description: The tasks in this task list. Read-only. Nullable.
       operationId: users.todo.lists_UpdateTasks
       parameters:
         - name: user-id
@@ -11115,6 +11272,7 @@ paths:
       tags:
         - users.todo
       summary: Delete navigation property tasks for users
+      description: The tasks in this task list. Read-only. Nullable.
       operationId: users.todo.lists_DeleteTasks
       parameters:
         - name: user-id
@@ -11154,6 +11312,7 @@ paths:
       tags:
         - users.todo
       summary: Get extensions from users
+      description: The collection of open extensions defined for the task. Nullable.
       operationId: users.todo.lists.tasks_ListExtensions
       parameters:
         - name: user-id
@@ -11246,6 +11405,7 @@ paths:
       tags:
         - users.todo
       summary: Create new navigation property to extensions for users
+      description: The collection of open extensions defined for the task. Nullable.
       operationId: users.todo.lists.tasks_CreateExtensions
       parameters:
         - name: user-id
@@ -11291,6 +11451,7 @@ paths:
       tags:
         - users.todo
       summary: Get extensions from users
+      description: The collection of open extensions defined for the task. Nullable.
       operationId: users.todo.lists.tasks_GetExtensions
       parameters:
         - name: user-id
@@ -11359,6 +11520,7 @@ paths:
       tags:
         - users.todo
       summary: Update the navigation property extensions in users
+      description: The collection of open extensions defined for the task. Nullable.
       operationId: users.todo.lists.tasks_UpdateExtensions
       parameters:
         - name: user-id
@@ -11406,6 +11568,7 @@ paths:
       tags:
         - users.todo
       summary: Delete navigation property extensions for users
+      description: The collection of open extensions defined for the task. Nullable.
       operationId: users.todo.lists.tasks_DeleteExtensions
       parameters:
         - name: user-id
@@ -11452,6 +11615,7 @@ paths:
       tags:
         - users.todo
       summary: Get linkedResources from users
+      description: A collection of resources linked to the task.
       operationId: users.todo.lists.tasks_ListLinkedResources
       parameters:
         - name: user-id
@@ -11556,6 +11720,7 @@ paths:
       tags:
         - users.todo
       summary: Create new navigation property to linkedResources for users
+      description: A collection of resources linked to the task.
       operationId: users.todo.lists.tasks_CreateLinkedResources
       parameters:
         - name: user-id
@@ -11601,6 +11766,7 @@ paths:
       tags:
         - users.todo
       summary: Get linkedResources from users
+      description: A collection of resources linked to the task.
       operationId: users.todo.lists.tasks_GetLinkedResources
       parameters:
         - name: user-id
@@ -11673,6 +11839,7 @@ paths:
       tags:
         - users.todo
       summary: Update the navigation property linkedResources in users
+      description: A collection of resources linked to the task.
       operationId: users.todo.lists.tasks_UpdateLinkedResources
       parameters:
         - name: user-id
@@ -11720,6 +11887,7 @@ paths:
       tags:
         - users.todo
       summary: Delete navigation property linkedResources for users
+      description: A collection of resources linked to the task.
       operationId: users.todo.lists.tasks_DeleteLinkedResources
       parameters:
         - name: user-id
@@ -12251,7 +12419,7 @@ components:
               description: State of license assignments for this user. Returned only on $select. Read-only.
             mail:
               type: string
-              description: 'The SMTP address for the user, for example, ''jeff@contoso.onmicrosoft.com''.NOTE: While this property can contain accent characters, using them can cause access issues with other Microsoft applications for the user.Returned by default. Supports $filter and endsWith.'
+              description: 'The SMTP address for the user, for example, ''jeff@contoso.onmicrosoft.com''. Changes to this property will also update the user''s proxyAddresses collection to include the value as an SMTP address. While this property can contain accent characters, using them can cause access issues with other Microsoft applications for the user. Supports $filter and endsWith.'
               nullable: true
             mailNickname:
               type: string
@@ -16312,6 +16480,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessage'
               description: A collection of all the messages in the chat. Nullable.
+            operations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.teamsAsyncOperation'
             permissionGrants:
               type: array
               items:
@@ -16341,7 +16513,7 @@ components:
               nullable: true
             description:
               type: string
-              description: An optional description for the team.
+              description: 'An optional description for the team. Maximum length: 1024 characters.'
               nullable: true
             discoverySettings:
               $ref: '#/components/schemas/microsoft.graph.teamDiscoverySettings'
@@ -16404,6 +16576,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.user'
               description: 'The list of this team''s owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user delegated permissions, no owner can be specified (the current user is the owner). Owner must be specified as an object ID (GUID), not a UPN.'
+            permissionGrants:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
             photo:
               $ref: '#/components/schemas/microsoft.graph.profilePhoto'
             primaryChannel:
@@ -18411,57 +18587,58 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScope'
-              description: 'This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user''s manager does not exist. See accessReviewReviewerScope.'
+              description: 'This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user''s manager does not exist. Supports $select. Note: This property has been replaced by fallbackReviewers. However, specifying either backupReviewers or fallbackReviewers automatically populates the same values to the other property.'
             createdBy:
               $ref: '#/components/schemas/microsoft.graph.userIdentity'
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Timestamp when review series was created.
+              description: Timestamp when the access review series was created. Supports $select.
               format: date-time
               nullable: true
             descriptionForAdmins:
               type: string
-              description: Description provided by review creators to provide more context of the review to admins.
+              description: Description provided by review creators to provide more context of the review to admins. Supports $select.
               nullable: true
             descriptionForReviewers:
               type: string
-              description: Description provided  by review creators to provide more context of the review to reviewers. Reviewers will see this description in the email sent to them requesting their review.
+              description: Description provided  by review creators to provide more context of the review to reviewers. Reviewers will see this description in the email sent to them requesting their review. Supports $select.
               nullable: true
             displayName:
               type: string
-              description: Name of access review series. Required on create.
+              description: Name of the access review series. Required on create. Supports $select.
               nullable: true
             fallbackReviewers:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScope'
+              description: 'This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user''s manager does not exist. Supports $select.'
             instanceEnumerationScope:
               $ref: '#/components/schemas/microsoft.graph.accessReviewScope'
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Timestamp when review series was last modified.
+              description: Timestamp when the access review series was last modified. Supports $select.
               format: date-time
               nullable: true
             reviewers:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScope'
-              description: This collection of access review scopes is used to define who are the reviewers. See accessReviewReviewerScope. Required on create.
+              description: 'This collection of access review scopes is used to define who are the reviewers. Required on create. Supports $select. For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API.'
             scope:
               $ref: '#/components/schemas/microsoft.graph.accessReviewScope'
             settings:
               $ref: '#/components/schemas/microsoft.graph.accessReviewScheduleSettings'
             status:
               type: string
-              description: 'This read-only field specifies the status of an accessReview. The typical states include Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed.'
+              description: 'This read-only field specifies the status of an access review. The typical states include Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed. Supports $select, $orderby, and $filter (eq only).'
               nullable: true
             instances:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewInstance'
-              description: 'Set of access reviews instances for this access review series. Access reviews that do not recur will only have one instance; otherwise, there will be an instance for each recurrence.'
+              description: 'Set of access reviews instances for this access review series. Access reviews that do not recur will only have one instance; otherwise, there is an instance for each recurrence.'
           additionalProperties:
             type: object
     microsoft.graph.agreementAcceptanceState:
@@ -19041,6 +19218,7 @@ components:
         - googleCloudDevicePolicyController
         - microsoft365ManagedMdm
         - windowsManagementCloudApi
+        - intuneAosp
       type: string
     microsoft.graph.managedDeviceManagementFeatures:
       title: managedDeviceManagementFeatures
@@ -19554,10 +19732,10 @@ components:
       properties:
         name:
           type: string
-          description: Name for this key-value pair
+          description: 'Name for this key-value pair. Possible names are: AdditionalWSFedEndpointCheckResult,  AllowedAuthenticationClassReferencesCheckResult, AlwaysRequireAuthenticationCheckResult,   AutoUpdateEnabledCheckResult, ClaimsProviderNameCheckResult, EncryptClaimsCheckResult,  EncryptedNameIdRequiredCheckResult, MonitoringEnabledCheckResult,NotBeforeSkewCheckResult,  RequestMFAFromClaimsProvidersCheckResult, SignedSamlRequestsRequiredCheckResult, AdditionalAuthenticationRulesCheckResult, TokenLifetimeCheckResult,  DelegationAuthorizationRulesCheckResult, IssuanceAuthorizationRulesCheckResult, IssuanceTransformRulesCheckResult.'
         value:
           type: string
-          description: Value for this key-value pair
+          description: 'Value for this key-value pair. Possible result values are 0 (when the validation check passed), 1 (when the validation check failed), or 2 (when the validation check is a warning).'
           nullable: true
       additionalProperties:
         type: object
@@ -21217,6 +21395,8 @@ components:
               type: string
               description: Read-only. Version number of the chat message.
               nullable: true
+            eventDetail:
+              $ref: '#/components/schemas/microsoft.graph.eventMessageDetail'
             from:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             importance:
@@ -21270,12 +21450,50 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
-              description: 'Content in a message hosted by Microsoft Teams e.g., images, code snippets etc.'
+              description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
             replies:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessage'
               description: Replies for a specified message.
+          additionalProperties:
+            type: object
+    microsoft.graph.teamsAsyncOperation:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamsAsyncOperation
+          type: object
+          properties:
+            attemptsCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Number of times the operation was attempted before being marked successful or failed.
+              format: int32
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Time when the operation was created.
+              format: date-time
+            error:
+              $ref: '#/components/schemas/microsoft.graph.operationError'
+            lastActionDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Time when the async operation was last updated.
+              format: date-time
+            operationType:
+              $ref: '#/components/schemas/microsoft.graph.teamsAsyncOperationType'
+            status:
+              $ref: '#/components/schemas/microsoft.graph.teamsAsyncOperationStatus'
+            targetResourceId:
+              type: string
+              description: 'The ID of the object that''s created or modified as result of this async operation, typically a team.'
+              nullable: true
+            targetResourceLocation:
+              type: string
+              description: The location of the object that's created or modified as result of this async operation. This URL should be treated as an opaque value and not parsed into its component paths.
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.teamsTab:
@@ -21480,44 +21698,6 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamsTab'
               description: A collection of all the tabs in the channel. A navigation property.
-          additionalProperties:
-            type: object
-    microsoft.graph.teamsAsyncOperation:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: teamsAsyncOperation
-          type: object
-          properties:
-            attemptsCount:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              description: Number of times the operation was attempted before being marked successful or failed.
-              format: int32
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: Time when the operation was created.
-              format: date-time
-            error:
-              $ref: '#/components/schemas/microsoft.graph.operationError'
-            lastActionDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: Time when the async operation was last updated.
-              format: date-time
-            operationType:
-              $ref: '#/components/schemas/microsoft.graph.teamsAsyncOperationType'
-            status:
-              $ref: '#/components/schemas/microsoft.graph.teamsAsyncOperationStatus'
-            targetResourceId:
-              type: string
-              description: 'The ID of the object that''s created or modified as result of this async operation, typically a team.'
-              nullable: true
-            targetResourceLocation:
-              type: string
-              description: The location of the object that's created or modified as result of this async operation. This URL should be treated as an opaque value and not parsed into its component paths.
-              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.teamworkTag:
@@ -23787,7 +23967,7 @@ components:
               nullable: true
             queryRoot:
               type: string
-              description: 'In the scenario where reviewers need to be specified dynamically, this property is used to indicate the relative source of the query. This property is only required if a relative query (i.e., ./manager) is specified.'
+              description: 'In the scenario where reviewers need to be specified dynamically, this property is used to indicate the relative source of the query. This property is only required if a relative query, for example, ./manager, is specified. Possible value: decisions.'
               nullable: true
             queryType:
               type: string
@@ -23806,14 +23986,14 @@ components:
           description: 'Optional field. Describes the  actions to take once a review is complete. There are two types that are currently supported: removeAccessApplyAction (default) and disableAndDeleteUserApplyAction. Field only needs to be specified in the case of disableAndDeleteUserApplyAction. See accessReviewApplyAction.'
         autoApplyDecisionsEnabled:
           type: boolean
-          description: Flag to indicate whether auto-apply feature is enabled.
+          description: 'Indicates whether decisions are automatically applied. When set to false, a user must apply the decisions manually once the reviewer completes the access review. When set to true, decisions are applied automatically after the access review instance duration ends, whether or not the reviewers have responded. Default value is false.'
         defaultDecision:
           type: string
-          description: 'Decision chosen if defaultDecisionEnabled is enabled. Can be one of ''Approve'', ''Deny'', or ''Recommendation''.'
+          description: 'Decision chosen if defaultDecisionEnabled is enabled. Can be one of Approve, Deny, or Recommendation.'
           nullable: true
         defaultDecisionEnabled:
           type: boolean
-          description: Flag to indicate whether default decision is enabled/disabled when reviewers do not respond.
+          description: Indicates whether the default decision is enabled or disabled when reviewers do not respond. Default value is false.
         instanceDurationInDays:
           maximum: 2147483647
           minimum: -2147483648
@@ -23822,18 +24002,18 @@ components:
           format: int32
         justificationRequiredOnApproval:
           type: boolean
-          description: Flag to indicate whether reviewers are required to provide justification with their decision.
+          description: Indicates whether reviewers are required to provide justification with their decision. Default value is false.
         mailNotificationsEnabled:
           type: boolean
-          description: Flag to indicate whether emails are enabled/disabled.
+          description: Indicates whether emails are enabled or disabled. Default value is false.
         recommendationsEnabled:
           type: boolean
-          description: Flag to indicate whether decision recommendations are enabled/disabled.
+          description: Indicates whether decision recommendations are enabled/disabled.
         recurrence:
           $ref: '#/components/schemas/microsoft.graph.patternedRecurrence'
         reminderNotificationsEnabled:
           type: boolean
-          description: Flag to indicate whether reminders are enabled/disabled.
+          description: Indicates whether reminders are enabled or disabled. Default value is false.
       additionalProperties:
         type: object
     microsoft.graph.deviceAndAppManagementAssignmentSource:
@@ -23958,6 +24138,7 @@ components:
         - windows10AndLater
         - androidWorkProfile
         - windows10XProfile
+        - androidAOSP
         - all
       type: string
     microsoft.graph.deviceCompliancePolicySettingState:
@@ -25153,6 +25334,11 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.eventMessageDetail:
+      title: eventMessageDetail
+      type: object
+      additionalProperties:
+        type: object
     microsoft.graph.chatMessageImportance:
       title: chatMessageImportance
       enum:
@@ -25185,6 +25371,8 @@ components:
         - message
         - chatEvent
         - typing
+        - unknownFutureValue
+        - systemEventMessage
       type: string
     microsoft.graph.chatMessagePolicyViolation:
       title: chatMessagePolicyViolation
@@ -25227,6 +25415,43 @@ components:
           type: object
           additionalProperties:
             type: object
+    microsoft.graph.operationError:
+      title: operationError
+      type: object
+      properties:
+        code:
+          type: string
+          description: Operation error code.
+          nullable: true
+        message:
+          type: string
+          description: Operation error message.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.teamsAsyncOperationType:
+      title: teamsAsyncOperationType
+      enum:
+        - invalid
+        - cloneTeam
+        - archiveTeam
+        - unarchiveTeam
+        - createTeam
+        - unknownFutureValue
+        - teamifyGroup
+        - createChannel
+        - createChat
+      type: string
+    microsoft.graph.teamsAsyncOperationStatus:
+      title: teamsAsyncOperationStatus
+      enum:
+        - invalid
+        - notStarted
+        - inProgress
+        - succeeded
+        - failed
+        - unknownFutureValue
+      type: string
     microsoft.graph.teamsTabConfiguration:
       title: teamsTabConfiguration
       type: object
@@ -25282,42 +25507,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.userNewMessageRestriction'
       additionalProperties:
         type: object
-    microsoft.graph.operationError:
-      title: operationError
-      type: object
-      properties:
-        code:
-          type: string
-          description: Operation error code.
-          nullable: true
-        message:
-          type: string
-          description: Operation error message.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.teamsAsyncOperationType:
-      title: teamsAsyncOperationType
-      enum:
-        - invalid
-        - cloneTeam
-        - archiveTeam
-        - unarchiveTeam
-        - createTeam
-        - unknownFutureValue
-        - teamifyGroup
-        - createChannel
-      type: string
-    microsoft.graph.teamsAsyncOperationStatus:
-      title: teamsAsyncOperationStatus
-      enum:
-        - invalid
-        - notStarted
-        - inProgress
-        - succeeded
-        - failed
-        - unknownFutureValue
-      type: string
     microsoft.graph.teamworkTagType:
       title: teamworkTagType
       enum:
@@ -25480,6 +25669,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.timeCardBreak'
+              description: The list of breaks associated with the timeCard.
             clockInEvent:
               $ref: '#/components/schemas/microsoft.graph.timeCardEvent'
             clockOutEvent:
@@ -25494,6 +25684,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.timeCardState'
             userId:
               type: string
+              description: User ID to which  the timeCard belongs.
               nullable: true
           additionalProperties:
             type: object
@@ -25612,17 +25803,22 @@ components:
       properties:
         color:
           type: string
+          description: 'The color that the user interface should display for the label, if configured.'
           nullable: true
         description:
           type: string
+          description: The admin-defined description for the label.
           nullable: true
         id:
           type: string
+          description: The label ID is a globally unique identifier (GUID).
           nullable: true
         isActive:
           type: boolean
+          description: Indicates whether the label is active or not. Active labels should be hidden or disabled in user interfaces.
         name:
           type: string
+          description: The plaintext name of the label.
           nullable: true
         parent:
           $ref: '#/components/schemas/microsoft.graph.parentLabelDetails'
@@ -25630,9 +25826,11 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: 'The sensitivity value of the label, where lower is less sensitive.'
           format: int32
         tooltip:
           type: string
+          description: The tooltip that should be displayed for the label in a user interface.
           nullable: true
       additionalProperties:
         type: object
@@ -26225,11 +26423,11 @@ components:
       properties:
         key:
           type: string
-          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object
@@ -27005,6 +27203,7 @@ components:
       properties:
         breakId:
           type: string
+          description: ID of the timeCardBreak.
           nullable: true
         end:
           $ref: '#/components/schemas/microsoft.graph.timeCardEvent'
@@ -27020,10 +27219,12 @@ components:
       properties:
         atApprovedLocation:
           type: boolean
+          description: Indicates whether the entry was recorded at the approved location.
           nullable: true
         dateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: The time the entry is recorded.
           format: date-time
         notes:
           $ref: '#/components/schemas/microsoft.graph.itemBody'
@@ -27045,6 +27246,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.timeCardBreak'
+          description: The list of breaks associated with the timeCard.
         clockInEvent:
           $ref: '#/components/schemas/microsoft.graph.timeCardEvent'
         clockOutEvent:
@@ -27303,7 +27505,7 @@ components:
           nullable: true
         languageTag:
           type: string
-          description: The anguage tag for the label.
+          description: The language tag for the label.
           nullable: true
         name:
           type: string

@@ -448,6 +448,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get custodians from compliance
+      description: Returns a list of case custodian objects for this case.  Nullable.
       operationId: compliance.ediscovery.cases_ListCustodians
       parameters:
         - name: case-id
@@ -558,6 +559,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Create new navigation property to custodians for compliance
+      description: Returns a list of case custodian objects for this case.  Nullable.
       operationId: compliance.ediscovery.cases_CreateCustodians
       parameters:
         - name: case-id
@@ -589,6 +591,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get custodians from compliance
+      description: Returns a list of case custodian objects for this case.  Nullable.
       operationId: compliance.ediscovery.cases_GetCustodians
       parameters:
         - name: case-id
@@ -680,6 +683,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Update the navigation property custodians in compliance
+      description: Returns a list of case custodian objects for this case.  Nullable.
       operationId: compliance.ediscovery.cases_UpdateCustodians
       parameters:
         - name: case-id
@@ -713,6 +717,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Delete navigation property custodians for compliance
+      description: Returns a list of case custodian objects for this case.  Nullable.
       operationId: compliance.ediscovery.cases_DeleteCustodians
       parameters:
         - name: case-id
@@ -826,6 +831,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get siteSources from compliance
+      description: Data source entity for SharePoint sites associated with the custodian.
       operationId: compliance.ediscovery.cases.custodians_ListSiteSources
       parameters:
         - name: case-id
@@ -922,6 +928,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Create new navigation property to siteSources for compliance
+      description: Data source entity for SharePoint sites associated with the custodian.
       operationId: compliance.ediscovery.cases.custodians_CreateSiteSources
       parameters:
         - name: case-id
@@ -960,6 +967,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get siteSources from compliance
+      description: Data source entity for SharePoint sites associated with the custodian.
       operationId: compliance.ediscovery.cases.custodians_GetSiteSources
       parameters:
         - name: case-id
@@ -1033,6 +1041,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Update the navigation property siteSources in compliance
+      description: Data source entity for SharePoint sites associated with the custodian.
       operationId: compliance.ediscovery.cases.custodians_UpdateSiteSources
       parameters:
         - name: case-id
@@ -1073,6 +1082,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Delete navigation property siteSources for compliance
+      description: Data source entity for SharePoint sites associated with the custodian.
       operationId: compliance.ediscovery.cases.custodians_DeleteSiteSources
       parameters:
         - name: case-id
@@ -1112,6 +1122,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get site from compliance
+      description: The SharePoint site associated with the siteSource.
       operationId: compliance.ediscovery.cases.custodians.siteSources_GetSite
       parameters:
         - name: case-id
@@ -1309,6 +1320,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get ref of site from compliance
+      description: The SharePoint site associated with the siteSource.
       operationId: compliance.ediscovery.cases.custodians.siteSources_GetRefSite
       parameters:
         - name: case-id
@@ -1437,6 +1449,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Update the ref of navigation property site in compliance
+      description: The SharePoint site associated with the siteSource.
       operationId: compliance.ediscovery.cases.custodians.siteSources_SetRefSite
       parameters:
         - name: case-id
@@ -1479,6 +1492,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Delete ref of navigation property site for compliance
+      description: The SharePoint site associated with the siteSource.
       operationId: compliance.ediscovery.cases.custodians.siteSources_DeleteRefSite
       parameters:
         - name: case-id
@@ -1518,6 +1532,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get unifiedGroupSources from compliance
+      description: Data source entity for groups associated with the custodian.
       operationId: compliance.ediscovery.cases.custodians_ListUnifiedGroupSources
       parameters:
         - name: case-id
@@ -1617,6 +1632,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Create new navigation property to unifiedGroupSources for compliance
+      description: Data source entity for groups associated with the custodian.
       operationId: compliance.ediscovery.cases.custodians_CreateUnifiedGroupSources
       parameters:
         - name: case-id
@@ -1655,6 +1671,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get unifiedGroupSources from compliance
+      description: Data source entity for groups associated with the custodian.
       operationId: compliance.ediscovery.cases.custodians_GetUnifiedGroupSources
       parameters:
         - name: case-id
@@ -1729,6 +1746,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Update the navigation property unifiedGroupSources in compliance
+      description: Data source entity for groups associated with the custodian.
       operationId: compliance.ediscovery.cases.custodians_UpdateUnifiedGroupSources
       parameters:
         - name: case-id
@@ -1769,6 +1787,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Delete navigation property unifiedGroupSources for compliance
+      description: Data source entity for groups associated with the custodian.
       operationId: compliance.ediscovery.cases.custodians_DeleteUnifiedGroupSources
       parameters:
         - name: case-id
@@ -1808,6 +1827,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get group from compliance
+      description: The group associated with the unifiedGroupSource.
       operationId: compliance.ediscovery.cases.custodians.unifiedGroupSources_GetGroup
       parameters:
         - name: case-id
@@ -2144,6 +2164,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get ref of group from compliance
+      description: The group associated with the unifiedGroupSource.
       operationId: compliance.ediscovery.cases.custodians.unifiedGroupSources_GetRefGroup
       parameters:
         - name: case-id
@@ -2350,6 +2371,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Update the ref of navigation property group in compliance
+      description: The group associated with the unifiedGroupSource.
       operationId: compliance.ediscovery.cases.custodians.unifiedGroupSources_SetRefGroup
       parameters:
         - name: case-id
@@ -2392,6 +2414,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Delete ref of navigation property group for compliance
+      description: The group associated with the unifiedGroupSource.
       operationId: compliance.ediscovery.cases.custodians.unifiedGroupSources_DeleteRefGroup
       parameters:
         - name: case-id
@@ -2431,6 +2454,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get userSources from compliance
+      description: Data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
       operationId: compliance.ediscovery.cases.custodians_ListUserSources
       parameters:
         - name: case-id
@@ -2531,6 +2555,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Create new navigation property to userSources for compliance
+      description: Data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
       operationId: compliance.ediscovery.cases.custodians_CreateUserSources
       parameters:
         - name: case-id
@@ -2569,6 +2594,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get userSources from compliance
+      description: Data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
       operationId: compliance.ediscovery.cases.custodians_GetUserSources
       parameters:
         - name: case-id
@@ -2635,6 +2661,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Update the navigation property userSources in compliance
+      description: Data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
       operationId: compliance.ediscovery.cases.custodians_UpdateUserSources
       parameters:
         - name: case-id
@@ -2675,6 +2702,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Delete navigation property userSources for compliance
+      description: Data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
       operationId: compliance.ediscovery.cases.custodians_DeleteUserSources
       parameters:
         - name: case-id
@@ -2714,6 +2742,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get legalHolds from compliance
+      description: Returns a list of case legalHold objects for this case.  Nullable.
       operationId: compliance.ediscovery.cases_ListLegalHolds
       parameters:
         - name: case-id
@@ -2828,6 +2857,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Create new navigation property to legalHolds for compliance
+      description: Returns a list of case legalHold objects for this case.  Nullable.
       operationId: compliance.ediscovery.cases_CreateLegalHolds
       parameters:
         - name: case-id
@@ -2859,6 +2889,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get legalHolds from compliance
+      description: Returns a list of case legalHold objects for this case.  Nullable.
       operationId: compliance.ediscovery.cases_GetLegalHolds
       parameters:
         - name: case-id
@@ -2945,6 +2976,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Update the navigation property legalHolds in compliance
+      description: Returns a list of case legalHold objects for this case.  Nullable.
       operationId: compliance.ediscovery.cases_UpdateLegalHolds
       parameters:
         - name: case-id
@@ -2978,6 +3010,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Delete navigation property legalHolds for compliance
+      description: Returns a list of case legalHold objects for this case.  Nullable.
       operationId: compliance.ediscovery.cases_DeleteLegalHolds
       parameters:
         - name: case-id
@@ -3010,6 +3043,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get siteSources from compliance
+      description: Data source entity for SharePoint sites associated with the legal hold.
       operationId: compliance.ediscovery.cases.legalHolds_ListSiteSources
       parameters:
         - name: case-id
@@ -3106,6 +3140,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Create new navigation property to siteSources for compliance
+      description: Data source entity for SharePoint sites associated with the legal hold.
       operationId: compliance.ediscovery.cases.legalHolds_CreateSiteSources
       parameters:
         - name: case-id
@@ -3144,6 +3179,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get siteSources from compliance
+      description: Data source entity for SharePoint sites associated with the legal hold.
       operationId: compliance.ediscovery.cases.legalHolds_GetSiteSources
       parameters:
         - name: case-id
@@ -3217,6 +3253,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Update the navigation property siteSources in compliance
+      description: Data source entity for SharePoint sites associated with the legal hold.
       operationId: compliance.ediscovery.cases.legalHolds_UpdateSiteSources
       parameters:
         - name: case-id
@@ -3257,6 +3294,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Delete navigation property siteSources for compliance
+      description: Data source entity for SharePoint sites associated with the legal hold.
       operationId: compliance.ediscovery.cases.legalHolds_DeleteSiteSources
       parameters:
         - name: case-id
@@ -3296,6 +3334,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get site from compliance
+      description: The SharePoint site associated with the siteSource.
       operationId: compliance.ediscovery.cases.legalHolds.siteSources_GetSite
       parameters:
         - name: case-id
@@ -3493,6 +3532,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get ref of site from compliance
+      description: The SharePoint site associated with the siteSource.
       operationId: compliance.ediscovery.cases.legalHolds.siteSources_GetRefSite
       parameters:
         - name: case-id
@@ -3621,6 +3661,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Update the ref of navigation property site in compliance
+      description: The SharePoint site associated with the siteSource.
       operationId: compliance.ediscovery.cases.legalHolds.siteSources_SetRefSite
       parameters:
         - name: case-id
@@ -3663,6 +3704,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Delete ref of navigation property site for compliance
+      description: The SharePoint site associated with the siteSource.
       operationId: compliance.ediscovery.cases.legalHolds.siteSources_DeleteRefSite
       parameters:
         - name: case-id
@@ -3992,6 +4034,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get group from compliance
+      description: The group associated with the unifiedGroupSource.
       operationId: compliance.ediscovery.cases.legalHolds.unifiedGroupSources_GetGroup
       parameters:
         - name: case-id
@@ -4328,6 +4371,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get ref of group from compliance
+      description: The group associated with the unifiedGroupSource.
       operationId: compliance.ediscovery.cases.legalHolds.unifiedGroupSources_GetRefGroup
       parameters:
         - name: case-id
@@ -4534,6 +4578,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Update the ref of navigation property group in compliance
+      description: The group associated with the unifiedGroupSource.
       operationId: compliance.ediscovery.cases.legalHolds.unifiedGroupSources_SetRefGroup
       parameters:
         - name: case-id
@@ -4576,6 +4621,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Delete ref of navigation property group for compliance
+      description: The group associated with the unifiedGroupSource.
       operationId: compliance.ediscovery.cases.legalHolds.unifiedGroupSources_DeleteRefGroup
       parameters:
         - name: case-id
@@ -4615,6 +4661,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get userSources from compliance
+      description: Data source entity for a the legal hold. This is the container for a mailbox and OneDrive for Business site.
       operationId: compliance.ediscovery.cases.legalHolds_ListUserSources
       parameters:
         - name: case-id
@@ -4715,6 +4762,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Create new navigation property to userSources for compliance
+      description: Data source entity for a the legal hold. This is the container for a mailbox and OneDrive for Business site.
       operationId: compliance.ediscovery.cases.legalHolds_CreateUserSources
       parameters:
         - name: case-id
@@ -4753,6 +4801,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get userSources from compliance
+      description: Data source entity for a the legal hold. This is the container for a mailbox and OneDrive for Business site.
       operationId: compliance.ediscovery.cases.legalHolds_GetUserSources
       parameters:
         - name: case-id
@@ -4819,6 +4868,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Update the navigation property userSources in compliance
+      description: Data source entity for a the legal hold. This is the container for a mailbox and OneDrive for Business site.
       operationId: compliance.ediscovery.cases.legalHolds_UpdateUserSources
       parameters:
         - name: case-id
@@ -4859,6 +4909,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Delete navigation property userSources for compliance
+      description: Data source entity for a the legal hold. This is the container for a mailbox and OneDrive for Business site.
       operationId: compliance.ediscovery.cases.legalHolds_DeleteUserSources
       parameters:
         - name: case-id
@@ -4938,6 +4989,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get noncustodialDataSources from compliance
+      description: Returns a list of case noncustodialDataSource objects for this case.  Nullable.
       operationId: compliance.ediscovery.cases_ListNoncustodialDataSources
       parameters:
         - name: case-id
@@ -5038,6 +5090,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Create new navigation property to noncustodialDataSources for compliance
+      description: Returns a list of case noncustodialDataSource objects for this case.  Nullable.
       operationId: compliance.ediscovery.cases_CreateNoncustodialDataSources
       parameters:
         - name: case-id
@@ -5069,6 +5122,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get noncustodialDataSources from compliance
+      description: Returns a list of case noncustodialDataSource objects for this case.  Nullable.
       operationId: compliance.ediscovery.cases_GetNoncustodialDataSources
       parameters:
         - name: case-id
@@ -5144,6 +5198,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Update the navigation property noncustodialDataSources in compliance
+      description: Returns a list of case noncustodialDataSource objects for this case.  Nullable.
       operationId: compliance.ediscovery.cases_UpdateNoncustodialDataSources
       parameters:
         - name: case-id
@@ -5177,6 +5232,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Delete navigation property noncustodialDataSources for compliance
+      description: Returns a list of case noncustodialDataSource objects for this case.  Nullable.
       operationId: compliance.ediscovery.cases_DeleteNoncustodialDataSources
       parameters:
         - name: case-id
@@ -5209,6 +5265,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get dataSource from compliance
+      description: User source or SharePoint site data source as non-custodial data source.
       operationId: compliance.ediscovery.cases.noncustodialDataSources_GetDataSource
       parameters:
         - name: case-id
@@ -5266,6 +5323,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Update the navigation property dataSource in compliance
+      description: User source or SharePoint site data source as non-custodial data source.
       operationId: compliance.ediscovery.cases.noncustodialDataSources_UpdateDataSource
       parameters:
         - name: case-id
@@ -5299,6 +5357,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Delete navigation property dataSource for compliance
+      description: User source or SharePoint site data source as non-custodial data source.
       operationId: compliance.ediscovery.cases.noncustodialDataSources_DeleteDataSource
       parameters:
         - name: case-id
@@ -5385,6 +5444,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get operations from compliance
+      description: Returns a list of case operation objects for this case. Nullable.
       operationId: compliance.ediscovery.cases_ListOperations
       parameters:
         - name: case-id
@@ -5484,6 +5544,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Create new navigation property to operations for compliance
+      description: Returns a list of case operation objects for this case. Nullable.
       operationId: compliance.ediscovery.cases_CreateOperations
       parameters:
         - name: case-id
@@ -5515,6 +5576,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get operations from compliance
+      description: Returns a list of case operation objects for this case. Nullable.
       operationId: compliance.ediscovery.cases_GetOperations
       parameters:
         - name: case-id
@@ -5576,6 +5638,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Update the navigation property operations in compliance
+      description: Returns a list of case operation objects for this case. Nullable.
       operationId: compliance.ediscovery.cases_UpdateOperations
       parameters:
         - name: case-id
@@ -5609,6 +5672,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Delete navigation property operations for compliance
+      description: Returns a list of case operation objects for this case. Nullable.
       operationId: compliance.ediscovery.cases_DeleteOperations
       parameters:
         - name: case-id
@@ -5673,6 +5737,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get reviewSets from compliance
+      description: Returns a list of reviewSet objects in the case. Read-only. Nullable.
       operationId: compliance.ediscovery.cases_ListReviewSets
       parameters:
         - name: case-id
@@ -5762,6 +5827,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Create new navigation property to reviewSets for compliance
+      description: Returns a list of reviewSet objects in the case. Read-only. Nullable.
       operationId: compliance.ediscovery.cases_CreateReviewSets
       parameters:
         - name: case-id
@@ -5793,6 +5859,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get reviewSets from compliance
+      description: Returns a list of reviewSet objects in the case. Read-only. Nullable.
       operationId: compliance.ediscovery.cases_GetReviewSets
       parameters:
         - name: case-id
@@ -5858,6 +5925,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Update the navigation property reviewSets in compliance
+      description: Returns a list of reviewSet objects in the case. Read-only. Nullable.
       operationId: compliance.ediscovery.cases_UpdateReviewSets
       parameters:
         - name: case-id
@@ -5891,6 +5959,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Delete navigation property reviewSets for compliance
+      description: Returns a list of reviewSet objects in the case. Read-only. Nullable.
       operationId: compliance.ediscovery.cases_DeleteReviewSets
       parameters:
         - name: case-id
@@ -6017,6 +6086,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get queries from compliance
+      description: Read-only. Nullable.
       operationId: compliance.ediscovery.cases.reviewSets_ListQueries
       parameters:
         - name: case-id
@@ -6120,6 +6190,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Create new navigation property to queries for compliance
+      description: Read-only. Nullable.
       operationId: compliance.ediscovery.cases.reviewSets_CreateQueries
       parameters:
         - name: case-id
@@ -6158,6 +6229,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get queries from compliance
+      description: Read-only. Nullable.
       operationId: compliance.ediscovery.cases.reviewSets_GetQueries
       parameters:
         - name: case-id
@@ -6225,6 +6297,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Update the navigation property queries in compliance
+      description: Read-only. Nullable.
       operationId: compliance.ediscovery.cases.reviewSets_UpdateQueries
       parameters:
         - name: case-id
@@ -6265,6 +6338,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Delete navigation property queries for compliance
+      description: Read-only. Nullable.
       operationId: compliance.ediscovery.cases.reviewSets_DeleteQueries
       parameters:
         - name: case-id
@@ -6477,6 +6551,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get sourceCollections from compliance
+      description: Returns a list of sourceCollection objects associated with this case.
       operationId: compliance.ediscovery.cases_ListSourceCollections
       parameters:
         - name: case-id
@@ -6589,6 +6664,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Create new navigation property to sourceCollections for compliance
+      description: Returns a list of sourceCollection objects associated with this case.
       operationId: compliance.ediscovery.cases_CreateSourceCollections
       parameters:
         - name: case-id
@@ -6620,6 +6696,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get sourceCollections from compliance
+      description: Returns a list of sourceCollection objects associated with this case.
       operationId: compliance.ediscovery.cases_GetSourceCollections
       parameters:
         - name: case-id
@@ -6718,6 +6795,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Update the navigation property sourceCollections in compliance
+      description: Returns a list of sourceCollection objects associated with this case.
       operationId: compliance.ediscovery.cases_UpdateSourceCollections
       parameters:
         - name: case-id
@@ -6751,6 +6829,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Delete navigation property sourceCollections for compliance
+      description: Returns a list of sourceCollection objects associated with this case.
       operationId: compliance.ediscovery.cases_DeleteSourceCollections
       parameters:
         - name: case-id
@@ -6783,6 +6862,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get additionalSources from compliance
+      description: Adds an additional source to the sourceCollection.
       operationId: compliance.ediscovery.cases.sourceCollections_ListAdditionalSources
       parameters:
         - name: case-id
@@ -6877,6 +6957,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Create new navigation property to additionalSources for compliance
+      description: Adds an additional source to the sourceCollection.
       operationId: compliance.ediscovery.cases.sourceCollections_CreateAdditionalSources
       parameters:
         - name: case-id
@@ -6915,6 +6996,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get additionalSources from compliance
+      description: Adds an additional source to the sourceCollection.
       operationId: compliance.ediscovery.cases.sourceCollections_GetAdditionalSources
       parameters:
         - name: case-id
@@ -6979,6 +7061,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Update the navigation property additionalSources in compliance
+      description: Adds an additional source to the sourceCollection.
       operationId: compliance.ediscovery.cases.sourceCollections_UpdateAdditionalSources
       parameters:
         - name: case-id
@@ -7019,6 +7102,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Delete navigation property additionalSources for compliance
+      description: Adds an additional source to the sourceCollection.
       operationId: compliance.ediscovery.cases.sourceCollections_DeleteAdditionalSources
       parameters:
         - name: case-id
@@ -7058,6 +7142,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get addToReviewSetOperation from compliance
+      description: Adds the results of the sourceCollection to the specified reviewSet.
       operationId: compliance.ediscovery.cases.sourceCollections_GetAddToReviewSetOperation
       parameters:
         - name: case-id
@@ -7135,6 +7220,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get ref of addToReviewSetOperation from compliance
+      description: Adds the results of the sourceCollection to the specified reviewSet.
       operationId: compliance.ediscovery.cases.sourceCollections_GetRefAddToReviewSetOperation
       parameters:
         - name: case-id
@@ -7176,6 +7262,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Update the ref of navigation property addToReviewSetOperation in compliance
+      description: Adds the results of the sourceCollection to the specified reviewSet.
       operationId: compliance.ediscovery.cases.sourceCollections_SetRefAddToReviewSetOperation
       parameters:
         - name: case-id
@@ -7211,6 +7298,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Delete ref of navigation property addToReviewSetOperation for compliance
+      description: Adds the results of the sourceCollection to the specified reviewSet.
       operationId: compliance.ediscovery.cases.sourceCollections_DeleteRefAddToReviewSetOperation
       parameters:
         - name: case-id
@@ -7243,6 +7331,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get custodianSources from compliance
+      description: Custodian sources that are included in the sourceCollection.
       operationId: compliance.ediscovery.cases.sourceCollections_ListCustodianSources
       parameters:
         - name: case-id
@@ -7338,6 +7427,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get ref of custodianSources from compliance
+      description: Custodian sources that are included in the sourceCollection.
       operationId: compliance.ediscovery.cases.sourceCollections_ListRefCustodianSources
       parameters:
         - name: case-id
@@ -7405,6 +7495,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Create new navigation property ref to custodianSources for compliance
+      description: Custodian sources that are included in the sourceCollection.
       operationId: compliance.ediscovery.cases.sourceCollections_CreateRefCustodianSources
       parameters:
         - name: case-id
@@ -7447,6 +7538,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get lastEstimateStatisticsOperation from compliance
+      description: The last estimate operation associated with the sourceCollection.
       operationId: compliance.ediscovery.cases.sourceCollections_GetLastEstimateStatisticsOperation
       parameters:
         - name: case-id
@@ -7523,6 +7615,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get ref of lastEstimateStatisticsOperation from compliance
+      description: The last estimate operation associated with the sourceCollection.
       operationId: compliance.ediscovery.cases.sourceCollections_GetRefLastEstimateStatisticsOperation
       parameters:
         - name: case-id
@@ -7559,6 +7652,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Update the ref of navigation property lastEstimateStatisticsOperation in compliance
+      description: The last estimate operation associated with the sourceCollection.
       operationId: compliance.ediscovery.cases.sourceCollections_SetRefLastEstimateStatisticsOperation
       parameters:
         - name: case-id
@@ -7594,6 +7688,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Delete ref of navigation property lastEstimateStatisticsOperation for compliance
+      description: The last estimate operation associated with the sourceCollection.
       operationId: compliance.ediscovery.cases.sourceCollections_DeleteRefLastEstimateStatisticsOperation
       parameters:
         - name: case-id
@@ -7653,6 +7748,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get noncustodialSources from compliance
+      description: noncustodialDataSource sources that are included in the sourceCollection
       operationId: compliance.ediscovery.cases.sourceCollections_ListNoncustodialSources
       parameters:
         - name: case-id
@@ -7761,6 +7857,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get ref of noncustodialSources from compliance
+      description: noncustodialDataSource sources that are included in the sourceCollection
       operationId: compliance.ediscovery.cases.sourceCollections_ListRefNoncustodialSources
       parameters:
         - name: case-id
@@ -7834,6 +7931,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Create new navigation property ref to noncustodialSources for compliance
+      description: noncustodialDataSource sources that are included in the sourceCollection
       operationId: compliance.ediscovery.cases.sourceCollections_CreateRefNoncustodialSources
       parameters:
         - name: case-id
@@ -7876,6 +7974,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get tags from compliance
+      description: Returns a list of tag objects associated to this case.
       operationId: compliance.ediscovery.cases_ListTags
       parameters:
         - name: case-id
@@ -7973,6 +8072,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Create new navigation property to tags for compliance
+      description: Returns a list of tag objects associated to this case.
       operationId: compliance.ediscovery.cases_CreateTags
       parameters:
         - name: case-id
@@ -8004,6 +8104,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get tags from compliance
+      description: Returns a list of tag objects associated to this case.
       operationId: compliance.ediscovery.cases_GetTags
       parameters:
         - name: case-id
@@ -8078,6 +8179,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Update the navigation property tags in compliance
+      description: Returns a list of tag objects associated to this case.
       operationId: compliance.ediscovery.cases_UpdateTags
       parameters:
         - name: case-id
@@ -8111,6 +8213,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Delete navigation property tags for compliance
+      description: Returns a list of tag objects associated to this case.
       operationId: compliance.ediscovery.cases_DeleteTags
       parameters:
         - name: case-id
@@ -8143,6 +8246,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get childTags from compliance
+      description: Returns the tags that are a child of a tag.
       operationId: compliance.ediscovery.cases.tags_ListChildTags
       parameters:
         - name: case-id
@@ -8248,6 +8352,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get ref of childTags from compliance
+      description: Returns the tags that are a child of a tag.
       operationId: compliance.ediscovery.cases.tags_ListRefChildTags
       parameters:
         - name: case-id
@@ -8319,6 +8424,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Create new navigation property ref to childTags for compliance
+      description: Returns the tags that are a child of a tag.
       operationId: compliance.ediscovery.cases.tags_CreateRefChildTags
       parameters:
         - name: case-id
@@ -8394,6 +8500,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get parent from compliance
+      description: Returns the parent tag of the specified tag.
       operationId: compliance.ediscovery.cases.tags_GetParent
       parameters:
         - name: case-id
@@ -8469,6 +8576,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get ref of parent from compliance
+      description: Returns the parent tag of the specified tag.
       operationId: compliance.ediscovery.cases.tags_GetRefParent
       parameters:
         - name: case-id
@@ -8510,6 +8618,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Update the ref of navigation property parent in compliance
+      description: Returns the parent tag of the specified tag.
       operationId: compliance.ediscovery.cases.tags_SetRefParent
       parameters:
         - name: case-id
@@ -8545,6 +8654,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Delete ref of navigation property parent for compliance
+      description: Returns the parent tag of the specified tag.
       operationId: compliance.ediscovery.cases.tags_DeleteRefParent
       parameters:
         - name: case-id
@@ -10795,7 +10905,7 @@ components:
               nullable: true
             description:
               type: string
-              description: An optional description for the team.
+              description: 'An optional description for the team. Maximum length: 1024 characters.'
               nullable: true
             discoverySettings:
               $ref: '#/components/schemas/microsoft.graph.teamDiscoverySettings'
@@ -10858,6 +10968,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.user'
               description: 'The list of this team''s owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user delegated permissions, no owner can be specified (the current user is the owner). Owner must be specified as an object ID (GUID), not a UPN.'
+            permissionGrants:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
             photo:
               $ref: '#/components/schemas/microsoft.graph.profilePhoto'
             primaryChannel:
@@ -11233,7 +11347,7 @@ components:
               description: State of license assignments for this user. Returned only on $select. Read-only.
             mail:
               type: string
-              description: 'The SMTP address for the user, for example, ''jeff@contoso.onmicrosoft.com''.NOTE: While this property can contain accent characters, using them can cause access issues with other Microsoft applications for the user.Returned by default. Supports $filter and endsWith.'
+              description: 'The SMTP address for the user, for example, ''jeff@contoso.onmicrosoft.com''. Changes to this property will also update the user''s proxyAddresses collection to include the value as an SMTP address. While this property can contain accent characters, using them can cause access issues with other Microsoft applications for the user. Supports $filter and endsWith.'
               nullable: true
             mailNickname:
               type: string
@@ -15882,6 +15996,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessage'
               description: A collection of all the messages in the chat. Nullable.
+            operations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.teamsAsyncOperation'
             permissionGrants:
               type: array
               items:
@@ -16626,11 +16744,11 @@ components:
       properties:
         key:
           type: string
-          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object
@@ -17316,6 +17434,8 @@ components:
               type: string
               description: Read-only. Version number of the chat message.
               nullable: true
+            eventDetail:
+              $ref: '#/components/schemas/microsoft.graph.eventMessageDetail'
             from:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             importance:
@@ -17369,7 +17489,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
-              description: 'Content in a message hosted by Microsoft Teams e.g., images, code snippets etc.'
+              description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
             replies:
               type: array
               items:
@@ -17503,6 +17623,7 @@ components:
         - unknownFutureValue
         - teamifyGroup
         - createChannel
+        - createChat
       type: string
     microsoft.graph.teamsAsyncOperationStatus:
       title: teamsAsyncOperationStatus
@@ -17676,6 +17797,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.timeCardBreak'
+              description: The list of breaks associated with the timeCard.
             clockInEvent:
               $ref: '#/components/schemas/microsoft.graph.timeCardEvent'
             clockOutEvent:
@@ -17690,6 +17812,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.timeCardState'
             userId:
               type: string
+              description: User ID to which  the timeCard belongs.
               nullable: true
           additionalProperties:
             type: object
@@ -18505,57 +18628,58 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScope'
-              description: 'This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user''s manager does not exist. See accessReviewReviewerScope.'
+              description: 'This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user''s manager does not exist. Supports $select. Note: This property has been replaced by fallbackReviewers. However, specifying either backupReviewers or fallbackReviewers automatically populates the same values to the other property.'
             createdBy:
               $ref: '#/components/schemas/microsoft.graph.userIdentity'
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Timestamp when review series was created.
+              description: Timestamp when the access review series was created. Supports $select.
               format: date-time
               nullable: true
             descriptionForAdmins:
               type: string
-              description: Description provided by review creators to provide more context of the review to admins.
+              description: Description provided by review creators to provide more context of the review to admins. Supports $select.
               nullable: true
             descriptionForReviewers:
               type: string
-              description: Description provided  by review creators to provide more context of the review to reviewers. Reviewers will see this description in the email sent to them requesting their review.
+              description: Description provided  by review creators to provide more context of the review to reviewers. Reviewers will see this description in the email sent to them requesting their review. Supports $select.
               nullable: true
             displayName:
               type: string
-              description: Name of access review series. Required on create.
+              description: Name of the access review series. Required on create. Supports $select.
               nullable: true
             fallbackReviewers:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScope'
+              description: 'This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user''s manager does not exist. Supports $select.'
             instanceEnumerationScope:
               $ref: '#/components/schemas/microsoft.graph.accessReviewScope'
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Timestamp when review series was last modified.
+              description: Timestamp when the access review series was last modified. Supports $select.
               format: date-time
               nullable: true
             reviewers:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScope'
-              description: This collection of access review scopes is used to define who are the reviewers. See accessReviewReviewerScope. Required on create.
+              description: 'This collection of access review scopes is used to define who are the reviewers. Required on create. Supports $select. For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API.'
             scope:
               $ref: '#/components/schemas/microsoft.graph.accessReviewScope'
             settings:
               $ref: '#/components/schemas/microsoft.graph.accessReviewScheduleSettings'
             status:
               type: string
-              description: 'This read-only field specifies the status of an accessReview. The typical states include Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed.'
+              description: 'This read-only field specifies the status of an access review. The typical states include Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed. Supports $select, $orderby, and $filter (eq only).'
               nullable: true
             instances:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewInstance'
-              description: 'Set of access reviews instances for this access review series. Access reviews that do not recur will only have one instance; otherwise, there will be an instance for each recurrence.'
+              description: 'Set of access reviews instances for this access review series. Access reviews that do not recur will only have one instance; otherwise, there is an instance for each recurrence.'
           additionalProperties:
             type: object
     microsoft.graph.agreementAcceptanceState:
@@ -19135,6 +19259,7 @@ components:
         - googleCloudDevicePolicyController
         - microsoft365ManagedMdm
         - windowsManagementCloudApi
+        - intuneAosp
       type: string
     microsoft.graph.managedDeviceManagementFeatures:
       title: managedDeviceManagementFeatures
@@ -19648,10 +19773,10 @@ components:
       properties:
         name:
           type: string
-          description: Name for this key-value pair
+          description: 'Name for this key-value pair. Possible names are: AdditionalWSFedEndpointCheckResult,  AllowedAuthenticationClassReferencesCheckResult, AlwaysRequireAuthenticationCheckResult,   AutoUpdateEnabledCheckResult, ClaimsProviderNameCheckResult, EncryptClaimsCheckResult,  EncryptedNameIdRequiredCheckResult, MonitoringEnabledCheckResult,NotBeforeSkewCheckResult,  RequestMFAFromClaimsProvidersCheckResult, SignedSamlRequestsRequiredCheckResult, AdditionalAuthenticationRulesCheckResult, TokenLifetimeCheckResult,  DelegationAuthorizationRulesCheckResult, IssuanceAuthorizationRulesCheckResult, IssuanceTransformRulesCheckResult.'
         value:
           type: string
-          description: Value for this key-value pair
+          description: 'Value for this key-value pair. Possible result values are 0 (when the validation check passed), 1 (when the validation check failed), or 2 (when the validation check is a warning).'
           nullable: true
       additionalProperties:
         type: object
@@ -21459,7 +21584,7 @@ components:
           nullable: true
         languageTag:
           type: string
-          description: The anguage tag for the label.
+          description: The language tag for the label.
           nullable: true
         name:
           type: string
@@ -21814,6 +21939,11 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.eventMessageDetail:
+      title: eventMessageDetail
+      type: object
+      additionalProperties:
+        type: object
     microsoft.graph.chatMessageImportance:
       title: chatMessageImportance
       enum:
@@ -21846,6 +21976,8 @@ components:
         - message
         - chatEvent
         - typing
+        - unknownFutureValue
+        - systemEventMessage
       type: string
     microsoft.graph.chatMessagePolicyViolation:
       title: chatMessagePolicyViolation
@@ -22054,6 +22186,7 @@ components:
       properties:
         breakId:
           type: string
+          description: ID of the timeCardBreak.
           nullable: true
         end:
           $ref: '#/components/schemas/microsoft.graph.timeCardEvent'
@@ -22069,10 +22202,12 @@ components:
       properties:
         atApprovedLocation:
           type: boolean
+          description: Indicates whether the entry was recorded at the approved location.
           nullable: true
         dateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: The time the entry is recorded.
           format: date-time
         notes:
           $ref: '#/components/schemas/microsoft.graph.itemBody'
@@ -22094,6 +22229,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.timeCardBreak'
+          description: The list of breaks associated with the timeCard.
         clockInEvent:
           $ref: '#/components/schemas/microsoft.graph.timeCardEvent'
         clockOutEvent:
@@ -22670,7 +22806,7 @@ components:
               nullable: true
             queryRoot:
               type: string
-              description: 'In the scenario where reviewers need to be specified dynamically, this property is used to indicate the relative source of the query. This property is only required if a relative query (i.e., ./manager) is specified.'
+              description: 'In the scenario where reviewers need to be specified dynamically, this property is used to indicate the relative source of the query. This property is only required if a relative query, for example, ./manager, is specified. Possible value: decisions.'
               nullable: true
             queryType:
               type: string
@@ -22689,14 +22825,14 @@ components:
           description: 'Optional field. Describes the  actions to take once a review is complete. There are two types that are currently supported: removeAccessApplyAction (default) and disableAndDeleteUserApplyAction. Field only needs to be specified in the case of disableAndDeleteUserApplyAction. See accessReviewApplyAction.'
         autoApplyDecisionsEnabled:
           type: boolean
-          description: Flag to indicate whether auto-apply feature is enabled.
+          description: 'Indicates whether decisions are automatically applied. When set to false, a user must apply the decisions manually once the reviewer completes the access review. When set to true, decisions are applied automatically after the access review instance duration ends, whether or not the reviewers have responded. Default value is false.'
         defaultDecision:
           type: string
-          description: 'Decision chosen if defaultDecisionEnabled is enabled. Can be one of ''Approve'', ''Deny'', or ''Recommendation''.'
+          description: 'Decision chosen if defaultDecisionEnabled is enabled. Can be one of Approve, Deny, or Recommendation.'
           nullable: true
         defaultDecisionEnabled:
           type: boolean
-          description: Flag to indicate whether default decision is enabled/disabled when reviewers do not respond.
+          description: Indicates whether the default decision is enabled or disabled when reviewers do not respond. Default value is false.
         instanceDurationInDays:
           maximum: 2147483647
           minimum: -2147483648
@@ -22705,18 +22841,18 @@ components:
           format: int32
         justificationRequiredOnApproval:
           type: boolean
-          description: Flag to indicate whether reviewers are required to provide justification with their decision.
+          description: Indicates whether reviewers are required to provide justification with their decision. Default value is false.
         mailNotificationsEnabled:
           type: boolean
-          description: Flag to indicate whether emails are enabled/disabled.
+          description: Indicates whether emails are enabled or disabled. Default value is false.
         recommendationsEnabled:
           type: boolean
-          description: Flag to indicate whether decision recommendations are enabled/disabled.
+          description: Indicates whether decision recommendations are enabled/disabled.
         recurrence:
           $ref: '#/components/schemas/microsoft.graph.patternedRecurrence'
         reminderNotificationsEnabled:
           type: boolean
-          description: Flag to indicate whether reminders are enabled/disabled.
+          description: Indicates whether reminders are enabled or disabled. Default value is false.
       additionalProperties:
         type: object
     microsoft.graph.deviceAndAppManagementAssignmentSource:
@@ -22841,6 +22977,7 @@ components:
         - windows10AndLater
         - androidWorkProfile
         - windows10XProfile
+        - androidAOSP
         - all
       type: string
     microsoft.graph.deviceCompliancePolicySettingState:
@@ -24166,17 +24303,22 @@ components:
       properties:
         color:
           type: string
+          description: 'The color that the user interface should display for the label, if configured.'
           nullable: true
         description:
           type: string
+          description: The admin-defined description for the label.
           nullable: true
         id:
           type: string
+          description: The label ID is a globally unique identifier (GUID).
           nullable: true
         isActive:
           type: boolean
+          description: Indicates whether the label is active or not. Active labels should be hidden or disabled in user interfaces.
         name:
           type: string
+          description: The plaintext name of the label.
           nullable: true
         parent:
           $ref: '#/components/schemas/microsoft.graph.parentLabelDetails'
@@ -24184,9 +24326,11 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: 'The sensitivity value of the label, where lower is less sensitive.'
           format: int32
         tooltip:
           type: string
+          description: The tooltip that should be displayed for the label in a user interface.
           nullable: true
       additionalProperties:
         type: object
