@@ -1,3 +1,6 @@
+# ------------------------------------------------------------------------------
+# Copyright (c) Microsoft Corporation. All Rights Reserved. Licensed under the MIT License. See License in the project root for license information.
+# ------------------------------------------------------------------------------
 Describe "The Microsoft.Graph.Authentication module" {
     BeforeAll {
         $ModuleName = "Microsoft.Graph.Authentication"
