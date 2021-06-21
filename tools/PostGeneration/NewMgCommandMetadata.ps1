@@ -41,7 +41,7 @@ Get-ChildItem -path $CmdletPathPattern -Filter "*.cs" -Recurse | Where-Object { 
         # "OperationId" = $Matches.1
         $MappingValue = @{
             "Command"         = $CommandName
-            "Variant"         = $VariantName
+            "Variants"        = [System.Collections.ArrayList]@($VariantName)
             "Method"          = $Matches.2
             "Url"             = $Matches.3
             "ApiVersion"      = $null
@@ -62,13 +62,22 @@ Get-ChildItem -path $CmdletPathPattern -Filter "*.cs" -Recurse | Where-Object { 
             $MappingValue.OutputType = $Matches.1
         }
 
-        $CommandPathMapping.Add("$($MappingValue.Command)_$($MappingValue.Variant)_$($MappingValue.ApiVersion)", $MappingValue)
+        $CommandMappingKey = "$($MappingValue.Command)_$($MappingValue.ApiVersion)"
+
+        if ($CommandPathMapping.Contains($CommandMappingKey))
+        {
+            $ExistingMapping = $CommandPathMapping[$CommandMappingKey]
+            $ExistingMapping.Variants.AddRange($MappingValue.Variants)
+
+        } else {
+            $CommandPathMapping.Add($CommandMappingKey, $MappingValue)
+        }
     }
     else {
         Write-Error "No match for $OpenApiTagPattern"
     }
 }
 
-$CommandPathMapping | ConvertTo-Json | Out-File -FilePath $MgCommandMetadataFile
+$CommandPathMapping | ConvertTo-Json -Depth 2 | Out-File -FilePath $MgCommandMetadataFile
 $stopwatch.Stop()
 $stopwatch.Elapsed.TotalSeconds
