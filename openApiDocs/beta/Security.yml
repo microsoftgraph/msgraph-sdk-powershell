@@ -120,6 +120,7 @@ paths:
       tags:
         - security.alert
       summary: Get alerts from security
+      description: Read-only. Nullable.
       operationId: security_ListAlerts
       parameters:
         - $ref: '#/components/parameters/top'
@@ -308,6 +309,7 @@ paths:
       tags:
         - security.alert
       summary: Create new navigation property to alerts for security
+      description: Read-only. Nullable.
       operationId: security_CreateAlerts
       requestBody:
         description: New navigation property
@@ -331,6 +333,7 @@ paths:
       tags:
         - security.alert
       summary: Get alerts from security
+      description: Read-only. Nullable.
       operationId: security_GetAlerts
       parameters:
         - name: alert-id
@@ -417,6 +420,7 @@ paths:
       tags:
         - security.alert
       summary: Update the navigation property alerts in security
+      description: Read-only. Nullable.
       operationId: security_UpdateAlerts
       parameters:
         - name: alert-id
@@ -443,6 +447,7 @@ paths:
       tags:
         - security.alert
       summary: Delete navigation property alerts for security
+      description: Read-only. Nullable.
       operationId: security_DeleteAlerts
       parameters:
         - name: alert-id
@@ -5492,10 +5497,10 @@ components:
       properties:
         name:
           type: string
-          description: Name for this key-value pair
+          description: 'Name for this key-value pair. Possible names are: AdditionalWSFedEndpointCheckResult,  AllowedAuthenticationClassReferencesCheckResult, AlwaysRequireAuthenticationCheckResult,   AutoUpdateEnabledCheckResult, ClaimsProviderNameCheckResult, EncryptClaimsCheckResult,  EncryptedNameIdRequiredCheckResult, MonitoringEnabledCheckResult,NotBeforeSkewCheckResult,  RequestMFAFromClaimsProvidersCheckResult, SignedSamlRequestsRequiredCheckResult, AdditionalAuthenticationRulesCheckResult, TokenLifetimeCheckResult,  DelegationAuthorizationRulesCheckResult, IssuanceAuthorizationRulesCheckResult, IssuanceTransformRulesCheckResult.'
         value:
           type: string
-          description: Value for this key-value pair
+          description: 'Value for this key-value pair. Possible result values are 0 (when the validation check passed), 1 (when the validation check failed), or 2 (when the validation check is a warning).'
           nullable: true
       additionalProperties:
         type: object

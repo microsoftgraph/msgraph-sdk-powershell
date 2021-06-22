@@ -218,6 +218,26 @@ directive:
       verb: Remove
       subject: (.*)(EntitlementManagement)Setting$
     remove: true
+  - where:
+      verb: Get|Update
+      subject: (.*)(IdentityGovernance)$
+    remove: true
+  - where:
+      verb: Get|Remove|Update
+      subject: (.*)(IdentityGovernance)AccessReview$
+    remove: true
+  - where:
+      verb: New|Remove|Update|Get|Add|Invoke|Reset|Send|Set|Stop
+      subject: (.*)(IdentityGovernance)(AccessReviewDefinition|AccessReviewHistoryDefinition|AccessReviewPolicy)(.*)$
+    remove: true
+  - where:
+      verb: New|Remove|Update|Get
+      subject: (.*)(IdentityGovernance)Term
+    remove: true
+  - where:
+      verb: New|Remove|Update|Get|Invoke
+      subject: (.*)(IdentityGovernance)AppConsent
+    remove: true
 # Rename cmdlets with duplicates in their name.
   - where:
       subject: ^(BusinessFlowTemplate)(\1)+
@@ -253,6 +273,6 @@ directive:
 ### Versioning
 
 ``` yaml
-module-version: 1.5.1
+module-version: 1.6.0
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```
