@@ -17,7 +17,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -32,7 +31,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -95,7 +93,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -186,7 +183,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -237,7 +233,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -310,7 +305,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -361,7 +355,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -447,7 +440,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -498,7 +490,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -529,7 +520,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -600,7 +590,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -631,7 +620,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -715,7 +703,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -748,7 +735,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -770,7 +756,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -841,7 +826,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -863,7 +847,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1169,7 +1152,7 @@ components:
               description: The collection of compliance information associated with secure score control
             controlCategory:
               type: string
-              description: 'Control action category (Account, Data, Device, Apps, Infrastructure).'
+              description: 'Control action category (Identity, Data, Device, Apps, Infrastructure).'
               nullable: true
             controlStateUpdates:
               type: array
@@ -1192,7 +1175,7 @@ components:
               nullable: true
             maxScore:
               type: number
-              description: Current obtained max score on specified date.
+              description: max attainable score for the control.
               format: double
               nullable: true
             rank:
@@ -1219,7 +1202,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: 'List of threats the control mitigates (accountBreach,dataDeletion,dataExfiltration,dataSpillage,elevationOfPrivilege,maliciousInsider,passwordCracking,phishingOrWhaling,spoofing).'
+              description: 'List of threats the control mitigates (accountBreach,dataDeletion,dataExfiltration,dataSpillage,'
             tier:
               type: string
               description: 'Control tier (Core, Defense in Depth, Advanced.)'
@@ -1519,7 +1502,7 @@ components:
       properties:
         applicationName:
           type: string
-          description: 'Name of the application managing the network connection (for example, Facebook, SMTP, etc.).'
+          description: 'Name of the application managing the network connection (for example, Facebook or SMTP).'
           nullable: true
         destinationAddress:
           type: string

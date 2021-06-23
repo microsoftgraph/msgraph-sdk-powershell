@@ -17,7 +17,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -63,7 +62,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -207,7 +205,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -228,7 +225,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -245,7 +241,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -319,7 +314,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -336,7 +330,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -436,7 +429,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -551,7 +543,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -617,7 +608,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -675,7 +665,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -861,7 +850,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -878,7 +866,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -892,7 +879,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -965,7 +951,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -979,7 +964,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1066,7 +1050,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1089,7 +1072,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1113,7 +1095,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1193,7 +1174,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1217,7 +1197,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1347,7 +1326,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1362,7 +1340,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1375,7 +1352,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1463,7 +1439,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1476,7 +1451,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1584,7 +1558,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1615,7 +1588,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1636,7 +1608,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1724,7 +1695,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1745,7 +1715,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1853,7 +1822,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1880,7 +1848,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1899,7 +1866,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1987,7 +1953,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2006,7 +1971,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2109,7 +2073,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2128,7 +2091,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2222,7 +2184,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2237,7 +2198,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2251,7 +2211,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2340,7 +2299,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2354,7 +2312,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2476,7 +2433,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2497,7 +2453,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2513,7 +2468,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2615,7 +2569,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2631,7 +2584,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2753,7 +2705,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2776,7 +2727,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2793,7 +2743,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2881,7 +2830,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2898,7 +2846,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3001,7 +2948,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3020,7 +2966,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3102,7 +3047,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3123,7 +3067,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3195,7 +3138,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3228,7 +3170,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3251,7 +3192,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3325,7 +3265,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3348,7 +3287,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3448,7 +3386,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3483,7 +3420,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3506,7 +3442,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3594,7 +3529,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3617,7 +3551,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3713,7 +3646,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3732,7 +3664,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3804,7 +3735,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3827,7 +3757,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3850,7 +3779,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3929,7 +3857,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3952,7 +3879,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4077,7 +4003,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4092,7 +4017,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4105,7 +4029,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4193,7 +4116,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4206,7 +4128,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4314,7 +4235,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4345,7 +4265,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4366,7 +4285,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4454,7 +4372,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4475,7 +4392,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4583,7 +4499,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4610,7 +4525,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4629,7 +4543,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4717,7 +4630,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4736,7 +4648,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4839,7 +4750,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4858,7 +4768,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4952,7 +4861,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4975,7 +4883,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4992,7 +4899,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5080,7 +4986,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5097,7 +5002,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5200,7 +5104,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5219,7 +5122,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5301,7 +5203,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5318,7 +5219,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5409,7 +5309,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5524,7 +5423,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5590,7 +5488,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5666,7 +5563,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5732,7 +5628,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5837,7 +5732,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5851,7 +5745,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5945,7 +5838,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5970,7 +5862,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5988,7 +5879,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6076,7 +5966,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6094,7 +5983,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6202,7 +6090,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6227,7 +6114,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6245,7 +6131,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6333,7 +6218,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6351,7 +6235,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6452,7 +6335,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6473,7 +6355,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6490,7 +6371,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6564,7 +6444,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6581,7 +6460,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6681,7 +6559,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6704,7 +6581,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6721,7 +6597,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6809,7 +6684,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6826,7 +6700,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6922,7 +6795,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6949,7 +6821,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7040,7 +6911,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7057,7 +6927,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7071,7 +6940,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7144,7 +7012,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7158,7 +7025,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7245,7 +7111,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7264,7 +7129,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7279,7 +7143,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7352,7 +7215,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7367,7 +7229,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7454,7 +7315,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7471,7 +7331,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7485,7 +7344,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7558,7 +7416,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7572,7 +7429,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7653,7 +7509,7 @@ components:
             intuneAccountId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
-              description: Intune Account ID for given tenant
+              description: Intune Account Id for given tenant
               format: uuid
             settings:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementSettings'

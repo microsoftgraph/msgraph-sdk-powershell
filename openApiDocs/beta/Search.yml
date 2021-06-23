@@ -17,7 +17,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -29,7 +28,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -85,7 +83,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -106,7 +103,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -126,7 +122,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -201,7 +196,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -221,7 +215,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -321,7 +314,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -333,7 +325,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -661,7 +652,7 @@ components:
         - list
         - listItem
         - drive
-        - unknownfuturevalue
+        - unknownFutureValue
       type: string
     microsoft.graph.searchQuery:
       title: searchQuery
@@ -993,6 +984,7 @@ components:
         - group
         - everyone
         - everyoneExceptGuests
+        - externalGroup
         - unknownFutureValue
       type: string
     microsoft.graph.externalConnectors.externalItemContentType:
@@ -1150,6 +1142,9 @@ components:
           type: integer
           description: The rank or the order of the result.
           format: int32
+          nullable: true
+        resultTemplateId:
+          type: string
           nullable: true
         summary:
           type: string

@@ -11,7 +11,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get planner from groups
-      description: Selective Planner services available to the group. Read-only. Nullable.
+      description: Entry-point to Planner resource that might exist for a Unified Group.
       operationId: groups_GetPlanner
       parameters:
         - name: group-id
@@ -25,7 +25,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -38,7 +37,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -66,7 +64,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Update the navigation property planner in groups
-      description: Selective Planner services available to the group. Read-only. Nullable.
+      description: Entry-point to Planner resource that might exist for a Unified Group.
       operationId: groups_UpdatePlanner
       parameters:
         - name: group-id
@@ -93,7 +91,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Delete navigation property planner for groups
-      description: Selective Planner services available to the group. Read-only. Nullable.
+      description: Entry-point to Planner resource that might exist for a Unified Group.
       operationId: groups_DeletePlanner
       parameters:
         - name: group-id
@@ -138,7 +136,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -159,7 +156,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -178,7 +174,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -269,7 +264,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -288,7 +282,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -396,7 +389,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get buckets from groups
-      description: Collection of buckets in the plan. Read-only. Nullable.
+      description: Read-only. Nullable. Collection of buckets in the plan.
       operationId: groups.planner.plans_ListBuckets
       parameters:
         - name: group-id
@@ -422,7 +415,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -441,7 +433,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -457,7 +448,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -493,7 +483,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Create new navigation property to buckets for groups
-      description: Collection of buckets in the plan. Read-only. Nullable.
+      description: Read-only. Nullable. Collection of buckets in the plan.
       operationId: groups.planner.plans_CreateBuckets
       parameters:
         - name: group-id
@@ -532,7 +522,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get buckets from groups
-      description: Collection of buckets in the plan. Read-only. Nullable.
+      description: Read-only. Nullable. Collection of buckets in the plan.
       operationId: groups.planner.plans_GetBuckets
       parameters:
         - name: group-id
@@ -560,7 +550,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -576,7 +565,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -606,7 +594,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Update the navigation property buckets in groups
-      description: Collection of buckets in the plan. Read-only. Nullable.
+      description: Read-only. Nullable. Collection of buckets in the plan.
       operationId: groups.planner.plans_UpdateBuckets
       parameters:
         - name: group-id
@@ -647,7 +635,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Delete navigation property buckets for groups
-      description: Collection of buckets in the plan. Read-only. Nullable.
+      description: Read-only. Nullable. Collection of buckets in the plan.
       operationId: groups.planner.plans_DeleteBuckets
       parameters:
         - name: group-id
@@ -720,7 +708,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -773,7 +760,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -809,7 +795,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -929,7 +914,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -965,7 +949,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1150,7 +1133,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1164,7 +1146,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1316,7 +1297,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1329,7 +1309,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1481,7 +1460,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1497,7 +1475,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1649,7 +1626,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1662,7 +1638,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1779,7 +1754,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get details from groups
-      description: Additional details about the plan. Read-only. Nullable.
+      description: Read-only. Nullable. Additional details about the plan.
       operationId: groups.planner.plans_GetDetails
       parameters:
         - name: group-id
@@ -1800,7 +1775,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1814,7 +1788,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1836,7 +1809,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Update the navigation property details in groups
-      description: Additional details about the plan. Read-only. Nullable.
+      description: Read-only. Nullable. Additional details about the plan.
       operationId: groups.planner.plans_UpdateDetails
       parameters:
         - name: group-id
@@ -1870,7 +1843,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Delete navigation property details for groups
-      description: Additional details about the plan. Read-only. Nullable.
+      description: Read-only. Nullable. Additional details about the plan.
       operationId: groups.planner.plans_DeleteDetails
       parameters:
         - name: group-id
@@ -1903,7 +1876,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get tasks from groups
-      description: Collection of tasks in the plan. Read-only. Nullable.
+      description: Read-only. Nullable. Collection of tasks in the plan.
       operationId: groups.planner.plans_ListTasks
       parameters:
         - name: group-id
@@ -1929,7 +1902,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1982,7 +1954,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2018,7 +1989,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2057,7 +2027,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Create new navigation property to tasks for groups
-      description: Collection of tasks in the plan. Read-only. Nullable.
+      description: Read-only. Nullable. Collection of tasks in the plan.
       operationId: groups.planner.plans_CreateTasks
       parameters:
         - name: group-id
@@ -2096,7 +2066,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get tasks from groups
-      description: Collection of tasks in the plan. Read-only. Nullable.
+      description: Read-only. Nullable. Collection of tasks in the plan.
       operationId: groups.planner.plans_GetTasks
       parameters:
         - name: group-id
@@ -2124,7 +2094,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2160,7 +2129,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2211,7 +2179,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Update the navigation property tasks in groups
-      description: Collection of tasks in the plan. Read-only. Nullable.
+      description: Read-only. Nullable. Collection of tasks in the plan.
       operationId: groups.planner.plans_UpdateTasks
       parameters:
         - name: group-id
@@ -2252,7 +2220,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Delete navigation property tasks for groups
-      description: Collection of tasks in the plan. Read-only. Nullable.
+      description: Read-only. Nullable. Collection of tasks in the plan.
       operationId: groups.planner.plans_DeleteTasks
       parameters:
         - name: group-id
@@ -2320,7 +2288,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2334,7 +2301,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2465,7 +2431,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2478,7 +2443,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2609,7 +2573,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2625,7 +2588,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2756,7 +2718,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2769,7 +2730,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2878,7 +2838,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2893,7 +2852,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2956,7 +2914,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2975,7 +2932,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2991,7 +2947,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3065,7 +3020,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3081,7 +3035,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3181,7 +3134,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3234,7 +3186,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3270,7 +3221,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3362,7 +3312,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3398,7 +3347,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3533,7 +3481,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3547,7 +3494,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3657,7 +3603,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3670,7 +3615,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3780,7 +3724,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3796,7 +3739,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3906,7 +3848,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3919,7 +3860,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4020,7 +3960,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4041,7 +3980,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4060,7 +3998,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4136,7 +4073,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4155,7 +4091,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4246,7 +4181,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get buckets from planner
-      description: Collection of buckets in the plan. Read-only. Nullable.
+      description: Read-only. Nullable. Collection of buckets in the plan.
       operationId: planner.plans_ListBuckets
       parameters:
         - name: plannerPlan-id
@@ -4265,7 +4200,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4284,7 +4218,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4300,7 +4233,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4336,7 +4268,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Create new navigation property to buckets for planner
-      description: Collection of buckets in the plan. Read-only. Nullable.
+      description: Read-only. Nullable. Collection of buckets in the plan.
       operationId: planner.plans_CreateBuckets
       parameters:
         - name: plannerPlan-id
@@ -4368,7 +4300,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get buckets from planner
-      description: Collection of buckets in the plan. Read-only. Nullable.
+      description: Read-only. Nullable. Collection of buckets in the plan.
       operationId: planner.plans_GetBuckets
       parameters:
         - name: plannerPlan-id
@@ -4389,7 +4321,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4405,7 +4336,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4434,7 +4364,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Update the navigation property buckets in planner
-      description: Collection of buckets in the plan. Read-only. Nullable.
+      description: Read-only. Nullable. Collection of buckets in the plan.
       operationId: planner.plans_UpdateBuckets
       parameters:
         - name: plannerPlan-id
@@ -4468,7 +4398,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Delete navigation property buckets for planner
-      description: Collection of buckets in the plan. Read-only. Nullable.
+      description: Read-only. Nullable. Collection of buckets in the plan.
       operationId: planner.plans_DeleteBuckets
       parameters:
         - name: plannerPlan-id
@@ -4527,7 +4457,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4580,7 +4509,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4616,7 +4544,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4722,7 +4649,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4758,7 +4684,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4918,7 +4843,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4932,7 +4856,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5063,7 +4986,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5076,7 +4998,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5207,7 +5128,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5223,7 +5143,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5354,7 +5273,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5367,7 +5285,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5470,7 +5387,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get details from planner
-      description: Additional details about the plan. Read-only. Nullable.
+      description: Read-only. Nullable. Additional details about the plan.
       operationId: planner.plans_GetDetails
       parameters:
         - name: plannerPlan-id
@@ -5484,7 +5401,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5498,7 +5414,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5520,7 +5435,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Update the navigation property details in planner
-      description: Additional details about the plan. Read-only. Nullable.
+      description: Read-only. Nullable. Additional details about the plan.
       operationId: planner.plans_UpdateDetails
       parameters:
         - name: plannerPlan-id
@@ -5547,7 +5462,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Delete navigation property details for planner
-      description: Additional details about the plan. Read-only. Nullable.
+      description: Read-only. Nullable. Additional details about the plan.
       operationId: planner.plans_DeleteDetails
       parameters:
         - name: plannerPlan-id
@@ -5573,7 +5488,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get tasks from planner
-      description: Collection of tasks in the plan. Read-only. Nullable.
+      description: Read-only. Nullable. Collection of tasks in the plan.
       operationId: planner.plans_ListTasks
       parameters:
         - name: plannerPlan-id
@@ -5592,7 +5507,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5645,7 +5559,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5681,7 +5594,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5720,7 +5632,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Create new navigation property to tasks for planner
-      description: Collection of tasks in the plan. Read-only. Nullable.
+      description: Read-only. Nullable. Collection of tasks in the plan.
       operationId: planner.plans_CreateTasks
       parameters:
         - name: plannerPlan-id
@@ -5752,7 +5664,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get tasks from planner
-      description: Collection of tasks in the plan. Read-only. Nullable.
+      description: Read-only. Nullable. Collection of tasks in the plan.
       operationId: planner.plans_GetTasks
       parameters:
         - name: plannerPlan-id
@@ -5773,7 +5685,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5809,7 +5720,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5856,7 +5766,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Update the navigation property tasks in planner
-      description: Collection of tasks in the plan. Read-only. Nullable.
+      description: Read-only. Nullable. Collection of tasks in the plan.
       operationId: planner.plans_UpdateTasks
       parameters:
         - name: plannerPlan-id
@@ -5890,7 +5800,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Delete navigation property tasks for planner
-      description: Collection of tasks in the plan. Read-only. Nullable.
+      description: Read-only. Nullable. Collection of tasks in the plan.
       operationId: planner.plans_DeleteTasks
       parameters:
         - name: plannerPlan-id
@@ -5944,7 +5854,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5958,7 +5867,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6068,7 +5976,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6081,7 +5988,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6191,7 +6097,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6207,7 +6112,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6317,7 +6221,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6330,7 +6233,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6431,7 +6333,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6484,7 +6385,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6520,7 +6420,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6597,7 +6496,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6633,7 +6531,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6743,7 +6640,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6757,7 +6653,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6846,7 +6741,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6859,7 +6753,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6948,7 +6841,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6964,7 +6856,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7053,7 +6944,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7066,7 +6956,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7141,7 +7030,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Get planner from users
-      description: Selective Planner services available to the user. Read-only. Nullable.
+      description: Entry-point to the Planner resource that might exist for a user. Read-only.
       operationId: users_GetPlanner
       parameters:
         - name: user-id
@@ -7155,7 +7044,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7169,7 +7057,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7202,7 +7089,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Update the navigation property planner in users
-      description: Selective Planner services available to the user. Read-only. Nullable.
+      description: Entry-point to the Planner resource that might exist for a user. Read-only.
       operationId: users_UpdatePlanner
       parameters:
         - name: user-id
@@ -7229,7 +7116,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property planner for users
-      description: Selective Planner services available to the user. Read-only. Nullable.
+      description: Entry-point to the Planner resource that might exist for a user. Read-only.
       operationId: users_DeletePlanner
       parameters:
         - name: user-id
@@ -7274,7 +7161,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7295,7 +7181,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7314,7 +7199,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7405,7 +7289,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7424,7 +7307,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7532,7 +7414,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Get buckets from users
-      description: Collection of buckets in the plan. Read-only. Nullable.
+      description: Read-only. Nullable. Collection of buckets in the plan.
       operationId: users.planner.plans_ListBuckets
       parameters:
         - name: user-id
@@ -7558,7 +7440,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7577,7 +7458,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7593,7 +7473,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7629,7 +7508,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Create new navigation property to buckets for users
-      description: Collection of buckets in the plan. Read-only. Nullable.
+      description: Read-only. Nullable. Collection of buckets in the plan.
       operationId: users.planner.plans_CreateBuckets
       parameters:
         - name: user-id
@@ -7668,7 +7547,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Get buckets from users
-      description: Collection of buckets in the plan. Read-only. Nullable.
+      description: Read-only. Nullable. Collection of buckets in the plan.
       operationId: users.planner.plans_GetBuckets
       parameters:
         - name: user-id
@@ -7696,7 +7575,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7712,7 +7590,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7742,7 +7619,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Update the navigation property buckets in users
-      description: Collection of buckets in the plan. Read-only. Nullable.
+      description: Read-only. Nullable. Collection of buckets in the plan.
       operationId: users.planner.plans_UpdateBuckets
       parameters:
         - name: user-id
@@ -7783,7 +7660,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property buckets for users
-      description: Collection of buckets in the plan. Read-only. Nullable.
+      description: Read-only. Nullable. Collection of buckets in the plan.
       operationId: users.planner.plans_DeleteBuckets
       parameters:
         - name: user-id
@@ -7856,7 +7733,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7909,7 +7785,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7945,7 +7820,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8065,7 +7939,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8101,7 +7974,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8286,7 +8158,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8300,7 +8171,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8452,7 +8322,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8465,7 +8334,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8617,7 +8485,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8633,7 +8500,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8785,7 +8651,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8798,7 +8663,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8915,7 +8779,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Get details from users
-      description: Additional details about the plan. Read-only. Nullable.
+      description: Read-only. Nullable. Additional details about the plan.
       operationId: users.planner.plans_GetDetails
       parameters:
         - name: user-id
@@ -8936,7 +8800,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8950,7 +8813,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8972,7 +8834,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Update the navigation property details in users
-      description: Additional details about the plan. Read-only. Nullable.
+      description: Read-only. Nullable. Additional details about the plan.
       operationId: users.planner.plans_UpdateDetails
       parameters:
         - name: user-id
@@ -9006,7 +8868,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property details for users
-      description: Additional details about the plan. Read-only. Nullable.
+      description: Read-only. Nullable. Additional details about the plan.
       operationId: users.planner.plans_DeleteDetails
       parameters:
         - name: user-id
@@ -9039,7 +8901,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Get tasks from users
-      description: Collection of tasks in the plan. Read-only. Nullable.
+      description: Read-only. Nullable. Collection of tasks in the plan.
       operationId: users.planner.plans_ListTasks
       parameters:
         - name: user-id
@@ -9065,7 +8927,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9118,7 +8979,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9154,7 +9014,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9193,7 +9052,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Create new navigation property to tasks for users
-      description: Collection of tasks in the plan. Read-only. Nullable.
+      description: Read-only. Nullable. Collection of tasks in the plan.
       operationId: users.planner.plans_CreateTasks
       parameters:
         - name: user-id
@@ -9232,7 +9091,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Get tasks from users
-      description: Collection of tasks in the plan. Read-only. Nullable.
+      description: Read-only. Nullable. Collection of tasks in the plan.
       operationId: users.planner.plans_GetTasks
       parameters:
         - name: user-id
@@ -9260,7 +9119,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9296,7 +9154,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9347,7 +9204,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Update the navigation property tasks in users
-      description: Collection of tasks in the plan. Read-only. Nullable.
+      description: Read-only. Nullable. Collection of tasks in the plan.
       operationId: users.planner.plans_UpdateTasks
       parameters:
         - name: user-id
@@ -9388,7 +9245,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property tasks for users
-      description: Collection of tasks in the plan. Read-only. Nullable.
+      description: Read-only. Nullable. Collection of tasks in the plan.
       operationId: users.planner.plans_DeleteTasks
       parameters:
         - name: user-id
@@ -9456,7 +9313,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9470,7 +9326,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9601,7 +9456,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9614,7 +9468,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9745,7 +9598,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9761,7 +9613,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9892,7 +9743,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9905,7 +9755,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10008,7 +9857,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Get tasks from users
-      description: Read-only. Nullable. Returns the plannerTasks assigned to the user.
+      description: Read-only. Nullable. Returns the plannerPlans shared with the user.
       operationId: users.planner_ListTasks
       parameters:
         - name: user-id
@@ -10027,7 +9876,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10080,7 +9928,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10116,7 +9963,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10155,7 +10001,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Create new navigation property to tasks for users
-      description: Read-only. Nullable. Returns the plannerTasks assigned to the user.
+      description: Read-only. Nullable. Returns the plannerPlans shared with the user.
       operationId: users.planner_CreateTasks
       parameters:
         - name: user-id
@@ -10187,7 +10033,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Get tasks from users
-      description: Read-only. Nullable. Returns the plannerTasks assigned to the user.
+      description: Read-only. Nullable. Returns the plannerPlans shared with the user.
       operationId: users.planner_GetTasks
       parameters:
         - name: user-id
@@ -10208,7 +10054,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10244,7 +10089,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10291,7 +10135,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Update the navigation property tasks in users
-      description: Read-only. Nullable. Returns the plannerTasks assigned to the user.
+      description: Read-only. Nullable. Returns the plannerPlans shared with the user.
       operationId: users.planner_UpdateTasks
       parameters:
         - name: user-id
@@ -10325,7 +10169,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property tasks for users
-      description: Read-only. Nullable. Returns the plannerTasks assigned to the user.
+      description: Read-only. Nullable. Returns the plannerPlans shared with the user.
       operationId: users.planner_DeleteTasks
       parameters:
         - name: user-id
@@ -10379,7 +10223,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10393,7 +10236,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10503,7 +10345,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10516,7 +10357,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10626,7 +10466,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10642,7 +10481,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10752,7 +10590,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10765,7 +10602,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10889,14 +10725,14 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerBucket'
-              description: Collection of buckets in the plan. Read-only. Nullable.
+              description: Read-only. Nullable. Collection of buckets in the plan.
             details:
               $ref: '#/components/schemas/microsoft.graph.plannerPlanDetails'
             tasks:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
-              description: Collection of tasks in the plan. Read-only. Nullable.
+              description: Read-only. Nullable. Collection of tasks in the plan.
           additionalProperties:
             type: object
     microsoft.graph.plannerBucket:
@@ -11134,7 +10970,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
-              description: Read-only. Nullable. Returns the plannerTasks assigned to the user.
+              description: Read-only. Nullable. Returns the plannerPlans shared with the user.
           additionalProperties:
             type: object
     microsoft.graph.entity:
