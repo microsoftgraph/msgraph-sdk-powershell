@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Security-help.xml
 Module Name: Microsoft.Graph.Security
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/new-mgsecurityaction
 schema: 2.0.0
@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgSecurityAction
 
 ## SYNOPSIS
-Create new navigation property to securityActions for Security
+Create new navigation property to securityActions for security
 
 ## SYNTAX
 
@@ -19,44 +19,26 @@ New-MgSecurityAction [-ActionReason <String>] [-AdditionalProperties <Hashtable>
  [-CreatedDateTime <DateTime>] [-ErrorInfo <IMicrosoftGraphResultInfo>] [-Id <String>]
  [-LastActionDateTime <DateTime>] [-Name <String>] [-Parameters <IMicrosoftGraphKeyValuePair[]>]
  [-States <IMicrosoftGraphSecurityActionState[]>] [-Status <String>] [-User <String>]
- [-VendorInformation <IMicrosoftGraphSecurityVendorInformation>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-VendorInformation <IMicrosoftGraphSecurityVendorInformation>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgSecurityAction -BodyParameter <IMicrosoftGraphSecurityAction> [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgSecurityAction -BodyParameter <IMicrosoftGraphSecurityAction> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create new navigation property to securityActions for Security
+Create new navigation property to securityActions for security
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
 ### -ActionReason
-.
+Reason for invoking this action.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -71,7 +53,7 @@ Accept wildcard characters: False
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -83,10 +65,11 @@ Accept wildcard characters: False
 ```
 
 ### -AppId
-.
+The Application ID of the calling application that submitted (POST) the action.
+The appId should be extracted from the auth token and not entered manually by the calling application.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -98,10 +81,11 @@ Accept wildcard characters: False
 ```
 
 ### -AzureTenantId
-.
+Azure tenant ID of the entity to determine which tenant the entity belongs to (multi-tenancy support).
+The azureTenantId should be extracted from the auth token and not entered manually by the calling application.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -117,7 +101,7 @@ securityAction
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityAction
+Type: IMicrosoftGraphSecurityAction
 Parameter Sets: Create
 Aliases:
 
@@ -132,7 +116,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -144,10 +128,12 @@ Accept wildcard characters: False
 ```
 
 ### -CompletedDateTime
-.
+Timestamp when the action was completed.
+The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 
 ```yaml
-Type: System.DateTime
+Type: DateTime
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -159,10 +145,12 @@ Accept wildcard characters: False
 ```
 
 ### -CreatedDateTime
-.
+Timestamp when the action is created.
+The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 
 ```yaml
-Type: System.DateTime
+Type: DateTime
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -174,11 +162,11 @@ Accept wildcard characters: False
 ```
 
 ### -ErrorInfo
-ResultInfo
+resultInfo
 To construct, see NOTES section for ERRORINFO properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphResultInfo
+Type: IMicrosoftGraphResultInfo
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -193,7 +181,7 @@ Accept wildcard characters: False
 Read-only.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -205,10 +193,12 @@ Accept wildcard characters: False
 ```
 
 ### -LastActionDateTime
-.
+Timestamp when this action was last updated.
+The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 
 ```yaml
-Type: System.DateTime
+Type: DateTime
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -220,10 +210,10 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-.
+Action name.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -235,11 +225,13 @@ Accept wildcard characters: False
 ```
 
 ### -Parameters
-.
+Collection of parameters (key-value pairs) necessary to invoke the action, e.g.
+URL or fileHash to block, etc.).
+Required
 To construct, see NOTES section for PARAMETERS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphKeyValuePair[]
+Type: IMicrosoftGraphKeyValuePair[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -251,11 +243,11 @@ Accept wildcard characters: False
 ```
 
 ### -States
-.
+Collection of securityActionState to keep the history of an action.
 To construct, see NOTES section for STATES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityActionState[]
+Type: IMicrosoftGraphSecurityActionState[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -270,7 +262,7 @@ Accept wildcard characters: False
 operationStatus
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -282,10 +274,11 @@ Accept wildcard characters: False
 ```
 
 ### -User
-.
+The user principal name of the signed-in user that submitted (POST) the action.
+The user should be extracted from the auth token and not entered manually by the calling application.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -301,7 +294,7 @@ securityVendorInformation
 To construct, see NOTES section for VENDORINFORMATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityVendorInformation
+Type: IMicrosoftGraphSecurityVendorInformation
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -316,7 +309,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -332,7 +325,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -366,29 +359,29 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphSecurityAction>: securityAction
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
-  - `[ActionReason <String>]`: 
-  - `[AppId <String>]`: 
-  - `[AzureTenantId <String>]`: 
+  - `[ActionReason <String>]`: Reason for invoking this action.
+  - `[AppId <String>]`: The Application ID of the calling application that submitted (POST) the action. The appId should be extracted from the auth token and not entered manually by the calling application.
+  - `[AzureTenantId <String>]`: Azure tenant ID of the entity to determine which tenant the entity belongs to (multi-tenancy support). The azureTenantId should be extracted from the auth token and not entered manually by the calling application.
   - `[ClientContext <String>]`: 
-  - `[CompletedDateTime <DateTime?>]`: 
-  - `[CreatedDateTime <DateTime?>]`: 
-  - `[ErrorInfo <IMicrosoftGraphResultInfo>]`: ResultInfo
+  - `[CompletedDateTime <DateTime?>]`: Timestamp when the action was completed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+  - `[CreatedDateTime <DateTime?>]`: Timestamp when the action is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+  - `[ErrorInfo <IMicrosoftGraphResultInfo>]`: resultInfo
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Code <Int32?>]`: 
-    - `[Message <String>]`: 
-    - `[Subcode <Int32?>]`: 
-  - `[LastActionDateTime <DateTime?>]`: 
-  - `[Name <String>]`: 
-  - `[Parameters <IMicrosoftGraphKeyValuePair[]>]`: 
-    - `[Name <String>]`: Name for this key-value pair
-    - `[Value <String>]`: Value for this key-value pair
-  - `[States <IMicrosoftGraphSecurityActionState[]>]`: 
-    - `[AppId <String>]`: 
+    - `[Code <Int32?>]`: The result code.
+    - `[Message <String>]`: The message.
+    - `[Subcode <Int32?>]`: The result sub-code.
+  - `[LastActionDateTime <DateTime?>]`: Timestamp when this action was last updated. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+  - `[Name <String>]`: Action name.
+  - `[Parameters <IMicrosoftGraphKeyValuePair[]>]`: Collection of parameters (key-value pairs) necessary to invoke the action, e.g. URL or fileHash to block, etc.). Required
+    - `[Name <String>]`: Name for this key-value pair. Possible names are: AdditionalWSFedEndpointCheckResult,  AllowedAuthenticationClassReferencesCheckResult, AlwaysRequireAuthenticationCheckResult,   AutoUpdateEnabledCheckResult, ClaimsProviderNameCheckResult, EncryptClaimsCheckResult,  EncryptedNameIdRequiredCheckResult, MonitoringEnabledCheckResult,NotBeforeSkewCheckResult,  RequestMFAFromClaimsProvidersCheckResult, SignedSamlRequestsRequiredCheckResult, AdditionalAuthenticationRulesCheckResult, TokenLifetimeCheckResult,  DelegationAuthorizationRulesCheckResult, IssuanceAuthorizationRulesCheckResult, IssuanceTransformRulesCheckResult.
+    - `[Value <String>]`: Value for this key-value pair. Possible result values are 0 (when the validation check passed), 1 (when the validation check failed), or 2 (when the validation check is a warning).
+  - `[States <IMicrosoftGraphSecurityActionState[]>]`: Collection of securityActionState to keep the history of an action.
+    - `[AppId <String>]`: The Application ID of the calling application that submitted an update (PATCH) to the action. The appId should be extracted from the auth token and not entered manually by the calling application.
     - `[Status <String>]`: operationStatus
-    - `[UpdatedDateTime <DateTime?>]`: 
-    - `[User <String>]`: 
+    - `[UpdatedDateTime <DateTime?>]`: Timestamp when the actionState was updated. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+    - `[User <String>]`: The user principal name of the signed-in user that submitted an update (PATCH) to the action. The user should be extracted from the auth token and not entered manually by the calling application.
   - `[Status <String>]`: operationStatus
-  - `[User <String>]`: 
+  - `[User <String>]`: The user principal name of the signed-in user that submitted  (POST) the action. The user should be extracted from the auth token and not entered manually by the calling application.
   - `[VendorInformation <IMicrosoftGraphSecurityVendorInformation>]`: securityVendorInformation
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Provider <String>]`: Specific provider (product/service - not vendor company); for example, WindowsDefenderATP.
@@ -396,21 +389,21 @@ BODYPARAMETER <IMicrosoftGraphSecurityAction>: securityAction
     - `[SubProvider <String>]`: Specific subprovider (under aggregating provider); for example, WindowsDefenderATP.SmartScreen.
     - `[Vendor <String>]`: Name of the alert vendor (for example, Microsoft, Dell, FireEye). Required
 
-ERRORINFO <IMicrosoftGraphResultInfo>: ResultInfo
+ERRORINFO <IMicrosoftGraphResultInfo>: resultInfo
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Code <Int32?>]`: 
-  - `[Message <String>]`: 
-  - `[Subcode <Int32?>]`: 
+  - `[Code <Int32?>]`: The result code.
+  - `[Message <String>]`: The message.
+  - `[Subcode <Int32?>]`: The result sub-code.
 
-PARAMETERS <IMicrosoftGraphKeyValuePair[]>: .
-  - `[Name <String>]`: Name for this key-value pair
-  - `[Value <String>]`: Value for this key-value pair
+PARAMETERS <IMicrosoftGraphKeyValuePair[]>: Collection of parameters (key-value pairs) necessary to invoke the action, e.g. URL or fileHash to block, etc.). Required
+  - `[Name <String>]`: Name for this key-value pair. Possible names are: AdditionalWSFedEndpointCheckResult,  AllowedAuthenticationClassReferencesCheckResult, AlwaysRequireAuthenticationCheckResult,   AutoUpdateEnabledCheckResult, ClaimsProviderNameCheckResult, EncryptClaimsCheckResult,  EncryptedNameIdRequiredCheckResult, MonitoringEnabledCheckResult,NotBeforeSkewCheckResult,  RequestMFAFromClaimsProvidersCheckResult, SignedSamlRequestsRequiredCheckResult, AdditionalAuthenticationRulesCheckResult, TokenLifetimeCheckResult,  DelegationAuthorizationRulesCheckResult, IssuanceAuthorizationRulesCheckResult, IssuanceTransformRulesCheckResult.
+  - `[Value <String>]`: Value for this key-value pair. Possible result values are 0 (when the validation check passed), 1 (when the validation check failed), or 2 (when the validation check is a warning).
 
-STATES <IMicrosoftGraphSecurityActionState[]>: .
-  - `[AppId <String>]`: 
+STATES <IMicrosoftGraphSecurityActionState[]>: Collection of securityActionState to keep the history of an action.
+  - `[AppId <String>]`: The Application ID of the calling application that submitted an update (PATCH) to the action. The appId should be extracted from the auth token and not entered manually by the calling application.
   - `[Status <String>]`: operationStatus
-  - `[UpdatedDateTime <DateTime?>]`: 
-  - `[User <String>]`: 
+  - `[UpdatedDateTime <DateTime?>]`: Timestamp when the actionState was updated. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+  - `[User <String>]`: The user principal name of the signed-in user that submitted an update (PATCH) to the action. The user should be extracted from the auth token and not entered manually by the calling application.
 
 VENDORINFORMATION <IMicrosoftGraphSecurityVendorInformation>: securityVendorInformation
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -420,4 +413,3 @@ VENDORINFORMATION <IMicrosoftGraphSecurityVendorInformation>: securityVendorInfo
   - `[Vendor <String>]`: Name of the alert vendor (for example, Microsoft, Dell, FireEye). Required
 
 ## RELATED LINKS
-

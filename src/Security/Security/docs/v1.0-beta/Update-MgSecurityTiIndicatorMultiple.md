@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Security-help.xml
 Module Name: Microsoft.Graph.Security
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/update-mgsecuritytiindicatormultiple
 schema: 2.0.0
@@ -15,14 +15,14 @@ Invoke action updateTiIndicators
 ### UpdateExpanded1 (Default)
 ```
 Update-MgSecurityTiIndicatorMultiple [-AdditionalProperties <Hashtable>]
- [-Value <IMicrosoftGraphTiIndicator[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Value <IMicrosoftGraphTiIndicator[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Update1
 ```
 Update-MgSecurityTiIndicatorMultiple
- -BodyParameter <IPathsS86SndSecurityTiindicatorsMicrosoftGraphUpdatetiindicatorsPostRequestbodyContentApplicationJsonSchema>
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IPaths3Ccfi6SecurityTiindicatorsMicrosoftGraphUpdatetiindicatorsPostRequestbodyContentApplicationJsonSchema>
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -30,31 +30,13 @@ Invoke action updateTiIndicators
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
 ### -AdditionalProperties
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: UpdateExpanded1
 Aliases:
 
@@ -70,7 +52,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsS86SndSecurityTiindicatorsMicrosoftGraphUpdatetiindicatorsPostRequestbodyContentApplicationJsonSchema
+Type: IPaths3Ccfi6SecurityTiindicatorsMicrosoftGraphUpdatetiindicatorsPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Update1
 Aliases:
 
@@ -86,7 +68,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for VALUE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTiIndicator[]
+Type: IMicrosoftGraphTiIndicator[]
 Parameter Sets: UpdateExpanded1
 Aliases:
 
@@ -101,7 +83,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -117,7 +99,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -133,7 +115,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsS86SndSecurityTiindicatorsMicrosoftGraphUpdatetiindicatorsPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.PowerShell.Models.IPaths3Ccfi6SecurityTiindicatorsMicrosoftGraphUpdatetiindicatorsPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
@@ -148,16 +130,16 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IPathsS86SndSecurityTiindicatorsMicrosoftGraphUpdatetiindicatorsPostRequestbodyContentApplicationJsonSchema>: .
+BODYPARAMETER <IPaths3Ccfi6SecurityTiindicatorsMicrosoftGraphUpdatetiindicatorsPostRequestbodyContentApplicationJsonSchema>: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Value <IMicrosoftGraphTiIndicator[]>]`: 
     - `[Id <String>]`: Read-only.
     - `[Action <String>]`: tiAction
-    - `[ActivityGroupNames <String[]>]`: 
-    - `[AdditionalInformation <String>]`: 
-    - `[AzureTenantId <String>]`: 
-    - `[Confidence <Int32?>]`: 
-    - `[Description <String>]`: 
+    - `[ActivityGroupNames <String[]>]`: The cyber threat intelligence name(s) for the parties responsible for the malicious activity covered by the threat indicator.
+    - `[AdditionalInformation <String>]`: A catchall area into which extra data from the indicator not covered by the other tiIndicator properties may be placed. Data placed into additionalInformation will typically not be utilized by the targetProduct security tool.
+    - `[AzureTenantId <String>]`: Stamped by the system when the indicator is ingested. The Azure Active Directory tenant id of submitting client. Required.
+    - `[Confidence <Int32?>]`: An integer representing the confidence the data within the indicator accurately identifies malicious behavior. Acceptable values are 0 - 100 with 100 being the highest.
+    - `[Description <String>]`: Brief description (100 characters or less) of the threat represented by the indicator. Required.
     - `[DiamondModel <String>]`: diamondModel
     - `[DomainName <String>]`: 
     - `[EmailEncoding <String>]`: 
@@ -169,8 +151,8 @@ BODYPARAMETER <IPathsS86SndSecurityTiindicatorsMicrosoftGraphUpdatetiindicatorsP
     - `[EmailSourceIPAddress <String>]`: 
     - `[EmailSubject <String>]`: 
     - `[EmailXMailer <String>]`: 
-    - `[ExpirationDateTime <DateTime?>]`: 
-    - `[ExternalId <String>]`: 
+    - `[ExpirationDateTime <DateTime?>]`: DateTime string indicating when the Indicator expires. All indicators must have an expiration date to avoid stale indicators persisting in the system. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.
+    - `[ExternalId <String>]`: An identification number that ties the indicator back to the indicator provider's system (e.g. a foreign key).
     - `[FileCompileDateTime <DateTime?>]`: 
     - `[FileCreatedDateTime <DateTime?>]`: 
     - `[FileHashType <String>]`: fileHashType
@@ -181,14 +163,14 @@ BODYPARAMETER <IPathsS86SndSecurityTiindicatorsMicrosoftGraphUpdatetiindicatorsP
     - `[FilePath <String>]`: 
     - `[FileSize <Int64?>]`: 
     - `[FileType <String>]`: 
-    - `[IngestedDateTime <DateTime?>]`: 
-    - `[IsActive <Boolean?>]`: 
-    - `[KillChain <String[]>]`: 
-    - `[KnownFalsePositives <String>]`: 
-    - `[LastReportedDateTime <DateTime?>]`: 
-    - `[MalwareFamilyNames <String[]>]`: 
+    - `[IngestedDateTime <DateTime?>]`: Stamped by the system when the indicator is ingested. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+    - `[IsActive <Boolean?>]`: Used to deactivate indicators within system. By default, any indicator submitted is set as active. However, providers may submit existing indicators with this set to 'False' to deactivate indicators in the system.
+    - `[KillChain <String[]>]`: A JSON array of strings that describes which point or points on the Kill Chain this indicator targets. See 'killChain values' below for exact values.
+    - `[KnownFalsePositives <String>]`: Scenarios in which the indicator may cause false positives. This should be human-readable text.
+    - `[LastReportedDateTime <DateTime?>]`: The last time the indicator was seen. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+    - `[MalwareFamilyNames <String[]>]`: The malware family name associated with an indicator if it exists. Microsoft prefers the Microsoft malware family name if at all possible which can be found via the Windows Defender Security Intelligence threat encyclopedia.
     - `[NetworkCidrBlock <String>]`: 
-    - `[NetworkDestinationAsn <Int32?>]`: 
+    - `[NetworkDestinationAsn <Int64?>]`: 
     - `[NetworkDestinationCidrBlock <String>]`: 
     - `[NetworkDestinationIPv4 <String>]`: 
     - `[NetworkDestinationIPv6 <String>]`: 
@@ -197,16 +179,16 @@ BODYPARAMETER <IPathsS86SndSecurityTiindicatorsMicrosoftGraphUpdatetiindicatorsP
     - `[NetworkIPv6 <String>]`: 
     - `[NetworkPort <Int32?>]`: 
     - `[NetworkProtocol <Int32?>]`: 
-    - `[NetworkSourceAsn <Int32?>]`: 
+    - `[NetworkSourceAsn <Int64?>]`: 
     - `[NetworkSourceCidrBlock <String>]`: 
     - `[NetworkSourceIPv4 <String>]`: 
     - `[NetworkSourceIPv6 <String>]`: 
     - `[NetworkSourcePort <Int32?>]`: 
-    - `[PassiveOnly <Boolean?>]`: 
-    - `[Severity <Int32?>]`: 
-    - `[Tags <String[]>]`: 
-    - `[TargetProduct <String>]`: 
-    - `[ThreatType <String>]`: 
+    - `[PassiveOnly <Boolean?>]`: Determines if the indicator should trigger an event that is visible to an end-user. When set to 'true,' security tools will not notify the end user that a 'hit' has occurred. This is most often treated as audit or silent mode by security products where they will simply log that a match occurred but will not perform the action. Default value is false.
+    - `[Severity <Int32?>]`: An integer representing the severity of the malicious behavior identified by the data within the indicator. Acceptable values are 0 - 5 where 5 is the most severe and zero is not severe at all. Default value is 3.
+    - `[Tags <String[]>]`: A JSON array of strings that stores arbitrary tags/keywords.
+    - `[TargetProduct <String>]`: A string value representing a single security product to which the indicator should be applied. Acceptable values are: Azure Sentinel, Microsoft Defender ATP. Required
+    - `[ThreatType <String>]`: Each indicator must have a valid Indicator Threat Type. Possible values are: Botnet, C2, CryptoMining, Darknet, DDoS, MaliciousUrl, Malware, Phishing, Proxy, PUA, WatchList. Required.
     - `[TlpLevel <String>]`: tlpLevel
     - `[Url <String>]`: 
     - `[UserAgent <String>]`: 
@@ -214,11 +196,11 @@ BODYPARAMETER <IPathsS86SndSecurityTiindicatorsMicrosoftGraphUpdatetiindicatorsP
 VALUE <IMicrosoftGraphTiIndicator[]>: .
   - `[Id <String>]`: Read-only.
   - `[Action <String>]`: tiAction
-  - `[ActivityGroupNames <String[]>]`: 
-  - `[AdditionalInformation <String>]`: 
-  - `[AzureTenantId <String>]`: 
-  - `[Confidence <Int32?>]`: 
-  - `[Description <String>]`: 
+  - `[ActivityGroupNames <String[]>]`: The cyber threat intelligence name(s) for the parties responsible for the malicious activity covered by the threat indicator.
+  - `[AdditionalInformation <String>]`: A catchall area into which extra data from the indicator not covered by the other tiIndicator properties may be placed. Data placed into additionalInformation will typically not be utilized by the targetProduct security tool.
+  - `[AzureTenantId <String>]`: Stamped by the system when the indicator is ingested. The Azure Active Directory tenant id of submitting client. Required.
+  - `[Confidence <Int32?>]`: An integer representing the confidence the data within the indicator accurately identifies malicious behavior. Acceptable values are 0 - 100 with 100 being the highest.
+  - `[Description <String>]`: Brief description (100 characters or less) of the threat represented by the indicator. Required.
   - `[DiamondModel <String>]`: diamondModel
   - `[DomainName <String>]`: 
   - `[EmailEncoding <String>]`: 
@@ -230,8 +212,8 @@ VALUE <IMicrosoftGraphTiIndicator[]>: .
   - `[EmailSourceIPAddress <String>]`: 
   - `[EmailSubject <String>]`: 
   - `[EmailXMailer <String>]`: 
-  - `[ExpirationDateTime <DateTime?>]`: 
-  - `[ExternalId <String>]`: 
+  - `[ExpirationDateTime <DateTime?>]`: DateTime string indicating when the Indicator expires. All indicators must have an expiration date to avoid stale indicators persisting in the system. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.
+  - `[ExternalId <String>]`: An identification number that ties the indicator back to the indicator provider's system (e.g. a foreign key).
   - `[FileCompileDateTime <DateTime?>]`: 
   - `[FileCreatedDateTime <DateTime?>]`: 
   - `[FileHashType <String>]`: fileHashType
@@ -242,14 +224,14 @@ VALUE <IMicrosoftGraphTiIndicator[]>: .
   - `[FilePath <String>]`: 
   - `[FileSize <Int64?>]`: 
   - `[FileType <String>]`: 
-  - `[IngestedDateTime <DateTime?>]`: 
-  - `[IsActive <Boolean?>]`: 
-  - `[KillChain <String[]>]`: 
-  - `[KnownFalsePositives <String>]`: 
-  - `[LastReportedDateTime <DateTime?>]`: 
-  - `[MalwareFamilyNames <String[]>]`: 
+  - `[IngestedDateTime <DateTime?>]`: Stamped by the system when the indicator is ingested. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+  - `[IsActive <Boolean?>]`: Used to deactivate indicators within system. By default, any indicator submitted is set as active. However, providers may submit existing indicators with this set to 'False' to deactivate indicators in the system.
+  - `[KillChain <String[]>]`: A JSON array of strings that describes which point or points on the Kill Chain this indicator targets. See 'killChain values' below for exact values.
+  - `[KnownFalsePositives <String>]`: Scenarios in which the indicator may cause false positives. This should be human-readable text.
+  - `[LastReportedDateTime <DateTime?>]`: The last time the indicator was seen. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+  - `[MalwareFamilyNames <String[]>]`: The malware family name associated with an indicator if it exists. Microsoft prefers the Microsoft malware family name if at all possible which can be found via the Windows Defender Security Intelligence threat encyclopedia.
   - `[NetworkCidrBlock <String>]`: 
-  - `[NetworkDestinationAsn <Int32?>]`: 
+  - `[NetworkDestinationAsn <Int64?>]`: 
   - `[NetworkDestinationCidrBlock <String>]`: 
   - `[NetworkDestinationIPv4 <String>]`: 
   - `[NetworkDestinationIPv6 <String>]`: 
@@ -258,19 +240,20 @@ VALUE <IMicrosoftGraphTiIndicator[]>: .
   - `[NetworkIPv6 <String>]`: 
   - `[NetworkPort <Int32?>]`: 
   - `[NetworkProtocol <Int32?>]`: 
-  - `[NetworkSourceAsn <Int32?>]`: 
+  - `[NetworkSourceAsn <Int64?>]`: 
   - `[NetworkSourceCidrBlock <String>]`: 
   - `[NetworkSourceIPv4 <String>]`: 
   - `[NetworkSourceIPv6 <String>]`: 
   - `[NetworkSourcePort <Int32?>]`: 
-  - `[PassiveOnly <Boolean?>]`: 
-  - `[Severity <Int32?>]`: 
-  - `[Tags <String[]>]`: 
-  - `[TargetProduct <String>]`: 
-  - `[ThreatType <String>]`: 
+  - `[PassiveOnly <Boolean?>]`: Determines if the indicator should trigger an event that is visible to an end-user. When set to 'true,' security tools will not notify the end user that a 'hit' has occurred. This is most often treated as audit or silent mode by security products where they will simply log that a match occurred but will not perform the action. Default value is false.
+  - `[Severity <Int32?>]`: An integer representing the severity of the malicious behavior identified by the data within the indicator. Acceptable values are 0 - 5 where 5 is the most severe and zero is not severe at all. Default value is 3.
+  - `[Tags <String[]>]`: A JSON array of strings that stores arbitrary tags/keywords.
+  - `[TargetProduct <String>]`: A string value representing a single security product to which the indicator should be applied. Acceptable values are: Azure Sentinel, Microsoft Defender ATP. Required
+  - `[ThreatType <String>]`: Each indicator must have a valid Indicator Threat Type. Possible values are: Botnet, C2, CryptoMining, Darknet, DDoS, MaliciousUrl, Malware, Phishing, Proxy, PUA, WatchList. Required.
   - `[TlpLevel <String>]`: tlpLevel
   - `[Url <String>]`: 
   - `[UserAgent <String>]`: 
 
 ## RELATED LINKS
 
+## RELATED LINKS

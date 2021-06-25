@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Security-help.xml
 Module Name: Microsoft.Graph.Security
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/new-mgsecurityhostsecurityprofile
 schema: 2.0.0
@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgSecurityHostSecurityProfile
 
 ## SYNOPSIS
-Create new navigation property to hostSecurityProfiles for Security
+Create new navigation property to hostSecurityProfiles for security
 
 ## SYNTAX
 
@@ -20,37 +20,19 @@ New-MgSecurityHostSecurityProfile [-AdditionalProperties <Hashtable>] [-AzureSub
  [-LogonUsers <IMicrosoftGraphLogonUser[]>] [-NetBiosName <String>]
  [-NetworkInterfaces <IMicrosoftGraphNetworkInterface[]>] [-OS <String>] [-OSVersion <String>]
  [-ParentHost <String>] [-RelatedHostIds <String[]>] [-RiskScore <String>] [-Tags <String[]>]
- [-VendorInformation <IMicrosoftGraphSecurityVendorInformation>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-VendorInformation <IMicrosoftGraphSecurityVendorInformation>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgSecurityHostSecurityProfile -BodyParameter <IMicrosoftGraphHostSecurityProfile> [-Confirm] [-WhatIf]
+New-MgSecurityHostSecurityProfile -BodyParameter <IMicrosoftGraphHostSecurityProfile> [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create new navigation property to hostSecurityProfiles for Security
+Create new navigation property to hostSecurityProfiles for security
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -58,7 +40,7 @@ PS C:\> {{ Add code here }}
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -73,7 +55,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -88,7 +70,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -104,7 +86,7 @@ hostSecurityProfile
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphHostSecurityProfile
+Type: IMicrosoftGraphHostSecurityProfile
 Parameter Sets: Create
 Aliases:
 
@@ -119,7 +101,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.DateTime
+Type: DateTime
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -134,7 +116,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -149,7 +131,7 @@ Accept wildcard characters: False
 Read-only.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -164,7 +146,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -179,7 +161,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -194,7 +176,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -209,7 +191,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.DateTime
+Type: DateTime
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -225,7 +207,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for LOGONUSERS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLogonUser[]
+Type: IMicrosoftGraphLogonUser[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -240,7 +222,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -256,7 +238,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for NETWORKINTERFACES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphNetworkInterface[]
+Type: IMicrosoftGraphNetworkInterface[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -271,7 +253,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -286,7 +268,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -301,7 +283,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -316,7 +298,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.String[]
+Type: String[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -331,7 +313,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -346,7 +328,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.String[]
+Type: String[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -362,7 +344,7 @@ securityVendorInformation
 To construct, see NOTES section for VENDORINFORMATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityVendorInformation
+Type: IMicrosoftGraphSecurityVendorInformation
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -377,7 +359,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -393,7 +375,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -436,20 +418,20 @@ BODYPARAMETER <IMicrosoftGraphHostSecurityProfile>: hostSecurityProfile
   - `[IsHybridAzureDomainJoined <Boolean?>]`: 
   - `[LastSeenDateTime <DateTime?>]`: 
   - `[LogonUsers <IMicrosoftGraphLogonUser[]>]`: 
-    - `[AccountDomain <String>]`: 
-    - `[AccountName <String>]`: 
+    - `[AccountDomain <String>]`: Domain of user account used to logon.
+    - `[AccountName <String>]`: Account name of user account used to logon.
     - `[AccountType <String>]`: userAccountSecurityType
-    - `[FirstSeenDateTime <DateTime?>]`: 
-    - `[LastSeenDateTime <DateTime?>]`: 
-    - `[LogonId <String>]`: 
-    - `[LogonTypes <String[]>]`: 
+    - `[FirstSeenDateTime <DateTime?>]`: DateTime at which the earliest logon by this user account occurred (provider-determined period). The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+    - `[LastSeenDateTime <DateTime?>]`: DateTime at which the latest logon by this user account occurred. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+    - `[LogonId <String>]`: User logon ID.
+    - `[LogonTypes <String[]>]`: Collection of the logon types observed for the logged on user from when first to last seen. Possible values are: unknown, interactive, remoteInteractive, network, batch, service.
   - `[NetBiosName <String>]`: 
   - `[NetworkInterfaces <IMicrosoftGraphNetworkInterface[]>]`: 
-    - `[Description <String>]`: 
-    - `[IPV4Address <String>]`: 
-    - `[IPV6Address <String>]`: 
-    - `[LocalIPV6Address <String>]`: 
-    - `[MacAddress <String>]`: 
+    - `[Description <String>]`: Description of the NIC (e.g. Ethernet adapter, Wireless LAN adapter Local Area Connection <#/>, etc.).
+    - `[IPV4Address <String>]`: Last IPv4 address associated with this NIC.
+    - `[IPV6Address <String>]`: Last Public (aka global) IPv6 address associated with this NIC.
+    - `[LocalIPV6Address <String>]`: Last local (link-local or site-local) IPv6 address associated with this NIC.
+    - `[MacAddress <String>]`: MAC address of the NIC on this host.
   - `[OS <String>]`: 
   - `[OSVersion <String>]`: 
   - `[ParentHost <String>]`: 
@@ -464,20 +446,20 @@ BODYPARAMETER <IMicrosoftGraphHostSecurityProfile>: hostSecurityProfile
     - `[Vendor <String>]`: Name of the alert vendor (for example, Microsoft, Dell, FireEye). Required
 
 LOGONUSERS <IMicrosoftGraphLogonUser[]>: .
-  - `[AccountDomain <String>]`: 
-  - `[AccountName <String>]`: 
+  - `[AccountDomain <String>]`: Domain of user account used to logon.
+  - `[AccountName <String>]`: Account name of user account used to logon.
   - `[AccountType <String>]`: userAccountSecurityType
-  - `[FirstSeenDateTime <DateTime?>]`: 
-  - `[LastSeenDateTime <DateTime?>]`: 
-  - `[LogonId <String>]`: 
-  - `[LogonTypes <String[]>]`: 
+  - `[FirstSeenDateTime <DateTime?>]`: DateTime at which the earliest logon by this user account occurred (provider-determined period). The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+  - `[LastSeenDateTime <DateTime?>]`: DateTime at which the latest logon by this user account occurred. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+  - `[LogonId <String>]`: User logon ID.
+  - `[LogonTypes <String[]>]`: Collection of the logon types observed for the logged on user from when first to last seen. Possible values are: unknown, interactive, remoteInteractive, network, batch, service.
 
 NETWORKINTERFACES <IMicrosoftGraphNetworkInterface[]>: .
-  - `[Description <String>]`: 
-  - `[IPV4Address <String>]`: 
-  - `[IPV6Address <String>]`: 
-  - `[LocalIPV6Address <String>]`: 
-  - `[MacAddress <String>]`: 
+  - `[Description <String>]`: Description of the NIC (e.g. Ethernet adapter, Wireless LAN adapter Local Area Connection <#/>, etc.).
+  - `[IPV4Address <String>]`: Last IPv4 address associated with this NIC.
+  - `[IPV6Address <String>]`: Last Public (aka global) IPv6 address associated with this NIC.
+  - `[LocalIPV6Address <String>]`: Last local (link-local or site-local) IPv6 address associated with this NIC.
+  - `[MacAddress <String>]`: MAC address of the NIC on this host.
 
 VENDORINFORMATION <IMicrosoftGraphSecurityVendorInformation>: securityVendorInformation
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -487,4 +469,3 @@ VENDORINFORMATION <IMicrosoftGraphSecurityVendorInformation>: securityVendorInfo
   - `[Vendor <String>]`: Name of the alert vendor (for example, Microsoft, Dell, FireEye). Required
 
 ## RELATED LINKS
-

@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Security-help.xml
 Module Name: Microsoft.Graph.Security
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/stop-mgsecurityaction
 schema: 2.0.0
@@ -14,36 +14,18 @@ Invoke action cancelSecurityAction
 
 ### Cancel (Default)
 ```
-Stop-MgSecurityAction -SecurityActionId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Stop-MgSecurityAction -SecurityActionId <String> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### CancelViaIdentity
 ```
-Stop-MgSecurityAction -InputObject <ISecurityIdentity> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Stop-MgSecurityAction -InputObject <ISecurityIdentity> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Invoke action cancelSecurityAction
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -52,7 +34,7 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Type: ISecurityIdentity
 Parameter Sets: CancelViaIdentity
 Aliases:
 
@@ -67,7 +49,7 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -82,7 +64,7 @@ Accept wildcard characters: False
 key: id of securityAction
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Cancel
 Aliases:
 
@@ -97,7 +79,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -113,7 +95,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -159,4 +141,3 @@ INPUTOBJECT <ISecurityIdentity>: Identity Parameter
   - `[UserSecurityProfileId <String>]`: key: id of userSecurityProfile
 
 ## RELATED LINKS
-
