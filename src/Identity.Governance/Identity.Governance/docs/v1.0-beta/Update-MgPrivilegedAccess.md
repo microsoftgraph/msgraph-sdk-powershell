@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Identity.Governance-help.xml
 Module Name: Microsoft.Graph.Identity.Governance
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/update-mgprivilegedaccess
 schema: 2.0.0
@@ -19,20 +19,13 @@ Update-MgPrivilegedAccess -PrivilegedAccessId <String> [-AdditionalProperties <H
  [-RoleAssignmentRequests <IMicrosoftGraphGovernanceRoleAssignmentRequest[]>]
  [-RoleAssignments <IMicrosoftGraphGovernanceRoleAssignment[]>]
  [-RoleDefinitions <IMicrosoftGraphGovernanceRoleDefinition[]>]
- [-RoleSettings <IMicrosoftGraphGovernanceRoleSetting[]>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-RoleSettings <IMicrosoftGraphGovernanceRoleSetting[]>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgPrivilegedAccess -PrivilegedAccessId <String> -BodyParameter <IMicrosoftGraphPrivilegedAccess>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### UpdateViaIdentity
-```
-Update-MgPrivilegedAccess -InputObject <IIdentityGovernanceIdentity>
- -BodyParameter <IMicrosoftGraphPrivilegedAccess> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -42,8 +35,13 @@ Update-MgPrivilegedAccess -InputObject <IIdentityGovernanceIdentity> [-Additiona
  [-RoleAssignmentRequests <IMicrosoftGraphGovernanceRoleAssignmentRequest[]>]
  [-RoleAssignments <IMicrosoftGraphGovernanceRoleAssignment[]>]
  [-RoleDefinitions <IMicrosoftGraphGovernanceRoleDefinition[]>]
- [-RoleSettings <IMicrosoftGraphGovernanceRoleSetting[]>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-RoleSettings <IMicrosoftGraphGovernanceRoleSetting[]>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### UpdateViaIdentity
+```
+Update-MgPrivilegedAccess -InputObject <IIdentityGovernanceIdentity>
+ -BodyParameter <IMicrosoftGraphPrivilegedAccess> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -51,31 +49,13 @@ Update entity in privilegedAccess
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
 ### -AdditionalProperties
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -91,7 +71,7 @@ privilegedAccess
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrivilegedAccess
+Type: IMicrosoftGraphPrivilegedAccess
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -103,10 +83,10 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-.
+The display name of the provider managed by PIM.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -121,7 +101,7 @@ Accept wildcard characters: False
 Read-only.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -137,8 +117,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
-Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
+Type: IIdentityGovernanceIdentity
+Parameter Sets: UpdateViaIdentityExpanded, UpdateViaIdentity
 Aliases:
 
 Required: True
@@ -152,7 +132,7 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -167,8 +147,8 @@ Accept wildcard characters: False
 key: id of privilegedAccess
 
 ```yaml
-Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Type: String
+Parameter Sets: UpdateExpanded, Update
 Aliases:
 
 Required: True
@@ -179,11 +159,11 @@ Accept wildcard characters: False
 ```
 
 ### -Resources
-.
+A collection of resources for the provider.
 To construct, see NOTES section for RESOURCES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGovernanceResource[]
+Type: IMicrosoftGraphGovernanceResource[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -195,11 +175,11 @@ Accept wildcard characters: False
 ```
 
 ### -RoleAssignmentRequests
-.
+A collection of role assignment requests for the provider.
 To construct, see NOTES section for ROLEASSIGNMENTREQUESTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGovernanceRoleAssignmentRequest[]
+Type: IMicrosoftGraphGovernanceRoleAssignmentRequest[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -211,11 +191,11 @@ Accept wildcard characters: False
 ```
 
 ### -RoleAssignments
-.
+A collection of role assignments for the provider.
 To construct, see NOTES section for ROLEASSIGNMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGovernanceRoleAssignment[]
+Type: IMicrosoftGraphGovernanceRoleAssignment[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -227,11 +207,11 @@ Accept wildcard characters: False
 ```
 
 ### -RoleDefinitions
-.
+A collection of role defintions for the provider.
 To construct, see NOTES section for ROLEDEFINITIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGovernanceRoleDefinition[]
+Type: IMicrosoftGraphGovernanceRoleDefinition[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -243,11 +223,11 @@ Accept wildcard characters: False
 ```
 
 ### -RoleSettings
-.
+A collection of role settings for the provider.
 To construct, see NOTES section for ROLESETTINGS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGovernanceRoleSetting[]
+Type: IMicrosoftGraphGovernanceRoleSetting[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -262,7 +242,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -278,7 +258,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -314,93 +294,93 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphPrivilegedAccess>: privilegedAccess
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
-  - `[DisplayName <String>]`: 
-  - `[Resources <IMicrosoftGraphGovernanceResource[]>]`: 
+  - `[DisplayName <String>]`: The display name of the provider managed by PIM.
+  - `[Resources <IMicrosoftGraphGovernanceResource[]>]`: A collection of resources for the provider.
     - `[Id <String>]`: Read-only.
-    - `[DisplayName <String>]`: 
-    - `[ExternalId <String>]`: 
+    - `[DisplayName <String>]`: The display name of the resource.
+    - `[ExternalId <String>]`: The external id of the resource, representing its original id in the external system. For example, a subscription resource's external id can be '/subscriptions/c14ae696-5e0c-4e5d-88cc-bef6637737ac'.
     - `[Parent <IMicrosoftGraphGovernanceResource>]`: governanceResource
-    - `[RegisteredDateTime <DateTime?>]`: 
-    - `[RegisteredRoot <String>]`: 
-    - `[RoleAssignmentRequests <IMicrosoftGraphGovernanceRoleAssignmentRequest[]>]`: 
+    - `[RegisteredDateTime <DateTime?>]`: Represents the date time when the resource is registered in PIM.
+    - `[RegisteredRoot <String>]`: The externalId of the resource's root scope that is registered in PIM. The root scope can be the parent, grandparent, or higher ancestor resources.
+    - `[RoleAssignmentRequests <IMicrosoftGraphGovernanceRoleAssignmentRequest[]>]`: The collection of role assignment requests for the resource.
       - `[Id <String>]`: Read-only.
-      - `[AssignmentState <String>]`: 
-      - `[LinkedEligibleRoleAssignmentId <String>]`: 
-      - `[Reason <String>]`: 
-      - `[RequestedDateTime <DateTime?>]`: 
+      - `[AssignmentState <String>]`: Required. The state of the assignment. The possible values are: Eligible (for eligible assignment),  Active (if it is directly assigned), Active (by administrators, or activated on an eligible assignment by the users).
+      - `[LinkedEligibleRoleAssignmentId <String>]`: If this is a request for role activation, it represents the id of the eligible assignment being referred; Otherwise, the value is null.
+      - `[Reason <String>]`: A message provided by users and administrators when create the request about why it is needed.
+      - `[RequestedDateTime <DateTime?>]`: Read-only. The request create time. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
       - `[Resource <IMicrosoftGraphGovernanceResource>]`: governanceResource
-      - `[ResourceId <String>]`: 
+      - `[ResourceId <String>]`: Required. The id of the resource which the role assignment request is associated with.
       - `[RoleDefinition <IMicrosoftGraphGovernanceRoleDefinition>]`: governanceRoleDefinition
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: Read-only.
-        - `[DisplayName <String>]`: 
-        - `[ExternalId <String>]`: 
+        - `[DisplayName <String>]`: The display name of the role definition.
+        - `[ExternalId <String>]`: The external id of the role definition.
         - `[Resource <IMicrosoftGraphGovernanceResource>]`: governanceResource
-        - `[ResourceId <String>]`: 
+        - `[ResourceId <String>]`: Required. The id of the resource associated with the role definition.
         - `[RoleSetting <IMicrosoftGraphGovernanceRoleSetting>]`: governanceRoleSetting
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: Read-only.
-          - `[AdminEligibleSettings <IMicrosoftGraphGovernanceRuleSetting[]>]`: 
-            - `[RuleIdentifier <String>]`: 
-            - `[Setting <String>]`: 
-          - `[AdminMemberSettings <IMicrosoftGraphGovernanceRuleSetting[]>]`: 
-          - `[IsDefault <Boolean?>]`: 
-          - `[LastUpdatedBy <String>]`: 
-          - `[LastUpdatedDateTime <DateTime?>]`: 
+          - `[AdminEligibleSettings <IMicrosoftGraphGovernanceRuleSetting[]>]`: The rule settings that are evaluated when an administrator tries to add an eligible role assignment.
+            - `[RuleIdentifier <String>]`: The id of the rule. For example, ExpirationRule and MfaRule.
+            - `[Setting <String>]`: The settings of the rule. The value is a JSON string with a list of pairs in the format of Parameter_Name:Parameter_Value. For example, {'permanentAssignment':false,'maximumGrantPeriodInMinutes':129600}
+          - `[AdminMemberSettings <IMicrosoftGraphGovernanceRuleSetting[]>]`: The rule settings that are evaluated when an administrator tries to add a direct member role assignment.
+          - `[IsDefault <Boolean?>]`: Read-only. Indicate if the roleSetting is a default roleSetting
+          - `[LastUpdatedBy <String>]`: Read-only. The display name of the administrator who last updated the roleSetting.
+          - `[LastUpdatedDateTime <DateTime?>]`: Read-only. The time when the role setting was last updated. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
           - `[Resource <IMicrosoftGraphGovernanceResource>]`: governanceResource
-          - `[ResourceId <String>]`: 
+          - `[ResourceId <String>]`: Required. The id of the resource that the role setting is associated with.
           - `[RoleDefinition <IMicrosoftGraphGovernanceRoleDefinition>]`: governanceRoleDefinition
-          - `[RoleDefinitionId <String>]`: 
-          - `[UserEligibleSettings <IMicrosoftGraphGovernanceRuleSetting[]>]`: 
-          - `[UserMemberSettings <IMicrosoftGraphGovernanceRuleSetting[]>]`: 
+          - `[RoleDefinitionId <String>]`: Required. The id of the role definition that the role setting is associated with.
+          - `[UserEligibleSettings <IMicrosoftGraphGovernanceRuleSetting[]>]`: The rule settings that are evaluated when a user tries to add an eligible role assignment. The setting is not supported for now.
+          - `[UserMemberSettings <IMicrosoftGraphGovernanceRuleSetting[]>]`: The rule settings that are evaluated when a user tries to activate his role assignment.
         - `[TemplateId <String>]`: 
-      - `[RoleDefinitionId <String>]`: 
+      - `[RoleDefinitionId <String>]`: Required. The id of the role definition which the role assignment request is associated with.
       - `[Schedule <IMicrosoftGraphGovernanceSchedule>]`: governanceSchedule
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[Duration <TimeSpan?>]`: 
-        - `[EndDateTime <DateTime?>]`: 
-        - `[StartDateTime <DateTime?>]`: 
-        - `[Type <String>]`: 
+        - `[Duration <TimeSpan?>]`: The duration of a role assignment. It is in format of a TimeSpan.
+        - `[EndDateTime <DateTime?>]`: The end time of the role assignment. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Note: if the value is null, it indicates a permanent assignment.
+        - `[StartDateTime <DateTime?>]`: The start time of the role assignment. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+        - `[Type <String>]`: The role assignment schedule type. Only Once is supported for now.
       - `[Status <IMicrosoftGraphGovernanceRoleAssignmentRequestStatus>]`: governanceRoleAssignmentRequestStatus
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Status <String>]`: 
         - `[StatusDetails <IMicrosoftGraphKeyValue[]>]`: 
-          - `[Key <String>]`: Key for the key-value pair.
-          - `[Value <String>]`: Value for the key-value pair.
+          - `[Key <String>]`: Key.
+          - `[Value <String>]`: Value.
         - `[SubStatus <String>]`: 
       - `[Subject <IMicrosoftGraphGovernanceSubject>]`: governanceSubject
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: Read-only.
-        - `[DisplayName <String>]`: 
-        - `[Email <String>]`: 
-        - `[PrincipalName <String>]`: 
-        - `[Type <String>]`: 
-      - `[SubjectId <String>]`: 
-      - `[Type <String>]`: 
-    - `[RoleAssignments <IMicrosoftGraphGovernanceRoleAssignment[]>]`: 
+        - `[DisplayName <String>]`: The display name of the subject.
+        - `[Email <String>]`: The email address of the user subject. If the subject is in other types, it is empty.
+        - `[PrincipalName <String>]`: The principal name of the user subject. If the subject is in other types, it is empty.
+        - `[Type <String>]`: The type of the subject. The value can be User, Group, and ServicePrincipal.
+      - `[SubjectId <String>]`: Required. The id of the subject which the role assignment request is associated with.
+      - `[Type <String>]`: Required. Representing the type of the operation on the role assignment. The possible values are: AdminAdd , UserAdd , AdminUpdate , AdminRemove , UserRemove , UserExtend , AdminExtend , UserRenew , AdminRenew.
+    - `[RoleAssignments <IMicrosoftGraphGovernanceRoleAssignment[]>]`: The collection of role assignments for the resource.
       - `[Id <String>]`: Read-only.
-      - `[AssignmentState <String>]`: 
-      - `[EndDateTime <DateTime?>]`: 
-      - `[ExternalId <String>]`: 
+      - `[AssignmentState <String>]`: The state of the assignment. The value can be Eligible for eligible assignment or Active if it is directly assigned Active by administrators, or activated on an eligible assignment by the users.
+      - `[EndDateTime <DateTime?>]`: For a non-permanent role assignment, this is the time when the role assignment will be expired. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+      - `[ExternalId <String>]`: The external ID the resource that is used to identify the role assignment in the provider.
       - `[LinkedEligibleRoleAssignment <IMicrosoftGraphGovernanceRoleAssignment>]`: governanceRoleAssignment
-      - `[LinkedEligibleRoleAssignmentId <String>]`: 
-      - `[MemberType <String>]`: 
+      - `[LinkedEligibleRoleAssignmentId <String>]`: If this is an active assignment and created due to activation on an eligible assignment, it represents the ID of that eligible assignment; Otherwise, the value is null.
+      - `[MemberType <String>]`: The type of member. The value can be: Inherited (if the role assignment is inherited from a parent resource scope), Group (if the role assignment is not inherited, but comes from the membership of a group assignment), or User (if the role assignment is neither inherited nor from a group assignment).
       - `[Resource <IMicrosoftGraphGovernanceResource>]`: governanceResource
-      - `[ResourceId <String>]`: 
+      - `[ResourceId <String>]`: Required. The ID of the resource which the role assignment is associated with.
       - `[RoleDefinition <IMicrosoftGraphGovernanceRoleDefinition>]`: governanceRoleDefinition
-      - `[RoleDefinitionId <String>]`: 
-      - `[StartDateTime <DateTime?>]`: 
+      - `[RoleDefinitionId <String>]`: Required. The ID of the role definition which the role assignment is associated with.
+      - `[StartDateTime <DateTime?>]`: The start time of the role assignment. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
       - `[Status <String>]`: 
       - `[Subject <IMicrosoftGraphGovernanceSubject>]`: governanceSubject
-      - `[SubjectId <String>]`: 
-    - `[RoleDefinitions <IMicrosoftGraphGovernanceRoleDefinition[]>]`: 
-    - `[RoleSettings <IMicrosoftGraphGovernanceRoleSetting[]>]`: 
-    - `[Status <String>]`: 
-    - `[Type <String>]`: 
-  - `[RoleAssignmentRequests <IMicrosoftGraphGovernanceRoleAssignmentRequest[]>]`: 
-  - `[RoleAssignments <IMicrosoftGraphGovernanceRoleAssignment[]>]`: 
-  - `[RoleDefinitions <IMicrosoftGraphGovernanceRoleDefinition[]>]`: 
-  - `[RoleSettings <IMicrosoftGraphGovernanceRoleSetting[]>]`: 
+      - `[SubjectId <String>]`: Required. The ID of the subject which the role assignment is associated with.
+    - `[RoleDefinitions <IMicrosoftGraphGovernanceRoleDefinition[]>]`: The collection of role defintions for the resource.
+    - `[RoleSettings <IMicrosoftGraphGovernanceRoleSetting[]>]`: The collection of role settings for the resource.
+    - `[Status <String>]`: The status of a given resource. For example, it could represent whether the resource is locked or not (values: Active/Locked). Note: This property may be extended in the future to support more scenarios.
+    - `[Type <String>]`: Required. Resource type. For example, for Azure resources, the type could be 'Subscription', 'ResourceGroup', 'Microsoft.Sql/server', etc.
+  - `[RoleAssignmentRequests <IMicrosoftGraphGovernanceRoleAssignmentRequest[]>]`: A collection of role assignment requests for the provider.
+  - `[RoleAssignments <IMicrosoftGraphGovernanceRoleAssignment[]>]`: A collection of role assignments for the provider.
+  - `[RoleDefinitions <IMicrosoftGraphGovernanceRoleDefinition[]>]`: A collection of role defintions for the provider.
+  - `[RoleSettings <IMicrosoftGraphGovernanceRoleSetting[]>]`: A collection of role settings for the provider.
 
 INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[AccessPackageAssignmentId <String>]`: key: id of accessPackageAssignment
@@ -409,20 +389,28 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[AccessPackageAssignmentResourceRoleId <String>]`: key: id of accessPackageAssignmentResourceRole
   - `[AccessPackageCatalogId <String>]`: key: id of accessPackageCatalog
   - `[AccessPackageId <String>]`: key: id of accessPackage
+  - `[AccessPackageResourceEnvironmentId <String>]`: key: id of accessPackageResourceEnvironment
   - `[AccessPackageResourceId <String>]`: key: id of accessPackageResource
   - `[AccessPackageResourceRequestId <String>]`: key: id of accessPackageResourceRequest
   - `[AccessPackageResourceRoleId <String>]`: key: id of accessPackageResourceRole
   - `[AccessPackageResourceRoleScopeId <String>]`: key: id of accessPackageResourceRoleScope
   - `[AccessPackageResourceScopeId <String>]`: key: id of accessPackageResourceScope
   - `[AccessReviewDecisionId <String>]`: key: id of accessReviewDecision
+  - `[AccessReviewHistoryDefinitionId <String>]`: key: id of accessReviewHistoryDefinition
   - `[AccessReviewId <String>]`: key: id of accessReview
   - `[AccessReviewId1 <String>]`: key: id of accessReview
+  - `[AccessReviewInstanceDecisionItemId <String>]`: key: id of accessReviewInstanceDecisionItem
   - `[AccessReviewInstanceId <String>]`: key: id of accessReviewInstance
   - `[AccessReviewReviewerId <String>]`: key: id of accessReviewReviewer
   - `[AccessReviewScheduleDefinitionId <String>]`: key: id of accessReviewScheduleDefinition
   - `[AgreementAcceptanceId <String>]`: key: id of agreementAcceptance
   - `[AgreementFileLocalizationId <String>]`: key: id of agreementFileLocalization
+  - `[AgreementFileVersionId <String>]`: key: id of agreementFileVersion
   - `[AgreementId <String>]`: key: id of agreement
+  - `[AppConsentRequestId <String>]`: key: id of appConsentRequest
+  - `[ApprovalId <String>]`: key: id of approval
+  - `[ApprovalStageId <String>]`: key: id of approvalStage
+  - `[ApprovalStepId <String>]`: key: id of approvalStep
   - `[BusinessFlowTemplateId <String>]`: key: id of businessFlowTemplate
   - `[ConnectedOrganizationId <String>]`: key: id of connectedOrganization
   - `[DirectoryObjectId <String>]`: key: id of directoryObject
@@ -431,6 +419,7 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[GovernanceRoleAssignmentRequestId <String>]`: key: id of governanceRoleAssignmentRequest
   - `[GovernanceRoleDefinitionId <String>]`: key: id of governanceRoleDefinition
   - `[GovernanceRoleSettingId <String>]`: key: id of governanceRoleSetting
+  - `[On <String>]`: Usage: on={on}
   - `[PrivilegedAccessId <String>]`: key: id of privilegedAccess
   - `[PrivilegedApprovalId <String>]`: key: id of privilegedApproval
   - `[PrivilegedOperationEventId <String>]`: key: id of privilegedOperationEvent
@@ -440,423 +429,425 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[ProgramControlId <String>]`: key: id of programControl
   - `[ProgramControlTypeId <String>]`: key: id of programControlType
   - `[ProgramId <String>]`: key: id of program
+  - `[UserConsentRequestId <String>]`: key: id of userConsentRequest
   - `[UserId <String>]`: key: id of user
 
-RESOURCES <IMicrosoftGraphGovernanceResource[]>: .
+RESOURCES <IMicrosoftGraphGovernanceResource[]>: A collection of resources for the provider.
   - `[Id <String>]`: Read-only.
-  - `[DisplayName <String>]`: 
-  - `[ExternalId <String>]`: 
+  - `[DisplayName <String>]`: The display name of the resource.
+  - `[ExternalId <String>]`: The external id of the resource, representing its original id in the external system. For example, a subscription resource's external id can be '/subscriptions/c14ae696-5e0c-4e5d-88cc-bef6637737ac'.
   - `[Parent <IMicrosoftGraphGovernanceResource>]`: governanceResource
-  - `[RegisteredDateTime <DateTime?>]`: 
-  - `[RegisteredRoot <String>]`: 
-  - `[RoleAssignmentRequests <IMicrosoftGraphGovernanceRoleAssignmentRequest[]>]`: 
+  - `[RegisteredDateTime <DateTime?>]`: Represents the date time when the resource is registered in PIM.
+  - `[RegisteredRoot <String>]`: The externalId of the resource's root scope that is registered in PIM. The root scope can be the parent, grandparent, or higher ancestor resources.
+  - `[RoleAssignmentRequests <IMicrosoftGraphGovernanceRoleAssignmentRequest[]>]`: The collection of role assignment requests for the resource.
     - `[Id <String>]`: Read-only.
-    - `[AssignmentState <String>]`: 
-    - `[LinkedEligibleRoleAssignmentId <String>]`: 
-    - `[Reason <String>]`: 
-    - `[RequestedDateTime <DateTime?>]`: 
+    - `[AssignmentState <String>]`: Required. The state of the assignment. The possible values are: Eligible (for eligible assignment),  Active (if it is directly assigned), Active (by administrators, or activated on an eligible assignment by the users).
+    - `[LinkedEligibleRoleAssignmentId <String>]`: If this is a request for role activation, it represents the id of the eligible assignment being referred; Otherwise, the value is null.
+    - `[Reason <String>]`: A message provided by users and administrators when create the request about why it is needed.
+    - `[RequestedDateTime <DateTime?>]`: Read-only. The request create time. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     - `[Resource <IMicrosoftGraphGovernanceResource>]`: governanceResource
-    - `[ResourceId <String>]`: 
+    - `[ResourceId <String>]`: Required. The id of the resource which the role assignment request is associated with.
     - `[RoleDefinition <IMicrosoftGraphGovernanceRoleDefinition>]`: governanceRoleDefinition
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: Read-only.
-      - `[DisplayName <String>]`: 
-      - `[ExternalId <String>]`: 
+      - `[DisplayName <String>]`: The display name of the role definition.
+      - `[ExternalId <String>]`: The external id of the role definition.
       - `[Resource <IMicrosoftGraphGovernanceResource>]`: governanceResource
-      - `[ResourceId <String>]`: 
+      - `[ResourceId <String>]`: Required. The id of the resource associated with the role definition.
       - `[RoleSetting <IMicrosoftGraphGovernanceRoleSetting>]`: governanceRoleSetting
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: Read-only.
-        - `[AdminEligibleSettings <IMicrosoftGraphGovernanceRuleSetting[]>]`: 
-          - `[RuleIdentifier <String>]`: 
-          - `[Setting <String>]`: 
-        - `[AdminMemberSettings <IMicrosoftGraphGovernanceRuleSetting[]>]`: 
-        - `[IsDefault <Boolean?>]`: 
-        - `[LastUpdatedBy <String>]`: 
-        - `[LastUpdatedDateTime <DateTime?>]`: 
+        - `[AdminEligibleSettings <IMicrosoftGraphGovernanceRuleSetting[]>]`: The rule settings that are evaluated when an administrator tries to add an eligible role assignment.
+          - `[RuleIdentifier <String>]`: The id of the rule. For example, ExpirationRule and MfaRule.
+          - `[Setting <String>]`: The settings of the rule. The value is a JSON string with a list of pairs in the format of Parameter_Name:Parameter_Value. For example, {'permanentAssignment':false,'maximumGrantPeriodInMinutes':129600}
+        - `[AdminMemberSettings <IMicrosoftGraphGovernanceRuleSetting[]>]`: The rule settings that are evaluated when an administrator tries to add a direct member role assignment.
+        - `[IsDefault <Boolean?>]`: Read-only. Indicate if the roleSetting is a default roleSetting
+        - `[LastUpdatedBy <String>]`: Read-only. The display name of the administrator who last updated the roleSetting.
+        - `[LastUpdatedDateTime <DateTime?>]`: Read-only. The time when the role setting was last updated. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
         - `[Resource <IMicrosoftGraphGovernanceResource>]`: governanceResource
-        - `[ResourceId <String>]`: 
+        - `[ResourceId <String>]`: Required. The id of the resource that the role setting is associated with.
         - `[RoleDefinition <IMicrosoftGraphGovernanceRoleDefinition>]`: governanceRoleDefinition
-        - `[RoleDefinitionId <String>]`: 
-        - `[UserEligibleSettings <IMicrosoftGraphGovernanceRuleSetting[]>]`: 
-        - `[UserMemberSettings <IMicrosoftGraphGovernanceRuleSetting[]>]`: 
+        - `[RoleDefinitionId <String>]`: Required. The id of the role definition that the role setting is associated with.
+        - `[UserEligibleSettings <IMicrosoftGraphGovernanceRuleSetting[]>]`: The rule settings that are evaluated when a user tries to add an eligible role assignment. The setting is not supported for now.
+        - `[UserMemberSettings <IMicrosoftGraphGovernanceRuleSetting[]>]`: The rule settings that are evaluated when a user tries to activate his role assignment.
       - `[TemplateId <String>]`: 
-    - `[RoleDefinitionId <String>]`: 
+    - `[RoleDefinitionId <String>]`: Required. The id of the role definition which the role assignment request is associated with.
     - `[Schedule <IMicrosoftGraphGovernanceSchedule>]`: governanceSchedule
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Duration <TimeSpan?>]`: 
-      - `[EndDateTime <DateTime?>]`: 
-      - `[StartDateTime <DateTime?>]`: 
-      - `[Type <String>]`: 
+      - `[Duration <TimeSpan?>]`: The duration of a role assignment. It is in format of a TimeSpan.
+      - `[EndDateTime <DateTime?>]`: The end time of the role assignment. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Note: if the value is null, it indicates a permanent assignment.
+      - `[StartDateTime <DateTime?>]`: The start time of the role assignment. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+      - `[Type <String>]`: The role assignment schedule type. Only Once is supported for now.
     - `[Status <IMicrosoftGraphGovernanceRoleAssignmentRequestStatus>]`: governanceRoleAssignmentRequestStatus
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Status <String>]`: 
       - `[StatusDetails <IMicrosoftGraphKeyValue[]>]`: 
-        - `[Key <String>]`: Key for the key-value pair.
-        - `[Value <String>]`: Value for the key-value pair.
+        - `[Key <String>]`: Key.
+        - `[Value <String>]`: Value.
       - `[SubStatus <String>]`: 
     - `[Subject <IMicrosoftGraphGovernanceSubject>]`: governanceSubject
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: Read-only.
-      - `[DisplayName <String>]`: 
-      - `[Email <String>]`: 
-      - `[PrincipalName <String>]`: 
-      - `[Type <String>]`: 
-    - `[SubjectId <String>]`: 
-    - `[Type <String>]`: 
-  - `[RoleAssignments <IMicrosoftGraphGovernanceRoleAssignment[]>]`: 
+      - `[DisplayName <String>]`: The display name of the subject.
+      - `[Email <String>]`: The email address of the user subject. If the subject is in other types, it is empty.
+      - `[PrincipalName <String>]`: The principal name of the user subject. If the subject is in other types, it is empty.
+      - `[Type <String>]`: The type of the subject. The value can be User, Group, and ServicePrincipal.
+    - `[SubjectId <String>]`: Required. The id of the subject which the role assignment request is associated with.
+    - `[Type <String>]`: Required. Representing the type of the operation on the role assignment. The possible values are: AdminAdd , UserAdd , AdminUpdate , AdminRemove , UserRemove , UserExtend , AdminExtend , UserRenew , AdminRenew.
+  - `[RoleAssignments <IMicrosoftGraphGovernanceRoleAssignment[]>]`: The collection of role assignments for the resource.
     - `[Id <String>]`: Read-only.
-    - `[AssignmentState <String>]`: 
-    - `[EndDateTime <DateTime?>]`: 
-    - `[ExternalId <String>]`: 
+    - `[AssignmentState <String>]`: The state of the assignment. The value can be Eligible for eligible assignment or Active if it is directly assigned Active by administrators, or activated on an eligible assignment by the users.
+    - `[EndDateTime <DateTime?>]`: For a non-permanent role assignment, this is the time when the role assignment will be expired. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+    - `[ExternalId <String>]`: The external ID the resource that is used to identify the role assignment in the provider.
     - `[LinkedEligibleRoleAssignment <IMicrosoftGraphGovernanceRoleAssignment>]`: governanceRoleAssignment
-    - `[LinkedEligibleRoleAssignmentId <String>]`: 
-    - `[MemberType <String>]`: 
+    - `[LinkedEligibleRoleAssignmentId <String>]`: If this is an active assignment and created due to activation on an eligible assignment, it represents the ID of that eligible assignment; Otherwise, the value is null.
+    - `[MemberType <String>]`: The type of member. The value can be: Inherited (if the role assignment is inherited from a parent resource scope), Group (if the role assignment is not inherited, but comes from the membership of a group assignment), or User (if the role assignment is neither inherited nor from a group assignment).
     - `[Resource <IMicrosoftGraphGovernanceResource>]`: governanceResource
-    - `[ResourceId <String>]`: 
+    - `[ResourceId <String>]`: Required. The ID of the resource which the role assignment is associated with.
     - `[RoleDefinition <IMicrosoftGraphGovernanceRoleDefinition>]`: governanceRoleDefinition
-    - `[RoleDefinitionId <String>]`: 
-    - `[StartDateTime <DateTime?>]`: 
+    - `[RoleDefinitionId <String>]`: Required. The ID of the role definition which the role assignment is associated with.
+    - `[StartDateTime <DateTime?>]`: The start time of the role assignment. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     - `[Status <String>]`: 
     - `[Subject <IMicrosoftGraphGovernanceSubject>]`: governanceSubject
-    - `[SubjectId <String>]`: 
-  - `[RoleDefinitions <IMicrosoftGraphGovernanceRoleDefinition[]>]`: 
-  - `[RoleSettings <IMicrosoftGraphGovernanceRoleSetting[]>]`: 
-  - `[Status <String>]`: 
-  - `[Type <String>]`: 
+    - `[SubjectId <String>]`: Required. The ID of the subject which the role assignment is associated with.
+  - `[RoleDefinitions <IMicrosoftGraphGovernanceRoleDefinition[]>]`: The collection of role defintions for the resource.
+  - `[RoleSettings <IMicrosoftGraphGovernanceRoleSetting[]>]`: The collection of role settings for the resource.
+  - `[Status <String>]`: The status of a given resource. For example, it could represent whether the resource is locked or not (values: Active/Locked). Note: This property may be extended in the future to support more scenarios.
+  - `[Type <String>]`: Required. Resource type. For example, for Azure resources, the type could be 'Subscription', 'ResourceGroup', 'Microsoft.Sql/server', etc.
 
-ROLEASSIGNMENTREQUESTS <IMicrosoftGraphGovernanceRoleAssignmentRequest[]>: .
+ROLEASSIGNMENTREQUESTS <IMicrosoftGraphGovernanceRoleAssignmentRequest[]>: A collection of role assignment requests for the provider.
   - `[Id <String>]`: Read-only.
-  - `[AssignmentState <String>]`: 
-  - `[LinkedEligibleRoleAssignmentId <String>]`: 
-  - `[Reason <String>]`: 
-  - `[RequestedDateTime <DateTime?>]`: 
+  - `[AssignmentState <String>]`: Required. The state of the assignment. The possible values are: Eligible (for eligible assignment),  Active (if it is directly assigned), Active (by administrators, or activated on an eligible assignment by the users).
+  - `[LinkedEligibleRoleAssignmentId <String>]`: If this is a request for role activation, it represents the id of the eligible assignment being referred; Otherwise, the value is null.
+  - `[Reason <String>]`: A message provided by users and administrators when create the request about why it is needed.
+  - `[RequestedDateTime <DateTime?>]`: Read-only. The request create time. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[Resource <IMicrosoftGraphGovernanceResource>]`: governanceResource
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: Read-only.
-    - `[DisplayName <String>]`: 
-    - `[ExternalId <String>]`: 
+    - `[DisplayName <String>]`: The display name of the resource.
+    - `[ExternalId <String>]`: The external id of the resource, representing its original id in the external system. For example, a subscription resource's external id can be '/subscriptions/c14ae696-5e0c-4e5d-88cc-bef6637737ac'.
     - `[Parent <IMicrosoftGraphGovernanceResource>]`: governanceResource
-    - `[RegisteredDateTime <DateTime?>]`: 
-    - `[RegisteredRoot <String>]`: 
-    - `[RoleAssignmentRequests <IMicrosoftGraphGovernanceRoleAssignmentRequest[]>]`: 
-    - `[RoleAssignments <IMicrosoftGraphGovernanceRoleAssignment[]>]`: 
+    - `[RegisteredDateTime <DateTime?>]`: Represents the date time when the resource is registered in PIM.
+    - `[RegisteredRoot <String>]`: The externalId of the resource's root scope that is registered in PIM. The root scope can be the parent, grandparent, or higher ancestor resources.
+    - `[RoleAssignmentRequests <IMicrosoftGraphGovernanceRoleAssignmentRequest[]>]`: The collection of role assignment requests for the resource.
+    - `[RoleAssignments <IMicrosoftGraphGovernanceRoleAssignment[]>]`: The collection of role assignments for the resource.
       - `[Id <String>]`: Read-only.
-      - `[AssignmentState <String>]`: 
-      - `[EndDateTime <DateTime?>]`: 
-      - `[ExternalId <String>]`: 
+      - `[AssignmentState <String>]`: The state of the assignment. The value can be Eligible for eligible assignment or Active if it is directly assigned Active by administrators, or activated on an eligible assignment by the users.
+      - `[EndDateTime <DateTime?>]`: For a non-permanent role assignment, this is the time when the role assignment will be expired. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+      - `[ExternalId <String>]`: The external ID the resource that is used to identify the role assignment in the provider.
       - `[LinkedEligibleRoleAssignment <IMicrosoftGraphGovernanceRoleAssignment>]`: governanceRoleAssignment
-      - `[LinkedEligibleRoleAssignmentId <String>]`: 
-      - `[MemberType <String>]`: 
+      - `[LinkedEligibleRoleAssignmentId <String>]`: If this is an active assignment and created due to activation on an eligible assignment, it represents the ID of that eligible assignment; Otherwise, the value is null.
+      - `[MemberType <String>]`: The type of member. The value can be: Inherited (if the role assignment is inherited from a parent resource scope), Group (if the role assignment is not inherited, but comes from the membership of a group assignment), or User (if the role assignment is neither inherited nor from a group assignment).
       - `[Resource <IMicrosoftGraphGovernanceResource>]`: governanceResource
-      - `[ResourceId <String>]`: 
+      - `[ResourceId <String>]`: Required. The ID of the resource which the role assignment is associated with.
       - `[RoleDefinition <IMicrosoftGraphGovernanceRoleDefinition>]`: governanceRoleDefinition
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: Read-only.
-        - `[DisplayName <String>]`: 
-        - `[ExternalId <String>]`: 
+        - `[DisplayName <String>]`: The display name of the role definition.
+        - `[ExternalId <String>]`: The external id of the role definition.
         - `[Resource <IMicrosoftGraphGovernanceResource>]`: governanceResource
-        - `[ResourceId <String>]`: 
+        - `[ResourceId <String>]`: Required. The id of the resource associated with the role definition.
         - `[RoleSetting <IMicrosoftGraphGovernanceRoleSetting>]`: governanceRoleSetting
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: Read-only.
-          - `[AdminEligibleSettings <IMicrosoftGraphGovernanceRuleSetting[]>]`: 
-            - `[RuleIdentifier <String>]`: 
-            - `[Setting <String>]`: 
-          - `[AdminMemberSettings <IMicrosoftGraphGovernanceRuleSetting[]>]`: 
-          - `[IsDefault <Boolean?>]`: 
-          - `[LastUpdatedBy <String>]`: 
-          - `[LastUpdatedDateTime <DateTime?>]`: 
+          - `[AdminEligibleSettings <IMicrosoftGraphGovernanceRuleSetting[]>]`: The rule settings that are evaluated when an administrator tries to add an eligible role assignment.
+            - `[RuleIdentifier <String>]`: The id of the rule. For example, ExpirationRule and MfaRule.
+            - `[Setting <String>]`: The settings of the rule. The value is a JSON string with a list of pairs in the format of Parameter_Name:Parameter_Value. For example, {'permanentAssignment':false,'maximumGrantPeriodInMinutes':129600}
+          - `[AdminMemberSettings <IMicrosoftGraphGovernanceRuleSetting[]>]`: The rule settings that are evaluated when an administrator tries to add a direct member role assignment.
+          - `[IsDefault <Boolean?>]`: Read-only. Indicate if the roleSetting is a default roleSetting
+          - `[LastUpdatedBy <String>]`: Read-only. The display name of the administrator who last updated the roleSetting.
+          - `[LastUpdatedDateTime <DateTime?>]`: Read-only. The time when the role setting was last updated. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
           - `[Resource <IMicrosoftGraphGovernanceResource>]`: governanceResource
-          - `[ResourceId <String>]`: 
+          - `[ResourceId <String>]`: Required. The id of the resource that the role setting is associated with.
           - `[RoleDefinition <IMicrosoftGraphGovernanceRoleDefinition>]`: governanceRoleDefinition
-          - `[RoleDefinitionId <String>]`: 
-          - `[UserEligibleSettings <IMicrosoftGraphGovernanceRuleSetting[]>]`: 
-          - `[UserMemberSettings <IMicrosoftGraphGovernanceRuleSetting[]>]`: 
+          - `[RoleDefinitionId <String>]`: Required. The id of the role definition that the role setting is associated with.
+          - `[UserEligibleSettings <IMicrosoftGraphGovernanceRuleSetting[]>]`: The rule settings that are evaluated when a user tries to add an eligible role assignment. The setting is not supported for now.
+          - `[UserMemberSettings <IMicrosoftGraphGovernanceRuleSetting[]>]`: The rule settings that are evaluated when a user tries to activate his role assignment.
         - `[TemplateId <String>]`: 
-      - `[RoleDefinitionId <String>]`: 
-      - `[StartDateTime <DateTime?>]`: 
+      - `[RoleDefinitionId <String>]`: Required. The ID of the role definition which the role assignment is associated with.
+      - `[StartDateTime <DateTime?>]`: The start time of the role assignment. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
       - `[Status <String>]`: 
       - `[Subject <IMicrosoftGraphGovernanceSubject>]`: governanceSubject
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: Read-only.
-        - `[DisplayName <String>]`: 
-        - `[Email <String>]`: 
-        - `[PrincipalName <String>]`: 
-        - `[Type <String>]`: 
-      - `[SubjectId <String>]`: 
-    - `[RoleDefinitions <IMicrosoftGraphGovernanceRoleDefinition[]>]`: 
-    - `[RoleSettings <IMicrosoftGraphGovernanceRoleSetting[]>]`: 
-    - `[Status <String>]`: 
-    - `[Type <String>]`: 
-  - `[ResourceId <String>]`: 
+        - `[DisplayName <String>]`: The display name of the subject.
+        - `[Email <String>]`: The email address of the user subject. If the subject is in other types, it is empty.
+        - `[PrincipalName <String>]`: The principal name of the user subject. If the subject is in other types, it is empty.
+        - `[Type <String>]`: The type of the subject. The value can be User, Group, and ServicePrincipal.
+      - `[SubjectId <String>]`: Required. The ID of the subject which the role assignment is associated with.
+    - `[RoleDefinitions <IMicrosoftGraphGovernanceRoleDefinition[]>]`: The collection of role defintions for the resource.
+    - `[RoleSettings <IMicrosoftGraphGovernanceRoleSetting[]>]`: The collection of role settings for the resource.
+    - `[Status <String>]`: The status of a given resource. For example, it could represent whether the resource is locked or not (values: Active/Locked). Note: This property may be extended in the future to support more scenarios.
+    - `[Type <String>]`: Required. Resource type. For example, for Azure resources, the type could be 'Subscription', 'ResourceGroup', 'Microsoft.Sql/server', etc.
+  - `[ResourceId <String>]`: Required. The id of the resource which the role assignment request is associated with.
   - `[RoleDefinition <IMicrosoftGraphGovernanceRoleDefinition>]`: governanceRoleDefinition
-  - `[RoleDefinitionId <String>]`: 
+  - `[RoleDefinitionId <String>]`: Required. The id of the role definition which the role assignment request is associated with.
   - `[Schedule <IMicrosoftGraphGovernanceSchedule>]`: governanceSchedule
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Duration <TimeSpan?>]`: 
-    - `[EndDateTime <DateTime?>]`: 
-    - `[StartDateTime <DateTime?>]`: 
-    - `[Type <String>]`: 
+    - `[Duration <TimeSpan?>]`: The duration of a role assignment. It is in format of a TimeSpan.
+    - `[EndDateTime <DateTime?>]`: The end time of the role assignment. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Note: if the value is null, it indicates a permanent assignment.
+    - `[StartDateTime <DateTime?>]`: The start time of the role assignment. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+    - `[Type <String>]`: The role assignment schedule type. Only Once is supported for now.
   - `[Status <IMicrosoftGraphGovernanceRoleAssignmentRequestStatus>]`: governanceRoleAssignmentRequestStatus
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Status <String>]`: 
     - `[StatusDetails <IMicrosoftGraphKeyValue[]>]`: 
-      - `[Key <String>]`: Key for the key-value pair.
-      - `[Value <String>]`: Value for the key-value pair.
+      - `[Key <String>]`: Key.
+      - `[Value <String>]`: Value.
     - `[SubStatus <String>]`: 
   - `[Subject <IMicrosoftGraphGovernanceSubject>]`: governanceSubject
-  - `[SubjectId <String>]`: 
-  - `[Type <String>]`: 
+  - `[SubjectId <String>]`: Required. The id of the subject which the role assignment request is associated with.
+  - `[Type <String>]`: Required. Representing the type of the operation on the role assignment. The possible values are: AdminAdd , UserAdd , AdminUpdate , AdminRemove , UserRemove , UserExtend , AdminExtend , UserRenew , AdminRenew.
 
-ROLEASSIGNMENTS <IMicrosoftGraphGovernanceRoleAssignment[]>: .
+ROLEASSIGNMENTS <IMicrosoftGraphGovernanceRoleAssignment[]>: A collection of role assignments for the provider.
   - `[Id <String>]`: Read-only.
-  - `[AssignmentState <String>]`: 
-  - `[EndDateTime <DateTime?>]`: 
-  - `[ExternalId <String>]`: 
+  - `[AssignmentState <String>]`: The state of the assignment. The value can be Eligible for eligible assignment or Active if it is directly assigned Active by administrators, or activated on an eligible assignment by the users.
+  - `[EndDateTime <DateTime?>]`: For a non-permanent role assignment, this is the time when the role assignment will be expired. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+  - `[ExternalId <String>]`: The external ID the resource that is used to identify the role assignment in the provider.
   - `[LinkedEligibleRoleAssignment <IMicrosoftGraphGovernanceRoleAssignment>]`: governanceRoleAssignment
-  - `[LinkedEligibleRoleAssignmentId <String>]`: 
-  - `[MemberType <String>]`: 
+  - `[LinkedEligibleRoleAssignmentId <String>]`: If this is an active assignment and created due to activation on an eligible assignment, it represents the ID of that eligible assignment; Otherwise, the value is null.
+  - `[MemberType <String>]`: The type of member. The value can be: Inherited (if the role assignment is inherited from a parent resource scope), Group (if the role assignment is not inherited, but comes from the membership of a group assignment), or User (if the role assignment is neither inherited nor from a group assignment).
   - `[Resource <IMicrosoftGraphGovernanceResource>]`: governanceResource
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: Read-only.
-    - `[DisplayName <String>]`: 
-    - `[ExternalId <String>]`: 
+    - `[DisplayName <String>]`: The display name of the resource.
+    - `[ExternalId <String>]`: The external id of the resource, representing its original id in the external system. For example, a subscription resource's external id can be '/subscriptions/c14ae696-5e0c-4e5d-88cc-bef6637737ac'.
     - `[Parent <IMicrosoftGraphGovernanceResource>]`: governanceResource
-    - `[RegisteredDateTime <DateTime?>]`: 
-    - `[RegisteredRoot <String>]`: 
-    - `[RoleAssignmentRequests <IMicrosoftGraphGovernanceRoleAssignmentRequest[]>]`: 
+    - `[RegisteredDateTime <DateTime?>]`: Represents the date time when the resource is registered in PIM.
+    - `[RegisteredRoot <String>]`: The externalId of the resource's root scope that is registered in PIM. The root scope can be the parent, grandparent, or higher ancestor resources.
+    - `[RoleAssignmentRequests <IMicrosoftGraphGovernanceRoleAssignmentRequest[]>]`: The collection of role assignment requests for the resource.
       - `[Id <String>]`: Read-only.
-      - `[AssignmentState <String>]`: 
-      - `[LinkedEligibleRoleAssignmentId <String>]`: 
-      - `[Reason <String>]`: 
-      - `[RequestedDateTime <DateTime?>]`: 
+      - `[AssignmentState <String>]`: Required. The state of the assignment. The possible values are: Eligible (for eligible assignment),  Active (if it is directly assigned), Active (by administrators, or activated on an eligible assignment by the users).
+      - `[LinkedEligibleRoleAssignmentId <String>]`: If this is a request for role activation, it represents the id of the eligible assignment being referred; Otherwise, the value is null.
+      - `[Reason <String>]`: A message provided by users and administrators when create the request about why it is needed.
+      - `[RequestedDateTime <DateTime?>]`: Read-only. The request create time. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
       - `[Resource <IMicrosoftGraphGovernanceResource>]`: governanceResource
-      - `[ResourceId <String>]`: 
+      - `[ResourceId <String>]`: Required. The id of the resource which the role assignment request is associated with.
       - `[RoleDefinition <IMicrosoftGraphGovernanceRoleDefinition>]`: governanceRoleDefinition
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: Read-only.
-        - `[DisplayName <String>]`: 
-        - `[ExternalId <String>]`: 
+        - `[DisplayName <String>]`: The display name of the role definition.
+        - `[ExternalId <String>]`: The external id of the role definition.
         - `[Resource <IMicrosoftGraphGovernanceResource>]`: governanceResource
-        - `[ResourceId <String>]`: 
+        - `[ResourceId <String>]`: Required. The id of the resource associated with the role definition.
         - `[RoleSetting <IMicrosoftGraphGovernanceRoleSetting>]`: governanceRoleSetting
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: Read-only.
-          - `[AdminEligibleSettings <IMicrosoftGraphGovernanceRuleSetting[]>]`: 
-            - `[RuleIdentifier <String>]`: 
-            - `[Setting <String>]`: 
-          - `[AdminMemberSettings <IMicrosoftGraphGovernanceRuleSetting[]>]`: 
-          - `[IsDefault <Boolean?>]`: 
-          - `[LastUpdatedBy <String>]`: 
-          - `[LastUpdatedDateTime <DateTime?>]`: 
+          - `[AdminEligibleSettings <IMicrosoftGraphGovernanceRuleSetting[]>]`: The rule settings that are evaluated when an administrator tries to add an eligible role assignment.
+            - `[RuleIdentifier <String>]`: The id of the rule. For example, ExpirationRule and MfaRule.
+            - `[Setting <String>]`: The settings of the rule. The value is a JSON string with a list of pairs in the format of Parameter_Name:Parameter_Value. For example, {'permanentAssignment':false,'maximumGrantPeriodInMinutes':129600}
+          - `[AdminMemberSettings <IMicrosoftGraphGovernanceRuleSetting[]>]`: The rule settings that are evaluated when an administrator tries to add a direct member role assignment.
+          - `[IsDefault <Boolean?>]`: Read-only. Indicate if the roleSetting is a default roleSetting
+          - `[LastUpdatedBy <String>]`: Read-only. The display name of the administrator who last updated the roleSetting.
+          - `[LastUpdatedDateTime <DateTime?>]`: Read-only. The time when the role setting was last updated. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
           - `[Resource <IMicrosoftGraphGovernanceResource>]`: governanceResource
-          - `[ResourceId <String>]`: 
+          - `[ResourceId <String>]`: Required. The id of the resource that the role setting is associated with.
           - `[RoleDefinition <IMicrosoftGraphGovernanceRoleDefinition>]`: governanceRoleDefinition
-          - `[RoleDefinitionId <String>]`: 
-          - `[UserEligibleSettings <IMicrosoftGraphGovernanceRuleSetting[]>]`: 
-          - `[UserMemberSettings <IMicrosoftGraphGovernanceRuleSetting[]>]`: 
+          - `[RoleDefinitionId <String>]`: Required. The id of the role definition that the role setting is associated with.
+          - `[UserEligibleSettings <IMicrosoftGraphGovernanceRuleSetting[]>]`: The rule settings that are evaluated when a user tries to add an eligible role assignment. The setting is not supported for now.
+          - `[UserMemberSettings <IMicrosoftGraphGovernanceRuleSetting[]>]`: The rule settings that are evaluated when a user tries to activate his role assignment.
         - `[TemplateId <String>]`: 
-      - `[RoleDefinitionId <String>]`: 
+      - `[RoleDefinitionId <String>]`: Required. The id of the role definition which the role assignment request is associated with.
       - `[Schedule <IMicrosoftGraphGovernanceSchedule>]`: governanceSchedule
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[Duration <TimeSpan?>]`: 
-        - `[EndDateTime <DateTime?>]`: 
-        - `[StartDateTime <DateTime?>]`: 
-        - `[Type <String>]`: 
+        - `[Duration <TimeSpan?>]`: The duration of a role assignment. It is in format of a TimeSpan.
+        - `[EndDateTime <DateTime?>]`: The end time of the role assignment. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Note: if the value is null, it indicates a permanent assignment.
+        - `[StartDateTime <DateTime?>]`: The start time of the role assignment. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+        - `[Type <String>]`: The role assignment schedule type. Only Once is supported for now.
       - `[Status <IMicrosoftGraphGovernanceRoleAssignmentRequestStatus>]`: governanceRoleAssignmentRequestStatus
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Status <String>]`: 
         - `[StatusDetails <IMicrosoftGraphKeyValue[]>]`: 
-          - `[Key <String>]`: Key for the key-value pair.
-          - `[Value <String>]`: Value for the key-value pair.
+          - `[Key <String>]`: Key.
+          - `[Value <String>]`: Value.
         - `[SubStatus <String>]`: 
       - `[Subject <IMicrosoftGraphGovernanceSubject>]`: governanceSubject
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: Read-only.
-        - `[DisplayName <String>]`: 
-        - `[Email <String>]`: 
-        - `[PrincipalName <String>]`: 
-        - `[Type <String>]`: 
-      - `[SubjectId <String>]`: 
-      - `[Type <String>]`: 
-    - `[RoleAssignments <IMicrosoftGraphGovernanceRoleAssignment[]>]`: 
-    - `[RoleDefinitions <IMicrosoftGraphGovernanceRoleDefinition[]>]`: 
-    - `[RoleSettings <IMicrosoftGraphGovernanceRoleSetting[]>]`: 
-    - `[Status <String>]`: 
-    - `[Type <String>]`: 
-  - `[ResourceId <String>]`: 
+        - `[DisplayName <String>]`: The display name of the subject.
+        - `[Email <String>]`: The email address of the user subject. If the subject is in other types, it is empty.
+        - `[PrincipalName <String>]`: The principal name of the user subject. If the subject is in other types, it is empty.
+        - `[Type <String>]`: The type of the subject. The value can be User, Group, and ServicePrincipal.
+      - `[SubjectId <String>]`: Required. The id of the subject which the role assignment request is associated with.
+      - `[Type <String>]`: Required. Representing the type of the operation on the role assignment. The possible values are: AdminAdd , UserAdd , AdminUpdate , AdminRemove , UserRemove , UserExtend , AdminExtend , UserRenew , AdminRenew.
+    - `[RoleAssignments <IMicrosoftGraphGovernanceRoleAssignment[]>]`: The collection of role assignments for the resource.
+    - `[RoleDefinitions <IMicrosoftGraphGovernanceRoleDefinition[]>]`: The collection of role defintions for the resource.
+    - `[RoleSettings <IMicrosoftGraphGovernanceRoleSetting[]>]`: The collection of role settings for the resource.
+    - `[Status <String>]`: The status of a given resource. For example, it could represent whether the resource is locked or not (values: Active/Locked). Note: This property may be extended in the future to support more scenarios.
+    - `[Type <String>]`: Required. Resource type. For example, for Azure resources, the type could be 'Subscription', 'ResourceGroup', 'Microsoft.Sql/server', etc.
+  - `[ResourceId <String>]`: Required. The ID of the resource which the role assignment is associated with.
   - `[RoleDefinition <IMicrosoftGraphGovernanceRoleDefinition>]`: governanceRoleDefinition
-  - `[RoleDefinitionId <String>]`: 
-  - `[StartDateTime <DateTime?>]`: 
+  - `[RoleDefinitionId <String>]`: Required. The ID of the role definition which the role assignment is associated with.
+  - `[StartDateTime <DateTime?>]`: The start time of the role assignment. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[Status <String>]`: 
   - `[Subject <IMicrosoftGraphGovernanceSubject>]`: governanceSubject
-  - `[SubjectId <String>]`: 
+  - `[SubjectId <String>]`: Required. The ID of the subject which the role assignment is associated with.
 
-ROLEDEFINITIONS <IMicrosoftGraphGovernanceRoleDefinition[]>: .
+ROLEDEFINITIONS <IMicrosoftGraphGovernanceRoleDefinition[]>: A collection of role defintions for the provider.
   - `[Id <String>]`: Read-only.
-  - `[DisplayName <String>]`: 
-  - `[ExternalId <String>]`: 
+  - `[DisplayName <String>]`: The display name of the role definition.
+  - `[ExternalId <String>]`: The external id of the role definition.
   - `[Resource <IMicrosoftGraphGovernanceResource>]`: governanceResource
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: Read-only.
-    - `[DisplayName <String>]`: 
-    - `[ExternalId <String>]`: 
+    - `[DisplayName <String>]`: The display name of the resource.
+    - `[ExternalId <String>]`: The external id of the resource, representing its original id in the external system. For example, a subscription resource's external id can be '/subscriptions/c14ae696-5e0c-4e5d-88cc-bef6637737ac'.
     - `[Parent <IMicrosoftGraphGovernanceResource>]`: governanceResource
-    - `[RegisteredDateTime <DateTime?>]`: 
-    - `[RegisteredRoot <String>]`: 
-    - `[RoleAssignmentRequests <IMicrosoftGraphGovernanceRoleAssignmentRequest[]>]`: 
+    - `[RegisteredDateTime <DateTime?>]`: Represents the date time when the resource is registered in PIM.
+    - `[RegisteredRoot <String>]`: The externalId of the resource's root scope that is registered in PIM. The root scope can be the parent, grandparent, or higher ancestor resources.
+    - `[RoleAssignmentRequests <IMicrosoftGraphGovernanceRoleAssignmentRequest[]>]`: The collection of role assignment requests for the resource.
       - `[Id <String>]`: Read-only.
-      - `[AssignmentState <String>]`: 
-      - `[LinkedEligibleRoleAssignmentId <String>]`: 
-      - `[Reason <String>]`: 
-      - `[RequestedDateTime <DateTime?>]`: 
+      - `[AssignmentState <String>]`: Required. The state of the assignment. The possible values are: Eligible (for eligible assignment),  Active (if it is directly assigned), Active (by administrators, or activated on an eligible assignment by the users).
+      - `[LinkedEligibleRoleAssignmentId <String>]`: If this is a request for role activation, it represents the id of the eligible assignment being referred; Otherwise, the value is null.
+      - `[Reason <String>]`: A message provided by users and administrators when create the request about why it is needed.
+      - `[RequestedDateTime <DateTime?>]`: Read-only. The request create time. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
       - `[Resource <IMicrosoftGraphGovernanceResource>]`: governanceResource
-      - `[ResourceId <String>]`: 
+      - `[ResourceId <String>]`: Required. The id of the resource which the role assignment request is associated with.
       - `[RoleDefinition <IMicrosoftGraphGovernanceRoleDefinition>]`: governanceRoleDefinition
-      - `[RoleDefinitionId <String>]`: 
+      - `[RoleDefinitionId <String>]`: Required. The id of the role definition which the role assignment request is associated with.
       - `[Schedule <IMicrosoftGraphGovernanceSchedule>]`: governanceSchedule
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[Duration <TimeSpan?>]`: 
-        - `[EndDateTime <DateTime?>]`: 
-        - `[StartDateTime <DateTime?>]`: 
-        - `[Type <String>]`: 
+        - `[Duration <TimeSpan?>]`: The duration of a role assignment. It is in format of a TimeSpan.
+        - `[EndDateTime <DateTime?>]`: The end time of the role assignment. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Note: if the value is null, it indicates a permanent assignment.
+        - `[StartDateTime <DateTime?>]`: The start time of the role assignment. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+        - `[Type <String>]`: The role assignment schedule type. Only Once is supported for now.
       - `[Status <IMicrosoftGraphGovernanceRoleAssignmentRequestStatus>]`: governanceRoleAssignmentRequestStatus
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Status <String>]`: 
         - `[StatusDetails <IMicrosoftGraphKeyValue[]>]`: 
-          - `[Key <String>]`: Key for the key-value pair.
-          - `[Value <String>]`: Value for the key-value pair.
+          - `[Key <String>]`: Key.
+          - `[Value <String>]`: Value.
         - `[SubStatus <String>]`: 
       - `[Subject <IMicrosoftGraphGovernanceSubject>]`: governanceSubject
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: Read-only.
-        - `[DisplayName <String>]`: 
-        - `[Email <String>]`: 
-        - `[PrincipalName <String>]`: 
-        - `[Type <String>]`: 
-      - `[SubjectId <String>]`: 
-      - `[Type <String>]`: 
-    - `[RoleAssignments <IMicrosoftGraphGovernanceRoleAssignment[]>]`: 
+        - `[DisplayName <String>]`: The display name of the subject.
+        - `[Email <String>]`: The email address of the user subject. If the subject is in other types, it is empty.
+        - `[PrincipalName <String>]`: The principal name of the user subject. If the subject is in other types, it is empty.
+        - `[Type <String>]`: The type of the subject. The value can be User, Group, and ServicePrincipal.
+      - `[SubjectId <String>]`: Required. The id of the subject which the role assignment request is associated with.
+      - `[Type <String>]`: Required. Representing the type of the operation on the role assignment. The possible values are: AdminAdd , UserAdd , AdminUpdate , AdminRemove , UserRemove , UserExtend , AdminExtend , UserRenew , AdminRenew.
+    - `[RoleAssignments <IMicrosoftGraphGovernanceRoleAssignment[]>]`: The collection of role assignments for the resource.
       - `[Id <String>]`: Read-only.
-      - `[AssignmentState <String>]`: 
-      - `[EndDateTime <DateTime?>]`: 
-      - `[ExternalId <String>]`: 
+      - `[AssignmentState <String>]`: The state of the assignment. The value can be Eligible for eligible assignment or Active if it is directly assigned Active by administrators, or activated on an eligible assignment by the users.
+      - `[EndDateTime <DateTime?>]`: For a non-permanent role assignment, this is the time when the role assignment will be expired. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+      - `[ExternalId <String>]`: The external ID the resource that is used to identify the role assignment in the provider.
       - `[LinkedEligibleRoleAssignment <IMicrosoftGraphGovernanceRoleAssignment>]`: governanceRoleAssignment
-      - `[LinkedEligibleRoleAssignmentId <String>]`: 
-      - `[MemberType <String>]`: 
+      - `[LinkedEligibleRoleAssignmentId <String>]`: If this is an active assignment and created due to activation on an eligible assignment, it represents the ID of that eligible assignment; Otherwise, the value is null.
+      - `[MemberType <String>]`: The type of member. The value can be: Inherited (if the role assignment is inherited from a parent resource scope), Group (if the role assignment is not inherited, but comes from the membership of a group assignment), or User (if the role assignment is neither inherited nor from a group assignment).
       - `[Resource <IMicrosoftGraphGovernanceResource>]`: governanceResource
-      - `[ResourceId <String>]`: 
+      - `[ResourceId <String>]`: Required. The ID of the resource which the role assignment is associated with.
       - `[RoleDefinition <IMicrosoftGraphGovernanceRoleDefinition>]`: governanceRoleDefinition
-      - `[RoleDefinitionId <String>]`: 
-      - `[StartDateTime <DateTime?>]`: 
+      - `[RoleDefinitionId <String>]`: Required. The ID of the role definition which the role assignment is associated with.
+      - `[StartDateTime <DateTime?>]`: The start time of the role assignment. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
       - `[Status <String>]`: 
       - `[Subject <IMicrosoftGraphGovernanceSubject>]`: governanceSubject
-      - `[SubjectId <String>]`: 
-    - `[RoleDefinitions <IMicrosoftGraphGovernanceRoleDefinition[]>]`: 
-    - `[RoleSettings <IMicrosoftGraphGovernanceRoleSetting[]>]`: 
+      - `[SubjectId <String>]`: Required. The ID of the subject which the role assignment is associated with.
+    - `[RoleDefinitions <IMicrosoftGraphGovernanceRoleDefinition[]>]`: The collection of role defintions for the resource.
+    - `[RoleSettings <IMicrosoftGraphGovernanceRoleSetting[]>]`: The collection of role settings for the resource.
       - `[Id <String>]`: Read-only.
-      - `[AdminEligibleSettings <IMicrosoftGraphGovernanceRuleSetting[]>]`: 
-        - `[RuleIdentifier <String>]`: 
-        - `[Setting <String>]`: 
-      - `[AdminMemberSettings <IMicrosoftGraphGovernanceRuleSetting[]>]`: 
-      - `[IsDefault <Boolean?>]`: 
-      - `[LastUpdatedBy <String>]`: 
-      - `[LastUpdatedDateTime <DateTime?>]`: 
+      - `[AdminEligibleSettings <IMicrosoftGraphGovernanceRuleSetting[]>]`: The rule settings that are evaluated when an administrator tries to add an eligible role assignment.
+        - `[RuleIdentifier <String>]`: The id of the rule. For example, ExpirationRule and MfaRule.
+        - `[Setting <String>]`: The settings of the rule. The value is a JSON string with a list of pairs in the format of Parameter_Name:Parameter_Value. For example, {'permanentAssignment':false,'maximumGrantPeriodInMinutes':129600}
+      - `[AdminMemberSettings <IMicrosoftGraphGovernanceRuleSetting[]>]`: The rule settings that are evaluated when an administrator tries to add a direct member role assignment.
+      - `[IsDefault <Boolean?>]`: Read-only. Indicate if the roleSetting is a default roleSetting
+      - `[LastUpdatedBy <String>]`: Read-only. The display name of the administrator who last updated the roleSetting.
+      - `[LastUpdatedDateTime <DateTime?>]`: Read-only. The time when the role setting was last updated. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
       - `[Resource <IMicrosoftGraphGovernanceResource>]`: governanceResource
-      - `[ResourceId <String>]`: 
+      - `[ResourceId <String>]`: Required. The id of the resource that the role setting is associated with.
       - `[RoleDefinition <IMicrosoftGraphGovernanceRoleDefinition>]`: governanceRoleDefinition
-      - `[RoleDefinitionId <String>]`: 
-      - `[UserEligibleSettings <IMicrosoftGraphGovernanceRuleSetting[]>]`: 
-      - `[UserMemberSettings <IMicrosoftGraphGovernanceRuleSetting[]>]`: 
-    - `[Status <String>]`: 
-    - `[Type <String>]`: 
-  - `[ResourceId <String>]`: 
+      - `[RoleDefinitionId <String>]`: Required. The id of the role definition that the role setting is associated with.
+      - `[UserEligibleSettings <IMicrosoftGraphGovernanceRuleSetting[]>]`: The rule settings that are evaluated when a user tries to add an eligible role assignment. The setting is not supported for now.
+      - `[UserMemberSettings <IMicrosoftGraphGovernanceRuleSetting[]>]`: The rule settings that are evaluated when a user tries to activate his role assignment.
+    - `[Status <String>]`: The status of a given resource. For example, it could represent whether the resource is locked or not (values: Active/Locked). Note: This property may be extended in the future to support more scenarios.
+    - `[Type <String>]`: Required. Resource type. For example, for Azure resources, the type could be 'Subscription', 'ResourceGroup', 'Microsoft.Sql/server', etc.
+  - `[ResourceId <String>]`: Required. The id of the resource associated with the role definition.
   - `[RoleSetting <IMicrosoftGraphGovernanceRoleSetting>]`: governanceRoleSetting
   - `[TemplateId <String>]`: 
 
-ROLESETTINGS <IMicrosoftGraphGovernanceRoleSetting[]>: .
+ROLESETTINGS <IMicrosoftGraphGovernanceRoleSetting[]>: A collection of role settings for the provider.
   - `[Id <String>]`: Read-only.
-  - `[AdminEligibleSettings <IMicrosoftGraphGovernanceRuleSetting[]>]`: 
-    - `[RuleIdentifier <String>]`: 
-    - `[Setting <String>]`: 
-  - `[AdminMemberSettings <IMicrosoftGraphGovernanceRuleSetting[]>]`: 
-  - `[IsDefault <Boolean?>]`: 
-  - `[LastUpdatedBy <String>]`: 
-  - `[LastUpdatedDateTime <DateTime?>]`: 
+  - `[AdminEligibleSettings <IMicrosoftGraphGovernanceRuleSetting[]>]`: The rule settings that are evaluated when an administrator tries to add an eligible role assignment.
+    - `[RuleIdentifier <String>]`: The id of the rule. For example, ExpirationRule and MfaRule.
+    - `[Setting <String>]`: The settings of the rule. The value is a JSON string with a list of pairs in the format of Parameter_Name:Parameter_Value. For example, {'permanentAssignment':false,'maximumGrantPeriodInMinutes':129600}
+  - `[AdminMemberSettings <IMicrosoftGraphGovernanceRuleSetting[]>]`: The rule settings that are evaluated when an administrator tries to add a direct member role assignment.
+  - `[IsDefault <Boolean?>]`: Read-only. Indicate if the roleSetting is a default roleSetting
+  - `[LastUpdatedBy <String>]`: Read-only. The display name of the administrator who last updated the roleSetting.
+  - `[LastUpdatedDateTime <DateTime?>]`: Read-only. The time when the role setting was last updated. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[Resource <IMicrosoftGraphGovernanceResource>]`: governanceResource
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: Read-only.
-    - `[DisplayName <String>]`: 
-    - `[ExternalId <String>]`: 
+    - `[DisplayName <String>]`: The display name of the resource.
+    - `[ExternalId <String>]`: The external id of the resource, representing its original id in the external system. For example, a subscription resource's external id can be '/subscriptions/c14ae696-5e0c-4e5d-88cc-bef6637737ac'.
     - `[Parent <IMicrosoftGraphGovernanceResource>]`: governanceResource
-    - `[RegisteredDateTime <DateTime?>]`: 
-    - `[RegisteredRoot <String>]`: 
-    - `[RoleAssignmentRequests <IMicrosoftGraphGovernanceRoleAssignmentRequest[]>]`: 
+    - `[RegisteredDateTime <DateTime?>]`: Represents the date time when the resource is registered in PIM.
+    - `[RegisteredRoot <String>]`: The externalId of the resource's root scope that is registered in PIM. The root scope can be the parent, grandparent, or higher ancestor resources.
+    - `[RoleAssignmentRequests <IMicrosoftGraphGovernanceRoleAssignmentRequest[]>]`: The collection of role assignment requests for the resource.
       - `[Id <String>]`: Read-only.
-      - `[AssignmentState <String>]`: 
-      - `[LinkedEligibleRoleAssignmentId <String>]`: 
-      - `[Reason <String>]`: 
-      - `[RequestedDateTime <DateTime?>]`: 
+      - `[AssignmentState <String>]`: Required. The state of the assignment. The possible values are: Eligible (for eligible assignment),  Active (if it is directly assigned), Active (by administrators, or activated on an eligible assignment by the users).
+      - `[LinkedEligibleRoleAssignmentId <String>]`: If this is a request for role activation, it represents the id of the eligible assignment being referred; Otherwise, the value is null.
+      - `[Reason <String>]`: A message provided by users and administrators when create the request about why it is needed.
+      - `[RequestedDateTime <DateTime?>]`: Read-only. The request create time. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
       - `[Resource <IMicrosoftGraphGovernanceResource>]`: governanceResource
-      - `[ResourceId <String>]`: 
+      - `[ResourceId <String>]`: Required. The id of the resource which the role assignment request is associated with.
       - `[RoleDefinition <IMicrosoftGraphGovernanceRoleDefinition>]`: governanceRoleDefinition
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: Read-only.
-        - `[DisplayName <String>]`: 
-        - `[ExternalId <String>]`: 
+        - `[DisplayName <String>]`: The display name of the role definition.
+        - `[ExternalId <String>]`: The external id of the role definition.
         - `[Resource <IMicrosoftGraphGovernanceResource>]`: governanceResource
-        - `[ResourceId <String>]`: 
+        - `[ResourceId <String>]`: Required. The id of the resource associated with the role definition.
         - `[RoleSetting <IMicrosoftGraphGovernanceRoleSetting>]`: governanceRoleSetting
         - `[TemplateId <String>]`: 
-      - `[RoleDefinitionId <String>]`: 
+      - `[RoleDefinitionId <String>]`: Required. The id of the role definition which the role assignment request is associated with.
       - `[Schedule <IMicrosoftGraphGovernanceSchedule>]`: governanceSchedule
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[Duration <TimeSpan?>]`: 
-        - `[EndDateTime <DateTime?>]`: 
-        - `[StartDateTime <DateTime?>]`: 
-        - `[Type <String>]`: 
+        - `[Duration <TimeSpan?>]`: The duration of a role assignment. It is in format of a TimeSpan.
+        - `[EndDateTime <DateTime?>]`: The end time of the role assignment. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Note: if the value is null, it indicates a permanent assignment.
+        - `[StartDateTime <DateTime?>]`: The start time of the role assignment. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+        - `[Type <String>]`: The role assignment schedule type. Only Once is supported for now.
       - `[Status <IMicrosoftGraphGovernanceRoleAssignmentRequestStatus>]`: governanceRoleAssignmentRequestStatus
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Status <String>]`: 
         - `[StatusDetails <IMicrosoftGraphKeyValue[]>]`: 
-          - `[Key <String>]`: Key for the key-value pair.
-          - `[Value <String>]`: Value for the key-value pair.
+          - `[Key <String>]`: Key.
+          - `[Value <String>]`: Value.
         - `[SubStatus <String>]`: 
       - `[Subject <IMicrosoftGraphGovernanceSubject>]`: governanceSubject
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: Read-only.
-        - `[DisplayName <String>]`: 
-        - `[Email <String>]`: 
-        - `[PrincipalName <String>]`: 
-        - `[Type <String>]`: 
-      - `[SubjectId <String>]`: 
-      - `[Type <String>]`: 
-    - `[RoleAssignments <IMicrosoftGraphGovernanceRoleAssignment[]>]`: 
+        - `[DisplayName <String>]`: The display name of the subject.
+        - `[Email <String>]`: The email address of the user subject. If the subject is in other types, it is empty.
+        - `[PrincipalName <String>]`: The principal name of the user subject. If the subject is in other types, it is empty.
+        - `[Type <String>]`: The type of the subject. The value can be User, Group, and ServicePrincipal.
+      - `[SubjectId <String>]`: Required. The id of the subject which the role assignment request is associated with.
+      - `[Type <String>]`: Required. Representing the type of the operation on the role assignment. The possible values are: AdminAdd , UserAdd , AdminUpdate , AdminRemove , UserRemove , UserExtend , AdminExtend , UserRenew , AdminRenew.
+    - `[RoleAssignments <IMicrosoftGraphGovernanceRoleAssignment[]>]`: The collection of role assignments for the resource.
       - `[Id <String>]`: Read-only.
-      - `[AssignmentState <String>]`: 
-      - `[EndDateTime <DateTime?>]`: 
-      - `[ExternalId <String>]`: 
+      - `[AssignmentState <String>]`: The state of the assignment. The value can be Eligible for eligible assignment or Active if it is directly assigned Active by administrators, or activated on an eligible assignment by the users.
+      - `[EndDateTime <DateTime?>]`: For a non-permanent role assignment, this is the time when the role assignment will be expired. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+      - `[ExternalId <String>]`: The external ID the resource that is used to identify the role assignment in the provider.
       - `[LinkedEligibleRoleAssignment <IMicrosoftGraphGovernanceRoleAssignment>]`: governanceRoleAssignment
-      - `[LinkedEligibleRoleAssignmentId <String>]`: 
-      - `[MemberType <String>]`: 
+      - `[LinkedEligibleRoleAssignmentId <String>]`: If this is an active assignment and created due to activation on an eligible assignment, it represents the ID of that eligible assignment; Otherwise, the value is null.
+      - `[MemberType <String>]`: The type of member. The value can be: Inherited (if the role assignment is inherited from a parent resource scope), Group (if the role assignment is not inherited, but comes from the membership of a group assignment), or User (if the role assignment is neither inherited nor from a group assignment).
       - `[Resource <IMicrosoftGraphGovernanceResource>]`: governanceResource
-      - `[ResourceId <String>]`: 
+      - `[ResourceId <String>]`: Required. The ID of the resource which the role assignment is associated with.
       - `[RoleDefinition <IMicrosoftGraphGovernanceRoleDefinition>]`: governanceRoleDefinition
-      - `[RoleDefinitionId <String>]`: 
-      - `[StartDateTime <DateTime?>]`: 
+      - `[RoleDefinitionId <String>]`: Required. The ID of the role definition which the role assignment is associated with.
+      - `[StartDateTime <DateTime?>]`: The start time of the role assignment. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
       - `[Status <String>]`: 
       - `[Subject <IMicrosoftGraphGovernanceSubject>]`: governanceSubject
-      - `[SubjectId <String>]`: 
-    - `[RoleDefinitions <IMicrosoftGraphGovernanceRoleDefinition[]>]`: 
-    - `[RoleSettings <IMicrosoftGraphGovernanceRoleSetting[]>]`: 
-    - `[Status <String>]`: 
-    - `[Type <String>]`: 
-  - `[ResourceId <String>]`: 
+      - `[SubjectId <String>]`: Required. The ID of the subject which the role assignment is associated with.
+    - `[RoleDefinitions <IMicrosoftGraphGovernanceRoleDefinition[]>]`: The collection of role defintions for the resource.
+    - `[RoleSettings <IMicrosoftGraphGovernanceRoleSetting[]>]`: The collection of role settings for the resource.
+    - `[Status <String>]`: The status of a given resource. For example, it could represent whether the resource is locked or not (values: Active/Locked). Note: This property may be extended in the future to support more scenarios.
+    - `[Type <String>]`: Required. Resource type. For example, for Azure resources, the type could be 'Subscription', 'ResourceGroup', 'Microsoft.Sql/server', etc.
+  - `[ResourceId <String>]`: Required. The id of the resource that the role setting is associated with.
   - `[RoleDefinition <IMicrosoftGraphGovernanceRoleDefinition>]`: governanceRoleDefinition
-  - `[RoleDefinitionId <String>]`: 
-  - `[UserEligibleSettings <IMicrosoftGraphGovernanceRuleSetting[]>]`: 
-  - `[UserMemberSettings <IMicrosoftGraphGovernanceRuleSetting[]>]`: 
+  - `[RoleDefinitionId <String>]`: Required. The id of the role definition that the role setting is associated with.
+  - `[UserEligibleSettings <IMicrosoftGraphGovernanceRuleSetting[]>]`: The rule settings that are evaluated when a user tries to add an eligible role assignment. The setting is not supported for now.
+  - `[UserMemberSettings <IMicrosoftGraphGovernanceRuleSetting[]>]`: The rule settings that are evaluated when a user tries to activate his role assignment.
 
 ## RELATED LINKS
 
+## RELATED LINKS
