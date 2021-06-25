@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Files-help.xml
 Module Name: Microsoft.Graph.Files
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files/get-mgsharelistitemactivity
 schema: 2.0.0
@@ -17,29 +17,24 @@ Invoke function getActivitiesByInterval
 Get-MgShareListItemActivity -SharedDriveItemId <String> [<CommonParameters>]
 ```
 
+### Get3
+```
+Get-MgShareListItemActivity -ListItemId <String> -SharedDriveItemId <String> -EndDateTime <String>
+ -Interval <String> -StartDateTime <String> [<CommonParameters>]
+```
+
 ### Get2
 ```
 Get-MgShareListItemActivity -ListItemId <String> -SharedDriveItemId <String> [<CommonParameters>]
 ```
 
-### Get3
-```
-Get-MgShareListItemActivity -EndDateTime <String> -Interval <String> -ListItemId <String>
- -SharedDriveItemId <String> -StartDateTime <String> [<CommonParameters>]
-```
-
 ### Get5
 ```
-Get-MgShareListItemActivity -EndDateTime <String> -Interval <String> -SharedDriveItemId <String>
+Get-MgShareListItemActivity -SharedDriveItemId <String> -EndDateTime <String> -Interval <String>
  -StartDateTime <String> [<CommonParameters>]
 ```
 
-### GetViaIdentity2
-```
-Get-MgShareListItemActivity -InputObject <IFilesIdentity> [<CommonParameters>]
-```
-
-### GetViaIdentity3
+### GetViaIdentity5
 ```
 Get-MgShareListItemActivity -InputObject <IFilesIdentity> [<CommonParameters>]
 ```
@@ -49,7 +44,12 @@ Get-MgShareListItemActivity -InputObject <IFilesIdentity> [<CommonParameters>]
 Get-MgShareListItemActivity -InputObject <IFilesIdentity> [<CommonParameters>]
 ```
 
-### GetViaIdentity5
+### GetViaIdentity3
+```
+Get-MgShareListItemActivity -InputObject <IFilesIdentity> [<CommonParameters>]
+```
+
+### GetViaIdentity2
 ```
 Get-MgShareListItemActivity -InputObject <IFilesIdentity> [<CommonParameters>]
 ```
@@ -59,31 +59,13 @@ Invoke function getActivitiesByInterval
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
 ### -EndDateTime
-.
+Usage: endDateTime={endDateTime}
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Get3, Get5
 Aliases:
 
@@ -99,8 +81,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
-Parameter Sets: GetViaIdentity2, GetViaIdentity3, GetViaIdentity4, GetViaIdentity5
+Type: IFilesIdentity
+Parameter Sets: GetViaIdentity5, GetViaIdentity4, GetViaIdentity3, GetViaIdentity2
 Aliases:
 
 Required: True
@@ -111,10 +93,10 @@ Accept wildcard characters: False
 ```
 
 ### -Interval
-.
+Usage: interval={interval}
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Get3, Get5
 Aliases:
 
@@ -129,8 +111,8 @@ Accept wildcard characters: False
 key: id of listItem
 
 ```yaml
-Type: System.String
-Parameter Sets: Get2, Get3
+Type: String
+Parameter Sets: Get3, Get2
 Aliases:
 
 Required: True
@@ -144,8 +126,8 @@ Accept wildcard characters: False
 key: id of sharedDriveItem
 
 ```yaml
-Type: System.String
-Parameter Sets: Get2, Get3, Get4, Get5
+Type: String
+Parameter Sets: Get4, Get3, Get2, Get5
 Aliases:
 
 Required: True
@@ -156,10 +138,10 @@ Accept wildcard characters: False
 ```
 
 ### -StartDateTime
-.
+Usage: startDateTime={startDateTime}
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Get3, Get5
 Aliases:
 
@@ -179,7 +161,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemActivityStat
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemActivityStat1
 
 ## NOTES
 
@@ -196,16 +178,15 @@ INPUTOBJECT <IFilesIdentity>: Identity Parameter
   - `[ContentTypeId <String>]`: key: id of contentType
   - `[DriveId <String>]`: key: id of drive
   - `[DriveItemId <String>]`: key: id of driveItem
-  - `[EndDateTime <String>]`: 
+  - `[EndDateTime <String>]`: Usage: endDateTime={endDateTime}
   - `[GroupId <String>]`: key: id of group
-  - `[Interval <String>]`: 
+  - `[Interval <String>]`: Usage: interval={interval}
   - `[ListItemId <String>]`: key: id of listItem
   - `[ListItemVersionId <String>]`: key: id of listItemVersion
-  - `[Q <String>]`: 
+  - `[Q <String>]`: Usage: q={q}
   - `[SharedDriveItemId <String>]`: key: id of sharedDriveItem
-  - `[StartDateTime <String>]`: 
+  - `[StartDateTime <String>]`: Usage: startDateTime={startDateTime}
   - `[SubscriptionId <String>]`: key: id of subscription
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
-
