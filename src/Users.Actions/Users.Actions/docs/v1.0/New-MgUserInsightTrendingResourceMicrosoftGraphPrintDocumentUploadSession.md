@@ -1,65 +1,49 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Users.Actions-help.xml
 Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/reset-mguserpassword
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/new-mguserinsighttrendingresourcemicrosoftgraphprintdocumentuploadsession
 schema: 2.0.0
 ---
 
-# Reset-MgUserPassword
+# New-MgUserInsightTrendingResourceMicrosoftGraphPrintDocumentUploadSession
 
 ## SYNOPSIS
-Invoke action changePassword
+Invoke action createUploadSession
 
 ## SYNTAX
 
-### ChangeExpanded (Default)
+### CreateExpanded (Default)
 ```
-Reset-MgUserPassword -UserId <String> [-AdditionalProperties <Hashtable>] [-CurrentPassword <String>]
- [-NewPassword <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### Change
-```
-Reset-MgUserPassword -UserId <String>
- -BodyParameter <IPaths3Mx0JpUsersUserIdMicrosoftGraphChangepasswordPostRequestbodyContentApplicationJsonSchema>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgUserInsightTrendingResourceMicrosoftGraphPrintDocumentUploadSession -TrendingId <String> -UserId <String>
+ [-AdditionalProperties <Hashtable>] [-Properties <IMicrosoftGraphPrintDocumentUploadProperties>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
-### ChangeViaIdentity
+### Create
 ```
-Reset-MgUserPassword -InputObject <IUsersActionsIdentity>
- -BodyParameter <IPaths3Mx0JpUsersUserIdMicrosoftGraphChangepasswordPostRequestbodyContentApplicationJsonSchema>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgUserInsightTrendingResourceMicrosoftGraphPrintDocumentUploadSession -TrendingId <String> -UserId <String>
+ -BodyParameter <IPaths11Er69AUsersUserIdInsightsTrendingIdResourceMicrosoftGraphPrintdocumentMicrosoftGraphCreateuploadsessionPostRequestbodyContentApplicationJsonSchema>
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### ChangeViaIdentityExpanded
+### CreateViaIdentityExpanded
 ```
-Reset-MgUserPassword -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
- [-CurrentPassword <String>] [-NewPassword <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgUserInsightTrendingResourceMicrosoftGraphPrintDocumentUploadSession -InputObject <IUsersActionsIdentity>
+ [-AdditionalProperties <Hashtable>] [-Properties <IMicrosoftGraphPrintDocumentUploadProperties>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
+```
+
+### CreateViaIdentity
+```
+New-MgUserInsightTrendingResourceMicrosoftGraphPrintDocumentUploadSession -InputObject <IUsersActionsIdentity>
+ -BodyParameter <IPaths11Er69AUsersUserIdInsightsTrendingIdResourceMicrosoftGraphPrintdocumentMicrosoftGraphCreateuploadsessionPostRequestbodyContentApplicationJsonSchema>
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Invoke action changePassword
+Invoke action createUploadSession
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -67,8 +51,8 @@ PS C:\> {{ Add code here }}
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: ChangeExpanded, ChangeViaIdentityExpanded
+Type: Hashtable
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -83,29 +67,14 @@ Accept wildcard characters: False
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths3Mx0JpUsersUserIdMicrosoftGraphChangepasswordPostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Change, ChangeViaIdentity
+Type: IPaths11Er69AUsersUserIdInsightsTrendingIdResourceMicrosoftGraphPrintdocumentMicrosoftGraphCreateuploadsessionPostRequestbodyContentApplicationJsonSchema
+Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -CurrentPassword
-.
-
-```yaml
-Type: System.String
-Parameter Sets: ChangeExpanded, ChangeViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -114,8 +83,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-Parameter Sets: ChangeViaIdentity, ChangeViaIdentityExpanded
+Type: IUsersActionsIdentity
+Parameter Sets: CreateViaIdentityExpanded, CreateViaIdentity
 Aliases:
 
 Required: True
@@ -125,12 +94,13 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -NewPassword
-.
+### -Properties
+printDocumentUploadProperties
+To construct, see NOTES section for PROPERTIES properties and create a hash table.
 
 ```yaml
-Type: System.String
-Parameter Sets: ChangeExpanded, ChangeViaIdentityExpanded
+Type: IMicrosoftGraphPrintDocumentUploadProperties
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -140,15 +110,15 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -PassThru
-Returns true when the command succeeds
+### -TrendingId
+key: id of trending
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
+Type: String
+Parameter Sets: CreateExpanded, Create
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -159,8 +129,8 @@ Accept wildcard characters: False
 key: id of user
 
 ```yaml
-Type: System.String
-Parameter Sets: Change, ChangeExpanded
+Type: String
+Parameter Sets: CreateExpanded, Create
 Aliases:
 
 Required: True
@@ -174,7 +144,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -190,7 +160,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -206,13 +176,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths3Mx0JpUsersUserIdMicrosoftGraphChangepasswordPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.PowerShell.Models.IPaths11Er69AUsersUserIdInsightsTrendingIdResourceMicrosoftGraphPrintdocumentMicrosoftGraphCreateuploadsessionPostRequestbodyContentApplicationJsonSchema
 
 ### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
 
 ## OUTPUTS
 
-### System.Boolean
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUploadSession
 
 ## NOTES
 
@@ -223,10 +193,13 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IPaths3Mx0JpUsersUserIdMicrosoftGraphChangepasswordPostRequestbodyContentApplicationJsonSchema>: .
+BODYPARAMETER <IPaths11Er69AUsersUserIdInsightsTrendingIdResourceMicrosoftGraphPrintdocumentMicrosoftGraphCreateuploadsessionPostRequestbodyContentApplicationJsonSchema>: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[CurrentPassword <String>]`: 
-  - `[NewPassword <String>]`: 
+  - `[Properties <IMicrosoftGraphPrintDocumentUploadProperties>]`: printDocumentUploadProperties
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[ContentType <String>]`: The document's content (MIME) type.
+    - `[DocumentName <String>]`: The document's name.
+    - `[Size <Int64?>]`: The document's size in bytes.
 
 INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[AccessReviewInstanceId <String>]`: key: id of accessReviewInstance
@@ -248,8 +221,15 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup
   - `[OutlookTaskId <String>]`: key: id of outlookTask
+  - `[SharedInsightId <String>]`: key: id of sharedInsight
+  - `[TrendingId <String>]`: key: id of trending
+  - `[UsedInsightId <String>]`: key: id of usedInsight
   - `[UserId <String>]`: key: id of user
-  - `[WindowsInformationProtectionDeviceRegistrationId <String>]`: key: id of windowsInformationProtectionDeviceRegistration
+
+PROPERTIES <IMicrosoftGraphPrintDocumentUploadProperties>: printDocumentUploadProperties
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[ContentType <String>]`: The document's content (MIME) type.
+  - `[DocumentName <String>]`: The document's name.
+  - `[Size <Int64?>]`: The document's size in bytes.
 
 ## RELATED LINKS
-

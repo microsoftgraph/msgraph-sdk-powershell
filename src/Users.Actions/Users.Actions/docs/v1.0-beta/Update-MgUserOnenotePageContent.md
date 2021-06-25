@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Users.Actions-help.xml
 Module Name: Microsoft.Graph.Users.Actions
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/update-mguseronenotepagecontent
 schema: 2.0.0
@@ -15,7 +15,7 @@ Invoke action onenotePatchContent
 ### PatchExpanded (Default)
 ```
 Update-MgUserOnenotePageContent -OnenotePageId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
- [-Commands <IMicrosoftGraphOnenotePatchContentCommand[]>] [-PassThru] [-Confirm] [-WhatIf]
+ [-Commands <IMicrosoftGraphOnenotePatchContentCommand[]>] [-PassThru] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
@@ -23,21 +23,21 @@ Update-MgUserOnenotePageContent -OnenotePageId <String> -UserId <String> [-Addit
 ```
 Update-MgUserOnenotePageContent -OnenotePageId <String> -UserId <String>
  -BodyParameter <IPaths1C74SuUsersUserIdOnenotePagesOnenotepageIdMicrosoftGraphOnenotepatchcontentPostRequestbodyContentApplicationJsonSchema>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### PatchViaIdentityExpanded
+```
+Update-MgUserOnenotePageContent -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
+ [-Commands <IMicrosoftGraphOnenotePatchContentCommand[]>] [-PassThru] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ### PatchViaIdentity
 ```
 Update-MgUserOnenotePageContent -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths1C74SuUsersUserIdOnenotePagesOnenotepageIdMicrosoftGraphOnenotepatchcontentPostRequestbodyContentApplicationJsonSchema>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### PatchViaIdentityExpanded
-```
-Update-MgUserOnenotePageContent -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
- [-Commands <IMicrosoftGraphOnenotePatchContentCommand[]>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -45,31 +45,13 @@ Invoke action onenotePatchContent
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
 ### -AdditionalProperties
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: PatchExpanded, PatchViaIdentityExpanded
 Aliases:
 
@@ -85,7 +67,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1C74SuUsersUserIdOnenotePagesOnenotepageIdMicrosoftGraphOnenotepatchcontentPostRequestbodyContentApplicationJsonSchema
+Type: IPaths1C74SuUsersUserIdOnenotePagesOnenotepageIdMicrosoftGraphOnenotepatchcontentPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Patch, PatchViaIdentity
 Aliases:
 
@@ -101,7 +83,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for COMMANDS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnenotePatchContentCommand[]
+Type: IMicrosoftGraphOnenotePatchContentCommand[]
 Parameter Sets: PatchExpanded, PatchViaIdentityExpanded
 Aliases:
 
@@ -117,8 +99,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-Parameter Sets: PatchViaIdentity, PatchViaIdentityExpanded
+Type: IUsersActionsIdentity
+Parameter Sets: PatchViaIdentityExpanded, PatchViaIdentity
 Aliases:
 
 Required: True
@@ -132,8 +114,8 @@ Accept wildcard characters: False
 key: id of onenotePage
 
 ```yaml
-Type: System.String
-Parameter Sets: Patch, PatchExpanded
+Type: String
+Parameter Sets: PatchExpanded, Patch
 Aliases:
 
 Required: True
@@ -147,7 +129,7 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -162,8 +144,8 @@ Accept wildcard characters: False
 key: id of user
 
 ```yaml
-Type: System.String
-Parameter Sets: Patch, PatchExpanded
+Type: String
+Parameter Sets: PatchExpanded, Patch
 Aliases:
 
 Required: True
@@ -177,7 +159,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -193,7 +175,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -232,13 +214,13 @@ BODYPARAMETER <IPaths1C74SuUsersUserIdOnenotePagesOnenotepageIdMicrosoftGraphOne
     - `[Action <String>]`: onenotePatchActionType
     - `[Content <String>]`: A string of well-formed HTML to add to the page, and any image or file binary data. If the content contains binary data, the request must be sent using the multipart/form-data content type with a 'Commands' part.
     - `[Position <String>]`: onenotePatchInsertPosition
-    - `[Target <String>]`: The element to update. Must be the #<data-id> or the generated <id> of the element, or the body or title keyword.
+    - `[Target <String>]`: The element to update. Must be the #<data-id> or the generated {id} of the element, or the body or title keyword.
 
 COMMANDS <IMicrosoftGraphOnenotePatchContentCommand[]>: .
   - `[Action <String>]`: onenotePatchActionType
   - `[Content <String>]`: A string of well-formed HTML to add to the page, and any image or file binary data. If the content contains binary data, the request must be sent using the multipart/form-data content type with a 'Commands' part.
   - `[Position <String>]`: onenotePatchInsertPosition
-  - `[Target <String>]`: The element to update. Must be the #<data-id> or the generated <id> of the element, or the body or title keyword.
+  - `[Target <String>]`: The element to update. Must be the #<data-id> or the generated {id} of the element, or the body or title keyword.
 
 INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[AccessReviewInstanceId <String>]`: key: id of accessReviewInstance
@@ -260,8 +242,9 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup
   - `[OutlookTaskId <String>]`: key: id of outlookTask
+  - `[SharedInsightId <String>]`: key: id of sharedInsight
+  - `[TrendingId <String>]`: key: id of trending
+  - `[UsedInsightId <String>]`: key: id of usedInsight
   - `[UserId <String>]`: key: id of user
-  - `[WindowsInformationProtectionDeviceRegistrationId <String>]`: key: id of windowsInformationProtectionDeviceRegistration
 
 ## RELATED LINKS
-

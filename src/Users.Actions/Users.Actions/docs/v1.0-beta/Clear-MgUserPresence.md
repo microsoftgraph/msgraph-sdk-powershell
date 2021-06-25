@@ -1,66 +1,47 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Users.Actions-help.xml
 Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/clear-mgusermanagedappregistrationbydevicetag
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/clear-mguserpresence
 schema: 2.0.0
 ---
 
-# Clear-MgUserManagedAppRegistrationByDeviceTag
+# Clear-MgUserPresence
 
 ## SYNOPSIS
-Invoke action wipeManagedAppRegistrationsByDeviceTag
+Invoke action clearPresence
 
 ## SYNTAX
 
-### WipeExpanded (Default)
+### ClearExpanded (Default)
 ```
-Clear-MgUserManagedAppRegistrationByDeviceTag -UserId <String> [-AdditionalProperties <Hashtable>]
- [-DeviceTag <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### Wipe
-```
-Clear-MgUserManagedAppRegistrationByDeviceTag -UserId <String>
- -BodyParameter <IPathsVloam1UsersUserIdMicrosoftGraphWipemanagedappregistrationsbydevicetagPostRequestbodyContentApplicationJsonSchema>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Clear-MgUserPresence -UserId <String> [-AdditionalProperties <Hashtable>] [-SessionId <String>] [-PassThru]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### WipeViaIdentity
+### Clear
 ```
-Clear-MgUserManagedAppRegistrationByDeviceTag -InputObject <IUsersActionsIdentity>
- -BodyParameter <IPathsVloam1UsersUserIdMicrosoftGraphWipemanagedappregistrationsbydevicetagPostRequestbodyContentApplicationJsonSchema>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Clear-MgUserPresence -UserId <String>
+ -BodyParameter <IPathsTdagveUsersUserIdPresenceMicrosoftGraphClearpresencePostRequestbodyContentApplicationJsonSchema>
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### WipeViaIdentityExpanded
+### ClearViaIdentityExpanded
 ```
-Clear-MgUserManagedAppRegistrationByDeviceTag -InputObject <IUsersActionsIdentity>
- [-AdditionalProperties <Hashtable>] [-DeviceTag <String>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Clear-MgUserPresence -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
+ [-SessionId <String>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### ClearViaIdentity
+```
+Clear-MgUserPresence -InputObject <IUsersActionsIdentity>
+ -BodyParameter <IPathsTdagveUsersUserIdPresenceMicrosoftGraphClearpresencePostRequestbodyContentApplicationJsonSchema>
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Invoke action wipeManagedAppRegistrationsByDeviceTag
+Invoke action clearPresence
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -68,8 +49,8 @@ PS C:\> {{ Add code here }}
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: WipeExpanded, WipeViaIdentityExpanded
+Type: Hashtable
+Parameter Sets: ClearExpanded, ClearViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -84,8 +65,8 @@ Accept wildcard characters: False
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsVloam1UsersUserIdMicrosoftGraphWipemanagedappregistrationsbydevicetagPostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Wipe, WipeViaIdentity
+Type: IPathsTdagveUsersUserIdPresenceMicrosoftGraphClearpresencePostRequestbodyContentApplicationJsonSchema
+Parameter Sets: Clear, ClearViaIdentity
 Aliases:
 
 Required: True
@@ -95,28 +76,13 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -DeviceTag
-.
-
-```yaml
-Type: System.String
-Parameter Sets: WipeExpanded, WipeViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-Parameter Sets: WipeViaIdentity, WipeViaIdentityExpanded
+Type: IUsersActionsIdentity
+Parameter Sets: ClearViaIdentityExpanded, ClearViaIdentity
 Aliases:
 
 Required: True
@@ -130,8 +96,23 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SessionId
+.
+
+```yaml
+Type: String
+Parameter Sets: ClearExpanded, ClearViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -145,8 +126,8 @@ Accept wildcard characters: False
 key: id of user
 
 ```yaml
-Type: System.String
-Parameter Sets: Wipe, WipeExpanded
+Type: String
+Parameter Sets: ClearExpanded, Clear
 Aliases:
 
 Required: True
@@ -160,7 +141,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -176,7 +157,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -192,7 +173,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsVloam1UsersUserIdMicrosoftGraphWipemanagedappregistrationsbydevicetagPostRequestbodyContentApplicationJsonSchema
+### Microsoft.Graph.PowerShell.Models.IPathsTdagveUsersUserIdPresenceMicrosoftGraphClearpresencePostRequestbodyContentApplicationJsonSchema
 
 ### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
 
@@ -209,9 +190,9 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IPathsVloam1UsersUserIdMicrosoftGraphWipemanagedappregistrationsbydevicetagPostRequestbodyContentApplicationJsonSchema>: .
+BODYPARAMETER <IPathsTdagveUsersUserIdPresenceMicrosoftGraphClearpresencePostRequestbodyContentApplicationJsonSchema>: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[DeviceTag <String>]`: 
+  - `[SessionId <String>]`: 
 
 INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[AccessReviewInstanceId <String>]`: key: id of accessReviewInstance
@@ -233,8 +214,9 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup
   - `[OutlookTaskId <String>]`: key: id of outlookTask
+  - `[SharedInsightId <String>]`: key: id of sharedInsight
+  - `[TrendingId <String>]`: key: id of trending
+  - `[UsedInsightId <String>]`: key: id of usedInsight
   - `[UserId <String>]`: key: id of user
-  - `[WindowsInformationProtectionDeviceRegistrationId <String>]`: key: id of windowsInformationProtectionDeviceRegistration
 
 ## RELATED LINKS
-
