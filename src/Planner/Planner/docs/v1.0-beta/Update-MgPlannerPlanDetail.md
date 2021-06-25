@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Planner-help.xml
 Module Name: Microsoft.Graph.Planner
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.planner/update-mgplannerplandetail
 schema: 2.0.0
@@ -8,58 +8,44 @@ schema: 2.0.0
 # Update-MgPlannerPlanDetail
 
 ## SYNOPSIS
-Update the navigation property details in planner
+Additional details about the plan.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
 ### UpdateExpanded (Default)
 ```
 Update-MgPlannerPlanDetail -PlannerPlanId <String> [-AdditionalProperties <Hashtable>]
- [-CategoryDescriptions <IMicrosoftGraphPlannerCategoryDescriptions>] [-ContextDetails <Hashtable>]
- [-Id <String>] [-SharedWith <Hashtable>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-CategoryDescriptions <IMicrosoftGraphPlannerCategoryDescriptions1>] [-ContextDetails <Hashtable>]
+ [-Id <String>] [-SharedWith <Hashtable>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgPlannerPlanDetail -PlannerPlanId <String> -BodyParameter <IMicrosoftGraphPlannerPlanDetails1>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### UpdateViaIdentity
-```
-Update-MgPlannerPlanDetail -InputObject <IPlannerIdentity> -BodyParameter <IMicrosoftGraphPlannerPlanDetails1>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgPlannerPlanDetail -InputObject <IPlannerIdentity> [-AdditionalProperties <Hashtable>]
- [-CategoryDescriptions <IMicrosoftGraphPlannerCategoryDescriptions>] [-ContextDetails <Hashtable>]
- [-Id <String>] [-SharedWith <Hashtable>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-CategoryDescriptions <IMicrosoftGraphPlannerCategoryDescriptions1>] [-ContextDetails <Hashtable>]
+ [-Id <String>] [-SharedWith <Hashtable>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### UpdateViaIdentity
+```
+Update-MgPlannerPlanDetail -InputObject <IPlannerIdentity> -BodyParameter <IMicrosoftGraphPlannerPlanDetails1>
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update the navigation property details in planner
+Additional details about the plan.
+Read-only.
+Nullable.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -67,7 +53,7 @@ PS C:\> {{ Add code here }}
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -83,7 +69,7 @@ plannerPlanDetails
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerPlanDetails1
+Type: IMicrosoftGraphPlannerPlanDetails1
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -99,7 +85,7 @@ plannerCategoryDescriptions
 To construct, see NOTES section for CATEGORYDESCRIPTIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerCategoryDescriptions
+Type: IMicrosoftGraphPlannerCategoryDescriptions1
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -114,7 +100,7 @@ Accept wildcard characters: False
 plannerPlanContextDetailsCollection
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -129,7 +115,7 @@ Accept wildcard characters: False
 Read-only.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -145,8 +131,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPlannerIdentity
-Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
+Type: IPlannerIdentity
+Parameter Sets: UpdateViaIdentityExpanded, UpdateViaIdentity
 Aliases:
 
 Required: True
@@ -160,7 +146,7 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -175,8 +161,8 @@ Accept wildcard characters: False
 key: id of plannerPlan
 
 ```yaml
-Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Type: String
+Parameter Sets: UpdateExpanded, Update
 Aliases:
 
 Required: True
@@ -190,7 +176,7 @@ Accept wildcard characters: False
 plannerUserIds
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -205,7 +191,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -221,7 +207,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -257,35 +243,74 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphPlannerPlanDetails1>: plannerPlanDetails
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
-  - `[CategoryDescriptions <IMicrosoftGraphPlannerCategoryDescriptions>]`: plannerCategoryDescriptions
+  - `[CategoryDescriptions <IMicrosoftGraphPlannerCategoryDescriptions1>]`: plannerCategoryDescriptions
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Category1 <String>]`: The label associated with Category 1
+    - `[Category10 <String>]`: The label associated with Category 10
+    - `[Category11 <String>]`: The label associated with Category 11
+    - `[Category12 <String>]`: The label associated with Category 12
+    - `[Category13 <String>]`: The label associated with Category 13
+    - `[Category14 <String>]`: The label associated with Category 14
+    - `[Category15 <String>]`: The label associated with Category 15
+    - `[Category16 <String>]`: The label associated with Category 16
+    - `[Category17 <String>]`: The label associated with Category 17
+    - `[Category18 <String>]`: The label associated with Category 18
+    - `[Category19 <String>]`: The label associated with Category 19
     - `[Category2 <String>]`: The label associated with Category 2
+    - `[Category20 <String>]`: The label associated with Category 20
+    - `[Category21 <String>]`: The label associated with Category 21
+    - `[Category22 <String>]`: The label associated with Category 22
+    - `[Category23 <String>]`: The label associated with Category 23
+    - `[Category24 <String>]`: The label associated with Category 24
+    - `[Category25 <String>]`: The label associated with Category 25
     - `[Category3 <String>]`: The label associated with Category 3
     - `[Category4 <String>]`: The label associated with Category 4
     - `[Category5 <String>]`: The label associated with Category 5
     - `[Category6 <String>]`: The label associated with Category 6
+    - `[Category7 <String>]`: The label associated with Category 7
+    - `[Category8 <String>]`: The label associated with Category 8
+    - `[Category9 <String>]`: The label associated with Category 9
   - `[ContextDetails <IMicrosoftGraphPlannerPlanContextDetailsCollection>]`: plannerPlanContextDetailsCollection
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[SharedWith <IMicrosoftGraphPlannerUserIds>]`: plannerUserIds
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
 
-CATEGORYDESCRIPTIONS <IMicrosoftGraphPlannerCategoryDescriptions>: plannerCategoryDescriptions
+CATEGORYDESCRIPTIONS <IMicrosoftGraphPlannerCategoryDescriptions1>: plannerCategoryDescriptions
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Category1 <String>]`: The label associated with Category 1
+  - `[Category10 <String>]`: The label associated with Category 10
+  - `[Category11 <String>]`: The label associated with Category 11
+  - `[Category12 <String>]`: The label associated with Category 12
+  - `[Category13 <String>]`: The label associated with Category 13
+  - `[Category14 <String>]`: The label associated with Category 14
+  - `[Category15 <String>]`: The label associated with Category 15
+  - `[Category16 <String>]`: The label associated with Category 16
+  - `[Category17 <String>]`: The label associated with Category 17
+  - `[Category18 <String>]`: The label associated with Category 18
+  - `[Category19 <String>]`: The label associated with Category 19
   - `[Category2 <String>]`: The label associated with Category 2
+  - `[Category20 <String>]`: The label associated with Category 20
+  - `[Category21 <String>]`: The label associated with Category 21
+  - `[Category22 <String>]`: The label associated with Category 22
+  - `[Category23 <String>]`: The label associated with Category 23
+  - `[Category24 <String>]`: The label associated with Category 24
+  - `[Category25 <String>]`: The label associated with Category 25
   - `[Category3 <String>]`: The label associated with Category 3
   - `[Category4 <String>]`: The label associated with Category 4
   - `[Category5 <String>]`: The label associated with Category 5
   - `[Category6 <String>]`: The label associated with Category 6
+  - `[Category7 <String>]`: The label associated with Category 7
+  - `[Category8 <String>]`: The label associated with Category 8
+  - `[Category9 <String>]`: The label associated with Category 9
 
 INPUTOBJECT <IPlannerIdentity>: Identity Parameter
   - `[GroupId <String>]`: key: id of group
   - `[PlannerBucketId <String>]`: key: id of plannerBucket
   - `[PlannerDeltaId <String>]`: key: id of plannerDelta
   - `[PlannerPlanId <String>]`: key: id of plannerPlan
+  - `[PlannerRosterId <String>]`: key: id of plannerRoster
+  - `[PlannerRosterMemberId <String>]`: key: id of plannerRosterMember
   - `[PlannerTaskId <String>]`: key: id of plannerTask
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
-
