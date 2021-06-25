@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.PersonalContacts-help.xml
 Module Name: Microsoft.Graph.PersonalContacts
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.personalcontacts/get-mgusercontactphoto
 schema: 2.0.0
@@ -8,14 +8,15 @@ schema: 2.0.0
 # Get-MgUserContactPhoto
 
 ## SYNOPSIS
-Get photo from users
+Optional contact picture.
+You can get or set a photo for a contact.
 
 ## SYNTAX
 
 ### Get (Default)
 ```
-Get-MgUserContactPhoto -ContactId <String> -UserId <String> [-ExpandProperty <String[]>]
- [-Property <String[]>] [<CommonParameters>]
+Get-MgUserContactPhoto -ContactId <String> -UserId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+ [<CommonParameters>]
 ```
 
 ### GetViaIdentity
@@ -25,27 +26,10 @@ Get-MgUserContactPhoto -InputObject <IPersonalContactsIdentity> [-ExpandProperty
 ```
 
 ## DESCRIPTION
-Get photo from users
+Optional contact picture.
+You can get or set a photo for a contact.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -53,7 +37,7 @@ PS C:\> {{ Add code here }}
 key: id of contact
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Get
 Aliases:
 
@@ -68,7 +52,7 @@ Accept wildcard characters: False
 Expand related entities
 
 ```yaml
-Type: System.String[]
+Type: String[]
 Parameter Sets: (All)
 Aliases: Expand
 
@@ -84,7 +68,7 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPersonalContactsIdentity
+Type: IPersonalContactsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -99,7 +83,7 @@ Accept wildcard characters: False
 Select properties to be returned
 
 ```yaml
-Type: System.String[]
+Type: String[]
 Parameter Sets: (All)
 Aliases: Select
 
@@ -114,7 +98,7 @@ Accept wildcard characters: False
 key: id of user
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Get
 Aliases:
 
@@ -155,4 +139,3 @@ INPUTOBJECT <IPersonalContactsIdentity>: Identity Parameter
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
-

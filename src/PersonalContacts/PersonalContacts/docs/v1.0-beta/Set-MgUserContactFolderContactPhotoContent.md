@@ -1,61 +1,50 @@
 ---
 external help file: Microsoft.Graph.PersonalContacts-help.xml
 Module Name: Microsoft.Graph.PersonalContacts
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.personalcontacts/get-mgusercontactfolderchildfolder
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.personalcontacts/set-mgusercontactfoldercontactphotocontent
 schema: 2.0.0
 ---
 
-# Get-MgUserContactFolderChildFolder
+# Set-MgUserContactFolderContactPhotoContent
 
 ## SYNOPSIS
-The collection of child folders in the folder.
-Navigation property.
+The user's profile photo.
 Read-only.
-Nullable.
 
 ## SYNTAX
 
-### List1 (Default)
+### Set (Default)
 ```
-Get-MgUserContactFolderChildFolder -ContactFolderId <String> -UserId <String> [-ExpandProperty <String[]>]
- [-Property <String[]>] [-Filter <String>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
- [-PageSize <Int32>] [-All] [-CountVariable <String>] [<CommonParameters>]
-```
-
-### Get1
-```
-Get-MgUserContactFolderChildFolder -ContactFolderId <String> -ContactFolderId1 <String> -UserId <String>
- [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
+Set-MgUserContactFolderContactPhotoContent -ContactFolderId <String> -ContactId <String> -UserId <String>
+ [-BodyParameter <Stream>] -InFile <String> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### GetViaIdentity1
+### SetViaIdentity
 ```
-Get-MgUserContactFolderChildFolder -InputObject <IPersonalContactsIdentity> [-ExpandProperty <String[]>]
- [-Property <String[]>] [<CommonParameters>]
+Set-MgUserContactFolderContactPhotoContent -InputObject <IPersonalContactsIdentity> [-BodyParameter <Stream>]
+ -InFile <String> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The collection of child folders in the folder.
-Navigation property.
+The user's profile photo.
 Read-only.
-Nullable.
 
 ## EXAMPLES
 
 ## PARAMETERS
 
-### -All
-List all pages.
+### -BodyParameter
+.
 
 ```yaml
-Type: SwitchParameter
-Parameter Sets: List1
+Type: Stream
+Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -64,7 +53,7 @@ key: id of contactFolder
 
 ```yaml
 Type: String
-Parameter Sets: List1, Get1
+Parameter Sets: Set
 Aliases:
 
 Required: True
@@ -74,12 +63,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ContactFolderId1
-key: id of contactFolder
+### -ContactId
+key: id of contact
 
 ```yaml
 Type: String
-Parameter Sets: Get1
+Parameter Sets: Set
 Aliases:
 
 Required: True
@@ -89,46 +78,17 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -CountVariable
-Specifies a count of the total number of items in a collection.
-By default, this variable will be set in the global scope.
+### -InFile
+The path to the file to upload.
+This should include a path and file name.
+If you omit the path, the current location will be used.
 
 ```yaml
 Type: String
-Parameter Sets: List1
-Aliases: CV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ExpandProperty
-Expand related entities
-
-```yaml
-Type: String[]
 Parameter Sets: (All)
-Aliases: Expand
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Filter
-Filter items by property values
-
-```yaml
-Type: String
-Parameter Sets: List1
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -141,7 +101,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: IPersonalContactsIdentity
-Parameter Sets: GetViaIdentity1
+Parameter Sets: SetViaIdentity
 Aliases:
 
 Required: True
@@ -151,73 +111,13 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -PageSize
-Sets the page size of results.
+### -PassThru
+Returns true when the command succeeds
 
 ```yaml
-Type: Int32
-Parameter Sets: List1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Property
-Select properties to be returned
-
-```yaml
-Type: String[]
+Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: Select
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Search
-Search items by search phrases
-
-```yaml
-Type: String
-Parameter Sets: List1
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Sort
-Order items by property values
-
-```yaml
-Type: String[]
-Parameter Sets: List1
-Aliases: OrderBy
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Top
-Show only the first n items
-
-```yaml
-Type: Int32
-Parameter Sets: List1
-Aliases: Limit
 
 Required: False
 Position: Named
@@ -231,7 +131,7 @@ key: id of user
 
 ```yaml
 Type: String
-Parameter Sets: List1, Get1
+Parameter Sets: Set
 Aliases:
 
 Required: True
@@ -241,13 +141,29 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Skip
-Skip the first n items
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: Int32
-Parameter Sets: List1
-Aliases:
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
 
 Required: False
 Position: Named
@@ -263,9 +179,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IPersonalContactsIdentity
 
+### System.IO.Stream
+
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContactFolder1
+### System.Boolean
 
 ## NOTES
 

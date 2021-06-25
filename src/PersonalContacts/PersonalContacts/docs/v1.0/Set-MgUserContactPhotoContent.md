@@ -1,46 +1,59 @@
 ---
 external help file: Microsoft.Graph.PersonalContacts-help.xml
 Module Name: Microsoft.Graph.PersonalContacts
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.personalcontacts/remove-mgusercontactmultivalueextendedproperty
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.personalcontacts/set-mgusercontactphotocontent
 schema: 2.0.0
 ---
 
-# Remove-MgUserContactMultiValueExtendedProperty
+# Set-MgUserContactPhotoContent
 
 ## SYNOPSIS
-The collection of multi-value extended properties defined for the contact.
+The user's profile photo.
 Read-only.
-Nullable.
 
 ## SYNTAX
 
-### Delete1 (Default)
+### Set (Default)
 ```
-Remove-MgUserContactMultiValueExtendedProperty -ContactId <String> -MultiValueLegacyExtendedPropertyId <String>
- -UserId <String> [-IfMatch <String>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
-```
-
-### DeleteViaIdentity1
-```
-Remove-MgUserContactMultiValueExtendedProperty -InputObject <IPersonalContactsIdentity> [-IfMatch <String>]
+Set-MgUserContactPhotoContent -ContactId <String> -UserId <String> [-BodyParameter <Stream>] -InFile <String>
  [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
+### SetViaIdentity
+```
+Set-MgUserContactPhotoContent -InputObject <IPersonalContactsIdentity> [-BodyParameter <Stream>]
+ -InFile <String> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
 ## DESCRIPTION
-The collection of multi-value extended properties defined for the contact.
+The user's profile photo.
 Read-only.
-Nullable.
 
 ## EXAMPLES
 
 ## PARAMETERS
+
+### -BodyParameter
+.
+
+```yaml
+Type: Stream
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
 
 ### -ContactId
 key: id of contact
 
 ```yaml
 Type: String
-Parameter Sets: Delete1
+Parameter Sets: Set
 Aliases:
 
 Required: True
@@ -50,15 +63,17 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -IfMatch
-ETag
+### -InFile
+The path to the file to upload.
+This should include a path and file name.
+If you omit the path, the current location will be used.
 
 ```yaml
 Type: String
 Parameter Sets: (All)
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -71,28 +86,13 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: IPersonalContactsIdentity
-Parameter Sets: DeleteViaIdentity1
+Parameter Sets: SetViaIdentity
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -MultiValueLegacyExtendedPropertyId
-key: id of multiValueLegacyExtendedProperty
-
-```yaml
-Type: String
-Parameter Sets: Delete1
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -116,7 +116,7 @@ key: id of user
 
 ```yaml
 Type: String
-Parameter Sets: Delete1
+Parameter Sets: Set
 Aliases:
 
 Required: True
@@ -163,6 +163,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IPersonalContactsIdentity
+
+### System.IO.Stream
 
 ## OUTPUTS
 
