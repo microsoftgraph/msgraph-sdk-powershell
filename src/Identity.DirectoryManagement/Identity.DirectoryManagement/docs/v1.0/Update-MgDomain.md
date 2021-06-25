@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Identity.DirectoryManagement-help.xml
 Module Name: Microsoft.Graph.Identity.DirectoryManagement
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/update-mgdomain
 schema: 2.0.0
@@ -16,23 +16,17 @@ Update entity in domains
 ```
 Update-MgDomain -DomainId <String> [-AdditionalProperties <Hashtable>] [-AuthenticationType <String>]
  [-AvailabilityStatus <String>] [-DomainNameReferences <IMicrosoftGraphDirectoryObject[]>] [-Id <String>]
- [-IsAdminManaged] [-IsDefault] [-IsInitial] [-IsRoot] [-IsVerified] [-Manufacturer <String>]
- [-Model <String>] [-PasswordNotificationWindowInDays <Int32>] [-PasswordValidityPeriodInDays <Int32>]
+ [-IsAdminManaged] [-IsDefault] [-IsInitial] [-IsRoot] [-IsVerified] [-Manufacturer <String>] [-Model <String>]
+ [-PasswordNotificationWindowInDays <Int32>] [-PasswordValidityPeriodInDays <Int32>]
  [-ServiceConfigurationRecords <IMicrosoftGraphDomainDnsRecord[]>] [-State <IMicrosoftGraphDomainState>]
  [-SupportedServices <String[]>] [-VerificationDnsRecords <IMicrosoftGraphDomainDnsRecord[]>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Update1
 ```
-Update-MgDomain -DomainId <String> -BodyParameter <IMicrosoftGraphDomain> [-PassThru] [-Confirm] [-WhatIf]
+Update-MgDomain -DomainId <String> -BodyParameter <IMicrosoftGraphDomain> [-PassThru] [-WhatIf] [-Confirm]
  [<CommonParameters>]
-```
-
-### UpdateViaIdentity1
-```
-Update-MgDomain -InputObject <IIdentityDirectoryManagementIdentity> -BodyParameter <IMicrosoftGraphDomain>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
@@ -44,7 +38,13 @@ Update-MgDomain -InputObject <IIdentityDirectoryManagementIdentity> [-Additional
  [-PasswordNotificationWindowInDays <Int32>] [-PasswordValidityPeriodInDays <Int32>]
  [-ServiceConfigurationRecords <IMicrosoftGraphDomainDnsRecord[]>] [-State <IMicrosoftGraphDomainState>]
  [-SupportedServices <String[]>] [-VerificationDnsRecords <IMicrosoftGraphDomainDnsRecord[]>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### UpdateViaIdentity1
+```
+Update-MgDomain -InputObject <IIdentityDirectoryManagementIdentity> -BodyParameter <IMicrosoftGraphDomain>
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -52,31 +52,13 @@ Update entity in domains
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
 ### -AdditionalProperties
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -90,11 +72,12 @@ Accept wildcard characters: False
 ### -AuthenticationType
 Indicates the configured authentication type for the domain.
 The value is either Managed or Federated.
-Managed indicates a cloud managed domain where Azure AD performs user authentication.Federated indicates authentication is federated with an identity provider such as the tenant's on-premises Active Directory via Active Directory Federation Services.
+Managed indicates a cloud managed domain where Azure AD performs user authentication.
+Federated indicates authentication is federated with an identity provider such as the tenant's on-premises Active Directory via Active Directory Federation Services.
 This property is read-only and is not nullable.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -111,7 +94,7 @@ When the verify action is used, a domain entity is returned in the response.
 The availabilityStatus property of the domain entity in the response is either AvailableImmediately or EmailVerifiedDomainTakeoverScheduled.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -127,7 +110,7 @@ domain
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDomain
+Type: IMicrosoftGraphDomain
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -142,8 +125,8 @@ Accept wildcard characters: False
 key: id of domain
 
 ```yaml
-Type: System.String
-Parameter Sets: Update1, UpdateExpanded1
+Type: String
+Parameter Sets: UpdateExpanded1, Update1
 Aliases:
 
 Required: True
@@ -158,7 +141,7 @@ Read-only, Nullable
 To construct, see NOTES section for DOMAINNAMEREFERENCES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
+Type: IMicrosoftGraphDirectoryObject[]
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -173,7 +156,7 @@ Accept wildcard characters: False
 Read-only.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -189,8 +172,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
-Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
+Type: IIdentityDirectoryManagementIdentity
+Parameter Sets: UpdateViaIdentityExpanded1, UpdateViaIdentity1
 Aliases:
 
 Required: True
@@ -206,7 +189,7 @@ Otherwise, the value is true.
 Not nullable
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -218,12 +201,12 @@ Accept wildcard characters: False
 ```
 
 ### -IsDefault
-True if this is the default domain that is used for user creation.
+true if this is the default domain that is used for user creation.
 There is only one default domain per company.
 Not nullable
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -235,12 +218,12 @@ Accept wildcard characters: False
 ```
 
 ### -IsInitial
-True if this is the initial domain created by Microsoft Online Services (companyname.onmicrosoft.com).
+true if this is the initial domain created by Microsoft Online Services (companyname.onmicrosoft.com).
 There is only one initial domain per company.
 Not nullable
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -252,12 +235,12 @@ Accept wildcard characters: False
 ```
 
 ### -IsRoot
-True if the domain is a verified root domain.
+true if the domain is a verified root domain.
 Otherwise, false if the domain is a subdomain or unverified.
 Not nullable
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -269,11 +252,11 @@ Accept wildcard characters: False
 ```
 
 ### -IsVerified
-True if the domain has completed domain ownership verification.
+true if the domain has completed domain ownership verification.
 Not nullable
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -288,7 +271,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -303,7 +286,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -318,7 +301,7 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -334,7 +317,7 @@ Specifies the number of days before a user receives notification that their pass
 If the property is not set, a default value of 14 days will be used.
 
 ```yaml
-Type: System.Int32
+Type: Int32
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -350,7 +333,7 @@ Specifies the length of time that a password is valid before it must be changed.
 If the property is not set, a default value of 90 days will be used.
 
 ```yaml
-Type: System.Int32
+Type: Int32
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -362,11 +345,12 @@ Accept wildcard characters: False
 ```
 
 ### -ServiceConfigurationRecords
-DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services.Read-only, Nullable
+DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services.
+Read-only, Nullable
 To construct, see NOTES section for SERVICECONFIGURATIONRECORDS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDomainDnsRecord[]
+Type: IMicrosoftGraphDomainDnsRecord[]
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -382,7 +366,7 @@ domainState
 To construct, see NOTES section for STATE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDomainState
+Type: IMicrosoftGraphDomainState
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -394,10 +378,13 @@ Accept wildcard characters: False
 ```
 
 ### -SupportedServices
-The capabilities assigned to the domain.Can include 0, 1 or more of following values: Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline, SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune The values which you can add/remove using Graph API include: Email, OfficeCommunicationsOnline, YammerNot nullable
+The capabilities assigned to the domain.
+Can include 0, 1 or more of following values: Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline,SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune.
+The values which you can add/remove using Graph API include: Email, OfficeCommunicationsOnline, Yammer.
+Not nullable
 
 ```yaml
-Type: System.String[]
+Type: String[]
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -409,11 +396,12 @@ Accept wildcard characters: False
 ```
 
 ### -VerificationDnsRecords
-DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD.Read-only, Nullable
+DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD.
+Read-only, Nullable
 To construct, see NOTES section for VERIFICATIONDNSRECORDS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDomainDnsRecord[]
+Type: IMicrosoftGraphDomainDnsRecord[]
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -428,7 +416,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -444,7 +432,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -480,21 +468,21 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphDomain>: domain
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
-  - `[AuthenticationType <String>]`: Indicates the configured authentication type for the domain. The value is either Managed or Federated. Managed indicates a cloud managed domain where Azure AD performs user authentication.Federated indicates authentication is federated with an identity provider such as the tenant's on-premises Active Directory via Active Directory Federation Services. This property is read-only and is not nullable.
+  - `[AuthenticationType <String>]`: Indicates the configured authentication type for the domain. The value is either Managed or Federated. Managed indicates a cloud managed domain where Azure AD performs user authentication. Federated indicates authentication is federated with an identity provider such as the tenant's on-premises Active Directory via Active Directory Federation Services. This property is read-only and is not nullable.
   - `[AvailabilityStatus <String>]`: This property is always null except when the verify action is used. When the verify action is used, a domain entity is returned in the response. The availabilityStatus property of the domain entity in the response is either AvailableImmediately or EmailVerifiedDomainTakeoverScheduled.
   - `[DomainNameReferences <IMicrosoftGraphDirectoryObject[]>]`: Read-only, Nullable
     - `[Id <String>]`: Read-only.
     - `[DeletedDateTime <DateTime?>]`: 
   - `[IsAdminManaged <Boolean?>]`: The value of the property is false if the DNS record management of the domain has been delegated to Microsoft 365. Otherwise, the value is true. Not nullable
-  - `[IsDefault <Boolean?>]`: True if this is the default domain that is used for user creation. There is only one default domain per company. Not nullable
-  - `[IsInitial <Boolean?>]`: True if this is the initial domain created by Microsoft Online Services (companyname.onmicrosoft.com). There is only one initial domain per company. Not nullable
-  - `[IsRoot <Boolean?>]`: True if the domain is a verified root domain. Otherwise, false if the domain is a subdomain or unverified. Not nullable
-  - `[IsVerified <Boolean?>]`: True if the domain has completed domain ownership verification. Not nullable
+  - `[IsDefault <Boolean?>]`: true if this is the default domain that is used for user creation. There is only one default domain per company. Not nullable
+  - `[IsInitial <Boolean?>]`: true if this is the initial domain created by Microsoft Online Services (companyname.onmicrosoft.com). There is only one initial domain per company. Not nullable
+  - `[IsRoot <Boolean?>]`: true if the domain is a verified root domain. Otherwise, false if the domain is a subdomain or unverified. Not nullable
+  - `[IsVerified <Boolean?>]`: true if the domain has completed domain ownership verification. Not nullable
   - `[Manufacturer <String>]`: 
   - `[Model <String>]`: 
   - `[PasswordNotificationWindowInDays <Int32?>]`: Specifies the number of days before a user receives notification that their password will expire. If the property is not set, a default value of 14 days will be used.
   - `[PasswordValidityPeriodInDays <Int32?>]`: Specifies the length of time that a password is valid before it must be changed. If the property is not set, a default value of 90 days will be used.
-  - `[ServiceConfigurationRecords <IMicrosoftGraphDomainDnsRecord[]>]`: DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services.Read-only, Nullable
+  - `[ServiceConfigurationRecords <IMicrosoftGraphDomainDnsRecord[]>]`: DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services. Read-only, Nullable
     - `[Id <String>]`: Read-only.
     - `[IsOptional <Boolean?>]`: If false, this record must be configured by the customer at the DNS host for Microsoft Online Services to operate correctly with the domain.
     - `[Label <String>]`: Value used when configuring the name of the DNS record at the DNS host.
@@ -506,8 +494,8 @@ BODYPARAMETER <IMicrosoftGraphDomain>: domain
     - `[LastActionDateTime <DateTime?>]`: Timestamp for when the last activity occurred. The value is updated when an operation is scheduled, the asynchronous task starts, and when the operation completes.
     - `[Operation <String>]`: Type of asynchronous operation. The values can be ForceDelete or Verification
     - `[Status <String>]`: Current status of the operation.  Scheduled - Operation has been scheduled but has not started.  InProgress - Task has started and is in progress.  Failed - Operation has failed.
-  - `[SupportedServices <String[]>]`: The capabilities assigned to the domain.Can include 0, 1 or more of following values: Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline, SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune The values which you can add/remove using Graph API include: Email, OfficeCommunicationsOnline, YammerNot nullable
-  - `[VerificationDnsRecords <IMicrosoftGraphDomainDnsRecord[]>]`: DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD.Read-only, Nullable
+  - `[SupportedServices <String[]>]`: The capabilities assigned to the domain. Can include 0, 1 or more of following values: Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline,SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune. The values which you can add/remove using Graph API include: Email, OfficeCommunicationsOnline, Yammer. Not nullable
+  - `[VerificationDnsRecords <IMicrosoftGraphDomainDnsRecord[]>]`: DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD. Read-only, Nullable
 
 DOMAINNAMEREFERENCES <IMicrosoftGraphDirectoryObject[]>: Read-only, Nullable
   - `[Id <String>]`: Read-only.
@@ -529,12 +517,15 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[FeatureRolloutPolicyId <String>]`: key: id of featureRolloutPolicy
   - `[OrgContactId <String>]`: key: id of orgContact
   - `[OrganizationId <String>]`: key: id of organization
-  - `[OrganizationalBrandingId <String>]`: key: id of organizationalBranding
+  - `[ProfileCardPropertyId <String>]`: key: id of profileCardProperty
   - `[ScopedRoleMembershipId <String>]`: key: id of scopedRoleMembership
+  - `[SharedEmailDomainId <String>]`: key: id of sharedEmailDomain
+  - `[SharedEmailDomainInvitationId <String>]`: key: id of sharedEmailDomainInvitation
   - `[SubscribedSkuId <String>]`: key: id of subscribedSku
+  - `[UsageRightId <String>]`: key: id of usageRight
   - `[UserId <String>]`: key: id of user
 
-SERVICECONFIGURATIONRECORDS <IMicrosoftGraphDomainDnsRecord[]>: DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services.Read-only, Nullable
+SERVICECONFIGURATIONRECORDS <IMicrosoftGraphDomainDnsRecord[]>: DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services. Read-only, Nullable
   - `[Id <String>]`: Read-only.
   - `[IsOptional <Boolean?>]`: If false, this record must be configured by the customer at the DNS host for Microsoft Online Services to operate correctly with the domain.
   - `[Label <String>]`: Value used when configuring the name of the DNS record at the DNS host.
@@ -548,7 +539,7 @@ STATE <IMicrosoftGraphDomainState>: domainState
   - `[Operation <String>]`: Type of asynchronous operation. The values can be ForceDelete or Verification
   - `[Status <String>]`: Current status of the operation.  Scheduled - Operation has been scheduled but has not started.  InProgress - Task has started and is in progress.  Failed - Operation has failed.
 
-VERIFICATIONDNSRECORDS <IMicrosoftGraphDomainDnsRecord[]>: DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD.Read-only, Nullable
+VERIFICATIONDNSRECORDS <IMicrosoftGraphDomainDnsRecord[]>: DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD. Read-only, Nullable
   - `[Id <String>]`: Read-only.
   - `[IsOptional <Boolean?>]`: If false, this record must be configured by the customer at the DNS host for Microsoft Online Services to operate correctly with the domain.
   - `[Label <String>]`: Value used when configuring the name of the DNS record at the DNS host.
@@ -557,4 +548,3 @@ VERIFICATIONDNSRECORDS <IMicrosoftGraphDomainDnsRecord[]>: DNS records that the 
   - `[Ttl <Int32?>]`: Value to use when configuring the time-to-live (ttl) property of the DNS record at the DNS host. Not nullable
 
 ## RELATED LINKS
-

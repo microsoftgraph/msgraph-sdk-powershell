@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Identity.DirectoryManagement-help.xml
 Module Name: Microsoft.Graph.Identity.DirectoryManagement
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/set-mgcontactmanagerbyref
 schema: 2.0.0
@@ -8,56 +8,40 @@ schema: 2.0.0
 # Set-MgContactManagerByRef
 
 ## SYNOPSIS
-Update the ref of navigation property manager in contacts
+The user or contact that is this contact's manager.
+Read-only.
 
 ## SYNTAX
 
-### UpdateExpanded1 (Default)
+### SetExpanded1 (Default)
 ```
-Set-MgContactManagerByRef -OrgContactId <String> [-AdditionalProperties <Hashtable>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Set-MgContactManagerByRef -OrgContactId <String> [-AdditionalProperties <Hashtable>] [-PassThru] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
-### Update1
+### Set1
 ```
-Set-MgContactManagerByRef -OrgContactId <String> -BodyParameter <Hashtable> [-PassThru] [-Confirm] [-WhatIf]
+Set-MgContactManagerByRef -OrgContactId <String> -BodyParameter <Hashtable> [-PassThru] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
-### UpdateViaIdentity1
-```
-Set-MgContactManagerByRef -InputObject <IIdentityDirectoryManagementIdentity> -BodyParameter <Hashtable>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### UpdateViaIdentityExpanded1
+### SetViaIdentityExpanded1
 ```
 Set-MgContactManagerByRef -InputObject <IIdentityDirectoryManagementIdentity>
- [-AdditionalProperties <Hashtable>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### SetViaIdentity1
+```
+Set-MgContactManagerByRef -InputObject <IIdentityDirectoryManagementIdentity> -BodyParameter <Hashtable>
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update the ref of navigation property manager in contacts
+The user or contact that is this contact's manager.
+Read-only.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -65,8 +49,8 @@ PS C:\> {{ Add code here }}
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Type: Hashtable
+Parameter Sets: SetExpanded1, SetViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -80,8 +64,8 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: Update1, UpdateViaIdentity1
+Type: Hashtable
+Parameter Sets: Set1, SetViaIdentity1
 Aliases:
 
 Required: True
@@ -96,8 +80,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
-Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
+Type: IIdentityDirectoryManagementIdentity
+Parameter Sets: SetViaIdentityExpanded1, SetViaIdentity1
 Aliases:
 
 Required: True
@@ -111,8 +95,8 @@ Accept wildcard characters: False
 key: id of orgContact
 
 ```yaml
-Type: System.String
-Parameter Sets: Update1, UpdateExpanded1
+Type: String
+Parameter Sets: SetExpanded1, Set1
 Aliases:
 
 Required: True
@@ -126,7 +110,7 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -141,7 +125,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -157,7 +141,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -206,10 +190,12 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[FeatureRolloutPolicyId <String>]`: key: id of featureRolloutPolicy
   - `[OrgContactId <String>]`: key: id of orgContact
   - `[OrganizationId <String>]`: key: id of organization
-  - `[OrganizationalBrandingId <String>]`: key: id of organizationalBranding
+  - `[ProfileCardPropertyId <String>]`: key: id of profileCardProperty
   - `[ScopedRoleMembershipId <String>]`: key: id of scopedRoleMembership
+  - `[SharedEmailDomainId <String>]`: key: id of sharedEmailDomain
+  - `[SharedEmailDomainInvitationId <String>]`: key: id of sharedEmailDomainInvitation
   - `[SubscribedSkuId <String>]`: key: id of subscribedSku
+  - `[UsageRightId <String>]`: key: id of usageRight
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
-

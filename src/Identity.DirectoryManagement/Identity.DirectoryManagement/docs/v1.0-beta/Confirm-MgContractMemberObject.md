@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Identity.DirectoryManagement-help.xml
 Module Name: Microsoft.Graph.Identity.DirectoryManagement
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/confirm-mgcontractmemberobject
 schema: 2.0.0
@@ -15,27 +15,27 @@ Invoke action checkMemberObjects
 ### CheckExpanded1 (Default)
 ```
 Confirm-MgContractMemberObject -ContractId <String> [-AdditionalProperties <Hashtable>] [-Ids <String[]>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Check1
 ```
 Confirm-MgContractMemberObject -ContractId <String>
  -BodyParameter <IPathsXq94UjContractsContractIdMicrosoftGraphCheckmemberobjectsPostRequestbodyContentApplicationJsonSchema>
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### CheckViaIdentityExpanded1
+```
+Confirm-MgContractMemberObject -InputObject <IIdentityDirectoryManagementIdentity>
+ [-AdditionalProperties <Hashtable>] [-Ids <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### CheckViaIdentity1
 ```
 Confirm-MgContractMemberObject -InputObject <IIdentityDirectoryManagementIdentity>
  -BodyParameter <IPathsXq94UjContractsContractIdMicrosoftGraphCheckmemberobjectsPostRequestbodyContentApplicationJsonSchema>
- [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### CheckViaIdentityExpanded1
-```
-Confirm-MgContractMemberObject -InputObject <IIdentityDirectoryManagementIdentity>
- [-AdditionalProperties <Hashtable>] [-Ids <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -43,31 +43,13 @@ Invoke action checkMemberObjects
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
 ### -AdditionalProperties
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: CheckExpanded1, CheckViaIdentityExpanded1
 Aliases:
 
@@ -83,7 +65,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsXq94UjContractsContractIdMicrosoftGraphCheckmemberobjectsPostRequestbodyContentApplicationJsonSchema
+Type: IPathsXq94UjContractsContractIdMicrosoftGraphCheckmemberobjectsPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Check1, CheckViaIdentity1
 Aliases:
 
@@ -98,8 +80,8 @@ Accept wildcard characters: False
 key: id of contract
 
 ```yaml
-Type: System.String
-Parameter Sets: Check1, CheckExpanded1
+Type: String
+Parameter Sets: CheckExpanded1, Check1
 Aliases:
 
 Required: True
@@ -113,7 +95,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.String[]
+Type: String[]
 Parameter Sets: CheckExpanded1, CheckViaIdentityExpanded1
 Aliases:
 
@@ -129,8 +111,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
-Parameter Sets: CheckViaIdentity1, CheckViaIdentityExpanded1
+Type: IIdentityDirectoryManagementIdentity
+Parameter Sets: CheckViaIdentityExpanded1, CheckViaIdentity1
 Aliases:
 
 Required: True
@@ -144,7 +126,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -160,7 +142,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -213,10 +195,12 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[FeatureRolloutPolicyId <String>]`: key: id of featureRolloutPolicy
   - `[OrgContactId <String>]`: key: id of orgContact
   - `[OrganizationId <String>]`: key: id of organization
-  - `[OrganizationalBrandingId <String>]`: key: id of organizationalBranding
+  - `[ProfileCardPropertyId <String>]`: key: id of profileCardProperty
   - `[ScopedRoleMembershipId <String>]`: key: id of scopedRoleMembership
+  - `[SharedEmailDomainId <String>]`: key: id of sharedEmailDomain
+  - `[SharedEmailDomainInvitationId <String>]`: key: id of sharedEmailDomainInvitation
   - `[SubscribedSkuId <String>]`: key: id of subscribedSku
+  - `[UsageRightId <String>]`: key: id of usageRight
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
-

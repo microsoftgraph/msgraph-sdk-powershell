@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Identity.DirectoryManagement-help.xml
 Module Name: Microsoft.Graph.Identity.DirectoryManagement
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdirectoryrole
 schema: 2.0.0
@@ -8,14 +8,15 @@ schema: 2.0.0
 # Get-MgDirectoryRole
 
 ## SYNOPSIS
-Get entity from directoryRoles by key
+Represents an Azure Active Directory object.
+The directoryObject type is the base type for many other directory entity types.
 
 ## SYNTAX
 
 ### List (Default)
 ```
-Get-MgDirectoryRole [-Count] [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
- [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-PageSize <Int32>]
+Get-MgDirectoryRole [-ExpandProperty <String[]>] [-Property <String[]>] [-Filter <String>] [-Search <String>]
+ [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-PageSize <Int32>] [-All] [-CountVariable <String>]
  [<CommonParameters>]
 ```
 
@@ -32,27 +33,43 @@ Get-MgDirectoryRole -InputObject <IIdentityDirectoryManagementIdentity> [-Expand
 ```
 
 ## DESCRIPTION
-Get entity from directoryRoles by key
+Represents an Azure Active Directory object.
+The directoryObject type is the base type for many other directory entity types.
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: Get all directory roles
 ```powershell
-PS C:\> {{ Add code here }}
+Get-MgDirectoryRole | Format-List
 
-{{ Add output here }}
+DeletedDateTime      :
+Description          : Can manage all aspects of Azure AD and Microsoft services that use Azure AD identities.
+DisplayName          : Global Administrator
+Id                   : a2d10e79-df32-47fc-86ef-64d199860810
+Members              :
+RoleTemplateId       : 1f12db9c-dbb3-410d-a893-4c0bc322bf85
+ScopedMembers        :
+AdditionalProperties : {}
 ```
 
-{{ Add description here }}
+This examples gets all the available directory roles.
 
-### Example 2: {{ Add title here }}
+### Example 2: Get a directory role by Id
 ```powershell
-PS C:\> {{ Add code here }}
+Get-MgDirectoryRole -DirectoryRoleId 'a2d10e79-df32-47fc-86ef-64d199860810' |
+  Format-List
 
-{{ Add output here }}
+DeletedDateTime      :
+Description          : Can manage all aspects of Azure AD and Microsoft services that use Azure AD identities.
+DisplayName          : Global Administrator
+Id                   : a2d10e79-df32-47fc-86ef-64d199860810
+Members              :
+RoleTemplateId       : 1f12db9c-dbb3-410d-a893-4c0bc322bf85
+ScopedMembers        :
+AdditionalProperties : {}
 ```
 
-{{ Add description here }}
+This example gets the directory role based on the specified Id.
 
 ## PARAMETERS
 
@@ -60,7 +77,7 @@ PS C:\> {{ Add code here }}
 List all pages.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: List
 Aliases:
 
@@ -71,13 +88,14 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Count
-Include count of items
+### -CountVariable
+Specifies a count of the total number of items in a collection.
+By default, this variable will be set in the global scope.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: String
 Parameter Sets: List
-Aliases:
+Aliases: CV
 
 Required: False
 Position: Named
@@ -90,7 +108,7 @@ Accept wildcard characters: False
 key: id of directoryRole
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Get
 Aliases:
 
@@ -105,7 +123,7 @@ Accept wildcard characters: False
 Expand related entities
 
 ```yaml
-Type: System.String[]
+Type: String[]
 Parameter Sets: (All)
 Aliases: Expand
 
@@ -120,7 +138,7 @@ Accept wildcard characters: False
 Filter items by property values
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: List
 Aliases:
 
@@ -136,7 +154,7 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+Type: IIdentityDirectoryManagementIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -151,7 +169,7 @@ Accept wildcard characters: False
 Sets the page size of results.
 
 ```yaml
-Type: System.Int32
+Type: Int32
 Parameter Sets: List
 Aliases:
 
@@ -166,7 +184,7 @@ Accept wildcard characters: False
 Select properties to be returned
 
 ```yaml
-Type: System.String[]
+Type: String[]
 Parameter Sets: (All)
 Aliases: Select
 
@@ -181,22 +199,7 @@ Accept wildcard characters: False
 Search items by search phrases
 
 ```yaml
-Type: System.String
-Parameter Sets: List
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Skip
-Skip the first n items
-
-```yaml
-Type: System.Int32
+Type: String
 Parameter Sets: List
 Aliases:
 
@@ -211,7 +214,7 @@ Accept wildcard characters: False
 Order items by property values
 
 ```yaml
-Type: System.String[]
+Type: String[]
 Parameter Sets: List
 Aliases: OrderBy
 
@@ -226,9 +229,24 @@ Accept wildcard characters: False
 Show only the first n items
 
 ```yaml
-Type: System.Int32
+Type: Int32
 Parameter Sets: List
 Aliases: Limit
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Skip
+Skip the first n items
+
+```yaml
+Type: Int32
+Parameter Sets: List
+Aliases:
 
 Required: False
 Position: Named
@@ -246,7 +264,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryRole1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryRole
 
 ## NOTES
 
@@ -273,10 +291,12 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[FeatureRolloutPolicyId <String>]`: key: id of featureRolloutPolicy
   - `[OrgContactId <String>]`: key: id of orgContact
   - `[OrganizationId <String>]`: key: id of organization
-  - `[OrganizationalBrandingId <String>]`: key: id of organizationalBranding
+  - `[ProfileCardPropertyId <String>]`: key: id of profileCardProperty
   - `[ScopedRoleMembershipId <String>]`: key: id of scopedRoleMembership
+  - `[SharedEmailDomainId <String>]`: key: id of sharedEmailDomain
+  - `[SharedEmailDomainInvitationId <String>]`: key: id of sharedEmailDomainInvitation
   - `[SubscribedSkuId <String>]`: key: id of subscribedSku
+  - `[UsageRightId <String>]`: key: id of usageRight
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
-

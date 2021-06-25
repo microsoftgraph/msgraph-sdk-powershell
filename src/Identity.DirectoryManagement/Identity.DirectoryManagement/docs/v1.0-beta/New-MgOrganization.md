@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Identity.DirectoryManagement-help.xml
 Module Name: Microsoft.Graph.Identity.DirectoryManagement
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/new-mgorganization
 schema: 2.0.0
@@ -15,7 +15,7 @@ Add new entity to organization
 ### CreateExpanded (Default)
 ```
 New-MgOrganization [-AdditionalProperties <Hashtable>] [-AssignedPlans <IMicrosoftGraphAssignedPlan[]>]
- [-Brandings <IMicrosoftGraphOrganizationalBranding[]>] [-BusinessPhones <String[]>]
+ [-Branding <IMicrosoftGraphOrganizationalBranding>] [-BusinessPhones <String[]>]
  [-CertificateBasedAuthConfiguration <IMicrosoftGraphCertificateBasedAuthConfiguration[]>]
  [-CertificateConnectorSetting <IMicrosoftGraphCertificateConnectorSetting>] [-City <String>]
  [-Country <String>] [-CountryLetterCode <String>] [-CreatedDateTime <DateTime>] [-DeletedDateTime <DateTime>]
@@ -27,12 +27,12 @@ New-MgOrganization [-AdditionalProperties <Hashtable>] [-AssignedPlans <IMicroso
  [-ProvisionedPlans <IMicrosoftGraphProvisionedPlan[]>] [-SecurityComplianceNotificationMails <String[]>]
  [-SecurityComplianceNotificationPhones <String[]>] [-Settings <IMicrosoftGraphOrganizationSettings>]
  [-State <String>] [-Street <String>] [-TechnicalNotificationMails <String[]>]
- [-VerifiedDomains <IMicrosoftGraphVerifiedDomain[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-VerifiedDomains <IMicrosoftGraphVerifiedDomain[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgOrganization -BodyParameter <IMicrosoftGraphOrganization1> [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgOrganization -BodyParameter <IMicrosoftGraphOrganization1> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -40,31 +40,13 @@ Add new entity to organization
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
 ### -AdditionalProperties
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -81,7 +63,7 @@ Not nullable.
 To construct, see NOTES section for ASSIGNEDPLANS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAssignedPlan[]
+Type: IMicrosoftGraphAssignedPlan[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -97,7 +79,7 @@ The organization resource represents an instance of global settings and resource
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOrganization1
+Type: IMicrosoftGraphOrganization1
 Parameter Sets: Create
 Aliases:
 
@@ -108,12 +90,12 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Brandings
-.
-To construct, see NOTES section for BRANDINGS properties and create a hash table.
+### -Branding
+organizationalBranding
+To construct, see NOTES section for BRANDING properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOrganizationalBranding[]
+Type: IMicrosoftGraphOrganizationalBranding
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -126,10 +108,10 @@ Accept wildcard characters: False
 
 ### -BusinessPhones
 Telephone number for the organization.
-NOTE: Although this is a string collection, only one number can be set for this property.
+Although this is a string collection, only one number can be set for this property.
 
 ```yaml
-Type: System.String[]
+Type: String[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -146,7 +128,7 @@ Only a single instance of certificateBasedAuthConfiguration can be created in th
 To construct, see NOTES section for CERTIFICATEBASEDAUTHCONFIGURATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCertificateBasedAuthConfiguration[]
+Type: IMicrosoftGraphCertificateBasedAuthConfiguration[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -162,7 +144,7 @@ Certificate connector settings.
 To construct, see NOTES section for CERTIFICATECONNECTORSETTING properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCertificateConnectorSetting
+Type: IMicrosoftGraphCertificateConnectorSetting
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -177,7 +159,7 @@ Accept wildcard characters: False
 City name of the address for the organization.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -192,7 +174,7 @@ Accept wildcard characters: False
 Country/region name of the address for the organization.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -207,7 +189,7 @@ Accept wildcard characters: False
 Country/region abbreviation for the organization.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -222,11 +204,11 @@ Accept wildcard characters: False
 Timestamp of when the organization was created.
 The value cannot be modified and is automatically populated when the organization is created.
 The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
-For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 Read-only.
 
 ```yaml
-Type: System.DateTime
+Type: DateTime
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -241,7 +223,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.DateTime
+Type: DateTime
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -257,7 +239,7 @@ directorySizeQuota
 To construct, see NOTES section for DIRECTORYSIZEQUOTA properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectorySizeQuota
+Type: IMicrosoftGraphDirectorySizeQuota
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -272,7 +254,7 @@ Accept wildcard characters: False
 The display name for the tenant.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -284,13 +266,12 @@ Accept wildcard characters: False
 ```
 
 ### -Extensions
-The collection of open extensions defined for the organization.
-Read-only.
+The collection of open extensions defined for the organization resource.
 Nullable.
 To construct, see NOTES section for EXTENSIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExtension[]
+Type: IMicrosoftGraphExtension[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -305,7 +286,7 @@ Accept wildcard characters: False
 Read-only.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -322,7 +303,7 @@ Read-only.
 For more information, see OneDrive Online Multi-Geo.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -337,7 +318,7 @@ Accept wildcard characters: False
 Not nullable.
 
 ```yaml
-Type: System.String[]
+Type: String[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -352,7 +333,7 @@ Accept wildcard characters: False
 mdmAuthority
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -364,13 +345,12 @@ Accept wildcard characters: False
 ```
 
 ### -OnPremisesLastSyncDateTime
-The time and date at which the tenant was last synced with the on-premise directory.
+The time and date at which the tenant was last synced with the on-premises directory.
 The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
-For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
-Read-only.
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 
 ```yaml
-Type: System.DateTime
+Type: DateTime
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -382,10 +362,11 @@ Accept wildcard characters: False
 ```
 
 ### -OnPremisesSyncEnabled
-true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default).
+true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; Nullable.
+null if this object has never been synced from an on-premises directory (default).
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -400,7 +381,7 @@ Accept wildcard characters: False
 Postal code of the address for the organization.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -413,10 +394,10 @@ Accept wildcard characters: False
 
 ### -PreferredLanguage
 The preferred language for the organization.
-Should follow ISO 639-1 Code; for example 'en'.
+Should follow ISO 639-1 Code; for example en.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -432,7 +413,7 @@ privacyProfile
 To construct, see NOTES section for PRIVACYPROFILE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrivacyProfile
+Type: IMicrosoftGraphPrivacyProfile
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -448,7 +429,7 @@ Not nullable.
 To construct, see NOTES section for PROVISIONEDPLANS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphProvisionedPlan[]
+Type: IMicrosoftGraphProvisionedPlan[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -463,7 +444,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.String[]
+Type: String[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -478,7 +459,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.String[]
+Type: String[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -494,7 +475,7 @@ organizationSettings
 To construct, see NOTES section for SETTINGS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOrganizationSettings
+Type: IMicrosoftGraphOrganizationSettings
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -509,7 +490,7 @@ Accept wildcard characters: False
 State name of the address for the organization.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -524,7 +505,7 @@ Accept wildcard characters: False
 Street name of the address for organization.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -539,7 +520,7 @@ Accept wildcard characters: False
 Not nullable.
 
 ```yaml
-Type: System.String[]
+Type: String[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -556,7 +537,7 @@ Not nullable.
 To construct, see NOTES section for VERIFIEDDOMAINS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphVerifiedDomain[]
+Type: IMicrosoftGraphVerifiedDomain[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -571,7 +552,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -587,7 +568,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -619,8 +600,8 @@ To create the parameters described below, construct a hash table containing the 
 
 
 ASSIGNEDPLANS <IMicrosoftGraphAssignedPlan[]>: The collection of service plans associated with the tenant. Not nullable.
-  - `[AssignedDateTime <DateTime?>]`: The date and time at which the plan was assigned; for example: 2013-01-02T19:32:30Z. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
-  - `[CapabilityStatus <String>]`: For example, 'Enabled'.
+  - `[AssignedDateTime <DateTime?>]`: The date and time at which the plan was assigned; for example: 2013-01-02T19:32:30Z. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+  - `[CapabilityStatus <String>]`: Condition of the capability assignment. The possible values are Enabled, Warning, Suspended, Deleted, LockedOut.
   - `[Service <String>]`: The name of the service; for example, 'Exchange'.
   - `[ServicePlanId <String>]`: A GUID that identifies the service plan.
 
@@ -629,21 +610,29 @@ BODYPARAMETER <IMicrosoftGraphOrganization1>: The organization resource represen
   - `[DeletedDateTime <DateTime?>]`: 
   - `[Id <String>]`: Read-only.
   - `[AssignedPlans <IMicrosoftGraphAssignedPlan[]>]`: The collection of service plans associated with the tenant. Not nullable.
-    - `[AssignedDateTime <DateTime?>]`: The date and time at which the plan was assigned; for example: 2013-01-02T19:32:30Z. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
-    - `[CapabilityStatus <String>]`: For example, 'Enabled'.
+    - `[AssignedDateTime <DateTime?>]`: The date and time at which the plan was assigned; for example: 2013-01-02T19:32:30Z. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+    - `[CapabilityStatus <String>]`: Condition of the capability assignment. The possible values are Enabled, Warning, Suspended, Deleted, LockedOut.
     - `[Service <String>]`: The name of the service; for example, 'Exchange'.
     - `[ServicePlanId <String>]`: A GUID that identifies the service plan.
-  - `[Brandings <IMicrosoftGraphOrganizationalBranding[]>]`: 
+  - `[Branding <IMicrosoftGraphOrganizationalBranding>]`: organizationalBranding
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[BackgroundColor <String>]`: Color that will appear in place of the background image in low-bandwidth connections. The primary color of your banner logo or your organization color is recommended to be used here. Specify this in hexadecimal (for example, white is #FFFFFF).
+    - `[BackgroundImage <Byte[]>]`: Image that appears as the background of the sign in page. .png or .jpg not larger than 1920x1080 and smaller than 300kb. A smaller image will reduce bandwidth requirements and make page loads more performant.
+    - `[BannerLogo <Byte[]>]`: A banner version of your company logo which appears appears on the sign-in page. .png or .jpg no larger than 36x245px. We recommend using a transparent image with no padding around the logo.
+    - `[SignInPageText <String>]`: Text that appears at the bottom of the sign-in box. You can use this to communicate additional information, such as the phone number to your help desk or a legal statement. This text must be Unicode and not exceed 1024 characters.
+    - `[SquareLogo <Byte[]>]`: Square version of your company logo. This appears in Windows 10 out-of-box (OOBE) experiences and when Windows Autopilot is enabled for deployment. .png or .jpg no larger than 240x240px and no more than 10kb in size. We recommend using a transparent image with no padding around the logo.
+    - `[UsernameHintText <String>]`: String that shows as the hint in the username textbox on the sign in screen. This text must be Unicode, without links or code, and can't exceed 64 characters.
     - `[Id <String>]`: Read-only.
-    - `[BackgroundColor <String>]`: 
-    - `[BackgroundImage <Byte[]>]`: 
-    - `[BannerLogo <Byte[]>]`: 
-    - `[Locale <String>]`: 
-    - `[SignInPageText <String>]`: 
-    - `[SquareLogo <Byte[]>]`: 
-    - `[UsernameHintText <String>]`: 
-  - `[BusinessPhones <String[]>]`: Telephone number for the organization. NOTE: Although this is a string collection, only one number can be set for this property.
-  - `[CertificateBasedAuthConfiguration <IMicrosoftGraphCertificateBasedAuthConfiguration[]>]`: Navigation property to manage certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
+    - `[Localizations <IMicrosoftGraphOrganizationalBrandingLocalization[]>]`: 
+      - `[BackgroundColor <String>]`: Color that will appear in place of the background image in low-bandwidth connections. The primary color of your banner logo or your organization color is recommended to be used here. Specify this in hexadecimal (for example, white is #FFFFFF).
+      - `[BackgroundImage <Byte[]>]`: Image that appears as the background of the sign in page. .png or .jpg not larger than 1920x1080 and smaller than 300kb. A smaller image will reduce bandwidth requirements and make page loads more performant.
+      - `[BannerLogo <Byte[]>]`: A banner version of your company logo which appears appears on the sign-in page. .png or .jpg no larger than 36x245px. We recommend using a transparent image with no padding around the logo.
+      - `[SignInPageText <String>]`: Text that appears at the bottom of the sign-in box. You can use this to communicate additional information, such as the phone number to your help desk or a legal statement. This text must be Unicode and not exceed 1024 characters.
+      - `[SquareLogo <Byte[]>]`: Square version of your company logo. This appears in Windows 10 out-of-box (OOBE) experiences and when Windows Autopilot is enabled for deployment. .png or .jpg no larger than 240x240px and no more than 10kb in size. We recommend using a transparent image with no padding around the logo.
+      - `[UsernameHintText <String>]`: String that shows as the hint in the username textbox on the sign in screen. This text must be Unicode, without links or code, and can't exceed 64 characters.
+      - `[Id <String>]`: Read-only.
+  - `[BusinessPhones <String[]>]`: Telephone number for the organization. Although this is a string collection, only one number can be set for this property.
+  - `[CertificateBasedAuthConfiguration <IMicrosoftGraphCertificateBasedAuthConfiguration[]>]`: Navigation property to manage  certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
     - `[Id <String>]`: Read-only.
     - `[CertificateAuthorities <IMicrosoftGraphCertificateAuthority[]>]`: Collection of certificate authorities which creates a trusted certificate chain.
       - `[Certificate <Byte[]>]`: Required. The base64 encoded string representing the public certificate.
@@ -663,21 +652,21 @@ BODYPARAMETER <IMicrosoftGraphOrganization1>: The organization resource represen
   - `[City <String>]`: City name of the address for the organization.
   - `[Country <String>]`: Country/region name of the address for the organization.
   - `[CountryLetterCode <String>]`: Country/region abbreviation for the organization.
-  - `[CreatedDateTime <DateTime?>]`: Timestamp of when the organization was created. The value cannot be modified and is automatically populated when the organization is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Read-only.
+  - `[CreatedDateTime <DateTime?>]`: Timestamp of when the organization was created. The value cannot be modified and is automatically populated when the organization is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
   - `[DirectorySizeQuota <IMicrosoftGraphDirectorySizeQuota>]`: directorySizeQuota
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Total <Int32?>]`: 
-    - `[Used <Int32?>]`: 
+    - `[Total <Int32?>]`: Total amount of the directory quota.
+    - `[Used <Int32?>]`: Used amount of the directory quota.
   - `[DisplayName <String>]`: The display name for the tenant.
-  - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the organization. Read-only. Nullable.
+  - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the organization resource. Nullable.
     - `[Id <String>]`: Read-only.
   - `[IsMultipleDataLocationsForServicesEnabled <Boolean?>]`: true if organization is Multi-Geo enabled; false if organization is not Multi-Geo enabled; null (default). Read-only. For more information, see OneDrive Online Multi-Geo.
   - `[MarketingNotificationEmails <String[]>]`: Not nullable.
   - `[MobileDeviceManagementAuthority <String>]`: mdmAuthority
-  - `[OnPremisesLastSyncDateTime <DateTime?>]`: The time and date at which the tenant was last synced with the on-premise directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Read-only.
-  - `[OnPremisesSyncEnabled <Boolean?>]`: true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default).
+  - `[OnPremisesLastSyncDateTime <DateTime?>]`: The time and date at which the tenant was last synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+  - `[OnPremisesSyncEnabled <Boolean?>]`: true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; Nullable. null if this object has never been synced from an on-premises directory (default).
   - `[PostalCode <String>]`: Postal code of the address for the organization.
-  - `[PreferredLanguage <String>]`: The preferred language for the organization. Should follow ISO 639-1 Code; for example 'en'.
+  - `[PreferredLanguage <String>]`: The preferred language for the organization. Should follow ISO 639-1 Code; for example en.
   - `[PrivacyProfile <IMicrosoftGraphPrivacyProfile>]`: privacyProfile
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[ContactEmail <String>]`: A valid smtp email address for the privacy statement contact. Not required.
@@ -694,16 +683,16 @@ BODYPARAMETER <IMicrosoftGraphOrganization1>: The organization resource represen
     - `[ItemInsights <IMicrosoftGraphItemInsightsSettings>]`: itemInsightsSettings
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: Read-only.
-      - `[DisabledForGroup <String>]`: 
-      - `[IsEnabledInOrganization <Boolean?>]`: 
-    - `[ProfileCardProperties <IMicrosoftGraphProfileCardProperty[]>]`: 
+      - `[DisabledForGroup <String>]`: The ID of an Azure AD group, of which the members' item insights are disabled. Default is empty. Optional.
+      - `[IsEnabledInOrganization <Boolean?>]`: true if organization item insights are enabled; false if organization item insights are disabled for all users without exceptions. Default is true. Optional.
+    - `[ProfileCardProperties <IMicrosoftGraphProfileCardProperty[]>]`: Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card. Get organization settings returns the properties configured for profile cards for the organization.
       - `[Id <String>]`: Read-only.
-      - `[Annotations <IMicrosoftGraphProfileCardAnnotation[]>]`: 
-        - `[DisplayName <String>]`: 
-        - `[Localizations <IMicrosoftGraphDisplayNameLocalization[]>]`: 
-          - `[DisplayName <String>]`: 
-          - `[LanguageTag <String>]`: 
-      - `[DirectoryPropertyName <String>]`: 
+      - `[Annotations <IMicrosoftGraphProfileCardAnnotation[]>]`: Allows an administrator to set a custom display label for the directory property and localize it for the users in their tenant.
+        - `[DisplayName <String>]`: If present, the value of this field is used by the profile card as the default property label in the experience (for example, 'Cost Center').
+        - `[Localizations <IMicrosoftGraphDisplayNameLocalization[]>]`: Each resource in this collection represents the localized value of the attribute name for a given language, used as the default label for that locale. For example, a user with a no-NB client gets 'Kostnads Senter' as the attribute label, rather than 'Cost Center.'
+          - `[DisplayName <String>]`: If present, the value of this field contains the displayName string that has been set for the language present in the languageTag field.
+          - `[LanguageTag <String>]`: Provides the language culture-code and friendly name of the language that the displayName field has been provided in.
+      - `[DirectoryPropertyName <String>]`: Identifies a profileCardProperty resource in Get, Update, or Delete operations. Allows an administrator to surface hidden Azure Active Directory (Azure AD) properties on the Microsoft 365 profile card within their tenant. When present, the Azure AD field referenced in this field will be visible to all users in your tenant on the contact pane of the profile card. Allowed values for this field are: UserPrincipalName, Fax, StreetAddress, PostalCode, StateOrProvince, Alias, CustomAttribute1,  CustomAttribute2, CustomAttribute3, CustomAttribute4, CustomAttribute5, CustomAttribute6, CustomAttribute7, CustomAttribute8, CustomAttribute9, CustomAttribute10, CustomAttribute11, CustomAttribute12, CustomAttribute13, CustomAttribute14, CustomAttribute15.
   - `[State <String>]`: State name of the address for the organization.
   - `[Street <String>]`: Street name of the address for organization.
   - `[TechnicalNotificationMails <String[]>]`: Not nullable.
@@ -714,15 +703,23 @@ BODYPARAMETER <IMicrosoftGraphOrganization1>: The organization resource represen
     - `[Name <String>]`: The domain name; for example, 'contoso.onmicrosoft.com'
     - `[Type <String>]`: For example, 'Managed'.
 
-BRANDINGS <IMicrosoftGraphOrganizationalBranding[]>: .
+BRANDING <IMicrosoftGraphOrganizationalBranding>: organizationalBranding
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[BackgroundColor <String>]`: Color that will appear in place of the background image in low-bandwidth connections. The primary color of your banner logo or your organization color is recommended to be used here. Specify this in hexadecimal (for example, white is #FFFFFF).
+  - `[BackgroundImage <Byte[]>]`: Image that appears as the background of the sign in page. .png or .jpg not larger than 1920x1080 and smaller than 300kb. A smaller image will reduce bandwidth requirements and make page loads more performant.
+  - `[BannerLogo <Byte[]>]`: A banner version of your company logo which appears appears on the sign-in page. .png or .jpg no larger than 36x245px. We recommend using a transparent image with no padding around the logo.
+  - `[SignInPageText <String>]`: Text that appears at the bottom of the sign-in box. You can use this to communicate additional information, such as the phone number to your help desk or a legal statement. This text must be Unicode and not exceed 1024 characters.
+  - `[SquareLogo <Byte[]>]`: Square version of your company logo. This appears in Windows 10 out-of-box (OOBE) experiences and when Windows Autopilot is enabled for deployment. .png or .jpg no larger than 240x240px and no more than 10kb in size. We recommend using a transparent image with no padding around the logo.
+  - `[UsernameHintText <String>]`: String that shows as the hint in the username textbox on the sign in screen. This text must be Unicode, without links or code, and can't exceed 64 characters.
   - `[Id <String>]`: Read-only.
-  - `[BackgroundColor <String>]`: 
-  - `[BackgroundImage <Byte[]>]`: 
-  - `[BannerLogo <Byte[]>]`: 
-  - `[Locale <String>]`: 
-  - `[SignInPageText <String>]`: 
-  - `[SquareLogo <Byte[]>]`: 
-  - `[UsernameHintText <String>]`: 
+  - `[Localizations <IMicrosoftGraphOrganizationalBrandingLocalization[]>]`: 
+    - `[BackgroundColor <String>]`: Color that will appear in place of the background image in low-bandwidth connections. The primary color of your banner logo or your organization color is recommended to be used here. Specify this in hexadecimal (for example, white is #FFFFFF).
+    - `[BackgroundImage <Byte[]>]`: Image that appears as the background of the sign in page. .png or .jpg not larger than 1920x1080 and smaller than 300kb. A smaller image will reduce bandwidth requirements and make page loads more performant.
+    - `[BannerLogo <Byte[]>]`: A banner version of your company logo which appears appears on the sign-in page. .png or .jpg no larger than 36x245px. We recommend using a transparent image with no padding around the logo.
+    - `[SignInPageText <String>]`: Text that appears at the bottom of the sign-in box. You can use this to communicate additional information, such as the phone number to your help desk or a legal statement. This text must be Unicode and not exceed 1024 characters.
+    - `[SquareLogo <Byte[]>]`: Square version of your company logo. This appears in Windows 10 out-of-box (OOBE) experiences and when Windows Autopilot is enabled for deployment. .png or .jpg no larger than 240x240px and no more than 10kb in size. We recommend using a transparent image with no padding around the logo.
+    - `[UsernameHintText <String>]`: String that shows as the hint in the username textbox on the sign in screen. This text must be Unicode, without links or code, and can't exceed 64 characters.
+    - `[Id <String>]`: Read-only.
 
 CERTIFICATEBASEDAUTHCONFIGURATION <IMicrosoftGraphCertificateBasedAuthConfiguration[]>: Navigation property to manage certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
   - `[Id <String>]`: Read-only.
@@ -745,10 +742,10 @@ CERTIFICATECONNECTORSETTING <IMicrosoftGraphCertificateConnectorSetting>: Certif
 
 DIRECTORYSIZEQUOTA <IMicrosoftGraphDirectorySizeQuota>: directorySizeQuota
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Total <Int32?>]`: 
-  - `[Used <Int32?>]`: 
+  - `[Total <Int32?>]`: Total amount of the directory quota.
+  - `[Used <Int32?>]`: Used amount of the directory quota.
 
-EXTENSIONS <IMicrosoftGraphExtension[]>: The collection of open extensions defined for the organization. Read-only. Nullable.
+EXTENSIONS <IMicrosoftGraphExtension[]>: The collection of open extensions defined for the organization resource. Nullable.
   - `[Id <String>]`: Read-only.
 
 PRIVACYPROFILE <IMicrosoftGraphPrivacyProfile>: privacyProfile
@@ -767,16 +764,16 @@ SETTINGS <IMicrosoftGraphOrganizationSettings>: organizationSettings
   - `[ItemInsights <IMicrosoftGraphItemInsightsSettings>]`: itemInsightsSettings
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: Read-only.
-    - `[DisabledForGroup <String>]`: 
-    - `[IsEnabledInOrganization <Boolean?>]`: 
-  - `[ProfileCardProperties <IMicrosoftGraphProfileCardProperty[]>]`: 
+    - `[DisabledForGroup <String>]`: The ID of an Azure AD group, of which the members' item insights are disabled. Default is empty. Optional.
+    - `[IsEnabledInOrganization <Boolean?>]`: true if organization item insights are enabled; false if organization item insights are disabled for all users without exceptions. Default is true. Optional.
+  - `[ProfileCardProperties <IMicrosoftGraphProfileCardProperty[]>]`: Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card. Get organization settings returns the properties configured for profile cards for the organization.
     - `[Id <String>]`: Read-only.
-    - `[Annotations <IMicrosoftGraphProfileCardAnnotation[]>]`: 
-      - `[DisplayName <String>]`: 
-      - `[Localizations <IMicrosoftGraphDisplayNameLocalization[]>]`: 
-        - `[DisplayName <String>]`: 
-        - `[LanguageTag <String>]`: 
-    - `[DirectoryPropertyName <String>]`: 
+    - `[Annotations <IMicrosoftGraphProfileCardAnnotation[]>]`: Allows an administrator to set a custom display label for the directory property and localize it for the users in their tenant.
+      - `[DisplayName <String>]`: If present, the value of this field is used by the profile card as the default property label in the experience (for example, 'Cost Center').
+      - `[Localizations <IMicrosoftGraphDisplayNameLocalization[]>]`: Each resource in this collection represents the localized value of the attribute name for a given language, used as the default label for that locale. For example, a user with a no-NB client gets 'Kostnads Senter' as the attribute label, rather than 'Cost Center.'
+        - `[DisplayName <String>]`: If present, the value of this field contains the displayName string that has been set for the language present in the languageTag field.
+        - `[LanguageTag <String>]`: Provides the language culture-code and friendly name of the language that the displayName field has been provided in.
+    - `[DirectoryPropertyName <String>]`: Identifies a profileCardProperty resource in Get, Update, or Delete operations. Allows an administrator to surface hidden Azure Active Directory (Azure AD) properties on the Microsoft 365 profile card within their tenant. When present, the Azure AD field referenced in this field will be visible to all users in your tenant on the contact pane of the profile card. Allowed values for this field are: UserPrincipalName, Fax, StreetAddress, PostalCode, StateOrProvince, Alias, CustomAttribute1,  CustomAttribute2, CustomAttribute3, CustomAttribute4, CustomAttribute5, CustomAttribute6, CustomAttribute7, CustomAttribute8, CustomAttribute9, CustomAttribute10, CustomAttribute11, CustomAttribute12, CustomAttribute13, CustomAttribute14, CustomAttribute15.
 
 VERIFIEDDOMAINS <IMicrosoftGraphVerifiedDomain[]>: The collection of domains associated with this tenant. Not nullable.
   - `[Capabilities <String>]`: For example, 'Email', 'OfficeCommunicationsOnline'.
@@ -787,3 +784,4 @@ VERIFIEDDOMAINS <IMicrosoftGraphVerifiedDomain[]>: The collection of domains ass
 
 ## RELATED LINKS
 
+## RELATED LINKS

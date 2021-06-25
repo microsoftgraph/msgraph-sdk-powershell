@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Identity.DirectoryManagement-help.xml
 Module Name: Microsoft.Graph.Identity.DirectoryManagement
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/new-mgadministrativeunitscopedrolemember
 schema: 2.0.0
@@ -8,7 +8,8 @@ schema: 2.0.0
 # New-MgAdministrativeUnitScopedRoleMember
 
 ## SYNOPSIS
-Create new navigation property to scopedRoleMembers for administrativeUnits
+Scoped-role members of this Administrative Unit.
+HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).
 
 ## SYNTAX
 
@@ -16,50 +17,33 @@ Create new navigation property to scopedRoleMembers for administrativeUnits
 ```
 New-MgAdministrativeUnitScopedRoleMember -AdministrativeUnitId <String> [-AdditionalProperties <Hashtable>]
  [-AdministrativeUnitId1 <String>] [-Id <String>] [-RoleId <String>]
- [-RoleMemberInfo <IMicrosoftGraphIdentity>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-RoleMemberInfo <IMicrosoftGraphIdentity>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### CreateViaIdentityExpanded
+```
+New-MgAdministrativeUnitScopedRoleMember [-AdministrativeUnitId <String>]
+ -InputObject <IIdentityDirectoryManagementIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
+ [-RoleId <String>] [-RoleMemberInfo <IMicrosoftGraphIdentity>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgAdministrativeUnitScopedRoleMember -AdministrativeUnitId <String>
- -BodyParameter <IMicrosoftGraphScopedRoleMembership> [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphScopedRoleMembership> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgAdministrativeUnitScopedRoleMember -InputObject <IIdentityDirectoryManagementIdentity>
- -BodyParameter <IMicrosoftGraphScopedRoleMembership> [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### CreateViaIdentityExpanded
-```
-New-MgAdministrativeUnitScopedRoleMember -InputObject <IIdentityDirectoryManagementIdentity>
- [-AdministrativeUnitId <String>] [-AdditionalProperties <Hashtable>] [-Id <String>] [-RoleId <String>]
- [-RoleMemberInfo <IMicrosoftGraphIdentity>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphScopedRoleMembership> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create new navigation property to scopedRoleMembers for administrativeUnits
+Scoped-role members of this Administrative Unit.
+HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -67,7 +51,7 @@ PS C:\> {{ Add code here }}
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -82,8 +66,8 @@ Accept wildcard characters: False
 key: id of administrativeUnit
 
 ```yaml
-Type: System.String
-Parameter Sets: Create, CreateExpanded, CreateViaIdentityExpanded
+Type: String
+Parameter Sets: CreateExpanded, Create
 Aliases:
 
 Required: True
@@ -93,11 +77,23 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+```yaml
+Type: String
+Parameter Sets: CreateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -AdministrativeUnitId1
-.
+Unique identifier for the administrative unit that the directory role is scoped to
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -113,7 +109,7 @@ scopedRoleMembership
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphScopedRoleMembership
+Type: IMicrosoftGraphScopedRoleMembership
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -128,7 +124,7 @@ Accept wildcard characters: False
 Read-only.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -144,8 +140,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
-Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
+Type: IIdentityDirectoryManagementIdentity
+Parameter Sets: CreateViaIdentityExpanded, CreateViaIdentity
 Aliases:
 
 Required: True
@@ -156,10 +152,10 @@ Accept wildcard characters: False
 ```
 
 ### -RoleId
-.
+Unique identifier for the directory role that the member is in.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -175,7 +171,7 @@ identity
 To construct, see NOTES section for ROLEMEMBERINFO properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentity
+Type: IMicrosoftGraphIdentity
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -190,7 +186,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -206,7 +202,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -242,8 +238,8 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphScopedRoleMembership>: scopedRoleMembership
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
-  - `[AdministrativeUnitId <String>]`: 
-  - `[RoleId <String>]`: 
+  - `[AdministrativeUnitId <String>]`: Unique identifier for the administrative unit that the directory role is scoped to
+  - `[RoleId <String>]`: Unique identifier for the directory role that the member is in.
   - `[RoleMemberInfo <IMicrosoftGraphIdentity>]`: identity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
@@ -265,9 +261,12 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[FeatureRolloutPolicyId <String>]`: key: id of featureRolloutPolicy
   - `[OrgContactId <String>]`: key: id of orgContact
   - `[OrganizationId <String>]`: key: id of organization
-  - `[OrganizationalBrandingId <String>]`: key: id of organizationalBranding
+  - `[ProfileCardPropertyId <String>]`: key: id of profileCardProperty
   - `[ScopedRoleMembershipId <String>]`: key: id of scopedRoleMembership
+  - `[SharedEmailDomainId <String>]`: key: id of sharedEmailDomain
+  - `[SharedEmailDomainInvitationId <String>]`: key: id of sharedEmailDomainInvitation
   - `[SubscribedSkuId <String>]`: key: id of subscribedSku
+  - `[UsageRightId <String>]`: key: id of usageRight
   - `[UserId <String>]`: key: id of user
 
 ROLEMEMBERINFO <IMicrosoftGraphIdentity>: identity
@@ -276,4 +275,3 @@ ROLEMEMBERINFO <IMicrosoftGraphIdentity>: identity
   - `[Id <String>]`: Unique identifier for the identity.
 
 ## RELATED LINKS
-

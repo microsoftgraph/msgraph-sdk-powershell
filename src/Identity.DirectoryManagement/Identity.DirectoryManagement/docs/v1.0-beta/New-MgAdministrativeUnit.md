@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Identity.DirectoryManagement-help.xml
 Module Name: Microsoft.Graph.Identity.DirectoryManagement
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/new-mgadministrativeunit
 schema: 2.0.0
@@ -17,12 +17,12 @@ Add new entity to administrativeUnits
 New-MgAdministrativeUnit [-AdditionalProperties <Hashtable>] [-DeletedDateTime <DateTime>]
  [-Description <String>] [-DisplayName <String>] [-Extensions <IMicrosoftGraphExtension[]>] [-Id <String>]
  [-Members <IMicrosoftGraphDirectoryObject[]>] [-ScopedRoleMembers <IMicrosoftGraphScopedRoleMembership[]>]
- [-Visibility <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Visibility <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgAdministrativeUnit -BodyParameter <IMicrosoftGraphAdministrativeUnit> [-Confirm] [-WhatIf]
+New-MgAdministrativeUnit -BodyParameter <IMicrosoftGraphAdministrativeUnit> [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
@@ -31,31 +31,13 @@ Add new entity to administrativeUnits
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
 ### -AdditionalProperties
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -72,7 +54,7 @@ The directoryObject type is the base type for many other directory entity types.
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAdministrativeUnit
+Type: IMicrosoftGraphAdministrativeUnit
 Parameter Sets: Create
 Aliases:
 
@@ -87,7 +69,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.DateTime
+Type: DateTime
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -99,10 +81,10 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-.
+An optional description for the administrative unit.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -114,10 +96,10 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-.
+Display name for the administrative unit.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -129,11 +111,12 @@ Accept wildcard characters: False
 ```
 
 ### -Extensions
-.
+The collection of open extensions defined for this Administrative Unit.
+Nullable.
 To construct, see NOTES section for EXTENSIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExtension[]
+Type: IMicrosoftGraphExtension[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -148,7 +131,7 @@ Accept wildcard characters: False
 Read-only.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -160,11 +143,12 @@ Accept wildcard characters: False
 ```
 
 ### -Members
-.
+Users and groups that are members of this Adminsitrative Unit.
+HTTP Methods: GET (list members), POST (add members), DELETE (remove members).
 To construct, see NOTES section for MEMBERS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
+Type: IMicrosoftGraphDirectoryObject[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -176,11 +160,12 @@ Accept wildcard characters: False
 ```
 
 ### -ScopedRoleMembers
-.
+Scoped-role members of this Administrative Unit.
+HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).
 To construct, see NOTES section for SCOPEDROLEMEMBERS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphScopedRoleMembership[]
+Type: IMicrosoftGraphScopedRoleMembership[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -192,10 +177,13 @@ Accept wildcard characters: False
 ```
 
 ### -Visibility
-.
+Controls whether the administrative unit and its members are hidden or public.
+Can be set to HiddenMembership or Public.
+If not set, default behavior is Public.
+When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -210,7 +198,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -226,7 +214,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -261,38 +249,37 @@ BODYPARAMETER <IMicrosoftGraphAdministrativeUnit>: Represents an Azure Active Di
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[DeletedDateTime <DateTime?>]`: 
   - `[Id <String>]`: Read-only.
-  - `[Description <String>]`: 
-  - `[DisplayName <String>]`: 
-  - `[Extensions <IMicrosoftGraphExtension[]>]`: 
+  - `[Description <String>]`: An optional description for the administrative unit.
+  - `[DisplayName <String>]`: Display name for the administrative unit.
+  - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for this Administrative Unit. Nullable.
     - `[Id <String>]`: Read-only.
-  - `[Members <IMicrosoftGraphDirectoryObject[]>]`: 
+  - `[Members <IMicrosoftGraphDirectoryObject[]>]`: Users and groups that are members of this Adminsitrative Unit. HTTP Methods: GET (list members), POST (add members), DELETE (remove members).
     - `[Id <String>]`: Read-only.
     - `[DeletedDateTime <DateTime?>]`: 
-  - `[ScopedRoleMembers <IMicrosoftGraphScopedRoleMembership[]>]`: 
+  - `[ScopedRoleMembers <IMicrosoftGraphScopedRoleMembership[]>]`: Scoped-role members of this Administrative Unit.  HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).
     - `[Id <String>]`: Read-only.
-    - `[AdministrativeUnitId <String>]`: 
-    - `[RoleId <String>]`: 
+    - `[AdministrativeUnitId <String>]`: Unique identifier for the administrative unit that the directory role is scoped to
+    - `[RoleId <String>]`: Unique identifier for the directory role that the member is in.
     - `[RoleMemberInfo <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
       - `[Id <String>]`: Unique identifier for the identity.
-  - `[Visibility <String>]`: 
+  - `[Visibility <String>]`: Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership or Public. If not set, default behavior is Public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.
 
-EXTENSIONS <IMicrosoftGraphExtension[]>: .
+EXTENSIONS <IMicrosoftGraphExtension[]>: The collection of open extensions defined for this Administrative Unit. Nullable.
   - `[Id <String>]`: Read-only.
 
-MEMBERS <IMicrosoftGraphDirectoryObject[]>: .
+MEMBERS <IMicrosoftGraphDirectoryObject[]>: Users and groups that are members of this Adminsitrative Unit. HTTP Methods: GET (list members), POST (add members), DELETE (remove members).
   - `[Id <String>]`: Read-only.
   - `[DeletedDateTime <DateTime?>]`: 
 
-SCOPEDROLEMEMBERS <IMicrosoftGraphScopedRoleMembership[]>: .
+SCOPEDROLEMEMBERS <IMicrosoftGraphScopedRoleMembership[]>: Scoped-role members of this Administrative Unit. HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).
   - `[Id <String>]`: Read-only.
-  - `[AdministrativeUnitId <String>]`: 
-  - `[RoleId <String>]`: 
+  - `[AdministrativeUnitId <String>]`: Unique identifier for the administrative unit that the directory role is scoped to
+  - `[RoleId <String>]`: Unique identifier for the directory role that the member is in.
   - `[RoleMemberInfo <IMicrosoftGraphIdentity>]`: identity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
     - `[Id <String>]`: Unique identifier for the identity.
 
 ## RELATED LINKS
-

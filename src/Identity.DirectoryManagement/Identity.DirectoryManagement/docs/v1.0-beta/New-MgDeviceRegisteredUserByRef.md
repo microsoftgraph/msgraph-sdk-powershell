@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Identity.DirectoryManagement-help.xml
 Module Name: Microsoft.Graph.Identity.DirectoryManagement
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/new-mgdeviceregistereduserbyref
 schema: 2.0.0
@@ -8,56 +8,44 @@ schema: 2.0.0
 # New-MgDeviceRegisteredUserByRef
 
 ## SYNOPSIS
-Create new navigation property ref to registeredUsers for devices
+Collection of registered users of the device.
+For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
-### CreateExpanded (Default)
+### CreateExpanded1 (Default)
 ```
-New-MgDeviceRegisteredUserByRef -DeviceId <String> [-AdditionalProperties <Hashtable>] [-Confirm] [-WhatIf]
+New-MgDeviceRegisteredUserByRef -DeviceId <String> [-AdditionalProperties <Hashtable>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
-### Create
+### Create1
 ```
-New-MgDeviceRegisteredUserByRef -DeviceId <String> -BodyParameter <Hashtable> [-Confirm] [-WhatIf]
+New-MgDeviceRegisteredUserByRef -DeviceId <String> -BodyParameter <Hashtable> [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
-### CreateViaIdentity
-```
-New-MgDeviceRegisteredUserByRef -InputObject <IIdentityDirectoryManagementIdentity> -BodyParameter <Hashtable>
- [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### CreateViaIdentityExpanded
+### CreateViaIdentityExpanded1
 ```
 New-MgDeviceRegisteredUserByRef -InputObject <IIdentityDirectoryManagementIdentity>
- [-AdditionalProperties <Hashtable>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### CreateViaIdentity1
+```
+New-MgDeviceRegisteredUserByRef -InputObject <IIdentityDirectoryManagementIdentity> -BodyParameter <Hashtable>
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create new navigation property ref to registeredUsers for devices
+Collection of registered users of the device.
+For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration.
+Read-only.
+Nullable.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -65,8 +53,8 @@ PS C:\> {{ Add code here }}
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Type: Hashtable
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -80,8 +68,8 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: Create, CreateViaIdentity
+Type: Hashtable
+Parameter Sets: Create1, CreateViaIdentity1
 Aliases:
 
 Required: True
@@ -95,8 +83,8 @@ Accept wildcard characters: False
 key: id of device
 
 ```yaml
-Type: System.String
-Parameter Sets: Create, CreateExpanded
+Type: String
+Parameter Sets: CreateExpanded1, Create1
 Aliases:
 
 Required: True
@@ -111,8 +99,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
-Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
+Type: IIdentityDirectoryManagementIdentity
+Parameter Sets: CreateViaIdentityExpanded1, CreateViaIdentity1
 Aliases:
 
 Required: True
@@ -126,7 +114,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -142,7 +130,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -191,10 +179,12 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[FeatureRolloutPolicyId <String>]`: key: id of featureRolloutPolicy
   - `[OrgContactId <String>]`: key: id of orgContact
   - `[OrganizationId <String>]`: key: id of organization
-  - `[OrganizationalBrandingId <String>]`: key: id of organizationalBranding
+  - `[ProfileCardPropertyId <String>]`: key: id of profileCardProperty
   - `[ScopedRoleMembershipId <String>]`: key: id of scopedRoleMembership
+  - `[SharedEmailDomainId <String>]`: key: id of sharedEmailDomain
+  - `[SharedEmailDomainInvitationId <String>]`: key: id of sharedEmailDomainInvitation
   - `[SubscribedSkuId <String>]`: key: id of subscribedSku
+  - `[UsageRightId <String>]`: key: id of usageRight
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
-
