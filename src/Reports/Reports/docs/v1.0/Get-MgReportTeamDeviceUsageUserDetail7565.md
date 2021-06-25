@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Reports-help.xml
 Module Name: Microsoft.Graph.Reports
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports/get-mgreportteamdeviceusageuserdetail7565
 schema: 2.0.0
@@ -12,12 +12,12 @@ Invoke function getTeamsDeviceUsageUserDetail
 
 ## SYNTAX
 
-### Get (Default)
+### Get1 (Default)
 ```
 Get-MgReportTeamDeviceUsageUserDetail7565 -Period <String> -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
-### GetViaIdentity
+### GetViaIdentity1
 ```
 Get-MgReportTeamDeviceUsageUserDetail7565 -InputObject <IReportsIdentity> -OutFile <String> [-PassThru]
  [<CommonParameters>]
@@ -28,24 +28,6 @@ Invoke function getTeamsDeviceUsageUserDetail
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
 ### -InputObject
@@ -53,8 +35,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IReportsIdentity
-Parameter Sets: GetViaIdentity
+Type: IReportsIdentity
+Parameter Sets: GetViaIdentity1
 Aliases:
 
 Required: True
@@ -68,7 +50,7 @@ Accept wildcard characters: False
 Path to write output file to
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
 Aliases:
 
@@ -83,7 +65,7 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -95,11 +77,11 @@ Accept wildcard characters: False
 ```
 
 ### -Period
-.
+Usage: period={period}
 
 ```yaml
-Type: System.String
-Parameter Sets: Get
+Type: String
+Parameter Sets: Get1
 Aliases:
 
 Required: True
@@ -132,19 +114,28 @@ To create the parameters described below, construct a hash table containing the 
 INPUTOBJECT <IReportsIdentity>: Identity Parameter
   - `[ApplicationSignInDetailedSummaryId <String>]`: key: id of applicationSignInDetailedSummary
   - `[CredentialUserRegistrationDetailsId <String>]`: key: id of credentialUserRegistrationDetails
-  - `[Date <DateTime?>]`: 
+  - `[Date <DateTime?>]`: Usage: date={date}
+  - `[DeviceManagementCachedReportConfigurationId <String>]`: key: id of deviceManagementCachedReportConfiguration
+  - `[DeviceManagementExportJobId <String>]`: key: id of deviceManagementExportJob
+  - `[DeviceManagementReportScheduleId <String>]`: key: id of deviceManagementReportSchedule
   - `[DirectoryAuditId <String>]`: key: id of directoryAudit
-  - `[Filter <String>]`: 
-  - `[Period <String>]`: 
-  - `[PrintUsageSummaryByPrinterId <String>]`: key: id of PrintUsageSummaryByPrinter
-  - `[PrintUsageSummaryByUserId <String>]`: key: id of PrintUsageSummaryByUser
+  - `[EndDateTime <DateTime?>]`: Usage: endDateTime={endDateTime}
+  - `[Filter <String>]`: Usage: filter={filter}
+  - `[GroupId <String>]`: Usage: groupId={groupId}
+  - `[IncludedUserRoles <String>]`: Usage: includedUserRoles={includedUserRoles}
+  - `[IncludedUserTypes <String>]`: Usage: includedUserTypes={includedUserTypes}
+  - `[Period <String>]`: Usage: period={period}
+  - `[PrintUsageByPrinterId <String>]`: key: id of printUsageByPrinter
+  - `[PrintUsageByUserId <String>]`: key: id of printUsageByUser
+  - `[PrinterId <String>]`: Usage: printerId={printerId}
   - `[ProvisioningObjectSummaryId <String>]`: key: id of provisioningObjectSummary
   - `[RestrictedSignInId <String>]`: key: id of restrictedSignIn
   - `[SignInId <String>]`: key: id of signIn
-  - `[Skip <Int32?>]`: 
-  - `[SkipToken <String>]`: 
-  - `[Top <Int32?>]`: 
+  - `[Skip <Int32?>]`: Usage: skip={skip}
+  - `[SkipToken <String>]`: Usage: skipToken={skipToken}
+  - `[StartDateTime <DateTime?>]`: Usage: startDateTime={startDateTime}
+  - `[Top <Int32?>]`: Usage: top={top}
   - `[UserCredentialUsageDetailsId <String>]`: key: id of userCredentialUsageDetails
+  - `[UserId <String>]`: Usage: userId={userId}
 
 ## RELATED LINKS
-

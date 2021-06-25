@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Reports-help.xml
 Module Name: Microsoft.Graph.Reports
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports/get-mgreportmanageddeviceenrollmentabandonmentsummary
 schema: 2.0.0
@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgReportManagedDeviceEnrollmentAbandonmentSummary
 
 ## SYNOPSIS
-Invoke function managedDeviceEnrollmentAbandonmentSummary
+Metadata for Enrollment abandonment summary report
 
 ## SYNTAX
 
@@ -25,35 +25,17 @@ Get-MgReportManagedDeviceEnrollmentAbandonmentSummary -InputObject <IReportsIden
 ```
 
 ## DESCRIPTION
-Invoke function managedDeviceEnrollmentAbandonmentSummary
+Metadata for Enrollment abandonment summary report
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
 ### -Filter
-.
+Usage: filter={filter}
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Managed
 Aliases:
 
@@ -69,7 +51,7 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IReportsIdentity
+Type: IReportsIdentity
 Parameter Sets: ManagedViaIdentity
 Aliases:
 
@@ -84,7 +66,7 @@ Accept wildcard characters: False
 Path to write output file to
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
 Aliases:
 
@@ -99,7 +81,7 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -110,26 +92,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Skip
-.
-
-```yaml
-Type: System.Int32
-Parameter Sets: Managed
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -SkipToken
-.
+Usage: skipToken={skipToken}
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Managed
 Aliases:
 
@@ -141,12 +108,27 @@ Accept wildcard characters: False
 ```
 
 ### -Top
-.
+Usage: top={top}
 
 ```yaml
-Type: System.Int32
+Type: Int32
 Parameter Sets: Managed
 Aliases: Limit
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Skip
+Usage: skip={skip}
+
+```yaml
+Type: Int32
+Parameter Sets: Managed
+Aliases:
 
 Required: True
 Position: Named
@@ -178,19 +160,28 @@ To create the parameters described below, construct a hash table containing the 
 INPUTOBJECT <IReportsIdentity>: Identity Parameter
   - `[ApplicationSignInDetailedSummaryId <String>]`: key: id of applicationSignInDetailedSummary
   - `[CredentialUserRegistrationDetailsId <String>]`: key: id of credentialUserRegistrationDetails
-  - `[Date <DateTime?>]`: 
+  - `[Date <DateTime?>]`: Usage: date={date}
+  - `[DeviceManagementCachedReportConfigurationId <String>]`: key: id of deviceManagementCachedReportConfiguration
+  - `[DeviceManagementExportJobId <String>]`: key: id of deviceManagementExportJob
+  - `[DeviceManagementReportScheduleId <String>]`: key: id of deviceManagementReportSchedule
   - `[DirectoryAuditId <String>]`: key: id of directoryAudit
-  - `[Filter <String>]`: 
-  - `[Period <String>]`: 
-  - `[PrintUsageSummaryByPrinterId <String>]`: key: id of PrintUsageSummaryByPrinter
-  - `[PrintUsageSummaryByUserId <String>]`: key: id of PrintUsageSummaryByUser
+  - `[EndDateTime <DateTime?>]`: Usage: endDateTime={endDateTime}
+  - `[Filter <String>]`: Usage: filter={filter}
+  - `[GroupId <String>]`: Usage: groupId={groupId}
+  - `[IncludedUserRoles <String>]`: Usage: includedUserRoles={includedUserRoles}
+  - `[IncludedUserTypes <String>]`: Usage: includedUserTypes={includedUserTypes}
+  - `[Period <String>]`: Usage: period={period}
+  - `[PrintUsageByPrinterId <String>]`: key: id of printUsageByPrinter
+  - `[PrintUsageByUserId <String>]`: key: id of printUsageByUser
+  - `[PrinterId <String>]`: Usage: printerId={printerId}
   - `[ProvisioningObjectSummaryId <String>]`: key: id of provisioningObjectSummary
   - `[RestrictedSignInId <String>]`: key: id of restrictedSignIn
   - `[SignInId <String>]`: key: id of signIn
-  - `[Skip <Int32?>]`: 
-  - `[SkipToken <String>]`: 
-  - `[Top <Int32?>]`: 
+  - `[Skip <Int32?>]`: Usage: skip={skip}
+  - `[SkipToken <String>]`: Usage: skipToken={skipToken}
+  - `[StartDateTime <DateTime?>]`: Usage: startDateTime={startDateTime}
+  - `[Top <Int32?>]`: Usage: top={top}
   - `[UserCredentialUsageDetailsId <String>]`: key: id of userCredentialUsageDetails
+  - `[UserId <String>]`: Usage: userId={userId}
 
 ## RELATED LINKS
-

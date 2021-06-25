@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Reports-help.xml
 Module Name: Microsoft.Graph.Reports
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports/get-mgreportteamdeviceusageuserdetail7148
 schema: 2.0.0
@@ -12,12 +12,12 @@ Invoke function getTeamsDeviceUsageUserDetail
 
 ## SYNTAX
 
-### Get1 (Default)
+### Get (Default)
 ```
 Get-MgReportTeamDeviceUsageUserDetail7148 -Date <DateTime> [<CommonParameters>]
 ```
 
-### GetViaIdentity1
+### GetViaIdentity
 ```
 Get-MgReportTeamDeviceUsageUserDetail7148 -InputObject <IReportsIdentity> [<CommonParameters>]
 ```
@@ -27,32 +27,14 @@ Invoke function getTeamsDeviceUsageUserDetail
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
 ### -Date
-.
+Usage: date={date}
 
 ```yaml
-Type: System.DateTime
-Parameter Sets: Get1
+Type: DateTime
+Parameter Sets: Get
 Aliases:
 
 Required: True
@@ -67,8 +49,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IReportsIdentity
-Parameter Sets: GetViaIdentity1
+Type: IReportsIdentity
+Parameter Sets: GetViaIdentity
 Aliases:
 
 Required: True
@@ -101,19 +83,28 @@ To create the parameters described below, construct a hash table containing the 
 INPUTOBJECT <IReportsIdentity>: Identity Parameter
   - `[ApplicationSignInDetailedSummaryId <String>]`: key: id of applicationSignInDetailedSummary
   - `[CredentialUserRegistrationDetailsId <String>]`: key: id of credentialUserRegistrationDetails
-  - `[Date <DateTime?>]`: 
+  - `[Date <DateTime?>]`: Usage: date={date}
+  - `[DeviceManagementCachedReportConfigurationId <String>]`: key: id of deviceManagementCachedReportConfiguration
+  - `[DeviceManagementExportJobId <String>]`: key: id of deviceManagementExportJob
+  - `[DeviceManagementReportScheduleId <String>]`: key: id of deviceManagementReportSchedule
   - `[DirectoryAuditId <String>]`: key: id of directoryAudit
-  - `[Filter <String>]`: 
-  - `[Period <String>]`: 
-  - `[PrintUsageSummaryByPrinterId <String>]`: key: id of PrintUsageSummaryByPrinter
-  - `[PrintUsageSummaryByUserId <String>]`: key: id of PrintUsageSummaryByUser
+  - `[EndDateTime <DateTime?>]`: Usage: endDateTime={endDateTime}
+  - `[Filter <String>]`: Usage: filter={filter}
+  - `[GroupId <String>]`: Usage: groupId={groupId}
+  - `[IncludedUserRoles <String>]`: Usage: includedUserRoles={includedUserRoles}
+  - `[IncludedUserTypes <String>]`: Usage: includedUserTypes={includedUserTypes}
+  - `[Period <String>]`: Usage: period={period}
+  - `[PrintUsageByPrinterId <String>]`: key: id of printUsageByPrinter
+  - `[PrintUsageByUserId <String>]`: key: id of printUsageByUser
+  - `[PrinterId <String>]`: Usage: printerId={printerId}
   - `[ProvisioningObjectSummaryId <String>]`: key: id of provisioningObjectSummary
   - `[RestrictedSignInId <String>]`: key: id of restrictedSignIn
   - `[SignInId <String>]`: key: id of signIn
-  - `[Skip <Int32?>]`: 
-  - `[SkipToken <String>]`: 
-  - `[Top <Int32?>]`: 
+  - `[Skip <Int32?>]`: Usage: skip={skip}
+  - `[SkipToken <String>]`: Usage: skipToken={skipToken}
+  - `[StartDateTime <DateTime?>]`: Usage: startDateTime={startDateTime}
+  - `[Top <Int32?>]`: Usage: top={top}
   - `[UserCredentialUsageDetailsId <String>]`: key: id of userCredentialUsageDetails
+  - `[UserId <String>]`: Usage: userId={userId}
 
 ## RELATED LINKS
-

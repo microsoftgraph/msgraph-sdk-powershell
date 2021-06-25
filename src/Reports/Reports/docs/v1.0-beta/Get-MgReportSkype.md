@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Reports-help.xml
 Module Name: Microsoft.Graph.Reports
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports/get-mgreportskype
 schema: 2.0.0
@@ -8,81 +8,41 @@ schema: 2.0.0
 # Get-MgReportSkype
 
 ## SYNOPSIS
-Invoke function getSkypeForBusinessActivityCounts
+Invoke function getSkypeForBusinessActivityUserDetail
 
 ## SYNTAX
 
-### Get17 (Default)
+### Get (Default)
+```
+Get-MgReportSkype -Period <String> -InputObject <IReportsIdentity> [<CommonParameters>]
+```
+
+### Get9
+```
+Get-MgReportSkype -Period <String> -InputObject <IReportsIdentity> [<CommonParameters>]
+```
+
+### Get8
 ```
 Get-MgReportSkype -Period <String> [<CommonParameters>]
 ```
 
-### Get18
+### Get7
 ```
 Get-MgReportSkype -Period <String> [<CommonParameters>]
 ```
 
-### Get19
-```
-Get-MgReportSkype -Date <DateTime> [<CommonParameters>]
-```
-
-### Get20
+### Get6
 ```
 Get-MgReportSkype -Period <String> [<CommonParameters>]
 ```
 
-### Get21
+### Get5
 ```
 Get-MgReportSkype -Period <String> [<CommonParameters>]
 ```
 
-### Get22
-```
-Get-MgReportSkype -Period <String> [<CommonParameters>]
-```
-
-### Get23
-```
-Get-MgReportSkype -Date <DateTime> [<CommonParameters>]
-```
-
-### Get24
-```
-Get-MgReportSkype -Period <String> [<CommonParameters>]
-```
-
-### Get25
-```
-Get-MgReportSkype -Period <String> [<CommonParameters>]
-```
-
-### Get26
-```
-Get-MgReportSkype -Period <String> [<CommonParameters>]
-```
-
-### Get27
-```
-Get-MgReportSkype -Period <String> [<CommonParameters>]
-```
-
-### Get28
-```
-Get-MgReportSkype -Period <String> [<CommonParameters>]
-```
-
-### Get29
-```
-Get-MgReportSkype -Period <String> [<CommonParameters>]
-```
-
-### Get30
-```
-Get-MgReportSkype -Period <String> [<CommonParameters>]
-```
-
-### Get31
+### Get4
 ```
 Get-MgReportSkype -Period <String> [<CommonParameters>]
 ```
@@ -92,87 +52,77 @@ Get-MgReportSkype -Period <String> [<CommonParameters>]
 Get-MgReportSkype -Period <String> [<CommonParameters>]
 ```
 
-### Get33
+### Get31
 ```
 Get-MgReportSkype -Period <String> [<CommonParameters>]
 ```
 
-### GetViaIdentity17
+### Get2
+```
+Get-MgReportSkype -Period <String> [<CommonParameters>]
+```
+
+### Get13
+```
+Get-MgReportSkype -Period <String> [<CommonParameters>]
+```
+
+### Get12
+```
+Get-MgReportSkype -Period <String> [<CommonParameters>]
+```
+
+### Get11
+```
+Get-MgReportSkype -Period <String> [<CommonParameters>]
+```
+
+### Get10
+```
+Get-MgReportSkype -Period <String> [<CommonParameters>]
+```
+
+### Get1
+```
+Get-MgReportSkype -Period <String> [<CommonParameters>]
+```
+
+### Get33
+```
+Get-MgReportSkype -Date <DateTime> [<CommonParameters>]
+```
+
+### Get3
+```
+Get-MgReportSkype -Date <DateTime> [<CommonParameters>]
+```
+
+### GetViaIdentity9
 ```
 Get-MgReportSkype -InputObject <IReportsIdentity> [<CommonParameters>]
 ```
 
-### GetViaIdentity18
+### GetViaIdentity8
 ```
 Get-MgReportSkype -InputObject <IReportsIdentity> [<CommonParameters>]
 ```
 
-### GetViaIdentity19
+### GetViaIdentity7
 ```
 Get-MgReportSkype -InputObject <IReportsIdentity> [<CommonParameters>]
 ```
 
-### GetViaIdentity20
+### GetViaIdentity6
 ```
 Get-MgReportSkype -InputObject <IReportsIdentity> [<CommonParameters>]
 ```
 
-### GetViaIdentity21
+### GetViaIdentity5
 ```
 Get-MgReportSkype -InputObject <IReportsIdentity> [<CommonParameters>]
 ```
 
-### GetViaIdentity22
-```
-Get-MgReportSkype -InputObject <IReportsIdentity> [<CommonParameters>]
-```
-
-### GetViaIdentity23
-```
-Get-MgReportSkype -InputObject <IReportsIdentity> [<CommonParameters>]
-```
-
-### GetViaIdentity24
-```
-Get-MgReportSkype -InputObject <IReportsIdentity> [<CommonParameters>]
-```
-
-### GetViaIdentity25
-```
-Get-MgReportSkype -InputObject <IReportsIdentity> [<CommonParameters>]
-```
-
-### GetViaIdentity26
-```
-Get-MgReportSkype -InputObject <IReportsIdentity> [<CommonParameters>]
-```
-
-### GetViaIdentity27
-```
-Get-MgReportSkype -InputObject <IReportsIdentity> [<CommonParameters>]
-```
-
-### GetViaIdentity28
-```
-Get-MgReportSkype -InputObject <IReportsIdentity> [<CommonParameters>]
-```
-
-### GetViaIdentity29
-```
-Get-MgReportSkype -InputObject <IReportsIdentity> [<CommonParameters>]
-```
-
-### GetViaIdentity30
-```
-Get-MgReportSkype -InputObject <IReportsIdentity> [<CommonParameters>]
-```
-
-### GetViaIdentity31
-```
-Get-MgReportSkype -InputObject <IReportsIdentity> [<CommonParameters>]
-```
-
-### GetViaIdentity32
+### GetViaIdentity4
 ```
 Get-MgReportSkype -InputObject <IReportsIdentity> [<CommonParameters>]
 ```
@@ -182,37 +132,69 @@ Get-MgReportSkype -InputObject <IReportsIdentity> [<CommonParameters>]
 Get-MgReportSkype -InputObject <IReportsIdentity> [<CommonParameters>]
 ```
 
+### GetViaIdentity32
+```
+Get-MgReportSkype -InputObject <IReportsIdentity> [<CommonParameters>]
+```
+
+### GetViaIdentity31
+```
+Get-MgReportSkype -InputObject <IReportsIdentity> [<CommonParameters>]
+```
+
+### GetViaIdentity3
+```
+Get-MgReportSkype -InputObject <IReportsIdentity> [<CommonParameters>]
+```
+
+### GetViaIdentity2
+```
+Get-MgReportSkype -InputObject <IReportsIdentity> [<CommonParameters>]
+```
+
+### GetViaIdentity13
+```
+Get-MgReportSkype -InputObject <IReportsIdentity> [<CommonParameters>]
+```
+
+### GetViaIdentity12
+```
+Get-MgReportSkype -InputObject <IReportsIdentity> [<CommonParameters>]
+```
+
+### GetViaIdentity11
+```
+Get-MgReportSkype -InputObject <IReportsIdentity> [<CommonParameters>]
+```
+
+### GetViaIdentity10
+```
+Get-MgReportSkype -InputObject <IReportsIdentity> [<CommonParameters>]
+```
+
+### Get (Default)
+```
+Get-MgReportSkype -Period <String> -InputObject <IReportsIdentity> [<CommonParameters>]
+```
+
+### Get9
+```
+Get-MgReportSkype -Period <String> -InputObject <IReportsIdentity> [<CommonParameters>]
+```
+
 ## DESCRIPTION
-Invoke function getSkypeForBusinessActivityCounts
+Invoke function getSkypeForBusinessActivityUserDetail
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
 ### -Date
-.
+Usage: date={date}
 
 ```yaml
-Type: System.DateTime
-Parameter Sets: Get19, Get23
+Type: DateTime
+Parameter Sets: Get33, Get3
 Aliases:
 
 Required: True
@@ -227,8 +209,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IReportsIdentity
-Parameter Sets: GetViaIdentity17, GetViaIdentity18, GetViaIdentity19, GetViaIdentity20, GetViaIdentity21, GetViaIdentity22, GetViaIdentity23, GetViaIdentity24, GetViaIdentity25, GetViaIdentity26, GetViaIdentity27, GetViaIdentity28, GetViaIdentity29, GetViaIdentity30, GetViaIdentity31, GetViaIdentity32, GetViaIdentity33
+Type: IReportsIdentity
+Parameter Sets: Get, Get9, GetViaIdentity9, GetViaIdentity8, GetViaIdentity7, GetViaIdentity6, GetViaIdentity5, GetViaIdentity4, GetViaIdentity33, GetViaIdentity32, GetViaIdentity31, GetViaIdentity3, GetViaIdentity2, GetViaIdentity13, GetViaIdentity12, GetViaIdentity11, GetViaIdentity10
 Aliases:
 
 Required: True
@@ -239,11 +221,11 @@ Accept wildcard characters: False
 ```
 
 ### -Period
-.
+Usage: period={period}
 
 ```yaml
-Type: System.String
-Parameter Sets: Get17, Get18, Get20, Get21, Get22, Get24, Get25, Get26, Get27, Get28, Get29, Get30, Get31, Get32, Get33
+Type: String
+Parameter Sets: Get, Get9, Get8, Get7, Get6, Get5, Get4, Get32, Get31, Get2, Get13, Get12, Get11, Get10, Get1
 Aliases:
 
 Required: True
@@ -304,19 +286,28 @@ To create the parameters described below, construct a hash table containing the 
 INPUTOBJECT <IReportsIdentity>: Identity Parameter
   - `[ApplicationSignInDetailedSummaryId <String>]`: key: id of applicationSignInDetailedSummary
   - `[CredentialUserRegistrationDetailsId <String>]`: key: id of credentialUserRegistrationDetails
-  - `[Date <DateTime?>]`: 
+  - `[Date <DateTime?>]`: Usage: date={date}
+  - `[DeviceManagementCachedReportConfigurationId <String>]`: key: id of deviceManagementCachedReportConfiguration
+  - `[DeviceManagementExportJobId <String>]`: key: id of deviceManagementExportJob
+  - `[DeviceManagementReportScheduleId <String>]`: key: id of deviceManagementReportSchedule
   - `[DirectoryAuditId <String>]`: key: id of directoryAudit
-  - `[Filter <String>]`: 
-  - `[Period <String>]`: 
-  - `[PrintUsageSummaryByPrinterId <String>]`: key: id of PrintUsageSummaryByPrinter
-  - `[PrintUsageSummaryByUserId <String>]`: key: id of PrintUsageSummaryByUser
+  - `[EndDateTime <DateTime?>]`: Usage: endDateTime={endDateTime}
+  - `[Filter <String>]`: Usage: filter={filter}
+  - `[GroupId <String>]`: Usage: groupId={groupId}
+  - `[IncludedUserRoles <String>]`: Usage: includedUserRoles={includedUserRoles}
+  - `[IncludedUserTypes <String>]`: Usage: includedUserTypes={includedUserTypes}
+  - `[Period <String>]`: Usage: period={period}
+  - `[PrintUsageByPrinterId <String>]`: key: id of printUsageByPrinter
+  - `[PrintUsageByUserId <String>]`: key: id of printUsageByUser
+  - `[PrinterId <String>]`: Usage: printerId={printerId}
   - `[ProvisioningObjectSummaryId <String>]`: key: id of provisioningObjectSummary
   - `[RestrictedSignInId <String>]`: key: id of restrictedSignIn
   - `[SignInId <String>]`: key: id of signIn
-  - `[Skip <Int32?>]`: 
-  - `[SkipToken <String>]`: 
-  - `[Top <Int32?>]`: 
+  - `[Skip <Int32?>]`: Usage: skip={skip}
+  - `[SkipToken <String>]`: Usage: skipToken={skipToken}
+  - `[StartDateTime <DateTime?>]`: Usage: startDateTime={startDateTime}
+  - `[Top <Int32?>]`: Usage: top={top}
   - `[UserCredentialUsageDetailsId <String>]`: key: id of userCredentialUsageDetails
+  - `[UserId <String>]`: Usage: userId={userId}
 
 ## RELATED LINKS
-
