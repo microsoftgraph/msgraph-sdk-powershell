@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Bookings-help.xml
 Module Name: Microsoft.Graph.Bookings
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.bookings/new-mgbookingbusinessstaffmember
 schema: 2.0.0
@@ -8,7 +8,9 @@ schema: 2.0.0
 # New-MgBookingBusinessStaffMember
 
 ## SYNOPSIS
-Create new navigation property to staffMembers for bookingBusinesses
+All the staff members that provide services in this business.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -17,19 +19,13 @@ Create new navigation property to staffMembers for bookingBusinesses
 New-MgBookingBusinessStaffMember -BookingBusinessId <String> [-AdditionalProperties <Hashtable>]
  [-AvailabilityIsAffectedByPersonalCalendar] [-ColorIndex <Int32>] [-DisplayName <String>]
  [-EmailAddress <String>] [-Id <String>] [-Role <String>] [-UseBusinessHours]
- [-WorkingHours <IMicrosoftGraphBookingWorkHours[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-WorkingHours <IMicrosoftGraphBookingWorkHours[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBookingBusinessStaffMember -BookingBusinessId <String>
- -BodyParameter <IMicrosoftGraphBookingStaffMember> [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### CreateViaIdentity
-```
-New-MgBookingBusinessStaffMember -InputObject <IBookingsIdentity>
- -BodyParameter <IMicrosoftGraphBookingStaffMember> [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBookingBusinessStaffMember -BookingBusinessId <String> -BodyParameter <IMicrosoftGraphBookingStaffMember>
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -37,31 +33,21 @@ New-MgBookingBusinessStaffMember -InputObject <IBookingsIdentity>
 New-MgBookingBusinessStaffMember -InputObject <IBookingsIdentity> [-AdditionalProperties <Hashtable>]
  [-AvailabilityIsAffectedByPersonalCalendar] [-ColorIndex <Int32>] [-DisplayName <String>]
  [-EmailAddress <String>] [-Id <String>] [-Role <String>] [-UseBusinessHours]
- [-WorkingHours <IMicrosoftGraphBookingWorkHours[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-WorkingHours <IMicrosoftGraphBookingWorkHours[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### CreateViaIdentity
+```
+New-MgBookingBusinessStaffMember -InputObject <IBookingsIdentity>
+ -BodyParameter <IMicrosoftGraphBookingStaffMember> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create new navigation property to staffMembers for bookingBusinesses
+All the staff members that provide services in this business.
+Read-only.
+Nullable.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -69,7 +55,7 @@ PS C:\> {{ Add code here }}
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -81,10 +67,10 @@ Accept wildcard characters: False
 ```
 
 ### -AvailabilityIsAffectedByPersonalCalendar
-.
+True means that if the staff member is a Microsoft 365 user, the Bookings API would verify the staff member's availability in their personal calendar in Microsoft 365, before making a booking.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -100,7 +86,7 @@ Represents a staff member who provides services in a business.
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingStaffMember
+Type: IMicrosoftGraphBookingStaffMember
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -115,8 +101,8 @@ Accept wildcard characters: False
 key: id of bookingBusiness
 
 ```yaml
-Type: System.String
-Parameter Sets: Create, CreateExpanded
+Type: String
+Parameter Sets: CreateExpanded, Create
 Aliases:
 
 Required: True
@@ -127,10 +113,11 @@ Accept wildcard characters: False
 ```
 
 ### -ColorIndex
-.
+Identifies a color to represent the staff member.
+The color corresponds to the color palette in the Staff details page in the Bookings app.
 
 ```yaml
-Type: System.Int32
+Type: Int32
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -142,10 +129,10 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-Display name of this entity.
+A name for the derived entity, which interfaces with customers.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -157,10 +144,10 @@ Accept wildcard characters: False
 ```
 
 ### -EmailAddress
-The e-mail address of this person.
+The email address of the person.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -175,7 +162,7 @@ Accept wildcard characters: False
 Read-only.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -191,8 +178,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IBookingsIdentity
-Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
+Type: IBookingsIdentity
+Parameter Sets: CreateViaIdentityExpanded, CreateViaIdentity
 Aliases:
 
 Required: True
@@ -206,7 +193,7 @@ Accept wildcard characters: False
 bookingStaffRole
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -218,10 +205,11 @@ Accept wildcard characters: False
 ```
 
 ### -UseBusinessHours
-.
+True means the staff member's availability is as specified in the businessHours property of the business.
+False means the availability is determined by the staff member's workingHours property setting.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -233,11 +221,12 @@ Accept wildcard characters: False
 ```
 
 ### -WorkingHours
-.
+The range of hours each day of the week that the staff member is available for booking.
+By default, they are initialized to be the same as the businessHours property of the business.
 To construct, see NOTES section for WORKINGHOURS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingWorkHours[]
+Type: IMicrosoftGraphBookingWorkHours[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -252,7 +241,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -268,7 +257,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -303,18 +292,18 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphBookingStaffMember>: Represents a staff member who provides services in a business.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[EmailAddress <String>]`: The e-mail address of this person.
-  - `[DisplayName <String>]`: Display name of this entity.
+  - `[EmailAddress <String>]`: The email address of the person.
+  - `[DisplayName <String>]`: A name for the derived entity, which interfaces with customers.
   - `[Id <String>]`: Read-only.
-  - `[AvailabilityIsAffectedByPersonalCalendar <Boolean?>]`: 
-  - `[ColorIndex <Int32?>]`: 
+  - `[AvailabilityIsAffectedByPersonalCalendar <Boolean?>]`: True means that if the staff member is a Microsoft 365 user, the Bookings API would verify the staff member's availability in their personal calendar in Microsoft 365, before making a booking.
+  - `[ColorIndex <Int32?>]`: Identifies a color to represent the staff member. The color corresponds to the color palette in the Staff details page in the Bookings app.
   - `[Role <String>]`: bookingStaffRole
-  - `[UseBusinessHours <Boolean?>]`: 
-  - `[WorkingHours <IMicrosoftGraphBookingWorkHours[]>]`: 
+  - `[UseBusinessHours <Boolean?>]`: True means the staff member's availability is as specified in the businessHours property of the business. False means the availability is determined by the staff member's workingHours property setting.
+  - `[WorkingHours <IMicrosoftGraphBookingWorkHours[]>]`: The range of hours each day of the week that the staff member is available for booking. By default, they are initialized to be the same as the businessHours property of the business.
     - `[Day <String>]`: dayOfWeek
     - `[TimeSlots <IMicrosoftGraphBookingWorkTimeSlot[]>]`: A list of start/end times during a day.
-      - `[End <String>]`: 
-      - `[Start <String>]`: 
+      - `[End <String>]`: The time of the day that work starts. For example, 08:00:00.0000000.
+      - `[Start <String>]`: The time of the day that work stops. For example, 17:00:00.0000000.
 
 INPUTOBJECT <IBookingsIdentity>: Identity Parameter
   - `[BookingAppointmentId <String>]`: key: id of bookingAppointment
@@ -324,11 +313,10 @@ INPUTOBJECT <IBookingsIdentity>: Identity Parameter
   - `[BookingServiceId <String>]`: key: id of bookingService
   - `[BookingStaffMemberId <String>]`: key: id of bookingStaffMember
 
-WORKINGHOURS <IMicrosoftGraphBookingWorkHours[]>: .
+WORKINGHOURS <IMicrosoftGraphBookingWorkHours[]>: The range of hours each day of the week that the staff member is available for booking. By default, they are initialized to be the same as the businessHours property of the business.
   - `[Day <String>]`: dayOfWeek
   - `[TimeSlots <IMicrosoftGraphBookingWorkTimeSlot[]>]`: A list of start/end times during a day.
-    - `[End <String>]`: 
-    - `[Start <String>]`: 
+    - `[End <String>]`: The time of the day that work starts. For example, 08:00:00.0000000.
+    - `[Start <String>]`: The time of the day that work stops. For example, 17:00:00.0000000.
 
 ## RELATED LINKS
-
