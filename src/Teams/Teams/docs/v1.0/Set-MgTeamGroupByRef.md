@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Teams-help.xml
 Module Name: Microsoft.Graph.Teams
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/set-mgteamgroupbyref
 schema: 2.0.0
@@ -12,28 +12,28 @@ Update the ref of navigation property group in teams
 
 ## SYNTAX
 
-### UpdateExpanded (Default)
+### SetExpanded1 (Default)
 ```
-Set-MgTeamGroupByRef -TeamId <String> [-AdditionalProperties <Hashtable>] [-PassThru] [-Confirm] [-WhatIf]
+Set-MgTeamGroupByRef -TeamId <String> [-AdditionalProperties <Hashtable>] [-PassThru] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
-### Update
+### Set1
 ```
-Set-MgTeamGroupByRef -TeamId <String> -BodyParameter <Hashtable> [-PassThru] [-Confirm] [-WhatIf]
+Set-MgTeamGroupByRef -TeamId <String> -BodyParameter <Hashtable> [-PassThru] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
-### UpdateViaIdentity
+### SetViaIdentityExpanded1
 ```
-Set-MgTeamGroupByRef -InputObject <ITeamsIdentity> -BodyParameter <Hashtable> [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Set-MgTeamGroupByRef -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>] [-PassThru] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
-### UpdateViaIdentityExpanded
+### SetViaIdentity1
 ```
-Set-MgTeamGroupByRef -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Set-MgTeamGroupByRef -InputObject <ITeamsIdentity> -BodyParameter <Hashtable> [-PassThru] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -41,32 +41,14 @@ Update the ref of navigation property group in teams
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
 ### -AdditionalProperties
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Type: Hashtable
+Parameter Sets: SetExpanded1, SetViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -80,8 +62,8 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: Update, UpdateViaIdentity
+Type: Hashtable
+Parameter Sets: Set1, SetViaIdentity1
 Aliases:
 
 Required: True
@@ -96,8 +78,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
-Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
+Type: ITeamsIdentity
+Parameter Sets: SetViaIdentityExpanded1, SetViaIdentity1
 Aliases:
 
 Required: True
@@ -111,7 +93,7 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -126,8 +108,8 @@ Accept wildcard characters: False
 key: id of team
 
 ```yaml
-Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Type: String
+Parameter Sets: SetExpanded1, Set1
 Aliases:
 
 Required: True
@@ -141,7 +123,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -157,7 +139,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -201,13 +183,19 @@ INPUTOBJECT <ITeamsIdentity>: Identity Parameter
   - `[OfferShiftRequestId <String>]`: key: id of offerShiftRequest
   - `[OpenShiftChangeRequestId <String>]`: key: id of openShiftChangeRequest
   - `[OpenShiftId <String>]`: key: id of openShift
+  - `[ResourceSpecificPermissionGrantId <String>]`: key: id of resourceSpecificPermissionGrant
   - `[SchedulingGroupId <String>]`: key: id of schedulingGroup
   - `[ShiftId <String>]`: key: id of shift
   - `[SwapShiftsChangeRequestId <String>]`: key: id of swapShiftsChangeRequest
   - `[TeamId <String>]`: key: id of team
+  - `[TeamsAppDefinitionId <String>]`: key: id of teamsAppDefinition
+  - `[TeamsAppId <String>]`: key: id of teamsApp
   - `[TeamsAppInstallationId <String>]`: key: id of teamsAppInstallation
   - `[TeamsAsyncOperationId <String>]`: key: id of teamsAsyncOperation
   - `[TeamsTabId <String>]`: key: id of teamsTab
+  - `[TeamworkTagId <String>]`: key: id of teamworkTag
+  - `[TeamworkTagMemberId <String>]`: key: id of teamworkTagMember
+  - `[TimeCardId <String>]`: key: id of timeCard
   - `[TimeOffId <String>]`: key: id of timeOff
   - `[TimeOffReasonId <String>]`: key: id of timeOffReason
   - `[TimeOffRequestId <String>]`: key: id of timeOffRequest
@@ -216,4 +204,3 @@ INPUTOBJECT <ITeamsIdentity>: Identity Parameter
   - `[WorkforceIntegrationId <String>]`: key: id of workforceIntegration
 
 ## RELATED LINKS
-

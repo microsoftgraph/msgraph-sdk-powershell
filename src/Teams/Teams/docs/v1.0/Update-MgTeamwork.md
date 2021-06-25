@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Teams-help.xml
 Module Name: Microsoft.Graph.Teams
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/update-mgteamwork
 schema: 2.0.0
@@ -15,13 +15,13 @@ Update teamwork
 ### UpdateExpanded1 (Default)
 ```
 Update-MgTeamwork [-AdditionalProperties <Hashtable>] [-Id <String>]
- [-WorkforceIntegrations <IMicrosoftGraphWorkforceIntegration[]>] [-PassThru] [-Confirm] [-WhatIf]
+ [-WorkforceIntegrations <IMicrosoftGraphWorkforceIntegration1[]>] [-PassThru] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ### Update1
 ```
-Update-MgTeamwork -BodyParameter <IMicrosoftGraphTeamwork1> [-PassThru] [-Confirm] [-WhatIf]
+Update-MgTeamwork -BodyParameter <IMicrosoftGraphTeamwork1> [-PassThru] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
@@ -30,31 +30,13 @@ Update teamwork
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
 ### -AdditionalProperties
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: UpdateExpanded1
 Aliases:
 
@@ -70,7 +52,7 @@ teamwork
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamwork1
+Type: IMicrosoftGraphTeamwork1
 Parameter Sets: Update1
 Aliases:
 
@@ -85,7 +67,7 @@ Accept wildcard characters: False
 Read-only.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: UpdateExpanded1
 Aliases:
 
@@ -100,7 +82,7 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -116,7 +98,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for WORKFORCEINTEGRATIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWorkforceIntegration[]
+Type: IMicrosoftGraphWorkforceIntegration1[]
 Parameter Sets: UpdateExpanded1
 Aliases:
 
@@ -131,7 +113,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -147,7 +129,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -181,8 +163,8 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphTeamwork1>: teamwork
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
-  - `[WorkforceIntegrations <IMicrosoftGraphWorkforceIntegration[]>]`: 
-    - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
+  - `[WorkforceIntegrations <IMicrosoftGraphWorkforceIntegration1[]>]`: 
+    - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Application <IMicrosoftGraphIdentity>]`: identity
@@ -191,7 +173,7 @@ BODYPARAMETER <IMicrosoftGraphTeamwork1>: teamwork
         - `[Id <String>]`: Unique identifier for the identity.
       - `[Device <IMicrosoftGraphIdentity>]`: identity
       - `[User <IMicrosoftGraphIdentity>]`: identity
-    - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
+    - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     - `[Id <String>]`: Read-only.
     - `[ApiVersion <Int32?>]`: API version for the call back URL. Start with 1.
     - `[DisplayName <String>]`: Name of the workforce integration.
@@ -200,11 +182,11 @@ BODYPARAMETER <IMicrosoftGraphTeamwork1>: teamwork
       - `[Protocol <String>]`: workforceIntegrationEncryptionProtocol
       - `[Secret <String>]`: Encryption shared secret.
     - `[IsActive <Boolean?>]`: Indicates whether this workforce integration is currently active and available.
-    - `[SupportedEntities <String>]`: workforceIntegrationSupportedEntities
+    - `[SupportedEntities <String>]`: 
     - `[Url <String>]`: Workforce Integration URL for callbacks from the Shifts service.
 
-WORKFORCEINTEGRATIONS <IMicrosoftGraphWorkforceIntegration[]>: .
-  - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
+WORKFORCEINTEGRATIONS <IMicrosoftGraphWorkforceIntegration1[]>: .
+  - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
@@ -213,7 +195,7 @@ WORKFORCEINTEGRATIONS <IMicrosoftGraphWorkforceIntegration[]>: .
       - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
-  - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
+  - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[Id <String>]`: Read-only.
   - `[ApiVersion <Int32?>]`: API version for the call back URL. Start with 1.
   - `[DisplayName <String>]`: Name of the workforce integration.
@@ -222,8 +204,7 @@ WORKFORCEINTEGRATIONS <IMicrosoftGraphWorkforceIntegration[]>: .
     - `[Protocol <String>]`: workforceIntegrationEncryptionProtocol
     - `[Secret <String>]`: Encryption shared secret.
   - `[IsActive <Boolean?>]`: Indicates whether this workforce integration is currently active and available.
-  - `[SupportedEntities <String>]`: workforceIntegrationSupportedEntities
+  - `[SupportedEntities <String>]`: 
   - `[Url <String>]`: Workforce Integration URL for callbacks from the Shifts service.
 
 ## RELATED LINKS
-
