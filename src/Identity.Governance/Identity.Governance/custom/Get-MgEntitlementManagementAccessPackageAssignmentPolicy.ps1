@@ -162,7 +162,7 @@ process {
         $PSBoundParameters['All'] = $true
     }
 
-    Microsoft.Graph.Identity.Governance.private\Get-MgEntitlementManagementAccessPackageAssignmentPolicy_List1 @PSBoundParameters
+    Microsoft.Graph.Identity.Governance.private\Get-MgEntitlementManagementAccessPackageAssignmentPolicy_List @PSBoundParameters
 }
 
 end {
