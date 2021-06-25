@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Notes-help.xml
 Module Name: Microsoft.Graph.Notes
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.notes/remove-mgsiteonenotesection
 schema: 2.0.0
@@ -8,44 +8,30 @@ schema: 2.0.0
 # Remove-MgSiteOnenoteSection
 
 ## SYNOPSIS
-Delete navigation property sections for sites
+The sections in all OneNote notebooks that are owned by the user or group.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
 ### Delete1 (Default)
 ```
 Remove-MgSiteOnenoteSection -OnenoteSectionId <String> -SiteId <String> [-IfMatch <String>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity1
 ```
-Remove-MgSiteOnenoteSection -InputObject <INotesIdentity> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
+Remove-MgSiteOnenoteSection -InputObject <INotesIdentity> [-IfMatch <String>] [-PassThru] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Delete navigation property sections for sites
+The sections in all OneNote notebooks that are owned by the user or group.
+Read-only.
+Nullable.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -53,7 +39,7 @@ PS C:\> {{ Add code here }}
 ETag
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
 Aliases:
 
@@ -69,7 +55,7 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.INotesIdentity
+Type: INotesIdentity
 Parameter Sets: DeleteViaIdentity1
 Aliases:
 
@@ -84,7 +70,7 @@ Accept wildcard characters: False
 key: id of onenoteSection
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Delete1
 Aliases:
 
@@ -99,7 +85,7 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -114,7 +100,7 @@ Accept wildcard characters: False
 key: id of site
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Delete1
 Aliases:
 
@@ -129,7 +115,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -145,7 +131,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -188,4 +174,3 @@ INPUTOBJECT <INotesIdentity>: Identity Parameter
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
-

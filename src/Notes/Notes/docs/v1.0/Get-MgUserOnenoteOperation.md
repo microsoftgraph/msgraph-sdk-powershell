@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Notes-help.xml
 Module Name: Microsoft.Graph.Notes
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.notes/get-mguseronenoteoperation
 schema: 2.0.0
@@ -8,7 +8,10 @@ schema: 2.0.0
 # Get-MgUserOnenoteOperation
 
 ## SYNOPSIS
-Get operations from users
+The status of OneNote operations.
+Getting an operations collection is not supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -25,27 +28,12 @@ Get-MgUserOnenoteOperation -InputObject <INotesIdentity> [-ExpandProperty <Strin
 ```
 
 ## DESCRIPTION
-Get operations from users
+The status of OneNote operations.
+Getting an operations collection is not supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response.
+Read-only.
+Nullable.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -53,7 +41,7 @@ PS C:\> {{ Add code here }}
 Expand related entities
 
 ```yaml
-Type: System.String[]
+Type: String[]
 Parameter Sets: (All)
 Aliases: Expand
 
@@ -69,7 +57,7 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.INotesIdentity
+Type: INotesIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -84,7 +72,7 @@ Accept wildcard characters: False
 key: id of onenoteOperation
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Get
 Aliases:
 
@@ -99,7 +87,7 @@ Accept wildcard characters: False
 Select properties to be returned
 
 ```yaml
-Type: System.String[]
+Type: String[]
 Parameter Sets: (All)
 Aliases: Select
 
@@ -114,7 +102,7 @@ Accept wildcard characters: False
 key: id of user
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Get
 Aliases:
 
@@ -157,4 +145,3 @@ INPUTOBJECT <INotesIdentity>: Identity Parameter
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
-
