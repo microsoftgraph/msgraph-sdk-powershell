@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Identity.SignIns-help.xml
 Module Name: Microsoft.Graph.Identity.SignIns
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/update-mgpolicydirectoryroleaccessreviewpolicy
 schema: 2.0.0
@@ -15,14 +15,14 @@ Update the navigation property directoryRoleAccessReviewPolicy in policies
 ### UpdateExpanded (Default)
 ```
 Update-MgPolicyDirectoryRoleAccessReviewPolicy [-AdditionalProperties <Hashtable>] [-Id <String>]
- [-Settings <IMicrosoftGraphAccessReviewScheduleSettings>] [-PassThru] [-Confirm] [-WhatIf]
+ [-Settings <IMicrosoftGraphAccessReviewScheduleSettings>] [-PassThru] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgPolicyDirectoryRoleAccessReviewPolicy -BodyParameter <IMicrosoftGraphDirectoryRoleAccessReviewPolicy>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -30,31 +30,13 @@ Update the navigation property directoryRoleAccessReviewPolicy in policies
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
 ### -AdditionalProperties
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -70,7 +52,7 @@ directoryRoleAccessReviewPolicy
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryRoleAccessReviewPolicy
+Type: IMicrosoftGraphDirectoryRoleAccessReviewPolicy
 Parameter Sets: Update
 Aliases:
 
@@ -85,7 +67,7 @@ Accept wildcard characters: False
 Read-only.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -100,7 +82,7 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -116,7 +98,7 @@ accessReviewScheduleSettings
 To construct, see NOTES section for SETTINGS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewScheduleSettings
+Type: IMicrosoftGraphAccessReviewScheduleSettings
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -131,7 +113,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -147,7 +129,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -183,20 +165,20 @@ BODYPARAMETER <IMicrosoftGraphDirectoryRoleAccessReviewPolicy>: directoryRoleAcc
   - `[Id <String>]`: Read-only.
   - `[Settings <IMicrosoftGraphAccessReviewScheduleSettings>]`: accessReviewScheduleSettings
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[ApplyActions <IMicrosoftGraphAccessReviewApplyAction[]>]`: 
-    - `[AutoApplyDecisionsEnabled <Boolean?>]`: 
-    - `[DefaultDecision <String>]`: 
-    - `[DefaultDecisionEnabled <Boolean?>]`: 
-    - `[InstanceDurationInDays <Int32?>]`: 
-    - `[JustificationRequiredOnApproval <Boolean?>]`: 
-    - `[MailNotificationsEnabled <Boolean?>]`: 
-    - `[RecommendationsEnabled <Boolean?>]`: 
+    - `[ApplyActions <IMicrosoftGraphAccessReviewApplyAction[]>]`: Optional field. Describes the  actions to take once a review is complete. There are two types that are currently supported: removeAccessApplyAction (default) and disableAndDeleteUserApplyAction. Field only needs to be specified in the case of disableAndDeleteUserApplyAction. See accessReviewApplyAction.
+    - `[AutoApplyDecisionsEnabled <Boolean?>]`: Indicates whether decisions are automatically applied. When set to false, a user must apply the decisions manually once the reviewer completes the access review. When set to true, decisions are applied automatically after the access review instance duration ends, whether or not the reviewers have responded. Default value is false.
+    - `[DefaultDecision <String>]`: Decision chosen if defaultDecisionEnabled is enabled. Can be one of Approve, Deny, or Recommendation.
+    - `[DefaultDecisionEnabled <Boolean?>]`: Indicates whether the default decision is enabled or disabled when reviewers do not respond. Default value is false.
+    - `[InstanceDurationInDays <Int32?>]`: Duration of each recurrence of review (accessReviewInstance) in number of days.
+    - `[JustificationRequiredOnApproval <Boolean?>]`: Indicates whether reviewers are required to provide justification with their decision. Default value is false.
+    - `[MailNotificationsEnabled <Boolean?>]`: Indicates whether emails are enabled or disabled. Default value is false.
+    - `[RecommendationsEnabled <Boolean?>]`: Indicates whether decision recommendations are enabled/disabled.
     - `[Recurrence <IMicrosoftGraphPatternedRecurrence>]`: patternedRecurrence
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Pattern <IMicrosoftGraphRecurrencePattern>]`: recurrencePattern
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[DayOfMonth <Int32?>]`: The day of the month on which the event occurs. Required if type is absoluteMonthly or absoluteYearly.
-        - `[DaysOfWeek <String[]>]`: A collection of the days of the week on which the event occurs. The possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. If type is relativeMonthly or relativeYearly, and daysOfWeek specifies more than one day, the event falls on the first day that satisfies the pattern.  Required if type is weekly, relativeMonthly, or relativeYearly.
+        - `[DaysOfWeek <String[]>]`: A collection of the days of the week on which the event occurs. Possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. If type is relativeMonthly or relativeYearly, and daysOfWeek specifies more than one day, the event falls on the first day that satisfies the pattern.  Required if type is weekly, relativeMonthly, or relativeYearly.
         - `[FirstDayOfWeek <String>]`: dayOfWeek
         - `[Index <String>]`: weekIndex
         - `[Interval <Int32?>]`: The number of units between occurrences, where units can be in days, weeks, months, or years, depending on the type. Required.
@@ -209,24 +191,24 @@ BODYPARAMETER <IMicrosoftGraphDirectoryRoleAccessReviewPolicy>: directoryRoleAcc
         - `[RecurrenceTimeZone <String>]`: Time zone for the startDate and endDate properties. Optional. If not specified, the time zone of the event is used.
         - `[StartDate <DateTime?>]`: The date to start applying the recurrence pattern. The first occurrence of the meeting may be this date or later, depending on the recurrence pattern of the event. Must be the same value as the start property of the recurring event. Required.
         - `[Type <String>]`: recurrenceRangeType
-    - `[ReminderNotificationsEnabled <Boolean?>]`: 
+    - `[ReminderNotificationsEnabled <Boolean?>]`: Indicates whether reminders are enabled or disabled. Default value is false.
 
 SETTINGS <IMicrosoftGraphAccessReviewScheduleSettings>: accessReviewScheduleSettings
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[ApplyActions <IMicrosoftGraphAccessReviewApplyAction[]>]`: 
-  - `[AutoApplyDecisionsEnabled <Boolean?>]`: 
-  - `[DefaultDecision <String>]`: 
-  - `[DefaultDecisionEnabled <Boolean?>]`: 
-  - `[InstanceDurationInDays <Int32?>]`: 
-  - `[JustificationRequiredOnApproval <Boolean?>]`: 
-  - `[MailNotificationsEnabled <Boolean?>]`: 
-  - `[RecommendationsEnabled <Boolean?>]`: 
+  - `[ApplyActions <IMicrosoftGraphAccessReviewApplyAction[]>]`: Optional field. Describes the  actions to take once a review is complete. There are two types that are currently supported: removeAccessApplyAction (default) and disableAndDeleteUserApplyAction. Field only needs to be specified in the case of disableAndDeleteUserApplyAction. See accessReviewApplyAction.
+  - `[AutoApplyDecisionsEnabled <Boolean?>]`: Indicates whether decisions are automatically applied. When set to false, a user must apply the decisions manually once the reviewer completes the access review. When set to true, decisions are applied automatically after the access review instance duration ends, whether or not the reviewers have responded. Default value is false.
+  - `[DefaultDecision <String>]`: Decision chosen if defaultDecisionEnabled is enabled. Can be one of Approve, Deny, or Recommendation.
+  - `[DefaultDecisionEnabled <Boolean?>]`: Indicates whether the default decision is enabled or disabled when reviewers do not respond. Default value is false.
+  - `[InstanceDurationInDays <Int32?>]`: Duration of each recurrence of review (accessReviewInstance) in number of days.
+  - `[JustificationRequiredOnApproval <Boolean?>]`: Indicates whether reviewers are required to provide justification with their decision. Default value is false.
+  - `[MailNotificationsEnabled <Boolean?>]`: Indicates whether emails are enabled or disabled. Default value is false.
+  - `[RecommendationsEnabled <Boolean?>]`: Indicates whether decision recommendations are enabled/disabled.
   - `[Recurrence <IMicrosoftGraphPatternedRecurrence>]`: patternedRecurrence
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Pattern <IMicrosoftGraphRecurrencePattern>]`: recurrencePattern
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[DayOfMonth <Int32?>]`: The day of the month on which the event occurs. Required if type is absoluteMonthly or absoluteYearly.
-      - `[DaysOfWeek <String[]>]`: A collection of the days of the week on which the event occurs. The possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. If type is relativeMonthly or relativeYearly, and daysOfWeek specifies more than one day, the event falls on the first day that satisfies the pattern.  Required if type is weekly, relativeMonthly, or relativeYearly.
+      - `[DaysOfWeek <String[]>]`: A collection of the days of the week on which the event occurs. Possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. If type is relativeMonthly or relativeYearly, and daysOfWeek specifies more than one day, the event falls on the first day that satisfies the pattern.  Required if type is weekly, relativeMonthly, or relativeYearly.
       - `[FirstDayOfWeek <String>]`: dayOfWeek
       - `[Index <String>]`: weekIndex
       - `[Interval <Int32?>]`: The number of units between occurrences, where units can be in days, weeks, months, or years, depending on the type. Required.
@@ -239,7 +221,6 @@ SETTINGS <IMicrosoftGraphAccessReviewScheduleSettings>: accessReviewScheduleSett
       - `[RecurrenceTimeZone <String>]`: Time zone for the startDate and endDate properties. Optional. If not specified, the time zone of the event is used.
       - `[StartDate <DateTime?>]`: The date to start applying the recurrence pattern. The first occurrence of the meeting may be this date or later, depending on the recurrence pattern of the event. Must be the same value as the start property of the recurring event. Required.
       - `[Type <String>]`: recurrenceRangeType
-  - `[ReminderNotificationsEnabled <Boolean?>]`: 
+  - `[ReminderNotificationsEnabled <Boolean?>]`: Indicates whether reminders are enabled or disabled. Default value is false.
 
 ## RELATED LINKS
-

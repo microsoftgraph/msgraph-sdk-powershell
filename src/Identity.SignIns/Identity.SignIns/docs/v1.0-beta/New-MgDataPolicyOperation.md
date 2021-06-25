@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Identity.SignIns-help.xml
 Module Name: Microsoft.Graph.Identity.SignIns
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/new-mgdatapolicyoperation
 schema: 2.0.0
@@ -16,12 +16,12 @@ Add new entity to dataPolicyOperations
 ```
 New-MgDataPolicyOperation [-AdditionalProperties <Hashtable>] [-CompletedDateTime <DateTime>] [-Id <String>]
  [-Progress <Double>] [-Status <String>] [-StorageLocation <String>] [-SubmittedDateTime <DateTime>]
- [-UserId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-UserId <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgDataPolicyOperation -BodyParameter <IMicrosoftGraphDataPolicyOperation> [-Confirm] [-WhatIf]
+New-MgDataPolicyOperation -BodyParameter <IMicrosoftGraphDataPolicyOperation> [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
@@ -30,31 +30,13 @@ Add new entity to dataPolicyOperations
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
 ### -AdditionalProperties
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -70,7 +52,7 @@ dataPolicyOperation
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDataPolicyOperation
+Type: IMicrosoftGraphDataPolicyOperation
 Parameter Sets: Create
 Aliases:
 
@@ -83,11 +65,11 @@ Accept wildcard characters: False
 
 ### -CompletedDateTime
 Represents when the request for this data policy operation was completed, in UTC time, using the ISO 8601 format.
-For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 Null until the operation completes.
 
 ```yaml
-Type: System.DateTime
+Type: DateTime
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -102,7 +84,7 @@ Accept wildcard characters: False
 Read-only.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -117,7 +99,7 @@ Accept wildcard characters: False
 Specifies the progress of an operation.
 
 ```yaml
-Type: System.Double
+Type: Double
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -132,7 +114,7 @@ Accept wildcard characters: False
 dataPolicyOperationStatus
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -147,7 +129,7 @@ Accept wildcard characters: False
 The URL location to where data is being exported for export requests.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -160,10 +142,10 @@ Accept wildcard characters: False
 
 ### -SubmittedDateTime
 Represents when the request for this data operation was submitted, in UTC time, using the ISO 8601 format.
-For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 
 ```yaml
-Type: System.DateTime
+Type: DateTime
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -178,7 +160,7 @@ Accept wildcard characters: False
 The id for the user on whom the operation is performed.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -193,7 +175,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -209,7 +191,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -243,12 +225,11 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphDataPolicyOperation>: dataPolicyOperation
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
-  - `[CompletedDateTime <DateTime?>]`: Represents when the request for this data policy operation was completed, in UTC time, using the ISO 8601 format. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Null until the operation completes.
+  - `[CompletedDateTime <DateTime?>]`: Represents when the request for this data policy operation was completed, in UTC time, using the ISO 8601 format. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Null until the operation completes.
   - `[Progress <Double?>]`: Specifies the progress of an operation.
   - `[Status <String>]`: dataPolicyOperationStatus
   - `[StorageLocation <String>]`: The URL location to where data is being exported for export requests.
-  - `[SubmittedDateTime <DateTime?>]`: Represents when the request for this data operation was submitted, in UTC time, using the ISO 8601 format. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
+  - `[SubmittedDateTime <DateTime?>]`: Represents when the request for this data operation was submitted, in UTC time, using the ISO 8601 format. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[UserId <String>]`: The id for the user on whom the operation is performed.
 
 ## RELATED LINKS
-

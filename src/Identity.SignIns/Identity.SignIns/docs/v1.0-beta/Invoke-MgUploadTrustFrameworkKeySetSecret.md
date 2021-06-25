@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Identity.SignIns-help.xml
 Module Name: Microsoft.Graph.Identity.SignIns
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/invoke-mguploadtrustframeworkkeysetsecret
 schema: 2.0.0
@@ -15,28 +15,28 @@ Invoke action uploadSecret
 ### UploadExpanded (Default)
 ```
 Invoke-MgUploadTrustFrameworkKeySetSecret -TrustFrameworkKeySetId <String> [-AdditionalProperties <Hashtable>]
- [-Exp <Int64>] [-K <String>] [-Nbf <Int64>] [-Use <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Exp <Int64>] [-K <String>] [-Nbf <Int64>] [-Use <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Upload
 ```
 Invoke-MgUploadTrustFrameworkKeySetSecret -TrustFrameworkKeySetId <String>
  -BodyParameter <IPathsDmvqaiTrustframeworkKeysetsTrustframeworkkeysetIdMicrosoftGraphUploadsecretPostRequestbodyContentApplicationJsonSchema>
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### UploadViaIdentityExpanded
+```
+Invoke-MgUploadTrustFrameworkKeySetSecret -InputObject <IIdentitySignInsIdentity>
+ [-AdditionalProperties <Hashtable>] [-Exp <Int64>] [-K <String>] [-Nbf <Int64>] [-Use <String>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ### UploadViaIdentity
 ```
 Invoke-MgUploadTrustFrameworkKeySetSecret -InputObject <IIdentitySignInsIdentity>
  -BodyParameter <IPathsDmvqaiTrustframeworkKeysetsTrustframeworkkeysetIdMicrosoftGraphUploadsecretPostRequestbodyContentApplicationJsonSchema>
- [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### UploadViaIdentityExpanded
-```
-Invoke-MgUploadTrustFrameworkKeySetSecret -InputObject <IIdentitySignInsIdentity>
- [-AdditionalProperties <Hashtable>] [-Exp <Int64>] [-K <String>] [-Nbf <Int64>] [-Use <String>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -44,31 +44,13 @@ Invoke action uploadSecret
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
 ### -AdditionalProperties
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: UploadExpanded, UploadViaIdentityExpanded
 Aliases:
 
@@ -84,7 +66,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsDmvqaiTrustframeworkKeysetsTrustframeworkkeysetIdMicrosoftGraphUploadsecretPostRequestbodyContentApplicationJsonSchema
+Type: IPathsDmvqaiTrustframeworkKeysetsTrustframeworkkeysetIdMicrosoftGraphUploadsecretPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Upload, UploadViaIdentity
 Aliases:
 
@@ -99,7 +81,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.Int64
+Type: Int64
 Parameter Sets: UploadExpanded, UploadViaIdentityExpanded
 Aliases:
 
@@ -115,8 +97,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
-Parameter Sets: UploadViaIdentity, UploadViaIdentityExpanded
+Type: IIdentitySignInsIdentity
+Parameter Sets: UploadViaIdentityExpanded, UploadViaIdentity
 Aliases:
 
 Required: True
@@ -130,7 +112,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: UploadExpanded, UploadViaIdentityExpanded
 Aliases:
 
@@ -145,7 +127,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.Int64
+Type: Int64
 Parameter Sets: UploadExpanded, UploadViaIdentityExpanded
 Aliases:
 
@@ -160,8 +142,8 @@ Accept wildcard characters: False
 key: id of trustFrameworkKeySet
 
 ```yaml
-Type: System.String
-Parameter Sets: Upload, UploadExpanded
+Type: String
+Parameter Sets: UploadExpanded, Upload
 Aliases:
 
 Required: True
@@ -175,7 +157,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: UploadExpanded, UploadViaIdentityExpanded
 Aliases:
 
@@ -190,7 +172,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -206,7 +188,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -248,20 +230,22 @@ BODYPARAMETER <IPathsDmvqaiTrustframeworkKeysetsTrustframeworkkeysetIdMicrosoftG
 
 INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[ActivityBasedTimeoutPolicyId <String>]`: key: id of activityBasedTimeoutPolicy
+  - `[AuthenticationContextClassReferenceId <String>]`: key: id of authenticationContextClassReference
   - `[AuthenticationMethodId <String>]`: key: id of authenticationMethod
   - `[AuthorizationPolicyId <String>]`: key: id of authorizationPolicy
-  - `[CertificateBasedAuthConfigurationId <String>]`: key: id of certificateBasedAuthConfiguration
+  - `[BitlockerRecoveryKeyId <String>]`: key: id of bitlockerRecoveryKey
   - `[ClaimsMappingPolicyId <String>]`: key: id of claimsMappingPolicy
   - `[ConditionalAccessPolicyId <String>]`: key: id of conditionalAccessPolicy
   - `[DataLossPreventionPolicyId <String>]`: key: id of dataLossPreventionPolicy
   - `[DataPolicyOperationId <String>]`: key: id of dataPolicyOperation
+  - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[EmailAuthenticationMethodId <String>]`: key: id of emailAuthenticationMethod
+  - `[FeatureRolloutPolicyId <String>]`: key: id of featureRolloutPolicy
   - `[Fido2AuthenticationMethodId <String>]`: key: id of fido2AuthenticationMethod
   - `[HomeRealmDiscoveryPolicyId <String>]`: key: id of homeRealmDiscoveryPolicy
   - `[IdentityProviderId <String>]`: key: id of identityProvider
   - `[IdentityUserFlowId <String>]`: key: id of identityUserFlow
   - `[InformationProtectionLabelId <String>]`: key: id of informationProtectionLabel
-  - `[InvitationId <String>]`: key: id of invitation
   - `[LongRunningOperationId <String>]`: key: id of longRunningOperation
   - `[MicrosoftAuthenticatorAuthenticationMethodId <String>]`: key: id of microsoftAuthenticatorAuthenticationMethod
   - `[NamedLocationId <String>]`: key: id of namedLocation
@@ -275,10 +259,8 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[RiskDetectionId <String>]`: key: id of riskDetection
   - `[RiskyUserHistoryItemId <String>]`: key: id of riskyUserHistoryItem
   - `[RiskyUserId <String>]`: key: id of riskyUser
-  - `[SecurityQuestionAuthenticationMethodId <String>]`: key: id of securityQuestionAuthenticationMethod
   - `[SensitivityLabelId <String>]`: key: id of sensitivityLabel
   - `[SensitivityLabelId1 <String>]`: key: id of sensitivityLabel
-  - `[SoftwareOathAuthenticationMethodId <String>]`: key: id of softwareOathAuthenticationMethod
   - `[TemporaryAccessPassAuthenticationMethodId <String>]`: key: id of temporaryAccessPassAuthenticationMethod
   - `[ThreatAssessmentRequestId <String>]`: key: id of threatAssessmentRequest
   - `[ThreatAssessmentResultId <String>]`: key: id of threatAssessmentResult
@@ -286,7 +268,10 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[TokenLifetimePolicyId <String>]`: key: id of tokenLifetimePolicy
   - `[TrustFrameworkKeySetId <String>]`: key: id of trustFrameworkKeySet
   - `[TrustFrameworkPolicyId <String>]`: key: id of trustFrameworkPolicy
+  - `[UnifiedRoleManagementPolicyAssignmentId <String>]`: key: id of unifiedRoleManagementPolicyAssignment
+  - `[UnifiedRoleManagementPolicyId <String>]`: key: id of unifiedRoleManagementPolicy
+  - `[UnifiedRoleManagementPolicyRuleId <String>]`: key: id of unifiedRoleManagementPolicyRule
   - `[UserId <String>]`: key: id of user
+  - `[WindowsHelloForBusinessAuthenticationMethodId <String>]`: key: id of windowsHelloForBusinessAuthenticationMethod
 
 ## RELATED LINKS
-

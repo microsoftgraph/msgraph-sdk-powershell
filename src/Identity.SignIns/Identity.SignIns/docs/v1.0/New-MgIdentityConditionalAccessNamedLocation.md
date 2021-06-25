@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Identity.SignIns-help.xml
 Module Name: Microsoft.Graph.Identity.SignIns
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/new-mgidentityconditionalaccessnamedlocation
 schema: 2.0.0
@@ -12,17 +12,17 @@ Create new navigation property to namedLocations for identity
 
 ## SYNTAX
 
-### CreateExpanded (Default)
+### CreateExpanded1 (Default)
 ```
 New-MgIdentityConditionalAccessNamedLocation [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>]
- [-DisplayName <String>] [-Id <String>] [-ModifiedDateTime <DateTime>] [-Confirm] [-WhatIf]
+ [-DisplayName <String>] [-Id <String>] [-ModifiedDateTime <DateTime>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
-### Create
+### Create1
 ```
-New-MgIdentityConditionalAccessNamedLocation -BodyParameter <IMicrosoftGraphNamedLocation> [-Confirm]
- [-WhatIf] [<CommonParameters>]
+New-MgIdentityConditionalAccessNamedLocation -BodyParameter <IMicrosoftGraphNamedLocation> [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -30,32 +30,14 @@ Create new navigation property to namedLocations for identity
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
 ### -AdditionalProperties
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: CreateExpanded
+Type: Hashtable
+Parameter Sets: CreateExpanded1
 Aliases:
 
 Required: False
@@ -70,8 +52,8 @@ namedLocation
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphNamedLocation
-Parameter Sets: Create
+Type: IMicrosoftGraphNamedLocation
+Parameter Sets: Create1
 Aliases:
 
 Required: True
@@ -83,12 +65,12 @@ Accept wildcard characters: False
 
 ### -CreatedDateTime
 The Timestamp type represents creation date and time of the location using ISO 8601 format and is always in UTC time.
-For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 Read-only.
 
 ```yaml
-Type: System.DateTime
-Parameter Sets: CreateExpanded
+Type: DateTime
+Parameter Sets: CreateExpanded1
 Aliases:
 
 Required: False
@@ -102,8 +84,8 @@ Accept wildcard characters: False
 Human-readable name of the location.
 
 ```yaml
-Type: System.String
-Parameter Sets: CreateExpanded
+Type: String
+Parameter Sets: CreateExpanded1
 Aliases:
 
 Required: False
@@ -117,8 +99,8 @@ Accept wildcard characters: False
 Read-only.
 
 ```yaml
-Type: System.String
-Parameter Sets: CreateExpanded
+Type: String
+Parameter Sets: CreateExpanded1
 Aliases:
 
 Required: False
@@ -130,12 +112,12 @@ Accept wildcard characters: False
 
 ### -ModifiedDateTime
 The Timestamp type represents last modified date and time of the location using ISO 8601 format and is always in UTC time.
-For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 Read-only.
 
 ```yaml
-Type: System.DateTime
-Parameter Sets: CreateExpanded
+Type: DateTime
+Parameter Sets: CreateExpanded1
 Aliases:
 
 Required: False
@@ -149,7 +131,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -165,7 +147,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -199,9 +181,8 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphNamedLocation>: namedLocation
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
-  - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents creation date and time of the location using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Read-only.
+  - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents creation date and time of the location using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
   - `[DisplayName <String>]`: Human-readable name of the location.
-  - `[ModifiedDateTime <DateTime?>]`: The Timestamp type represents last modified date and time of the location using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Read-only.
+  - `[ModifiedDateTime <DateTime?>]`: The Timestamp type represents last modified date and time of the location using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 
 ## RELATED LINKS
-

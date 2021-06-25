@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Identity.SignIns-help.xml
 Module Name: Microsoft.Graph.Identity.SignIns
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/new-mgriskdetection
 schema: 2.0.0
@@ -16,16 +16,16 @@ Add new entity to riskDetections
 ```
 New-MgRiskDetection [-Activity <String>] [-ActivityDateTime <DateTime>] [-AdditionalInfo <String>]
  [-AdditionalProperties <Hashtable>] [-CorrelationId <String>] [-DetectedDateTime <DateTime>]
- [-DetectionTimingType <String>] [-Id <String>] [-IPAddress <String>] [-LastUpdatedDateTime <DateTime>]
+ [-DetectionTimingType <String>] [-IPAddress <String>] [-Id <String>] [-LastUpdatedDateTime <DateTime>]
  [-Location <IMicrosoftGraphSignInLocation>] [-RequestId <String>] [-RiskDetail <String>]
  [-RiskEventType <String>] [-RiskLevel <String>] [-RiskState <String>] [-RiskType <String>] [-Source <String>]
  [-TokenIssuerType <String>] [-UserDisplayName <String>] [-UserId <String>] [-UserPrincipalName <String>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgRiskDetection -BodyParameter <IMicrosoftGraphRiskDetection> [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgRiskDetection -BodyParameter <IMicrosoftGraphRiskDetection> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -33,31 +33,13 @@ Add new entity to riskDetections
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
 ### -Activity
 activityType
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -70,9 +52,11 @@ Accept wildcard characters: False
 
 ### -ActivityDateTime
 Date and time that the risky activity occurred.
+The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time.
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 
 ```yaml
-Type: System.DateTime
+Type: DateTime
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -87,7 +71,7 @@ Accept wildcard characters: False
 Additional information associated with the risk detection in JSON format.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -102,7 +86,7 @@ Accept wildcard characters: False
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -118,7 +102,7 @@ riskDetection
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRiskDetection
+Type: IMicrosoftGraphRiskDetection
 Parameter Sets: Create
 Aliases:
 
@@ -134,7 +118,7 @@ Correlation ID of the sign-in associated with the risk detection.
 This property is null if the risk detection is not associated with a sign-in.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -147,9 +131,11 @@ Accept wildcard characters: False
 
 ### -DetectedDateTime
 Date and time that the risk was detected.
+The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time.
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 
 ```yaml
-Type: System.DateTime
+Type: DateTime
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -164,7 +150,7 @@ Accept wildcard characters: False
 riskDetectionTimingType
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -179,7 +165,7 @@ Accept wildcard characters: False
 Read-only.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -194,7 +180,7 @@ Accept wildcard characters: False
 Provides the IP address of the client from where the risk occurred.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -209,7 +195,7 @@ Accept wildcard characters: False
 Date and time that the risk detection was last updated.
 
 ```yaml
-Type: System.DateTime
+Type: DateTime
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -225,7 +211,7 @@ signInLocation
 To construct, see NOTES section for LOCATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSignInLocation
+Type: IMicrosoftGraphSignInLocation
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -241,7 +227,7 @@ Request ID of the sign-in associated with the risk detection.
 This property is null if the risk detection is not associated with a sign-in.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -256,7 +242,7 @@ Accept wildcard characters: False
 riskDetail
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -269,11 +255,10 @@ Accept wildcard characters: False
 
 ### -RiskEventType
 The type of risk event detected.
-The possible values are unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence, genericadminConfirmedUserCompromised, mcasImpossibleTravel, mcasSuspiciousInboxManipulationRules, investigationsThreatIntelligenceSigninLinked, maliciousIPAddressValidCredentialsBlockedIP, and unknownFutureValue.
-If the risk detection is a premium detection, will show generic
+The possible values are unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence, generic,adminConfirmedUserCompromised, mcasImpossibleTravel, mcasSuspiciousInboxManipulationRules, investigationsThreatIntelligenceSigninLinked, maliciousIPAddressValidCredentialsBlockedIP, and unknownFutureValue.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -288,7 +273,7 @@ Accept wildcard characters: False
 riskLevel
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -303,7 +288,7 @@ Accept wildcard characters: False
 riskState
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -318,7 +303,7 @@ Accept wildcard characters: False
 riskEventType
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -331,10 +316,10 @@ Accept wildcard characters: False
 
 ### -Source
 Source of the risk detection.
-For example, 'activeDirectory'.
+For example, activeDirectory.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -349,7 +334,7 @@ Accept wildcard characters: False
 tokenIssuerType
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -361,10 +346,10 @@ Accept wildcard characters: False
 ```
 
 ### -UserDisplayName
-The user principal name (UPN) of the user.
+Name of the user.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -377,9 +362,11 @@ Accept wildcard characters: False
 
 ### -UserId
 Unique ID of the user.
+The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time.
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -394,7 +381,7 @@ Accept wildcard characters: False
 The user principal name (UPN) of the user.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -409,7 +396,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -425,7 +412,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -460,10 +447,10 @@ BODYPARAMETER <IMicrosoftGraphRiskDetection>: riskDetection
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
   - `[Activity <String>]`: activityType
-  - `[ActivityDateTime <DateTime?>]`: Date and time that the risky activity occurred.
+  - `[ActivityDateTime <DateTime?>]`: Date and time that the risky activity occurred. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[AdditionalInfo <String>]`: Additional information associated with the risk detection in JSON format.
   - `[CorrelationId <String>]`: Correlation ID of the sign-in associated with the risk detection. This property is null if the risk detection is not associated with a sign-in.
-  - `[DetectedDateTime <DateTime?>]`: Date and time that the risk was detected.
+  - `[DetectedDateTime <DateTime?>]`: Date and time that the risk was detected. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[DetectionTimingType <String>]`: riskDetectionTimingType
   - `[IPAddress <String>]`: Provides the IP address of the client from where the risk occurred.
   - `[LastUpdatedDateTime <DateTime?>]`: Date and time that the risk detection was last updated.
@@ -474,19 +461,19 @@ BODYPARAMETER <IMicrosoftGraphRiskDetection>: riskDetection
     - `[GeoCoordinates <IMicrosoftGraphGeoCoordinates>]`: geoCoordinates
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Altitude <Double?>]`: Optional. The altitude (height), in feet,  above sea level for the item. Read-only.
-      - `[Latitude <Double?>]`: Optional. The latitude, in decimal, for the item. Read-only.
-      - `[Longitude <Double?>]`: Optional. The longitude, in decimal, for the item. Read-only.
+      - `[Latitude <Double?>]`: Optional. The latitude, in decimal, for the item. Writable on OneDrive Personal.
+      - `[Longitude <Double?>]`: Optional. The longitude, in decimal, for the item. Writable on OneDrive Personal.
     - `[State <String>]`: Provides the State where the sign-in originated. This is calculated using latitude/longitude information from the sign-in activity.
   - `[RequestId <String>]`: Request ID of the sign-in associated with the risk detection. This property is null if the risk detection is not associated with a sign-in.
   - `[RiskDetail <String>]`: riskDetail
-  - `[RiskEventType <String>]`: The type of risk event detected. The possible values are unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence, genericadminConfirmedUserCompromised, mcasImpossibleTravel, mcasSuspiciousInboxManipulationRules, investigationsThreatIntelligenceSigninLinked, maliciousIPAddressValidCredentialsBlockedIP, and unknownFutureValue. If the risk detection is a premium detection, will show generic
+  - `[RiskEventType <String>]`: The type of risk event detected. The possible values are unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence, generic,adminConfirmedUserCompromised, mcasImpossibleTravel, mcasSuspiciousInboxManipulationRules, investigationsThreatIntelligenceSigninLinked, maliciousIPAddressValidCredentialsBlockedIP, and unknownFutureValue.
   - `[RiskLevel <String>]`: riskLevel
   - `[RiskState <String>]`: riskState
   - `[RiskType <String>]`: riskEventType
-  - `[Source <String>]`: Source of the risk detection. For example, 'activeDirectory'.
+  - `[Source <String>]`: Source of the risk detection. For example, activeDirectory.
   - `[TokenIssuerType <String>]`: tokenIssuerType
-  - `[UserDisplayName <String>]`: The user principal name (UPN) of the user.
-  - `[UserId <String>]`: Unique ID of the user.
+  - `[UserDisplayName <String>]`: Name of the user.
+  - `[UserId <String>]`: Unique ID of the user.  The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[UserPrincipalName <String>]`: The user principal name (UPN) of the user.
 
 LOCATION <IMicrosoftGraphSignInLocation>: signInLocation
@@ -496,9 +483,8 @@ LOCATION <IMicrosoftGraphSignInLocation>: signInLocation
   - `[GeoCoordinates <IMicrosoftGraphGeoCoordinates>]`: geoCoordinates
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Altitude <Double?>]`: Optional. The altitude (height), in feet,  above sea level for the item. Read-only.
-    - `[Latitude <Double?>]`: Optional. The latitude, in decimal, for the item. Read-only.
-    - `[Longitude <Double?>]`: Optional. The longitude, in decimal, for the item. Read-only.
+    - `[Latitude <Double?>]`: Optional. The latitude, in decimal, for the item. Writable on OneDrive Personal.
+    - `[Longitude <Double?>]`: Optional. The longitude, in decimal, for the item. Writable on OneDrive Personal.
   - `[State <String>]`: Provides the State where the sign-in originated. This is calculated using latitude/longitude information from the sign-in activity.
 
 ## RELATED LINKS
-

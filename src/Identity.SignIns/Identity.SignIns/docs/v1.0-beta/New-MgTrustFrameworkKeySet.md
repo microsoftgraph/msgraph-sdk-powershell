@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Identity.SignIns-help.xml
 Module Name: Microsoft.Graph.Identity.SignIns
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/new-mgtrustframeworkkeyset
 schema: 2.0.0
@@ -15,12 +15,12 @@ Create new navigation property to keySets for trustFramework
 ### CreateExpanded (Default)
 ```
 New-MgTrustFrameworkKeySet [-AdditionalProperties <Hashtable>] [-Id <String>]
- [-Keys <IMicrosoftGraphTrustFrameworkKey[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Keys <IMicrosoftGraphTrustFrameworkKey[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgTrustFrameworkKeySet -BodyParameter <IMicrosoftGraphTrustFrameworkKeySet> [-Confirm] [-WhatIf]
+New-MgTrustFrameworkKeySet -BodyParameter <IMicrosoftGraphTrustFrameworkKeySet> [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
@@ -29,31 +29,13 @@ Create new navigation property to keySets for trustFramework
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
 ### -AdditionalProperties
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -69,7 +51,7 @@ trustFrameworkKeySet
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTrustFrameworkKeySet
+Type: IMicrosoftGraphTrustFrameworkKeySet
 Parameter Sets: Create
 Aliases:
 
@@ -84,7 +66,7 @@ Accept wildcard characters: False
 Read-only.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -96,11 +78,11 @@ Accept wildcard characters: False
 ```
 
 ### -Keys
-.
+A collection of the keys.
 To construct, see NOTES section for KEYS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTrustFrameworkKey[]
+Type: IMicrosoftGraphTrustFrameworkKey[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -115,7 +97,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -131,7 +113,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -165,41 +147,40 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphTrustFrameworkKeySet>: trustFrameworkKeySet
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
-  - `[Keys <IMicrosoftGraphTrustFrameworkKey[]>]`: 
-    - `[D <String>]`: 
-    - `[Dp <String>]`: 
-    - `[Dq <String>]`: 
-    - `[E <String>]`: 
-    - `[Exp <Int64?>]`: 
-    - `[K <String>]`: 
-    - `[Kid <String>]`: 
-    - `[Kty <String>]`: 
-    - `[N <String>]`: 
-    - `[Nbf <Int64?>]`: 
-    - `[P <String>]`: 
-    - `[Q <String>]`: 
-    - `[Qi <String>]`: 
-    - `[Use <String>]`: 
-    - `[X5C <String[]>]`: 
-    - `[X5T <String>]`: 
+  - `[Keys <IMicrosoftGraphTrustFrameworkKey[]>]`: A collection of the keys.
+    - `[D <String>]`: RSA Key - private exponent. Field cannot be read back.
+    - `[Dp <String>]`: RSA Key - first exponent. Field cannot be read back.
+    - `[Dq <String>]`: RSA Key - second exponent. Field cannot be read back.
+    - `[E <String>]`: RSA Key - public exponent
+    - `[Exp <Int64?>]`: This value is a NumericDate as defined in RFC 7519 (A JSON numeric value representing the number of seconds from 1970-01-01T00:00:00Z UTC until the specified UTC date/time, ignoring leap seconds.)
+    - `[K <String>]`: Symmetric Key for oct key type. Field cannot be read back.
+    - `[Kid <String>]`: The unique identifier for the key.
+    - `[Kty <String>]`: The kty (key type) parameter identifies the cryptographic algorithm family used with the key, The valid values are rsa, oct.
+    - `[N <String>]`: RSA Key - modulus
+    - `[Nbf <Int64?>]`: This value is a NumericDate as defined in RFC 7519 (A JSON numeric value representing the number of seconds from 1970-01-01T00:00:00Z UTC until the specified UTC date/time, ignoring leap seconds.)
+    - `[P <String>]`: RSA Key - first prime. Field cannot be read back.
+    - `[Q <String>]`: RSA Key - second prime. Field cannot be read back.
+    - `[Qi <String>]`: RSA Key - Coefficient. Field cannot be read back.
+    - `[Use <String>]`: The use (public key use) parameter identifies the intended use of the public key.  The use parameter is employed to indicate whether a public key is used for encrypting data or verifying the signature on data. Possible values are: sig (signature), enc (encryption)
+    - `[X5C <String[]>]`: The x5c (X.509 certificate chain) parameter contains a chain of one or more PKIX certificates RFC 5280.
+    - `[X5T <String>]`: The x5t (X.509 certificate SHA-1 thumbprint) parameter is a base64url-encoded SHA-1 thumbprint (a.k.a. digest) of the DER encoding of an X.509 certificate RFC 5280.
 
-KEYS <IMicrosoftGraphTrustFrameworkKey[]>: .
-  - `[D <String>]`: 
-  - `[Dp <String>]`: 
-  - `[Dq <String>]`: 
-  - `[E <String>]`: 
-  - `[Exp <Int64?>]`: 
-  - `[K <String>]`: 
-  - `[Kid <String>]`: 
-  - `[Kty <String>]`: 
-  - `[N <String>]`: 
-  - `[Nbf <Int64?>]`: 
-  - `[P <String>]`: 
-  - `[Q <String>]`: 
-  - `[Qi <String>]`: 
-  - `[Use <String>]`: 
-  - `[X5C <String[]>]`: 
-  - `[X5T <String>]`: 
+KEYS <IMicrosoftGraphTrustFrameworkKey[]>: A collection of the keys.
+  - `[D <String>]`: RSA Key - private exponent. Field cannot be read back.
+  - `[Dp <String>]`: RSA Key - first exponent. Field cannot be read back.
+  - `[Dq <String>]`: RSA Key - second exponent. Field cannot be read back.
+  - `[E <String>]`: RSA Key - public exponent
+  - `[Exp <Int64?>]`: This value is a NumericDate as defined in RFC 7519 (A JSON numeric value representing the number of seconds from 1970-01-01T00:00:00Z UTC until the specified UTC date/time, ignoring leap seconds.)
+  - `[K <String>]`: Symmetric Key for oct key type. Field cannot be read back.
+  - `[Kid <String>]`: The unique identifier for the key.
+  - `[Kty <String>]`: The kty (key type) parameter identifies the cryptographic algorithm family used with the key, The valid values are rsa, oct.
+  - `[N <String>]`: RSA Key - modulus
+  - `[Nbf <Int64?>]`: This value is a NumericDate as defined in RFC 7519 (A JSON numeric value representing the number of seconds from 1970-01-01T00:00:00Z UTC until the specified UTC date/time, ignoring leap seconds.)
+  - `[P <String>]`: RSA Key - first prime. Field cannot be read back.
+  - `[Q <String>]`: RSA Key - second prime. Field cannot be read back.
+  - `[Qi <String>]`: RSA Key - Coefficient. Field cannot be read back.
+  - `[Use <String>]`: The use (public key use) parameter identifies the intended use of the public key.  The use parameter is employed to indicate whether a public key is used for encrypting data or verifying the signature on data. Possible values are: sig (signature), enc (encryption)
+  - `[X5C <String[]>]`: The x5c (X.509 certificate chain) parameter contains a chain of one or more PKIX certificates RFC 5280.
+  - `[X5T <String>]`: The x5t (X.509 certificate SHA-1 thumbprint) parameter is a base64url-encoded SHA-1 thumbprint (a.k.a. digest) of the DER encoding of an X.509 certificate RFC 5280.
 
 ## RELATED LINKS
-

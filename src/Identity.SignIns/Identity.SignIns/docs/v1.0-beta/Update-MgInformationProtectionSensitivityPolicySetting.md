@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Identity.SignIns-help.xml
 Module Name: Microsoft.Graph.Identity.SignIns
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/update-mginformationprotectionsensitivitypolicysetting
 schema: 2.0.0
@@ -16,13 +16,13 @@ Update the navigation property sensitivityPolicySettings in informationProtectio
 ```
 Update-MgInformationProtectionSensitivityPolicySetting [-AdditionalProperties <Hashtable>]
  [-ApplicableTo <String>] [-DowngradeSensitivityRequiresJustification] [-HelpWebUrl <String>] [-Id <String>]
- [-IsMandatory] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-IsMandatory] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgInformationProtectionSensitivityPolicySetting
- -BodyParameter <IMicrosoftGraphSensitivityPolicySettings> [-PassThru] [-Confirm] [-WhatIf]
+ -BodyParameter <IMicrosoftGraphSensitivityPolicySettings> [-PassThru] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
@@ -31,31 +31,13 @@ Update the navigation property sensitivityPolicySettings in informationProtectio
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
 ### -AdditionalProperties
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -70,7 +52,7 @@ Accept wildcard characters: False
 sensitivityLabelTarget
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -86,7 +68,7 @@ sensitivityPolicySettings
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSensitivityPolicySettings
+Type: IMicrosoftGraphSensitivityPolicySettings
 Parameter Sets: Update
 Aliases:
 
@@ -101,7 +83,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -116,7 +98,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -131,7 +113,7 @@ Accept wildcard characters: False
 Read-only.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -146,7 +128,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -161,7 +143,7 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -176,7 +158,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -192,7 +174,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -232,4 +214,3 @@ BODYPARAMETER <IMicrosoftGraphSensitivityPolicySettings>: sensitivityPolicySetti
   - `[IsMandatory <Boolean?>]`: 
 
 ## RELATED LINKS
-

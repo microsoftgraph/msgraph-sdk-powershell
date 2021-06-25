@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Identity.SignIns-help.xml
 Module Name: Microsoft.Graph.Identity.SignIns
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/invoke-mgextractinformationprotectionpolicylabel
 schema: 2.0.0
@@ -15,14 +15,14 @@ Invoke action extractLabel
 ### ExtractExpanded (Default)
 ```
 Invoke-MgExtractInformationProtectionPolicyLabel [-AdditionalProperties <Hashtable>]
- [-ContentInfo <IMicrosoftGraphContentInfo>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ContentInfo <IMicrosoftGraphContentInfo>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Extract
 ```
 Invoke-MgExtractInformationProtectionPolicyLabel
  -BodyParameter <IPathsBj48EsInformationprotectionPolicyLabelsMicrosoftGraphExtractlabelPostRequestbodyContentApplicationJsonSchema>
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -30,31 +30,13 @@ Invoke action extractLabel
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
 ### -AdditionalProperties
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: ExtractExpanded
 Aliases:
 
@@ -70,7 +52,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsBj48EsInformationprotectionPolicyLabelsMicrosoftGraphExtractlabelPostRequestbodyContentApplicationJsonSchema
+Type: IPathsBj48EsInformationprotectionPolicyLabelsMicrosoftGraphExtractlabelPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Extract
 Aliases:
 
@@ -86,7 +68,7 @@ contentInfo
 To construct, see NOTES section for CONTENTINFO properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContentInfo
+Type: IMicrosoftGraphContentInfo
 Parameter Sets: ExtractExpanded
 Aliases:
 
@@ -101,7 +83,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -117,7 +99,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -153,20 +135,19 @@ BODYPARAMETER <IPathsBj48EsInformationprotectionPolicyLabelsMicrosoftGraphExtrac
   - `[ContentInfo <IMicrosoftGraphContentInfo>]`: contentInfo
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Format <String>]`: contentFormat
-    - `[Identifier <String>]`: 
-    - `[Metadata <IMicrosoftGraphKeyValuePair[]>]`: 
-      - `[Name <String>]`: Name for this key-value pair
-      - `[Value <String>]`: Value for this key-value pair
+    - `[Identifier <String>]`: Identifier used for Azure Information Protection Analytics.
+    - `[Metadata <IMicrosoftGraphKeyValuePair[]>]`: Existing Microsoft Information Protection metadata is passed as key/value pairs, where the key is the MSIP_Label_GUID_PropName.
+      - `[Name <String>]`: Name for this key-value pair. Possible names are: AdditionalWSFedEndpointCheckResult,  AllowedAuthenticationClassReferencesCheckResult, AlwaysRequireAuthenticationCheckResult,   AutoUpdateEnabledCheckResult, ClaimsProviderNameCheckResult, EncryptClaimsCheckResult,  EncryptedNameIdRequiredCheckResult, MonitoringEnabledCheckResult,NotBeforeSkewCheckResult,  RequestMFAFromClaimsProvidersCheckResult, SignedSamlRequestsRequiredCheckResult, AdditionalAuthenticationRulesCheckResult, TokenLifetimeCheckResult,  DelegationAuthorizationRulesCheckResult, IssuanceAuthorizationRulesCheckResult, IssuanceTransformRulesCheckResult.
+      - `[Value <String>]`: Value for this key-value pair. Possible result values are 0 (when the validation check passed), 1 (when the validation check failed), or 2 (when the validation check is a warning).
     - `[State <String>]`: contentState
 
 CONTENTINFO <IMicrosoftGraphContentInfo>: contentInfo
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Format <String>]`: contentFormat
-  - `[Identifier <String>]`: 
-  - `[Metadata <IMicrosoftGraphKeyValuePair[]>]`: 
-    - `[Name <String>]`: Name for this key-value pair
-    - `[Value <String>]`: Value for this key-value pair
+  - `[Identifier <String>]`: Identifier used for Azure Information Protection Analytics.
+  - `[Metadata <IMicrosoftGraphKeyValuePair[]>]`: Existing Microsoft Information Protection metadata is passed as key/value pairs, where the key is the MSIP_Label_GUID_PropName.
+    - `[Name <String>]`: Name for this key-value pair. Possible names are: AdditionalWSFedEndpointCheckResult,  AllowedAuthenticationClassReferencesCheckResult, AlwaysRequireAuthenticationCheckResult,   AutoUpdateEnabledCheckResult, ClaimsProviderNameCheckResult, EncryptClaimsCheckResult,  EncryptedNameIdRequiredCheckResult, MonitoringEnabledCheckResult,NotBeforeSkewCheckResult,  RequestMFAFromClaimsProvidersCheckResult, SignedSamlRequestsRequiredCheckResult, AdditionalAuthenticationRulesCheckResult, TokenLifetimeCheckResult,  DelegationAuthorizationRulesCheckResult, IssuanceAuthorizationRulesCheckResult, IssuanceTransformRulesCheckResult.
+    - `[Value <String>]`: Value for this key-value pair. Possible result values are 0 (when the validation check passed), 1 (when the validation check failed), or 2 (when the validation check is a warning).
   - `[State <String>]`: contentState
 
 ## RELATED LINKS
-

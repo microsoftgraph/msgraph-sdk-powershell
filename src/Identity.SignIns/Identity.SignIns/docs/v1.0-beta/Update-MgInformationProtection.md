@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Identity.SignIns-help.xml
 Module Name: Microsoft.Graph.Identity.SignIns
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/update-mginformationprotection
 schema: 2.0.0
@@ -14,19 +14,19 @@ Update informationProtection
 
 ### UpdateExpanded1 (Default)
 ```
-Update-MgInformationProtection [-AdditionalProperties <Hashtable>]
+Update-MgInformationProtection [-AdditionalProperties <Hashtable>] [-Bitlocker <IMicrosoftGraphBitlocker>]
  [-DataLossPreventionPolicies <IMicrosoftGraphDataLossPreventionPolicy[]>] [-Id <String>]
  [-Policy <IMicrosoftGraphInformationProtectionPolicy>]
  [-SensitivityLabels <IMicrosoftGraphSensitivityLabel[]>]
  [-SensitivityPolicySettings <IMicrosoftGraphSensitivityPolicySettings>]
- [-ThreatAssessmentRequests <IMicrosoftGraphThreatAssessmentRequest[]>] [-PassThru] [-Confirm] [-WhatIf]
+ [-ThreatAssessmentRequests <IMicrosoftGraphThreatAssessmentRequest[]>] [-PassThru] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ### Update1
 ```
-Update-MgInformationProtection -BodyParameter <IMicrosoftGraphInformationProtection1> [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Update-MgInformationProtection -BodyParameter <IMicrosoftGraphInformationProtection> [-PassThru] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -34,31 +34,29 @@ Update informationProtection
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
 ### -AdditionalProperties
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
+Parameter Sets: UpdateExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Bitlocker
+bitlocker
+To construct, see NOTES section for BITLOCKER properties and create a hash table.
+
+```yaml
+Type: IMicrosoftGraphBitlocker
 Parameter Sets: UpdateExpanded1
 Aliases:
 
@@ -74,7 +72,7 @@ informationProtection
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInformationProtection1
+Type: IMicrosoftGraphInformationProtection
 Parameter Sets: Update1
 Aliases:
 
@@ -90,7 +88,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for DATALOSSPREVENTIONPOLICIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDataLossPreventionPolicy[]
+Type: IMicrosoftGraphDataLossPreventionPolicy[]
 Parameter Sets: UpdateExpanded1
 Aliases:
 
@@ -105,7 +103,7 @@ Accept wildcard characters: False
 Read-only.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: UpdateExpanded1
 Aliases:
 
@@ -120,7 +118,7 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -136,7 +134,7 @@ informationProtectionPolicy
 To construct, see NOTES section for POLICY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInformationProtectionPolicy
+Type: IMicrosoftGraphInformationProtectionPolicy
 Parameter Sets: UpdateExpanded1
 Aliases:
 
@@ -152,7 +150,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for SENSITIVITYLABELS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSensitivityLabel[]
+Type: IMicrosoftGraphSensitivityLabel[]
 Parameter Sets: UpdateExpanded1
 Aliases:
 
@@ -168,7 +166,7 @@ sensitivityPolicySettings
 To construct, see NOTES section for SENSITIVITYPOLICYSETTINGS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSensitivityPolicySettings
+Type: IMicrosoftGraphSensitivityPolicySettings
 Parameter Sets: UpdateExpanded1
 Aliases:
 
@@ -184,7 +182,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for THREATASSESSMENTREQUESTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphThreatAssessmentRequest[]
+Type: IMicrosoftGraphThreatAssessmentRequest[]
 Parameter Sets: UpdateExpanded1
 Aliases:
 
@@ -199,7 +197,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -215,7 +213,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -231,7 +229,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInformationProtection1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInformationProtection
 
 ## OUTPUTS
 
@@ -246,9 +244,28 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphInformationProtection1>: informationProtection
+BITLOCKER <IMicrosoftGraphBitlocker>: bitlocker
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
+  - `[RecoveryKeys <IMicrosoftGraphBitlockerRecoveryKey[]>]`: The recovery keys associated with the bitlocker entity.
+    - `[Id <String>]`: Read-only.
+    - `[CreatedDateTime <DateTime?>]`: The date and time when the key was originally backed up to Azure Active Directory.
+    - `[DeviceId <String>]`: ID of the device the BitLocker key is originally backed up from.
+    - `[Key <String>]`: The BitLocker recovery key.
+    - `[VolumeType <String>]`: volumeType
+
+BODYPARAMETER <IMicrosoftGraphInformationProtection>: informationProtection
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[Id <String>]`: Read-only.
+  - `[Bitlocker <IMicrosoftGraphBitlocker>]`: bitlocker
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Id <String>]`: Read-only.
+    - `[RecoveryKeys <IMicrosoftGraphBitlockerRecoveryKey[]>]`: The recovery keys associated with the bitlocker entity.
+      - `[Id <String>]`: Read-only.
+      - `[CreatedDateTime <DateTime?>]`: The date and time when the key was originally backed up to Azure Active Directory.
+      - `[DeviceId <String>]`: ID of the device the BitLocker key is originally backed up from.
+      - `[Key <String>]`: The BitLocker recovery key.
+      - `[VolumeType <String>]`: volumeType
   - `[DataLossPreventionPolicies <IMicrosoftGraphDataLossPreventionPolicy[]>]`: 
     - `[Id <String>]`: Read-only.
     - `[Name <String>]`: 
@@ -257,12 +274,22 @@ BODYPARAMETER <IMicrosoftGraphInformationProtection1>: informationProtection
     - `[Id <String>]`: Read-only.
     - `[Labels <IMicrosoftGraphInformationProtectionLabel[]>]`: 
       - `[Id <String>]`: Read-only.
-      - `[Color <String>]`: 
-      - `[Description <String>]`: 
-      - `[IsActive <Boolean?>]`: 
-      - `[Name <String>]`: 
-      - `[Sensitivity <Int32?>]`: 
-      - `[Tooltip <String>]`: 
+      - `[Color <String>]`: The color that the UI should display for the label, if configured.
+      - `[Description <String>]`: The admin-defined description for the label.
+      - `[IsActive <Boolean?>]`: Indicates whether the label is active or not. Active labels should be hidden or disabled in UI.
+      - `[Name <String>]`: The plaintext name of the label.
+      - `[Parent <IMicrosoftGraphParentLabelDetails>]`: parentLabelDetails
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[Color <String>]`: The color that the user interface should display for the label, if configured.
+        - `[Description <String>]`: The admin-defined description for the label.
+        - `[Id <String>]`: The label ID is a globally unique identifier (GUID).
+        - `[IsActive <Boolean?>]`: Indicates whether the label is active or not. Active labels should be hidden or disabled in user interfaces.
+        - `[Name <String>]`: The plaintext name of the label.
+        - `[Parent <IMicrosoftGraphParentLabelDetails>]`: parentLabelDetails
+        - `[Sensitivity <Int32?>]`: The sensitivity value of the label, where lower is less sensitive.
+        - `[Tooltip <String>]`: The tooltip that should be displayed for the label in a user interface.
+      - `[Sensitivity <Int32?>]`: The sensitivity value of the label, where lower is less sensitive.
+      - `[Tooltip <String>]`: The tooltip that should be displayed for the label in a UI.
   - `[SensitivityLabels <IMicrosoftGraphSensitivityLabel[]>]`: 
     - `[Id <String>]`: Read-only.
     - `[ApplicableTo <String>]`: sensitivityLabelTarget
@@ -303,12 +330,12 @@ BODYPARAMETER <IMicrosoftGraphInformationProtection1>: informationProtection
         - `[Id <String>]`: Unique identifier for the identity.
       - `[Device <IMicrosoftGraphIdentity>]`: identity
       - `[User <IMicrosoftGraphIdentity>]`: identity
-    - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
+    - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     - `[ExpectedAssessment <String>]`: threatExpectedAssessment
     - `[RequestSource <String>]`: threatAssessmentRequestSource
     - `[Results <IMicrosoftGraphThreatAssessmentResult[]>]`: A collection of threat assessment results. Read-only. By default, a GET /threatAssessmentRequests/{id} does not return this property unless you apply $expand on it.
       - `[Id <String>]`: Read-only.
-      - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
+      - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
       - `[Message <String>]`: The result message for each threat assessment.
       - `[ResultType <String>]`: threatAssessmentResultType
     - `[Status <String>]`: threatAssessmentStatus
@@ -322,12 +349,22 @@ POLICY <IMicrosoftGraphInformationProtectionPolicy>: informationProtectionPolicy
   - `[Id <String>]`: Read-only.
   - `[Labels <IMicrosoftGraphInformationProtectionLabel[]>]`: 
     - `[Id <String>]`: Read-only.
-    - `[Color <String>]`: 
-    - `[Description <String>]`: 
-    - `[IsActive <Boolean?>]`: 
-    - `[Name <String>]`: 
-    - `[Sensitivity <Int32?>]`: 
-    - `[Tooltip <String>]`: 
+    - `[Color <String>]`: The color that the UI should display for the label, if configured.
+    - `[Description <String>]`: The admin-defined description for the label.
+    - `[IsActive <Boolean?>]`: Indicates whether the label is active or not. Active labels should be hidden or disabled in UI.
+    - `[Name <String>]`: The plaintext name of the label.
+    - `[Parent <IMicrosoftGraphParentLabelDetails>]`: parentLabelDetails
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[Color <String>]`: The color that the user interface should display for the label, if configured.
+      - `[Description <String>]`: The admin-defined description for the label.
+      - `[Id <String>]`: The label ID is a globally unique identifier (GUID).
+      - `[IsActive <Boolean?>]`: Indicates whether the label is active or not. Active labels should be hidden or disabled in user interfaces.
+      - `[Name <String>]`: The plaintext name of the label.
+      - `[Parent <IMicrosoftGraphParentLabelDetails>]`: parentLabelDetails
+      - `[Sensitivity <Int32?>]`: The sensitivity value of the label, where lower is less sensitive.
+      - `[Tooltip <String>]`: The tooltip that should be displayed for the label in a user interface.
+    - `[Sensitivity <Int32?>]`: The sensitivity value of the label, where lower is less sensitive.
+    - `[Tooltip <String>]`: The tooltip that should be displayed for the label in a UI.
 
 SENSITIVITYLABELS <IMicrosoftGraphSensitivityLabel[]>: .
   - `[Id <String>]`: Read-only.
@@ -371,15 +408,16 @@ THREATASSESSMENTREQUESTS <IMicrosoftGraphThreatAssessmentRequest[]>: .
       - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
-  - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
+  - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
   - `[ExpectedAssessment <String>]`: threatExpectedAssessment
   - `[RequestSource <String>]`: threatAssessmentRequestSource
   - `[Results <IMicrosoftGraphThreatAssessmentResult[]>]`: A collection of threat assessment results. Read-only. By default, a GET /threatAssessmentRequests/{id} does not return this property unless you apply $expand on it.
     - `[Id <String>]`: Read-only.
-    - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
+    - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     - `[Message <String>]`: The result message for each threat assessment.
     - `[ResultType <String>]`: threatAssessmentResultType
   - `[Status <String>]`: threatAssessmentStatus
 
 ## RELATED LINKS
 
+## RELATED LINKS
