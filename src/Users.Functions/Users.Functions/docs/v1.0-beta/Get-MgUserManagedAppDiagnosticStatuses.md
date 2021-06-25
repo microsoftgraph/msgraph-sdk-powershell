@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Users.Functions-help.xml
 Module Name: Microsoft.Graph.Users.Functions
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.functions/get-mgusermanagedappdiagnosticstatuses
 schema: 2.0.0
@@ -8,42 +8,24 @@ schema: 2.0.0
 # Get-MgUserManagedAppDiagnosticStatuses
 
 ## SYNOPSIS
-Invoke function getManagedAppDiagnosticStatuses
+Gets diagnostics validation status for a given user.
 
 ## SYNTAX
 
-### Get (Default)
+### Get1 (Default)
 ```
 Get-MgUserManagedAppDiagnosticStatuses -UserId <String> [<CommonParameters>]
 ```
 
-### GetViaIdentity
+### GetViaIdentity1
 ```
 Get-MgUserManagedAppDiagnosticStatuses -InputObject <IUsersFunctionsIdentity> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Invoke function getManagedAppDiagnosticStatuses
+Gets diagnostics validation status for a given user.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -52,8 +34,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
-Parameter Sets: GetViaIdentity
+Type: IUsersFunctionsIdentity
+Parameter Sets: GetViaIdentity1
 Aliases:
 
 Required: True
@@ -67,8 +49,8 @@ Accept wildcard characters: False
 key: id of user
 
 ```yaml
-Type: System.String
-Parameter Sets: Get
+Type: String
+Parameter Sets: Get1
 Aliases:
 
 Required: True
@@ -99,21 +81,36 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IUsersFunctionsIdentity>: Identity Parameter
+  - `[AccessReviewInstanceId <String>]`: key: id of accessReviewInstance
+  - `[AnotherRange <String>]`: Usage: anotherRange={anotherRange}
+  - `[AppConsentRequestId <String>]`: key: id of appConsentRequest
   - `[CalendarId <String>]`: key: id of calendar
+  - `[Column <Int32?>]`: Usage: column={column}
+  - `[ColumnOffset <Int32?>]`: Usage: columnOffset={columnOffset}
   - `[ContactFolderId <String>]`: key: id of contactFolder
-  - `[EndDateTime <String>]`: 
+  - `[Count <Int32?>]`: Usage: count={count}
+  - `[DeltaColumns <Int32?>]`: Usage: deltaColumns={deltaColumns}
+  - `[DeltaRows <Int32?>]`: Usage: deltaRows={deltaRows}
+  - `[EndDateTime <String>]`: Usage: EndDateTime={EndDateTime}
   - `[EventId <String>]`: key: id of event
-  - `[IncludePersonalNotebooks <Boolean?>]`: 
+  - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
   - `[MailFolderId <String>]`: key: id of mailFolder
   - `[ManagedDeviceId <String>]`: key: id of managedDevice
+  - `[On <String>]`: Usage: on={on}
   - `[OnenotePageId <String>]`: key: id of onenotePage
-  - `[RoomList <String>]`: 
-  - `[Skip <Int32?>]`: 
-  - `[StartDateTime <String>]`: 
-  - `[TimeZoneStandard <String>]`: 
-  - `[Top <Int32?>]`: 
-  - `[User <String>]`: 
+  - `[RoomList <String>]`: Usage: RoomList={RoomList}
+  - `[Row <Int32?>]`: Usage: row={row}
+  - `[RowOffset <Int32?>]`: Usage: rowOffset={rowOffset}
+  - `[SharedInsightId <String>]`: key: id of sharedInsight
+  - `[Skip <Int32?>]`: Usage: skip={skip}
+  - `[StartDateTime <String>]`: Usage: StartDateTime={StartDateTime}
+  - `[TimeZoneStandard <String>]`: Usage: TimeZoneStandard={TimeZoneStandard}
+  - `[TodoTaskListId <String>]`: key: id of todoTaskList
+  - `[Top <Int32?>]`: Usage: top={top}
+  - `[TrendingId <String>]`: key: id of trending
+  - `[UsedInsightId <String>]`: key: id of usedInsight
+  - `[User <String>]`: Usage: User={User}
   - `[UserId <String>]`: key: id of user
+  - `[ValuesOnly <Boolean?>]`: Usage: valuesOnly={valuesOnly}
 
 ## RELATED LINKS
-
