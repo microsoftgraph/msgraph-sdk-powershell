@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Users-help.xml
 Module Name: Microsoft.Graph.Users
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/update-mgusersetting
 schema: 2.0.0
@@ -8,7 +8,8 @@ schema: 2.0.0
 # Update-MgUserSetting
 
 ## SYNOPSIS
-Update the navigation property settings in users
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -16,52 +17,35 @@ Update the navigation property settings in users
 ```
 Update-MgUserSetting -UserId <String> [-AdditionalProperties <Hashtable>]
  [-ContributionToContentDiscoveryAsOrganizationDisabled] [-ContributionToContentDiscoveryDisabled]
- [-Id <String>] [-ShiftPreferences <IMicrosoftGraphShiftPreferences>] [-PassThru] [-Confirm] [-WhatIf]
+ [-Id <String>] [-ShiftPreferences <IMicrosoftGraphShiftPreferences1>] [-PassThru] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ### Update1
 ```
-Update-MgUserSetting -UserId <String> -BodyParameter <IMicrosoftGraphUserSettings> [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
-```
-
-### UpdateViaIdentity1
-```
-Update-MgUserSetting -InputObject <IUsersIdentity> -BodyParameter <IMicrosoftGraphUserSettings> [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgUserSetting -UserId <String> -BodyParameter <IMicrosoftGraphUserSettings1> [-PassThru] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
 Update-MgUserSetting -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>]
  [-ContributionToContentDiscoveryAsOrganizationDisabled] [-ContributionToContentDiscoveryDisabled]
- [-Id <String>] [-ShiftPreferences <IMicrosoftGraphShiftPreferences>] [-PassThru] [-Confirm] [-WhatIf]
+ [-Id <String>] [-ShiftPreferences <IMicrosoftGraphShiftPreferences1>] [-PassThru] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
+### UpdateViaIdentity1
+```
+Update-MgUserSetting -InputObject <IUsersIdentity> -BodyParameter <IMicrosoftGraphUserSettings1> [-PassThru]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
 ## DESCRIPTION
-Update the navigation property settings in users
+Read-only.
+Nullable.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -69,7 +53,7 @@ PS C:\> {{ Add code here }}
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -85,7 +69,7 @@ userSettings
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserSettings
+Type: IMicrosoftGraphUserSettings1
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -97,10 +81,13 @@ Accept wildcard characters: False
 ```
 
 ### -ContributionToContentDiscoveryAsOrganizationDisabled
-.
+Reflects the organization level setting controlling delegate access to the trending API.
+When set to true, the organization doesn't have access to Office Delve.
+The relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected for the whole organization.
+This setting is read-only and can only be changed by administrators in the SharePoint admin center.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -112,10 +99,13 @@ Accept wildcard characters: False
 ```
 
 ### -ContributionToContentDiscoveryDisabled
-.
+When set to true, the delegate access to the user's trending API is disabled.
+When set to true, documents in the user's Office Delve are disabled.
+When set to true, the relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected.
+Users can control this setting in Office Delve.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -130,7 +120,7 @@ Accept wildcard characters: False
 Read-only.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -146,8 +136,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
-Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
+Type: IUsersIdentity
+Parameter Sets: UpdateViaIdentityExpanded1, UpdateViaIdentity1
 Aliases:
 
 Required: True
@@ -161,7 +151,7 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -177,7 +167,7 @@ shiftPreferences
 To construct, see NOTES section for SHIFTPREFERENCES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphShiftPreferences
+Type: IMicrosoftGraphShiftPreferences1
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -192,8 +182,8 @@ Accept wildcard characters: False
 key: id of user
 
 ```yaml
-Type: System.String
-Parameter Sets: Update1, UpdateExpanded1
+Type: String
+Parameter Sets: UpdateExpanded1, Update1
 Aliases:
 
 Required: True
@@ -207,7 +197,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -223,7 +213,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -239,7 +229,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserSettings
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserSettings1
 
 ### Microsoft.Graph.PowerShell.Models.IUsersIdentity
 
@@ -256,14 +246,14 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphUserSettings>: userSettings
+BODYPARAMETER <IMicrosoftGraphUserSettings1>: userSettings
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
-  - `[ContributionToContentDiscoveryAsOrganizationDisabled <Boolean?>]`: 
-  - `[ContributionToContentDiscoveryDisabled <Boolean?>]`: 
-  - `[ShiftPreferences <IMicrosoftGraphShiftPreferences>]`: shiftPreferences
+  - `[ContributionToContentDiscoveryAsOrganizationDisabled <Boolean?>]`: Reflects the organization level setting controlling delegate access to the trending API. When set to true, the organization doesn't have access to Office Delve. The relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected for the whole organization. This setting is read-only and can only be changed by administrators in the SharePoint admin center.
+  - `[ContributionToContentDiscoveryDisabled <Boolean?>]`: When set to true, the delegate access to the user's trending API is disabled. When set to true, documents in the user's Office Delve are disabled. When set to true, the relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected. Users can control this setting in Office Delve.
+  - `[ShiftPreferences <IMicrosoftGraphShiftPreferences1>]`: shiftPreferences
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
+    - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Application <IMicrosoftGraphIdentity>]`: identity
@@ -272,7 +262,7 @@ BODYPARAMETER <IMicrosoftGraphUserSettings>: userSettings
         - `[Id <String>]`: Unique identifier for the identity.
       - `[Device <IMicrosoftGraphIdentity>]`: identity
       - `[User <IMicrosoftGraphIdentity>]`: identity
-    - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
+    - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     - `[Id <String>]`: Read-only.
     - `[Availability <IMicrosoftGraphShiftAvailability[]>]`: Availability of the user to be scheduled for work and its recurrence pattern.
       - `[Recurrence <IMicrosoftGraphPatternedRecurrence>]`: patternedRecurrence
@@ -280,7 +270,7 @@ BODYPARAMETER <IMicrosoftGraphUserSettings>: userSettings
         - `[Pattern <IMicrosoftGraphRecurrencePattern>]`: recurrencePattern
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[DayOfMonth <Int32?>]`: The day of the month on which the event occurs. Required if type is absoluteMonthly or absoluteYearly.
-          - `[DaysOfWeek <String[]>]`: A collection of the days of the week on which the event occurs. The possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. If type is relativeMonthly or relativeYearly, and daysOfWeek specifies more than one day, the event falls on the first day that satisfies the pattern.  Required if type is weekly, relativeMonthly, or relativeYearly.
+          - `[DaysOfWeek <String[]>]`: A collection of the days of the week on which the event occurs. Possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. If type is relativeMonthly or relativeYearly, and daysOfWeek specifies more than one day, the event falls on the first day that satisfies the pattern.  Required if type is weekly, relativeMonthly, or relativeYearly.
           - `[FirstDayOfWeek <String>]`: dayOfWeek
           - `[Index <String>]`: weekIndex
           - `[Interval <Int32?>]`: The number of units between occurrences, where units can be in days, weeks, months, or years, depending on the type. Required.
@@ -300,23 +290,24 @@ BODYPARAMETER <IMicrosoftGraphUserSettings>: userSettings
 
 INPUTOBJECT <IUsersIdentity>: Identity Parameter
   - `[AttachmentId <String>]`: key: id of attachment
-  - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[ExtensionId <String>]`: key: id of extension
   - `[LicenseDetailsId <String>]`: key: id of licenseDetails
+  - `[LinkedResourceId <String>]`: key: id of linkedResource
   - `[MultiValueLegacyExtendedPropertyId <String>]`: key: id of multiValueLegacyExtendedProperty
   - `[NotificationId <String>]`: key: id of notification
-  - `[OAuth2PermissionGrantId <String>]`: key: id of oAuth2PermissionGrant
   - `[OutlookCategoryId <String>]`: key: id of outlookCategory
   - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup
   - `[OutlookTaskId <String>]`: key: id of outlookTask
   - `[ProfilePhotoId <String>]`: key: id of profilePhoto
   - `[SingleValueLegacyExtendedPropertyId <String>]`: key: id of singleValueLegacyExtendedProperty
+  - `[TodoTaskId <String>]`: key: id of todoTask
+  - `[TodoTaskListId <String>]`: key: id of todoTaskList
   - `[UserId <String>]`: key: id of user
 
-SHIFTPREFERENCES <IMicrosoftGraphShiftPreferences>: shiftPreferences
+SHIFTPREFERENCES <IMicrosoftGraphShiftPreferences1>: shiftPreferences
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
+  - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
@@ -325,7 +316,7 @@ SHIFTPREFERENCES <IMicrosoftGraphShiftPreferences>: shiftPreferences
       - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
-  - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
+  - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[Id <String>]`: Read-only.
   - `[Availability <IMicrosoftGraphShiftAvailability[]>]`: Availability of the user to be scheduled for work and its recurrence pattern.
     - `[Recurrence <IMicrosoftGraphPatternedRecurrence>]`: patternedRecurrence
@@ -333,7 +324,7 @@ SHIFTPREFERENCES <IMicrosoftGraphShiftPreferences>: shiftPreferences
       - `[Pattern <IMicrosoftGraphRecurrencePattern>]`: recurrencePattern
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[DayOfMonth <Int32?>]`: The day of the month on which the event occurs. Required if type is absoluteMonthly or absoluteYearly.
-        - `[DaysOfWeek <String[]>]`: A collection of the days of the week on which the event occurs. The possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. If type is relativeMonthly or relativeYearly, and daysOfWeek specifies more than one day, the event falls on the first day that satisfies the pattern.  Required if type is weekly, relativeMonthly, or relativeYearly.
+        - `[DaysOfWeek <String[]>]`: A collection of the days of the week on which the event occurs. Possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. If type is relativeMonthly or relativeYearly, and daysOfWeek specifies more than one day, the event falls on the first day that satisfies the pattern.  Required if type is weekly, relativeMonthly, or relativeYearly.
         - `[FirstDayOfWeek <String>]`: dayOfWeek
         - `[Index <String>]`: weekIndex
         - `[Interval <Int32?>]`: The number of units between occurrences, where units can be in days, weeks, months, or years, depending on the type. Required.
@@ -353,3 +344,4 @@ SHIFTPREFERENCES <IMicrosoftGraphShiftPreferences>: shiftPreferences
 
 ## RELATED LINKS
 
+## RELATED LINKS

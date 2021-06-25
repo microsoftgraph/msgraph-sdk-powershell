@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Users-help.xml
 Module Name: Microsoft.Graph.Users
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/update-mguserphoto
 schema: 2.0.0
@@ -8,80 +8,64 @@ schema: 2.0.0
 # Update-MgUserPhoto
 
 ## SYNOPSIS
-Update the navigation property photo in users
+The user's profile photo.
+Read-only.
 
 ## SYNTAX
 
 ### UpdateExpanded (Default)
 ```
 Update-MgUserPhoto -UserId <String> [-AdditionalProperties <Hashtable>] [-Height <Int32>] [-Id <String>]
- [-Width <Int32>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### Update
-```
-Update-MgUserPhoto -UserId <String> -BodyParameter <IMicrosoftGraphProfilePhoto> [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
-```
-
-### Update1
-```
-Update-MgUserPhoto -ProfilePhotoId <String> -UserId <String> -BodyParameter <IMicrosoftGraphProfilePhoto>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Width <Int32>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### UpdateExpanded1
 ```
-Update-MgUserPhoto -ProfilePhotoId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
- [-Height <Int32>] [-Id <String>] [-Width <Int32>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgUserPhoto -UserId <String> -ProfilePhotoId <String> [-AdditionalProperties <Hashtable>]
+ [-Height <Int32>] [-Id <String>] [-Width <Int32>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### UpdateViaIdentity
+### Update1
 ```
-Update-MgUserPhoto -InputObject <IUsersIdentity> -BodyParameter <IMicrosoftGraphProfilePhoto> [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### UpdateViaIdentity1
-```
-Update-MgUserPhoto -InputObject <IUsersIdentity> -BodyParameter <IMicrosoftGraphProfilePhoto> [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgUserPhoto -UserId <String> -ProfilePhotoId <String> -BodyParameter <IMicrosoftGraphProfilePhoto>
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### UpdateViaIdentityExpanded
+### Update
 ```
-Update-MgUserPhoto -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>] [-Height <Int32>]
- [-Id <String>] [-Width <Int32>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgUserPhoto -UserId <String> -BodyParameter <IMicrosoftGraphProfilePhoto> [-PassThru] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
 Update-MgUserPhoto -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>] [-Height <Int32>]
- [-Id <String>] [-Width <Int32>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-Width <Int32>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### UpdateViaIdentityExpanded
+```
+Update-MgUserPhoto -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>] [-Height <Int32>]
+ [-Id <String>] [-Width <Int32>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### UpdateViaIdentity1
+```
+Update-MgUserPhoto -InputObject <IUsersIdentity> -BodyParameter <IMicrosoftGraphProfilePhoto> [-PassThru]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### UpdateViaIdentity
+```
+Update-MgUserPhoto -InputObject <IUsersIdentity> -BodyParameter <IMicrosoftGraphProfilePhoto> [-PassThru]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update the navigation property photo in users
+The user's profile photo.
+Read-only.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -89,8 +73,8 @@ PS C:\> {{ Add code here }}
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
+Type: Hashtable
+Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded1, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -105,8 +89,8 @@ profilePhoto
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphProfilePhoto
-Parameter Sets: Update, Update1, UpdateViaIdentity, UpdateViaIdentity1
+Type: IMicrosoftGraphProfilePhoto
+Parameter Sets: Update1, Update, UpdateViaIdentity1, UpdateViaIdentity
 Aliases:
 
 Required: True
@@ -121,8 +105,8 @@ The height of the photo.
 Read-only.
 
 ```yaml
-Type: System.Int32
-Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
+Type: Int32
+Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded1, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -136,8 +120,8 @@ Accept wildcard characters: False
 Read-only.
 
 ```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
+Type: String
+Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded1, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -152,8 +136,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
-Parameter Sets: UpdateViaIdentity, UpdateViaIdentity1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
+Type: IUsersIdentity
+Parameter Sets: UpdateViaIdentityExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentity1, UpdateViaIdentity
 Aliases:
 
 Required: True
@@ -167,7 +151,7 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -182,8 +166,8 @@ Accept wildcard characters: False
 key: id of profilePhoto
 
 ```yaml
-Type: System.String
-Parameter Sets: Update1, UpdateExpanded1
+Type: String
+Parameter Sets: UpdateExpanded1, Update1
 Aliases:
 
 Required: True
@@ -197,8 +181,8 @@ Accept wildcard characters: False
 key: id of user
 
 ```yaml
-Type: System.String
-Parameter Sets: Update, Update1, UpdateExpanded, UpdateExpanded1
+Type: String
+Parameter Sets: UpdateExpanded, UpdateExpanded1, Update1, Update
 Aliases:
 
 Required: True
@@ -213,8 +197,8 @@ The width of the photo.
 Read-only.
 
 ```yaml
-Type: System.Int32
-Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
+Type: Int32
+Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded1, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -228,7 +212,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -244,7 +228,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -285,19 +269,19 @@ BODYPARAMETER <IMicrosoftGraphProfilePhoto>: profilePhoto
 
 INPUTOBJECT <IUsersIdentity>: Identity Parameter
   - `[AttachmentId <String>]`: key: id of attachment
-  - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[ExtensionId <String>]`: key: id of extension
   - `[LicenseDetailsId <String>]`: key: id of licenseDetails
+  - `[LinkedResourceId <String>]`: key: id of linkedResource
   - `[MultiValueLegacyExtendedPropertyId <String>]`: key: id of multiValueLegacyExtendedProperty
   - `[NotificationId <String>]`: key: id of notification
-  - `[OAuth2PermissionGrantId <String>]`: key: id of oAuth2PermissionGrant
   - `[OutlookCategoryId <String>]`: key: id of outlookCategory
   - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup
   - `[OutlookTaskId <String>]`: key: id of outlookTask
   - `[ProfilePhotoId <String>]`: key: id of profilePhoto
   - `[SingleValueLegacyExtendedPropertyId <String>]`: key: id of singleValueLegacyExtendedProperty
+  - `[TodoTaskId <String>]`: key: id of todoTask
+  - `[TodoTaskListId <String>]`: key: id of todoTaskList
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
-

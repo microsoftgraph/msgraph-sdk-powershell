@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Users-help.xml
 Module Name: Microsoft.Graph.Users
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/update-mgusersetting
 schema: 2.0.0
@@ -8,7 +8,8 @@ schema: 2.0.0
 # Update-MgUserSetting
 
 ## SYNOPSIS
-Update the navigation property settings in users
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -16,52 +17,37 @@ Update the navigation property settings in users
 ```
 Update-MgUserSetting -UserId <String> [-AdditionalProperties <Hashtable>]
  [-ContributionToContentDiscoveryAsOrganizationDisabled] [-ContributionToContentDiscoveryDisabled]
- [-Id <String>] [-RegionalAndLanguageSettings <IMicrosoftGraphRegionalAndLanguageSettings>]
- [-ShiftPreferences <IMicrosoftGraphShiftPreferences>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-ItemInsights <IMicrosoftGraphUserInsightsSettings>]
+ [-RegionalAndLanguageSettings <IMicrosoftGraphRegionalAndLanguageSettings>]
+ [-ShiftPreferences <IMicrosoftGraphShiftPreferences>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgUserSetting -UserId <String> -BodyParameter <IMicrosoftGraphUserSettings1> [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
-```
-
-### UpdateViaIdentity
-```
-Update-MgUserSetting -InputObject <IUsersIdentity> -BodyParameter <IMicrosoftGraphUserSettings1> [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgUserSetting -UserId <String> -BodyParameter <IMicrosoftGraphUserSettings> [-PassThru] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgUserSetting -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>]
  [-ContributionToContentDiscoveryAsOrganizationDisabled] [-ContributionToContentDiscoveryDisabled]
- [-Id <String>] [-RegionalAndLanguageSettings <IMicrosoftGraphRegionalAndLanguageSettings>]
- [-ShiftPreferences <IMicrosoftGraphShiftPreferences>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-ItemInsights <IMicrosoftGraphUserInsightsSettings>]
+ [-RegionalAndLanguageSettings <IMicrosoftGraphRegionalAndLanguageSettings>]
+ [-ShiftPreferences <IMicrosoftGraphShiftPreferences>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### UpdateViaIdentity
+```
+Update-MgUserSetting -InputObject <IUsersIdentity> -BodyParameter <IMicrosoftGraphUserSettings> [-PassThru]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update the navigation property settings in users
+Read-only.
+Nullable.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -69,7 +55,7 @@ PS C:\> {{ Add code here }}
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -85,7 +71,7 @@ userSettings
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserSettings1
+Type: IMicrosoftGraphUserSettings
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -97,10 +83,13 @@ Accept wildcard characters: False
 ```
 
 ### -ContributionToContentDiscoveryAsOrganizationDisabled
-.
+Reflects the organization level setting controlling delegate access to the trending API.
+When set to true, the organization doesn't have access to Office Delve.
+The relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected for the whole organization.
+This setting is read-only and can only be changed by administrators in the SharePoint admin center.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -112,10 +101,13 @@ Accept wildcard characters: False
 ```
 
 ### -ContributionToContentDiscoveryDisabled
-.
+When set to true, the delegate access to the user's trending API is disabled.
+When set to true, documents in the user's Office Delve are disabled.
+When set to true, the relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected.
+Users can control this setting in Office Delve.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -130,7 +122,7 @@ Accept wildcard characters: False
 Read-only.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -146,8 +138,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
-Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
+Type: IUsersIdentity
+Parameter Sets: UpdateViaIdentityExpanded, UpdateViaIdentity
 Aliases:
 
 Required: True
@@ -157,11 +149,27 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
+### -ItemInsights
+userInsightsSettings
+To construct, see NOTES section for ITEMINSIGHTS properties and create a hash table.
+
+```yaml
+Type: IMicrosoftGraphUserInsightsSettings
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -PassThru
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -177,7 +185,7 @@ regionalAndLanguageSettings
 To construct, see NOTES section for REGIONALANDLANGUAGESETTINGS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRegionalAndLanguageSettings
+Type: IMicrosoftGraphRegionalAndLanguageSettings
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -193,7 +201,7 @@ shiftPreferences
 To construct, see NOTES section for SHIFTPREFERENCES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphShiftPreferences
+Type: IMicrosoftGraphShiftPreferences
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -208,8 +216,8 @@ Accept wildcard characters: False
 key: id of user
 
 ```yaml
-Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Type: String
+Parameter Sets: UpdateExpanded, Update
 Aliases:
 
 Required: True
@@ -223,7 +231,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -239,7 +247,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -255,7 +263,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserSettings1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserSettings
 
 ### Microsoft.Graph.PowerShell.Models.IUsersIdentity
 
@@ -272,15 +280,19 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphUserSettings1>: userSettings
+BODYPARAMETER <IMicrosoftGraphUserSettings>: userSettings
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
-  - `[ContributionToContentDiscoveryAsOrganizationDisabled <Boolean?>]`: 
-  - `[ContributionToContentDiscoveryDisabled <Boolean?>]`: 
+  - `[ContributionToContentDiscoveryAsOrganizationDisabled <Boolean?>]`: Reflects the organization level setting controlling delegate access to the trending API. When set to true, the organization doesn't have access to Office Delve. The relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected for the whole organization. This setting is read-only and can only be changed by administrators in the SharePoint admin center.
+  - `[ContributionToContentDiscoveryDisabled <Boolean?>]`: When set to true, the delegate access to the user's trending API is disabled. When set to true, documents in the user's Office Delve are disabled. When set to true, the relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected. Users can control this setting in Office Delve.
+  - `[ItemInsights <IMicrosoftGraphUserInsightsSettings>]`: userInsightsSettings
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Id <String>]`: Read-only.
+    - `[IsEnabled <Boolean?>]`: 
   - `[RegionalAndLanguageSettings <IMicrosoftGraphRegionalAndLanguageSettings>]`: regionalAndLanguageSettings
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: Read-only.
-    - `[AuthoringLanguages <IMicrosoftGraphLocaleInfo[]>]`: 
+    - `[AuthoringLanguages <IMicrosoftGraphLocaleInfo[]>]`: Prioritized list of languages the user reads and authors in.Returned by default. Not nullable.
       - `[DisplayName <String>]`: A name representing the user's locale in natural language, for example, 'English (United States)'.
       - `[Locale <String>]`: A locale representation for the user, which includes the user's preferred language and country/region. For example, 'en-us'. The language component follows 2-letter codes as defined in ISO 639-1, and the country component follows 2-letter codes as defined in ISO 3166-1 alpha-2.
     - `[DefaultDisplayLanguage <IMicrosoftGraphLocaleInfo>]`: localeInfo
@@ -289,17 +301,23 @@ BODYPARAMETER <IMicrosoftGraphUserSettings1>: userSettings
     - `[DefaultTranslationLanguage <IMicrosoftGraphLocaleInfo>]`: localeInfo
     - `[RegionalFormatOverrides <IMicrosoftGraphRegionalFormatOverrides>]`: regionalFormatOverrides
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Calendar <String>]`: 
-      - `[FirstDayOfWeek <String>]`: 
-      - `[LongDateFormat <String>]`: 
-      - `[LongTimeFormat <String>]`: 
-      - `[ShortDateFormat <String>]`: 
-      - `[ShortTimeFormat <String>]`: 
-      - `[TimeZone <String>]`: 
+      - `[Calendar <String>]`: The calendar to use, e.g., Gregorian Calendar.Returned by default.
+      - `[FirstDayOfWeek <String>]`: The first day of the week to use, e.g., Sunday.Returned by default.
+      - `[LongDateFormat <String>]`: The long date time format to be used for displaying dates.Returned by default.
+      - `[LongTimeFormat <String>]`: The long time format to be used for displaying time.Returned by default.
+      - `[ShortDateFormat <String>]`: The short date time format to be used for displaying dates.Returned by default.
+      - `[ShortTimeFormat <String>]`: The short time format to be used for displaying time.Returned by default.
+      - `[TimeZone <String>]`: The timezone to be used for displaying time.Returned by default.
+    - `[TranslationPreferences <IMicrosoftGraphTranslationPreferences>]`: translationPreferences
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[LanguageOverrides <IMicrosoftGraphTranslationLanguageOverride[]>]`: Translation override behavior for languages, if any.Returned by default.
+        - `[LanguageTag <String>]`: The language to apply the override.Returned by default. Not nullable.
+        - `[TranslationBehavior <String>]`: translationBehavior
+      - `[TranslationBehavior <String>]`: translationBehavior
+      - `[UntranslatedLanguages <String[]>]`: The list of languages the user does not need translated. This is computed from the authoringLanguages collection in regionalAndLanguageSettings, and the languageOverrides collection in translationPreferences. The list specifies neutral culture values that include the language code without any country or region association. For example, it would specify 'fr' for the neutral French culture, but not 'fr-FR' for the French culture in France. Returned by default. Read only.
   - `[ShiftPreferences <IMicrosoftGraphShiftPreferences>]`: shiftPreferences
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
-    - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+    - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Application <IMicrosoftGraphIdentity>]`: identity
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -307,7 +325,9 @@ BODYPARAMETER <IMicrosoftGraphUserSettings1>: userSettings
         - `[Id <String>]`: Unique identifier for the identity.
       - `[Device <IMicrosoftGraphIdentity>]`: identity
       - `[User <IMicrosoftGraphIdentity>]`: identity
-    - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
+    - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+    - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+    - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     - `[Id <String>]`: Read-only.
     - `[Availability <IMicrosoftGraphShiftAvailability[]>]`: Availability of the user to be scheduled for work and its recurrence pattern.
       - `[Recurrence <IMicrosoftGraphPatternedRecurrence>]`: patternedRecurrence
@@ -315,7 +335,7 @@ BODYPARAMETER <IMicrosoftGraphUserSettings1>: userSettings
         - `[Pattern <IMicrosoftGraphRecurrencePattern>]`: recurrencePattern
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[DayOfMonth <Int32?>]`: The day of the month on which the event occurs. Required if type is absoluteMonthly or absoluteYearly.
-          - `[DaysOfWeek <String[]>]`: A collection of the days of the week on which the event occurs. The possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. If type is relativeMonthly or relativeYearly, and daysOfWeek specifies more than one day, the event falls on the first day that satisfies the pattern.  Required if type is weekly, relativeMonthly, or relativeYearly.
+          - `[DaysOfWeek <String[]>]`: A collection of the days of the week on which the event occurs. Possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. If type is relativeMonthly or relativeYearly, and daysOfWeek specifies more than one day, the event falls on the first day that satisfies the pattern.  Required if type is weekly, relativeMonthly, or relativeYearly.
           - `[FirstDayOfWeek <String>]`: dayOfWeek
           - `[Index <String>]`: weekIndex
           - `[Interval <Int32?>]`: The number of units between occurrences, where units can be in days, weeks, months, or years, depending on the type. Required.
@@ -335,24 +355,30 @@ BODYPARAMETER <IMicrosoftGraphUserSettings1>: userSettings
 
 INPUTOBJECT <IUsersIdentity>: Identity Parameter
   - `[AttachmentId <String>]`: key: id of attachment
-  - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[ExtensionId <String>]`: key: id of extension
   - `[LicenseDetailsId <String>]`: key: id of licenseDetails
+  - `[LinkedResourceId <String>]`: key: id of linkedResource
   - `[MultiValueLegacyExtendedPropertyId <String>]`: key: id of multiValueLegacyExtendedProperty
   - `[NotificationId <String>]`: key: id of notification
-  - `[OAuth2PermissionGrantId <String>]`: key: id of oAuth2PermissionGrant
   - `[OutlookCategoryId <String>]`: key: id of outlookCategory
   - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup
   - `[OutlookTaskId <String>]`: key: id of outlookTask
   - `[ProfilePhotoId <String>]`: key: id of profilePhoto
   - `[SingleValueLegacyExtendedPropertyId <String>]`: key: id of singleValueLegacyExtendedProperty
+  - `[TodoTaskId <String>]`: key: id of todoTask
+  - `[TodoTaskListId <String>]`: key: id of todoTaskList
   - `[UserId <String>]`: key: id of user
+
+ITEMINSIGHTS <IMicrosoftGraphUserInsightsSettings>: userInsightsSettings
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[Id <String>]`: Read-only.
+  - `[IsEnabled <Boolean?>]`: 
 
 REGIONALANDLANGUAGESETTINGS <IMicrosoftGraphRegionalAndLanguageSettings>: regionalAndLanguageSettings
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
-  - `[AuthoringLanguages <IMicrosoftGraphLocaleInfo[]>]`: 
+  - `[AuthoringLanguages <IMicrosoftGraphLocaleInfo[]>]`: Prioritized list of languages the user reads and authors in.Returned by default. Not nullable.
     - `[DisplayName <String>]`: A name representing the user's locale in natural language, for example, 'English (United States)'.
     - `[Locale <String>]`: A locale representation for the user, which includes the user's preferred language and country/region. For example, 'en-us'. The language component follows 2-letter codes as defined in ISO 639-1, and the country component follows 2-letter codes as defined in ISO 3166-1 alpha-2.
   - `[DefaultDisplayLanguage <IMicrosoftGraphLocaleInfo>]`: localeInfo
@@ -361,18 +387,24 @@ REGIONALANDLANGUAGESETTINGS <IMicrosoftGraphRegionalAndLanguageSettings>: region
   - `[DefaultTranslationLanguage <IMicrosoftGraphLocaleInfo>]`: localeInfo
   - `[RegionalFormatOverrides <IMicrosoftGraphRegionalFormatOverrides>]`: regionalFormatOverrides
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Calendar <String>]`: 
-    - `[FirstDayOfWeek <String>]`: 
-    - `[LongDateFormat <String>]`: 
-    - `[LongTimeFormat <String>]`: 
-    - `[ShortDateFormat <String>]`: 
-    - `[ShortTimeFormat <String>]`: 
-    - `[TimeZone <String>]`: 
+    - `[Calendar <String>]`: The calendar to use, e.g., Gregorian Calendar.Returned by default.
+    - `[FirstDayOfWeek <String>]`: The first day of the week to use, e.g., Sunday.Returned by default.
+    - `[LongDateFormat <String>]`: The long date time format to be used for displaying dates.Returned by default.
+    - `[LongTimeFormat <String>]`: The long time format to be used for displaying time.Returned by default.
+    - `[ShortDateFormat <String>]`: The short date time format to be used for displaying dates.Returned by default.
+    - `[ShortTimeFormat <String>]`: The short time format to be used for displaying time.Returned by default.
+    - `[TimeZone <String>]`: The timezone to be used for displaying time.Returned by default.
+  - `[TranslationPreferences <IMicrosoftGraphTranslationPreferences>]`: translationPreferences
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[LanguageOverrides <IMicrosoftGraphTranslationLanguageOverride[]>]`: Translation override behavior for languages, if any.Returned by default.
+      - `[LanguageTag <String>]`: The language to apply the override.Returned by default. Not nullable.
+      - `[TranslationBehavior <String>]`: translationBehavior
+    - `[TranslationBehavior <String>]`: translationBehavior
+    - `[UntranslatedLanguages <String[]>]`: The list of languages the user does not need translated. This is computed from the authoringLanguages collection in regionalAndLanguageSettings, and the languageOverrides collection in translationPreferences. The list specifies neutral culture values that include the language code without any country or region association. For example, it would specify 'fr' for the neutral French culture, but not 'fr-FR' for the French culture in France. Returned by default. Read only.
 
 SHIFTPREFERENCES <IMicrosoftGraphShiftPreferences>: shiftPreferences
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
-  - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+  - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -380,7 +412,9 @@ SHIFTPREFERENCES <IMicrosoftGraphShiftPreferences>: shiftPreferences
       - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
-  - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
+  - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+  - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+  - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[Id <String>]`: Read-only.
   - `[Availability <IMicrosoftGraphShiftAvailability[]>]`: Availability of the user to be scheduled for work and its recurrence pattern.
     - `[Recurrence <IMicrosoftGraphPatternedRecurrence>]`: patternedRecurrence
@@ -388,7 +422,7 @@ SHIFTPREFERENCES <IMicrosoftGraphShiftPreferences>: shiftPreferences
       - `[Pattern <IMicrosoftGraphRecurrencePattern>]`: recurrencePattern
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[DayOfMonth <Int32?>]`: The day of the month on which the event occurs. Required if type is absoluteMonthly or absoluteYearly.
-        - `[DaysOfWeek <String[]>]`: A collection of the days of the week on which the event occurs. The possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. If type is relativeMonthly or relativeYearly, and daysOfWeek specifies more than one day, the event falls on the first day that satisfies the pattern.  Required if type is weekly, relativeMonthly, or relativeYearly.
+        - `[DaysOfWeek <String[]>]`: A collection of the days of the week on which the event occurs. Possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. If type is relativeMonthly or relativeYearly, and daysOfWeek specifies more than one day, the event falls on the first day that satisfies the pattern.  Required if type is weekly, relativeMonthly, or relativeYearly.
         - `[FirstDayOfWeek <String>]`: dayOfWeek
         - `[Index <String>]`: weekIndex
         - `[Interval <Int32?>]`: The number of units between occurrences, where units can be in days, weeks, months, or years, depending on the type. Required.
@@ -408,3 +442,4 @@ SHIFTPREFERENCES <IMicrosoftGraphShiftPreferences>: shiftPreferences
 
 ## RELATED LINKS
 
+## RELATED LINKS

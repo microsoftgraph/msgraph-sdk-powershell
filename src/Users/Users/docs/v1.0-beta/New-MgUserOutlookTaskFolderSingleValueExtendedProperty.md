@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Users-help.xml
 Module Name: Microsoft.Graph.Users
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/new-mguseroutlooktaskfoldersinglevalueextendedproperty
 schema: 2.0.0
@@ -8,58 +8,42 @@ schema: 2.0.0
 # New-MgUserOutlookTaskFolderSingleValueExtendedProperty
 
 ## SYNOPSIS
-Create new navigation property to singleValueExtendedProperties for users
+The collection of single-value extended properties defined for the task folder.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
 ### CreateExpanded (Default)
 ```
 New-MgUserOutlookTaskFolderSingleValueExtendedProperty -OutlookTaskFolderId <String> -UserId <String>
- [-AdditionalProperties <Hashtable>] [-Id <String>] [-Value <String>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-Id <String>] [-Value <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgUserOutlookTaskFolderSingleValueExtendedProperty -OutlookTaskFolderId <String> -UserId <String>
- -BodyParameter <IMicrosoftGraphSingleValueLegacyExtendedProperty> [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### CreateViaIdentity
-```
-New-MgUserOutlookTaskFolderSingleValueExtendedProperty -InputObject <IUsersIdentity>
- -BodyParameter <IMicrosoftGraphSingleValueLegacyExtendedProperty> [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphSingleValueLegacyExtendedProperty> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgUserOutlookTaskFolderSingleValueExtendedProperty -InputObject <IUsersIdentity>
- [-AdditionalProperties <Hashtable>] [-Id <String>] [-Value <String>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-Id <String>] [-Value <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### CreateViaIdentity
+```
+New-MgUserOutlookTaskFolderSingleValueExtendedProperty -InputObject <IUsersIdentity>
+ -BodyParameter <IMicrosoftGraphSingleValueLegacyExtendedProperty> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create new navigation property to singleValueExtendedProperties for users
+The collection of single-value extended properties defined for the task folder.
+Read-only.
+Nullable.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -67,7 +51,7 @@ PS C:\> {{ Add code here }}
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -83,7 +67,7 @@ singleValueLegacyExtendedProperty
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty
+Type: IMicrosoftGraphSingleValueLegacyExtendedProperty
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -98,7 +82,7 @@ Accept wildcard characters: False
 Read-only.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -114,8 +98,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
-Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
+Type: IUsersIdentity
+Parameter Sets: CreateViaIdentityExpanded, CreateViaIdentity
 Aliases:
 
 Required: True
@@ -129,8 +113,8 @@ Accept wildcard characters: False
 key: id of outlookTaskFolder
 
 ```yaml
-Type: System.String
-Parameter Sets: Create, CreateExpanded
+Type: String
+Parameter Sets: CreateExpanded, Create
 Aliases:
 
 Required: True
@@ -144,8 +128,8 @@ Accept wildcard characters: False
 key: id of user
 
 ```yaml
-Type: System.String
-Parameter Sets: Create, CreateExpanded
+Type: String
+Parameter Sets: CreateExpanded, Create
 Aliases:
 
 Required: True
@@ -159,7 +143,7 @@ Accept wildcard characters: False
 A property value.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -174,7 +158,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -190,7 +174,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -230,19 +214,19 @@ BODYPARAMETER <IMicrosoftGraphSingleValueLegacyExtendedProperty>: singleValueLeg
 
 INPUTOBJECT <IUsersIdentity>: Identity Parameter
   - `[AttachmentId <String>]`: key: id of attachment
-  - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[ExtensionId <String>]`: key: id of extension
   - `[LicenseDetailsId <String>]`: key: id of licenseDetails
+  - `[LinkedResourceId <String>]`: key: id of linkedResource
   - `[MultiValueLegacyExtendedPropertyId <String>]`: key: id of multiValueLegacyExtendedProperty
   - `[NotificationId <String>]`: key: id of notification
-  - `[OAuth2PermissionGrantId <String>]`: key: id of oAuth2PermissionGrant
   - `[OutlookCategoryId <String>]`: key: id of outlookCategory
   - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup
   - `[OutlookTaskId <String>]`: key: id of outlookTask
   - `[ProfilePhotoId <String>]`: key: id of profilePhoto
   - `[SingleValueLegacyExtendedPropertyId <String>]`: key: id of singleValueLegacyExtendedProperty
+  - `[TodoTaskId <String>]`: key: id of todoTask
+  - `[TodoTaskListId <String>]`: key: id of todoTaskList
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
-

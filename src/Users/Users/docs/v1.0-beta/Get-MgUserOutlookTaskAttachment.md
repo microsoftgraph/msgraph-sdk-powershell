@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Users-help.xml
 Module Name: Microsoft.Graph.Users
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/get-mguseroutlooktaskattachment
 schema: 2.0.0
@@ -8,15 +8,17 @@ schema: 2.0.0
 # Get-MgUserOutlookTaskAttachment
 
 ## SYNOPSIS
-Get attachments from users
+The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
 ### List (Default)
 ```
-Get-MgUserOutlookTaskAttachment -OutlookTaskId <String> -UserId <String> [-Count] [-ExpandProperty <String[]>]
- [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
- [-Top <Int32>] [-All] [-PageSize <Int32>] [<CommonParameters>]
+Get-MgUserOutlookTaskAttachment -OutlookTaskId <String> -UserId <String> [-ExpandProperty <String[]>]
+ [-Property <String[]>] [-Filter <String>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
+ [-PageSize <Int32>] [-All] [-CountVariable <String>] [<CommonParameters>]
 ```
 
 ### Get
@@ -32,27 +34,11 @@ Get-MgUserOutlookTaskAttachment -InputObject <IUsersIdentity> [-ExpandProperty <
 ```
 
 ## DESCRIPTION
-Get attachments from users
+The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.
+Read-only.
+Nullable.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -60,7 +46,7 @@ PS C:\> {{ Add code here }}
 List all pages.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: List
 Aliases:
 
@@ -75,7 +61,7 @@ Accept wildcard characters: False
 key: id of attachment
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Get
 Aliases:
 
@@ -86,13 +72,14 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Count
-Include count of items
+### -CountVariable
+Specifies a count of the total number of items in a collection.
+By default, this variable will be set in the global scope.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: String
 Parameter Sets: List
-Aliases:
+Aliases: CV
 
 Required: False
 Position: Named
@@ -105,7 +92,7 @@ Accept wildcard characters: False
 Expand related entities
 
 ```yaml
-Type: System.String[]
+Type: String[]
 Parameter Sets: (All)
 Aliases: Expand
 
@@ -120,7 +107,7 @@ Accept wildcard characters: False
 Filter items by property values
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: List
 Aliases:
 
@@ -136,7 +123,7 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
+Type: IUsersIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -151,8 +138,8 @@ Accept wildcard characters: False
 key: id of outlookTask
 
 ```yaml
-Type: System.String
-Parameter Sets: Get, List
+Type: String
+Parameter Sets: List, Get
 Aliases:
 
 Required: True
@@ -166,7 +153,7 @@ Accept wildcard characters: False
 Sets the page size of results.
 
 ```yaml
-Type: System.Int32
+Type: Int32
 Parameter Sets: List
 Aliases:
 
@@ -181,7 +168,7 @@ Accept wildcard characters: False
 Select properties to be returned
 
 ```yaml
-Type: System.String[]
+Type: String[]
 Parameter Sets: (All)
 Aliases: Select
 
@@ -196,22 +183,7 @@ Accept wildcard characters: False
 Search items by search phrases
 
 ```yaml
-Type: System.String
-Parameter Sets: List
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Skip
-Skip the first n items
-
-```yaml
-Type: System.Int32
+Type: String
 Parameter Sets: List
 Aliases:
 
@@ -226,7 +198,7 @@ Accept wildcard characters: False
 Order items by property values
 
 ```yaml
-Type: System.String[]
+Type: String[]
 Parameter Sets: List
 Aliases: OrderBy
 
@@ -241,7 +213,7 @@ Accept wildcard characters: False
 Show only the first n items
 
 ```yaml
-Type: System.Int32
+Type: Int32
 Parameter Sets: List
 Aliases: Limit
 
@@ -256,11 +228,26 @@ Accept wildcard characters: False
 key: id of user
 
 ```yaml
-Type: System.String
-Parameter Sets: Get, List
+Type: String
+Parameter Sets: List, Get
 Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Skip
+Skip the first n items
+
+```yaml
+Type: Int32
+Parameter Sets: List
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -289,19 +276,19 @@ To create the parameters described below, construct a hash table containing the 
 
 INPUTOBJECT <IUsersIdentity>: Identity Parameter
   - `[AttachmentId <String>]`: key: id of attachment
-  - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[ExtensionId <String>]`: key: id of extension
   - `[LicenseDetailsId <String>]`: key: id of licenseDetails
+  - `[LinkedResourceId <String>]`: key: id of linkedResource
   - `[MultiValueLegacyExtendedPropertyId <String>]`: key: id of multiValueLegacyExtendedProperty
   - `[NotificationId <String>]`: key: id of notification
-  - `[OAuth2PermissionGrantId <String>]`: key: id of oAuth2PermissionGrant
   - `[OutlookCategoryId <String>]`: key: id of outlookCategory
   - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup
   - `[OutlookTaskId <String>]`: key: id of outlookTask
   - `[ProfilePhotoId <String>]`: key: id of profilePhoto
   - `[SingleValueLegacyExtendedPropertyId <String>]`: key: id of singleValueLegacyExtendedProperty
+  - `[TodoTaskId <String>]`: key: id of todoTask
+  - `[TodoTaskListId <String>]`: key: id of todoTaskList
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
-

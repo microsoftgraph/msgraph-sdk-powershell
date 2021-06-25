@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Users-help.xml
 Module Name: Microsoft.Graph.Users
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/new-mguserowneddevicebyref
 schema: 2.0.0
@@ -8,56 +8,42 @@ schema: 2.0.0
 # New-MgUserOwnedDeviceByRef
 
 ## SYNOPSIS
-Create new navigation property ref to ownedDevices for users
+Devices that are owned by the user.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
 ### CreateExpanded1 (Default)
 ```
-New-MgUserOwnedDeviceByRef -UserId <String> [-AdditionalProperties <Hashtable>] [-Confirm] [-WhatIf]
+New-MgUserOwnedDeviceByRef -UserId <String> [-AdditionalProperties <Hashtable>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ### Create1
 ```
-New-MgUserOwnedDeviceByRef -UserId <String> -BodyParameter <Hashtable> [-Confirm] [-WhatIf]
- [<CommonParameters>]
-```
-
-### CreateViaIdentity1
-```
-New-MgUserOwnedDeviceByRef -InputObject <IUsersIdentity> -BodyParameter <Hashtable> [-Confirm] [-WhatIf]
+New-MgUserOwnedDeviceByRef -UserId <String> -BodyParameter <Hashtable> [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded1
 ```
-New-MgUserOwnedDeviceByRef -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+New-MgUserOwnedDeviceByRef -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
+```
+
+### CreateViaIdentity1
+```
+New-MgUserOwnedDeviceByRef -InputObject <IUsersIdentity> -BodyParameter <Hashtable> [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create new navigation property ref to ownedDevices for users
+Devices that are owned by the user.
+Read-only.
+Nullable.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -65,7 +51,7 @@ PS C:\> {{ Add code here }}
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -80,7 +66,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: Create1, CreateViaIdentity1
 Aliases:
 
@@ -96,8 +82,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
-Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
+Type: IUsersIdentity
+Parameter Sets: CreateViaIdentityExpanded1, CreateViaIdentity1
 Aliases:
 
 Required: True
@@ -111,8 +97,8 @@ Accept wildcard characters: False
 key: id of user
 
 ```yaml
-Type: System.String
-Parameter Sets: Create1, CreateExpanded1
+Type: String
+Parameter Sets: CreateExpanded1, Create1
 Aliases:
 
 Required: True
@@ -126,7 +112,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -142,7 +128,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -177,19 +163,19 @@ To create the parameters described below, construct a hash table containing the 
 
 INPUTOBJECT <IUsersIdentity>: Identity Parameter
   - `[AttachmentId <String>]`: key: id of attachment
-  - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[ExtensionId <String>]`: key: id of extension
   - `[LicenseDetailsId <String>]`: key: id of licenseDetails
+  - `[LinkedResourceId <String>]`: key: id of linkedResource
   - `[MultiValueLegacyExtendedPropertyId <String>]`: key: id of multiValueLegacyExtendedProperty
   - `[NotificationId <String>]`: key: id of notification
-  - `[OAuth2PermissionGrantId <String>]`: key: id of oAuth2PermissionGrant
   - `[OutlookCategoryId <String>]`: key: id of outlookCategory
   - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup
   - `[OutlookTaskId <String>]`: key: id of outlookTask
   - `[ProfilePhotoId <String>]`: key: id of profilePhoto
   - `[SingleValueLegacyExtendedPropertyId <String>]`: key: id of singleValueLegacyExtendedProperty
+  - `[TodoTaskId <String>]`: key: id of todoTask
+  - `[TodoTaskListId <String>]`: key: id of todoTaskList
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
-

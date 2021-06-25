@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Users-help.xml
 Module Name: Microsoft.Graph.Users
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/remove-mguser
 schema: 2.0.0
@@ -8,43 +8,39 @@ schema: 2.0.0
 # Remove-MgUser
 
 ## SYNOPSIS
-Delete entity from users
+Represents an Azure Active Directory user object.
 
 ## SYNTAX
 
 ### Delete1 (Default)
 ```
-Remove-MgUser -UserId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MgUser -UserId <String> [-IfMatch <String>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity1
 ```
-Remove-MgUser -InputObject <IUsersIdentity> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
+Remove-MgUser -InputObject <IUsersIdentity> [-IfMatch <String>] [-PassThru] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Delete entity from users
+Represents an Azure Active Directory user object.
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: Remove a user
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Remove-MgUser -UserId '5c442efb-5e66-484a-936a-91b6810bed14'
 ```
 
-{{ Add description here }}
+This example removes a user.
 
-### Example 2: {{ Add title here }}
+### Example 2: Remove a user with a confirmation
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Remove-MgUser -UserId '3f80a75e-750b-49aa-a6b0-d9bf6df7b4c6' -Confirm
 ```
 
-{{ Add description here }}
+This examples removes a user after the user is prompted for a confirmation.
 
 ## PARAMETERS
 
@@ -52,7 +48,7 @@ PS C:\> {{ Add code here }}
 ETag
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
 Aliases:
 
@@ -68,7 +64,7 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
+Type: IUsersIdentity
 Parameter Sets: DeleteViaIdentity1
 Aliases:
 
@@ -83,7 +79,7 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -98,7 +94,7 @@ Accept wildcard characters: False
 key: id of user
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Delete1
 Aliases:
 
@@ -113,7 +109,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -129,7 +125,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -162,19 +158,19 @@ To create the parameters described below, construct a hash table containing the 
 
 INPUTOBJECT <IUsersIdentity>: Identity Parameter
   - `[AttachmentId <String>]`: key: id of attachment
-  - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[ExtensionId <String>]`: key: id of extension
   - `[LicenseDetailsId <String>]`: key: id of licenseDetails
+  - `[LinkedResourceId <String>]`: key: id of linkedResource
   - `[MultiValueLegacyExtendedPropertyId <String>]`: key: id of multiValueLegacyExtendedProperty
   - `[NotificationId <String>]`: key: id of notification
-  - `[OAuth2PermissionGrantId <String>]`: key: id of oAuth2PermissionGrant
   - `[OutlookCategoryId <String>]`: key: id of outlookCategory
   - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup
   - `[OutlookTaskId <String>]`: key: id of outlookTask
   - `[ProfilePhotoId <String>]`: key: id of profilePhoto
   - `[SingleValueLegacyExtendedPropertyId <String>]`: key: id of singleValueLegacyExtendedProperty
+  - `[TodoTaskId <String>]`: key: id of todoTask
+  - `[TodoTaskListId <String>]`: key: id of todoTaskList
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
-

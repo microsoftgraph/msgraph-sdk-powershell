@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Users-help.xml
 Module Name: Microsoft.Graph.Users
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/get-mgusermanager
 schema: 2.0.0
@@ -8,43 +8,40 @@ schema: 2.0.0
 # Get-MgUserManager
 
 ## SYNOPSIS
-Get manager from users
+The user or contact that is this user's manager.
+Read-only.
+(HTTP Methods: GET, PUT, DELETE.)
 
 ## SYNTAX
 
-### Get1 (Default)
+### Get (Default)
 ```
 Get-MgUserManager -UserId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
-### GetViaIdentity1
+### GetViaIdentity
 ```
 Get-MgUserManager -InputObject <IUsersIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get manager from users
+The user or contact that is this user's manager.
+Read-only.
+(HTTP Methods: GET, PUT, DELETE.)
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: Get a user's manager
 ```powershell
-PS C:\> {{ Add code here }}
+Get-MgUserManager -UserId '0ec3a5e8-b4b6-4678-90ff-ce786055065f'
 
-{{ Add output here }}
+Id                                   DeletedDateTime
+--                                   ---------------
+e1428c8c-4219-4beb-b5cb-765c2590278b
 ```
 
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
+The commands gets the manager of the specified user.
 
 ## PARAMETERS
 
@@ -52,7 +49,7 @@ PS C:\> {{ Add code here }}
 Expand related entities
 
 ```yaml
-Type: System.String[]
+Type: String[]
 Parameter Sets: (All)
 Aliases: Expand
 
@@ -68,8 +65,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
-Parameter Sets: GetViaIdentity1
+Type: IUsersIdentity
+Parameter Sets: GetViaIdentity
 Aliases:
 
 Required: True
@@ -83,7 +80,7 @@ Accept wildcard characters: False
 Select properties to be returned
 
 ```yaml
-Type: System.String[]
+Type: String[]
 Parameter Sets: (All)
 Aliases: Select
 
@@ -98,8 +95,8 @@ Accept wildcard characters: False
 key: id of user
 
 ```yaml
-Type: System.String
-Parameter Sets: Get1
+Type: String
+Parameter Sets: Get
 Aliases:
 
 Required: True
@@ -131,19 +128,19 @@ To create the parameters described below, construct a hash table containing the 
 
 INPUTOBJECT <IUsersIdentity>: Identity Parameter
   - `[AttachmentId <String>]`: key: id of attachment
-  - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[ExtensionId <String>]`: key: id of extension
   - `[LicenseDetailsId <String>]`: key: id of licenseDetails
+  - `[LinkedResourceId <String>]`: key: id of linkedResource
   - `[MultiValueLegacyExtendedPropertyId <String>]`: key: id of multiValueLegacyExtendedProperty
   - `[NotificationId <String>]`: key: id of notification
-  - `[OAuth2PermissionGrantId <String>]`: key: id of oAuth2PermissionGrant
   - `[OutlookCategoryId <String>]`: key: id of outlookCategory
   - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup
   - `[OutlookTaskId <String>]`: key: id of outlookTask
   - `[ProfilePhotoId <String>]`: key: id of profilePhoto
   - `[SingleValueLegacyExtendedPropertyId <String>]`: key: id of singleValueLegacyExtendedProperty
+  - `[TodoTaskId <String>]`: key: id of todoTask
+  - `[TodoTaskListId <String>]`: key: id of todoTaskList
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
-
