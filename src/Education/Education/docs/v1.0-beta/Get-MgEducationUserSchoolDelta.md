@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Education-help.xml
 Module Name: Microsoft.Graph.Education
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/get-mgeducationuserschooldelta
 schema: 2.0.0
@@ -27,31 +27,13 @@ Invoke function delta
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
 ### -EducationUserId
 key: id of educationUser
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Delta
 Aliases:
 
@@ -67,7 +49,7 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
+Type: IEducationIdentity
 Parameter Sets: DeltaViaIdentity
 Aliases:
 
@@ -87,7 +69,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationSchool1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationSchool
 
 ## NOTES
 
@@ -113,4 +95,3 @@ INPUTOBJECT <IEducationIdentity>: Identity Parameter
   - `[EducationUserId <String>]`: key: id of educationUser
 
 ## RELATED LINKS
-

@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Education-help.xml
 Module Name: Microsoft.Graph.Education
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/remove-mgeducationmeassignmentsubmissionsubmittedresource
 schema: 2.0.0
@@ -8,7 +8,8 @@ schema: 2.0.0
 # Remove-MgEducationMeAssignmentSubmissionSubmittedResource
 
 ## SYNOPSIS
-Delete navigation property submittedResources for education
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -16,37 +17,20 @@ Delete navigation property submittedResources for education
 ```
 Remove-MgEducationMeAssignmentSubmissionSubmittedResource -EducationAssignmentId <String>
  -EducationSubmissionId <String> -EducationSubmissionResourceId <String> [-IfMatch <String>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgEducationMeAssignmentSubmissionSubmittedResource -InputObject <IEducationIdentity>
- [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MgEducationMeAssignmentSubmissionSubmittedResource -InputObject <IEducationIdentity> [-IfMatch <String>]
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Delete navigation property submittedResources for education
+Read-only.
+Nullable.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -54,7 +38,7 @@ PS C:\> {{ Add code here }}
 key: id of educationAssignment
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Delete
 Aliases:
 
@@ -69,7 +53,7 @@ Accept wildcard characters: False
 key: id of educationSubmission
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Delete
 Aliases:
 
@@ -84,7 +68,7 @@ Accept wildcard characters: False
 key: id of educationSubmissionResource
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Delete
 Aliases:
 
@@ -99,7 +83,7 @@ Accept wildcard characters: False
 ETag
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
 Aliases:
 
@@ -115,7 +99,7 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
+Type: IEducationIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -130,7 +114,7 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -145,7 +129,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -161,7 +145,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -207,4 +191,3 @@ INPUTOBJECT <IEducationIdentity>: Identity Parameter
   - `[EducationUserId <String>]`: key: id of educationUser
 
 ## RELATED LINKS
-

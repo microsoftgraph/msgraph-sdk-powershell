@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Education-help.xml
 Module Name: Microsoft.Graph.Education
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/set-mgeducationschooladministrativeunitbyref
 schema: 2.0.0
@@ -8,56 +8,38 @@ schema: 2.0.0
 # Set-MgEducationSchoolAdministrativeUnitByRef
 
 ## SYNOPSIS
-Update the ref of navigation property administrativeUnit in education
+The underlying administrativeUnit for this school.
 
 ## SYNTAX
 
-### UpdateExpanded (Default)
+### SetExpanded (Default)
 ```
 Set-MgEducationSchoolAdministrativeUnitByRef -EducationSchoolId <String> [-AdditionalProperties <Hashtable>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### Update
+### Set
 ```
-Set-MgEducationSchoolAdministrativeUnitByRef -EducationSchoolId <String> -BodyParameter <Hashtable>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### UpdateViaIdentity
-```
-Set-MgEducationSchoolAdministrativeUnitByRef -InputObject <IEducationIdentity> -BodyParameter <Hashtable>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Set-MgEducationSchoolAdministrativeUnitByRef -EducationSchoolId <String> -BodyParameter <Hashtable> [-PassThru]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### UpdateViaIdentityExpanded
+### SetViaIdentityExpanded
 ```
 Set-MgEducationSchoolAdministrativeUnitByRef -InputObject <IEducationIdentity>
- [-AdditionalProperties <Hashtable>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### SetViaIdentity
+```
+Set-MgEducationSchoolAdministrativeUnitByRef -InputObject <IEducationIdentity> -BodyParameter <Hashtable>
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update the ref of navigation property administrativeUnit in education
+The underlying administrativeUnit for this school.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -65,8 +47,8 @@ PS C:\> {{ Add code here }}
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Type: Hashtable
+Parameter Sets: SetExpanded, SetViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -80,8 +62,8 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: Update, UpdateViaIdentity
+Type: Hashtable
+Parameter Sets: Set, SetViaIdentity
 Aliases:
 
 Required: True
@@ -95,8 +77,8 @@ Accept wildcard characters: False
 key: id of educationSchool
 
 ```yaml
-Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Type: String
+Parameter Sets: SetExpanded, Set
 Aliases:
 
 Required: True
@@ -111,8 +93,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
-Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
+Type: IEducationIdentity
+Parameter Sets: SetViaIdentityExpanded, SetViaIdentity
 Aliases:
 
 Required: True
@@ -126,7 +108,7 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -141,7 +123,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -157,7 +139,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -205,4 +187,3 @@ INPUTOBJECT <IEducationIdentity>: Identity Parameter
   - `[EducationUserId <String>]`: key: id of educationUser
 
 ## RELATED LINKS
-

@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Education-help.xml
 Module Name: Microsoft.Graph.Education
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/get-mgeducationclassgroup
 schema: 2.0.0
@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgEducationClassGroup
 
 ## SYNOPSIS
-Get group from education
+The underlying Microsoft 365 group object.
 
 ## SYNTAX
 
@@ -20,32 +20,14 @@ Get-MgEducationClassGroup -EducationClassId <String> [-ExpandProperty <String[]>
 
 ### GetViaIdentity
 ```
-Get-MgEducationClassGroup -InputObject <IEducationIdentity> [-ExpandProperty <String[]>]
- [-Property <String[]>] [<CommonParameters>]
+Get-MgEducationClassGroup -InputObject <IEducationIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get group from education
+The underlying Microsoft 365 group object.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -53,7 +35,7 @@ PS C:\> {{ Add code here }}
 key: id of educationClass
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Get
 Aliases:
 
@@ -68,7 +50,7 @@ Accept wildcard characters: False
 Expand related entities
 
 ```yaml
-Type: System.String[]
+Type: String[]
 Parameter Sets: (All)
 Aliases: Expand
 
@@ -84,7 +66,7 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
+Type: IEducationIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -99,7 +81,7 @@ Accept wildcard characters: False
 Select properties to be returned
 
 ```yaml
-Type: System.String[]
+Type: String[]
 Parameter Sets: (All)
 Aliases: Select
 
@@ -145,4 +127,3 @@ INPUTOBJECT <IEducationIdentity>: Identity Parameter
   - `[EducationUserId <String>]`: key: id of educationUser
 
 ## RELATED LINKS
-

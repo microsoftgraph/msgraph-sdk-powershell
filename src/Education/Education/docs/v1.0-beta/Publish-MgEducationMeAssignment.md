@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Education-help.xml
 Module Name: Microsoft.Graph.Education
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/publish-mgeducationmeassignment
 schema: 2.0.0
@@ -14,12 +14,12 @@ Invoke action publish
 
 ### Publish (Default)
 ```
-Publish-MgEducationMeAssignment -EducationAssignmentId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
+Publish-MgEducationMeAssignment -EducationAssignmentId <String> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### PublishViaIdentity
 ```
-Publish-MgEducationMeAssignment -InputObject <IEducationIdentity> [-Confirm] [-WhatIf] [<CommonParameters>]
+Publish-MgEducationMeAssignment -InputObject <IEducationIdentity> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -27,31 +27,13 @@ Invoke action publish
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
 ### -EducationAssignmentId
 key: id of educationAssignment
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Publish
 Aliases:
 
@@ -67,7 +49,7 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
+Type: IEducationIdentity
 Parameter Sets: PublishViaIdentity
 Aliases:
 
@@ -82,7 +64,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -98,7 +80,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -144,4 +126,3 @@ INPUTOBJECT <IEducationIdentity>: Identity Parameter
   - `[EducationUserId <String>]`: key: id of educationUser
 
 ## RELATED LINKS
-

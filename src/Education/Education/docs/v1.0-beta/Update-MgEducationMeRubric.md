@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Education-help.xml
 Module Name: Microsoft.Graph.Education
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/update-mgeducationmerubric
 schema: 2.0.0
@@ -18,20 +18,14 @@ Update-MgEducationMeRubric -EducationRubricId <String> [-AdditionalProperties <H
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>]
  [-Description <IMicrosoftGraphEducationItemBody>] [-DisplayName <String>] [-Grading <Hashtable>]
  [-Id <String>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>]
- [-Levels <IMicrosoftGraphRubricLevel[]>] [-Qualities <IMicrosoftGraphRubricQuality[]>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-Levels <IMicrosoftGraphRubricLevel[]>] [-Qualities <IMicrosoftGraphRubricQuality[]>] [-PassThru] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgEducationMeRubric -EducationRubricId <String> -BodyParameter <IMicrosoftGraphEducationRubric>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### UpdateViaIdentity
-```
-Update-MgEducationMeRubric -InputObject <IEducationIdentity> -BodyParameter <IMicrosoftGraphEducationRubric>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -40,8 +34,14 @@ Update-MgEducationMeRubric -InputObject <IEducationIdentity> [-AdditionalPropert
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>]
  [-Description <IMicrosoftGraphEducationItemBody>] [-DisplayName <String>] [-Grading <Hashtable>]
  [-Id <String>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>]
- [-Levels <IMicrosoftGraphRubricLevel[]>] [-Qualities <IMicrosoftGraphRubricQuality[]>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-Levels <IMicrosoftGraphRubricLevel[]>] [-Qualities <IMicrosoftGraphRubricQuality[]>] [-PassThru] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
+```
+
+### UpdateViaIdentity
+```
+Update-MgEducationMeRubric -InputObject <IEducationIdentity> -BodyParameter <IMicrosoftGraphEducationRubric>
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -49,31 +49,13 @@ Update the navigation property rubrics in education
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
 ### -AdditionalProperties
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -89,7 +71,7 @@ educationRubric
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationRubric
+Type: IMicrosoftGraphEducationRubric
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -105,7 +87,7 @@ identitySet
 To construct, see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: IMicrosoftGraphIdentitySet
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -117,10 +99,11 @@ Accept wildcard characters: False
 ```
 
 ### -CreatedDateTime
-.
+The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 
 ```yaml
-Type: System.DateTime
+Type: DateTime
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -136,7 +119,7 @@ educationItemBody
 To construct, see NOTES section for DESCRIPTION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationItemBody
+Type: IMicrosoftGraphEducationItemBody
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -148,10 +131,10 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-.
+The name of this rubric.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -166,8 +149,8 @@ Accept wildcard characters: False
 key: id of educationRubric
 
 ```yaml
-Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Type: String
+Parameter Sets: UpdateExpanded, Update
 Aliases:
 
 Required: True
@@ -181,7 +164,7 @@ Accept wildcard characters: False
 educationAssignmentGradeType
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -196,7 +179,7 @@ Accept wildcard characters: False
 Read-only.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -212,8 +195,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
-Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
+Type: IEducationIdentity
+Parameter Sets: UpdateViaIdentityExpanded, UpdateViaIdentity
 Aliases:
 
 Required: True
@@ -228,7 +211,7 @@ identitySet
 To construct, see NOTES section for LASTMODIFIEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: IMicrosoftGraphIdentitySet
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -240,10 +223,12 @@ Accept wildcard characters: False
 ```
 
 ### -LastModifiedDateTime
-.
+Moment in time when the resource was last modified.
+The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 
 ```yaml
-Type: System.DateTime
+Type: DateTime
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -255,11 +240,11 @@ Accept wildcard characters: False
 ```
 
 ### -Levels
-.
+The collection of levels making up this rubric.
 To construct, see NOTES section for LEVELS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRubricLevel[]
+Type: IMicrosoftGraphRubricLevel[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -274,7 +259,7 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -286,11 +271,11 @@ Accept wildcard characters: False
 ```
 
 ### -Qualities
-.
+The collection of qualities making up this rubric.
 To construct, see NOTES section for QUALITIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRubricQuality[]
+Type: IMicrosoftGraphRubricQuality[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -305,7 +290,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -321,7 +306,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -365,28 +350,28 @@ BODYPARAMETER <IMicrosoftGraphEducationRubric>: educationRubric
       - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
-  - `[CreatedDateTime <DateTime?>]`: 
+  - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[Description <IMicrosoftGraphEducationItemBody>]`: educationItemBody
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Content <String>]`: 
     - `[ContentType <String>]`: bodyType
-  - `[DisplayName <String>]`: 
+  - `[DisplayName <String>]`: The name of this rubric.
   - `[Grading <IMicrosoftGraphEducationAssignmentGradeType>]`: educationAssignmentGradeType
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-  - `[LastModifiedDateTime <DateTime?>]`: 
-  - `[Levels <IMicrosoftGraphRubricLevel[]>]`: 
+  - `[LastModifiedDateTime <DateTime?>]`: Moment in time when the resource was last modified.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+  - `[Levels <IMicrosoftGraphRubricLevel[]>]`: The collection of levels making up this rubric.
     - `[Description <IMicrosoftGraphEducationItemBody>]`: educationItemBody
-    - `[DisplayName <String>]`: 
+    - `[DisplayName <String>]`: The name of this rubric level.
     - `[Grading <IMicrosoftGraphEducationAssignmentGradeType>]`: educationAssignmentGradeType
-    - `[LevelId <String>]`: 
-  - `[Qualities <IMicrosoftGraphRubricQuality[]>]`: 
-    - `[Criteria <IMicrosoftGraphRubricCriterion[]>]`: 
+    - `[LevelId <String>]`: The ID of this resource.
+  - `[Qualities <IMicrosoftGraphRubricQuality[]>]`: The collection of qualities making up this rubric.
+    - `[Criteria <IMicrosoftGraphRubricCriterion[]>]`: The collection of criteria for this rubric quality.
       - `[Description <IMicrosoftGraphEducationItemBody>]`: educationItemBody
     - `[Description <IMicrosoftGraphEducationItemBody>]`: educationItemBody
-    - `[DisplayName <String>]`: 
-    - `[QualityId <String>]`: 
-    - `[Weight <Single?>]`: 
+    - `[DisplayName <String>]`: The name of this rubric quality.
+    - `[QualityId <String>]`: The ID of this resource.
+    - `[Weight <Single?>]`: If present, a numerical weight for this quality.  Weights must add up to 100.
 
 CREATEDBY <IMicrosoftGraphIdentitySet>: identitySet
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -425,26 +410,25 @@ LASTMODIFIEDBY <IMicrosoftGraphIdentitySet>: identitySet
   - `[Device <IMicrosoftGraphIdentity>]`: identity
   - `[User <IMicrosoftGraphIdentity>]`: identity
 
-LEVELS <IMicrosoftGraphRubricLevel[]>: .
+LEVELS <IMicrosoftGraphRubricLevel[]>: The collection of levels making up this rubric.
   - `[Description <IMicrosoftGraphEducationItemBody>]`: educationItemBody
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Content <String>]`: 
     - `[ContentType <String>]`: bodyType
-  - `[DisplayName <String>]`: 
+  - `[DisplayName <String>]`: The name of this rubric level.
   - `[Grading <IMicrosoftGraphEducationAssignmentGradeType>]`: educationAssignmentGradeType
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[LevelId <String>]`: 
+  - `[LevelId <String>]`: The ID of this resource.
 
-QUALITIES <IMicrosoftGraphRubricQuality[]>: .
-  - `[Criteria <IMicrosoftGraphRubricCriterion[]>]`: 
+QUALITIES <IMicrosoftGraphRubricQuality[]>: The collection of qualities making up this rubric.
+  - `[Criteria <IMicrosoftGraphRubricCriterion[]>]`: The collection of criteria for this rubric quality.
     - `[Description <IMicrosoftGraphEducationItemBody>]`: educationItemBody
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Content <String>]`: 
       - `[ContentType <String>]`: bodyType
   - `[Description <IMicrosoftGraphEducationItemBody>]`: educationItemBody
-  - `[DisplayName <String>]`: 
-  - `[QualityId <String>]`: 
-  - `[Weight <Single?>]`: 
+  - `[DisplayName <String>]`: The name of this rubric quality.
+  - `[QualityId <String>]`: The ID of this resource.
+  - `[Weight <Single?>]`: If present, a numerical weight for this quality.  Weights must add up to 100.
 
 ## RELATED LINKS
-

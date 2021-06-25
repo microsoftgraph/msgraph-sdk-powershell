@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Education-help.xml
 Module Name: Microsoft.Graph.Education
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/get-mgeducationmeuser
 schema: 2.0.0
@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgEducationMeUser
 
 ## SYNOPSIS
-Get user from education
+The directory user corresponding to this user.
 
 ## SYNTAX
 
@@ -17,27 +17,9 @@ Get-MgEducationMeUser [-ExpandProperty <String[]>] [-Property <String[]>] [<Comm
 ```
 
 ## DESCRIPTION
-Get user from education
+The directory user corresponding to this user.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -45,7 +27,7 @@ PS C:\> {{ Add code here }}
 Expand related entities
 
 ```yaml
-Type: System.String[]
+Type: String[]
 Parameter Sets: (All)
 Aliases: Expand
 
@@ -60,7 +42,7 @@ Accept wildcard characters: False
 Select properties to be returned
 
 ```yaml
-Type: System.String[]
+Type: String[]
 Parameter Sets: (All)
 Aliases: Select
 
@@ -85,4 +67,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ALIASES
 
 ## RELATED LINKS
-

@@ -1,74 +1,40 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Education-help.xml
 Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/get-mgeducationuserassignmentresourcefolderurl
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/get-mgeducationclassmemberdelta
 schema: 2.0.0
 ---
 
-# Get-MgEducationUserAssignmentResourceFolderUrl
+# Get-MgEducationClassMemberDelta
 
 ## SYNOPSIS
-Invoke function getResourcesFolderUrl
+Invoke function delta
 
 ## SYNTAX
 
-### Get (Default)
+### Delta (Default)
 ```
-Get-MgEducationUserAssignmentResourceFolderUrl -EducationAssignmentId <String> -EducationUserId <String>
- [<CommonParameters>]
+Get-MgEducationClassMemberDelta -EducationClassId <String> [<CommonParameters>]
 ```
 
-### GetViaIdentity
+### DeltaViaIdentity
 ```
-Get-MgEducationUserAssignmentResourceFolderUrl -InputObject <IEducationIdentity> [<CommonParameters>]
+Get-MgEducationClassMemberDelta -InputObject <IEducationIdentity> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Invoke function getResourcesFolderUrl
+Invoke function delta
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
-### -EducationAssignmentId
-key: id of educationAssignment
+### -EducationClassId
+key: id of educationClass
 
 ```yaml
-Type: System.String
-Parameter Sets: Get
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -EducationUserId
-key: id of educationUser
-
-```yaml
-Type: System.String
-Parameter Sets: Get
+Type: String
+Parameter Sets: Delta
 Aliases:
 
 Required: True
@@ -83,8 +49,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
-Parameter Sets: GetViaIdentity
+Type: IEducationIdentity
+Parameter Sets: DeltaViaIdentity
 Aliases:
 
 Required: True
@@ -103,7 +69,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### System.String
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationUser1
 
 ## NOTES
 
@@ -129,4 +95,3 @@ INPUTOBJECT <IEducationIdentity>: Identity Parameter
   - `[EducationUserId <String>]`: key: id of educationUser
 
 ## RELATED LINKS
-
