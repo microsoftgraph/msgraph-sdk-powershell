@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Sites-help.xml
 Module Name: Microsoft.Graph.Sites
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/get-mgsiteactivitybyinterval
 schema: 2.0.0
@@ -12,13 +12,13 @@ Invoke function getActivitiesByInterval
 
 ## SYNTAX
 
-### Get2 (Default)
+### Get (Default)
 ```
 Get-MgSiteActivityByInterval -EndDateTime <String> -Interval <String> -SiteId <String> -StartDateTime <String>
  [<CommonParameters>]
 ```
 
-### GetViaIdentity2
+### GetViaIdentity
 ```
 Get-MgSiteActivityByInterval -InputObject <ISitesIdentity> [<CommonParameters>]
 ```
@@ -28,32 +28,14 @@ Invoke function getActivitiesByInterval
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
 ### -EndDateTime
-.
+Usage: endDateTime={endDateTime}
 
 ```yaml
-Type: System.String
-Parameter Sets: Get2
+Type: String
+Parameter Sets: Get
 Aliases:
 
 Required: True
@@ -68,8 +50,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
-Parameter Sets: GetViaIdentity2
+Type: ISitesIdentity
+Parameter Sets: GetViaIdentity
 Aliases:
 
 Required: True
@@ -80,11 +62,11 @@ Accept wildcard characters: False
 ```
 
 ### -Interval
-.
+Usage: interval={interval}
 
 ```yaml
-Type: System.String
-Parameter Sets: Get2
+Type: String
+Parameter Sets: Get
 Aliases:
 
 Required: True
@@ -98,8 +80,8 @@ Accept wildcard characters: False
 key: id of site
 
 ```yaml
-Type: System.String
-Parameter Sets: Get2
+Type: String
+Parameter Sets: Get
 Aliases:
 
 Required: True
@@ -110,11 +92,11 @@ Accept wildcard characters: False
 ```
 
 ### -StartDateTime
-.
+Usage: startDateTime={startDateTime}
 
 ```yaml
-Type: System.String
-Parameter Sets: Get2
+Type: String
+Parameter Sets: Get
 Aliases:
 
 Required: True
@@ -133,7 +115,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemActivityStat1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemActivityStat
 
 ## NOTES
 
@@ -149,23 +131,24 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[ColumnLinkId <String>]`: key: id of columnLink
   - `[ContentTypeId <String>]`: key: id of contentType
   - `[DriveId <String>]`: key: id of drive
-  - `[EndDateTime <String>]`: 
+  - `[EndDateTime <String>]`: Usage: endDateTime={endDateTime}
   - `[GroupId <String>]`: key: id of group
-  - `[IncludePersonalNotebooks <Boolean?>]`: 
-  - `[Interval <String>]`: 
+  - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
+  - `[Interval <String>]`: Usage: interval={interval}
   - `[ListId <String>]`: key: id of list
+  - `[ListId1 <String>]`: Usage: listId={listId}
   - `[ListItemId <String>]`: key: id of listItem
   - `[ListItemVersionId <String>]`: key: id of listItemVersion
   - `[NotebookId <String>]`: key: id of notebook
   - `[OnenotePageId <String>]`: key: id of onenotePage
   - `[OnenoteSectionId <String>]`: key: id of onenoteSection
-  - `[Path <String>]`: 
+  - `[Path <String>]`: Usage: path={path}
+  - `[PermissionId <String>]`: key: id of permission
   - `[SiteId <String>]`: key: id of site
   - `[SiteId1 <String>]`: key: id of site
   - `[SitePageId <String>]`: key: id of sitePage
-  - `[StartDateTime <String>]`: 
+  - `[StartDateTime <String>]`: Usage: startDateTime={startDateTime}
   - `[SubscriptionId <String>]`: key: id of subscription
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
-
