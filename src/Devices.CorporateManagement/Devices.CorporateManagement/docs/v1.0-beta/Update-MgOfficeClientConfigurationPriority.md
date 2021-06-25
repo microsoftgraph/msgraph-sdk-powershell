@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Devices.CorporateManagement-help.xml
 Module Name: Microsoft.Graph.Devices.CorporateManagement
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/update-mgofficeclientconfigurationpriority
 schema: 2.0.0
@@ -15,15 +15,15 @@ Invoke action updatePriorities
 ### UpdateExpanded (Default)
 ```
 Update-MgOfficeClientConfigurationPriority [-AdditionalProperties <Hashtable>]
- [-OfficeConfigurationPolicyIds <String[]>] [-OfficeConfigurationPriorities <Int32[]>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-OfficeConfigurationPolicyIds <String[]>] [-OfficeConfigurationPriorities <Int32[]>] [-PassThru] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgOfficeClientConfigurationPriority
  -BodyParameter <IPaths9D5V4YOfficeconfigurationClientconfigurationsMicrosoftGraphUpdateprioritiesPostRequestbodyContentApplicationJsonSchema>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -31,31 +31,13 @@ Invoke action updatePriorities
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
 ### -AdditionalProperties
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -71,7 +53,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths9D5V4YOfficeconfigurationClientconfigurationsMicrosoftGraphUpdateprioritiesPostRequestbodyContentApplicationJsonSchema
+Type: IPaths9D5V4YOfficeconfigurationClientconfigurationsMicrosoftGraphUpdateprioritiesPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Update
 Aliases:
 
@@ -86,7 +68,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.String[]
+Type: String[]
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -101,7 +83,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.Int32[]
+Type: Int32[]
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -116,7 +98,7 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -131,7 +113,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -147,7 +129,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -184,4 +166,3 @@ BODYPARAMETER <IPaths9D5V4YOfficeconfigurationClientconfigurationsMicrosoftGraph
   - `[OfficeConfigurationPriorities <Int32[]>]`: 
 
 ## RELATED LINKS
-

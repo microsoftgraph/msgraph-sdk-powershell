@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Devices.CorporateManagement-help.xml
 Module Name: Microsoft.Graph.Devices.CorporateManagement
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/update-mgofficeclientconfiguration
 schema: 2.0.0
@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgOfficeClientConfiguration
 
 ## SYNOPSIS
-Update the navigation property clientConfigurations in officeConfiguration
+List of office Client configuration.
 
 ## SYNTAX
 
@@ -19,20 +19,13 @@ Update-MgOfficeClientConfiguration -OfficeClientConfigurationId <String> [-Addit
  [-CheckinStatuses <IMicrosoftGraphOfficeClientCheckinStatus[]>] [-Description <String>]
  [-DisplayName <String>] [-Id <String>] [-PolicyPayloadInputFile <String>] [-Priority <Int32>]
  [-UserCheckinSummary <IMicrosoftGraphOfficeUserCheckinSummary>] [-UserPreferencePayloadInputFile <String>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgOfficeClientConfiguration -OfficeClientConfigurationId <String>
- -BodyParameter <IMicrosoftGraphOfficeClientConfiguration> [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
-```
-
-### UpdateViaIdentity
-```
-Update-MgOfficeClientConfiguration -InputObject <IDevicesCorporateManagementIdentity>
- -BodyParameter <IMicrosoftGraphOfficeClientConfiguration> [-PassThru] [-Confirm] [-WhatIf]
+ -BodyParameter <IMicrosoftGraphOfficeClientConfiguration> [-PassThru] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
@@ -43,31 +36,20 @@ Update-MgOfficeClientConfiguration -InputObject <IDevicesCorporateManagementIden
  [-CheckinStatuses <IMicrosoftGraphOfficeClientCheckinStatus[]>] [-Description <String>]
  [-DisplayName <String>] [-Id <String>] [-PolicyPayloadInputFile <String>] [-Priority <Int32>]
  [-UserCheckinSummary <IMicrosoftGraphOfficeUserCheckinSummary>] [-UserPreferencePayloadInputFile <String>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### UpdateViaIdentity
+```
+Update-MgOfficeClientConfiguration -InputObject <IDevicesCorporateManagementIdentity>
+ -BodyParameter <IMicrosoftGraphOfficeClientConfiguration> [-PassThru] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update the navigation property clientConfigurations in officeConfiguration
+List of office Client configuration.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -75,7 +57,7 @@ PS C:\> {{ Add code here }}
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -87,11 +69,11 @@ Accept wildcard characters: False
 ```
 
 ### -Assignments
-.
+The list of group assignments for the policy.
 To construct, see NOTES section for ASSIGNMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOfficeClientConfigurationAssignment[]
+Type: IMicrosoftGraphOfficeClientConfigurationAssignment[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -107,7 +89,7 @@ officeClientConfiguration
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOfficeClientConfiguration
+Type: IMicrosoftGraphOfficeClientConfiguration
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -119,11 +101,11 @@ Accept wildcard characters: False
 ```
 
 ### -CheckinStatuses
-.
+List of office Client check-in status.
 To construct, see NOTES section for CHECKINSTATUSES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOfficeClientCheckinStatus[]
+Type: IMicrosoftGraphOfficeClientCheckinStatus[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -135,10 +117,10 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-.
+Not yet documented
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -150,10 +132,10 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-.
+Admin provided description of the office client configuration policy.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -168,7 +150,7 @@ Accept wildcard characters: False
 Read-only.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -184,8 +166,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
-Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
+Type: IDevicesCorporateManagementIdentity
+Parameter Sets: UpdateViaIdentityExpanded, UpdateViaIdentity
 Aliases:
 
 Required: True
@@ -199,8 +181,8 @@ Accept wildcard characters: False
 key: id of officeClientConfiguration
 
 ```yaml
-Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Type: String
+Parameter Sets: UpdateExpanded, Update
 Aliases:
 
 Required: True
@@ -214,7 +196,7 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -226,10 +208,10 @@ Accept wildcard characters: False
 ```
 
 ### -PolicyPayloadInputFile
-Input File for PolicyPayload (.)
+Input File for PolicyPayload (Policy settings JSON string in binary format, these values cannot be changed by the user.)
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -241,10 +223,10 @@ Accept wildcard characters: False
 ```
 
 ### -Priority
-.
+Priority value should be unique value for each policy under a tenant and will be used for conflict resolution, lower values mean priority is high.
 
 ```yaml
-Type: System.Int32
+Type: Int32
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -260,7 +242,7 @@ officeUserCheckinSummary
 To construct, see NOTES section for USERCHECKINSUMMARY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOfficeUserCheckinSummary
+Type: IMicrosoftGraphOfficeUserCheckinSummary
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -272,10 +254,10 @@ Accept wildcard characters: False
 ```
 
 ### -UserPreferencePayloadInputFile
-Input File for UserPreferencePayload (.)
+Input File for UserPreferencePayload (Preference settings JSON string in binary format, these values can be overridden by the user.)
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -290,7 +272,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -306,7 +288,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -339,7 +321,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-ASSIGNMENTS <IMicrosoftGraphOfficeClientConfigurationAssignment[]>: .
+ASSIGNMENTS <IMicrosoftGraphOfficeClientConfigurationAssignment[]>: The list of group assignments for the policy.
   - `[Id <String>]`: Read-only.
   - `[Target <IMicrosoftGraphOfficeConfigurationAssignmentTarget>]`: officeConfigurationAssignmentTarget
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -347,53 +329,53 @@ ASSIGNMENTS <IMicrosoftGraphOfficeClientConfigurationAssignment[]>: .
 BODYPARAMETER <IMicrosoftGraphOfficeClientConfiguration>: officeClientConfiguration
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
-  - `[Assignments <IMicrosoftGraphOfficeClientConfigurationAssignment[]>]`: 
+  - `[Assignments <IMicrosoftGraphOfficeClientConfigurationAssignment[]>]`: The list of group assignments for the policy.
     - `[Id <String>]`: Read-only.
     - `[Target <IMicrosoftGraphOfficeConfigurationAssignmentTarget>]`: officeConfigurationAssignmentTarget
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[CheckinStatuses <IMicrosoftGraphOfficeClientCheckinStatus[]>]`: 
-    - `[AppliedPolicies <String[]>]`: 
-    - `[CheckinDateTime <DateTime?>]`: 
-    - `[DeviceName <String>]`: 
-    - `[DevicePlatform <String>]`: 
-    - `[DevicePlatformVersion <String>]`: 
-    - `[ErrorMessage <String>]`: 
-    - `[UserId <String>]`: 
-    - `[UserPrincipalName <String>]`: 
-    - `[WasSuccessful <Boolean?>]`: 
-  - `[Description <String>]`: 
-  - `[DisplayName <String>]`: 
-  - `[PolicyPayload <Byte[]>]`: 
-  - `[Priority <Int32?>]`: 
+  - `[CheckinStatuses <IMicrosoftGraphOfficeClientCheckinStatus[]>]`: List of office Client check-in status.
+    - `[AppliedPolicies <String[]>]`: List of policies delivered to the device as last checkin.
+    - `[CheckinDateTime <DateTime?>]`: Last device check-in time in UTC.
+    - `[DeviceName <String>]`: Device name trying to check-in.
+    - `[DevicePlatform <String>]`: Device platform trying to check-in.
+    - `[DevicePlatformVersion <String>]`: Device platform version trying to check-in.
+    - `[ErrorMessage <String>]`: Error message if any associated for the last checkin.
+    - `[UserId <String>]`: User identifier using the device.
+    - `[UserPrincipalName <String>]`: User principal name using the device.
+    - `[WasSuccessful <Boolean?>]`: If the last checkin was successful.
+  - `[Description <String>]`: Not yet documented
+  - `[DisplayName <String>]`: Admin provided description of the office client configuration policy.
+  - `[PolicyPayload <Byte[]>]`: Policy settings JSON string in binary format, these values cannot be changed by the user.
+  - `[Priority <Int32?>]`: Priority value should be unique value for each policy under a tenant and will be used for conflict resolution, lower values mean priority is high.
   - `[UserCheckinSummary <IMicrosoftGraphOfficeUserCheckinSummary>]`: officeUserCheckinSummary
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[FailedUserCount <Int32?>]`: 
-    - `[SucceededUserCount <Int32?>]`: 
-  - `[UserPreferencePayload <Byte[]>]`: 
+    - `[FailedUserCount <Int32?>]`: Total failed user check ins for the last 3 months.
+    - `[SucceededUserCount <Int32?>]`: Total successful user check ins for the last 3 months.
+  - `[UserPreferencePayload <Byte[]>]`: Preference settings JSON string in binary format, these values can be overridden by the user.
 
-CHECKINSTATUSES <IMicrosoftGraphOfficeClientCheckinStatus[]>: .
-  - `[AppliedPolicies <String[]>]`: 
-  - `[CheckinDateTime <DateTime?>]`: 
-  - `[DeviceName <String>]`: 
-  - `[DevicePlatform <String>]`: 
-  - `[DevicePlatformVersion <String>]`: 
-  - `[ErrorMessage <String>]`: 
-  - `[UserId <String>]`: 
-  - `[UserPrincipalName <String>]`: 
-  - `[WasSuccessful <Boolean?>]`: 
+CHECKINSTATUSES <IMicrosoftGraphOfficeClientCheckinStatus[]>: List of office Client check-in status.
+  - `[AppliedPolicies <String[]>]`: List of policies delivered to the device as last checkin.
+  - `[CheckinDateTime <DateTime?>]`: Last device check-in time in UTC.
+  - `[DeviceName <String>]`: Device name trying to check-in.
+  - `[DevicePlatform <String>]`: Device platform trying to check-in.
+  - `[DevicePlatformVersion <String>]`: Device platform version trying to check-in.
+  - `[ErrorMessage <String>]`: Error message if any associated for the last checkin.
+  - `[UserId <String>]`: User identifier using the device.
+  - `[UserPrincipalName <String>]`: User principal name using the device.
+  - `[WasSuccessful <Boolean?>]`: If the last checkin was successful.
 
 INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[AndroidManagedAppProtectionId <String>]`: key: id of androidManagedAppProtection
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest
-  - `[BundleId <String>]`: 
-  - `[Count <Int64?>]`: 
+  - `[AssignmentFilterEvaluationStatusDetailsId <String>]`: key: id of assignmentFilterEvaluationStatusDetails
+  - `[BundleId <String>]`: Usage: bundleId={bundleId}
+  - `[Count <Int64?>]`: Usage: count={count}
   - `[DefaultManagedAppProtectionId <String>]`: key: id of defaultManagedAppProtection
-  - `[DetectedAppId <String>]`: key: id of detectedApp
   - `[DeviceAppManagementTaskId <String>]`: key: id of deviceAppManagementTask
   - `[DeviceCompliancePolicyStateId <String>]`: key: id of deviceCompliancePolicyState
   - `[DeviceConfigurationStateId <String>]`: key: id of deviceConfigurationState
   - `[DeviceEnrollmentConfigurationId <String>]`: key: id of deviceEnrollmentConfiguration
-  - `[DeviceId <String>]`: 
+  - `[DeviceId <String>]`: Usage: deviceId={deviceId}
   - `[DeviceInstallStateId <String>]`: key: id of deviceInstallState
   - `[DeviceLogCollectionResponseId <String>]`: key: id of deviceLogCollectionResponse
   - `[DeviceManagementTroubleshootingEventId <String>]`: key: id of deviceManagementTroubleshootingEvent
@@ -433,14 +415,14 @@ INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[SecurityBaselineSettingStateId <String>]`: key: id of securityBaselineSettingState
   - `[SecurityBaselineStateId <String>]`: key: id of securityBaselineState
   - `[SideLoadingKeyId <String>]`: key: id of sideLoadingKey
-  - `[Status <String>]`: 
+  - `[Status <String>]`: Usage: status={status}
   - `[TargetedManagedAppConfigurationId <String>]`: key: id of targetedManagedAppConfiguration
   - `[TargetedManagedAppPolicyAssignmentId <String>]`: key: id of targetedManagedAppPolicyAssignment
   - `[UserAppInstallStatusId <String>]`: key: id of userAppInstallStatus
   - `[UserId <String>]`: key: id of user
   - `[UserId1 <String>]`: key: id of user
   - `[UserInstallStateSummaryId <String>]`: key: id of userInstallStateSummary
-  - `[UserPrincipalName <String>]`: 
+  - `[UserPrincipalName <String>]`: Usage: userPrincipalName={userPrincipalName}
   - `[VppTokenId <String>]`: key: id of vppToken
   - `[WindowsDefenderApplicationControlSupplementalPolicyAssignmentId <String>]`: key: id of windowsDefenderApplicationControlSupplementalPolicyAssignment
   - `[WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusId <String>]`: key: id of windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus
@@ -452,8 +434,7 @@ INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
 
 USERCHECKINSUMMARY <IMicrosoftGraphOfficeUserCheckinSummary>: officeUserCheckinSummary
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[FailedUserCount <Int32?>]`: 
-  - `[SucceededUserCount <Int32?>]`: 
+  - `[FailedUserCount <Int32?>]`: Total failed user check ins for the last 3 months.
+  - `[SucceededUserCount <Int32?>]`: Total successful user check ins for the last 3 months.
 
 ## RELATED LINKS
-

@@ -1,100 +1,65 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Devices.CorporateManagement-help.xml
 Module Name: Microsoft.Graph.Devices.CorporateManagement
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/update-mgdeviceappmgtmobileappuserstatusesapprelationship
 schema: 2.0.0
 ---
 
-# Update-MgDeviceAppMgtMobileAppUserStatusesAppRelationship
+# Set-MgOfficeClientConfigurationUserPerencePayloadByRef
 
 ## SYNOPSIS
-Invoke action updateRelationships
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
 ## SYNTAX
 
-### UpdateExpanded (Default)
+### Set (Default)
 ```
-Update-MgDeviceAppMgtMobileAppUserStatusesAppRelationship -MobileAppId <String>
- -UserAppInstallStatusId <String> [-AdditionalProperties <Hashtable>]
- [-Relationships <IMicrosoftGraphMobileAppRelationship[]>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Set-MgOfficeClientConfigurationUserPerencePayloadByRef -OfficeClientConfigurationId <String>
+ [-BodyParameter <Stream>] -InFile <String> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### Update
+### SetViaIdentity
 ```
-Update-MgDeviceAppMgtMobileAppUserStatusesAppRelationship -MobileAppId <String>
- -UserAppInstallStatusId <String>
- -BodyParameter <IPathsZuckfjDeviceappmanagementMobileappsMobileappIdUserstatusesUserappinstallstatusIdAppMicrosoftGraphUpdaterelationshipsPostRequestbodyContentApplicationJsonSchema>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### UpdateViaIdentity
-```
-Update-MgDeviceAppMgtMobileAppUserStatusesAppRelationship -InputObject <IDevicesCorporateManagementIdentity>
- -BodyParameter <IPathsZuckfjDeviceappmanagementMobileappsMobileappIdUserstatusesUserappinstallstatusIdAppMicrosoftGraphUpdaterelationshipsPostRequestbodyContentApplicationJsonSchema>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### UpdateViaIdentityExpanded
-```
-Update-MgDeviceAppMgtMobileAppUserStatusesAppRelationship -InputObject <IDevicesCorporateManagementIdentity>
- [-AdditionalProperties <Hashtable>] [-Relationships <IMicrosoftGraphMobileAppRelationship[]>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Set-MgOfficeClientConfigurationUserPerencePayloadByRef -InputObject <IDevicesCorporateManagementIdentity>
+ [-BodyParameter <Stream>] -InFile <String> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Invoke action updateRelationships
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
-### -AdditionalProperties
-Additional Parameters
+### -BodyParameter
+.
 
 ```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Type: Stream
+Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -BodyParameter
-.
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+### -InFile
+The path to the file to upload.
+This should include a path and file name.
+If you omit the path, the current location will be used.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsZuckfjDeviceappmanagementMobileappsMobileappIdUserstatusesUserappinstallstatusIdAppMicrosoftGraphUpdaterelationshipsPostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Update, UpdateViaIdentity
+Type: String
+Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: True (ByValue)
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -103,8 +68,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
-Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
+Type: IDevicesCorporateManagementIdentity
+Parameter Sets: SetViaIdentity
 Aliases:
 
 Required: True
@@ -114,12 +79,12 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -MobileAppId
-key: id of mobileApp
+### -OfficeClientConfigurationId
+key: id of officeClientConfiguration
 
 ```yaml
-Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Type: String
+Parameter Sets: Set
 Aliases:
 
 Required: True
@@ -133,7 +98,7 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -144,42 +109,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Relationships
-.
-To construct, see NOTES section for RELATIONSHIPS properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppRelationship[]
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -UserAppInstallStatusId
-key: id of userAppInstallStatus
-
-```yaml
-Type: System.String
-Parameter Sets: Update, UpdateExpanded
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -195,7 +129,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -213,7 +147,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IPathsZuckfjDeviceappmanagementMobileappsMobileappIdUserstatusesUserappinstallstatusIdAppMicrosoftGraphUpdaterelationshipsPostRequestbodyContentApplicationJsonSchema
+### System.IO.Stream
 
 ## OUTPUTS
 
@@ -223,32 +157,23 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-### Update-MgDeviceAppManagementMobileAppUserStatusesAppRelationship
-
 COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IPathsZuckfjDeviceappmanagementMobileappsMobileappIdUserstatusesUserappinstallstatusIdAppMicrosoftGraphUpdaterelationshipsPostRequestbodyContentApplicationJsonSchema>: .
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Relationships <IMicrosoftGraphMobileAppRelationship[]>]`: 
-    - `[Id <String>]`: Read-only.
-    - `[TargetDisplayName <String>]`: The target mobile app's display name.
-    - `[TargetId <String>]`: The target mobile app's app id.
-
 INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[AndroidManagedAppProtectionId <String>]`: key: id of androidManagedAppProtection
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest
-  - `[BundleId <String>]`: 
-  - `[Count <Int64?>]`: 
+  - `[AssignmentFilterEvaluationStatusDetailsId <String>]`: key: id of assignmentFilterEvaluationStatusDetails
+  - `[BundleId <String>]`: Usage: bundleId={bundleId}
+  - `[Count <Int64?>]`: Usage: count={count}
   - `[DefaultManagedAppProtectionId <String>]`: key: id of defaultManagedAppProtection
-  - `[DetectedAppId <String>]`: key: id of detectedApp
   - `[DeviceAppManagementTaskId <String>]`: key: id of deviceAppManagementTask
   - `[DeviceCompliancePolicyStateId <String>]`: key: id of deviceCompliancePolicyState
   - `[DeviceConfigurationStateId <String>]`: key: id of deviceConfigurationState
   - `[DeviceEnrollmentConfigurationId <String>]`: key: id of deviceEnrollmentConfiguration
-  - `[DeviceId <String>]`: 
+  - `[DeviceId <String>]`: Usage: deviceId={deviceId}
   - `[DeviceInstallStateId <String>]`: key: id of deviceInstallState
   - `[DeviceLogCollectionResponseId <String>]`: key: id of deviceLogCollectionResponse
   - `[DeviceManagementTroubleshootingEventId <String>]`: key: id of deviceManagementTroubleshootingEvent
@@ -288,14 +213,14 @@ INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[SecurityBaselineSettingStateId <String>]`: key: id of securityBaselineSettingState
   - `[SecurityBaselineStateId <String>]`: key: id of securityBaselineState
   - `[SideLoadingKeyId <String>]`: key: id of sideLoadingKey
-  - `[Status <String>]`: 
+  - `[Status <String>]`: Usage: status={status}
   - `[TargetedManagedAppConfigurationId <String>]`: key: id of targetedManagedAppConfiguration
   - `[TargetedManagedAppPolicyAssignmentId <String>]`: key: id of targetedManagedAppPolicyAssignment
   - `[UserAppInstallStatusId <String>]`: key: id of userAppInstallStatus
   - `[UserId <String>]`: key: id of user
   - `[UserId1 <String>]`: key: id of user
   - `[UserInstallStateSummaryId <String>]`: key: id of userInstallStateSummary
-  - `[UserPrincipalName <String>]`: 
+  - `[UserPrincipalName <String>]`: Usage: userPrincipalName={userPrincipalName}
   - `[VppTokenId <String>]`: key: id of vppToken
   - `[WindowsDefenderApplicationControlSupplementalPolicyAssignmentId <String>]`: key: id of windowsDefenderApplicationControlSupplementalPolicyAssignment
   - `[WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusId <String>]`: key: id of windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus
@@ -305,10 +230,4 @@ INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[WindowsInformationProtectionPolicyId <String>]`: key: id of windowsInformationProtectionPolicy
   - `[WindowsInformationProtectionWipeActionId <String>]`: key: id of windowsInformationProtectionWipeAction
 
-RELATIONSHIPS <IMicrosoftGraphMobileAppRelationship[]>: .
-  - `[Id <String>]`: Read-only.
-  - `[TargetDisplayName <String>]`: The target mobile app's display name.
-  - `[TargetId <String>]`: The target mobile app's app id.
-
 ## RELATED LINKS
-
