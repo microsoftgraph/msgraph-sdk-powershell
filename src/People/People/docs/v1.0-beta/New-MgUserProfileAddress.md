@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.People-help.xml
 Module Name: Microsoft.Graph.People
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.people/new-mguserprofileaddress
 schema: 2.0.0
@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserProfileAddress
 
 ## SYNOPSIS
-Create new navigation property to addresses for users
+Represents details of addresses associated with the user.
 
 ## SYNTAX
 
@@ -18,20 +18,14 @@ New-MgUserProfileAddress -UserId <String> [-AdditionalProperties <Hashtable>] [-
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>]
  [-Detail <IMicrosoftGraphPhysicalAddress1>] [-DisplayName <String>]
  [-GeoCoordinates <IMicrosoftGraphGeoCoordinates>] [-Id <String>] [-Inference <IMicrosoftGraphInferenceData>]
- [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>]
- [-Source <IMicrosoftGraphPersonDataSource>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-IsSearchable] [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>]
+ [-Source <IMicrosoftGraphPersonDataSources>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgUserProfileAddress -UserId <String> -BodyParameter <IMicrosoftGraphItemAddress> [-Confirm] [-WhatIf]
+New-MgUserProfileAddress -UserId <String> -BodyParameter <IMicrosoftGraphItemAddress> [-WhatIf] [-Confirm]
  [<CommonParameters>]
-```
-
-### CreateViaIdentity
-```
-New-MgUserProfileAddress -InputObject <IPeopleIdentity> -BodyParameter <IMicrosoftGraphItemAddress> [-Confirm]
- [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -40,32 +34,20 @@ New-MgUserProfileAddress -InputObject <IPeopleIdentity> [-AdditionalProperties <
  [-AllowedAudiences <String>] [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>]
  [-Detail <IMicrosoftGraphPhysicalAddress1>] [-DisplayName <String>]
  [-GeoCoordinates <IMicrosoftGraphGeoCoordinates>] [-Id <String>] [-Inference <IMicrosoftGraphInferenceData>]
- [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>]
- [-Source <IMicrosoftGraphPersonDataSource>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-IsSearchable] [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>]
+ [-Source <IMicrosoftGraphPersonDataSources>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### CreateViaIdentity
+```
+New-MgUserProfileAddress -InputObject <IPeopleIdentity> -BodyParameter <IMicrosoftGraphItemAddress> [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create new navigation property to addresses for users
+Represents details of addresses associated with the user.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -73,7 +55,7 @@ PS C:\> {{ Add code here }}
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -88,7 +70,7 @@ Accept wildcard characters: False
 allowedAudiences
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -104,7 +86,7 @@ itemAddress
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemAddress
+Type: IMicrosoftGraphItemAddress
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -120,7 +102,7 @@ identitySet
 To construct, see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: IMicrosoftGraphIdentitySet
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -132,10 +114,10 @@ Accept wildcard characters: False
 ```
 
 ### -CreatedDateTime
-.
+Provides the dateTimeOffset for when the entity was created.
 
 ```yaml
-Type: System.DateTime
+Type: DateTime
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -151,7 +133,7 @@ physicalAddress
 To construct, see NOTES section for DETAIL properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPhysicalAddress1
+Type: IMicrosoftGraphPhysicalAddress1
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -163,10 +145,10 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-.
+Friendly name the user has assigned to this address.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -182,7 +164,7 @@ geoCoordinates
 To construct, see NOTES section for GEOCOORDINATES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGeoCoordinates
+Type: IMicrosoftGraphGeoCoordinates
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -197,7 +179,7 @@ Accept wildcard characters: False
 Read-only.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -213,7 +195,7 @@ inferenceData
 To construct, see NOTES section for INFERENCE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInferenceData
+Type: IMicrosoftGraphInferenceData
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -229,8 +211,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPeopleIdentity
-Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
+Type: IPeopleIdentity
+Parameter Sets: CreateViaIdentityExpanded, CreateViaIdentity
 Aliases:
 
 Required: True
@@ -240,12 +222,27 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
+### -IsSearchable
+.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -LastModifiedBy
 identitySet
 To construct, see NOTES section for LASTMODIFIEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: IMicrosoftGraphIdentitySet
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -257,10 +254,10 @@ Accept wildcard characters: False
 ```
 
 ### -LastModifiedDateTime
-.
+Provides the dateTimeOffset for when the entity was created.
 
 ```yaml
-Type: System.DateTime
+Type: DateTime
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -272,11 +269,11 @@ Accept wildcard characters: False
 ```
 
 ### -Source
-personDataSource
+personDataSources
 To construct, see NOTES section for SOURCE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPersonDataSource
+Type: IMicrosoftGraphPersonDataSources
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -291,8 +288,8 @@ Accept wildcard characters: False
 key: id of user
 
 ```yaml
-Type: System.String
-Parameter Sets: Create, CreateExpanded
+Type: String
+Parameter Sets: CreateExpanded, Create
 Aliases:
 
 Required: True
@@ -306,7 +303,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -322,7 +319,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -366,32 +363,33 @@ BODYPARAMETER <IMicrosoftGraphItemAddress>: itemAddress
       - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
-  - `[CreatedDateTime <DateTime?>]`: 
+  - `[CreatedDateTime <DateTime?>]`: Provides the dateTimeOffset for when the entity was created.
   - `[Inference <IMicrosoftGraphInferenceData>]`: inferenceData
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[ConfidenceScore <Double?>]`: 
-    - `[UserHasVerifiedAccuracy <Boolean?>]`: 
+    - `[ConfidenceScore <Double?>]`: Confidence score reflecting the accuracy of the data inferred about the user.
+    - `[UserHasVerifiedAccuracy <Boolean?>]`: Records if the user has confirmed this inference as being True or False.
+  - `[IsSearchable <Boolean?>]`: 
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-  - `[LastModifiedDateTime <DateTime?>]`: 
-  - `[Source <IMicrosoftGraphPersonDataSource>]`: personDataSource
+  - `[LastModifiedDateTime <DateTime?>]`: Provides the dateTimeOffset for when the entity was created.
+  - `[Source <IMicrosoftGraphPersonDataSources>]`: personDataSources
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Type <String>]`: 
+    - `[Type <String[]>]`: 
   - `[Id <String>]`: Read-only.
   - `[Detail <IMicrosoftGraphPhysicalAddress1>]`: physicalAddress
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[City <String>]`: The city.
     - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
-    - `[PostOfficeBox <String>]`: 
+    - `[PostOfficeBox <String>]`: The post office box number.
     - `[PostalCode <String>]`: The postal code.
     - `[State <String>]`: The state.
     - `[Street <String>]`: The street.
     - `[Type <String>]`: physicalAddressType
-  - `[DisplayName <String>]`: 
+  - `[DisplayName <String>]`: Friendly name the user has assigned to this address.
   - `[GeoCoordinates <IMicrosoftGraphGeoCoordinates>]`: geoCoordinates
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Altitude <Double?>]`: Optional. The altitude (height), in feet,  above sea level for the item. Read-only.
-    - `[Latitude <Double?>]`: Optional. The latitude, in decimal, for the item. Read-only.
-    - `[Longitude <Double?>]`: Optional. The longitude, in decimal, for the item. Read-only.
+    - `[Latitude <Double?>]`: Optional. The latitude, in decimal, for the item. Writable on OneDrive Personal.
+    - `[Longitude <Double?>]`: Optional. The longitude, in decimal, for the item. Writable on OneDrive Personal.
 
 CREATEDBY <IMicrosoftGraphIdentitySet>: identitySet
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -406,7 +404,7 @@ DETAIL <IMicrosoftGraphPhysicalAddress1>: physicalAddress
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[City <String>]`: The city.
   - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
-  - `[PostOfficeBox <String>]`: 
+  - `[PostOfficeBox <String>]`: The post office box number.
   - `[PostalCode <String>]`: The postal code.
   - `[State <String>]`: The state.
   - `[Street <String>]`: The street.
@@ -415,13 +413,13 @@ DETAIL <IMicrosoftGraphPhysicalAddress1>: physicalAddress
 GEOCOORDINATES <IMicrosoftGraphGeoCoordinates>: geoCoordinates
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Altitude <Double?>]`: Optional. The altitude (height), in feet,  above sea level for the item. Read-only.
-  - `[Latitude <Double?>]`: Optional. The latitude, in decimal, for the item. Read-only.
-  - `[Longitude <Double?>]`: Optional. The longitude, in decimal, for the item. Read-only.
+  - `[Latitude <Double?>]`: Optional. The latitude, in decimal, for the item. Writable on OneDrive Personal.
+  - `[Longitude <Double?>]`: Optional. The longitude, in decimal, for the item. Writable on OneDrive Personal.
 
 INFERENCE <IMicrosoftGraphInferenceData>: inferenceData
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[ConfidenceScore <Double?>]`: 
-  - `[UserHasVerifiedAccuracy <Boolean?>]`: 
+  - `[ConfidenceScore <Double?>]`: Confidence score reflecting the accuracy of the data inferred about the user.
+  - `[UserHasVerifiedAccuracy <Boolean?>]`: Records if the user has confirmed this inference as being True or False.
 
 INPUTOBJECT <IPeopleIdentity>: Identity Parameter
   - `[ActivityStatisticsId <String>]`: key: id of activityStatistics
@@ -432,8 +430,8 @@ INPUTOBJECT <IPeopleIdentity>: Identity Parameter
   - `[ItemPhoneId <String>]`: key: id of itemPhone
   - `[ItemPublicationId <String>]`: key: id of itemPublication
   - `[LanguageProficiencyId <String>]`: key: id of languageProficiency
-  - `[PersonAnniversaryId <String>]`: key: id of personAnniversary
   - `[PersonAnnotationId <String>]`: key: id of personAnnotation
+  - `[PersonAnnualEventId <String>]`: key: id of personAnnualEvent
   - `[PersonAwardId <String>]`: key: id of personAward
   - `[PersonCertificationId <String>]`: key: id of personCertification
   - `[PersonId <String>]`: key: id of person
@@ -459,9 +457,8 @@ LASTMODIFIEDBY <IMicrosoftGraphIdentitySet>: identitySet
   - `[Device <IMicrosoftGraphIdentity>]`: identity
   - `[User <IMicrosoftGraphIdentity>]`: identity
 
-SOURCE <IMicrosoftGraphPersonDataSource>: personDataSource
+SOURCE <IMicrosoftGraphPersonDataSources>: personDataSources
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Type <String>]`: 
+  - `[Type <String[]>]`: 
 
 ## RELATED LINKS
-

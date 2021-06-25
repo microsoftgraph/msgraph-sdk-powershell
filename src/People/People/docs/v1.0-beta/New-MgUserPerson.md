@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.People-help.xml
 Module Name: Microsoft.Graph.People
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.people/new-mguserperson
 schema: 2.0.0
@@ -8,7 +8,10 @@ schema: 2.0.0
 # New-MgUserPerson
 
 ## SYNOPSIS
-Create new navigation property to people for users
+Read-only.
+The most relevant people to the user.
+The collection is ordered by their relevance to the user, which is determined by the user's communication, collaboration and business relationships.
+A person is an aggregation of information from across mail, contacts and social networks.
 
 ## SYNTAX
 
@@ -20,19 +23,13 @@ New-MgUserPerson -UserId <String> [-AdditionalProperties <Hashtable>] [-Birthday
  [-MailboxType <String>] [-OfficeLocation <String>] [-PersonNotes <String>] [-PersonType <String>]
  [-Phones <IMicrosoftGraphPhone1[]>] [-PostalAddresses <IMicrosoftGraphLocation1[]>] [-Profession <String>]
  [-Sources <IMicrosoftGraphPersonDataSource[]>] [-Surname <String>] [-Title <String>]
- [-UserPrincipalName <String>] [-Websites <IMicrosoftGraphWebsite[]>] [-YomiCompany <String>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-UserPrincipalName <String>] [-Websites <IMicrosoftGraphWebsite[]>] [-YomiCompany <String>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ### Create1
 ```
-New-MgUserPerson -UserId <String> -BodyParameter <IMicrosoftGraphPerson1> [-Confirm] [-WhatIf]
- [<CommonParameters>]
-```
-
-### CreateViaIdentity1
-```
-New-MgUserPerson -InputObject <IPeopleIdentity> -BodyParameter <IMicrosoftGraphPerson1> [-Confirm] [-WhatIf]
+New-MgUserPerson -UserId <String> -BodyParameter <IMicrosoftGraphPerson1> [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
@@ -44,32 +41,23 @@ New-MgUserPerson -InputObject <IPeopleIdentity> [-AdditionalProperties <Hashtabl
  [-MailboxType <String>] [-OfficeLocation <String>] [-PersonNotes <String>] [-PersonType <String>]
  [-Phones <IMicrosoftGraphPhone1[]>] [-PostalAddresses <IMicrosoftGraphLocation1[]>] [-Profession <String>]
  [-Sources <IMicrosoftGraphPersonDataSource[]>] [-Surname <String>] [-Title <String>]
- [-UserPrincipalName <String>] [-Websites <IMicrosoftGraphWebsite[]>] [-YomiCompany <String>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-UserPrincipalName <String>] [-Websites <IMicrosoftGraphWebsite[]>] [-YomiCompany <String>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
+```
+
+### CreateViaIdentity1
+```
+New-MgUserPerson -InputObject <IPeopleIdentity> -BodyParameter <IMicrosoftGraphPerson1> [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create new navigation property to people for users
+Read-only.
+The most relevant people to the user.
+The collection is ordered by their relevance to the user, which is determined by the user's communication, collaboration and business relationships.
+A person is an aggregation of information from across mail, contacts and social networks.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -77,7 +65,7 @@ PS C:\> {{ Add code here }}
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -92,7 +80,7 @@ Accept wildcard characters: False
 The person's birthday.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -108,7 +96,7 @@ person
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPerson1
+Type: IMicrosoftGraphPerson1
 Parameter Sets: Create1, CreateViaIdentity1
 Aliases:
 
@@ -123,7 +111,7 @@ Accept wildcard characters: False
 The name of the person's company.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -138,7 +126,7 @@ Accept wildcard characters: False
 The person's department.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -153,7 +141,7 @@ Accept wildcard characters: False
 The person's display name.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -165,11 +153,11 @@ Accept wildcard characters: False
 ```
 
 ### -EmailAddresses
-.
+The person's email addresses.
 To construct, see NOTES section for EMAILADDRESSES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRankedEmailAddress[]
+Type: IMicrosoftGraphRankedEmailAddress[]
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -184,7 +172,7 @@ Accept wildcard characters: False
 The person's given name.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -199,7 +187,7 @@ Accept wildcard characters: False
 Read-only.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -215,8 +203,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPeopleIdentity
-Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
+Type: IPeopleIdentity
+Parameter Sets: CreateViaIdentityExpanded1, CreateViaIdentity1
 Aliases:
 
 Required: True
@@ -230,7 +218,7 @@ Accept wildcard characters: False
 true if the user has flagged this person as a favorite.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -242,10 +230,10 @@ Accept wildcard characters: False
 ```
 
 ### -MailboxType
-.
+The type of mailbox that is represented by the person's email address.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -260,7 +248,7 @@ Accept wildcard characters: False
 The location of the person's office.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -275,7 +263,7 @@ Accept wildcard characters: False
 Free-form notes that the user has taken about this person.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -287,10 +275,10 @@ Accept wildcard characters: False
 ```
 
 ### -PersonType
-The type of person.
+The type of person, for example distribution list.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -306,7 +294,7 @@ The person's phone numbers.
 To construct, see NOTES section for PHONES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPhone1[]
+Type: IMicrosoftGraphPhone1[]
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -322,7 +310,7 @@ The person's addresses.
 To construct, see NOTES section for POSTALADDRESSES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLocation1[]
+Type: IMicrosoftGraphLocation1[]
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -337,7 +325,7 @@ Accept wildcard characters: False
 The person's profession.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -349,11 +337,11 @@ Accept wildcard characters: False
 ```
 
 ### -Sources
-.
+The sources the user data comes from, for example Directory or Outlook Contacts.
 To construct, see NOTES section for SOURCES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPersonDataSource[]
+Type: IMicrosoftGraphPersonDataSource[]
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -368,7 +356,7 @@ Accept wildcard characters: False
 The person's surname.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -380,10 +368,10 @@ Accept wildcard characters: False
 ```
 
 ### -Title
-.
+The person's title.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -398,8 +386,8 @@ Accept wildcard characters: False
 key: id of user
 
 ```yaml
-Type: System.String
-Parameter Sets: Create1, CreateExpanded1
+Type: String
+Parameter Sets: CreateExpanded1, Create1
 Aliases:
 
 Required: True
@@ -416,7 +404,7 @@ By convention, this should map to the person's email name.
 The general format is alias@domain.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -432,7 +420,7 @@ The person's websites.
 To construct, see NOTES section for WEBSITES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWebsite[]
+Type: IMicrosoftGraphWebsite[]
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -447,7 +435,7 @@ Accept wildcard characters: False
 The phonetic Japanese name of the person's company.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -462,7 +450,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -478,7 +466,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -518,15 +506,15 @@ BODYPARAMETER <IMicrosoftGraphPerson1>: person
   - `[CompanyName <String>]`: The name of the person's company.
   - `[Department <String>]`: The person's department.
   - `[DisplayName <String>]`: The person's display name.
-  - `[EmailAddresses <IMicrosoftGraphRankedEmailAddress[]>]`: 
-    - `[Address <String>]`: 
-    - `[Rank <Double?>]`: 
+  - `[EmailAddresses <IMicrosoftGraphRankedEmailAddress[]>]`: The person's email addresses.
+    - `[Address <String>]`: The email address.
+    - `[Rank <Double?>]`: The rank of the email address. A rank is used as a sort key, in relation to the other returned results. A higher rank value corresponds to a more relevant result. Relevance is determined by communication, collaboration, and business relationship signals.
   - `[GivenName <String>]`: The person's given name.
   - `[IsFavorite <Boolean?>]`: true if the user has flagged this person as a favorite.
-  - `[MailboxType <String>]`: 
+  - `[MailboxType <String>]`: The type of mailbox that is represented by the person's email address.
   - `[OfficeLocation <String>]`: The location of the person's office.
   - `[PersonNotes <String>]`: Free-form notes that the user has taken about this person.
-  - `[PersonType <String>]`: The type of person.
+  - `[PersonType <String>]`: The type of person, for example distribution list.
   - `[Phones <IMicrosoftGraphPhone1[]>]`: The person's phone numbers.
     - `[Number <String>]`: The phone number.
     - `[Type <String>]`: phoneType
@@ -535,7 +523,7 @@ BODYPARAMETER <IMicrosoftGraphPerson1>: person
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[City <String>]`: The city.
       - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
-      - `[PostOfficeBox <String>]`: 
+      - `[PostOfficeBox <String>]`: The post office box number.
       - `[PostalCode <String>]`: The postal code.
       - `[State <String>]`: The state.
       - `[Street <String>]`: The street.
@@ -554,10 +542,10 @@ BODYPARAMETER <IMicrosoftGraphPerson1>: person
     - `[UniqueId <String>]`: For internal use only.
     - `[UniqueIdType <String>]`: locationUniqueIdType
   - `[Profession <String>]`: The person's profession.
-  - `[Sources <IMicrosoftGraphPersonDataSource[]>]`: 
-    - `[Type <String>]`: 
+  - `[Sources <IMicrosoftGraphPersonDataSource[]>]`: The sources the user data comes from, for example Directory or Outlook Contacts.
+    - `[Type <String>]`: The type of data source.
   - `[Surname <String>]`: The person's surname.
-  - `[Title <String>]`: 
+  - `[Title <String>]`: The person's title.
   - `[UserPrincipalName <String>]`: The user principal name (UPN) of the person. The UPN is an Internet-style login name for the person based on the Internet standard RFC 822. By convention, this should map to the person's email name. The general format is alias@domain.
   - `[Websites <IMicrosoftGraphWebsite[]>]`: The person's websites.
     - `[Address <String>]`: The URL of the website.
@@ -565,9 +553,9 @@ BODYPARAMETER <IMicrosoftGraphPerson1>: person
     - `[Type <String>]`: websiteType
   - `[YomiCompany <String>]`: The phonetic Japanese name of the person's company.
 
-EMAILADDRESSES <IMicrosoftGraphRankedEmailAddress[]>: .
-  - `[Address <String>]`: 
-  - `[Rank <Double?>]`: 
+EMAILADDRESSES <IMicrosoftGraphRankedEmailAddress[]>: The person's email addresses.
+  - `[Address <String>]`: The email address.
+  - `[Rank <Double?>]`: The rank of the email address. A rank is used as a sort key, in relation to the other returned results. A higher rank value corresponds to a more relevant result. Relevance is determined by communication, collaboration, and business relationship signals.
 
 INPUTOBJECT <IPeopleIdentity>: Identity Parameter
   - `[ActivityStatisticsId <String>]`: key: id of activityStatistics
@@ -578,8 +566,8 @@ INPUTOBJECT <IPeopleIdentity>: Identity Parameter
   - `[ItemPhoneId <String>]`: key: id of itemPhone
   - `[ItemPublicationId <String>]`: key: id of itemPublication
   - `[LanguageProficiencyId <String>]`: key: id of languageProficiency
-  - `[PersonAnniversaryId <String>]`: key: id of personAnniversary
   - `[PersonAnnotationId <String>]`: key: id of personAnnotation
+  - `[PersonAnnualEventId <String>]`: key: id of personAnnualEvent
   - `[PersonAwardId <String>]`: key: id of personAward
   - `[PersonCertificationId <String>]`: key: id of personCertification
   - `[PersonId <String>]`: key: id of person
@@ -605,7 +593,7 @@ POSTALADDRESSES <IMicrosoftGraphLocation1[]>: The person's addresses.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[City <String>]`: The city.
     - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
-    - `[PostOfficeBox <String>]`: 
+    - `[PostOfficeBox <String>]`: The post office box number.
     - `[PostalCode <String>]`: The postal code.
     - `[State <String>]`: The state.
     - `[Street <String>]`: The street.
@@ -624,8 +612,8 @@ POSTALADDRESSES <IMicrosoftGraphLocation1[]>: The person's addresses.
   - `[UniqueId <String>]`: For internal use only.
   - `[UniqueIdType <String>]`: locationUniqueIdType
 
-SOURCES <IMicrosoftGraphPersonDataSource[]>: .
-  - `[Type <String>]`: 
+SOURCES <IMicrosoftGraphPersonDataSource[]>: The sources the user data comes from, for example Directory or Outlook Contacts.
+  - `[Type <String>]`: The type of data source.
 
 WEBSITES <IMicrosoftGraphWebsite[]>: The person's websites.
   - `[Address <String>]`: The URL of the website.
@@ -633,4 +621,3 @@ WEBSITES <IMicrosoftGraphWebsite[]>: The person's websites.
   - `[Type <String>]`: websiteType
 
 ## RELATED LINKS
-

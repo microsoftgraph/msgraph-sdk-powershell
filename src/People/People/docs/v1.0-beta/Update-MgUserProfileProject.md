@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.People-help.xml
 Module Name: Microsoft.Graph.People
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.people/update-mguserprofileproject
 schema: 2.0.0
@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgUserProfileProject
 
 ## SYNOPSIS
-Update the navigation property projects in users
+Represents detailed information about projects associated with a user.
 
 ## SYNTAX
 
@@ -18,22 +18,17 @@ Update-MgUserProfileProject -ProjectParticipationId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-AllowedAudiences <String>] [-Categories <String[]>]
  [-Client <IMicrosoftGraphCompanyDetail>] [-CollaborationTags <String[]>]
  [-Colleagues <IMicrosoftGraphRelatedPerson[]>] [-CreatedBy <IMicrosoftGraphIdentitySet>]
- [-CreatedDateTime <DateTime>] [-Detail <IMicrosoftGraphPositionDetail>] [-DisplayName <String>]
- [-Id <String>] [-Inference <IMicrosoftGraphInferenceData>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
- [-LastModifiedDateTime <DateTime>] [-Source <IMicrosoftGraphPersonDataSource>]
- [-Sponsors <IMicrosoftGraphRelatedPerson[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-CreatedDateTime <DateTime>] [-Detail <IMicrosoftGraphPositionDetail>] [-DisplayName <String>] [-Id <String>]
+ [-Inference <IMicrosoftGraphInferenceData>] [-IsSearchable] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
+ [-LastModifiedDateTime <DateTime>] [-Source <IMicrosoftGraphPersonDataSources>]
+ [-Sponsors <IMicrosoftGraphRelatedPerson[]>] [-ThumbnailUrl <String>] [-PassThru] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgUserProfileProject -ProjectParticipationId <String> -UserId <String>
- -BodyParameter <IMicrosoftGraphProjectParticipation> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### UpdateViaIdentity
-```
-Update-MgUserProfileProject -InputObject <IPeopleIdentity>
- -BodyParameter <IMicrosoftGraphProjectParticipation> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphProjectParticipation> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -43,33 +38,22 @@ Update-MgUserProfileProject -InputObject <IPeopleIdentity> [-AdditionalPropertie
  [-CollaborationTags <String[]>] [-Colleagues <IMicrosoftGraphRelatedPerson[]>]
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>]
  [-Detail <IMicrosoftGraphPositionDetail>] [-DisplayName <String>] [-Id <String>]
- [-Inference <IMicrosoftGraphInferenceData>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
- [-LastModifiedDateTime <DateTime>] [-Source <IMicrosoftGraphPersonDataSource>]
- [-Sponsors <IMicrosoftGraphRelatedPerson[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Inference <IMicrosoftGraphInferenceData>] [-IsSearchable] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
+ [-LastModifiedDateTime <DateTime>] [-Source <IMicrosoftGraphPersonDataSources>]
+ [-Sponsors <IMicrosoftGraphRelatedPerson[]>] [-ThumbnailUrl <String>] [-PassThru] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+### UpdateViaIdentity
+```
+Update-MgUserProfileProject -InputObject <IPeopleIdentity> -BodyParameter <IMicrosoftGraphProjectParticipation>
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update the navigation property projects in users
+Represents detailed information about projects associated with a user.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -77,7 +61,7 @@ PS C:\> {{ Add code here }}
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -92,7 +76,7 @@ Accept wildcard characters: False
 allowedAudiences
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -108,7 +92,7 @@ projectParticipation
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphProjectParticipation
+Type: IMicrosoftGraphProjectParticipation
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -120,10 +104,10 @@ Accept wildcard characters: False
 ```
 
 ### -Categories
-.
+Contains categories a user has associated with the project (for example, digital transformation, oil rig).
 
 ```yaml
-Type: System.String[]
+Type: String[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -139,7 +123,7 @@ companyDetail
 To construct, see NOTES section for CLIENT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCompanyDetail
+Type: IMicrosoftGraphCompanyDetail
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -151,10 +135,11 @@ Accept wildcard characters: False
 ```
 
 ### -CollaborationTags
-.
+Contains experience scenario tags a user has associated with the interest.
+Allowed values in the collection are: askMeAbout, ableToMentor, wantsToLearn, wantsToImprove.
 
 ```yaml
-Type: System.String[]
+Type: String[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -166,11 +151,11 @@ Accept wildcard characters: False
 ```
 
 ### -Colleagues
-.
+Lists people that also worked on the project.
 To construct, see NOTES section for COLLEAGUES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRelatedPerson[]
+Type: IMicrosoftGraphRelatedPerson[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -186,7 +171,7 @@ identitySet
 To construct, see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: IMicrosoftGraphIdentitySet
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -198,10 +183,10 @@ Accept wildcard characters: False
 ```
 
 ### -CreatedDateTime
-.
+Provides the dateTimeOffset for when the entity was created.
 
 ```yaml
-Type: System.DateTime
+Type: DateTime
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -217,7 +202,7 @@ positionDetail
 To construct, see NOTES section for DETAIL properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPositionDetail
+Type: IMicrosoftGraphPositionDetail
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -229,10 +214,10 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-.
+Contains a friendly name for the project.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -247,7 +232,7 @@ Accept wildcard characters: False
 Read-only.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -263,7 +248,7 @@ inferenceData
 To construct, see NOTES section for INFERENCE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInferenceData
+Type: IMicrosoftGraphInferenceData
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -279,8 +264,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPeopleIdentity
-Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
+Type: IPeopleIdentity
+Parameter Sets: UpdateViaIdentityExpanded, UpdateViaIdentity
 Aliases:
 
 Required: True
@@ -290,12 +275,27 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
+### -IsSearchable
+.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -LastModifiedBy
 identitySet
 To construct, see NOTES section for LASTMODIFIEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: IMicrosoftGraphIdentitySet
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -307,10 +307,10 @@ Accept wildcard characters: False
 ```
 
 ### -LastModifiedDateTime
-.
+Provides the dateTimeOffset for when the entity was created.
 
 ```yaml
-Type: System.DateTime
+Type: DateTime
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -325,7 +325,7 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -340,8 +340,8 @@ Accept wildcard characters: False
 key: id of projectParticipation
 
 ```yaml
-Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Type: String
+Parameter Sets: UpdateExpanded, Update
 Aliases:
 
 Required: True
@@ -352,11 +352,11 @@ Accept wildcard characters: False
 ```
 
 ### -Source
-personDataSource
+personDataSources
 To construct, see NOTES section for SOURCE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPersonDataSource
+Type: IMicrosoftGraphPersonDataSources
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -368,11 +368,26 @@ Accept wildcard characters: False
 ```
 
 ### -Sponsors
-.
+The Person or people who sponsored the project.
 To construct, see NOTES section for SPONSORS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRelatedPerson[]
+Type: IMicrosoftGraphRelatedPerson[]
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ThumbnailUrl
+.
+
+```yaml
+Type: String
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -387,8 +402,8 @@ Accept wildcard characters: False
 key: id of user
 
 ```yaml
-Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Type: String
+Parameter Sets: UpdateExpanded, Update
 Aliases:
 
 Required: True
@@ -402,7 +417,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -418,7 +433,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -462,50 +477,52 @@ BODYPARAMETER <IMicrosoftGraphProjectParticipation>: projectParticipation
       - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
-  - `[CreatedDateTime <DateTime?>]`: 
+  - `[CreatedDateTime <DateTime?>]`: Provides the dateTimeOffset for when the entity was created.
   - `[Inference <IMicrosoftGraphInferenceData>]`: inferenceData
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[ConfidenceScore <Double?>]`: 
-    - `[UserHasVerifiedAccuracy <Boolean?>]`: 
+    - `[ConfidenceScore <Double?>]`: Confidence score reflecting the accuracy of the data inferred about the user.
+    - `[UserHasVerifiedAccuracy <Boolean?>]`: Records if the user has confirmed this inference as being True or False.
+  - `[IsSearchable <Boolean?>]`: 
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-  - `[LastModifiedDateTime <DateTime?>]`: 
-  - `[Source <IMicrosoftGraphPersonDataSource>]`: personDataSource
+  - `[LastModifiedDateTime <DateTime?>]`: Provides the dateTimeOffset for when the entity was created.
+  - `[Source <IMicrosoftGraphPersonDataSources>]`: personDataSources
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Type <String>]`: 
+    - `[Type <String[]>]`: 
   - `[Id <String>]`: Read-only.
-  - `[Categories <String[]>]`: 
+  - `[Categories <String[]>]`: Contains categories a user has associated with the project (for example, digital transformation, oil rig).
   - `[Client <IMicrosoftGraphCompanyDetail>]`: companyDetail
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Address <IMicrosoftGraphPhysicalAddress1>]`: physicalAddress
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[City <String>]`: The city.
       - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
-      - `[PostOfficeBox <String>]`: 
+      - `[PostOfficeBox <String>]`: The post office box number.
       - `[PostalCode <String>]`: The postal code.
       - `[State <String>]`: The state.
       - `[Street <String>]`: The street.
       - `[Type <String>]`: physicalAddressType
-    - `[Department <String>]`: 
-    - `[DisplayName <String>]`: 
-    - `[OfficeLocation <String>]`: 
-    - `[Pronunciation <String>]`: 
-    - `[WebUrl <String>]`: 
-  - `[CollaborationTags <String[]>]`: 
-  - `[Colleagues <IMicrosoftGraphRelatedPerson[]>]`: 
-    - `[DisplayName <String>]`: 
+    - `[Department <String>]`: Department Name within a company.
+    - `[DisplayName <String>]`: Company name.
+    - `[OfficeLocation <String>]`: Office Location of the person referred to.
+    - `[Pronunciation <String>]`: Pronunciation guide for the company name.
+    - `[WebUrl <String>]`: Link to the company home page.
+  - `[CollaborationTags <String[]>]`: Contains experience scenario tags a user has associated with the interest. Allowed values in the collection are: askMeAbout, ableToMentor, wantsToLearn, wantsToImprove.
+  - `[Colleagues <IMicrosoftGraphRelatedPerson[]>]`: Lists people that also worked on the project.
+    - `[DisplayName <String>]`: Name of the person.
     - `[Relationship <String>]`: personRelationship
-    - `[UserPrincipalName <String>]`: 
+    - `[UserPrincipalName <String>]`: Email address or reference to person within organization.
   - `[Detail <IMicrosoftGraphPositionDetail>]`: positionDetail
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Company <IMicrosoftGraphCompanyDetail>]`: companyDetail
-    - `[Description <String>]`: 
-    - `[EndMonthYear <DateTime?>]`: 
-    - `[JobTitle <String>]`: 
-    - `[Role <String>]`: 
-    - `[StartMonthYear <DateTime?>]`: 
-    - `[Summary <String>]`: 
-  - `[DisplayName <String>]`: 
-  - `[Sponsors <IMicrosoftGraphRelatedPerson[]>]`: 
+    - `[Description <String>]`: Description of the position in question.
+    - `[EndMonthYear <DateTime?>]`: When the position ended.
+    - `[JobTitle <String>]`: The title held when in that position.
+    - `[Role <String>]`: The role the position entailed.
+    - `[StartMonthYear <DateTime?>]`: The start month and year of the position.
+    - `[Summary <String>]`: Short summary of the position.
+  - `[DisplayName <String>]`: Contains a friendly name for the project.
+  - `[Sponsors <IMicrosoftGraphRelatedPerson[]>]`: The Person or people who sponsored the project.
+  - `[ThumbnailUrl <String>]`: 
 
 CLIENT <IMicrosoftGraphCompanyDetail>: companyDetail
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -513,21 +530,21 @@ CLIENT <IMicrosoftGraphCompanyDetail>: companyDetail
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[City <String>]`: The city.
     - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
-    - `[PostOfficeBox <String>]`: 
+    - `[PostOfficeBox <String>]`: The post office box number.
     - `[PostalCode <String>]`: The postal code.
     - `[State <String>]`: The state.
     - `[Street <String>]`: The street.
     - `[Type <String>]`: physicalAddressType
-  - `[Department <String>]`: 
-  - `[DisplayName <String>]`: 
-  - `[OfficeLocation <String>]`: 
-  - `[Pronunciation <String>]`: 
-  - `[WebUrl <String>]`: 
+  - `[Department <String>]`: Department Name within a company.
+  - `[DisplayName <String>]`: Company name.
+  - `[OfficeLocation <String>]`: Office Location of the person referred to.
+  - `[Pronunciation <String>]`: Pronunciation guide for the company name.
+  - `[WebUrl <String>]`: Link to the company home page.
 
-COLLEAGUES <IMicrosoftGraphRelatedPerson[]>: .
-  - `[DisplayName <String>]`: 
+COLLEAGUES <IMicrosoftGraphRelatedPerson[]>: Lists people that also worked on the project.
+  - `[DisplayName <String>]`: Name of the person.
   - `[Relationship <String>]`: personRelationship
-  - `[UserPrincipalName <String>]`: 
+  - `[UserPrincipalName <String>]`: Email address or reference to person within organization.
 
 CREATEDBY <IMicrosoftGraphIdentitySet>: identitySet
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -546,27 +563,27 @@ DETAIL <IMicrosoftGraphPositionDetail>: positionDetail
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[City <String>]`: The city.
       - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
-      - `[PostOfficeBox <String>]`: 
+      - `[PostOfficeBox <String>]`: The post office box number.
       - `[PostalCode <String>]`: The postal code.
       - `[State <String>]`: The state.
       - `[Street <String>]`: The street.
       - `[Type <String>]`: physicalAddressType
-    - `[Department <String>]`: 
-    - `[DisplayName <String>]`: 
-    - `[OfficeLocation <String>]`: 
-    - `[Pronunciation <String>]`: 
-    - `[WebUrl <String>]`: 
-  - `[Description <String>]`: 
-  - `[EndMonthYear <DateTime?>]`: 
-  - `[JobTitle <String>]`: 
-  - `[Role <String>]`: 
-  - `[StartMonthYear <DateTime?>]`: 
-  - `[Summary <String>]`: 
+    - `[Department <String>]`: Department Name within a company.
+    - `[DisplayName <String>]`: Company name.
+    - `[OfficeLocation <String>]`: Office Location of the person referred to.
+    - `[Pronunciation <String>]`: Pronunciation guide for the company name.
+    - `[WebUrl <String>]`: Link to the company home page.
+  - `[Description <String>]`: Description of the position in question.
+  - `[EndMonthYear <DateTime?>]`: When the position ended.
+  - `[JobTitle <String>]`: The title held when in that position.
+  - `[Role <String>]`: The role the position entailed.
+  - `[StartMonthYear <DateTime?>]`: The start month and year of the position.
+  - `[Summary <String>]`: Short summary of the position.
 
 INFERENCE <IMicrosoftGraphInferenceData>: inferenceData
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[ConfidenceScore <Double?>]`: 
-  - `[UserHasVerifiedAccuracy <Boolean?>]`: 
+  - `[ConfidenceScore <Double?>]`: Confidence score reflecting the accuracy of the data inferred about the user.
+  - `[UserHasVerifiedAccuracy <Boolean?>]`: Records if the user has confirmed this inference as being True or False.
 
 INPUTOBJECT <IPeopleIdentity>: Identity Parameter
   - `[ActivityStatisticsId <String>]`: key: id of activityStatistics
@@ -577,8 +594,8 @@ INPUTOBJECT <IPeopleIdentity>: Identity Parameter
   - `[ItemPhoneId <String>]`: key: id of itemPhone
   - `[ItemPublicationId <String>]`: key: id of itemPublication
   - `[LanguageProficiencyId <String>]`: key: id of languageProficiency
-  - `[PersonAnniversaryId <String>]`: key: id of personAnniversary
   - `[PersonAnnotationId <String>]`: key: id of personAnnotation
+  - `[PersonAnnualEventId <String>]`: key: id of personAnnualEvent
   - `[PersonAwardId <String>]`: key: id of personAward
   - `[PersonCertificationId <String>]`: key: id of personCertification
   - `[PersonId <String>]`: key: id of person
@@ -604,14 +621,15 @@ LASTMODIFIEDBY <IMicrosoftGraphIdentitySet>: identitySet
   - `[Device <IMicrosoftGraphIdentity>]`: identity
   - `[User <IMicrosoftGraphIdentity>]`: identity
 
-SOURCE <IMicrosoftGraphPersonDataSource>: personDataSource
+SOURCE <IMicrosoftGraphPersonDataSources>: personDataSources
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Type <String>]`: 
+  - `[Type <String[]>]`: 
 
-SPONSORS <IMicrosoftGraphRelatedPerson[]>: .
-  - `[DisplayName <String>]`: 
+SPONSORS <IMicrosoftGraphRelatedPerson[]>: The Person or people who sponsored the project.
+  - `[DisplayName <String>]`: Name of the person.
   - `[Relationship <String>]`: personRelationship
-  - `[UserPrincipalName <String>]`: 
+  - `[UserPrincipalName <String>]`: Email address or reference to person within organization.
 
 ## RELATED LINKS
 
+## RELATED LINKS

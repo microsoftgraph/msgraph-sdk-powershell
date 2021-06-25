@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.People-help.xml
 Module Name: Microsoft.Graph.People
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.people/get-mgusertrendingresourceinsightbyref
 schema: 2.0.0
@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserTrendingResourceInsightByRef
 
 ## SYNOPSIS
-Get ref of resource from users
+Used for navigating to the trending document.
 
 ## SYNTAX
 
@@ -23,27 +23,9 @@ Get-MgUserTrendingResourceInsightByRef -InputObject <IPeopleIdentity> [<CommonPa
 ```
 
 ## DESCRIPTION
-Get ref of resource from users
+Used for navigating to the trending document.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -52,7 +34,7 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPeopleIdentity
+Type: IPeopleIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -67,7 +49,7 @@ Accept wildcard characters: False
 key: id of trending
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Get
 Aliases:
 
@@ -82,7 +64,7 @@ Accept wildcard characters: False
 key: id of user
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Get
 Aliases:
 
@@ -122,8 +104,8 @@ INPUTOBJECT <IPeopleIdentity>: Identity Parameter
   - `[ItemPhoneId <String>]`: key: id of itemPhone
   - `[ItemPublicationId <String>]`: key: id of itemPublication
   - `[LanguageProficiencyId <String>]`: key: id of languageProficiency
-  - `[PersonAnniversaryId <String>]`: key: id of personAnniversary
   - `[PersonAnnotationId <String>]`: key: id of personAnnotation
+  - `[PersonAnnualEventId <String>]`: key: id of personAnnualEvent
   - `[PersonAwardId <String>]`: key: id of personAward
   - `[PersonCertificationId <String>]`: key: id of personCertification
   - `[PersonId <String>]`: key: id of person
@@ -141,4 +123,3 @@ INPUTOBJECT <IPeopleIdentity>: Identity Parameter
   - `[WorkPositionId <String>]`: key: id of workPosition
 
 ## RELATED LINKS
-

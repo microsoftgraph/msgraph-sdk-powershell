@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.People-help.xml
 Module Name: Microsoft.Graph.People
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.people/new-mguserprofilewebaccount
 schema: 2.0.0
@@ -8,65 +8,47 @@ schema: 2.0.0
 # New-MgUserProfileWebAccount
 
 ## SYNOPSIS
-Create new navigation property to webAccounts for users
+Represents web accounts the user has indicated they use or has added to their user profile.
 
 ## SYNTAX
 
 ### CreateExpanded (Default)
 ```
 New-MgUserProfileWebAccount -UserId <String> [-AdditionalProperties <Hashtable>] [-AllowedAudiences <String>]
- [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>] [-Description <String>]
- [-Id <String>] [-Inference <IMicrosoftGraphInferenceData>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
+ [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>] [-Description <String>] [-Id <String>]
+ [-Inference <IMicrosoftGraphInferenceData>] [-IsSearchable] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
  [-LastModifiedDateTime <DateTime>] [-Service <IMicrosoftGraphServiceInformation>]
- [-Source <IMicrosoftGraphPersonDataSource>] [-StatusMessage <String>] [-UserId1 <String>] [-WebUrl <String>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Source <IMicrosoftGraphPersonDataSources>] [-StatusMessage <String>] [-ThumbnailUrl <String>]
+ [-UserId1 <String>] [-WebUrl <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### CreateViaIdentityExpanded
+```
+New-MgUserProfileWebAccount [-UserId <String>] -InputObject <IPeopleIdentity>
+ [-AdditionalProperties <Hashtable>] [-AllowedAudiences <String>] [-CreatedBy <IMicrosoftGraphIdentitySet>]
+ [-CreatedDateTime <DateTime>] [-Description <String>] [-Id <String>]
+ [-Inference <IMicrosoftGraphInferenceData>] [-IsSearchable] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
+ [-LastModifiedDateTime <DateTime>] [-Service <IMicrosoftGraphServiceInformation>]
+ [-Source <IMicrosoftGraphPersonDataSources>] [-StatusMessage <String>] [-ThumbnailUrl <String>]
+ [-WebUrl <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgUserProfileWebAccount -UserId <String> -BodyParameter <IMicrosoftGraphWebAccount> [-Confirm] [-WhatIf]
+New-MgUserProfileWebAccount -UserId <String> -BodyParameter <IMicrosoftGraphWebAccount> [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgUserProfileWebAccount -InputObject <IPeopleIdentity> -BodyParameter <IMicrosoftGraphWebAccount>
- [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### CreateViaIdentityExpanded
-```
-New-MgUserProfileWebAccount -InputObject <IPeopleIdentity> [-UserId <String>]
- [-AdditionalProperties <Hashtable>] [-AllowedAudiences <String>] [-CreatedBy <IMicrosoftGraphIdentitySet>]
- [-CreatedDateTime <DateTime>] [-Description <String>] [-Id <String>]
- [-Inference <IMicrosoftGraphInferenceData>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
- [-LastModifiedDateTime <DateTime>] [-Service <IMicrosoftGraphServiceInformation>]
- [-Source <IMicrosoftGraphPersonDataSource>] [-StatusMessage <String>] [-WebUrl <String>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+New-MgUserProfileWebAccount -InputObject <IPeopleIdentity> -BodyParameter <IMicrosoftGraphWebAccount> [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create new navigation property to webAccounts for users
+Represents web accounts the user has indicated they use or has added to their user profile.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -74,7 +56,7 @@ PS C:\> {{ Add code here }}
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -89,7 +71,7 @@ Accept wildcard characters: False
 allowedAudiences
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -105,7 +87,7 @@ webAccount
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWebAccount
+Type: IMicrosoftGraphWebAccount
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -121,7 +103,7 @@ identitySet
 To construct, see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: IMicrosoftGraphIdentitySet
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -133,10 +115,10 @@ Accept wildcard characters: False
 ```
 
 ### -CreatedDateTime
-.
+Provides the dateTimeOffset for when the entity was created.
 
 ```yaml
-Type: System.DateTime
+Type: DateTime
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -148,10 +130,10 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-.
+Contains the description the user has provided for the account on the service being referenced.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -166,7 +148,7 @@ Accept wildcard characters: False
 Read-only.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -182,7 +164,7 @@ inferenceData
 To construct, see NOTES section for INFERENCE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInferenceData
+Type: IMicrosoftGraphInferenceData
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -198,8 +180,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPeopleIdentity
-Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
+Type: IPeopleIdentity
+Parameter Sets: CreateViaIdentityExpanded, CreateViaIdentity
 Aliases:
 
 Required: True
@@ -209,12 +191,27 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
+### -IsSearchable
+.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -LastModifiedBy
 identitySet
 To construct, see NOTES section for LASTMODIFIEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: IMicrosoftGraphIdentitySet
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -226,10 +223,10 @@ Accept wildcard characters: False
 ```
 
 ### -LastModifiedDateTime
-.
+Provides the dateTimeOffset for when the entity was created.
 
 ```yaml
-Type: System.DateTime
+Type: DateTime
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -245,7 +242,7 @@ serviceInformation
 To construct, see NOTES section for SERVICE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphServiceInformation
+Type: IMicrosoftGraphServiceInformation
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -257,11 +254,11 @@ Accept wildcard characters: False
 ```
 
 ### -Source
-personDataSource
+personDataSources
 To construct, see NOTES section for SOURCE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPersonDataSource
+Type: IMicrosoftGraphPersonDataSources
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -273,10 +270,25 @@ Accept wildcard characters: False
 ```
 
 ### -StatusMessage
+Contains a status message from the cloud service if provided or synchronized.
+
+```yaml
+Type: String
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ThumbnailUrl
 .
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -291,8 +303,8 @@ Accept wildcard characters: False
 key: id of user
 
 ```yaml
-Type: System.String
-Parameter Sets: Create, CreateExpanded, CreateViaIdentityExpanded
+Type: String
+Parameter Sets: CreateExpanded, Create
 Aliases:
 
 Required: True
@@ -302,11 +314,23 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+```yaml
+Type: String
+Parameter Sets: CreateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -UserId1
-.
+The user name displayed for the webaccount.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -318,10 +342,10 @@ Accept wildcard characters: False
 ```
 
 ### -WebUrl
-.
+Contains a link to the user's profile on the cloud service if one exists.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -336,7 +360,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -352,7 +376,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -396,25 +420,27 @@ BODYPARAMETER <IMicrosoftGraphWebAccount>: webAccount
       - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
-  - `[CreatedDateTime <DateTime?>]`: 
+  - `[CreatedDateTime <DateTime?>]`: Provides the dateTimeOffset for when the entity was created.
   - `[Inference <IMicrosoftGraphInferenceData>]`: inferenceData
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[ConfidenceScore <Double?>]`: 
-    - `[UserHasVerifiedAccuracy <Boolean?>]`: 
+    - `[ConfidenceScore <Double?>]`: Confidence score reflecting the accuracy of the data inferred about the user.
+    - `[UserHasVerifiedAccuracy <Boolean?>]`: Records if the user has confirmed this inference as being True or False.
+  - `[IsSearchable <Boolean?>]`: 
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-  - `[LastModifiedDateTime <DateTime?>]`: 
-  - `[Source <IMicrosoftGraphPersonDataSource>]`: personDataSource
+  - `[LastModifiedDateTime <DateTime?>]`: Provides the dateTimeOffset for when the entity was created.
+  - `[Source <IMicrosoftGraphPersonDataSources>]`: personDataSources
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Type <String>]`: 
+    - `[Type <String[]>]`: 
   - `[Id <String>]`: Read-only.
-  - `[Description <String>]`: 
+  - `[Description <String>]`: Contains the description the user has provided for the account on the service being referenced.
   - `[Service <IMicrosoftGraphServiceInformation>]`: serviceInformation
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Name <String>]`: 
-    - `[WebUrl <String>]`: 
-  - `[StatusMessage <String>]`: 
-  - `[UserId <String>]`: 
-  - `[WebUrl <String>]`: 
+    - `[Name <String>]`: The name of the cloud service (for example, Twitter, Instagram).
+    - `[WebUrl <String>]`: Contains the URL for the service being referenced.
+  - `[StatusMessage <String>]`: Contains a status message from the cloud service if provided or synchronized.
+  - `[ThumbnailUrl <String>]`: 
+  - `[UserId <String>]`: The user name  displayed for the webaccount.
+  - `[WebUrl <String>]`: Contains a link to the user's profile on the cloud service if one exists.
 
 CREATEDBY <IMicrosoftGraphIdentitySet>: identitySet
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -427,8 +453,8 @@ CREATEDBY <IMicrosoftGraphIdentitySet>: identitySet
 
 INFERENCE <IMicrosoftGraphInferenceData>: inferenceData
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[ConfidenceScore <Double?>]`: 
-  - `[UserHasVerifiedAccuracy <Boolean?>]`: 
+  - `[ConfidenceScore <Double?>]`: Confidence score reflecting the accuracy of the data inferred about the user.
+  - `[UserHasVerifiedAccuracy <Boolean?>]`: Records if the user has confirmed this inference as being True or False.
 
 INPUTOBJECT <IPeopleIdentity>: Identity Parameter
   - `[ActivityStatisticsId <String>]`: key: id of activityStatistics
@@ -439,8 +465,8 @@ INPUTOBJECT <IPeopleIdentity>: Identity Parameter
   - `[ItemPhoneId <String>]`: key: id of itemPhone
   - `[ItemPublicationId <String>]`: key: id of itemPublication
   - `[LanguageProficiencyId <String>]`: key: id of languageProficiency
-  - `[PersonAnniversaryId <String>]`: key: id of personAnniversary
   - `[PersonAnnotationId <String>]`: key: id of personAnnotation
+  - `[PersonAnnualEventId <String>]`: key: id of personAnnualEvent
   - `[PersonAwardId <String>]`: key: id of personAward
   - `[PersonCertificationId <String>]`: key: id of personCertification
   - `[PersonId <String>]`: key: id of person
@@ -468,12 +494,11 @@ LASTMODIFIEDBY <IMicrosoftGraphIdentitySet>: identitySet
 
 SERVICE <IMicrosoftGraphServiceInformation>: serviceInformation
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Name <String>]`: 
-  - `[WebUrl <String>]`: 
+  - `[Name <String>]`: The name of the cloud service (for example, Twitter, Instagram).
+  - `[WebUrl <String>]`: Contains the URL for the service being referenced.
 
-SOURCE <IMicrosoftGraphPersonDataSource>: personDataSource
+SOURCE <IMicrosoftGraphPersonDataSources>: personDataSources
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Type <String>]`: 
+  - `[Type <String[]>]`: 
 
 ## RELATED LINKS
-

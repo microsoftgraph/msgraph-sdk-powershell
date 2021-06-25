@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.People-help.xml
 Module Name: Microsoft.Graph.People
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.people/update-mguserprofileposition
 schema: 2.0.0
@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgUserProfilePosition
 
 ## SYNOPSIS
-Update the navigation property positions in users
+Represents detailed information about work positions associated with a user's profile.
 
 ## SYNTAX
 
@@ -18,21 +18,15 @@ Update-MgUserProfilePosition -UserId <String> -WorkPositionId <String> [-Additio
  [-AllowedAudiences <String>] [-Categories <String[]>] [-Colleagues <IMicrosoftGraphRelatedPerson[]>]
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>]
  [-Detail <IMicrosoftGraphPositionDetail>] [-Id <String>] [-Inference <IMicrosoftGraphInferenceData>]
- [-IsCurrent] [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>]
- [-Manager <IMicrosoftGraphRelatedPerson>] [-Source <IMicrosoftGraphPersonDataSource>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-IsCurrent] [-IsSearchable] [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>]
+ [-Manager <IMicrosoftGraphRelatedPerson>] [-Source <IMicrosoftGraphPersonDataSources>] [-PassThru] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgUserProfilePosition -UserId <String> -WorkPositionId <String>
- -BodyParameter <IMicrosoftGraphWorkPosition> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### UpdateViaIdentity
-```
-Update-MgUserProfilePosition -InputObject <IPeopleIdentity> -BodyParameter <IMicrosoftGraphWorkPosition>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphWorkPosition> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -41,33 +35,21 @@ Update-MgUserProfilePosition -InputObject <IPeopleIdentity> [-AdditionalProperti
  [-AllowedAudiences <String>] [-Categories <String[]>] [-Colleagues <IMicrosoftGraphRelatedPerson[]>]
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>]
  [-Detail <IMicrosoftGraphPositionDetail>] [-Id <String>] [-Inference <IMicrosoftGraphInferenceData>]
- [-IsCurrent] [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>]
- [-Manager <IMicrosoftGraphRelatedPerson>] [-Source <IMicrosoftGraphPersonDataSource>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-IsCurrent] [-IsSearchable] [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>]
+ [-Manager <IMicrosoftGraphRelatedPerson>] [-Source <IMicrosoftGraphPersonDataSources>] [-PassThru] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
+```
+
+### UpdateViaIdentity
+```
+Update-MgUserProfilePosition -InputObject <IPeopleIdentity> -BodyParameter <IMicrosoftGraphWorkPosition>
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update the navigation property positions in users
+Represents detailed information about work positions associated with a user's profile.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -75,7 +57,7 @@ PS C:\> {{ Add code here }}
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -90,7 +72,7 @@ Accept wildcard characters: False
 allowedAudiences
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -106,7 +88,7 @@ workPosition
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWorkPosition
+Type: IMicrosoftGraphWorkPosition
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -118,10 +100,10 @@ Accept wildcard characters: False
 ```
 
 ### -Categories
-.
+Categories that the user has associated with this position.
 
 ```yaml
-Type: System.String[]
+Type: String[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -133,11 +115,11 @@ Accept wildcard characters: False
 ```
 
 ### -Colleagues
-.
+Colleagues that are associated with this position.
 To construct, see NOTES section for COLLEAGUES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRelatedPerson[]
+Type: IMicrosoftGraphRelatedPerson[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -153,7 +135,7 @@ identitySet
 To construct, see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: IMicrosoftGraphIdentitySet
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -165,10 +147,10 @@ Accept wildcard characters: False
 ```
 
 ### -CreatedDateTime
-.
+Provides the dateTimeOffset for when the entity was created.
 
 ```yaml
-Type: System.DateTime
+Type: DateTime
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -184,7 +166,7 @@ positionDetail
 To construct, see NOTES section for DETAIL properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPositionDetail
+Type: IMicrosoftGraphPositionDetail
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -199,7 +181,7 @@ Accept wildcard characters: False
 Read-only.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -215,7 +197,7 @@ inferenceData
 To construct, see NOTES section for INFERENCE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInferenceData
+Type: IMicrosoftGraphInferenceData
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -231,8 +213,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPeopleIdentity
-Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
+Type: IPeopleIdentity
+Parameter Sets: UpdateViaIdentityExpanded, UpdateViaIdentity
 Aliases:
 
 Required: True
@@ -243,10 +225,25 @@ Accept wildcard characters: False
 ```
 
 ### -IsCurrent
+Denotes whether or not the position is current.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IsSearchable
 .
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -262,7 +259,7 @@ identitySet
 To construct, see NOTES section for LASTMODIFIEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: IMicrosoftGraphIdentitySet
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -274,10 +271,10 @@ Accept wildcard characters: False
 ```
 
 ### -LastModifiedDateTime
-.
+Provides the dateTimeOffset for when the entity was created.
 
 ```yaml
-Type: System.DateTime
+Type: DateTime
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -293,7 +290,7 @@ relatedPerson
 To construct, see NOTES section for MANAGER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRelatedPerson
+Type: IMicrosoftGraphRelatedPerson
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -308,7 +305,7 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -320,11 +317,11 @@ Accept wildcard characters: False
 ```
 
 ### -Source
-personDataSource
+personDataSources
 To construct, see NOTES section for SOURCE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPersonDataSource
+Type: IMicrosoftGraphPersonDataSources
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -339,8 +336,8 @@ Accept wildcard characters: False
 key: id of user
 
 ```yaml
-Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Type: String
+Parameter Sets: UpdateExpanded, Update
 Aliases:
 
 Required: True
@@ -354,8 +351,8 @@ Accept wildcard characters: False
 key: id of workPosition
 
 ```yaml
-Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Type: String
+Parameter Sets: UpdateExpanded, Update
 Aliases:
 
 Required: True
@@ -369,7 +366,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -385,7 +382,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -429,22 +426,23 @@ BODYPARAMETER <IMicrosoftGraphWorkPosition>: workPosition
       - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
-  - `[CreatedDateTime <DateTime?>]`: 
+  - `[CreatedDateTime <DateTime?>]`: Provides the dateTimeOffset for when the entity was created.
   - `[Inference <IMicrosoftGraphInferenceData>]`: inferenceData
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[ConfidenceScore <Double?>]`: 
-    - `[UserHasVerifiedAccuracy <Boolean?>]`: 
+    - `[ConfidenceScore <Double?>]`: Confidence score reflecting the accuracy of the data inferred about the user.
+    - `[UserHasVerifiedAccuracy <Boolean?>]`: Records if the user has confirmed this inference as being True or False.
+  - `[IsSearchable <Boolean?>]`: 
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-  - `[LastModifiedDateTime <DateTime?>]`: 
-  - `[Source <IMicrosoftGraphPersonDataSource>]`: personDataSource
+  - `[LastModifiedDateTime <DateTime?>]`: Provides the dateTimeOffset for when the entity was created.
+  - `[Source <IMicrosoftGraphPersonDataSources>]`: personDataSources
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Type <String>]`: 
+    - `[Type <String[]>]`: 
   - `[Id <String>]`: Read-only.
-  - `[Categories <String[]>]`: 
-  - `[Colleagues <IMicrosoftGraphRelatedPerson[]>]`: 
-    - `[DisplayName <String>]`: 
+  - `[Categories <String[]>]`: Categories that the user has associated with this position.
+  - `[Colleagues <IMicrosoftGraphRelatedPerson[]>]`: Colleagues that are associated with this position.
+    - `[DisplayName <String>]`: Name of the person.
     - `[Relationship <String>]`: personRelationship
-    - `[UserPrincipalName <String>]`: 
+    - `[UserPrincipalName <String>]`: Email address or reference to person within organization.
   - `[Detail <IMicrosoftGraphPositionDetail>]`: positionDetail
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Company <IMicrosoftGraphCompanyDetail>]`: companyDetail
@@ -453,29 +451,29 @@ BODYPARAMETER <IMicrosoftGraphWorkPosition>: workPosition
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[City <String>]`: The city.
         - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
-        - `[PostOfficeBox <String>]`: 
+        - `[PostOfficeBox <String>]`: The post office box number.
         - `[PostalCode <String>]`: The postal code.
         - `[State <String>]`: The state.
         - `[Street <String>]`: The street.
         - `[Type <String>]`: physicalAddressType
-      - `[Department <String>]`: 
-      - `[DisplayName <String>]`: 
-      - `[OfficeLocation <String>]`: 
-      - `[Pronunciation <String>]`: 
-      - `[WebUrl <String>]`: 
-    - `[Description <String>]`: 
-    - `[EndMonthYear <DateTime?>]`: 
-    - `[JobTitle <String>]`: 
-    - `[Role <String>]`: 
-    - `[StartMonthYear <DateTime?>]`: 
-    - `[Summary <String>]`: 
-  - `[IsCurrent <Boolean?>]`: 
+      - `[Department <String>]`: Department Name within a company.
+      - `[DisplayName <String>]`: Company name.
+      - `[OfficeLocation <String>]`: Office Location of the person referred to.
+      - `[Pronunciation <String>]`: Pronunciation guide for the company name.
+      - `[WebUrl <String>]`: Link to the company home page.
+    - `[Description <String>]`: Description of the position in question.
+    - `[EndMonthYear <DateTime?>]`: When the position ended.
+    - `[JobTitle <String>]`: The title held when in that position.
+    - `[Role <String>]`: The role the position entailed.
+    - `[StartMonthYear <DateTime?>]`: The start month and year of the position.
+    - `[Summary <String>]`: Short summary of the position.
+  - `[IsCurrent <Boolean?>]`: Denotes whether or not the position is current.
   - `[Manager <IMicrosoftGraphRelatedPerson>]`: relatedPerson
 
-COLLEAGUES <IMicrosoftGraphRelatedPerson[]>: .
-  - `[DisplayName <String>]`: 
+COLLEAGUES <IMicrosoftGraphRelatedPerson[]>: Colleagues that are associated with this position.
+  - `[DisplayName <String>]`: Name of the person.
   - `[Relationship <String>]`: personRelationship
-  - `[UserPrincipalName <String>]`: 
+  - `[UserPrincipalName <String>]`: Email address or reference to person within organization.
 
 CREATEDBY <IMicrosoftGraphIdentitySet>: identitySet
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -494,27 +492,27 @@ DETAIL <IMicrosoftGraphPositionDetail>: positionDetail
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[City <String>]`: The city.
       - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
-      - `[PostOfficeBox <String>]`: 
+      - `[PostOfficeBox <String>]`: The post office box number.
       - `[PostalCode <String>]`: The postal code.
       - `[State <String>]`: The state.
       - `[Street <String>]`: The street.
       - `[Type <String>]`: physicalAddressType
-    - `[Department <String>]`: 
-    - `[DisplayName <String>]`: 
-    - `[OfficeLocation <String>]`: 
-    - `[Pronunciation <String>]`: 
-    - `[WebUrl <String>]`: 
-  - `[Description <String>]`: 
-  - `[EndMonthYear <DateTime?>]`: 
-  - `[JobTitle <String>]`: 
-  - `[Role <String>]`: 
-  - `[StartMonthYear <DateTime?>]`: 
-  - `[Summary <String>]`: 
+    - `[Department <String>]`: Department Name within a company.
+    - `[DisplayName <String>]`: Company name.
+    - `[OfficeLocation <String>]`: Office Location of the person referred to.
+    - `[Pronunciation <String>]`: Pronunciation guide for the company name.
+    - `[WebUrl <String>]`: Link to the company home page.
+  - `[Description <String>]`: Description of the position in question.
+  - `[EndMonthYear <DateTime?>]`: When the position ended.
+  - `[JobTitle <String>]`: The title held when in that position.
+  - `[Role <String>]`: The role the position entailed.
+  - `[StartMonthYear <DateTime?>]`: The start month and year of the position.
+  - `[Summary <String>]`: Short summary of the position.
 
 INFERENCE <IMicrosoftGraphInferenceData>: inferenceData
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[ConfidenceScore <Double?>]`: 
-  - `[UserHasVerifiedAccuracy <Boolean?>]`: 
+  - `[ConfidenceScore <Double?>]`: Confidence score reflecting the accuracy of the data inferred about the user.
+  - `[UserHasVerifiedAccuracy <Boolean?>]`: Records if the user has confirmed this inference as being True or False.
 
 INPUTOBJECT <IPeopleIdentity>: Identity Parameter
   - `[ActivityStatisticsId <String>]`: key: id of activityStatistics
@@ -525,8 +523,8 @@ INPUTOBJECT <IPeopleIdentity>: Identity Parameter
   - `[ItemPhoneId <String>]`: key: id of itemPhone
   - `[ItemPublicationId <String>]`: key: id of itemPublication
   - `[LanguageProficiencyId <String>]`: key: id of languageProficiency
-  - `[PersonAnniversaryId <String>]`: key: id of personAnniversary
   - `[PersonAnnotationId <String>]`: key: id of personAnnotation
+  - `[PersonAnnualEventId <String>]`: key: id of personAnnualEvent
   - `[PersonAwardId <String>]`: key: id of personAward
   - `[PersonCertificationId <String>]`: key: id of personCertification
   - `[PersonId <String>]`: key: id of person
@@ -554,13 +552,14 @@ LASTMODIFIEDBY <IMicrosoftGraphIdentitySet>: identitySet
 
 MANAGER <IMicrosoftGraphRelatedPerson>: relatedPerson
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[DisplayName <String>]`: 
+  - `[DisplayName <String>]`: Name of the person.
   - `[Relationship <String>]`: personRelationship
-  - `[UserPrincipalName <String>]`: 
+  - `[UserPrincipalName <String>]`: Email address or reference to person within organization.
 
-SOURCE <IMicrosoftGraphPersonDataSource>: personDataSource
+SOURCE <IMicrosoftGraphPersonDataSources>: personDataSources
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Type <String>]`: 
+  - `[Type <String[]>]`: 
 
 ## RELATED LINKS
 
+## RELATED LINKS
