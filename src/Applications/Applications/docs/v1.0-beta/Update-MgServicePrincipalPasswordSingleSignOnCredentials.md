@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Applications-help.xml
 Module Name: Microsoft.Graph.Applications
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/update-mgserviceprincipalpasswordsinglesignoncredentials
 schema: 2.0.0
@@ -16,28 +16,28 @@ Invoke action updatePasswordSingleSignOnCredentials
 ```
 Update-MgServicePrincipalPasswordSingleSignOnCredentials -ServicePrincipalId <String>
  [-AdditionalProperties <Hashtable>] [-Credentials <IMicrosoftGraphCredential[]>] [-Id <String>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgServicePrincipalPasswordSingleSignOnCredentials -ServicePrincipalId <String>
  -BodyParameter <IPaths1R4QqcnServiceprincipalsServiceprincipalIdMicrosoftGraphUpdatepasswordsinglesignoncredentialsPostRequestbodyContentApplicationJsonSchema>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### UpdateViaIdentity
-```
-Update-MgServicePrincipalPasswordSingleSignOnCredentials -InputObject <IApplicationsIdentity>
- -BodyParameter <IPaths1R4QqcnServiceprincipalsServiceprincipalIdMicrosoftGraphUpdatepasswordsinglesignoncredentialsPostRequestbodyContentApplicationJsonSchema>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgServicePrincipalPasswordSingleSignOnCredentials -InputObject <IApplicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-Credentials <IMicrosoftGraphCredential[]>] [-Id <String>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### UpdateViaIdentity
+```
+Update-MgServicePrincipalPasswordSingleSignOnCredentials -InputObject <IApplicationsIdentity>
+ -BodyParameter <IPaths1R4QqcnServiceprincipalsServiceprincipalIdMicrosoftGraphUpdatepasswordsinglesignoncredentialsPostRequestbodyContentApplicationJsonSchema>
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -45,31 +45,13 @@ Invoke action updatePasswordSingleSignOnCredentials
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
 ### -AdditionalProperties
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -85,7 +67,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1R4QqcnServiceprincipalsServiceprincipalIdMicrosoftGraphUpdatepasswordsinglesignoncredentialsPostRequestbodyContentApplicationJsonSchema
+Type: IPaths1R4QqcnServiceprincipalsServiceprincipalIdMicrosoftGraphUpdatepasswordsinglesignoncredentialsPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -101,7 +83,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for CREDENTIALS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCredential[]
+Type: IMicrosoftGraphCredential[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -116,7 +98,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -132,8 +114,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
-Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
+Type: IApplicationsIdentity
+Parameter Sets: UpdateViaIdentityExpanded, UpdateViaIdentity
 Aliases:
 
 Required: True
@@ -147,7 +129,7 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -162,8 +144,8 @@ Accept wildcard characters: False
 key: id of servicePrincipal
 
 ```yaml
-Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Type: String
+Parameter Sets: UpdateExpanded, Update
 Aliases:
 
 Required: True
@@ -177,7 +159,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -193,7 +175,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -229,31 +211,28 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IPaths1R4QqcnServiceprincipalsServiceprincipalIdMicrosoftGraphUpdatepasswordsinglesignoncredentialsPostRequestbodyContentApplicationJsonSchema>: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Credentials <IMicrosoftGraphCredential[]>]`: 
-    - `[FieldId <String>]`: 
-    - `[Type <String>]`: 
-    - `[Value <String>]`: 
+    - `[FieldId <String>]`: The name of the field for this credential. e.g, username or password or phoneNumber. This is defined by the application. Must match what is in the html field on singleSignOnSettings/password object.
+    - `[Type <String>]`: The type for this credential. Valid values: username, password, or other.
+    - `[Value <String>]`: The value for this credential. e.g, mysuperhiddenpassword. Note the value for passwords is write-only, the value can never be read back.
   - `[Id <String>]`: 
 
 CREDENTIALS <IMicrosoftGraphCredential[]>: .
-  - `[FieldId <String>]`: 
-  - `[Type <String>]`: 
-  - `[Value <String>]`: 
+  - `[FieldId <String>]`: The name of the field for this credential. e.g, username or password or phoneNumber. This is defined by the application. Must match what is in the html field on singleSignOnSettings/password object.
+  - `[Type <String>]`: The type for this credential. Valid values: username, password, or other.
+  - `[Value <String>]`: The value for this credential. e.g, mysuperhiddenpassword. Note the value for passwords is write-only, the value can never be read back.
 
 INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
   - `[AppRoleAssignmentId <String>]`: key: id of appRoleAssignment
   - `[ApplicationId <String>]`: key: id of application
   - `[ApplicationTemplateId <String>]`: key: id of applicationTemplate
-  - `[ClaimsMappingPolicyId <String>]`: key: id of claimsMappingPolicy
   - `[ConnectorGroupId <String>]`: key: id of connectorGroup
   - `[ConnectorId <String>]`: key: id of connector
+  - `[DelegatedPermissionClassificationId <String>]`: key: id of delegatedPermissionClassification
   - `[DirectoryDefinitionId <String>]`: key: id of directoryDefinition
-  - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[EndpointId <String>]`: key: id of endpoint
   - `[ExtensionPropertyId <String>]`: key: id of extensionProperty
   - `[GroupId <String>]`: key: id of group
-  - `[HomeRealmDiscoveryPolicyId <String>]`: key: id of homeRealmDiscoveryPolicy
   - `[LicenseDetailsId <String>]`: key: id of licenseDetails
-  - `[OAuth2PermissionGrantId <String>]`: key: id of oAuth2PermissionGrant
   - `[OnPremisesAgentGroupId <String>]`: key: id of onPremisesAgentGroup
   - `[OnPremisesAgentGroupId1 <String>]`: key: id of onPremisesAgentGroup
   - `[OnPremisesAgentId <String>]`: key: id of onPremisesAgent
@@ -264,9 +243,6 @@ INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
   - `[ServicePrincipalId <String>]`: key: id of servicePrincipal
   - `[SynchronizationJobId <String>]`: key: id of synchronizationJob
   - `[SynchronizationTemplateId <String>]`: key: id of synchronizationTemplate
-  - `[TokenIssuancePolicyId <String>]`: key: id of tokenIssuancePolicy
-  - `[TokenLifetimePolicyId <String>]`: key: id of tokenLifetimePolicy
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
-

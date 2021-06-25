@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Applications-help.xml
 Module Name: Microsoft.Graph.Applications
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/test-mgserviceprincipalsynchronizationjobcredentials
 schema: 2.0.0
@@ -17,7 +17,7 @@ Invoke action validateCredentials
 Test-MgServicePrincipalSynchronizationJobCredentials -ServicePrincipalId <String>
  -SynchronizationJobId <String> [-AdditionalProperties <Hashtable>] [-ApplicationIdentifier <String>]
  [-Credentials <IMicrosoftGraphSynchronizationSecretKeyStringValuePair[]>] [-TemplateId <String>]
- [-UseSavedCredentials] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-UseSavedCredentials] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Validate
@@ -25,14 +25,7 @@ Test-MgServicePrincipalSynchronizationJobCredentials -ServicePrincipalId <String
 Test-MgServicePrincipalSynchronizationJobCredentials -ServicePrincipalId <String>
  -SynchronizationJobId <String>
  -BodyParameter <IPaths3LjeyyServiceprincipalsServiceprincipalIdSynchronizationJobsSynchronizationjobIdMicrosoftGraphValidatecredentialsPostRequestbodyContentApplicationJsonSchema>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### ValidateViaIdentity
-```
-Test-MgServicePrincipalSynchronizationJobCredentials -InputObject <IApplicationsIdentity>
- -BodyParameter <IPaths3LjeyyServiceprincipalsServiceprincipalIdSynchronizationJobsSynchronizationjobIdMicrosoftGraphValidatecredentialsPostRequestbodyContentApplicationJsonSchema>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ValidateViaIdentityExpanded
@@ -40,7 +33,14 @@ Test-MgServicePrincipalSynchronizationJobCredentials -InputObject <IApplications
 Test-MgServicePrincipalSynchronizationJobCredentials -InputObject <IApplicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-ApplicationIdentifier <String>]
  [-Credentials <IMicrosoftGraphSynchronizationSecretKeyStringValuePair[]>] [-TemplateId <String>]
- [-UseSavedCredentials] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-UseSavedCredentials] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### ValidateViaIdentity
+```
+Test-MgServicePrincipalSynchronizationJobCredentials -InputObject <IApplicationsIdentity>
+ -BodyParameter <IPaths3LjeyyServiceprincipalsServiceprincipalIdSynchronizationJobsSynchronizationjobIdMicrosoftGraphValidatecredentialsPostRequestbodyContentApplicationJsonSchema>
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -48,31 +48,13 @@ Invoke action validateCredentials
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
 ### -AdditionalProperties
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: ValidateExpanded, ValidateViaIdentityExpanded
 Aliases:
 
@@ -87,7 +69,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: ValidateExpanded, ValidateViaIdentityExpanded
 Aliases:
 
@@ -103,7 +85,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths3LjeyyServiceprincipalsServiceprincipalIdSynchronizationJobsSynchronizationjobIdMicrosoftGraphValidatecredentialsPostRequestbodyContentApplicationJsonSchema
+Type: IPaths3LjeyyServiceprincipalsServiceprincipalIdSynchronizationJobsSynchronizationjobIdMicrosoftGraphValidatecredentialsPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Validate, ValidateViaIdentity
 Aliases:
 
@@ -119,7 +101,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for CREDENTIALS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSynchronizationSecretKeyStringValuePair[]
+Type: IMicrosoftGraphSynchronizationSecretKeyStringValuePair[]
 Parameter Sets: ValidateExpanded, ValidateViaIdentityExpanded
 Aliases:
 
@@ -135,8 +117,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
-Parameter Sets: ValidateViaIdentity, ValidateViaIdentityExpanded
+Type: IApplicationsIdentity
+Parameter Sets: ValidateViaIdentityExpanded, ValidateViaIdentity
 Aliases:
 
 Required: True
@@ -150,7 +132,7 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -165,8 +147,8 @@ Accept wildcard characters: False
 key: id of servicePrincipal
 
 ```yaml
-Type: System.String
-Parameter Sets: Validate, ValidateExpanded
+Type: String
+Parameter Sets: ValidateExpanded, Validate
 Aliases:
 
 Required: True
@@ -180,8 +162,8 @@ Accept wildcard characters: False
 key: id of synchronizationJob
 
 ```yaml
-Type: System.String
-Parameter Sets: Validate, ValidateExpanded
+Type: String
+Parameter Sets: ValidateExpanded, Validate
 Aliases:
 
 Required: True
@@ -195,7 +177,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: ValidateExpanded, ValidateViaIdentityExpanded
 Aliases:
 
@@ -210,7 +192,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: ValidateExpanded, ValidateViaIdentityExpanded
 Aliases:
 
@@ -225,7 +207,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -241,7 +223,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -279,29 +261,26 @@ BODYPARAMETER <IPaths3LjeyyServiceprincipalsServiceprincipalIdSynchronizationJob
   - `[ApplicationIdentifier <String>]`: 
   - `[Credentials <IMicrosoftGraphSynchronizationSecretKeyStringValuePair[]>]`: 
     - `[Key <String>]`: synchronizationSecret
-    - `[Value <String>]`: 
+    - `[Value <String>]`: The value of the secret.
   - `[TemplateId <String>]`: 
   - `[UseSavedCredentials <Boolean?>]`: 
 
 CREDENTIALS <IMicrosoftGraphSynchronizationSecretKeyStringValuePair[]>: .
   - `[Key <String>]`: synchronizationSecret
-  - `[Value <String>]`: 
+  - `[Value <String>]`: The value of the secret.
 
 INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
   - `[AppRoleAssignmentId <String>]`: key: id of appRoleAssignment
   - `[ApplicationId <String>]`: key: id of application
   - `[ApplicationTemplateId <String>]`: key: id of applicationTemplate
-  - `[ClaimsMappingPolicyId <String>]`: key: id of claimsMappingPolicy
   - `[ConnectorGroupId <String>]`: key: id of connectorGroup
   - `[ConnectorId <String>]`: key: id of connector
+  - `[DelegatedPermissionClassificationId <String>]`: key: id of delegatedPermissionClassification
   - `[DirectoryDefinitionId <String>]`: key: id of directoryDefinition
-  - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[EndpointId <String>]`: key: id of endpoint
   - `[ExtensionPropertyId <String>]`: key: id of extensionProperty
   - `[GroupId <String>]`: key: id of group
-  - `[HomeRealmDiscoveryPolicyId <String>]`: key: id of homeRealmDiscoveryPolicy
   - `[LicenseDetailsId <String>]`: key: id of licenseDetails
-  - `[OAuth2PermissionGrantId <String>]`: key: id of oAuth2PermissionGrant
   - `[OnPremisesAgentGroupId <String>]`: key: id of onPremisesAgentGroup
   - `[OnPremisesAgentGroupId1 <String>]`: key: id of onPremisesAgentGroup
   - `[OnPremisesAgentId <String>]`: key: id of onPremisesAgent
@@ -312,9 +291,6 @@ INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
   - `[ServicePrincipalId <String>]`: key: id of servicePrincipal
   - `[SynchronizationJobId <String>]`: key: id of synchronizationJob
   - `[SynchronizationTemplateId <String>]`: key: id of synchronizationTemplate
-  - `[TokenIssuancePolicyId <String>]`: key: id of tokenIssuancePolicy
-  - `[TokenLifetimePolicyId <String>]`: key: id of tokenLifetimePolicy
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
-

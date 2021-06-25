@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Applications-help.xml
 Module Name: Microsoft.Graph.Applications
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/new-mgapplicationsynchronizationjobschemadirectory
 schema: 2.0.0
@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgApplicationSynchronizationJobSchemaDirectory
 
 ## SYNOPSIS
-Create new navigation property to directories for applications
+Contains the collection of directories and all of their objects.
 
 ## SYNTAX
 
@@ -16,52 +16,34 @@ Create new navigation property to directories for applications
 ```
 New-MgApplicationSynchronizationJobSchemaDirectory -ApplicationId <String> -SynchronizationJobId <String>
  [-AdditionalProperties <Hashtable>] [-Discoverabilities <String>] [-DiscoveryDateTime <DateTime>]
- [-Id <String>] [-Name <String>] [-Objects <IMicrosoftGraphObjectDefinition[]>] [-ReadOnly]
- [-Version <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-Name <String>] [-Objects <IMicrosoftGraphObjectDefinition[]>] [-ReadOnly] [-Version <String>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgApplicationSynchronizationJobSchemaDirectory -ApplicationId <String> -SynchronizationJobId <String>
- -BodyParameter <IMicrosoftGraphDirectoryDefinition> [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### CreateViaIdentity
-```
-New-MgApplicationSynchronizationJobSchemaDirectory -InputObject <IApplicationsIdentity>
- -BodyParameter <IMicrosoftGraphDirectoryDefinition> [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDirectoryDefinition> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgApplicationSynchronizationJobSchemaDirectory -InputObject <IApplicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-Discoverabilities <String>] [-DiscoveryDateTime <DateTime>]
- [-Id <String>] [-Name <String>] [-Objects <IMicrosoftGraphObjectDefinition[]>] [-ReadOnly]
- [-Version <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-Name <String>] [-Objects <IMicrosoftGraphObjectDefinition[]>] [-ReadOnly] [-Version <String>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### CreateViaIdentity
+```
+New-MgApplicationSynchronizationJobSchemaDirectory -InputObject <IApplicationsIdentity>
+ -BodyParameter <IMicrosoftGraphDirectoryDefinition> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create new navigation property to directories for applications
+Contains the collection of directories and all of their objects.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -69,7 +51,7 @@ PS C:\> {{ Add code here }}
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -84,8 +66,8 @@ Accept wildcard characters: False
 key: id of application
 
 ```yaml
-Type: System.String
-Parameter Sets: Create, CreateExpanded
+Type: String
+Parameter Sets: CreateExpanded, Create
 Aliases:
 
 Required: True
@@ -100,7 +82,7 @@ directoryDefinition
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryDefinition
+Type: IMicrosoftGraphDirectoryDefinition
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -115,7 +97,7 @@ Accept wildcard characters: False
 directoryDefinitionDiscoverabilities
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -127,10 +109,11 @@ Accept wildcard characters: False
 ```
 
 ### -DiscoveryDateTime
-.
+Represents the discovery date and time using ISO 8601 format and is always in UTC time.
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 
 ```yaml
-Type: System.DateTime
+Type: DateTime
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -145,7 +128,7 @@ Accept wildcard characters: False
 Read-only.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -161,8 +144,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
-Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
+Type: IApplicationsIdentity
+Parameter Sets: CreateViaIdentityExpanded, CreateViaIdentity
 Aliases:
 
 Required: True
@@ -173,10 +156,12 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-.
+Name of the directory.
+Must be unique within the synchronization schema.
+Not nullable.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -188,11 +173,11 @@ Accept wildcard characters: False
 ```
 
 ### -Objects
-.
+Collection of objects supported by the directory.
 To construct, see NOTES section for OBJECTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphObjectDefinition[]
+Type: IMicrosoftGraphObjectDefinition[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -207,7 +192,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -222,8 +207,8 @@ Accept wildcard characters: False
 key: id of synchronizationJob
 
 ```yaml
-Type: System.String
-Parameter Sets: Create, CreateExpanded
+Type: String
+Parameter Sets: CreateExpanded, Create
 Aliases:
 
 Required: True
@@ -234,10 +219,11 @@ Accept wildcard characters: False
 ```
 
 ### -Version
-.
+Read only value that indicates version discovered.
+null if discovery has not yet occurred.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -252,7 +238,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -268,7 +254,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -305,49 +291,46 @@ BODYPARAMETER <IMicrosoftGraphDirectoryDefinition>: directoryDefinition
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
   - `[Discoverabilities <String>]`: directoryDefinitionDiscoverabilities
-  - `[DiscoveryDateTime <DateTime?>]`: 
-  - `[Name <String>]`: 
-  - `[Objects <IMicrosoftGraphObjectDefinition[]>]`: 
+  - `[DiscoveryDateTime <DateTime?>]`: Represents the discovery date and time using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+  - `[Name <String>]`: Name of the directory. Must be unique within the synchronization schema. Not nullable.
+  - `[Objects <IMicrosoftGraphObjectDefinition[]>]`: Collection of objects supported by the directory.
     - `[Attributes <IMicrosoftGraphAttributeDefinition[]>]`: 
-      - `[Anchor <Boolean?>]`: 
+      - `[Anchor <Boolean?>]`: true if the attribute should be used as the anchor for the object. Anchor attributes must have a unique value identifying an object, and must be immutable. Default is false. One, and only one, of the object's attributes must be designated as the anchor to support synchronization.
       - `[ApiExpressions <IMicrosoftGraphStringKeyStringValuePair[]>]`: 
-        - `[Key <String>]`: 
-        - `[Value <String>]`: 
-      - `[CaseExact <Boolean?>]`: 
+        - `[Key <String>]`: Key.
+        - `[Value <String>]`: Value.
+      - `[CaseExact <Boolean?>]`: true if value of this attribute should be treated as case-sensitive. This setting affects how the synchronization engine detects changes for the attribute.
       - `[DefaultValue <String>]`: 
-      - `[FlowNullValues <Boolean?>]`: 
-      - `[Metadata <IMicrosoftGraphMetadataEntry[]>]`: 
-        - `[Key <String>]`: 
-        - `[Value <String>]`: 
-      - `[Multivalued <Boolean?>]`: 
+      - `[FlowNullValues <Boolean?>]`: 'true' to allow null values for attributes.
+      - `[Metadata <IMicrosoftGraphMetadataEntry[]>]`: Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
+        - `[Key <String>]`: Name of the metadata property.
+        - `[Value <String>]`: Value of the metadata property.
+      - `[Multivalued <Boolean?>]`: true if an attribute can have multiple values. Default is false.
       - `[Mutability <String>]`: mutability
-      - `[Name <String>]`: 
-      - `[ReferencedObjects <IMicrosoftGraphReferencedObject[]>]`: 
-        - `[ReferencedObjectName <String>]`: 
-        - `[ReferencedProperty <String>]`: 
-      - `[Required <Boolean?>]`: 
+      - `[Name <String>]`: Name of the attribute. Must be unique within the object definition. Not nullable.
+      - `[ReferencedObjects <IMicrosoftGraphReferencedObject[]>]`: For attributes with reference type, lists referenced objects (for example, the manager attribute would list User as the referenced object).
+        - `[ReferencedObjectName <String>]`: Name of the referenced object. Must match one of the objects in the directory definition.
+        - `[ReferencedProperty <String>]`: Currently not supported. Name of the property in the referenced object, the value for which is used as the reference.
+      - `[Required <Boolean?>]`: true if attribute is required. Object can not be created if any of the required attributes are missing. If during synchronization, the required attribute has no value, the default value will be used. If default the value was not set, synchronization will record an error.
       - `[Type <String>]`: attributeType
     - `[Metadata <IMicrosoftGraphMetadataEntry[]>]`: 
     - `[Name <String>]`: 
     - `[SupportedApis <String[]>]`: 
   - `[ReadOnly <Boolean?>]`: 
-  - `[Version <String>]`: 
+  - `[Version <String>]`: Read only value that indicates version discovered. null if discovery has not yet occurred.
 
 INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
   - `[AppRoleAssignmentId <String>]`: key: id of appRoleAssignment
   - `[ApplicationId <String>]`: key: id of application
   - `[ApplicationTemplateId <String>]`: key: id of applicationTemplate
-  - `[ClaimsMappingPolicyId <String>]`: key: id of claimsMappingPolicy
   - `[ConnectorGroupId <String>]`: key: id of connectorGroup
   - `[ConnectorId <String>]`: key: id of connector
+  - `[DelegatedPermissionClassificationId <String>]`: key: id of delegatedPermissionClassification
   - `[DirectoryDefinitionId <String>]`: key: id of directoryDefinition
-  - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[EndpointId <String>]`: key: id of endpoint
   - `[ExtensionPropertyId <String>]`: key: id of extensionProperty
   - `[GroupId <String>]`: key: id of group
-  - `[HomeRealmDiscoveryPolicyId <String>]`: key: id of homeRealmDiscoveryPolicy
   - `[LicenseDetailsId <String>]`: key: id of licenseDetails
-  - `[OAuth2PermissionGrantId <String>]`: key: id of oAuth2PermissionGrant
   - `[OnPremisesAgentGroupId <String>]`: key: id of onPremisesAgentGroup
   - `[OnPremisesAgentGroupId1 <String>]`: key: id of onPremisesAgentGroup
   - `[OnPremisesAgentId <String>]`: key: id of onPremisesAgent
@@ -358,33 +341,30 @@ INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
   - `[ServicePrincipalId <String>]`: key: id of servicePrincipal
   - `[SynchronizationJobId <String>]`: key: id of synchronizationJob
   - `[SynchronizationTemplateId <String>]`: key: id of synchronizationTemplate
-  - `[TokenIssuancePolicyId <String>]`: key: id of tokenIssuancePolicy
-  - `[TokenLifetimePolicyId <String>]`: key: id of tokenLifetimePolicy
   - `[UserId <String>]`: key: id of user
 
-OBJECTS <IMicrosoftGraphObjectDefinition[]>: .
+OBJECTS <IMicrosoftGraphObjectDefinition[]>: Collection of objects supported by the directory.
   - `[Attributes <IMicrosoftGraphAttributeDefinition[]>]`: 
-    - `[Anchor <Boolean?>]`: 
+    - `[Anchor <Boolean?>]`: true if the attribute should be used as the anchor for the object. Anchor attributes must have a unique value identifying an object, and must be immutable. Default is false. One, and only one, of the object's attributes must be designated as the anchor to support synchronization.
     - `[ApiExpressions <IMicrosoftGraphStringKeyStringValuePair[]>]`: 
-      - `[Key <String>]`: 
-      - `[Value <String>]`: 
-    - `[CaseExact <Boolean?>]`: 
+      - `[Key <String>]`: Key.
+      - `[Value <String>]`: Value.
+    - `[CaseExact <Boolean?>]`: true if value of this attribute should be treated as case-sensitive. This setting affects how the synchronization engine detects changes for the attribute.
     - `[DefaultValue <String>]`: 
-    - `[FlowNullValues <Boolean?>]`: 
-    - `[Metadata <IMicrosoftGraphMetadataEntry[]>]`: 
-      - `[Key <String>]`: 
-      - `[Value <String>]`: 
-    - `[Multivalued <Boolean?>]`: 
+    - `[FlowNullValues <Boolean?>]`: 'true' to allow null values for attributes.
+    - `[Metadata <IMicrosoftGraphMetadataEntry[]>]`: Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
+      - `[Key <String>]`: Name of the metadata property.
+      - `[Value <String>]`: Value of the metadata property.
+    - `[Multivalued <Boolean?>]`: true if an attribute can have multiple values. Default is false.
     - `[Mutability <String>]`: mutability
-    - `[Name <String>]`: 
-    - `[ReferencedObjects <IMicrosoftGraphReferencedObject[]>]`: 
-      - `[ReferencedObjectName <String>]`: 
-      - `[ReferencedProperty <String>]`: 
-    - `[Required <Boolean?>]`: 
+    - `[Name <String>]`: Name of the attribute. Must be unique within the object definition. Not nullable.
+    - `[ReferencedObjects <IMicrosoftGraphReferencedObject[]>]`: For attributes with reference type, lists referenced objects (for example, the manager attribute would list User as the referenced object).
+      - `[ReferencedObjectName <String>]`: Name of the referenced object. Must match one of the objects in the directory definition.
+      - `[ReferencedProperty <String>]`: Currently not supported. Name of the property in the referenced object, the value for which is used as the reference.
+    - `[Required <Boolean?>]`: true if attribute is required. Object can not be created if any of the required attributes are missing. If during synchronization, the required attribute has no value, the default value will be used. If default the value was not set, synchronization will record an error.
     - `[Type <String>]`: attributeType
   - `[Metadata <IMicrosoftGraphMetadataEntry[]>]`: 
   - `[Name <String>]`: 
   - `[SupportedApis <String[]>]`: 
 
 ## RELATED LINKS
-

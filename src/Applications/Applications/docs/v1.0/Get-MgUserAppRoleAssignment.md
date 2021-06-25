@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Applications-help.xml
 Module Name: Microsoft.Graph.Applications
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/get-mguserapproleassignment
 schema: 2.0.0
@@ -8,15 +8,15 @@ schema: 2.0.0
 # Get-MgUserAppRoleAssignment
 
 ## SYNOPSIS
-Get appRoleAssignments from users
+Represents the app roles a user has been granted for an application.
 
 ## SYNTAX
 
 ### List1 (Default)
 ```
-Get-MgUserAppRoleAssignment -UserId <String> [-Count] [-ExpandProperty <String[]>] [-Filter <String>]
- [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
- [-PageSize <Int32>] [<CommonParameters>]
+Get-MgUserAppRoleAssignment -UserId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+ [-Filter <String>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-PageSize <Int32>]
+ [-All] [-CountVariable <String>] [<CommonParameters>]
 ```
 
 ### Get1
@@ -32,27 +32,31 @@ Get-MgUserAppRoleAssignment -InputObject <IApplicationsIdentity> [-ExpandPropert
 ```
 
 ## DESCRIPTION
-Get appRoleAssignments from users
+Represents the app roles a user has been granted for an application.
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: Get assigned app roles
 ```powershell
-PS C:\> {{ Add code here }}
+Get-MgUserAppRoleAssignment -UserId "529827aa-d058-4821-a012-4de3ce093955" | 
+  Format-List Id, AppRoleID, CreationTimeStamp, PrincipalDisplayName,PrincipalId, PrincipalType, ResourceDisplayName
 
-{{ Add output here }}
+Id                   : QQxVaKMYXkmqHc9ijBcbSFkvIqIpOSdOjXRyNBWe_zE
+AppRoleId            : 00000000-0000-0000-0000-000000000000
+PrincipalDisplayName : MOD Administrator
+PrincipalId          : 529827aa-d058-4821-a012-4de3ce093955
+PrincipalType        : User
+ResourceDisplayName  : MOD Demo Platform UnifiedApiConsumer
+
+Id                   : QQxVaKMYXkmqHc9ijBcbSDXNn98ZHl9Gg4yTKKIIUFA
+AppRoleId            : 00000000-0000-0000-0000-000000000000
+PrincipalDisplayName : MOD Administrator
+PrincipalId          : 529827aa-d058-4821-a012-4de3ce093955
+PrincipalType        : User
+ResourceDisplayName  : dxprovisioning-worker-mfa
 ```
 
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
+This command gets all the application roles that the selected user has been assigned.
 
 ## PARAMETERS
 
@@ -60,7 +64,7 @@ PS C:\> {{ Add code here }}
 List all pages.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: List1
 Aliases:
 
@@ -75,7 +79,7 @@ Accept wildcard characters: False
 key: id of appRoleAssignment
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Get1
 Aliases:
 
@@ -86,13 +90,14 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Count
-Include count of items
+### -CountVariable
+Specifies a count of the total number of items in a collection.
+By default, this variable will be set in the global scope.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: String
 Parameter Sets: List1
-Aliases:
+Aliases: CV
 
 Required: False
 Position: Named
@@ -105,7 +110,7 @@ Accept wildcard characters: False
 Expand related entities
 
 ```yaml
-Type: System.String[]
+Type: String[]
 Parameter Sets: (All)
 Aliases: Expand
 
@@ -120,7 +125,7 @@ Accept wildcard characters: False
 Filter items by property values
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: List1
 Aliases:
 
@@ -136,7 +141,7 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: IApplicationsIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -151,7 +156,7 @@ Accept wildcard characters: False
 Sets the page size of results.
 
 ```yaml
-Type: System.Int32
+Type: Int32
 Parameter Sets: List1
 Aliases:
 
@@ -166,7 +171,7 @@ Accept wildcard characters: False
 Select properties to be returned
 
 ```yaml
-Type: System.String[]
+Type: String[]
 Parameter Sets: (All)
 Aliases: Select
 
@@ -181,22 +186,7 @@ Accept wildcard characters: False
 Search items by search phrases
 
 ```yaml
-Type: System.String
-Parameter Sets: List1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Skip
-Skip the first n items
-
-```yaml
-Type: System.Int32
+Type: String
 Parameter Sets: List1
 Aliases:
 
@@ -211,7 +201,7 @@ Accept wildcard characters: False
 Order items by property values
 
 ```yaml
-Type: System.String[]
+Type: String[]
 Parameter Sets: List1
 Aliases: OrderBy
 
@@ -226,7 +216,7 @@ Accept wildcard characters: False
 Show only the first n items
 
 ```yaml
-Type: System.Int32
+Type: Int32
 Parameter Sets: List1
 Aliases: Limit
 
@@ -241,11 +231,26 @@ Accept wildcard characters: False
 key: id of user
 
 ```yaml
-Type: System.String
-Parameter Sets: Get1, List1
+Type: String
+Parameter Sets: List1, Get1
 Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Skip
+Skip the first n items
+
+```yaml
+Type: Int32
+Parameter Sets: List1
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -276,17 +281,14 @@ INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
   - `[AppRoleAssignmentId <String>]`: key: id of appRoleAssignment
   - `[ApplicationId <String>]`: key: id of application
   - `[ApplicationTemplateId <String>]`: key: id of applicationTemplate
-  - `[ClaimsMappingPolicyId <String>]`: key: id of claimsMappingPolicy
   - `[ConnectorGroupId <String>]`: key: id of connectorGroup
   - `[ConnectorId <String>]`: key: id of connector
+  - `[DelegatedPermissionClassificationId <String>]`: key: id of delegatedPermissionClassification
   - `[DirectoryDefinitionId <String>]`: key: id of directoryDefinition
-  - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[EndpointId <String>]`: key: id of endpoint
   - `[ExtensionPropertyId <String>]`: key: id of extensionProperty
   - `[GroupId <String>]`: key: id of group
-  - `[HomeRealmDiscoveryPolicyId <String>]`: key: id of homeRealmDiscoveryPolicy
   - `[LicenseDetailsId <String>]`: key: id of licenseDetails
-  - `[OAuth2PermissionGrantId <String>]`: key: id of oAuth2PermissionGrant
   - `[OnPremisesAgentGroupId <String>]`: key: id of onPremisesAgentGroup
   - `[OnPremisesAgentGroupId1 <String>]`: key: id of onPremisesAgentGroup
   - `[OnPremisesAgentId <String>]`: key: id of onPremisesAgent
@@ -297,9 +299,6 @@ INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
   - `[ServicePrincipalId <String>]`: key: id of servicePrincipal
   - `[SynchronizationJobId <String>]`: key: id of synchronizationJob
   - `[SynchronizationTemplateId <String>]`: key: id of synchronizationTemplate
-  - `[TokenIssuancePolicyId <String>]`: key: id of tokenIssuancePolicy
-  - `[TokenLifetimePolicyId <String>]`: key: id of tokenLifetimePolicy
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
-

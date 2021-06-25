@@ -1,63 +1,47 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Applications-help.xml
 Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/set-mgapplicationcreatedonbehalfbyref
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/invoke-mginstantiateapplicationtemplate
 schema: 2.0.0
 ---
 
-# Set-MgApplicationCreatedOnBehalfByRef
+# Invoke-MgInstantiateApplicationTemplate
 
 ## SYNOPSIS
-Update the ref of navigation property createdOnBehalfOf in applications
+Invoke action instantiate
 
 ## SYNTAX
 
-### UpdateExpanded (Default)
+### InstantiateExpanded (Default)
 ```
-Set-MgApplicationCreatedOnBehalfByRef -ApplicationId <String> [-AdditionalProperties <Hashtable>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### Update
-```
-Set-MgApplicationCreatedOnBehalfByRef -ApplicationId <String> -BodyParameter <Hashtable> [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Invoke-MgInstantiateApplicationTemplate -ApplicationTemplateId <String> [-AdditionalProperties <Hashtable>]
+ [-DisplayName <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### UpdateViaIdentity
+### Instantiate
 ```
-Set-MgApplicationCreatedOnBehalfByRef -InputObject <IApplicationsIdentity> -BodyParameter <Hashtable>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Invoke-MgInstantiateApplicationTemplate -ApplicationTemplateId <String>
+ -BodyParameter <IPathsCuokzfApplicationtemplatesApplicationtemplateIdMicrosoftGraphInstantiatePostRequestbodyContentApplicationJsonSchema>
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### UpdateViaIdentityExpanded
+### InstantiateViaIdentityExpanded
 ```
-Set-MgApplicationCreatedOnBehalfByRef -InputObject <IApplicationsIdentity> [-AdditionalProperties <Hashtable>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Invoke-MgInstantiateApplicationTemplate -InputObject <IApplicationsIdentity>
+ [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### InstantiateViaIdentity
+```
+Invoke-MgInstantiateApplicationTemplate -InputObject <IApplicationsIdentity>
+ -BodyParameter <IPathsCuokzfApplicationtemplatesApplicationtemplateIdMicrosoftGraphInstantiatePostRequestbodyContentApplicationJsonSchema>
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update the ref of navigation property createdOnBehalfOf in applications
+Invoke action instantiate
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -65,8 +49,8 @@ PS C:\> {{ Add code here }}
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Type: Hashtable
+Parameter Sets: InstantiateExpanded, InstantiateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -76,12 +60,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ApplicationId
-key: id of application
+### -ApplicationTemplateId
+key: id of applicationTemplate
 
 ```yaml
-Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Type: String
+Parameter Sets: InstantiateExpanded, Instantiate
 Aliases:
 
 Required: True
@@ -93,10 +77,11 @@ Accept wildcard characters: False
 
 ### -BodyParameter
 .
+To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: Update, UpdateViaIdentity
+Type: IPathsCuokzfApplicationtemplatesApplicationtemplateIdMicrosoftGraphInstantiatePostRequestbodyContentApplicationJsonSchema
+Parameter Sets: Instantiate, InstantiateViaIdentity
 Aliases:
 
 Required: True
@@ -106,28 +91,12 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -InputObject
-Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+### -DisplayName
+.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
-Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -PassThru
-Returns true when the command succeeds
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
+Type: String
+Parameter Sets: InstantiateExpanded, InstantiateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -137,11 +106,27 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -InputObject
+Identity Parameter
+To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+
+```yaml
+Type: IApplicationsIdentity
+Parameter Sets: InstantiateViaIdentityExpanded, InstantiateViaIdentity
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -157,7 +142,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -175,11 +160,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
 
-### System.Collections.Hashtable
+### Microsoft.Graph.PowerShell.Models.IPathsCuokzfApplicationtemplatesApplicationtemplateIdMicrosoftGraphInstantiatePostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### System.Boolean
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphApplicationServicePrincipal
 
 ## NOTES
 
@@ -190,21 +175,22 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
+BODYPARAMETER <IPathsCuokzfApplicationtemplatesApplicationtemplateIdMicrosoftGraphInstantiatePostRequestbodyContentApplicationJsonSchema>: .
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[DisplayName <String>]`: 
+
 INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
   - `[AppRoleAssignmentId <String>]`: key: id of appRoleAssignment
   - `[ApplicationId <String>]`: key: id of application
   - `[ApplicationTemplateId <String>]`: key: id of applicationTemplate
-  - `[ClaimsMappingPolicyId <String>]`: key: id of claimsMappingPolicy
   - `[ConnectorGroupId <String>]`: key: id of connectorGroup
   - `[ConnectorId <String>]`: key: id of connector
+  - `[DelegatedPermissionClassificationId <String>]`: key: id of delegatedPermissionClassification
   - `[DirectoryDefinitionId <String>]`: key: id of directoryDefinition
-  - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[EndpointId <String>]`: key: id of endpoint
   - `[ExtensionPropertyId <String>]`: key: id of extensionProperty
   - `[GroupId <String>]`: key: id of group
-  - `[HomeRealmDiscoveryPolicyId <String>]`: key: id of homeRealmDiscoveryPolicy
   - `[LicenseDetailsId <String>]`: key: id of licenseDetails
-  - `[OAuth2PermissionGrantId <String>]`: key: id of oAuth2PermissionGrant
   - `[OnPremisesAgentGroupId <String>]`: key: id of onPremisesAgentGroup
   - `[OnPremisesAgentGroupId1 <String>]`: key: id of onPremisesAgentGroup
   - `[OnPremisesAgentId <String>]`: key: id of onPremisesAgent
@@ -215,9 +201,6 @@ INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
   - `[ServicePrincipalId <String>]`: key: id of servicePrincipal
   - `[SynchronizationJobId <String>]`: key: id of synchronizationJob
   - `[SynchronizationTemplateId <String>]`: key: id of synchronizationTemplate
-  - `[TokenIssuancePolicyId <String>]`: key: id of tokenIssuancePolicy
-  - `[TokenLifetimePolicyId <String>]`: key: id of tokenLifetimePolicy
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
-

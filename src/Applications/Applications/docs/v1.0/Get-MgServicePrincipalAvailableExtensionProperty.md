@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Applications-help.xml
 Module Name: Microsoft.Graph.Applications
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/get-mgserviceprincipalavailableextensionproperty
 schema: 2.0.0
@@ -15,14 +15,14 @@ Invoke action getAvailableExtensionProperties
 ### GetExpanded (Default)
 ```
 Get-MgServicePrincipalAvailableExtensionProperty [-AdditionalProperties <Hashtable>] [-IsSyncedFromOnPremises]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Get
 ```
 Get-MgServicePrincipalAvailableExtensionProperty
  -BodyParameter <IPathsGo2T4HServiceprincipalsMicrosoftGraphGetavailableextensionpropertiesPostRequestbodyContentApplicationJsonSchema>
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -30,31 +30,13 @@ Invoke action getAvailableExtensionProperties
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
 ### -AdditionalProperties
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: GetExpanded
 Aliases:
 
@@ -70,7 +52,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsGo2T4HServiceprincipalsMicrosoftGraphGetavailableextensionpropertiesPostRequestbodyContentApplicationJsonSchema
+Type: IPathsGo2T4HServiceprincipalsMicrosoftGraphGetavailableextensionpropertiesPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Get
 Aliases:
 
@@ -85,7 +67,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: GetExpanded
 Aliases:
 
@@ -100,7 +82,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -116,7 +98,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -152,4 +134,3 @@ BODYPARAMETER <IPathsGo2T4HServiceprincipalsMicrosoftGraphGetavailableextensionp
   - `[IsSyncedFromOnPremises <Boolean?>]`: 
 
 ## RELATED LINKS
-
