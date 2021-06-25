@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.DirectoryObjects-help.xml
 Module Name: Microsoft.Graph.DirectoryObjects
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.directoryobjects/get-mgdirectoryobjectmemberobject
 schema: 2.0.0
@@ -15,27 +15,27 @@ Invoke action getMemberObjects
 ### GetExpanded1 (Default)
 ```
 Get-MgDirectoryObjectMemberObject -DirectoryObjectId <String> [-AdditionalProperties <Hashtable>]
- [-SecurityEnabledOnly] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-SecurityEnabledOnly] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Get1
 ```
 Get-MgDirectoryObjectMemberObject -DirectoryObjectId <String>
  -BodyParameter <IPaths16Hhl7EDirectoryobjectsDirectoryobjectIdMicrosoftGraphGetmemberobjectsPostRequestbodyContentApplicationJsonSchema>
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### GetViaIdentityExpanded1
+```
+Get-MgDirectoryObjectMemberObject -InputObject <IDirectoryObjectsIdentity> [-AdditionalProperties <Hashtable>]
+ [-SecurityEnabledOnly] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
 Get-MgDirectoryObjectMemberObject -InputObject <IDirectoryObjectsIdentity>
  -BodyParameter <IPaths16Hhl7EDirectoryobjectsDirectoryobjectIdMicrosoftGraphGetmemberobjectsPostRequestbodyContentApplicationJsonSchema>
- [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### GetViaIdentityExpanded1
-```
-Get-MgDirectoryObjectMemberObject -InputObject <IDirectoryObjectsIdentity> [-AdditionalProperties <Hashtable>]
- [-SecurityEnabledOnly] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -43,31 +43,13 @@ Invoke action getMemberObjects
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
 ### -AdditionalProperties
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: GetExpanded1, GetViaIdentityExpanded1
 Aliases:
 
@@ -83,7 +65,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths16Hhl7EDirectoryobjectsDirectoryobjectIdMicrosoftGraphGetmemberobjectsPostRequestbodyContentApplicationJsonSchema
+Type: IPaths16Hhl7EDirectoryobjectsDirectoryobjectIdMicrosoftGraphGetmemberobjectsPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Get1, GetViaIdentity1
 Aliases:
 
@@ -98,8 +80,8 @@ Accept wildcard characters: False
 key: id of directoryObject
 
 ```yaml
-Type: System.String
-Parameter Sets: Get1, GetExpanded1
+Type: String
+Parameter Sets: GetExpanded1, Get1
 Aliases:
 
 Required: True
@@ -114,8 +96,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDirectoryObjectsIdentity
-Parameter Sets: GetViaIdentity1, GetViaIdentityExpanded1
+Type: IDirectoryObjectsIdentity
+Parameter Sets: GetViaIdentityExpanded1, GetViaIdentity1
 Aliases:
 
 Required: True
@@ -129,7 +111,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: GetExpanded1, GetViaIdentityExpanded1
 Aliases:
 
@@ -144,7 +126,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -160,7 +142,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -201,4 +183,3 @@ INPUTOBJECT <IDirectoryObjectsIdentity>: Identity Parameter
   - `[DirectoryObjectId <String>]`: key: id of directoryObject
 
 ## RELATED LINKS
-

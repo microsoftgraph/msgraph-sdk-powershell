@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.DirectoryObjects-help.xml
 Module Name: Microsoft.Graph.DirectoryObjects
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.directoryobjects/restore-mgdirectoryobject
 schema: 2.0.0
@@ -14,12 +14,12 @@ Invoke action restore
 
 ### Restore (Default)
 ```
-Restore-MgDirectoryObject -DirectoryObjectId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
+Restore-MgDirectoryObject -DirectoryObjectId <String> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### RestoreViaIdentity
 ```
-Restore-MgDirectoryObject -InputObject <IDirectoryObjectsIdentity> [-Confirm] [-WhatIf] [<CommonParameters>]
+Restore-MgDirectoryObject -InputObject <IDirectoryObjectsIdentity> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -27,31 +27,13 @@ Invoke action restore
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
 ### -DirectoryObjectId
 key: id of directoryObject
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Restore
 Aliases:
 
@@ -67,7 +49,7 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDirectoryObjectsIdentity
+Type: IDirectoryObjectsIdentity
 Parameter Sets: RestoreViaIdentity
 Aliases:
 
@@ -82,7 +64,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -98,7 +80,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -133,4 +115,3 @@ INPUTOBJECT <IDirectoryObjectsIdentity>: Identity Parameter
   - `[DirectoryObjectId <String>]`: key: id of directoryObject
 
 ## RELATED LINKS
-
