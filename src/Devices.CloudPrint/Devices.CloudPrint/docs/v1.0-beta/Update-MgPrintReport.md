@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Devices.CloudPrint-help.xml
 Module Name: Microsoft.Graph.Devices.CloudPrint
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.cloudprint/update-mgprintreport
 schema: 2.0.0
@@ -14,39 +14,25 @@ Update the navigation property reports in print
 
 ### UpdateExpanded (Default)
 ```
-Update-MgPrintReport -ReportRootId <String> [-AdditionalProperties <Hashtable>]
+Update-MgPrintReport [-AdditionalProperties <Hashtable>]
  [-ApplicationSignInDetailedSummary <IMicrosoftGraphApplicationSignInDetailedSummary[]>]
+ [-AuthenticationMethods <Hashtable>]
  [-CredentialUserRegistrationDetails <IMicrosoftGraphCredentialUserRegistrationDetails[]>]
- [-DailyPrintUsageSummariesByPrinter <IMicrosoftGraphPrintUsageSummaryByPrinter[]>]
- [-DailyPrintUsageSummariesByUser <IMicrosoftGraphPrintUsageSummaryByUser[]>] [-Id <String>]
- [-MonthlyPrintUsageSummariesByPrinter <IMicrosoftGraphPrintUsageSummaryByPrinter[]>]
- [-MonthlyPrintUsageSummariesByUser <IMicrosoftGraphPrintUsageSummaryByUser[]>]
- [-UserCredentialUsageDetails <IMicrosoftGraphUserCredentialUsageDetails[]>] [-PassThru] [-Confirm] [-WhatIf]
+ [-DailyPrintUsageByPrinter <IMicrosoftGraphPrintUsageByPrinter[]>]
+ [-DailyPrintUsageByUser <IMicrosoftGraphPrintUsageByUser[]>]
+ [-DailyPrintUsageSummariesByPrinter <IMicrosoftGraphPrintUsageByPrinter[]>]
+ [-DailyPrintUsageSummariesByUser <IMicrosoftGraphPrintUsageByUser[]>] [-Id <String>]
+ [-MonthlyPrintUsageByPrinter <IMicrosoftGraphPrintUsageByPrinter[]>]
+ [-MonthlyPrintUsageByUser <IMicrosoftGraphPrintUsageByUser[]>]
+ [-MonthlyPrintUsageSummariesByPrinter <IMicrosoftGraphPrintUsageByPrinter[]>]
+ [-MonthlyPrintUsageSummariesByUser <IMicrosoftGraphPrintUsageByUser[]>]
+ [-UserCredentialUsageDetails <IMicrosoftGraphUserCredentialUsageDetails[]>] [-PassThru] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgPrintReport -ReportRootId <String> -BodyParameter <IMicrosoftGraphReportRoot> [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
-```
-
-### UpdateViaIdentity
-```
-Update-MgPrintReport -InputObject <IDevicesCloudPrintIdentity> -BodyParameter <IMicrosoftGraphReportRoot>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### UpdateViaIdentityExpanded
-```
-Update-MgPrintReport -InputObject <IDevicesCloudPrintIdentity> [-AdditionalProperties <Hashtable>]
- [-ApplicationSignInDetailedSummary <IMicrosoftGraphApplicationSignInDetailedSummary[]>]
- [-CredentialUserRegistrationDetails <IMicrosoftGraphCredentialUserRegistrationDetails[]>]
- [-DailyPrintUsageSummariesByPrinter <IMicrosoftGraphPrintUsageSummaryByPrinter[]>]
- [-DailyPrintUsageSummariesByUser <IMicrosoftGraphPrintUsageSummaryByUser[]>] [-Id <String>]
- [-MonthlyPrintUsageSummariesByPrinter <IMicrosoftGraphPrintUsageSummaryByPrinter[]>]
- [-MonthlyPrintUsageSummariesByUser <IMicrosoftGraphPrintUsageSummaryByUser[]>]
- [-UserCredentialUsageDetails <IMicrosoftGraphUserCredentialUsageDetails[]>] [-PassThru] [-Confirm] [-WhatIf]
+Update-MgPrintReport -BodyParameter <IMicrosoftGraphReportRoot> [-PassThru] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
@@ -55,32 +41,14 @@ Update the navigation property reports in print
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
 ### -AdditionalProperties
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Type: Hashtable
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: False
@@ -95,8 +63,23 @@ Accept wildcard characters: False
 To construct, see NOTES section for APPLICATIONSIGNINDETAILEDSUMMARY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphApplicationSignInDetailedSummary[]
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Type: IMicrosoftGraphApplicationSignInDetailedSummary[]
+Parameter Sets: UpdateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AuthenticationMethods
+authenticationMethodsRoot
+
+```yaml
+Type: Hashtable
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: False
@@ -111,8 +94,8 @@ The resource that represents an instance of History Reports.
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphReportRoot
-Parameter Sets: Update, UpdateViaIdentity
+Type: IMicrosoftGraphReportRoot
+Parameter Sets: Update
 Aliases:
 
 Required: True
@@ -127,8 +110,40 @@ Accept wildcard characters: False
 To construct, see NOTES section for CREDENTIALUSERREGISTRATIONDETAILS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCredentialUserRegistrationDetails[]
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Type: IMicrosoftGraphCredentialUserRegistrationDetails[]
+Parameter Sets: UpdateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DailyPrintUsageByPrinter
+.
+To construct, see NOTES section for DAILYPRINTUSAGEBYPRINTER properties and create a hash table.
+
+```yaml
+Type: IMicrosoftGraphPrintUsageByPrinter[]
+Parameter Sets: UpdateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DailyPrintUsageByUser
+.
+To construct, see NOTES section for DAILYPRINTUSAGEBYUSER properties and create a hash table.
+
+```yaml
+Type: IMicrosoftGraphPrintUsageByUser[]
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: False
@@ -143,8 +158,8 @@ Accept wildcard characters: False
 To construct, see NOTES section for DAILYPRINTUSAGESUMMARIESBYPRINTER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintUsageSummaryByPrinter[]
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Type: IMicrosoftGraphPrintUsageByPrinter[]
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: False
@@ -159,8 +174,8 @@ Accept wildcard characters: False
 To construct, see NOTES section for DAILYPRINTUSAGESUMMARIESBYUSER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintUsageSummaryByUser[]
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Type: IMicrosoftGraphPrintUsageByUser[]
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: False
@@ -174,8 +189,8 @@ Accept wildcard characters: False
 Read-only.
 
 ```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Type: String
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: False
@@ -185,19 +200,35 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -InputObject
-Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+### -MonthlyPrintUsageByPrinter
+.
+To construct, see NOTES section for MONTHLYPRINTUSAGEBYPRINTER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCloudPrintIdentity
-Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
+Type: IMicrosoftGraphPrintUsageByPrinter[]
+Parameter Sets: UpdateExpanded
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
-Accept pipeline input: True (ByValue)
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MonthlyPrintUsageByUser
+.
+To construct, see NOTES section for MONTHLYPRINTUSAGEBYUSER properties and create a hash table.
+
+```yaml
+Type: IMicrosoftGraphPrintUsageByUser[]
+Parameter Sets: UpdateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -206,8 +237,8 @@ Accept wildcard characters: False
 To construct, see NOTES section for MONTHLYPRINTUSAGESUMMARIESBYPRINTER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintUsageSummaryByPrinter[]
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Type: IMicrosoftGraphPrintUsageByPrinter[]
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: False
@@ -222,8 +253,8 @@ Accept wildcard characters: False
 To construct, see NOTES section for MONTHLYPRINTUSAGESUMMARIESBYUSER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintUsageSummaryByUser[]
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Type: IMicrosoftGraphPrintUsageByUser[]
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: False
@@ -237,26 +268,11 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ReportRootId
-key: id of reportRoot
-
-```yaml
-Type: System.String
-Parameter Sets: Update, UpdateExpanded
-Aliases:
-
-Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -268,8 +284,8 @@ Accept wildcard characters: False
 To construct, see NOTES section for USERCREDENTIALUSAGEDETAILS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserCredentialUsageDetails[]
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Type: IMicrosoftGraphUserCredentialUsageDetails[]
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: False
@@ -283,7 +299,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -299,7 +315,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -314,8 +330,6 @@ Accept wildcard characters: False
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
-
-### Microsoft.Graph.PowerShell.Models.IDevicesCloudPrintIdentity
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphReportRoot
 
@@ -334,14 +348,14 @@ To create the parameters described below, construct a hash table containing the 
 
 APPLICATIONSIGNINDETAILEDSUMMARY <IMicrosoftGraphApplicationSignInDetailedSummary[]>: .
   - `[Id <String>]`: Read-only.
-  - `[AggregatedEventDateTime <DateTime?>]`: 
-  - `[AppDisplayName <String>]`: 
-  - `[AppId <String>]`: 
-  - `[SignInCount <Int64?>]`: 
+  - `[AggregatedEventDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+  - `[AppDisplayName <String>]`: Name of the application that the user signed in to.
+  - `[AppId <String>]`: ID of the application that the user signed in to.
+  - `[SignInCount <Int64?>]`: Count of sign-ins made by the application.
   - `[Status <IMicrosoftGraphSignInStatus>]`: signInStatus
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[AdditionalDetails <String>]`: Provides additional details on the sign-in activity
-    - `[ErrorCode <Int32?>]`: Provides the 5-6digit error code that's generated during a sign-in failure. Check out the list of error codes and messages.
+    - `[ErrorCode <Int32?>]`: Provides the 5-6 digit error code that's generated during a sign-in failure. Check out the list of error codes and messages.
     - `[FailureReason <String>]`: Provides the error message or the reason for failure for the corresponding sign-in activity. Check out the list of error codes and messages.
 
 BODYPARAMETER <IMicrosoftGraphReportRoot>: The resource that represents an instance of History Reports.
@@ -349,122 +363,141 @@ BODYPARAMETER <IMicrosoftGraphReportRoot>: The resource that represents an insta
   - `[Id <String>]`: Read-only.
   - `[ApplicationSignInDetailedSummary <IMicrosoftGraphApplicationSignInDetailedSummary[]>]`: 
     - `[Id <String>]`: Read-only.
-    - `[AggregatedEventDateTime <DateTime?>]`: 
-    - `[AppDisplayName <String>]`: 
-    - `[AppId <String>]`: 
-    - `[SignInCount <Int64?>]`: 
+    - `[AggregatedEventDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+    - `[AppDisplayName <String>]`: Name of the application that the user signed in to.
+    - `[AppId <String>]`: ID of the application that the user signed in to.
+    - `[SignInCount <Int64?>]`: Count of sign-ins made by the application.
     - `[Status <IMicrosoftGraphSignInStatus>]`: signInStatus
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[AdditionalDetails <String>]`: Provides additional details on the sign-in activity
-      - `[ErrorCode <Int32?>]`: Provides the 5-6digit error code that's generated during a sign-in failure. Check out the list of error codes and messages.
+      - `[ErrorCode <Int32?>]`: Provides the 5-6 digit error code that's generated during a sign-in failure. Check out the list of error codes and messages.
       - `[FailureReason <String>]`: Provides the error message or the reason for failure for the corresponding sign-in activity. Check out the list of error codes and messages.
+  - `[AuthenticationMethods <IMicrosoftGraphAuthenticationMethodsRoot>]`: authenticationMethodsRoot
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Id <String>]`: Read-only.
   - `[CredentialUserRegistrationDetails <IMicrosoftGraphCredentialUserRegistrationDetails[]>]`: 
     - `[Id <String>]`: Read-only.
-    - `[AuthMethods <String[]>]`: 
-    - `[IsCapable <Boolean?>]`: 
-    - `[IsEnabled <Boolean?>]`: 
-    - `[IsMfaRegistered <Boolean?>]`: 
-    - `[IsRegistered <Boolean?>]`: 
-    - `[UserDisplayName <String>]`: 
-    - `[UserPrincipalName <String>]`: 
-  - `[DailyPrintUsageSummariesByPrinter <IMicrosoftGraphPrintUsageSummaryByPrinter[]>]`: 
-    - `[Id <String>]`: Read-only.
+    - `[AuthMethods <String[]>]`: Represents the authentication method that the user has registered. Possible values are: email, mobilePhone, officePhone,  securityQuestion (only used for self-service password reset), appNotification,  appCode, alternateMobilePhone (supported only in registration),  fido,  appPassword,  unknownFutureValue.
+    - `[IsCapable <Boolean?>]`: Indicates whether the user is ready to perform self-service password reset or MFA.
+    - `[IsEnabled <Boolean?>]`: Indicates whether the user enabled to perform self-service password reset.
+    - `[IsMfaRegistered <Boolean?>]`: Indicates whether the user is registered for MFA.
+    - `[IsRegistered <Boolean?>]`: Indicates whether the user has registered any authentication methods for self-service password reset.
+    - `[UserDisplayName <String>]`: Provides the user name of the corresponding user.
+    - `[UserPrincipalName <String>]`: Provides the user principal name of the corresponding user.
+  - `[DailyPrintUsageByPrinter <IMicrosoftGraphPrintUsageByPrinter[]>]`: 
     - `[CompletedBlackAndWhiteJobCount <Int64?>]`: 
     - `[CompletedColorJobCount <Int64?>]`: 
     - `[IncompleteJobCount <Int64?>]`: 
+    - `[UsageDate <DateTime?>]`: 
+    - `[Id <String>]`: Read-only.
     - `[PrinterId <String>]`: 
-    - `[UsageDate <DateTime?>]`: 
-  - `[DailyPrintUsageSummariesByUser <IMicrosoftGraphPrintUsageSummaryByUser[]>]`: 
-    - `[Id <String>]`: Read-only.
+  - `[DailyPrintUsageByUser <IMicrosoftGraphPrintUsageByUser[]>]`: 
     - `[CompletedBlackAndWhiteJobCount <Int64?>]`: 
     - `[CompletedColorJobCount <Int64?>]`: 
     - `[IncompleteJobCount <Int64?>]`: 
     - `[UsageDate <DateTime?>]`: 
-    - `[UserPrincipalName <String>]`: 
-  - `[MonthlyPrintUsageSummariesByPrinter <IMicrosoftGraphPrintUsageSummaryByPrinter[]>]`: 
-  - `[MonthlyPrintUsageSummariesByUser <IMicrosoftGraphPrintUsageSummaryByUser[]>]`: 
+    - `[Id <String>]`: Read-only.
+    - `[UserPrincipalName <String>]`: The UPN of the user represented by these statistics.
+  - `[DailyPrintUsageSummariesByPrinter <IMicrosoftGraphPrintUsageByPrinter[]>]`: 
+  - `[DailyPrintUsageSummariesByUser <IMicrosoftGraphPrintUsageByUser[]>]`: 
+  - `[MonthlyPrintUsageByPrinter <IMicrosoftGraphPrintUsageByPrinter[]>]`: 
+  - `[MonthlyPrintUsageByUser <IMicrosoftGraphPrintUsageByUser[]>]`: 
+  - `[MonthlyPrintUsageSummariesByPrinter <IMicrosoftGraphPrintUsageByPrinter[]>]`: 
+  - `[MonthlyPrintUsageSummariesByUser <IMicrosoftGraphPrintUsageByUser[]>]`: 
   - `[UserCredentialUsageDetails <IMicrosoftGraphUserCredentialUsageDetails[]>]`: 
     - `[Id <String>]`: Read-only.
     - `[AuthMethod <String>]`: usageAuthMethod
-    - `[EventDateTime <DateTime?>]`: 
-    - `[FailureReason <String>]`: 
+    - `[EventDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: 2014-01-01T00:00:00Z.
+    - `[FailureReason <String>]`: Provides the failure reason for the corresponding reset or registration workflow.
     - `[Feature <String>]`: featureType
-    - `[IsSuccess <Boolean?>]`: 
-    - `[UserDisplayName <String>]`: 
-    - `[UserPrincipalName <String>]`: 
+    - `[IsSuccess <Boolean?>]`: Indicates success or failure of the workflow.
+    - `[UserDisplayName <String>]`: User name of the user performing the reset or registration workflow.
+    - `[UserPrincipalName <String>]`: User principal name of the user performing the reset or registration workflow.
 
 CREDENTIALUSERREGISTRATIONDETAILS <IMicrosoftGraphCredentialUserRegistrationDetails[]>: .
   - `[Id <String>]`: Read-only.
-  - `[AuthMethods <String[]>]`: 
-  - `[IsCapable <Boolean?>]`: 
-  - `[IsEnabled <Boolean?>]`: 
-  - `[IsMfaRegistered <Boolean?>]`: 
-  - `[IsRegistered <Boolean?>]`: 
-  - `[UserDisplayName <String>]`: 
-  - `[UserPrincipalName <String>]`: 
+  - `[AuthMethods <String[]>]`: Represents the authentication method that the user has registered. Possible values are: email, mobilePhone, officePhone,  securityQuestion (only used for self-service password reset), appNotification,  appCode, alternateMobilePhone (supported only in registration),  fido,  appPassword,  unknownFutureValue.
+  - `[IsCapable <Boolean?>]`: Indicates whether the user is ready to perform self-service password reset or MFA.
+  - `[IsEnabled <Boolean?>]`: Indicates whether the user enabled to perform self-service password reset.
+  - `[IsMfaRegistered <Boolean?>]`: Indicates whether the user is registered for MFA.
+  - `[IsRegistered <Boolean?>]`: Indicates whether the user has registered any authentication methods for self-service password reset.
+  - `[UserDisplayName <String>]`: Provides the user name of the corresponding user.
+  - `[UserPrincipalName <String>]`: Provides the user principal name of the corresponding user.
 
-DAILYPRINTUSAGESUMMARIESBYPRINTER <IMicrosoftGraphPrintUsageSummaryByPrinter[]>: .
-  - `[Id <String>]`: Read-only.
+DAILYPRINTUSAGEBYPRINTER <IMicrosoftGraphPrintUsageByPrinter[]>: .
   - `[CompletedBlackAndWhiteJobCount <Int64?>]`: 
   - `[CompletedColorJobCount <Int64?>]`: 
   - `[IncompleteJobCount <Int64?>]`: 
+  - `[UsageDate <DateTime?>]`: 
+  - `[Id <String>]`: Read-only.
   - `[PrinterId <String>]`: 
-  - `[UsageDate <DateTime?>]`: 
 
-DAILYPRINTUSAGESUMMARIESBYUSER <IMicrosoftGraphPrintUsageSummaryByUser[]>: .
-  - `[Id <String>]`: Read-only.
+DAILYPRINTUSAGEBYUSER <IMicrosoftGraphPrintUsageByUser[]>: .
   - `[CompletedBlackAndWhiteJobCount <Int64?>]`: 
   - `[CompletedColorJobCount <Int64?>]`: 
   - `[IncompleteJobCount <Int64?>]`: 
   - `[UsageDate <DateTime?>]`: 
-  - `[UserPrincipalName <String>]`: 
-
-INPUTOBJECT <IDevicesCloudPrintIdentity>: Identity Parameter
-  - `[GroupId <String>]`: 
-  - `[PeriodEnd <DateTime?>]`: 
-  - `[PeriodStart <DateTime?>]`: 
-  - `[PrintConnectorId <String>]`: key: id of printConnector
-  - `[PrintIdentityId <String>]`: key: id of printIdentity
-  - `[PrintOperationId <String>]`: key: id of printOperation
-  - `[PrintServiceEndpointId <String>]`: key: id of printServiceEndpoint
-  - `[PrintServiceId <String>]`: key: id of printService
-  - `[PrintTaskDefinitionId <String>]`: key: id of printTaskDefinition
-  - `[PrintTaskId <String>]`: key: id of printTask
-  - `[PrintTaskTriggerId <String>]`: key: id of printTaskTrigger
-  - `[PrintUserIdentityId <String>]`: key: id of printUserIdentity
-  - `[PrinterId <String>]`: key: id of printer
-  - `[PrinterId1 <String>]`: 
-  - `[PrinterShareId <String>]`: key: id of printerShare
-  - `[ReportRootId <String>]`: key: id of reportRoot
-  - `[TimeSpanInMinutes <Int32?>]`: 
-  - `[TopListsSize <Int32?>]`: 
-  - `[UserId <String>]`: 
-
-MONTHLYPRINTUSAGESUMMARIESBYPRINTER <IMicrosoftGraphPrintUsageSummaryByPrinter[]>: .
   - `[Id <String>]`: Read-only.
+  - `[UserPrincipalName <String>]`: The UPN of the user represented by these statistics.
+
+DAILYPRINTUSAGESUMMARIESBYPRINTER <IMicrosoftGraphPrintUsageByPrinter[]>: .
   - `[CompletedBlackAndWhiteJobCount <Int64?>]`: 
   - `[CompletedColorJobCount <Int64?>]`: 
   - `[IncompleteJobCount <Int64?>]`: 
+  - `[UsageDate <DateTime?>]`: 
+  - `[Id <String>]`: Read-only.
   - `[PrinterId <String>]`: 
-  - `[UsageDate <DateTime?>]`: 
 
-MONTHLYPRINTUSAGESUMMARIESBYUSER <IMicrosoftGraphPrintUsageSummaryByUser[]>: .
-  - `[Id <String>]`: Read-only.
+DAILYPRINTUSAGESUMMARIESBYUSER <IMicrosoftGraphPrintUsageByUser[]>: .
   - `[CompletedBlackAndWhiteJobCount <Int64?>]`: 
   - `[CompletedColorJobCount <Int64?>]`: 
   - `[IncompleteJobCount <Int64?>]`: 
   - `[UsageDate <DateTime?>]`: 
-  - `[UserPrincipalName <String>]`: 
+  - `[Id <String>]`: Read-only.
+  - `[UserPrincipalName <String>]`: The UPN of the user represented by these statistics.
+
+MONTHLYPRINTUSAGEBYPRINTER <IMicrosoftGraphPrintUsageByPrinter[]>: .
+  - `[CompletedBlackAndWhiteJobCount <Int64?>]`: 
+  - `[CompletedColorJobCount <Int64?>]`: 
+  - `[IncompleteJobCount <Int64?>]`: 
+  - `[UsageDate <DateTime?>]`: 
+  - `[Id <String>]`: Read-only.
+  - `[PrinterId <String>]`: 
+
+MONTHLYPRINTUSAGEBYUSER <IMicrosoftGraphPrintUsageByUser[]>: .
+  - `[CompletedBlackAndWhiteJobCount <Int64?>]`: 
+  - `[CompletedColorJobCount <Int64?>]`: 
+  - `[IncompleteJobCount <Int64?>]`: 
+  - `[UsageDate <DateTime?>]`: 
+  - `[Id <String>]`: Read-only.
+  - `[UserPrincipalName <String>]`: The UPN of the user represented by these statistics.
+
+MONTHLYPRINTUSAGESUMMARIESBYPRINTER <IMicrosoftGraphPrintUsageByPrinter[]>: .
+  - `[CompletedBlackAndWhiteJobCount <Int64?>]`: 
+  - `[CompletedColorJobCount <Int64?>]`: 
+  - `[IncompleteJobCount <Int64?>]`: 
+  - `[UsageDate <DateTime?>]`: 
+  - `[Id <String>]`: Read-only.
+  - `[PrinterId <String>]`: 
+
+MONTHLYPRINTUSAGESUMMARIESBYUSER <IMicrosoftGraphPrintUsageByUser[]>: .
+  - `[CompletedBlackAndWhiteJobCount <Int64?>]`: 
+  - `[CompletedColorJobCount <Int64?>]`: 
+  - `[IncompleteJobCount <Int64?>]`: 
+  - `[UsageDate <DateTime?>]`: 
+  - `[Id <String>]`: Read-only.
+  - `[UserPrincipalName <String>]`: The UPN of the user represented by these statistics.
 
 USERCREDENTIALUSAGEDETAILS <IMicrosoftGraphUserCredentialUsageDetails[]>: .
   - `[Id <String>]`: Read-only.
   - `[AuthMethod <String>]`: usageAuthMethod
-  - `[EventDateTime <DateTime?>]`: 
-  - `[FailureReason <String>]`: 
+  - `[EventDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: 2014-01-01T00:00:00Z.
+  - `[FailureReason <String>]`: Provides the failure reason for the corresponding reset or registration workflow.
   - `[Feature <String>]`: featureType
-  - `[IsSuccess <Boolean?>]`: 
-  - `[UserDisplayName <String>]`: 
-  - `[UserPrincipalName <String>]`: 
+  - `[IsSuccess <Boolean?>]`: Indicates success or failure of the workflow.
+  - `[UserDisplayName <String>]`: User name of the user performing the reset or registration workflow.
+  - `[UserPrincipalName <String>]`: User principal name of the user performing the reset or registration workflow.
 
 ## RELATED LINKS
 
+## RELATED LINKS
