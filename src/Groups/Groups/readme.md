@@ -50,6 +50,10 @@ directive:
       subject: ^GroupDynamicMembership$
       variant: Evaluate1|EvaluateExpanded1
     remove: true
+  - where:
+      verb: Get
+      subject: (Group)AvailableExtensionProperty
+    remove: true
 # Rename cmdlets
   - where:
       subject: ^(GroupLifecyclePolicy)(\1)+

@@ -38,6 +38,11 @@ subject-prefix: ''
 
 ``` yaml
 directive:
+# Remove cmdlets.
+  - where:
+      verb: Get
+      subject: (Contact|Contract|Device|DirectoryRole|DirectoryRoleTemplate|Organization)AvailableExtensionProperty
+    remove: true
 # Alias then rename cmdlets to avoid breaking change.
   - where:
       subject: ^UserScopedRoleMember$
