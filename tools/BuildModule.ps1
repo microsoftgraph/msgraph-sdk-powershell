@@ -7,7 +7,8 @@ Param(
     [Parameter(Mandatory = $true)] [ValidateNotNullOrEmpty()][string[]] $ReleaseNotes,
     [int] $ModulePreviewNumber = -1,
     [hashtable[]] $RequiredModules,
-    [switch] $EnableSigning
+    [switch] $EnableSigning,
+    [switch] $ExcludeExampleTemplates
 )
 $ErrorActionPreference = "Stop"
 $LASTEXITCODE = $null
@@ -42,7 +43,7 @@ else {
 
 # Build module
 Write-Host -ForegroundColor Green "Building '$Module' module..."
-& $BuildModulePS1 -Docs -Release
+& $BuildModulePS1 -Docs -Release -ExcludeExampleTemplates:$ExcludeExampleTemplates
 if ($LASTEXITCODE) {
     Write-Error "Failed to build '$Module' module."
 }
