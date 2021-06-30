@@ -9,6 +9,10 @@ Set-StrictMode -Version 2
 Find permissions for authorization against Microsoft Graph
 #>
 
+. "$psscriptroot/common/Permissions.ps1"
+
+# 1. Signing into any AAD organization
+
 # Import-Module -Force .\Microsoft.Graph.Authentication.psd1
 
 # Setting a empty entity to store the imported data
@@ -16,9 +20,9 @@ $msgraphServicePrincipal = $null
 
 function GetPermissionsData {
 
-    # Making a REST request to MS Graph both locally and through the web service
-    if ($null -eq $script:msgraphServicePrincipal){
-        $script:msgraphServicePrincipal = try {
+    # 2. Making a REST request to MS Graph
+    if ($null -eq $script:Permissions_MsGraphServicePrincipal){
+        $script:Permissions_MsGraphServicePrincipal = try {
 
             Write-Host "Getting data from web service"
             Invoke-MgGraphRequest -method GET 'https://graph.microsoft.com/v1.0/servicePrincipals?filter=appId eq ''00000003-0000-0000-c000-000000000000''' | select-object -expandproperty value
@@ -30,9 +34,9 @@ function GetPermissionsData {
         
         }
     }
-    # Parse the permisions from the serviceprincipal
-    $msOauth = $msgraphServicePrincipal.oauth2PermissionScopes
-    $msAppRoles = $msgraphServicePrincipal.appRoles
+    # 3. Parse the permisions from the serviceprincipal
+    $msOauth = $script:Permissions_MsGraphServicePrincipal.oauth2PermissionScopes
+    $msAppRoles = $script:Permissions_MsGraphServicePrincipal.appRoles
 
     # make sure the parsed permissions are exported properly
     @{
