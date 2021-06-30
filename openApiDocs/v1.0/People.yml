@@ -25,7 +25,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -40,7 +39,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -131,7 +129,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Get shared from users
-      description: Access this property from the derived type itemInsights.
+      description: 'Calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.'
       operationId: users.insights_ListShared
       parameters:
         - name: user-id
@@ -150,7 +148,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -171,7 +168,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -189,7 +185,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -226,7 +221,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Create new navigation property to shared for users
-      description: Access this property from the derived type itemInsights.
+      description: 'Calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.'
       operationId: users.insights_CreateShared
       parameters:
         - name: user-id
@@ -258,7 +253,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Get shared from users
-      description: Access this property from the derived type itemInsights.
+      description: 'Calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.'
       operationId: users.insights_GetShared
       parameters:
         - name: user-id
@@ -279,7 +274,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -297,7 +291,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -332,7 +325,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Update the navigation property shared in users
-      description: Access this property from the derived type itemInsights.
+      description: 'Calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.'
       operationId: users.insights_UpdateShared
       parameters:
         - name: user-id
@@ -366,7 +359,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Delete navigation property shared for users
-      description: Access this property from the derived type itemInsights.
+      description: 'Calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.'
       operationId: users.insights_DeleteShared
       parameters:
         - name: user-id
@@ -419,7 +412,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -431,7 +423,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -572,7 +563,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -584,7 +574,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -707,7 +696,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Get trending from users
-      description: Access this property from the derived type itemInsights.
+      description: 'Calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user''s closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.'
       operationId: users.insights_ListTrending
       parameters:
         - name: user-id
@@ -726,7 +715,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -747,7 +735,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -764,7 +751,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -800,7 +786,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Create new navigation property to trending for users
-      description: Access this property from the derived type itemInsights.
+      description: 'Calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user''s closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.'
       operationId: users.insights_CreateTrending
       parameters:
         - name: user-id
@@ -832,7 +818,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Get trending from users
-      description: Access this property from the derived type itemInsights.
+      description: 'Calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user''s closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.'
       operationId: users.insights_GetTrending
       parameters:
         - name: user-id
@@ -853,7 +839,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -870,7 +855,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -899,7 +883,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Update the navigation property trending in users
-      description: Access this property from the derived type itemInsights.
+      description: 'Calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user''s closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.'
       operationId: users.insights_UpdateTrending
       parameters:
         - name: user-id
@@ -933,7 +917,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Delete navigation property trending for users
-      description: Access this property from the derived type itemInsights.
+      description: 'Calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user''s closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.'
       operationId: users.insights_DeleteTrending
       parameters:
         - name: user-id
@@ -987,7 +971,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -999,7 +982,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1122,7 +1104,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Get used from users
-      description: Access this property from the derived type itemInsights.
+      description: 'Calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.'
       operationId: users.insights_ListUsed
       parameters:
         - name: user-id
@@ -1141,7 +1123,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1160,7 +1141,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1176,7 +1156,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1212,7 +1191,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Create new navigation property to used for users
-      description: Access this property from the derived type itemInsights.
+      description: 'Calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.'
       operationId: users.insights_CreateUsed
       parameters:
         - name: user-id
@@ -1244,7 +1223,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Get used from users
-      description: Access this property from the derived type itemInsights.
+      description: 'Calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.'
       operationId: users.insights_GetUsed
       parameters:
         - name: user-id
@@ -1265,7 +1244,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1281,7 +1259,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1310,7 +1287,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Update the navigation property used in users
-      description: Access this property from the derived type itemInsights.
+      description: 'Calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.'
       operationId: users.insights_UpdateUsed
       parameters:
         - name: user-id
@@ -1344,7 +1321,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Delete navigation property used for users
-      description: Access this property from the derived type itemInsights.
+      description: 'Calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.'
       operationId: users.insights_DeleteUsed
       parameters:
         - name: user-id
@@ -1398,7 +1375,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1410,7 +1386,6 @@ paths:
           in: query
           description: Expand related entities
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1533,7 +1508,7 @@ paths:
       tags:
         - users.person
       summary: Get people from users
-      description: 'Read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user''s communication, collaboration and business relationships. A person is an aggregation of information from across mail, contacts and social networks.'
+      description: People that are relevant to the user. Read-only. Nullable.
       operationId: users_ListPeople
       parameters:
         - name: user-id
@@ -1552,7 +1527,6 @@ paths:
           in: query
           description: Order items by property values
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1603,7 +1577,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1629,18 +1602,6 @@ paths:
                 - userPrincipalName
                 - websites
                 - yomiCompany
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
               type: string
       responses:
         '200':
@@ -1669,7 +1630,7 @@ paths:
       tags:
         - users.person
       summary: Create new navigation property to people for users
-      description: 'Read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user''s communication, collaboration and business relationships. A person is an aggregation of information from across mail, contacts and social networks.'
+      description: People that are relevant to the user. Read-only. Nullable.
       operationId: users_CreatePeople
       parameters:
         - name: user-id
@@ -1701,7 +1662,7 @@ paths:
       tags:
         - users.person
       summary: Get people from users
-      description: 'Read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user''s communication, collaboration and business relationships. A person is an aggregation of information from across mail, contacts and social networks.'
+      description: People that are relevant to the user. Read-only. Nullable.
       operationId: users_GetPeople
       parameters:
         - name: user-id
@@ -1722,7 +1683,6 @@ paths:
           in: query
           description: Select properties to be returned
           style: form
-          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1749,18 +1709,6 @@ paths:
                 - websites
                 - yomiCompany
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -1775,7 +1723,7 @@ paths:
       tags:
         - users.person
       summary: Update the navigation property people in users
-      description: 'Read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user''s communication, collaboration and business relationships. A person is an aggregation of information from across mail, contacts and social networks.'
+      description: People that are relevant to the user. Read-only. Nullable.
       operationId: users_UpdatePeople
       parameters:
         - name: user-id
@@ -1809,7 +1757,7 @@ paths:
       tags:
         - users.person
       summary: Delete navigation property people for users
-      description: 'Read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user''s communication, collaboration and business relationships. A person is an aggregation of information from across mail, contacts and social networks.'
+      description: People that are relevant to the user. Read-only. Nullable.
       operationId: users_DeletePeople
       parameters:
         - name: user-id
@@ -1849,17 +1797,17 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.sharedInsight'
-              description: Access this property from the derived type itemInsights.
+              description: 'Calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.'
             trending:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.trending'
-              description: Access this property from the derived type itemInsights.
+              description: 'Calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user''s closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.'
             used:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.usedInsight'
-              description: Access this property from the derived type itemInsights.
+              description: 'Calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.'
           additionalProperties:
             type: object
     microsoft.graph.sharedInsight:
