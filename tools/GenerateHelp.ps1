@@ -5,7 +5,10 @@ Param(
     $ModulesToGenerate = @(),
     [string] $ModuleMappingConfigPath = (Join-Path $PSScriptRoot "..\config\ModulesMapping.jsonc")
 )
-Install-Module PlatyPS -Force
+# Install PlatyPS
+if (!(Get-Module -Name PlatyPS -ListAvailable)) {
+    Install-Module PlatyPS -Force
+}
 Import-Module PlatyPS -Force -Scope Global
 
 $ErrorActionPreference = 'Stop'

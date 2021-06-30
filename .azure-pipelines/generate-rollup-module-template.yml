@@ -36,7 +36,7 @@ jobs:
   timeoutInMinutes: 600
     
   steps:
-  - template: ./install-tools-template.yml
+  - template: ./common-templates/install-tools-template.yml
 
   - task: PowerShell@2
     displayName: 'Generate and Build Roll-Up Module'
