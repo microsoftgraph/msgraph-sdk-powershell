@@ -322,10 +322,9 @@ paths:
       parameters:
         - name: ConsistencyLevel
           in: header
-          description: Indicates the requested consistency level.
+          description: 'Indicates the requested consistency level. Documentation URL: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/'
           schema:
             type: string
-          example: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/
           examples:
             example-1:
               description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
@@ -625,6 +624,7 @@ paths:
       tags:
         - groups.group
       summary: Get entity from groups by key
+      description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
       operationId: groups.group_GetGroup
       parameters:
         - name: group-id
@@ -636,10 +636,9 @@ paths:
           x-ms-docs-key-type: group
         - name: ConsistencyLevel
           in: header
-          description: Indicates the requested consistency level.
+          description: 'Indicates the requested consistency level. Documentation URL: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/'
           schema:
             type: string
-          example: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/
           examples:
             example-1:
               description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
@@ -900,6 +899,7 @@ paths:
       tags:
         - groups.group
       summary: Update entity in groups
+      description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
       operationId: groups.group_UpdateGroup
       parameters:
         - name: group-id
@@ -926,6 +926,7 @@ paths:
       tags:
         - groups.group
       summary: Delete entity from groups
+      description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
       operationId: groups.group_DeleteGroup
       parameters:
         - name: group-id
@@ -951,6 +952,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get acceptedSenders from groups
+      description: The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
       operationId: groups_ListAcceptedSenders
       parameters:
         - name: group-id
@@ -1033,6 +1035,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get ref of acceptedSenders from groups
+      description: The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
       operationId: groups_ListRefAcceptedSenders
       parameters:
         - name: group-id
@@ -1089,6 +1092,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Create new navigation property ref to acceptedSenders for groups
+      description: The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
       operationId: groups_CreateRefAcceptedSenders
       parameters:
         - name: group-id
@@ -5463,6 +5467,7 @@ paths:
       tags:
         - groups.conversation
       summary: Get conversations from groups
+      description: The group's conversations.
       operationId: groups_ListConversations
       parameters:
         - name: group-id
@@ -5558,6 +5563,7 @@ paths:
       tags:
         - groups.conversation
       summary: Create new navigation property to conversations for groups
+      description: The group's conversations.
       operationId: groups_CreateConversations
       parameters:
         - name: group-id
@@ -5589,6 +5595,7 @@ paths:
       tags:
         - groups.conversation
       summary: Get conversations from groups
+      description: The group's conversations.
       operationId: groups_GetConversations
       parameters:
         - name: group-id
@@ -5656,6 +5663,7 @@ paths:
       tags:
         - groups.conversation
       summary: Update the navigation property conversations in groups
+      description: The group's conversations.
       operationId: groups_UpdateConversations
       parameters:
         - name: group-id
@@ -5689,6 +5697,7 @@ paths:
       tags:
         - groups.conversation
       summary: Delete navigation property conversations for groups
+      description: The group's conversations.
       operationId: groups_DeleteConversations
       parameters:
         - name: group-id
@@ -5721,6 +5730,7 @@ paths:
       tags:
         - groups.conversation
       summary: Get threads from groups
+      description: A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
       operationId: groups.conversations_ListThreads
       parameters:
         - name: group-id
@@ -5832,6 +5842,7 @@ paths:
       tags:
         - groups.conversation
       summary: Create new navigation property to threads for groups
+      description: A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
       operationId: groups.conversations_CreateThreads
       parameters:
         - name: group-id
@@ -5870,6 +5881,7 @@ paths:
       tags:
         - groups.conversation
       summary: Get threads from groups
+      description: A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
       operationId: groups.conversations_GetThreads
       parameters:
         - name: group-id
@@ -5948,6 +5960,7 @@ paths:
       tags:
         - groups.conversation
       summary: Update the navigation property threads in groups
+      description: A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
       operationId: groups.conversations_UpdateThreads
       parameters:
         - name: group-id
@@ -5988,6 +6001,7 @@ paths:
       tags:
         - groups.conversation
       summary: Delete navigation property threads for groups
+      description: A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
       operationId: groups.conversations_DeleteThreads
       parameters:
         - name: group-id
@@ -6073,6 +6087,7 @@ paths:
       tags:
         - groups.conversation
       summary: Get posts from groups
+      description: Read-only. Nullable.
       operationId: groups.conversations.threads_ListPosts
       parameters:
         - name: group-id
@@ -6216,6 +6231,7 @@ paths:
       tags:
         - groups.conversation
       summary: Create new navigation property to posts for groups
+      description: Read-only. Nullable.
       operationId: groups.conversations.threads_CreatePosts
       parameters:
         - name: group-id
@@ -6261,6 +6277,7 @@ paths:
       tags:
         - groups.conversation
       summary: Get posts from groups
+      description: Read-only. Nullable.
       operationId: groups.conversations.threads_GetPosts
       parameters:
         - name: group-id
@@ -6397,6 +6414,7 @@ paths:
       tags:
         - groups.conversation
       summary: Update the navigation property posts in groups
+      description: Read-only. Nullable.
       operationId: groups.conversations.threads_UpdatePosts
       parameters:
         - name: group-id
@@ -6444,6 +6462,7 @@ paths:
       tags:
         - groups.conversation
       summary: Delete navigation property posts for groups
+      description: Read-only. Nullable.
       operationId: groups.conversations.threads_DeletePosts
       parameters:
         - name: group-id
@@ -6490,6 +6509,7 @@ paths:
       tags:
         - groups.conversation
       summary: Get attachments from groups
+      description: 'The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post. Read-only. Nullable.'
       operationId: groups.conversations.threads.posts_ListAttachments
       parameters:
         - name: group-id
@@ -6604,6 +6624,7 @@ paths:
       tags:
         - groups.conversation
       summary: Create new navigation property to attachments for groups
+      description: 'The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post. Read-only. Nullable.'
       operationId: groups.conversations.threads.posts_CreateAttachments
       parameters:
         - name: group-id
@@ -6656,6 +6677,7 @@ paths:
       tags:
         - groups.conversation
       summary: Get attachments from groups
+      description: 'The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post. Read-only. Nullable.'
       operationId: groups.conversations.threads.posts_GetAttachments
       parameters:
         - name: group-id
@@ -6736,6 +6758,7 @@ paths:
       tags:
         - groups.conversation
       summary: Update the navigation property attachments in groups
+      description: 'The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post. Read-only. Nullable.'
       operationId: groups.conversations.threads.posts_UpdateAttachments
       parameters:
         - name: group-id
@@ -6790,6 +6813,7 @@ paths:
       tags:
         - groups.conversation
       summary: Delete navigation property attachments for groups
+      description: 'The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post. Read-only. Nullable.'
       operationId: groups.conversations.threads.posts_DeleteAttachments
       parameters:
         - name: group-id
@@ -6900,6 +6924,7 @@ paths:
       tags:
         - groups.conversation
       summary: Get extensions from groups
+      description: The collection of open extensions defined for the post. Read-only. Nullable.
       operationId: groups.conversations.threads.posts_ListExtensions
       parameters:
         - name: group-id
@@ -6999,6 +7024,7 @@ paths:
       tags:
         - groups.conversation
       summary: Create new navigation property to extensions for groups
+      description: The collection of open extensions defined for the post. Read-only. Nullable.
       operationId: groups.conversations.threads.posts_CreateExtensions
       parameters:
         - name: group-id
@@ -7051,6 +7077,7 @@ paths:
       tags:
         - groups.conversation
       summary: Get extensions from groups
+      description: The collection of open extensions defined for the post. Read-only. Nullable.
       operationId: groups.conversations.threads.posts_GetExtensions
       parameters:
         - name: group-id
@@ -7126,6 +7153,7 @@ paths:
       tags:
         - groups.conversation
       summary: Update the navigation property extensions in groups
+      description: The collection of open extensions defined for the post. Read-only. Nullable.
       operationId: groups.conversations.threads.posts_UpdateExtensions
       parameters:
         - name: group-id
@@ -7180,6 +7208,7 @@ paths:
       tags:
         - groups.conversation
       summary: Delete navigation property extensions for groups
+      description: The collection of open extensions defined for the post. Read-only. Nullable.
       operationId: groups.conversations.threads.posts_DeleteExtensions
       parameters:
         - name: group-id
@@ -7233,6 +7262,7 @@ paths:
       tags:
         - groups.conversation
       summary: Get inReplyTo from groups
+      description: The earlier post that this post is replying to in the conversationThread. Read-only.
       operationId: groups.conversations.threads.posts_GetInReplyTo
       parameters:
         - name: group-id
@@ -7369,6 +7399,7 @@ paths:
       tags:
         - groups.conversation
       summary: Update the navigation property inReplyTo in groups
+      description: The earlier post that this post is replying to in the conversationThread. Read-only.
       operationId: groups.conversations.threads.posts_UpdateInReplyTo
       parameters:
         - name: group-id
@@ -7416,6 +7447,7 @@ paths:
       tags:
         - groups.conversation
       summary: Delete navigation property inReplyTo for groups
+      description: The earlier post that this post is replying to in the conversationThread. Read-only.
       operationId: groups.conversations.threads.posts_DeleteInReplyTo
       parameters:
         - name: group-id
@@ -8049,6 +8081,7 @@ paths:
       tags:
         - groups.conversation
       summary: Get multiValueExtendedProperties from groups
+      description: The collection of multi-value extended properties defined for the post. Read-only. Nullable.
       operationId: groups.conversations.threads.posts_ListMultiValueExtendedProperties
       parameters:
         - name: group-id
@@ -8151,6 +8184,7 @@ paths:
       tags:
         - groups.conversation
       summary: Create new navigation property to multiValueExtendedProperties for groups
+      description: The collection of multi-value extended properties defined for the post. Read-only. Nullable.
       operationId: groups.conversations.threads.posts_CreateMultiValueExtendedProperties
       parameters:
         - name: group-id
@@ -8203,6 +8237,7 @@ paths:
       tags:
         - groups.conversation
       summary: Get multiValueExtendedProperties from groups
+      description: The collection of multi-value extended properties defined for the post. Read-only. Nullable.
       operationId: groups.conversations.threads.posts_GetMultiValueExtendedProperties
       parameters:
         - name: group-id
@@ -8279,6 +8314,7 @@ paths:
       tags:
         - groups.conversation
       summary: Update the navigation property multiValueExtendedProperties in groups
+      description: The collection of multi-value extended properties defined for the post. Read-only. Nullable.
       operationId: groups.conversations.threads.posts_UpdateMultiValueExtendedProperties
       parameters:
         - name: group-id
@@ -8333,6 +8369,7 @@ paths:
       tags:
         - groups.conversation
       summary: Delete navigation property multiValueExtendedProperties for groups
+      description: The collection of multi-value extended properties defined for the post. Read-only. Nullable.
       operationId: groups.conversations.threads.posts_DeleteMultiValueExtendedProperties
       parameters:
         - name: group-id
@@ -8386,6 +8423,7 @@ paths:
       tags:
         - groups.conversation
       summary: Get singleValueExtendedProperties from groups
+      description: The collection of single-value extended properties defined for the post. Read-only. Nullable.
       operationId: groups.conversations.threads.posts_ListSingleValueExtendedProperties
       parameters:
         - name: group-id
@@ -8488,6 +8526,7 @@ paths:
       tags:
         - groups.conversation
       summary: Create new navigation property to singleValueExtendedProperties for groups
+      description: The collection of single-value extended properties defined for the post. Read-only. Nullable.
       operationId: groups.conversations.threads.posts_CreateSingleValueExtendedProperties
       parameters:
         - name: group-id
@@ -8540,6 +8579,7 @@ paths:
       tags:
         - groups.conversation
       summary: Get singleValueExtendedProperties from groups
+      description: The collection of single-value extended properties defined for the post. Read-only. Nullable.
       operationId: groups.conversations.threads.posts_GetSingleValueExtendedProperties
       parameters:
         - name: group-id
@@ -8616,6 +8656,7 @@ paths:
       tags:
         - groups.conversation
       summary: Update the navigation property singleValueExtendedProperties in groups
+      description: The collection of single-value extended properties defined for the post. Read-only. Nullable.
       operationId: groups.conversations.threads.posts_UpdateSingleValueExtendedProperties
       parameters:
         - name: group-id
@@ -8670,6 +8711,7 @@ paths:
       tags:
         - groups.conversation
       summary: Delete navigation property singleValueExtendedProperties for groups
+      description: The collection of single-value extended properties defined for the post. Read-only. Nullable.
       operationId: groups.conversations.threads.posts_DeleteSingleValueExtendedProperties
       parameters:
         - name: group-id
@@ -8723,6 +8765,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get createdOnBehalfOf from groups
+      description: 'The user (or application) that created the group. Note: This is not set if the user is an administrator. Read-only.'
       operationId: groups_GetCreatedOnBehalfOf
       parameters:
         - name: group-id
@@ -8772,6 +8815,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get ref of createdOnBehalfOf from groups
+      description: 'The user (or application) that created the group. Note: This is not set if the user is an administrator. Read-only.'
       operationId: groups_GetRefCreatedOnBehalfOf
       parameters:
         - name: group-id
@@ -8795,6 +8839,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Update the ref of navigation property createdOnBehalfOf in groups
+      description: 'The user (or application) that created the group. Note: This is not set if the user is an administrator. Read-only.'
       operationId: groups_SetRefCreatedOnBehalfOf
       parameters:
         - name: group-id
@@ -8823,6 +8868,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Delete ref of navigation property createdOnBehalfOf for groups
+      description: 'The user (or application) that created the group. Note: This is not set if the user is an administrator. Read-only.'
       operationId: groups_DeleteRefCreatedOnBehalfOf
       parameters:
         - name: group-id
@@ -8848,6 +8894,7 @@ paths:
       tags:
         - groups.endpoint
       summary: Get endpoints from groups
+      description: Endpoints for the group. Read-only. Nullable.
       operationId: groups_ListEndpoints
       parameters:
         - name: group-id
@@ -8944,6 +8991,7 @@ paths:
       tags:
         - groups.endpoint
       summary: Create new navigation property to endpoints for groups
+      description: Endpoints for the group. Read-only. Nullable.
       operationId: groups_CreateEndpoints
       parameters:
         - name: group-id
@@ -8975,6 +9023,7 @@ paths:
       tags:
         - groups.endpoint
       summary: Get endpoints from groups
+      description: Endpoints for the group. Read-only. Nullable.
       operationId: groups_GetEndpoints
       parameters:
         - name: group-id
@@ -9035,6 +9084,7 @@ paths:
       tags:
         - groups.endpoint
       summary: Update the navigation property endpoints in groups
+      description: Endpoints for the group. Read-only. Nullable.
       operationId: groups_UpdateEndpoints
       parameters:
         - name: group-id
@@ -9068,6 +9118,7 @@ paths:
       tags:
         - groups.endpoint
       summary: Delete navigation property endpoints for groups
+      description: Endpoints for the group. Read-only. Nullable.
       operationId: groups_DeleteEndpoints
       parameters:
         - name: group-id
@@ -11004,6 +11055,7 @@ paths:
       tags:
         - groups.extension
       summary: Get extensions from groups
+      description: The collection of open extensions defined for the group. Read-only. Nullable.
       operationId: groups_ListExtensions
       parameters:
         - name: group-id
@@ -11082,6 +11134,7 @@ paths:
       tags:
         - groups.extension
       summary: Create new navigation property to extensions for groups
+      description: The collection of open extensions defined for the group. Read-only. Nullable.
       operationId: groups_CreateExtensions
       parameters:
         - name: group-id
@@ -11113,6 +11166,7 @@ paths:
       tags:
         - groups.extension
       summary: Get extensions from groups
+      description: The collection of open extensions defined for the group. Read-only. Nullable.
       operationId: groups_GetExtensions
       parameters:
         - name: group-id
@@ -11167,6 +11221,7 @@ paths:
       tags:
         - groups.extension
       summary: Update the navigation property extensions in groups
+      description: The collection of open extensions defined for the group. Read-only. Nullable.
       operationId: groups_UpdateExtensions
       parameters:
         - name: group-id
@@ -11200,6 +11255,7 @@ paths:
       tags:
         - groups.extension
       summary: Delete navigation property extensions for groups
+      description: The collection of open extensions defined for the group. Read-only. Nullable.
       operationId: groups_DeleteExtensions
       parameters:
         - name: group-id
@@ -11472,6 +11528,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get memberOf from groups
+      description: 'Groups and administrative units that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable.'
       operationId: groups_ListMemberOf
       parameters:
         - name: group-id
@@ -11554,6 +11611,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get ref of memberOf from groups
+      description: 'Groups and administrative units that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable.'
       operationId: groups_ListRefMemberOf
       parameters:
         - name: group-id
@@ -11610,6 +11668,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Create new navigation property ref to memberOf for groups
+      description: 'Groups and administrative units that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable.'
       operationId: groups_CreateRefMemberOf
       parameters:
         - name: group-id
@@ -11645,6 +11704,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get members from groups
+      description: 'Users, contacts, and groups that are members of this group. HTTP Methods: GET (supported for all groups), POST (supported for security groups and mail-enabled security groups), DELETE (supported only for security groups) Read-only. Nullable.'
       operationId: groups_ListMembers
       parameters:
         - name: group-id
@@ -11727,6 +11787,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get ref of members from groups
+      description: 'Users, contacts, and groups that are members of this group. HTTP Methods: GET (supported for all groups), POST (supported for security groups and mail-enabled security groups), DELETE (supported only for security groups) Read-only. Nullable.'
       operationId: groups_ListRefMembers
       parameters:
         - name: group-id
@@ -11783,6 +11844,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Create new navigation property ref to members for groups
+      description: 'Users, contacts, and groups that are members of this group. HTTP Methods: GET (supported for all groups), POST (supported for security groups and mail-enabled security groups), DELETE (supported only for security groups) Read-only. Nullable.'
       operationId: groups_CreateRefMembers
       parameters:
         - name: group-id
@@ -11818,6 +11880,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get membersWithLicenseErrors from groups
+      description: A list of group members with license errors from this group-based license assignment. Read-only.
       operationId: groups_ListMembersWithLicenseErrors
       parameters:
         - name: group-id
@@ -11900,6 +11963,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get ref of membersWithLicenseErrors from groups
+      description: A list of group members with license errors from this group-based license assignment. Read-only.
       operationId: groups_ListRefMembersWithLicenseErrors
       parameters:
         - name: group-id
@@ -11956,6 +12020,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Create new navigation property ref to membersWithLicenseErrors for groups
+      description: A list of group members with license errors from this group-based license assignment. Read-only.
       operationId: groups_CreateRefMembersWithLicenseErrors
       parameters:
         - name: group-id
@@ -19168,6 +19233,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get owners from groups
+      description: 'The owners of the group. The owners are a set of non-admin users who are allowed to modify this object. HTTP Methods: GET (supported for all groups), POST (supported for security groups and mail-enabled security groups), DELETE (supported only for security groups) Read-only. Nullable.'
       operationId: groups_ListOwners
       parameters:
         - name: group-id
@@ -19250,6 +19316,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get ref of owners from groups
+      description: 'The owners of the group. The owners are a set of non-admin users who are allowed to modify this object. HTTP Methods: GET (supported for all groups), POST (supported for security groups and mail-enabled security groups), DELETE (supported only for security groups) Read-only. Nullable.'
       operationId: groups_ListRefOwners
       parameters:
         - name: group-id
@@ -19306,6 +19373,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Create new navigation property ref to owners for groups
+      description: 'The owners of the group. The owners are a set of non-admin users who are allowed to modify this object. HTTP Methods: GET (supported for all groups), POST (supported for security groups and mail-enabled security groups), DELETE (supported only for security groups) Read-only. Nullable.'
       operationId: groups_CreateRefOwners
       parameters:
         - name: group-id
@@ -19341,6 +19409,7 @@ paths:
       tags:
         - groups.resourceSpecificPermissionGrant
       summary: Get permissionGrants from groups
+      description: The permission that has been granted for a group to a specific application.
       operationId: groups_ListPermissionGrants
       parameters:
         - name: group-id
@@ -19437,6 +19506,7 @@ paths:
       tags:
         - groups.resourceSpecificPermissionGrant
       summary: Create new navigation property to permissionGrants for groups
+      description: The permission that has been granted for a group to a specific application.
       operationId: groups_CreatePermissionGrants
       parameters:
         - name: group-id
@@ -19468,6 +19538,7 @@ paths:
       tags:
         - groups.resourceSpecificPermissionGrant
       summary: Get permissionGrants from groups
+      description: The permission that has been granted for a group to a specific application.
       operationId: groups_GetPermissionGrants
       parameters:
         - name: group-id
@@ -19528,6 +19599,7 @@ paths:
       tags:
         - groups.resourceSpecificPermissionGrant
       summary: Update the navigation property permissionGrants in groups
+      description: The permission that has been granted for a group to a specific application.
       operationId: groups_UpdatePermissionGrants
       parameters:
         - name: group-id
@@ -19561,6 +19633,7 @@ paths:
       tags:
         - groups.resourceSpecificPermissionGrant
       summary: Delete navigation property permissionGrants for groups
+      description: The permission that has been granted for a group to a specific application.
       operationId: groups_DeletePermissionGrants
       parameters:
         - name: group-id
@@ -19593,6 +19666,7 @@ paths:
       tags:
         - groups.profilePhoto
       summary: Get photo from groups
+      description: The group's profile photo.
       operationId: groups_GetPhoto
       parameters:
         - name: group-id
@@ -19642,6 +19716,7 @@ paths:
       tags:
         - groups.profilePhoto
       summary: Update the navigation property photo in groups
+      description: The group's profile photo.
       operationId: groups_UpdatePhoto
       parameters:
         - name: group-id
@@ -19668,6 +19743,7 @@ paths:
       tags:
         - groups.profilePhoto
       summary: Delete navigation property photo for groups
+      description: The group's profile photo.
       operationId: groups_DeletePhoto
       parameters:
         - name: group-id
@@ -19693,6 +19769,7 @@ paths:
       tags:
         - groups.profilePhoto
       summary: Get media content for the navigation property photo from groups
+      description: The group's profile photo.
       operationId: groups_GetPhotoContent
       parameters:
         - name: group-id
@@ -19717,6 +19794,7 @@ paths:
       tags:
         - groups.profilePhoto
       summary: Update media content for the navigation property photo in groups
+      description: The group's profile photo.
       operationId: groups_SetPhotoContent
       parameters:
         - name: group-id
@@ -19745,6 +19823,7 @@ paths:
       tags:
         - groups.profilePhoto
       summary: Get photos from groups
+      description: The profile photos owned by the group. Read-only. Nullable.
       operationId: groups_ListPhotos
       parameters:
         - name: group-id
@@ -19829,6 +19908,7 @@ paths:
       tags:
         - groups.profilePhoto
       summary: Create new navigation property to photos for groups
+      description: The profile photos owned by the group. Read-only. Nullable.
       operationId: groups_CreatePhotos
       parameters:
         - name: group-id
@@ -19860,6 +19940,7 @@ paths:
       tags:
         - groups.profilePhoto
       summary: Get photos from groups
+      description: The profile photos owned by the group. Read-only. Nullable.
       operationId: groups_GetPhotos
       parameters:
         - name: group-id
@@ -19916,6 +19997,7 @@ paths:
       tags:
         - groups.profilePhoto
       summary: Update the navigation property photos in groups
+      description: The profile photos owned by the group. Read-only. Nullable.
       operationId: groups_UpdatePhotos
       parameters:
         - name: group-id
@@ -19949,6 +20031,7 @@ paths:
       tags:
         - groups.profilePhoto
       summary: Delete navigation property photos for groups
+      description: The profile photos owned by the group. Read-only. Nullable.
       operationId: groups_DeletePhotos
       parameters:
         - name: group-id
@@ -20047,6 +20130,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get rejectedSenders from groups
+      description: The list of users or groups that are not allowed to create posts or calendar events in this group. Nullable
       operationId: groups_ListRejectedSenders
       parameters:
         - name: group-id
@@ -20129,6 +20213,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get ref of rejectedSenders from groups
+      description: The list of users or groups that are not allowed to create posts or calendar events in this group. Nullable
       operationId: groups_ListRefRejectedSenders
       parameters:
         - name: group-id
@@ -20185,6 +20270,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Create new navigation property ref to rejectedSenders for groups
+      description: The list of users or groups that are not allowed to create posts or calendar events in this group. Nullable
       operationId: groups_CreateRefRejectedSenders
       parameters:
         - name: group-id
@@ -20220,6 +20306,7 @@ paths:
       tags:
         - groups.directorySetting
       summary: Get settings from groups
+      description: 'Settings that can govern this group''s behavior, like whether members can invite guest users to the group. Nullable.'
       operationId: groups_ListSettings
       parameters:
         - name: group-id
@@ -20307,6 +20394,7 @@ paths:
       tags:
         - groups.directorySetting
       summary: Create new navigation property to settings for groups
+      description: 'Settings that can govern this group''s behavior, like whether members can invite guest users to the group. Nullable.'
       operationId: groups_CreateSettings
       parameters:
         - name: group-id
@@ -20338,6 +20426,7 @@ paths:
       tags:
         - groups.directorySetting
       summary: Get settings from groups
+      description: 'Settings that can govern this group''s behavior, like whether members can invite guest users to the group. Nullable.'
       operationId: groups_GetSettings
       parameters:
         - name: group-id
@@ -20395,6 +20484,7 @@ paths:
       tags:
         - groups.directorySetting
       summary: Update the navigation property settings in groups
+      description: 'Settings that can govern this group''s behavior, like whether members can invite guest users to the group. Nullable.'
       operationId: groups_UpdateSettings
       parameters:
         - name: group-id
@@ -20428,6 +20518,7 @@ paths:
       tags:
         - groups.directorySetting
       summary: Delete navigation property settings for groups
+      description: 'Settings that can govern this group''s behavior, like whether members can invite guest users to the group. Nullable.'
       operationId: groups_DeleteSettings
       parameters:
         - name: group-id
@@ -20460,6 +20551,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Get threads from groups
+      description: The group's conversation threads. Nullable.
       operationId: groups_ListThreads
       parameters:
         - name: group-id
@@ -20564,6 +20656,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Create new navigation property to threads for groups
+      description: The group's conversation threads. Nullable.
       operationId: groups_CreateThreads
       parameters:
         - name: group-id
@@ -20595,6 +20688,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Get threads from groups
+      description: The group's conversation threads. Nullable.
       operationId: groups_GetThreads
       parameters:
         - name: group-id
@@ -20665,6 +20759,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Update the navigation property threads in groups
+      description: The group's conversation threads. Nullable.
       operationId: groups_UpdateThreads
       parameters:
         - name: group-id
@@ -20698,6 +20793,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Delete navigation property threads for groups
+      description: The group's conversation threads. Nullable.
       operationId: groups_DeleteThreads
       parameters:
         - name: group-id
@@ -20769,6 +20865,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Get posts from groups
+      description: Read-only. Nullable.
       operationId: groups.threads_ListPosts
       parameters:
         - name: group-id
@@ -20905,6 +21002,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Create new navigation property to posts for groups
+      description: Read-only. Nullable.
       operationId: groups.threads_CreatePosts
       parameters:
         - name: group-id
@@ -20943,6 +21041,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Get posts from groups
+      description: Read-only. Nullable.
       operationId: groups.threads_GetPosts
       parameters:
         - name: group-id
@@ -21066,6 +21165,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Update the navigation property posts in groups
+      description: Read-only. Nullable.
       operationId: groups.threads_UpdatePosts
       parameters:
         - name: group-id
@@ -21106,6 +21206,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Delete navigation property posts for groups
+      description: Read-only. Nullable.
       operationId: groups.threads_DeletePosts
       parameters:
         - name: group-id
@@ -21145,6 +21246,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Get attachments from groups
+      description: 'The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post. Read-only. Nullable.'
       operationId: groups.threads.posts_ListAttachments
       parameters:
         - name: group-id
@@ -21252,6 +21354,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Create new navigation property to attachments for groups
+      description: 'The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post. Read-only. Nullable.'
       operationId: groups.threads.posts_CreateAttachments
       parameters:
         - name: group-id
@@ -21297,6 +21400,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Get attachments from groups
+      description: 'The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post. Read-only. Nullable.'
       operationId: groups.threads.posts_GetAttachments
       parameters:
         - name: group-id
@@ -21370,6 +21474,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Update the navigation property attachments in groups
+      description: 'The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post. Read-only. Nullable.'
       operationId: groups.threads.posts_UpdateAttachments
       parameters:
         - name: group-id
@@ -21417,6 +21522,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Delete navigation property attachments for groups
+      description: 'The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post. Read-only. Nullable.'
       operationId: groups.threads.posts_DeleteAttachments
       parameters:
         - name: group-id
@@ -21513,6 +21619,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Get extensions from groups
+      description: The collection of open extensions defined for the post. Read-only. Nullable.
       operationId: groups.threads.posts_ListExtensions
       parameters:
         - name: group-id
@@ -21605,6 +21712,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Create new navigation property to extensions for groups
+      description: The collection of open extensions defined for the post. Read-only. Nullable.
       operationId: groups.threads.posts_CreateExtensions
       parameters:
         - name: group-id
@@ -21650,6 +21758,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Get extensions from groups
+      description: The collection of open extensions defined for the post. Read-only. Nullable.
       operationId: groups.threads.posts_GetExtensions
       parameters:
         - name: group-id
@@ -21718,6 +21827,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Update the navigation property extensions in groups
+      description: The collection of open extensions defined for the post. Read-only. Nullable.
       operationId: groups.threads.posts_UpdateExtensions
       parameters:
         - name: group-id
@@ -21765,6 +21875,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Delete navigation property extensions for groups
+      description: The collection of open extensions defined for the post. Read-only. Nullable.
       operationId: groups.threads.posts_DeleteExtensions
       parameters:
         - name: group-id
@@ -21811,6 +21922,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Get inReplyTo from groups
+      description: The earlier post that this post is replying to in the conversationThread. Read-only.
       operationId: groups.threads.posts_GetInReplyTo
       parameters:
         - name: group-id
@@ -21934,6 +22046,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Update the navigation property inReplyTo in groups
+      description: The earlier post that this post is replying to in the conversationThread. Read-only.
       operationId: groups.threads.posts_UpdateInReplyTo
       parameters:
         - name: group-id
@@ -21974,6 +22087,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Delete navigation property inReplyTo for groups
+      description: The earlier post that this post is replying to in the conversationThread. Read-only.
       operationId: groups.threads.posts_DeleteInReplyTo
       parameters:
         - name: group-id
@@ -22537,6 +22651,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Get multiValueExtendedProperties from groups
+      description: The collection of multi-value extended properties defined for the post. Read-only. Nullable.
       operationId: groups.threads.posts_ListMultiValueExtendedProperties
       parameters:
         - name: group-id
@@ -22632,6 +22747,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Create new navigation property to multiValueExtendedProperties for groups
+      description: The collection of multi-value extended properties defined for the post. Read-only. Nullable.
       operationId: groups.threads.posts_CreateMultiValueExtendedProperties
       parameters:
         - name: group-id
@@ -22677,6 +22793,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Get multiValueExtendedProperties from groups
+      description: The collection of multi-value extended properties defined for the post. Read-only. Nullable.
       operationId: groups.threads.posts_GetMultiValueExtendedProperties
       parameters:
         - name: group-id
@@ -22746,6 +22863,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Update the navigation property multiValueExtendedProperties in groups
+      description: The collection of multi-value extended properties defined for the post. Read-only. Nullable.
       operationId: groups.threads.posts_UpdateMultiValueExtendedProperties
       parameters:
         - name: group-id
@@ -22793,6 +22911,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Delete navigation property multiValueExtendedProperties for groups
+      description: The collection of multi-value extended properties defined for the post. Read-only. Nullable.
       operationId: groups.threads.posts_DeleteMultiValueExtendedProperties
       parameters:
         - name: group-id
@@ -22839,6 +22958,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Get singleValueExtendedProperties from groups
+      description: The collection of single-value extended properties defined for the post. Read-only. Nullable.
       operationId: groups.threads.posts_ListSingleValueExtendedProperties
       parameters:
         - name: group-id
@@ -22934,6 +23054,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Create new navigation property to singleValueExtendedProperties for groups
+      description: The collection of single-value extended properties defined for the post. Read-only. Nullable.
       operationId: groups.threads.posts_CreateSingleValueExtendedProperties
       parameters:
         - name: group-id
@@ -22979,6 +23100,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Get singleValueExtendedProperties from groups
+      description: The collection of single-value extended properties defined for the post. Read-only. Nullable.
       operationId: groups.threads.posts_GetSingleValueExtendedProperties
       parameters:
         - name: group-id
@@ -23048,6 +23170,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Update the navigation property singleValueExtendedProperties in groups
+      description: The collection of single-value extended properties defined for the post. Read-only. Nullable.
       operationId: groups.threads.posts_UpdateSingleValueExtendedProperties
       parameters:
         - name: group-id
@@ -23095,6 +23218,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Delete navigation property singleValueExtendedProperties for groups
+      description: The collection of single-value extended properties defined for the post. Read-only. Nullable.
       operationId: groups.threads.posts_DeleteSingleValueExtendedProperties
       parameters:
         - name: group-id
@@ -23642,6 +23766,7 @@ paths:
       tags:
         - users.group
       summary: Get joinedGroups from users
+      description: Read-only. Nullable.
       operationId: users_ListJoinedGroups
       parameters:
         - name: user-id
@@ -23923,6 +24048,7 @@ paths:
       tags:
         - users.group
       summary: Create new navigation property to joinedGroups for users
+      description: Read-only. Nullable.
       operationId: users_CreateJoinedGroups
       parameters:
         - name: user-id
@@ -23954,6 +24080,7 @@ paths:
       tags:
         - users.group
       summary: Get joinedGroups from users
+      description: Read-only. Nullable.
       operationId: users_GetJoinedGroups
       parameters:
         - name: user-id
@@ -24254,6 +24381,7 @@ paths:
       tags:
         - users.group
       summary: Update the navigation property joinedGroups in users
+      description: Read-only. Nullable.
       operationId: users_UpdateJoinedGroups
       parameters:
         - name: user-id
@@ -24287,6 +24415,7 @@ paths:
       tags:
         - users.group
       summary: Delete navigation property joinedGroups for users
+      description: Read-only. Nullable.
       operationId: users_DeleteJoinedGroups
       parameters:
         - name: user-id
@@ -25868,7 +25997,7 @@ components:
               nullable: true
             description:
               type: string
-              description: An optional description for the team.
+              description: 'An optional description for the team. Maximum length: 1024 characters.'
               nullable: true
             discoverySettings:
               $ref: '#/components/schemas/microsoft.graph.teamDiscoverySettings'
@@ -25931,6 +26060,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.user'
               description: 'The list of this team''s owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user delegated permissions, no owner can be specified (the current user is the owner). Owner must be specified as an object ID (GUID), not a UPN.'
+            permissionGrants:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
             photo:
               $ref: '#/components/schemas/microsoft.graph.profilePhoto'
             primaryChannel:
@@ -27601,7 +27734,7 @@ components:
               description: State of license assignments for this user. Returned only on $select. Read-only.
             mail:
               type: string
-              description: 'The SMTP address for the user, for example, ''jeff@contoso.onmicrosoft.com''.NOTE: While this property can contain accent characters, using them can cause access issues with other Microsoft applications for the user.Returned by default. Supports $filter and endsWith.'
+              description: 'The SMTP address for the user, for example, ''jeff@contoso.onmicrosoft.com''. Changes to this property will also update the user''s proxyAddresses collection to include the value as an SMTP address. While this property can contain accent characters, using them can cause access issues with other Microsoft applications for the user. Supports $filter and endsWith.'
               nullable: true
             mailNickname:
               type: string
@@ -30051,6 +30184,8 @@ components:
               type: string
               description: Read-only. Version number of the chat message.
               nullable: true
+            eventDetail:
+              $ref: '#/components/schemas/microsoft.graph.eventMessageDetail'
             from:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             importance:
@@ -30104,7 +30239,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
-              description: 'Content in a message hosted by Microsoft Teams e.g., images, code snippets etc.'
+              description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
             replies:
               type: array
               items:
@@ -30238,6 +30373,7 @@ components:
         - unknownFutureValue
         - teamifyGroup
         - createChannel
+        - createChat
       type: string
     microsoft.graph.teamsAsyncOperationStatus:
       title: teamsAsyncOperationStatus
@@ -32616,6 +32752,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessage'
               description: A collection of all the messages in the chat. Nullable.
+            operations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.teamsAsyncOperation'
             permissionGrants:
               type: array
               items:
@@ -32807,6 +32947,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.timeCardBreak'
+              description: The list of breaks associated with the timeCard.
             clockInEvent:
               $ref: '#/components/schemas/microsoft.graph.timeCardEvent'
             clockOutEvent:
@@ -32821,6 +32962,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.timeCardState'
             userId:
               type: string
+              description: User ID to which  the timeCard belongs.
               nullable: true
           additionalProperties:
             type: object
@@ -33494,11 +33636,11 @@ components:
       properties:
         key:
           type: string
-          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object
@@ -33830,6 +33972,11 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.eventMessageDetail:
+      title: eventMessageDetail
+      type: object
+      additionalProperties:
+        type: object
     microsoft.graph.chatMessageImportance:
       title: chatMessageImportance
       enum:
@@ -33862,6 +34009,8 @@ components:
         - message
         - chatEvent
         - typing
+        - unknownFutureValue
+        - systemEventMessage
       type: string
     microsoft.graph.chatMessagePolicyViolation:
       title: chatMessagePolicyViolation
@@ -34683,57 +34832,58 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScope'
-              description: 'This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user''s manager does not exist. See accessReviewReviewerScope.'
+              description: 'This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user''s manager does not exist. Supports $select. Note: This property has been replaced by fallbackReviewers. However, specifying either backupReviewers or fallbackReviewers automatically populates the same values to the other property.'
             createdBy:
               $ref: '#/components/schemas/microsoft.graph.userIdentity'
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Timestamp when review series was created.
+              description: Timestamp when the access review series was created. Supports $select.
               format: date-time
               nullable: true
             descriptionForAdmins:
               type: string
-              description: Description provided by review creators to provide more context of the review to admins.
+              description: Description provided by review creators to provide more context of the review to admins. Supports $select.
               nullable: true
             descriptionForReviewers:
               type: string
-              description: Description provided  by review creators to provide more context of the review to reviewers. Reviewers will see this description in the email sent to them requesting their review.
+              description: Description provided  by review creators to provide more context of the review to reviewers. Reviewers will see this description in the email sent to them requesting their review. Supports $select.
               nullable: true
             displayName:
               type: string
-              description: Name of access review series. Required on create.
+              description: Name of the access review series. Required on create. Supports $select.
               nullable: true
             fallbackReviewers:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScope'
+              description: 'This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user''s manager does not exist. Supports $select.'
             instanceEnumerationScope:
               $ref: '#/components/schemas/microsoft.graph.accessReviewScope'
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Timestamp when review series was last modified.
+              description: Timestamp when the access review series was last modified. Supports $select.
               format: date-time
               nullable: true
             reviewers:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScope'
-              description: This collection of access review scopes is used to define who are the reviewers. See accessReviewReviewerScope. Required on create.
+              description: 'This collection of access review scopes is used to define who are the reviewers. Required on create. Supports $select. For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API.'
             scope:
               $ref: '#/components/schemas/microsoft.graph.accessReviewScope'
             settings:
               $ref: '#/components/schemas/microsoft.graph.accessReviewScheduleSettings'
             status:
               type: string
-              description: 'This read-only field specifies the status of an accessReview. The typical states include Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed.'
+              description: 'This read-only field specifies the status of an access review. The typical states include Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed. Supports $select, $orderby, and $filter (eq only).'
               nullable: true
             instances:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewInstance'
-              description: 'Set of access reviews instances for this access review series. Access reviews that do not recur will only have one instance; otherwise, there will be an instance for each recurrence.'
+              description: 'Set of access reviews instances for this access review series. Access reviews that do not recur will only have one instance; otherwise, there is an instance for each recurrence.'
           additionalProperties:
             type: object
     microsoft.graph.agreementAcceptanceState:
@@ -35313,6 +35463,7 @@ components:
         - googleCloudDevicePolicyController
         - microsoft365ManagedMdm
         - windowsManagementCloudApi
+        - intuneAosp
       type: string
     microsoft.graph.managedDeviceManagementFeatures:
       title: managedDeviceManagementFeatures
@@ -35826,10 +35977,10 @@ components:
       properties:
         name:
           type: string
-          description: Name for this key-value pair
+          description: 'Name for this key-value pair. Possible names are: AdditionalWSFedEndpointCheckResult,  AllowedAuthenticationClassReferencesCheckResult, AlwaysRequireAuthenticationCheckResult,   AutoUpdateEnabledCheckResult, ClaimsProviderNameCheckResult, EncryptClaimsCheckResult,  EncryptedNameIdRequiredCheckResult, MonitoringEnabledCheckResult,NotBeforeSkewCheckResult,  RequestMFAFromClaimsProvidersCheckResult, SignedSamlRequestsRequiredCheckResult, AdditionalAuthenticationRulesCheckResult, TokenLifetimeCheckResult,  DelegationAuthorizationRulesCheckResult, IssuanceAuthorizationRulesCheckResult, IssuanceTransformRulesCheckResult.'
         value:
           type: string
-          description: Value for this key-value pair
+          description: 'Value for this key-value pair. Possible result values are 0 (when the validation check passed), 1 (when the validation check failed), or 2 (when the validation check is a warning).'
           nullable: true
       additionalProperties:
         type: object
@@ -37286,6 +37437,7 @@ components:
       properties:
         breakId:
           type: string
+          description: ID of the timeCardBreak.
           nullable: true
         end:
           $ref: '#/components/schemas/microsoft.graph.timeCardEvent'
@@ -37301,10 +37453,12 @@ components:
       properties:
         atApprovedLocation:
           type: boolean
+          description: Indicates whether the entry was recorded at the approved location.
           nullable: true
         dateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: The time the entry is recorded.
           format: date-time
         notes:
           $ref: '#/components/schemas/microsoft.graph.itemBody'
@@ -37326,6 +37480,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.timeCardBreak'
+          description: The list of breaks associated with the timeCard.
         clockInEvent:
           $ref: '#/components/schemas/microsoft.graph.timeCardEvent'
         clockOutEvent:
@@ -37584,7 +37739,7 @@ components:
           nullable: true
         languageTag:
           type: string
-          description: The anguage tag for the label.
+          description: The language tag for the label.
           nullable: true
         name:
           type: string
@@ -38215,7 +38370,7 @@ components:
               nullable: true
             queryRoot:
               type: string
-              description: 'In the scenario where reviewers need to be specified dynamically, this property is used to indicate the relative source of the query. This property is only required if a relative query (i.e., ./manager) is specified.'
+              description: 'In the scenario where reviewers need to be specified dynamically, this property is used to indicate the relative source of the query. This property is only required if a relative query, for example, ./manager, is specified. Possible value: decisions.'
               nullable: true
             queryType:
               type: string
@@ -38234,14 +38389,14 @@ components:
           description: 'Optional field. Describes the  actions to take once a review is complete. There are two types that are currently supported: removeAccessApplyAction (default) and disableAndDeleteUserApplyAction. Field only needs to be specified in the case of disableAndDeleteUserApplyAction. See accessReviewApplyAction.'
         autoApplyDecisionsEnabled:
           type: boolean
-          description: Flag to indicate whether auto-apply feature is enabled.
+          description: 'Indicates whether decisions are automatically applied. When set to false, a user must apply the decisions manually once the reviewer completes the access review. When set to true, decisions are applied automatically after the access review instance duration ends, whether or not the reviewers have responded. Default value is false.'
         defaultDecision:
           type: string
-          description: 'Decision chosen if defaultDecisionEnabled is enabled. Can be one of ''Approve'', ''Deny'', or ''Recommendation''.'
+          description: 'Decision chosen if defaultDecisionEnabled is enabled. Can be one of Approve, Deny, or Recommendation.'
           nullable: true
         defaultDecisionEnabled:
           type: boolean
-          description: Flag to indicate whether default decision is enabled/disabled when reviewers do not respond.
+          description: Indicates whether the default decision is enabled or disabled when reviewers do not respond. Default value is false.
         instanceDurationInDays:
           maximum: 2147483647
           minimum: -2147483648
@@ -38250,18 +38405,18 @@ components:
           format: int32
         justificationRequiredOnApproval:
           type: boolean
-          description: Flag to indicate whether reviewers are required to provide justification with their decision.
+          description: Indicates whether reviewers are required to provide justification with their decision. Default value is false.
         mailNotificationsEnabled:
           type: boolean
-          description: Flag to indicate whether emails are enabled/disabled.
+          description: Indicates whether emails are enabled or disabled. Default value is false.
         recommendationsEnabled:
           type: boolean
-          description: Flag to indicate whether decision recommendations are enabled/disabled.
+          description: Indicates whether decision recommendations are enabled/disabled.
         recurrence:
           $ref: '#/components/schemas/microsoft.graph.patternedRecurrence'
         reminderNotificationsEnabled:
           type: boolean
-          description: Flag to indicate whether reminders are enabled/disabled.
+          description: Indicates whether reminders are enabled or disabled. Default value is false.
       additionalProperties:
         type: object
     microsoft.graph.deviceAndAppManagementAssignmentSource:
@@ -38386,6 +38541,7 @@ components:
         - windows10AndLater
         - androidWorkProfile
         - windows10XProfile
+        - androidAOSP
         - all
       type: string
     microsoft.graph.deviceCompliancePolicySettingState:
@@ -39636,17 +39792,22 @@ components:
       properties:
         color:
           type: string
+          description: 'The color that the user interface should display for the label, if configured.'
           nullable: true
         description:
           type: string
+          description: The admin-defined description for the label.
           nullable: true
         id:
           type: string
+          description: The label ID is a globally unique identifier (GUID).
           nullable: true
         isActive:
           type: boolean
+          description: Indicates whether the label is active or not. Active labels should be hidden or disabled in user interfaces.
         name:
           type: string
+          description: The plaintext name of the label.
           nullable: true
         parent:
           $ref: '#/components/schemas/microsoft.graph.parentLabelDetails'
@@ -39654,9 +39815,11 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: 'The sensitivity value of the label, where lower is less sensitive.'
           format: int32
         tooltip:
           type: string
+          description: The tooltip that should be displayed for the label in a user interface.
           nullable: true
       additionalProperties:
         type: object

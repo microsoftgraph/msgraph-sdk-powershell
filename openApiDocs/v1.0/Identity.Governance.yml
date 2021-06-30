@@ -248,6 +248,7 @@ paths:
       tags:
         - agreements.agreementAcceptance
       summary: Get acceptances from agreements
+      description: Read-only. Information about acceptances of this agreement.
       operationId: agreements_ListAcceptances
       parameters:
         - name: agreement-id
@@ -365,6 +366,7 @@ paths:
       tags:
         - agreements.agreementAcceptance
       summary: Create new navigation property to acceptances for agreements
+      description: Read-only. Information about acceptances of this agreement.
       operationId: agreements_CreateAcceptances
       parameters:
         - name: agreement-id
@@ -396,6 +398,7 @@ paths:
       tags:
         - agreements.agreementAcceptance
       summary: Get acceptances from agreements
+      description: Read-only. Information about acceptances of this agreement.
       operationId: agreements_GetAcceptances
       parameters:
         - name: agreement-id
@@ -463,6 +466,7 @@ paths:
       tags:
         - agreements.agreementAcceptance
       summary: Update the navigation property acceptances in agreements
+      description: Read-only. Information about acceptances of this agreement.
       operationId: agreements_UpdateAcceptances
       parameters:
         - name: agreement-id
@@ -496,6 +500,7 @@ paths:
       tags:
         - agreements.agreementAcceptance
       summary: Delete navigation property acceptances for agreements
+      description: Read-only. Information about acceptances of this agreement.
       operationId: agreements_DeleteAcceptances
       parameters:
         - name: agreement-id
@@ -528,6 +533,7 @@ paths:
       tags:
         - agreements.agreementFile
       summary: Get file from agreements
+      description: Default PDF linked to this agreement.
       operationId: agreements_GetFile
       parameters:
         - name: agreement-id
@@ -589,6 +595,7 @@ paths:
       tags:
         - agreements.agreementFile
       summary: Update the navigation property file in agreements
+      description: Default PDF linked to this agreement.
       operationId: agreements_UpdateFile
       parameters:
         - name: agreement-id
@@ -615,6 +622,7 @@ paths:
       tags:
         - agreements.agreementFile
       summary: Delete navigation property file for agreements
+      description: Default PDF linked to this agreement.
       operationId: agreements_DeleteFile
       parameters:
         - name: agreement-id
@@ -1197,6 +1205,7 @@ paths:
       tags:
         - agreements.agreementFileLocalization
       summary: Get files from agreements
+      description: 'PDFs linked to this agreement. Note: This property is in the process of being deprecated. Use the  file property instead.'
       operationId: agreements_ListFiles
       parameters:
         - name: agreement-id
@@ -1298,6 +1307,7 @@ paths:
       tags:
         - agreements.agreementFileLocalization
       summary: Create new navigation property to files for agreements
+      description: 'PDFs linked to this agreement. Note: This property is in the process of being deprecated. Use the  file property instead.'
       operationId: agreements_CreateFiles
       parameters:
         - name: agreement-id
@@ -1329,6 +1339,7 @@ paths:
       tags:
         - agreements.agreementFileLocalization
       summary: Get files from agreements
+      description: 'PDFs linked to this agreement. Note: This property is in the process of being deprecated. Use the  file property instead.'
       operationId: agreements_GetFiles
       parameters:
         - name: agreement-id
@@ -1398,6 +1409,7 @@ paths:
       tags:
         - agreements.agreementFileLocalization
       summary: Update the navigation property files in agreements
+      description: 'PDFs linked to this agreement. Note: This property is in the process of being deprecated. Use the  file property instead.'
       operationId: agreements_UpdateFiles
       parameters:
         - name: agreement-id
@@ -1431,6 +1443,7 @@ paths:
       tags:
         - agreements.agreementFileLocalization
       summary: Delete navigation property files for agreements
+      description: 'PDFs linked to this agreement. Note: This property is in the process of being deprecated. Use the  file property instead.'
       operationId: agreements_DeleteFiles
       parameters:
         - name: agreement-id
@@ -1749,6 +1762,986 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /identityGovernance:
+    get:
+      tags:
+        - identityGovernance.identityGovernance
+      summary: Get identityGovernance
+      operationId: identityGovernance.identityGovernance_GetIdentityGovernance
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - accessReviews
+                - appConsent
+                - termsOfUse
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - accessReviews
+                - appConsent
+                - termsOfUse
+              type: string
+      responses:
+        '200':
+          description: Retrieved entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.identityGovernance'
+          links:
+            accessReviews:
+              operationId: identityGovernance.GetAccessReviews
+            appConsent:
+              operationId: identityGovernance.GetAppConsent
+            termsOfUse:
+              operationId: identityGovernance.GetTermsOfUse
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - identityGovernance.identityGovernance
+      summary: Update identityGovernance
+      operationId: identityGovernance.identityGovernance_UpdateIdentityGovernance
+      requestBody:
+        description: New property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.identityGovernance'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /identityGovernance/accessReviews:
+    get:
+      tags:
+        - identityGovernance.accessReviewSet
+      summary: Get accessReviews from identityGovernance
+      operationId: identityGovernance_GetAccessReviews
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - definitions
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - definitions
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.accessReviewSet'
+          links:
+            definitions:
+              operationId: identityGovernance.AccessReviews.ListDefinitions
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - identityGovernance.accessReviewSet
+      summary: Update the navigation property accessReviews in identityGovernance
+      operationId: identityGovernance_UpdateAccessReviews
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.accessReviewSet'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identityGovernance.accessReviewSet
+      summary: Delete navigation property accessReviews for identityGovernance
+      operationId: identityGovernance_DeleteAccessReviews
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /identityGovernance/accessReviews/definitions:
+    get:
+      tags:
+        - identityGovernance.accessReviewSet
+      summary: Get definitions from identityGovernance
+      operationId: identityGovernance.accessReviews_ListDefinitions
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - createdBy
+                - createdBy desc
+                - createdDateTime
+                - createdDateTime desc
+                - descriptionForAdmins
+                - descriptionForAdmins desc
+                - descriptionForReviewers
+                - descriptionForReviewers desc
+                - displayName
+                - displayName desc
+                - fallbackReviewers
+                - fallbackReviewers desc
+                - instanceEnumerationScope
+                - instanceEnumerationScope desc
+                - lastModifiedDateTime
+                - lastModifiedDateTime desc
+                - reviewers
+                - reviewers desc
+                - scope
+                - scope desc
+                - settings
+                - settings desc
+                - status
+                - status desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdBy
+                - createdDateTime
+                - descriptionForAdmins
+                - descriptionForReviewers
+                - displayName
+                - fallbackReviewers
+                - instanceEnumerationScope
+                - lastModifiedDateTime
+                - reviewers
+                - scope
+                - settings
+                - status
+                - instances
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - instances
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of accessReviewScheduleDefinition
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.accessReviewScheduleDefinition'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - identityGovernance.accessReviewSet
+      summary: Create new navigation property to definitions for identityGovernance
+      operationId: identityGovernance.accessReviews_CreateDefinitions
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.accessReviewScheduleDefinition'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.accessReviewScheduleDefinition'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}':
+    get:
+      tags:
+        - identityGovernance.accessReviewSet
+      summary: Get definitions from identityGovernance
+      operationId: identityGovernance.accessReviews_GetDefinitions
+      parameters:
+        - name: accessReviewScheduleDefinition-id
+          in: path
+          description: 'key: id of accessReviewScheduleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewScheduleDefinition
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdBy
+                - createdDateTime
+                - descriptionForAdmins
+                - descriptionForReviewers
+                - displayName
+                - fallbackReviewers
+                - instanceEnumerationScope
+                - lastModifiedDateTime
+                - reviewers
+                - scope
+                - settings
+                - status
+                - instances
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - instances
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.accessReviewScheduleDefinition'
+          links:
+            instances:
+              operationId: identityGovernance.accessReviews.Definitions.ListInstances
+              parameters:
+                accessReviewScheduleDefinition-id: $request.path.accessReviewScheduleDefinition-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - identityGovernance.accessReviewSet
+      summary: Update the navigation property definitions in identityGovernance
+      operationId: identityGovernance.accessReviews_UpdateDefinitions
+      parameters:
+        - name: accessReviewScheduleDefinition-id
+          in: path
+          description: 'key: id of accessReviewScheduleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewScheduleDefinition
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.accessReviewScheduleDefinition'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identityGovernance.accessReviewSet
+      summary: Delete navigation property definitions for identityGovernance
+      operationId: identityGovernance.accessReviews_DeleteDefinitions
+      parameters:
+        - name: accessReviewScheduleDefinition-id
+          in: path
+          description: 'key: id of accessReviewScheduleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewScheduleDefinition
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}/instances':
+    get:
+      tags:
+        - identityGovernance.accessReviewSet
+      summary: Get instances from identityGovernance
+      description: 'Set of access reviews instances for this access review series. Access reviews that do not recur will only have one instance; otherwise, there is an instance for each recurrence.'
+      operationId: identityGovernance.accessReviews.definitions_ListInstances
+      parameters:
+        - name: accessReviewScheduleDefinition-id
+          in: path
+          description: 'key: id of accessReviewScheduleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewScheduleDefinition
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - endDateTime
+                - endDateTime desc
+                - scope
+                - scope desc
+                - startDateTime
+                - startDateTime desc
+                - status
+                - status desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - endDateTime
+                - scope
+                - startDateTime
+                - status
+                - decisions
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - decisions
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of accessReviewInstance
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.accessReviewInstance'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - identityGovernance.accessReviewSet
+      summary: Create new navigation property to instances for identityGovernance
+      description: 'Set of access reviews instances for this access review series. Access reviews that do not recur will only have one instance; otherwise, there is an instance for each recurrence.'
+      operationId: identityGovernance.accessReviews.definitions_CreateInstances
+      parameters:
+        - name: accessReviewScheduleDefinition-id
+          in: path
+          description: 'key: id of accessReviewScheduleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewScheduleDefinition
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.accessReviewInstance'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.accessReviewInstance'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}/instances/{accessReviewInstance-id}':
+    get:
+      tags:
+        - identityGovernance.accessReviewSet
+      summary: Get instances from identityGovernance
+      description: 'Set of access reviews instances for this access review series. Access reviews that do not recur will only have one instance; otherwise, there is an instance for each recurrence.'
+      operationId: identityGovernance.accessReviews.definitions_GetInstances
+      parameters:
+        - name: accessReviewScheduleDefinition-id
+          in: path
+          description: 'key: id of accessReviewScheduleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewScheduleDefinition
+        - name: accessReviewInstance-id
+          in: path
+          description: 'key: id of accessReviewInstance'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewInstance
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - endDateTime
+                - scope
+                - startDateTime
+                - status
+                - decisions
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - decisions
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.accessReviewInstance'
+          links:
+            decisions:
+              operationId: identityGovernance.accessReviews.definitions.Instances.ListDecisions
+              parameters:
+                accessReviewScheduleDefinition-id: $request.path.accessReviewScheduleDefinition-id
+                accessReviewInstance-id: $request.path.accessReviewInstance-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - identityGovernance.accessReviewSet
+      summary: Update the navigation property instances in identityGovernance
+      description: 'Set of access reviews instances for this access review series. Access reviews that do not recur will only have one instance; otherwise, there is an instance for each recurrence.'
+      operationId: identityGovernance.accessReviews.definitions_UpdateInstances
+      parameters:
+        - name: accessReviewScheduleDefinition-id
+          in: path
+          description: 'key: id of accessReviewScheduleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewScheduleDefinition
+        - name: accessReviewInstance-id
+          in: path
+          description: 'key: id of accessReviewInstance'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewInstance
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.accessReviewInstance'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identityGovernance.accessReviewSet
+      summary: Delete navigation property instances for identityGovernance
+      description: 'Set of access reviews instances for this access review series. Access reviews that do not recur will only have one instance; otherwise, there is an instance for each recurrence.'
+      operationId: identityGovernance.accessReviews.definitions_DeleteInstances
+      parameters:
+        - name: accessReviewScheduleDefinition-id
+          in: path
+          description: 'key: id of accessReviewScheduleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewScheduleDefinition
+        - name: accessReviewInstance-id
+          in: path
+          description: 'key: id of accessReviewInstance'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewInstance
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}/instances/{accessReviewInstance-id}/decisions':
+    get:
+      tags:
+        - identityGovernance.accessReviewSet
+      summary: Get decisions from identityGovernance
+      description: 'Each user reviewed in an accessReviewInstance has a decision item representing if their access was approved, denied, or not yet reviewed.'
+      operationId: identityGovernance.accessReviews.definitions.instances_ListDecisions
+      parameters:
+        - name: accessReviewScheduleDefinition-id
+          in: path
+          description: 'key: id of accessReviewScheduleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewScheduleDefinition
+        - name: accessReviewInstance-id
+          in: path
+          description: 'key: id of accessReviewInstance'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewInstance
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - accessReviewId
+                - accessReviewId desc
+                - appliedBy
+                - appliedBy desc
+                - appliedDateTime
+                - appliedDateTime desc
+                - applyResult
+                - applyResult desc
+                - decision
+                - decision desc
+                - justification
+                - justification desc
+                - principal
+                - principal desc
+                - principalLink
+                - principalLink desc
+                - recommendation
+                - recommendation desc
+                - resource
+                - resource desc
+                - resourceLink
+                - resourceLink desc
+                - reviewedBy
+                - reviewedBy desc
+                - reviewedDateTime
+                - reviewedDateTime desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - accessReviewId
+                - appliedBy
+                - appliedDateTime
+                - applyResult
+                - decision
+                - justification
+                - principal
+                - principalLink
+                - recommendation
+                - resource
+                - resourceLink
+                - reviewedBy
+                - reviewedDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of accessReviewInstanceDecisionItem
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.accessReviewInstanceDecisionItem'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - identityGovernance.accessReviewSet
+      summary: Create new navigation property to decisions for identityGovernance
+      description: 'Each user reviewed in an accessReviewInstance has a decision item representing if their access was approved, denied, or not yet reviewed.'
+      operationId: identityGovernance.accessReviews.definitions.instances_CreateDecisions
+      parameters:
+        - name: accessReviewScheduleDefinition-id
+          in: path
+          description: 'key: id of accessReviewScheduleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewScheduleDefinition
+        - name: accessReviewInstance-id
+          in: path
+          description: 'key: id of accessReviewInstance'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewInstance
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.accessReviewInstanceDecisionItem'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.accessReviewInstanceDecisionItem'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}/instances/{accessReviewInstance-id}/decisions/{accessReviewInstanceDecisionItem-id}':
+    get:
+      tags:
+        - identityGovernance.accessReviewSet
+      summary: Get decisions from identityGovernance
+      description: 'Each user reviewed in an accessReviewInstance has a decision item representing if their access was approved, denied, or not yet reviewed.'
+      operationId: identityGovernance.accessReviews.definitions.instances_GetDecisions
+      parameters:
+        - name: accessReviewScheduleDefinition-id
+          in: path
+          description: 'key: id of accessReviewScheduleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewScheduleDefinition
+        - name: accessReviewInstance-id
+          in: path
+          description: 'key: id of accessReviewInstance'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewInstance
+        - name: accessReviewInstanceDecisionItem-id
+          in: path
+          description: 'key: id of accessReviewInstanceDecisionItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewInstanceDecisionItem
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - accessReviewId
+                - appliedBy
+                - appliedDateTime
+                - applyResult
+                - decision
+                - justification
+                - principal
+                - principalLink
+                - recommendation
+                - resource
+                - resourceLink
+                - reviewedBy
+                - reviewedDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.accessReviewInstanceDecisionItem'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - identityGovernance.accessReviewSet
+      summary: Update the navigation property decisions in identityGovernance
+      description: 'Each user reviewed in an accessReviewInstance has a decision item representing if their access was approved, denied, or not yet reviewed.'
+      operationId: identityGovernance.accessReviews.definitions.instances_UpdateDecisions
+      parameters:
+        - name: accessReviewScheduleDefinition-id
+          in: path
+          description: 'key: id of accessReviewScheduleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewScheduleDefinition
+        - name: accessReviewInstance-id
+          in: path
+          description: 'key: id of accessReviewInstance'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewInstance
+        - name: accessReviewInstanceDecisionItem-id
+          in: path
+          description: 'key: id of accessReviewInstanceDecisionItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewInstanceDecisionItem
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.accessReviewInstanceDecisionItem'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identityGovernance.accessReviewSet
+      summary: Delete navigation property decisions for identityGovernance
+      description: 'Each user reviewed in an accessReviewInstance has a decision item representing if their access was approved, denied, or not yet reviewed.'
+      operationId: identityGovernance.accessReviews.definitions.instances_DeleteDecisions
+      parameters:
+        - name: accessReviewScheduleDefinition-id
+          in: path
+          description: 'key: id of accessReviewScheduleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewScheduleDefinition
+        - name: accessReviewInstance-id
+          in: path
+          description: 'key: id of accessReviewInstance'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewInstance
+        - name: accessReviewInstanceDecisionItem-id
+          in: path
+          description: 'key: id of accessReviewInstanceDecisionItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewInstanceDecisionItem
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}/instances/{accessReviewInstance-id}/decisions/microsoft.graph.filterByCurrentUser(on={on})':
     get:
       tags:
@@ -2049,6 +3042,997 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  /identityGovernance/appConsent:
+    get:
+      tags:
+        - identityGovernance.appConsentApprovalRoute
+      summary: Get appConsent from identityGovernance
+      operationId: identityGovernance_GetAppConsent
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - appConsentRequests
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - appConsentRequests
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.appConsentApprovalRoute'
+          links:
+            appConsentRequests:
+              operationId: identityGovernance.AppConsent.ListAppConsentRequests
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - identityGovernance.appConsentApprovalRoute
+      summary: Update the navigation property appConsent in identityGovernance
+      operationId: identityGovernance_UpdateAppConsent
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.appConsentApprovalRoute'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identityGovernance.appConsentApprovalRoute
+      summary: Delete navigation property appConsent for identityGovernance
+      operationId: identityGovernance_DeleteAppConsent
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /identityGovernance/appConsent/appConsentRequests:
+    get:
+      tags:
+        - identityGovernance.appConsentApprovalRoute
+      summary: Get appConsentRequests from identityGovernance
+      operationId: identityGovernance.appConsent_ListAppConsentRequests
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - appDisplayName
+                - appDisplayName desc
+                - appId
+                - appId desc
+                - pendingScopes
+                - pendingScopes desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - appDisplayName
+                - appId
+                - pendingScopes
+                - userConsentRequests
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - userConsentRequests
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of appConsentRequest
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.appConsentRequest'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - identityGovernance.appConsentApprovalRoute
+      summary: Create new navigation property to appConsentRequests for identityGovernance
+      operationId: identityGovernance.appConsent_CreateAppConsentRequests
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.appConsentRequest'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.appConsentRequest'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identityGovernance/appConsent/appConsentRequests/{appConsentRequest-id}':
+    get:
+      tags:
+        - identityGovernance.appConsentApprovalRoute
+      summary: Get appConsentRequests from identityGovernance
+      operationId: identityGovernance.appConsent_GetAppConsentRequests
+      parameters:
+        - name: appConsentRequest-id
+          in: path
+          description: 'key: id of appConsentRequest'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: appConsentRequest
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - appDisplayName
+                - appId
+                - pendingScopes
+                - userConsentRequests
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - userConsentRequests
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.appConsentRequest'
+          links:
+            userConsentRequests:
+              operationId: identityGovernance.appConsent.AppConsentRequests.ListUserConsentRequests
+              parameters:
+                appConsentRequest-id: $request.path.appConsentRequest-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - identityGovernance.appConsentApprovalRoute
+      summary: Update the navigation property appConsentRequests in identityGovernance
+      operationId: identityGovernance.appConsent_UpdateAppConsentRequests
+      parameters:
+        - name: appConsentRequest-id
+          in: path
+          description: 'key: id of appConsentRequest'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: appConsentRequest
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.appConsentRequest'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identityGovernance.appConsentApprovalRoute
+      summary: Delete navigation property appConsentRequests for identityGovernance
+      operationId: identityGovernance.appConsent_DeleteAppConsentRequests
+      parameters:
+        - name: appConsentRequest-id
+          in: path
+          description: 'key: id of appConsentRequest'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: appConsentRequest
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identityGovernance/appConsent/appConsentRequests/{appConsentRequest-id}/userConsentRequests':
+    get:
+      tags:
+        - identityGovernance.appConsentApprovalRoute
+      summary: Get userConsentRequests from identityGovernance
+      description: A list of pending user consent requests.
+      operationId: identityGovernance.appConsent.appConsentRequests_ListUserConsentRequests
+      parameters:
+        - name: appConsentRequest-id
+          in: path
+          description: 'key: id of appConsentRequest'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: appConsentRequest
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - approvalId
+                - approvalId desc
+                - completedDateTime
+                - completedDateTime desc
+                - createdBy
+                - createdBy desc
+                - createdDateTime
+                - createdDateTime desc
+                - customData
+                - customData desc
+                - status
+                - status desc
+                - reason
+                - reason desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - approvalId
+                - completedDateTime
+                - createdBy
+                - createdDateTime
+                - customData
+                - status
+                - reason
+                - approval
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - approval
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of userConsentRequest
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.userConsentRequest'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - identityGovernance.appConsentApprovalRoute
+      summary: Create new navigation property to userConsentRequests for identityGovernance
+      description: A list of pending user consent requests.
+      operationId: identityGovernance.appConsent.appConsentRequests_CreateUserConsentRequests
+      parameters:
+        - name: appConsentRequest-id
+          in: path
+          description: 'key: id of appConsentRequest'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: appConsentRequest
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.userConsentRequest'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.userConsentRequest'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identityGovernance/appConsent/appConsentRequests/{appConsentRequest-id}/userConsentRequests/{userConsentRequest-id}':
+    get:
+      tags:
+        - identityGovernance.appConsentApprovalRoute
+      summary: Get userConsentRequests from identityGovernance
+      description: A list of pending user consent requests.
+      operationId: identityGovernance.appConsent.appConsentRequests_GetUserConsentRequests
+      parameters:
+        - name: appConsentRequest-id
+          in: path
+          description: 'key: id of appConsentRequest'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: appConsentRequest
+        - name: userConsentRequest-id
+          in: path
+          description: 'key: id of userConsentRequest'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userConsentRequest
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - approvalId
+                - completedDateTime
+                - createdBy
+                - createdDateTime
+                - customData
+                - status
+                - reason
+                - approval
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - approval
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.userConsentRequest'
+          links:
+            approval:
+              operationId: identityGovernance.appConsent.appConsentRequests.UserConsentRequests.GetApproval
+              parameters:
+                appConsentRequest-id: $request.path.appConsentRequest-id
+                userConsentRequest-id: $request.path.userConsentRequest-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - identityGovernance.appConsentApprovalRoute
+      summary: Update the navigation property userConsentRequests in identityGovernance
+      description: A list of pending user consent requests.
+      operationId: identityGovernance.appConsent.appConsentRequests_UpdateUserConsentRequests
+      parameters:
+        - name: appConsentRequest-id
+          in: path
+          description: 'key: id of appConsentRequest'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: appConsentRequest
+        - name: userConsentRequest-id
+          in: path
+          description: 'key: id of userConsentRequest'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userConsentRequest
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.userConsentRequest'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identityGovernance.appConsentApprovalRoute
+      summary: Delete navigation property userConsentRequests for identityGovernance
+      description: A list of pending user consent requests.
+      operationId: identityGovernance.appConsent.appConsentRequests_DeleteUserConsentRequests
+      parameters:
+        - name: appConsentRequest-id
+          in: path
+          description: 'key: id of appConsentRequest'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: appConsentRequest
+        - name: userConsentRequest-id
+          in: path
+          description: 'key: id of userConsentRequest'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userConsentRequest
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identityGovernance/appConsent/appConsentRequests/{appConsentRequest-id}/userConsentRequests/{userConsentRequest-id}/approval':
+    get:
+      tags:
+        - identityGovernance.appConsentApprovalRoute
+      summary: Get approval from identityGovernance
+      description: Approval decisions associated with a request.
+      operationId: identityGovernance.appConsent.appConsentRequests.userConsentRequests_GetApproval
+      parameters:
+        - name: appConsentRequest-id
+          in: path
+          description: 'key: id of appConsentRequest'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: appConsentRequest
+        - name: userConsentRequest-id
+          in: path
+          description: 'key: id of userConsentRequest'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userConsentRequest
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - stages
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - stages
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.approval'
+          links:
+            stages:
+              operationId: identityGovernance.appConsent.appConsentRequests.userConsentRequests.Approval.ListStages
+              parameters:
+                appConsentRequest-id: $request.path.appConsentRequest-id
+                userConsentRequest-id: $request.path.userConsentRequest-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - identityGovernance.appConsentApprovalRoute
+      summary: Update the navigation property approval in identityGovernance
+      description: Approval decisions associated with a request.
+      operationId: identityGovernance.appConsent.appConsentRequests.userConsentRequests_UpdateApproval
+      parameters:
+        - name: appConsentRequest-id
+          in: path
+          description: 'key: id of appConsentRequest'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: appConsentRequest
+        - name: userConsentRequest-id
+          in: path
+          description: 'key: id of userConsentRequest'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userConsentRequest
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.approval'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identityGovernance.appConsentApprovalRoute
+      summary: Delete navigation property approval for identityGovernance
+      description: Approval decisions associated with a request.
+      operationId: identityGovernance.appConsent.appConsentRequests.userConsentRequests_DeleteApproval
+      parameters:
+        - name: appConsentRequest-id
+          in: path
+          description: 'key: id of appConsentRequest'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: appConsentRequest
+        - name: userConsentRequest-id
+          in: path
+          description: 'key: id of userConsentRequest'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userConsentRequest
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identityGovernance/appConsent/appConsentRequests/{appConsentRequest-id}/userConsentRequests/{userConsentRequest-id}/approval/stages':
+    get:
+      tags:
+        - identityGovernance.appConsentApprovalRoute
+      summary: Get stages from identityGovernance
+      description: 'Used for the approvalStages property of approval settings in the requestApprovalSettings property of an access package assignment policy. Specifies the primary, fallback, and escalation approvers of each stage.'
+      operationId: identityGovernance.appConsent.appConsentRequests.userConsentRequests.approval_ListStages
+      parameters:
+        - name: appConsentRequest-id
+          in: path
+          description: 'key: id of appConsentRequest'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: appConsentRequest
+        - name: userConsentRequest-id
+          in: path
+          description: 'key: id of userConsentRequest'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userConsentRequest
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - assignedToMe
+                - assignedToMe desc
+                - displayName
+                - displayName desc
+                - justification
+                - justification desc
+                - reviewedBy
+                - reviewedBy desc
+                - reviewedDateTime
+                - reviewedDateTime desc
+                - reviewResult
+                - reviewResult desc
+                - status
+                - status desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - assignedToMe
+                - displayName
+                - justification
+                - reviewedBy
+                - reviewedDateTime
+                - reviewResult
+                - status
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of approvalStage
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.approvalStage'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - identityGovernance.appConsentApprovalRoute
+      summary: Create new navigation property to stages for identityGovernance
+      description: 'Used for the approvalStages property of approval settings in the requestApprovalSettings property of an access package assignment policy. Specifies the primary, fallback, and escalation approvers of each stage.'
+      operationId: identityGovernance.appConsent.appConsentRequests.userConsentRequests.approval_CreateStages
+      parameters:
+        - name: appConsentRequest-id
+          in: path
+          description: 'key: id of appConsentRequest'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: appConsentRequest
+        - name: userConsentRequest-id
+          in: path
+          description: 'key: id of userConsentRequest'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userConsentRequest
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.approvalStage'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.approvalStage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identityGovernance/appConsent/appConsentRequests/{appConsentRequest-id}/userConsentRequests/{userConsentRequest-id}/approval/stages/{approvalStage-id}':
+    get:
+      tags:
+        - identityGovernance.appConsentApprovalRoute
+      summary: Get stages from identityGovernance
+      description: 'Used for the approvalStages property of approval settings in the requestApprovalSettings property of an access package assignment policy. Specifies the primary, fallback, and escalation approvers of each stage.'
+      operationId: identityGovernance.appConsent.appConsentRequests.userConsentRequests.approval_GetStages
+      parameters:
+        - name: appConsentRequest-id
+          in: path
+          description: 'key: id of appConsentRequest'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: appConsentRequest
+        - name: userConsentRequest-id
+          in: path
+          description: 'key: id of userConsentRequest'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userConsentRequest
+        - name: approvalStage-id
+          in: path
+          description: 'key: id of approvalStage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: approvalStage
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - assignedToMe
+                - displayName
+                - justification
+                - reviewedBy
+                - reviewedDateTime
+                - reviewResult
+                - status
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.approvalStage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - identityGovernance.appConsentApprovalRoute
+      summary: Update the navigation property stages in identityGovernance
+      description: 'Used for the approvalStages property of approval settings in the requestApprovalSettings property of an access package assignment policy. Specifies the primary, fallback, and escalation approvers of each stage.'
+      operationId: identityGovernance.appConsent.appConsentRequests.userConsentRequests.approval_UpdateStages
+      parameters:
+        - name: appConsentRequest-id
+          in: path
+          description: 'key: id of appConsentRequest'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: appConsentRequest
+        - name: userConsentRequest-id
+          in: path
+          description: 'key: id of userConsentRequest'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userConsentRequest
+        - name: approvalStage-id
+          in: path
+          description: 'key: id of approvalStage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: approvalStage
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.approvalStage'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identityGovernance.appConsentApprovalRoute
+      summary: Delete navigation property stages for identityGovernance
+      description: 'Used for the approvalStages property of approval settings in the requestApprovalSettings property of an access package assignment policy. Specifies the primary, fallback, and escalation approvers of each stage.'
+      operationId: identityGovernance.appConsent.appConsentRequests.userConsentRequests.approval_DeleteStages
+      parameters:
+        - name: appConsentRequest-id
+          in: path
+          description: 'key: id of appConsentRequest'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: appConsentRequest
+        - name: userConsentRequest-id
+          in: path
+          description: 'key: id of userConsentRequest'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userConsentRequest
+        - name: approvalStage-id
+          in: path
+          description: 'key: id of approvalStage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: approvalStage
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/identityGovernance/appConsent/appConsentRequests/{appConsentRequest-id}/userConsentRequests/microsoft.graph.filterByCurrentUser(on={on})':
     get:
       tags:
@@ -2106,11 +4090,578 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  /identityGovernance/termsOfUse:
+    get:
+      tags:
+        - identityGovernance.termsOfUseContainer
+      summary: Get termsOfUse from identityGovernance
+      operationId: identityGovernance_GetTermsOfUse
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - agreementAcceptances
+                - agreements
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - agreementAcceptances
+                - agreements
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.termsOfUseContainer'
+          links:
+            agreementAcceptances:
+              operationId: identityGovernance.TermsOfUse.ListAgreementAcceptances
+            agreements:
+              operationId: identityGovernance.TermsOfUse.ListAgreements
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - identityGovernance.termsOfUseContainer
+      summary: Update the navigation property termsOfUse in identityGovernance
+      operationId: identityGovernance_UpdateTermsOfUse
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.termsOfUseContainer'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identityGovernance.termsOfUseContainer
+      summary: Delete navigation property termsOfUse for identityGovernance
+      operationId: identityGovernance_DeleteTermsOfUse
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /identityGovernance/termsOfUse/agreementAcceptances:
+    get:
+      tags:
+        - identityGovernance.termsOfUseContainer
+      summary: Get agreementAcceptances from identityGovernance
+      operationId: identityGovernance.termsOfUse_ListAgreementAcceptances
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - agreementFileId
+                - agreementFileId desc
+                - agreementId
+                - agreementId desc
+                - deviceDisplayName
+                - deviceDisplayName desc
+                - deviceId
+                - deviceId desc
+                - deviceOSType
+                - deviceOSType desc
+                - deviceOSVersion
+                - deviceOSVersion desc
+                - expirationDateTime
+                - expirationDateTime desc
+                - recordedDateTime
+                - recordedDateTime desc
+                - state
+                - state desc
+                - userDisplayName
+                - userDisplayName desc
+                - userEmail
+                - userEmail desc
+                - userId
+                - userId desc
+                - userPrincipalName
+                - userPrincipalName desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - agreementFileId
+                - agreementId
+                - deviceDisplayName
+                - deviceId
+                - deviceOSType
+                - deviceOSVersion
+                - expirationDateTime
+                - recordedDateTime
+                - state
+                - userDisplayName
+                - userEmail
+                - userId
+                - userPrincipalName
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of agreementAcceptance
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.agreementAcceptance'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - identityGovernance.termsOfUseContainer
+      summary: Create new navigation property to agreementAcceptances for identityGovernance
+      operationId: identityGovernance.termsOfUse_CreateAgreementAcceptances
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.agreementAcceptance'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.agreementAcceptance'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identityGovernance/termsOfUse/agreementAcceptances/{agreementAcceptance-id}':
+    get:
+      tags:
+        - identityGovernance.termsOfUseContainer
+      summary: Get agreementAcceptances from identityGovernance
+      operationId: identityGovernance.termsOfUse_GetAgreementAcceptances
+      parameters:
+        - name: agreementAcceptance-id
+          in: path
+          description: 'key: id of agreementAcceptance'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: agreementAcceptance
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - agreementFileId
+                - agreementId
+                - deviceDisplayName
+                - deviceId
+                - deviceOSType
+                - deviceOSVersion
+                - expirationDateTime
+                - recordedDateTime
+                - state
+                - userDisplayName
+                - userEmail
+                - userId
+                - userPrincipalName
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.agreementAcceptance'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - identityGovernance.termsOfUseContainer
+      summary: Update the navigation property agreementAcceptances in identityGovernance
+      operationId: identityGovernance.termsOfUse_UpdateAgreementAcceptances
+      parameters:
+        - name: agreementAcceptance-id
+          in: path
+          description: 'key: id of agreementAcceptance'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: agreementAcceptance
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.agreementAcceptance'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identityGovernance.termsOfUseContainer
+      summary: Delete navigation property agreementAcceptances for identityGovernance
+      operationId: identityGovernance.termsOfUse_DeleteAgreementAcceptances
+      parameters:
+        - name: agreementAcceptance-id
+          in: path
+          description: 'key: id of agreementAcceptance'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: agreementAcceptance
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /identityGovernance/termsOfUse/agreements:
+    get:
+      tags:
+        - identityGovernance.termsOfUseContainer
+      summary: Get agreements from identityGovernance
+      operationId: identityGovernance.termsOfUse_ListAgreements
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - displayName
+                - displayName desc
+                - isPerDeviceAcceptanceRequired
+                - isPerDeviceAcceptanceRequired desc
+                - isViewingBeforeAcceptanceRequired
+                - isViewingBeforeAcceptanceRequired desc
+                - termsExpiration
+                - termsExpiration desc
+                - userReacceptRequiredFrequency
+                - userReacceptRequiredFrequency desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - isPerDeviceAcceptanceRequired
+                - isViewingBeforeAcceptanceRequired
+                - termsExpiration
+                - userReacceptRequiredFrequency
+                - acceptances
+                - file
+                - files
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - acceptances
+                - file
+                - files
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of agreement
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.agreement'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - identityGovernance.termsOfUseContainer
+      summary: Create new navigation property to agreements for identityGovernance
+      operationId: identityGovernance.termsOfUse_CreateAgreements
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.agreement'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.agreement'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identityGovernance/termsOfUse/agreements/{agreement-id}':
+    get:
+      tags:
+        - identityGovernance.termsOfUseContainer
+      summary: Get agreements from identityGovernance
+      operationId: identityGovernance.termsOfUse_GetAgreements
+      parameters:
+        - name: agreement-id
+          in: path
+          description: 'key: id of agreement'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: agreement
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - isPerDeviceAcceptanceRequired
+                - isViewingBeforeAcceptanceRequired
+                - termsExpiration
+                - userReacceptRequiredFrequency
+                - acceptances
+                - file
+                - files
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - acceptances
+                - file
+                - files
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.agreement'
+          links:
+            acceptances:
+              operationId: identityGovernance.termsOfUse.Agreements.ListAcceptances
+              parameters:
+                agreement-id: $request.path.agreement-id
+            file:
+              operationId: identityGovernance.termsOfUse.Agreements.GetFile
+              parameters:
+                agreement-id: $request.path.agreement-id
+            files:
+              operationId: identityGovernance.termsOfUse.Agreements.ListFiles
+              parameters:
+                agreement-id: $request.path.agreement-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - identityGovernance.termsOfUseContainer
+      summary: Update the navigation property agreements in identityGovernance
+      operationId: identityGovernance.termsOfUse_UpdateAgreements
+      parameters:
+        - name: agreement-id
+          in: path
+          description: 'key: id of agreement'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: agreement
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.agreement'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identityGovernance.termsOfUseContainer
+      summary: Delete navigation property agreements for identityGovernance
+      operationId: identityGovernance.termsOfUse_DeleteAgreements
+      parameters:
+        - name: agreement-id
+          in: path
+          description: 'key: id of agreement'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: agreement
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/agreementAcceptances':
     get:
       tags:
         - users.agreementAcceptance
       summary: Get agreementAcceptances from users
+      description: The user's terms of use acceptance statuses. Read-only. Nullable.
       operationId: users_ListAgreementAcceptances
       parameters:
         - name: user-id
@@ -2229,6 +4780,7 @@ paths:
       tags:
         - users.agreementAcceptance
       summary: Get ref of agreementAcceptances from users
+      description: The user's terms of use acceptance statuses. Read-only. Nullable.
       operationId: users_ListRefAgreementAcceptances
       parameters:
         - name: user-id
@@ -2309,6 +4861,7 @@ paths:
       tags:
         - users.agreementAcceptance
       summary: Create new navigation property ref to agreementAcceptances for users
+      description: The user's terms of use acceptance statuses. Read-only. Nullable.
       operationId: users_CreateRefAgreementAcceptances
       parameters:
         - name: user-id
@@ -2474,12 +5027,120 @@ components:
           type: object
           additionalProperties:
             type: object
-    microsoft.graph.accessReviewInstanceDecisionItemFilterByCurrentUserOptions:
-      title: accessReviewInstanceDecisionItemFilterByCurrentUserOptions
-      enum:
-        - reviewer
-        - unknownFutureValue
-      type: string
+    microsoft.graph.identityGovernance:
+      title: identityGovernance
+      type: object
+      properties:
+        accessReviews:
+          $ref: '#/components/schemas/microsoft.graph.accessReviewSet'
+        appConsent:
+          $ref: '#/components/schemas/microsoft.graph.appConsentApprovalRoute'
+        termsOfUse:
+          $ref: '#/components/schemas/microsoft.graph.termsOfUseContainer'
+      additionalProperties:
+        type: object
+    microsoft.graph.accessReviewSet:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: accessReviewSet
+          type: object
+          properties:
+            definitions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.accessReviewScheduleDefinition'
+          additionalProperties:
+            type: object
+    microsoft.graph.accessReviewScheduleDefinition:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: accessReviewScheduleDefinition
+          type: object
+          properties:
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.userIdentity'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Timestamp when the access review series was created. Supports $select.
+              format: date-time
+              nullable: true
+            descriptionForAdmins:
+              type: string
+              description: Description provided by review creators to provide more context of the review to admins. Supports $select.
+              nullable: true
+            descriptionForReviewers:
+              type: string
+              description: Description provided  by review creators to provide more context of the review to reviewers. Reviewers will see this description in the email sent to them requesting their review. Supports $select.
+              nullable: true
+            displayName:
+              type: string
+              description: Name of the access review series. Required on create. Supports $select.
+              nullable: true
+            fallbackReviewers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScope'
+              description: 'This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user''s manager does not exist. Supports $select.'
+            instanceEnumerationScope:
+              $ref: '#/components/schemas/microsoft.graph.accessReviewScope'
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Timestamp when the access review series was last modified. Supports $select.
+              format: date-time
+              nullable: true
+            reviewers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScope'
+              description: 'This collection of access review scopes is used to define who are the reviewers. Required on create. Supports $select. For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API.'
+            scope:
+              $ref: '#/components/schemas/microsoft.graph.accessReviewScope'
+            settings:
+              $ref: '#/components/schemas/microsoft.graph.accessReviewScheduleSettings'
+            status:
+              type: string
+              description: 'This read-only field specifies the status of an access review. The typical states include Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed. Supports $select, $orderby, and $filter (eq only).'
+              nullable: true
+            instances:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.accessReviewInstance'
+              description: 'Set of access reviews instances for this access review series. Access reviews that do not recur will only have one instance; otherwise, there is an instance for each recurrence.'
+          additionalProperties:
+            type: object
+    microsoft.graph.accessReviewInstance:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: accessReviewInstance
+          type: object
+          properties:
+            endDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'DateTime when review instance is scheduled to end.The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              nullable: true
+            scope:
+              $ref: '#/components/schemas/microsoft.graph.accessReviewScope'
+            startDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'DateTime when review instance is scheduled to start. May be in the future. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              nullable: true
+            status:
+              type: string
+              description: 'Specifies the status of an accessReview. The typical states include Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed.  Read-only.'
+              nullable: true
+            decisions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.accessReviewInstanceDecisionItem'
+              description: 'Each user reviewed in an accessReviewInstance has a decision item representing if their access was approved, denied, or not yet reviewed.'
+          additionalProperties:
+            type: object
     microsoft.graph.accessReviewInstanceDecisionItem:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -2533,125 +5194,34 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.accessReviewInstanceDecisionItemFilterByCurrentUserOptions:
+      title: accessReviewInstanceDecisionItemFilterByCurrentUserOptions
+      enum:
+        - reviewer
+        - unknownFutureValue
+      type: string
     microsoft.graph.accessReviewInstanceFilterByCurrentUserOptions:
       title: accessReviewInstanceFilterByCurrentUserOptions
       enum:
         - reviewer
         - unknownFutureValue
       type: string
-    microsoft.graph.accessReviewInstance:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: accessReviewInstance
-          type: object
-          properties:
-            endDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'DateTime when review instance is scheduled to end.The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
-              format: date-time
-              nullable: true
-            scope:
-              $ref: '#/components/schemas/microsoft.graph.accessReviewScope'
-            startDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'DateTime when review instance is scheduled to start. May be in the future. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
-              format: date-time
-              nullable: true
-            status:
-              type: string
-              description: 'Specifies the status of an accessReview. The typical states include Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed.  Read-only.'
-              nullable: true
-            decisions:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.accessReviewInstanceDecisionItem'
-              description: 'Each user reviewed in an accessReviewInstance has a decision item representing if their access was approved, denied, or not yet reviewed.'
-          additionalProperties:
-            type: object
     microsoft.graph.accessReviewScheduleDefinitionFilterByCurrentUserOptions:
       title: accessReviewScheduleDefinitionFilterByCurrentUserOptions
       enum:
         - reviewer
         - unknownFutureValue
       type: string
-    microsoft.graph.accessReviewScheduleDefinition:
+    microsoft.graph.appConsentApprovalRoute:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: accessReviewScheduleDefinition
+        - title: appConsentApprovalRoute
           type: object
           properties:
-            createdBy:
-              $ref: '#/components/schemas/microsoft.graph.userIdentity'
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: Timestamp when review series was created.
-              format: date-time
-              nullable: true
-            descriptionForAdmins:
-              type: string
-              description: Description provided by review creators to provide more context of the review to admins.
-              nullable: true
-            descriptionForReviewers:
-              type: string
-              description: Description provided  by review creators to provide more context of the review to reviewers. Reviewers will see this description in the email sent to them requesting their review.
-              nullable: true
-            displayName:
-              type: string
-              description: Name of access review series. Required on create.
-              nullable: true
-            fallbackReviewers:
+            appConsentRequests:
               type: array
               items:
-                $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScope'
-            instanceEnumerationScope:
-              $ref: '#/components/schemas/microsoft.graph.accessReviewScope'
-            lastModifiedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: Timestamp when review series was last modified.
-              format: date-time
-              nullable: true
-            reviewers:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScope'
-              description: This collection of access review scopes is used to define who are the reviewers. See accessReviewReviewerScope. Required on create.
-            scope:
-              $ref: '#/components/schemas/microsoft.graph.accessReviewScope'
-            settings:
-              $ref: '#/components/schemas/microsoft.graph.accessReviewScheduleSettings'
-            status:
-              type: string
-              description: 'This read-only field specifies the status of an accessReview. The typical states include Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed.'
-              nullable: true
-            instances:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.accessReviewInstance'
-              description: 'Set of access reviews instances for this access review series. Access reviews that do not recur will only have one instance; otherwise, there will be an instance for each recurrence.'
-          additionalProperties:
-            type: object
-    microsoft.graph.consentRequestFilterByCurrentUserOptions:
-      title: consentRequestFilterByCurrentUserOptions
-      enum:
-        - reviewer
-        - unknownFutureValue
-      type: string
-    microsoft.graph.userConsentRequest:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.request'
-        - title: userConsentRequest
-          type: object
-          properties:
-            reason:
-              type: string
-              description: The user's justification for requiring access to the app. Supports $filter (eq only) and $orderby.
-              nullable: true
-            approval:
-              $ref: '#/components/schemas/microsoft.graph.approval'
+                $ref: '#/components/schemas/microsoft.graph.appConsentRequest'
           additionalProperties:
             type: object
     microsoft.graph.appConsentRequest:
@@ -2677,6 +5247,91 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.userConsentRequest'
               description: A list of pending user consent requests.
+          additionalProperties:
+            type: object
+    microsoft.graph.userConsentRequest:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.request'
+        - title: userConsentRequest
+          type: object
+          properties:
+            reason:
+              type: string
+              description: The user's justification for requiring access to the app. Supports $filter (eq only) and $orderby.
+              nullable: true
+            approval:
+              $ref: '#/components/schemas/microsoft.graph.approval'
+          additionalProperties:
+            type: object
+    microsoft.graph.approval:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: approval
+          type: object
+          properties:
+            stages:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.approvalStage'
+              description: 'Used for the approvalStages property of approval settings in the requestApprovalSettings property of an access package assignment policy. Specifies the primary, fallback, and escalation approvers of each stage.'
+          additionalProperties:
+            type: object
+    microsoft.graph.approvalStage:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: approvalStage
+          type: object
+          properties:
+            assignedToMe:
+              type: boolean
+              description: Indicates whether the stage is assigned to the calling user to review. Read-only.
+              nullable: true
+            displayName:
+              type: string
+              description: The label provided by the policy creator to identify an approval stage. Read-only.
+              nullable: true
+            justification:
+              type: string
+              description: The justification associated with the approval stage decision.
+              nullable: true
+            reviewedBy:
+              $ref: '#/components/schemas/microsoft.graph.identity'
+            reviewedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when a decision was recorded. The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              format: date-time
+              nullable: true
+            reviewResult:
+              type: string
+              description: 'The result of this approval record. Possible values include: NotReviewed, Approved, Denied.'
+              nullable: true
+            status:
+              type: string
+              description: 'The stage status. Possible values: InProgress, Initializing, Completed, Expired. Read-only.'
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.consentRequestFilterByCurrentUserOptions:
+      title: consentRequestFilterByCurrentUserOptions
+      enum:
+        - reviewer
+        - unknownFutureValue
+      type: string
+    microsoft.graph.termsOfUseContainer:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: termsOfUseContainer
+          type: object
+          properties:
+            agreementAcceptances:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.agreementAcceptance'
+            agreements:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.agreement'
           additionalProperties:
             type: object
     microsoft.graph.entity:
@@ -2759,6 +5414,70 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.accessReviewReviewerScope:
+      title: accessReviewReviewerScope
+      type: object
+      properties:
+        query:
+          type: string
+          description: The query specifying who will be the reviewer. See table for examples.
+          nullable: true
+        queryRoot:
+          type: string
+          description: 'In the scenario where reviewers need to be specified dynamically, this property is used to indicate the relative source of the query. This property is only required if a relative query, for example, ./manager, is specified. Possible value: decisions.'
+          nullable: true
+        queryType:
+          type: string
+          description: The type of query. Examples include MicrosoftGraph and ARM.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.accessReviewScope:
+      title: accessReviewScope
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.accessReviewScheduleSettings:
+      title: accessReviewScheduleSettings
+      type: object
+      properties:
+        applyActions:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.accessReviewApplyAction'
+          description: 'Optional field. Describes the  actions to take once a review is complete. There are two types that are currently supported: removeAccessApplyAction (default) and disableAndDeleteUserApplyAction. Field only needs to be specified in the case of disableAndDeleteUserApplyAction. See accessReviewApplyAction.'
+        autoApplyDecisionsEnabled:
+          type: boolean
+          description: 'Indicates whether decisions are automatically applied. When set to false, a user must apply the decisions manually once the reviewer completes the access review. When set to true, decisions are applied automatically after the access review instance duration ends, whether or not the reviewers have responded. Default value is false.'
+        defaultDecision:
+          type: string
+          description: 'Decision chosen if defaultDecisionEnabled is enabled. Can be one of Approve, Deny, or Recommendation.'
+          nullable: true
+        defaultDecisionEnabled:
+          type: boolean
+          description: Indicates whether the default decision is enabled or disabled when reviewers do not respond. Default value is false.
+        instanceDurationInDays:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Duration of each recurrence of review (accessReviewInstance) in number of days.
+          format: int32
+        justificationRequiredOnApproval:
+          type: boolean
+          description: Indicates whether reviewers are required to provide justification with their decision. Default value is false.
+        mailNotificationsEnabled:
+          type: boolean
+          description: Indicates whether emails are enabled or disabled. Default value is false.
+        recommendationsEnabled:
+          type: boolean
+          description: Indicates whether decision recommendations are enabled/disabled.
+        recurrence:
+          $ref: '#/components/schemas/microsoft.graph.patternedRecurrence'
+        reminderNotificationsEnabled:
+          type: boolean
+          description: Indicates whether reminders are enabled or disabled. Default value is false.
+      additionalProperties:
+        type: object
     microsoft.graph.identity:
       title: identity
       type: object
@@ -2791,68 +5510,14 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.accessReviewScope:
-      title: accessReviewScope
-      type: object
-      additionalProperties:
-        type: object
-    microsoft.graph.accessReviewReviewerScope:
-      title: accessReviewReviewerScope
+    microsoft.graph.appConsentRequestScope:
+      title: appConsentRequestScope
       type: object
       properties:
-        query:
+        displayName:
           type: string
-          description: The query specifying who will be the reviewer. See table for examples.
+          description: The name of the scope.
           nullable: true
-        queryRoot:
-          type: string
-          description: 'In the scenario where reviewers need to be specified dynamically, this property is used to indicate the relative source of the query. This property is only required if a relative query (i.e., ./manager) is specified.'
-          nullable: true
-        queryType:
-          type: string
-          description: The type of query. Examples include MicrosoftGraph and ARM.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.accessReviewScheduleSettings:
-      title: accessReviewScheduleSettings
-      type: object
-      properties:
-        applyActions:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.accessReviewApplyAction'
-          description: 'Optional field. Describes the  actions to take once a review is complete. There are two types that are currently supported: removeAccessApplyAction (default) and disableAndDeleteUserApplyAction. Field only needs to be specified in the case of disableAndDeleteUserApplyAction. See accessReviewApplyAction.'
-        autoApplyDecisionsEnabled:
-          type: boolean
-          description: Flag to indicate whether auto-apply feature is enabled.
-        defaultDecision:
-          type: string
-          description: 'Decision chosen if defaultDecisionEnabled is enabled. Can be one of ''Approve'', ''Deny'', or ''Recommendation''.'
-          nullable: true
-        defaultDecisionEnabled:
-          type: boolean
-          description: Flag to indicate whether default decision is enabled/disabled when reviewers do not respond.
-        instanceDurationInDays:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: Duration of each recurrence of review (accessReviewInstance) in number of days.
-          format: int32
-        justificationRequiredOnApproval:
-          type: boolean
-          description: Flag to indicate whether reviewers are required to provide justification with their decision.
-        mailNotificationsEnabled:
-          type: boolean
-          description: Flag to indicate whether emails are enabled/disabled.
-        recommendationsEnabled:
-          type: boolean
-          description: Flag to indicate whether decision recommendations are enabled/disabled.
-        recurrence:
-          $ref: '#/components/schemas/microsoft.graph.patternedRecurrence'
-        reminderNotificationsEnabled:
-          type: boolean
-          description: Flag to indicate whether reminders are enabled/disabled.
       additionalProperties:
         type: object
     microsoft.graph.request:
@@ -2883,29 +5548,6 @@ components:
               type: string
           additionalProperties:
             type: object
-    microsoft.graph.approval:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: approval
-          type: object
-          properties:
-            stages:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.approvalStage'
-              description: 'Used for the approvalStages property of approval settings in the requestApprovalSettings property of an access package assignment policy. Specifies the primary, fallback, and escalation approvers of each stage.'
-          additionalProperties:
-            type: object
-    microsoft.graph.appConsentRequestScope:
-      title: appConsentRequestScope
-      type: object
-      properties:
-        displayName:
-          type: string
-          description: The name of the scope.
-          nullable: true
-      additionalProperties:
-        type: object
     odata.error:
       required:
         - error
@@ -2952,42 +5594,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.identity'
       additionalProperties:
         type: object
-    microsoft.graph.approvalStage:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: approvalStage
-          type: object
-          properties:
-            assignedToMe:
-              type: boolean
-              description: Indicates whether the stage is assigned to the calling user to review. Read-only.
-              nullable: true
-            displayName:
-              type: string
-              description: The label provided by the policy creator to identify an approval stage. Read-only.
-              nullable: true
-            justification:
-              type: string
-              description: The justification associated with the approval stage decision.
-              nullable: true
-            reviewedBy:
-              $ref: '#/components/schemas/microsoft.graph.identity'
-            reviewedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'The date and time when a decision was recorded. The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
-              format: date-time
-              nullable: true
-            reviewResult:
-              type: string
-              description: 'The result of this approval record. Possible values include: NotReviewed, Approved, Denied.'
-              nullable: true
-            status:
-              type: string
-              description: 'The stage status. Possible values: InProgress, Initializing, Completed, Expired. Read-only.'
-              nullable: true
-          additionalProperties:
-            type: object
     odata.error.main:
       required:
         - code

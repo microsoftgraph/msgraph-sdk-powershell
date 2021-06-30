@@ -224,6 +224,7 @@ paths:
       tags:
         - appCatalogs.teamsApp
       summary: Get appDefinitions from appCatalogs
+      description: The details for each version of the app.
       operationId: appCatalogs.teamsApps_ListAppDefinitions
       parameters:
         - name: teamsApp-id
@@ -328,6 +329,7 @@ paths:
       tags:
         - appCatalogs.teamsApp
       summary: Create new navigation property to appDefinitions for appCatalogs
+      description: The details for each version of the app.
       operationId: appCatalogs.teamsApps_CreateAppDefinitions
       parameters:
         - name: teamsApp-id
@@ -359,6 +361,7 @@ paths:
       tags:
         - appCatalogs.teamsApp
       summary: Get appDefinitions from appCatalogs
+      description: The details for each version of the app.
       operationId: appCatalogs.teamsApps_GetAppDefinitions
       parameters:
         - name: teamsApp-id
@@ -429,6 +432,7 @@ paths:
       tags:
         - appCatalogs.teamsApp
       summary: Update the navigation property appDefinitions in appCatalogs
+      description: The details for each version of the app.
       operationId: appCatalogs.teamsApps_UpdateAppDefinitions
       parameters:
         - name: teamsApp-id
@@ -462,6 +466,7 @@ paths:
       tags:
         - appCatalogs.teamsApp
       summary: Delete navigation property appDefinitions for appCatalogs
+      description: The details for each version of the app.
       operationId: appCatalogs.teamsApps_DeleteAppDefinitions
       parameters:
         - name: teamsApp-id
@@ -494,6 +499,7 @@ paths:
       tags:
         - appCatalogs.teamsApp
       summary: Get bot from appCatalogs
+      description: The details of the bot specified in the Teams app manifest.
       operationId: appCatalogs.teamsApps.appDefinitions_GetBot
       parameters:
         - name: teamsApp-id
@@ -548,6 +554,7 @@ paths:
       tags:
         - appCatalogs.teamsApp
       summary: Update the navigation property bot in appCatalogs
+      description: The details of the bot specified in the Teams app manifest.
       operationId: appCatalogs.teamsApps.appDefinitions_UpdateBot
       parameters:
         - name: teamsApp-id
@@ -581,6 +588,7 @@ paths:
       tags:
         - appCatalogs.teamsApp
       summary: Delete navigation property bot for appCatalogs
+      description: The details of the bot specified in the Teams app manifest.
       operationId: appCatalogs.teamsApps.appDefinitions_DeleteBot
       parameters:
         - name: teamsApp-id
@@ -854,6 +862,7 @@ paths:
       tags:
         - chats.teamsAppInstallation
       summary: Get installedApps from chats
+      description: A collection of all the apps in the chat. Nullable.
       operationId: chats_ListInstalledApps
       parameters:
         - name: chat-id
@@ -936,6 +945,7 @@ paths:
       tags:
         - chats.teamsAppInstallation
       summary: Create new navigation property to installedApps for chats
+      description: A collection of all the apps in the chat. Nullable.
       operationId: chats_CreateInstalledApps
       parameters:
         - name: chat-id
@@ -967,6 +977,7 @@ paths:
       tags:
         - chats.teamsAppInstallation
       summary: Get installedApps from chats
+      description: A collection of all the apps in the chat. Nullable.
       operationId: chats_GetInstalledApps
       parameters:
         - name: chat-id
@@ -1036,6 +1047,7 @@ paths:
       tags:
         - chats.teamsAppInstallation
       summary: Update the navigation property installedApps in chats
+      description: A collection of all the apps in the chat. Nullable.
       operationId: chats_UpdateInstalledApps
       parameters:
         - name: chat-id
@@ -1069,6 +1081,7 @@ paths:
       tags:
         - chats.teamsAppInstallation
       summary: Delete navigation property installedApps for chats
+      description: A collection of all the apps in the chat. Nullable.
       operationId: chats_DeleteInstalledApps
       parameters:
         - name: chat-id
@@ -1128,6 +1141,7 @@ paths:
       tags:
         - chats.teamsAppInstallation
       summary: Get teamsApp from chats
+      description: The app that is installed.
       operationId: chats.installedApps_GetTeamsApp
       parameters:
         - name: chat-id
@@ -1194,6 +1208,7 @@ paths:
       tags:
         - chats.teamsAppInstallation
       summary: Get ref of teamsApp from chats
+      description: The app that is installed.
       operationId: chats.installedApps_GetRefTeamsApp
       parameters:
         - name: chat-id
@@ -1230,6 +1245,7 @@ paths:
       tags:
         - chats.teamsAppInstallation
       summary: Update the ref of navigation property teamsApp in chats
+      description: The app that is installed.
       operationId: chats.installedApps_SetRefTeamsApp
       parameters:
         - name: chat-id
@@ -1265,6 +1281,7 @@ paths:
       tags:
         - chats.teamsAppInstallation
       summary: Delete ref of navigation property teamsApp for chats
+      description: The app that is installed.
       operationId: chats.installedApps_DeleteRefTeamsApp
       parameters:
         - name: chat-id
@@ -1297,6 +1314,7 @@ paths:
       tags:
         - chats.teamsAppInstallation
       summary: Get teamsAppDefinition from chats
+      description: The details of this version of the app.
       operationId: chats.installedApps_GetTeamsAppDefinition
       parameters:
         - name: chat-id
@@ -1368,6 +1386,7 @@ paths:
       tags:
         - chats.teamsAppInstallation
       summary: Get ref of teamsAppDefinition from chats
+      description: The details of this version of the app.
       operationId: chats.installedApps_GetRefTeamsAppDefinition
       parameters:
         - name: chat-id
@@ -1404,6 +1423,7 @@ paths:
       tags:
         - chats.teamsAppInstallation
       summary: Update the ref of navigation property teamsAppDefinition in chats
+      description: The details of this version of the app.
       operationId: chats.installedApps_SetRefTeamsAppDefinition
       parameters:
         - name: chat-id
@@ -1439,6 +1459,7 @@ paths:
       tags:
         - chats.teamsAppInstallation
       summary: Delete ref of navigation property teamsAppDefinition for chats
+      description: The details of this version of the app.
       operationId: chats.installedApps_DeleteRefTeamsAppDefinition
       parameters:
         - name: chat-id
@@ -1471,6 +1492,7 @@ paths:
       tags:
         - chats.conversationMember
       summary: Get members from chats
+      description: A collection of all the members in the chat. Nullable.
       operationId: chats_ListMembers
       parameters:
         - name: chat-id
@@ -1558,6 +1580,7 @@ paths:
       tags:
         - chats.conversationMember
       summary: Create new navigation property to members for chats
+      description: A collection of all the members in the chat. Nullable.
       operationId: chats_CreateMembers
       parameters:
         - name: chat-id
@@ -1589,6 +1612,7 @@ paths:
       tags:
         - chats.conversationMember
       summary: Get members from chats
+      description: A collection of all the members in the chat. Nullable.
       operationId: chats_GetMembers
       parameters:
         - name: chat-id
@@ -1646,6 +1670,7 @@ paths:
       tags:
         - chats.conversationMember
       summary: Update the navigation property members in chats
+      description: A collection of all the members in the chat. Nullable.
       operationId: chats_UpdateMembers
       parameters:
         - name: chat-id
@@ -1679,6 +1704,7 @@ paths:
       tags:
         - chats.conversationMember
       summary: Delete navigation property members for chats
+      description: A collection of all the members in the chat. Nullable.
       operationId: chats_DeleteMembers
       parameters:
         - name: chat-id
@@ -1711,6 +1737,7 @@ paths:
       tags:
         - chats.chatMessage
       summary: Get messages from chats
+      description: A collection of all the messages in the chat. Nullable.
       operationId: chats_ListMessages
       parameters:
         - name: chat-id
@@ -1853,6 +1880,7 @@ paths:
       tags:
         - chats.chatMessage
       summary: Create new navigation property to messages for chats
+      description: A collection of all the messages in the chat. Nullable.
       operationId: chats_CreateMessages
       parameters:
         - name: chat-id
@@ -1884,6 +1912,7 @@ paths:
       tags:
         - chats.chatMessage
       summary: Get messages from chats
+      description: A collection of all the messages in the chat. Nullable.
       operationId: chats_GetMessages
       parameters:
         - name: chat-id
@@ -1973,6 +2002,7 @@ paths:
       tags:
         - chats.chatMessage
       summary: Update the navigation property messages in chats
+      description: A collection of all the messages in the chat. Nullable.
       operationId: chats_UpdateMessages
       parameters:
         - name: chat-id
@@ -2006,6 +2036,7 @@ paths:
       tags:
         - chats.chatMessage
       summary: Delete navigation property messages for chats
+      description: A collection of all the messages in the chat. Nullable.
       operationId: chats_DeleteMessages
       parameters:
         - name: chat-id
@@ -2038,6 +2069,7 @@ paths:
       tags:
         - chats.chatMessage
       summary: Get hostedContents from chats
+      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: chats.messages_ListHostedContents
       parameters:
         - name: chat-id
@@ -2129,6 +2161,7 @@ paths:
       tags:
         - chats.chatMessage
       summary: Create new navigation property to hostedContents for chats
+      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: chats.messages_CreateHostedContents
       parameters:
         - name: chat-id
@@ -2167,6 +2200,7 @@ paths:
       tags:
         - chats.chatMessage
       summary: Get hostedContents from chats
+      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: chats.messages_GetHostedContents
       parameters:
         - name: chat-id
@@ -2230,6 +2264,7 @@ paths:
       tags:
         - chats.chatMessage
       summary: Update the navigation property hostedContents in chats
+      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: chats.messages_UpdateHostedContents
       parameters:
         - name: chat-id
@@ -2270,6 +2305,7 @@ paths:
       tags:
         - chats.chatMessage
       summary: Delete navigation property hostedContents for chats
+      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: chats.messages_DeleteHostedContents
       parameters:
         - name: chat-id
@@ -2309,6 +2345,7 @@ paths:
       tags:
         - chats.chatMessage
       summary: Get replies from chats
+      description: Replies for a specified message.
       operationId: chats.messages_ListReplies
       parameters:
         - name: chat-id
@@ -2458,6 +2495,7 @@ paths:
       tags:
         - chats.chatMessage
       summary: Create new navigation property to replies for chats
+      description: Replies for a specified message.
       operationId: chats.messages_CreateReplies
       parameters:
         - name: chat-id
@@ -2496,6 +2534,7 @@ paths:
       tags:
         - chats.chatMessage
       summary: Get replies from chats
+      description: Replies for a specified message.
       operationId: chats.messages_GetReplies
       parameters:
         - name: chat-id
@@ -2594,6 +2633,7 @@ paths:
       tags:
         - chats.chatMessage
       summary: Update the navigation property replies in chats
+      description: Replies for a specified message.
       operationId: chats.messages_UpdateReplies
       parameters:
         - name: chat-id
@@ -2634,6 +2674,7 @@ paths:
       tags:
         - chats.chatMessage
       summary: Delete navigation property replies for chats
+      description: Replies for a specified message.
       operationId: chats.messages_DeleteReplies
       parameters:
         - name: chat-id
@@ -3029,6 +3070,7 @@ paths:
       tags:
         - chats.teamsTab
       summary: Get teamsApp from chats
+      description: The application that is linked to the tab.
       operationId: chats.tabs_GetTeamsApp
       parameters:
         - name: chat-id
@@ -3095,6 +3137,7 @@ paths:
       tags:
         - chats.teamsTab
       summary: Get ref of teamsApp from chats
+      description: The application that is linked to the tab.
       operationId: chats.tabs_GetRefTeamsApp
       parameters:
         - name: chat-id
@@ -3131,6 +3174,7 @@ paths:
       tags:
         - chats.teamsTab
       summary: Update the ref of navigation property teamsApp in chats
+      description: The application that is linked to the tab.
       operationId: chats.tabs_SetRefTeamsApp
       parameters:
         - name: chat-id
@@ -3166,6 +3210,7 @@ paths:
       tags:
         - chats.teamsTab
       summary: Delete ref of navigation property teamsApp for chats
+      description: The application that is linked to the tab.
       operationId: chats.tabs_DeleteRefTeamsApp
       parameters:
         - name: chat-id
@@ -3685,6 +3730,7 @@ paths:
       tags:
         - teams.channel
       summary: Get channels from teams
+      description: The collection of channels & messages associated with the team.
       operationId: teams_ListChannels
       parameters:
         - name: team-id
@@ -3792,6 +3838,7 @@ paths:
       tags:
         - teams.channel
       summary: Create new navigation property to channels for teams
+      description: The collection of channels & messages associated with the team.
       operationId: teams_CreateChannels
       parameters:
         - name: team-id
@@ -3823,6 +3870,7 @@ paths:
       tags:
         - teams.channel
       summary: Get channels from teams
+      description: The collection of channels & messages associated with the team.
       operationId: teams_GetChannels
       parameters:
         - name: team-id
@@ -3913,6 +3961,7 @@ paths:
       tags:
         - teams.channel
       summary: Update the navigation property channels in teams
+      description: The collection of channels & messages associated with the team.
       operationId: teams_UpdateChannels
       parameters:
         - name: team-id
@@ -3946,6 +3995,7 @@ paths:
       tags:
         - teams.channel
       summary: Delete navigation property channels for teams
+      description: The collection of channels & messages associated with the team.
       operationId: teams_DeleteChannels
       parameters:
         - name: team-id
@@ -3978,6 +4028,7 @@ paths:
       tags:
         - teams.channel
       summary: Get filesFolder from teams
+      description: Metadata for the location where the channel's files are stored.
       operationId: teams.channels_GetFilesFolder
       parameters:
         - name: team-id
@@ -4134,6 +4185,7 @@ paths:
       tags:
         - teams.channel
       summary: Update the navigation property filesFolder in teams
+      description: Metadata for the location where the channel's files are stored.
       operationId: teams.channels_UpdateFilesFolder
       parameters:
         - name: team-id
@@ -4167,6 +4219,7 @@ paths:
       tags:
         - teams.channel
       summary: Delete navigation property filesFolder for teams
+      description: Metadata for the location where the channel's files are stored.
       operationId: teams.channels_DeleteFilesFolder
       parameters:
         - name: team-id
@@ -4265,6 +4318,7 @@ paths:
       tags:
         - teams.channel
       summary: Get members from teams
+      description: A collection of membership records associated with the channel.
       operationId: teams.channels_ListMembers
       parameters:
         - name: team-id
@@ -4359,6 +4413,7 @@ paths:
       tags:
         - teams.channel
       summary: Create new navigation property to members for teams
+      description: A collection of membership records associated with the channel.
       operationId: teams.channels_CreateMembers
       parameters:
         - name: team-id
@@ -4397,6 +4452,7 @@ paths:
       tags:
         - teams.channel
       summary: Get members from teams
+      description: A collection of membership records associated with the channel.
       operationId: teams.channels_GetMembers
       parameters:
         - name: team-id
@@ -4461,6 +4517,7 @@ paths:
       tags:
         - teams.channel
       summary: Update the navigation property members in teams
+      description: A collection of membership records associated with the channel.
       operationId: teams.channels_UpdateMembers
       parameters:
         - name: team-id
@@ -4501,6 +4558,7 @@ paths:
       tags:
         - teams.channel
       summary: Delete navigation property members for teams
+      description: A collection of membership records associated with the channel.
       operationId: teams.channels_DeleteMembers
       parameters:
         - name: team-id
@@ -4540,6 +4598,7 @@ paths:
       tags:
         - teams.channel
       summary: Get messages from teams
+      description: A collection of all the messages in the channel. A navigation property. Nullable.
       operationId: teams.channels_ListMessages
       parameters:
         - name: team-id
@@ -4689,6 +4748,7 @@ paths:
       tags:
         - teams.channel
       summary: Create new navigation property to messages for teams
+      description: A collection of all the messages in the channel. A navigation property. Nullable.
       operationId: teams.channels_CreateMessages
       parameters:
         - name: team-id
@@ -4727,6 +4787,7 @@ paths:
       tags:
         - teams.channel
       summary: Get messages from teams
+      description: A collection of all the messages in the channel. A navigation property. Nullable.
       operationId: teams.channels_GetMessages
       parameters:
         - name: team-id
@@ -4825,6 +4886,7 @@ paths:
       tags:
         - teams.channel
       summary: Update the navigation property messages in teams
+      description: A collection of all the messages in the channel. A navigation property. Nullable.
       operationId: teams.channels_UpdateMessages
       parameters:
         - name: team-id
@@ -4865,6 +4927,7 @@ paths:
       tags:
         - teams.channel
       summary: Delete navigation property messages for teams
+      description: A collection of all the messages in the channel. A navigation property. Nullable.
       operationId: teams.channels_DeleteMessages
       parameters:
         - name: team-id
@@ -4904,6 +4967,7 @@ paths:
       tags:
         - teams.channel
       summary: Get hostedContents from teams
+      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: teams.channels.messages_ListHostedContents
       parameters:
         - name: team-id
@@ -5002,6 +5066,7 @@ paths:
       tags:
         - teams.channel
       summary: Create new navigation property to hostedContents for teams
+      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: teams.channels.messages_CreateHostedContents
       parameters:
         - name: team-id
@@ -5047,6 +5112,7 @@ paths:
       tags:
         - teams.channel
       summary: Get hostedContents from teams
+      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: teams.channels.messages_GetHostedContents
       parameters:
         - name: team-id
@@ -5117,6 +5183,7 @@ paths:
       tags:
         - teams.channel
       summary: Update the navigation property hostedContents in teams
+      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: teams.channels.messages_UpdateHostedContents
       parameters:
         - name: team-id
@@ -5164,6 +5231,7 @@ paths:
       tags:
         - teams.channel
       summary: Delete navigation property hostedContents for teams
+      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: teams.channels.messages_DeleteHostedContents
       parameters:
         - name: team-id
@@ -5210,6 +5278,7 @@ paths:
       tags:
         - teams.channel
       summary: Get replies from teams
+      description: Replies for a specified message.
       operationId: teams.channels.messages_ListReplies
       parameters:
         - name: team-id
@@ -5366,6 +5435,7 @@ paths:
       tags:
         - teams.channel
       summary: Create new navigation property to replies for teams
+      description: Replies for a specified message.
       operationId: teams.channels.messages_CreateReplies
       parameters:
         - name: team-id
@@ -5411,6 +5481,7 @@ paths:
       tags:
         - teams.channel
       summary: Get replies from teams
+      description: Replies for a specified message.
       operationId: teams.channels.messages_GetReplies
       parameters:
         - name: team-id
@@ -5518,6 +5589,7 @@ paths:
       tags:
         - teams.channel
       summary: Update the navigation property replies in teams
+      description: Replies for a specified message.
       operationId: teams.channels.messages_UpdateReplies
       parameters:
         - name: team-id
@@ -5565,6 +5637,7 @@ paths:
       tags:
         - teams.channel
       summary: Delete navigation property replies for teams
+      description: Replies for a specified message.
       operationId: teams.channels.messages_DeleteReplies
       parameters:
         - name: team-id
@@ -5711,6 +5784,7 @@ paths:
       tags:
         - teams.channel
       summary: Get tabs from teams
+      description: A collection of all the tabs in the channel. A navigation property.
       operationId: teams.channels_ListTabs
       parameters:
         - name: team-id
@@ -5807,6 +5881,7 @@ paths:
       tags:
         - teams.channel
       summary: Create new navigation property to tabs for teams
+      description: A collection of all the tabs in the channel. A navigation property.
       operationId: teams.channels_CreateTabs
       parameters:
         - name: team-id
@@ -5845,6 +5920,7 @@ paths:
       tags:
         - teams.channel
       summary: Get tabs from teams
+      description: A collection of all the tabs in the channel. A navigation property.
       operationId: teams.channels_GetTabs
       parameters:
         - name: team-id
@@ -5918,6 +5994,7 @@ paths:
       tags:
         - teams.channel
       summary: Update the navigation property tabs in teams
+      description: A collection of all the tabs in the channel. A navigation property.
       operationId: teams.channels_UpdateTabs
       parameters:
         - name: team-id
@@ -5958,6 +6035,7 @@ paths:
       tags:
         - teams.channel
       summary: Delete navigation property tabs for teams
+      description: A collection of all the tabs in the channel. A navigation property.
       operationId: teams.channels_DeleteTabs
       parameters:
         - name: team-id
@@ -5997,6 +6075,7 @@ paths:
       tags:
         - teams.channel
       summary: Get teamsApp from teams
+      description: The application that is linked to the tab.
       operationId: teams.channels.tabs_GetTeamsApp
       parameters:
         - name: team-id
@@ -6071,6 +6150,7 @@ paths:
       tags:
         - teams.channel
       summary: Get ref of teamsApp from teams
+      description: The application that is linked to the tab.
       operationId: teams.channels.tabs_GetRefTeamsApp
       parameters:
         - name: team-id
@@ -6115,6 +6195,7 @@ paths:
       tags:
         - teams.channel
       summary: Update the ref of navigation property teamsApp in teams
+      description: The application that is linked to the tab.
       operationId: teams.channels.tabs_SetRefTeamsApp
       parameters:
         - name: team-id
@@ -6157,6 +6238,7 @@ paths:
       tags:
         - teams.channel
       summary: Delete ref of navigation property teamsApp for teams
+      description: The application that is linked to the tab.
       operationId: teams.channels.tabs_DeleteRefTeamsApp
       parameters:
         - name: team-id
@@ -6630,6 +6712,7 @@ paths:
       tags:
         - teams.teamsAppInstallation
       summary: Get installedApps from teams
+      description: The apps installed in this team.
       operationId: teams_ListInstalledApps
       parameters:
         - name: team-id
@@ -6712,6 +6795,7 @@ paths:
       tags:
         - teams.teamsAppInstallation
       summary: Create new navigation property to installedApps for teams
+      description: The apps installed in this team.
       operationId: teams_CreateInstalledApps
       parameters:
         - name: team-id
@@ -6743,6 +6827,7 @@ paths:
       tags:
         - teams.teamsAppInstallation
       summary: Get installedApps from teams
+      description: The apps installed in this team.
       operationId: teams_GetInstalledApps
       parameters:
         - name: team-id
@@ -6812,6 +6897,7 @@ paths:
       tags:
         - teams.teamsAppInstallation
       summary: Update the navigation property installedApps in teams
+      description: The apps installed in this team.
       operationId: teams_UpdateInstalledApps
       parameters:
         - name: team-id
@@ -6845,6 +6931,7 @@ paths:
       tags:
         - teams.teamsAppInstallation
       summary: Delete navigation property installedApps for teams
+      description: The apps installed in this team.
       operationId: teams_DeleteInstalledApps
       parameters:
         - name: team-id
@@ -6904,6 +6991,7 @@ paths:
       tags:
         - teams.teamsAppInstallation
       summary: Get teamsApp from teams
+      description: The app that is installed.
       operationId: teams.installedApps_GetTeamsApp
       parameters:
         - name: team-id
@@ -6970,6 +7058,7 @@ paths:
       tags:
         - teams.teamsAppInstallation
       summary: Get ref of teamsApp from teams
+      description: The app that is installed.
       operationId: teams.installedApps_GetRefTeamsApp
       parameters:
         - name: team-id
@@ -7006,6 +7095,7 @@ paths:
       tags:
         - teams.teamsAppInstallation
       summary: Update the ref of navigation property teamsApp in teams
+      description: The app that is installed.
       operationId: teams.installedApps_SetRefTeamsApp
       parameters:
         - name: team-id
@@ -7041,6 +7131,7 @@ paths:
       tags:
         - teams.teamsAppInstallation
       summary: Delete ref of navigation property teamsApp for teams
+      description: The app that is installed.
       operationId: teams.installedApps_DeleteRefTeamsApp
       parameters:
         - name: team-id
@@ -7073,6 +7164,7 @@ paths:
       tags:
         - teams.teamsAppInstallation
       summary: Get teamsAppDefinition from teams
+      description: The details of this version of the app.
       operationId: teams.installedApps_GetTeamsAppDefinition
       parameters:
         - name: team-id
@@ -7144,6 +7236,7 @@ paths:
       tags:
         - teams.teamsAppInstallation
       summary: Get ref of teamsAppDefinition from teams
+      description: The details of this version of the app.
       operationId: teams.installedApps_GetRefTeamsAppDefinition
       parameters:
         - name: team-id
@@ -7180,6 +7273,7 @@ paths:
       tags:
         - teams.teamsAppInstallation
       summary: Update the ref of navigation property teamsAppDefinition in teams
+      description: The details of this version of the app.
       operationId: teams.installedApps_SetRefTeamsAppDefinition
       parameters:
         - name: team-id
@@ -7215,6 +7309,7 @@ paths:
       tags:
         - teams.teamsAppInstallation
       summary: Delete ref of navigation property teamsAppDefinition for teams
+      description: The details of this version of the app.
       operationId: teams.installedApps_DeleteRefTeamsAppDefinition
       parameters:
         - name: team-id
@@ -7247,6 +7342,7 @@ paths:
       tags:
         - teams.conversationMember
       summary: Get members from teams
+      description: Members and owners of the team.
       operationId: teams_ListMembers
       parameters:
         - name: team-id
@@ -7334,6 +7430,7 @@ paths:
       tags:
         - teams.conversationMember
       summary: Create new navigation property to members for teams
+      description: Members and owners of the team.
       operationId: teams_CreateMembers
       parameters:
         - name: team-id
@@ -7365,6 +7462,7 @@ paths:
       tags:
         - teams.conversationMember
       summary: Get members from teams
+      description: Members and owners of the team.
       operationId: teams_GetMembers
       parameters:
         - name: team-id
@@ -7422,6 +7520,7 @@ paths:
       tags:
         - teams.conversationMember
       summary: Update the navigation property members in teams
+      description: Members and owners of the team.
       operationId: teams_UpdateMembers
       parameters:
         - name: team-id
@@ -7455,6 +7554,7 @@ paths:
       tags:
         - teams.conversationMember
       summary: Delete navigation property members for teams
+      description: Members and owners of the team.
       operationId: teams_DeleteMembers
       parameters:
         - name: team-id
@@ -7654,6 +7754,7 @@ paths:
       tags:
         - teams.teamsAsyncOperation
       summary: Get operations from teams
+      description: The async operations that ran or are running on this team.
       operationId: teams_ListOperations
       parameters:
         - name: team-id
@@ -7756,6 +7857,7 @@ paths:
       tags:
         - teams.teamsAsyncOperation
       summary: Create new navigation property to operations for teams
+      description: The async operations that ran or are running on this team.
       operationId: teams_CreateOperations
       parameters:
         - name: team-id
@@ -7787,6 +7889,7 @@ paths:
       tags:
         - teams.teamsAsyncOperation
       summary: Get operations from teams
+      description: The async operations that ran or are running on this team.
       operationId: teams_GetOperations
       parameters:
         - name: team-id
@@ -7849,6 +7952,7 @@ paths:
       tags:
         - teams.teamsAsyncOperation
       summary: Update the navigation property operations in teams
+      description: The async operations that ran or are running on this team.
       operationId: teams_UpdateOperations
       parameters:
         - name: team-id
@@ -7882,6 +7986,7 @@ paths:
       tags:
         - teams.teamsAsyncOperation
       summary: Delete navigation property operations for teams
+      description: The async operations that ran or are running on this team.
       operationId: teams_DeleteOperations
       parameters:
         - name: team-id
@@ -7914,6 +8019,7 @@ paths:
       tags:
         - teams.channel
       summary: Get primaryChannel from teams
+      description: The general channel for the team.
       operationId: teams_GetPrimaryChannel
       parameters:
         - name: team-id
@@ -7993,6 +8099,7 @@ paths:
       tags:
         - teams.channel
       summary: Update the navigation property primaryChannel in teams
+      description: The general channel for the team.
       operationId: teams_UpdatePrimaryChannel
       parameters:
         - name: team-id
@@ -8019,6 +8126,7 @@ paths:
       tags:
         - teams.channel
       summary: Delete navigation property primaryChannel for teams
+      description: The general channel for the team.
       operationId: teams_DeletePrimaryChannel
       parameters:
         - name: team-id
@@ -8044,6 +8152,7 @@ paths:
       tags:
         - teams.channel
       summary: Get filesFolder from teams
+      description: Metadata for the location where the channel's files are stored.
       operationId: teams.primaryChannel_GetFilesFolder
       parameters:
         - name: team-id
@@ -8183,6 +8292,7 @@ paths:
       tags:
         - teams.channel
       summary: Update the navigation property filesFolder in teams
+      description: Metadata for the location where the channel's files are stored.
       operationId: teams.primaryChannel_UpdateFilesFolder
       parameters:
         - name: team-id
@@ -8209,6 +8319,7 @@ paths:
       tags:
         - teams.channel
       summary: Delete navigation property filesFolder for teams
+      description: Metadata for the location where the channel's files are stored.
       operationId: teams.primaryChannel_DeleteFilesFolder
       parameters:
         - name: team-id
@@ -8286,6 +8397,7 @@ paths:
       tags:
         - teams.channel
       summary: Get members from teams
+      description: A collection of membership records associated with the channel.
       operationId: teams.primaryChannel_ListMembers
       parameters:
         - name: team-id
@@ -8373,6 +8485,7 @@ paths:
       tags:
         - teams.channel
       summary: Create new navigation property to members for teams
+      description: A collection of membership records associated with the channel.
       operationId: teams.primaryChannel_CreateMembers
       parameters:
         - name: team-id
@@ -8404,6 +8517,7 @@ paths:
       tags:
         - teams.channel
       summary: Get members from teams
+      description: A collection of membership records associated with the channel.
       operationId: teams.primaryChannel_GetMembers
       parameters:
         - name: team-id
@@ -8461,6 +8575,7 @@ paths:
       tags:
         - teams.channel
       summary: Update the navigation property members in teams
+      description: A collection of membership records associated with the channel.
       operationId: teams.primaryChannel_UpdateMembers
       parameters:
         - name: team-id
@@ -8494,6 +8609,7 @@ paths:
       tags:
         - teams.channel
       summary: Delete navigation property members for teams
+      description: A collection of membership records associated with the channel.
       operationId: teams.primaryChannel_DeleteMembers
       parameters:
         - name: team-id
@@ -8526,6 +8642,7 @@ paths:
       tags:
         - teams.channel
       summary: Get messages from teams
+      description: A collection of all the messages in the channel. A navigation property. Nullable.
       operationId: teams.primaryChannel_ListMessages
       parameters:
         - name: team-id
@@ -8668,6 +8785,7 @@ paths:
       tags:
         - teams.channel
       summary: Create new navigation property to messages for teams
+      description: A collection of all the messages in the channel. A navigation property. Nullable.
       operationId: teams.primaryChannel_CreateMessages
       parameters:
         - name: team-id
@@ -8699,6 +8817,7 @@ paths:
       tags:
         - teams.channel
       summary: Get messages from teams
+      description: A collection of all the messages in the channel. A navigation property. Nullable.
       operationId: teams.primaryChannel_GetMessages
       parameters:
         - name: team-id
@@ -8788,6 +8907,7 @@ paths:
       tags:
         - teams.channel
       summary: Update the navigation property messages in teams
+      description: A collection of all the messages in the channel. A navigation property. Nullable.
       operationId: teams.primaryChannel_UpdateMessages
       parameters:
         - name: team-id
@@ -8821,6 +8941,7 @@ paths:
       tags:
         - teams.channel
       summary: Delete navigation property messages for teams
+      description: A collection of all the messages in the channel. A navigation property. Nullable.
       operationId: teams.primaryChannel_DeleteMessages
       parameters:
         - name: team-id
@@ -8853,6 +8974,7 @@ paths:
       tags:
         - teams.channel
       summary: Get hostedContents from teams
+      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: teams.primaryChannel.messages_ListHostedContents
       parameters:
         - name: team-id
@@ -8944,6 +9066,7 @@ paths:
       tags:
         - teams.channel
       summary: Create new navigation property to hostedContents for teams
+      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: teams.primaryChannel.messages_CreateHostedContents
       parameters:
         - name: team-id
@@ -8982,6 +9105,7 @@ paths:
       tags:
         - teams.channel
       summary: Get hostedContents from teams
+      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: teams.primaryChannel.messages_GetHostedContents
       parameters:
         - name: team-id
@@ -9045,6 +9169,7 @@ paths:
       tags:
         - teams.channel
       summary: Update the navigation property hostedContents in teams
+      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: teams.primaryChannel.messages_UpdateHostedContents
       parameters:
         - name: team-id
@@ -9085,6 +9210,7 @@ paths:
       tags:
         - teams.channel
       summary: Delete navigation property hostedContents for teams
+      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: teams.primaryChannel.messages_DeleteHostedContents
       parameters:
         - name: team-id
@@ -9124,6 +9250,7 @@ paths:
       tags:
         - teams.channel
       summary: Get replies from teams
+      description: Replies for a specified message.
       operationId: teams.primaryChannel.messages_ListReplies
       parameters:
         - name: team-id
@@ -9273,6 +9400,7 @@ paths:
       tags:
         - teams.channel
       summary: Create new navigation property to replies for teams
+      description: Replies for a specified message.
       operationId: teams.primaryChannel.messages_CreateReplies
       parameters:
         - name: team-id
@@ -9311,6 +9439,7 @@ paths:
       tags:
         - teams.channel
       summary: Get replies from teams
+      description: Replies for a specified message.
       operationId: teams.primaryChannel.messages_GetReplies
       parameters:
         - name: team-id
@@ -9409,6 +9538,7 @@ paths:
       tags:
         - teams.channel
       summary: Update the navigation property replies in teams
+      description: Replies for a specified message.
       operationId: teams.primaryChannel.messages_UpdateReplies
       parameters:
         - name: team-id
@@ -9449,6 +9579,7 @@ paths:
       tags:
         - teams.channel
       summary: Delete navigation property replies for teams
+      description: Replies for a specified message.
       operationId: teams.primaryChannel.messages_DeleteReplies
       parameters:
         - name: team-id
@@ -9567,6 +9698,7 @@ paths:
       tags:
         - teams.channel
       summary: Get tabs from teams
+      description: A collection of all the tabs in the channel. A navigation property.
       operationId: teams.primaryChannel_ListTabs
       parameters:
         - name: team-id
@@ -9656,6 +9788,7 @@ paths:
       tags:
         - teams.channel
       summary: Create new navigation property to tabs for teams
+      description: A collection of all the tabs in the channel. A navigation property.
       operationId: teams.primaryChannel_CreateTabs
       parameters:
         - name: team-id
@@ -9687,6 +9820,7 @@ paths:
       tags:
         - teams.channel
       summary: Get tabs from teams
+      description: A collection of all the tabs in the channel. A navigation property.
       operationId: teams.primaryChannel_GetTabs
       parameters:
         - name: team-id
@@ -9752,6 +9886,7 @@ paths:
       tags:
         - teams.channel
       summary: Update the navigation property tabs in teams
+      description: A collection of all the tabs in the channel. A navigation property.
       operationId: teams.primaryChannel_UpdateTabs
       parameters:
         - name: team-id
@@ -9785,6 +9920,7 @@ paths:
       tags:
         - teams.channel
       summary: Delete navigation property tabs for teams
+      description: A collection of all the tabs in the channel. A navigation property.
       operationId: teams.primaryChannel_DeleteTabs
       parameters:
         - name: team-id
@@ -9817,6 +9953,7 @@ paths:
       tags:
         - teams.channel
       summary: Get teamsApp from teams
+      description: The application that is linked to the tab.
       operationId: teams.primaryChannel.tabs_GetTeamsApp
       parameters:
         - name: team-id
@@ -9883,6 +10020,7 @@ paths:
       tags:
         - teams.channel
       summary: Get ref of teamsApp from teams
+      description: The application that is linked to the tab.
       operationId: teams.primaryChannel.tabs_GetRefTeamsApp
       parameters:
         - name: team-id
@@ -9919,6 +10057,7 @@ paths:
       tags:
         - teams.channel
       summary: Update the ref of navigation property teamsApp in teams
+      description: The application that is linked to the tab.
       operationId: teams.primaryChannel.tabs_SetRefTeamsApp
       parameters:
         - name: team-id
@@ -9954,6 +10093,7 @@ paths:
       tags:
         - teams.channel
       summary: Delete ref of navigation property teamsApp for teams
+      description: The application that is linked to the tab.
       operationId: teams.primaryChannel.tabs_DeleteRefTeamsApp
       parameters:
         - name: team-id
@@ -9986,6 +10126,7 @@ paths:
       tags:
         - teams.schedule
       summary: Get schedule from teams
+      description: The schedule of shifts for this team.
       operationId: teams_GetSchedule
       parameters:
         - name: team-id
@@ -10098,6 +10239,7 @@ paths:
       tags:
         - teams.schedule
       summary: Update the navigation property schedule in teams
+      description: The schedule of shifts for this team.
       operationId: teams_UpdateSchedule
       parameters:
         - name: team-id
@@ -10124,6 +10266,7 @@ paths:
       tags:
         - teams.schedule
       summary: Delete navigation property schedule for teams
+      description: The schedule of shifts for this team.
       operationId: teams_DeleteSchedule
       parameters:
         - name: team-id
@@ -11009,6 +11152,7 @@ paths:
       tags:
         - teams.schedule
       summary: Get schedulingGroups from teams
+      description: The logical grouping of users in the schedule (usually by role).
       operationId: teams.schedule_ListSchedulingGroups
       parameters:
         - name: team-id
@@ -11105,6 +11249,7 @@ paths:
       tags:
         - teams.schedule
       summary: Create new navigation property to schedulingGroups for teams
+      description: The logical grouping of users in the schedule (usually by role).
       operationId: teams.schedule_CreateSchedulingGroups
       parameters:
         - name: team-id
@@ -11136,6 +11281,7 @@ paths:
       tags:
         - teams.schedule
       summary: Get schedulingGroups from teams
+      description: The logical grouping of users in the schedule (usually by role).
       operationId: teams.schedule_GetSchedulingGroups
       parameters:
         - name: team-id
@@ -11196,6 +11342,7 @@ paths:
       tags:
         - teams.schedule
       summary: Update the navigation property schedulingGroups in teams
+      description: The logical grouping of users in the schedule (usually by role).
       operationId: teams.schedule_UpdateSchedulingGroups
       parameters:
         - name: team-id
@@ -11229,6 +11376,7 @@ paths:
       tags:
         - teams.schedule
       summary: Delete navigation property schedulingGroups for teams
+      description: The logical grouping of users in the schedule (usually by role).
       operationId: teams.schedule_DeleteSchedulingGroups
       parameters:
         - name: team-id
@@ -11261,6 +11409,7 @@ paths:
       tags:
         - teams.schedule
       summary: Get shifts from teams
+      description: The shifts in the schedule.
       operationId: teams.schedule_ListShifts
       parameters:
         - name: team-id
@@ -11360,6 +11509,7 @@ paths:
       tags:
         - teams.schedule
       summary: Create new navigation property to shifts for teams
+      description: The shifts in the schedule.
       operationId: teams.schedule_CreateShifts
       parameters:
         - name: team-id
@@ -11391,6 +11541,7 @@ paths:
       tags:
         - teams.schedule
       summary: Get shifts from teams
+      description: The shifts in the schedule.
       operationId: teams.schedule_GetShifts
       parameters:
         - name: team-id
@@ -11452,6 +11603,7 @@ paths:
       tags:
         - teams.schedule
       summary: Update the navigation property shifts in teams
+      description: The shifts in the schedule.
       operationId: teams.schedule_UpdateShifts
       parameters:
         - name: team-id
@@ -11485,6 +11637,7 @@ paths:
       tags:
         - teams.schedule
       summary: Delete navigation property shifts for teams
+      description: The shifts in the schedule.
       operationId: teams.schedule_DeleteShifts
       parameters:
         - name: team-id
@@ -11809,6 +11962,7 @@ paths:
       tags:
         - teams.schedule
       summary: Get timeOffReasons from teams
+      description: The set of reasons for a time off in the schedule.
       operationId: teams.schedule_ListTimeOffReasons
       parameters:
         - name: team-id
@@ -11905,6 +12059,7 @@ paths:
       tags:
         - teams.schedule
       summary: Create new navigation property to timeOffReasons for teams
+      description: The set of reasons for a time off in the schedule.
       operationId: teams.schedule_CreateTimeOffReasons
       parameters:
         - name: team-id
@@ -11936,6 +12091,7 @@ paths:
       tags:
         - teams.schedule
       summary: Get timeOffReasons from teams
+      description: The set of reasons for a time off in the schedule.
       operationId: teams.schedule_GetTimeOffReasons
       parameters:
         - name: team-id
@@ -11996,6 +12152,7 @@ paths:
       tags:
         - teams.schedule
       summary: Update the navigation property timeOffReasons in teams
+      description: The set of reasons for a time off in the schedule.
       operationId: teams.schedule_UpdateTimeOffReasons
       parameters:
         - name: team-id
@@ -12029,6 +12186,7 @@ paths:
       tags:
         - teams.schedule
       summary: Delete navigation property timeOffReasons for teams
+      description: The set of reasons for a time off in the schedule.
       operationId: teams.schedule_DeleteTimeOffReasons
       parameters:
         - name: team-id
@@ -12345,6 +12503,7 @@ paths:
       tags:
         - teams.schedule
       summary: Get timesOff from teams
+      description: The instances of times off in the schedule.
       operationId: teams.schedule_ListTimesOff
       parameters:
         - name: team-id
@@ -12441,6 +12600,7 @@ paths:
       tags:
         - teams.schedule
       summary: Create new navigation property to timesOff for teams
+      description: The instances of times off in the schedule.
       operationId: teams.schedule_CreateTimesOff
       parameters:
         - name: team-id
@@ -12472,6 +12632,7 @@ paths:
       tags:
         - teams.schedule
       summary: Get timesOff from teams
+      description: The instances of times off in the schedule.
       operationId: teams.schedule_GetTimesOff
       parameters:
         - name: team-id
@@ -12532,6 +12693,7 @@ paths:
       tags:
         - teams.schedule
       summary: Update the navigation property timesOff in teams
+      description: The instances of times off in the schedule.
       operationId: teams.schedule_UpdateTimesOff
       parameters:
         - name: team-id
@@ -12565,6 +12727,7 @@ paths:
       tags:
         - teams.schedule
       summary: Delete navigation property timesOff for teams
+      description: The instances of times off in the schedule.
       operationId: teams.schedule_DeleteTimesOff
       parameters:
         - name: team-id
@@ -12597,6 +12760,7 @@ paths:
       tags:
         - teams.teamsTemplate
       summary: Get template from teams
+      description: The template this team was created from. See available templates.
       operationId: teams_GetTemplate
       parameters:
         - name: team-id
@@ -12645,6 +12809,7 @@ paths:
       tags:
         - teams.teamsTemplate
       summary: Get ref of template from teams
+      description: The template this team was created from. See available templates.
       operationId: teams_GetRefTemplate
       parameters:
         - name: team-id
@@ -12668,6 +12833,7 @@ paths:
       tags:
         - teams.teamsTemplate
       summary: Update the ref of navigation property template in teams
+      description: The template this team was created from. See available templates.
       operationId: teams_SetRefTemplate
       parameters:
         - name: team-id
@@ -12696,6 +12862,7 @@ paths:
       tags:
         - teams.teamsTemplate
       summary: Delete ref of navigation property template for teams
+      description: The template this team was created from. See available templates.
       operationId: teams_DeleteRefTemplate
       parameters:
         - name: team-id
@@ -13312,6 +13479,7 @@ paths:
       tags:
         - users.team
       summary: Get joinedTeams from users
+      description: The Microsoft Teams teams that the user is a member of. Read-only. Nullable.
       operationId: users_ListJoinedTeams
       parameters:
         - name: user-id
@@ -13445,6 +13613,7 @@ paths:
       tags:
         - users.team
       summary: Create new navigation property to joinedTeams for users
+      description: The Microsoft Teams teams that the user is a member of. Read-only. Nullable.
       operationId: users_CreateJoinedTeams
       parameters:
         - name: user-id
@@ -13476,6 +13645,7 @@ paths:
       tags:
         - users.team
       summary: Get joinedTeams from users
+      description: The Microsoft Teams teams that the user is a member of. Read-only. Nullable.
       operationId: users_GetJoinedTeams
       parameters:
         - name: user-id
@@ -13600,6 +13770,7 @@ paths:
       tags:
         - users.team
       summary: Update the navigation property joinedTeams in users
+      description: The Microsoft Teams teams that the user is a member of. Read-only. Nullable.
       operationId: users_UpdateJoinedTeams
       parameters:
         - name: user-id
@@ -13633,6 +13804,7 @@ paths:
       tags:
         - users.team
       summary: Delete navigation property joinedTeams for users
+      description: The Microsoft Teams teams that the user is a member of. Read-only. Nullable.
       operationId: users_DeleteJoinedTeams
       parameters:
         - name: user-id
@@ -13665,6 +13837,7 @@ paths:
       tags:
         - users.userTeamwork
       summary: Get teamwork from users
+      description: A container for Microsoft Teams features available for the user. Read-only. Nullable.
       operationId: users_GetTeamwork
       parameters:
         - name: user-id
@@ -13719,6 +13892,7 @@ paths:
       tags:
         - users.userTeamwork
       summary: Update the navigation property teamwork in users
+      description: A container for Microsoft Teams features available for the user. Read-only. Nullable.
       operationId: users_UpdateTeamwork
       parameters:
         - name: user-id
@@ -13745,6 +13919,7 @@ paths:
       tags:
         - users.userTeamwork
       summary: Delete navigation property teamwork for users
+      description: A container for Microsoft Teams features available for the user. Read-only. Nullable.
       operationId: users_DeleteTeamwork
       parameters:
         - name: user-id
@@ -13770,6 +13945,7 @@ paths:
       tags:
         - users.userTeamwork
       summary: Get installedApps from users
+      description: The apps installed in the personal scope of this user.
       operationId: users.teamwork_ListInstalledApps
       parameters:
         - name: user-id
@@ -13854,6 +14030,7 @@ paths:
       tags:
         - users.userTeamwork
       summary: Create new navigation property to installedApps for users
+      description: The apps installed in the personal scope of this user.
       operationId: users.teamwork_CreateInstalledApps
       parameters:
         - name: user-id
@@ -13885,6 +14062,7 @@ paths:
       tags:
         - users.userTeamwork
       summary: Get installedApps from users
+      description: The apps installed in the personal scope of this user.
       operationId: users.teamwork_GetInstalledApps
       parameters:
         - name: user-id
@@ -13961,6 +14139,7 @@ paths:
       tags:
         - users.userTeamwork
       summary: Update the navigation property installedApps in users
+      description: The apps installed in the personal scope of this user.
       operationId: users.teamwork_UpdateInstalledApps
       parameters:
         - name: user-id
@@ -13994,6 +14173,7 @@ paths:
       tags:
         - users.userTeamwork
       summary: Delete navigation property installedApps for users
+      description: The apps installed in the personal scope of this user.
       operationId: users.teamwork_DeleteInstalledApps
       parameters:
         - name: user-id
@@ -14026,6 +14206,7 @@ paths:
       tags:
         - users.userTeamwork
       summary: Get chat from users
+      description: The chat between the user and Teams app.
       operationId: users.teamwork.installedApps_GetChat
       parameters:
         - name: user-id
@@ -14114,6 +14295,7 @@ paths:
       tags:
         - users.userTeamwork
       summary: Get ref of chat from users
+      description: The chat between the user and Teams app.
       operationId: users.teamwork.installedApps_GetRefChat
       parameters:
         - name: user-id
@@ -14165,6 +14347,7 @@ paths:
       tags:
         - users.userTeamwork
       summary: Update the ref of navigation property chat in users
+      description: The chat between the user and Teams app.
       operationId: users.teamwork.installedApps_SetRefChat
       parameters:
         - name: user-id
@@ -14200,6 +14383,7 @@ paths:
       tags:
         - users.userTeamwork
       summary: Delete ref of navigation property chat for users
+      description: The chat between the user and Teams app.
       operationId: users.teamwork.installedApps_DeleteRefChat
       parameters:
         - name: user-id
@@ -14467,7 +14651,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
-              description: 'Content in a message hosted by Microsoft Teams e.g., images, code snippets etc.'
+              description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
             replies:
               type: array
               items:
@@ -14566,7 +14750,7 @@ components:
               nullable: true
             description:
               type: string
-              description: An optional description for the team.
+              description: 'An optional description for the team. Maximum length: 1024 characters.'
               nullable: true
             displayName:
               type: string
@@ -17620,7 +17804,7 @@ components:
               description: State of license assignments for this user. Returned only on $select. Read-only.
             mail:
               type: string
-              description: 'The SMTP address for the user, for example, ''jeff@contoso.onmicrosoft.com''.NOTE: While this property can contain accent characters, using them can cause access issues with other Microsoft applications for the user.Returned by default. Supports $filter and endsWith.'
+              description: 'The SMTP address for the user, for example, ''jeff@contoso.onmicrosoft.com''. Changes to this property will also update the user''s proxyAddresses collection to include the value as an SMTP address. While this property can contain accent characters, using them can cause access issues with other Microsoft applications for the user. Supports $filter and endsWith.'
               nullable: true
             mailNickname:
               type: string
@@ -20262,6 +20446,10 @@ components:
               type: string
               description: Enrollment time of the device. This property is read-only.
               format: date-time
+            ethernetMacAddress:
+              type: string
+              description: Ethernet MAC. This property is read-only.
+              nullable: true
             exchangeAccessState:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementExchangeAccessState'
             exchangeAccessStateReason:
@@ -20275,6 +20463,10 @@ components:
               type: integer
               description: Free Storage in Bytes. This property is read-only.
               format: int64
+            iccid:
+              type: string
+              description: 'Integrated Circuit Card Identifier, it is A SIM card''s unique identification number. This property is read-only.'
+              nullable: true
             imei:
               type: string
               description: IMEI. This property is read-only.
@@ -20314,6 +20506,10 @@ components:
               type: string
               description: Model of the device. This property is read-only.
               nullable: true
+            notes:
+              type: string
+              description: Notes on the device created by IT Admin
+              nullable: true
             operatingSystem:
               type: string
               description: 'Operating system of the device. Windows, iOS, etc. This property is read-only.'
@@ -20328,6 +20524,10 @@ components:
               type: string
               description: Phone number of the device. This property is read-only.
               nullable: true
+            physicalMemoryInBytes:
+              type: integer
+              description: Total Memory in Bytes. This property is read-only.
+              format: int64
             remoteAssistanceSessionErrorDetails:
               type: string
               description: An error string that identifies issues when creating Remote Assistance session objects. This property is read-only.
@@ -20348,6 +20548,10 @@ components:
               type: integer
               description: Total Storage in Bytes. This property is read-only.
               format: int64
+            udid:
+              type: string
+              description: Unique Device Identifier for iOS and macOS devices. This property is read-only.
+              nullable: true
             userDisplayName:
               type: string
               description: User display name. This property is read-only.
@@ -22030,6 +22234,9 @@ components:
         - windowsAutoEnrollment
         - windowsBulkAzureDomainJoin
         - windowsCoManagement
+        - windowsAzureADJoinUsingDeviceAuth
+        - appleUserEnrollment
+        - appleUserEnrollmentWithServiceAccount
       type: string
     microsoft.graph.deviceHealthAttestationState:
       title: deviceHealthAttestationState
