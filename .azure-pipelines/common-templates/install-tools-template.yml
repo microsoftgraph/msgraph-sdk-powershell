@@ -3,22 +3,22 @@
 
 steps:
     - task: UseDotNet@2
-      displayName: 'Use .NET Core SDK 2.x'
+      displayName: 'Use .NET Core SDK 2 LTS'
       inputs:
         debugMode: false
         version: 2.1.28
 
     - task: UseDotNet@2
-      displayName: 'Use .NET Core SDK 3.x'
+      displayName: 'Use .NET Core SDK 3 LTS'
       inputs:
         debugMode: false
         version: 3.1.16
 
     - task: UseDotNet@2
-      displayName: 'Use .NET Core SDK 5.x'
+      displayName: 'Use .NET Core SDK 5 Current'
       inputs:
         debugMode: false
-        version: 5.0.7
+        version: 5.x
 
     - task: NuGetToolInstaller@1
       displayName: 'Install Nuget 5.7'
