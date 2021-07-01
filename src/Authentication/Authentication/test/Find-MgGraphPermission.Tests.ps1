@@ -8,15 +8,7 @@ Describe "the Find-MgGraphPermission Command" {
 
     Context "when executing the command" {
         It 'Executes successfully with no parameters' {
-            Connect-MgGraph
-            { Find-MgGraphPermission | Out-Null } | Should -Throw
-        }
-
-    }
-
-    Context "does not have access to MgGraph" {
-        It 'Executes successfully with no parameters' {
-            { Find-MgGraphPermission mail| Out-Null } | Should -Throw
+            { Find-MgGraphPermission | Out-Null } | Should -Not -Throw
         }
 
     }

@@ -10,12 +10,12 @@ function GetPermissionsData {
     if ($null -eq $script:permissionsMsGraphServicePrincipal){
         $script:permissionsMsGraphServicePrincipal = try {
 
-            Write-Host "Getting data from web service"
+            # Write-Host "Getting data from web service"
             Invoke-MgGraphRequest -method GET 'https://graph.microsoft.com/v1.0/servicePrincipals?filter=appId eq ''00000003-0000-0000-c000-000000000000''' | select-object -expandproperty value
 
         } catch {
 
-            Write-Host "Getting data from local file"
+            # Write-Host "Getting data from local file"
             Get-Content $PSScriptRoot/datasample.json | Out-String | ConvertFrom-Json
         
         }
@@ -33,7 +33,7 @@ function GetPermissionsData {
 }
 
 # Search based on user input
-function GetOauthData {
+function Permissions_GetOauthData {
 
     $permissions = GetPermissionsData
     $msOauth = $permissions.oauth2
@@ -64,7 +64,7 @@ function GetOauthData {
     }
 }
 
-function GetAppRolesData {
+function Permissions_GetAppRolesData {
     
     $permissions = GetPermissionsData
     $msAppRoles = $permissions.appRoles 
