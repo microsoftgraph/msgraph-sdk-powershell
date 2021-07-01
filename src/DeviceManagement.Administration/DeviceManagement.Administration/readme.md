@@ -38,6 +38,11 @@ subject-prefix: ''
 
 ``` yaml
 directive:
+# Pluralize
+  - where:
+      subject: (.*)OnPremisConnection(.*)
+    set:
+      subject: $1OnPremisesConnection$2
 # Remove cmdlets.
   - where:
       verb: New
@@ -46,6 +51,14 @@ directive:
   - where:
       verb: Remove
       subject: ^DeviceManagementGroupPolicyUploadedDefinitionFile$
+    remove: true
+  - where:
+      verb: New|Remove|Update
+      subject: ^DeviceManagementVirtualEndpoint(AuditEvent|CloudPC|AuditEventAuditActivityType|DeviceImageSourceImage)$
+    remove: true
+  - where:
+      verb: New|Remove|Update
+      subject: ^DeviceManagementVirtualEndpoint$
     remove: true
 ```
 ### Versioning
