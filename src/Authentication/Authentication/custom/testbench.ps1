@@ -1,1 +1,0 @@
-$test = Get-Content $PSScriptRoot/common/datasample.json | Out-String | ConvertFrom-Json
