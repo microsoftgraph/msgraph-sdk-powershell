@@ -27,6 +27,12 @@ if ($ModulesToGenerate.Count -eq 0) {
 
 $ModulePrefix = "Microsoft.Graph"
 Import-Module (Join-Path $PSScriptRoot "..\src\Authentication\Authentication\artifacts\Microsoft.Graph.Authentication.psd1") -Force -Scope Global
+
+if ($ModulesToGenerate.Count -eq 0) {
+    [HashTable] $ModuleMapping = Get-Content $ModuleMappingConfigPath | ConvertFrom-Json -AsHashTable
+    $ModulesToGenerate = $ModuleMapping.Keys
+}
+
 $ModulesToGenerate | ForEach-Object {
     $ModuleName = $_
     $modulePath = Join-Path $PSScriptRoot "..\src\$ModuleName\$ModuleName\$ModulePrefix.$ModuleName.psd1"

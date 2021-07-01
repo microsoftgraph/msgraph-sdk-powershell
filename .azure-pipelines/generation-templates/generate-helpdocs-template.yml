@@ -5,6 +5,9 @@ parameters:
   - name: DOCSBRANCH
     type: string
     default: "DocsGeneration"
+  - name: ModulesToGenerate
+    type: string
+    default: ""
   - name: BUILDAGENT
     default: MsGraphBuildAgentsWindows
     displayName: Build Agent
@@ -38,7 +41,8 @@ steps:
     targetType: 'inline'
     pwsh: true
     script: |  
-      . $(System.DefaultWorkingDirectory)/tools/GenerateHelp.ps1
+      $Modules = "${{ parameters.ModulesToGenerate }}" -split " "
+      . $(System.DefaultWorkingDirectory)/tools/GenerateHelp.ps1 -ModulesToGenerate $Modules
 
 - task: Bash@3
   displayName: Commit Generated Help Docs files
