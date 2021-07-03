@@ -41,7 +41,7 @@ steps:
     targetType: 'inline'
     pwsh: true
     script: |
-       $Modules = "$(ModulesToGenerate)" -split " "
+       $Modules = "${{ parameters.ModulesToGenerate }}" -split " "
        . $(System.DefaultWorkingDirectory)/tools/GenerateHelp.ps1 -ModulesToGenerate $Modules
 
 - task: Bash@3
