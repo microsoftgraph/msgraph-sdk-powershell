@@ -147,7 +147,6 @@ jobs:
       - template: ./generation-templates/generate-helpdocs-template.yml
         parameters:
             DOCSBRANCH: $(DocsBranch)
-            ModulesToGenerate: $(ModulesToGenerate)
 
       - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
         displayName: ESRP DLL strong name (Service Modules)
