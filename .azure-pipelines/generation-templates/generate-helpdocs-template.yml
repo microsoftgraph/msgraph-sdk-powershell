@@ -40,9 +40,9 @@ steps:
   inputs:
     targetType: 'inline'
     pwsh: true
-    script: |  
+    script: |
        $Modules = "$(ModulesToGenerate)" -split " "
-      . $(System.DefaultWorkingDirectory)/tools/GenerateHelp.ps1 -ModulesToGenerate $Modules
+       . $(System.DefaultWorkingDirectory)/tools/GenerateHelp.ps1 -ModulesToGenerate $Modules
 
 - task: Bash@3
   displayName: Commit Generated Help Docs files
