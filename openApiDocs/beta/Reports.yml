@@ -91,6 +91,7 @@ paths:
       tags:
         - auditLogs.directoryAudit
       summary: Get directoryAudits from auditLogs
+      description: Read-only. Nullable.
       operationId: auditLogs_ListDirectoryAudits
       parameters:
         - $ref: '#/components/parameters/top'
@@ -195,6 +196,7 @@ paths:
       tags:
         - auditLogs.directoryAudit
       summary: Create new navigation property to directoryAudits for auditLogs
+      description: Read-only. Nullable.
       operationId: auditLogs_CreateDirectoryAudits
       requestBody:
         description: New navigation property
@@ -218,6 +220,7 @@ paths:
       tags:
         - auditLogs.directoryAudit
       summary: Get directoryAudits from auditLogs
+      description: Read-only. Nullable.
       operationId: auditLogs_GetDirectoryAudits
       parameters:
         - name: directoryAudit-id
@@ -276,6 +279,7 @@ paths:
       tags:
         - auditLogs.directoryAudit
       summary: Update the navigation property directoryAudits in auditLogs
+      description: Read-only. Nullable.
       operationId: auditLogs_UpdateDirectoryAudits
       parameters:
         - name: directoryAudit-id
@@ -302,6 +306,7 @@ paths:
       tags:
         - auditLogs.directoryAudit
       summary: Delete navigation property directoryAudits for auditLogs
+      description: Read-only. Nullable.
       operationId: auditLogs_DeleteDirectoryAudits
       parameters:
         - name: directoryAudit-id
@@ -1235,6 +1240,7 @@ paths:
       tags:
         - auditLogs.signIn
       summary: Get signIns from auditLogs
+      description: Read-only. Nullable.
       operationId: auditLogs_ListSignIns
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1444,6 +1450,7 @@ paths:
       tags:
         - auditLogs.signIn
       summary: Create new navigation property to signIns for auditLogs
+      description: Read-only. Nullable.
       operationId: auditLogs_CreateSignIns
       requestBody:
         description: New navigation property
@@ -1467,6 +1474,7 @@ paths:
       tags:
         - auditLogs.signIn
       summary: Get signIns from auditLogs
+      description: Read-only. Nullable.
       operationId: auditLogs_GetSignIns
       parameters:
         - name: signIn-id
@@ -1560,6 +1568,7 @@ paths:
       tags:
         - auditLogs.signIn
       summary: Update the navigation property signIns in auditLogs
+      description: Read-only. Nullable.
       operationId: auditLogs_UpdateSignIns
       parameters:
         - name: signIn-id
@@ -1586,6 +1595,7 @@ paths:
       tags:
         - auditLogs.signIn
       summary: Delete navigation property signIns for auditLogs
+      description: Read-only. Nullable.
       operationId: auditLogs_DeleteSignIns
       parameters:
         - name: signIn-id
@@ -1611,6 +1621,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Get reports from deviceManagement
+      description: Reports singleton
       operationId: deviceManagement_GetReports
       parameters:
         - name: $select
@@ -1664,6 +1675,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Update the navigation property reports in deviceManagement
+      description: Reports singleton
       operationId: deviceManagement_UpdateReports
       requestBody:
         description: New navigation property values
@@ -1682,6 +1694,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Delete navigation property reports for deviceManagement
+      description: Reports singleton
       operationId: deviceManagement_DeleteReports
       parameters:
         - name: If-Match
@@ -1700,6 +1713,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Get cachedReportConfigurations from deviceManagement
+      description: Entity representing the configuration of a cached report
       operationId: deviceManagement.reports_ListCachedReportConfigurations
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1795,6 +1809,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Create new navigation property to cachedReportConfigurations for deviceManagement
+      description: Entity representing the configuration of a cached report
       operationId: deviceManagement.reports_CreateCachedReportConfigurations
       requestBody:
         description: New navigation property
@@ -1818,6 +1833,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Get cachedReportConfigurations from deviceManagement
+      description: Entity representing the configuration of a cached report
       operationId: deviceManagement.reports_GetCachedReportConfigurations
       parameters:
         - name: deviceManagementCachedReportConfiguration-id
@@ -1873,6 +1889,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Update the navigation property cachedReportConfigurations in deviceManagement
+      description: Entity representing the configuration of a cached report
       operationId: deviceManagement.reports_UpdateCachedReportConfigurations
       parameters:
         - name: deviceManagementCachedReportConfiguration-id
@@ -1899,6 +1916,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Delete navigation property cachedReportConfigurations for deviceManagement
+      description: Entity representing the configuration of a cached report
       operationId: deviceManagement.reports_DeleteCachedReportConfigurations
       parameters:
         - name: deviceManagementCachedReportConfiguration-id
@@ -1924,6 +1942,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Get exportJobs from deviceManagement
+      description: Entity representing a job to export a report
       operationId: deviceManagement.reports_ListExportJobs
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2025,6 +2044,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Create new navigation property to exportJobs for deviceManagement
+      description: Entity representing a job to export a report
       operationId: deviceManagement.reports_CreateExportJobs
       requestBody:
         description: New navigation property
@@ -2048,6 +2068,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Get exportJobs from deviceManagement
+      description: Entity representing a job to export a report
       operationId: deviceManagement.reports_GetExportJobs
       parameters:
         - name: deviceManagementExportJob-id
@@ -2105,6 +2126,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Update the navigation property exportJobs in deviceManagement
+      description: Entity representing a job to export a report
       operationId: deviceManagement.reports_UpdateExportJobs
       parameters:
         - name: deviceManagementExportJob-id
@@ -2131,6 +2153,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Delete navigation property exportJobs for deviceManagement
+      description: Entity representing a job to export a report
       operationId: deviceManagement.reports_DeleteExportJobs
       parameters:
         - name: deviceManagementExportJob-id
@@ -2156,6 +2179,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Get reportSchedules from deviceManagement
+      description: Entity representing a schedule for which reports are delivered
       operationId: deviceManagement.reports_ListReportSchedules
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2263,6 +2287,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Create new navigation property to reportSchedules for deviceManagement
+      description: Entity representing a schedule for which reports are delivered
       operationId: deviceManagement.reports_CreateReportSchedules
       requestBody:
         description: New navigation property
@@ -2286,6 +2311,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Get reportSchedules from deviceManagement
+      description: Entity representing a schedule for which reports are delivered
       operationId: deviceManagement.reports_GetReportSchedules
       parameters:
         - name: deviceManagementReportSchedule-id
@@ -2345,6 +2371,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Update the navigation property reportSchedules in deviceManagement
+      description: Entity representing a schedule for which reports are delivered
       operationId: deviceManagement.reports_UpdateReportSchedules
       parameters:
         - name: deviceManagementReportSchedule-id
@@ -2371,6 +2398,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Delete navigation property reportSchedules for deviceManagement
+      description: Entity representing a schedule for which reports are delivered
       operationId: deviceManagement.reports_DeleteReportSchedules
       parameters:
         - name: deviceManagementReportSchedule-id
@@ -3950,6 +3978,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function deviceConfigurationDeviceActivity
+      description: Metadata for the device configuration device activity report
       operationId: reports_deviceConfigurationDeviceActivity
       responses:
         '200':
@@ -3966,6 +3995,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function deviceConfigurationUserActivity
+      description: Metadata for the device configuration user activity report
       operationId: reports_deviceConfigurationUserActivity
       responses:
         '200':
@@ -6629,6 +6659,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function managedDeviceEnrollmentAbandonmentDetails
+      description: Metadata for Enrollment abandonment details report
       operationId: reports_managedDeviceEnrollmentAbandonmentDetails
       parameters:
         - name: skip
@@ -6680,6 +6711,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function managedDeviceEnrollmentAbandonmentSummary
+      description: Metadata for Enrollment abandonment summary report
       operationId: reports_managedDeviceEnrollmentAbandonmentSummary
       parameters:
         - name: skip
@@ -6798,6 +6830,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function managedDeviceEnrollmentFailureTrends
+      description: Metadata for the enrollment failure trends report
       operationId: reports_managedDeviceEnrollmentFailureTrends
       responses:
         '200':
@@ -12092,11 +12125,11 @@ components:
       properties:
         key:
           type: string
-          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object
@@ -12801,10 +12834,10 @@ components:
       properties:
         name:
           type: string
-          description: Name for this key-value pair
+          description: 'Name for this key-value pair. Possible names are: AdditionalWSFedEndpointCheckResult,  AllowedAuthenticationClassReferencesCheckResult, AlwaysRequireAuthenticationCheckResult,   AutoUpdateEnabledCheckResult, ClaimsProviderNameCheckResult, EncryptClaimsCheckResult,  EncryptedNameIdRequiredCheckResult, MonitoringEnabledCheckResult,NotBeforeSkewCheckResult,  RequestMFAFromClaimsProvidersCheckResult, SignedSamlRequestsRequiredCheckResult, AdditionalAuthenticationRulesCheckResult, TokenLifetimeCheckResult,  DelegationAuthorizationRulesCheckResult, IssuanceAuthorizationRulesCheckResult, IssuanceTransformRulesCheckResult.'
         value:
           type: string
-          description: Value for this key-value pair
+          description: 'Value for this key-value pair. Possible result values are 0 (when the validation check passed), 1 (when the validation check failed), or 2 (when the validation check is a warning).'
           nullable: true
       additionalProperties:
         type: object

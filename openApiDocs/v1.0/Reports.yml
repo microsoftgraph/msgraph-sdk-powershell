@@ -87,6 +87,7 @@ paths:
       tags:
         - auditLogs.directoryAudit
       summary: Get directoryAudits from auditLogs
+      description: Read-only. Nullable.
       operationId: auditLogs_ListDirectoryAudits
       parameters:
         - $ref: '#/components/parameters/top'
@@ -191,6 +192,7 @@ paths:
       tags:
         - auditLogs.directoryAudit
       summary: Create new navigation property to directoryAudits for auditLogs
+      description: Read-only. Nullable.
       operationId: auditLogs_CreateDirectoryAudits
       requestBody:
         description: New navigation property
@@ -214,6 +216,7 @@ paths:
       tags:
         - auditLogs.directoryAudit
       summary: Get directoryAudits from auditLogs
+      description: Read-only. Nullable.
       operationId: auditLogs_GetDirectoryAudits
       parameters:
         - name: directoryAudit-id
@@ -272,6 +275,7 @@ paths:
       tags:
         - auditLogs.directoryAudit
       summary: Update the navigation property directoryAudits in auditLogs
+      description: Read-only. Nullable.
       operationId: auditLogs_UpdateDirectoryAudits
       parameters:
         - name: directoryAudit-id
@@ -298,6 +302,7 @@ paths:
       tags:
         - auditLogs.directoryAudit
       summary: Delete navigation property directoryAudits for auditLogs
+      description: Read-only. Nullable.
       operationId: auditLogs_DeleteDirectoryAudits
       parameters:
         - name: directoryAudit-id
@@ -867,6 +872,7 @@ paths:
       tags:
         - auditLogs.signIn
       summary: Get signIns from auditLogs
+      description: Read-only. Nullable.
       operationId: auditLogs_ListSignIns
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1007,6 +1013,7 @@ paths:
       tags:
         - auditLogs.signIn
       summary: Create new navigation property to signIns for auditLogs
+      description: Read-only. Nullable.
       operationId: auditLogs_CreateSignIns
       requestBody:
         description: New navigation property
@@ -1030,6 +1037,7 @@ paths:
       tags:
         - auditLogs.signIn
       summary: Get signIns from auditLogs
+      description: Read-only. Nullable.
       operationId: auditLogs_GetSignIns
       parameters:
         - name: signIn-id
@@ -1100,6 +1108,7 @@ paths:
       tags:
         - auditLogs.signIn
       summary: Update the navigation property signIns in auditLogs
+      description: Read-only. Nullable.
       operationId: auditLogs_UpdateSignIns
       parameters:
         - name: signIn-id
@@ -1126,6 +1135,7 @@ paths:
       tags:
         - auditLogs.signIn
       summary: Delete navigation property signIns for auditLogs
+      description: Read-only. Nullable.
       operationId: auditLogs_DeleteSignIns
       parameters:
         - name: signIn-id
@@ -1651,6 +1661,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function deviceConfigurationDeviceActivity
+      description: Metadata for the device configuration device activity report
       operationId: reports_deviceConfigurationDeviceActivity
       responses:
         '200':
@@ -1667,6 +1678,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function deviceConfigurationUserActivity
+      description: Metadata for the device configuration user activity report
       operationId: reports_deviceConfigurationUserActivity
       responses:
         '200':

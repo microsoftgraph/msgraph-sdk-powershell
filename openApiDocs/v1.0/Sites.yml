@@ -11,6 +11,7 @@ paths:
       tags:
         - groups.site
       summary: Get sites from groups
+      description: The list of SharePoint sites in this group. Access the default site with /sites/root.
       operationId: groups_ListSites
       parameters:
         - name: group-id
@@ -155,6 +156,7 @@ paths:
       tags:
         - groups.site
       summary: Create new navigation property to sites for groups
+      description: The list of SharePoint sites in this group. Access the default site with /sites/root.
       operationId: groups_CreateSites
       parameters:
         - name: group-id
@@ -186,6 +188,7 @@ paths:
       tags:
         - groups.site
       summary: Get sites from groups
+      description: The list of SharePoint sites in this group. Access the default site with /sites/root.
       operationId: groups_GetSites
       parameters:
         - name: group-id
@@ -339,6 +342,7 @@ paths:
       tags:
         - groups.site
       summary: Update the navigation property sites in groups
+      description: The list of SharePoint sites in this group. Access the default site with /sites/root.
       operationId: groups_UpdateSites
       parameters:
         - name: group-id
@@ -372,6 +376,7 @@ paths:
       tags:
         - groups.site
       summary: Delete navigation property sites for groups
+      description: The list of SharePoint sites in this group. Access the default site with /sites/root.
       operationId: groups_DeleteSites
       parameters:
         - name: group-id
@@ -749,6 +754,7 @@ paths:
       tags:
         - sites.itemAnalytics
       summary: Get analytics from sites
+      description: Analytics about the view activities that took place in this site.
       operationId: sites_GetAnalytics
       parameters:
         - name: site-id
@@ -816,6 +822,7 @@ paths:
       tags:
         - sites.itemAnalytics
       summary: Get ref of analytics from sites
+      description: Analytics about the view activities that took place in this site.
       operationId: sites_GetRefAnalytics
       parameters:
         - name: site-id
@@ -852,6 +859,7 @@ paths:
       tags:
         - sites.itemAnalytics
       summary: Update the ref of navigation property analytics in sites
+      description: Analytics about the view activities that took place in this site.
       operationId: sites_SetRefAnalytics
       parameters:
         - name: site-id
@@ -880,6 +888,7 @@ paths:
       tags:
         - sites.itemAnalytics
       summary: Delete ref of navigation property analytics for sites
+      description: Analytics about the view activities that took place in this site.
       operationId: sites_DeleteRefAnalytics
       parameters:
         - name: site-id
@@ -905,6 +914,7 @@ paths:
       tags:
         - sites.columnDefinition
       summary: Get columns from sites
+      description: The collection of column definitions reusable across lists under this site.
       operationId: sites_ListColumns
       parameters:
         - name: site-id
@@ -1043,6 +1053,7 @@ paths:
       tags:
         - sites.columnDefinition
       summary: Create new navigation property to columns for sites
+      description: The collection of column definitions reusable across lists under this site.
       operationId: sites_CreateColumns
       parameters:
         - name: site-id
@@ -1074,6 +1085,7 @@ paths:
       tags:
         - sites.columnDefinition
       summary: Get columns from sites
+      description: The collection of column definitions reusable across lists under this site.
       operationId: sites_GetColumns
       parameters:
         - name: site-id
@@ -1148,6 +1160,7 @@ paths:
       tags:
         - sites.columnDefinition
       summary: Update the navigation property columns in sites
+      description: The collection of column definitions reusable across lists under this site.
       operationId: sites_UpdateColumns
       parameters:
         - name: site-id
@@ -1181,6 +1194,7 @@ paths:
       tags:
         - sites.columnDefinition
       summary: Delete navigation property columns for sites
+      description: The collection of column definitions reusable across lists under this site.
       operationId: sites_DeleteColumns
       parameters:
         - name: site-id
@@ -1213,6 +1227,7 @@ paths:
       tags:
         - sites.contentType
       summary: Get contentTypes from sites
+      description: The collection of content types defined for this site.
       operationId: sites_ListContentTypes
       parameters:
         - name: site-id
@@ -1320,6 +1335,7 @@ paths:
       tags:
         - sites.contentType
       summary: Create new navigation property to contentTypes for sites
+      description: The collection of content types defined for this site.
       operationId: sites_CreateContentTypes
       parameters:
         - name: site-id
@@ -1351,6 +1367,7 @@ paths:
       tags:
         - sites.contentType
       summary: Get contentTypes from sites
+      description: The collection of content types defined for this site.
       operationId: sites_GetContentTypes
       parameters:
         - name: site-id
@@ -1422,6 +1439,7 @@ paths:
       tags:
         - sites.contentType
       summary: Update the navigation property contentTypes in sites
+      description: The collection of content types defined for this site.
       operationId: sites_UpdateContentTypes
       parameters:
         - name: site-id
@@ -1455,6 +1473,7 @@ paths:
       tags:
         - sites.contentType
       summary: Delete navigation property contentTypes for sites
+      description: The collection of content types defined for this site.
       operationId: sites_DeleteContentTypes
       parameters:
         - name: site-id
@@ -1487,6 +1506,7 @@ paths:
       tags:
         - sites.contentType
       summary: Get columnLinks from sites
+      description: The collection of columns that are required by this content type
       operationId: sites.contentTypes_ListColumnLinks
       parameters:
         - name: site-id
@@ -1575,6 +1595,7 @@ paths:
       tags:
         - sites.contentType
       summary: Create new navigation property to columnLinks for sites
+      description: The collection of columns that are required by this content type
       operationId: sites.contentTypes_CreateColumnLinks
       parameters:
         - name: site-id
@@ -1613,6 +1634,7 @@ paths:
       tags:
         - sites.contentType
       summary: Get columnLinks from sites
+      description: The collection of columns that are required by this content type
       operationId: sites.contentTypes_GetColumnLinks
       parameters:
         - name: site-id
@@ -1675,6 +1697,7 @@ paths:
       tags:
         - sites.contentType
       summary: Update the navigation property columnLinks in sites
+      description: The collection of columns that are required by this content type
       operationId: sites.contentTypes_UpdateColumnLinks
       parameters:
         - name: site-id
@@ -1715,6 +1738,7 @@ paths:
       tags:
         - sites.contentType
       summary: Delete navigation property columnLinks for sites
+      description: The collection of columns that are required by this content type
       operationId: sites.contentTypes_DeleteColumnLinks
       parameters:
         - name: site-id
@@ -1754,6 +1778,7 @@ paths:
       tags:
         - sites.drive
       summary: Get drive from sites
+      description: The default drive (document library) for this site.
       operationId: sites_GetDrive
       parameters:
         - name: site-id
@@ -1858,6 +1883,7 @@ paths:
       tags:
         - sites.drive
       summary: Update the navigation property drive in sites
+      description: The default drive (document library) for this site.
       operationId: sites_UpdateDrive
       parameters:
         - name: site-id
@@ -1884,6 +1910,7 @@ paths:
       tags:
         - sites.drive
       summary: Delete navigation property drive for sites
+      description: The default drive (document library) for this site.
       operationId: sites_DeleteDrive
       parameters:
         - name: site-id
@@ -1909,6 +1936,7 @@ paths:
       tags:
         - sites.drive
       summary: Get drives from sites
+      description: The collection of drives (document libraries) under this site.
       operationId: sites_ListDrives
       parameters:
         - name: site-id
@@ -2043,6 +2071,7 @@ paths:
       tags:
         - sites.drive
       summary: Create new navigation property to drives for sites
+      description: The collection of drives (document libraries) under this site.
       operationId: sites_CreateDrives
       parameters:
         - name: site-id
@@ -2074,6 +2103,7 @@ paths:
       tags:
         - sites.drive
       summary: Get drives from sites
+      description: The collection of drives (document libraries) under this site.
       operationId: sites_GetDrives
       parameters:
         - name: site-id
@@ -2192,6 +2222,7 @@ paths:
       tags:
         - sites.drive
       summary: Update the navigation property drives in sites
+      description: The collection of drives (document libraries) under this site.
       operationId: sites_UpdateDrives
       parameters:
         - name: site-id
@@ -2225,6 +2256,7 @@ paths:
       tags:
         - sites.drive
       summary: Delete navigation property drives for sites
+      description: The collection of drives (document libraries) under this site.
       operationId: sites_DeleteDrives
       parameters:
         - name: site-id
@@ -2257,6 +2289,7 @@ paths:
       tags:
         - sites.list
       summary: Get lists from sites
+      description: The collection of lists under this site.
       operationId: sites_ListLists
       parameters:
         - name: site-id
@@ -2388,6 +2421,7 @@ paths:
       tags:
         - sites.list
       summary: Create new navigation property to lists for sites
+      description: The collection of lists under this site.
       operationId: sites_CreateLists
       parameters:
         - name: site-id
@@ -2419,6 +2453,7 @@ paths:
       tags:
         - sites.list
       summary: Get lists from sites
+      description: The collection of lists under this site.
       operationId: sites_GetLists
       parameters:
         - name: site-id
@@ -2536,6 +2571,7 @@ paths:
       tags:
         - sites.list
       summary: Update the navigation property lists in sites
+      description: The collection of lists under this site.
       operationId: sites_UpdateLists
       parameters:
         - name: site-id
@@ -2569,6 +2605,7 @@ paths:
       tags:
         - sites.list
       summary: Delete navigation property lists for sites
+      description: The collection of lists under this site.
       operationId: sites_DeleteLists
       parameters:
         - name: site-id
@@ -2601,6 +2638,7 @@ paths:
       tags:
         - sites.list
       summary: Get columns from sites
+      description: The collection of field definitions for this list.
       operationId: sites.lists_ListColumns
       parameters:
         - name: site-id
@@ -2746,6 +2784,7 @@ paths:
       tags:
         - sites.list
       summary: Create new navigation property to columns for sites
+      description: The collection of field definitions for this list.
       operationId: sites.lists_CreateColumns
       parameters:
         - name: site-id
@@ -2784,6 +2823,7 @@ paths:
       tags:
         - sites.list
       summary: Get columns from sites
+      description: The collection of field definitions for this list.
       operationId: sites.lists_GetColumns
       parameters:
         - name: site-id
@@ -2865,6 +2905,7 @@ paths:
       tags:
         - sites.list
       summary: Update the navigation property columns in sites
+      description: The collection of field definitions for this list.
       operationId: sites.lists_UpdateColumns
       parameters:
         - name: site-id
@@ -2905,6 +2946,7 @@ paths:
       tags:
         - sites.list
       summary: Delete navigation property columns for sites
+      description: The collection of field definitions for this list.
       operationId: sites.lists_DeleteColumns
       parameters:
         - name: site-id
@@ -2944,6 +2986,7 @@ paths:
       tags:
         - sites.list
       summary: Get contentTypes from sites
+      description: The collection of content types present in this list.
       operationId: sites.lists_ListContentTypes
       parameters:
         - name: site-id
@@ -3058,6 +3101,7 @@ paths:
       tags:
         - sites.list
       summary: Create new navigation property to contentTypes for sites
+      description: The collection of content types present in this list.
       operationId: sites.lists_CreateContentTypes
       parameters:
         - name: site-id
@@ -3096,6 +3140,7 @@ paths:
       tags:
         - sites.list
       summary: Get contentTypes from sites
+      description: The collection of content types present in this list.
       operationId: sites.lists_GetContentTypes
       parameters:
         - name: site-id
@@ -3175,6 +3220,7 @@ paths:
       tags:
         - sites.list
       summary: Update the navigation property contentTypes in sites
+      description: The collection of content types present in this list.
       operationId: sites.lists_UpdateContentTypes
       parameters:
         - name: site-id
@@ -3215,6 +3261,7 @@ paths:
       tags:
         - sites.list
       summary: Delete navigation property contentTypes for sites
+      description: The collection of content types present in this list.
       operationId: sites.lists_DeleteContentTypes
       parameters:
         - name: site-id
@@ -3254,6 +3301,7 @@ paths:
       tags:
         - sites.list
       summary: Get columnLinks from sites
+      description: The collection of columns that are required by this content type
       operationId: sites.lists.contentTypes_ListColumnLinks
       parameters:
         - name: site-id
@@ -3349,6 +3397,7 @@ paths:
       tags:
         - sites.list
       summary: Create new navigation property to columnLinks for sites
+      description: The collection of columns that are required by this content type
       operationId: sites.lists.contentTypes_CreateColumnLinks
       parameters:
         - name: site-id
@@ -3394,6 +3443,7 @@ paths:
       tags:
         - sites.list
       summary: Get columnLinks from sites
+      description: The collection of columns that are required by this content type
       operationId: sites.lists.contentTypes_GetColumnLinks
       parameters:
         - name: site-id
@@ -3463,6 +3513,7 @@ paths:
       tags:
         - sites.list
       summary: Update the navigation property columnLinks in sites
+      description: The collection of columns that are required by this content type
       operationId: sites.lists.contentTypes_UpdateColumnLinks
       parameters:
         - name: site-id
@@ -3510,6 +3561,7 @@ paths:
       tags:
         - sites.list
       summary: Delete navigation property columnLinks for sites
+      description: The collection of columns that are required by this content type
       operationId: sites.lists.contentTypes_DeleteColumnLinks
       parameters:
         - name: site-id
@@ -3556,6 +3608,7 @@ paths:
       tags:
         - sites.list
       summary: Get drive from sites
+      description: 'Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].'
       operationId: sites.lists_GetDrive
       parameters:
         - name: site-id
@@ -3674,6 +3727,7 @@ paths:
       tags:
         - sites.list
       summary: Update the navigation property drive in sites
+      description: 'Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].'
       operationId: sites.lists_UpdateDrive
       parameters:
         - name: site-id
@@ -3707,6 +3761,7 @@ paths:
       tags:
         - sites.list
       summary: Delete navigation property drive for sites
+      description: 'Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].'
       operationId: sites.lists_DeleteDrive
       parameters:
         - name: site-id
@@ -3739,6 +3794,7 @@ paths:
       tags:
         - sites.list
       summary: Get items from sites
+      description: All items contained in the list.
       operationId: sites.lists_ListItems
       parameters:
         - name: site-id
@@ -3869,6 +3925,7 @@ paths:
       tags:
         - sites.list
       summary: Create new navigation property to items for sites
+      description: All items contained in the list.
       operationId: sites.lists_CreateItems
       parameters:
         - name: site-id
@@ -3907,6 +3964,7 @@ paths:
       tags:
         - sites.list
       summary: Get items from sites
+      description: All items contained in the list.
       operationId: sites.lists_GetItems
       parameters:
         - name: site-id
@@ -4028,6 +4086,7 @@ paths:
       tags:
         - sites.list
       summary: Update the navigation property items in sites
+      description: All items contained in the list.
       operationId: sites.lists_UpdateItems
       parameters:
         - name: site-id
@@ -4068,6 +4127,7 @@ paths:
       tags:
         - sites.list
       summary: Delete navigation property items for sites
+      description: All items contained in the list.
       operationId: sites.lists_DeleteItems
       parameters:
         - name: site-id
@@ -4107,6 +4167,7 @@ paths:
       tags:
         - sites.list
       summary: Get analytics from sites
+      description: Analytics about the view activities that took place on this item.
       operationId: sites.lists.items_GetAnalytics
       parameters:
         - name: site-id
@@ -4194,6 +4255,7 @@ paths:
       tags:
         - sites.list
       summary: Get ref of analytics from sites
+      description: Analytics about the view activities that took place on this item.
       operationId: sites.lists.items_GetRefAnalytics
       parameters:
         - name: site-id
@@ -4250,6 +4312,7 @@ paths:
       tags:
         - sites.list
       summary: Update the ref of navigation property analytics in sites
+      description: Analytics about the view activities that took place on this item.
       operationId: sites.lists.items_SetRefAnalytics
       parameters:
         - name: site-id
@@ -4292,6 +4355,7 @@ paths:
       tags:
         - sites.list
       summary: Delete ref of navigation property analytics for sites
+      description: Analytics about the view activities that took place on this item.
       operationId: sites.lists.items_DeleteRefAnalytics
       parameters:
         - name: site-id
@@ -4331,6 +4395,7 @@ paths:
       tags:
         - sites.list
       summary: Get driveItem from sites
+      description: 'For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]'
       operationId: sites.lists.items_GetDriveItem
       parameters:
         - name: site-id
@@ -4504,6 +4569,7 @@ paths:
       tags:
         - sites.list
       summary: Update the navigation property driveItem in sites
+      description: 'For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]'
       operationId: sites.lists.items_UpdateDriveItem
       parameters:
         - name: site-id
@@ -4544,6 +4610,7 @@ paths:
       tags:
         - sites.list
       summary: Delete navigation property driveItem for sites
+      description: 'For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]'
       operationId: sites.lists.items_DeleteDriveItem
       parameters:
         - name: site-id
@@ -4663,6 +4730,7 @@ paths:
       tags:
         - sites.list
       summary: Get fields from sites
+      description: The values of the columns set on this list item.
       operationId: sites.lists.items_GetFields
       parameters:
         - name: site-id
@@ -4724,6 +4792,7 @@ paths:
       tags:
         - sites.list
       summary: Update the navigation property fields in sites
+      description: The values of the columns set on this list item.
       operationId: sites.lists.items_UpdateFields
       parameters:
         - name: site-id
@@ -4764,6 +4833,7 @@ paths:
       tags:
         - sites.list
       summary: Delete navigation property fields for sites
+      description: The values of the columns set on this list item.
       operationId: sites.lists.items_DeleteFields
       parameters:
         - name: site-id
@@ -4904,6 +4974,7 @@ paths:
       tags:
         - sites.list
       summary: Get versions from sites
+      description: The list of previous versions of the list item.
       operationId: sites.lists.items_ListVersions
       parameters:
         - name: site-id
@@ -5007,6 +5078,7 @@ paths:
       tags:
         - sites.list
       summary: Create new navigation property to versions for sites
+      description: The list of previous versions of the list item.
       operationId: sites.lists.items_CreateVersions
       parameters:
         - name: site-id
@@ -5052,6 +5124,7 @@ paths:
       tags:
         - sites.list
       summary: Get versions from sites
+      description: The list of previous versions of the list item.
       operationId: sites.lists.items_GetVersions
       parameters:
         - name: site-id
@@ -5133,6 +5206,7 @@ paths:
       tags:
         - sites.list
       summary: Update the navigation property versions in sites
+      description: The list of previous versions of the list item.
       operationId: sites.lists.items_UpdateVersions
       parameters:
         - name: site-id
@@ -5180,6 +5254,7 @@ paths:
       tags:
         - sites.list
       summary: Delete navigation property versions for sites
+      description: The list of previous versions of the list item.
       operationId: sites.lists.items_DeleteVersions
       parameters:
         - name: site-id
@@ -5226,6 +5301,7 @@ paths:
       tags:
         - sites.list
       summary: Get fields from sites
+      description: A collection of the fields and values for this version of the list item.
       operationId: sites.lists.items.versions_GetFields
       parameters:
         - name: site-id
@@ -5294,6 +5370,7 @@ paths:
       tags:
         - sites.list
       summary: Update the navigation property fields in sites
+      description: A collection of the fields and values for this version of the list item.
       operationId: sites.lists.items.versions_UpdateFields
       parameters:
         - name: site-id
@@ -5341,6 +5418,7 @@ paths:
       tags:
         - sites.list
       summary: Delete navigation property fields for sites
+      description: A collection of the fields and values for this version of the list item.
       operationId: sites.lists.items.versions_DeleteFields
       parameters:
         - name: site-id
@@ -5428,6 +5506,7 @@ paths:
       tags:
         - sites.list
       summary: Get subscriptions from sites
+      description: The set of subscriptions on the list.
       operationId: sites.lists_ListSubscriptions
       parameters:
         - name: site-id
@@ -5552,6 +5631,7 @@ paths:
       tags:
         - sites.list
       summary: Create new navigation property to subscriptions for sites
+      description: The set of subscriptions on the list.
       operationId: sites.lists_CreateSubscriptions
       parameters:
         - name: site-id
@@ -5590,6 +5670,7 @@ paths:
       tags:
         - sites.list
       summary: Get subscriptions from sites
+      description: The set of subscriptions on the list.
       operationId: sites.lists_GetSubscriptions
       parameters:
         - name: site-id
@@ -5664,6 +5745,7 @@ paths:
       tags:
         - sites.list
       summary: Update the navigation property subscriptions in sites
+      description: The set of subscriptions on the list.
       operationId: sites.lists_UpdateSubscriptions
       parameters:
         - name: site-id
@@ -5704,6 +5786,7 @@ paths:
       tags:
         - sites.list
       summary: Delete navigation property subscriptions for sites
+      description: The set of subscriptions on the list.
       operationId: sites.lists_DeleteSubscriptions
       parameters:
         - name: site-id
@@ -12572,6 +12655,7 @@ paths:
       tags:
         - sites.permission
       summary: Get permissions from sites
+      description: The permissions associated with the site. Nullable.
       operationId: sites_ListPermissions
       parameters:
         - name: site-id
@@ -12677,6 +12761,7 @@ paths:
       tags:
         - sites.permission
       summary: Create new navigation property to permissions for sites
+      description: The permissions associated with the site. Nullable.
       operationId: sites_CreatePermissions
       parameters:
         - name: site-id
@@ -12708,6 +12793,7 @@ paths:
       tags:
         - sites.permission
       summary: Get permissions from sites
+      description: The permissions associated with the site. Nullable.
       operationId: sites_GetPermissions
       parameters:
         - name: site-id
@@ -12771,6 +12857,7 @@ paths:
       tags:
         - sites.permission
       summary: Update the navigation property permissions in sites
+      description: The permissions associated with the site. Nullable.
       operationId: sites_UpdatePermissions
       parameters:
         - name: site-id
@@ -12804,6 +12891,7 @@ paths:
       tags:
         - sites.permission
       summary: Delete navigation property permissions for sites
+      description: The permissions associated with the site. Nullable.
       operationId: sites_DeletePermissions
       parameters:
         - name: site-id
@@ -12888,6 +12976,7 @@ paths:
       tags:
         - sites.site
       summary: Get sites from sites
+      description: The collection of the sub-sites under this site.
       operationId: sites_ListSites
       parameters:
         - name: site-id
@@ -13032,6 +13121,7 @@ paths:
       tags:
         - sites.site
       summary: Create new navigation property to sites for sites
+      description: The collection of the sub-sites under this site.
       operationId: sites_CreateSites
       parameters:
         - name: site-id
@@ -13063,6 +13153,7 @@ paths:
       tags:
         - sites.site
       summary: Get sites from sites
+      description: The collection of the sub-sites under this site.
       operationId: sites_GetSites
       parameters:
         - name: site-id
@@ -13216,6 +13307,7 @@ paths:
       tags:
         - sites.site
       summary: Update the navigation property sites in sites
+      description: The collection of the sub-sites under this site.
       operationId: sites_UpdateSites
       parameters:
         - name: site-id
@@ -13249,6 +13341,7 @@ paths:
       tags:
         - sites.site
       summary: Delete navigation property sites for sites
+      description: The collection of the sub-sites under this site.
       operationId: sites_DeleteSites
       parameters:
         - name: site-id
@@ -15660,7 +15753,7 @@ components:
               description: State of license assignments for this user. Returned only on $select. Read-only.
             mail:
               type: string
-              description: 'The SMTP address for the user, for example, ''jeff@contoso.onmicrosoft.com''.NOTE: While this property can contain accent characters, using them can cause access issues with other Microsoft applications for the user.Returned by default. Supports $filter and endsWith.'
+              description: 'The SMTP address for the user, for example, ''jeff@contoso.onmicrosoft.com''. Changes to this property will also update the user''s proxyAddresses collection to include the value as an SMTP address. While this property can contain accent characters, using them can cause access issues with other Microsoft applications for the user. Supports $filter and endsWith.'
               nullable: true
             mailNickname:
               type: string
@@ -17891,6 +17984,10 @@ components:
               type: string
               description: Enrollment time of the device. This property is read-only.
               format: date-time
+            ethernetMacAddress:
+              type: string
+              description: Ethernet MAC. This property is read-only.
+              nullable: true
             exchangeAccessState:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementExchangeAccessState'
             exchangeAccessStateReason:
@@ -17904,6 +18001,10 @@ components:
               type: integer
               description: Free Storage in Bytes. This property is read-only.
               format: int64
+            iccid:
+              type: string
+              description: 'Integrated Circuit Card Identifier, it is A SIM card''s unique identification number. This property is read-only.'
+              nullable: true
             imei:
               type: string
               description: IMEI. This property is read-only.
@@ -17943,6 +18044,10 @@ components:
               type: string
               description: Model of the device. This property is read-only.
               nullable: true
+            notes:
+              type: string
+              description: Notes on the device created by IT Admin
+              nullable: true
             operatingSystem:
               type: string
               description: 'Operating system of the device. Windows, iOS, etc. This property is read-only.'
@@ -17957,6 +18062,10 @@ components:
               type: string
               description: Phone number of the device. This property is read-only.
               nullable: true
+            physicalMemoryInBytes:
+              type: integer
+              description: Total Memory in Bytes. This property is read-only.
+              format: int64
             remoteAssistanceSessionErrorDetails:
               type: string
               description: An error string that identifies issues when creating Remote Assistance session objects. This property is read-only.
@@ -17977,6 +18086,10 @@ components:
               type: integer
               description: Total Storage in Bytes. This property is read-only.
               format: int64
+            udid:
+              type: string
+              description: Unique Device Identifier for iOS and macOS devices. This property is read-only.
+              nullable: true
             userDisplayName:
               type: string
               description: User display name. This property is read-only.
@@ -18379,7 +18492,7 @@ components:
               nullable: true
             description:
               type: string
-              description: An optional description for the team.
+              description: 'An optional description for the team. Maximum length: 1024 characters.'
               nullable: true
             displayName:
               type: string
@@ -19396,6 +19509,9 @@ components:
         - windowsAutoEnrollment
         - windowsBulkAzureDomainJoin
         - windowsCoManagement
+        - windowsAzureADJoinUsingDeviceAuth
+        - appleUserEnrollment
+        - appleUserEnrollmentWithServiceAccount
       type: string
     microsoft.graph.deviceHealthAttestationState:
       title: deviceHealthAttestationState
@@ -20353,7 +20469,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
-              description: 'Content in a message hosted by Microsoft Teams e.g., images, code snippets etc.'
+              description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
             replies:
               type: array
               items:
