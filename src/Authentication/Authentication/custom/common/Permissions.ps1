@@ -4,7 +4,7 @@
 
 $permissionsMsGraphServicePrincipal = $null
 
-function GetPermissionsData {
+function Permissions_GetPermissionsData {
 
     # 2. Making a REST request to MS Graph
     if ($null -eq $script:permissionsMsGraphServicePrincipal){
@@ -35,7 +35,7 @@ function GetPermissionsData {
 # Search based on user input
 function Permissions_GetOauthData {
 
-    $permissions = GetPermissionsData
+    $permissions = Permissions_GetPermissionsData
     $msOauth = $permissions.oauth2
     
     ForEach ($oauth2grant in $msOauth) {
@@ -66,7 +66,7 @@ function Permissions_GetOauthData {
 
 function Permissions_GetAppRolesData {
     
-    $permissions = GetPermissionsData
+    $permissions = Permissions_GetPermissionsData
     $msAppRoles = $permissions.appRoles 
     
     ForEach ($oauth2grant in $msAppRoles) {

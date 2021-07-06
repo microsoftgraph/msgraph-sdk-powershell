@@ -6,7 +6,7 @@
     {
       "origin": "Application",
       "displayName": "Read and write workforce integrations",
-      "id": "202bf709-e8e6-478e-bcfd-5d63c50b68e3",
+      "id": "14129a18-cd93-4007-bde5-f29c4a8182de",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -17,7 +17,7 @@
     {
       "origin": "Application",
       "displayName": "Read and write presence information for all users",
-      "id": "83cded22-8297-4ff6-a7fa-e97e9545a259",
+      "id": "07ce9d78-d387-4cab-9fdd-3b2ac2f08b52",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -28,7 +28,7 @@
     {
       "origin": "Application",
       "displayName": "Read and write tags in Teams",
-      "id": "a3371ca5-911d-46d6-901c-42c8c7a937d8",
+      "id": "1890ffa8-85a5-4443-9918-1035c9035c8a",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -39,7 +39,7 @@
     {
       "origin": "Application",
       "displayName": "Read tags in Teams",
-      "id": "b74fd6c4-4bde-488e-9695-eeb100e4907f",
+      "id": "7bc782da-d159-4f6d-b947-3cc4edfd1cb8",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -50,7 +50,7 @@
     {
       "origin": "Application",
       "displayName": "Read and write all Windows update deployment settings",
-      "id": "7dd1be58-6e76-4401-bf8d-31d1e8180d5b",
+      "id": "19a2c56a-9a2b-4e71-b958-1ff61d0bc410",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -61,7 +61,7 @@
     {
       "origin": "Application",
       "displayName": "Read and write external connections",
-      "id": "f431331c-49a6-499f-be1c-62af19c34a9d",
+      "id": "c3a60873-1b38-4d99-921c-913aa00058af",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -72,7 +72,7 @@
     {
       "origin": "Application",
       "displayName": "Read and write external items",
-      "id": "8116ae0f-55c2-452d-9944-d18420f5b2c8",
+      "id": "7cdfb150-b0b1-4bb8-b955-298e966528d3",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -83,7 +83,7 @@
     {
       "origin": "Application",
       "displayName": "Access selected site collections",
-      "id": "883ea226-0bf2-4a8f-9f9d-92c9162a727d",
+      "id": "3f7edd8a-3607-4fe7-8b60-19d811717f37",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -94,7 +94,7 @@
     {
       "origin": "Application",
       "displayName": "Read items in all site collections ",
-      "id": "332a536c-c7ef-4017-ab91-336970924f0d",
+      "id": "87a497db-5976-41e0-aba2-fb55cd7be355",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -105,7 +105,7 @@
     {
       "origin": "Application",
       "displayName": "Read and write items in all site collections",
-      "id": "9492366f-7969-46a4-8d15-ed1a20078fff",
+      "id": "3c277784-2700-43b6-b352-f0af50483dc7",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -116,7 +116,7 @@
     {
       "origin": "Application",
       "displayName": "Read and write Cloud PCs",
-      "id": "3b4349e1-8cf5-45a3-95b7-69d1751d3e6a",
+      "id": "0db9a5b7-4555-4d44-993f-6d2af088650f",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -127,7 +127,7 @@
     {
       "origin": "Application",
       "displayName": "Read Cloud PCs",
-      "id": "a9e09520-8ed4-4cde-838e-4fdea192c227",
+      "id": "f1563cab-1b79-4a01-97ff-36e3bf96a070",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -138,7 +138,7 @@
     {
       "origin": "Application",
       "displayName": "Read and update service principal endpoints",
-      "id": "89c8469c-83ad-45f7-8ff2-6e3d4285709e",
+      "id": "5208277c-50e5-4b37-98f3-16c473da63d7",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -149,7 +149,7 @@
     {
       "origin": "Application",
       "displayName": "Read service principal endpoints",
-      "id": "5256681e-b7f6-40c0-8447-2d9db68797a0",
+      "id": "76336ac9-9437-4922-b2c5-f25501b7e6fd",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -160,7 +160,7 @@
     {
       "origin": "Application",
       "displayName": "Send a teamwork activity to any user",
-      "id": "a267235f-af13-44dc-8385-c1dc93023186",
+      "id": "6229f902-ebfa-42f9-a9d9-94d6827acfa9",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -171,7 +171,7 @@
     {
       "origin": "Application",
       "displayName": "Read all terms of use acceptance statuses",
-      "id": "d8e4ec18-f6c0-4620-8122-c8b1f2bf400e",
+      "id": "04e8a956-f603-46b9-83db-fc7b5b7d9835",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -182,7 +182,7 @@
     {
       "origin": "Application",
       "displayName": "Read and write all terms of use agreements",
-      "id": "c9090d00-6101-42f0-a729-c41074260d47",
+      "id": "a5166258-66ad-4530-826e-1164668590c0",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -193,7 +193,7 @@
     {
       "origin": "Application",
       "displayName": "Read all terms of use agreements",
-      "id": "2f3e6f8c-093b-4c57-a58b-ba5ce494a169",
+      "id": "8e541c40-a238-4364-b40c-1dbf85283d20",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -204,7 +204,7 @@
     {
       "origin": "Application",
       "displayName": "Read and write all consent requests",
-      "id": "9f1b81a7-0223-4428-bfa4-0bcb5535f27d",
+      "id": "9baeb31f-5501-48e7-8366-eb86dfd0b6ef",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -215,7 +215,7 @@
     {
       "origin": "Application",
       "displayName": "Read and write your organization's consent request policy",
-      "id": "999f8c63-0a38-4f1b-91fd-ed1947bdd1a9",
+      "id": "1113a1df-c391-458c-b994-27f2f56bd434",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -226,7 +226,7 @@
     {
       "origin": "Application",
       "displayName": "Read all consent requests",
-      "id": "1260ad83-98fb-4785-abbb-d6cc1806fd41",
+      "id": "00f21680-1e92-4fe3-a771-f348a4f916a1",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -237,7 +237,7 @@
     {
       "origin": "Application",
       "displayName": "Read basic mail in all mailboxes",
-      "id": "693c5e45-0940-467d-9b8a-1022fb9d42ef",
+      "id": "48a5c1ef-e0cf-4d0e-a8ed-1bfa3cc86f57",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -248,7 +248,7 @@
     {
       "origin": "Application",
       "displayName": "Read basic mail in all mailboxes",
-      "id": "6be147d2-ea4f-4b5a-a3fa-3eab6f3c140a",
+      "id": "93cdcd08-8443-4cb8-9b13-1f5dc35bc19d",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -259,7 +259,7 @@
     {
       "origin": "Application",
       "displayName": "Read and write feature rollout policies",
-      "id": "2044e4f1-e56c-435b-925c-44cd8f6ba89a",
+      "id": "41b33c6a-5671-483e-9977-1a1698d315e7",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -270,7 +270,7 @@
     {
       "origin": "Application",
       "displayName": "Read and write all directory RBAC settings",
-      "id": "9e3f62cf-ca93-4989-b6ce-bf83c28f9fe8",
+      "id": "44db1c92-b0e8-48ea-914c-80285850829a",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -281,7 +281,7 @@
     {
       "origin": "Application",
       "displayName": "Read all directory RBAC settings",
-      "id": "483bed4a-2ad3-4361-a73b-c83ccdbdc53c",
+      "id": "d92e4cb1-3ae4-45bd-85e1-424c2732027c",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -292,7 +292,7 @@
     {
       "origin": "Application",
       "displayName": "Read and write organization information",
-      "id": "292d869f-3427-49a8-9dab-8c70152b74e9",
+      "id": "251b0e00-dc98-4314-8b03-5dba634c8da5",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -303,7 +303,7 @@
     {
       "origin": "Application",
       "displayName": "Read organization information",
-      "id": "498476ce-e0fe-48b0-b801-37ba7e2685c6",
+      "id": "b416ceb7-a530-49a0-a247-4a70d73afb40",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -314,7 +314,7 @@
     {
       "origin": "Application",
       "displayName": "Read all company places",
-      "id": "913b9306-0ce1-42b8-9137-6a7df690a760",
+      "id": "f1eddf6d-24ce-457a-84a1-ac3547e27a30",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -325,7 +325,7 @@
     {
       "origin": "Application",
       "displayName": "Read all hidden memberships",
-      "id": "658aa5d8-239f-45c4-aa12-864f4fc7e490",
+      "id": "185fdb19-fb57-49b2-9256-1684c3251a6a",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -336,7 +336,7 @@
     {
       "origin": "Application",
       "displayName": "Read and write items in external datasets",
-      "id": "38c3d6ee-69ee-422f-b954-e17819665354",
+      "id": "d8003042-f272-479f-a5f5-edf6b9102737",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -347,7 +347,7 @@
     {
       "origin": "Application",
       "displayName": "Manage access reviews for group and app memberships",
-      "id": "18228521-a591-40f1-b215-5fad4488c117",
+      "id": "80368c5e-bb81-4167-a562-7dee21bd73d8",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -358,7 +358,7 @@
     {
       "origin": "Application",
       "displayName": "Read Microsoft Intune device configuration and policies",
-      "id": "dc377aa6-52d8-4e23-b271-2a7ae04cedf3",
+      "id": "5efd8721-0301-4294-8dc5-303f5a761165",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -369,7 +369,7 @@
     {
       "origin": "Application",
       "displayName": "Read Microsoft Intune apps",
-      "id": "7a6ee1e7-141e-4cec-ae74-d9db155731ff",
+      "id": "011c3489-9d90-47e6-a72e-be3d81d00395",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -380,7 +380,7 @@
     {
       "origin": "Application",
       "displayName": "Read Microsoft Intune devices",
-      "id": "2f51be20-0bb4-4fed-bf7b-db946066c75e",
+      "id": "d694857b-9340-4010-8292-b820c01a1609",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -391,7 +391,7 @@
     {
       "origin": "Application",
       "displayName": "Read Microsoft Intune RBAC settings",
-      "id": "58ca0d9a-1575-47e1-a3cb-007ef2e4583b",
+      "id": "108c5fa3-7168-46c4-8edf-f6cae4887e6d",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -402,7 +402,7 @@
     {
       "origin": "Application",
       "displayName": "Read Microsoft Intune configuration",
-      "id": "06a5fe6d-c49d-46a7-b082-56b1b14103c7",
+      "id": "ea372771-3568-4fec-8e71-5aabb9564a48",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -413,7 +413,7 @@
     {
       "origin": "Application",
       "displayName": "Manage on-premises published resources",
-      "id": "0b57845e-aa49-4e6f-8109-ce654fffa618",
+      "id": "73dda415-678c-4583-a80f-7b0b982932e0",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -424,7 +424,7 @@
     {
       "origin": "Application",
       "displayName": "Read and write trust framework key sets",
-      "id": "4a771c9a-1cf2-4609-b88e-3d3e02d539cd",
+      "id": "781da221-7a9e-44e9-b228-dd8e89341f4b",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -435,7 +435,7 @@
     {
       "origin": "Application",
       "displayName": "Read trust framework key sets",
-      "id": "fff194f1-7dce-4428-8301-1badb5518201",
+      "id": "9b54c375-d168-4fd0-943a-2c3fca52a208",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -446,7 +446,7 @@
     {
       "origin": "Application",
       "displayName": "Read and write your organization's trust framework policies",
-      "id": "79a677f7-b79d-40d0-a36a-3e6f8688dd7a",
+      "id": "fefe153c-a400-4cd3-b895-ec083befc70e",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -457,7 +457,7 @@
     {
       "origin": "Application",
       "displayName": "Read your organization's policies",
-      "id": "246dd0d5-5bd0-4def-940b-0421030a5b68",
+      "id": "a6d74c43-a0c5-4501-8a67-a5fcd9c999c5",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -468,7 +468,7 @@
     {
       "origin": "Application",
       "displayName": "Read and write identity providers",
-      "id": "90db2b9a-d928-4d33-a4dd-8442ae3d41e4",
+      "id": "da1d2b4f-1e81-470c-ac3e-db7a955a8eb1",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -479,7 +479,7 @@
     {
       "origin": "Application",
       "displayName": "Read identity providers",
-      "id": "e321f0bb-e7f7-481e-bb28-e3b0b32d4bd0",
+      "id": "8a535dbf-3058-433d-be37-05dd89320a29",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -490,7 +490,7 @@
     {
       "origin": "Application",
       "displayName": "Read and write all administrative units",
-      "id": "5eb59dd3-1da2-4329-8733-9dabdc435916",
+      "id": "fcb6874d-49f5-4496-8659-4693d13cf437",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -501,7 +501,7 @@
     {
       "origin": "Application",
       "displayName": "Read all administrative units",
-      "id": "134fd756-38ce-4afd-ba33-e9623dbe66c2",
+      "id": "3a0654d5-d1ba-4971-8142-d62c5c734acd",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -512,7 +512,7 @@
     {
       "origin": "Application",
       "displayName": "Read all published labels and label policies for an organization.",
-      "id": "19da66cb-0fb0-4390-b071-ebc76a349482",
+      "id": "9ea3ca5f-ac10-40a0-a640-5beec0d6d51b",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -523,7 +523,7 @@
     {
       "origin": "Application",
       "displayName": "Read all OneNote notebooks",
-      "id": "3aeca27b-ee3a-4c2b-8ded-80376e2134a4",
+      "id": "a7a0358c-b4d1-4750-8c76-5a65fefd9931",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -534,7 +534,7 @@
     {
       "origin": "Application",
       "displayName": "Invite guest users to the organization",
-      "id": "09850681-111b-4a89-9bed-3f2cae46d706",
+      "id": "761a02f0-fd95-4950-9c5e-03964444a7e8",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -545,7 +545,7 @@
     {
       "origin": "Application",
       "displayName": "Read and write files in all site collections",
-      "id": "75359482-378d-4052-8f01-80520e7db3cd",
+      "id": "daa2cc37-5ee9-40d5-aa06-537bbb92c590",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -556,7 +556,7 @@
     {
       "origin": "Application",
       "displayName": "Manage threat indicators this app creates or owns",
-      "id": "21792b6c-c986-4ffc-85de-df9da54b52fa",
+      "id": "96f409fe-eddb-49a4-9d6f-9e7d63c7a749",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -567,7 +567,7 @@
     {
       "origin": "Application",
       "displayName": "Read and update your organization's security actions",
-      "id": "f2bf083f-0179-402a-bedb-b2784de8a49b",
+      "id": "5b8a26aa-bc40-4abb-bf64-9243f048fa64",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -578,7 +578,7 @@
     {
       "origin": "Application",
       "displayName": "Read your organization's security actions",
-      "id": "5e0edab9-c148-49d0-b423-ac253e121825",
+      "id": "829471f8-2466-4708-9bc7-7f7161bd44e6",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -589,7 +589,7 @@
     {
       "origin": "Application",
       "displayName": "Read and update your organization’s security events",
-      "id": "d903a879-88e0-4c09-b0c9-82f6a1333f84",
+      "id": "d865d4f5-594d-4148-802c-34b2c5548673",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -600,7 +600,7 @@
     {
       "origin": "Application",
       "displayName": "Read your organization’s security events",
-      "id": "bf394140-e372-4bf9-a898-299cfc7564e5",
+      "id": "b954b935-94c4-4cbe-bbe9-9cb29cb08d67",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -611,7 +611,7 @@
     {
       "origin": "Application",
       "displayName": "Read and write all chat messages",
-      "id": "294ce7c9-31ba-490a-ad7d-97a7d075e4ed",
+      "id": "19fecb2d-bf55-4376-bb7f-8d73ac82857b",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -622,7 +622,7 @@
     {
       "origin": "Application",
       "displayName": "Read and write all risk detection information",
-      "id": "db06fb33-1953-4b7b-a2ac-f1e2c854f7ae",
+      "id": "fe5d7817-eafa-4b50-998a-09ad44991f61",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -633,7 +633,7 @@
     {
       "origin": "Application",
       "displayName": "Read and write all risky user information",
-      "id": "656f6061-f9fe-4807-9708-6a2e0934df76",
+      "id": "755dd5e6-5d75-4333-9b94-f1432149dc8a",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -644,7 +644,7 @@
     {
       "origin": "Application",
       "displayName": "Read files in all site collections",
-      "id": "01d4889c-1287-42c6-ac1f-5d1e02578ef6",
+      "id": "3c4869f7-f3e8-4662-ba63-88000c717e72",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -655,7 +655,7 @@
     {
       "origin": "Application",
       "displayName": "Read all identity risk event information",
-      "id": "6e472fd1-ad78-48da-a0f0-97ab2c6b769e",
+      "id": "46798917-6edd-4aee-a8df-7b569e5e0610",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -666,7 +666,7 @@
     {
       "origin": "Application",
       "displayName": "Read a limited subset of the organization's roster",
-      "id": "0d412a8c-a06c-439f-b3ec-8abcf54d2f96",
+      "id": "3a274ea0-a447-4429-a6f3-f9d049f5b940",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -677,7 +677,7 @@
     {
       "origin": "Application",
       "displayName": "Read the organization's roster",
-      "id": "e0ac9e1b-cb65-4fc5-87c5-1a8bc181f648",
+      "id": "57f37cdb-1635-4b93-8f97-1bd9966e3715",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -688,7 +688,7 @@
     {
       "origin": "Application",
       "displayName": "Read and write the organization's roster",
-      "id": "d1808e82-ce13-47af-ae0d-f9b254e6d58a",
+      "id": "5bacd83c-3d71-493f-872c-31dfaa138d2d",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -699,7 +699,7 @@
     {
       "origin": "Application",
       "displayName": "Read class assignments without grades",
-      "id": "6e0a958b-b7fc-4348-b7c4-a6ab9fd3dd0e",
+      "id": "f752b2f4-d2fd-4dc0-b2cb-b24df52a581f",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -710,7 +710,7 @@
     {
       "origin": "Application",
       "displayName": "Read and write class assignments without grades",
-      "id": "f431cc63-a2de-48c4-8054-a34bc093af84",
+      "id": "e13ad29f-1eba-4d15-a60a-925763e66ee8",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -721,7 +721,7 @@
     {
       "origin": "Application",
       "displayName": "Read class assignments with grades",
-      "id": "4c37e1b6-35a1-43bf-926a-6f30f2cdf585",
+      "id": "29c32d2a-416e-4760-832d-985685705dd1",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -732,7 +732,7 @@
     {
       "origin": "Application",
       "displayName": "Read and write class assignments with grades",
-      "id": "0d22204b-6cad-4dd0-8362-3e3f2ae699d9",
+      "id": "70098618-6fc0-474c-98cf-2026819e0939",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -743,7 +743,7 @@
     {
       "origin": "Application",
       "displayName": "Read Education app settings",
-      "id": "7c9db06a-ec2d-4e7b-a592-5a1e30992566",
+      "id": "6c6ffdc4-ae2f-4ccf-86a0-b90770ac91e9",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -754,7 +754,7 @@
     {
       "origin": "Application",
       "displayName": "Manage education app settings",
-      "id": "9bc431c3-b8bc-4a8d-a219-40f10f92eff6",
+      "id": "b5decac3-c59a-441f-9474-abe6c2d87e2a",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -765,7 +765,7 @@
     {
       "origin": "Application",
       "displayName": "Read all identity risky user information",
-      "id": "dc5007c0-2d7d-4c42-879c-2dab87571379",
+      "id": "bfe280fc-7bc2-4a5e-bdb0-7f3fb315b627",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -776,7 +776,7 @@
     {
       "origin": "Application",
       "displayName": "Read and write all users' full profiles",
-      "id": "741f803b-c850-494e-b5df-cde7c675a1ca",
+      "id": "1cd98e6b-a083-48ce-a7d0-2732b5359717",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -787,7 +787,7 @@
     {
       "origin": "Application",
       "displayName": "Read all users' full profiles",
-      "id": "df021288-bdef-4463-88db-98f22de89214",
+      "id": "1ee5c693-4e73-47b3-a59c-cfab9e375538",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -798,7 +798,7 @@
     {
       "origin": "Application",
       "displayName": "Read all audit log data",
-      "id": "b0afded3-3588-46d8-8b3d-9842eff778da",
+      "id": "34b494d3-7afa-4023-bc15-20158c0cd05e",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -809,7 +809,7 @@
     {
       "origin": "Application",
       "displayName": "Manage apps that this app creates or owns",
-      "id": "18a4783c-866b-4cc7-a460-3d5e5662c884",
+      "id": "57acd78f-1803-4efe-a2c9-b7b93a1ff4d1",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -820,7 +820,7 @@
     {
       "origin": "Application",
       "displayName": "Export user's data",
-      "id": "405a51b5-8d8d-430b-9842-8be4b0e9f324",
+      "id": "1c66e578-47bb-4e9e-93b4-b8dcd9901cbb",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -831,7 +831,7 @@
     {
       "origin": "Application",
       "displayName": "Manage all programs",
-      "id": "60a901ed-09f7-4aa5-a16e-7dd3d6f9de36",
+      "id": "5e3296e6-a5f1-45a0-aef2-cc6db590ce55",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -842,7 +842,7 @@
     {
       "origin": "Application",
       "displayName": "Read all programs",
-      "id": "eedb7fdd-7539-4345-a38b-4839e4a84cbd",
+      "id": "6fb1bc0a-4808-44ec-912c-f40c6ce1d148",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -853,7 +853,7 @@
     {
       "origin": "Application",
       "displayName": "Manage all access reviews",
-      "id": "ef5f7d5c-338f-44b0-86c3-351f46c8bb5f",
+      "id": "92758cfd-e526-4483-9525-d8c25dde4dd9",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -864,7 +864,7 @@
     {
       "origin": "Application",
       "displayName": "Read all access reviews",
-      "id": "d07a8cc0-3d51-4b77-b3b0-32704d1f69fa",
+      "id": "f889f573-7c4e-42e8-a1c7-3c9710b16dff",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -875,7 +875,7 @@
     {
       "origin": "Application",
       "displayName": "Read all usage reports",
-      "id": "230c1aed-a721-4c5d-9cb4-a90514e508ef",
+      "id": "7347d139-374f-4a38-84fa-31ea5b6a166b",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -886,7 +886,7 @@
     {
       "origin": "Application",
       "displayName": "Read all users' relevant people lists",
-      "id": "b528084d-ad10-4598-8b93-929746b4d7d6",
+      "id": "c56903fc-6e28-43cc-91e2-e6791bc4e44f",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -897,7 +897,7 @@
     {
       "origin": "Application",
       "displayName": "Flag chat messages for violating policy",
-      "id": "7e847308-e030-4183-9899-5235d7270f58",
+      "id": "aeff3f54-1e19-4253-865c-6a694270f167",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -908,7 +908,7 @@
     {
       "origin": "Application",
       "displayName": "Read all chat messages",
-      "id": "6b7d71aa-70aa-4810-a8d9-5d9fb2830017",
+      "id": "7993f6ad-0b60-43c0-bd9a-cbdcf00cd039",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -919,7 +919,7 @@
     {
       "origin": "Application",
       "displayName": "Read all channel messages",
-      "id": "7b2449af-6ccd-4f4d-9f78-e550c193f0d1",
+      "id": "487582be-f26a-4251-939a-5d6e6c5d6bb2",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -930,7 +930,7 @@
     {
       "origin": "Application",
       "displayName": "Flag channel messages for violating policy",
-      "id": "4d02b0cc-d90b-441f-8d82-4fb55c34d6bb",
+      "id": "7d267413-c9ac-487f-8e0f-e5a381d217f1",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -941,7 +941,7 @@
     {
       "origin": "Application",
       "displayName": "Read and write all applications",
-      "id": "1bfefb4e-e0b5-418b-a88f-73c46d2cc8e9",
+      "id": "e83fc5f8-0b39-461c-9bf1-6345728c85c7",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -952,7 +952,7 @@
     {
       "origin": "Application",
       "displayName": "Read and write all user mailbox settings",
-      "id": "6931bccd-447a-43d1-b442-00a195474933",
+      "id": "1a767c5a-ee3f-4f48-9649-68fc62d886d9",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -963,7 +963,7 @@
     {
       "origin": "Application",
       "displayName": "Read and write domains",
-      "id": "7e05723c-0bb0-42da-be95-ae9f08a6e53c",
+      "id": "09b061df-f905-409e-82e2-7ef6783744e6",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -974,7 +974,7 @@
     {
       "origin": "Application",
       "displayName": "Read all user mailbox settings",
-      "id": "40f97065-369a-49f4-947c-6a255697ae91",
+      "id": "fe1dae39-bd67-4f48-9cd1-546ee08dc7a8",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -985,7 +985,7 @@
     {
       "origin": "Application",
       "displayName": "Read mail in all mailboxes",
-      "id": "810c84a8-4a9e-49e6-bf7d-12d183f40d01",
+      "id": "ba586a11-b140-410f-87b0-1f87fa9675a8",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -996,7 +996,7 @@
     {
       "origin": "Application",
       "displayName": "Read and write mail in all mailboxes",
-      "id": "e2a3a72e-5f79-4c64-b1b1-878b674786c9",
+      "id": "9ab41576-61de-4d59-8289-5d467b7f2ab8",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1007,7 +1007,7 @@
     {
       "origin": "Application",
       "displayName": "Send mail as any user",
-      "id": "b633e1c5-b582-4048-a93e-9f11b44c7e96",
+      "id": "2e56a107-1092-4f3e-bdfb-48ef579454ab",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1018,7 +1018,7 @@
     {
       "origin": "Application",
       "displayName": "Read contacts in all mailboxes",
-      "id": "089fe4d0-434a-44c5-8827-41ba8a0b17f5",
+      "id": "0cc401ef-2507-4c52-bcf4-8d028d290e60",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1029,7 +1029,7 @@
     {
       "origin": "Application",
       "displayName": "Read and write contacts in all mailboxes",
-      "id": "6918b873-d17a-4dc1-b314-35f528134491",
+      "id": "386a243a-cdb1-4e07-86f0-2d5cfb11b369",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1040,7 +1040,7 @@
     {
       "origin": "Application",
       "displayName": "Read all groups",
-      "id": "5b567255-7703-4780-807c-7be8301ae99b",
+      "id": "8df35202-8cb4-49b3-998d-080490ca3901",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1051,7 +1051,7 @@
     {
       "origin": "Application",
       "displayName": "Read and write all groups",
-      "id": "62a82d76-70ea-41e2-9197-370581804d09",
+      "id": "257946ea-07c0-4a06-a649-9eedd1a0aa84",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1062,7 +1062,7 @@
     {
       "origin": "Application",
       "displayName": "Read directory data",
-      "id": "7ab1d382-f21e-4acd-a863-ba3e13f7da61",
+      "id": "d719c20d-217c-45fe-a041-85eba43a35c1",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1073,7 +1073,7 @@
     {
       "origin": "Application",
       "displayName": "Read and write directory data",
-      "id": "19dbc75e-c2e2-444c-a770-ec69d8559fc7",
+      "id": "0d8a4bcc-79bc-47d0-b4cd-c17b83fd1ef9",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1084,7 +1084,7 @@
     {
       "origin": "Application",
       "displayName": "Read and write devices",
-      "id": "1138cb37-bd11-4084-a2b7-9f71582aeddb",
+      "id": "ee8e3bdf-6439-4511-833b-8c2868d66cde",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1095,7 +1095,7 @@
     {
       "origin": "Application",
       "displayName": "Read calendars in all mailboxes",
-      "id": "798ee544-9d2d-430c-a058-570e29e34338",
+      "id": "0bf984ab-1c8b-43f6-8142-ba94a6c29525",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1106,7 +1106,7 @@
     {
       "origin": "Application",
       "displayName": "Read and write calendars in all mailboxes",
-      "id": "ef54d2bf-783f-4e0f-bca1-3210c0444d99",
+      "id": "8be6ce8a-b334-4433-a109-d6537cec1317",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1117,7 +1117,7 @@
     {
       "origin": "Application",
       "displayName": "Read all identity user flows",
-      "id": "1b0c317f-dd31-4305-9932-259a8b6e8099",
+      "id": "8426efc1-6a8c-4d9e-b9b0-92e26b900e8a",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1128,7 +1128,7 @@
     {
       "origin": "Application",
       "displayName": "Read and write all identity user flows",
-      "id": "65319a09-a2be-469d-8782-f6b07debf789",
+      "id": "ab892904-de13-4edf-b1e9-829bb7896b65",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1139,7 +1139,7 @@
     {
       "origin": "Application",
       "displayName": "Read and create online meetings",
-      "id": "b8bb2037-6e08-44ac-a4ea-4674e010e2a4",
+      "id": "72326257-26a1-477a-a6f1-8440eac45b9e",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1150,7 +1150,7 @@
     {
       "origin": "Application",
       "displayName": "Read online meeting details",
-      "id": "c1684f21-1984-47fa-9d61-2dc8c296bb70",
+      "id": "0876ee33-d486-4733-8264-a0e84f5def3e",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1161,7 +1161,7 @@
     {
       "origin": "Application",
       "displayName": "Access media streams in a call as an app",
-      "id": "a7a681dc-756e-4909-b988-f160edc6655f",
+      "id": "a07a0ef3-612d-441e-b3ba-a24d2930cd3e",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1172,7 +1172,7 @@
     {
       "origin": "Application",
       "displayName": "Join group calls and meetings as a guest",
-      "id": "fd7ccf6b-3d28-418b-9701-cd10f5cd2fd4",
+      "id": "da036b58-d7f1-40cb-b7e9-c94eb0dbdecf",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1183,7 +1183,7 @@
     {
       "origin": "Application",
       "displayName": "Join group calls and meetings as an app",
-      "id": "f6b49018-60ab-4f81-83bd-22caeabfed2d",
+      "id": "6622680c-cff8-43cd-861c-c30c085f286b",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1194,7 +1194,7 @@
     {
       "origin": "Application",
       "displayName": "Initiate outgoing group calls from the app",
-      "id": "4c277553-8a09-487b-8023-29ee378d8324",
+      "id": "86805710-4532-4ae4-be94-8789125494dd",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1205,7 +1205,7 @@
     {
       "origin": "Application",
       "displayName": "Initiate outgoing 1 to 1 calls from the app",
-      "id": "284383ee-7f6e-4e40-a2a8-e85dcb029101",
+      "id": "2714c210-2630-4c94-ac15-10a7b62e7f50",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1216,7 +1216,7 @@
     {
       "origin": "Application",
       "displayName": "Read organizational contacts",
-      "id": "e1a88a34-94c4-4418-be12-c87b00e26bea",
+      "id": "90a41a84-0268-4b47-9228-9b7131acc0c6",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1227,7 +1227,7 @@
     {
       "origin": "Application",
       "displayName": "Read and write Microsoft Intune apps",
-      "id": "78145de6-330d-4800-a6ce-494ff2d33d07",
+      "id": "3fcf42f6-e1b6-43b9-ac7c-f2fe597d6623",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1238,7 +1238,7 @@
     {
       "origin": "Application",
       "displayName": "Read and write Microsoft Intune device configuration and policies",
-      "id": "9241abd9-d0e6-425a-bd4f-47ba86e767a4",
+      "id": "5e5da663-ef5b-4fb8-9af6-2fdb5ba78d26",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1249,7 +1249,7 @@
     {
       "origin": "Application",
       "displayName": "Perform user-impacting remote actions on Microsoft Intune devices",
-      "id": "5b07b0dd-2377-4e44-a38d-703f09a0dc3c",
+      "id": "cc482b86-67c5-4821-9f0d-b6003d6c6a73",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1260,7 +1260,7 @@
     {
       "origin": "Application",
       "displayName": "Read and write Microsoft Intune devices",
-      "id": "243333ab-4d21-40cb-a475-36241daa0842",
+      "id": "9142268d-5d1a-47cf-ad9d-8cb0598cab75",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1271,7 +1271,7 @@
     {
       "origin": "Application",
       "displayName": "Read and write Microsoft Intune RBAC settings",
-      "id": "e330c4f0-4170-414e-a55a-2f022ec2b57b",
+      "id": "31dba754-7ca5-4d46-9f4b-0ea10f665162",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1282,7 +1282,7 @@
     {
       "origin": "Application",
       "displayName": "Read and write Microsoft Intune configuration",
-      "id": "5ac13192-7ace-4fcf-b828-1a26f28068ee",
+      "id": "009c43e9-5eea-440e-a9b2-63503cbe7821",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1293,7 +1293,7 @@
     {
       "origin": "Application",
       "displayName": "Manage app permission grants and app role assignments",
-      "id": "06b708a9-e830-4db3-a914-8e69da51d44f",
+      "id": "cd129121-56d5-40a4-9e4d-f7293c56677a",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1304,7 +1304,7 @@
     {
       "origin": "Application",
       "displayName": "Manage all delegated permission grants",
-      "id": "8e8e4742-1d95-4f68-9d56-6ee75648c72a",
+      "id": "815bd89a-c897-46db-af61-92a71c78ce25",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1315,7 +1315,7 @@
     {
       "origin": "Application",
       "displayName": "Read all users' teamwork activity feed",
-      "id": "70dec828-f620-4914-aa83-a29117306807",
+      "id": "55c4f8b0-2c65-403f-a2a4-9169ea67b6b8",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1326,7 +1326,7 @@
     {
       "origin": "Application",
       "displayName": "Read privileged access to Azure AD roles",
-      "id": "4cdc2547-9148-4295-8d11-be0db1391d6b",
+      "id": "b8692245-4f55-40a4-b688-f0a2db44a13f",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1337,7 +1337,7 @@
     {
       "origin": "Application",
       "displayName": "Read privileged access to Azure AD groups",
-      "id": "01e37dc9-c035-40bd-b438-b2879c4870a6",
+      "id": "cd82a8fb-a170-4922-b074-f6a7f89b64e3",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1348,7 +1348,7 @@
     {
       "origin": "Application",
       "displayName": "Read privileged access to Azure resources",
-      "id": "5df6fe86-1be0-44eb-b916-7bd443a71236",
+      "id": "2b1ce4fd-8ce9-4b6e-8636-ef9d6820282a",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1359,7 +1359,7 @@
     {
       "origin": "Application",
       "displayName": "Read and write privileged access to Azure AD roles",
-      "id": "854d9ab1-6657-4ec8-be45-823027bcd009",
+      "id": "5a72ce74-c330-48e9-bc94-064a0a99ed1d",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1370,7 +1370,7 @@
     {
       "origin": "Application",
       "displayName": "Read and write privileged access to Azure AD groups",
-      "id": "2f6817f8-7b12-4f0f-bc18-eeaf60705a9e",
+      "id": "6591daca-27dc-41c1-9a99-6eacbe9fc61d",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1381,7 +1381,7 @@
     {
       "origin": "Application",
       "displayName": "Read and write privileged access to Azure resources",
-      "id": "6f9d5abc-2db6-400b-a267-7de22a40fb87",
+      "id": "284920dc-5596-45da-8e7f-8cd96a4b8c67",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1392,7 +1392,7 @@
     {
       "origin": "Application",
       "displayName": "Read all threat indicators",
-      "id": "197ee4e9-b993-4066-898f-d6aecc55125b",
+      "id": "ae5e9f9e-e0b5-42d9-93a1-047363091c63",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1403,7 +1403,7 @@
     {
       "origin": "Application",
       "displayName": "Read all privileged access approval requests",
-      "id": "3f410ed8-2d83-4435-b2c4-c776f44e4ae1",
+      "id": "c7493bc8-5f94-4123-b3ac-1e0b694bc692",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1414,7 +1414,7 @@
     {
       "origin": "Application",
       "displayName": "Read all entitlement management approval requests",
-      "id": "b2a3adf0-5774-4846-986c-a91c705b0141",
+      "id": "786863f7-3c46-434f-9bec-41ae204d9220",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1425,7 +1425,7 @@
     {
       "origin": "Application",
       "displayName": "Read all admin consent approval requests",
-      "id": "0d9d2e88-e2eb-4ac7-9b1d-9b68ed9f9f4f",
+      "id": "ef6a7e59-7ab0-4eca-930f-99f079839e29",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1436,7 +1436,7 @@
     {
       "origin": "Application",
       "displayName": "Read all customer lockbox approval requests",
-      "id": "080ce695-a830-4d5c-a45a-375e3ab11b11",
+      "id": "d2a8bf23-5f58-40e6-ac54-446d22b6305b",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1447,7 +1447,7 @@
     {
       "origin": "Application",
       "displayName": "Read and write all privileged access approval requests",
-      "id": "60182ac6-4565-4baa-8b04-9350fe8dbfca",
+      "id": "6e3cc754-2a2d-4ffb-bba7-b43c1d210efb",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1458,7 +1458,7 @@
     {
       "origin": "Application",
       "displayName": "Read and write all entitlement management approval requests",
-      "id": "fbfdecc9-4b78-4882-bb98-7decbddcbddf",
+      "id": "9f551eba-a487-4129-8bf9-3c3efcdad03e",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1469,7 +1469,7 @@
     {
       "origin": "Application",
       "displayName": "Read and write all admin consent approval requests",
-      "id": "afe5c674-a576-4b80-818c-e3d7f6afd299",
+      "id": "575bac6d-2573-47e5-a395-fec121004676",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1480,7 +1480,7 @@
     {
       "origin": "Application",
       "displayName": "Read and write all customer lockbox approval requests",
-      "id": "5f411d27-abad-4dc3-83c6-b84a46ffa434",
+      "id": "5fb94079-96a0-4898-a1d3-a219018a5c92",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1491,7 +1491,7 @@
     {
       "origin": "Application",
       "displayName": "Read all users' installed Teams apps",
-      "id": "afdb422a-4b2a-4e07-a708-8ceed48196bf",
+      "id": "badb6251-50b0-47c3-89d6-8323c4638470",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1502,7 +1502,7 @@
     {
       "origin": "Application",
       "displayName": "Manage all users' Teams apps",
-      "id": "eb6b3d76-ed75-4be6-ac36-158d04c0a555",
+      "id": "71e9f2b1-e70b-44ac-b0b0-c56d4452858f",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1513,7 +1513,7 @@
     {
       "origin": "Application",
       "displayName": "Deliver and manage all user's notifications",
-      "id": "4e774092-a092-48d1-90bd-baad67c7eb47",
+      "id": "e4ec623b-d6d5-402d-b572-22669e6e9f42",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1524,7 +1524,7 @@
     {
       "origin": "Application",
       "displayName": "Read all applications",
-      "id": "9a5d68dd-52b0-4cc2-bd40-abcf44ac3a30",
+      "id": "ad5e28a1-b3f1-4528-9731-135dd42aca7d",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1535,7 +1535,7 @@
     {
       "origin": "Application",
       "displayName": "Read all BitLocker keys",
-      "id": "57f1cf28-c0c4-4ec3-9a30-19a2eaaf2f6e",
+      "id": "5e351988-471b-4977-9f38-173d3da9a8af",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1546,7 +1546,7 @@
     {
       "origin": "Application",
       "displayName": "Read all BitLocker keys basic information",
-      "id": "f690d423-6b29-4d04-98c6-694c42282419",
+      "id": "2585021b-43a8-4bde-b2e6-21af60b60cd1",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1557,7 +1557,7 @@
     {
       "origin": "Application",
       "displayName": "Read all group memberships",
-      "id": "98830695-27a2-44f7-8c18-0c3ebc9698f6",
+      "id": "a5eae595-1a45-4b99-870a-69de918a2006",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1568,7 +1568,7 @@
     {
       "origin": "Application",
       "displayName": "Read and write all group memberships",
-      "id": "dbaae8cf-10b5-4b86-a4a1-f871c94c6695",
+      "id": "6abc664c-664b-46b8-ab52-c5aa58c396e4",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1579,7 +1579,7 @@
     {
       "origin": "Application",
       "displayName": "Create groups",
-      "id": "bf7b1a76-6e77-406b-b258-bf5c7720e98f",
+      "id": "a571a020-a411-4596-94c6-3befd2d0e1e2",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1590,7 +1590,7 @@
     {
       "origin": "Application",
       "displayName": "Read threat assessment requests",
-      "id": "f8f035bb-2cce-47fb-8bf5-7baf3ecbee48",
+      "id": "01104198-d9d2-4a47-ba8a-b5bfd4d64306",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1601,7 +1601,7 @@
     {
       "origin": "Application",
       "displayName": "Read all schedule items",
-      "id": "7b2ebf90-d836-437f-b90d-7b62722c4456",
+      "id": "c5df8953-91d3-4687-9a8b-36e4dc415668",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1612,7 +1612,7 @@
     {
       "origin": "Application",
       "displayName": "Read and write all schedule items",
-      "id": "b7760610-0545-4e8a-9ec3-cce9e63db01c",
+      "id": "f2440dec-354e-4961-871b-f290ff1e81b3",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1623,7 +1623,7 @@
     {
       "origin": "Application",
       "displayName": "Read all call records",
-      "id": "45bbb07e-7321-4fd7-a8f6-3ff27e6a81c8",
+      "id": "9f00d2a9-dec4-4af9-a77b-6cbaf2fa8ede",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1634,7 +1634,7 @@
     {
       "origin": "Application",
       "displayName": "Read and write your organization's conditional access policies",
-      "id": "01c0a623-fc9b-48e9-b794-0756f8e8f067",
+      "id": "80efa3b2-ddef-4157-9fae-e32215dbfdef",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1645,7 +1645,7 @@
     {
       "origin": "Application",
       "displayName": "Read and write all users' authentication methods ",
-      "id": "50483e42-d915-4231-9639-7fdb7fd190e5",
+      "id": "05581c73-bace-4505-b919-ce6280e3cd33",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1656,7 +1656,7 @@
     {
       "origin": "Application",
       "displayName": " Read all users' authentication methods",
-      "id": "38d9df27-64da-44fd-b7c5-a6fbac20248f",
+      "id": "5f057ef9-d937-410e-bb87-88eb7278e7ce",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1667,7 +1667,7 @@
     {
       "origin": "Application",
       "displayName": "Create tabs in Microsoft Teams.",
-      "id": "49981c42-fd7b-4530-be03-e77b21aed25e",
+      "id": "98baa560-9504-4d1b-918d-4b333bc2dae3",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1678,7 +1678,7 @@
     {
       "origin": "Application",
       "displayName": "Read tabs in Microsoft Teams.",
-      "id": "46890524-499a-4bb2-ad64-1476b4f3e1cf",
+      "id": "6b3d2036-896b-4131-ba91-82390c1c516e",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1689,7 +1689,7 @@
     {
       "origin": "Application",
       "displayName": "Read and write tabs in Microsoft Teams.",
-      "id": "a96d855f-016b-47d7-b51c-1218a98d791c",
+      "id": "4a243dc8-13a5-4eb2-a558-e11e4df75c13",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1700,7 +1700,7 @@
     {
       "origin": "Application",
       "displayName": "Read domains",
-      "id": "dbb9058a-0e50-45d7-ae91-66909b5d4664",
+      "id": "9b1b7ff5-b0a0-448c-bc9b-7079ef81cc1c",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1711,7 +1711,7 @@
     {
       "origin": "Application",
       "displayName": "Read and write your organization's application configuration policies",
-      "id": "be74164b-cff1-491c-8741-e671cb536e13",
+      "id": "d020cf1e-47c2-410a-9402-a2462dd67b8c",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1722,7 +1722,7 @@
     {
       "origin": "Application",
       "displayName": "Read all devices",
-      "id": "7438b122-aefc-4978-80ed-43db9fcc7715",
+      "id": "ce0ce828-5b15-41cf-8f6f-8815bb329d67",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1733,7 +1733,7 @@
     {
       "origin": "Application",
       "displayName": "Manage all users' identities",
-      "id": "c529cfca-c91b-489c-af2b-d92990b66ce6",
+      "id": "a1dc2851-4db0-4867-b3fd-1a9c6acfc322",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1744,7 +1744,7 @@
     {
       "origin": "Application",
       "displayName": "Read all user shift preferences",
-      "id": "de023814-96df-4f53-9376-1e2891ef5a18",
+      "id": "103e430e-81eb-47c1-b47a-7a802ce38fb4",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1755,7 +1755,7 @@
     {
       "origin": "Application",
       "displayName": "Read and write all user shift preferences",
-      "id": "d1eec298-80f3-49b0-9efb-d90e224798ac",
+      "id": "128cc3c1-fe87-4de4-a6ae-76dca7ce2a79",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1766,7 +1766,7 @@
     {
       "origin": "Application",
       "displayName": "Read and write all OneNote notebooks",
-      "id": "0c458cef-11f3-48c2-a568-c66751c238c0",
+      "id": "8ca7e3ba-2491-48f2-8c3e-aea8ec0decb8",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1777,7 +1777,7 @@
     {
       "origin": "Application",
       "displayName": "Have full control of all site collections",
-      "id": "a82116e5-55eb-4c41-a434-62fe8a61c773",
+      "id": "73ba264f-0189-4846-8f5b-8f0b8d825181",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1788,7 +1788,7 @@
     {
       "origin": "Application",
       "displayName": "Create, edit, and delete items and lists in all site collections",
-      "id": "0c0bf378-bf22-4481-8f81-9e89a9b4960a",
+      "id": "04052783-e45e-4d7c-b5f9-86322f566ee7",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1799,7 +1799,7 @@
     {
       "origin": "Application",
       "displayName": "Read all entitlement management resources",
-      "id": "c74fd47d-ed3c-45c3-9a9e-b8676de685d2",
+      "id": "114d8f6b-15af-4e71-92d3-a726f3e6324f",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1810,7 +1810,7 @@
     {
       "origin": "Application",
       "displayName": "Read and write all entitlement management resources",
-      "id": "9acd699f-1e81-4958-b001-93b1d2506e19",
+      "id": "389c796f-ed13-4c90-a852-3701133715dc",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1821,7 +1821,7 @@
     {
       "origin": "Application",
       "displayName": "Create channels",
-      "id": "f3a65bd4-b703-46df-8f7e-0174fea562aa",
+      "id": "0b65e418-98b8-4fe5-befb-59bc31201910",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1832,7 +1832,7 @@
     {
       "origin": "Application",
       "displayName": "Delete channels",
-      "id": "6a118a39-1227-45d4-af0c-ea7b40d210bc",
+      "id": "17d007dc-ff07-46af-9cca-b090f8718f50",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1843,7 +1843,7 @@
     {
       "origin": "Application",
       "displayName": "Read the names, descriptions, and settings of all channels",
-      "id": "c97b873f-f59f-49aa-8a0e-52b32d762124",
+      "id": "fdd0a0a7-bf4a-4bf5-a435-6b4e9d15ed11",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1854,7 +1854,7 @@
     {
       "origin": "Application",
       "displayName": "Read and write the names, descriptions, and settings of all channels",
-      "id": "243cded2-bd16-4fd6-a953-ff8177894c3d",
+      "id": "53fd807f-4f67-46d9-8d94-4a44b41bc54f",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1865,7 +1865,7 @@
     {
       "origin": "Application",
       "displayName": "Get a list of all teams",
-      "id": "2280dda6-0bfd-44ee-a2f4-cb867cfc4c1e",
+      "id": "86cb59c2-40f5-4ed7-9035-ab12836e0881",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1876,7 +1876,7 @@
     {
       "origin": "Application",
       "displayName": "Read the names and descriptions  of all channels",
-      "id": "59a6b24b-4225-4393-8165-ebaec5f55d7a",
+      "id": "6f968f46-279b-41a2-884d-2e234871cca2",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1887,7 +1887,7 @@
     {
       "origin": "Application",
       "displayName": "Read and change all teams' settings",
-      "id": "bdd80a03-d9bc-451d-b7c4-ce7c63fe3c8f",
+      "id": "72018907-acc9-4cee-ac84-4c903b9ac4dc",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1898,7 +1898,7 @@
     {
       "origin": "Application",
       "displayName": "Read all teams' settings",
-      "id": "242607bd-1d2c-432c-82eb-bdb27baa23ab",
+      "id": "6dc4d83c-70cc-4857-a129-8e3a3faa7253",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1909,7 +1909,7 @@
     {
       "origin": "Application",
       "displayName": "Read the members of all teams",
-      "id": "660b7406-55f1-41ca-a0ed-0b035e182f3e",
+      "id": "27d4ad88-b605-47b2-8c05-8cf162a1bcfc",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1920,7 +1920,7 @@
     {
       "origin": "Application",
       "displayName": "Add and remove members from all teams",
-      "id": "0121dc95-1b9f-4aed-8bac-58c5ac466691",
+      "id": "e2c1eab1-db5a-4187-8a73-81a9661873a3",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1931,7 +1931,7 @@
     {
       "origin": "Application",
       "displayName": "Read the members of all channels",
-      "id": "3b55498e-47ec-484f-8136-9013221c06a9",
+      "id": "ce0d5e69-b2ce-4a2d-80f5-4002bdfe4dc5",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1942,7 +1942,7 @@
     {
       "origin": "Application",
       "displayName": "Add and remove members from all channels",
-      "id": "35930dcf-aceb-4bd1-b99a-8ffed403c974",
+      "id": "93ecfc67-9532-4220-ad87-9841444b8c3e",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1953,7 +1953,7 @@
     {
       "origin": "Application",
       "displayName": "Read and write authentication flow policies",
-      "id": "25f85f3c-f66c-4205-8cd5-de92dd7f0cec",
+      "id": "9385dee5-dfc8-4339-8174-c8821fb7b0eb",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1964,7 +1964,7 @@
     {
       "origin": "Application",
       "displayName": "Read and write all authentication method policies ",
-      "id": "29c18626-4985-4dcd-85c0-193eef327366",
+      "id": "4b184e19-b2e4-4656-900c-80f8d00acd82",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1975,7 +1975,7 @@
     {
       "origin": "Application",
       "displayName": "Read and write your organization's authorization policy",
-      "id": "fb221be6-99f2-473f-bd32-01c6a0e9ca3b",
+      "id": "0a8c600b-63f1-41f0-b203-ebfb3b972100",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1986,7 +1986,7 @@
     {
       "origin": "Application",
       "displayName": "Read names and members of all chat threads",
-      "id": "b2e060da-3baf-4687-9611-f4ebc0f0cbde",
+      "id": "852fa72b-dac0-4963-b63c-137d59445257",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -1997,7 +1997,7 @@
     {
       "origin": "Application",
       "displayName": "Read consent and permission grant policies",
-      "id": "9e640839-a198-48fb-8b9a-013fd6f6cbcd",
+      "id": "15ee5856-0043-409f-a8e4-48e1a9fb6751",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -2008,7 +2008,7 @@
     {
       "origin": "Application",
       "displayName": "Manage consent and permission grant policies",
-      "id": "a402ca1c-2696-4531-972d-6e5ee4aa11ea",
+      "id": "058a1c59-2ae9-474c-a104-c21ed922eea7",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -2019,7 +2019,7 @@
     {
       "origin": "Application",
       "displayName": "Read printers",
-      "id": "9709bb33-4549-49d4-8ed9-a8f65e45bb0f",
+      "id": "0857b3d1-00d8-4174-9e50-23ccddb643e6",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -2030,7 +2030,7 @@
     {
       "origin": "Application",
       "displayName": "Read and update printers",
-      "id": "f5b3f73d-6247-44df-a74c-866173fddab0",
+      "id": "c4487aad-b80f-47e6-82da-917262f0d75f",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -2041,7 +2041,7 @@
     {
       "origin": "Application",
       "displayName": "Perform advanced operations on print jobs",
-      "id": "58a52f47-9e36-4b17-9ebe-ce4ef7f3e6c8",
+      "id": "00660834-f55b-4f91-a588-618257eeeccc",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -2052,7 +2052,7 @@
     {
       "origin": "Application",
       "displayName": "Read print jobs",
-      "id": "ac6f956c-edea-44e4-bd06-64b1b4b9aec9",
+      "id": "00196a4d-850e-4a40-894b-7d691efb2f17",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -2063,7 +2063,7 @@
     {
       "origin": "Application",
       "displayName": "Read basic information for print jobs",
-      "id": "fbf67eee-e074-4ef7-b965-ab5ce1c1f689",
+      "id": "6a097609-8126-4bad-bb5e-744bcd253010",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -2074,7 +2074,7 @@
     {
       "origin": "Application",
       "displayName": "Read and write print jobs",
-      "id": "5114b07b-2898-4de7-a541-53b0004e2e13",
+      "id": "ae4e0591-966d-4084-b3d6-b0b2d368cd32",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -2085,7 +2085,7 @@
     {
       "origin": "Application",
       "displayName": "Read and write basic information for print jobs",
-      "id": "57878358-37f4-4d3a-8c20-4816e0d457b1",
+      "id": "65ac62fe-b38c-475b-9c40-6abb006dc4cc",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -2096,7 +2096,7 @@
     {
       "origin": "Application",
       "displayName": "Read, write and update print task definitions",
-      "id": "456b71a7-0ee0-4588-9842-c123fcc8f664",
+      "id": "9bc0b1c5-817a-42e2-ad66-6b556bb01612",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -2107,7 +2107,7 @@
     {
       "origin": "Application",
       "displayName": "Create chat and channel messages with anyone's identity and with any timestamp",
-      "id": "dfb0dd15-61de-45b2-be36-d6a69fba3c79",
+      "id": "e734cb4b-8d48-4844-98b3-e550f767482d",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -2118,7 +2118,7 @@
     {
       "origin": "Application",
       "displayName": "Read installed Teams apps for all chats",
-      "id": "cc7e7635-2586-41d6-adaa-a8d3bcad5ee5",
+      "id": "4aa2f37b-c963-4d06-9e3d-6ad8d94dccef",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -2129,7 +2129,7 @@
     {
       "origin": "Application",
       "displayName": "Read installed Teams apps for all teams",
-      "id": "1f615aea-6bf9-4b05-84bd-46388e138537",
+      "id": "cfa54f39-7136-4734-ba66-091a39181956",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -2140,7 +2140,7 @@
     {
       "origin": "Application",
       "displayName": "Read installed Teams apps for all users",
-      "id": "9ce09611-f4f7-4abd-a629-a05450422a97",
+      "id": "b3ded6a4-84b4-4d8a-a010-6b5207adcd4d",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -2151,7 +2151,7 @@
     {
       "origin": "Application",
       "displayName": "Manage Teams apps for all chats",
-      "id": "9e19bae1-2623-4c4f-ab6e-2664615ff9a0",
+      "id": "83ca6d58-91e9-43dd-968c-b7ef712ba173",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -2162,7 +2162,7 @@
     {
       "origin": "Application",
       "displayName": "Manage Teams apps for all teams",
-      "id": "5dad17ba-f6cc-4954-a5a2-a0dcc95154f0",
+      "id": "8a8f22ee-3961-4cd2-91f3-c4ebb6843d9d",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -2173,7 +2173,7 @@
     {
       "origin": "Application",
       "displayName": "Manage Teams apps for all users",
-      "id": "74ef0291-ca83-4d02-8c7e-d2391e6a444f",
+      "id": "1690eb17-7bbe-41e5-b2f0-3dc5c66e6d23",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -2184,7 +2184,7 @@
     {
       "origin": "Application",
       "displayName": "Allow the Teams app to manage itself for all chats",
-      "id": "73a45059-f39c-4baf-9182-4954ac0e55cf",
+      "id": "3e3f1a2c-1f6a-44f0-8e6d-f38b7994bf00",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -2195,7 +2195,7 @@
     {
       "origin": "Application",
       "displayName": "Allow the Teams app to manage itself for all teams",
-      "id": "9f67436c-5415-4e7f-8ac1-3014a7132630",
+      "id": "21f7ba0e-47b7-4950-b96a-4398e46a5e5b",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -2206,7 +2206,7 @@
     {
       "origin": "Application",
       "displayName": "Allow the app to manage itself for all users",
-      "id": "908de74d-f8b2-4d6b-a9ed-2a17b3b78179",
+      "id": "612bcf1e-9862-49b9-9a66-acff97b10182",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -2217,7 +2217,7 @@
     {
       "origin": "Application",
       "displayName": "Create teams",
-      "id": "23fc2474-f741-46ce-8465-674744c5c361",
+      "id": "335b5dad-7dc4-4da8-80d9-e3ffaa8bdab5",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -2228,7 +2228,7 @@
     {
       "origin": "Application",
       "displayName": "Add and remove members with non-owner role for all teams",
-      "id": "4437522e-9a86-4a41-a7da-e380edd4a97d",
+      "id": "7b61b1a8-5d69-473b-a16b-495076eb839f",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -2239,7 +2239,7 @@
     {
       "origin": "Application",
       "displayName": "Read all term store data",
-      "id": "ea047cc2-df29-4f3e-83a3-205de61501ca",
+      "id": "8a19b451-1fdc-4de7-a035-27bbbd99213d",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -2250,7 +2250,7 @@
     {
       "origin": "Application",
       "displayName": "Read and write all term store data",
-      "id": "f12eb8d6-28e3-46e6-b2c0-b7e4dc69fc95",
+      "id": "1d1e96d6-ecfd-4fca-9ec1-f212996017c0",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -2261,7 +2261,7 @@
     {
       "origin": "Application",
       "displayName": "Read service health",
-      "id": "79c261e0-fe76-4144-aad5-bdc68fbe4037",
+      "id": "0670291e-c9b7-4030-ba4e-abba3f328227",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -2272,7 +2272,7 @@
     {
       "origin": "Application",
       "displayName": "Read service messages",
-      "id": "1b620472-6534-4fe6-9df2-4680e8aa28ec",
+      "id": "fb389d23-cdb4-4ece-a209-86349af06762",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -2283,7 +2283,7 @@
     {
       "origin": "Application",
       "displayName": "Read all users' short notes",
-      "id": "0c7d31ec-31ca-4f58-b6ec-9950b6b0de69",
+      "id": "9d90ddfe-751f-49eb-8443-efe60e04a776",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -2294,7 +2294,7 @@
     {
       "origin": "Application",
       "displayName": "Read, create, edit, and delete all users' short notes",
-      "id": "842c284c-763d-4a97-838d-79787d129bab",
+      "id": "40179fe6-0568-420a-9028-640744bef73b",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -2305,7 +2305,7 @@
     {
       "origin": "Application",
       "displayName": "Read your organization's conditional access policies",
-      "id": "37730810-e9ba-4e46-b07e-8ca78d182097",
+      "id": "375f597d-1093-45ec-9013-348e83326e0f",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -2316,7 +2316,7 @@
     {
       "origin": "Application",
       "displayName": "Read role management data for all RBAC providers",
-      "id": "c7fbd983-d9aa-4fa7-84b8-17382c103bc4",
+      "id": "e2a57bc4-7999-41c1-8568-2437ab16c16f",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -2327,7 +2327,7 @@
     {
       "origin": "Application",
       "displayName": "Read PSTN and direct routing call log data",
-      "id": "a2611786-80b3-417e-adaa-707d4261a5f0",
+      "id": "ec9720bb-d60c-4542-9c55-d7dd998a22a2",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -2338,7 +2338,7 @@
     {
       "origin": "Application",
       "displayName": "Read all chat messages",
-      "id": "b9bb2381-47a4-46cd-aafb-00cb12f68504",
+      "id": "f0a0e15d-eea4-4803-b53a-d9d841e11a70",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -2349,7 +2349,7 @@
     {
       "origin": "Application",
       "displayName": "Allow the Teams app to manage all tabs for all chats",
-      "id": "fd9ce730-a250-40dc-bd44-8dc8d20f39ea",
+      "id": "4d2194fd-d856-4ab7-a812-cf55f10c2b62",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -2360,7 +2360,7 @@
     {
       "origin": "Application",
       "displayName": "Allow the Teams app to manage all tabs for all teams",
-      "id": "6163d4f4-fbf8-43da-a7b4-060fe85ed148",
+      "id": "658b201c-9a0d-4846-8ea1-c8fca150ba27",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -2371,7 +2371,7 @@
     {
       "origin": "Application",
       "displayName": "Allow the app to manage all tabs for all users",
-      "id": "425b4b59-d5af-45c8-832f-bb0b7402348a",
+      "id": "95e2f911-eed0-4b08-8183-7c6d8f81241c",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -2382,7 +2382,7 @@
     {
       "origin": "Application",
       "displayName": "Read API connectors for authentication flows",
-      "id": "b86848a7-d5b1-41eb-a9b4-54a4e6306e97",
+      "id": "94922d72-a6fb-4f42-b255-3e5ee2d18b92",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -2393,7 +2393,7 @@
     {
       "origin": "Application",
       "displayName": "Read and write API connectors for authentication flows",
-      "id": "1dfe531a-24a6-4f1b-80f4-7a0dc5a0a171",
+      "id": "aedf2bb7-d9a1-4652-a230-e89bf1f3bc60",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -2404,7 +2404,7 @@
     {
       "origin": "Application",
       "displayName": "Read the members of all chats",
-      "id": "a3410be2-8e48-4f32-8454-c29a7465209d",
+      "id": "15ab25f1-aabd-42b5-b78d-c30c419a6af0",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -2415,7 +2415,7 @@
     {
       "origin": "Application",
       "displayName": "Add and remove members from all chats",
-      "id": "57257249-34ce-4810-a8a2-a03adf0c5693",
+      "id": "bf2a48bf-5d72-4ee9-ac21-ad5cfbcb7b16",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -2426,7 +2426,7 @@
     {
       "origin": "Application",
       "displayName": "Create chats",
-      "id": "d9c48af6-9ad9-47ad-82c3-63757137b9af",
+      "id": "9eec60f7-1c32-4940-9422-1c96c78d9d6e",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -2437,7 +2437,7 @@
     {
       "origin": "Application",
       "displayName": "Read tenant-wide print settings",
-      "id": "b5991872-94cf-4652-9765-29535087c6d8",
+      "id": "fb8054bc-f854-4a47-9e77-89119ebab56d",
       "allowedMemberTypes": [
         "Application"
       ],
@@ -2472,7 +2472,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read, update, and delete all active role assignments for your company's directory",
       "isEnabled": true,
-      "id": "8c026be3-8e26-4774-9372-8d5d6f21daff"
+      "id": "ccbc1eba-e9cf-4701-a2f4-f71ea039c92a"
     },
     {
       "userConsentDescription": "Allows the app to read and manage the eligible role-based access control (RBAC) assignments for your company's directory, on your behalf. This includes managing eligible directory role membership, and reading directory role templates, directory roles and eligible memberships.",
@@ -2482,7 +2482,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read, update, and delete  all eligible role assignments for your company's directory",
       "isEnabled": true,
-      "id": "62ade113-f8e0-4bf9-a6ba-5acb31db32fd"
+      "id": "c947a157-de85-4597-9434-cdfeccb454c5"
     },
     {
       "userConsentDescription": "Allows the app to read, update, and delete policies for privileged role-based access control (RBAC) assignments of your company's directory, on your behalf.",
@@ -2492,7 +2492,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read, update, and delete all policies for privileged role assignments of your company's directory",
       "isEnabled": true,
-      "id": "1ff1be21-34eb-448c-9ac9-ce1f506b2a68"
+      "id": "27465fe2-1ce7-40dd-8a29-8df818b8e65c"
     },
     {
       "userConsentDescription": "Allows the app to read the active role-based access control (RBAC) assignments for your company's directory, on your behalf. This includes reading directory role templates, and directory roles.",
@@ -2502,7 +2502,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read all active role assignments for your company's directory",
       "isEnabled": true,
-      "id": "344a729c-0285-42c6-9014-f12b9b8d6129"
+      "id": "31938072-fe98-48b0-a3f1-ab6852232133"
     },
     {
       "userConsentDescription": "Allows the app to read the eligible role-based access control (RBAC) assignments for your company's directory, on your behalf. This includes reading directory role templates, and directory roles.",
@@ -2512,7 +2512,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read all eligible role assignments for your company's directory",
       "isEnabled": true,
-      "id": "eb0788c2-6d4e-4658-8c9e-c0fb8053f03d"
+      "id": "8d344f6c-44d9-464b-b710-8849f815ea9a"
     },
     {
       "userConsentDescription": "Allows the app to read policies for privileged role-based access control (RBAC) assignments of your company's directory, on your behalf.",
@@ -2522,7 +2522,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read all policies for privileged role assignments of your company's directory",
       "isEnabled": true,
-      "id": "3de2cdbe-0ff5-47d5-bdee-7f45b4749ead"
+      "id": "04faa9b8-7173-4e7b-9f4c-880af54e7d41"
     },
     {
       "userConsentDescription": "Allows the app to read and write all Windows update deployment settings for the organization on your behalf.",
@@ -2532,7 +2532,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and write all Windows update deployment settings",
       "isEnabled": true,
-      "id": "11776c0c-6138-4db3-a668-ee621bea2555"
+      "id": "f88d24b0-e50b-415a-8b29-3bc216653999"
     },
     {
       "userConsentDescription": "Allows the app to read and write your organization's mobility management policies on your behalf.  For example, a mobility management policy can set the enrollment scope for a given mobility management application.",
@@ -2542,7 +2542,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and write your organization's mobility management policies",
       "isEnabled": true,
-      "id": "a8ead177-1889-4546-9387-f25e658e2a79"
+      "id": "b19630c2-3b37-439b-9753-26da2cd0d339"
     },
     {
       "userConsentDescription": "Allows the app to read basic unified group properties, memberships and owners of the group you are a member of.",
@@ -2552,7 +2552,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read unified group memberships as guest",
       "isEnabled": true,
-      "id": "73e75199-7c3e-41bb-9357-167164dbb415"
+      "id": "bc82dc50-3d4f-4f45-ba02-dce14baa8b6d"
     },
     {
       "userConsentDescription": "Allows the app to update service principal endpoints",
@@ -2562,7 +2562,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and update service principal endpoints",
       "isEnabled": true,
-      "id": "7297d82c-9546-4aed-91df-3d4f0a9b3ff0"
+      "id": "fddc1d3a-1bb5-438e-bc68-0959c47bfd3a"
     },
     {
       "userConsentDescription": "Allows the app to read service principal endpoints",
@@ -2572,7 +2572,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read service principal endpoints",
       "isEnabled": true,
-      "id": "9f9ce928-e038-4e3b-8faf-7b59049a8ddc"
+      "id": "8d4def6d-37fc-4617-836f-15be21bb8ce4"
     },
     {
       "userConsentDescription": "Allows the app to create new activities in your teamwork activity feed, and send new activities to other users' activity feed, on your behalf.",
@@ -2582,7 +2582,7 @@
       "type": "User",
       "adminConsentDisplayName": "Send a teamwork activity as the user",
       "isEnabled": true,
-      "id": "7ab1d787-bae7-4d5d-8db6-37ea32df9186"
+      "id": "1a422b85-d9d9-4ad3-bda3-ad20c22dec9d"
     },
     {
       "userConsentDescription": "Allows the app to read and write eDiscovery objects such as cases, custodians, review sets and other related objects on your behalf.",
@@ -2592,7 +2592,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and write all eDiscovery objects",
       "isEnabled": true,
-      "id": "acb8f680-0834-4146-b69e-4ab1b39745ad"
+      "id": "3a8a0150-a291-42e1-b60a-c782c59b9424"
     },
     {
       "userConsentDescription": "Allows the app to read eDiscovery objects such as cases, custodians, review sets and other related objects on your behalf.",
@@ -2602,7 +2602,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read all eDiscovery objects",
       "isEnabled": true,
-      "id": "99201db3-7652-4d5a-809a-bdb94f85fe3c"
+      "id": "95c04b2d-0cac-44c6-b914-ba49f36c4c9f"
     },
     {
       "userConsentDescription": "Allows the app to read and write custom security attribute assignments for all principals in the tenant on your behalf.",
@@ -2612,7 +2612,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and write custom security attribute assignments",
       "isEnabled": true,
-      "id": "ca46335e-8453-47cd-a001-8459884efeae"
+      "id": "d197fc2a-04fb-4827-8234-9a3776630bcb"
     },
     {
       "userConsentDescription": "Allows the app to read and write custom security attribute definitions for the tenant on your behalf.",
@@ -2622,7 +2622,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and write custom security attribute definitions",
       "isEnabled": true,
-      "id": "8b0160d4-5743-482b-bb27-efc0a485ca4a"
+      "id": "b4aed3d8-92f7-435b-8053-91f0fabd8f3c"
     },
     {
       "userConsentDescription": "Allows the app to read email in the signed-in user's mailbox except body, previewBody, attachments and any extended properties.",
@@ -2632,7 +2632,7 @@
       "type": "User",
       "adminConsentDisplayName": "Read user basic mail",
       "isEnabled": true,
-      "id": "a4b8392a-d8d1-4954-a029-8e668a39a170"
+      "id": "a3a7f9bc-28f3-4727-8cdd-fbfe1f9f4c67"
     },
     {
       "userConsentDescription": "Allows the app to read and write your organization's feature rollout policies on your behalf. Includes abilities to assign and remove users and groups to rollout of a specific feature.",
@@ -2642,7 +2642,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and write your organization's feature rollout policies",
       "isEnabled": true,
-      "id": "92a38652-f13b-4875-bc77-6e1dbb63e1b2"
+      "id": "d2879f14-b6f1-46dc-8f57-3ee8ed023f95"
     },
     {
       "userConsentDescription": "Allows the app to read and manage the role-based access control (RBAC) settings for your company's directory, on your behalf. This includes instantiating directory roles and managing directory role membership, and reading directory role templates, directory roles and memberships.",
@@ -2652,7 +2652,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and write directory RBAC settings",
       "isEnabled": true,
-      "id": "d01b97e9-cbc0-49fe-810a-750afd5527a3"
+      "id": "27229482-359f-45b2-a287-78bc92407e87"
     },
     {
       "userConsentDescription": "Allows the app to read the role-based access control (RBAC) settings for your company's directory, on your behalf.  This includes reading directory role templates, directory roles and memberships.",
@@ -2662,7 +2662,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read directory RBAC settings",
       "isEnabled": true,
-      "id": "741c54c3-0c1e-44a1-818b-3f97ab4e8c83"
+      "id": "43cbf13c-cc48-425d-ba91-d40abf27d609"
     },
     {
       "userConsentDescription": "Allows the app to read and write the organization and related resources, on your behalf. Related resources include things like subscribed skus and tenant branding information.",
@@ -2672,7 +2672,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and write organization information",
       "isEnabled": true,
-      "id": "46ca0847-7e6b-426e-9775-ea810a948356"
+      "id": "95b532da-7923-4cdb-b977-7edd3b8463ad"
     },
     {
       "userConsentDescription": "Allows the app to read the organization and related resources, on your behalf. Related resources include things like subscribed skus and tenant branding information.",
@@ -2682,7 +2682,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read organization information",
       "isEnabled": true,
-      "id": "4908d5b9-3fb2-4b1e-9336-1888b7937185"
+      "id": "c08fb9e8-83b1-4578-b1cd-235571e42a38"
     },
     {
       "userConsentDescription": "Allows the app to read your company's places (conference rooms and room lists) for calendar events and other applications, on your behalf.",
@@ -2692,7 +2692,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read all company places",
       "isEnabled": true,
-      "id": "cb8f45a0-5c2e-4ea1-b803-84b870a7d7ec"
+      "id": "5914ef83-37ad-42f2-8958-726f02b6eaba"
     },
     {
       "userConsentDescription": "Allows the app to manage workforce integrations, to synchronize data from Microsoft Teams Shifts, on your behalf.",
@@ -2702,7 +2702,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and write workforce integrations",
       "isEnabled": true,
-      "id": "08c4b377-0d23-4a8b-be2a-23c1c1d88545"
+      "id": "373e3bee-c561-4159-8e9f-b204ed338fd1"
     },
     {
       "userConsentDescription": "Allows the app to read workforce integrations, to synchronize data from Microsoft Teams Shifts, on your behalf.",
@@ -2712,7 +2712,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read workforce integrations",
       "isEnabled": true,
-      "id": "f1ccd5a7-6383-466a-8db8-1a656f7d06fa"
+      "id": "dba309bf-524e-4839-b0d3-f14195fefcee"
     },
     {
       "userConsentDescription": "Allows the app to read, update and perform action on access reviews, reviewers, decisions and settings that you have access to.",
@@ -2722,7 +2722,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Manage access reviews for group and app memberships",
       "isEnabled": true,
-      "id": "5af8c3f5-baca-439a-97b0-ea58a435e269"
+      "id": "59488882-f4b1-49d8-82d5-e196df51a452"
     },
     {
       "userConsentDescription": "Allows the app to manage hybrid identity service configuration by creating, viewing, updating and deleting on-premises published resources, on-premises agents and agent groups, on your behalf.",
@@ -2732,7 +2732,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Manage on-premises published resources",
       "isEnabled": true,
-      "id": "8c4d5184-71c2-4bf8-bb9d-bc3378c9ad42"
+      "id": "1ccfc5df-85c9-4fed-b720-83f3b7811ad5"
     },
     {
       "userConsentDescription": "Allows an app to read information protection sensitivity labels and label policy settings, on behalf of the signed-in user.",
@@ -2742,7 +2742,7 @@
       "type": "User",
       "adminConsentDisplayName": "Read user sensitivity labels and label policies.",
       "isEnabled": true,
-      "id": "4ad84827-5578-4e18-ad7a-86530b12f884"
+      "id": "963fa8e0-9ba7-4a61-84aa-941daf2abb91"
     },
     {
       "userConsentDescription": "Allows the app to read administrative units and administrative unit membership on your behalf.",
@@ -2752,7 +2752,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read administrative units",
       "isEnabled": true,
-      "id": "3361d15d-be43-4de6-b441-3c746d05163d"
+      "id": "4f61269d-1b28-4a7c-96f2-c080a8377a97"
     },
     {
       "userConsentDescription": "Allows the app to create, read, update, and delete administrative units and manage administrative unit membership on your behalf.",
@@ -2762,7 +2762,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and write administrative units",
       "isEnabled": true,
-      "id": "7b8a2d34-6b3f-4542-a343-54651608ad81"
+      "id": "123e4cda-d1a9-4ac5-832d-63c67ae1b173"
     },
     {
       "userConsentDescription": "Allows the app to read your family information, members and their basic profile.",
@@ -2772,7 +2772,7 @@
       "type": "User",
       "adminConsentDisplayName": "Read your family info",
       "isEnabled": true,
-      "id": "3a1e4806-a744-4c70-80fc-223bf8582c46"
+      "id": "834ef8f6-c6c1-4f4f-9446-2690743f9ebb"
     },
     {
       "userConsentDescription": "Allows the app to create threat indicators, and fully manage those threat indicators (read, update and delete), on your behalf.  It cannot update any threat indicators that it is not an owner of.",
@@ -2782,7 +2782,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Manage threat indicators this app creates or owns",
       "isEnabled": true,
-      "id": "91e7d36d-022a-490f-a748-f8e011357b42"
+      "id": "fec22a0f-ac24-4728-a8bb-70c42bbe41f3"
     },
     {
       "userConsentDescription": "Allows the app to read and update security actions, on your behalf.",
@@ -2792,7 +2792,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and update your organization's security actions",
       "isEnabled": true,
-      "id": "dc38509c-b87d-4da0-bd92-6bec988bac4a"
+      "id": "bf98174e-102b-461d-ba8b-240bc8526081"
     },
     {
       "userConsentDescription": "Allows the app to read security actions, on your behalf.",
@@ -2802,7 +2802,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read your organization's security actions",
       "isEnabled": true,
-      "id": "1638cddf-07a4-4de2-8645-69c96cacad73"
+      "id": "b2b95ce5-e30e-40ea-bfa6-3af73b7fe968"
     },
     {
       "userConsentDescription": "Allows an app to read your 1 on 1 or group chat messages in Microsoft Teams, on your behalf.",
@@ -2812,7 +2812,7 @@
       "type": "User",
       "adminConsentDisplayName": "Read user chat messages",
       "isEnabled": true,
-      "id": "f501c180-9344-439a-bca0-6cbf209fd270"
+      "id": "36576b73-27e5-472b-8e0a-88714ae1d0ce"
     },
     {
       "userConsentDescription": "Allows an app to read and write your 1 on 1 or group chat messages in Microsoft Teams, on your behalf.",
@@ -2822,7 +2822,7 @@
       "type": "User",
       "adminConsentDisplayName": "Read and write user chat messages",
       "isEnabled": true,
-      "id": "9ff7295e-131b-4d94-90e1-69fde507ac11"
+      "id": "78b32d08-0fdc-47f6-8357-cbe22ad250c5"
     },
     {
       "userConsentDescription": "Allows the app to read and write your organization's trust framework policies on your behalf.",
@@ -2832,7 +2832,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and write your organization's trust framework policies",
       "isEnabled": true,
-      "id": "cefba324-1a70-4a6e-9c1d-fd670b7ae392"
+      "id": "7c548cfb-312b-4c0e-957f-20898df00b49"
     },
     {
       "userConsentDescription": "Allows the app to read trust framework key sets, on your behalf.",
@@ -2842,7 +2842,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read trust framework key sets",
       "isEnabled": true,
-      "id": "7ad34336-f5b1-44ce-8682-31d7dfcd9ab9"
+      "id": "a04412fc-1ac0-45ff-99e3-0487d23fb45a"
     },
     {
       "userConsentDescription": "Allows the app to read or write trust framework key sets, on your behalf.",
@@ -2852,7 +2852,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and write trust framework key sets",
       "isEnabled": true,
-      "id": "39244520-1e7d-4b4a-aee0-57c65826e427"
+      "id": "d6f2bb79-cacd-4c60-8515-93a4e3f649f1"
     },
     {
       "userConsentDescription": "Allows the app to read and update identity risk event information for all users in your organization on your behalf. Update operations include confirming risk event detections. ",
@@ -2862,7 +2862,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and write risk event information",
       "isEnabled": true,
-      "id": "9e4862a5-b68f-479e-848a-4e07e25c9916"
+      "id": "b4c1753b-65a8-4a6d-93bc-9671fecb76e5"
     },
     {
       "userConsentDescription": "Allows the app to read and update identity risky user information for all users in your organization on your behalf. Update operations include dismissing risky users.",
@@ -2872,7 +2872,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and write risky user information",
       "isEnabled": true,
-      "id": "e0a7cdbb-08b0-4697-8264-0069786e9674"
+      "id": "f79114e5-2dd3-4ba7-b2e4-f9b148c80a29"
     },
     {
       "userConsentDescription": "Allows the app to read email in your mailbox. ",
@@ -2882,7 +2882,7 @@
       "type": "User",
       "adminConsentDisplayName": "Read user mail ",
       "isEnabled": true,
-      "id": "570282fd-fa5c-430d-a7fd-fc8dc98a9dca"
+      "id": "c801abec-aa42-4f23-9ea7-10e4baacf83c"
     },
     {
       "userConsentDescription": "Allows the app to read identity risky user information for all users in your organization on behalf of the signed-in user.",
@@ -2892,7 +2892,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read identity risky user information",
       "isEnabled": true,
-      "id": "d04bb851-cb7c-4146-97c7-ca3e71baf56c"
+      "id": "3711fcf0-382f-42ba-a50b-59930a8e1c1d"
     },
     {
       "userConsentDescription": "Allows the app to read your activity statistics, such as how much time you've spent on emails, in meetings, or in chat sessions.",
@@ -2902,7 +2902,7 @@
       "type": "User",
       "adminConsentDisplayName": "Read user activity statistics",
       "isEnabled": true,
-      "id": "e03cf23f-8056-446a-8994-7d93dfc8b50e"
+      "id": "71653240-6ddb-4cdd-8814-5efc6a07ebb3"
     },
     {
       "userConsentDescription": "Allows the app to see and update the data you gave it access to, even when you are not currently using the app. This does not give the app any additional permissions.",
@@ -2912,7 +2912,7 @@
       "type": "User",
       "adminConsentDisplayName": "Maintain access to data you have given it access to",
       "isEnabled": true,
-      "id": "7427e0e9-2fba-42fe-b0c0-848c9e6a8182"
+      "id": "7455838d-04d9-48ae-aa99-7a3222b56a4c"
     },
     {
       "userConsentDescription": "Allows the app full access to your mailboxes on your behalf.",
@@ -2922,7 +2922,7 @@
       "type": "User",
       "adminConsentDisplayName": "Access mailboxes as the signed-in user via Exchange Web Services",
       "isEnabled": true,
-      "id": "9769c687-087d-48ac-9cb3-c37dde652038"
+      "id": "1962c4f0-e555-4026-9d78-c8176b280b7c"
     },
     {
       "userConsentDescription": "Allows the app to export data (e.g. customer content or system-generated logs), associated with any user in your company, when the app is used by a privileged user (e.g. a Company Administrator).",
@@ -2932,7 +2932,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Export user's data",
       "isEnabled": true,
-      "id": "405a51b5-8d8d-430b-9842-8be4b0e9f324"
+      "id": "bc92c985-3079-4710-b7c2-b18e18ad8916"
     },
     {
       "userConsentDescription": "Allows the app to deliver its notifications, on your behalf. Also allows the app to read, update, and delete your notification items for this app.",
@@ -2942,7 +2942,7 @@
       "type": "User",
       "adminConsentDisplayName": "Deliver and manage user notifications for this app",
       "isEnabled": true,
-      "id": "89497502-6e42-46a2-8cb2-427fd3df970a"
+      "id": "73ad90d8-78a1-48ec-b5f9-ddbef9d9eb99"
     },
     {
       "userConsentDescription": "Allows the app to read and write your organization's conditional access policies on your behalf.",
@@ -2952,7 +2952,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and write your organization's conditional access policies",
       "isEnabled": true,
-      "id": "ad902697-1014-4ef5-81ef-2b4301988e8c"
+      "id": "e693ae35-ae1a-4f2e-8d6d-65ac88758d99"
     },
     {
       "userConsentDescription": "Allows the app to read your organization's policies on your behalf.",
@@ -2962,7 +2962,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read your organization's policies",
       "isEnabled": true,
-      "id": "572fea84-0151-49b2-9301-11cb16974376"
+      "id": "cf5fe340-df3d-483e-93f0-26f3ed2010ac"
     },
     {
       "userConsentDescription": "Allows the app to read information on access reviews, reviewers, decisions and settings that you have access to.",
@@ -2972,7 +2972,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read all access reviews that user can access",
       "isEnabled": true,
-      "id": "ebfcd32b-babb-40f4-a14b-42706e83bd28"
+      "id": "a806993e-e102-4b98-99f8-464936857cf0"
     },
     {
       "userConsentDescription": "Allows the app to read, update and perform action on access reviews, reviewers, decisions and settings that you have access to.",
@@ -2982,7 +2982,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Manage all access reviews that user can access",
       "isEnabled": true,
-      "id": "e4aa47b9-9a69-4109-82ed-36ec70d85ff1"
+      "id": "c75c8efc-9e01-497b-a807-856982ba8e7a"
     },
     {
       "userConsentDescription": "Allows the app to read information on programs and program controls that you have access to.",
@@ -2992,7 +2992,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read all programs that user can access",
       "isEnabled": true,
-      "id": "c492a2e1-2f8f-4caa-b076-99bbf6e40fe4"
+      "id": "7caeee03-1cda-4269-9841-7d17d9514f03"
     },
     {
       "userConsentDescription": "Allows the app to read, update and perform action on programs and program controls that you have access to.",
@@ -3002,7 +3002,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Manage all programs that user can access",
       "isEnabled": true,
-      "id": "50fd364f-9d93-4ae1-b170-300e87cccf84"
+      "id": "a80abd32-9724-497e-b5d4-7d5e0bf3a137"
     },
     {
       "userConsentDescription": "Allows the app to create, read, update, and delete apps in the app catalogs.",
@@ -3012,7 +3012,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and write to all app catalogs",
       "isEnabled": true,
-      "id": "1ca167d5-1655-44a1-8adf-1414072e1ef9"
+      "id": "5979913b-3f34-41d4-9f4a-7554f5bc1c2e"
     },
     {
       "userConsentDescription": "Allows the app to request and manage just in time elevation (including scheduled elevation) of users to Azure AD built-in administrative roles, on your behalf.",
@@ -3022,7 +3022,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and write privileged access to Azure AD",
       "isEnabled": true,
-      "id": "3c3c74f5-cdaa-4a97-b7e0-4e788bfcfb37"
+      "id": "6a864221-1986-48ac-b73f-b3feb8c420a9"
     },
     {
       "userConsentDescription": "Allows the app to read terms of use agreements on your behalf.",
@@ -3032,7 +3032,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read all terms of use agreements",
       "isEnabled": true,
-      "id": "af2819c9-df71-4dd3-ade7-4d7c9dc653b7"
+      "id": "7d542f62-d035-4508-9239-c13d862e4b65"
     },
     {
       "userConsentDescription": "Allows the app to read and write terms of use agreements on your behalf.",
@@ -3042,7 +3042,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and write all terms of use agreements",
       "isEnabled": true,
-      "id": "ef4b5d93-3104-4664-9053-a5c49ab44218"
+      "id": "cda45934-84bc-48fa-818b-a19c1c58ce8d"
     },
     {
       "userConsentDescription": "Allows the app to read your terms of use acceptance statuses.",
@@ -3052,7 +3052,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read user terms of use acceptance statuses",
       "isEnabled": true,
-      "id": "0b7643bb-5336-476f-80b5-18fbfbc91806"
+      "id": "b365d5ac-6dc4-4a73-bcc4-00804e83df04"
     },
     {
       "userConsentDescription": "Allows the app to read terms of use acceptance statuses on your behalf.",
@@ -3062,7 +3062,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read terms of use acceptance statuses that user can access",
       "isEnabled": true,
-      "id": "a66a5341-e66e-4897-9d52-c2df58c2bfb9"
+      "id": "d82ac4ed-c3be-40de-b772-622eb5a2e4b3"
     },
     {
       "userConsentDescription": "Allows the app to read and query your audit log activities, on your behalf.",
@@ -3072,7 +3072,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read audit log data",
       "isEnabled": true,
-      "id": "e4c9e354-4dc5-45b8-9e7c-e1393b0b1a20"
+      "id": "b5b22480-3578-40d4-909d-0ce876a1eb94"
     },
     {
       "userConsentDescription": "Allows the app to read and report your activity in the app.",
@@ -3082,7 +3082,7 @@
       "type": "User",
       "adminConsentDisplayName": "Read and write app activity to users' activity feed",
       "isEnabled": true,
-      "id": "47607519-5fb1-47d9-99c7-da4b48f369b1"
+      "id": "e1900dff-079a-493c-966d-91b9f5f0a2ac"
     },
     {
       "userConsentDescription": "Allows the app to read properties of Microsoft Intune-managed device configuration and device compliance policies and their assignment to groups.",
@@ -3092,7 +3092,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read Microsoft Intune Device Configuration and Policies",
       "isEnabled": true,
-      "id": "f1493658-876a-4c87-8fa7-edb559b3476a"
+      "id": "f878b40d-3fd3-4cef-9377-b2f3fcf415f0"
     },
     {
       "userConsentDescription": "Allows the app to read and write properties of Microsoft Intune-managed device configuration and device compliance policies and their assignment to groups.",
@@ -3102,7 +3102,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and write Microsoft Intune Device Configuration and Policies",
       "isEnabled": true,
-      "id": "0883f392-0a7a-443d-8c76-16a6d39c7b63"
+      "id": "e7d0736a-4934-48dd-9d23-c0b4b01ed6d0"
     },
     {
       "userConsentDescription": "Allows the app to read the properties, group assignments and status of apps, app configurations and app protection policies managed by Microsoft Intune.",
@@ -3112,7 +3112,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read Microsoft Intune apps",
       "isEnabled": true,
-      "id": "4edf5f54-4666-44af-9de9-0144fb4b6e8c"
+      "id": "2166913f-89d1-4cf1-a992-151583706ab3"
     },
     {
       "userConsentDescription": "Allows the app to read and write the properties, group assignments and status of apps, app configurations and app protection policies managed by Microsoft Intune.",
@@ -3122,7 +3122,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and write Microsoft Intune apps",
       "isEnabled": true,
-      "id": "7b3f05d5-f68c-4b8d-8c59-a2ecd12f24af"
+      "id": "00e46208-d0e0-4012-8889-96aa3b9b31d7"
     },
     {
       "userConsentDescription": "Allows the app to read the properties relating to the Microsoft Intune Role-Based Access Control (RBAC) settings.",
@@ -3132,7 +3132,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read Microsoft Intune RBAC settings",
       "isEnabled": true,
-      "id": "49f0cc30-024c-4dfd-ab3e-82e137ee5431"
+      "id": "565fbdfd-2596-4e48-b894-20b1f03f8085"
     },
     {
       "userConsentDescription": "Allows the app to read and write the properties relating to the Microsoft Intune Role-Based Access Control (RBAC) settings.",
@@ -3142,7 +3142,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and write Microsoft Intune RBAC settings",
       "isEnabled": true,
-      "id": "0c5e8a55-87a6-4556-93ab-adc52c4d862d"
+      "id": "58acb11a-0d0c-4c44-9201-3c490d542080"
     },
     {
       "userConsentDescription": "Allows the app to read the properties of devices managed by Microsoft Intune.",
@@ -3152,7 +3152,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read Microsoft Intune devices",
       "isEnabled": true,
-      "id": "314874da-47d6-4978-88dc-cf0d37f0bb82"
+      "id": "0fd46139-7f11-4411-ae8d-deac9cb87a49"
     },
     {
       "userConsentDescription": "Allows the app to read and write the properties of devices managed by Microsoft Intune. Does not allow high impact operations such as remote wipe and password reset on the device’s owner.",
@@ -3162,7 +3162,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and write Microsoft Intune devices",
       "isEnabled": true,
-      "id": "44642bfe-8385-4adc-8fc6-fe3cb2c375c3"
+      "id": "c43092f1-9e08-4cc9-8540-b15537d08c98"
     },
     {
       "userConsentDescription": "Allows the app to perform remote high impact actions such as wiping the device or resetting the passcode on devices managed by Microsoft Intune.",
@@ -3172,7 +3172,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Perform user-impacting remote actions on Microsoft Intune devices",
       "isEnabled": true,
-      "id": "3404d2bf-2b13-457e-a330-c24615765193"
+      "id": "5a6a1ae6-fcb3-43e5-a436-9a1d38042a72"
     },
     {
       "userConsentDescription": "Allows the app to read and write Microsoft Intune service properties including device enrollment and third party service connection configuration.",
@@ -3182,7 +3182,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and write Microsoft Intune configuration",
       "isEnabled": true,
-      "id": "662ed50a-ac44-4eef-ad86-62eed9be2a29"
+      "id": "0b922726-f41d-4048-9166-178a0f148044"
     },
     {
       "userConsentDescription": "Allows the app to read Microsoft Intune service properties including device enrollment and third party service connection configuration.",
@@ -3192,7 +3192,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read Microsoft Intune configuration",
       "isEnabled": true,
-      "id": "8696daa5-bce5-4b2e-83f9-51b6defc4e1e"
+      "id": "4a24079a-9241-421b-83d8-52808302e62b"
     },
     {
       "userConsentDescription": "Allows the app to read your organization’s security events on your behalf.",
@@ -3202,7 +3202,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read your organization’s security events",
       "isEnabled": true,
-      "id": "64733abd-851e-478a-bffb-e47a14b18235"
+      "id": "f526755c-9ade-439f-beb1-eb6a017e3fc1"
     },
     {
       "userConsentDescription": "Allows the app to read your organization’s security events on your behalf. Also allows you to update editable properties in security events.",
@@ -3212,7 +3212,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and update your organization’s security events",
       "isEnabled": true,
-      "id": "6aedf524-7e1c-45a7-bd76-ded8cab8d0fc"
+      "id": "4b0502b0-2720-46c3-8e88-2a2c197c3c2e"
     },
     {
       "userConsentDescription": "Allows the app to read a list of people in the order that is most relevant to you. Allows the app to read a list of people in the order that is most relevant to another user in your organization. These can include local contacts, contacts from social networking, people listed in your organization’s directory, and people from recent communications.",
@@ -3222,7 +3222,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read all users' relevant people lists",
       "isEnabled": true,
-      "id": "b89f9189-71a5-4e70-b041-9887f0bc7e4a"
+      "id": "fe5384f4-35ce-4fc1-9aec-083a87809f8a"
     },
     {
       "userConsentDescription": "Allows the app to manage the state and settings of all Microsoft education apps on your behalf.",
@@ -3232,7 +3232,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Manage education app settings",
       "isEnabled": true,
-      "id": "63589852-04e3-46b4-bae9-15d5b1050748"
+      "id": "9583568a-b360-470e-a0c4-fd33bf2495cd"
     },
     {
       "userConsentDescription": "Allows the app to view the state and settings of all Microsoft education apps on your behalf.",
@@ -3242,7 +3242,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read education app settings",
       "isEnabled": true,
-      "id": "8523895c-6081-45bf-8a5d-f062a2f12c9f"
+      "id": "cebabfa7-047e-42b7-9b21-e4399986e541"
     },
     {
       "userConsentDescription": "Allows the app to view and modify your assignments on your behalf including  grades.",
@@ -3252,7 +3252,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and write users' class assignments and their grades",
       "isEnabled": true,
-      "id": "2f233e90-164b-4501-8bce-31af2559a2d3"
+      "id": "f5417d49-8527-446d-96a0-efccaa777a71"
     },
     {
       "userConsentDescription": "Allows the app to view your assignments on your behalf including grades.",
@@ -3262,7 +3262,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read users' class assignments and their grades",
       "isEnabled": true,
-      "id": "091460c9-9c4a-49b2-81ef-1f3d852acce2"
+      "id": "87de3f1a-6834-4a47-9657-b5c9d8052241"
     },
     {
       "userConsentDescription": "Allows the app to view and modify your assignments on your behalf without seeing grades.",
@@ -3272,7 +3272,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and write users' class assignments without grades",
       "isEnabled": true,
-      "id": "2ef770a1-622a-47c4-93ee-28d6adbed3a0"
+      "id": "0f83bf47-c61e-47b9-a9cb-03af26841593"
     },
     {
       "userConsentDescription": "Allows the app to view your assignments on your behalf without seeing grades.",
@@ -3282,7 +3282,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read users' class assignments without grades",
       "isEnabled": true,
-      "id": "c0b0103b-c053-4b2e-9973-9f3a544ec9b8"
+      "id": "5819ff9e-caf3-4fa4-ab71-117bc88ab596"
     },
     {
       "userConsentDescription": "Allows the app to view and modify information about schools and classes in your organization and education-related information about you and other users on your behalf.",
@@ -3292,7 +3292,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and write users' view of the roster",
       "isEnabled": true,
-      "id": "359e19a6-e3fa-4d7f-bcab-d28ec592b51e"
+      "id": "bab8973e-afc7-4145-8160-a14ba0e68046"
     },
     {
       "userConsentDescription": "Allows the app to view information about schools and classes in your organization and education-related information about you and other users on your behalf.",
@@ -3302,7 +3302,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read users' view of the roster",
       "isEnabled": true,
-      "id": "a4389601-22d9-4096-ac18-36a927199112"
+      "id": "2356b094-0306-4900-8ccc-bea0358a73cb"
     },
     {
       "userConsentDescription": "Allows the app to view minimal  information about both schools and classes in your organization and education-related information about you and other users on your behalf.",
@@ -3312,7 +3312,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read a limited subset of users' view of the roster",
       "isEnabled": true,
-      "id": "5d186531-d1bf-4f07-8cea-7c42119e1bd9"
+      "id": "026ac88d-e81e-43d8-ba0f-eae2b838101e"
     },
     {
       "userConsentDescription": "Allows the app to report your app activity information to Microsoft Timeline.",
@@ -3322,7 +3322,7 @@
       "type": "User",
       "adminConsentDisplayName": "Write app activity to users' timeline",
       "isEnabled": true,
-      "id": "367492fc-594d-4972-a9b5-0d58c622c91c"
+      "id": "3c4f11e9-7146-400e-a60a-b3b8ac90249c"
     },
     {
       "userConsentDescription": "Allows the app to read, update, create, and delete your mailbox settings.",
@@ -3332,7 +3332,7 @@
       "type": "User",
       "adminConsentDisplayName": "Read and write user mailbox settings",
       "isEnabled": true,
-      "id": "818c620a-27a9-40bd-a6a5-d96f7d610b4b"
+      "id": "9bdc570e-ce92-4050-ac07-4cbae2e8de63"
     },
     {
       "userConsentDescription": "Allows the app to launch another app or communicate with another app on a device that you own.",
@@ -3342,7 +3342,7 @@
       "type": "User",
       "adminConsentDisplayName": "Communicate with user devices",
       "isEnabled": true,
-      "id": "bac3b9c2-b516-4ef4-bd3b-c2ef73d8d804"
+      "id": "f8e490ae-9987-4f06-9a2f-e90a7b026d46"
     },
     {
       "userConsentDescription": "Allows the app to see your list of devices.",
@@ -3352,7 +3352,7 @@
       "type": "User",
       "adminConsentDisplayName": "Read user devices",
       "isEnabled": true,
-      "id": "11d4cd79-5ba5-460f-803f-e22c8ab85ccd"
+      "id": "e631c46a-62e6-4798-b19e-65cdc95dea9b"
     },
     {
       "userConsentDescription": "Allows the app to read, share, and modify all the OneNote notebooks that you have access to.",
@@ -3362,7 +3362,7 @@
       "type": "User",
       "adminConsentDisplayName": "Read and write all OneNote notebooks that user can access",
       "isEnabled": true,
-      "id": "64ac0503-b4fa-45d9-b544-71a463f05da0"
+      "id": "91d2ee69-d1d7-4afa-beda-336fb6fb5971"
     },
     {
       "userConsentDescription": "Allows the app to read all the OneNote notebooks that you have access to.",
@@ -3372,7 +3372,7 @@
       "type": "User",
       "adminConsentDisplayName": "Read all OneNote notebooks that user can access",
       "isEnabled": true,
-      "id": "dfabfca6-ee36-4db2-8208-7a28381419b3"
+      "id": "cb2a9be9-c811-4fe7-9030-b9907e4f879f"
     },
     {
       "userConsentDescription": "Allows the app to read, share, and modify OneNote notebooks on your behalf.",
@@ -3382,7 +3382,7 @@
       "type": "User",
       "adminConsentDisplayName": "Read and write user OneNote notebooks",
       "isEnabled": true,
-      "id": "615e26af-c38a-4150-ae3e-c3b0d4cb1d6a"
+      "id": "62f75b96-8d51-4ef0-8512-ed67495ea821"
     },
     {
       "userConsentDescription": "Allows the app to read OneNote notebooks on your behalf.",
@@ -3392,7 +3392,7 @@
       "type": "User",
       "adminConsentDisplayName": "Read user OneNote notebooks",
       "isEnabled": true,
-      "id": "371361e4-b9e2-4a3f-8315-2a301a3b0a3d"
+      "id": "eb8809b7-57c8-4a97-86a9-74fc037cae2f"
     },
     {
       "userConsentDescription": "This permission no longer has any effect. You can safely consent to it. No additional privileges will be granted to the app.",
@@ -3402,7 +3402,7 @@
       "type": "User",
       "adminConsentDisplayName": "Limited notebook access (deprecated)",
       "isEnabled": true,
-      "id": "ed68249d-017c-4df5-9113-e684c7f8760b"
+      "id": "b17511ce-2ef3-47b2-9bf9-7d6163c6802d"
     },
     {
       "userConsentDescription": "Allows the app to view the titles of your OneNote notebooks and sections and to create new pages, notebooks, and sections on your behalf.",
@@ -3412,7 +3412,7 @@
       "type": "User",
       "adminConsentDisplayName": "Create user OneNote notebooks",
       "isEnabled": true,
-      "id": "9d822255-d64d-4b7a-afdb-833b9a97ed02"
+      "id": "237ea669-93c5-44e7-b50a-c8c232943cb9"
     },
     {
       "userConsentDescription": "Allows the app to invite guest users to the organization, on your behalf.",
@@ -3422,7 +3422,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Invite guest users to the organization",
       "isEnabled": true,
-      "id": "63dd7cd9-b489-4adf-a28c-ac38b9a0f962"
+      "id": "e517eca7-fbb9-4894-b5a4-ca29ec12371e"
     },
     {
       "userConsentDescription": "Allows the app to read your mailbox settings.",
@@ -3432,7 +3432,7 @@
       "type": "User",
       "adminConsentDisplayName": "Read user mailbox settings",
       "isEnabled": true,
-      "id": "87f447af-9fa4-4c32-9dfa-4a57a73d18ce"
+      "id": "a067ee22-9594-4f03-8443-ba0503cce18e"
     },
     {
       "userConsentDescription": "(Preview) Allows the app to read files that you select. After you select a file, the app has access to the file for several hours.",
@@ -3442,7 +3442,7 @@
       "type": "User",
       "adminConsentDisplayName": "Read files that the user selects (preview)",
       "isEnabled": true,
-      "id": "5447fe39-cb82-4c1a-b977-520e67e724eb"
+      "id": "ecbd08a5-1e11-4efb-b5a6-80daec28e169"
     },
     {
       "userConsentDescription": "(Preview) Allows the app to read and write files that you select. After you select a file, the app has access to the file for several hours.",
@@ -3452,7 +3452,7 @@
       "type": "User",
       "adminConsentDisplayName": "Read and write files that the user selects (preview)",
       "isEnabled": true,
-      "id": "17dde5bd-8c17-420f-a486-969730c1b827"
+      "id": "555cc92d-0b7c-47ac-9945-8973215b1596"
     },
     {
       "userConsentDescription": "(Preview) Allows the app to read, create, update and delete files in the application's folder.",
@@ -3462,7 +3462,7 @@
       "type": "User",
       "adminConsentDisplayName": "Have full access to the application's folder (preview)",
       "isEnabled": true,
-      "id": "8019c312-3263-48e6-825e-2b833497195b"
+      "id": "12404099-bea2-438c-9538-5d07c9163d3b"
     },
     {
       "userConsentDescription": "Allows an app to read all service usage reports on your behalf. Services that provide usage reports include Office 365 and Azure Active Directory.",
@@ -3472,7 +3472,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read all usage reports",
       "isEnabled": true,
-      "id": "02e97553-ed7b-43d0-ab3c-f8bace0d040c"
+      "id": "0201b7f9-d278-4cab-aeee-792ed4011cc2"
     },
     {
       "userConsentDescription": "Allow the application to edit or delete documents and list items in all site collections on your behalf.",
@@ -3482,7 +3482,7 @@
       "type": "User",
       "adminConsentDisplayName": "Edit or delete items in all site collections",
       "isEnabled": true,
-      "id": "89fe6a52-be36-487e-b7d8-d061c450a026"
+      "id": "2177395e-e337-4bcb-9933-e9911d6f904a"
     },
     {
       "userConsentDescription": "Allows the app to read, update, create, and delete tasks you have permissions to access, including your own and shared tasks.",
@@ -3492,7 +3492,7 @@
       "type": "User",
       "adminConsentDisplayName": "Read and write user and shared tasks",
       "isEnabled": true,
-      "id": "c5ddf11b-c114-4886-8558-8a4e557cd52b"
+      "id": "4bb9c5f1-0600-427c-91f8-097054aaea5d"
     },
     {
       "userConsentDescription": "Allows the app to read tasks you have permissions to access, including your own and shared tasks.",
@@ -3502,7 +3502,7 @@
       "type": "User",
       "adminConsentDisplayName": "Read user and shared tasks",
       "isEnabled": true,
-      "id": "88d21fd4-8e5a-4c32-b5e2-4a1c95f34f72"
+      "id": "6fa3a40a-4b96-4501-b0db-5d4e51bfd18e"
     },
     {
       "userConsentDescription": "Allows the app to read, update, create, and delete contacts you have permissions to access, including your own and shared contacts.",
@@ -3512,7 +3512,7 @@
       "type": "User",
       "adminConsentDisplayName": "Read and write user and shared contacts",
       "isEnabled": true,
-      "id": "afb6c84b-06be-49af-80bb-8f3f77004eab"
+      "id": "e5bc2458-8d48-48eb-a02a-064ebe8facd1"
     },
     {
       "userConsentDescription": "Allows the app to read contacts you have permissions to access, including your own and shared contacts.",
@@ -3522,7 +3522,7 @@
       "type": "User",
       "adminConsentDisplayName": "Read user and shared contacts",
       "isEnabled": true,
-      "id": "242b9d9e-ed24-4d09-9a52-f43769beb9d4"
+      "id": "eb62f620-16ed-40b6-9cbb-02f22edd9bbd"
     },
     {
       "userConsentDescription": "Allows the app to read, update, create and delete events in all calendars in your organization you have permissions to access. This includes delegate and shared calendars.",
@@ -3532,7 +3532,7 @@
       "type": "User",
       "adminConsentDisplayName": "Read and write user and shared calendars",
       "isEnabled": true,
-      "id": "12466101-c9b8-439a-8589-dd09ee67e8e9"
+      "id": "4b4b0486-9c39-40a3-bfdc-38fcefb5a07c"
     },
     {
       "userConsentDescription": "Allows the app to read events in all calendars that you can access, including delegate and shared calendars. ",
@@ -3542,7 +3542,7 @@
       "type": "User",
       "adminConsentDisplayName": "Read user and shared calendars",
       "isEnabled": true,
-      "id": "2b9c4092-424d-4249-948d-b43879977640"
+      "id": "01cfe8a4-031a-4d9e-8424-eb9494cc5850"
     },
     {
       "userConsentDescription": "Allows the app to send mail as you or on-behalf of someone else.",
@@ -3552,7 +3552,7 @@
       "type": "User",
       "adminConsentDisplayName": "Send mail on behalf of others",
       "isEnabled": true,
-      "id": "a367ab51-6b49-43bf-a716-a1fb06d2a174"
+      "id": "8e5c7204-3726-4ecf-beba-40cd367f6532"
     },
     {
       "userConsentDescription": "Allows the app to read, update, create, and delete mail you have permission to access, including your own and shared mail. Does not allow the app to send mail on your behalf.",
@@ -3562,7 +3562,7 @@
       "type": "User",
       "adminConsentDisplayName": "Read and write user and shared mail",
       "isEnabled": true,
-      "id": "5df07973-7d5d-46ed-9847-1271055cbd51"
+      "id": "09892997-cd42-4535-997e-50545104a126"
     },
     {
       "userConsentDescription": "Allows the app to read mail you can access, including shared mail.",
@@ -3572,7 +3572,7 @@
       "type": "User",
       "adminConsentDisplayName": "Read user and shared mail",
       "isEnabled": true,
-      "id": "7b9103a5-4610-446b-9670-80643382c1fa"
+      "id": "bc761da2-8cc2-41a6-ad0d-9c45a453a35e"
     },
     {
       "userConsentDescription": "Allows you to sign in to the app with your organizational account and let the app read your profile. It also allows the app to read basic company information.",
@@ -3582,7 +3582,7 @@
       "type": "User",
       "adminConsentDisplayName": "Sign in and read user profile",
       "isEnabled": true,
-      "id": "e1fe6dd8-ba31-4d61-89e7-88639da4683d"
+      "id": "1e7d3ec9-872f-4a8c-817d-483b7e8ff185"
     },
     {
       "userConsentDescription": "Allows the app to read your profile, and discover your group membership, reports and manager. It also allows the app to update your profile information on your behalf.",
@@ -3592,7 +3592,7 @@
       "type": "User",
       "adminConsentDisplayName": "Read and write access to user profile",
       "isEnabled": true,
-      "id": "b4e74841-8e56-480b-be8b-910348b18b4c"
+      "id": "38ef71b2-6df5-445f-859a-c2dc8aecf953"
     },
     {
       "userConsentDescription": "Allows the app to read a basic set of profile properties of other users in your organization on your behalf. Includes display name, first and last name, email address and photo.",
@@ -3602,7 +3602,7 @@
       "type": "User",
       "adminConsentDisplayName": "Read all users' basic profiles",
       "isEnabled": true,
-      "id": "b340eb25-3456-403f-be2f-af7a0d370277"
+      "id": "5ebefc31-e63e-4bb5-beda-330a7050b31f"
     },
     {
       "userConsentDescription": "Allows the app to read the full set of profile properties, reports, and managers of other users in your organization, on your behalf.",
@@ -3612,7 +3612,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read all users' full profiles",
       "isEnabled": true,
-      "id": "a154be20-db9c-4678-8ab7-66f6cc099a59"
+      "id": "72462210-1ec4-40c2-9738-4c64ebd8a263"
     },
     {
       "userConsentDescription": "Allows the app to read and write the full set of profile properties, reports, and managers of other users in your organization, on your behalf.",
@@ -3622,7 +3622,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and write all users' full profiles",
       "isEnabled": true,
-      "id": "204e0828-b5ca-4ad8-b9f3-f32a958e7cc4"
+      "id": "8f5dbe96-6ee5-4722-b4f8-b6ae8c41610e"
     },
     {
       "userConsentDescription": "Allows the app to list groups, and to read their properties and all group memberships on your behalf.  Also allows the app to read calendar, conversations, files, and other group content for all groups you can access.  ",
@@ -3632,7 +3632,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read all groups",
       "isEnabled": true,
-      "id": "5f8c59db-677d-491f-a6b8-5f174b11ec1d"
+      "id": "3bbbda31-535d-454a-9bef-6f5ea43675a5"
     },
     {
       "userConsentDescription": "Allows the app to create groups and read all group properties and memberships on your behalf.  Additionally allows the app to manage your groups and to update group content for groups you are a member of.",
@@ -3642,7 +3642,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and write all groups",
       "isEnabled": true,
-      "id": "4e46008b-f24c-477d-8fff-7bb4ec7aafe0"
+      "id": "6673bfd0-08c2-48e6-8b6c-3e981a5735cd"
     },
     {
       "userConsentDescription": "Allows the app to read data in your organization's directory.",
@@ -3652,7 +3652,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read directory data",
       "isEnabled": true,
-      "id": "06da0dbc-49e2-44d2-8312-53f166ab848a"
+      "id": "e1e5b1fe-06c2-4511-9af0-35c946ab605d"
     },
     {
       "userConsentDescription": "Allows the app to read and write data in your organization's directory, such as other users, groups.  It does not allow the app to delete users or groups, or reset user passwords.",
@@ -3662,7 +3662,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and write directory data",
       "isEnabled": true,
-      "id": "c5366453-9fb0-48a5-a156-24f0c49a4b84"
+      "id": "01573fbf-364e-45e8-bc13-159d4991c7eb"
     },
     {
       "userConsentDescription": "Allows the app to have the same access to information in your work or school directory as you do.",
@@ -3672,7 +3672,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Access directory as the signed in user",
       "isEnabled": true,
-      "id": "0e263e50-5827-48a4-b97c-d940288653c7"
+      "id": "b52b55a3-9ac3-43ba-aa8d-3d3f05d15dfd"
     },
     {
       "userConsentDescription": "Allows the app to read, update, create and delete email in your mailbox. Does not include permission to send mail. ",
@@ -3682,7 +3682,7 @@
       "type": "User",
       "adminConsentDisplayName": "Read and write access to user mail ",
       "isEnabled": true,
-      "id": "024d486e-b451-40bb-833d-3e66d98c5c73"
+      "id": "6ee71189-b731-4c99-b177-b62c96f5cbc1"
     },
     {
       "userConsentDescription": "Allows the app to send mail as you. ",
@@ -3692,7 +3692,7 @@
       "type": "User",
       "adminConsentDisplayName": "Send mail as a user ",
       "isEnabled": true,
-      "id": "e383f46e-2787-4529-855e-0e479a3ffac0"
+      "id": "bd28c256-6560-4793-8222-f0697de5d535"
     },
     {
       "userConsentDescription": "Allows the app to read events in your calendars. ",
@@ -3702,7 +3702,7 @@
       "type": "User",
       "adminConsentDisplayName": "Read user calendars ",
       "isEnabled": true,
-      "id": "465a38f9-76ea-45b9-9f34-9e8b0d4b0b42"
+      "id": "6cd4c926-5a77-4b64-b32e-4e097c71fdcc"
     },
     {
       "userConsentDescription": "Allows the app to read, update, create and delete events in your calendars. ",
@@ -3712,7 +3712,7 @@
       "type": "User",
       "adminConsentDisplayName": "Have full access to user calendars ",
       "isEnabled": true,
-      "id": "1ec239c2-d7c9-4623-a91a-a9775856bb36"
+      "id": "868f7d71-f899-4212-a5c8-c0e6f3b740de"
     },
     {
       "userConsentDescription": "Allows the app to read contacts in your contact folders. ",
@@ -3722,7 +3722,7 @@
       "type": "User",
       "adminConsentDisplayName": "Read user contacts ",
       "isEnabled": true,
-      "id": "ff74d97f-43af-4b68-9f2a-b77ee6968c5d"
+      "id": "d6b50831-d444-4325-a75f-f9ed930bd822"
     },
     {
       "userConsentDescription": "Allows the app to read, update, create and delete contacts in your contact folders. ",
@@ -3732,7 +3732,7 @@
       "type": "User",
       "adminConsentDisplayName": "Have full access to user contacts ",
       "isEnabled": true,
-      "id": "d56682ec-c09e-4743-aaf4-1a3aac4caa21"
+      "id": "97ff0ced-3b53-477d-b6fc-c74d73be5724"
     },
     {
       "userConsentDescription": "Allows the app to read your files.",
@@ -3742,7 +3742,7 @@
       "type": "User",
       "adminConsentDisplayName": "Read user files",
       "isEnabled": true,
-      "id": "10465720-29dd-4523-a11a-6a75c743c9d9"
+      "id": "45f96448-afbc-46c3-b8e2-203aa3df6472"
     },
     {
       "userConsentDescription": "Allows the app to read, create, update, and delete your files.",
@@ -3752,7 +3752,7 @@
       "type": "User",
       "adminConsentDisplayName": "Have full access to user files",
       "isEnabled": true,
-      "id": "5c28f0bf-8a70-41f1-8ab2-9032436ddb65"
+      "id": "1da1df57-5114-418f-ba18-5ad740439ac8"
     },
     {
       "userConsentDescription": "Allows the app to read all files you can access.",
@@ -3762,7 +3762,7 @@
       "type": "User",
       "adminConsentDisplayName": "Read all files that user can access",
       "isEnabled": true,
-      "id": "df85f4d6-205c-4ac5-a5ea-6bf408dba283"
+      "id": "f23148f6-59a6-4a62-b304-6b43712b3bd5"
     },
     {
       "userConsentDescription": "Allows the app to read, create, update and delete all files that you can access.",
@@ -3772,7 +3772,7 @@
       "type": "User",
       "adminConsentDisplayName": "Have full access to all files user can access",
       "isEnabled": true,
-      "id": "863451e7-0667-486c-a5d6-d135439485f0"
+      "id": "dc89730a-f2db-4e9a-8cc4-486f37a3e5e2"
     },
     {
       "userConsentDescription": "Allow the application to read documents and list items in all site collections on your behalf",
@@ -3782,7 +3782,7 @@
       "type": "User",
       "adminConsentDisplayName": "Read items in all site collections",
       "isEnabled": true,
-      "id": "205e70e5-aba6-4c52-a976-6d2d46c48043"
+      "id": "8db8e1c0-cbf0-41ff-b2bc-31059e951e57"
     },
     {
       "userConsentDescription": "Allows you to sign in to the app with your work or school account and allows the app to read your basic profile information.",
@@ -3792,7 +3792,7 @@
       "type": "User",
       "adminConsentDisplayName": "Sign users in",
       "isEnabled": true,
-      "id": "37f7f235-527c-4136-accd-4a02d197296e"
+      "id": "26eea13b-3640-4c29-b8df-fbd3a68de70a"
     },
     {
       "userConsentDescription": "Allows the app to read your primary email address",
@@ -3802,7 +3802,7 @@
       "type": "User",
       "adminConsentDisplayName": "View users' email address",
       "isEnabled": true,
-      "id": "64a6cdd6-aab1-4aaf-94b8-3cc8405e90d0"
+      "id": "eb9b4389-f00e-4fa6-adeb-86c7723ab731"
     },
     {
       "userConsentDescription": "Allows the app to see your basic profile (name, picture, user name)",
@@ -3812,7 +3812,7 @@
       "type": "User",
       "adminConsentDisplayName": "View users' basic profile",
       "isEnabled": true,
-      "id": "14dad69e-099b-42c9-810b-d002981feec1"
+      "id": "92ccec9a-8340-4f5b-99ca-6dbd0f8004f5"
     },
     {
       "userConsentDescription": "Allows the app to read identity risk event information for all users in your organization on behalf of the signed-in user. ",
@@ -3822,7 +3822,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read identity risk event information",
       "isEnabled": true,
-      "id": "8f6a01e7-0391-4ee5-aa22-a3af122cef27"
+      "id": "caab57a0-3d30-47e5-b794-547b7d8c7397"
     },
     {
       "userConsentDescription": "Allows the app to read the memberships of hidden groups or administrative units on your behalf, for those hidden groups or adminstrative units that you have access to.",
@@ -3832,7 +3832,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read hidden memberships",
       "isEnabled": true,
-      "id": "f6a3db3e-f7e8-4ed2-a414-557c8c9830be"
+      "id": "b4017dcb-4f8e-4759-bf9e-91f52c60d448"
     },
     {
       "userConsentDescription": "Allows the app to read a list of people in the order that's most relevant to you. This includes your local contacts, your contacts from social networking, people listed in your organization's directory, and people from recent communications.",
@@ -3842,7 +3842,7 @@
       "type": "User",
       "adminConsentDisplayName": "Read users' relevant people lists",
       "isEnabled": true,
-      "id": "ba47897c-39ec-4d83-8086-ee8256fa737d"
+      "id": "4272c5fd-1f8f-40c8-ae68-990981967c2c"
     },
     {
       "userConsentDescription": "Allow the application to create or delete document libraries and lists in all site collections on your behalf.",
@@ -3852,7 +3852,7 @@
       "type": "User",
       "adminConsentDisplayName": "Create, edit, and delete items and lists in all site collections",
       "isEnabled": true,
-      "id": "65e50fdc-43b7-4915-933e-e8138f11f40a"
+      "id": "f0f587af-82e2-4b67-b25c-5bd8362f5bf6"
     },
     {
       "userConsentDescription": "Allow the application to have full control of all site collections on your behalf.",
@@ -3862,7 +3862,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Have full control of all site collections",
       "isEnabled": true,
-      "id": "5a54b8b3-347c-476d-8f8e-42d5c7424d29"
+      "id": "85f4a40d-b26d-440a-afc5-29911320fd65"
     },
     {
       "userConsentDescription": "Allows the app to read and write your organization’s identity (authentication) providers’ properties on your behalf.",
@@ -3872,7 +3872,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and write identity providers",
       "isEnabled": true,
-      "id": "f13ce604-1677-429f-90bd-8a10b9f01325"
+      "id": "0b1298c7-7f5e-4af1-925e-364a77e6440b"
     },
     {
       "userConsentDescription": "Allows the app to read your organization’s identity (authentication) providers’ properties on your behalf.",
@@ -3882,7 +3882,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read identity providers",
       "isEnabled": true,
-      "id": "43781733-b5a7-4d1b-98f4-e8edff23e1a9"
+      "id": "de3910fb-2e4f-4b90-9c2d-c32c35926b6f"
     },
     {
       "userConsentDescription": "Allows an app to read bookings appointments, businesses, customers, services, and staff on your behalf.",
@@ -3892,7 +3892,7 @@
       "type": "User",
       "adminConsentDisplayName": "Read bookings information",
       "isEnabled": true,
-      "id": "33b1df99-4b29-4548-9339-7a7b83eaeebc"
+      "id": "00282cbc-4429-4e43-ad2a-945b69078499"
     },
     {
       "userConsentDescription": "Allows an app to read and write bookings appointments and customers, and additionally allows read businesses information, services, and staff on your behalf.",
@@ -3902,7 +3902,7 @@
       "type": "User",
       "adminConsentDisplayName": "Read and write booking appointments",
       "isEnabled": true,
-      "id": "02a5a114-36a6-46ff-a102-954d89d9ab02"
+      "id": "4ff7b1b2-667e-431e-8636-8415651bd205"
     },
     {
       "userConsentDescription": "Allows an app to read and write Bookings appointments, businesses, customers, services, and staff on your behalf. Does not allow create, delete and publish of booking businesses.",
@@ -3912,7 +3912,7 @@
       "type": "User",
       "adminConsentDisplayName": "Read and write bookings information",
       "isEnabled": true,
-      "id": "948eb538-f19d-4ec5-9ccc-f059e1ea4c72"
+      "id": "25ab2a8b-4cf3-481b-b614-2b39a6cb6f0a"
     },
     {
       "userConsentDescription": "Allows an app to read, write and manage bookings appointments, businesses, customers, services, and staff on your behalf.",
@@ -3922,7 +3922,7 @@
       "type": "User",
       "adminConsentDisplayName": "Manage bookings information",
       "isEnabled": true,
-      "id": "7f36b48e-542f-4d3b-9bcb-8406f0ab9fdb"
+      "id": "b0d7ce91-ce78-4114-bb0d-47c61afe7af0"
     },
     {
       "userConsentDescription": "Allows the app full access to your mailboxes on your behalf.",
@@ -3932,7 +3932,7 @@
       "type": "User",
       "adminConsentDisplayName": "Access mailboxes via Exchange ActiveSync",
       "isEnabled": true,
-      "id": "ff91d191-45a0-43fd-b837-bd682c4a0b0f"
+      "id": "066bf1cd-121e-4221-83f7-075348eb74c2"
     },
     {
       "userConsentDescription": "Allows the app to read and write financials data on your behalf.",
@@ -3942,7 +3942,7 @@
       "type": "User",
       "adminConsentDisplayName": "Read and write financials data",
       "isEnabled": true,
-      "id": "f534bf13-55d4-45a9-8f3c-c92fe64d6131"
+      "id": "d551f7ef-6d36-49cc-ab4b-bda514676ea9"
     },
     {
       "userConsentDescription": "Allows the app to read your organization's user flows, on your behalf.",
@@ -3952,7 +3952,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read all identity user flows",
       "isEnabled": true,
-      "id": "2903d63d-4611-4d43-99ce-a33f3f52e343"
+      "id": "ebeeeeb9-e221-44db-a404-e448bdb5ff37"
     },
     {
       "userConsentDescription": "Allows the app to read or write your organization's user flows, on your behalf.",
@@ -3962,7 +3962,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and write all identity user flows",
       "isEnabled": true,
-      "id": "281892cc-4dbf-4e3a-b6cc-b21029bb4e82"
+      "id": "b05b4ccc-18b8-4d45-bdd8-7c0bac16474c"
     },
     {
       "userConsentDescription": "Allows the app to read all organizational contacts on your behalf.  These contacts are managed by the organization and are different from your personal contacts.",
@@ -3972,7 +3972,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read organizational contacts",
       "isEnabled": true,
-      "id": "08432d1b-5911-483c-86df-7980af5cdee0"
+      "id": "a2903c0a-2be7-4182-aee7-839221846b67"
     },
     {
       "userConsentDescription": "Allows the app to manage permission grants for application permissions to any API (including Microsoft Graph) and application assignments for any app, on your behalf.",
@@ -3982,7 +3982,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Manage app permission grants and app role assignments",
       "isEnabled": true,
-      "id": "84bccea3-f856-4a8a-967b-dbe0a3d53a64"
+      "id": "29c6ba13-97ec-4452-ae20-a6fb848e26a5"
     },
     {
       "userConsentDescription": "Allows the app to manage permission grants for delegated permissions exposed by any API (including Microsoft Graph), on your behalf. ",
@@ -3992,7 +3992,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Manage all delegated permission grants",
       "isEnabled": true,
-      "id": "41ce6ca6-6826-4807-84f1-1c82854f7ee5"
+      "id": "c6fb49f9-813f-44b5-94e8-759602dbc0a6"
     },
     {
       "userConsentDescription": "Allows the app to read online meeting details on your behalf.",
@@ -4002,7 +4002,7 @@
       "type": "User",
       "adminConsentDisplayName": "Read user's online meetings",
       "isEnabled": true,
-      "id": "9be106e1-f4e3-4df5-bdff-e4bc531cbe43"
+      "id": "f310b557-7f84-438c-808c-f21685600e94"
     },
     {
       "userConsentDescription": "Allows the app to read and create online meetings on your behalf.",
@@ -4012,7 +4012,7 @@
       "type": "User",
       "adminConsentDisplayName": "Read and create user's online meetings",
       "isEnabled": true,
-      "id": "a65f2972-a4f8-4f5e-afd7-69ccb046d5dc"
+      "id": "2db82911-e654-4de4-b85b-10e117582929"
     },
     {
       "userConsentDescription": "Allows the app to read your teamwork activity feed.",
@@ -4022,7 +4022,7 @@
       "type": "User",
       "adminConsentDisplayName": "Read user's teamwork activity feed",
       "isEnabled": true,
-      "id": "0e755559-83fb-4b44-91d0-4cc721b9323e"
+      "id": "c09c0acc-87c7-46c2-9623-b4a8393f47ac"
     },
     {
       "userConsentDescription": "Allows the app to request and manage time-based assignment and just-in-time elevation of user privileges to manage  your Azure resources (like your subscriptions, resource groups, storage, compute) on your behalf.",
@@ -4032,7 +4032,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and write privileged access to Azure resources",
       "isEnabled": true,
-      "id": "a84a9652-ffd3-496e-a991-22ba5529156a"
+      "id": "2b2770f5-7273-409c-9c9f-d14319e074f3"
     },
     {
       "userConsentDescription": "Allows the app to read time-based assignment and just-in-time elevation (including scheduled elevation) of Azure AD built-in and custom administrative roles, on your behalf.",
@@ -4042,7 +4042,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read privileged access to Azure AD",
       "isEnabled": true,
-      "id": "b3a539c9-59cb-4ad5-825a-041ddbdc2bdb"
+      "id": "7f075811-b7de-44df-af56-fcfab8222e6a"
     },
     {
       "userConsentDescription": "Allows the app to read time-based assignment and just-in-time elevation (including scheduled elevation) of Azure AD groups, on your behalf.",
@@ -4052,7 +4052,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read privileged access to Azure AD groups",
       "isEnabled": true,
-      "id": "d329c81c-20ad-4772-abf9-3f6fdb7e5988"
+      "id": "38677896-2fe8-470d-b727-92a612990d9b"
     },
     {
       "userConsentDescription": "Allows the app to read time-based assignment and just-in-time elevation of Azure resources (like your subscriptions, resource groups, storage, compute) on your behalf.",
@@ -4062,7 +4062,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read privileged access to Azure resources",
       "isEnabled": true,
-      "id": "1d89d70c-dcac-4248-b214-903c457af83a"
+      "id": "70eb601d-3055-4f8c-9642-422d1dff7ca3"
     },
     {
       "userConsentDescription": "Allows the app to request and manage time-based assignment and just-in-time elevation (including scheduled elevation) of Azure AD groups, on your behalf.",
@@ -4072,7 +4072,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and write privileged access to Azure AD groups",
       "isEnabled": true,
-      "id": "32531c59-1f32-461f-b8df-6f8a3b89f73b"
+      "id": "863da1c2-926f-4f33-b7f0-d06b31d2d3d8"
     },
     {
       "userConsentDescription": "Allows the app to read all the indicators for your organization, on your behalf.",
@@ -4082,7 +4082,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read all threat indicators",
       "isEnabled": true,
-      "id": "9cc427b4-2004-41c5-aa22-757b755e9796"
+      "id": "cd9a2082-1c61-4409-ae03-c0b10e517031"
     },
     {
       "userConsentDescription": "Allows the app to read privileged access requests, business flows, and governance policy templates on your behalf.",
@@ -4092,7 +4092,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read privileged access approval requests",
       "isEnabled": true,
-      "id": "31df746c-3cfa-4b19-b243-36a6fb2b6a66"
+      "id": "d2517873-38db-4232-ac02-308452ccff70"
     },
     {
       "userConsentDescription": "Allows the app to read entitlement management requests, business flows, and governance policy templates on your behalf.",
@@ -4102,7 +4102,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read entitlement management approval requests",
       "isEnabled": true,
-      "id": "95b85e04-9c5c-4554-a3ad-2e933c8a81cd"
+      "id": "ae178643-de54-4fa3-a60e-f5c35e4c57d9"
     },
     {
       "userConsentDescription": "Allows the app to read admin consent requests, business flows, and governance policy templates on your behalf.",
@@ -4112,7 +4112,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read admin consent approval requests",
       "isEnabled": true,
-      "id": "fad55eff-94e6-4517-9859-439301f0bad2"
+      "id": "ea311a29-c9a6-406c-8018-08f7e089324a"
     },
     {
       "userConsentDescription": "Allows the app to read customer lockbox requests, business flows and governance policy templates on your behalf.",
@@ -4122,7 +4122,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read customer lockbox approval requests",
       "isEnabled": true,
-      "id": "8123bef2-defe-4f3a-8d33-02baa9e6fcfc"
+      "id": "13a795bf-2927-4e1a-aed0-2bf92528a211"
     },
     {
       "userConsentDescription": "Allows the app to read and write privileged access requests, business flows, and governance policy templates on your behalf.",
@@ -4132,7 +4132,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and write privileged access approval requests",
       "isEnabled": true,
-      "id": "51e5d7dc-745e-4986-aa03-63d64036a7a5"
+      "id": "0828b5a1-fce1-4227-98de-8107592fbeab"
     },
     {
       "userConsentDescription": "Allows the app to read and write entitlement management requests, business flows, and governance policy templates on your behalf.",
@@ -4142,7 +4142,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and write entitlement management approval requests",
       "isEnabled": true,
-      "id": "15dc7bc3-a26c-40b1-8b58-b2a764eb06c1"
+      "id": "7870dca5-addd-4243-9e97-214547d2115a"
     },
     {
       "userConsentDescription": "Allows the app to read and write admin consent requests, business flows, and governance policy templates on your behalf.",
@@ -4152,7 +4152,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and write admin consent approval requests",
       "isEnabled": true,
-      "id": "0c940179-817f-401c-9a44-277f3fc38e2b"
+      "id": "226ada0b-78c7-46e8-bdff-5f1489fd7b72"
     },
     {
       "userConsentDescription": "Allows the app to read and write customer lockbox requests, business flows and governance policy templates on your behalf.",
@@ -4162,7 +4162,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and write customer lockbox approval requests",
       "isEnabled": true,
-      "id": "115b3477-4404-4685-a45d-4cf6a6092533"
+      "id": "806dcfb0-f7c3-4c22-9c54-9e8edb9eda7f"
     },
     {
       "userConsentDescription": "Allows the app to read external datasets and content that you have access to.",
@@ -4172,7 +4172,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read items in external datasets",
       "isEnabled": true,
-      "id": "922f9392-b1b7-483c-a4be-0089be7704fb"
+      "id": "4252d78b-9364-4879-b616-61009eddb080"
     },
     {
       "userConsentDescription": "Allows the app to delete channel messages in Microsoft Teams, on your behalf.",
@@ -4182,7 +4182,7 @@
       "type": "User",
       "adminConsentDisplayName": "Delete user's channel messages",
       "isEnabled": true,
-      "id": "32ea53ac-4a89-4cde-bac4-727c6fb9ac29"
+      "id": "15637902-cce4-47e1-b22a-ba1eb0352a71"
     },
     {
       "userConsentDescription": "Allows the app to edit channel messages in Microsoft Teams, on your behalf.",
@@ -4192,7 +4192,7 @@
       "type": "User",
       "adminConsentDisplayName": "Edit user's channel messages",
       "isEnabled": true,
-      "id": "2b61aa8a-6d36-4b2f-ac7b-f29867937c53"
+      "id": "3d518106-ffed-4dcf-9dbb-4d3060bb3cdb"
     },
     {
       "userConsentDescription": "Allows the app to send channel messages in Microsoft Teams, on your behalf.",
@@ -4202,7 +4202,7 @@
       "type": "User",
       "adminConsentDisplayName": "Send channel messages",
       "isEnabled": true,
-      "id": "ebf0f66e-9fb1-49e4-a278-222f76911cf4"
+      "id": "b612e56f-b1a3-4327-afff-d41589c17a8e"
     },
     {
       "userConsentDescription": "Allows the app to read the Teams apps that are installed for you. Does not give the ability to read application-specific settings.",
@@ -4212,7 +4212,7 @@
       "type": "User",
       "adminConsentDisplayName": "Read user's installed Teams apps",
       "isEnabled": true,
-      "id": "daef10fc-047a-48b0-b1a5-da4b5e72fabc"
+      "id": "54465842-a9df-498f-98c0-976274016326"
     },
     {
       "userConsentDescription": "Allows the app to read, install, upgrade, and uninstall Teams apps, on your behalf. Does not give the ability to read or write application-specific settings.",
@@ -4222,7 +4222,7 @@
       "type": "User",
       "adminConsentDisplayName": "Manage user's Teams apps",
       "isEnabled": true,
-      "id": "2a5addc2-4d9e-4d7d-8527-5215aec410f3"
+      "id": "a1c5155d-696f-4eb4-bcaf-406436b59df6"
     },
     {
       "userConsentDescription": "Allows the app to read your personal places.",
@@ -4232,7 +4232,7 @@
       "type": "User",
       "adminConsentDisplayName": "Read user places",
       "isEnabled": true,
-      "id": "40f6bacc-b201-40da-90a5-09775cc4a863"
+      "id": "197efc34-461b-4a66-8be6-88c41f0c71ed"
     },
     {
       "userConsentDescription": "Allows the app to create, read, and update personal places on your behalf.",
@@ -4242,7 +4242,7 @@
       "type": "User",
       "adminConsentDisplayName": "Read and write user places",
       "isEnabled": true,
-      "id": "012ba4a5-ca82-4a76-95ba-6c27f44364c3"
+      "id": "e6e02d62-73c9-4dba-b18d-996a253994f6"
     },
     {
       "userConsentDescription": "Allows the app to manage organization places (conference rooms and room lists) for calendar events and other applications, on your behalf.",
@@ -4252,7 +4252,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and write organization places",
       "isEnabled": true,
-      "id": "4c06a06a-098a-4063-868e-5dfee3827264"
+      "id": "d3622098-8623-4df8-becf-464b2a99c686"
     },
     {
       "userConsentDescription": "Allows the app to read your personal places and other users’ personal places that you have delegate access to.",
@@ -4262,7 +4262,7 @@
       "type": "User",
       "adminConsentDisplayName": "Read user places for delegates",
       "isEnabled": true,
-      "id": "0b3f56bc-fecd-4036-8930-660fc672e342"
+      "id": "db26c42f-145e-49f8-9da6-4790f232b444"
     },
     {
       "userConsentDescription": "Allows the app to request access to and management of access packages and related entitlement management resources that you have access to.",
@@ -4272,7 +4272,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and write entitlement management resources",
       "isEnabled": true,
-      "id": "ae7a573d-81d7-432b-ad44-4ed5c9d89038"
+      "id": "d4d20d91-a3cc-4131-9f59-91060917af78"
     },
     {
       "userConsentDescription": "Allows the app to send, read, update and delete your app-specific notifications.",
@@ -4282,7 +4282,7 @@
       "type": "User",
       "adminConsentDisplayName": "Deliver and manage user's notifications",
       "isEnabled": true,
-      "id": "26e2f3e8-b2a1-47fc-9620-89bb5b042024"
+      "id": "cf2f5d8b-c21f-442e-baa6-cd5753bd133a"
     },
     {
       "userConsentDescription": "Allows the app to read applications and service principals on your behalf.",
@@ -4292,7 +4292,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read applications",
       "isEnabled": true,
-      "id": "c79f8feb-a9db-4090-85f9-90d820caa0eb"
+      "id": "59bad08b-c700-4c3d-af10-7c1f1c18b999"
     },
     {
       "userConsentDescription": "Allows the app to create, read, update and delete applications and service principals on your behalf. Does not allow management of consent grants.",
@@ -4302,7 +4302,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and write all applications",
       "isEnabled": true,
-      "id": "bdfbf15f-ee85-4955-8675-146e8e5296b5"
+      "id": "3c69b8c7-fa10-4f0c-bbb6-5746e4bb180f"
     },
     {
       "userConsentDescription": "Allows the app to read BitLocker keys for your owned devices. Allows read of the recovery key.",
@@ -4312,7 +4312,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read BitLocker keys",
       "isEnabled": true,
-      "id": "b27a61ec-b99c-4d6a-b126-c4375d08ae30"
+      "id": "5c29da93-60c1-40fc-a780-4cb7f64ff51d"
     },
     {
       "userConsentDescription": "Allows the app to read basic BitLocker key properties for your owned devices. Does not allow read of the recovery key itself.",
@@ -4322,7 +4322,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read BitLocker keys basic information",
       "isEnabled": true,
-      "id": "5a107bfc-4f00-4e1a-b67e-66451267bc68"
+      "id": "06972c80-9527-4b0e-9a27-bb7724f76d64"
     },
     {
       "userConsentDescription": "Allows the app to list groups, read basic group properties and read membership of all your groups.",
@@ -4332,7 +4332,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read group memberships",
       "isEnabled": true,
-      "id": "bc024368-1153-4739-b217-4326f2e966d0"
+      "id": "876c57e8-7307-4dcf-8c12-138504f87c40"
     },
     {
       "userConsentDescription": "Allows the app to list groups, read basic properties, read and update the membership of your groups. Group properties and owners cannot be updated and groups cannot be deleted.",
@@ -4342,7 +4342,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and write group memberships",
       "isEnabled": true,
-      "id": "f81125ac-d3b7-4573-a3b2-7099cc39df9e"
+      "id": "f5c1cf05-29ad-4e8e-bd75-7d0445180485"
     },
     {
       "userConsentDescription": "Allows an app to read your organization's threat assessment requests on your behalf. Also allows the app to create new requests to assess threats received by your organization on your behalf.",
@@ -4352,7 +4352,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and write threat assessment requests",
       "isEnabled": true,
-      "id": "cac97e40-6730-457d-ad8d-4852fddab7ad"
+      "id": "a1fc222e-14f7-4f68-be86-6fc741bfbb0c"
     },
     {
       "userConsentDescription": "Allows the app to read schedule, schedule groups, shifts and associated entities in the Teams or Shifts application on your behalf.",
@@ -4362,7 +4362,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read user schedule items",
       "isEnabled": true,
-      "id": "fccf6dd8-5706-49fa-811f-69e2e1b585d0"
+      "id": "a42bbc42-de0a-45c9-a298-6db356fb8736"
     },
     {
       "userConsentDescription": "Allows the app to manage schedule, schedule groups, shifts and associated entities in the Teams or Shifts application on your behalf.",
@@ -4372,7 +4372,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and write user schedule items",
       "isEnabled": true,
-      "id": "63f27281-c9d9-4f29-94dd-6942f7f1feb0"
+      "id": "f5be022f-ebce-4a5d-8101-e438f8a32f1e"
     },
     {
       "userConsentDescription": "Allows the app to read and write authentication methods of all users you have access to in your organization.                       Authentication methods include things like a user’s phone numbers and Authenticator app settings. This does not allow                      the app to see secret information like passwords, or to sign-in or otherwise use the authentication methods.",
@@ -4382,7 +4382,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and write all users' authentication methods.",
       "isEnabled": true,
-      "id": "b7887744-6746-4312-813d-72daeaee7e2d"
+      "id": "695efc0c-e664-4174-9c0b-84f682556666"
     },
     {
       "userConsentDescription": "Allows the app to read and write your authentication methods, including phone numbers and Authenticator app settings.This does not allow the app to see secret information like your passwords, or to sign-in or otherwise use your authentication methods.",
@@ -4392,7 +4392,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and write user authentication methods",
       "isEnabled": true,
-      "id": "48971fc1-70d7-4245-af77-0beb29b53ee2"
+      "id": "63e506dd-c914-4995-8020-eae4b941374c"
     },
     {
       "userConsentDescription": "Allows the app to read authentication methods of all users you have access to in your organization. Authentication methods include things like a user’s phone numbers and Authenticator app settings. This does not allow the app to see secret information like passwords, or to sign-in or otherwise use the authentication methods.",
@@ -4402,7 +4402,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read all users' authentication methods",
       "isEnabled": true,
-      "id": "aec28ec7-4d02-4e8c-b864-50163aea77eb"
+      "id": "19b58459-34f2-492f-814c-5964873c0d71"
     },
     {
       "userConsentDescription": "Allows the app to read your authentication methods, including phone numbers and Authenticator app settings. This does not allow the app to see secret information like your passwords, or to sign-in or otherwise use your authentication methods.",
@@ -4412,7 +4412,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read user authentication methods.",
       "isEnabled": true,
-      "id": "1f6b61c5-2f65-4135-9c9f-31c0f8d32b52"
+      "id": "a408e219-157d-448c-a2fa-b3d429e14bc0"
     },
     {
       "userConsentDescription": "Allows the app to read, install, upgrade, and uninstall Teams apps, on your behalf. Does not give the ability to read or write application-specific settings.",
@@ -4422,7 +4422,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Manage all Teams apps",
       "isEnabled": true,
-      "id": "d3f0af02-b22d-4778-a433-14f7e3f2e1e2"
+      "id": "4a4a0281-1981-442a-b7fb-2a2c9191bc86"
     },
     {
       "userConsentDescription": "Allows the app to read the Teams apps that are installed for you, and in teams you are a member of. Does not give the ability to read application-specific settings.",
@@ -4432,7 +4432,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read all installed Teams apps",
       "isEnabled": true,
-      "id": "9127ba42-f79f-43b1-be80-f23ecd42377e"
+      "id": "2441cef8-f425-459c-a1cd-825252e9fd4f"
     },
     {
       "userConsentDescription": "Allows the app to create tabs in any team in Microsoft Teams, on your behalf. This does not grant the ability to read, modify or delete tabs after they are created, or give access to the content inside the tabs.",
@@ -4442,7 +4442,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Create tabs in Microsoft Teams.",
       "isEnabled": true,
-      "id": "a9ff19c2-f369-4a95-9a25-ba9d460efc8e"
+      "id": "91e89ad9-3126-41f7-9456-643bff3f3fe8"
     },
     {
       "userConsentDescription": "Read the names and settings of tabs inside any team in Microsoft Teams, on your behalf. This does not give access to the content inside the tabs.",
@@ -4452,7 +4452,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read tabs in Microsoft Teams.",
       "isEnabled": true,
-      "id": "59dacb05-e88d-4c13-a684-59f1afc8cc98"
+      "id": "35ac8a79-001c-4665-96ac-15344bd9a355"
     },
     {
       "userConsentDescription": "Read and write tabs in any team in Microsoft Teams, on your behalf. This does not give access to the content inside the tabs.",
@@ -4462,7 +4462,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and write tabs in Microsoft Teams.",
       "isEnabled": true,
-      "id": "b98bfd41-87c6-45cc-b104-e2de4f0dafb9"
+      "id": "c53d63c9-c232-486d-a2a6-3cd2b287ff60"
     },
     {
       "userConsentDescription": "Allows the app to read, update, create and delete email in your mailbox. Does not include permission to send mail.",
@@ -4472,7 +4472,7 @@
       "type": "User",
       "adminConsentDisplayName": "Read and write access to mailboxes via IMAP.",
       "isEnabled": true,
-      "id": "652390e4-393a-48de-9484-05f9b1212954"
+      "id": "3f65ebe3-12f4-4d17-9665-198fa0ef9b67"
     },
     {
       "userConsentDescription": "Allows the app to read, update, create and delete email in your mailbox. Does not include permission to send mail.",
@@ -4482,7 +4482,7 @@
       "type": "User",
       "adminConsentDisplayName": "Read and write access to mailboxes via POP.",
       "isEnabled": true,
-      "id": "d7b7f2d9-0f45-4ea1-9d42-e50810c06991"
+      "id": "d48dd925-82b2-45ca-b63a-9061ab7a094b"
     },
     {
       "userConsentDescription": "Allows the app to send emails on your behalf from your mailbox.",
@@ -4492,7 +4492,7 @@
       "type": "User",
       "adminConsentDisplayName": "Send emails from mailboxes using SMTP AUTH.",
       "isEnabled": true,
-      "id": "258f6531-6087-4cc4-bb90-092c5fb3ed3f"
+      "id": "27eeb2e1-92a2-4669-847f-efcc569309eb"
     },
     {
       "userConsentDescription": "Allows the app to read all domain properties on your behalf.",
@@ -4502,7 +4502,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read domains.",
       "isEnabled": true,
-      "id": "2f9ee017-59c1-4f1d-9472-bd5529a7b311"
+      "id": "a084ed12-1120-4c05-a4b9-f5a8e7f4785b"
     },
     {
       "userConsentDescription": "Allows the app to read and write all domain properties on your behalf. Also allows the app to add, verify and remove domains.",
@@ -4512,7 +4512,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and write domains",
       "isEnabled": true,
-      "id": "0b5d694c-a244-4bde-86e6-eb5cd07730fe"
+      "id": "905861a4-81d4-40d5-95ff-c3e337e96a00"
     },
     {
       "userConsentDescription": "Allows the app to read and write your organization's application configuration policies on your behalf.  This includes policies such as activityBasedTimeoutPolicy, claimsMappingPolicy, homeRealmDiscoveryPolicy, tokenIssuancePolicy  and tokenLifetimePolicy.",
@@ -4522,7 +4522,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and write your organization's application configuration policies",
       "isEnabled": true,
-      "id": "b27add92-efb2-4f16-84f5-8108ba77985c"
+      "id": "cb1b73d0-94e2-40dd-8be5-ab5252558778"
     },
     {
       "userConsentDescription": "Allows the app to read devices' configuration information on your behalf.",
@@ -4532,7 +4532,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read all devices",
       "isEnabled": true,
-      "id": "951183d1-1a61-466f-a6d1-1fde911bfd95"
+      "id": "10c97f27-eecd-473b-89a9-ea222e347d1d"
     },
     {
       "userConsentDescription": "Allows the app to read, update and delete identities that are associated with a user's account that you have access to. This controls the identities users can sign-in with.",
@@ -4542,7 +4542,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Manage  user identities",
       "isEnabled": true,
-      "id": "637d7bec-b31e-4deb-acc9-24275642a2c9"
+      "id": "f515d1de-4794-45ce-8e8c-db79019e8a2c"
     },
     {
       "userConsentDescription": "Allows the app to read access packages and related entitlement management resources that you have access to.",
@@ -4552,7 +4552,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read all entitlement management resources",
       "isEnabled": true,
-      "id": "5449aa12-1393-4ea2-a7c7-d0e06c1a56b2"
+      "id": "6b5f402c-33c4-4893-8c5a-5178d39ca1d9"
     },
     {
       "userConsentDescription": "Create channels in any team, on your behalf.",
@@ -4562,7 +4562,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Create channels",
       "isEnabled": true,
-      "id": "101147cf-4178-4455-9d58-02b5c164e759"
+      "id": "83ad7b83-a8d6-43e8-92c9-ae1b10d5d257"
     },
     {
       "userConsentDescription": "Delete channels in any team, on your behalf.",
@@ -4572,7 +4572,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Delete channels",
       "isEnabled": true,
-      "id": "cc83893a-e232-4723-b5af-bd0b01bcfe65"
+      "id": "1fb2ac73-3230-4bb4-98be-0df3c7d510c6"
     },
     {
       "userConsentDescription": "Read all channel names, channel descriptions, and channel settings, on your behalf.",
@@ -4582,7 +4582,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read the names, descriptions, and settings of channels",
       "isEnabled": true,
-      "id": "233e0cf1-dd62-48bc-b65b-b38fe87fcf8e"
+      "id": "f1ac5f65-d98b-48cc-be7a-1d25373acf95"
     },
     {
       "userConsentDescription": "Read and write the names, descriptions, and settings of all channels, on your behalf.",
@@ -4592,7 +4592,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and write the names, descriptions, and settings of channels",
       "isEnabled": true,
-      "id": "d649fb7c-72b4-4eec-b2b4-b15acf79e378"
+      "id": "037b46c1-4a60-4734-ab5c-33ae351deae4"
     },
     {
       "userConsentDescription": "Allows the app to read all webhook subscriptions on your behalf.",
@@ -4602,7 +4602,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read all webhook subscriptions ",
       "isEnabled": true,
-      "id": "5f88184c-80bb-4d52-9ff2-757288b2e9b7"
+      "id": "88f05e22-65dd-469b-894b-d3bceebbe7fd"
     },
     {
       "userConsentDescription": "Read the names and  descriptions of teams, on your behalf.",
@@ -4612,7 +4612,7 @@
       "type": "User",
       "adminConsentDisplayName": "Read the names and descriptions of teams",
       "isEnabled": true,
-      "id": "485be79e-c497-4b35-9400-0e3fa7f2a5d4"
+      "id": "6633c406-4977-4d37-8ab8-6b6ede8c85ac"
     },
     {
       "userConsentDescription": "Read channel names and channel descriptions, on your behalf.",
@@ -4622,7 +4622,7 @@
       "type": "User",
       "adminConsentDisplayName": "Read the names and descriptions of channels",
       "isEnabled": true,
-      "id": "9d8982ae-4365-4f57-95e9-d6032a4c0b87"
+      "id": "ea53732e-b156-42ca-becb-cd34c7a48fd4"
     },
     {
       "userConsentDescription": "Read all teams' settings, on your behalf.",
@@ -4632,7 +4632,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read teams' settings",
       "isEnabled": true,
-      "id": "48638b3c-ad68-4383-8ac4-e6880ee6ca57"
+      "id": "3f821d36-6ebd-40d7-8cfc-72ef317f4732"
     },
     {
       "userConsentDescription": "Read and change all teams' settings, on your behalf.",
@@ -4642,7 +4642,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and change teams' settings",
       "isEnabled": true,
-      "id": "39d65650-9d3e-4223-80db-a335590d027e"
+      "id": "4ef9f7d2-98ca-4905-baf7-1bc17d78a3f3"
     },
     {
       "userConsentDescription": "Allows the app to read approvals on your behalf.",
@@ -4652,7 +4652,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read approvals",
       "isEnabled": true,
-      "id": "1196552e-b226-4363-b01e-b8901fe10a11"
+      "id": "741e9916-287f-4856-8017-2205de334938"
     },
     {
       "userConsentDescription": "Allows the app to read and write approvals on your behalf.",
@@ -4662,7 +4662,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and write approvals",
       "isEnabled": true,
-      "id": "1d3d0bc7-4b3a-427a-ae9f-6de4e1edc95f"
+      "id": "e324e019-54d6-4a0c-8a70-6acbd9181f81"
     },
     {
       "userConsentDescription": "Read the members of teams, on your behalf.",
@@ -4672,7 +4672,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read the members of teams",
       "isEnabled": true,
-      "id": "2497278c-d82d-46a2-b1ce-39d4cdde5570"
+      "id": "1a6331c8-88f0-4a7d-a012-7b63c9db9133"
     },
     {
       "userConsentDescription": "Add and remove members from teams, on your behalf. Also allows changing a member's role, for example from owner to non-owner.",
@@ -4682,7 +4682,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Add and remove members from teams",
       "isEnabled": true,
-      "id": "4a06efd2-f825-4e34-813e-82a57b03d1ee"
+      "id": "dd3febbe-d22e-4132-99ec-190e3ddb08b0"
     },
     {
       "userConsentDescription": "Allows the app to read consent requests and approvals, on your behalf.",
@@ -4692,7 +4692,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read consent requests",
       "isEnabled": true,
-      "id": "f3bfad56-966e-4590-a536-82ecf548ac1e"
+      "id": "8cff24fb-28fa-4ee9-bc15-db0647ff515b"
     },
     {
       "userConsentDescription": "Allows the app to read app consent requests for your approval, and deny or approve those request on your behalf.",
@@ -4702,7 +4702,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and write consent requests",
       "isEnabled": true,
-      "id": "497d9dfa-3bd1-481a-baab-90895e54568c"
+      "id": "68557661-0bcd-4c85-af76-129294fe69ac"
     },
     {
       "userConsentDescription": "Allows the app to read and write your organization's consent request policy on your behalf.",
@@ -4712,7 +4712,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and write consent request policy",
       "isEnabled": true,
-      "id": "4d135e65-66b8-41a8-9f8b-081452c91774"
+      "id": "5cceccdf-c9b1-45f8-85a0-63d5c4cc555a"
     },
     {
       "userConsentDescription": "Allows the app to read your presence information on your behalf. Presence information includes activity, availability, status note, calendar out-of-office message, timezone and location.",
@@ -4722,7 +4722,7 @@
       "type": "User",
       "adminConsentDisplayName": "Read user's presence information",
       "isEnabled": true,
-      "id": "76bc735e-aecd-4a1d-8b4c-2b915deabb79"
+      "id": "305bfaa5-5c1e-48e0-822e-e07ad2429472"
     },
     {
       "userConsentDescription": "Allows the app to read presence information of all users in the directory on your behalf. Presence information includes activity, availability, status note, calendar out-of-office message, timezone and location.",
@@ -4732,7 +4732,7 @@
       "type": "User",
       "adminConsentDisplayName": "Read presence information of all users in your organization",
       "isEnabled": true,
-      "id": "9c7a330d-35b3-4aa1-963d-cb2b9f927841"
+      "id": "f5ea1483-953b-40c0-be9c-a269c9b4a98d"
     },
     {
       "userConsentDescription": "Read the members of channels, on your behalf.",
@@ -4742,7 +4742,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read the members of channels",
       "isEnabled": true,
-      "id": "2eadaff8-0bce-4198-a6b9-2cfc35a30075"
+      "id": "06c96283-c4b6-439e-ac29-9f7109b00504"
     },
     {
       "userConsentDescription": "Add and remove members from channels, on your behalf. Also allows changing a member's role, for example from owner to non-owner.",
@@ -4752,7 +4752,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Add and remove members from channels",
       "isEnabled": true,
-      "id": "0c3e411a-ce45-4cd1-8f30-f99a3efa7b11"
+      "id": "5f8e3a54-4666-4503-a963-77d8556dd378"
     },
     {
       "userConsentDescription": "Allows the app to read and write the authentication flow policies for your tenant, on your behalf.",
@@ -4762,7 +4762,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and write authentication flow policies",
       "isEnabled": true,
-      "id": "edb72de9-4252-4d03-a925-451deef99db7"
+      "id": "77a0be12-59f2-4bb7-a441-0381c7abf344"
     },
     {
       "userConsentDescription": "Allows the app to read a channel's messages in Microsoft Teams, on your behalf.",
@@ -4772,7 +4772,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read user channel messages",
       "isEnabled": true,
-      "id": "767156cb-16ae-4d10-8f8b-41b657c8c8c8"
+      "id": "4824b089-8e3f-47e4-8992-67512a1f9f07"
     },
     {
       "userConsentDescription": "Allows the app to read apps in the app catalogs.",
@@ -4782,7 +4782,7 @@
       "type": "User",
       "adminConsentDisplayName": "Read all app catalogs",
       "isEnabled": true,
-      "id": "88e58d74-d3df-44f3-ad47-e89edf4472e4"
+      "id": "6dd854a4-9c61-4ced-8034-264a0d1d17b3"
     },
     {
       "userConsentDescription": "Allows the app to read and write the authentication method policies for your tenant, on your behalf.",
@@ -4792,7 +4792,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and write authentication method policies",
       "isEnabled": true,
-      "id": "7e823077-d88e-468f-a337-e18f1f0e6c7c"
+      "id": "60228327-575d-4f6a-866e-efc1cfe51509"
     },
     {
       "userConsentDescription": "Allows the app to read and write your organization's authorization policy on your behalf. For example, authorization policies can control some of the permissions that the out-of-the-box user role has by default.",
@@ -4802,7 +4802,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and write your organization's authorization policy",
       "isEnabled": true,
-      "id": "edd3c878-b384-41fd-95ad-e7407dd775be"
+      "id": "ea8859f5-87b2-4bbf-a140-916b9e29e309"
     },
     {
       "userConsentDescription": "Allows the app to read policies related to consent and permission grants for applications, on your behalf.",
@@ -4812,7 +4812,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read consent and permission grant policies",
       "isEnabled": true,
-      "id": "414de6ea-2d92-462f-b120-6e2a809a6d01"
+      "id": "920d514b-ce7f-4d24-951d-3e1ef36f42ee"
     },
     {
       "userConsentDescription": "Allows the app to manage policies related to consent and permission grants for applications, on behalf of the signed-in user.",
@@ -4822,7 +4822,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Manage consent and permission grant policies",
       "isEnabled": true,
-      "id": "2672f8bb-fd5e-42e0-85e1-ec764dd2614e"
+      "id": "7843530d-ba5f-4661-8728-9f41cd265674"
     },
     {
       "userConsentDescription": "Allows the application to create (register) printers on your behalf. ",
@@ -4832,7 +4832,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Register printers  ",
       "isEnabled": true,
-      "id": "90c30bed-6fd1-4279-bf39-714069619721"
+      "id": "282a0b64-5577-411e-92bc-0fcfa66b6dac"
     },
     {
       "userConsentDescription": "Allows the application to create (register), read, update, and delete (unregister) printers on your behalf.  ",
@@ -4842,7 +4842,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Register, read, update, and unregister printers",
       "isEnabled": true,
-      "id": "93dae4bd-43a1-4a23-9a1a-92957e1d9121"
+      "id": "3aaaa41e-f158-4693-9c32-f67a07f53780"
     },
     {
       "userConsentDescription": "Allows the application to read printers on your behalf. ",
@@ -4852,7 +4852,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read printers",
       "isEnabled": true,
-      "id": "3a736c8a-018e-460a-b60c-863b2683e8bf"
+      "id": "3a48e41b-2e49-4246-891f-e0002a8fa18f"
     },
     {
       "userConsentDescription": "Allows the application to read and update printers on your behalf. Does not allow creating (registering) or deleting (unregistering) printers.",
@@ -4862,7 +4862,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and update printers",
       "isEnabled": true,
-      "id": "89f66824-725f-4b8f-928e-e1c5258dc565"
+      "id": "f2815995-6029-4720-9c0a-6e07cd505430"
     },
     {
       "userConsentDescription": "Allows the application to read printer shares on your behalf. ",
@@ -4872,7 +4872,7 @@
       "type": "User",
       "adminConsentDisplayName": "Read printer shares",
       "isEnabled": true,
-      "id": "ed11134d-2f3f-440d-a2e1-411efada2502"
+      "id": "425b887b-5b07-41db-87cb-c881f1013d3a"
     },
     {
       "userConsentDescription": "Allows the application to read and update printer shares on your behalf. ",
@@ -4882,7 +4882,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and write printer shares",
       "isEnabled": true,
-      "id": "06ceea37-85e2-40d7-bec3-91337a46038f"
+      "id": "bfba9f5d-259d-4f37-bf98-d769647c3d76"
     },
     {
       "userConsentDescription": "Allows the application to read the metadata and document content of print jobs that you created.",
@@ -4892,7 +4892,7 @@
       "type": "User",
       "adminConsentDisplayName": "Read user's print jobs",
       "isEnabled": true,
-      "id": "248f5528-65c0-4c88-8326-876c7236df5e"
+      "id": "e5f72b5d-db2b-46fc-b5d4-ed404f530f53"
     },
     {
       "userConsentDescription": "Allows the application to read the metadata and document content of print jobs on your behalf. ",
@@ -4902,7 +4902,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read print jobs",
       "isEnabled": true,
-      "id": "afdd6933-a0d8-40f7-bd1a-b5d778e8624b"
+      "id": "afb98331-6ddc-4322-aa06-621bcf927deb"
     },
     {
       "userConsentDescription": "Allows the application to read the metadata of print jobs that you created. Does not allow access to print job document content.",
@@ -4912,7 +4912,7 @@
       "type": "User",
       "adminConsentDisplayName": "Read basic information of user's print jobs",
       "isEnabled": true,
-      "id": "6a71a747-280f-4670-9ca0-a9cbf882b274"
+      "id": "e5aa676f-f9a9-496b-83a8-546a75fd78cc"
     },
     {
       "userConsentDescription": "Allows the application to read the metadata of print jobs on your behalf. Does not allow access to print job document content.",
@@ -4922,7 +4922,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read basic information of print jobs",
       "isEnabled": true,
-      "id": "04ce8d60-72ce-4867-85cf-6d82f36922f3"
+      "id": "08714b8f-2d44-4635-9676-9c5c34ff59ef"
     },
     {
       "userConsentDescription": "Allows the application to read and update the metadata and document content of print jobs that you created.",
@@ -4932,7 +4932,7 @@
       "type": "User",
       "adminConsentDisplayName": "Read and write user's print jobs",
       "isEnabled": true,
-      "id": "b81dd597-8abb-4b3f-a07a-820b0316ed04"
+      "id": "26139aef-8d45-46f9-abb5-abbafc64157b"
     },
     {
       "userConsentDescription": "Allows the application to read and update the metadata and document content of print jobs on your behalf. ",
@@ -4942,7 +4942,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and write print jobs",
       "isEnabled": true,
-      "id": "036b9544-e8c5-46ef-900a-0646cc42b271"
+      "id": "e1edb7c9-8ab3-497e-8e34-92b9b82d2318"
     },
     {
       "userConsentDescription": "Allows the application to read and update the metadata of print jobs that you created. Does not allow access to print job document content.",
@@ -4952,7 +4952,7 @@
       "type": "User",
       "adminConsentDisplayName": "Read and write basic information of user's print jobs",
       "isEnabled": true,
-      "id": "6f2d22f2-1cb6-412c-a17c-3336817eaa82"
+      "id": "84af8bf4-aa17-4df1-a57d-1c3bbf4a072c"
     },
     {
       "userConsentDescription": "Allows the application to read and update the metadata of print jobs on your behalf. Does not allow access to print job document content.",
@@ -4962,7 +4962,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and write basic information of print jobs",
       "isEnabled": true,
-      "id": "3a0db2f6-0d2a-4c19-971b-49109b19ad3d"
+      "id": "dfaae1cf-4848-4781-a0e3-5a7c021c988b"
     },
     {
       "userConsentDescription": "Allows the app to read and write your organization's device configuration policies on your behalf.  For example, device registration policy can limit initial provisioning controls using quota restrictions, additional authentication and authorization checks.",
@@ -4972,7 +4972,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and write your organization's device configuration policies",
       "isEnabled": true,
-      "id": "40b534c3-9552-4550-901b-23879c90bcf9"
+      "id": "dc222486-70a1-488c-9ec4-41abe1254f31"
     },
     {
       "userConsentDescription": "Allows the app to submit application packages to the catalog and cancel submissions that are pending review on your behalf.",
@@ -4982,7 +4982,7 @@
       "type": "User",
       "adminConsentDisplayName": "Submit application packages to the catalog and cancel pending submissions",
       "isEnabled": true,
-      "id": "3db89e36-7fa6-4012-b281-85f3d9d9fd2e"
+      "id": "af79aacf-e7c9-4191-89d8-b732c377d818"
     },
     {
       "userConsentDescription": "Allows the app to read the Teams apps that are installed in chats that you can access. Does not give the ability to read application-specific settings.",
@@ -4992,7 +4992,7 @@
       "type": "User",
       "adminConsentDisplayName": "Read installed Teams apps in chats",
       "isEnabled": true,
-      "id": "bf3fbf03-f35f-4e93-963e-47e4d874c37a"
+      "id": "6327a905-ffca-4640-a35e-70d9d6411379"
     },
     {
       "userConsentDescription": "Allows the app to read the Teams apps that are installed in teams that you can access. Does not give the ability to read application-specific settings.",
@@ -5002,7 +5002,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read installed Teams apps in teams",
       "isEnabled": true,
-      "id": "5248dcb1-f83b-4ec3-9f4d-a4428a961a72"
+      "id": "25e71dd5-5fa1-4094-94fc-ce534c1d9672"
     },
     {
       "userConsentDescription": "Allows the app to read the Teams apps that are installed for you. Does not give the ability to read application-specific settings.",
@@ -5012,7 +5012,7 @@
       "type": "User",
       "adminConsentDisplayName": "Read user's installed Teams apps",
       "isEnabled": true,
-      "id": "c395395c-ff9a-4dba-bc1f-8372ba9dca84"
+      "id": "d4bf44aa-7f68-4ac3-8bb8-f85d6a6ebe0b"
     },
     {
       "userConsentDescription": "Allows the app to read, install, upgrade, and uninstall Teams apps in teams you can access. Does not give the ability to read application-specific settings.",
@@ -5022,7 +5022,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Manage installed Teams apps in teams",
       "isEnabled": true,
-      "id": "2e25a044-2580-450d-8859-42eeb6e996c0"
+      "id": "e9564c56-400c-458b-a457-069bfdaadb31"
     },
     {
       "userConsentDescription": "Allows a Teams app to read, install, upgrade, and uninstall itself in chats you can access.",
@@ -5032,7 +5032,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Allow the Teams app to manage itself in chats",
       "isEnabled": true,
-      "id": "0ce33576-30e8-43b7-99e5-62f8569a4002"
+      "id": "4e888531-18e1-4ad0-8f53-8e20bcad13d4"
     },
     {
       "userConsentDescription": "Allows a Teams app to read, install, upgrade, and uninstall itself to teams you can access.",
@@ -5042,7 +5042,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Allow the app to manage itself in teams",
       "isEnabled": true,
-      "id": "0f4595f7-64b1-4e13-81bc-11a249df07a9"
+      "id": "9960fd99-1b1c-4ca7-8ca5-b8fdce4b34bb"
     },
     {
       "userConsentDescription": "Allows a Teams app to read, install, upgrade, and uninstall itself for you.",
@@ -5052,7 +5052,7 @@
       "type": "User",
       "adminConsentDisplayName": "Allow the Teams app to manage itself for a user",
       "isEnabled": true,
-      "id": "207e0cb1-3ce7-4922-b991-5a760c346ebc"
+      "id": "16579710-d0b3-448a-b81e-7e84b9a28952"
     },
     {
       "userConsentDescription": "Allows the app to read, install, upgrade, and uninstall Teams apps installed for you. Does not give the ability to read application-specific settings.",
@@ -5062,7 +5062,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Manage user's installed Teams apps",
       "isEnabled": true,
-      "id": "093f8818-d05f-49b8-95bc-9d2a73e9a43c"
+      "id": "503791af-053d-4077-8e26-f4fcceb2efa2"
     },
     {
       "userConsentDescription": "Allows the app to create teams on your behalf. ",
@@ -5072,7 +5072,7 @@
       "type": "User",
       "adminConsentDisplayName": "Create teams",
       "isEnabled": true,
-      "id": "7825d5d6-6049-4ce7-bdf6-3b8d53f4bcd0"
+      "id": "a5499ec7-c80d-4572-b7b7-4afb13ba5b04"
     },
     {
       "userConsentDescription": "Add and remove members from all teams, on your behalf. Does not allow adding or removing a member with the owner role. Additionally, does not allow the app to elevate an existing member to the owner role.",
@@ -5082,7 +5082,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Add and remove members with non-owner role for all teams",
       "isEnabled": true,
-      "id": "2104a4db-3a2f-4ea0-9dba-143d457dc666"
+      "id": "9630292c-513e-4b40-a973-6fcd4ea22e10"
     },
     {
       "userConsentDescription": "Allows the app to read the term store data that you have access to. This includes all sets, groups and terms in the term store.",
@@ -5092,7 +5092,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read term store data",
       "isEnabled": true,
-      "id": "297f747b-0005-475b-8fef-c890f5152b38"
+      "id": "1a419f36-f304-4c9c-bf4d-1cf102499cc3"
     },
     {
       "userConsentDescription": "Allows the app to read or modify data that you have access to. This includes all sets, groups and terms in the term store.",
@@ -5102,7 +5102,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and write term store data",
       "isEnabled": true,
-      "id": "6c37c71d-f50f-4bff-8fd3-8a41da390140"
+      "id": "7206d1a4-810e-4c46-881e-39daf46b8298"
     },
     {
       "userConsentDescription": "Allows the app to read your tenant's service announcement messages on your behalf. Messages may include information about new or changed features.",
@@ -5112,7 +5112,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read service announcement messages",
       "isEnabled": true,
-      "id": "eda39fa6-f8cf-4c3c-a909-432c683e4c9b"
+      "id": "67c114c4-4875-43a9-ac7e-8994f7dde787"
     },
     {
       "userConsentDescription": "Allows the app to read your tenant's service health information on your behalf.Health information may include service issues or service health overviews.",
@@ -5122,7 +5122,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read service health",
       "isEnabled": true,
-      "id": "55896846-df78-47a7-aa94-8d3d4442ca7f"
+      "id": "f4fc11f3-d98d-4449-b041-c86c3746479a"
     },
     {
       "userConsentDescription": "Allows the app to read your short notes.",
@@ -5132,7 +5132,7 @@
       "type": "User",
       "adminConsentDisplayName": "Read short notes of the signed-in user",
       "isEnabled": true,
-      "id": "50f66e47-eb56-45b7-aaa2-75057d9afe08"
+      "id": "9a8b066e-5a38-4630-87ac-a59a2bf14901"
     },
     {
       "userConsentDescription": "Allows the app to read, create, edit, and delete your short notes.",
@@ -5142,7 +5142,7 @@
       "type": "User",
       "adminConsentDisplayName": "Read, create, edit, and delete short notes of the signed-in user",
       "isEnabled": true,
-      "id": "328438b7-4c01-4c07-a840-e625a749bb89"
+      "id": "0cf07bb7-f99f-41c1-b6fb-bed843a7a5eb"
     },
     {
       "userConsentDescription": "Allows the app to read your organization's conditional access policies on your behalf.",
@@ -5152,7 +5152,7 @@
       "type": "User",
       "adminConsentDisplayName": "Read your organization's conditional access policies",
       "isEnabled": true,
-      "id": "633e0fce-8c58-4cfb-9495-12bbd5a24f7c"
+      "id": "c471b12a-3b14-4ea0-9251-ea011f1edcd9"
     },
     {
       "userConsentDescription": "Allows the app to read the role-based access control (RBAC) settings for all RBAC providers, on your behalf.  This includes reading role definitions and role assignments.",
@@ -5162,7 +5162,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read role management data for all RBAC providers",
       "isEnabled": true,
-      "id": "48fec646-b2ba-4019-8681-8eb31435aded"
+      "id": "9892e09f-c64b-43d9-87f6-e5dd0c38fd48"
     },
     {
       "userConsentDescription": "Allows an app to send one-to-one and group chat messages in Microsoft Teams, on your behalf.",
@@ -5172,7 +5172,7 @@
       "type": "User",
       "adminConsentDisplayName": "Send user chat messages",
       "isEnabled": true,
-      "id": "116b7235-7cc6-461e-b163-8e55691d839e"
+      "id": "2c33477e-4cc5-4d46-b70e-637cb2cc8528"
     },
     {
       "userConsentDescription": "Allows an app to read the members and descriptions of one-to-one and group chat threads, on your behalf.",
@@ -5182,7 +5182,7 @@
       "type": "User",
       "adminConsentDisplayName": "Read names and members of user chat threads",
       "isEnabled": true,
-      "id": "9547fcb5-d03f-419d-9948-5928bbf71b0f"
+      "id": "9a76bd7a-4e79-4a42-8cbd-b4efea139b3e"
     },
     {
       "userConsentDescription": "Allows the app to read and write the properties of Cloud PCs, on your behalf.",
@@ -5192,7 +5192,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and write Cloud PCs",
       "isEnabled": true,
-      "id": "9d77138f-f0e2-47ba-ab33-cd246c8b79d1"
+      "id": "c7a8cc6a-3ebe-438b-b208-3520281c8e64"
     },
     {
       "userConsentDescription": "Allows the app to read the properties of Cloud PCs, on your behalf.",
@@ -5202,7 +5202,7 @@
       "type": "User",
       "adminConsentDisplayName": "Read Cloud PCs",
       "isEnabled": true,
-      "id": "5252ec4e-fd40-4d92-8c68-89dd1d3c6110"
+      "id": "6f7bab03-7edb-4c44-996b-dca1f718d6d1"
     },
     {
       "userConsentDescription": "Allows the app to read, install, upgrade, and uninstall Teams apps in chats you can access. Does not give the ability to read application-specific settings.",
@@ -5212,7 +5212,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Manage installed Teams apps in chats",
       "isEnabled": true,
-      "id": "aa85bf13-d771-4d5d-a9e6-bca04ce44edf"
+      "id": "465718a2-9fc5-45e1-8fc2-8120ff859fc8"
     },
     {
       "userConsentDescription": "Allows the app to create, read, update, and delete your tasks and task lists, including any shared with you.",
@@ -5222,7 +5222,7 @@
       "type": "User",
       "adminConsentDisplayName": "Create, read, update, and delete user’s tasks and task lists",
       "isEnabled": true,
-      "id": "2219042f-cab5-40cc-b0d2-16b1540b4c5f"
+      "id": "4c737f75-5d4f-4dda-ae87-481704a4f2c6"
     },
     {
       "userConsentDescription": "Allows the app to read your tasks and task lists, including any shared with you. Doesn't include permission to create, delete, or update anything.",
@@ -5232,7 +5232,7 @@
       "type": "User",
       "adminConsentDisplayName": "Read user's tasks and task lists",
       "isEnabled": true,
-      "id": "f45671fb-e0fe-4b4b-be20-3d3ce43f1bcb"
+      "id": "afe6b918-beb1-4cc0-aef2-4acba0685f87"
     },
     {
       "userConsentDescription": "Allows an app to read one-to-one or group chat messages in Microsoft Teams, on your behalf.",
@@ -5242,7 +5242,7 @@
       "type": "User",
       "adminConsentDisplayName": "Read user chat messages",
       "isEnabled": true,
-      "id": "cdcdac3a-fd45-410d-83ef-554db620e5c7"
+      "id": "0537af23-a006-4c72-b1e1-09591a9ddbc2"
     },
     {
       "userConsentDescription": "Allows a Teams app to read, install, upgrade, and uninstall all tabs in chats you can access.",
@@ -5252,7 +5252,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Allow the Teams app to manage all tabs in chats",
       "isEnabled": true,
-      "id": "ee928332-e9c2-4747-b4a0-f8c164b68de6"
+      "id": "be62a724-3a85-419d-9113-042cce90692c"
     },
     {
       "userConsentDescription": "Allows a Teams app to read, install, upgrade, and uninstall all tabs to teams you can access.",
@@ -5262,7 +5262,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Allow the Teams app to manage all tabs in teams",
       "isEnabled": true,
-      "id": "c975dd04-a06e-4fbb-9704-62daad77bb49"
+      "id": "28281c2b-5067-4ad9-bf3c-2ab692e7631f"
     },
     {
       "userConsentDescription": "Allows a Teams app to read, install, upgrade, and uninstall all tabs for you.",
@@ -5272,7 +5272,7 @@
       "type": "User",
       "adminConsentDisplayName": "Allow the Teams app to manage all tabs for a user",
       "isEnabled": true,
-      "id": "c37c9b61-7762-4bff-a156-afc0005847a0"
+      "id": "abac1394-c442-47c9-aa76-0de675a0f440"
     },
     {
       "userConsentDescription": "Allows the app to read the API connectors used in user authentication flows, on your behalf.",
@@ -5282,7 +5282,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read API connectors for authentication flows",
       "isEnabled": true,
-      "id": "1b6ff35f-31df-4332-8571-d31ea5a4893f"
+      "id": "2153e6b1-5e30-46d7-a764-46265b057882"
     },
     {
       "userConsentDescription": "Allows the app to read, create and manage the API connectors used in user authentication flows, on your behalf.",
@@ -5292,7 +5292,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and write API connectors for authentication flows",
       "isEnabled": true,
-      "id": "c67b52c5-7c69-48b6-9d48-7b3af3ded914"
+      "id": "71ac8761-d104-4972-b437-3e69d0068690"
     },
     {
       "userConsentDescription": "Read the members of chats, on your behalf.",
@@ -5302,7 +5302,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read the members of chats",
       "isEnabled": true,
-      "id": "c5a9e2b1-faf6-41d4-8875-d381aa549b24"
+      "id": "c5317ad3-4218-4ced-9127-d1572b629394"
     },
     {
       "userConsentDescription": "Add and remove members from chats, on your behalf.",
@@ -5312,7 +5312,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Add and remove members from chats",
       "isEnabled": true,
-      "id": "dea13482-7ea6-488f-8b98-eb5bbecf033d"
+      "id": "65f5412b-9ea3-480a-a4e0-2fa8310ee19c"
     },
     {
       "userConsentDescription": "Allows the app to create chats on your behalf. ",
@@ -5322,7 +5322,7 @@
       "type": "User",
       "adminConsentDisplayName": "Create chats",
       "isEnabled": true,
-      "id": "38826093-1258-4dea-98f0-00003be2b8d0"
+      "id": "27f3ab6f-0989-4ef6-85b4-8f8b1349abd9"
     },
     {
       "userConsentDescription": "Allows the application to read and write tenant-wide print settings on your behalf.",
@@ -5332,7 +5332,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and write tenant-wide print settings",
       "isEnabled": true,
-      "id": "9ccc526a-c51c-4e5c-a1fd-74726ef50b8f"
+      "id": "828dc740-6d3b-436d-825b-1addcaf6cc77"
     },
     {
       "userConsentDescription": "Allows the application to read tenant-wide print settings on your behalf.",
@@ -5342,7 +5342,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read tenant-wide print settings",
       "isEnabled": true,
-      "id": "490f32fd-d90f-4dd7-a601-ff6cdc1a3f6c"
+      "id": "0427e622-5cae-4a69-a252-de3c803d9b2b"
     },
     {
       "userConsentDescription": "Allows the application to read and write print connectors on your behalf.",
@@ -5352,7 +5352,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read and write print connectors",
       "isEnabled": true,
-      "id": "79ef9967-7d59-4213-9c64-4b10687637d8"
+      "id": "5b0c6b7b-bc55-4293-a6f6-04376e036c44"
     },
     {
       "userConsentDescription": "Allows the application to read print connectors on your behalf.",
@@ -5362,7 +5362,7 @@
       "type": "Admin",
       "adminConsentDisplayName": "Read print connectors",
       "isEnabled": true,
-      "id": "d69c2d6d-4f72-4f99-a6b9-663e32f8cf68"
+      "id": "18cf1cf9-d0db-409c-a91c-f36f2357d565"
     },
     {
       "userConsentDescription": "Allows the application to read basic information about printer shares on your behalf.",
@@ -5372,7 +5372,7 @@
       "type": "User",
       "adminConsentDisplayName": "Read basic information about printer shares",
       "isEnabled": true,
-      "id": "5fa075e9-b951-4165-947b-c63396ff0a37"
+      "id": "8492aedd-fcd4-4b91-bbc6-d3438773e935"
     },
     {
       "userConsentDescription": "Allows the application to create print jobs on your behalf and upload document content to print jobs  that you created.",
@@ -5382,7 +5382,7 @@
       "type": "User",
       "adminConsentDisplayName": "Create print jobs",
       "isEnabled": true,
-      "id": "21f0d9c0-9f13-48b3-94e0-b6b231c7d320"
+      "id": "75af14b8-3c44-459d-bbeb-37c4ce058055"
     }
   ],
   "signInAudience": "AzureADMultipleOrgs",

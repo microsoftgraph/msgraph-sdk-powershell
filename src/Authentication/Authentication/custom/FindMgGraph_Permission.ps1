@@ -17,7 +17,7 @@ Find permissions for authorization against Microsoft Graph
 
 function Find-MgGraphPermission($search) {
     
-    GetOauthData | Where-Object Name -like *$search* 
-    GetAppRolesData | Where-Object Name -like *$search*
+    Permissions_GetOauthData | Where-Object Name -like *$search* 
+    Permissions_GetAppRolesData | Where-Object Name -like *$search*
 
 }
