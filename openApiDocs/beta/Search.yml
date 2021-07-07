@@ -661,7 +661,7 @@ components:
         - list
         - listItem
         - drive
-        - unknownfuturevalue
+        - unknownFutureValue
       type: string
     microsoft.graph.searchQuery:
       title: searchQuery
@@ -681,6 +681,7 @@ components:
       properties:
         enableResultTemplate:
           type: boolean
+          description: 'Indicates whether search display layouts are enabled. If enabled, the user will get the result template to render the search results content in the resultTemplates property of the response. The result template is based on Adaptive Cards. This property is optional.'
           nullable: true
       additionalProperties:
         type: object
@@ -993,6 +994,7 @@ components:
         - group
         - everyone
         - everyoneExceptGuests
+        - externalGroup
         - unknownFutureValue
       type: string
     microsoft.graph.externalConnectors.externalItemContentType:
@@ -1150,6 +1152,10 @@ components:
           type: integer
           description: The rank or the order of the result.
           format: int32
+          nullable: true
+        resultTemplateId:
+          type: string
+          description: 'ID of the result template for rendering the search result. This ID must map to a display layout in the resultTemplates dictionary, included in the searchresponse as well.'
           nullable: true
         summary:
           type: string
