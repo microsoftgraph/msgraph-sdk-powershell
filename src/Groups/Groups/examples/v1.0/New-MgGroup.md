@@ -1,18 +1,11 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
+### Example 1: Create a new group
 
-{{ Add output here }}
+```powershell
+New-MgGroup -DisplayName 'Test Group' -MailEnabled:$False  -MailNickName 'testgroup' -SecurityEnabled
+
+Id                                   DisplayName Description GroupTypes
+--                                   ----------- ----------- ----------
+15bb6c2c-ac32-41a1-b9ec-b6300b8b8e52 Test Group              {}
 ```
 
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example creates a new group.

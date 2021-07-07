@@ -1740,7 +1740,7 @@ components:
           nullable: true
         type:
           type: string
-          description: 'Type of the property in the key:value pair for interpretation. For example, String, Boolean, etc.'
+          description: 'Type of the property in the key:value pair for interpretation. For example, String, Boolean etc.'
           nullable: true
         value:
           type: string
