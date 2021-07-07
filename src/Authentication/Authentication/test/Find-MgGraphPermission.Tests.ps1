@@ -8,7 +8,7 @@ Describe "the Find-MgGraphPermission Command" {
 
     Context "when executing the command" {
         It 'Executes successfully with no parameters' {
-            { Find-MgGraphPermission | Out-Null } | Should -Throw
+            { Find-MgGraphPermission | Out-Null } | Should -Not -Throw
         }
 
     }
