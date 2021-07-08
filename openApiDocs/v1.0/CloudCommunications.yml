@@ -3651,7 +3651,7 @@ components:
               nullable: true
             isEntryExitAnnounced:
               type: boolean
-              description: Whether or not to announce when callers join or leave.
+              description: Indicates whether to announce when callers join or leave.
               nullable: true
             joinInformation:
               $ref: '#/components/schemas/microsoft.graph.itemBody'
