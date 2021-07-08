@@ -41,8 +41,8 @@ steps:
     targetType: 'inline'
     pwsh: true
     script: |
-      $ModulesToGenerate = ${{ parameters.ModulesToGenerate }}
-      $Modules = $ModulesToGenerate.Split("", [System.StringSplitOptions]::RemoveEmptyEntries)
+      $ModulesToGenerate = "${{ parameters.ModulesToGenerate }}"
+      $Modules = $ModulesToGenerate.Split(" ", [System.StringSplitOptions]::RemoveEmptyEntries)
       . $(System.DefaultWorkingDirectory)/tools/GenerateHelp.ps1 -ModulesToGenerate $Modules
 
 - task: Bash@3
