@@ -85,6 +85,13 @@ namespace Microsoft.Graph.PowerShell
             using (Extensions.NoSynchronizationContext)
             {
                 var eventData = EventDataConverter.ConvertFrom(getEventData());
+                //Handle case where network is down or the endpoint is unreachable
+                //making ResponseMessage null
+                //https://github.com/microsoftgraph/msgraph-sdk-powershell/issues/700
+                if (eventData.ResponseMessage == null)
+                {
+                    return;
+                }
                 var responseFormatter = new HttpMessageFormatter(eventData.ResponseMessage as HttpResponseMessage);
                 var responseString = await responseFormatter.ReadAsStringAsync();
                 await signal(Events.Debug, cancellationToken, () => EventFactory.CreateLogEvent(responseString));
