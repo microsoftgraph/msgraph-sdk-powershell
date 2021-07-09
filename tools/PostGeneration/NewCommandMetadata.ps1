@@ -9,7 +9,7 @@ param (
     $OutputPath = (Join-Path $PSScriptRoot "..\..\assets\")
 )
 if (!(Test-Path $SourcePath)) {
-    Write-Error "SourcePath is not valid. Ensure that $SourcePath exists then try again."
+    Write-Error "SourcePath is not valid or does not exist. Please ensure that $SourcePath exists then try again."
 }
 
 if (!(Test-Path $OutputPath)) {
@@ -24,12 +24,13 @@ $CmdletPathPattern = Join-Path $SourcePath "\*\*\generated\cmdlets"
 $OpenApiTagPattern = '\[OpenAPI\].s*(.*)=>(.*):\"(.*)\"'
 $ProfilePattern = 'Profile\("(v1\.0|v1\.0-beta)"\)'
 $OutputTypePattern = 'OutputType\(typeof\(Microsoft\.Graph\.PowerShell\.Models\.(.*)\)\)'
+$PermissionsUrl = "https://graphexplorerapi.azurewebsites.net/permissions"
 
 Write-Debug "Crawling cmdlets in $CmdletPathPattern."
 $Stopwatch = [system.diagnostics.stopwatch]::StartNew()
 Get-ChildItem -path $CmdletPathPattern -Filter "*.cs" -Recurse | Where-Object { $_.Attributes -ne "Directory" } | ForEach-Object {
     $SplitFileName = $_.BaseName.Split("_")
-    $CommandName = (New-Object regex -ArgumentList "Mg").Replace($SplitFileName[0],"-Mg", 1)
+    $CommandName = (New-Object regex -ArgumentList "Mg").Replace($SplitFileName[0], "-Mg", 1)
     $VariantName = $SplitFileName[1]
 
     if ($_.DirectoryName -match "\\src\\(.*?.)\\") {
@@ -40,13 +41,14 @@ Get-ChildItem -path $CmdletPathPattern -Filter "*.cs" -Recurse | Where-Object { 
     if ($RawFileContent -match $OpenApiTagPattern) {
         # "OperationId" = $Matches.1
         $MappingValue = @{
-            "Command"         = $CommandName
-            "Variants"        = [System.Collections.ArrayList]@($VariantName)
-            "Method"          = $Matches.2
-            "Url"             = $Matches.3
-            "ApiVersion"      = $null
-            "OutputType"      = $null
-            "Module"          = $ModuleName
+            "Command"     = $CommandName
+            "Variants"    = [System.Collections.ArrayList]@($VariantName)
+            "Method"      = $Matches.2
+            "Url"         = $Matches.3
+            "ApiVersion"  = $null
+            "OutputType"  = $null
+            "Module"      = $ModuleName
+            "Permissions" = @()
         }
 
         if ($RawFileContent -match $ProfilePattern) {
@@ -64,12 +66,18 @@ Get-ChildItem -path $CmdletPathPattern -Filter "*.cs" -Recurse | Where-Object { 
 
         $CommandMappingKey = "$($MappingValue.Command)_$($MappingValue.ApiVersion)"
 
-        if ($CommandPathMapping.Contains($CommandMappingKey))
-        {
-            $ExistingMapping = $CommandPathMapping[$CommandMappingKey]
-            $ExistingMapping.Variants.AddRange($MappingValue.Variants)
-
-        } else {
+        if ($CommandPathMapping.Contains($CommandMappingKey)) {
+            $CommandPathMapping[$CommandMappingKey].Variants.AddRange($MappingValue.Variants)
+        }
+        else {
+            Write-Host "Fetching permissions for $CommandMappingKey" -ForegroundColor Green
+            try {
+                $Permissions = Invoke-RestMethod -Uri "$($PermissionsUrl)?requesturl=$($MappingValue.Url)&method=$($MappingValue.Method)" -ErrorAction SilentlyContinue
+                $MappingValue.Permissions = ($Permissions | Sort-Object -Property value -Unique)
+            }
+            catch {
+                Write-Warning "Failed to fetch permissions: $($PermissionsUrl)?requesturl=$($MappingValue.Url)&method=$($MappingValue.Method)"
+            }
             $CommandPathMapping.Add($CommandMappingKey, $MappingValue)
         }
     }
@@ -78,6 +86,6 @@ Get-ChildItem -path $CmdletPathPattern -Filter "*.cs" -Recurse | Where-Object { 
     }
 }
 
-$CommandPathMapping | ConvertTo-Json -Depth 2 | Out-File -FilePath $MgCommandMetadataFile
+$CommandPathMapping | ConvertTo-Json -Depth 3 | Out-File -FilePath $MgCommandMetadataFile
 $stopwatch.Stop()
 $stopwatch.Elapsed.TotalSeconds
