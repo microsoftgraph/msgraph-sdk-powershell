@@ -1,0 +1,73 @@
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
+
+steps:
+    - task: UseDotNet@2
+      displayName: 'Use .NET Core SDK 2 LTS'
+      inputs:
+        debugMode: false
+        version: 2.x
+
+    - task: UseDotNet@2
+      displayName: 'Use .NET Core SDK 3 LTS'
+      inputs:
+        debugMode: false
+        version: 3.x
+
+    - task: UseDotNet@2
+      displayName: 'Use .NET Core SDK 5 Current'
+      inputs:
+        debugMode: false
+        version: 5.x
+
+    - task: NuGetToolInstaller@1
+      displayName: 'Install Nuget 5.7'
+      inputs:
+         versionSpec: 5.7.0
+         checkLatest: false # Optional
+
+    - task: NuGetAuthenticate@0
+
+
+    - task: PowerShell@2
+      displayName: 'Version Check'
+      inputs:
+        targetType: inline
+        pwsh: true
+        script: |
+          Write-Host $PSVersionTable.PSVersion
+          Write-Host $host.Version
+          Write-Host (Get-Host).Version
+
+    - task: NodeTool@0
+      displayName: 'Install NodeJs 14.11.0'
+      inputs:
+        versionSpec: '14.11.0' 
+        checkLatest: true # Optional
+
+    - task: Npm@1
+      displayName: 'Install AutoRest'
+      inputs:
+        command: 'custom'
+        customCommand: 'install -g autorest@latest'
+
+    - task: PowerShell@2
+      displayName: 'Register PS Repository'
+      inputs:
+        targetType: inline
+        pwsh: true
+        errorActionPreference: 'continue'
+        script: |
+          $ErrorActionPreference = [System.Management.Automation.ActionPreference]::Continue
+          Get-PSRepository
+          $patToken = '$(NUGETFEEDKEY)' | ConvertTo-SecureString -AsPlainText -Force
+          $nugetFeed = '$(NUGETFEED)'
+          $user = '$(NUGETBUILDUSER)'
+          $credsAzureDevopsServices = New-Object System.Management.Automation.PSCredential($user, $patToken)
+          UnRegister-PackageSource -Name 'LocalNugetPackageSource' -ErrorAction Continue
+          UnRegister-PSRepository -Name 'LocalNugetFeed' -ErrorAction Continue
+          Register-PackageSource -Name 'LocalNugetPackageSource' -Location $nugetFeed -SkipValidate -Trusted -Verbose -ProviderName 'Nuget' -ErrorAction Continue
+          Register-PSRepository -Name 'LocalNugetFeed' -SourceLocation $nugetFeed -PublishLocation $nugetFeed -InstallationPolicy Trusted -Credential $credsAzureDevopsServices -PackageManagementProvider 'Nuget' -ErrorAction Continue
+          Get-PSRepository
+          Find-Module -Name Microsoft.Graph.Authentication -AllowPrerelease -Credential $credsAzureDevopsServices -AllVersions -Repository 'LocalNugetFeed'
+          Find-Module -Name Microsoft.Graph.Authentication -AllowPrerelease -Repository 'LocalNugetFeed'
