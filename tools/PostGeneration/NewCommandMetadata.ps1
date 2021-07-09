@@ -6,7 +6,7 @@ param (
 
     [Parameter()]
     [string]
-    $OutputPath = (Join-Path $PSScriptRoot "..\..\artifacts\")
+    $OutputPath = (Join-Path $PSScriptRoot "..\..\assets\")
 )
 if (!(Test-Path $SourcePath)) {
     Write-Error "SourcePath is not valid. Ensure that $SourcePath exists then try again."
