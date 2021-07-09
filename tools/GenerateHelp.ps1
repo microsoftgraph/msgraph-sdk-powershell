@@ -11,7 +11,8 @@ if (!(Get-Module -Name PlatyPS -ListAvailable)) {
 }
 Import-Module PlatyPS -Force -Scope Global
 
-$ErrorActionPreference = 'Stop'
+# Errors in PlatyPS validation.
+$ErrorActionPreference = 'Continue'
 $LASTEXITCODE = $null
 if ($PSEdition -ne 'Core') {
     Write-Error 'This script requires PowerShell Core to execute. [Note] Generated cmdlets will work in both PowerShell Core or Windows PowerShell.'
