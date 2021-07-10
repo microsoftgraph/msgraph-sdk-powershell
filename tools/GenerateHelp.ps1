@@ -33,15 +33,10 @@ $ModulesToGenerate | ForEach-Object {
     $ModuleName = $_
     $modulePath = Join-Path $PSScriptRoot "..\src\$ModuleName\$ModuleName\$ModulePrefix.$ModuleName.psd1"
     Write-Host "Current Module Path $modulePath"
-    Import-Module $modulePath -Force -Scope Global -Verbose -Debug
     #Handle Beta
     $betaModuleDocs = Join-Path $PSScriptRoot "..\src\$ModuleName\$ModuleName\docs\v1.0-beta"
     Write-Host $betaModuleDocs
     if (Test-Path $betaModuleDocs) {
-        Write-Host $betaModuleDocs
-        Select-MgProfile beta
-        Update-MarkdownHelpModule -Path $betaModuleDocs -RefreshModulePage -AlphabeticParamsOrder -ExcludeDontShow
-        #Add Updated docs to current commit
         git add $betaModuleDocs
     }
     else {
@@ -53,8 +48,6 @@ $ModulesToGenerate | ForEach-Object {
     Write-Host $v1ModuleDocs
     if (Test-Path $v1ModuleDocs) {
         Write-Host $v1ModuleDocs
-        Select-MgProfile v1.0
-        Update-MarkdownHelpModule -Path $v1ModuleDocs -RefreshModulePage -AlphabeticParamsOrder -ExcludeDontShow
         git add $v1ModuleDocs
     }
     else {
