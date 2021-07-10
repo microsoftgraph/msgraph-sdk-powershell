@@ -64,7 +64,11 @@ Get-ChildItem -path $CmdletPathPattern -Filter "*.cs" -Recurse | Where-Object { 
             $MappingValue.OutputType = $Matches.1
         }
 
-        $CommandMappingKey = "$($MappingValue.Command)_$($MappingValue.ApiVersion)"
+        if ($VariantName.StartsWith("List")) {
+            $CommandMappingKey = "$($MappingValue.Command)_List_$($MappingValue.ApiVersion)"
+        } else {
+            $CommandMappingKey = "$($MappingValue.Command)_$($MappingValue.ApiVersion)"
+        }
 
         if ($CommandPathMapping.Contains($CommandMappingKey)) {
             $CommandPathMapping[$CommandMappingKey].Variants.AddRange($MappingValue.Variants)
