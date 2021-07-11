@@ -29,8 +29,7 @@ steps:
     targetType: inline
     script: |
       git status
-      git branch $(ComputeBranch.DocsBranch)
-      git checkout $(ComputeBranch.DocsBranch)
+      git checkout -b $(ComputeBranch.DocsBranch) dev
       git status
 
 - task: PowerShell@2
@@ -52,8 +51,6 @@ steps:
   inputs:
     targetType: inline
     script: |
-      git status
-      git commit -m 'Docs Generation'
       git status
       git push --set-upstream origin $(ComputeBranch.DocsBranch)
       git status

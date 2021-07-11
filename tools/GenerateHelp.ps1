@@ -33,22 +33,26 @@ $ModulesToGenerate | ForEach-Object {
     $ModuleName = $_
     $modulePath = Join-Path $PSScriptRoot "..\src\$ModuleName\$ModuleName\$ModulePrefix.$ModuleName.psd1"
     Write-Host "Current Module Path $modulePath"
-    #Handle Beta
+    #Handle Beta docs and examples
     $betaModuleDocs = Join-Path $PSScriptRoot "..\src\$ModuleName\$ModuleName\docs\v1.0-beta"
+    $betaModuleExamples = Join-Path $PSScriptRoot "..\src\$ModuleName\$ModuleName\examples\v1.0-beta"
     Write-Host $betaModuleDocs
     if (Test-Path $betaModuleDocs) {
         git add $betaModuleDocs
+        git add $betaModuleExamples
     }
     else {
         Write-Warning "Beta Docs for $ModuleName not Found"
     }
 
-    #Handle v1.0
+    #Handle v1.0 docs and examples
     $v1ModuleDocs = Join-Path $PSScriptRoot "..\src\$ModuleName\$ModuleName\docs\v1.0"
+    $v1ModuleExamples = Join-Path $PSScriptRoot "..\src\$ModuleName\$ModuleName\examples\v1.0"
     Write-Host $v1ModuleDocs
     if (Test-Path $v1ModuleDocs) {
         Write-Host $v1ModuleDocs
         git add $v1ModuleDocs
+        git add $v1ModuleExamples
     }
     else {
         Write-Warning "v1.0 Docs for $ModuleName not Found"
