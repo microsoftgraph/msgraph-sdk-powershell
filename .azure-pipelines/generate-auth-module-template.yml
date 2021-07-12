@@ -35,7 +35,7 @@ jobs:
   displayName: Microsoft Graph PowerShell SDK Auth Module Generation
 
   steps:
-  - template: ./install-tools-template.yml
+  - template: ./common-templates/install-tools-template.yml
 
   - task: AzureKeyVault@1
     inputs:
