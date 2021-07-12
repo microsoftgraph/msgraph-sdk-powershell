@@ -1,0 +1,57 @@
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
+
+parameters:
+  - name: DOCSBRANCH
+    type: string
+    default: "DocsGeneration"
+  - name: ModulesToGenerate
+    type: string
+    default: ""
+  - name: BUILDAGENT
+    default: MsGraphBuildAgentsWindows
+    displayName: Build Agent
+
+steps:
+- task: PowerShell@2
+  name: "ComputeBranch"
+  displayName: "Compute Docs Branch Name"
+  inputs:
+    targetType: inline
+    script: |
+      $branch = "{0}/{1}" -f "${{ parameters.DOCSBRANCH }}", (Get-Date -Format yyyyMMddHHmm)
+      Write-Host "Docs Branch $branch"
+      Write-Host "##vso[task.setvariable variable=DocsBranch;isOutput=true]$branch"
+
+- task: Bash@3
+  displayName: "Create Docs branch"
+  inputs:
+    targetType: inline
+    script: |
+      git status
+      git branch $(ComputeBranch.DocsBranch)
+      git checkout $(ComputeBranch.DocsBranch)
+      git status
+
+- task: PowerShell@2
+  displayName: Generate Help Docs
+  continueOnError: false
+  enabled: true
+  inputs:
+    targetType: 'inline'
+    pwsh: true
+    script: |
+      $ModulesToGenerate = "${{ parameters.ModulesToGenerate }}"
+      $Modules = $ModulesToGenerate.Split(" ", [System.StringSplitOptions]::RemoveEmptyEntries)
+      . $(System.DefaultWorkingDirectory)/tools/GenerateHelp.ps1 -ModulesToGenerate $Modules
+
+- task: Bash@3
+  displayName: "Push Generated Help Docs"
+  env:
+    GITHUB_TOKEN: $(GITHUB_TOKEN)
+  inputs:
+    targetType: inline
+    script: |
+      git status
+      git push --set-upstream origin $(ComputeBranch.DocsBranch)
+      git status
