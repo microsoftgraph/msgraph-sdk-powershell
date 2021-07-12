@@ -29,7 +29,8 @@ steps:
     targetType: inline
     script: |
       git status
-      git checkout -b $(ComputeBranch.DocsBranch) dev
+      git branch $(ComputeBranch.DocsBranch)
+      git checkout $(ComputeBranch.DocsBranch)
       git status
 
 - task: PowerShell@2
@@ -45,7 +46,7 @@ steps:
       . $(System.DefaultWorkingDirectory)/tools/GenerateHelp.ps1 -ModulesToGenerate $Modules
 
 - task: Bash@3
-  displayName: Commit Generated Help Docs files
+  displayName: "Push Generated Help Docs"
   env:
     GITHUB_TOKEN: $(GITHUB_TOKEN)
   inputs:
