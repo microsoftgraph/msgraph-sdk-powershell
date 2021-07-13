@@ -51,6 +51,10 @@ directive:
       verb: Get
       subject: ^(UserOnlineMeeting)$
     remove: true
+  - where:
+      verb: Get
+      subject: (User)AvailableExtensionProperty
+    remove: true
 # Rename
   - where:
       verb: Clear
