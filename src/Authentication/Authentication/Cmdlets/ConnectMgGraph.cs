@@ -69,7 +69,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         [Parameter(ParameterSetName = Constants.AppParameterSet)]
         [Parameter(ParameterSetName = Constants.UserParameterSet,
             Position = 4,
-            HelpMessage = "The id of the tenant to connect to.")]
+            HelpMessage = "The id of the tenant to connect to. You can also use this parameter to specify your sign-in audience. i.e., common, organizations, or consumers. " +
+            "See https://docs.microsoft.com/en-us/azure/active-directory/develop/msal-client-application-configuration#authority.")]
+        [Alias("Audience")]
         public string TenantId { get; set; }
 
         [Parameter(ParameterSetName = Constants.AppParameterSet)]
