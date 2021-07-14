@@ -11,15 +11,20 @@ function Permissions_GetPermissionsData {
         $script:permissionsMsGraphServicePrincipal = try {
 
             # Write-Host "Getting data from web service"
-            Invoke-MgGraphRequest -method GET 'https://graph.microsoft.com/v1.0/servicePrincipals?filter=appId eq ''00000003-0000-0000-c000-000000000000''' | select-object -expandproperty value
+            $result = Invoke-MgGraphRequest -method GET 'https://graph.microsoft.com/v1.0/servicePrincipals?filter=appId eq ''00000003-0000-0000-c000-000000000000''' 
+            
+            if ($null -ne $result) {
+                $result | select-object -expandproperty value 
+            }
 
-        } catch {
+        } catch [System.Management.Automation.ValidationMetadataException] {
 
             # Write-Host "Getting data from local file"
             Get-Content $PSScriptRoot/datasample.json | Out-String | ConvertFrom-Json
         
         }
     }
+    
     # 3. Parse the permisions from the serviceprincipal
     $msOauth = $script:permissionsMsGraphServicePrincipal.oauth2PermissionScopes
     $msAppRoles = $script:permissionsMsGraphServicePrincipal.appRoles
