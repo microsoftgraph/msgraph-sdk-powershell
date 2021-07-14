@@ -1,4 +1,10 @@
-﻿[CmdletBinding()]
+﻿# ------------------------------------------------------------------------------
+#  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
+# ------------------------------------------------------------------------------
+
+# Set-StrictMode -Version 2
+
+[CmdletBinding()]
 param (
     [Parameter()]
     [string]
@@ -76,8 +82,8 @@ Get-ChildItem -path $CmdletPathPattern -Filter "*.cs" -Recurse | Where-Object { 
         else {
             Write-Host "Fetching permissions for $CommandMappingKey" -ForegroundColor Green
             try {
-                $Permissions = Invoke-RestMethod -Uri "$($PermissionsUrl)?requesturl=$($MappingValue.Url)&method=$($MappingValue.Method)" -ErrorAction SilentlyContinue
-                $MappingValue.Permissions = ($Permissions | Sort-Object -Property value -Unique)
+                # $Permissions = Invoke-RestMethod -Uri "$($PermissionsUrl)?requesturl=$($MappingValue.Url)&method=$($MappingValue.Method)" -ErrorAction SilentlyContinue
+                # $MappingValue.Permissions = ($Permissions | Sort-Object -Property value -Unique)
             }
             catch {
                 Write-Warning "Failed to fetch permissions: $($PermissionsUrl)?requesturl=$($MappingValue.Url)&method=$($MappingValue.Method)"
