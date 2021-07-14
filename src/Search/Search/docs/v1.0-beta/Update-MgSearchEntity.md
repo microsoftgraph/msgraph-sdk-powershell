@@ -1,57 +1,41 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Search
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.search/remove-mgexternalconnection
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.search/update-mgsearchentity
 schema: 2.0.0
 ---
 
-# Remove-MgExternalConnection
+# Update-MgSearchEntity
 
 ## SYNOPSIS
-Delete navigation property connections for external
+Update search
 
 ## SYNTAX
 
-### Delete (Default)
+### UpdateExpanded1 (Default)
 ```
-Remove-MgExternalConnection -ExternalConnectionId <String> [-IfMatch <String>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Update-MgSearchEntity [-AdditionalProperties <Hashtable>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
-### DeleteViaIdentity
+### Update1
 ```
-Remove-MgExternalConnection -InputObject <ISearchIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Update-MgSearchEntity -BodyParameter <Hashtable> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Delete navigation property connections for external
+Update search
 
 ## EXAMPLES
 
 ## PARAMETERS
 
-### -ExternalConnectionId
-key: id of externalConnection
+### -AdditionalProperties
+Additional Parameters
 
 ```yaml
-Type: System.String
-Parameter Sets: Delete
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -IfMatch
-ETag
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
+Type: System.Collections.Hashtable
+Parameter Sets: UpdateExpanded1
 Aliases:
 
 Required: False
@@ -61,19 +45,33 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -InputObject
-Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+### -BodyParameter
+searchEntity
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISearchIdentity
-Parameter Sets: DeleteViaIdentity
+Type: System.Collections.Hashtable
+Parameter Sets: Update1
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -Id
+Read-only.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -128,7 +126,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ISearchIdentity
+### System.Collections.Hashtable
 
 ## OUTPUTS
 
@@ -137,14 +135,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ALIASES
-
-COMPLEX PARAMETER PROPERTIES
-
-To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-
-INPUTOBJECT <ISearchIdentity>: Identity Parameter
-  - `[ExternalConnectionId <String>]`: key: id of externalConnection
 
 ## RELATED LINKS
 
