@@ -3,6 +3,7 @@
 # ------------------------------------------------------------------------------
 
 $permissionsMsGraphServicePrincipal = $null
+$permissionsPulledFromMgGraphRequest = $null
 
 function Permissions_GetPermissionsData {
 
