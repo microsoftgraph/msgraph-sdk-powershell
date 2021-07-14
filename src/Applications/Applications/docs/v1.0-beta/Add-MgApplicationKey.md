@@ -8,7 +8,7 @@ schema: 2.0.0
 # Add-MgApplicationKey
 
 ## SYNOPSIS
-Invoke action addKey
+Invoke action addKey test action
 
 ## SYNTAX
 
