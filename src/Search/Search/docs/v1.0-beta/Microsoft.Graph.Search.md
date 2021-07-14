@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Search
-Module Guid: 994ad135-2b99-45c2-963c-a3d1eba186df
+Module Guid: 6a15dcfa-e426-41f6-a44e-7c73e45a4c4a
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.search
 Help Version: 1.0.0.0
 Locale: en-US
@@ -17,7 +17,7 @@ Get external
 ### [Get-MgExternalConnection](Get-MgExternalConnection.md)
 Get connections from external
 
-### [Get-MgSearch](Get-MgSearch.md)
+### [Get-MgSearchEntity](Get-MgSearchEntity.md)
 Get search
 
 ### [Invoke-MgQuerySearch](Invoke-MgQuerySearch.md)
@@ -35,6 +35,6 @@ Update external
 ### [Update-MgExternalConnection](Update-MgExternalConnection.md)
 Update the navigation property connections in external
 
-### [Update-MgSearch](Update-MgSearch.md)
+### [Update-MgSearchEntity](Update-MgSearchEntity.md)
 Update search
 

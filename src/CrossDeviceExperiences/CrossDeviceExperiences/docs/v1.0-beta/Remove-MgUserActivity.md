@@ -8,7 +8,9 @@ schema: 2.0.0
 # Remove-MgUserActivity
 
 ## SYNOPSIS
-Delete navigation property activities for users
+The user's activities across devices.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -25,27 +27,11 @@ Remove-MgUserActivity -InputObject <ICrossDeviceExperiencesIdentity> [-IfMatch <
 ```
 
 ## DESCRIPTION
-Delete navigation property activities for users
+The user's activities across devices.
+Read-only.
+Nullable.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 

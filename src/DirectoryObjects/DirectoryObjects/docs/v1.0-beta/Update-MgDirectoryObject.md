@@ -8,7 +8,8 @@ schema: 2.0.0
 # Update-MgDirectoryObject
 
 ## SYNOPSIS
-Update entity in directoryObjects
+Represents an Azure Active Directory object.
+The directoryObject type is the base type for many other directory entity types.
 
 ## SYNTAX
 
@@ -37,27 +38,10 @@ Update-MgDirectoryObject -InputObject <IDirectoryObjectsIdentity> [-AdditionalPr
 ```
 
 ## DESCRIPTION
-Update entity in directoryObjects
+Represents an Azure Active Directory object.
+The directoryObject type is the base type for many other directory entity types.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 

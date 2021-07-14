@@ -8,7 +8,8 @@ schema: 2.0.0
 # New-MgUserActivityHistoryItem
 
 ## SYNOPSIS
-Create new navigation property to historyItems for users
+Optional.
+NavigationProperty/Containment; navigation property to the activity's historyItems.
 
 ## SYNTAX
 
@@ -43,27 +44,10 @@ New-MgUserActivityHistoryItem -InputObject <ICrossDeviceExperiencesIdentity> [-A
 ```
 
 ## DESCRIPTION
-Create new navigation property to historyItems for users
+Optional.
+NavigationProperty/Containment; navigation property to the activity's historyItems.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 

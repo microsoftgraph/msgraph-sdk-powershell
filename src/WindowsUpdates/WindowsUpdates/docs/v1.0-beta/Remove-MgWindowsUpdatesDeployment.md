@@ -1,59 +1,59 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Search
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.search/update-mgsearch
+Module Name: Microsoft.Graph.WindowsUpdates
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.windowsupdates/remove-mgwindowsupdatesdeployment
 schema: 2.0.0
 ---
 
-# Update-MgSearch
+# Remove-MgWindowsUpdatesDeployment
 
 ## SYNOPSIS
-Update search
+Deployments created using the deployment service.
+Read-only.
 
 ## SYNTAX
 
-### UpdateExpanded (Default)
+### Delete (Default)
 ```
-Update-MgSearch [-AdditionalProperties <Hashtable>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf]
+Remove-MgWindowsUpdatesDeployment -DeploymentId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
-### Update
+### DeleteViaIdentity
 ```
-Update-MgSearch -BodyParameter <Hashtable> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MgWindowsUpdatesDeployment -InputObject <IWindowsUpdatesIdentity> [-IfMatch <String>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update search
+Deployments created using the deployment service.
+Read-only.
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
-### -AdditionalProperties
-Additional Parameters
+### -DeploymentId
+key: id of deployment
 
 ```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded
+Type: System.String
+Parameter Sets: Delete
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IfMatch
+ETag
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -63,33 +63,19 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -BodyParameter
-search
+### -InputObject
+Identity Parameter
+To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: Update
+Type: Microsoft.Graph.PowerShell.Models.IWindowsUpdatesIdentity
+Parameter Sets: DeleteViaIdentity
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Id
-Read-only.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -144,7 +130,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### System.Collections.Hashtable
+### Microsoft.Graph.PowerShell.Models.IWindowsUpdatesIdentity
 
 ## OUTPUTS
 
@@ -153,6 +139,18 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ALIASES
+
+### Remove-MgWuDeployment
+
+COMPLEX PARAMETER PROPERTIES
+
+To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
+
+
+INPUTOBJECT <IWindowsUpdatesIdentity>: Identity Parameter
+  - `[CatalogEntryId <String>]`: key: id of catalogEntry
+  - `[DeploymentId <String>]`: key: id of deployment
+  - `[UpdatableAssetId <String>]`: key: id of updatableAsset
 
 ## RELATED LINKS
 

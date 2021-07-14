@@ -8,7 +8,8 @@ schema: 2.0.0
 # Remove-MgUserActivityHistoryItem
 
 ## SYNOPSIS
-Delete navigation property historyItems for users
+Optional.
+NavigationProperty/Containment; navigation property to the activity's historyItems.
 
 ## SYNTAX
 
@@ -25,27 +26,10 @@ Remove-MgUserActivityHistoryItem -InputObject <ICrossDeviceExperiencesIdentity> 
 ```
 
 ## DESCRIPTION
-Delete navigation property historyItems for users
+Optional.
+NavigationProperty/Containment; navigation property to the activity's historyItems.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
