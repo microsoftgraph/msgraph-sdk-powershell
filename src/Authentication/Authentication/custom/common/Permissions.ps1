@@ -20,7 +20,7 @@ function Permissions_GetPermissionsData {
         } catch [System.Management.Automation.ValidationMetadataException] {
 
             # Write-Host "Getting data from local file"
-            Get-Content $PSScriptRoot/datasample.json | Out-String | ConvertFrom-Json
+            Get-Content $PSScriptRoot/MSGraphServicePrincipalPermissions.json | Out-String | ConvertFrom-Json
         
         }
     }

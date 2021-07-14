@@ -3,7 +3,7 @@
 # ------------------------------------------------------------------------------
 Describe "the Find-MgGraphPermission Command" {
     BeforeAll{
-        . (join-path $PSScriptRoot  ..\custom\FindMgGraph_Permission.ps1)
+        . (join-path $PSScriptRoot  ..\custom\Find-MgGraphPermission.ps1)
     }
 
     Context "when executing the command" {
