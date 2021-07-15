@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgGroupPermissionGrant
 
 ## SYNOPSIS
-Create new navigation property to permissionGrants for groups
+The permissions that have been granted for a group to a specific application.
 
 ## SYNTAX
 
@@ -40,7 +40,7 @@ New-MgGroupPermissionGrant -InputObject <IGroupsIdentity> [-AdditionalProperties
 ```
 
 ## DESCRIPTION
-Create new navigation property to permissionGrants for groups
+The permissions that have been granted for a group to a specific application.
 
 ## EXAMPLES
 
@@ -97,7 +97,8 @@ Accept wildcard characters: False
 ```
 
 ### -ClientAppId
-.
+ID of the service principal of the Azure AD app that has been granted access.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -112,7 +113,8 @@ Accept wildcard characters: False
 ```
 
 ### -ClientId
-.
+ID of the Azure AD app that has been granted access.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -188,7 +190,8 @@ Accept wildcard characters: False
 ```
 
 ### -Permission
-.
+The name of the resource-specific permission.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -203,7 +206,9 @@ Accept wildcard characters: False
 ```
 
 ### -PermissionType
-.
+The type of permission.
+Possible values are: Application, Delegated.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -218,7 +223,8 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceAppId
-.
+ID of the Azure AD app that is hosting the resource.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -289,24 +295,23 @@ BODYPARAMETER <IMicrosoftGraphResourceSpecificPermissionGrant>: Represents an Az
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[DeletedDateTime <DateTime?>]`: 
   - `[Id <String>]`: Read-only.
-  - `[ClientAppId <String>]`: 
-  - `[ClientId <String>]`: 
-  - `[Permission <String>]`: 
-  - `[PermissionType <String>]`: 
-  - `[ResourceAppId <String>]`: 
+  - `[ClientAppId <String>]`: ID of the service principal of the Azure AD app that has been granted access. Read-only.
+  - `[ClientId <String>]`: ID of the Azure AD app that has been granted access. Read-only.
+  - `[Permission <String>]`: The name of the resource-specific permission. Read-only.
+  - `[PermissionType <String>]`: The type of permission. Possible values are: Application, Delegated. Read-only.
+  - `[ResourceAppId <String>]`: ID of the Azure AD app that is hosting the resource. Read-only.
 
 INPUTOBJECT <IGroupsIdentity>: Identity Parameter
   - `[AttachmentId <String>]`: key: id of attachment
   - `[ConversationId <String>]`: key: id of conversation
   - `[ConversationThreadId <String>]`: key: id of conversationThread
-  - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[DirectorySettingId <String>]`: key: id of directorySetting
   - `[EndpointId <String>]`: key: id of endpoint
   - `[EventId <String>]`: key: id of event
   - `[ExtensionId <String>]`: key: id of extension
   - `[GroupId <String>]`: key: id of group
   - `[GroupLifecyclePolicyId <String>]`: key: id of groupLifecyclePolicy
-  - `[IncludePersonalNotebooks <Boolean?>]`: 
+  - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
   - `[MentionId <String>]`: key: id of mention
   - `[MultiValueLegacyExtendedPropertyId <String>]`: key: id of multiValueLegacyExtendedProperty
   - `[NotebookId <String>]`: key: id of notebook
@@ -316,7 +321,7 @@ INPUTOBJECT <IGroupsIdentity>: Identity Parameter
   - `[ProfilePhotoId <String>]`: key: id of profilePhoto
   - `[ResourceSpecificPermissionGrantId <String>]`: key: id of resourceSpecificPermissionGrant
   - `[SingleValueLegacyExtendedPropertyId <String>]`: key: id of singleValueLegacyExtendedProperty
-  - `[User <String>]`: 
+  - `[User <String>]`: Usage: User={User}
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS

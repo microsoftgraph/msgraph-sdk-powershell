@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Groups
-Module Guid: 804f073f-e282-4562-9171-7d6fe134987e
+Module Guid: 9d284c65-420c-4557-867b-b75cf1874f1b
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups
 Help Version: 1.0.0.0
 Locale: en-US
@@ -16,6 +16,9 @@ Invoke action addFavorite
 
 ### [Add-MgGroupToLifecyclePolicy](Add-MgGroupToLifecyclePolicy.md)
 Invoke action addGroup
+
+### [Confirm-MgGroupGrantedPermission](Confirm-MgGroupGrantedPermission.md)
+Invoke action checkGrantedPermissionsForApp
 
 ### [Confirm-MgGroupMemberGroup](Confirm-MgGroupMemberGroup.md)
 Invoke action checkMemberGroups
@@ -36,13 +39,16 @@ Invoke action copyToNotebook
 Invoke action copyToSectionGroup
 
 ### [Get-MgGroup](Get-MgGroup.md)
-Get entity from groups by key
+Represents an Azure Active Directory object.
+The directoryObject type is the base type for many other directory entity types.
 
 ### [Get-MgGroupAcceptedSender](Get-MgGroupAcceptedSender.md)
-Get acceptedSenders from groups
+The list of users or groups that are allowed to create post's or calendar events in this group.
+If this list is non-empty then only users or groups listed here are allowed to post.
 
-### [Get-MgGroupAvailableExtensionProperty](Get-MgGroupAvailableExtensionProperty.md)
-Invoke action getAvailableExtensionProperties
+### [Get-MgGroupAcceptedSenderByRef](Get-MgGroupAcceptedSenderByRef.md)
+The list of users or groups that are allowed to create post's or calendar events in this group.
+If this list is non-empty then only users or groups listed here are allowed to post.
 
 ### [Get-MgGroupById](Get-MgGroupById.md)
 Invoke action getByIds
@@ -54,31 +60,47 @@ Invoke function delta
 Invoke action getSchedule
 
 ### [Get-MgGroupConversation](Get-MgGroupConversation.md)
-Get conversations from groups
+The group's conversations.
 
 ### [Get-MgGroupConversationThread](Get-MgGroupConversationThread.md)
-Get threads from groups
+A collection of all the conversation threads in the conversation.
+A navigation property.
+Read-only.
+Nullable.
 
 ### [Get-MgGroupConversationThreadPost](Get-MgGroupConversationThreadPost.md)
-Get posts from groups
+Read-only.
+Nullable.
 
 ### [Get-MgGroupConversationThreadPostAttachment](Get-MgGroupConversationThreadPostAttachment.md)
-Get attachments from groups
+The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post.
+Read-only.
+Nullable.
 
 ### [Get-MgGroupConversationThreadPostExtension](Get-MgGroupConversationThreadPostExtension.md)
-Get extensions from groups
+The collection of open extensions defined for the post.
+Read-only.
+Nullable.
 
 ### [Get-MgGroupConversationThreadPostMultiValueExtendedProperty](Get-MgGroupConversationThreadPostMultiValueExtendedProperty.md)
-Get multiValueExtendedProperties from groups
+The collection of multi-value extended properties defined for the post.
+Read-only.
+Nullable.
 
 ### [Get-MgGroupConversationThreadPostSingleValueExtendedProperty](Get-MgGroupConversationThreadPostSingleValueExtendedProperty.md)
-Get singleValueExtendedProperties from groups
+The collection of single-value extended properties defined for the post.
+Read-only.
+Nullable.
 
-### [Get-MgGroupCreatedOnBehalf](Get-MgGroupCreatedOnBehalf.md)
-Get createdOnBehalfOf from groups
+### [Get-MgGroupCreatedOnBehalfOf](Get-MgGroupCreatedOnBehalfOf.md)
+The user (or application) that created the group.
+Note: This is not set if the user is an administrator.
+Read-only.
 
-### [Get-MgGroupCreatedOnBehalfByRef](Get-MgGroupCreatedOnBehalfByRef.md)
-Get ref of createdOnBehalfOf from groups
+### [Get-MgGroupCreatedOnBehalfOfByRef](Get-MgGroupCreatedOnBehalfOfByRef.md)
+The user (or application) that created the group.
+Note: This is not set if the user is an administrator.
+Read-only.
 
 ### [Get-MgGroupDelta](Get-MgGroupDelta.md)
 Invoke function delta
@@ -87,16 +109,21 @@ Invoke function delta
 Invoke function delta
 
 ### [Get-MgGroupExtension](Get-MgGroupExtension.md)
-Get extensions from groups
+The collection of open extensions defined for the group.
+Read-only.
+Nullable.
 
 ### [Get-MgGroupLifecyclePolicy](Get-MgGroupLifecyclePolicy.md)
 Get entity from groupLifecyclePolicies by key
 
 ### [Get-MgGroupMember](Get-MgGroupMember.md)
-Get members from groups
+Users, contacts, and groups that are members of this group.
+HTTP Methods: GET (supported for all groups), POST (supported for security groups and mail-enabled security groups), DELETE (supported only for security groups) Read-only.
+Nullable.
 
 ### [Get-MgGroupMemberByRef](Get-MgGroupMemberByRef.md)
-Get ref of members from groups
+A list of group members with license errors from this group-based license assignment.
+Read-only.
 
 ### [Get-MgGroupMemberGroup](Get-MgGroupMemberGroup.md)
 Invoke action getMemberGroups
@@ -105,16 +132,25 @@ Invoke action getMemberGroups
 Invoke action getMemberObjects
 
 ### [Get-MgGroupMemberOf](Get-MgGroupMemberOf.md)
-Get memberOf from groups
+Groups and administrative units that this group is a member of.
+HTTP Methods: GET (supported for all groups).
+Read-only.
+Nullable.
 
 ### [Get-MgGroupMemberOfByRef](Get-MgGroupMemberOfByRef.md)
-Get ref of memberOf from groups
+Users, contacts, and groups that are members of this group.
+HTTP Methods: GET (supported for all groups), POST (supported for security groups and mail-enabled security groups), DELETE (supported only for security groups) Read-only.
+Nullable.
 
 ### [Get-MgGroupMemberWithLicenseError](Get-MgGroupMemberWithLicenseError.md)
-Get membersWithLicenseErrors from groups
+A list of group members with license errors from this group-based license assignment.
+Read-only.
 
 ### [Get-MgGroupMemberWithLicenseErrorByRef](Get-MgGroupMemberWithLicenseErrorByRef.md)
-Get ref of membersWithLicenseErrors from groups
+Groups and administrative units that this group is a member of.
+HTTP Methods: GET (supported for all groups).
+Read-only.
+Nullable.
 
 ### [Get-MgGroupOnenoteNotebookFromWebUrl](Get-MgGroupOnenoteNotebookFromWebUrl.md)
 Invoke action getNotebookFromWebUrl
@@ -123,34 +159,61 @@ Invoke action getNotebookFromWebUrl
 Invoke function getRecentNotebooks
 
 ### [Get-MgGroupOwner](Get-MgGroupOwner.md)
-Get owners from groups
+The owners of the group.
+The owners are a set of non-admin users who are allowed to modify this object.
+HTTP Methods: GET (supported for all groups), POST (supported for security groups and mail-enabled security groups), DELETE (supported only for security groups) Read-only.
+Nullable.
 
 ### [Get-MgGroupOwnerByRef](Get-MgGroupOwnerByRef.md)
-Get ref of owners from groups
+The owners of the group.
+The owners are a set of non-admin users who are allowed to modify this object.
+HTTP Methods: GET (supported for all groups), POST (supported for security groups and mail-enabled security groups), DELETE (supported only for security groups) Read-only.
+Nullable.
+
+### [Get-MgGroupPermissionGrant](Get-MgGroupPermissionGrant.md)
+The permissions that have been granted for a group to a specific application.
 
 ### [Get-MgGroupPhoto](Get-MgGroupPhoto.md)
-Get photo from groups
+The group's profile photo.
+
+### [Get-MgGroupPhotoContent](Get-MgGroupPhotoContent.md)
+The group's profile photo.
 
 ### [Get-MgGroupRejectedSender](Get-MgGroupRejectedSender.md)
-Get rejectedSenders from groups
+The list of users or groups that are not allowed to create posts or calendar events in this group.
+Nullable
+
+### [Get-MgGroupRejectedSenderByRef](Get-MgGroupRejectedSenderByRef.md)
+The list of users or groups that are not allowed to create posts or calendar events in this group.
+Nullable
 
 ### [Get-MgGroupThread](Get-MgGroupThread.md)
-Get threads from groups
+The group's conversation threads.
+Nullable.
 
 ### [Get-MgGroupThreadPost](Get-MgGroupThreadPost.md)
-Get posts from groups
+Read-only.
+Nullable.
 
 ### [Get-MgGroupThreadPostAttachment](Get-MgGroupThreadPostAttachment.md)
-Get attachments from groups
+The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post.
+Read-only.
+Nullable.
 
 ### [Get-MgGroupThreadPostExtension](Get-MgGroupThreadPostExtension.md)
-Get extensions from groups
+The collection of open extensions defined for the post.
+Read-only.
+Nullable.
 
 ### [Get-MgGroupThreadPostMultiValueExtendedProperty](Get-MgGroupThreadPostMultiValueExtendedProperty.md)
-Get multiValueExtendedProperties from groups
+The collection of multi-value extended properties defined for the post.
+Read-only.
+Nullable.
 
 ### [Get-MgGroupThreadPostSingleValueExtendedProperty](Get-MgGroupThreadPostSingleValueExtendedProperty.md)
-Get singleValueExtendedProperties from groups
+The collection of single-value extended properties defined for the post.
+Read-only.
+Nullable.
 
 ### [Get-MgGroupTransitiveMember](Get-MgGroupTransitiveMember.md)
 Get transitiveMembers from groups
@@ -191,10 +254,16 @@ Invoke action dismissReminder
 ### [Invoke-MgDismissGroupEventReminder](Invoke-MgDismissGroupEventReminder.md)
 Invoke action dismissReminder
 
+### [Invoke-MgForwardGroupCalendarEvent](Invoke-MgForwardGroupCalendarEvent.md)
+Invoke action forward
+
 ### [Invoke-MgForwardGroupConversationThreadPost](Invoke-MgForwardGroupConversationThreadPost.md)
 Invoke action forward
 
 ### [Invoke-MgForwardGroupConversationThreadPostInReplyTo](Invoke-MgForwardGroupConversationThreadPostInReplyTo.md)
+Invoke action forward
+
+### [Invoke-MgForwardGroupEvent](Invoke-MgForwardGroupEvent.md)
 Invoke action forward
 
 ### [Invoke-MgForwardGroupThreadPost](Invoke-MgForwardGroupThreadPost.md)
@@ -242,35 +311,50 @@ Invoke action unsubscribeByMail
 ### [New-MgGroup](New-MgGroup.md)
 Add new entity to groups
 
-### [New-MgGroupAcceptedSender](New-MgGroupAcceptedSender.md)
-Create new navigation property to acceptedSenders for groups
+### [New-MgGroupAcceptedSenderByRef](New-MgGroupAcceptedSenderByRef.md)
+The list of users or groups that are allowed to create post's or calendar events in this group.
+If this list is non-empty then only users or groups listed here are allowed to post.
 
 ### [New-MgGroupConversation](New-MgGroupConversation.md)
-Create new navigation property to conversations for groups
+The group's conversations.
 
 ### [New-MgGroupConversationThread](New-MgGroupConversationThread.md)
-Create new navigation property to threads for groups
+A collection of all the conversation threads in the conversation.
+A navigation property.
+Read-only.
+Nullable.
 
 ### [New-MgGroupConversationThreadPost](New-MgGroupConversationThreadPost.md)
-Create new navigation property to posts for groups
+Read-only.
+Nullable.
 
 ### [New-MgGroupConversationThreadPostAttachment](New-MgGroupConversationThreadPostAttachment.md)
-Create new navigation property to attachments for groups
+The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post.
+Read-only.
+Nullable.
 
 ### [New-MgGroupConversationThreadPostAttachmentUploadSession](New-MgGroupConversationThreadPostAttachmentUploadSession.md)
 Invoke action createUploadSession
 
 ### [New-MgGroupConversationThreadPostExtension](New-MgGroupConversationThreadPostExtension.md)
-Create new navigation property to extensions for groups
+The collection of open extensions defined for the post.
+Read-only.
+Nullable.
 
 ### [New-MgGroupConversationThreadPostMultiValueExtendedProperty](New-MgGroupConversationThreadPostMultiValueExtendedProperty.md)
-Create new navigation property to multiValueExtendedProperties for groups
+The collection of multi-value extended properties defined for the post.
+Read-only.
+Nullable.
 
 ### [New-MgGroupConversationThreadPostSingleValueExtendedProperty](New-MgGroupConversationThreadPostSingleValueExtendedProperty.md)
-Create new navigation property to singleValueExtendedProperties for groups
+The collection of single-value extended properties defined for the post.
+Read-only.
+Nullable.
 
 ### [New-MgGroupExtension](New-MgGroupExtension.md)
-Create new navigation property to extensions for groups
+The collection of open extensions defined for the group.
+Read-only.
+Nullable.
 
 ### [New-MgGroupLifecyclePolicy](New-MgGroupLifecyclePolicy.md)
 Add new entity to groupLifecyclePolicies
@@ -279,79 +363,118 @@ Add new entity to groupLifecyclePolicies
 Add a member to an Office 365 group or security group through the members navigation property.
 
 ### [New-MgGroupMemberByRef](New-MgGroupMemberByRef.md)
-Create new navigation property ref to members for groups
+A list of group members with license errors from this group-based license assignment.
+Read-only.
 
 ### [New-MgGroupMemberOfByRef](New-MgGroupMemberOfByRef.md)
-Create new navigation property ref to memberOf for groups
+Users, contacts, and groups that are members of this group.
+HTTP Methods: GET (supported for all groups), POST (supported for security groups and mail-enabled security groups), DELETE (supported only for security groups) Read-only.
+Nullable.
 
 ### [New-MgGroupMemberWithLicenseErrorByRef](New-MgGroupMemberWithLicenseErrorByRef.md)
-Create new navigation property ref to membersWithLicenseErrors for groups
+Groups and administrative units that this group is a member of.
+HTTP Methods: GET (supported for all groups).
+Read-only.
+Nullable.
 
 ### [New-MgGroupOwnerByRef](New-MgGroupOwnerByRef.md)
-Create new navigation property ref to owners for groups
+The owners of the group.
+The owners are a set of non-admin users who are allowed to modify this object.
+HTTP Methods: GET (supported for all groups), POST (supported for security groups and mail-enabled security groups), DELETE (supported only for security groups) Read-only.
+Nullable.
+
+### [New-MgGroupPermissionGrant](New-MgGroupPermissionGrant.md)
+The permissions that have been granted for a group to a specific application.
 
 ### [New-MgGroupPhoto](New-MgGroupPhoto.md)
-Create new navigation property to photos for groups
+The profile photos owned by the group.
+Read-only.
+Nullable.
 
-### [New-MgGroupRejectedSender](New-MgGroupRejectedSender.md)
-Create new navigation property to rejectedSenders for groups
+### [New-MgGroupRejectedSenderByRef](New-MgGroupRejectedSenderByRef.md)
+The list of users or groups that are not allowed to create posts or calendar events in this group.
+Nullable
 
 ### [New-MgGroupThread](New-MgGroupThread.md)
-Create new navigation property to threads for groups
+The group's conversation threads.
+Nullable.
 
 ### [New-MgGroupThreadPost](New-MgGroupThreadPost.md)
-Create new navigation property to posts for groups
+Read-only.
+Nullable.
 
 ### [New-MgGroupThreadPostAttachment](New-MgGroupThreadPostAttachment.md)
-Create new navigation property to attachments for groups
+The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post.
+Read-only.
+Nullable.
 
 ### [New-MgGroupThreadPostAttachmentUploadSession](New-MgGroupThreadPostAttachmentUploadSession.md)
 Invoke action createUploadSession
 
 ### [New-MgGroupThreadPostExtension](New-MgGroupThreadPostExtension.md)
-Create new navigation property to extensions for groups
+The collection of open extensions defined for the post.
+Read-only.
+Nullable.
 
 ### [New-MgGroupThreadPostMultiValueExtendedProperty](New-MgGroupThreadPostMultiValueExtendedProperty.md)
-Create new navigation property to multiValueExtendedProperties for groups
+The collection of multi-value extended properties defined for the post.
+Read-only.
+Nullable.
 
 ### [New-MgGroupThreadPostSingleValueExtendedProperty](New-MgGroupThreadPostSingleValueExtendedProperty.md)
-Create new navigation property to singleValueExtendedProperties for groups
+The collection of single-value extended properties defined for the post.
+Read-only.
+Nullable.
 
 ### [New-MgGroupTransitiveMemberByRef](New-MgGroupTransitiveMemberByRef.md)
 Create new navigation property ref to transitiveMemberOf for groups
 
 ### [Remove-MgGroup](Remove-MgGroup.md)
-Delete entity from groups
-
-### [Remove-MgGroupAcceptedSender](Remove-MgGroupAcceptedSender.md)
-Delete navigation property acceptedSenders for groups
+Represents an Azure Active Directory object.
+The directoryObject type is the base type for many other directory entity types.
 
 ### [Remove-MgGroupConversation](Remove-MgGroupConversation.md)
-Delete navigation property conversations for groups
+The group's conversations.
 
 ### [Remove-MgGroupConversationThread](Remove-MgGroupConversationThread.md)
-Delete navigation property threads for groups
+A collection of all the conversation threads in the conversation.
+A navigation property.
+Read-only.
+Nullable.
 
 ### [Remove-MgGroupConversationThreadPost](Remove-MgGroupConversationThreadPost.md)
-Delete navigation property posts for groups
+Read-only.
+Nullable.
 
 ### [Remove-MgGroupConversationThreadPostAttachment](Remove-MgGroupConversationThreadPostAttachment.md)
-Delete navigation property attachments for groups
+The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post.
+Read-only.
+Nullable.
 
 ### [Remove-MgGroupConversationThreadPostExtension](Remove-MgGroupConversationThreadPostExtension.md)
-Delete navigation property extensions for groups
+The collection of open extensions defined for the post.
+Read-only.
+Nullable.
 
 ### [Remove-MgGroupConversationThreadPostMultiValueExtendedProperty](Remove-MgGroupConversationThreadPostMultiValueExtendedProperty.md)
-Delete navigation property multiValueExtendedProperties for groups
+The collection of multi-value extended properties defined for the post.
+Read-only.
+Nullable.
 
 ### [Remove-MgGroupConversationThreadPostSingleValueExtendedProperty](Remove-MgGroupConversationThreadPostSingleValueExtendedProperty.md)
-Delete navigation property singleValueExtendedProperties for groups
+The collection of single-value extended properties defined for the post.
+Read-only.
+Nullable.
 
-### [Remove-MgGroupCreatedOnBehalfByRef](Remove-MgGroupCreatedOnBehalfByRef.md)
-Delete ref of navigation property createdOnBehalfOf for groups
+### [Remove-MgGroupCreatedOnBehalfOfByRef](Remove-MgGroupCreatedOnBehalfOfByRef.md)
+The user (or application) that created the group.
+Note: This is not set if the user is an administrator.
+Read-only.
 
 ### [Remove-MgGroupExtension](Remove-MgGroupExtension.md)
-Delete navigation property extensions for groups
+The collection of open extensions defined for the group.
+Read-only.
+Nullable.
 
 ### [Remove-MgGroupFavorite](Remove-MgGroupFavorite.md)
 Invoke action removeFavorite
@@ -362,29 +485,39 @@ Invoke action removeGroup
 ### [Remove-MgGroupLifecyclePolicy](Remove-MgGroupLifecyclePolicy.md)
 Delete entity from groupLifecyclePolicies
 
-### [Remove-MgGroupPhoto](Remove-MgGroupPhoto.md)
-Delete navigation property photo for groups
+### [Remove-MgGroupPermissionGrant](Remove-MgGroupPermissionGrant.md)
+The permissions that have been granted for a group to a specific application.
 
-### [Remove-MgGroupRejectedSender](Remove-MgGroupRejectedSender.md)
-Delete navigation property rejectedSenders for groups
+### [Remove-MgGroupPhoto](Remove-MgGroupPhoto.md)
+The group's profile photo.
 
 ### [Remove-MgGroupThread](Remove-MgGroupThread.md)
-Delete navigation property threads for groups
+The group's conversation threads.
+Nullable.
 
 ### [Remove-MgGroupThreadPost](Remove-MgGroupThreadPost.md)
-Delete navigation property posts for groups
+Read-only.
+Nullable.
 
 ### [Remove-MgGroupThreadPostAttachment](Remove-MgGroupThreadPostAttachment.md)
-Delete navigation property attachments for groups
+The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post.
+Read-only.
+Nullable.
 
 ### [Remove-MgGroupThreadPostExtension](Remove-MgGroupThreadPostExtension.md)
-Delete navigation property extensions for groups
+The collection of open extensions defined for the post.
+Read-only.
+Nullable.
 
 ### [Remove-MgGroupThreadPostMultiValueExtendedProperty](Remove-MgGroupThreadPostMultiValueExtendedProperty.md)
-Delete navigation property multiValueExtendedProperties for groups
+The collection of multi-value extended properties defined for the post.
+Read-only.
+Nullable.
 
 ### [Remove-MgGroupThreadPostSingleValueExtendedProperty](Remove-MgGroupThreadPostSingleValueExtendedProperty.md)
-Delete navigation property singleValueExtendedProperties for groups
+The collection of single-value extended properties defined for the post.
+Read-only.
+Nullable.
 
 ### [Reset-MgGroupUnseenCount](Reset-MgGroupUnseenCount.md)
 Invoke action resetUnseenCount
@@ -392,44 +525,67 @@ Invoke action resetUnseenCount
 ### [Restore-MgGroup](Restore-MgGroup.md)
 Invoke action restore
 
-### [Set-MgGroupCreatedOnBehalfByRef](Set-MgGroupCreatedOnBehalfByRef.md)
-Update the ref of navigation property createdOnBehalfOf in groups
+### [Set-MgGroupCreatedOnBehalfOfByRef](Set-MgGroupCreatedOnBehalfOfByRef.md)
+The user (or application) that created the group.
+Note: This is not set if the user is an administrator.
+Read-only.
 
 ### [Set-MgGroupLicense](Set-MgGroupLicense.md)
 Invoke action assignLicense
+
+### [Set-MgGroupPhotoContent](Set-MgGroupPhotoContent.md)
+The group's profile photo.
+
+### [Stop-MgGroupCalendarEvent](Stop-MgGroupCalendarEvent.md)
+Invoke action cancel
+
+### [Stop-MgGroupEvent](Stop-MgGroupEvent.md)
+Invoke action cancel
 
 ### [Test-MgGroupProperty](Test-MgGroupProperty.md)
 Invoke action validateProperties
 
 ### [Update-MgGroup](Update-MgGroup.md)
-Update entity in groups
-
-### [Update-MgGroupAcceptedSender](Update-MgGroupAcceptedSender.md)
-Update the navigation property acceptedSenders in groups
+Represents an Azure Active Directory object.
+The directoryObject type is the base type for many other directory entity types.
 
 ### [Update-MgGroupConversation](Update-MgGroupConversation.md)
-Update the navigation property conversations in groups
+The group's conversations.
 
 ### [Update-MgGroupConversationThread](Update-MgGroupConversationThread.md)
-Update the navigation property threads in groups
+A collection of all the conversation threads in the conversation.
+A navigation property.
+Read-only.
+Nullable.
 
 ### [Update-MgGroupConversationThreadPost](Update-MgGroupConversationThreadPost.md)
-Update the navigation property posts in groups
+Read-only.
+Nullable.
 
 ### [Update-MgGroupConversationThreadPostAttachment](Update-MgGroupConversationThreadPostAttachment.md)
-Update the navigation property attachments in groups
+The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post.
+Read-only.
+Nullable.
 
 ### [Update-MgGroupConversationThreadPostExtension](Update-MgGroupConversationThreadPostExtension.md)
-Update the navigation property extensions in groups
+The collection of open extensions defined for the post.
+Read-only.
+Nullable.
 
 ### [Update-MgGroupConversationThreadPostMultiValueExtendedProperty](Update-MgGroupConversationThreadPostMultiValueExtendedProperty.md)
-Update the navigation property multiValueExtendedProperties in groups
+The collection of multi-value extended properties defined for the post.
+Read-only.
+Nullable.
 
 ### [Update-MgGroupConversationThreadPostSingleValueExtendedProperty](Update-MgGroupConversationThreadPostSingleValueExtendedProperty.md)
-Update the navigation property singleValueExtendedProperties in groups
+The collection of single-value extended properties defined for the post.
+Read-only.
+Nullable.
 
 ### [Update-MgGroupExtension](Update-MgGroupExtension.md)
-Update the navigation property extensions in groups
+The collection of open extensions defined for the group.
+Read-only.
+Nullable.
 
 ### [Update-MgGroupLifecyclePolicy](Update-MgGroupLifecyclePolicy.md)
 Update entity in groupLifecyclePolicies
@@ -437,27 +593,37 @@ Update entity in groupLifecyclePolicies
 ### [Update-MgGroupOnenotePageContent](Update-MgGroupOnenotePageContent.md)
 Invoke action onenotePatchContent
 
-### [Update-MgGroupPhoto](Update-MgGroupPhoto.md)
-Update the navigation property photo in groups
+### [Update-MgGroupPermissionGrant](Update-MgGroupPermissionGrant.md)
+The permissions that have been granted for a group to a specific application.
 
-### [Update-MgGroupRejectedSender](Update-MgGroupRejectedSender.md)
-Update the navigation property rejectedSenders in groups
+### [Update-MgGroupPhoto](Update-MgGroupPhoto.md)
+The group's profile photo.
 
 ### [Update-MgGroupThread](Update-MgGroupThread.md)
-Update the navigation property threads in groups
+The group's conversation threads.
+Nullable.
 
 ### [Update-MgGroupThreadPost](Update-MgGroupThreadPost.md)
-Update the navigation property posts in groups
+Read-only.
+Nullable.
 
 ### [Update-MgGroupThreadPostAttachment](Update-MgGroupThreadPostAttachment.md)
-Update the navigation property attachments in groups
+The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post.
+Read-only.
+Nullable.
 
 ### [Update-MgGroupThreadPostExtension](Update-MgGroupThreadPostExtension.md)
-Update the navigation property extensions in groups
+The collection of open extensions defined for the post.
+Read-only.
+Nullable.
 
 ### [Update-MgGroupThreadPostMultiValueExtendedProperty](Update-MgGroupThreadPostMultiValueExtendedProperty.md)
-Update the navigation property multiValueExtendedProperties in groups
+The collection of multi-value extended properties defined for the post.
+Read-only.
+Nullable.
 
 ### [Update-MgGroupThreadPostSingleValueExtendedProperty](Update-MgGroupThreadPostSingleValueExtendedProperty.md)
-Update the navigation property singleValueExtendedProperties in groups
+The collection of single-value extended properties defined for the post.
+Read-only.
+Nullable.
 
