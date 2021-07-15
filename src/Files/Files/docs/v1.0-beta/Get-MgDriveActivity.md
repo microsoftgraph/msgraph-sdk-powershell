@@ -8,18 +8,18 @@ schema: 2.0.0
 # Get-MgDriveActivity
 
 ## SYNOPSIS
-Get activities from drives
+The list of recent activities that took place under this drive.
 
 ## SYNTAX
 
 ```
-Get-MgDriveActivity -DriveId <String> [-Count] [-ExpandProperty <String[]>] [-Filter <String>]
- [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
+Get-MgDriveActivity -DriveId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+ [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get activities from drives
+The list of recent activities that took place under this drive.
 
 ## EXAMPLES
 
@@ -58,13 +58,14 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Count
-Include count of items
+### -CountVariable
+Specifies a count of the total number of items in a collection.
+By default, this variable will be set in the global scope.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: System.String
 Parameter Sets: (All)
-Aliases:
+Aliases: CV
 
 Required: False
 Position: Named
