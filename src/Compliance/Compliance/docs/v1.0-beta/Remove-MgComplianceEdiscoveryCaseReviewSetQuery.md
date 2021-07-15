@@ -8,13 +8,14 @@ schema: 2.0.0
 # Remove-MgComplianceEdiscoveryCaseReviewSetQuery
 
 ## SYNOPSIS
-Delete navigation property queries for compliance
+Read-only.
+Nullable.
 
 ## SYNTAX
 
 ### Delete (Default)
 ```
-Remove-MgComplianceEdiscoveryCaseReviewSetQuery -EdiscoveryCaseId <String> -ReviewSetId <String>
+Remove-MgComplianceEdiscoveryCaseReviewSetQuery -CaseId <String> -ReviewSetId <String>
  -ReviewSetQueryId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -25,7 +26,8 @@ Remove-MgComplianceEdiscoveryCaseReviewSetQuery -InputObject <IComplianceIdentit
 ```
 
 ## DESCRIPTION
-Delete navigation property queries for compliance
+Read-only.
+Nullable.
 
 ## EXAMPLES
 
@@ -49,8 +51,8 @@ PS C:\> {{ Add code here }}
 
 ## PARAMETERS
 
-### -EdiscoveryCaseId
-key: id of ediscoveryCase
+### -CaseId
+key: id of case
 
 ```yaml
 Type: System.String
@@ -192,9 +194,19 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IComplianceIdentity>: Identity Parameter
-  - `[EdiscoveryCaseId <String>]`: key: id of ediscoveryCase
+  - `[CaseId <String>]`: key: id of case
+  - `[CaseOperationId <String>]`: key: id of caseOperation
+  - `[CustodianId <String>]`: key: id of custodian
+  - `[DataSourceId <String>]`: key: id of dataSource
+  - `[LegalHoldId <String>]`: key: id of legalHold
+  - `[NoncustodialDataSourceId <String>]`: key: id of noncustodialDataSource
   - `[ReviewSetId <String>]`: key: id of reviewSet
   - `[ReviewSetQueryId <String>]`: key: id of reviewSetQuery
+  - `[SiteSourceId <String>]`: key: id of siteSource
+  - `[SourceCollectionId <String>]`: key: id of sourceCollection
+  - `[TagId <String>]`: key: id of tag
+  - `[UnifiedGroupSourceId <String>]`: key: id of unifiedGroupSource
+  - `[UserSourceId <String>]`: key: id of userSource
 
 ## RELATED LINKS
 

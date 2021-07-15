@@ -8,21 +8,23 @@ schema: 2.0.0
 # Get-MgComplianceEdiscoveryCaseReviewSet
 
 ## SYNOPSIS
-Get reviewSets from compliance
+Returns a list of reviewSet objects in the case.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
 ### List (Default)
 ```
-Get-MgComplianceEdiscoveryCaseReviewSet -EdiscoveryCaseId <String> [-Count] [-ExpandProperty <String[]>]
- [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
- [-Top <Int32>] [-All] [-PageSize <Int32>] [<CommonParameters>]
+Get-MgComplianceEdiscoveryCaseReviewSet -CaseId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+ [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
+ [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgComplianceEdiscoveryCaseReviewSet -EdiscoveryCaseId <String> -ReviewSetId <String>
- [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
+Get-MgComplianceEdiscoveryCaseReviewSet -CaseId <String> -ReviewSetId <String> [-ExpandProperty <String[]>]
+ [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
@@ -32,7 +34,9 @@ Get-MgComplianceEdiscoveryCaseReviewSet -InputObject <IComplianceIdentity> [-Exp
 ```
 
 ## DESCRIPTION
-Get reviewSets from compliance
+Returns a list of reviewSet objects in the case.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 
@@ -71,23 +75,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Count
-Include count of items
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -EdiscoveryCaseId
-key: id of ediscoveryCase
+### -CaseId
+key: id of case
 
 ```yaml
 Type: System.String
@@ -95,6 +84,22 @@ Parameter Sets: Get, List
 Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CountVariable
+Specifies a count of the total number of items in a collection.
+By default, this variable will be set in the global scope.
+
+```yaml
+Type: System.String
+Parameter Sets: List
+Aliases: CV
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -261,7 +266,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphReviewSet
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEdiscoveryReviewSet
 
 ## NOTES
 
@@ -273,9 +278,19 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IComplianceIdentity>: Identity Parameter
-  - `[EdiscoveryCaseId <String>]`: key: id of ediscoveryCase
+  - `[CaseId <String>]`: key: id of case
+  - `[CaseOperationId <String>]`: key: id of caseOperation
+  - `[CustodianId <String>]`: key: id of custodian
+  - `[DataSourceId <String>]`: key: id of dataSource
+  - `[LegalHoldId <String>]`: key: id of legalHold
+  - `[NoncustodialDataSourceId <String>]`: key: id of noncustodialDataSource
   - `[ReviewSetId <String>]`: key: id of reviewSet
   - `[ReviewSetQueryId <String>]`: key: id of reviewSetQuery
+  - `[SiteSourceId <String>]`: key: id of siteSource
+  - `[SourceCollectionId <String>]`: key: id of sourceCollection
+  - `[TagId <String>]`: key: id of tag
+  - `[UnifiedGroupSourceId <String>]`: key: id of unifiedGroupSource
+  - `[UserSourceId <String>]`: key: id of userSource
 
 ## RELATED LINKS
 
