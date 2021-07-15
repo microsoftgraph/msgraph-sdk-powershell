@@ -168,30 +168,30 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IPathsLeqqhcInformationprotectionPolicyLabelsMicrosoftGraphEvaluateclassificationresultsPostRequestbodyContentApplicationJsonSchema>: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[ClassificationResults <IMicrosoftGraphClassificationResult[]>]`: 
-    - `[ConfidenceLevel <Int32?>]`: 
-    - `[Count <Int32?>]`: 
-    - `[SensitiveTypeId <String>]`: 
+    - `[ConfidenceLevel <Int32?>]`: The confidence level, 0 to 100, of the result.
+    - `[Count <Int32?>]`: The number of instances of the specific information type in the input.
+    - `[SensitiveTypeId <String>]`: The GUID of the discovered sensitive information type.
   - `[ContentInfo <IMicrosoftGraphContentInfo>]`: contentInfo
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Format <String>]`: contentFormat
-    - `[Identifier <String>]`: 
-    - `[Metadata <IMicrosoftGraphKeyValuePair[]>]`: 
-      - `[Name <String>]`: Name for this key-value pair
-      - `[Value <String>]`: Value for this key-value pair
+    - `[Identifier <String>]`: Identifier used for Azure Information Protection Analytics.
+    - `[Metadata <IMicrosoftGraphKeyValuePair[]>]`: Existing Microsoft Information Protection metadata is passed as key/value pairs, where the key is the MSIP_Label_GUID_PropName.
+      - `[Name <String>]`: Name for this key-value pair. Possible names are: AdditionalWSFedEndpointCheckResult,  AllowedAuthenticationClassReferencesCheckResult, AlwaysRequireAuthenticationCheckResult,   AutoUpdateEnabledCheckResult, ClaimsProviderNameCheckResult, EncryptClaimsCheckResult,  EncryptedNameIdRequiredCheckResult, MonitoringEnabledCheckResult,NotBeforeSkewCheckResult,  RequestMFAFromClaimsProvidersCheckResult, SignedSamlRequestsRequiredCheckResult, AdditionalAuthenticationRulesCheckResult, TokenLifetimeCheckResult,  DelegationAuthorizationRulesCheckResult, IssuanceAuthorizationRulesCheckResult, IssuanceTransformRulesCheckResult.
+      - `[Value <String>]`: Value for this key-value pair. Possible result values are 0 (when the validation check passed), 1 (when the validation check failed), or 2 (when the validation check is a warning).
     - `[State <String>]`: contentState
 
 CLASSIFICATIONRESULTS <IMicrosoftGraphClassificationResult[]>: .
-  - `[ConfidenceLevel <Int32?>]`: 
-  - `[Count <Int32?>]`: 
-  - `[SensitiveTypeId <String>]`: 
+  - `[ConfidenceLevel <Int32?>]`: The confidence level, 0 to 100, of the result.
+  - `[Count <Int32?>]`: The number of instances of the specific information type in the input.
+  - `[SensitiveTypeId <String>]`: The GUID of the discovered sensitive information type.
 
 CONTENTINFO <IMicrosoftGraphContentInfo>: contentInfo
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Format <String>]`: contentFormat
-  - `[Identifier <String>]`: 
-  - `[Metadata <IMicrosoftGraphKeyValuePair[]>]`: 
-    - `[Name <String>]`: Name for this key-value pair
-    - `[Value <String>]`: Value for this key-value pair
+  - `[Identifier <String>]`: Identifier used for Azure Information Protection Analytics.
+  - `[Metadata <IMicrosoftGraphKeyValuePair[]>]`: Existing Microsoft Information Protection metadata is passed as key/value pairs, where the key is the MSIP_Label_GUID_PropName.
+    - `[Name <String>]`: Name for this key-value pair. Possible names are: AdditionalWSFedEndpointCheckResult,  AllowedAuthenticationClassReferencesCheckResult, AlwaysRequireAuthenticationCheckResult,   AutoUpdateEnabledCheckResult, ClaimsProviderNameCheckResult, EncryptClaimsCheckResult,  EncryptedNameIdRequiredCheckResult, MonitoringEnabledCheckResult,NotBeforeSkewCheckResult,  RequestMFAFromClaimsProvidersCheckResult, SignedSamlRequestsRequiredCheckResult, AdditionalAuthenticationRulesCheckResult, TokenLifetimeCheckResult,  DelegationAuthorizationRulesCheckResult, IssuanceAuthorizationRulesCheckResult, IssuanceTransformRulesCheckResult.
+    - `[Value <String>]`: Value for this key-value pair. Possible result values are 0 (when the validation check passed), 1 (when the validation check failed), or 2 (when the validation check is a warning).
   - `[State <String>]`: contentState
 
 ## RELATED LINKS

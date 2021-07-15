@@ -81,7 +81,10 @@ Accept wildcard characters: False
 ```
 
 ### -ClientId
-.
+The client ID for the application obtained when registering the application with the identity provider.
+This is a required field.
+Required.
+Not nullable.
 
 ```yaml
 Type: System.String
@@ -96,7 +99,12 @@ Accept wildcard characters: False
 ```
 
 ### -ClientSecret
-.
+The client secret for the application obtained when registering the application with the identity provider.
+This is write-only.
+A read operation will return ****.
+This is a required field.
+Required.
+Not nullable.
 
 ```yaml
 Type: System.String
@@ -126,7 +134,8 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-.
+The display name of the identity provider.
+Not nullable.
 
 ```yaml
 Type: System.String
@@ -141,7 +150,10 @@ Accept wildcard characters: False
 ```
 
 ### -Type
-.
+The identity provider type is a required field.
+For B2B scenario: Google, Facebook.
+For B2C scenario: Microsoft, Google, Amazon, LinkedIn, Facebook, GitHub, Twitter, Weibo,QQ, WeChat, OpenIDConnect.
+Not nullable.
 
 ```yaml
 Type: System.String
@@ -209,10 +221,10 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphIdentityProvider>: identityProvider
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
-  - `[ClientId <String>]`: 
-  - `[ClientSecret <String>]`: 
-  - `[Name <String>]`: 
-  - `[Type <String>]`: 
+  - `[ClientId <String>]`: The client ID for the application obtained when registering the application with the identity provider. This is a required field.  Required. Not nullable.
+  - `[ClientSecret <String>]`: The client secret for the application obtained when registering the application with the identity provider. This is write-only. A read operation will return ****. This is a required field. Required. Not nullable.
+  - `[Name <String>]`: The display name of the identity provider. Not nullable.
+  - `[Type <String>]`: The identity provider type is a required field. For B2B scenario: Google, Facebook. For B2C scenario: Microsoft, Google, Amazon, LinkedIn, Facebook, GitHub, Twitter, Weibo,QQ, WeChat, OpenIDConnect. Not nullable.
 
 ## RELATED LINKS
 

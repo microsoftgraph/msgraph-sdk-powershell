@@ -147,7 +147,7 @@ Accept wildcard characters: False
 
 ### -IsDeleted
 Indicates whether the user is deleted.
-Possible values are: true, false
+Possible values are: true, false.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -162,7 +162,7 @@ Accept wildcard characters: False
 ```
 
 ### -IsProcessing
-Indicates wehther a user's risky state is being processed by the backend
+Indicates whether a user's risky state is being processed by the backend.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -208,6 +208,8 @@ Accept wildcard characters: False
 
 ### -RiskLastUpdatedDateTime
 The date and time that the risky user was last updated.
+The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time.
+For example, midnight UTC on Jan 1, 2014 would look like this: 2014-01-01T00:00:00Z
 
 ```yaml
 Type: System.DateTime
@@ -354,10 +356,10 @@ BODYPARAMETER <IMicrosoftGraphRiskyUser>: riskyUser
   - `[Id <String>]`: Read-only.
   - `[History <IMicrosoftGraphRiskyUserHistoryItem[]>]`: The activity related to user risk level change
     - `[History <IMicrosoftGraphRiskyUserHistoryItem[]>]`: The activity related to user risk level change
-    - `[IsDeleted <Boolean?>]`: Indicates whether the user is deleted. Possible values are: true, false
-    - `[IsProcessing <Boolean?>]`: Indicates wehther a user's risky state is being processed by the backend
+    - `[IsDeleted <Boolean?>]`: Indicates whether the user is deleted. Possible values are: true, false.
+    - `[IsProcessing <Boolean?>]`: Indicates whether a user's risky state is being processed by the backend.
     - `[RiskDetail <String>]`: riskDetail
-    - `[RiskLastUpdatedDateTime <DateTime?>]`: The date and time that the risky user was last updated.
+    - `[RiskLastUpdatedDateTime <DateTime?>]`: The date and time that the risky user was last updated.  The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: 2014-01-01T00:00:00Z
     - `[RiskLevel <String>]`: riskLevel
     - `[RiskState <String>]`: riskState
     - `[UserDisplayName <String>]`: Risky user display name.
@@ -366,14 +368,14 @@ BODYPARAMETER <IMicrosoftGraphRiskyUser>: riskyUser
     - `[Activity <IMicrosoftGraphRiskUserActivity>]`: riskUserActivity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Detail <String>]`: riskDetail
-      - `[EventTypes <String[]>]`: 
+      - `[EventTypes <String[]>]`: List of risk event types. Deprecated. Use riskEventType instead.
       - `[RiskEventTypes <String[]>]`: The type of risk event detected.
     - `[InitiatedBy <String>]`: The id of actor that does the operation.
     - `[UserId <String>]`: The id of the user.
-  - `[IsDeleted <Boolean?>]`: Indicates whether the user is deleted. Possible values are: true, false
-  - `[IsProcessing <Boolean?>]`: Indicates wehther a user's risky state is being processed by the backend
+  - `[IsDeleted <Boolean?>]`: Indicates whether the user is deleted. Possible values are: true, false.
+  - `[IsProcessing <Boolean?>]`: Indicates whether a user's risky state is being processed by the backend.
   - `[RiskDetail <String>]`: riskDetail
-  - `[RiskLastUpdatedDateTime <DateTime?>]`: The date and time that the risky user was last updated.
+  - `[RiskLastUpdatedDateTime <DateTime?>]`: The date and time that the risky user was last updated.  The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: 2014-01-01T00:00:00Z
   - `[RiskLevel <String>]`: riskLevel
   - `[RiskState <String>]`: riskState
   - `[UserDisplayName <String>]`: Risky user display name.
@@ -381,10 +383,10 @@ BODYPARAMETER <IMicrosoftGraphRiskyUser>: riskyUser
 
 HISTORY <IMicrosoftGraphRiskyUserHistoryItem[]>: The activity related to user risk level change
   - `[History <IMicrosoftGraphRiskyUserHistoryItem[]>]`: The activity related to user risk level change
-  - `[IsDeleted <Boolean?>]`: Indicates whether the user is deleted. Possible values are: true, false
-  - `[IsProcessing <Boolean?>]`: Indicates wehther a user's risky state is being processed by the backend
+  - `[IsDeleted <Boolean?>]`: Indicates whether the user is deleted. Possible values are: true, false.
+  - `[IsProcessing <Boolean?>]`: Indicates whether a user's risky state is being processed by the backend.
   - `[RiskDetail <String>]`: riskDetail
-  - `[RiskLastUpdatedDateTime <DateTime?>]`: The date and time that the risky user was last updated.
+  - `[RiskLastUpdatedDateTime <DateTime?>]`: The date and time that the risky user was last updated.  The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: 2014-01-01T00:00:00Z
   - `[RiskLevel <String>]`: riskLevel
   - `[RiskState <String>]`: riskState
   - `[UserDisplayName <String>]`: Risky user display name.
@@ -393,27 +395,29 @@ HISTORY <IMicrosoftGraphRiskyUserHistoryItem[]>: The activity related to user ri
   - `[Activity <IMicrosoftGraphRiskUserActivity>]`: riskUserActivity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Detail <String>]`: riskDetail
-    - `[EventTypes <String[]>]`: 
+    - `[EventTypes <String[]>]`: List of risk event types. Deprecated. Use riskEventType instead.
     - `[RiskEventTypes <String[]>]`: The type of risk event detected.
   - `[InitiatedBy <String>]`: The id of actor that does the operation.
   - `[UserId <String>]`: The id of the user.
 
 INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[ActivityBasedTimeoutPolicyId <String>]`: key: id of activityBasedTimeoutPolicy
+  - `[AuthenticationContextClassReferenceId <String>]`: key: id of authenticationContextClassReference
   - `[AuthenticationMethodId <String>]`: key: id of authenticationMethod
   - `[AuthorizationPolicyId <String>]`: key: id of authorizationPolicy
-  - `[CertificateBasedAuthConfigurationId <String>]`: key: id of certificateBasedAuthConfiguration
+  - `[BitlockerRecoveryKeyId <String>]`: key: id of bitlockerRecoveryKey
   - `[ClaimsMappingPolicyId <String>]`: key: id of claimsMappingPolicy
   - `[ConditionalAccessPolicyId <String>]`: key: id of conditionalAccessPolicy
   - `[DataLossPreventionPolicyId <String>]`: key: id of dataLossPreventionPolicy
   - `[DataPolicyOperationId <String>]`: key: id of dataPolicyOperation
+  - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[EmailAuthenticationMethodId <String>]`: key: id of emailAuthenticationMethod
+  - `[FeatureRolloutPolicyId <String>]`: key: id of featureRolloutPolicy
   - `[Fido2AuthenticationMethodId <String>]`: key: id of fido2AuthenticationMethod
   - `[HomeRealmDiscoveryPolicyId <String>]`: key: id of homeRealmDiscoveryPolicy
   - `[IdentityProviderId <String>]`: key: id of identityProvider
   - `[IdentityUserFlowId <String>]`: key: id of identityUserFlow
   - `[InformationProtectionLabelId <String>]`: key: id of informationProtectionLabel
-  - `[InvitationId <String>]`: key: id of invitation
   - `[LongRunningOperationId <String>]`: key: id of longRunningOperation
   - `[MicrosoftAuthenticatorAuthenticationMethodId <String>]`: key: id of microsoftAuthenticatorAuthenticationMethod
   - `[NamedLocationId <String>]`: key: id of namedLocation
@@ -427,10 +431,8 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[RiskDetectionId <String>]`: key: id of riskDetection
   - `[RiskyUserHistoryItemId <String>]`: key: id of riskyUserHistoryItem
   - `[RiskyUserId <String>]`: key: id of riskyUser
-  - `[SecurityQuestionAuthenticationMethodId <String>]`: key: id of securityQuestionAuthenticationMethod
   - `[SensitivityLabelId <String>]`: key: id of sensitivityLabel
   - `[SensitivityLabelId1 <String>]`: key: id of sensitivityLabel
-  - `[SoftwareOathAuthenticationMethodId <String>]`: key: id of softwareOathAuthenticationMethod
   - `[TemporaryAccessPassAuthenticationMethodId <String>]`: key: id of temporaryAccessPassAuthenticationMethod
   - `[ThreatAssessmentRequestId <String>]`: key: id of threatAssessmentRequest
   - `[ThreatAssessmentResultId <String>]`: key: id of threatAssessmentResult
@@ -438,7 +440,11 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[TokenLifetimePolicyId <String>]`: key: id of tokenLifetimePolicy
   - `[TrustFrameworkKeySetId <String>]`: key: id of trustFrameworkKeySet
   - `[TrustFrameworkPolicyId <String>]`: key: id of trustFrameworkPolicy
+  - `[UnifiedRoleManagementPolicyAssignmentId <String>]`: key: id of unifiedRoleManagementPolicyAssignment
+  - `[UnifiedRoleManagementPolicyId <String>]`: key: id of unifiedRoleManagementPolicy
+  - `[UnifiedRoleManagementPolicyRuleId <String>]`: key: id of unifiedRoleManagementPolicyRule
   - `[UserId <String>]`: key: id of user
+  - `[WindowsHelloForBusinessAuthenticationMethodId <String>]`: key: id of windowsHelloForBusinessAuthenticationMethod
 
 ## RELATED LINKS
 

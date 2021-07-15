@@ -48,7 +48,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOAuth2PermissionGrant1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOAuth2PermissionGrant
 
 ## NOTES
 

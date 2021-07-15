@@ -8,7 +8,8 @@ schema: 2.0.0
 # New-MgPolicyPermissionGrantPolicyExclude
 
 ## SYNOPSIS
-Create new navigation property to excludes for policies
+Condition sets which are excluded in this permission grant policy.
+Automatically expanded on GET.
 
 ## SYNTAX
 
@@ -44,7 +45,8 @@ New-MgPolicyPermissionGrantPolicyExclude -InputObject <IIdentitySignInsIdentity>
 ```
 
 ## DESCRIPTION
-Create new navigation property to excludes for policies
+Condition sets which are excluded in this permission grant policy.
+Automatically expanded on GET.
 
 ## EXAMPLES
 
@@ -100,7 +102,8 @@ Accept wildcard characters: False
 ```
 
 ### -ClientApplicationIds
-.
+A list of appId values for the client applications to match with, or a list with the single value all to match any client application.
+Default is the single value all.
 
 ```yaml
 Type: System.String[]
@@ -115,7 +118,8 @@ Accept wildcard characters: False
 ```
 
 ### -ClientApplicationPublisherIds
-.
+A list of Microsoft Partner Network (MPN) IDs for verified publishers of the client application, or a list with the single value all to match with client apps from any publisher.
+Default is the single value all.
 
 ```yaml
 Type: System.String[]
@@ -130,7 +134,9 @@ Accept wildcard characters: False
 ```
 
 ### -ClientApplicationsFromVerifiedPublisherOnly
-.
+Set to true to only match on client applications with a verified publisher.
+Set to false to match on any client app, even if it does not have a verified publisher.
+Default is false.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -145,7 +151,8 @@ Accept wildcard characters: False
 ```
 
 ### -ClientApplicationTenantIds
-.
+A list of Azure Active Directory tenant IDs in which the client application is registered, or a list with the single value all to match with client apps registered in any tenant.
+Default is the single value all.
 
 ```yaml
 Type: System.String[]
@@ -191,7 +198,8 @@ Accept wildcard characters: False
 ```
 
 ### -PermissionClassification
-.
+The permission classification for the permission being granted, or all to match with any permission classification (including permissions which are not classified).
+Default is all.
 
 ```yaml
 Type: System.String
@@ -221,7 +229,11 @@ Accept wildcard characters: False
 ```
 
 ### -Permissions
-.
+The list of id values for the specific permissions to match with, or a list with the single value all to match with any permission.
+The id of delegated permissions can be found in the publishedPermissionScopes property of the API's **servicePrincipal** object.
+The id of application permissions can be found in the appRoles property of the API's **servicePrincipal** object.
+The id of resource-specific application permissions can be found in the resourceSpecificApplicationPermissions property of the API's **servicePrincipal** object.
+Default is the single value all.
 
 ```yaml
 Type: System.String[]
@@ -251,7 +263,9 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceApplication
-.
+The appId of the resource application (e.g.
+the API) for which a permission is being granted, or any to match with any resource application or API.
+Default is any.
 
 ```yaml
 Type: System.String
@@ -321,31 +335,33 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphPermissionGrantConditionSet>: permissionGrantConditionSet
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
-  - `[ClientApplicationIds <String[]>]`: 
-  - `[ClientApplicationPublisherIds <String[]>]`: 
-  - `[ClientApplicationTenantIds <String[]>]`: 
-  - `[ClientApplicationsFromVerifiedPublisherOnly <Boolean?>]`: 
-  - `[PermissionClassification <String>]`: 
+  - `[ClientApplicationIds <String[]>]`: A list of appId values for the client applications to match with, or a list with the single value all to match any client application. Default is the single value all.
+  - `[ClientApplicationPublisherIds <String[]>]`: A list of Microsoft Partner Network (MPN) IDs for verified publishers of the client application, or a list with the single value all to match with client apps from any publisher. Default is the single value all.
+  - `[ClientApplicationTenantIds <String[]>]`: A list of Azure Active Directory tenant IDs in which the client application is registered, or a list with the single value all to match with client apps registered in any tenant. Default is the single value all.
+  - `[ClientApplicationsFromVerifiedPublisherOnly <Boolean?>]`: Set to true to only match on client applications with a verified publisher. Set to false to match on any client app, even if it does not have a verified publisher. Default is false.
+  - `[PermissionClassification <String>]`: The permission classification for the permission being granted, or all to match with any permission classification (including permissions which are not classified). Default is all.
   - `[PermissionType <String>]`: permissionType
-  - `[Permissions <String[]>]`: 
-  - `[ResourceApplication <String>]`: 
+  - `[Permissions <String[]>]`: The list of id values for the specific permissions to match with, or a list with the single value all to match with any permission. The id of delegated permissions can be found in the publishedPermissionScopes property of the API's **servicePrincipal** object. The id of application permissions can be found in the appRoles property of the API's **servicePrincipal** object. The id of resource-specific application permissions can be found in the resourceSpecificApplicationPermissions property of the API's **servicePrincipal** object. Default is the single value all.
+  - `[ResourceApplication <String>]`: The appId of the resource application (e.g. the API) for which a permission is being granted, or any to match with any resource application or API. Default is any.
 
 INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[ActivityBasedTimeoutPolicyId <String>]`: key: id of activityBasedTimeoutPolicy
+  - `[AuthenticationContextClassReferenceId <String>]`: key: id of authenticationContextClassReference
   - `[AuthenticationMethodId <String>]`: key: id of authenticationMethod
   - `[AuthorizationPolicyId <String>]`: key: id of authorizationPolicy
-  - `[CertificateBasedAuthConfigurationId <String>]`: key: id of certificateBasedAuthConfiguration
+  - `[BitlockerRecoveryKeyId <String>]`: key: id of bitlockerRecoveryKey
   - `[ClaimsMappingPolicyId <String>]`: key: id of claimsMappingPolicy
   - `[ConditionalAccessPolicyId <String>]`: key: id of conditionalAccessPolicy
   - `[DataLossPreventionPolicyId <String>]`: key: id of dataLossPreventionPolicy
   - `[DataPolicyOperationId <String>]`: key: id of dataPolicyOperation
+  - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[EmailAuthenticationMethodId <String>]`: key: id of emailAuthenticationMethod
+  - `[FeatureRolloutPolicyId <String>]`: key: id of featureRolloutPolicy
   - `[Fido2AuthenticationMethodId <String>]`: key: id of fido2AuthenticationMethod
   - `[HomeRealmDiscoveryPolicyId <String>]`: key: id of homeRealmDiscoveryPolicy
   - `[IdentityProviderId <String>]`: key: id of identityProvider
   - `[IdentityUserFlowId <String>]`: key: id of identityUserFlow
   - `[InformationProtectionLabelId <String>]`: key: id of informationProtectionLabel
-  - `[InvitationId <String>]`: key: id of invitation
   - `[LongRunningOperationId <String>]`: key: id of longRunningOperation
   - `[MicrosoftAuthenticatorAuthenticationMethodId <String>]`: key: id of microsoftAuthenticatorAuthenticationMethod
   - `[NamedLocationId <String>]`: key: id of namedLocation
@@ -359,10 +375,8 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[RiskDetectionId <String>]`: key: id of riskDetection
   - `[RiskyUserHistoryItemId <String>]`: key: id of riskyUserHistoryItem
   - `[RiskyUserId <String>]`: key: id of riskyUser
-  - `[SecurityQuestionAuthenticationMethodId <String>]`: key: id of securityQuestionAuthenticationMethod
   - `[SensitivityLabelId <String>]`: key: id of sensitivityLabel
   - `[SensitivityLabelId1 <String>]`: key: id of sensitivityLabel
-  - `[SoftwareOathAuthenticationMethodId <String>]`: key: id of softwareOathAuthenticationMethod
   - `[TemporaryAccessPassAuthenticationMethodId <String>]`: key: id of temporaryAccessPassAuthenticationMethod
   - `[ThreatAssessmentRequestId <String>]`: key: id of threatAssessmentRequest
   - `[ThreatAssessmentResultId <String>]`: key: id of threatAssessmentResult
@@ -370,7 +384,11 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[TokenLifetimePolicyId <String>]`: key: id of tokenLifetimePolicy
   - `[TrustFrameworkKeySetId <String>]`: key: id of trustFrameworkKeySet
   - `[TrustFrameworkPolicyId <String>]`: key: id of trustFrameworkPolicy
+  - `[UnifiedRoleManagementPolicyAssignmentId <String>]`: key: id of unifiedRoleManagementPolicyAssignment
+  - `[UnifiedRoleManagementPolicyId <String>]`: key: id of unifiedRoleManagementPolicy
+  - `[UnifiedRoleManagementPolicyRuleId <String>]`: key: id of unifiedRoleManagementPolicyRule
   - `[UserId <String>]`: key: id of user
+  - `[WindowsHelloForBusinessAuthenticationMethodId <String>]`: key: id of windowsHelloForBusinessAuthenticationMethod
 
 ## RELATED LINKS
 

@@ -83,7 +83,7 @@ Accept wildcard characters: False
 
 ### -CompletedDateTime
 Represents when the request for this data policy operation was completed, in UTC time, using the ISO 8601 format.
-For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 Null until the operation completes.
 
 ```yaml
@@ -160,7 +160,7 @@ Accept wildcard characters: False
 
 ### -SubmittedDateTime
 Represents when the request for this data operation was submitted, in UTC time, using the ISO 8601 format.
-For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 
 ```yaml
 Type: System.DateTime
@@ -243,11 +243,11 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphDataPolicyOperation>: dataPolicyOperation
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
-  - `[CompletedDateTime <DateTime?>]`: Represents when the request for this data policy operation was completed, in UTC time, using the ISO 8601 format. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Null until the operation completes.
+  - `[CompletedDateTime <DateTime?>]`: Represents when the request for this data policy operation was completed, in UTC time, using the ISO 8601 format. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Null until the operation completes.
   - `[Progress <Double?>]`: Specifies the progress of an operation.
   - `[Status <String>]`: dataPolicyOperationStatus
   - `[StorageLocation <String>]`: The URL location to where data is being exported for export requests.
-  - `[SubmittedDateTime <DateTime?>]`: Represents when the request for this data operation was submitted, in UTC time, using the ISO 8601 format. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
+  - `[SubmittedDateTime <DateTime?>]`: Represents when the request for this data operation was submitted, in UTC time, using the ISO 8601 format. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[UserId <String>]`: The id for the user on whom the operation is performed.
 
 ## RELATED LINKS

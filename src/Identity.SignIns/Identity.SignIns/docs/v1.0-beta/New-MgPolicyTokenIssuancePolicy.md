@@ -231,7 +231,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTokenIssuancePolicy1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTokenIssuancePolicy
 
 ## NOTES
 

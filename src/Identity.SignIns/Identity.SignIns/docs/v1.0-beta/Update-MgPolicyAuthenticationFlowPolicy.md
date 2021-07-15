@@ -83,7 +83,11 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-.
+Inherited property.
+A description of the policy.
+This property is not a key.
+Optional.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -98,7 +102,11 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-.
+Inherited property.
+The human-readable name of the policy.
+This property is not a key.
+Optional.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -212,15 +220,15 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphAuthenticationFlowsPolicy>: authenticationFlowsPolicy
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
-  - `[Description <String>]`: 
-  - `[DisplayName <String>]`: 
+  - `[Description <String>]`: Inherited property. A description of the policy. This property is not a key. Optional. Read-only.
+  - `[DisplayName <String>]`: Inherited property. The human-readable name of the policy. This property is not a key. Optional. Read-only.
   - `[SelfServiceSignUp <IMicrosoftGraphSelfServiceSignUpAuthenticationFlowConfiguration>]`: selfServiceSignUpAuthenticationFlowConfiguration
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[IsEnabled <Boolean?>]`: 
+    - `[IsEnabled <Boolean?>]`: Indicates whether self-service sign-up flow is enabled or disabled. The default value is false. This property is not a key. Required.
 
 SELFSERVICESIGNUP <IMicrosoftGraphSelfServiceSignUpAuthenticationFlowConfiguration>: selfServiceSignUpAuthenticationFlowConfiguration
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[IsEnabled <Boolean?>]`: 
+  - `[IsEnabled <Boolean?>]`: Indicates whether self-service sign-up flow is enabled or disabled. The default value is false. This property is not a key. Required.
 
 ## RELATED LINKS
 

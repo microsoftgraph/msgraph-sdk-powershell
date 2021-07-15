@@ -16,7 +16,7 @@ Update the navigation property adminConsentRequestPolicy in policies
 ```
 Update-MgPolicyAdminConsentRequestPolicy [-AdditionalProperties <Hashtable>] [-Id <String>] [-IsEnabled]
  [-NotifyReviewers] [-RemindersEnabled] [-RequestDurationInDays <Int32>]
- [-Reviewers <IMicrosoftGraphAccessReviewScope[]>] [-Version <Int32>] [-PassThru] [-Confirm] [-WhatIf]
+ [-Reviewers <IMicrosoftGraphAccessReviewReviewerScope[]>] [-Version <Int32>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -98,7 +98,8 @@ Accept wildcard characters: False
 ```
 
 ### -IsEnabled
-.
+Specifies whether the admin consent request feature is enabled or disabled.
+Required.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -113,7 +114,8 @@ Accept wildcard characters: False
 ```
 
 ### -NotifyReviewers
-.
+Specifies whether reviewers will receive notifications.
+Required.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -143,7 +145,8 @@ Accept wildcard characters: False
 ```
 
 ### -RemindersEnabled
-.
+Specifies whether reviewers will receive reminder emails.
+Required.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -158,7 +161,7 @@ Accept wildcard characters: False
 ```
 
 ### -RequestDurationInDays
-.
+Specifies the duration the request is active before it automatically expires if no decision is applied.
 
 ```yaml
 Type: System.Int32
@@ -173,11 +176,11 @@ Accept wildcard characters: False
 ```
 
 ### -Reviewers
-.
+Required.
 To construct, see NOTES section for REVIEWERS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewScope[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewReviewerScope[]
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -189,7 +192,9 @@ Accept wildcard characters: False
 ```
 
 ### -Version
-.
+Specifies the version of this policy.
+When the policy is updated, this version is updated.
+Read-only.
 
 ```yaml
 Type: System.Int32
@@ -257,18 +262,20 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphAdminConsentRequestPolicy>: adminConsentRequestPolicy
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
-  - `[IsEnabled <Boolean?>]`: 
-  - `[NotifyReviewers <Boolean?>]`: 
-  - `[RemindersEnabled <Boolean?>]`: 
-  - `[RequestDurationInDays <Int32?>]`: 
-  - `[Reviewers <IMicrosoftGraphAccessReviewScope[]>]`: 
-    - `[Query <String>]`: 
-    - `[QueryType <String>]`: 
-  - `[Version <Int32?>]`: 
+  - `[IsEnabled <Boolean?>]`: Specifies whether the admin consent request feature is enabled or disabled. Required.
+  - `[NotifyReviewers <Boolean?>]`: Specifies whether reviewers will receive notifications. Required.
+  - `[RemindersEnabled <Boolean?>]`: Specifies whether reviewers will receive reminder emails. Required.
+  - `[RequestDurationInDays <Int32?>]`: Specifies the duration the request is active before it automatically expires if no decision is applied.
+  - `[Reviewers <IMicrosoftGraphAccessReviewReviewerScope[]>]`: Required.
+    - `[Query <String>]`: The query specifying who will be the reviewer. See table for examples.
+    - `[QueryRoot <String>]`: In the scenario where reviewers need to be specified dynamically, this property is used to indicate the relative source of the query. This property is only required if a relative query, for example, ./manager, is specified. Possible value: decisions.
+    - `[QueryType <String>]`: The type of query. Examples include MicrosoftGraph and ARM.
+  - `[Version <Int32?>]`: Specifies the version of this policy. When the policy is updated, this version is updated. Read-only.
 
-REVIEWERS <IMicrosoftGraphAccessReviewScope[]>: .
-  - `[Query <String>]`: 
-  - `[QueryType <String>]`: 
+REVIEWERS <IMicrosoftGraphAccessReviewReviewerScope[]>: Required.
+  - `[Query <String>]`: The query specifying who will be the reviewer. See table for examples.
+  - `[QueryRoot <String>]`: In the scenario where reviewers need to be specified dynamically, this property is used to indicate the relative source of the query. This property is only required if a relative query, for example, ./manager, is specified. Possible value: decisions.
+  - `[QueryType <String>]`: The type of query. Examples include MicrosoftGraph and ARM.
 
 ## RELATED LINKS
 

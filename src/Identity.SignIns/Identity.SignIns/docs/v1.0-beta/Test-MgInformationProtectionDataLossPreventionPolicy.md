@@ -190,6 +190,9 @@ BODYPARAMETER <IPaths1JhdydfInformationprotectionDatalosspreventionpoliciesMicro
       - `[ApplicationMode <String>]`: applicationMode
       - `[Id <String>]`: 
     - `[DiscoveredSensitiveTypes <IMicrosoftGraphDiscoveredSensitiveType[]>]`: 
+      - `[ClassificationAttributes <IMicrosoftGraphClassificationAttribute[]>]`: 
+        - `[Confidence <Int32?>]`: 
+        - `[Count <Int32?>]`: 
       - `[Confidence <Int32?>]`: 
       - `[Count <Int32?>]`: 
       - `[Id <String>]`: 
@@ -206,6 +209,9 @@ EVALUATIONINPUT <IMicrosoftGraphDlpEvaluationInput>: dlpEvaluationInput
     - `[ApplicationMode <String>]`: applicationMode
     - `[Id <String>]`: 
   - `[DiscoveredSensitiveTypes <IMicrosoftGraphDiscoveredSensitiveType[]>]`: 
+    - `[ClassificationAttributes <IMicrosoftGraphClassificationAttribute[]>]`: 
+      - `[Confidence <Int32?>]`: 
+      - `[Count <Int32?>]`: 
     - `[Confidence <Int32?>]`: 
     - `[Count <Int32?>]`: 
     - `[Id <String>]`: 
