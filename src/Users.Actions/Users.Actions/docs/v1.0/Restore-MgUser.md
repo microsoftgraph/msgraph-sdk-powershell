@@ -12,12 +12,12 @@ Invoke action restore
 
 ## SYNTAX
 
-### Restore (Default)
+### Restore1 (Default)
 ```
 Restore-MgUser -UserId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### RestoreViaIdentity
+### RestoreViaIdentity1
 ```
 Restore-MgUser -InputObject <IUsersActionsIdentity> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -53,7 +53,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-Parameter Sets: RestoreViaIdentity
+Parameter Sets: RestoreViaIdentity1
 Aliases:
 
 Required: True
@@ -68,7 +68,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Restore
+Parameter Sets: Restore1
 Aliases:
 
 Required: True
@@ -149,8 +149,10 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup
   - `[OutlookTaskId <String>]`: key: id of outlookTask
+  - `[SharedInsightId <String>]`: key: id of sharedInsight
+  - `[TrendingId <String>]`: key: id of trending
+  - `[UsedInsightId <String>]`: key: id of usedInsight
   - `[UserId <String>]`: key: id of user
-  - `[WindowsInformationProtectionDeviceRegistrationId <String>]`: key: id of windowsInformationProtectionDeviceRegistration
 
 ## RELATED LINKS
 

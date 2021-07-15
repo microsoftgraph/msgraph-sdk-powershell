@@ -15,7 +15,8 @@ Invoke action decline
 ### DeclineExpanded (Default)
 ```
 Invoke-MgDeclineUserEvent -EventId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
- [-Comment <String>] [-SendResponse] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Comment <String>] [-ProposedNewTime <IMicrosoftGraphTimeSlot>] [-SendResponse] [-PassThru] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Decline
@@ -35,7 +36,8 @@ Invoke-MgDeclineUserEvent -InputObject <IUsersActionsIdentity>
 ### DeclineViaIdentityExpanded
 ```
 Invoke-MgDeclineUserEvent -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
- [-Comment <String>] [-SendResponse] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Comment <String>] [-ProposedNewTime <IMicrosoftGraphTimeSlot>] [-SendResponse] [-PassThru] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -155,6 +157,22 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -ProposedNewTime
+timeSlot
+To construct, see NOTES section for PROPOSEDNEWTIME properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTimeSlot
+Parameter Sets: DeclineExpanded, DeclineViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -SendResponse
 .
 
@@ -241,6 +259,13 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IPathsT4Hh9DUsersUserIdEventsEventIdMicrosoftGraphDeclinePostRequestbodyContentApplicationJsonSchema>: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Comment <String>]`: 
+  - `[ProposedNewTime <IMicrosoftGraphTimeSlot>]`: timeSlot
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[End <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}). For example, '2019-04-16T09:00:00'.
+      - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for possible values.
+    - `[Start <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
   - `[SendResponse <Boolean?>]`: 
 
 INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
@@ -263,8 +288,18 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup
   - `[OutlookTaskId <String>]`: key: id of outlookTask
+  - `[SharedInsightId <String>]`: key: id of sharedInsight
+  - `[TrendingId <String>]`: key: id of trending
+  - `[UsedInsightId <String>]`: key: id of usedInsight
   - `[UserId <String>]`: key: id of user
-  - `[WindowsInformationProtectionDeviceRegistrationId <String>]`: key: id of windowsInformationProtectionDeviceRegistration
+
+PROPOSEDNEWTIME <IMicrosoftGraphTimeSlot>: timeSlot
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[End <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}). For example, '2019-04-16T09:00:00'.
+    - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for possible values.
+  - `[Start <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
 
 ## RELATED LINKS
 

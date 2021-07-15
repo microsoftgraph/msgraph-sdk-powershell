@@ -284,13 +284,13 @@ BODYPARAMETER <IPaths18Aow54UsersUserIdTeamworkMicrosoftGraphSendactivitynotific
     - `[Content <String>]`: The content of the item.
     - `[ContentType <String>]`: bodyType
   - `[TemplateParameters <IMicrosoftGraphKeyValuePair[]>]`: 
-    - `[Name <String>]`: Name for this key-value pair
-    - `[Value <String>]`: Value for this key-value pair
+    - `[Name <String>]`: Name for this key-value pair. Possible names are: AdditionalWSFedEndpointCheckResult,  AllowedAuthenticationClassReferencesCheckResult, AlwaysRequireAuthenticationCheckResult,   AutoUpdateEnabledCheckResult, ClaimsProviderNameCheckResult, EncryptClaimsCheckResult,  EncryptedNameIdRequiredCheckResult, MonitoringEnabledCheckResult,NotBeforeSkewCheckResult,  RequestMFAFromClaimsProvidersCheckResult, SignedSamlRequestsRequiredCheckResult, AdditionalAuthenticationRulesCheckResult, TokenLifetimeCheckResult,  DelegationAuthorizationRulesCheckResult, IssuanceAuthorizationRulesCheckResult, IssuanceTransformRulesCheckResult.
+    - `[Value <String>]`: Value for this key-value pair. Possible result values are 0 (when the validation check passed), 1 (when the validation check failed), or 2 (when the validation check is a warning).
   - `[Topic <IMicrosoftGraphTeamworkActivityTopic>]`: teamworkActivityTopic
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Source <String>]`: teamworkActivityTopicSource
-    - `[Value <String>]`: 
-    - `[WebUrl <String>]`: 
+    - `[Value <String>]`: The topic value. If the value of the source property is entityUrl, this must be a Microsoft Graph URL. If the vaule is text, this must be a plain text value.
+    - `[WebUrl <String>]`: The link the user clicks when they select the notification. Optional when source is entityUrl; required when source is text.
 
 INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[AccessReviewInstanceId <String>]`: key: id of accessReviewInstance
@@ -312,8 +312,10 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup
   - `[OutlookTaskId <String>]`: key: id of outlookTask
+  - `[SharedInsightId <String>]`: key: id of sharedInsight
+  - `[TrendingId <String>]`: key: id of trending
+  - `[UsedInsightId <String>]`: key: id of usedInsight
   - `[UserId <String>]`: key: id of user
-  - `[WindowsInformationProtectionDeviceRegistrationId <String>]`: key: id of windowsInformationProtectionDeviceRegistration
 
 PREVIEWTEXT <IMicrosoftGraphItemBody>: itemBody
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -321,14 +323,14 @@ PREVIEWTEXT <IMicrosoftGraphItemBody>: itemBody
   - `[ContentType <String>]`: bodyType
 
 TEMPLATEPARAMETERS <IMicrosoftGraphKeyValuePair[]>: .
-  - `[Name <String>]`: Name for this key-value pair
-  - `[Value <String>]`: Value for this key-value pair
+  - `[Name <String>]`: Name for this key-value pair. Possible names are: AdditionalWSFedEndpointCheckResult,  AllowedAuthenticationClassReferencesCheckResult, AlwaysRequireAuthenticationCheckResult,   AutoUpdateEnabledCheckResult, ClaimsProviderNameCheckResult, EncryptClaimsCheckResult,  EncryptedNameIdRequiredCheckResult, MonitoringEnabledCheckResult,NotBeforeSkewCheckResult,  RequestMFAFromClaimsProvidersCheckResult, SignedSamlRequestsRequiredCheckResult, AdditionalAuthenticationRulesCheckResult, TokenLifetimeCheckResult,  DelegationAuthorizationRulesCheckResult, IssuanceAuthorizationRulesCheckResult, IssuanceTransformRulesCheckResult.
+  - `[Value <String>]`: Value for this key-value pair. Possible result values are 0 (when the validation check passed), 1 (when the validation check failed), or 2 (when the validation check is a warning).
 
 TOPIC <IMicrosoftGraphTeamworkActivityTopic>: teamworkActivityTopic
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Source <String>]`: teamworkActivityTopicSource
-  - `[Value <String>]`: 
-  - `[WebUrl <String>]`: 
+  - `[Value <String>]`: The topic value. If the value of the source property is entityUrl, this must be a Microsoft Graph URL. If the vaule is text, this must be a plain text value.
+  - `[WebUrl <String>]`: The link the user clicks when they select the notification. Optional when source is entityUrl; required when source is text.
 
 ## RELATED LINKS
 

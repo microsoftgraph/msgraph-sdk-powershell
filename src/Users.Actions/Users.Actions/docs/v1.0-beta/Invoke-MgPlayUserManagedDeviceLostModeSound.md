@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgPlayUserManagedDeviceLostModeSound
 
 ## SYNOPSIS
-Invoke action playLostModeSound
+Remote lock
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Invoke-MgPlayUserManagedDeviceLostModeSound -InputObject <IUsersActionsIdentity>
 ```
 
 ## DESCRIPTION
-Invoke action playLostModeSound
+Remote lock
 
 ## EXAMPLES
 
@@ -181,8 +181,10 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup
   - `[OutlookTaskId <String>]`: key: id of outlookTask
+  - `[SharedInsightId <String>]`: key: id of sharedInsight
+  - `[TrendingId <String>]`: key: id of trending
+  - `[UsedInsightId <String>]`: key: id of usedInsight
   - `[UserId <String>]`: key: id of user
-  - `[WindowsInformationProtectionDeviceRegistrationId <String>]`: key: id of windowsInformationProtectionDeviceRegistration
 
 ## RELATED LINKS
 

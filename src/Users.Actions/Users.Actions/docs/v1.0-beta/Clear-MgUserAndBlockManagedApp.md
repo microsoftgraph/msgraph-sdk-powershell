@@ -8,7 +8,7 @@ schema: 2.0.0
 # Clear-MgUserAndBlockManagedApp
 
 ## SYNOPSIS
-Invoke action wipeAndBlockManagedApps
+Blocks the managed app user from app check-in.
 
 ## SYNTAX
 
@@ -24,7 +24,7 @@ Clear-MgUserAndBlockManagedApp -InputObject <IUsersActionsIdentity> [-PassThru] 
 ```
 
 ## DESCRIPTION
-Invoke action wipeAndBlockManagedApps
+Blocks the managed app user from app check-in.
 
 ## EXAMPLES
 
@@ -165,8 +165,10 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup
   - `[OutlookTaskId <String>]`: key: id of outlookTask
+  - `[SharedInsightId <String>]`: key: id of sharedInsight
+  - `[TrendingId <String>]`: key: id of trending
+  - `[UsedInsightId <String>]`: key: id of usedInsight
   - `[UserId <String>]`: key: id of user
-  - `[WindowsInformationProtectionDeviceRegistrationId <String>]`: key: id of windowsInformationProtectionDeviceRegistration
 
 ## RELATED LINKS
 

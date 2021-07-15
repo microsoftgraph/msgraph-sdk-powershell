@@ -8,7 +8,7 @@ schema: 2.0.0
 # Enable-MgUserManagedDeviceLostMode
 
 ## SYNOPSIS
-Invoke action enableLostMode
+Enable lost mode
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ Enable-MgUserManagedDeviceLostMode -InputObject <IUsersActionsIdentity> [-Additi
 ```
 
 ## DESCRIPTION
-Invoke action enableLostMode
+Enable lost mode
 
 ## EXAMPLES
 
@@ -281,8 +281,10 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup
   - `[OutlookTaskId <String>]`: key: id of outlookTask
+  - `[SharedInsightId <String>]`: key: id of sharedInsight
+  - `[TrendingId <String>]`: key: id of trending
+  - `[UsedInsightId <String>]`: key: id of usedInsight
   - `[UserId <String>]`: key: id of user
-  - `[WindowsInformationProtectionDeviceRegistrationId <String>]`: key: id of windowsInformationProtectionDeviceRegistration
 
 ## RELATED LINKS
 

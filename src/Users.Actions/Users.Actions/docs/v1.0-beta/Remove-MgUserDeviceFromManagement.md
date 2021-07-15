@@ -8,23 +8,23 @@ schema: 2.0.0
 # Remove-MgUserDeviceFromManagement
 
 ## SYNOPSIS
-Invoke action removeAllDevicesFromManagement
+Retire all devices from management for this user
 
 ## SYNTAX
 
-### Remove1 (Default)
+### Remove (Default)
 ```
 Remove-MgUserDeviceFromManagement -UserId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### RemoveViaIdentity1
+### RemoveViaIdentity
 ```
 Remove-MgUserDeviceFromManagement -InputObject <IUsersActionsIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Invoke action removeAllDevicesFromManagement
+Retire all devices from management for this user
 
 ## EXAMPLES
 
@@ -54,7 +54,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-Parameter Sets: RemoveViaIdentity1
+Parameter Sets: RemoveViaIdentity
 Aliases:
 
 Required: True
@@ -84,7 +84,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Remove1
+Parameter Sets: Remove
 Aliases:
 
 Required: True
@@ -165,8 +165,10 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup
   - `[OutlookTaskId <String>]`: key: id of outlookTask
+  - `[SharedInsightId <String>]`: key: id of sharedInsight
+  - `[TrendingId <String>]`: key: id of trending
+  - `[UsedInsightId <String>]`: key: id of usedInsight
   - `[UserId <String>]`: key: id of user
-  - `[WindowsInformationProtectionDeviceRegistrationId <String>]`: key: id of windowsInformationProtectionDeviceRegistration
 
 ## RELATED LINKS
 
