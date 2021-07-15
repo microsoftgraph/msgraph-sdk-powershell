@@ -1,11 +1,11 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Search
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.search/get-mgsearch
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.search/get-mgsearchentity
 schema: 2.0.0
 ---
 
-# Get-MgSearch
+# Get-MgSearchEntity
 
 ## SYNOPSIS
 Get search
@@ -13,7 +13,7 @@ Get search
 ## SYNTAX
 
 ```
-Get-MgSearch [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
+Get-MgSearchEntity [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
