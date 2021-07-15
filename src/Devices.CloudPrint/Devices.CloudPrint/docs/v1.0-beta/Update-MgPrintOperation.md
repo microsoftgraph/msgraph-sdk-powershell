@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgPrintOperation
 
 ## SYNOPSIS
-Update the navigation property operations in print
+The list of print long running operations.
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ Update-MgPrintOperation -InputObject <IDevicesCloudPrintIdentity> [-AdditionalPr
 ```
 
 ## DESCRIPTION
-Update the navigation property operations in print
+The list of print long running operations.
 
 ## EXAMPLES
 
@@ -95,7 +95,8 @@ Accept wildcard characters: False
 ```
 
 ### -CreatedDateTime
-.
+The DateTimeOffset when the operation was created.
+Read-only.
 
 ```yaml
 Type: System.DateTime
@@ -242,36 +243,26 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphPrintOperation>: printOperation
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
-  - `[CreatedDateTime <DateTime?>]`: 
+  - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the operation was created. Read-only.
   - `[Status <IMicrosoftGraphPrintOperationStatus>]`: printOperationStatus
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Description <String>]`: 
+    - `[Description <String>]`: A human-readable description of the printOperation's current processing state. Read-only.
     - `[State <String>]`: printOperationProcessingState
 
 INPUTOBJECT <IDevicesCloudPrintIdentity>: Identity Parameter
-  - `[GroupId <String>]`: 
-  - `[PeriodEnd <DateTime?>]`: 
-  - `[PeriodStart <DateTime?>]`: 
   - `[PrintConnectorId <String>]`: key: id of printConnector
-  - `[PrintIdentityId <String>]`: key: id of printIdentity
   - `[PrintOperationId <String>]`: key: id of printOperation
   - `[PrintServiceEndpointId <String>]`: key: id of printServiceEndpoint
   - `[PrintServiceId <String>]`: key: id of printService
   - `[PrintTaskDefinitionId <String>]`: key: id of printTaskDefinition
   - `[PrintTaskId <String>]`: key: id of printTask
   - `[PrintTaskTriggerId <String>]`: key: id of printTaskTrigger
-  - `[PrintUserIdentityId <String>]`: key: id of printUserIdentity
   - `[PrinterId <String>]`: key: id of printer
-  - `[PrinterId1 <String>]`: 
   - `[PrinterShareId <String>]`: key: id of printerShare
-  - `[ReportRootId <String>]`: key: id of reportRoot
-  - `[TimeSpanInMinutes <Int32?>]`: 
-  - `[TopListsSize <Int32?>]`: 
-  - `[UserId <String>]`: 
 
 STATUS <IMicrosoftGraphPrintOperationStatus>: printOperationStatus
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Description <String>]`: 
+  - `[Description <String>]`: A human-readable description of the printOperation's current processing state. Read-only.
   - `[State <String>]`: printOperationProcessingState
 
 ## RELATED LINKS

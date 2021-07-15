@@ -22,6 +22,12 @@ Get-MgPrintPrinterShareByRef -PrinterId <String> [<CommonParameters>]
 Get-MgPrintPrinterShareByRef -InputObject <IDevicesCloudPrintIdentity> [<CommonParameters>]
 ```
 
+### List1
+```
+Get-MgPrintPrinterShareByRef -PrinterId <String> [-Filter <String>] [-Search <String>] [-Skip <Int32>]
+ [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
+```
+
 ## DESCRIPTION
 Get ref of share from print
 
@@ -47,6 +53,52 @@ PS C:\> {{ Add code here }}
 
 ## PARAMETERS
 
+### -All
+List all pages.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: List1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CountVariable
+Specifies a count of the total number of items in a collection.
+By default, this variable will be set in the global scope.
+
+```yaml
+Type: System.String
+Parameter Sets: List1
+Aliases: CV
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Filter
+Filter items by property values
+
+```yaml
+Type: System.String
+Parameter Sets: List1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -63,15 +115,90 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
+### -PageSize
+Sets the page size of results.
+
+```yaml
+Type: System.Int32
+Parameter Sets: List1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -PrinterId
 key: id of printer
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
+Parameter Sets: Get, List1
 Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Search
+Search items by search phrases
+
+```yaml
+Type: System.String
+Parameter Sets: List1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Skip
+Skip the first n items
+
+```yaml
+Type: System.Int32
+Parameter Sets: List1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Sort
+Order items by property values
+
+```yaml
+Type: System.String[]
+Parameter Sets: List1
+Aliases: OrderBy
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Top
+Show only the first n items
+
+```yaml
+Type: System.Int32
+Parameter Sets: List1
+Aliases: Limit
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -99,25 +226,15 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IDevicesCloudPrintIdentity>: Identity Parameter
-  - `[GroupId <String>]`: 
-  - `[PeriodEnd <DateTime?>]`: 
-  - `[PeriodStart <DateTime?>]`: 
   - `[PrintConnectorId <String>]`: key: id of printConnector
-  - `[PrintIdentityId <String>]`: key: id of printIdentity
   - `[PrintOperationId <String>]`: key: id of printOperation
   - `[PrintServiceEndpointId <String>]`: key: id of printServiceEndpoint
   - `[PrintServiceId <String>]`: key: id of printService
   - `[PrintTaskDefinitionId <String>]`: key: id of printTaskDefinition
   - `[PrintTaskId <String>]`: key: id of printTask
   - `[PrintTaskTriggerId <String>]`: key: id of printTaskTrigger
-  - `[PrintUserIdentityId <String>]`: key: id of printUserIdentity
   - `[PrinterId <String>]`: key: id of printer
-  - `[PrinterId1 <String>]`: 
   - `[PrinterShareId <String>]`: key: id of printerShare
-  - `[ReportRootId <String>]`: key: id of reportRoot
-  - `[TimeSpanInMinutes <Int32?>]`: 
-  - `[TopListsSize <Int32?>]`: 
-  - `[UserId <String>]`: 
 
 ## RELATED LINKS
 

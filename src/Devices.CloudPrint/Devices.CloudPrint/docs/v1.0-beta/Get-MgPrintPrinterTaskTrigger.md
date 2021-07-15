@@ -8,31 +8,31 @@ schema: 2.0.0
 # Get-MgPrintPrinterTaskTrigger
 
 ## SYNOPSIS
-Get taskTriggers from print
+A list of task triggers that are associated with the printer.
 
 ## SYNTAX
 
-### List (Default)
+### List1 (Default)
 ```
-Get-MgPrintPrinterTaskTrigger -PrinterId <String> [-Count] [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgPrintPrinterTaskTrigger -PrinterId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
- [-PageSize <Int32>] [<CommonParameters>]
+ [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
-### Get
+### Get1
 ```
 Get-MgPrintPrinterTaskTrigger -PrinterId <String> -PrintTaskTriggerId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
-### GetViaIdentity
+### GetViaIdentity1
 ```
 Get-MgPrintPrinterTaskTrigger -InputObject <IDevicesCloudPrintIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get taskTriggers from print
+A list of task triggers that are associated with the printer.
 
 ## EXAMPLES
 
@@ -61,7 +61,7 @@ List all pages.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List
+Parameter Sets: List1
 Aliases:
 
 Required: False
@@ -71,13 +71,14 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Count
-Include count of items
+### -CountVariable
+Specifies a count of the total number of items in a collection.
+By default, this variable will be set in the global scope.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List
-Aliases:
+Type: System.String
+Parameter Sets: List1
+Aliases: CV
 
 Required: False
 Position: Named
@@ -106,7 +107,7 @@ Filter items by property values
 
 ```yaml
 Type: System.String
-Parameter Sets: List
+Parameter Sets: List1
 Aliases:
 
 Required: False
@@ -122,7 +123,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IDevicesCloudPrintIdentity
-Parameter Sets: GetViaIdentity
+Parameter Sets: GetViaIdentity1
 Aliases:
 
 Required: True
@@ -137,7 +138,7 @@ Sets the page size of results.
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List
+Parameter Sets: List1
 Aliases:
 
 Required: False
@@ -152,7 +153,7 @@ key: id of printer
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, List
+Parameter Sets: Get1, List1
 Aliases:
 
 Required: True
@@ -167,7 +168,7 @@ key: id of printTaskTrigger
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
+Parameter Sets: Get1
 Aliases:
 
 Required: True
@@ -197,7 +198,7 @@ Search items by search phrases
 
 ```yaml
 Type: System.String
-Parameter Sets: List
+Parameter Sets: List1
 Aliases:
 
 Required: False
@@ -212,7 +213,7 @@ Skip the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List
+Parameter Sets: List1
 Aliases:
 
 Required: False
@@ -227,7 +228,7 @@ Order items by property values
 
 ```yaml
 Type: System.String[]
-Parameter Sets: List
+Parameter Sets: List1
 Aliases: OrderBy
 
 Required: False
@@ -242,7 +243,7 @@ Show only the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List
+Parameter Sets: List1
 Aliases: Limit
 
 Required: False
@@ -261,7 +262,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintTaskTrigger
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintTaskTrigger1
 
 ## NOTES
 
@@ -273,25 +274,15 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IDevicesCloudPrintIdentity>: Identity Parameter
-  - `[GroupId <String>]`: 
-  - `[PeriodEnd <DateTime?>]`: 
-  - `[PeriodStart <DateTime?>]`: 
   - `[PrintConnectorId <String>]`: key: id of printConnector
-  - `[PrintIdentityId <String>]`: key: id of printIdentity
   - `[PrintOperationId <String>]`: key: id of printOperation
   - `[PrintServiceEndpointId <String>]`: key: id of printServiceEndpoint
   - `[PrintServiceId <String>]`: key: id of printService
   - `[PrintTaskDefinitionId <String>]`: key: id of printTaskDefinition
   - `[PrintTaskId <String>]`: key: id of printTask
   - `[PrintTaskTriggerId <String>]`: key: id of printTaskTrigger
-  - `[PrintUserIdentityId <String>]`: key: id of printUserIdentity
   - `[PrinterId <String>]`: key: id of printer
-  - `[PrinterId1 <String>]`: 
   - `[PrinterShareId <String>]`: key: id of printerShare
-  - `[ReportRootId <String>]`: key: id of reportRoot
-  - `[TimeSpanInMinutes <Int32?>]`: 
-  - `[TopListsSize <Int32?>]`: 
-  - `[UserId <String>]`: 
 
 ## RELATED LINKS
 

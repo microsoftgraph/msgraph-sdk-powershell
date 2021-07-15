@@ -8,24 +8,24 @@ schema: 2.0.0
 # Remove-MgPrintPrinterTaskTrigger
 
 ## SYNOPSIS
-Delete navigation property taskTriggers for print
+A list of task triggers that are associated with the printer.
 
 ## SYNTAX
 
-### Delete (Default)
+### Delete1 (Default)
 ```
 Remove-MgPrintPrinterTaskTrigger -PrinterId <String> -PrintTaskTriggerId <String> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### DeleteViaIdentity
+### DeleteViaIdentity1
 ```
 Remove-MgPrintPrinterTaskTrigger -InputObject <IDevicesCloudPrintIdentity> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Delete navigation property taskTriggers for print
+A list of task triggers that are associated with the printer.
 
 ## EXAMPLES
 
@@ -70,7 +70,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IDevicesCloudPrintIdentity
-Parameter Sets: DeleteViaIdentity
+Parameter Sets: DeleteViaIdentity1
 Aliases:
 
 Required: True
@@ -100,7 +100,7 @@ key: id of printer
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: Delete1
 Aliases:
 
 Required: True
@@ -115,7 +115,7 @@ key: id of printTaskTrigger
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: Delete1
 Aliases:
 
 Required: True
@@ -177,25 +177,15 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IDevicesCloudPrintIdentity>: Identity Parameter
-  - `[GroupId <String>]`: 
-  - `[PeriodEnd <DateTime?>]`: 
-  - `[PeriodStart <DateTime?>]`: 
   - `[PrintConnectorId <String>]`: key: id of printConnector
-  - `[PrintIdentityId <String>]`: key: id of printIdentity
   - `[PrintOperationId <String>]`: key: id of printOperation
   - `[PrintServiceEndpointId <String>]`: key: id of printServiceEndpoint
   - `[PrintServiceId <String>]`: key: id of printService
   - `[PrintTaskDefinitionId <String>]`: key: id of printTaskDefinition
   - `[PrintTaskId <String>]`: key: id of printTask
   - `[PrintTaskTriggerId <String>]`: key: id of printTaskTrigger
-  - `[PrintUserIdentityId <String>]`: key: id of printUserIdentity
   - `[PrinterId <String>]`: key: id of printer
-  - `[PrinterId1 <String>]`: 
   - `[PrinterShareId <String>]`: key: id of printerShare
-  - `[ReportRootId <String>]`: key: id of reportRoot
-  - `[TimeSpanInMinutes <Int32?>]`: 
-  - `[TopListsSize <Int32?>]`: 
-  - `[UserId <String>]`: 
 
 ## RELATED LINKS
 

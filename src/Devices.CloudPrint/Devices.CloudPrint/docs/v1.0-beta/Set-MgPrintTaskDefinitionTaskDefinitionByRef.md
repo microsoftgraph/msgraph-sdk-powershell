@@ -8,36 +8,38 @@ schema: 2.0.0
 # Set-MgPrintTaskDefinitionTaskDefinitionByRef
 
 ## SYNOPSIS
-Update the ref of navigation property definition in print
+The printTaskDefinition that was used to create this task.
+Read-only.
 
 ## SYNTAX
 
-### UpdateExpanded (Default)
+### SetExpanded (Default)
 ```
 Set-MgPrintTaskDefinitionTaskDefinitionByRef -PrintTaskDefinitionId <String> -PrintTaskId <String>
  [-AdditionalProperties <Hashtable>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Update
+### Set
 ```
 Set-MgPrintTaskDefinitionTaskDefinitionByRef -PrintTaskDefinitionId <String> -PrintTaskId <String>
  -BodyParameter <Hashtable> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentity
+### SetViaIdentity
 ```
 Set-MgPrintTaskDefinitionTaskDefinitionByRef -InputObject <IDevicesCloudPrintIdentity>
  -BodyParameter <Hashtable> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentityExpanded
+### SetViaIdentityExpanded
 ```
 Set-MgPrintTaskDefinitionTaskDefinitionByRef -InputObject <IDevicesCloudPrintIdentity>
  [-AdditionalProperties <Hashtable>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update the ref of navigation property definition in print
+The printTaskDefinition that was used to create this task.
+Read-only.
 
 ## EXAMPLES
 
@@ -66,7 +68,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: SetExpanded, SetViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -81,7 +83,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: Update, UpdateViaIdentity
+Parameter Sets: Set, SetViaIdentity
 Aliases:
 
 Required: True
@@ -97,7 +99,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IDevicesCloudPrintIdentity
-Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
+Parameter Sets: SetViaIdentity, SetViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -127,7 +129,7 @@ key: id of printTaskDefinition
 
 ```yaml
 Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Parameter Sets: Set, SetExpanded
 Aliases:
 
 Required: True
@@ -142,7 +144,7 @@ key: id of printTask
 
 ```yaml
 Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Parameter Sets: Set, SetExpanded
 Aliases:
 
 Required: True
@@ -206,25 +208,15 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IDevicesCloudPrintIdentity>: Identity Parameter
-  - `[GroupId <String>]`: 
-  - `[PeriodEnd <DateTime?>]`: 
-  - `[PeriodStart <DateTime?>]`: 
   - `[PrintConnectorId <String>]`: key: id of printConnector
-  - `[PrintIdentityId <String>]`: key: id of printIdentity
   - `[PrintOperationId <String>]`: key: id of printOperation
   - `[PrintServiceEndpointId <String>]`: key: id of printServiceEndpoint
   - `[PrintServiceId <String>]`: key: id of printService
   - `[PrintTaskDefinitionId <String>]`: key: id of printTaskDefinition
   - `[PrintTaskId <String>]`: key: id of printTask
   - `[PrintTaskTriggerId <String>]`: key: id of printTaskTrigger
-  - `[PrintUserIdentityId <String>]`: key: id of printUserIdentity
   - `[PrinterId <String>]`: key: id of printer
-  - `[PrinterId1 <String>]`: 
   - `[PrinterShareId <String>]`: key: id of printerShare
-  - `[ReportRootId <String>]`: key: id of reportRoot
-  - `[TimeSpanInMinutes <Int32?>]`: 
-  - `[TopListsSize <Int32?>]`: 
-  - `[UserId <String>]`: 
 
 ## RELATED LINKS
 

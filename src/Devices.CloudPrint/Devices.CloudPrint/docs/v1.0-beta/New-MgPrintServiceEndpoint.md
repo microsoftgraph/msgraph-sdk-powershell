@@ -8,36 +8,40 @@ schema: 2.0.0
 # New-MgPrintServiceEndpoint
 
 ## SYNOPSIS
-Create new navigation property to endpoints for print
+Endpoints that can be used to access the service.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
-### CreateExpanded (Default)
+### CreateExpanded1 (Default)
 ```
 New-MgPrintServiceEndpoint -PrintServiceId <String> [-AdditionalProperties <Hashtable>]
  [-DisplayName <String>] [-Id <String>] [-Uri <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Create
+### Create1
 ```
-New-MgPrintServiceEndpoint -PrintServiceId <String> -BodyParameter <IMicrosoftGraphPrintServiceEndpoint>
+New-MgPrintServiceEndpoint -PrintServiceId <String> -BodyParameter <IMicrosoftGraphPrintServiceEndpoint1>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### CreateViaIdentity
+### CreateViaIdentity1
 ```
 New-MgPrintServiceEndpoint -InputObject <IDevicesCloudPrintIdentity>
- -BodyParameter <IMicrosoftGraphPrintServiceEndpoint> [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphPrintServiceEndpoint1> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### CreateViaIdentityExpanded
+### CreateViaIdentityExpanded1
 ```
 New-MgPrintServiceEndpoint -InputObject <IDevicesCloudPrintIdentity> [-AdditionalProperties <Hashtable>]
  [-DisplayName <String>] [-Id <String>] [-Uri <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create new navigation property to endpoints for print
+Endpoints that can be used to access the service.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 
@@ -66,7 +70,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -81,8 +85,8 @@ printServiceEndpoint
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintServiceEndpoint
-Parameter Sets: Create, CreateViaIdentity
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintServiceEndpoint1
+Parameter Sets: Create1, CreateViaIdentity1
 Aliases:
 
 Required: True
@@ -93,11 +97,11 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-.
+A human-readable display name for the endpoint.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -112,7 +116,7 @@ Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -128,7 +132,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IDevicesCloudPrintIdentity
-Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
+Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -143,7 +147,7 @@ key: id of printService
 
 ```yaml
 Type: System.String
-Parameter Sets: Create, CreateExpanded
+Parameter Sets: Create1, CreateExpanded1
 Aliases:
 
 Required: True
@@ -154,11 +158,11 @@ Accept wildcard characters: False
 ```
 
 ### -Uri
-.
+The URI that can be used to access the service.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -206,11 +210,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IDevicesCloudPrintIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintServiceEndpoint
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintServiceEndpoint1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintServiceEndpoint
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintServiceEndpoint1
 
 ## NOTES
 
@@ -221,32 +225,22 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphPrintServiceEndpoint>: printServiceEndpoint
+BODYPARAMETER <IMicrosoftGraphPrintServiceEndpoint1>: printServiceEndpoint
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
-  - `[DisplayName <String>]`: 
-  - `[Uri <String>]`: 
+  - `[DisplayName <String>]`: A human-readable display name for the endpoint.
+  - `[Uri <String>]`: The URI that can be used to access the service.
 
 INPUTOBJECT <IDevicesCloudPrintIdentity>: Identity Parameter
-  - `[GroupId <String>]`: 
-  - `[PeriodEnd <DateTime?>]`: 
-  - `[PeriodStart <DateTime?>]`: 
   - `[PrintConnectorId <String>]`: key: id of printConnector
-  - `[PrintIdentityId <String>]`: key: id of printIdentity
   - `[PrintOperationId <String>]`: key: id of printOperation
   - `[PrintServiceEndpointId <String>]`: key: id of printServiceEndpoint
   - `[PrintServiceId <String>]`: key: id of printService
   - `[PrintTaskDefinitionId <String>]`: key: id of printTaskDefinition
   - `[PrintTaskId <String>]`: key: id of printTask
   - `[PrintTaskTriggerId <String>]`: key: id of printTaskTrigger
-  - `[PrintUserIdentityId <String>]`: key: id of printUserIdentity
   - `[PrinterId <String>]`: key: id of printer
-  - `[PrinterId1 <String>]`: 
   - `[PrinterShareId <String>]`: key: id of printerShare
-  - `[ReportRootId <String>]`: key: id of reportRoot
-  - `[TimeSpanInMinutes <Int32?>]`: 
-  - `[TopListsSize <Int32?>]`: 
-  - `[UserId <String>]`: 
 
 ## RELATED LINKS
 

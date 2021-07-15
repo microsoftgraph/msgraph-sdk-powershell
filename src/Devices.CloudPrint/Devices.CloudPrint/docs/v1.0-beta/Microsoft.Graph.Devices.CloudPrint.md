@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Devices.CloudPrint
-Module Guid: 057da9f3-a0e8-4f8f-892a-82e894271354
+Module Guid: 30667c6d-5cdc-4eee-a5b1-27c20a4dfa46
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.cloudprint
 Help Version: 1.0.0.0
 Locale: en-US
@@ -15,244 +15,225 @@ Microsoft Graph PowerShell Cmdlets
 Get print
 
 ### [Get-MgPrintConnector](Get-MgPrintConnector.md)
-Get connectors from print
+The list of available print connectors.
 
 ### [Get-MgPrintOperation](Get-MgPrintOperation.md)
-Get operations from print
+The list of print long running operations.
 
 ### [Get-MgPrintPrinter](Get-MgPrintPrinter.md)
-Get printers from print
-
-### [Get-MgPrintPrinterAllowedGroup](Get-MgPrintPrinterAllowedGroup.md)
-Get allowedGroups from print
-
-### [Get-MgPrintPrinterAllowedUser](Get-MgPrintPrinterAllowedUser.md)
-Get allowedUsers from print
+The list of printers registered in the tenant.
 
 ### [Get-MgPrintPrinterCapability](Get-MgPrintPrinterCapability.md)
 Invoke function getCapabilities
 
 ### [Get-MgPrintPrinterConnector](Get-MgPrintPrinterConnector.md)
-Get connectors from print
+The connectors that are associated with the printer.
 
 ### [Get-MgPrintPrinterConnectorByRef](Get-MgPrintPrinterConnectorByRef.md)
-Get ref of connectors from print
+The connectors that are associated with the printer.
 
 ### [Get-MgPrintPrinterShare](Get-MgPrintPrinterShare.md)
 Get share from print
 
 ### [Get-MgPrintPrinterShareAllowedGroup](Get-MgPrintPrinterShareAllowedGroup.md)
-Get allowedGroups from print
+The groups whose users have access to print using the printer.
+
+### [Get-MgPrintPrinterShareAllowedGroupByRef](Get-MgPrintPrinterShareAllowedGroupByRef.md)
+The groups whose users have access to print using the printer.
 
 ### [Get-MgPrintPrinterShareAllowedUser](Get-MgPrintPrinterShareAllowedUser.md)
-Get allowedUsers from print
+The users who have access to print using the printer.
+
+### [Get-MgPrintPrinterShareAllowedUserByRef](Get-MgPrintPrinterShareAllowedUserByRef.md)
+The users who have access to print using the printer.
 
 ### [Get-MgPrintPrinterShareByRef](Get-MgPrintPrinterShareByRef.md)
 Get ref of share from print
 
 ### [Get-MgPrintPrinterSharePrinter](Get-MgPrintPrinterSharePrinter.md)
-Get printer from print
+The printer that this printer share is related to.
 
 ### [Get-MgPrintPrinterSharePrinterByRef](Get-MgPrintPrinterSharePrinterByRef.md)
-Get ref of printer from print
+The printer that this printer share is related to.
 
 ### [Get-MgPrintPrinterSharePrinterCapability](Get-MgPrintPrinterSharePrinterCapability.md)
 Invoke function getCapabilities
 
 ### [Get-MgPrintPrinterTaskTrigger](Get-MgPrintPrinterTaskTrigger.md)
-Get taskTriggers from print
+A list of task triggers that are associated with the printer.
 
 ### [Get-MgPrintPrinterTaskTriggerDefinition](Get-MgPrintPrinterTaskTriggerDefinition.md)
-Get definition from print
+An abstract definition that will be used to create a printTask when triggered by a print event.
+Read-only.
 
 ### [Get-MgPrintPrinterTaskTriggerDefinitionByRef](Get-MgPrintPrinterTaskTriggerDefinitionByRef.md)
-Get ref of definition from print
+An abstract definition that will be used to create a printTask when triggered by a print event.
+Read-only.
 
 ### [Get-MgPrintReport](Get-MgPrintReport.md)
 Get reports from print
 
-### [Get-MgPrintReportGroupArchivedPrintJob](Get-MgPrintReportGroupArchivedPrintJob.md)
-Invoke function getGroupArchivedPrintJobs
-
-### [Get-MgPrintReportGroupPrintUsageSummary](Get-MgPrintReportGroupPrintUsageSummary.md)
-Invoke function getGroupPrintUsageSummary
-
-### [Get-MgPrintReportOverallPrintUsageSummary](Get-MgPrintReportOverallPrintUsageSummary.md)
-Invoke function getOverallPrintUsageSummary
-
-### [Get-MgPrintReportPrinterArchivedPrintJob](Get-MgPrintReportPrinterArchivedPrintJob.md)
-Invoke function getPrinterArchivedPrintJobs
-
-### [Get-MgPrintReportPrinterUsageSummary](Get-MgPrintReportPrinterUsageSummary.md)
-Invoke function getPrinterUsageSummary
-
-### [Get-MgPrintReportPrintUsageSummary](Get-MgPrintReportPrintUsageSummary.md)
-Invoke function getPrintUsageSummariesByGroup
-
-### [Get-MgPrintReportUserArchivedPrintJob](Get-MgPrintReportUserArchivedPrintJob.md)
-Invoke function getUserArchivedPrintJobs
-
-### [Get-MgPrintReportUserPrintUsageSummary](Get-MgPrintReportUserPrintUsageSummary.md)
-Invoke function getUserPrintUsageSummary
-
 ### [Get-MgPrintService](Get-MgPrintService.md)
-Get services from print
+The list of available Universal Print service endpoints.
 
 ### [Get-MgPrintServiceEndpoint](Get-MgPrintServiceEndpoint.md)
-Get endpoints from print
+Endpoints that can be used to access the service.
+Read-only.
+Nullable.
 
 ### [Get-MgPrintShare](Get-MgPrintShare.md)
-Get shares from print
+The list of printer shares registered in the tenant.
 
 ### [Get-MgPrintShareAllowedGroup](Get-MgPrintShareAllowedGroup.md)
-Get allowedGroups from print
+The groups whose users have access to print using the printer.
+
+### [Get-MgPrintShareAllowedGroupByRef](Get-MgPrintShareAllowedGroupByRef.md)
+The groups whose users have access to print using the printer.
 
 ### [Get-MgPrintShareAllowedUser](Get-MgPrintShareAllowedUser.md)
-Get allowedUsers from print
+The users who have access to print using the printer.
+
+### [Get-MgPrintShareAllowedUserByRef](Get-MgPrintShareAllowedUserByRef.md)
+The users who have access to print using the printer.
 
 ### [Get-MgPrintSharePrinter](Get-MgPrintSharePrinter.md)
-Get printer from print
+The printer that this printer share is related to.
 
 ### [Get-MgPrintSharePrinterByRef](Get-MgPrintSharePrinterByRef.md)
-Get ref of printer from print
+The printer that this printer share is related to.
 
 ### [Get-MgPrintSharePrinterCapability](Get-MgPrintSharePrinterCapability.md)
 Invoke function getCapabilities
 
 ### [Get-MgPrintTaskDefinition](Get-MgPrintTaskDefinition.md)
-Get taskDefinitions from print
+List of abstract definition for a task that can be triggered when various events occur within Universal Print.
 
 ### [Get-MgPrintTaskDefinitionTask](Get-MgPrintTaskDefinitionTask.md)
-Get tasks from print
+A list of tasks that have been created based on this definition.
+The list includes currently running tasks and recently completed tasks.
+Read-only.
 
 ### [Get-MgPrintTaskDefinitionTaskDefinitionByRef](Get-MgPrintTaskDefinitionTaskDefinitionByRef.md)
-Get ref of definition from print
+The printTaskDefinition that was used to create this task.
+Read-only.
 
 ### [Get-MgPrintTaskDefinitionTaskTrigger](Get-MgPrintTaskDefinitionTaskTrigger.md)
-Get trigger from print
+The printTaskTrigger that triggered this task's execution.
+Read-only.
 
 ### [Get-MgPrintTaskDefinitionTaskTriggerByRef](Get-MgPrintTaskDefinitionTaskTriggerByRef.md)
-Get ref of trigger from print
+The printTaskTrigger that triggered this task's execution.
+Read-only.
 
 ### [New-MgPrintConnector](New-MgPrintConnector.md)
-Create new navigation property to connectors for print
+The list of available print connectors.
 
 ### [New-MgPrintOperation](New-MgPrintOperation.md)
-Create new navigation property to operations for print
-
-### [New-MgPrintPrinterAllowedGroup](New-MgPrintPrinterAllowedGroup.md)
-Create new navigation property to allowedGroups for print
-
-### [New-MgPrintPrinterAllowedUser](New-MgPrintPrinterAllowedUser.md)
-Create new navigation property to allowedUsers for print
+The list of print long running operations.
 
 ### [New-MgPrintPrinterConnectorByRef](New-MgPrintPrinterConnectorByRef.md)
-Create new navigation property ref to connectors for print
+The connectors that are associated with the printer.
 
 ### [New-MgPrintPrinterShare](New-MgPrintPrinterShare.md)
 Create new navigation property to printerShares for print
 
-### [New-MgPrintPrinterShareAllowedGroup](New-MgPrintPrinterShareAllowedGroup.md)
-Create new navigation property to allowedGroups for print
+### [New-MgPrintPrinterShareAllowedGroupByRef](New-MgPrintPrinterShareAllowedGroupByRef.md)
+The groups whose users have access to print using the printer.
 
-### [New-MgPrintPrinterShareAllowedUser](New-MgPrintPrinterShareAllowedUser.md)
-Create new navigation property to allowedUsers for print
+### [New-MgPrintPrinterShareAllowedUserByRef](New-MgPrintPrinterShareAllowedUserByRef.md)
+The users who have access to print using the printer.
+
+### [New-MgPrintPrinterShareByRef](New-MgPrintPrinterShareByRef.md)
+The list of printerShares that are associated with the printer.
+Currently, only one printerShare can be associated with the printer.
+Read-only.
+Nullable.
 
 ### [New-MgPrintPrinterTaskTrigger](New-MgPrintPrinterTaskTrigger.md)
-Create new navigation property to taskTriggers for print
-
-### [New-MgPrintReport](New-MgPrintReport.md)
-Create new navigation property to reports for print
+A list of task triggers that are associated with the printer.
 
 ### [New-MgPrintService](New-MgPrintService.md)
-Create new navigation property to services for print
+The list of available Universal Print service endpoints.
 
 ### [New-MgPrintServiceEndpoint](New-MgPrintServiceEndpoint.md)
-Create new navigation property to endpoints for print
+Endpoints that can be used to access the service.
+Read-only.
+Nullable.
 
 ### [New-MgPrintShare](New-MgPrintShare.md)
-Create new navigation property to shares for print
+The list of printer shares registered in the tenant.
 
-### [New-MgPrintShareAllowedGroup](New-MgPrintShareAllowedGroup.md)
-Create new navigation property to allowedGroups for print
+### [New-MgPrintShareAllowedGroupByRef](New-MgPrintShareAllowedGroupByRef.md)
+The groups whose users have access to print using the printer.
 
-### [New-MgPrintShareAllowedUser](New-MgPrintShareAllowedUser.md)
-Create new navigation property to allowedUsers for print
+### [New-MgPrintShareAllowedUserByRef](New-MgPrintShareAllowedUserByRef.md)
+The users who have access to print using the printer.
 
 ### [New-MgPrintTaskDefinition](New-MgPrintTaskDefinition.md)
-Create new navigation property to taskDefinitions for print
+List of abstract definition for a task that can be triggered when various events occur within Universal Print.
 
 ### [New-MgPrintTaskDefinitionTask](New-MgPrintTaskDefinitionTask.md)
-Create new navigation property to tasks for print
+A list of tasks that have been created based on this definition.
+The list includes currently running tasks and recently completed tasks.
+Read-only.
 
 ### [Remove-MgPrintConnector](Remove-MgPrintConnector.md)
-Delete navigation property connectors for print
+The list of available print connectors.
 
 ### [Remove-MgPrintOperation](Remove-MgPrintOperation.md)
-Delete navigation property operations for print
+The list of print long running operations.
 
 ### [Remove-MgPrintPrinter](Remove-MgPrintPrinter.md)
-Delete navigation property printers for print
-
-### [Remove-MgPrintPrinterAllowedGroup](Remove-MgPrintPrinterAllowedGroup.md)
-Delete navigation property allowedGroups for print
-
-### [Remove-MgPrintPrinterAllowedUser](Remove-MgPrintPrinterAllowedUser.md)
-Delete navigation property allowedUsers for print
+The list of printers registered in the tenant.
 
 ### [Remove-MgPrintPrinterShare](Remove-MgPrintPrinterShare.md)
 Delete navigation property printerShares for print
-
-### [Remove-MgPrintPrinterShareAllowedGroup](Remove-MgPrintPrinterShareAllowedGroup.md)
-Delete navigation property allowedGroups for print
-
-### [Remove-MgPrintPrinterShareAllowedUser](Remove-MgPrintPrinterShareAllowedUser.md)
-Delete navigation property allowedUsers for print
 
 ### [Remove-MgPrintPrinterShareByRef](Remove-MgPrintPrinterShareByRef.md)
 Delete ref of navigation property share for print
 
 ### [Remove-MgPrintPrinterSharePrinterByRef](Remove-MgPrintPrinterSharePrinterByRef.md)
-Delete ref of navigation property printer for print
+The printer that this printer share is related to.
 
 ### [Remove-MgPrintPrinterTaskTrigger](Remove-MgPrintPrinterTaskTrigger.md)
-Delete navigation property taskTriggers for print
+A list of task triggers that are associated with the printer.
 
 ### [Remove-MgPrintPrinterTaskTriggerDefinitionByRef](Remove-MgPrintPrinterTaskTriggerDefinitionByRef.md)
-Delete ref of navigation property definition for print
+An abstract definition that will be used to create a printTask when triggered by a print event.
+Read-only.
 
 ### [Remove-MgPrintReport](Remove-MgPrintReport.md)
 Delete navigation property reports for print
 
 ### [Remove-MgPrintService](Remove-MgPrintService.md)
-Delete navigation property services for print
+The list of available Universal Print service endpoints.
 
 ### [Remove-MgPrintServiceEndpoint](Remove-MgPrintServiceEndpoint.md)
-Delete navigation property endpoints for print
+Endpoints that can be used to access the service.
+Read-only.
+Nullable.
 
 ### [Remove-MgPrintShare](Remove-MgPrintShare.md)
-Delete navigation property shares for print
-
-### [Remove-MgPrintShareAllowedGroup](Remove-MgPrintShareAllowedGroup.md)
-Delete navigation property allowedGroups for print
-
-### [Remove-MgPrintShareAllowedUser](Remove-MgPrintShareAllowedUser.md)
-Delete navigation property allowedUsers for print
+The list of printer shares registered in the tenant.
 
 ### [Remove-MgPrintSharePrinterByRef](Remove-MgPrintSharePrinterByRef.md)
-Delete ref of navigation property printer for print
+The printer that this printer share is related to.
 
 ### [Remove-MgPrintTaskDefinition](Remove-MgPrintTaskDefinition.md)
-Delete navigation property taskDefinitions for print
+List of abstract definition for a task that can be triggered when various events occur within Universal Print.
 
 ### [Remove-MgPrintTaskDefinitionTask](Remove-MgPrintTaskDefinitionTask.md)
-Delete navigation property tasks for print
+A list of tasks that have been created based on this definition.
+The list includes currently running tasks and recently completed tasks.
+Read-only.
 
 ### [Remove-MgPrintTaskDefinitionTaskDefinitionByRef](Remove-MgPrintTaskDefinitionTaskDefinitionByRef.md)
-Delete ref of navigation property definition for print
+The printTaskDefinition that was used to create this task.
+Read-only.
 
 ### [Remove-MgPrintTaskDefinitionTaskTriggerByRef](Remove-MgPrintTaskDefinitionTaskTriggerByRef.md)
-Delete ref of navigation property trigger for print
+The printTaskTrigger that triggered this task's execution.
+Read-only.
 
 ### [Reset-MgPrintPrinterDefault](Reset-MgPrintPrinterDefault.md)
 Invoke action resetDefaults
@@ -263,75 +244,73 @@ Invoke action resetDefaults
 ### [Reset-MgPrintSharePrinterDefault](Reset-MgPrintSharePrinterDefault.md)
 Invoke action resetDefaults
 
+### [Restore-MgPrintPrinterFactoryDefault](Restore-MgPrintPrinterFactoryDefault.md)
+Invoke action restoreFactoryDefaults
+
+### [Restore-MgPrintPrinterSharePrinterFactoryDefault](Restore-MgPrintPrinterSharePrinterFactoryDefault.md)
+Invoke action restoreFactoryDefaults
+
+### [Restore-MgPrintSharePrinterFactoryDefault](Restore-MgPrintSharePrinterFactoryDefault.md)
+Invoke action restoreFactoryDefaults
+
 ### [Set-MgPrintPrinterShareByRef](Set-MgPrintPrinterShareByRef.md)
 Update the ref of navigation property share in print
 
 ### [Set-MgPrintPrinterSharePrinterByRef](Set-MgPrintPrinterSharePrinterByRef.md)
-Update the ref of navigation property printer in print
+The printer that this printer share is related to.
 
 ### [Set-MgPrintPrinterTaskTriggerDefinitionByRef](Set-MgPrintPrinterTaskTriggerDefinitionByRef.md)
-Update the ref of navigation property definition in print
+An abstract definition that will be used to create a printTask when triggered by a print event.
+Read-only.
 
 ### [Set-MgPrintSharePrinterByRef](Set-MgPrintSharePrinterByRef.md)
-Update the ref of navigation property printer in print
+The printer that this printer share is related to.
 
 ### [Set-MgPrintTaskDefinitionTaskDefinitionByRef](Set-MgPrintTaskDefinitionTaskDefinitionByRef.md)
-Update the ref of navigation property definition in print
+The printTaskDefinition that was used to create this task.
+Read-only.
 
 ### [Set-MgPrintTaskDefinitionTaskTriggerByRef](Set-MgPrintTaskDefinitionTaskTriggerByRef.md)
-Update the ref of navigation property trigger in print
+The printTaskTrigger that triggered this task's execution.
+Read-only.
 
 ### [Update-MgPrint](Update-MgPrint.md)
 Update print
 
 ### [Update-MgPrintConnector](Update-MgPrintConnector.md)
-Update the navigation property connectors in print
+The list of available print connectors.
 
 ### [Update-MgPrintOperation](Update-MgPrintOperation.md)
-Update the navigation property operations in print
+The list of print long running operations.
 
 ### [Update-MgPrintPrinter](Update-MgPrintPrinter.md)
-Update the navigation property printers in print
-
-### [Update-MgPrintPrinterAllowedGroup](Update-MgPrintPrinterAllowedGroup.md)
-Update the navigation property allowedGroups in print
-
-### [Update-MgPrintPrinterAllowedUser](Update-MgPrintPrinterAllowedUser.md)
-Update the navigation property allowedUsers in print
+The list of printers registered in the tenant.
 
 ### [Update-MgPrintPrinterShare](Update-MgPrintPrinterShare.md)
 Update the navigation property printerShares in print
 
-### [Update-MgPrintPrinterShareAllowedGroup](Update-MgPrintPrinterShareAllowedGroup.md)
-Update the navigation property allowedGroups in print
-
-### [Update-MgPrintPrinterShareAllowedUser](Update-MgPrintPrinterShareAllowedUser.md)
-Update the navigation property allowedUsers in print
-
 ### [Update-MgPrintPrinterTaskTrigger](Update-MgPrintPrinterTaskTrigger.md)
-Update the navigation property taskTriggers in print
+A list of task triggers that are associated with the printer.
 
 ### [Update-MgPrintReport](Update-MgPrintReport.md)
 Update the navigation property reports in print
 
 ### [Update-MgPrintService](Update-MgPrintService.md)
-Update the navigation property services in print
+The list of available Universal Print service endpoints.
 
 ### [Update-MgPrintServiceEndpoint](Update-MgPrintServiceEndpoint.md)
-Update the navigation property endpoints in print
+Endpoints that can be used to access the service.
+Read-only.
+Nullable.
 
 ### [Update-MgPrintShare](Update-MgPrintShare.md)
-Update the navigation property shares in print
-
-### [Update-MgPrintShareAllowedGroup](Update-MgPrintShareAllowedGroup.md)
-Update the navigation property allowedGroups in print
-
-### [Update-MgPrintShareAllowedUser](Update-MgPrintShareAllowedUser.md)
-Update the navigation property allowedUsers in print
+The list of printer shares registered in the tenant.
 
 ### [Update-MgPrintTaskDefinition](Update-MgPrintTaskDefinition.md)
-Update the navigation property taskDefinitions in print
+List of abstract definition for a task that can be triggered when various events occur within Universal Print.
 
 ### [Update-MgPrintTaskDefinitionTask](Update-MgPrintTaskDefinitionTask.md)
-Update the navigation property tasks in print
+A list of tasks that have been created based on this definition.
+The list includes currently running tasks and recently completed tasks.
+Read-only.
 

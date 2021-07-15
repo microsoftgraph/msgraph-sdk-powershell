@@ -12,11 +12,11 @@ Get share from print
 
 ## SYNTAX
 
-### List (Default)
+### List2 (Default)
 ```
-Get-MgPrintPrinterShare [-Count] [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
- [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-PageSize <Int32>]
- [<CommonParameters>]
+Get-MgPrintPrinterShare [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+ [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
+ [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
@@ -41,6 +41,13 @@ Get-MgPrintPrinterShare -InputObject <IDevicesCloudPrintIdentity> [-ExpandProper
 ```
 Get-MgPrintPrinterShare -InputObject <IDevicesCloudPrintIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
+```
+
+### List1
+```
+Get-MgPrintPrinterShare -PrinterId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+ [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
+ [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -73,7 +80,7 @@ List all pages.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List
+Parameter Sets: List1, List2
 Aliases:
 
 Required: False
@@ -83,13 +90,14 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Count
-Include count of items
+### -CountVariable
+Specifies a count of the total number of items in a collection.
+By default, this variable will be set in the global scope.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List
-Aliases:
+Type: System.String
+Parameter Sets: List1, List2
+Aliases: CV
 
 Required: False
 Position: Named
@@ -118,7 +126,7 @@ Filter items by property values
 
 ```yaml
 Type: System.String
-Parameter Sets: List
+Parameter Sets: List1, List2
 Aliases:
 
 Required: False
@@ -149,7 +157,7 @@ Sets the page size of results.
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List
+Parameter Sets: List1, List2
 Aliases:
 
 Required: False
@@ -164,7 +172,7 @@ key: id of printer
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
+Parameter Sets: Get, List1
 Aliases:
 
 Required: True
@@ -209,7 +217,7 @@ Search items by search phrases
 
 ```yaml
 Type: System.String
-Parameter Sets: List
+Parameter Sets: List1, List2
 Aliases:
 
 Required: False
@@ -224,7 +232,7 @@ Skip the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List
+Parameter Sets: List1, List2
 Aliases:
 
 Required: False
@@ -239,7 +247,7 @@ Order items by property values
 
 ```yaml
 Type: System.String[]
-Parameter Sets: List
+Parameter Sets: List1, List2
 Aliases: OrderBy
 
 Required: False
@@ -254,7 +262,7 @@ Show only the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List
+Parameter Sets: List1, List2
 Aliases: Limit
 
 Required: False
@@ -273,7 +281,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrinterShare
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrinterShare1
 
 ## NOTES
 
@@ -285,25 +293,15 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IDevicesCloudPrintIdentity>: Identity Parameter
-  - `[GroupId <String>]`: 
-  - `[PeriodEnd <DateTime?>]`: 
-  - `[PeriodStart <DateTime?>]`: 
   - `[PrintConnectorId <String>]`: key: id of printConnector
-  - `[PrintIdentityId <String>]`: key: id of printIdentity
   - `[PrintOperationId <String>]`: key: id of printOperation
   - `[PrintServiceEndpointId <String>]`: key: id of printServiceEndpoint
   - `[PrintServiceId <String>]`: key: id of printService
   - `[PrintTaskDefinitionId <String>]`: key: id of printTaskDefinition
   - `[PrintTaskId <String>]`: key: id of printTask
   - `[PrintTaskTriggerId <String>]`: key: id of printTaskTrigger
-  - `[PrintUserIdentityId <String>]`: key: id of printUserIdentity
   - `[PrinterId <String>]`: key: id of printer
-  - `[PrinterId1 <String>]`: 
   - `[PrinterShareId <String>]`: key: id of printerShare
-  - `[ReportRootId <String>]`: key: id of reportRoot
-  - `[TimeSpanInMinutes <Int32?>]`: 
-  - `[TopListsSize <Int32?>]`: 
-  - `[UserId <String>]`: 
 
 ## RELATED LINKS
 

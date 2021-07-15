@@ -12,16 +12,8 @@ Delete navigation property reports for print
 
 ## SYNTAX
 
-### Delete (Default)
 ```
-Remove-MgPrintReport -ReportRootId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
-```
-
-### DeleteViaIdentity
-```
-Remove-MgPrintReport -InputObject <IDevicesCloudPrintIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Remove-MgPrintReport [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -64,22 +56,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -InputObject
-Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCloudPrintIdentity
-Parameter Sets: DeleteViaIdentity
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -PassThru
 Returns true when the command succeeds
 
@@ -89,21 +65,6 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ReportRootId
-key: id of reportRoot
-
-```yaml
-Type: System.String
-Parameter Sets: Delete
-Aliases:
-
-Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -146,8 +107,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IDevicesCloudPrintIdentity
-
 ## OUTPUTS
 
 ### System.Boolean
@@ -155,32 +114,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ALIASES
-
-COMPLEX PARAMETER PROPERTIES
-
-To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-
-INPUTOBJECT <IDevicesCloudPrintIdentity>: Identity Parameter
-  - `[GroupId <String>]`: 
-  - `[PeriodEnd <DateTime?>]`: 
-  - `[PeriodStart <DateTime?>]`: 
-  - `[PrintConnectorId <String>]`: key: id of printConnector
-  - `[PrintIdentityId <String>]`: key: id of printIdentity
-  - `[PrintOperationId <String>]`: key: id of printOperation
-  - `[PrintServiceEndpointId <String>]`: key: id of printServiceEndpoint
-  - `[PrintServiceId <String>]`: key: id of printService
-  - `[PrintTaskDefinitionId <String>]`: key: id of printTaskDefinition
-  - `[PrintTaskId <String>]`: key: id of printTask
-  - `[PrintTaskTriggerId <String>]`: key: id of printTaskTrigger
-  - `[PrintUserIdentityId <String>]`: key: id of printUserIdentity
-  - `[PrinterId <String>]`: key: id of printer
-  - `[PrinterId1 <String>]`: 
-  - `[PrinterShareId <String>]`: key: id of printerShare
-  - `[ReportRootId <String>]`: key: id of reportRoot
-  - `[TimeSpanInMinutes <Int32?>]`: 
-  - `[TopListsSize <Int32?>]`: 
-  - `[UserId <String>]`: 
 
 ## RELATED LINKS
 
