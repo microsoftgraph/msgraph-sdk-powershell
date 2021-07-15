@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceAppMgtSymantecCodeSigningCertificate
 
 ## SYNOPSIS
-Update the navigation property symantecCodeSigningCertificate in deviceAppManagement
+The WinPhone Symantec Code Signing Certificate.
 
 ## SYNTAX
 
@@ -28,7 +28,7 @@ Update-MgDeviceAppMgtSymantecCodeSigningCertificate
 ```
 
 ## DESCRIPTION
-Update the navigation property symantecCodeSigningCertificate in deviceAppManagement
+The WinPhone Symantec Code Signing Certificate.
 
 ## EXAMPLES
 

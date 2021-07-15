@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceAppMgtSymantecCodeSigningCertificate
 
 ## SYNOPSIS
-Get symantecCodeSigningCertificate from deviceAppManagement
+The WinPhone Symantec Code Signing Certificate.
 
 ## SYNTAX
 
@@ -18,7 +18,7 @@ Get-MgDeviceAppMgtSymantecCodeSigningCertificate [-ExpandProperty <String[]>] [-
 ```
 
 ## DESCRIPTION
-Get symantecCodeSigningCertificate from deviceAppManagement
+The WinPhone Symantec Code Signing Certificate.
 
 ## EXAMPLES
 

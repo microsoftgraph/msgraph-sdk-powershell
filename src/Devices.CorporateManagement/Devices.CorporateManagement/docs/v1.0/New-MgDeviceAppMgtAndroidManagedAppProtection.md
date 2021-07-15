@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceAppMgtAndroidManagedAppProtection
 
 ## SYNOPSIS
-Create new navigation property to androidManagedAppProtections for deviceAppManagement
+Android managed app policies.
 
 ## SYNTAX
 
@@ -38,12 +38,12 @@ New-MgDeviceAppMgtAndroidManagedAppProtection [-AdditionalProperties <Hashtable>
 
 ### Create1
 ```
-New-MgDeviceAppMgtAndroidManagedAppProtection -BodyParameter <IMicrosoftGraphAndroidManagedAppProtection>
+New-MgDeviceAppMgtAndroidManagedAppProtection -BodyParameter <IMicrosoftGraphAndroidManagedAppProtection1>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create new navigation property to androidManagedAppProtections for deviceAppManagement
+Android managed app policies.
 
 ## EXAMPLES
 
@@ -179,7 +179,7 @@ Policy used to configure detailed management settings targeted to specific secur
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAndroidManagedAppProtection
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAndroidManagedAppProtection1
 Parameter Sets: Create1
 Aliases:
 
@@ -222,7 +222,6 @@ Accept wildcard characters: False
 
 ### -CustomBrowserDisplayName
 Friendly name of the preferred custom browser to open weblink on Android.
-When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
 
 ```yaml
 Type: System.String
@@ -237,8 +236,7 @@ Accept wildcard characters: False
 ```
 
 ### -CustomBrowserPackageId
-Unique identifier of the preferred custom browser to open weblink on Android.
-When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
+Unique identifier of a custom browser to open weblink on Android.
 
 ```yaml
 Type: System.String
@@ -814,11 +812,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAndroidManagedAppProtection
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAndroidManagedAppProtection1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAndroidManagedAppProtection
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAndroidManagedAppProtection1
 
 ## NOTES
 
@@ -842,7 +840,7 @@ ASSIGNMENTS <IMicrosoftGraphTargetedManagedAppPolicyAssignment1[]>: Navigation p
   - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
 
-BODYPARAMETER <IMicrosoftGraphAndroidManagedAppProtection>: Policy used to configure detailed management settings targeted to specific security groups and for a specified set of apps on an Android device
+BODYPARAMETER <IMicrosoftGraphAndroidManagedAppProtection1>: Policy used to configure detailed management settings targeted to specific security groups and for a specified set of apps on an Android device
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Assignments <IMicrosoftGraphTargetedManagedAppPolicyAssignment1[]>]`: Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
     - `[Id <String>]`: Read-only.
@@ -887,8 +885,8 @@ BODYPARAMETER <IMicrosoftGraphAndroidManagedAppProtection>: Policy used to confi
     - `[MobileAppIdentifier <IMicrosoftGraphMobileAppIdentifier>]`: The identifier for a mobile app.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Version <String>]`: Version of the entity.
-  - `[CustomBrowserDisplayName <String>]`: Friendly name of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
-  - `[CustomBrowserPackageId <String>]`: Unique identifier of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
+  - `[CustomBrowserDisplayName <String>]`: Friendly name of the preferred custom browser to open weblink on Android.
+  - `[CustomBrowserPackageId <String>]`: Unique identifier of a custom browser to open weblink on Android.
   - `[DeployedAppCount <Int32?>]`: Count of apps to which the current policy is deployed.
   - `[DeploymentSummary <IMicrosoftGraphManagedAppPolicyDeploymentSummary>]`: The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.

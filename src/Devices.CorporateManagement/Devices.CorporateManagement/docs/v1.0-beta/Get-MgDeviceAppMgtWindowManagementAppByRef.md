@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceAppMgtWindowManagementAppByRef
 
 ## SYNOPSIS
-Get ref of windowsManagementApp from deviceAppManagement
+Windows management app.
 
 ## SYNTAX
 
@@ -17,7 +17,7 @@ Get-MgDeviceAppMgtWindowManagementAppByRef [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get ref of windowsManagementApp from deviceAppManagement
+Windows management app.
 
 ## EXAMPLES
 

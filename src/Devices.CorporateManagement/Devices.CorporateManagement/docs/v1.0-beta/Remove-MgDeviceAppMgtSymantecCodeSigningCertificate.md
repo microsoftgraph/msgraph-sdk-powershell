@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceAppMgtSymantecCodeSigningCertificate
 
 ## SYNOPSIS
-Delete navigation property symantecCodeSigningCertificate for deviceAppManagement
+The WinPhone Symantec Code Signing Certificate.
 
 ## SYNTAX
 
@@ -18,7 +18,7 @@ Remove-MgDeviceAppMgtSymantecCodeSigningCertificate [-IfMatch <String>] [-PassTh
 ```
 
 ## DESCRIPTION
-Delete navigation property symantecCodeSigningCertificate for deviceAppManagement
+The WinPhone Symantec Code Signing Certificate.
 
 ## EXAMPLES
 

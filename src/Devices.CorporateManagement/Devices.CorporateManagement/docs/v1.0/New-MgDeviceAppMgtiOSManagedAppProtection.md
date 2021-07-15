@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceAppMgtiOSManagedAppProtection
 
 ## SYNOPSIS
-Create new navigation property to iosManagedAppProtections for deviceAppManagement
+iOS managed app policies.
 
 ## SYNTAX
 
@@ -34,12 +34,12 @@ New-MgDeviceAppMgtiOSManagedAppProtection [-AdditionalProperties <Hashtable>]
 
 ### Create
 ```
-New-MgDeviceAppMgtiOSManagedAppProtection -BodyParameter <IMicrosoftGraphIosManagedAppProtection> [-Confirm]
+New-MgDeviceAppMgtiOSManagedAppProtection -BodyParameter <IMicrosoftGraphIosManagedAppProtection1> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create new navigation property to iosManagedAppProtections for deviceAppManagement
+iOS managed app policies.
 
 ## EXAMPLES
 
@@ -190,7 +190,7 @@ Policy used to configure detailed management settings targeted to specific secur
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIosManagedAppProtection
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIosManagedAppProtection1
 Parameter Sets: Create
 Aliases:
 
@@ -233,7 +233,6 @@ Accept wildcard characters: False
 
 ### -CustomBrowserProtocol
 A custom browser protocol to open weblink on iOS.
-When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
 
 ```yaml
 Type: System.String
@@ -764,11 +763,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIosManagedAppProtection
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIosManagedAppProtection1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIosManagedAppProtection
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIosManagedAppProtection1
 
 ## NOTES
 
@@ -792,7 +791,7 @@ ASSIGNMENTS <IMicrosoftGraphTargetedManagedAppPolicyAssignment1[]>: Navigation p
   - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
 
-BODYPARAMETER <IMicrosoftGraphIosManagedAppProtection>: Policy used to configure detailed management settings targeted to specific security groups and for a specified set of apps on an iOS device
+BODYPARAMETER <IMicrosoftGraphIosManagedAppProtection1>: Policy used to configure detailed management settings targeted to specific security groups and for a specified set of apps on an iOS device
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Assignments <IMicrosoftGraphTargetedManagedAppPolicyAssignment1[]>]`: Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
     - `[Id <String>]`: Read-only.
@@ -838,7 +837,7 @@ BODYPARAMETER <IMicrosoftGraphIosManagedAppProtection>: Policy used to configure
     - `[MobileAppIdentifier <IMicrosoftGraphMobileAppIdentifier>]`: The identifier for a mobile app.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Version <String>]`: Version of the entity.
-  - `[CustomBrowserProtocol <String>]`: A custom browser protocol to open weblink on iOS. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
+  - `[CustomBrowserProtocol <String>]`: A custom browser protocol to open weblink on iOS.
   - `[DeployedAppCount <Int32?>]`: Count of apps to which the current policy is deployed.
   - `[DeploymentSummary <IMicrosoftGraphManagedAppPolicyDeploymentSummary>]`: The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.

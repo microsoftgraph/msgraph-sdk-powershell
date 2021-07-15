@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceAppMgtAndroidManagedAppProtection
 
 ## SYNOPSIS
-Create new navigation property to androidManagedAppProtections for deviceAppManagement
+Android managed app policies.
 
 ## SYNTAX
 
@@ -23,19 +23,21 @@ New-MgDeviceAppMgtAndroidManagedAppProtection [-AdditionalProperties <Hashtable>
  [-AppActionIfAndroidDeviceModelNotAllowed <String>]
  [-AppActionIfAndroidSafetyNetAppsVerificationFailed <String>]
  [-AppActionIfAndroidSafetyNetDeviceAttestationFailed <String>]
- [-AppActionIfDeviceComplianceRequired <String>] [-AppActionIfMaximumPinRetriesExceeded <String>]
- [-AppActionIfUnableToAuthenticateUser <String>] [-ApprovedKeyboards <IMicrosoftGraphKeyValuePair[]>]
- [-Apps <IMicrosoftGraphManagedMobileApp[]>]
- [-Assignments <IMicrosoftGraphTargetedManagedAppPolicyAssignment[]>]
- [-BlockDataIngestionIntoOrganizationDocuments] [-ContactSyncBlocked] [-CreatedDateTime <DateTime>]
- [-CustomBrowserDisplayName <String>] [-CustomBrowserPackageId <String>]
- [-CustomDialerAppDisplayName <String>] [-CustomDialerAppPackageId <String>] [-DataBackupBlocked]
- [-DeployedAppCount <Int32>] [-DeploymentSummary <IMicrosoftGraphManagedAppPolicyDeploymentSummary>]
- [-Description <String>] [-DeviceComplianceRequired] [-DialerRestrictionLevel <String>]
+ [-AppActionIfDeviceComplianceRequired <String>] [-AppActionIfDeviceLockNotSet <String>]
+ [-AppActionIfMaximumPinRetriesExceeded <String>] [-AppActionIfUnableToAuthenticateUser <String>]
+ [-ApprovedKeyboards <IMicrosoftGraphKeyValuePair[]>] [-Apps <IMicrosoftGraphManagedMobileApp[]>]
+ [-Assignments <IMicrosoftGraphTargetedManagedAppPolicyAssignment[]>] [-BiometricAuthenticationBlocked]
+ [-BlockAfterCompanyPortalUpdateDeferralInDays <Int32>] [-BlockDataIngestionIntoOrganizationDocuments]
+ [-ContactSyncBlocked] [-CreatedDateTime <DateTime>] [-CustomBrowserDisplayName <String>]
+ [-CustomBrowserPackageId <String>] [-CustomDialerAppDisplayName <String>]
+ [-CustomDialerAppPackageId <String>] [-DataBackupBlocked] [-DeployedAppCount <Int32>]
+ [-DeploymentSummary <IMicrosoftGraphManagedAppPolicyDeploymentSummary>] [-Description <String>]
+ [-DeviceComplianceRequired] [-DeviceLockRequired] [-DialerRestrictionLevel <String>]
  [-DisableAppEncryptionIfDeviceEncryptionIsEnabled] [-DisableAppPinIfDevicePinIsSet] [-DisplayName <String>]
  [-EncryptAppData] [-ExemptedAppPackages <IMicrosoftGraphKeyValuePair[]>] [-FingerprintBlocked] [-Id <String>]
  [-IsAssigned] [-KeyboardsRestricted] [-LastModifiedDateTime <DateTime>] [-ManagedBrowser <String>]
  [-ManagedBrowserToOpenLinksRequired] [-MaximumAllowedDeviceThreatLevel <String>] [-MaximumPinRetries <Int32>]
+ [-MaximumRequiredOSVersion <String>] [-MaximumWarningOSVersion <String>] [-MaximumWipeOSVersion <String>]
  [-MinimumPinLength <Int32>] [-MinimumRequiredAppVersion <String>]
  [-MinimumRequiredCompanyPortalVersion <String>] [-MinimumRequiredOSVersion <String>]
  [-MinimumRequiredPatchVersion <String>] [-MinimumWarningAppVersion <String>]
@@ -48,19 +50,21 @@ New-MgDeviceAppMgtAndroidManagedAppProtection [-AdditionalProperties <Hashtable>
  [-PeriodOnlineBeforeAccessCheck <TimeSpan>] [-PinCharacterSet <String>] [-PinRequired]
  [-PinRequiredInsteadOfBiometricTimeout <TimeSpan>] [-PreviousPinBlockCount <Int32>] [-PrintBlocked]
  [-RequiredAndroidSafetyNetAppsVerificationType <String>]
- [-RequiredAndroidSafetyNetDeviceAttestationType <String>] [-RoleScopeTagIds <String[]>] [-SaveAsBlocked]
- [-ScreenCaptureBlocked] [-SimplePinBlocked] [-TargetedAppManagementLevels <String>] [-Version <String>]
+ [-RequiredAndroidSafetyNetDeviceAttestationType <String>] [-RequiredAndroidSafetyNetEvaluationType <String>]
+ [-RoleScopeTagIds <String[]>] [-SaveAsBlocked] [-ScreenCaptureBlocked] [-SimplePinBlocked]
+ [-TargetedAppManagementLevels <String>] [-Version <String>]
+ [-WarnAfterCompanyPortalUpdateDeferralInDays <Int32>] [-WipeAfterCompanyPortalUpdateDeferralInDays <Int32>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgDeviceAppMgtAndroidManagedAppProtection -BodyParameter <IMicrosoftGraphAndroidManagedAppProtection1>
+New-MgDeviceAppMgtAndroidManagedAppProtection -BodyParameter <IMicrosoftGraphAndroidManagedAppProtection>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create new navigation property to androidManagedAppProtections for deviceAppManagement
+Android managed app policies.
 
 ## EXAMPLES
 
@@ -296,6 +300,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -AppActionIfDeviceLockNotSet
+managedAppRemediationAction
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -AppActionIfMaximumPinRetriesExceeded
 managedAppRemediationAction
 
@@ -375,6 +394,36 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -BiometricAuthenticationBlocked
+Indicates whether use of the biometric authentication is allowed in place of a pin if PinRequired is set to True.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -BlockAfterCompanyPortalUpdateDeferralInDays
+Maximum number of days Company Portal update can be deferred on the device or app access will be blocked.
+
+```yaml
+Type: System.Int32
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -BlockDataIngestionIntoOrganizationDocuments
 Indicates whether a user can bring data into org documents.
 
@@ -395,7 +444,7 @@ Policy used to configure detailed management settings targeted to specific secur
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAndroidManagedAppProtection1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAndroidManagedAppProtection
 Parameter Sets: Create
 Aliases:
 
@@ -438,7 +487,6 @@ Accept wildcard characters: False
 
 ### -CustomBrowserDisplayName
 Friendly name of the preferred custom browser to open weblink on Android.
-When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
 
 ```yaml
 Type: System.String
@@ -453,8 +501,7 @@ Accept wildcard characters: False
 ```
 
 ### -CustomBrowserPackageId
-Unique identifier of the preferred custom browser to open weblink on Android.
-When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
+Unique identifier of a custom browser to open weblink on Android.
 
 ```yaml
 Type: System.String
@@ -561,6 +608,21 @@ Accept wildcard characters: False
 
 ### -DeviceComplianceRequired
 Indicates whether device compliance is required.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DeviceLockRequired
+Defines if any kind of lock must be required on android device
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -791,6 +853,51 @@ Maximum number of incorrect pin retry attempts before the managed app is either 
 
 ```yaml
 Type: System.Int32
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MaximumRequiredOSVersion
+Versions bigger than the specified version will block the managed app from accessing company data.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MaximumWarningOSVersion
+Versions bigger than the specified version will block the managed app from accessing company data.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MaximumWipeOSVersion
+Versions bigger than the specified version will block the managed app from accessing company data.
+
+```yaml
+Type: System.String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -1206,6 +1313,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -RequiredAndroidSafetyNetEvaluationType
+androidManagedAppSafetyNetEvaluationType
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -RoleScopeTagIds
 List of Scope Tags for this Entity instance.
 
@@ -1296,6 +1418,36 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -WarnAfterCompanyPortalUpdateDeferralInDays
+Maximum number of days Company Portal update can be deferred on the device or the user will receive the warning
+
+```yaml
+Type: System.Int32
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WipeAfterCompanyPortalUpdateDeferralInDays
+Maximum number of days Company Portal update can be deferred on the device or the company data on the app will be wiped
+
+```yaml
+Type: System.Int32
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -1332,11 +1484,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAndroidManagedAppProtection1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAndroidManagedAppProtection
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAndroidManagedAppProtection1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAndroidManagedAppProtection
 
 ## NOTES
 
@@ -1350,8 +1502,8 @@ To create the parameters described below, construct a hash table containing the 
 
 
 APPROVEDKEYBOARDS <IMicrosoftGraphKeyValuePair[]>: If Keyboard Restriction is enabled, only keyboards in this approved list will be allowed. A key should be Android package id for a keyboard and value should be a friendly name
-  - `[Name <String>]`: Name for this key-value pair
-  - `[Value <String>]`: Value for this key-value pair
+  - `[Name <String>]`: Name for this key-value pair. Possible names are: AdditionalWSFedEndpointCheckResult,  AllowedAuthenticationClassReferencesCheckResult, AlwaysRequireAuthenticationCheckResult,   AutoUpdateEnabledCheckResult, ClaimsProviderNameCheckResult, EncryptClaimsCheckResult,  EncryptedNameIdRequiredCheckResult, MonitoringEnabledCheckResult,NotBeforeSkewCheckResult,  RequestMFAFromClaimsProvidersCheckResult, SignedSamlRequestsRequiredCheckResult, AdditionalAuthenticationRulesCheckResult, TokenLifetimeCheckResult,  DelegationAuthorizationRulesCheckResult, IssuanceAuthorizationRulesCheckResult, IssuanceTransformRulesCheckResult.
+  - `[Value <String>]`: Value for this key-value pair. Possible result values are 0 (when the validation check passed), 1 (when the validation check failed), or 2 (when the validation check is a warning).
 
 APPS <IMicrosoftGraphManagedMobileApp[]>: List of apps to which the policy is deployed.
   - `[Id <String>]`: Read-only.
@@ -1368,7 +1520,7 @@ ASSIGNMENTS <IMicrosoftGraphTargetedManagedAppPolicyAssignment[]>: Navigation pr
     - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
     - `[DeviceAndAppManagementAssignmentFilterType <String>]`: deviceAndAppManagementAssignmentFilterType
 
-BODYPARAMETER <IMicrosoftGraphAndroidManagedAppProtection1>: Policy used to configure detailed management settings targeted to specific security groups and for a specified set of apps on an Android device
+BODYPARAMETER <IMicrosoftGraphAndroidManagedAppProtection>: Policy used to configure detailed management settings targeted to specific security groups and for a specified set of apps on an Android device
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Assignments <IMicrosoftGraphTargetedManagedAppPolicyAssignment[]>]`: Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
     - `[Id <String>]`: Read-only.
@@ -1400,6 +1552,9 @@ BODYPARAMETER <IMicrosoftGraphAndroidManagedAppProtection1>: Policy used to conf
   - `[ManagedBrowserToOpenLinksRequired <Boolean?>]`: Indicates whether internet links should be opened in the managed browser app, or any custom browser specified by CustomBrowserProtocol (for iOS) or CustomBrowserPackageId/CustomBrowserDisplayName (for Android)
   - `[MaximumAllowedDeviceThreatLevel <String>]`: managedAppDeviceThreatLevel
   - `[MaximumPinRetries <Int32?>]`: Maximum number of incorrect pin retry attempts before the managed app is either blocked or wiped.
+  - `[MaximumRequiredOSVersion <String>]`: Versions bigger than the specified version will block the managed app from accessing company data.
+  - `[MaximumWarningOSVersion <String>]`: Versions bigger than the specified version will block the managed app from accessing company data.
+  - `[MaximumWipeOSVersion <String>]`: Versions bigger than the specified version will block the managed app from accessing company data.
   - `[MinimumPinLength <Int32?>]`: Minimum pin length required for an app-level pin if PinRequired is set to True
   - `[MinimumRequiredAppVersion <String>]`: Versions less than the specified version will block the managed app from accessing company data.
   - `[MinimumRequiredOSVersion <String>]`: Versions less than the specified version will block the managed app from accessing company data.
@@ -1434,16 +1589,19 @@ BODYPARAMETER <IMicrosoftGraphAndroidManagedAppProtection1>: Policy used to conf
   - `[AppActionIfAndroidDeviceModelNotAllowed <String>]`: managedAppRemediationAction
   - `[AppActionIfAndroidSafetyNetAppsVerificationFailed <String>]`: managedAppRemediationAction
   - `[AppActionIfAndroidSafetyNetDeviceAttestationFailed <String>]`: managedAppRemediationAction
+  - `[AppActionIfDeviceLockNotSet <String>]`: managedAppRemediationAction
   - `[ApprovedKeyboards <IMicrosoftGraphKeyValuePair[]>]`: If Keyboard Restriction is enabled, only keyboards in this approved list will be allowed. A key should be Android package id for a keyboard and value should be a friendly name
-    - `[Name <String>]`: Name for this key-value pair
-    - `[Value <String>]`: Value for this key-value pair
+    - `[Name <String>]`: Name for this key-value pair. Possible names are: AdditionalWSFedEndpointCheckResult,  AllowedAuthenticationClassReferencesCheckResult, AlwaysRequireAuthenticationCheckResult,   AutoUpdateEnabledCheckResult, ClaimsProviderNameCheckResult, EncryptClaimsCheckResult,  EncryptedNameIdRequiredCheckResult, MonitoringEnabledCheckResult,NotBeforeSkewCheckResult,  RequestMFAFromClaimsProvidersCheckResult, SignedSamlRequestsRequiredCheckResult, AdditionalAuthenticationRulesCheckResult, TokenLifetimeCheckResult,  DelegationAuthorizationRulesCheckResult, IssuanceAuthorizationRulesCheckResult, IssuanceTransformRulesCheckResult.
+    - `[Value <String>]`: Value for this key-value pair. Possible result values are 0 (when the validation check passed), 1 (when the validation check failed), or 2 (when the validation check is a warning).
   - `[Apps <IMicrosoftGraphManagedMobileApp[]>]`: List of apps to which the policy is deployed.
     - `[Id <String>]`: Read-only.
     - `[MobileAppIdentifier <IMicrosoftGraphMobileAppIdentifier>]`: The identifier for a mobile app.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Version <String>]`: Version of the entity.
-  - `[CustomBrowserDisplayName <String>]`: Friendly name of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
-  - `[CustomBrowserPackageId <String>]`: Unique identifier of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
+  - `[BiometricAuthenticationBlocked <Boolean?>]`: Indicates whether use of the biometric authentication is allowed in place of a pin if PinRequired is set to True.
+  - `[BlockAfterCompanyPortalUpdateDeferralInDays <Int32?>]`: Maximum number of days Company Portal update can be deferred on the device or app access will be blocked.
+  - `[CustomBrowserDisplayName <String>]`: Friendly name of the preferred custom browser to open weblink on Android.
+  - `[CustomBrowserPackageId <String>]`: Unique identifier of a custom browser to open weblink on Android.
   - `[CustomDialerAppDisplayName <String>]`: Friendly name of a custom dialer app to click-to-open a phone number on Android.
   - `[CustomDialerAppPackageId <String>]`: PackageId of a custom dialer app to click-to-open a phone number on Android.
   - `[DeployedAppCount <Int32?>]`: Count of apps to which the current policy is deployed.
@@ -1457,6 +1615,7 @@ BODYPARAMETER <IMicrosoftGraphAndroidManagedAppProtection1>: Policy used to conf
     - `[DisplayName <String>]`: Not yet documented
     - `[LastRefreshTime <DateTime?>]`: Not yet documented
     - `[Version <String>]`: Version of the entity.
+  - `[DeviceLockRequired <Boolean?>]`: Defines if any kind of lock must be required on android device
   - `[DisableAppEncryptionIfDeviceEncryptionIsEnabled <Boolean?>]`: When this setting is enabled, app level encryption is disabled if device level encryption is enabled
   - `[EncryptAppData <Boolean?>]`: Indicates whether application data for managed apps should be encrypted
   - `[ExemptedAppPackages <IMicrosoftGraphKeyValuePair[]>]`: App packages in this list will be exempt from the policy and will be able to receive data from managed apps.
@@ -1469,7 +1628,10 @@ BODYPARAMETER <IMicrosoftGraphAndroidManagedAppProtection1>: Policy used to conf
   - `[MinimumWipePatchVersion <String>]`: Android security patch level  less than or equal to the specified value will wipe the managed app and the associated company data.
   - `[RequiredAndroidSafetyNetAppsVerificationType <String>]`: androidManagedAppSafetyNetAppsVerificationType
   - `[RequiredAndroidSafetyNetDeviceAttestationType <String>]`: androidManagedAppSafetyNetDeviceAttestationType
+  - `[RequiredAndroidSafetyNetEvaluationType <String>]`: androidManagedAppSafetyNetEvaluationType
   - `[ScreenCaptureBlocked <Boolean?>]`: Indicates whether a managed user can take screen captures of managed apps
+  - `[WarnAfterCompanyPortalUpdateDeferralInDays <Int32?>]`: Maximum number of days Company Portal update can be deferred on the device or the user will receive the warning
+  - `[WipeAfterCompanyPortalUpdateDeferralInDays <Int32?>]`: Maximum number of days Company Portal update can be deferred on the device or the company data on the app will be wiped
 
 DEPLOYMENTSUMMARY <IMicrosoftGraphManagedAppPolicyDeploymentSummary>: The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -1484,8 +1646,8 @@ DEPLOYMENTSUMMARY <IMicrosoftGraphManagedAppPolicyDeploymentSummary>: The Manage
   - `[Version <String>]`: Version of the entity.
 
 EXEMPTEDAPPPACKAGES <IMicrosoftGraphKeyValuePair[]>: App packages in this list will be exempt from the policy and will be able to receive data from managed apps.
-  - `[Name <String>]`: Name for this key-value pair
-  - `[Value <String>]`: Value for this key-value pair
+  - `[Name <String>]`: Name for this key-value pair. Possible names are: AdditionalWSFedEndpointCheckResult,  AllowedAuthenticationClassReferencesCheckResult, AlwaysRequireAuthenticationCheckResult,   AutoUpdateEnabledCheckResult, ClaimsProviderNameCheckResult, EncryptClaimsCheckResult,  EncryptedNameIdRequiredCheckResult, MonitoringEnabledCheckResult,NotBeforeSkewCheckResult,  RequestMFAFromClaimsProvidersCheckResult, SignedSamlRequestsRequiredCheckResult, AdditionalAuthenticationRulesCheckResult, TokenLifetimeCheckResult,  DelegationAuthorizationRulesCheckResult, IssuanceAuthorizationRulesCheckResult, IssuanceTransformRulesCheckResult.
+  - `[Value <String>]`: Value for this key-value pair. Possible result values are 0 (when the validation check passed), 1 (when the validation check failed), or 2 (when the validation check is a warning).
 
 ## RELATED LINKS
 

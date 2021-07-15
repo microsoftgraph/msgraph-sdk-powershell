@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceAppMgtEnterpriseCodeSigningCertificate
 
 ## SYNOPSIS
-Create new navigation property to enterpriseCodeSigningCertificates for deviceAppManagement
+The Windows Enterprise Code Signing Certificate.
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ New-MgDeviceAppMgtEnterpriseCodeSigningCertificate
 ```
 
 ## DESCRIPTION
-Create new navigation property to enterpriseCodeSigningCertificates for deviceAppManagement
+The Windows Enterprise Code Signing Certificate.
 
 ## EXAMPLES
 

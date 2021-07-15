@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceAppMgtMobileApp
 
 ## SYNOPSIS
-Create new navigation property to mobileApps for deviceAppManagement
+The mobile apps.
 
 ## SYNTAX
 
@@ -29,7 +29,7 @@ New-MgDeviceAppMgtMobileApp -BodyParameter <IMicrosoftGraphMobileApp1> [-Confirm
 ```
 
 ## DESCRIPTION
-Create new navigation property to mobileApps for deviceAppManagement
+The mobile apps.
 
 ## EXAMPLES
 

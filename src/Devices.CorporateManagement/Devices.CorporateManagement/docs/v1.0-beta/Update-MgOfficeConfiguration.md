@@ -15,7 +15,7 @@ Update officeConfiguration
 ### UpdateExpanded (Default)
 ```
 Update-MgOfficeConfiguration [-AdditionalProperties <Hashtable>]
- [-ClientConfigurations <IMicrosoftGraphOfficeClientConfiguration[]>] [-Id <String>]
+ [-ClientConfigurations <IMicrosoftGraphOfficeClientConfiguration[]>]
  [-TenantCheckinStatuses <IMicrosoftGraphOfficeClientCheckinStatus[]>]
  [-TenantUserCheckinSummary <IMicrosoftGraphOfficeUserCheckinSummary>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -84,26 +84,11 @@ Accept wildcard characters: False
 ```
 
 ### -ClientConfigurations
-.
+List of office Client configuration.
 To construct, see NOTES section for CLIENTCONFIGURATIONS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOfficeClientConfiguration[]
-Parameter Sets: UpdateExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Id
-Read-only.
-
-```yaml
-Type: System.String
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -130,7 +115,7 @@ Accept wildcard characters: False
 ```
 
 ### -TenantCheckinStatuses
-.
+List of office Client check-in status.
 To construct, see NOTES section for TENANTCHECKINSTATUSES properties and create a hash table.
 
 ```yaml
@@ -214,76 +199,75 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphOfficeConfiguration>: officeConfiguration
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
-  - `[ClientConfigurations <IMicrosoftGraphOfficeClientConfiguration[]>]`: 
+  - `[ClientConfigurations <IMicrosoftGraphOfficeClientConfiguration[]>]`: List of office Client configuration.
     - `[Id <String>]`: Read-only.
-    - `[Assignments <IMicrosoftGraphOfficeClientConfigurationAssignment[]>]`: 
+    - `[Assignments <IMicrosoftGraphOfficeClientConfigurationAssignment[]>]`: The list of group assignments for the policy.
       - `[Id <String>]`: Read-only.
       - `[Target <IMicrosoftGraphOfficeConfigurationAssignmentTarget>]`: officeConfigurationAssignmentTarget
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[CheckinStatuses <IMicrosoftGraphOfficeClientCheckinStatus[]>]`: 
-      - `[AppliedPolicies <String[]>]`: 
-      - `[CheckinDateTime <DateTime?>]`: 
-      - `[DeviceName <String>]`: 
-      - `[DevicePlatform <String>]`: 
-      - `[DevicePlatformVersion <String>]`: 
-      - `[ErrorMessage <String>]`: 
-      - `[UserId <String>]`: 
-      - `[UserPrincipalName <String>]`: 
-      - `[WasSuccessful <Boolean?>]`: 
-    - `[Description <String>]`: 
-    - `[DisplayName <String>]`: 
-    - `[PolicyPayload <Byte[]>]`: 
-    - `[Priority <Int32?>]`: 
+    - `[CheckinStatuses <IMicrosoftGraphOfficeClientCheckinStatus[]>]`: List of office Client check-in status.
+      - `[AppliedPolicies <String[]>]`: List of policies delivered to the device as last checkin.
+      - `[CheckinDateTime <DateTime?>]`: Last device check-in time in UTC.
+      - `[DeviceName <String>]`: Device name trying to check-in.
+      - `[DevicePlatform <String>]`: Device platform trying to check-in.
+      - `[DevicePlatformVersion <String>]`: Device platform version trying to check-in.
+      - `[ErrorMessage <String>]`: Error message if any associated for the last checkin.
+      - `[UserId <String>]`: User identifier using the device.
+      - `[UserPrincipalName <String>]`: User principal name using the device.
+      - `[WasSuccessful <Boolean?>]`: If the last checkin was successful.
+    - `[Description <String>]`: Not yet documented
+    - `[DisplayName <String>]`: Admin provided description of the office client configuration policy.
+    - `[PolicyPayload <Byte[]>]`: Policy settings JSON string in binary format, these values cannot be changed by the user.
+    - `[Priority <Int32?>]`: Priority value should be unique value for each policy under a tenant and will be used for conflict resolution, lower values mean priority is high.
     - `[UserCheckinSummary <IMicrosoftGraphOfficeUserCheckinSummary>]`: officeUserCheckinSummary
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[FailedUserCount <Int32?>]`: 
-      - `[SucceededUserCount <Int32?>]`: 
-    - `[UserPreferencePayload <Byte[]>]`: 
-  - `[TenantCheckinStatuses <IMicrosoftGraphOfficeClientCheckinStatus[]>]`: 
+      - `[FailedUserCount <Int32?>]`: Total failed user check ins for the last 3 months.
+      - `[SucceededUserCount <Int32?>]`: Total successful user check ins for the last 3 months.
+    - `[UserPreferencePayload <Byte[]>]`: Preference settings JSON string in binary format, these values can be overridden by the user.
+  - `[TenantCheckinStatuses <IMicrosoftGraphOfficeClientCheckinStatus[]>]`: List of office Client check-in status.
   - `[TenantUserCheckinSummary <IMicrosoftGraphOfficeUserCheckinSummary>]`: officeUserCheckinSummary
 
-CLIENTCONFIGURATIONS <IMicrosoftGraphOfficeClientConfiguration[]>: .
+CLIENTCONFIGURATIONS <IMicrosoftGraphOfficeClientConfiguration[]>: List of office Client configuration.
   - `[Id <String>]`: Read-only.
-  - `[Assignments <IMicrosoftGraphOfficeClientConfigurationAssignment[]>]`: 
+  - `[Assignments <IMicrosoftGraphOfficeClientConfigurationAssignment[]>]`: The list of group assignments for the policy.
     - `[Id <String>]`: Read-only.
     - `[Target <IMicrosoftGraphOfficeConfigurationAssignmentTarget>]`: officeConfigurationAssignmentTarget
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[CheckinStatuses <IMicrosoftGraphOfficeClientCheckinStatus[]>]`: 
-    - `[AppliedPolicies <String[]>]`: 
-    - `[CheckinDateTime <DateTime?>]`: 
-    - `[DeviceName <String>]`: 
-    - `[DevicePlatform <String>]`: 
-    - `[DevicePlatformVersion <String>]`: 
-    - `[ErrorMessage <String>]`: 
-    - `[UserId <String>]`: 
-    - `[UserPrincipalName <String>]`: 
-    - `[WasSuccessful <Boolean?>]`: 
-  - `[Description <String>]`: 
-  - `[DisplayName <String>]`: 
-  - `[PolicyPayload <Byte[]>]`: 
-  - `[Priority <Int32?>]`: 
+  - `[CheckinStatuses <IMicrosoftGraphOfficeClientCheckinStatus[]>]`: List of office Client check-in status.
+    - `[AppliedPolicies <String[]>]`: List of policies delivered to the device as last checkin.
+    - `[CheckinDateTime <DateTime?>]`: Last device check-in time in UTC.
+    - `[DeviceName <String>]`: Device name trying to check-in.
+    - `[DevicePlatform <String>]`: Device platform trying to check-in.
+    - `[DevicePlatformVersion <String>]`: Device platform version trying to check-in.
+    - `[ErrorMessage <String>]`: Error message if any associated for the last checkin.
+    - `[UserId <String>]`: User identifier using the device.
+    - `[UserPrincipalName <String>]`: User principal name using the device.
+    - `[WasSuccessful <Boolean?>]`: If the last checkin was successful.
+  - `[Description <String>]`: Not yet documented
+  - `[DisplayName <String>]`: Admin provided description of the office client configuration policy.
+  - `[PolicyPayload <Byte[]>]`: Policy settings JSON string in binary format, these values cannot be changed by the user.
+  - `[Priority <Int32?>]`: Priority value should be unique value for each policy under a tenant and will be used for conflict resolution, lower values mean priority is high.
   - `[UserCheckinSummary <IMicrosoftGraphOfficeUserCheckinSummary>]`: officeUserCheckinSummary
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[FailedUserCount <Int32?>]`: 
-    - `[SucceededUserCount <Int32?>]`: 
-  - `[UserPreferencePayload <Byte[]>]`: 
+    - `[FailedUserCount <Int32?>]`: Total failed user check ins for the last 3 months.
+    - `[SucceededUserCount <Int32?>]`: Total successful user check ins for the last 3 months.
+  - `[UserPreferencePayload <Byte[]>]`: Preference settings JSON string in binary format, these values can be overridden by the user.
 
-TENANTCHECKINSTATUSES <IMicrosoftGraphOfficeClientCheckinStatus[]>: .
-  - `[AppliedPolicies <String[]>]`: 
-  - `[CheckinDateTime <DateTime?>]`: 
-  - `[DeviceName <String>]`: 
-  - `[DevicePlatform <String>]`: 
-  - `[DevicePlatformVersion <String>]`: 
-  - `[ErrorMessage <String>]`: 
-  - `[UserId <String>]`: 
-  - `[UserPrincipalName <String>]`: 
-  - `[WasSuccessful <Boolean?>]`: 
+TENANTCHECKINSTATUSES <IMicrosoftGraphOfficeClientCheckinStatus[]>: List of office Client check-in status.
+  - `[AppliedPolicies <String[]>]`: List of policies delivered to the device as last checkin.
+  - `[CheckinDateTime <DateTime?>]`: Last device check-in time in UTC.
+  - `[DeviceName <String>]`: Device name trying to check-in.
+  - `[DevicePlatform <String>]`: Device platform trying to check-in.
+  - `[DevicePlatformVersion <String>]`: Device platform version trying to check-in.
+  - `[ErrorMessage <String>]`: Error message if any associated for the last checkin.
+  - `[UserId <String>]`: User identifier using the device.
+  - `[UserPrincipalName <String>]`: User principal name using the device.
+  - `[WasSuccessful <Boolean?>]`: If the last checkin was successful.
 
 TENANTUSERCHECKINSUMMARY <IMicrosoftGraphOfficeUserCheckinSummary>: officeUserCheckinSummary
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[FailedUserCount <Int32?>]`: 
-  - `[SucceededUserCount <Int32?>]`: 
+  - `[FailedUserCount <Int32?>]`: Total failed user check ins for the last 3 months.
+  - `[SucceededUserCount <Int32?>]`: Total successful user check ins for the last 3 months.
 
 ## RELATED LINKS
 

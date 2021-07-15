@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceAppMgtTask
 
 ## SYNOPSIS
-Create new navigation property to deviceAppManagementTasks for deviceAppManagement
+Device app management tasks.
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ New-MgDeviceAppMgtTask -BodyParameter <IMicrosoftGraphDeviceAppManagementTask> [
 ```
 
 ## DESCRIPTION
-Create new navigation property to deviceAppManagementTasks for deviceAppManagement
+Device app management tasks.
 
 ## EXAMPLES
 

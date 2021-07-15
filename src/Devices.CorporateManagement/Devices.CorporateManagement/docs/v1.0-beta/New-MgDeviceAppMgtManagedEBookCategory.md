@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceAppMgtManagedEBookCategory
 
 ## SYNOPSIS
-Create new navigation property to managedEBookCategories for deviceAppManagement
+The mobile eBook categories.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ New-MgDeviceAppMgtManagedEBookCategory -BodyParameter <IMicrosoftGraphManagedEBo
 ```
 
 ## DESCRIPTION
-Create new navigation property to managedEBookCategories for deviceAppManagement
+The mobile eBook categories.
 
 ## EXAMPLES
 

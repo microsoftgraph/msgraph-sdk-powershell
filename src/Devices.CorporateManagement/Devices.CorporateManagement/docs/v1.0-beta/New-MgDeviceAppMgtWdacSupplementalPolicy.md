@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceAppMgtWdacSupplementalPolicy
 
 ## SYNOPSIS
-Create new navigation property to wdacSupplementalPolicies for deviceAppManagement
+The collection of Windows Defender Application Control Supplemental Policies.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ New-MgDeviceAppMgtWdacSupplementalPolicy
 ```
 
 ## DESCRIPTION
-Create new navigation property to wdacSupplementalPolicies for deviceAppManagement
+The collection of Windows Defender Application Control Supplemental Policies.
 
 ## EXAMPLES
 

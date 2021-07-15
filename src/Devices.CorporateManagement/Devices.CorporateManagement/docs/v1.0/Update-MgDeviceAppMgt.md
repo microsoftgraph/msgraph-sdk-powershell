@@ -15,12 +15,12 @@ Update deviceAppManagement
 ### UpdateExpanded1 (Default)
 ```
 Update-MgDeviceAppMgt [-AdditionalProperties <Hashtable>]
- [-AndroidManagedAppProtections <IMicrosoftGraphAndroidManagedAppProtection[]>]
- [-DefaultManagedAppProtections <IMicrosoftGraphDefaultManagedAppProtection[]>] [-Id <String>]
- [-IosManagedAppProtections <IMicrosoftGraphIosManagedAppProtection[]>]
- [-IsEnabledForMicrosoftStoreForBusiness] [-ManagedAppPolicies <IMicrosoftGraphManagedAppPolicy[]>]
- [-ManagedAppRegistrations <IMicrosoftGraphManagedAppRegistration[]>]
- [-ManagedAppStatuses <IMicrosoftGraphManagedAppStatus[]>] [-ManagedEBooks <IMicrosoftGraphManagedEBook[]>]
+ [-AndroidManagedAppProtections <IMicrosoftGraphAndroidManagedAppProtection1[]>]
+ [-DefaultManagedAppProtections <IMicrosoftGraphDefaultManagedAppProtection1[]>] [-Id <String>]
+ [-IosManagedAppProtections <IMicrosoftGraphIosManagedAppProtection1[]>]
+ [-IsEnabledForMicrosoftStoreForBusiness] [-ManagedAppPolicies <IMicrosoftGraphManagedAppPolicy1[]>]
+ [-ManagedAppRegistrations <IMicrosoftGraphManagedAppRegistration1[]>]
+ [-ManagedAppStatuses <IMicrosoftGraphManagedAppStatus[]>] [-ManagedEBooks <IMicrosoftGraphManagedEBook1[]>]
  [-MdmWindowsInformationProtectionPolicies <IMicrosoftGraphMdmWindowsInformationProtectionPolicy1[]>]
  [-MicrosoftStoreForBusinessLanguage <String>]
  [-MicrosoftStoreForBusinessLastCompletedApplicationSyncTime <DateTime>]
@@ -85,7 +85,7 @@ Android managed app policies.
 To construct, see NOTES section for ANDROIDMANAGEDAPPPROTECTIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAndroidManagedAppProtection[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAndroidManagedAppProtection1[]
 Parameter Sets: UpdateExpanded1
 Aliases:
 
@@ -117,7 +117,7 @@ Default managed app policies.
 To construct, see NOTES section for DEFAULTMANAGEDAPPPROTECTIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDefaultManagedAppProtection[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDefaultManagedAppProtection1[]
 Parameter Sets: UpdateExpanded1
 Aliases:
 
@@ -148,7 +148,7 @@ iOS managed app policies.
 To construct, see NOTES section for IOSMANAGEDAPPPROTECTIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIosManagedAppProtection[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIosManagedAppProtection1[]
 Parameter Sets: UpdateExpanded1
 Aliases:
 
@@ -179,7 +179,7 @@ Managed app policies.
 To construct, see NOTES section for MANAGEDAPPPOLICIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppPolicy[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppPolicy1[]
 Parameter Sets: UpdateExpanded1
 Aliases:
 
@@ -195,7 +195,7 @@ The managed app registrations.
 To construct, see NOTES section for MANAGEDAPPREGISTRATIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppRegistration[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppRegistration1[]
 Parameter Sets: UpdateExpanded1
 Aliases:
 
@@ -227,7 +227,7 @@ The Managed eBook.
 To construct, see NOTES section for MANAGEDEBOOKS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedEBook[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedEBook1[]
 Parameter Sets: UpdateExpanded1
 Aliases:
 
@@ -467,7 +467,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-ANDROIDMANAGEDAPPPROTECTIONS <IMicrosoftGraphAndroidManagedAppProtection[]>: Android managed app policies.
+ANDROIDMANAGEDAPPPROTECTIONS <IMicrosoftGraphAndroidManagedAppProtection1[]>: Android managed app policies.
   - `[Assignments <IMicrosoftGraphTargetedManagedAppPolicyAssignment1[]>]`: Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
     - `[Id <String>]`: Read-only.
     - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
@@ -511,8 +511,8 @@ ANDROIDMANAGEDAPPPROTECTIONS <IMicrosoftGraphAndroidManagedAppProtection[]>: And
     - `[MobileAppIdentifier <IMicrosoftGraphMobileAppIdentifier>]`: The identifier for a mobile app.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Version <String>]`: Version of the entity.
-  - `[CustomBrowserDisplayName <String>]`: Friendly name of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
-  - `[CustomBrowserPackageId <String>]`: Unique identifier of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
+  - `[CustomBrowserDisplayName <String>]`: Friendly name of the preferred custom browser to open weblink on Android.
+  - `[CustomBrowserPackageId <String>]`: Unique identifier of a custom browser to open weblink on Android.
   - `[DeployedAppCount <Int32?>]`: Count of apps to which the current policy is deployed.
   - `[DeploymentSummary <IMicrosoftGraphManagedAppPolicyDeploymentSummary>]`: The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -533,7 +533,7 @@ ANDROIDMANAGEDAPPPROTECTIONS <IMicrosoftGraphAndroidManagedAppProtection[]>: And
 BODYPARAMETER <IMicrosoftGraphDeviceAppManagement1>: Singleton entity that acts as a container for all device app management functionality.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
-  - `[AndroidManagedAppProtections <IMicrosoftGraphAndroidManagedAppProtection[]>]`: Android managed app policies.
+  - `[AndroidManagedAppProtections <IMicrosoftGraphAndroidManagedAppProtection1[]>]`: Android managed app policies.
     - `[Assignments <IMicrosoftGraphTargetedManagedAppPolicyAssignment1[]>]`: Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
       - `[Id <String>]`: Read-only.
       - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
@@ -577,8 +577,8 @@ BODYPARAMETER <IMicrosoftGraphDeviceAppManagement1>: Singleton entity that acts 
       - `[MobileAppIdentifier <IMicrosoftGraphMobileAppIdentifier>]`: The identifier for a mobile app.
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Version <String>]`: Version of the entity.
-    - `[CustomBrowserDisplayName <String>]`: Friendly name of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
-    - `[CustomBrowserPackageId <String>]`: Unique identifier of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
+    - `[CustomBrowserDisplayName <String>]`: Friendly name of the preferred custom browser to open weblink on Android.
+    - `[CustomBrowserPackageId <String>]`: Unique identifier of a custom browser to open weblink on Android.
     - `[DeployedAppCount <Int32?>]`: Count of apps to which the current policy is deployed.
     - `[DeploymentSummary <IMicrosoftGraphManagedAppPolicyDeploymentSummary>]`: The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -595,7 +595,7 @@ BODYPARAMETER <IMicrosoftGraphDeviceAppManagement1>: Singleton entity that acts 
     - `[MinimumRequiredPatchVersion <String>]`: Define the oldest required Android security patch level a user can have to gain secure access to the app.
     - `[MinimumWarningPatchVersion <String>]`: Define the oldest recommended Android security patch level a user can have for secure access to the app.
     - `[ScreenCaptureBlocked <Boolean?>]`: Indicates whether a managed user can take screen captures of managed apps
-  - `[DefaultManagedAppProtections <IMicrosoftGraphDefaultManagedAppProtection[]>]`: Default managed app policies.
+  - `[DefaultManagedAppProtections <IMicrosoftGraphDefaultManagedAppProtection1[]>]`: Default managed app policies.
     - `[AllowedDataStorageLocations <String[]>]`: Data storage locations where a user may store managed data.
     - `[AllowedInboundDataTransferSources <String>]`: managedAppDataTransferLevel
     - `[AllowedOutboundClipboardSharingLevel <String>]`: managedAppClipboardSharingLevel
@@ -632,8 +632,8 @@ BODYPARAMETER <IMicrosoftGraphDeviceAppManagement1>: Singleton entity that acts 
     - `[AppDataEncryptionType <String>]`: managedAppDataEncryptionType
     - `[Apps <IMicrosoftGraphManagedMobileApp[]>]`: List of apps to which the policy is deployed.
     - `[CustomSettings <IMicrosoftGraphKeyValuePair[]>]`: A set of string key and string value pairs to be sent to the affected users, unalterned by this service
-      - `[Name <String>]`: Name for this key-value pair
-      - `[Value <String>]`: Value for this key-value pair
+      - `[Name <String>]`: Name for this key-value pair. Possible names are: AdditionalWSFedEndpointCheckResult,  AllowedAuthenticationClassReferencesCheckResult, AlwaysRequireAuthenticationCheckResult,   AutoUpdateEnabledCheckResult, ClaimsProviderNameCheckResult, EncryptClaimsCheckResult,  EncryptedNameIdRequiredCheckResult, MonitoringEnabledCheckResult,NotBeforeSkewCheckResult,  RequestMFAFromClaimsProvidersCheckResult, SignedSamlRequestsRequiredCheckResult, AdditionalAuthenticationRulesCheckResult, TokenLifetimeCheckResult,  DelegationAuthorizationRulesCheckResult, IssuanceAuthorizationRulesCheckResult, IssuanceTransformRulesCheckResult.
+      - `[Value <String>]`: Value for this key-value pair. Possible result values are 0 (when the validation check passed), 1 (when the validation check failed), or 2 (when the validation check is a warning).
     - `[DeployedAppCount <Int32?>]`: Count of apps to which the current policy is deployed.
     - `[DeploymentSummary <IMicrosoftGraphManagedAppPolicyDeploymentSummary>]`: The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
     - `[DisableAppEncryptionIfDeviceEncryptionIsEnabled <Boolean?>]`: When this setting is enabled, app level encryption is disabled if device level encryption is enabled. (Android only)
@@ -643,7 +643,7 @@ BODYPARAMETER <IMicrosoftGraphDeviceAppManagement1>: Singleton entity that acts 
     - `[MinimumRequiredSdkVersion <String>]`: Versions less than the specified version will block the managed app from accessing company data. (iOS Only)
     - `[MinimumWarningPatchVersion <String>]`: Define the oldest recommended Android security patch level a user can have for secure access to the app. (Android only)
     - `[ScreenCaptureBlocked <Boolean?>]`: Indicates whether screen capture is blocked. (Android only)
-  - `[IosManagedAppProtections <IMicrosoftGraphIosManagedAppProtection[]>]`: iOS managed app policies.
+  - `[IosManagedAppProtections <IMicrosoftGraphIosManagedAppProtection1[]>]`: iOS managed app policies.
     - `[Assignments <IMicrosoftGraphTargetedManagedAppPolicyAssignment1[]>]`: Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
     - `[IsAssigned <Boolean?>]`: Indicates if the policy is deployed to any inclusion groups or not.
     - `[AllowedDataStorageLocations <String[]>]`: Data storage locations where a user may store managed data.
@@ -681,30 +681,30 @@ BODYPARAMETER <IMicrosoftGraphDeviceAppManagement1>: Singleton entity that acts 
     - `[Id <String>]`: Read-only.
     - `[AppDataEncryptionType <String>]`: managedAppDataEncryptionType
     - `[Apps <IMicrosoftGraphManagedMobileApp[]>]`: List of apps to which the policy is deployed.
-    - `[CustomBrowserProtocol <String>]`: A custom browser protocol to open weblink on iOS. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
+    - `[CustomBrowserProtocol <String>]`: A custom browser protocol to open weblink on iOS.
     - `[DeployedAppCount <Int32?>]`: Count of apps to which the current policy is deployed.
     - `[DeploymentSummary <IMicrosoftGraphManagedAppPolicyDeploymentSummary>]`: The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
     - `[FaceIdBlocked <Boolean?>]`: Indicates whether use of the FaceID is allowed in place of a pin if PinRequired is set to True.
     - `[MinimumRequiredSdkVersion <String>]`: Versions less than the specified version will block the managed app from accessing company data.
   - `[IsEnabledForMicrosoftStoreForBusiness <Boolean?>]`: Whether the account is enabled for syncing applications from the Microsoft Store for Business.
-  - `[ManagedAppPolicies <IMicrosoftGraphManagedAppPolicy[]>]`: Managed app policies.
+  - `[ManagedAppPolicies <IMicrosoftGraphManagedAppPolicy1[]>]`: Managed app policies.
     - `[Id <String>]`: Read-only.
     - `[CreatedDateTime <DateTime?>]`: The date and time the policy was created.
     - `[Description <String>]`: The policy's description.
     - `[DisplayName <String>]`: Policy display name.
     - `[LastModifiedDateTime <DateTime?>]`: Last time the policy was modified.
     - `[Version <String>]`: Version of the entity.
-  - `[ManagedAppRegistrations <IMicrosoftGraphManagedAppRegistration[]>]`: The managed app registrations.
+  - `[ManagedAppRegistrations <IMicrosoftGraphManagedAppRegistration1[]>]`: The managed app registrations.
     - `[Id <String>]`: Read-only.
     - `[AppIdentifier <IMicrosoftGraphMobileAppIdentifier>]`: The identifier for a mobile app.
     - `[ApplicationVersion <String>]`: App version
-    - `[AppliedPolicies <IMicrosoftGraphManagedAppPolicy[]>]`: Zero or more policys already applied on the registered app when it last synchronized with managment service.
+    - `[AppliedPolicies <IMicrosoftGraphManagedAppPolicy1[]>]`: Zero or more policys already applied on the registered app when it last synchronized with managment service.
     - `[CreatedDateTime <DateTime?>]`: Date and time of creation
     - `[DeviceName <String>]`: Host device name
     - `[DeviceTag <String>]`: App management SDK generated tag, which helps relate apps hosted on the same device. Not guaranteed to relate apps in all conditions.
     - `[DeviceType <String>]`: Host device type
     - `[FlaggedReasons <String[]>]`: Zero or more reasons an app registration is flagged. E.g. app running on rooted device
-    - `[IntendedPolicies <IMicrosoftGraphManagedAppPolicy[]>]`: Zero or more policies admin intended for the app as of now.
+    - `[IntendedPolicies <IMicrosoftGraphManagedAppPolicy1[]>]`: Zero or more policies admin intended for the app as of now.
     - `[LastSyncDateTime <DateTime?>]`: Date and time of last the app synced with management service.
     - `[ManagementSdkVersion <String>]`: App management SDK version
     - `[Operations <IMicrosoftGraphManagedAppOperation[]>]`: Zero or more long running operations triggered on the app registration.
@@ -720,9 +720,9 @@ BODYPARAMETER <IMicrosoftGraphDeviceAppManagement1>: Singleton entity that acts 
     - `[Id <String>]`: Read-only.
     - `[DisplayName <String>]`: Friendly name of the status report.
     - `[Version <String>]`: Version of the entity.
-  - `[ManagedEBooks <IMicrosoftGraphManagedEBook[]>]`: The Managed eBook.
+  - `[ManagedEBooks <IMicrosoftGraphManagedEBook1[]>]`: The Managed eBook.
     - `[Id <String>]`: Read-only.
-    - `[Assignments <IMicrosoftGraphManagedEBookAssignment[]>]`: The list of assignments for this eBook.
+    - `[Assignments <IMicrosoftGraphManagedEBookAssignment1[]>]`: The list of assignments for this eBook.
       - `[Id <String>]`: Read-only.
       - `[InstallIntent <String>]`: installIntent
       - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
@@ -777,7 +777,7 @@ BODYPARAMETER <IMicrosoftGraphDeviceAppManagement1>: Singleton entity that acts 
     - `[EnterpriseDomain <String>]`: Primary enterprise domain
     - `[EnterpriseIPRanges <IMicrosoftGraphWindowsInformationProtectionIPRangeCollection[]>]`: Sets the enterprise IP ranges that define the computers in the enterprise network. Data that comes from those computers will be considered part of the enterprise and protected. These locations will be considered a safe destination for enterprise data to be shared to
       - `[DisplayName <String>]`: Display name
-      - `[Ranges <IMicrosoftGraphIPRange[]>]`: Collection of Internet protocol address ranges
+      - `[Ranges <IMicrosoftGraphIPRange[]>]`: Collection of ip ranges
     - `[EnterpriseIPRangesAreAuthoritative <Boolean?>]`: Boolean value that tells the client to accept the configured list and not to use heuristics to attempt to find other subnets. Default is false
     - `[EnterpriseInternalProxyServers <IMicrosoftGraphWindowsInformationProtectionResourceCollection[]>]`: This is the comma-separated list of internal proxy servers. For example, '157.54.14.28, 157.54.11.118, 10.202.14.167, 157.53.14.163, 157.69.210.59'. These proxies have been configured by the admin to connect to specific resources on the Internet. They are considered to be enterprise network locations. The proxies are only leveraged in configuring the EnterpriseProxiedDomains policy to force traffic to the matched domains through these proxies
       - `[DisplayName <String>]`: Display name
@@ -843,7 +843,7 @@ BODYPARAMETER <IMicrosoftGraphDeviceAppManagement1>: Singleton entity that acts 
       - `[NotApplicableCount <Int32?>]`: Number of not applicable devices
       - `[PendingCount <Int32?>]`: Number of pending devices
       - `[SuccessCount <Int32?>]`: Number of succeeded devices
-    - `[DeviceStatuses <IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus[]>]`: List of ManagedDeviceMobileAppConfigurationDeviceStatus.
+    - `[DeviceStatuses <IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus1[]>]`: List of ManagedDeviceMobileAppConfigurationDeviceStatus.
       - `[Id <String>]`: Read-only.
       - `[ComplianceGracePeriodExpirationDateTime <DateTime?>]`: The DateTime when device compliance grace period expires
       - `[DeviceDisplayName <String>]`: Device name of the DevicePolicyStatus.
@@ -915,7 +915,7 @@ BODYPARAMETER <IMicrosoftGraphDeviceAppManagement1>: Singleton entity that acts 
     - `[CountryOrRegion <String>]`: Whether or not apps for the VPP token will be automatically updated.
     - `[ExpirationDateTime <DateTime?>]`: The expiration date time of the Apple Volume Purchase Program Token.
     - `[LastModifiedDateTime <DateTime?>]`: Last modification date time associated with the Apple Volume Purchase Program Token.
-    - `[LastSyncDateTime <DateTime?>]`: The last time when an application sync was done with the Apple volume purchase program service using the Apple Volume Purchase Program Token.
+    - `[LastSyncDateTime <DateTime?>]`: The last time when an application sync was done with the Apple volume purchase program service using the the Apple Volume Purchase Program Token.
     - `[LastSyncStatus <String>]`: vppTokenSyncStatus
     - `[OrganizationName <String>]`: The organization associated with the Apple Volume Purchase Program Token
     - `[State <String>]`: 
@@ -966,7 +966,7 @@ BODYPARAMETER <IMicrosoftGraphDeviceAppManagement1>: Singleton entity that acts 
     - `[RevokeOnMdmHandoffDisabled <Boolean?>]`: New property in RS2, pending documentation
     - `[WindowsHelloForBusinessBlocked <Boolean?>]`: Boolean value that sets Windows Hello for Business as a method for signing into Windows.
 
-DEFAULTMANAGEDAPPPROTECTIONS <IMicrosoftGraphDefaultManagedAppProtection[]>: Default managed app policies.
+DEFAULTMANAGEDAPPPROTECTIONS <IMicrosoftGraphDefaultManagedAppProtection1[]>: Default managed app policies.
   - `[AllowedDataStorageLocations <String[]>]`: Data storage locations where a user may store managed data.
   - `[AllowedInboundDataTransferSources <String>]`: managedAppDataTransferLevel
   - `[AllowedOutboundClipboardSharingLevel <String>]`: managedAppClipboardSharingLevel
@@ -1007,8 +1007,8 @@ DEFAULTMANAGEDAPPPROTECTIONS <IMicrosoftGraphDefaultManagedAppProtection[]>: Def
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Version <String>]`: Version of the entity.
   - `[CustomSettings <IMicrosoftGraphKeyValuePair[]>]`: A set of string key and string value pairs to be sent to the affected users, unalterned by this service
-    - `[Name <String>]`: Name for this key-value pair
-    - `[Value <String>]`: Value for this key-value pair
+    - `[Name <String>]`: Name for this key-value pair. Possible names are: AdditionalWSFedEndpointCheckResult,  AllowedAuthenticationClassReferencesCheckResult, AlwaysRequireAuthenticationCheckResult,   AutoUpdateEnabledCheckResult, ClaimsProviderNameCheckResult, EncryptClaimsCheckResult,  EncryptedNameIdRequiredCheckResult, MonitoringEnabledCheckResult,NotBeforeSkewCheckResult,  RequestMFAFromClaimsProvidersCheckResult, SignedSamlRequestsRequiredCheckResult, AdditionalAuthenticationRulesCheckResult, TokenLifetimeCheckResult,  DelegationAuthorizationRulesCheckResult, IssuanceAuthorizationRulesCheckResult, IssuanceTransformRulesCheckResult.
+    - `[Value <String>]`: Value for this key-value pair. Possible result values are 0 (when the validation check passed), 1 (when the validation check failed), or 2 (when the validation check is a warning).
   - `[DeployedAppCount <Int32?>]`: Count of apps to which the current policy is deployed.
   - `[DeploymentSummary <IMicrosoftGraphManagedAppPolicyDeploymentSummary>]`: The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -1028,7 +1028,7 @@ DEFAULTMANAGEDAPPPROTECTIONS <IMicrosoftGraphDefaultManagedAppProtection[]>: Def
   - `[MinimumWarningPatchVersion <String>]`: Define the oldest recommended Android security patch level a user can have for secure access to the app. (Android only)
   - `[ScreenCaptureBlocked <Boolean?>]`: Indicates whether screen capture is blocked. (Android only)
 
-IOSMANAGEDAPPPROTECTIONS <IMicrosoftGraphIosManagedAppProtection[]>: iOS managed app policies.
+IOSMANAGEDAPPPROTECTIONS <IMicrosoftGraphIosManagedAppProtection1[]>: iOS managed app policies.
   - `[Assignments <IMicrosoftGraphTargetedManagedAppPolicyAssignment1[]>]`: Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
     - `[Id <String>]`: Read-only.
     - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
@@ -1073,7 +1073,7 @@ IOSMANAGEDAPPPROTECTIONS <IMicrosoftGraphIosManagedAppProtection[]>: iOS managed
     - `[MobileAppIdentifier <IMicrosoftGraphMobileAppIdentifier>]`: The identifier for a mobile app.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Version <String>]`: Version of the entity.
-  - `[CustomBrowserProtocol <String>]`: A custom browser protocol to open weblink on iOS. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
+  - `[CustomBrowserProtocol <String>]`: A custom browser protocol to open weblink on iOS.
   - `[DeployedAppCount <Int32?>]`: Count of apps to which the current policy is deployed.
   - `[DeploymentSummary <IMicrosoftGraphManagedAppPolicyDeploymentSummary>]`: The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -1088,7 +1088,7 @@ IOSMANAGEDAPPPROTECTIONS <IMicrosoftGraphIosManagedAppProtection[]>: iOS managed
   - `[FaceIdBlocked <Boolean?>]`: Indicates whether use of the FaceID is allowed in place of a pin if PinRequired is set to True.
   - `[MinimumRequiredSdkVersion <String>]`: Versions less than the specified version will block the managed app from accessing company data.
 
-MANAGEDAPPPOLICIES <IMicrosoftGraphManagedAppPolicy[]>: Managed app policies.
+MANAGEDAPPPOLICIES <IMicrosoftGraphManagedAppPolicy1[]>: Managed app policies.
   - `[Id <String>]`: Read-only.
   - `[CreatedDateTime <DateTime?>]`: The date and time the policy was created.
   - `[Description <String>]`: The policy's description.
@@ -1096,12 +1096,12 @@ MANAGEDAPPPOLICIES <IMicrosoftGraphManagedAppPolicy[]>: Managed app policies.
   - `[LastModifiedDateTime <DateTime?>]`: Last time the policy was modified.
   - `[Version <String>]`: Version of the entity.
 
-MANAGEDAPPREGISTRATIONS <IMicrosoftGraphManagedAppRegistration[]>: The managed app registrations.
+MANAGEDAPPREGISTRATIONS <IMicrosoftGraphManagedAppRegistration1[]>: The managed app registrations.
   - `[Id <String>]`: Read-only.
   - `[AppIdentifier <IMicrosoftGraphMobileAppIdentifier>]`: The identifier for a mobile app.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[ApplicationVersion <String>]`: App version
-  - `[AppliedPolicies <IMicrosoftGraphManagedAppPolicy[]>]`: Zero or more policys already applied on the registered app when it last synchronized with managment service.
+  - `[AppliedPolicies <IMicrosoftGraphManagedAppPolicy1[]>]`: Zero or more policys already applied on the registered app when it last synchronized with managment service.
     - `[Id <String>]`: Read-only.
     - `[CreatedDateTime <DateTime?>]`: The date and time the policy was created.
     - `[Description <String>]`: The policy's description.
@@ -1113,7 +1113,7 @@ MANAGEDAPPREGISTRATIONS <IMicrosoftGraphManagedAppRegistration[]>: The managed a
   - `[DeviceTag <String>]`: App management SDK generated tag, which helps relate apps hosted on the same device. Not guaranteed to relate apps in all conditions.
   - `[DeviceType <String>]`: Host device type
   - `[FlaggedReasons <String[]>]`: Zero or more reasons an app registration is flagged. E.g. app running on rooted device
-  - `[IntendedPolicies <IMicrosoftGraphManagedAppPolicy[]>]`: Zero or more policies admin intended for the app as of now.
+  - `[IntendedPolicies <IMicrosoftGraphManagedAppPolicy1[]>]`: Zero or more policies admin intended for the app as of now.
   - `[LastSyncDateTime <DateTime?>]`: Date and time of last the app synced with management service.
   - `[ManagementSdkVersion <String>]`: App management SDK version
   - `[Operations <IMicrosoftGraphManagedAppOperation[]>]`: Zero or more long running operations triggered on the app registration.
@@ -1131,9 +1131,9 @@ MANAGEDAPPSTATUSES <IMicrosoftGraphManagedAppStatus[]>: The managed app statuses
   - `[DisplayName <String>]`: Friendly name of the status report.
   - `[Version <String>]`: Version of the entity.
 
-MANAGEDEBOOKS <IMicrosoftGraphManagedEBook[]>: The Managed eBook.
+MANAGEDEBOOKS <IMicrosoftGraphManagedEBook1[]>: The Managed eBook.
   - `[Id <String>]`: Read-only.
-  - `[Assignments <IMicrosoftGraphManagedEBookAssignment[]>]`: The list of assignments for this eBook.
+  - `[Assignments <IMicrosoftGraphManagedEBookAssignment1[]>]`: The list of assignments for this eBook.
     - `[Id <String>]`: Read-only.
     - `[InstallIntent <String>]`: installIntent
     - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
@@ -1193,7 +1193,7 @@ MDMWINDOWSINFORMATIONPROTECTIONPOLICIES <IMicrosoftGraphMdmWindowsInformationPro
   - `[EnterpriseDomain <String>]`: Primary enterprise domain
   - `[EnterpriseIPRanges <IMicrosoftGraphWindowsInformationProtectionIPRangeCollection[]>]`: Sets the enterprise IP ranges that define the computers in the enterprise network. Data that comes from those computers will be considered part of the enterprise and protected. These locations will be considered a safe destination for enterprise data to be shared to
     - `[DisplayName <String>]`: Display name
-    - `[Ranges <IMicrosoftGraphIPRange[]>]`: Collection of Internet protocol address ranges
+    - `[Ranges <IMicrosoftGraphIPRange[]>]`: Collection of ip ranges
   - `[EnterpriseIPRangesAreAuthoritative <Boolean?>]`: Boolean value that tells the client to accept the configured list and not to use heuristics to attempt to find other subnets. Default is false
   - `[EnterpriseInternalProxyServers <IMicrosoftGraphWindowsInformationProtectionResourceCollection[]>]`: This is the comma-separated list of internal proxy servers. For example, '157.54.14.28, 157.54.11.118, 10.202.14.167, 157.53.14.163, 157.69.210.59'. These proxies have been configured by the admin to connect to specific resources on the Internet. They are considered to be enterprise network locations. The proxies are only leveraged in configuring the EnterpriseProxiedDomains policy to force traffic to the matched domains through these proxies
     - `[DisplayName <String>]`: Display name
@@ -1259,7 +1259,7 @@ MOBILEAPPCONFIGURATIONS <IMicrosoftGraphManagedDeviceMobileAppConfiguration1[]>:
     - `[NotApplicableCount <Int32?>]`: Number of not applicable devices
     - `[PendingCount <Int32?>]`: Number of pending devices
     - `[SuccessCount <Int32?>]`: Number of succeeded devices
-  - `[DeviceStatuses <IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus[]>]`: List of ManagedDeviceMobileAppConfigurationDeviceStatus.
+  - `[DeviceStatuses <IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus1[]>]`: List of ManagedDeviceMobileAppConfigurationDeviceStatus.
     - `[Id <String>]`: Read-only.
     - `[ComplianceGracePeriodExpirationDateTime <DateTime?>]`: The DateTime when device compliance grace period expires
     - `[DeviceDisplayName <String>]`: Device name of the DevicePolicyStatus.
@@ -1322,8 +1322,8 @@ MOBILEAPPS <IMicrosoftGraphMobileApp1[]>: The mobile apps.
 
 TARGETEDMANAGEDAPPCONFIGURATIONS <IMicrosoftGraphTargetedManagedAppConfiguration1[]>: Targeted managed app configurations.
   - `[CustomSettings <IMicrosoftGraphKeyValuePair[]>]`: A set of string key and string value pairs to be sent to apps for users to whom the configuration is scoped, unalterned by this service
-    - `[Name <String>]`: Name for this key-value pair
-    - `[Value <String>]`: Value for this key-value pair
+    - `[Name <String>]`: Name for this key-value pair. Possible names are: AdditionalWSFedEndpointCheckResult,  AllowedAuthenticationClassReferencesCheckResult, AlwaysRequireAuthenticationCheckResult,   AutoUpdateEnabledCheckResult, ClaimsProviderNameCheckResult, EncryptClaimsCheckResult,  EncryptedNameIdRequiredCheckResult, MonitoringEnabledCheckResult,NotBeforeSkewCheckResult,  RequestMFAFromClaimsProvidersCheckResult, SignedSamlRequestsRequiredCheckResult, AdditionalAuthenticationRulesCheckResult, TokenLifetimeCheckResult,  DelegationAuthorizationRulesCheckResult, IssuanceAuthorizationRulesCheckResult, IssuanceTransformRulesCheckResult.
+    - `[Value <String>]`: Value for this key-value pair. Possible result values are 0 (when the validation check passed), 1 (when the validation check failed), or 2 (when the validation check is a warning).
   - `[CreatedDateTime <DateTime?>]`: The date and time the policy was created.
   - `[Description <String>]`: The policy's description.
   - `[DisplayName <String>]`: Policy display name.
@@ -1359,7 +1359,7 @@ VPPTOKENS <IMicrosoftGraphVppToken1[]>: List of Vpp tokens for this organization
   - `[CountryOrRegion <String>]`: Whether or not apps for the VPP token will be automatically updated.
   - `[ExpirationDateTime <DateTime?>]`: The expiration date time of the Apple Volume Purchase Program Token.
   - `[LastModifiedDateTime <DateTime?>]`: Last modification date time associated with the Apple Volume Purchase Program Token.
-  - `[LastSyncDateTime <DateTime?>]`: The last time when an application sync was done with the Apple volume purchase program service using the Apple Volume Purchase Program Token.
+  - `[LastSyncDateTime <DateTime?>]`: The last time when an application sync was done with the Apple volume purchase program service using the the Apple Volume Purchase Program Token.
   - `[LastSyncStatus <String>]`: vppTokenSyncStatus
   - `[OrganizationName <String>]`: The organization associated with the Apple Volume Purchase Program Token
   - `[State <String>]`: 
@@ -1382,7 +1382,7 @@ WINDOWSINFORMATIONPROTECTIONPOLICIES <IMicrosoftGraphWindowsInformationProtectio
   - `[EnterpriseDomain <String>]`: Primary enterprise domain
   - `[EnterpriseIPRanges <IMicrosoftGraphWindowsInformationProtectionIPRangeCollection[]>]`: Sets the enterprise IP ranges that define the computers in the enterprise network. Data that comes from those computers will be considered part of the enterprise and protected. These locations will be considered a safe destination for enterprise data to be shared to
     - `[DisplayName <String>]`: Display name
-    - `[Ranges <IMicrosoftGraphIPRange[]>]`: Collection of Internet protocol address ranges
+    - `[Ranges <IMicrosoftGraphIPRange[]>]`: Collection of ip ranges
   - `[EnterpriseIPRangesAreAuthoritative <Boolean?>]`: Boolean value that tells the client to accept the configured list and not to use heuristics to attempt to find other subnets. Default is false
   - `[EnterpriseInternalProxyServers <IMicrosoftGraphWindowsInformationProtectionResourceCollection[]>]`: This is the comma-separated list of internal proxy servers. For example, '157.54.14.28, 157.54.11.118, 10.202.14.167, 157.53.14.163, 157.69.210.59'. These proxies have been configured by the admin to connect to specific resources on the Internet. They are considered to be enterprise network locations. The proxies are only leveraged in configuring the EnterpriseProxiedDomains policy to force traffic to the matched domains through these proxies
     - `[DisplayName <String>]`: Display name

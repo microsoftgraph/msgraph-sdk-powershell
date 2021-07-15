@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgUserManagedDeviceSecurityBaselineState
 
 ## SYNOPSIS
-Update the navigation property securityBaselineStates in users
+Security baseline states for this device.
 
 ## SYNTAX
 
@@ -17,7 +17,7 @@ Update the navigation property securityBaselineStates in users
 Update-MgUserManagedDeviceSecurityBaselineState -ManagedDeviceId <String> -SecurityBaselineStateId <String>
  -UserId <String> [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>]
  [-SecurityBaselineTemplateId <String>] [-SettingStates <IMicrosoftGraphSecurityBaselineSettingState[]>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-State <String>] [-UserPrincipalName <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
@@ -38,11 +38,11 @@ Update-MgUserManagedDeviceSecurityBaselineState -InputObject <IDevicesCorporateM
 Update-MgUserManagedDeviceSecurityBaselineState -InputObject <IDevicesCorporateManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>]
  [-SecurityBaselineTemplateId <String>] [-SettingStates <IMicrosoftGraphSecurityBaselineSettingState[]>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-State <String>] [-UserPrincipalName <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update the navigation property securityBaselineStates in users
+Security baseline states for this device.
 
 ## EXAMPLES
 
@@ -219,6 +219,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -State
+securityBaselineComplianceState
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -UserId
 key: id of user
 
@@ -228,6 +243,21 @@ Parameter Sets: Update, UpdateExpanded
 Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UserPrincipalName
+User Principal Name
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -294,22 +324,35 @@ BODYPARAMETER <IMicrosoftGraphSecurityBaselineState>: Security baseline state fo
   - `[SecurityBaselineTemplateId <String>]`: The security baseline template id
   - `[SettingStates <IMicrosoftGraphSecurityBaselineSettingState[]>]`: The security baseline state for different settings for a device
     - `[Id <String>]`: Read-only.
+    - `[ContributingPolicies <IMicrosoftGraphSecurityBaselineContributingPolicy[]>]`: The policies that contribute to this setting instance
+      - `[DisplayName <String>]`: Name of the policy
+      - `[SourceId <String>]`: Unique identifier of the policy
+      - `[SourceType <String>]`: securityBaselinePolicySourceType
+    - `[ErrorCode <String>]`: The error code if the setting is in error state
     - `[SettingCategoryId <String>]`: The setting category id which this setting belongs to
+    - `[SettingCategoryName <String>]`: The setting category name which this setting belongs to
+    - `[SettingId <String>]`: The setting id guid
     - `[SettingName <String>]`: The setting name that is being reported
+    - `[SourcePolicies <IMicrosoftGraphSettingSource[]>]`: The policies that contribute to this setting instance
+      - `[DisplayName <String>]`: Not yet documented
+      - `[Id <String>]`: Not yet documented
+      - `[SourceType <String>]`: settingSourceType
     - `[State <String>]`: securityBaselineComplianceState
+  - `[State <String>]`: securityBaselineComplianceState
+  - `[UserPrincipalName <String>]`: User Principal Name
 
 INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[AndroidManagedAppProtectionId <String>]`: key: id of androidManagedAppProtection
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest
-  - `[BundleId <String>]`: 
-  - `[Count <Int64?>]`: 
+  - `[AssignmentFilterEvaluationStatusDetailsId <String>]`: key: id of assignmentFilterEvaluationStatusDetails
+  - `[BundleId <String>]`: Usage: bundleId={bundleId}
+  - `[Count <Int64?>]`: Usage: count={count}
   - `[DefaultManagedAppProtectionId <String>]`: key: id of defaultManagedAppProtection
-  - `[DetectedAppId <String>]`: key: id of detectedApp
   - `[DeviceAppManagementTaskId <String>]`: key: id of deviceAppManagementTask
   - `[DeviceCompliancePolicyStateId <String>]`: key: id of deviceCompliancePolicyState
   - `[DeviceConfigurationStateId <String>]`: key: id of deviceConfigurationState
   - `[DeviceEnrollmentConfigurationId <String>]`: key: id of deviceEnrollmentConfiguration
-  - `[DeviceId <String>]`: 
+  - `[DeviceId <String>]`: Usage: deviceId={deviceId}
   - `[DeviceInstallStateId <String>]`: key: id of deviceInstallState
   - `[DeviceLogCollectionResponseId <String>]`: key: id of deviceLogCollectionResponse
   - `[DeviceManagementTroubleshootingEventId <String>]`: key: id of deviceManagementTroubleshootingEvent
@@ -349,14 +392,14 @@ INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[SecurityBaselineSettingStateId <String>]`: key: id of securityBaselineSettingState
   - `[SecurityBaselineStateId <String>]`: key: id of securityBaselineState
   - `[SideLoadingKeyId <String>]`: key: id of sideLoadingKey
-  - `[Status <String>]`: 
+  - `[Status <String>]`: Usage: status={status}
   - `[TargetedManagedAppConfigurationId <String>]`: key: id of targetedManagedAppConfiguration
   - `[TargetedManagedAppPolicyAssignmentId <String>]`: key: id of targetedManagedAppPolicyAssignment
   - `[UserAppInstallStatusId <String>]`: key: id of userAppInstallStatus
   - `[UserId <String>]`: key: id of user
   - `[UserId1 <String>]`: key: id of user
   - `[UserInstallStateSummaryId <String>]`: key: id of userInstallStateSummary
-  - `[UserPrincipalName <String>]`: 
+  - `[UserPrincipalName <String>]`: Usage: userPrincipalName={userPrincipalName}
   - `[VppTokenId <String>]`: key: id of vppToken
   - `[WindowsDefenderApplicationControlSupplementalPolicyAssignmentId <String>]`: key: id of windowsDefenderApplicationControlSupplementalPolicyAssignment
   - `[WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusId <String>]`: key: id of windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus
@@ -368,8 +411,19 @@ INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
 
 SETTINGSTATES <IMicrosoftGraphSecurityBaselineSettingState[]>: The security baseline state for different settings for a device
   - `[Id <String>]`: Read-only.
+  - `[ContributingPolicies <IMicrosoftGraphSecurityBaselineContributingPolicy[]>]`: The policies that contribute to this setting instance
+    - `[DisplayName <String>]`: Name of the policy
+    - `[SourceId <String>]`: Unique identifier of the policy
+    - `[SourceType <String>]`: securityBaselinePolicySourceType
+  - `[ErrorCode <String>]`: The error code if the setting is in error state
   - `[SettingCategoryId <String>]`: The setting category id which this setting belongs to
+  - `[SettingCategoryName <String>]`: The setting category name which this setting belongs to
+  - `[SettingId <String>]`: The setting id guid
   - `[SettingName <String>]`: The setting name that is being reported
+  - `[SourcePolicies <IMicrosoftGraphSettingSource[]>]`: The policies that contribute to this setting instance
+    - `[DisplayName <String>]`: Not yet documented
+    - `[Id <String>]`: Not yet documented
+    - `[SourceType <String>]`: settingSourceType
   - `[State <String>]`: securityBaselineComplianceState
 
 ## RELATED LINKS

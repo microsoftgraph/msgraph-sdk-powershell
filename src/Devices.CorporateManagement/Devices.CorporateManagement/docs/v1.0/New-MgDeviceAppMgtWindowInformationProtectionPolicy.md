@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceAppMgtWindowInformationProtectionPolicy
 
 ## SYNOPSIS
-Create new navigation property to windowsInformationProtectionPolicies for deviceAppManagement
+Windows information protection for apps running on devices which are not MDM enrolled.
 
 ## SYNTAX
 
@@ -50,7 +50,7 @@ New-MgDeviceAppMgtWindowInformationProtectionPolicy
 ```
 
 ## DESCRIPTION
-Create new navigation property to windowsInformationProtectionPolicies for deviceAppManagement
+Windows information protection for apps running on devices which are not MDM enrolled.
 
 ## EXAMPLES
 
@@ -873,7 +873,7 @@ BODYPARAMETER <IMicrosoftGraphWindowsInformationProtectionPolicy1>: Policy for W
   - `[EnterpriseDomain <String>]`: Primary enterprise domain
   - `[EnterpriseIPRanges <IMicrosoftGraphWindowsInformationProtectionIPRangeCollection[]>]`: Sets the enterprise IP ranges that define the computers in the enterprise network. Data that comes from those computers will be considered part of the enterprise and protected. These locations will be considered a safe destination for enterprise data to be shared to
     - `[DisplayName <String>]`: Display name
-    - `[Ranges <IMicrosoftGraphIPRange[]>]`: Collection of Internet protocol address ranges
+    - `[Ranges <IMicrosoftGraphIPRange[]>]`: Collection of ip ranges
   - `[EnterpriseIPRangesAreAuthoritative <Boolean?>]`: Boolean value that tells the client to accept the configured list and not to use heuristics to attempt to find other subnets. Default is false
   - `[EnterpriseInternalProxyServers <IMicrosoftGraphWindowsInformationProtectionResourceCollection[]>]`: This is the comma-separated list of internal proxy servers. For example, '157.54.14.28, 157.54.11.118, 10.202.14.167, 157.53.14.163, 157.69.210.59'. These proxies have been configured by the admin to connect to specific resources on the Internet. They are considered to be enterprise network locations. The proxies are only leveraged in configuring the EnterpriseProxiedDomains policy to force traffic to the matched domains through these proxies
     - `[DisplayName <String>]`: Display name
@@ -941,7 +941,7 @@ ENTERPRISEINTERNALPROXYSERVERS <IMicrosoftGraphWindowsInformationProtectionResou
 
 ENTERPRISEIPRANGES <IMicrosoftGraphWindowsInformationProtectionIPRangeCollection[]>: Sets the enterprise IP ranges that define the computers in the enterprise network. Data that comes from those computers will be considered part of the enterprise and protected. These locations will be considered a safe destination for enterprise data to be shared to
   - `[DisplayName <String>]`: Display name
-  - `[Ranges <IMicrosoftGraphIPRange[]>]`: Collection of Internet protocol address ranges
+  - `[Ranges <IMicrosoftGraphIPRange[]>]`: Collection of ip ranges
 
 ENTERPRISENETWORKDOMAINNAMES <IMicrosoftGraphWindowsInformationProtectionResourceCollection[]>: This is the list of domains that comprise the boundaries of the enterprise. Data from one of these domains that is sent to a device will be considered enterprise data and protected These locations will be considered a safe destination for enterprise data to be shared to
   - `[DisplayName <String>]`: Display name

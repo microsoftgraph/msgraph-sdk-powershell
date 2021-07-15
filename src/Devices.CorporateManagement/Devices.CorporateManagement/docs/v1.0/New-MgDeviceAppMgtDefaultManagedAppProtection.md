@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceAppMgtDefaultManagedAppProtection
 
 ## SYNOPSIS
-Create new navigation property to defaultManagedAppProtections for deviceAppManagement
+Default managed app policies.
 
 ## SYNTAX
 
@@ -36,12 +36,12 @@ New-MgDeviceAppMgtDefaultManagedAppProtection [-AdditionalProperties <Hashtable>
 
 ### Create1
 ```
-New-MgDeviceAppMgtDefaultManagedAppProtection -BodyParameter <IMicrosoftGraphDefaultManagedAppProtection>
+New-MgDeviceAppMgtDefaultManagedAppProtection -BodyParameter <IMicrosoftGraphDefaultManagedAppProtection1>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create new navigation property to defaultManagedAppProtections for deviceAppManagement
+Default managed app policies.
 
 ## EXAMPLES
 
@@ -176,7 +176,7 @@ Policy used to configure detailed management settings for a specified set of app
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDefaultManagedAppProtection
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDefaultManagedAppProtection1
 Parameter Sets: Create1
 Aliases:
 
@@ -817,11 +817,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDefaultManagedAppProtection
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDefaultManagedAppProtection1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDefaultManagedAppProtection
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDefaultManagedAppProtection1
 
 ## NOTES
 
@@ -840,7 +840,7 @@ APPS <IMicrosoftGraphManagedMobileApp[]>: List of apps to which the policy is de
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Version <String>]`: Version of the entity.
 
-BODYPARAMETER <IMicrosoftGraphDefaultManagedAppProtection>: Policy used to configure detailed management settings for a specified set of apps for all users not targeted by a TargetedManagedAppProtection Policy
+BODYPARAMETER <IMicrosoftGraphDefaultManagedAppProtection1>: Policy used to configure detailed management settings for a specified set of apps for all users not targeted by a TargetedManagedAppProtection Policy
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[AllowedDataStorageLocations <String[]>]`: Data storage locations where a user may store managed data.
   - `[AllowedInboundDataTransferSources <String>]`: managedAppDataTransferLevel
@@ -882,8 +882,8 @@ BODYPARAMETER <IMicrosoftGraphDefaultManagedAppProtection>: Policy used to confi
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Version <String>]`: Version of the entity.
   - `[CustomSettings <IMicrosoftGraphKeyValuePair[]>]`: A set of string key and string value pairs to be sent to the affected users, unalterned by this service
-    - `[Name <String>]`: Name for this key-value pair
-    - `[Value <String>]`: Value for this key-value pair
+    - `[Name <String>]`: Name for this key-value pair. Possible names are: AdditionalWSFedEndpointCheckResult,  AllowedAuthenticationClassReferencesCheckResult, AlwaysRequireAuthenticationCheckResult,   AutoUpdateEnabledCheckResult, ClaimsProviderNameCheckResult, EncryptClaimsCheckResult,  EncryptedNameIdRequiredCheckResult, MonitoringEnabledCheckResult,NotBeforeSkewCheckResult,  RequestMFAFromClaimsProvidersCheckResult, SignedSamlRequestsRequiredCheckResult, AdditionalAuthenticationRulesCheckResult, TokenLifetimeCheckResult,  DelegationAuthorizationRulesCheckResult, IssuanceAuthorizationRulesCheckResult, IssuanceTransformRulesCheckResult.
+    - `[Value <String>]`: Value for this key-value pair. Possible result values are 0 (when the validation check passed), 1 (when the validation check failed), or 2 (when the validation check is a warning).
   - `[DeployedAppCount <Int32?>]`: Count of apps to which the current policy is deployed.
   - `[DeploymentSummary <IMicrosoftGraphManagedAppPolicyDeploymentSummary>]`: The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -904,8 +904,8 @@ BODYPARAMETER <IMicrosoftGraphDefaultManagedAppProtection>: Policy used to confi
   - `[ScreenCaptureBlocked <Boolean?>]`: Indicates whether screen capture is blocked. (Android only)
 
 CUSTOMSETTINGS <IMicrosoftGraphKeyValuePair[]>: A set of string key and string value pairs to be sent to the affected users, unalterned by this service
-  - `[Name <String>]`: Name for this key-value pair
-  - `[Value <String>]`: Value for this key-value pair
+  - `[Name <String>]`: Name for this key-value pair. Possible names are: AdditionalWSFedEndpointCheckResult,  AllowedAuthenticationClassReferencesCheckResult, AlwaysRequireAuthenticationCheckResult,   AutoUpdateEnabledCheckResult, ClaimsProviderNameCheckResult, EncryptClaimsCheckResult,  EncryptedNameIdRequiredCheckResult, MonitoringEnabledCheckResult,NotBeforeSkewCheckResult,  RequestMFAFromClaimsProvidersCheckResult, SignedSamlRequestsRequiredCheckResult, AdditionalAuthenticationRulesCheckResult, TokenLifetimeCheckResult,  DelegationAuthorizationRulesCheckResult, IssuanceAuthorizationRulesCheckResult, IssuanceTransformRulesCheckResult.
+  - `[Value <String>]`: Value for this key-value pair. Possible result values are 0 (when the validation check passed), 1 (when the validation check failed), or 2 (when the validation check is a warning).
 
 DEPLOYMENTSUMMARY <IMicrosoftGraphManagedAppPolicyDeploymentSummary>: The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.

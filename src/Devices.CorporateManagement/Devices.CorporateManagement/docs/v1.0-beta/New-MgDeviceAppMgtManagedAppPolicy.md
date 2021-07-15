@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceAppMgtManagedAppPolicy
 
 ## SYNOPSIS
-Create new navigation property to managedAppPolicies for deviceAppManagement
+Managed app policies.
 
 ## SYNTAX
 
@@ -21,12 +21,12 @@ New-MgDeviceAppMgtManagedAppPolicy [-AdditionalProperties <Hashtable>] [-Created
 
 ### Create1
 ```
-New-MgDeviceAppMgtManagedAppPolicy -BodyParameter <IMicrosoftGraphManagedAppPolicy1> [-Confirm] [-WhatIf]
+New-MgDeviceAppMgtManagedAppPolicy -BodyParameter <IMicrosoftGraphManagedAppPolicy> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create new navigation property to managedAppPolicies for deviceAppManagement
+Managed app policies.
 
 ## EXAMPLES
 
@@ -70,7 +70,7 @@ The ManagedAppPolicy resource represents a base type for platform specific polic
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppPolicy1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppPolicy
 Parameter Sets: Create1
 Aliases:
 
@@ -222,11 +222,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppPolicy1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppPolicy
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppPolicy1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppPolicy
 
 ## NOTES
 
@@ -239,7 +239,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphManagedAppPolicy1>: The ManagedAppPolicy resource represents a base type for platform specific policies.
+BODYPARAMETER <IMicrosoftGraphManagedAppPolicy>: The ManagedAppPolicy resource represents a base type for platform specific policies.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
   - `[CreatedDateTime <DateTime?>]`: The date and time the policy was created.
