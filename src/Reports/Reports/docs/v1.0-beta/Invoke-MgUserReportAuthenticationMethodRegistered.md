@@ -1,0 +1,168 @@
+---
+external help file:
+Module Name: Microsoft.Graph.Reports
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports/invoke-mguserreportauthenticationmethodregistered
+schema: 2.0.0
+---
+
+# Invoke-MgUserReportAuthenticationMethodRegistered
+
+## SYNOPSIS
+Invoke function usersRegisteredByFeature
+
+## SYNTAX
+
+### Users (Default)
+```
+Invoke-MgUserReportAuthenticationMethodRegistered [<CommonParameters>]
+```
+
+### Users1
+```
+Invoke-MgUserReportAuthenticationMethodRegistered -IncludedUserRoles <String> -IncludedUserTypes <String>
+ [<CommonParameters>]
+```
+
+### Users2
+```
+Invoke-MgUserReportAuthenticationMethodRegistered [<CommonParameters>]
+```
+
+### Users3
+```
+Invoke-MgUserReportAuthenticationMethodRegistered -IncludedUserRoles <String> -IncludedUserTypes <String>
+ [<CommonParameters>]
+```
+
+### UsersViaIdentity
+```
+Invoke-MgUserReportAuthenticationMethodRegistered -InputObject <IReportsIdentity> [<CommonParameters>]
+```
+
+### UsersViaIdentity1
+```
+Invoke-MgUserReportAuthenticationMethodRegistered -InputObject <IReportsIdentity> [<CommonParameters>]
+```
+
+## DESCRIPTION
+Invoke function usersRegisteredByFeature
+
+## EXAMPLES
+
+### Example 1: {{ Add title here }}
+```powershell
+PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+```
+
+{{ Add description here }}
+
+### Example 2: {{ Add title here }}
+```powershell
+PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+```
+
+{{ Add description here }}
+
+## PARAMETERS
+
+### -IncludedUserRoles
+Usage: includedUserRoles={includedUserRoles}
+
+```yaml
+Type: System.String
+Parameter Sets: Users1, Users3
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IncludedUserTypes
+Usage: includedUserTypes={includedUserTypes}
+
+```yaml
+Type: System.String
+Parameter Sets: Users1, Users3
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -InputObject
+Identity Parameter
+To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IReportsIdentity
+Parameter Sets: UsersViaIdentity, UsersViaIdentity1
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+### Microsoft.Graph.PowerShell.Models.IReportsIdentity
+
+## OUTPUTS
+
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserRegistrationFeatureSummary
+
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserRegistrationMethodSummary
+
+## NOTES
+
+ALIASES
+
+COMPLEX PARAMETER PROPERTIES
+
+To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
+
+
+INPUTOBJECT <IReportsIdentity>: Identity Parameter
+  - `[ApplicationSignInDetailedSummaryId <String>]`: key: id of applicationSignInDetailedSummary
+  - `[CredentialUserRegistrationDetailsId <String>]`: key: id of credentialUserRegistrationDetails
+  - `[Date <DateTime?>]`: Usage: date={date}
+  - `[DeviceManagementCachedReportConfigurationId <String>]`: key: id of deviceManagementCachedReportConfiguration
+  - `[DeviceManagementExportJobId <String>]`: key: id of deviceManagementExportJob
+  - `[DeviceManagementReportScheduleId <String>]`: key: id of deviceManagementReportSchedule
+  - `[DirectoryAuditId <String>]`: key: id of directoryAudit
+  - `[EndDateTime <DateTime?>]`: Usage: endDateTime={endDateTime}
+  - `[Filter <String>]`: Usage: filter={filter}
+  - `[GroupId <String>]`: Usage: groupId={groupId}
+  - `[IncludedUserRoles <String>]`: Usage: includedUserRoles={includedUserRoles}
+  - `[IncludedUserTypes <String>]`: Usage: includedUserTypes={includedUserTypes}
+  - `[Period <String>]`: Usage: period={period}
+  - `[PrintUsageByPrinterId <String>]`: key: id of printUsageByPrinter
+  - `[PrintUsageByUserId <String>]`: key: id of printUsageByUser
+  - `[PrinterId <String>]`: Usage: printerId={printerId}
+  - `[ProvisioningObjectSummaryId <String>]`: key: id of provisioningObjectSummary
+  - `[RestrictedSignInId <String>]`: key: id of restrictedSignIn
+  - `[SignInId <String>]`: key: id of signIn
+  - `[Skip <Int32?>]`: Usage: skip={skip}
+  - `[SkipToken <String>]`: Usage: skipToken={skipToken}
+  - `[StartDateTime <DateTime?>]`: Usage: startDateTime={startDateTime}
+  - `[Top <Int32?>]`: Usage: top={top}
+  - `[UserCredentialUsageDetailsId <String>]`: key: id of userCredentialUsageDetails
+  - `[UserId <String>]`: Usage: userId={userId}
+
+## RELATED LINKS
+

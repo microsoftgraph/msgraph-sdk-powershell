@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgReportManagedDeviceEnrollmentFailureTrend
 
 ## SYNOPSIS
-Invoke function managedDeviceEnrollmentFailureTrends
+Metadata for the enrollment failure trends report
 
 ## SYNTAX
 
@@ -17,7 +17,7 @@ Get-MgReportManagedDeviceEnrollmentFailureTrend -OutFile <String> [-PassThru] [<
 ```
 
 ## DESCRIPTION
-Invoke function managedDeviceEnrollmentFailureTrends
+Metadata for the enrollment failure trends report
 
 ## EXAMPLES
 
