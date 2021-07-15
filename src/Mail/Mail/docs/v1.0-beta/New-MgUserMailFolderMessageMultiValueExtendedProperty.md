@@ -8,7 +8,8 @@ schema: 2.0.0
 # New-MgUserMailFolderMessageMultiValueExtendedProperty
 
 ## SYNOPSIS
-Create new navigation property to multiValueExtendedProperties for users
+The collection of multi-value extended properties defined for the message.
+Nullable.
 
 ## SYNTAX
 
@@ -40,7 +41,8 @@ New-MgUserMailFolderMessageMultiValueExtendedProperty -InputObject <IMailIdentit
 ```
 
 ## DESCRIPTION
-Create new navigation property to multiValueExtendedProperties for users
+The collection of multi-value extended properties defined for the message.
+Nullable.
 
 ## EXAMPLES
 

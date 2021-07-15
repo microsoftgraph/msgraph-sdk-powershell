@@ -8,7 +8,8 @@ schema: 2.0.0
 # New-MgUserMailFolderMessageExtension
 
 ## SYNOPSIS
-Create new navigation property to extensions for users
+The collection of open extensions defined for the message.
+Nullable.
 
 ## SYNTAX
 
@@ -37,7 +38,8 @@ New-MgUserMailFolderMessageExtension -InputObject <IMailIdentity> [-AdditionalPr
 ```
 
 ## DESCRIPTION
-Create new navigation property to extensions for users
+The collection of open extensions defined for the message.
+Nullable.
 
 ## EXAMPLES
 

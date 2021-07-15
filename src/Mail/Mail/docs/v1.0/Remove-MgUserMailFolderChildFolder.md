@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgUserMailFolderChildFolder
 
 ## SYNOPSIS
-Delete navigation property childFolders for users
+The collection of child folders in the mailFolder.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgUserMailFolderChildFolder -InputObject <IMailIdentity> [-IfMatch <Strin
 ```
 
 ## DESCRIPTION
-Delete navigation property childFolders for users
+The collection of child folders in the mailFolder.
 
 ## EXAMPLES
 

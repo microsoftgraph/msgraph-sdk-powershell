@@ -8,7 +8,8 @@ schema: 2.0.0
 # Remove-MgUserMailFolderMessageSingleValueExtendedProperty
 
 ## SYNOPSIS
-Delete navigation property singleValueExtendedProperties for users
+The collection of single-value extended properties defined for the message.
+Nullable.
 
 ## SYNTAX
 
@@ -26,7 +27,8 @@ Remove-MgUserMailFolderMessageSingleValueExtendedProperty -InputObject <IMailIde
 ```
 
 ## DESCRIPTION
-Delete navigation property singleValueExtendedProperties for users
+The collection of single-value extended properties defined for the message.
+Nullable.
 
 ## EXAMPLES
 

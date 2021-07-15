@@ -8,7 +8,9 @@ schema: 2.0.0
 # Update-MgUserMailFolderSingleValueExtendedProperty
 
 ## SYNOPSIS
-Update the navigation property singleValueExtendedProperties in users
+The collection of single-value extended properties defined for the mailFolder.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -42,7 +44,9 @@ Update-MgUserMailFolderSingleValueExtendedProperty -InputObject <IMailIdentity>
 ```
 
 ## DESCRIPTION
-Update the navigation property singleValueExtendedProperties in users
+The collection of single-value extended properties defined for the mailFolder.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

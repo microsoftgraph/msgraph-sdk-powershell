@@ -8,7 +8,8 @@ schema: 2.0.0
 # Remove-MgUserMailFolderMessageExtension
 
 ## SYNOPSIS
-Delete navigation property extensions for users
+The collection of open extensions defined for the message.
+Nullable.
 
 ## SYNTAX
 
@@ -25,7 +26,8 @@ Remove-MgUserMailFolderMessageExtension -InputObject <IMailIdentity> [-IfMatch <
 ```
 
 ## DESCRIPTION
-Delete navigation property extensions for users
+The collection of open extensions defined for the message.
+Nullable.
 
 ## EXAMPLES
 

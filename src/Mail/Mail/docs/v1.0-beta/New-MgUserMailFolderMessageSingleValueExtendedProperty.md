@@ -8,7 +8,8 @@ schema: 2.0.0
 # New-MgUserMailFolderMessageSingleValueExtendedProperty
 
 ## SYNOPSIS
-Create new navigation property to singleValueExtendedProperties for users
+The collection of single-value extended properties defined for the message.
+Nullable.
 
 ## SYNTAX
 
@@ -40,7 +41,8 @@ New-MgUserMailFolderMessageSingleValueExtendedProperty -InputObject <IMailIdenti
 ```
 
 ## DESCRIPTION
-Create new navigation property to singleValueExtendedProperties for users
+The collection of single-value extended properties defined for the message.
+Nullable.
 
 ## EXAMPLES
 

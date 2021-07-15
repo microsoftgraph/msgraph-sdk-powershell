@@ -8,7 +8,8 @@ schema: 2.0.0
 # Update-MgUserMailFolderMessageMultiValueExtendedProperty
 
 ## SYNOPSIS
-Update the navigation property multiValueExtendedProperties in users
+The collection of multi-value extended properties defined for the message.
+Nullable.
 
 ## SYNTAX
 
@@ -42,7 +43,8 @@ Update-MgUserMailFolderMessageMultiValueExtendedProperty -InputObject <IMailIden
 ```
 
 ## DESCRIPTION
-Update the navigation property multiValueExtendedProperties in users
+The collection of multi-value extended properties defined for the message.
+Nullable.
 
 ## EXAMPLES
 

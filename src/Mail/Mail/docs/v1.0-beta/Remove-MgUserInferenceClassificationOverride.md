@@ -8,7 +8,9 @@ schema: 2.0.0
 # Remove-MgUserInferenceClassificationOverride
 
 ## SYNOPSIS
-Delete navigation property overrides for users
+A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -25,7 +27,9 @@ Remove-MgUserInferenceClassificationOverride -InputObject <IMailIdentity> [-IfMa
 ```
 
 ## DESCRIPTION
-Delete navigation property overrides for users
+A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 
