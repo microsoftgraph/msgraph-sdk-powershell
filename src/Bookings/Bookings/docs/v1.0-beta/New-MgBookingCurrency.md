@@ -96,7 +96,8 @@ Accept wildcard characters: False
 ```
 
 ### -Symbol
-.
+The currency symbol.
+For example, the currency symbol for the US dollar and for the Australian dollar is $.
 
 ```yaml
 Type: System.String
@@ -164,7 +165,7 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphBookingCurrency>: bookingCurrency
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
-  - `[Symbol <String>]`: 
+  - `[Symbol <String>]`: The currency symbol. For example, the currency symbol for the US dollar and for the Australian dollar is $.
 
 ## RELATED LINKS
 

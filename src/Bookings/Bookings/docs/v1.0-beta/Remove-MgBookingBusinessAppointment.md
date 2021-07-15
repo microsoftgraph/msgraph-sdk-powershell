@@ -8,7 +8,9 @@ schema: 2.0.0
 # Remove-MgBookingBusinessAppointment
 
 ## SYNOPSIS
-Delete navigation property appointments for bookingBusinesses
+All the appointments of this business.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -25,7 +27,9 @@ Remove-MgBookingBusinessAppointment -InputObject <IBookingsIdentity> [-IfMatch <
 ```
 
 ## DESCRIPTION
-Delete navigation property appointments for bookingBusinesses
+All the appointments of this business.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

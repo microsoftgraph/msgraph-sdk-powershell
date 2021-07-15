@@ -8,7 +8,7 @@ schema: 2.0.0
 # Stop-MgBookingBusinessAppointment
 
 ## SYNOPSIS
-Invoke action cancel
+Cancels the giving booking appointment, sending a message to the involved parties.
 
 ## SYNTAX
 
@@ -40,7 +40,7 @@ Stop-MgBookingBusinessAppointment -InputObject <IBookingsIdentity> [-AdditionalP
 ```
 
 ## DESCRIPTION
-Invoke action cancel
+Cancels the giving booking appointment, sending a message to the involved parties.
 
 ## EXAMPLES
 

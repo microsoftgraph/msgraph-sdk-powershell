@@ -8,15 +8,17 @@ schema: 2.0.0
 # Get-MgBookingBusinessCalendarView
 
 ## SYNOPSIS
-Get calendarView from bookingBusinesses
+The set of appointments of this business in a specified date range.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
 ### List (Default)
 ```
-Get-MgBookingBusinessCalendarView -BookingBusinessId <String> -End <String> -Start <String> [-Count]
+Get-MgBookingBusinessCalendarView -BookingBusinessId <String> -End <String> -Start <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
- [-Sort <String[]>] [-Top <Int32>] [-All] [-PageSize <Int32>] [<CommonParameters>]
+ [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
@@ -32,7 +34,9 @@ Get-MgBookingBusinessCalendarView -InputObject <IBookingsIdentity> -End <String>
 ```
 
 ## DESCRIPTION
-Get calendarView from bookingBusinesses
+The set of appointments of this business in a specified date range.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 
@@ -101,13 +105,14 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Count
-Include count of items
+### -CountVariable
+Specifies a count of the total number of items in a collection.
+By default, this variable will be set in the global scope.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: System.String
 Parameter Sets: List
-Aliases:
+Aliases: CV
 
 Required: False
 Position: Named

@@ -8,7 +8,9 @@ schema: 2.0.0
 # Remove-MgBookingBusinessService
 
 ## SYNOPSIS
-Delete navigation property services for bookingBusinesses
+All the services offered by this business.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -25,7 +27,9 @@ Remove-MgBookingBusinessService -InputObject <IBookingsIdentity> [-IfMatch <Stri
 ```
 
 ## DESCRIPTION
-Delete navigation property services for bookingBusinesses
+All the services offered by this business.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

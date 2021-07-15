@@ -8,7 +8,9 @@ schema: 2.0.0
 # New-MgBookingBusinessCustomer
 
 ## SYNOPSIS
-Create new navigation property to customers for bookingBusinesses
+All the customers of this business.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -37,7 +39,9 @@ New-MgBookingBusinessCustomer -InputObject <IBookingsIdentity> [-AdditionalPrope
 ```
 
 ## DESCRIPTION
-Create new navigation property to customers for bookingBusinesses
+All the customers of this business.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 
@@ -107,7 +111,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-Display name of this entity.
+A name for the derived entity, which interfaces with customers.
 
 ```yaml
 Type: System.String
@@ -122,7 +126,7 @@ Accept wildcard characters: False
 ```
 
 ### -EmailAddress
-The e-mail address of this person.
+The email address of the person.
 
 ```yaml
 Type: System.String

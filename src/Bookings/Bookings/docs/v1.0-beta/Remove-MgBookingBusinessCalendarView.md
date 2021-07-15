@@ -8,7 +8,9 @@ schema: 2.0.0
 # Remove-MgBookingBusinessCalendarView
 
 ## SYNOPSIS
-Delete navigation property calendarView for bookingBusinesses
+The set of appointments of this business in a specified date range.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -25,7 +27,9 @@ Remove-MgBookingBusinessCalendarView -InputObject <IBookingsIdentity> [-IfMatch 
 ```
 
 ## DESCRIPTION
-Delete navigation property calendarView for bookingBusinesses
+The set of appointments of this business in a specified date range.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 
