@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceCommand
 
 ## SYNOPSIS
-Create new navigation property to commands for devices
+Set of commands sent to this device.
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ New-MgDeviceCommand -InputObject <IIdentityDirectoryManagementIdentity> [-Additi
 ```
 
 ## DESCRIPTION
-Create new navigation property to commands for devices
+Set of commands sent to this device.
 
 ## EXAMPLES
 
@@ -188,7 +188,7 @@ Accept wildcard characters: False
 ```
 
 ### -Payload
-PayloadRequest
+payloadRequest
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -336,7 +336,7 @@ BODYPARAMETER <IMicrosoftGraphCommand>: command
   - `[AppServiceName <String>]`: 
   - `[Error <String>]`: 
   - `[PackageFamilyName <String>]`: 
-  - `[Payload <IMicrosoftGraphPayloadRequest>]`: PayloadRequest
+  - `[Payload <IMicrosoftGraphPayloadRequest>]`: payloadRequest
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[PermissionTicket <String>]`: 
   - `[PostBackUri <String>]`: 
@@ -362,9 +362,12 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[FeatureRolloutPolicyId <String>]`: key: id of featureRolloutPolicy
   - `[OrgContactId <String>]`: key: id of orgContact
   - `[OrganizationId <String>]`: key: id of organization
-  - `[OrganizationalBrandingId <String>]`: key: id of organizationalBranding
+  - `[ProfileCardPropertyId <String>]`: key: id of profileCardProperty
   - `[ScopedRoleMembershipId <String>]`: key: id of scopedRoleMembership
+  - `[SharedEmailDomainId <String>]`: key: id of sharedEmailDomain
+  - `[SharedEmailDomainInvitationId <String>]`: key: id of sharedEmailDomainInvitation
   - `[SubscribedSkuId <String>]`: key: id of subscribedSku
+  - `[UsageRightId <String>]`: key: id of usageRight
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS

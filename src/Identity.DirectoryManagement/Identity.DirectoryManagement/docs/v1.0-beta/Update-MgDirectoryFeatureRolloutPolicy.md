@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDirectoryFeatureRolloutPolicy
 
 ## SYNOPSIS
-Update the navigation property featureRolloutPolicies in directory
+Nullable.
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ Update-MgDirectoryFeatureRolloutPolicy -InputObject <IIdentityDirectoryManagemen
 ```
 
 ## DESCRIPTION
-Update the navigation property featureRolloutPolicies in directory
+Nullable.
 
 ## EXAMPLES
 
@@ -81,7 +81,8 @@ Accept wildcard characters: False
 ```
 
 ### -AppliesTo
-.
+Nullable.
+Specifies a list of directoryObjects that feature is enabled for.
 To construct, see NOTES section for APPLIESTO properties and create a hash table.
 
 ```yaml
@@ -113,7 +114,7 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-.
+A description for this feature rollout policy.
 
 ```yaml
 Type: System.String
@@ -128,7 +129,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-.
+The display name for this feature rollout policy.
 
 ```yaml
 Type: System.String
@@ -204,7 +205,7 @@ Accept wildcard characters: False
 ```
 
 ### -IsAppliedToOrganization
-.
+Indicates whether this feature rollout policy should be applied to the entire organization.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -219,7 +220,7 @@ Accept wildcard characters: False
 ```
 
 ### -IsEnabled
-.
+Indicates whether the feature rollout is enabled.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -301,21 +302,21 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-APPLIESTO <IMicrosoftGraphDirectoryObject[]>: .
+APPLIESTO <IMicrosoftGraphDirectoryObject[]>: Nullable. Specifies a list of directoryObjects that feature is enabled for.
   - `[Id <String>]`: Read-only.
   - `[DeletedDateTime <DateTime?>]`: 
 
 BODYPARAMETER <IMicrosoftGraphFeatureRolloutPolicy>: featureRolloutPolicy
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
-  - `[AppliesTo <IMicrosoftGraphDirectoryObject[]>]`: 
+  - `[AppliesTo <IMicrosoftGraphDirectoryObject[]>]`: Nullable. Specifies a list of directoryObjects that feature is enabled for.
     - `[Id <String>]`: Read-only.
     - `[DeletedDateTime <DateTime?>]`: 
-  - `[Description <String>]`: 
-  - `[DisplayName <String>]`: 
+  - `[Description <String>]`: A description for this feature rollout policy.
+  - `[DisplayName <String>]`: The display name for this  feature rollout policy.
   - `[Feature <String>]`: stagedFeatureName
-  - `[IsAppliedToOrganization <Boolean?>]`: 
-  - `[IsEnabled <Boolean?>]`: 
+  - `[IsAppliedToOrganization <Boolean?>]`: Indicates whether this feature rollout policy should be applied to the entire organization.
+  - `[IsEnabled <Boolean?>]`: Indicates whether the feature rollout is enabled.
 
 INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[AdministrativeUnitId <String>]`: key: id of administrativeUnit
@@ -333,9 +334,12 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[FeatureRolloutPolicyId <String>]`: key: id of featureRolloutPolicy
   - `[OrgContactId <String>]`: key: id of orgContact
   - `[OrganizationId <String>]`: key: id of organization
-  - `[OrganizationalBrandingId <String>]`: key: id of organizationalBranding
+  - `[ProfileCardPropertyId <String>]`: key: id of profileCardProperty
   - `[ScopedRoleMembershipId <String>]`: key: id of scopedRoleMembership
+  - `[SharedEmailDomainId <String>]`: key: id of sharedEmailDomain
+  - `[SharedEmailDomainInvitationId <String>]`: key: id of sharedEmailDomainInvitation
   - `[SubscribedSkuId <String>]`: key: id of subscribedSku
+  - `[UsageRightId <String>]`: key: id of usageRight
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS

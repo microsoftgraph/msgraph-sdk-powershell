@@ -8,7 +8,9 @@ schema: 2.0.0
 # New-MgDirectoryDeletedItem
 
 ## SYNOPSIS
-Create new navigation property to deletedItems for directory
+Recently deleted items.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -25,7 +27,9 @@ New-MgDirectoryDeletedItem -BodyParameter <IMicrosoftGraphDirectoryObject> [-Con
 ```
 
 ## DESCRIPTION
-Create new navigation property to deletedItems for directory
+Recently deleted items.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

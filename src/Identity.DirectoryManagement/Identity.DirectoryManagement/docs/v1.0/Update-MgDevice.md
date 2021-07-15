@@ -8,7 +8,8 @@ schema: 2.0.0
 # Update-MgDevice
 
 ## SYNOPSIS
-Update entity in devices
+Represents an Azure Active Directory object.
+The directoryObject type is the base type for many other directory entity types.
 
 ## SYNTAX
 
@@ -55,7 +56,8 @@ Update-MgDevice -InputObject <IIdentityDirectoryManagementIdentity> [-DeviceId <
 ```
 
 ## DESCRIPTION
-Update entity in devices
+Represents an Azure Active Directory object.
+The directoryObject type is the base type for many other directory entity types.
 
 ## EXAMPLES
 
@@ -81,7 +83,7 @@ PS C:\> {{ Add code here }}
 
 ### -AccountEnabled
 true if the account is enabled; otherwise, false.
-Required.
+default is true.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -129,7 +131,7 @@ Accept wildcard characters: False
 
 ### -ApproximateLastSignInDateTime
 The timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
-For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 Read-only.
 
 ```yaml
@@ -164,7 +166,7 @@ Accept wildcard characters: False
 ### -ComplianceExpirationDateTime
 The timestamp when the device is no longer deemed compliant.
 The timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
-For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 Read-only.
 
 ```yaml
@@ -210,7 +212,7 @@ Accept wildcard characters: False
 ```
 
 ### -DeviceId1
-Unique identifier set by Azure Device Registration Service at the time of registration.
+Identifier set by Azure Device Registration Service at the time of registration.
 
 ```yaml
 Type: System.String
@@ -225,7 +227,7 @@ Accept wildcard characters: False
 ```
 
 ### -DeviceMetadata
-For interal use only.
+For internal use only.
 Set to null.
 
 ```yaml
@@ -241,7 +243,7 @@ Accept wildcard characters: False
 ```
 
 ### -DeviceVersion
-For interal use only.
+For internal use only.
 
 ```yaml
 Type: System.Int32
@@ -371,8 +373,7 @@ Accept wildcard characters: False
 ```
 
 ### -MemberOf
-Groups that this group is a member of.
-HTTP Methods: GET (supported for all groups).
+Groups that this device is a member of.
 Read-only.
 Nullable.
 To construct, see NOTES section for MEMBEROF properties and create a hash table.
@@ -390,8 +391,9 @@ Accept wildcard characters: False
 ```
 
 ### -OnPremisesLastSyncDateTime
-The last time at which the object was synced with the on-premises directory.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
-For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z' Read-only.
+The last time at which the object was synced with the on-premises directory.
+The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Read-only.
 
 ```yaml
 Type: System.DateTime
@@ -438,7 +440,7 @@ Accept wildcard characters: False
 ```
 
 ### -OperatingSystemVersion
-The version of the operating system on the device.
+Operating system version of the device.
 Required.
 
 ```yaml
@@ -469,7 +471,7 @@ Accept wildcard characters: False
 ```
 
 ### -PhysicalIds
-For interal use only.
+For internal use only.
 Not nullable.
 
 ```yaml
@@ -486,7 +488,7 @@ Accept wildcard characters: False
 
 ### -ProfileType
 The profile type of the device.
-Possible values:RegisteredDevice (default)SecureVMPrinterSharedIoT
+Possible values: RegisteredDevice (default), SecureVM, Printer, Shared, IoT.
 
 ```yaml
 Type: System.String
@@ -555,7 +557,8 @@ Accept wildcard characters: False
 ```
 
 ### -TransitiveMemberOf
-.
+Groups that this device is a member of.
+This operation is transitive.
 To construct, see NOTES section for TRANSITIVEMEMBEROF properties and create a hash table.
 
 ```yaml
@@ -573,7 +576,7 @@ Accept wildcard characters: False
 ### -TrustType
 Type of trust for the joined device.
 Read-only.
-Possible values: Workplace - indicates bring your own personal devicesAzureAd - Cloud only joined devicesServerAd - on-premises domain joined devices joined to Azure AD.
+Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD).
 For more details, see Introduction to device management in Azure Active Directory
 
 ```yaml
@@ -650,36 +653,36 @@ BODYPARAMETER <IMicrosoftGraphDevice>: Represents an Azure Active Directory obje
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[DeletedDateTime <DateTime?>]`: 
   - `[Id <String>]`: Read-only.
-  - `[AccountEnabled <Boolean?>]`: true if the account is enabled; otherwise, false. Required.
+  - `[AccountEnabled <Boolean?>]`: true if the account is enabled; otherwise, false. default is true.
   - `[AlternativeSecurityIds <IMicrosoftGraphAlternativeSecurityId[]>]`: For internal use only. Not nullable.
     - `[IdentityProvider <String>]`: For internal use only
     - `[Key <Byte[]>]`: For internal use only
     - `[Type <Int32?>]`: For internal use only
-  - `[ApproximateLastSignInDateTime <DateTime?>]`: The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Read-only.
-  - `[ComplianceExpirationDateTime <DateTime?>]`: The timestamp when the device is no longer deemed compliant. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Read-only.
-  - `[DeviceId <String>]`: Unique identifier set by Azure Device Registration Service at the time of registration.
-  - `[DeviceMetadata <String>]`: For interal use only. Set to null.
-  - `[DeviceVersion <Int32?>]`: For interal use only.
+  - `[ApproximateLastSignInDateTime <DateTime?>]`: The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+  - `[ComplianceExpirationDateTime <DateTime?>]`: The timestamp when the device is no longer deemed compliant. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+  - `[DeviceId <String>]`: Identifier set by Azure Device Registration Service at the time of registration.
+  - `[DeviceMetadata <String>]`: For internal use only. Set to null.
+  - `[DeviceVersion <Int32?>]`: For internal use only.
   - `[DisplayName <String>]`: The display name for the device. Required.
   - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the device. Read-only. Nullable.
     - `[Id <String>]`: Read-only.
   - `[IsCompliant <Boolean?>]`: true if the device complies with Mobile Device Management (MDM) policies; otherwise, false. Read-only. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices.
   - `[IsManaged <Boolean?>]`: true if the device is managed by a Mobile Device Management (MDM) app; otherwise, false. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices.
   - `[MdmAppId <String>]`: Application identifier used to register device into MDM. Read-only. Supports $filter.
-  - `[MemberOf <IMicrosoftGraphDirectoryObject[]>]`: Groups that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable.
+  - `[MemberOf <IMicrosoftGraphDirectoryObject[]>]`: Groups that this device is a member of. Read-only. Nullable.
     - `[Id <String>]`: Read-only.
     - `[DeletedDateTime <DateTime?>]`: 
-  - `[OnPremisesLastSyncDateTime <DateTime?>]`: The last time at which the object was synced with the on-premises directory.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z' Read-only.
+  - `[OnPremisesLastSyncDateTime <DateTime?>]`: The last time at which the object was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Read-only.
   - `[OnPremisesSyncEnabled <Boolean?>]`: true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only.
   - `[OperatingSystem <String>]`: The type of operating system on the device. Required.
-  - `[OperatingSystemVersion <String>]`: The version of the operating system on the device. Required.
-  - `[PhysicalIds <String[]>]`: For interal use only. Not nullable.
-  - `[ProfileType <String>]`: The profile type of the device. Possible values:RegisteredDevice (default)SecureVMPrinterSharedIoT
+  - `[OperatingSystemVersion <String>]`: Operating system version of the device. Required.
+  - `[PhysicalIds <String[]>]`: For internal use only. Not nullable.
+  - `[ProfileType <String>]`: The profile type of the device. Possible values: RegisteredDevice (default), SecureVM, Printer, Shared, IoT.
   - `[RegisteredOwners <IMicrosoftGraphDirectoryObject[]>]`: The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable.
   - `[RegisteredUsers <IMicrosoftGraphDirectoryObject[]>]`: Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable.
   - `[SystemLabels <String[]>]`: List of labels applied to the device by the system.
-  - `[TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]`: 
-  - `[TrustType <String>]`: Type of trust for the joined device. Read-only. Possible values: Workplace - indicates bring your own personal devicesAzureAd - Cloud only joined devicesServerAd - on-premises domain joined devices joined to Azure AD. For more details, see Introduction to device management in Azure Active Directory
+  - `[TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]`: Groups that this device is a member of. This operation is transitive.
+  - `[TrustType <String>]`: Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory
 
 EXTENSIONS <IMicrosoftGraphExtension[]>: The collection of open extensions defined for the device. Read-only. Nullable.
   - `[Id <String>]`: Read-only.
@@ -700,12 +703,15 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[FeatureRolloutPolicyId <String>]`: key: id of featureRolloutPolicy
   - `[OrgContactId <String>]`: key: id of orgContact
   - `[OrganizationId <String>]`: key: id of organization
-  - `[OrganizationalBrandingId <String>]`: key: id of organizationalBranding
+  - `[ProfileCardPropertyId <String>]`: key: id of profileCardProperty
   - `[ScopedRoleMembershipId <String>]`: key: id of scopedRoleMembership
+  - `[SharedEmailDomainId <String>]`: key: id of sharedEmailDomain
+  - `[SharedEmailDomainInvitationId <String>]`: key: id of sharedEmailDomainInvitation
   - `[SubscribedSkuId <String>]`: key: id of subscribedSku
+  - `[UsageRightId <String>]`: key: id of usageRight
   - `[UserId <String>]`: key: id of user
 
-MEMBEROF <IMicrosoftGraphDirectoryObject[]>: Groups that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable.
+MEMBEROF <IMicrosoftGraphDirectoryObject[]>: Groups that this device is a member of. Read-only. Nullable.
   - `[Id <String>]`: Read-only.
   - `[DeletedDateTime <DateTime?>]`: 
 
@@ -717,7 +723,7 @@ REGISTEREDUSERS <IMicrosoftGraphDirectoryObject[]>: Collection of registered use
   - `[Id <String>]`: Read-only.
   - `[DeletedDateTime <DateTime?>]`: 
 
-TRANSITIVEMEMBEROF <IMicrosoftGraphDirectoryObject[]>: .
+TRANSITIVEMEMBEROF <IMicrosoftGraphDirectoryObject[]>: Groups that this device is a member of. This operation is transitive.
   - `[Id <String>]`: Read-only.
   - `[DeletedDateTime <DateTime?>]`: 
 

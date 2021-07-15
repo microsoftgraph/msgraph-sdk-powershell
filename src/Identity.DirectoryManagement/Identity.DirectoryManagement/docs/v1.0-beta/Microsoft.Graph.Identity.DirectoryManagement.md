@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.DirectoryManagement
-Module Guid: 6337ab02-706b-4234-903e-0e869d211f59
+Module Guid: fb1c3260-ddce-4b4b-8a9d-fed6c6b10ff2
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -53,6 +53,9 @@ Invoke action checkMemberGroups
 ### [Confirm-MgDirectorySettingTemplateMemberObject](Confirm-MgDirectorySettingTemplateMemberObject.md)
 Invoke action checkMemberObjects
 
+### [Confirm-MgDomain](Confirm-MgDomain.md)
+Invoke action verify
+
 ### [Confirm-MgOrganizationMemberGroup](Confirm-MgOrganizationMemberGroup.md)
 Invoke action checkMemberGroups
 
@@ -60,7 +63,8 @@ Invoke action checkMemberGroups
 Invoke action checkMemberObjects
 
 ### [Get-MgAdministrativeUnit](Get-MgAdministrativeUnit.md)
-Get entity from administrativeUnits by key
+Represents an Azure Active Directory object.
+The directoryObject type is the base type for many other directory entity types.
 
 ### [Get-MgAdministrativeUnitById](Get-MgAdministrativeUnitById.md)
 Invoke action getByIds
@@ -69,13 +73,16 @@ Invoke action getByIds
 Invoke function delta
 
 ### [Get-MgAdministrativeUnitExtension](Get-MgAdministrativeUnitExtension.md)
-Get extensions from administrativeUnits
+The collection of open extensions defined for this Administrative Unit.
+Nullable.
 
 ### [Get-MgAdministrativeUnitMember](Get-MgAdministrativeUnitMember.md)
-Get members from administrativeUnits
+Users and groups that are members of this Adminsitrative Unit.
+HTTP Methods: GET (list members), POST (add members), DELETE (remove members).
 
 ### [Get-MgAdministrativeUnitMemberByRef](Get-MgAdministrativeUnitMemberByRef.md)
-Get ref of members from administrativeUnits
+Users and groups that are members of this Adminsitrative Unit.
+HTTP Methods: GET (list members), POST (add members), DELETE (remove members).
 
 ### [Get-MgAdministrativeUnitMemberGroup](Get-MgAdministrativeUnitMemberGroup.md)
 Invoke action getMemberGroups
@@ -84,13 +91,15 @@ Invoke action getMemberGroups
 Invoke action getMemberObjects
 
 ### [Get-MgAdministrativeUnitScopedRoleMember](Get-MgAdministrativeUnitScopedRoleMember.md)
-Get scopedRoleMembers from administrativeUnits
+Scoped-role members of this Administrative Unit.
+HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).
 
 ### [Get-MgAdministrativeUnitUserOwnedObject](Get-MgAdministrativeUnitUserOwnedObject.md)
 Invoke action getUserOwnedObjects
 
 ### [Get-MgContact](Get-MgContact.md)
-Get entity from contacts by key
+Represents an Azure Active Directory object.
+The directoryObject type is the base type for many other directory entity types.
 
 ### [Get-MgContactById](Get-MgContactById.md)
 Invoke action getByIds
@@ -99,22 +108,22 @@ Invoke action getByIds
 Invoke function delta
 
 ### [Get-MgContactDirectReport](Get-MgContactDirectReport.md)
-Get directReports from contacts
+The contact's direct reports.
+(The users and contacts that have their manager property set to this contact.) Read-only.
+Nullable.
 
 ### [Get-MgContactDirectReportByRef](Get-MgContactDirectReportByRef.md)
-Get ref of directReports from contacts
+The contact's direct reports.
+(The users and contacts that have their manager property set to this contact.) Read-only.
+Nullable.
 
 ### [Get-MgContactManager](Get-MgContactManager.md)
-Get manager from contacts
+The user or contact that is this contact's manager.
+Read-only.
 
 ### [Get-MgContactManagerByRef](Get-MgContactManagerByRef.md)
-Get ref of manager from contacts
-
-### [Get-MgContactMember](Get-MgContactMember.md)
-Get memberOf from contacts
-
-### [Get-MgContactMemberByRef](Get-MgContactMemberByRef.md)
-Get ref of memberOf from contacts
+The user or contact that is this contact's manager.
+Read-only.
 
 ### [Get-MgContactMemberGroup](Get-MgContactMemberGroup.md)
 Invoke action getMemberGroups
@@ -122,17 +131,36 @@ Invoke action getMemberGroups
 ### [Get-MgContactMemberObject](Get-MgContactMemberObject.md)
 Invoke action getMemberObjects
 
-### [Get-MgContactTransitiveMember](Get-MgContactTransitiveMember.md)
+### [Get-MgContactMemberOf](Get-MgContactMemberOf.md)
+Groups that this contact is a member of.
+Read-only.
+Nullable.
+
+### [Get-MgContactMemberOfByRef](Get-MgContactMemberOfByRef.md)
+Groups that this contact is a member of.
+Read-only.
+Nullable.
+
+### [Get-MgContactTransitiveMemberOf](Get-MgContactTransitiveMemberOf.md)
 Get transitiveMemberOf from contacts
 
-### [Get-MgContactTransitiveMemberByRef](Get-MgContactTransitiveMemberByRef.md)
+### [Get-MgContactTransitiveMemberOfByRef](Get-MgContactTransitiveMemberOfByRef.md)
 Get ref of transitiveMemberOf from contacts
+
+### [Get-MgContactTransitiveReport](Get-MgContactTransitiveReport.md)
+The transitive reports for a contact.
+Read-only.
+
+### [Get-MgContactTransitiveReportByRef](Get-MgContactTransitiveReportByRef.md)
+The transitive reports for a contact.
+Read-only.
 
 ### [Get-MgContactUserOwnedObject](Get-MgContactUserOwnedObject.md)
 Invoke action getUserOwnedObjects
 
 ### [Get-MgContract](Get-MgContract.md)
-Get entity from contracts by key
+Represents an Azure Active Directory object.
+The directoryObject type is the base type for many other directory entity types.
 
 ### [Get-MgContractById](Get-MgContractById.md)
 Invoke action getByIds
@@ -153,16 +181,12 @@ Get entities from devices
 Invoke action getByIds
 
 ### [Get-MgDeviceCommand](Get-MgDeviceCommand.md)
-Get commands from devices
+Set of commands sent to this device.
 
 ### [Get-MgDeviceExtension](Get-MgDeviceExtension.md)
-Get extensions from devices
-
-### [Get-MgDeviceMember](Get-MgDeviceMember.md)
-Get memberOf from devices
-
-### [Get-MgDeviceMemberByRef](Get-MgDeviceMemberByRef.md)
-Get ref of memberOf from devices
+The collection of open extensions defined for the device.
+Read-only.
+Nullable.
 
 ### [Get-MgDeviceMemberGroup](Get-MgDeviceMemberGroup.md)
 Invoke action getMemberGroups
@@ -170,23 +194,52 @@ Invoke action getMemberGroups
 ### [Get-MgDeviceMemberObject](Get-MgDeviceMemberObject.md)
 Invoke action getMemberObjects
 
+### [Get-MgDeviceMemberOf](Get-MgDeviceMemberOf.md)
+Groups that this device is a member of.
+Read-only.
+Nullable.
+
+### [Get-MgDeviceMemberOfByRef](Get-MgDeviceMemberOfByRef.md)
+Groups that this device is a member of.
+Read-only.
+Nullable.
+
 ### [Get-MgDeviceRegisteredOwner](Get-MgDeviceRegisteredOwner.md)
-Get registeredOwners from devices
+The user that cloud joined the device or registered their personal device.
+The registered owner is set at the time of registration.
+Currently, there can be only one owner.
+Read-only.
+Nullable.
 
 ### [Get-MgDeviceRegisteredOwnerByRef](Get-MgDeviceRegisteredOwnerByRef.md)
-Get ref of registeredOwners from devices
+The user that cloud joined the device or registered their personal device.
+The registered owner is set at the time of registration.
+Currently, there can be only one owner.
+Read-only.
+Nullable.
 
 ### [Get-MgDeviceRegisteredUser](Get-MgDeviceRegisteredUser.md)
-Get registeredUsers from devices
+Collection of registered users of the device.
+For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration.
+Read-only.
+Nullable.
 
 ### [Get-MgDeviceRegisteredUserByRef](Get-MgDeviceRegisteredUserByRef.md)
-Get ref of registeredUsers from devices
+Collection of registered users of the device.
+For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration.
+Read-only.
+Nullable.
 
-### [Get-MgDeviceTransitiveMember](Get-MgDeviceTransitiveMember.md)
-Get transitiveMemberOf from devices
+### [Get-MgDeviceTransitiveMemberOf](Get-MgDeviceTransitiveMemberOf.md)
+Groups that this device is a member of.
+This operation is transitive.
 
-### [Get-MgDeviceTransitiveMemberByRef](Get-MgDeviceTransitiveMemberByRef.md)
-Get ref of transitiveMemberOf from devices
+### [Get-MgDeviceTransitiveMemberOfByRef](Get-MgDeviceTransitiveMemberOfByRef.md)
+Groups that this device is a member of.
+This operation is transitive.
+
+### [Get-MgDeviceUsageRights](Get-MgDeviceUsageRights.md)
+Represents the usage rights a device has been granted.
 
 ### [Get-MgDeviceUserOwnedObject](Get-MgDeviceUserOwnedObject.md)
 Invoke action getUserOwnedObjects
@@ -194,17 +247,24 @@ Invoke action getUserOwnedObjects
 ### [Get-MgDirectory](Get-MgDirectory.md)
 Get directory
 
+### [Get-MgDirectoryAdministrativeUnit](Get-MgDirectoryAdministrativeUnit.md)
+Get administrativeUnits from directory
+
 ### [Get-MgDirectoryDeletedItem](Get-MgDirectoryDeletedItem.md)
-Get deletedItems from directory
+Recently deleted items.
+Read-only.
+Nullable.
 
 ### [Get-MgDirectoryFeatureRolloutPolicy](Get-MgDirectoryFeatureRolloutPolicy.md)
-Get featureRolloutPolicies from directory
+Nullable.
 
 ### [Get-MgDirectoryFeatureRolloutPolicyApplyTo](Get-MgDirectoryFeatureRolloutPolicyApplyTo.md)
-Get appliesTo from directory
+Nullable.
+Specifies a list of directoryObjects that feature is enabled for.
 
 ### [Get-MgDirectoryRole](Get-MgDirectoryRole.md)
-Get entity from directoryRoles by key
+Represents an Azure Active Directory object.
+The directoryObject type is the base type for many other directory entity types.
 
 ### [Get-MgDirectoryRoleById](Get-MgDirectoryRoleById.md)
 Invoke action getByIds
@@ -213,10 +273,16 @@ Invoke action getByIds
 Invoke function delta
 
 ### [Get-MgDirectoryRoleMember](Get-MgDirectoryRoleMember.md)
-Get members from directoryRoles
+Users that are members of this directory role.
+HTTP Methods: GET, POST, DELETE.
+Read-only.
+Nullable.
 
 ### [Get-MgDirectoryRoleMemberByRef](Get-MgDirectoryRoleMemberByRef.md)
-Get ref of members from directoryRoles
+Users that are members of this directory role.
+HTTP Methods: GET, POST, DELETE.
+Read-only.
+Nullable.
 
 ### [Get-MgDirectoryRoleMemberGroup](Get-MgDirectoryRoleMemberGroup.md)
 Invoke action getMemberGroups
@@ -225,10 +291,13 @@ Invoke action getMemberGroups
 Invoke action getMemberObjects
 
 ### [Get-MgDirectoryRoleScopedMember](Get-MgDirectoryRoleScopedMember.md)
-Get scopedMembers from directoryRoles
+Members of this directory role that are scoped to administrative units.
+Read-only.
+Nullable.
 
 ### [Get-MgDirectoryRoleTemplate](Get-MgDirectoryRoleTemplate.md)
-Get entity from directoryRoleTemplates by key
+Represents an Azure Active Directory object.
+The directoryObject type is the base type for many other directory entity types.
 
 ### [Get-MgDirectoryRoleTemplateById](Get-MgDirectoryRoleTemplateById.md)
 Invoke action getByIds
@@ -249,7 +318,8 @@ Invoke action getUserOwnedObjects
 Get entity from settings by key
 
 ### [Get-MgDirectorySettingTemplate](Get-MgDirectorySettingTemplate.md)
-Get entity from directorySettingTemplates by key
+Represents an Azure Active Directory object.
+The directoryObject type is the base type for many other directory entity types.
 
 ### [Get-MgDirectorySettingTemplateById](Get-MgDirectorySettingTemplateById.md)
 Invoke action getByIds
@@ -263,32 +333,41 @@ Invoke action getMemberObjects
 ### [Get-MgDirectorySettingTemplateUserOwnedObject](Get-MgDirectorySettingTemplateUserOwnedObject.md)
 Invoke action getUserOwnedObjects
 
+### [Get-MgDirectorySharedEmailDomain](Get-MgDirectorySharedEmailDomain.md)
+Get sharedEmailDomains from directory
+
 ### [Get-MgDomain](Get-MgDomain.md)
 Get entity from domains by key
 
 ### [Get-MgDomainNameerenceByRef](Get-MgDomainNameerenceByRef.md)
-Get domainNameReferences from domains
+Read-only, Nullable
 
 ### [Get-MgDomainRefDomainNameerenceByRef](Get-MgDomainRefDomainNameerenceByRef.md)
-Get ref of domainNameReferences from domains
+Read-only, Nullable
 
 ### [Get-MgDomainServiceConfigurationRecord](Get-MgDomainServiceConfigurationRecord.md)
-Get serviceConfigurationRecords from domains
+DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services.
+Read-only, Nullable
+
+### [Get-MgDomainSharedEmailDomainInvitation](Get-MgDomainSharedEmailDomainInvitation.md)
+Get sharedEmailDomainInvitations from domains
 
 ### [Get-MgDomainVerificationDnsRecord](Get-MgDomainVerificationDnsRecord.md)
-Get verificationDnsRecords from domains
+DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD.
+Read-only, Nullable
 
 ### [Get-MgOrganization](Get-MgOrganization.md)
-Get entity from organization by key
+The organization resource represents an instance of global settings and resources which operate and are provisioned at the tenant-level.
 
 ### [Get-MgOrganizationBranding](Get-MgOrganizationBranding.md)
-Get brandings from organization
+Get branding from organization
 
 ### [Get-MgOrganizationById](Get-MgOrganizationById.md)
 Invoke action getByIds
 
 ### [Get-MgOrganizationExtension](Get-MgOrganizationExtension.md)
-Get extensions from organization
+The collection of open extensions defined for the organization resource.
+Nullable.
 
 ### [Get-MgOrganizationMemberGroup](Get-MgOrganizationMemberGroup.md)
 Invoke action getMemberGroups
@@ -296,14 +375,31 @@ Invoke action getMemberGroups
 ### [Get-MgOrganizationMemberObject](Get-MgOrganizationMemberObject.md)
 Invoke action getMemberObjects
 
+### [Get-MgOrganizationSetting](Get-MgOrganizationSetting.md)
+Retrieve the properties and relationships of organizationSettings object.
+Nullable.
+
+### [Get-MgOrganizationSettingItemInsight](Get-MgOrganizationSettingItemInsight.md)
+Contains the properties that are configured by an administrator for the visibility of Microsoft Graph-derived insights, between a user and other items in Microsoft 365, such as documents or sites.
+Get itemInsightsSettings through this navigation property.
+
+### [Get-MgOrganizationSettingProfileCardProperty](Get-MgOrganizationSettingProfileCardProperty.md)
+Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card.
+Get organization settings returns the properties configured for profile cards for the organization.
+
 ### [Get-MgOrganizationUserOwnedObject](Get-MgOrganizationUserOwnedObject.md)
 Invoke action getUserOwnedObjects
 
 ### [Get-MgSubscribedSku](Get-MgSubscribedSku.md)
 Get entity from subscribedSkus by key
 
-### [Get-MgUserScopedRoleMember](Get-MgUserScopedRoleMember.md)
-Get scopedRoleMemberOf from users
+### [Get-MgUserScopedRoleMemberOf](Get-MgUserScopedRoleMemberOf.md)
+The scoped-role administrative unit memberships for this user.
+Read-only.
+Nullable.
+
+### [Initialize-MgOrganizationService](Initialize-MgOrganizationService.md)
+Invoke action activateService
 
 ### [Invoke-MgForceDomainDelete](Invoke-MgForceDomainDelete.md)
 Invoke action forceDelete
@@ -312,25 +408,36 @@ Invoke action forceDelete
 Add new entity to administrativeUnits
 
 ### [New-MgAdministrativeUnitExtension](New-MgAdministrativeUnitExtension.md)
-Create new navigation property to extensions for administrativeUnits
+The collection of open extensions defined for this Administrative Unit.
+Nullable.
 
 ### [New-MgAdministrativeUnitMemberByRef](New-MgAdministrativeUnitMemberByRef.md)
-Create new navigation property ref to members for administrativeUnits
+Users and groups that are members of this Adminsitrative Unit.
+HTTP Methods: GET (list members), POST (add members), DELETE (remove members).
 
 ### [New-MgAdministrativeUnitScopedRoleMember](New-MgAdministrativeUnitScopedRoleMember.md)
-Create new navigation property to scopedRoleMembers for administrativeUnits
+Scoped-role members of this Administrative Unit.
+HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).
 
 ### [New-MgContact](New-MgContact.md)
 Add new entity to contacts
 
 ### [New-MgContactDirectReportByRef](New-MgContactDirectReportByRef.md)
-Create new navigation property ref to directReports for contacts
+The contact's direct reports.
+(The users and contacts that have their manager property set to this contact.) Read-only.
+Nullable.
 
-### [New-MgContactMemberByRef](New-MgContactMemberByRef.md)
-Create new navigation property ref to memberOf for contacts
+### [New-MgContactMemberOfByRef](New-MgContactMemberOfByRef.md)
+Groups that this contact is a member of.
+Read-only.
+Nullable.
 
-### [New-MgContactTransitiveMemberByRef](New-MgContactTransitiveMemberByRef.md)
+### [New-MgContactTransitiveMemberOfByRef](New-MgContactTransitiveMemberOfByRef.md)
 Create new navigation property ref to transitiveMemberOf for contacts
+
+### [New-MgContactTransitiveReportByRef](New-MgContactTransitiveReportByRef.md)
+The transitive reports for a contact.
+Read-only.
 
 ### [New-MgContract](New-MgContract.md)
 Add new entity to contracts
@@ -339,40 +446,66 @@ Add new entity to contracts
 Add new entity to devices
 
 ### [New-MgDeviceCommand](New-MgDeviceCommand.md)
-Create new navigation property to commands for devices
+Set of commands sent to this device.
 
 ### [New-MgDeviceExtension](New-MgDeviceExtension.md)
-Create new navigation property to extensions for devices
+The collection of open extensions defined for the device.
+Read-only.
+Nullable.
 
-### [New-MgDeviceMemberByRef](New-MgDeviceMemberByRef.md)
-Create new navigation property ref to memberOf for devices
+### [New-MgDeviceMemberOfByRef](New-MgDeviceMemberOfByRef.md)
+Groups that this device is a member of.
+Read-only.
+Nullable.
 
 ### [New-MgDeviceRegisteredOwnerByRef](New-MgDeviceRegisteredOwnerByRef.md)
-Create new navigation property ref to registeredOwners for devices
+The user that cloud joined the device or registered their personal device.
+The registered owner is set at the time of registration.
+Currently, there can be only one owner.
+Read-only.
+Nullable.
 
 ### [New-MgDeviceRegisteredUserByRef](New-MgDeviceRegisteredUserByRef.md)
-Create new navigation property ref to registeredUsers for devices
+Collection of registered users of the device.
+For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration.
+Read-only.
+Nullable.
 
-### [New-MgDeviceTransitiveMemberByRef](New-MgDeviceTransitiveMemberByRef.md)
-Create new navigation property ref to transitiveMemberOf for devices
+### [New-MgDeviceTransitiveMemberOfByRef](New-MgDeviceTransitiveMemberOfByRef.md)
+Groups that this device is a member of.
+This operation is transitive.
+
+### [New-MgDeviceUsageRights](New-MgDeviceUsageRights.md)
+Represents the usage rights a device has been granted.
+
+### [New-MgDirectoryAdministrativeUnit](New-MgDirectoryAdministrativeUnit.md)
+Create new navigation property to administrativeUnits for directory
 
 ### [New-MgDirectoryDeletedItem](New-MgDirectoryDeletedItem.md)
-Create new navigation property to deletedItems for directory
+Recently deleted items.
+Read-only.
+Nullable.
 
 ### [New-MgDirectoryFeatureRolloutPolicy](New-MgDirectoryFeatureRolloutPolicy.md)
-Create new navigation property to featureRolloutPolicies for directory
+Nullable.
 
 ### [New-MgDirectoryFeatureRolloutPolicyApplyTo](New-MgDirectoryFeatureRolloutPolicyApplyTo.md)
-Create new navigation property to appliesTo for directory
+Nullable.
+Specifies a list of directoryObjects that feature is enabled for.
 
 ### [New-MgDirectoryRole](New-MgDirectoryRole.md)
 Add new entity to directoryRoles
 
 ### [New-MgDirectoryRoleMemberByRef](New-MgDirectoryRoleMemberByRef.md)
-Create new navigation property ref to members for directoryRoles
+Users that are members of this directory role.
+HTTP Methods: GET, POST, DELETE.
+Read-only.
+Nullable.
 
 ### [New-MgDirectoryRoleScopedMember](New-MgDirectoryRoleScopedMember.md)
-Create new navigation property to scopedMembers for directoryRoles
+Members of this directory role that are scoped to administrative units.
+Read-only.
+Nullable.
 
 ### [New-MgDirectoryRoleTemplate](New-MgDirectoryRoleTemplate.md)
 Add new entity to directoryRoleTemplates
@@ -383,107 +516,165 @@ Add new entity to settings
 ### [New-MgDirectorySettingTemplate](New-MgDirectorySettingTemplate.md)
 Add new entity to directorySettingTemplates
 
+### [New-MgDirectorySharedEmailDomain](New-MgDirectorySharedEmailDomain.md)
+Create new navigation property to sharedEmailDomains for directory
+
 ### [New-MgDomain](New-MgDomain.md)
 Add new entity to domains
 
 ### [New-MgDomainRefDomainNameerenceByRef](New-MgDomainRefDomainNameerenceByRef.md)
-Create new navigation property ref to domainNameReferences for domains
+Read-only, Nullable
 
 ### [New-MgDomainServiceConfigurationRecord](New-MgDomainServiceConfigurationRecord.md)
-Create new navigation property to serviceConfigurationRecords for domains
+DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services.
+Read-only, Nullable
+
+### [New-MgDomainSharedEmailDomainInvitation](New-MgDomainSharedEmailDomainInvitation.md)
+Create new navigation property to sharedEmailDomainInvitations for domains
 
 ### [New-MgDomainVerificationDnsRecord](New-MgDomainVerificationDnsRecord.md)
-Create new navigation property to verificationDnsRecords for domains
+DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD.
+Read-only, Nullable
 
 ### [New-MgOrganization](New-MgOrganization.md)
 Add new entity to organization
 
-### [New-MgOrganizationBranding](New-MgOrganizationBranding.md)
-Create new navigation property to brandings for organization
-
 ### [New-MgOrganizationExtension](New-MgOrganizationExtension.md)
-Create new navigation property to extensions for organization
+The collection of open extensions defined for the organization resource.
+Nullable.
+
+### [New-MgOrganizationSettingProfileCardProperty](New-MgOrganizationSettingProfileCardProperty.md)
+Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card.
+Get organization settings returns the properties configured for profile cards for the organization.
 
 ### [New-MgSubscribedSku](New-MgSubscribedSku.md)
 Add new entity to subscribedSkus
 
-### [New-MgUserScopedRoleMember](New-MgUserScopedRoleMember.md)
-Create new navigation property to scopedRoleMemberOf for users
+### [New-MgUserScopedRoleMemberOf](New-MgUserScopedRoleMemberOf.md)
+The scoped-role administrative unit memberships for this user.
+Read-only.
+Nullable.
 
 ### [Remove-MgAdministrativeUnit](Remove-MgAdministrativeUnit.md)
-Delete entity from administrativeUnits
+Represents an Azure Active Directory object.
+The directoryObject type is the base type for many other directory entity types.
 
 ### [Remove-MgAdministrativeUnitExtension](Remove-MgAdministrativeUnitExtension.md)
-Delete navigation property extensions for administrativeUnits
+The collection of open extensions defined for this Administrative Unit.
+Nullable.
 
 ### [Remove-MgAdministrativeUnitScopedRoleMember](Remove-MgAdministrativeUnitScopedRoleMember.md)
-Delete navigation property scopedRoleMembers for administrativeUnits
+Scoped-role members of this Administrative Unit.
+HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).
 
 ### [Remove-MgContact](Remove-MgContact.md)
-Delete entity from contacts
+Represents an Azure Active Directory object.
+The directoryObject type is the base type for many other directory entity types.
 
 ### [Remove-MgContactManagerByRef](Remove-MgContactManagerByRef.md)
-Delete ref of navigation property manager for contacts
+The user or contact that is this contact's manager.
+Read-only.
 
 ### [Remove-MgContract](Remove-MgContract.md)
-Delete entity from contracts
+Represents an Azure Active Directory object.
+The directoryObject type is the base type for many other directory entity types.
 
 ### [Remove-MgDevice](Remove-MgDevice.md)
-Delete entity from devices
+Represents an Azure Active Directory object.
+The directoryObject type is the base type for many other directory entity types.
 
 ### [Remove-MgDeviceCommand](Remove-MgDeviceCommand.md)
-Delete navigation property commands for devices
+Set of commands sent to this device.
 
 ### [Remove-MgDeviceExtension](Remove-MgDeviceExtension.md)
-Delete navigation property extensions for devices
+The collection of open extensions defined for the device.
+Read-only.
+Nullable.
+
+### [Remove-MgDeviceUsageRights](Remove-MgDeviceUsageRights.md)
+Represents the usage rights a device has been granted.
+
+### [Remove-MgDirectoryAdministrativeUnit](Remove-MgDirectoryAdministrativeUnit.md)
+Delete navigation property administrativeUnits for directory
 
 ### [Remove-MgDirectoryDeletedItem](Remove-MgDirectoryDeletedItem.md)
-Delete navigation property deletedItems for directory
+Recently deleted items.
+Read-only.
+Nullable.
 
 ### [Remove-MgDirectoryFeatureRolloutPolicy](Remove-MgDirectoryFeatureRolloutPolicy.md)
-Delete navigation property featureRolloutPolicies for directory
+Nullable.
 
 ### [Remove-MgDirectoryFeatureRolloutPolicyApplyTo](Remove-MgDirectoryFeatureRolloutPolicyApplyTo.md)
-Delete navigation property appliesTo for directory
+Nullable.
+Specifies a list of directoryObjects that feature is enabled for.
 
 ### [Remove-MgDirectoryRole](Remove-MgDirectoryRole.md)
-Delete entity from directoryRoles
+Represents an Azure Active Directory object.
+The directoryObject type is the base type for many other directory entity types.
 
 ### [Remove-MgDirectoryRoleScopedMember](Remove-MgDirectoryRoleScopedMember.md)
-Delete navigation property scopedMembers for directoryRoles
+Members of this directory role that are scoped to administrative units.
+Read-only.
+Nullable.
 
 ### [Remove-MgDirectoryRoleTemplate](Remove-MgDirectoryRoleTemplate.md)
-Delete entity from directoryRoleTemplates
+Represents an Azure Active Directory object.
+The directoryObject type is the base type for many other directory entity types.
 
 ### [Remove-MgDirectorySetting](Remove-MgDirectorySetting.md)
 Delete entity from settings
 
 ### [Remove-MgDirectorySettingTemplate](Remove-MgDirectorySettingTemplate.md)
-Delete entity from directorySettingTemplates
+Represents an Azure Active Directory object.
+The directoryObject type is the base type for many other directory entity types.
+
+### [Remove-MgDirectorySharedEmailDomain](Remove-MgDirectorySharedEmailDomain.md)
+Delete navigation property sharedEmailDomains for directory
 
 ### [Remove-MgDomain](Remove-MgDomain.md)
 Delete entity from domains
 
 ### [Remove-MgDomainServiceConfigurationRecord](Remove-MgDomainServiceConfigurationRecord.md)
-Delete navigation property serviceConfigurationRecords for domains
+DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services.
+Read-only, Nullable
+
+### [Remove-MgDomainSharedEmailDomainInvitation](Remove-MgDomainSharedEmailDomainInvitation.md)
+Delete navigation property sharedEmailDomainInvitations for domains
 
 ### [Remove-MgDomainVerificationDnsRecord](Remove-MgDomainVerificationDnsRecord.md)
-Delete navigation property verificationDnsRecords for domains
+DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD.
+Read-only, Nullable
 
 ### [Remove-MgOrganization](Remove-MgOrganization.md)
-Delete entity from organization
+The organization resource represents an instance of global settings and resources which operate and are provisioned at the tenant-level.
 
 ### [Remove-MgOrganizationBranding](Remove-MgOrganizationBranding.md)
-Delete navigation property brandings for organization
+Delete navigation property branding for organization
 
 ### [Remove-MgOrganizationExtension](Remove-MgOrganizationExtension.md)
-Delete navigation property extensions for organization
+The collection of open extensions defined for the organization resource.
+Nullable.
+
+### [Remove-MgOrganizationSetting](Remove-MgOrganizationSetting.md)
+Retrieve the properties and relationships of organizationSettings object.
+Nullable.
+
+### [Remove-MgOrganizationSettingItemInsight](Remove-MgOrganizationSettingItemInsight.md)
+Contains the properties that are configured by an administrator for the visibility of Microsoft Graph-derived insights, between a user and other items in Microsoft 365, such as documents or sites.
+Get itemInsightsSettings through this navigation property.
+
+### [Remove-MgOrganizationSettingProfileCardProperty](Remove-MgOrganizationSettingProfileCardProperty.md)
+Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card.
+Get organization settings returns the properties configured for profile cards for the organization.
 
 ### [Remove-MgSubscribedSku](Remove-MgSubscribedSku.md)
 Delete entity from subscribedSkus
 
-### [Remove-MgUserScopedRoleMember](Remove-MgUserScopedRoleMember.md)
-Delete navigation property scopedRoleMemberOf for users
+### [Remove-MgUserScopedRoleMemberOf](Remove-MgUserScopedRoleMemberOf.md)
+The scoped-role administrative unit memberships for this user.
+Read-only.
+Nullable.
 
 ### [Restore-MgAdministrativeUnit](Restore-MgAdministrativeUnit.md)
 Invoke action restore
@@ -510,10 +701,11 @@ Invoke action restore
 Invoke action restore
 
 ### [Set-MgContactManagerByRef](Set-MgContactManagerByRef.md)
-Update the ref of navigation property manager in contacts
+The user or contact that is this contact's manager.
+Read-only.
 
 ### [Set-MgOrganizationMobileDeviceManagementAuthority](Set-MgOrganizationMobileDeviceManagementAuthority.md)
-Invoke action setMobileDeviceManagementAuthority
+Set mobile device management authority
 
 ### [Test-MgAdministrativeUnitProperty](Test-MgAdministrativeUnitProperty.md)
 Invoke action validateProperties
@@ -536,84 +728,126 @@ Invoke action validateProperties
 ### [Test-MgDirectorySettingTemplateProperty](Test-MgDirectorySettingTemplateProperty.md)
 Invoke action validateProperties
 
-### [Test-MgDomain](Test-MgDomain.md)
-Invoke action verify
-
 ### [Test-MgOrganizationProperty](Test-MgOrganizationProperty.md)
 Invoke action validateProperties
 
 ### [Update-MgAdministrativeUnit](Update-MgAdministrativeUnit.md)
-Update entity in administrativeUnits
+Represents an Azure Active Directory object.
+The directoryObject type is the base type for many other directory entity types.
 
 ### [Update-MgAdministrativeUnitExtension](Update-MgAdministrativeUnitExtension.md)
-Update the navigation property extensions in administrativeUnits
+The collection of open extensions defined for this Administrative Unit.
+Nullable.
 
 ### [Update-MgAdministrativeUnitScopedRoleMember](Update-MgAdministrativeUnitScopedRoleMember.md)
-Update the navigation property scopedRoleMembers in administrativeUnits
+Scoped-role members of this Administrative Unit.
+HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).
 
 ### [Update-MgContact](Update-MgContact.md)
-Update entity in contacts
+Represents an Azure Active Directory object.
+The directoryObject type is the base type for many other directory entity types.
 
 ### [Update-MgContract](Update-MgContract.md)
-Update entity in contracts
+Represents an Azure Active Directory object.
+The directoryObject type is the base type for many other directory entity types.
 
 ### [Update-MgDevice](Update-MgDevice.md)
-Update entity in devices
+Represents an Azure Active Directory object.
+The directoryObject type is the base type for many other directory entity types.
 
 ### [Update-MgDeviceCommand](Update-MgDeviceCommand.md)
-Update the navigation property commands in devices
+Set of commands sent to this device.
 
 ### [Update-MgDeviceExtension](Update-MgDeviceExtension.md)
-Update the navigation property extensions in devices
+The collection of open extensions defined for the device.
+Read-only.
+Nullable.
+
+### [Update-MgDeviceUsageRights](Update-MgDeviceUsageRights.md)
+Represents the usage rights a device has been granted.
 
 ### [Update-MgDirectory](Update-MgDirectory.md)
 Update directory
 
+### [Update-MgDirectoryAdministrativeUnit](Update-MgDirectoryAdministrativeUnit.md)
+Update the navigation property administrativeUnits in directory
+
 ### [Update-MgDirectoryDeletedItem](Update-MgDirectoryDeletedItem.md)
-Update the navigation property deletedItems in directory
+Recently deleted items.
+Read-only.
+Nullable.
 
 ### [Update-MgDirectoryFeatureRolloutPolicy](Update-MgDirectoryFeatureRolloutPolicy.md)
-Update the navigation property featureRolloutPolicies in directory
+Nullable.
 
 ### [Update-MgDirectoryFeatureRolloutPolicyApplyTo](Update-MgDirectoryFeatureRolloutPolicyApplyTo.md)
-Update the navigation property appliesTo in directory
+Nullable.
+Specifies a list of directoryObjects that feature is enabled for.
 
 ### [Update-MgDirectoryRole](Update-MgDirectoryRole.md)
-Update entity in directoryRoles
+Represents an Azure Active Directory object.
+The directoryObject type is the base type for many other directory entity types.
 
 ### [Update-MgDirectoryRoleScopedMember](Update-MgDirectoryRoleScopedMember.md)
-Update the navigation property scopedMembers in directoryRoles
+Members of this directory role that are scoped to administrative units.
+Read-only.
+Nullable.
 
 ### [Update-MgDirectoryRoleTemplate](Update-MgDirectoryRoleTemplate.md)
-Update entity in directoryRoleTemplates
+Represents an Azure Active Directory object.
+The directoryObject type is the base type for many other directory entity types.
 
 ### [Update-MgDirectorySetting](Update-MgDirectorySetting.md)
 Update entity in settings
 
 ### [Update-MgDirectorySettingTemplate](Update-MgDirectorySettingTemplate.md)
-Update entity in directorySettingTemplates
+Represents an Azure Active Directory object.
+The directoryObject type is the base type for many other directory entity types.
+
+### [Update-MgDirectorySharedEmailDomain](Update-MgDirectorySharedEmailDomain.md)
+Update the navigation property sharedEmailDomains in directory
 
 ### [Update-MgDomain](Update-MgDomain.md)
 Update entity in domains
 
 ### [Update-MgDomainServiceConfigurationRecord](Update-MgDomainServiceConfigurationRecord.md)
-Update the navigation property serviceConfigurationRecords in domains
+DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services.
+Read-only, Nullable
+
+### [Update-MgDomainSharedEmailDomainInvitation](Update-MgDomainSharedEmailDomainInvitation.md)
+Update the navigation property sharedEmailDomainInvitations in domains
 
 ### [Update-MgDomainVerificationDnsRecord](Update-MgDomainVerificationDnsRecord.md)
-Update the navigation property verificationDnsRecords in domains
+DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD.
+Read-only, Nullable
 
 ### [Update-MgOrganization](Update-MgOrganization.md)
-Update entity in organization
+The organization resource represents an instance of global settings and resources which operate and are provisioned at the tenant-level.
 
 ### [Update-MgOrganizationBranding](Update-MgOrganizationBranding.md)
-Update the navigation property brandings in organization
+Update the navigation property branding in organization
 
 ### [Update-MgOrganizationExtension](Update-MgOrganizationExtension.md)
-Update the navigation property extensions in organization
+The collection of open extensions defined for the organization resource.
+Nullable.
+
+### [Update-MgOrganizationSetting](Update-MgOrganizationSetting.md)
+Retrieve the properties and relationships of organizationSettings object.
+Nullable.
+
+### [Update-MgOrganizationSettingItemInsight](Update-MgOrganizationSettingItemInsight.md)
+Contains the properties that are configured by an administrator for the visibility of Microsoft Graph-derived insights, between a user and other items in Microsoft 365, such as documents or sites.
+Get itemInsightsSettings through this navigation property.
+
+### [Update-MgOrganizationSettingProfileCardProperty](Update-MgOrganizationSettingProfileCardProperty.md)
+Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card.
+Get organization settings returns the properties configured for profile cards for the organization.
 
 ### [Update-MgSubscribedSku](Update-MgSubscribedSku.md)
 Update entity in subscribedSkus
 
-### [Update-MgUserScopedRoleMember](Update-MgUserScopedRoleMember.md)
-Update the navigation property scopedRoleMemberOf in users
+### [Update-MgUserScopedRoleMemberOf](Update-MgUserScopedRoleMemberOf.md)
+The scoped-role administrative unit memberships for this user.
+Read-only.
+Nullable.
 
