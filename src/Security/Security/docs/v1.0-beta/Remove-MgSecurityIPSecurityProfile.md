@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgSecurityIPSecurityProfile
 
 ## SYNOPSIS
-Delete navigation property ipSecurityProfiles for Security
+Delete navigation property ipSecurityProfiles for security
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgSecurityIPSecurityProfile -InputObject <ISecurityIdentity> [-IfMatch <S
 ```
 
 ## DESCRIPTION
-Delete navigation property ipSecurityProfiles for Security
+Delete navigation property ipSecurityProfiles for security
 
 ## EXAMPLES
 

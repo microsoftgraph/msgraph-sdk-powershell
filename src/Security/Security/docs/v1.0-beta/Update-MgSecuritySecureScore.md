@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgSecuritySecureScore
 
 ## SYNOPSIS
-Update the navigation property secureScores in Security
+Update the navigation property secureScores in security
 
 ## SYNTAX
 
@@ -45,7 +45,7 @@ Update-MgSecuritySecureScore -InputObject <ISecurityIdentity> [-ActiveUserCount 
 ```
 
 ## DESCRIPTION
-Update the navigation property secureScores in Security
+Update the navigation property secureScores in security
 
 ## EXAMPLES
 

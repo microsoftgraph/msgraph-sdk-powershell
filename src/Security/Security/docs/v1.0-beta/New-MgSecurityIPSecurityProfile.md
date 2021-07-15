@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgSecurityIPSecurityProfile
 
 ## SYNOPSIS
-Create new navigation property to ipSecurityProfiles for Security
+Create new navigation property to ipSecurityProfiles for security
 
 ## SYNTAX
 
@@ -29,7 +29,7 @@ New-MgSecurityIPSecurityProfile -BodyParameter <IMicrosoftGraphIPSecurityProfile
 ```
 
 ## DESCRIPTION
-Create new navigation property to ipSecurityProfiles for Security
+Create new navigation property to ipSecurityProfiles for security
 
 ## EXAMPLES
 
@@ -363,7 +363,7 @@ BODYPARAMETER <IMicrosoftGraphIPSecurityProfile>: ipSecurityProfile
     - `[Name <String>]`: 
     - `[Vendor <String>]`: 
   - `[IPReferenceData <IMicrosoftGraphIPReferenceData[]>]`: 
-    - `[Asn <Int32?>]`: 
+    - `[Asn <Int64?>]`: 
     - `[City <String>]`: 
     - `[CountryOrRegionCode <String>]`: 
     - `[Organization <String>]`: 
@@ -385,7 +385,7 @@ IPCATEGORIES <IMicrosoftGraphIPCategory[]>: .
   - `[Vendor <String>]`: 
 
 IPREFERENCEDATA <IMicrosoftGraphIPReferenceData[]>: .
-  - `[Asn <Int32?>]`: 
+  - `[Asn <Int64?>]`: 
   - `[City <String>]`: 
   - `[CountryOrRegionCode <String>]`: 
   - `[Organization <String>]`: 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgSecurityUserSecurityProfile
 
 ## SYNOPSIS
-Delete navigation property userSecurityProfiles for Security
+Delete navigation property userSecurityProfiles for security
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgSecurityUserSecurityProfile -InputObject <ISecurityIdentity> [-IfMatch 
 ```
 
 ## DESCRIPTION
-Delete navigation property userSecurityProfiles for Security
+Delete navigation property userSecurityProfiles for security
 
 ## EXAMPLES
 

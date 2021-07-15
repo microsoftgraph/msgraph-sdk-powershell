@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgSecuritySecureScore
 
 ## SYNOPSIS
-Create new navigation property to secureScores for Security
+Create new navigation property to secureScores for security
 
 ## SYNTAX
 
@@ -28,7 +28,7 @@ New-MgSecuritySecureScore -BodyParameter <IMicrosoftGraphSecureScore> [-Confirm]
 ```
 
 ## DESCRIPTION
-Create new navigation property to secureScores for Security
+Create new navigation property to secureScores for security
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgSecurityUserSecurityProfile
 
 ## SYNOPSIS
-Create new navigation property to userSecurityProfiles for Security
+Create new navigation property to userSecurityProfiles for security
 
 ## SYNTAX
 
@@ -28,7 +28,7 @@ New-MgSecurityUserSecurityProfile -BodyParameter <IMicrosoftGraphUserSecurityPro
 ```
 
 ## DESCRIPTION
-Create new navigation property to userSecurityProfiles for Security
+Create new navigation property to userSecurityProfiles for security
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgSecuritySecureScore
 
 ## SYNOPSIS
-Delete navigation property secureScores for Security
+Delete navigation property secureScores for security
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgSecuritySecureScore -InputObject <ISecurityIdentity> [-IfMatch <String>
 ```
 
 ## DESCRIPTION
-Delete navigation property secureScores for Security
+Delete navigation property secureScores for security
 
 ## EXAMPLES
 

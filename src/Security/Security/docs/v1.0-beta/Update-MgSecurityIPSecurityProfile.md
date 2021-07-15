@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgSecurityIPSecurityProfile
 
 ## SYNOPSIS
-Update the navigation property ipSecurityProfiles in Security
+Update the navigation property ipSecurityProfiles in security
 
 ## SYNTAX
 
@@ -47,7 +47,7 @@ Update-MgSecurityIPSecurityProfile -InputObject <ISecurityIdentity> [-ActivityGr
 ```
 
 ## DESCRIPTION
-Update the navigation property ipSecurityProfiles in Security
+Update the navigation property ipSecurityProfiles in security
 
 ## EXAMPLES
 
@@ -429,7 +429,7 @@ BODYPARAMETER <IMicrosoftGraphIPSecurityProfile>: ipSecurityProfile
     - `[Name <String>]`: 
     - `[Vendor <String>]`: 
   - `[IPReferenceData <IMicrosoftGraphIPReferenceData[]>]`: 
-    - `[Asn <Int32?>]`: 
+    - `[Asn <Int64?>]`: 
     - `[City <String>]`: 
     - `[CountryOrRegionCode <String>]`: 
     - `[Organization <String>]`: 
@@ -465,7 +465,7 @@ IPCATEGORIES <IMicrosoftGraphIPCategory[]>: .
   - `[Vendor <String>]`: 
 
 IPREFERENCEDATA <IMicrosoftGraphIPReferenceData[]>: .
-  - `[Asn <Int32?>]`: 
+  - `[Asn <Int64?>]`: 
   - `[City <String>]`: 
   - `[CountryOrRegionCode <String>]`: 
   - `[Organization <String>]`: 

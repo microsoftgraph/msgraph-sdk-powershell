@@ -8,7 +8,8 @@ schema: 2.0.0
 # Remove-MgSecurityAlert
 
 ## SYNOPSIS
-Delete navigation property alerts for Security
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -25,7 +26,8 @@ Remove-MgSecurityAlert -InputObject <ISecurityIdentity> [-IfMatch <String>] [-Pa
 ```
 
 ## DESCRIPTION
-Delete navigation property alerts for Security
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

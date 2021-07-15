@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgSecurityProviderTenantSetting
 
 ## SYNOPSIS
-Update the navigation property providerTenantSettings in Security
+Update the navigation property providerTenantSettings in security
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ Update-MgSecurityProviderTenantSetting -InputObject <ISecurityIdentity> [-Additi
 ```
 
 ## DESCRIPTION
-Update the navigation property providerTenantSettings in Security
+Update the navigation property providerTenantSettings in security
 
 ## EXAMPLES
 

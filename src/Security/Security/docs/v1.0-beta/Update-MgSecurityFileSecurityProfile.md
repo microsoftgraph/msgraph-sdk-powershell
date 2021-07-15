@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgSecurityFileSecurityProfile
 
 ## SYNOPSIS
-Update the navigation property fileSecurityProfiles in Security
+Update the navigation property fileSecurityProfiles in security
 
 ## SYNTAX
 
@@ -51,7 +51,7 @@ Update-MgSecurityFileSecurityProfile -InputObject <ISecurityIdentity> [-Activity
 ```
 
 ## DESCRIPTION
-Update the navigation property fileSecurityProfiles in Security
+Update the navigation property fileSecurityProfiles in security
 
 ## EXAMPLES
 

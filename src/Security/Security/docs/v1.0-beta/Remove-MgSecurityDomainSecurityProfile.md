@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgSecurityDomainSecurityProfile
 
 ## SYNOPSIS
-Delete navigation property domainSecurityProfiles for Security
+Delete navigation property domainSecurityProfiles for security
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgSecurityDomainSecurityProfile -InputObject <ISecurityIdentity> [-IfMatc
 ```
 
 ## DESCRIPTION
-Delete navigation property domainSecurityProfiles for Security
+Delete navigation property domainSecurityProfiles for security
 
 ## EXAMPLES
 

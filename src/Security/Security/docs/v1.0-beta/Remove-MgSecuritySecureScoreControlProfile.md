@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgSecuritySecureScoreControlProfile
 
 ## SYNOPSIS
-Delete navigation property secureScoreControlProfiles for Security
+Delete navigation property secureScoreControlProfiles for security
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgSecuritySecureScoreControlProfile -InputObject <ISecurityIdentity> [-If
 ```
 
 ## DESCRIPTION
-Delete navigation property secureScoreControlProfiles for Security
+Delete navigation property secureScoreControlProfiles for security
 
 ## EXAMPLES
 
