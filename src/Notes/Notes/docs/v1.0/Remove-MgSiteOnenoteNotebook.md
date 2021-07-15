@@ -8,7 +8,9 @@ schema: 2.0.0
 # Remove-MgSiteOnenoteNotebook
 
 ## SYNOPSIS
-Delete navigation property notebooks for sites
+The collection of OneNote notebooks that are owned by the user or group.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -25,7 +27,9 @@ Remove-MgSiteOnenoteNotebook -InputObject <INotesIdentity> [-IfMatch <String>] [
 ```
 
 ## DESCRIPTION
-Delete navigation property notebooks for sites
+The collection of OneNote notebooks that are owned by the user or group.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

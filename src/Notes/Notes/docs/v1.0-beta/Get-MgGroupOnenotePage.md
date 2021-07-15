@@ -8,31 +8,35 @@ schema: 2.0.0
 # Get-MgGroupOnenotePage
 
 ## SYNOPSIS
-Get pages from groups
+The pages in all OneNote notebooks that are owned by the user or group.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
 ### List (Default)
 ```
-Get-MgGroupOnenotePage -GroupId <String> [-Count] [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgGroupOnenotePage -GroupId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
- [-PageSize <Int32>] [<CommonParameters>]
+ [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
-### Get1
+### Get
 ```
 Get-MgGroupOnenotePage -GroupId <String> -OnenotePageId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
-### GetViaIdentity1
+### GetViaIdentity
 ```
 Get-MgGroupOnenotePage -InputObject <INotesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get pages from groups
+The pages in all OneNote notebooks that are owned by the user or group.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 
@@ -71,13 +75,14 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Count
-Include count of items
+### -CountVariable
+Specifies a count of the total number of items in a collection.
+By default, this variable will be set in the global scope.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: System.String
 Parameter Sets: List
-Aliases:
+Aliases: CV
 
 Required: False
 Position: Named
@@ -121,7 +126,7 @@ key: id of group
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1, List
+Parameter Sets: Get, List
 Aliases:
 
 Required: True
@@ -137,7 +142,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.INotesIdentity
-Parameter Sets: GetViaIdentity1
+Parameter Sets: GetViaIdentity
 Aliases:
 
 Required: True
@@ -152,7 +157,7 @@ key: id of onenotePage
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1
+Parameter Sets: Get
 Aliases:
 
 Required: True
@@ -261,7 +266,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnenotePage
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnenotePage1
 
 ## NOTES
 

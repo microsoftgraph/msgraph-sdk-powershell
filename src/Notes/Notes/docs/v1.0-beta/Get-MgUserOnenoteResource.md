@@ -8,7 +8,10 @@ schema: 2.0.0
 # Get-MgUserOnenoteResource
 
 ## SYNOPSIS
-Get resources from users
+The image and other file resources in OneNote pages.
+Getting a resources collection is not supported, but you can get the binary content of a specific resource.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -25,7 +28,10 @@ Get-MgUserOnenoteResource -InputObject <INotesIdentity> [-ExpandProperty <String
 ```
 
 ## DESCRIPTION
-Get resources from users
+The image and other file resources in OneNote pages.
+Getting a resources collection is not supported, but you can get the binary content of a specific resource.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

@@ -8,15 +8,17 @@ schema: 2.0.0
 # Get-MgGroupOnenoteSectionGroup
 
 ## SYNOPSIS
-Get sectionGroups from groups
+The section groups in all OneNote notebooks that are owned by the user or group.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
 ### List2 (Default)
 ```
-Get-MgGroupOnenoteSectionGroup -GroupId <String> [-Count] [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgGroupOnenoteSectionGroup -GroupId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
- [-PageSize <Int32>] [<CommonParameters>]
+ [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
@@ -33,13 +35,15 @@ Get-MgGroupOnenoteSectionGroup -InputObject <INotesIdentity> [-ExpandProperty <S
 
 ### List3
 ```
-Get-MgGroupOnenoteSectionGroup -GroupId <String> -SectionGroupId <String> [-Count]
- [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
- [-Sort <String[]>] [-Top <Int32>] [-All] [-PageSize <Int32>] [<CommonParameters>]
+Get-MgGroupOnenoteSectionGroup -GroupId <String> -SectionGroupId <String> [-ExpandProperty <String[]>]
+ [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
+ [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get sectionGroups from groups
+The section groups in all OneNote notebooks that are owned by the user or group.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 
@@ -78,13 +82,14 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Count
-Include count of items
+### -CountVariable
+Specifies a count of the total number of items in a collection.
+By default, this variable will be set in the global scope.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: System.String
 Parameter Sets: List2, List3
-Aliases:
+Aliases: CV
 
 Required: False
 Position: Named

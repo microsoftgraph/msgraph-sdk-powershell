@@ -8,7 +8,10 @@ schema: 2.0.0
 # Get-MgUserOnenoteOperation
 
 ## SYNOPSIS
-Get operations from users
+The status of OneNote operations.
+Getting an operations collection is not supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -25,7 +28,10 @@ Get-MgUserOnenoteOperation -InputObject <INotesIdentity> [-ExpandProperty <Strin
 ```
 
 ## DESCRIPTION
-Get operations from users
+The status of OneNote operations.
+Getting an operations collection is not supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 
