@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users.Functions
-Module Guid: f54feaaa-5bc6-4ff3-82af-4e5309253203
+Module Guid: ce4e7879-5613-470e-8f0f-ad80125fd57e
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.functions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -69,22 +69,25 @@ Invoke function delta
 Invoke function getManagedAppBlockedUsers
 
 ### [Get-MgUserManagedAppDiagnosticStatuses](Get-MgUserManagedAppDiagnosticStatuses.md)
-Invoke function getManagedAppDiagnosticStatuses
+Gets diagnostics validation status for a given user.
 
 ### [Get-MgUserManagedAppPolicy](Get-MgUserManagedAppPolicy.md)
-Invoke function getManagedAppPolicies
+Gets app restrictions for a given user.
 
 ### [Get-MgUserManagedAppRegistrationUserId](Get-MgUserManagedAppRegistrationUserId.md)
 Invoke function getUserIdsWithFlaggedAppRegistration
 
-### [Get-MgUserManagedDevice](Get-MgUserManagedDevice.md)
-Invoke function getManagedDevicesWithAppFailures
+### [Get-MgUserManagedDeviceCloudPcRemoteActionResult](Get-MgUserManagedDeviceCloudPcRemoteActionResult.md)
+Invoke function getCloudPcRemoteActionResults
 
 ### [Get-MgUserManagedDeviceFileVaultKey](Get-MgUserManagedDeviceFileVaultKey.md)
 Invoke function getFileVaultKey
 
 ### [Get-MgUserManagedDeviceNonCompliantSetting](Get-MgUserManagedDeviceNonCompliantSetting.md)
 Invoke function getNonCompliantSettings
+
+### [Get-MgUserManagedDeviceWithAppFailure](Get-MgUserManagedDeviceWithAppFailure.md)
+Retrieves the list of devices with failed apps
 
 ### [Get-MgUserMessageDelta](Get-MgUserMessageDelta.md)
 Invoke function delta
@@ -95,14 +98,35 @@ Invoke function getRecentNotebooks
 ### [Get-MgUserPlannerAllDelta](Get-MgUserPlannerAllDelta.md)
 Invoke function delta
 
+### [Get-MgUserTodoListDelta](Get-MgUserTodoListDelta.md)
+Invoke function delta
+
+### [Get-MgUserTodoListTaskDelta](Get-MgUserTodoListTaskDelta.md)
+Invoke function delta
+
 ### [Invoke-MgCalendarUserCalendarAllowedCalendarSharingRoles](Invoke-MgCalendarUserCalendarAllowedCalendarSharingRoles.md)
 Invoke function allowedCalendarSharingRoles
 
 ### [Invoke-MgCalendarUserEventCalendarAllowedCalendarSharingRoles](Invoke-MgCalendarUserEventCalendarAllowedCalendarSharingRoles.md)
 Invoke function allowedCalendarSharingRoles
 
+### [Invoke-MgFilterUserAppConsentRequestForApproval](Invoke-MgFilterUserAppConsentRequestForApproval.md)
+Invoke function filterByCurrentUser
+
+### [Invoke-MgFilterUserAppConsentRequestForApprovalUserConsentRequest](Invoke-MgFilterUserAppConsentRequestForApprovalUserConsentRequest.md)
+Invoke function filterByCurrentUser
+
+### [Invoke-MgFilterUserApproval](Invoke-MgFilterUserApproval.md)
+Invoke function filterByCurrentUser
+
+### [Invoke-MgFilterUserPendingAccessReviewInstance](Invoke-MgFilterUserPendingAccessReviewInstance.md)
+Invoke function filterByCurrentUser
+
+### [Invoke-MgFilterUserPendingAccessReviewInstanceDecision](Invoke-MgFilterUserPendingAccessReviewInstanceDecision.md)
+Invoke function filterByCurrentUser
+
 ### [Invoke-MgPendingUserApp](Invoke-MgPendingUserApp.md)
-Invoke function getManagedDevicesWithFailedOrPendingApps
+Retrieves the list of devices with failed or pending apps
 
 ### [Invoke-MgPreviewUserOnenotePage](Invoke-MgPreviewUserOnenotePage.md)
 Invoke function preview
@@ -120,5 +144,5 @@ Invoke function supportedTimeZones
 Invoke function reminderView
 
 ### [Test-MgUserManagedAppUserBlocked](Test-MgUserManagedAppUserBlocked.md)
-Invoke function isManagedAppUserBlocked
+Gets the blocked state of a managed app user.
 

@@ -12,22 +12,22 @@ Invoke function supportedTimeZones
 
 ## SYNTAX
 
-### Time2 (Default)
+### Time (Default)
 ```
 Invoke-MgTimeUserOutlook -UserId <String> [<CommonParameters>]
 ```
 
-### Time3
+### Time1
 ```
 Invoke-MgTimeUserOutlook -TimeZoneStandard <String> -UserId <String> [<CommonParameters>]
 ```
 
-### TimeViaIdentity2
+### TimeViaIdentity
 ```
 Invoke-MgTimeUserOutlook -InputObject <IUsersFunctionsIdentity> [<CommonParameters>]
 ```
 
-### TimeViaIdentity3
+### TimeViaIdentity1
 ```
 Invoke-MgTimeUserOutlook -InputObject <IUsersFunctionsIdentity> [<CommonParameters>]
 ```
@@ -63,7 +63,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
-Parameter Sets: TimeViaIdentity2, TimeViaIdentity3
+Parameter Sets: TimeViaIdentity, TimeViaIdentity1
 Aliases:
 
 Required: True
@@ -74,11 +74,11 @@ Accept wildcard characters: False
 ```
 
 ### -TimeZoneStandard
-.
+Usage: TimeZoneStandard={TimeZoneStandard}
 
 ```yaml
 Type: System.String
-Parameter Sets: Time3
+Parameter Sets: Time1
 Aliases:
 
 Required: True
@@ -93,7 +93,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Time2, Time3
+Parameter Sets: Time, Time1
 Aliases:
 
 Required: True
@@ -124,21 +124,37 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IUsersFunctionsIdentity>: Identity Parameter
+  - `[AccessReviewInstanceId <String>]`: key: id of accessReviewInstance
+  - `[AnotherRange <String>]`: Usage: anotherRange={anotherRange}
+  - `[AppConsentRequestId <String>]`: key: id of appConsentRequest
   - `[CalendarId <String>]`: key: id of calendar
+  - `[Column <Int32?>]`: Usage: column={column}
+  - `[ColumnOffset <Int32?>]`: Usage: columnOffset={columnOffset}
   - `[ContactFolderId <String>]`: key: id of contactFolder
-  - `[EndDateTime <String>]`: 
+  - `[Count <Int32?>]`: Usage: count={count}
+  - `[DeltaColumns <Int32?>]`: Usage: deltaColumns={deltaColumns}
+  - `[DeltaRows <Int32?>]`: Usage: deltaRows={deltaRows}
+  - `[EndDateTime <String>]`: Usage: EndDateTime={EndDateTime}
   - `[EventId <String>]`: key: id of event
-  - `[IncludePersonalNotebooks <Boolean?>]`: 
+  - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
   - `[MailFolderId <String>]`: key: id of mailFolder
   - `[ManagedDeviceId <String>]`: key: id of managedDevice
+  - `[On <String>]`: Usage: on={on}
   - `[OnenotePageId <String>]`: key: id of onenotePage
-  - `[RoomList <String>]`: 
-  - `[Skip <Int32?>]`: 
-  - `[StartDateTime <String>]`: 
-  - `[TimeZoneStandard <String>]`: 
-  - `[Top <Int32?>]`: 
-  - `[User <String>]`: 
+  - `[RoomList <String>]`: Usage: RoomList={RoomList}
+  - `[Row <Int32?>]`: Usage: row={row}
+  - `[RowOffset <Int32?>]`: Usage: rowOffset={rowOffset}
+  - `[SharedInsightId <String>]`: key: id of sharedInsight
+  - `[Skip <Int32?>]`: Usage: skip={skip}
+  - `[StartDateTime <String>]`: Usage: StartDateTime={StartDateTime}
+  - `[TimeZoneStandard <String>]`: Usage: TimeZoneStandard={TimeZoneStandard}
+  - `[TodoTaskListId <String>]`: key: id of todoTaskList
+  - `[Top <Int32?>]`: Usage: top={top}
+  - `[TrendingId <String>]`: key: id of trending
+  - `[UsedInsightId <String>]`: key: id of usedInsight
+  - `[User <String>]`: Usage: User={User}
   - `[UserId <String>]`: key: id of user
+  - `[ValuesOnly <Boolean?>]`: Usage: valuesOnly={valuesOnly}
 
 ## RELATED LINKS
 
