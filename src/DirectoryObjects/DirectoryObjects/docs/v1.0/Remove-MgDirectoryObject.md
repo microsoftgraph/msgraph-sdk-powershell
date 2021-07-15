@@ -8,7 +8,8 @@ schema: 2.0.0
 # Remove-MgDirectoryObject
 
 ## SYNOPSIS
-Delete entity from directoryObjects
+Represents an Azure Active Directory object.
+The directoryObject type is the base type for many other directory entity types.
 
 ## SYNTAX
 
@@ -25,7 +26,8 @@ Remove-MgDirectoryObject -InputObject <IDirectoryObjectsIdentity> [-IfMatch <Str
 ```
 
 ## DESCRIPTION
-Delete entity from directoryObjects
+Represents an Azure Active Directory object.
+The directoryObject type is the base type for many other directory entity types.
 
 ## EXAMPLES
 
