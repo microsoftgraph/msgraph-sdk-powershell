@@ -8,7 +8,9 @@ schema: 2.0.0
 # New-MgUserPlannerFavoritePlanByRef
 
 ## SYNOPSIS
-Create new navigation property ref to favoritePlans for users
+Read-only.
+Nullable.
+Returns the plannerPlans that the user marked as favorites.
 
 ## SYNTAX
 
@@ -37,7 +39,9 @@ New-MgUserPlannerFavoritePlanByRef -InputObject <IPlannerIdentity> [-AdditionalP
 ```
 
 ## DESCRIPTION
-Create new navigation property ref to favoritePlans for users
+Read-only.
+Nullable.
+Returns the plannerPlans that the user marked as favorites.
 
 ## EXAMPLES
 
@@ -180,6 +184,8 @@ INPUTOBJECT <IPlannerIdentity>: Identity Parameter
   - `[PlannerBucketId <String>]`: key: id of plannerBucket
   - `[PlannerDeltaId <String>]`: key: id of plannerDelta
   - `[PlannerPlanId <String>]`: key: id of plannerPlan
+  - `[PlannerRosterId <String>]`: key: id of plannerRoster
+  - `[PlannerRosterMemberId <String>]`: key: id of plannerRosterMember
   - `[PlannerTaskId <String>]`: key: id of plannerTask
   - `[UserId <String>]`: key: id of user
 

@@ -8,7 +8,9 @@ schema: 2.0.0
 # Remove-MgUserPlannerPlanBucketTaskProgressTaskBoardFormat
 
 ## SYNOPSIS
-Delete navigation property progressTaskBoardFormat for users
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by progress.
 
 ## SYNTAX
 
@@ -26,7 +28,9 @@ Remove-MgUserPlannerPlanBucketTaskProgressTaskBoardFormat -InputObject <IPlanner
 ```
 
 ## DESCRIPTION
-Delete navigation property progressTaskBoardFormat for users
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by progress.
 
 ## EXAMPLES
 
@@ -212,6 +216,8 @@ INPUTOBJECT <IPlannerIdentity>: Identity Parameter
   - `[PlannerBucketId <String>]`: key: id of plannerBucket
   - `[PlannerDeltaId <String>]`: key: id of plannerDelta
   - `[PlannerPlanId <String>]`: key: id of plannerPlan
+  - `[PlannerRosterId <String>]`: key: id of plannerRoster
+  - `[PlannerRosterMemberId <String>]`: key: id of plannerRosterMember
   - `[PlannerTaskId <String>]`: key: id of plannerTask
   - `[UserId <String>]`: key: id of user
 

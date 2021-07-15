@@ -8,7 +8,9 @@ schema: 2.0.0
 # Remove-MgUserPlanner
 
 ## SYNOPSIS
-Delete navigation property planner for users
+Selective Planner services available to the user.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -25,7 +27,9 @@ Remove-MgUserPlanner -InputObject <IPlannerIdentity> [-IfMatch <String>] [-PassT
 ```
 
 ## DESCRIPTION
-Delete navigation property planner for users
+Selective Planner services available to the user.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 
@@ -166,6 +170,8 @@ INPUTOBJECT <IPlannerIdentity>: Identity Parameter
   - `[PlannerBucketId <String>]`: key: id of plannerBucket
   - `[PlannerDeltaId <String>]`: key: id of plannerDelta
   - `[PlannerPlanId <String>]`: key: id of plannerPlan
+  - `[PlannerRosterId <String>]`: key: id of plannerRoster
+  - `[PlannerRosterMemberId <String>]`: key: id of plannerRosterMember
   - `[PlannerTaskId <String>]`: key: id of plannerTask
   - `[UserId <String>]`: key: id of user
 
